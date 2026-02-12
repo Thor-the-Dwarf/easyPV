@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Umfassende Strukturprüfung von Quellcode durch systematisches Durchlaufen aller möglichen Ausführungspfade (Path/Branch Coverage).
-- Kontext: White-Box-Testing, Code-Analyse, Sicherheitstests, Bedingungsabdeckung.
-- UX-Prinzip:
-  - "The Cave Explorer": Der Code ist ein dunkles Höhlensystem (Control Flow Graph).
-  - "Flare-Deployment" (Testdaten): Der Spieler wirft "Leuchtkugeln" (Eingabedaten) in die Tunnel. Jede Kugel leuchtet den Pfad aus, den sie aufgrund der Logik-Eingänge nimmt.
-  - "Mapping the Dark": Ziel ist die vollständige Kartierung; jeder Geheimgang (`else`, `catch`, `default`) muss einmal hell erleuchtet sein.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Vertiefung des Verständnisses von internen Programmabläufen und deren gezielte Absicherung durch Testabdeckung (Pfadabdeckung).
+- Game-Mechanic: "The Path Navigator". Du steuerst eine winzige Drohne durch das Innere eines Computer-Chips. Der Quellcode ist ein Labyrinth aus Korridoren (Anweisungen) und Weichen (IF/ELSE). Deine Drohne hinterlässt eine grüne Spur (Coverage). Ziel: Fliege JEDEN Korridor mindestens einmal ab, ohne an eine geschlossene Weiche (Bedingung nicht erfüllt) zu knallen.
+- Challenge: 
+  - Level 1 (The Straight Line): Fliege eine einfache Funktion ohne Abzweigungen ab.
+  - Level 2 (The Junction): Eine `IF-ELSE` Weiche. Wähle den richtigen Input, um beide Arme der Weiche nacheinander "grün" zu färben.
+  - Level 3 (The Loop-Vortex): Eine `WHILE`-Schleife. Fliege 3 Runden und breche dann korrekt aus, um das Ende des Korridors zu erreichen.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die unentdeckten Pfade (Schatten), 2 = Die Eingabe-Konsole (Steuerung), 3 = Die Gesamtkarte (Graph).
-- [ ] Textbudget: Max. 10 Wörter pro Entscheidungsknoten.
-- [ ] "Heatmap-Overlay": Anzeige, welche Zeilen wie oft "beleuchtet" wurden.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Path-Coverage" (%), "Battery (Input-Complexity)", "Crystal-Clear Logic Index".
+- [ ] Scoring: "Navigator-Bonus" für das Finden des kürzesten Weges zur 100% Pfadabdeckung. Abzug bei "Dead-Ends" (nicht erreichbarer Code).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> code-cave-viewer (Center) -> navigation-console -> map-legend`.
-- [ ] Viewer: Graphische Darstellung des Kontrollflusses mit interaktiven Verzweigungen (Desktop Full-Screen).
-- [ ] Console: Ein Dashboard zum Anpassen der Variablenwerte (Side-Panel).
+2. Screen-Layout (The Chip-Interior)
+- [ ] `cockpit-view -> source-code-blueprint -> drone-control -> coverage-heatmap`.
+- [ ] Source-Code-Blueprint: Der Code wird als leuchtendes Adern-System im Hintergrund dargestellt.
+- [ ] Heatmap: Bereits beflogene Pfade leuchten neon-grün, unberührte Pfade sind dunkelblau.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-to-Navigate" im Graphen; modale Eingabe-Buttons für die Testdaten.
-- [ ] `canvas` oder `svg` basierte Animation der Lichtstrahlen im Graphen.
+3. Kernvisuals und Effekte
+- [ ] Sci-Fi Tron Ästhetik: Dunkler Hintergrund, leuchtende Vektor-Linien, digitale Glitch-Effekte, elektronischer Puls-Sound.
+- [ ] "Line-Highlight": Wenn die Drohne eine Zeile passiert, blitzt diese kurz hellweiß auf und wird dann grün.
+- [ ] "Condition-Snap": Wenn eine Bedingung (`true`/`false`) gewählt wird, klappt die Weiche mit einem mechanischen Sound um.
 
-4. Kernvisuals
-- [ ] Speläologie-Ästhetik: Felsige Texturen, Taschenlampen-Effekte, Glühwürmchen-Pfade (shared_theme.css).
-- [ ] "The Dead End": Totenköpfe markieren Passagen, die unmöglich zu erreichen sind (Unreachable Code).
-- [ ] High-Contrast Linien für aktive Pfade (Neon-Gelb auf Tiefschwarz).
+4. Browser- und Device-Resilienz
+- [ ] `SVG` für das scharfe Rendern der Pfade auf allen Auflösungen.
+- [ ] Mobile: "Tilt-to-Fly" (Gyroskop) oder On-Screen Joystick.
 
-5. Interaktion und Feedback
-- [ ] Explorer-Feedback: "Signal! `UserIsAdmin = False` leitet die Kugel in den unteren Tunnel. Ein neuer Bereich wurde kartiert."
-- [ ] Coverage-Aha: "Halt! Du hast den `IOException` Pfad noch nie besucht. Probiere eine ungültige Pfad-Eingabe aus!"
-- [ ] Erfolg: "Höhlensystem komplett erfasst! Deine Testsuite lässt keinen Winkel deines Programms ungeprüft."
+5. Content-Strategie (The Circuits)
+- [ ] 14 Logik-Schaltungen: Von "Login-Prüfung" bis "Komplexer Rabatt-Algo".
 
-6. KPI-Klarheit
-- [ ] Exploration-Percent: "Kartierungs-Grad: 100%".
-- [ ] Structural-Depth: "Pfadtiefe: X / Max Y".
+6. QA-Paket
+- [ ] Test: Sind die IF-Bedingungen (Input-Boxen) während des Fluges einfach zu bedienen?
+- [ ] Test: Bleibt der Überblick über den "gesamten Code" auch bei Zoom-Ins erhalten?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Komplexe Kreditwürdigkeits-Prüfung", "Mehrstufiges Auth-System", "Mathematische Fallunterscheidungen".
-- [ ] Tonalität: Abenteuerlich, explorativ, gewissenhaft.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist der Kontrollfluss-Graph auf mobilen Bildschirmen intuitiv navigierbar (Zoom-Level)?
-- [ ] Test: Funktioniert die Echtzeit-Färbung der Pfade auch bei komplexen Verschachtelungen?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler versteht White-Box-Tests als aktive Jagd nach "unbekannten Ecken" im Code.
-- [ ] Das Interface wirkt wie eine hochwertige Navigationskonsole für Entdecker.
-- [ ] Volle Beherrschung des Konzepts "Strukturabdeckung".
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "White-Box heißt, man sieht das Innere der Logik".
+- [ ] Das Interface wirkt futuristisch, rasant und technisch präzise.
+- [ ] 100% Pfadabdeckung als ultimatives Ziel.

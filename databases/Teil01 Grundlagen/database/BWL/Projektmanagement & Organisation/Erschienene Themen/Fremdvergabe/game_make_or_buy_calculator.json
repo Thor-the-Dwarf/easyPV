@@ -1,0 +1,68 @@
+{
+  "id": "make_or_buy_calculator_v1",
+  "title": "Make or Buy Calculator",
+  "goal": "Entscheide in 5 Faellen rechnerisch korrekt zwischen Eigenfertigung (Make) und Fremdbezug (Buy).",
+  "labels": {
+    "make": "Make (Eigenfertigung)",
+    "buy": "Buy (Fremdbezug)",
+    "next": "Naechster Fall",
+    "restart": "Nochmal trainieren"
+  },
+  "cases": [
+    {
+      "id": "fall-1",
+      "title": "Standardprodukt",
+      "fixedCostMake": 1000,
+      "variableCostMake": 5,
+      "unitCostBuy": 10,
+      "quantity": 300,
+      "quantityMin": 50,
+      "quantityMax": 800,
+      "hint": "Vergleiche Gesamtkosten bei 300 Stueck."
+    },
+    {
+      "id": "fall-2",
+      "title": "Kleinserie",
+      "fixedCostMake": 1800,
+      "variableCostMake": 7,
+      "unitCostBuy": 9,
+      "quantity": 140,
+      "quantityMin": 40,
+      "quantityMax": 500,
+      "hint": "Hohe Fixkosten koennen bei kleinen Mengen gegen Make sprechen."
+    },
+    {
+      "id": "fall-3",
+      "title": "Seriennahe Menge",
+      "fixedCostMake": 2200,
+      "variableCostMake": 4,
+      "unitCostBuy": 8,
+      "quantity": 620,
+      "quantityMin": 120,
+      "quantityMax": 1200,
+      "hint": "Pruefe, ab welcher Menge der Eigenbau kippt."
+    },
+    {
+      "id": "fall-4",
+      "title": "Prototypenphase",
+      "fixedCostMake": 900,
+      "variableCostMake": 6,
+      "unitCostBuy": 11,
+      "quantity": 90,
+      "quantityMin": 20,
+      "quantityMax": 450,
+      "hint": "Sehr kleine Mengen bevorzugen oft Buy, aber nicht immer."
+    },
+    {
+      "id": "fall-5",
+      "title": "Rollout Welle 1",
+      "fixedCostMake": 1500,
+      "variableCostMake": 5,
+      "unitCostBuy": 7,
+      "quantity": 820,
+      "quantityMin": 150,
+      "quantityMax": 1500,
+      "hint": "Achte auf die Differenz bei hohen Volumina."
+    }
+  ]
+}

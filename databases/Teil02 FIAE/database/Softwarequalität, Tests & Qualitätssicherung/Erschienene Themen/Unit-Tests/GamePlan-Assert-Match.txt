@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Beherrschung von Unit-Testing Assertions zur automatisierten Verifizierung von Funktionszuständen und Logik-Ergebnissen.
-- Kontext: Unit-Testing Frameworks (JUnit, Jest, PyTest), Testgetriebene Entwicklung (TDD).
-- UX-Prinzip:
-  - "The Truth Detector": Jede Assertion ist ein präziser Sensor. Ist der Zustand (Actual) ungleich der Wahrheit (Expected), geht die rote Warnlampe an.
-  - "Sensor-Matching": Der Spieler muss für unterschiedliche Phänomene den richtigen Sensor wählen (z.B. `assertEquals` für Werte, `assertNull` für Leere).
-  - "Signal-Phase": Durchführung des Tests mit sofortiger Red/Green Rückmeldung (Pass/Fail).
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Erstellung hochgradig spezialisierter, isolierter Tests für kleinste Software-Einheiten (Funktionen/Methoden).
+- Game-Mechanic: "The Lego-Block Test". In deiner digitalen Werkstatt baust du ein gigantisches Schiff. Jedes Bauteil (Die Funktion) wird einzeln auf den "Prüfstand" (Anforderungshöhe) gelegt. Du musst mit Laser-Sonden (Asserts) prüfen: Ist dieser Stein genau 4 Noppen breit (`assertEquals`)? Ist er nicht hohl (`assertNotNull`)? Nur perfekte Steine kommen in den Verbau.
+- Challenge: 
+  - Level 1 (The Single Stud): Teste eine `add(a, b)` Funktion. Was passiert bei Null?
+  - Level 2 (The Broken Brick): Eine Funktion liefert einen falschen String. Finde den Fehler durch gezielte Asserts.
+  - Level 3 (The Isolation-War): Die Komponente will heimlich auf die Datenbank (Dependency) zugreifen. "Mappe" (Mocke) den Zugriff ab, damit nur die Logik des Steins geprüft wird.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Das Signal (Success/Fail), 2 = Die Assertion (Sensor), 3 = Die Testdaten (Quelle).
-- [ ] Textbudget: Max. 8 Zeilen isolierter Code-Snippets.
-- [ ] "Truth-HUD": Anzeige von `Expected` vs. `Actual` in Echtzeit.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Isolation-Rank", "Assertion-Count", "Instant-Green-Light".
+- [ ] Scoring: "Speed-Dev" Bonus für Tests, die in <1ms laufen. Abzug bei "Bloated-Tests" (zu viel Setup für zu wenig Logik).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> logic-oscilloscope -> assertion-deck -> test-runner-log`.
-- [ ] Oscilloscope: Dynamische Visualisierung der Datenströme, die auf die Sensoren treffen (Desktop mittig).
-- [ ] Assertion-Deck: Ein "Schaltbrett" am unteren Rand mit den Test-Methoden.
+2. Screen-Layout (The Testing Bench)
+- [ ] `workbench -> the-brick-display -> assertion-toolbox -> test-runner-strip`.
+- [ ] Workbench: Ein technischer Tisch mit blauen Markierungen für die Maße.
+- [ ] Assertion-Toolbox: Eine Liste von Werkzeugen (`==`, `!=`, `>`, `NULL`).
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Tap-to-Snap" Mechanik zum Ankoppeln der richtigen Assertion an den Datenstrom.
-- [ ] `safe-area-inset` für das Runner-Log am unteren Rand.
+3. Kernvisuals und Effekte
+- [ ] Modern-Industrial Ästhetik: Saubere weiße Oberflächen, gelbe Warnmarkierungen, mechanische Greifarme, helle LEDs (Shared Theme kompatibel).
+- [ ] "Assert-Zap": Ein kleiner Laserstrahl schießt auf den Stein. Wenn der Test passt, leuchtet er grün auf.
+- [ ] "Fracture-Scan": Bei einem fehlgeschlagenen Assert zeigt der Stein einen virtuellen Riss.
 
-4. Kernvisuals
-- [ ] Cyber-Labor Ästhetik: Wellenformen, digitale Terminals, grün/rote Energieflüsse (shared_theme.css).
-- [ ] "The Assert-Shot": Ein kleiner Laserstrahl, der prüft, ob der Wert durch die Schablone passt.
-- [ ] High-Contrast Colors: Neongrün (Pass) vs. Alarm-Rot (Fail).
+4. Browser- und Device-Resilienz
+- [ ] `flexbox` für die Werkzeugleiste am unteren Rand.
+- [ ] Mobile: "Drag-and-Drop" der Assertions auf die Code-Zeilen.
 
-5. Interaktion und Feedback
-- [ ] Match-Feedback: "Klick! `assertEquals(expected, actual)` eingesetzt. Der Wert 42 passt perfekt zur Erwartung."
-- [ ] Red-Light-Moment: "Bzzz! `assertTrue` ist fehlgeschlagen, da die Bedingung FALSE war. Test gescheitert!"
-- [ ] Erfolg: "Alle Sensoren auf GRÜN. Dein Modul ist mathematisch abgesichert."
+5. Content-Strategie (The Parts)
+- [ ] 20 Baustein-Challenges: Von "String-Formatierung" bis "Mathematische Algorithmen".
 
-6. KPI-Klarheit
-- [ ] Assert-Accuracy: "Trefferrate der Sensoren: 100%".
-- [ ] Test-Stability: "Immunität gegen Regressionen: Gesteigert".
+6. QA-Paket
+- [ ] Test: Ist der "Instant-Green-Light" Effekt befriedigend genug (Gamification)?
+- [ ] Test: Sind die Fehlermeldungen der Asserts (Expected vs. Actual) im HUD gut lesbar?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Listen-Größe prüfen", "Null-Values abfangen", "Exceptions provozieren", "Mathematische Ergebnisse".
-- [ ] Tonalität: Technisch, binär, verlässlich.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die `Expected/Actual` Vergleiche auch bei schmalen Displays lesbar?
-- [ ] Test: Sind die Fehlermeldungen bei einem 'False Assert' hilfreich ("Expected '404', but got '200'")?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler verankert Assertions als das "Herzstück" jeder automatisierten Qualitätssicherung.
-- [ ] Das Interface wirkt wie ein futuristisches Testzentrum für Mikrochips.
-- [ ] Maximale Klarheit über die Syntax gängiger Frameworks.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Unittests müssen klein, schnell und isoliert sein.
+- [ ] Das Interface wirkt aufgeräumt, effizient und technisch modern.
+- [ ] Maximale Punkte durch präzise Asserts und sauberes Mocking.

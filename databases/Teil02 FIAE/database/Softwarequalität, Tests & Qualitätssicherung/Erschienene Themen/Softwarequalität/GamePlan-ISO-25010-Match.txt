@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Systematisches Verständnis und Klassifizierung der acht Hauptqualitätsmerkmale von Software nach ISO/IEC 25010.
-- Kontext: Qualitätsmanagement, Anforderungsanalyse, Software-Evaluierung.
-- UX-Prinzip:
-  - "The Diamond Scale": Softwarequalität ist wie ein geschliffener Diamant. Nur wenn alle Facetten (Sicherheit, Performanz, Wartbarkeit etc.) perfekt poliert sind, erreicht der Stein seinen vollen Wert.
-  - "Facet-Inspection": Der Spieler untersucht "Rohsteine" (Szenarien wie "App verbraucht zu viel RAM") unter der Lupe.
-  - "The Grading": Zuordnung des Szenarios zur richtigen Facette (Kategorie) des ISO-Diamanten.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sicherer Umgang mit den Qualitätsmerkmalen von Software nach der internationalen Norm ISO/IEC 25010.
+- Game-Mechanic: "The Quality Inspector". Du bist der TÜV-Prüfer für digitale Hochglanz-Produkte. Verschiedene Apps stehen auf deinem Prüfstand. Du musst sie in Kategorien wie "Wartbarkeit", "Benutzerfreundlichkeit", "Zuverlässigkeit" oder "Portabilität" bewerten. Jede Eigenschaft hat eine "Mindest-Hürde".
+- Challenge: 
+  - Level 1 (The Basic Seal): Ordne 5 Software-Probleme (z.B. "App stürzt oft ab") dem korrekten Qualitätsmerkmal (z.B. "Zuverlässigkeit") zu.
+  - Level 2 (The Conflict): Zwei Merkmale beleißen sich (z.B. hohe Sicherheit vs. hohe Performance). Finde den optimalen "Trade-Off" für den Kunden.
+  - Level 3 (The Deep Audit): Erstelle einen Qualitätsbericht für ein komplexes System (ERP-Software). Welche Merkmale sind hier Prio 1?
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Das Szenario (Der Makel), 2 = Die 8 ISO-Hauptkategorien (Die Facetten), 3 = Der Qualitäts-Score des Diamanten.
-- [ ] Textbudget: Max. 10 Wörter pro Szenario (z. B. "Datenbank-Leak durch SQL-Injection").
-- [ ] "Quality-Radar": Ein Spinnendiagramm, das die Ausgewogenheit der Qualität visualisiert.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "ISO-Compliance-Score", "Inspector-Authority Level", "Quality-Radar-Chart".
+- [ ] Scoring: "Precision-Audit" Bonus für die exakte Zuordnung nach Norm-Handbuch. Abzug bei "Vague-Assumptions" (ungenauen Bewertungen).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> diamond-viewer (Center) -> facet-selectors (Circular) -> scenario-stack (Source)`.
-- [ ] Diamond-Viewer: Ein rotierendes 3D-Modell (oder hochwertige 2D-Grafik) eines Diamanten (Desktop mittig).
-- [ ] Facet-Selectors: Die 8 Kategorien sind ringförmig um den Diamanten angeordnet.
+2. Screen-Layout (The Lab)
+- [ ] `inspector-desk -> the-gadget (App under test) -> quality-magnifier -> report-clipboard`.
+- [ ] Quality-Magnifier: Eine Lupe, die beim Drüberfahren über App-Features die ISO-Kategorien einblendet.
+- [ ] Report-Clipboard: Hier sammelst du deine "Audit-Stempel".
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-Scenario-to-Facet" Mechanik.
-- [ ] `clamp()` Typografie für die langen Kategorienamen (z.B. "Funktionale Eignung").
+3. Kernvisuals und Effekte
+- [ ] Luxury-Laboratory Ästhetik: Klavierlack-Oberflächen, Hologramme, weißer Marmor, metallische Klick-Sounds, edles Blau und Silber (Shared Theme kompatibel).
+- [ ] "Seal-of-Approval": Ein wuchtiger, goldener Stempel knallt auf den Bericht, wenn eine Prüfung bestanden ist.
+- [ ] "Scan-Wave": Ein blauer Laser scannt vertikal über das Gadget.
 
-4. Kernvisuals
-- [ ] Juwelier-Ästhetik: Dunkler Samt-Hintergrund, Lichtbrechung, funkelnde Edelsteine (shared_theme.css).
-- [ ] Glanz-Effekte: Wenn eine Kategorie richtig zugeordnet wird, "blitzt" die entsprechende Facette des Diamanten auf.
-- [ ] High-Contrast Icons für jede ISO-Kategorie.
+4. Browser- und Device-Resilienz
+- [ ] `clip-path` für die runden Linsen-Effekte der Lupe.
+- [ ] Mobile: "Swipe-to-Seal" Mechanik.
 
-5. Interaktion und Feedback
-- [ ] Facet-Feedback: "Klick! 'Benutzbarkeit' geschärft. Ein konsistentes Menü-Design verbessert die User Experience."
-- [ ] Fehler-Visual: Der Diamant bekommt einen "Riss" (Sound: Glasbrechen), wenn ein Szenario falsch klassifiziert wird.
-- [ ] Erfolg: "Diamant perfekt geschliffen! Du hast alle Qualitätsdimensionen sicher im Griff."
+5. Content-Strategie (The Audit-Files)
+- [ ] 18 reale Fallbeispiele: Von "Banking-App Sicherheit" bis "Open-Source Performance".
 
-6. KPI-Klarheit
-- [ ] Facet-Coverage: "ISO-Abdeckung: 100%".
-- [ ] Quality-Insight: "Expertenstatus im Qualitätsmanagement: Erreicht".
+6. QA-Paket
+- [ ] Test: Ist das Radar-Diagramm intuitiv erfassbar (Trade-Off Visualisierung)?
+- [ ] Test: Sind die ISO-Beschreibungen kurz und verständlich (kein Beamtendeutsch)?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien aus allen 8 Bereichen: Funktionsfähigkeit, Effizienz, Kompatibilität, Benutzbarkeit, Zuverlässigkeit, Sicherheit, Wartbarkeit, Übertragbarkeit.
-- [ ] Tonalität: Wertvoll, präzise, analytisch.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind alle 8 Kategorien auf kleinen Handy-Displays ohne Überlappung lesbar?
-- [ ] Test: Sind die Szenarien für Prüfungsrelevanz (AP1/AP2) optimiert?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift Qualität als dynamisches Gleichgewicht mehrerer Faktoren.
-- [ ] Das Interface wirkt wie ein exklusives Tool eines Luxus-Gutachters.
-- [ ] Nachhaltige Verankerung der ISO-Terminologie.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift Qualität als messbare und vielschichtige Dimension.
+- [ ] Das Interface wirkt exklusiv, präzise und vertrauenswürdig.
+- [ ] Fokus auf professionelle Standards und Normen.

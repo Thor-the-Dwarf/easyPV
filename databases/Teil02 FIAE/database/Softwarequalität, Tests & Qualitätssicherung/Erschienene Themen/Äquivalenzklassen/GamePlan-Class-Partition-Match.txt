@@ -1,51 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Effiziente Testfall-Reduktion durch Bildung von Äquivalenzklassen (Equivalence Partitioning).
-- Kontext: Testentwurf, Testdatenmanagement, Grenzwertanalyse.
-- UX-Prinzip:
-  - "The Sorting Gate": Ein endloser Strom von Paketen (Werten) muss geprüft werden. 
-  - "Bucketing": Der Spieler muss nicht jedes Paket einzeln öffnen, sondern entscheidet: Alle Pakete zwischen 0 und 100kg kommen in das "Gültig"-Tor.
-  - "Representative-Probe": Ein einziger Paket-Stanztest pro Tor genügt, um die Qualität der ganzen Gruppe zu bestätigen.
-  - "The Outlier-Alert": Pakete, die genau auf der Kante liegen (Grenzwerte), erfordern besondere Aufmerksamkeit.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Reduzierung der Testfälle durch Bildung von Äquivalenzklassen und Grenzwertanalyse zur Steigerung der Test-Effizienz.
+- Game-Mechanic: "The Group Sorter". Du arbeitest an der Sortieranlage eines Logistik-Zentrums. Tausende von Paketen (Inputs) prasseln auf dich ein. Du kannst nicht jedes Paket einzeln wiegen! Du musst sie in "Zonen" (Klassen) einteilen (z.B. "0-10kg", "11-50kg", "Ungültig"). Ein Testpaket pro Zone reicht aus, um das System zu prüfen.
+- Challenge: 
+  - Level 1 (The Weight Check): Bilde Äquivalenzklassen für eine Altersprüfung (0-17, 18-99, Ungültig).
+  - Level 2 (The Border-Patrol): Die Grenzwertanalyse! Ein Ticket kostet 10€. Prüfe genau die Kanten: 9.99€, 10.00€, 10.01€. Funktioniert die Waage an den Schwellen?
+  - Level 3 (The Multi-Dimension): Zwei Inputs gleichzeitig (z.B. Alter UND Budget). Bilde eine Matrix aus Klassen und finde die minimal nötige Anzahl an Testpaketen.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Partitionen (Die Tore), 2 = Der Wertebereich (Der Zahlenstrahl), 3 = Die Testdaten-Proben.
-- [ ] Textbudget: Max. 5 Worte pro Klassen-Name (z.B. "Zu jung", "Passend", "Zu alt").
-- [ ] "Efficiency-Gauge": Zeigt an, wie viele Testfälle durch die Klassenbildung eingespart wurden.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Testing-Efficiency-Index", "Logical-Clarity-Meter", "Redundancy-Warning".
+- [ ] Scoring: "Efficiency-Pro" Bonus für die geringste Anzahl an Testfällen bei 100% Logik-Abdeckung. Abzug für "Testing-Overhead" (unnötige Doppel-Tests).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> conveyor-belt -> sorting-partitions -> efficiency-dashboard`.
-- [ ] Conveyor-Belt: Ein animiertes Förderband mit Werten (Desktop mittig, Mobile Full-Width).
-- [ ] Partitions: Die Tore am Ende des Bandes als Zielzonen.
+2. Screen-Layout (The Logistic Center)
+- [ ] `conveyor-belt -> input-stream -> class-containers (Zonen) -> validation-stamp`.
+- [ ] Conveyor-Belt: Pakete mit Werten (Zahlen, Strings) fahren von links nach rechts durch den Screen.
+- [ ] Containers: Boxen, in die man die Pakete zieht, um eine Klasse zu "definieren".
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-to-Sort" Geste für die Testwerte; "Pinch-on-Scale" zum Definieren der Grenzwerte.
-- [ ] `flex-wrap` für die Klassen-Labels auf kleinen Screens.
+3. Kernvisuals und Effekte
+- [ ] Modern-Logistic Ästhetik: Gelbe Roboterarme, schwarz-gelbe Warnstreifen, digitale Anzeigen, futuristische Container.
+- [ ] "Zone-Glow": Wenn ein Paket in die richtige Zone gezogen wird, leuchtet der Container-Rand kurz grün.
+- [ ] "Efficiency-Spark": Bei jeder erfolgreichen Reduktion von Testfällen sprühen oben kleine goldene Funken.
 
-4. Kernvisuals
-- [ ] Logistik-Ästhetik: Förderbänder, Scannner, farbige Container, Industrie-Raster (shared_theme.css).
-- [ ] "The Highlight": Grenzwerte (0, 100, 101) leuchten golden auf, wenn sie als Testfall gewählt werden.
-- [ ] High-Contrast Badges für "VALID" und "INVALID".
+4. Browser- und Device-Resilienz
+- [ ] `Draggable API` oder `Pointer Events` für das Verschieben der Pakete.
+- [ ] Mobile: "Tap-to-Assign" Mechanik.
 
-5. Interaktion und Feedback
-- [ ] Sorting-Feedback: "Klick! Du hast die Klasse 'Minderjährig' (0-17) definiert. Ein Testwert von 10 reicht aus, um diese ganze Gruppe abzuprüfen!"
-- [ ] Redundanz-Warnung: "Halt! Du hast schon einen Wert in dieser Klasse getestet. Ein zweiter bringt keinen neuen Erkenntnisgewinn."
-- [ ] Erfolg: "Optimale Teststrategie! Du hast 90% der unnötigen Tests vermieden und trotzdem volle Sicherheit."
+5. Content-Strategie (The Manifests)
+- [ ] 16 Test-Szenarien: Von "Passwort-Länge" bis "Temperatur-Sensor-Validierung".
 
-6. KPI-Klarheit
-- [ ] Partition-Accuracy: "Klassenbildung: 100% korrekt".
-- [ ] Test-Effizienz: "Einsparungspotenzial: X% genutzt".
+6. QA-Paket
+- [ ] Test: Wird das Konzept der Grenzwertanalyse (Border-Patrol) visuell deutlich hervorgehoben?
+- [ ] Test: Ist das Handling der "Pakete" auf kleinen Screens flüssig genug?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Passwort-Länge", "Alters-Check für Filme", "Rabatt-Staffelung nach Bestellwert", "Eingabe-Formate (Datum)".
-- [ ] Tonalität: Logistisch, effizient, ordnend.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist der Zahlenstrahl auf dem Smartphone gut lesbar und die Interaktionspunkte (Grenzwerte) treffbar?
-- [ ] Test: Sind die Rückmeldungen bei Überschneidungen von Klassen logisch klar?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift Äquivalenzklassen als massive Zeitersparnis.
-- [ ] Das Interface wirkt wie ein modernes Logistik-Management-System.
-- [ ] Absolute Sicherheit bei der Unterscheidung zwischen gültigen und ungültigen Klassen.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Weniger Tests können die gleiche Sicherheit bieten, wenn man klug wählt.
+- [ ] Das Interface wirkt strukturiert, effizient und hochgradig logisch.
+- [ ] Fokus auf strategische Testfall-Design-Techniken.

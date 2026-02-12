@@ -117,6 +117,7 @@
       display: grid;
       grid-template-rows: auto 1fr auto;
       gap: 6px;
+      min-width: 0;
     }
 
     .phase-dot {
@@ -135,6 +136,7 @@
       display: grid;
       align-content: start;
       min-height: 126px;
+      min-width: 0;
       padding: 7px;
       gap: 6px;
       transition: border-color 120ms ease, transform 120ms ease;
@@ -155,6 +157,8 @@
       color: var(--ink-soft);
       min-height: 2.2em;
       padding: 0 2px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .statement {
@@ -264,10 +268,11 @@
       }
 
       .curve {
-        grid-template-columns: repeat(7, minmax(104px, 1fr));
+        grid-template-columns: repeat(7, minmax(140px, 140px));
         align-items: end;
         overflow-x: auto;
         padding-bottom: 8px;
+        gap: 10px;
       }
 
       .phase {
@@ -286,6 +291,9 @@
       .phase-name {
         text-align: center;
         grid-column: auto;
+        min-height: 3.1em;
+        display: grid;
+        place-items: start center;
       }
 
       #statement-pool {

@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Entwurf sauberer Modul-Schnittstellen und Kapselung von Implementierungsdetails zur Reduzierung der Systemkomplexität.
+- Game-Mechanic: "The Module Carver". Du bist ein Bildhauer für digitale Skulpturen. Ein roher Block aus Funktionen muss in unabhängige, austauschbare Komponenten geschnitten werden. Deine Messer (The Splicers) schneiden nur dann sauber, wenn die Schnittstelle (Interface) präzise definiert ist.
+- Challenge: 
+  - Level 1 (The Clean Cut): Trenne eine "Logger"-Funktion vom Hauptcode. Definiere, was die Komponente nach außen zeigt (Public API) und was verborgen bleibt (Kapselung).
+  - Level 2 (The Swap-Challenge): Ersetze eine Komponente durch eine andere (z. B. `LocalFileStore` durch `CloudStore`). Wenn dein Design gut ist, muss der Rest der Skulptur nicht angepasst werden.
+  - Level 3 (The Leak Detector): Deine Komponente "blutet" interne Daten nach außen (Encapsulation Leak). Finde das Leck und dichte es mit `private` und `protected` ab.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Interface-Purity Index", "Coupling-Strength", "Encapsulation-Health".
+- [ ] Scoring: "Clean-API" Bonus für Interfaces mit minimalen Abhängigkeiten. Abzug bei "Leaky Abstractions" (wenn Interna nach außen dringen).
+
+2. Screen-Layout (The Studio)
+- [ ] `sculpture-view -> carver-tools -> module-inventory -> interface-inspector`.
+- [ ] Sculpture-View: Eine 3D-Darstellung deines Modul-Gefüges.
+- [ ] Carver-Tools: Werkzeuge zum Markieren von Schnittstellen-Methoden.
+
+3. Kernvisuals und Effekte
+- [ ] Minimalist-Studio Ästhetik: Weißer Raum, sanfte Schatten, klare Linien, Marmor- und Glas-Effekte.
+- [ ] "Carve-Effect": Wenn du ein Modul trennst, leuchtet die Schnittkante kurz magisch blau auf.
+- [ ] "Snap-Fit": Wenn eine Komponente perfekt passt, rastet sie mit einem kristallinen Klang ein.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS 3D Transforms` für die Skulptur-Animation.
+- [ ] Mobile: "Tap-and-Drag" zum Verschieben der Komponenten.
+
+5. Content-Strategie (The Carvings)
+- [ ] 12 Architektur-Beispiele: Von "Payment-Bridge" bis "UI-Component-Lib".
+
+6. QA-Paket
+- [ ] Test: Ist der Unterschied zwischen "Implementierung" und "Schnittstelle" visuell klar getrennt (Vordergrund/Hintergrund)?
+- [ ] Test: Fühlt sich das "Austauschen" von Modulen flüssig und logisch an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Interfaces sind Verträge, Kapselung ist Schutz".
+- [ ] Das Interface wirkt edel, puristisch und architektonisch anspruchsvoll.
+- [ ] Hoher Lerneffekt für professionelles Software-Design.

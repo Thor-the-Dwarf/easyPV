@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Beherrschung von Organisationsstrukturen (Namespaces/Packages) zur Vermeidung von Namenskonflikten und Erhöhung der Code-Wartbarkeit.
-- Kontext: Modularisierung, Software-Architektur, Clean Code.
-- UX-Prinzip:
-  - "The Logistics Warehouse": Klassen sind herrenlose Pakete auf einer Laderampe. Sie müssen in die richtigen Regale (Packages) sortiert werden.
-  - "The Smart Label": Jedes Paket hat Tags (Zweck, Abhängigkeiten), die beim Sortieren helfen.
-  - "Namespace-Prefix": Die Paketpfade (`com.app.core`) sind wie Adressen auf den Regalfächern.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler beherrschen die Strukturierung von Software-Projekten durch logische Pakete (Packages/Namespaces) und vermeiden zirkuläre Abhängigkeiten.
+- Game-Mechanic: "The City Planner". Du entwirfst eine digitale Stadtplanung. Deine Häuser (Klassen) müssen in die richtigen Stadtteile (Packages) wie "Business-District", "Utility-Zone" oder "Data-Harbor" einsortiert werden. 
+- Challenge: 
+  - Level 1 (The Zone-Match): Sortiere Klassen wie `Invoice`, `Logger` und `DatabaseConnector` in die drei Standard-Stadtteile ein.
+  - Level 2 (The Circular Trap): Hilfe! Zwei Stadtteile haben eine Straße (Abhängigkeit) zueinander gebaut, die im Kreis führt. Reiße eine Straße ab und baue eine Umgehung (Interface) ein.
+  - Level 3 (Global-Export): Bestimme, welche Häuser "Public" (für alle sichtbar) und welche "Private" (nur innerhalb des Stadtteils) sind, um die Kapselung zu wahren.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Das aktuelle Paket (Klasse), 2 = Die Regal-Hierarchie (Struktur), 3 = Die logische Zusammengehörigkeit.
-- [ ] Textbudget: Kurze Klassennamen (`User`, `DB`, `Config`).
-- [ ] "No-Clutter" Regale: Erst beim Hineinziehen öffnet sich die Unterstruktur des Pakets.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Package-Cohesion-Score", "Dependency-Labyrinth-Map", "Public-Exposure-Index".
+- [ ] Scoring: "Urban-Order" Bonus für komplett kreisfreie Strukturen. Abzug bei "Spaghetti-Roads" (zu viele kreuzende Abhängigkeiten).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> loading-dock (Source) -> shelf-grid (Target) -> address-monitor`.
-- [ ] Grid-Area: Kachel-Ansicht der Hauptpakete (Desktop 70% Breite, Mobile scrollbare vertikale Liste).
-- [ ] Address-Monitor: Eine Zeile, die den resultierenden FQN (Fully Qualified Name) live anzeigt.
+2. Screen-Layout (The Digital City)
+- [ ] `birdseye-view -> package-districts -> class-buildings (Icons) -> dependency-highways`.
+- [ ] Districts: Quadratische Zonen auf dem Screen, farblich codiert nach Verantwortlichkeit.
+- [ ] Highways: Animierte Linien, die den Datenfluss zwischen den Paketen zeigen.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Drag-and-Drop" mit haptischem Feedback beim Einrasten.
-- [ ] `touch-action: pan-x` für die Seiten-Navigation in tiefen Archiven.
+3. Kernvisuals und Effekte
+- [ ] SimCity-Retro Ästhetik: Isometrische Ansicht, kleine wimmelnde Partikel (Daten), Blaulicht bei Fehlern, grüne Parks bei hoher Kohäsion.
+- [ ] "District-Snap": Beim Einrasten einer Klasse in ein Paket wächst das Gebäude visuell in die Höhe.
+- [ ] "Traffic-Jam": Bei zirkulären Abhängigkeiten färben sich die Straßen rot und der Datenfluss gerät ins Stocken.
 
-4. Kernvisuals
-- [ ] Warehouse-Ästhetik: Karton-Texturen, Strichcodes, metallische Regale (shared_theme.css).
-- [ ] Ikonografische Tags: Ein Zahnrad für Hilfsklassen, eine Person für Domain-Models, ein Kabel für Infrastruktur.
-- [ ] High-Contrast Pfad-Anzeige (z.B. `java.util.Scanner` in Weiß auf Dunkelblau).
+4. Browser- und Device-Resilienz
+- [ ] `CSS Grid` und `transform: scale()` für die isometrische Stadtansicht.
+- [ ] Mobile: "Pinch-to-Zoom" für die Stadtteil-Analyse.
 
-5. Interaktion und Feedback
-- [ ] Snap-in-Logik: Klassen "rasten" mit einem Paketband-Geräusch ein.
-- [ ] Logik-Check: "Vorsicht! Eine Datenbank-Klasse in das 'Domain-Viertel' zu legen, bricht die Architekturregeln."
-- [ ] Erfolg: Das Regal schließt sich und wird als "Versandfertig" markiert (Code-Release-Metapher).
+5. Content-Strategie (The Assignments)
+- [ ] 15 Projekt-Szenarien: Von "Fintech-App" bis "Game-Engine-Struktur".
 
-6. KPI-Klarheit
-- [ ] Organizational-Order: "Ordnungsgrad: 100%".
-- [ ] Dependency-Safety: "Kopplungsrisiko: Minimal".
+6. QA-Paket
+- [ ] Test: Ist die visuelle Trennung zwischen "Public" und "Private" (z. B. durch Zäune) intuitiv verständlich?
+- [ ] Test: Bleibt die isometrische Ansicht auch bei 10+ Paketen auf Mobile performant?
 
-7. Content-/Copy-Feinschliff
-- [ ] Professionelle Pakete: `api`, `dto`, `entities`, `exceptions`, `services`.
-- [ ] Tonalität: Strukturiert, ordentlich, verlässlich.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Pfadangaben auf einem Smartphone in Querformat noch lesbar?
-- [ ] Test: Lassen sich Pakete auch wieder aus den Regalen herausziehen (Undo-Logik)?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler versteht Pakete als notwendiges Ordnungsmittel für komplexe Systeme.
-- [ ] Das Interface wirkt wie ein professionelles Logistik-Management-System.
-- [ ] Stolz über ein sauber strukturiertes Projekt-Archiv.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Logische Gruppierung erhöht die Übersichtlichkeit".
+- [ ] Das Interface wirkt detailreich, lebendig und professionell.
+- [ ] Hoher Lerneffekt für saubere Projekt-Architektur.

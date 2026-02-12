@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Kritische Abwägung zwischen Eigenentwicklung und Drittanbieter-Modulen (Libraries) unter Aspekten von Zeit, Sicherheit und Kontrolle.
-- Kontext: Software-Management, Dependency-Strategie, Buy-vs-Build.
-- UX-Prinzip:
-  - "The Wheel Factory": Der Spieler baut einen LKW. Für die Räder hat er zwei Optionen: In der eigenen Werkstatt schmieden (Make) oder Fix-und-Fertig vom Weltmarktführer beziehen (Use).
-  - "The Trade-off Scale": Eine Waage, auf der "Kontrolle/Wissen" (Make) gegen "Geschwindigkeit/Sicherheit" (Use) abgewogen wird.
-  - "Event-Cards": Unvorhergesehene Ereignisse (z.B. "Log4j Sicherheitslücke" oder "Eigenbau-Bug bei Schaltjahr") zeigen die Konsequenzen der Wahl.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Abwägung zwischen Eigenentwicklung (Make) und Nutzung externer Bibliotheken/Frameworks (Use) unter Berücksichtigung von Kosten, Zeit und Risiko.
+- Game-Mechanic: "The Tool Shopper". Du bist der Chef-Entwickler in einem Startup. Dein Budget (Zeit/Geld) ist begrenzt. Für jedes Feature hast du zwei Regale: "The Build-it-Yourself Kit" (voller Kontrolle, aber zeitintensiv) und "The Ready-to-Use Tool" (schnell, aber starr oder mit Lizenzkosten).
+- Challenge: 
+  - Level 1 (The Calendar): Brauchen wir eine eigene Datums-Logik oder nehmen wir `Moment.js`/`date-fns`? Berechne den Zeitvorteil gegen die Paketgröße.
+  - Level 2 (The Black Box): Eine super Library ist umsonst, hat aber 500 bekannte Bugs. "Make" oder "Risk it"?
+  - Level 3 (The Core Business): Das Kernfeature deines Produkts. Solltest du das wirklich outsourcen (Dependency-Risiko) oder ist hier "Make" die einzige Wahl für IP-Schutz?
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die anstehende Aufgabe (Problem), 2 = Die zwei Optionen (Buttons), 3 = Die langfristigen Auswirkungen (Score).
-- [ ] Textbudget: Max. 12 Wörter pro Szenario-Beschreibung.
-- [ ] "Decision Impact Monitor": Anzeige der verbleibenden Projektzeit und des Sicherheitsbudgets.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Wallet (Budget)", "Launch-Timer", "Maintenance-Risk Meter".
+- [ ] Scoring: "ROI-Master" Bonus für die kosteneffizienteste Entscheidung. Abzug bei "Over-Engineering" (alles selber bauen) oder "Dependency-Hell" (zu viele instabile Pakete).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> mission-card -> decision-fork -> consequence-log`.
-- [ ] Fork-Area: Zwei große, gleichberechtigte Kacheln (Desktop nebeneinander, Mobile untereinander).
-- [ ] Log: Ein Feed am unteren Rand, der die Historie der Entscheidungen und deren Ergebnisse zeigt.
+2. Screen-Layout (The Strategy Board)
+- [ ] `market-place -> decision-scale -> feature-blueprint -> cost-analysis-chart`.
+- [ ] Decision-Scale: Eine physische Waage in der Mitte. Lege "Make-Argumente" (Gewichte) auf die linke und "Use-Argumente" auf die recht Seite.
+- [ ] Feature-Blueprint: Die Beschreibung der technischen Anforderung.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-Left (Make), Swipe-Right (Use)" – Intuitive Entscheidungsfindung.
-- [ ] `safe-area-inset` für die kritischen HUD-Elemente.
+3. Kernvisuals und Effekte
+- [ ] Board-Game Ästhetik: Hochwertige Münzen, hölzerne Waage, Papier-Karten, edle Finishes (Gold, Lack).
+- [ ] "Coin-Clink": Bei jeder Budget-Entscheidung hörst du das Klimpern von Goldmünzen.
+- [ ] "Scale-Tilt": Die Waage neigt sich dynamisch, je mehr Argumente du sammelst.
 
-4. Kernvisuals
-- [ ] Strategie-Ästhetik: Blaupause-Look, Diagramme, Business-Metriken (shared_theme.css).
-- [ ] "Risk-Glow": Eine Option leuchtet rot, wenn sie für die aktuelle Situation besonders riskant ist.
-- [ ] High-Contrast Icons für "Eigene Werkstatt" vs. "Cloud/Package".
+4. Browser- und Device-Resilienz
+- [ ] `flex-wrap` für die Karten-Galerie auf Mobile.
+- [ ] Mobile: "Swipe-to-Decide" Mechanik (links = Make, rechts = Use).
 
-5. Interaktion und Feedback
-- [ ] Konsequenz-Feedback: "Du hast die Library genutzt – Zeitersparnis 3 Tage! Aber Vorsicht: Du hast jetzt eine neue Abhängigkeit im Projekt."
-- [ ] Aha-Moment: "Hättest du es selbst gebaut, hättest du jetzt einen Bug im Passwort-Hashing. Gut, dass du die Standard-Lib genommen hast!"
-- [ ] Erfolg: "Projekt pünktlich und sicher abgeliefert. Die Balance zwischen Eigenbau und Zukauf war perfekt."
+5. Content-Strategie (The Shopping-List)
+- [ ] 12 reale Entscheidungsfälle: Von "PDF-Export" über "Auth-System" bis "Machine-Learning Engine".
 
-6. KPI-Klarheit
-- [ ] Strategic-Efficiency: "Top-Entscheider: S-Rank".
-- [ ] Safety-Index: "Risikograd der Abhängigkeiten: Akzeptabel".
+6. QA-Paket
+- [ ] Test: Sind die Vor- und Nachteile (Lizenz, Kontrolle, Zeit) in den Kurzbeschreibungen prägnant genug?
+- [ ] Test: Fühlt sich das "Wiegen" der Argumente spielerisch befriedigend an?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "JSON-Parsing", "Kreditkarten-Validierung", "Hausinternes Chat-Protokoll", "PDF-Rechnungsgenerator".
-- [ ] Tonalität: Abwägend, professionell, strategisch.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Vor- und Nachteile auf den Entscheidungskarten auf dem Smartphone lesbar?
-- [ ] Test: Sind die Zufallsevents (Bugs/Lücken) fair verteilt und pädagogisch sinnvoll?
-
-9. Abnahmekriterien
-- [ ] Der Spieler begreift, dass "selbst machen" nicht immer "besser machen" bedeutet.
-- [ ] Das Interface wirkt wie ein Management-Dashboard für CTOs.
-- [ ] Hoher Wiederspielwert durch verschiedene Strategiepfade.
+7. Abnahme-Kriterien
+- [ ] Der Spieler lernt: Softwareentwicklung ist immer auch eine ökonomische Entscheidung.
+- [ ] Das Interface wirkt hochwertig, strategisch und klug.
+- [ ] Hoher Lerneffekt für technisches Projektmanagement.

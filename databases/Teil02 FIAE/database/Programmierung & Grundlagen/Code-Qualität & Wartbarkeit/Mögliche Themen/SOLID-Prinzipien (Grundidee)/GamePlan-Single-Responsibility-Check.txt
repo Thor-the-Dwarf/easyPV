@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Praktische Anwendung des Single Responsibility Prinzips (SRP) zur Schaffung fokussierter, hochkohäsiver Klassen.
-- Kontext: SOLID-Prinzipien, Objektorientiertes Design, Refactoring.
-- UX-Prinzip:
-  - "The Swiss Army Knife Problem": Eine Klasse ist ein Taschenmesser mit 50 Klingen. Sie ist schwer, unhandlich und gefährlich zu warten.
-  - "Surgical Splitting": Der Spieler nutzt ein "Skalpell" (Trenn-Werkzeug), um die Klingen (Methoden) sauber in verschiedene Spezialwerkzeuge (neue Klassen) zu zerlegen.
-  - "Cohesion-Magnet": Methoden, die zusammengehören, ziehen sich gegenseitig an; Fremdkörper stoßen sich ab.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sicherer Umgang mit den SOLID-Prinzipien (S-O-L-I-D) zur Erstellung robuster und erweiterbarer Software-Systeme.
+- Game-Mechanic: "The Five Pillars". Du bist der Hüter des "Software-Tempels". Fünf gewaltige Säulen tragen das Dach. Ständig prallen "Anforderungs-Meteoriten" auf den Tempel. Du musst Code-Snippets der richtigen Säule (Prinzip) zuordnen, um sie zu verstärken.
+- Challenge: 
+  - Level 1 (Die Basis): Identifiziere das "Single Responsibility Principle". Welche Klasse tut zu viel?
+  - Level 2 (The Open-Closed Gate): Erkenne Stellen, an denen man Code ändern muss, statt ihn zu erweitern. Baue das "Abstract-Gate" ein.
+  - Level 3 (The Interface Puzzle): Trenne fette Interfaces in kleine, spezialisierte Schnittstellen (Interface Segregation).
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die überladene Klasse (Monster), 2 = Die logischen Funktionsgruppen, 3 = Die neue, schlanke Modularität.
-- [ ] Textbudget: Max. 5 Methoden pro Monster-Klasse zur schnellen Analyse.
-- [ ] "SRP-Bar": Zeigt an, wie viele Verantwortlichkeiten eine Klasse aktuell trägt (Ziel: 1).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Temple-Stability" (%), "Active-Principle-XP", "Meteor-Warning (Next Challenge)".
+- [ ] Scoring: "Architect-Streak" Bonus für 5 korrekte Zuordnungen in Folge. Abzug bei "Violation-Errors" (falsche Säule gewählt).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> class-anatomy-viewer -> splitting-table -> component-gallery`.
-- [ ] Anatomy-Viewer: Zentrale Box mit Methoden-Tags (Desktop 50% Breite, Mobile 40dvh Höhe).
-- [ ] Component-Gallery: Am rechten Rand entstehen die neuen "Spezial-Tools" nach der Trennung.
+2. Screen-Layout (The Temple Grounds)
+- [ ] `panorama -> the-five-pillars -> code-shards -> oracle-feedback`.
+- [ ] The-Five-Pillars: Fünf monumentale Säulen in 3D-Optik, beschriftet mit S, O, L, I, D.
+- [ ] Code-Shards: Schwebende Code-Fragmente, die per Drag auf die Säulen gezogen werden müssen.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Drag-Method-to-New-Class" Geste.
-- [ ] `overflow-x: auto` für das Gallerie-Board der neuen Klassen.
+3. Kernvisuals und Effekte
+- [ ] Ancient-Greek meets Matrix Ästhetik: Marmor-Texturen mit digitalen Code-Regen-Lichtern, epischer Hintergrund, weißer Nebel am Boden.
+- [ ] "Pillar-Glow": Wenn ein Snippet korrekt zugeordnet wird, leuchtet die Säule hell auf und vibriert.
+- [ ] "Structural-Crack": Bei einer Fehlentscheidung bekommt der Tempel einen Riss und der Bildschirm wackelt.
 
-4. Kernvisuals
-- [ ] Metallische Ästhetik: Klassensymbole als Werkzeuge; Monster-Klassen wirken "klumpig" und überladen.
-- [ ] "Breaking-Apart" Animation: Visuelle Teilung der Box mit Glanz-Effekten an den Schnittkanten.
-- [ ] High-Contrast Icons für Verantwortlichkeiten (z. B. Brief für Mail-Logic, HDD für DB-Logic).
+4. Browser- und Device-Resilienz
+- [ ] `z-index` Management für die schwebenden Shards.
+- [ ] Mobile: "Swipe-to-Pillar" Geste.
 
-5. Interaktion und Feedback
-- [ ] Split-Feedback: "Schnitt perfekt! Die Mail-Logik hat in der `UserRepository` nichts zu suchen. Jetzt ist sie eine eigene `MailService` Instanz."
-- [ ] Erfolg: "System modularisiert. Jede Klasse hat jetzt genau EINE Aufgabe."
-- [ ] Warnung: "Halt! Du hast die Logik zu fein zerlegt – achte darauf, dass zusammengehörige Teile zusammenbleiben."
+5. Content-Strategie (The Fragments)
+- [ ] 25 prägnante Code-Beispiele (Java/C#/JS): Von "God-Class" bis "Liskov-Violation".
 
-6. KPI-Klarheit
-- [ ] Cohesion-Level: "Kohäsions-Grad: Exzellent".
-- [ ] Coupling-Reduction: "Abhängigkeiten minimiert".
+6. QA-Paket
+- [ ] Test: Sind die Erklärungen der Prinzipien kurz genug, um den Spielfluss nicht zu stoppen?
+- [ ] Test: Ist die visuelle Unterscheidung der 5 Säulen auch auf kleinen Displays gegeben?
 
-7. Content-/Copy-Feinschliff
-- [ ] Beispiele: `OrderManager` (der auch Mails sendet, PDFs erstellt und in die DB schreibt), `SmartHomeHub` (der Licht, Heizung und Security mischt).
-- [ ] Tonalität: Präzise, architektonisch, aufräumend.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Methoden-Namen auf kleinen Karten auf dem Smartphone noch lesbar?
-- [ ] Test: Funktioniert das "Herausschneiden" einer Methode auch bei hektischen Bewegungen flüssig?
-
-9. Abnahmekriterien
-- [ ] Der Spieler verinnerlicht das Ideal der kleinen, fokussierten Klasse.
-- [ ] Das Interface wirkt wie ein exklusives Design-Studio für Software-Architekten.
-- [ ] Höchste Klarheit über den Unterschied zwischen "Alles-Könner" und "Spezialist".
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift SOLID als praktisches Werkzeug, nicht als trockene Theorie.
+- [ ] Das Interface wirkt majestätisch, modern und beeindruckend.
+- [ ] Hohe Lerneffizienz durch sofortiges visuelles Feedback.

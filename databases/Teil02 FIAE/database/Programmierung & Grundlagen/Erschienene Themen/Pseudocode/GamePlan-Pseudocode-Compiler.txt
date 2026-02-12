@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Abstraktion von Logik-Abläufen und deren präzise Implementierung in verschiedenen Hochsprachen (Cross-Language-Thinking).
-- Kontext: Algorithmen-Design, Syntax-Matching, Logik-Transfer.
-- UX-Prinzip:
-  - "The Translator's Bridge": Eine Brücke mit verschiedenen Mautstationen (Sprachen). Der Pseudocode-Gedanke (z. B. "Drucke alles von 1 bis 10") ist die Fracht.
-  - "Syntax-Cargo": Der Spieler packt die Fracht in die sprachspezifischen Container (Python-Syntax, Java-Klammern).
-  - "Logic-Pulse": Wenn die Logik übereinstimmt, leuchtet die Brücke in der Farbe der Zielsprache auf.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Transfer von logischen Abläufen in strukturierten Pseudocode zur Vorbereitung der eigentlichen Implementierung.
+- Game-Mechanic: "The Logic Bridge". Du stehst vor einer Schlucht. Auf der einen Seite: Die menschliche Sprache ("Wenn der Kunde keine Pizza hat..."). Auf der anderen Seite: Der binäre Code. Du musst "Brückenelemente" aus Pseudocode-Bausteinen (`IF`, `WHILE`, `RETURN`) bauen, damit der Logik-Strom sicher rüberfließen kann.
+- Challenge: 
+  - Level 1 (Der einfache Weg): Baue eine `IF-ELSE` Abfrage für eine Altersprüfung.
+  - Level 2 (The Loop-Gate): Konstruiere eine `FOR`-Schleife, um eine Liste von Bestellungen abzuarbeiten. Achte auf die Index-Grenzen.
+  - Level 3 (The Complex Riddle): Ein Algorithmus für "Sitzplatz-Suche" (2D-Array). Baue die verschachtelten Schleifen so, dass kein Feld doppelt geprüft wird.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Der abstrakte Wunsch (Pseudocode), 2 = Die Syntax-Bausteine (Ziel), 3 = Der Logik-Check.
-- [ ] Textbudget: Max. 10 Wörter für den Pseudocode-Auftrag.
-- [ ] "Lingua-Franca": Fokus auf universelle Logik (Loops, Conditions) statt auf Nischen-Syntax.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Logic-Integrity" (%), "Bridge-Stability", "Step-by-Step Execution Log".
+- [ ] Scoring: "KISS-Bonus" (Keep It Simple, Stupid) für die kürzeste logische Lösung. Abzug bei "Logic-Leaks" (Endlosschleifen).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> thought-bubble (Pseudocode) -> syntax-bridge -> language-containers`.
-- [ ] Bridge-Area: Ein dynamischer Bereich, in dem Bausteine kombiniert werden (Desktop 50% Breite, Mobile 40dvh Höhe).
-- [ ] Containers: Symbole für JS, Python, Java am rechten Rand zum Umschalten der "Sichtweise".
+2. Screen-Layout (The Logic Canyon)
+- [ ] `abyss-panorama -> natural-language-cloud -> construction-yard -> logic-flow-preview`.
+- [ ] Natural-Language-Cloud: Hier schweben Textfetzen mit den Anforderungen.
+- [ ] Construction-Yard: Ein Raster, in das Pseudocode-Blöcke wie Tetris-Steine eingeklickt werden.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Tap-to-Translate" Workflow – Auswahl aus einer Syntax-Dropdown-Liste.
-- [ ] `scroll-snap-type: x mandatory` für den Sprachen-Wechsel.
+3. Kernvisuals und Effekte
+- [ ] Architektur-Sketch Ästhetik: Blaupausen-Hintergrund (Blueprint Blue), weiße Kreidestift-Linien, technische Zeichnungs-Symbole.
+- [ ] "Blueprint-Lock": Wenn ein Block einrastet, gibt es einen haptischen "Snap" und eine weiße Konturlinie erscheint.
+- [ ] "Logic-Flow": Ein kleiner Lichtpuls wandert nach dem Bauen testweise über die Brücke, um die Korrektheit zu prüfen.
 
-4. Kernvisuals
-- [ ] Brücken-Ästhetik: Konstruktionselemente, Lichtfasern, die Logik-Signale transportieren.
-- [ ] High-Contrast Code: Jedes Sprach-Theme hat seine eigene Farbe (Python-Blau/Gelb, JS-Gelb, Java-Rot).
-- [ ] Ikonografische Wegweiser: Symbole für Schleifen (Loop-Icon) und Gabelungen (Wait-Icon).
+4. Browser- und Device-Resilienz
+- [ ] `background-image` mit einem Blueprint-Grid (shared_theme.css kompatibel).
+- [ ] Mobile: "Long-Press to Rotate" (falls Blöcke gedreht werden müssen).
 
-5. Interaktion und Feedback
-- [ ] Live-Translation: Während der Spieler Bausteine setzt, wird das Ergebnis im Pseudocode rück-übersetzt ("Das würde bedeuten: Mache X solange Y...").
-- [ ] Aha-Effekt: "Siehst du? Ob `print`, `console.log` oder `System.out.println` – die Logik ist identisch."
-- [ ] Fehler-Prall: Bei falscher Syntax prallt der Baustein mit einem Funken-Effekt von der Brücke ab.
+5. Content-Strategie (The Blueprints)
+- [ ] 18 Übungen: Von "Maximum finden" bis "Bubble-Sort Logik".
 
-6. KPI-Klarheit
-- [ ] Abstraktions-Level: "Logik-Meister: S-Rank".
-- [ ] Language-Versatility: "Beherrschte Dialekte: 3/3".
+6. QA-Paket
+- [ ] Test: Sind die Pseudocode-Keywords (`WENN`, `SOLANGE`, `TUE`) sprachunabhängig logisch verständlich?
+- [ ] Test: Wirkt der Übergang von Text zu Block-Design nahtlos?
 
-7. Content-/Copy-Feinschliff
-- [ ] Reale Aufgaben: "Summe berechnen", "Namen filtern", "Endlosschleife verhindern", "Array umkehren".
-- [ ] Tonalität: Erhellend, verbindend, strukturiert.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Sprach-Icons auf einem kleinen Display gut unterscheidbar?
-- [ ] Test: Funktioniert das Umschalten zwischen den Sprachen ohne Datenverlust im aktiven Puzzle?
-
-9. Abnahmekriterien
-- [ ] Der Spieler verliert die Angst vor neuer Syntax durch das Verständnis der zugrundeliegenden Logik.
-- [ ] Das Interface wirkt wie ein moderner Hochgeschwindigkeits-Translater.
-- [ ] Maximaler Lerneffekt durch den direkten Vergleich.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert logische Strukturen unabhängig von einer Programmiersprache.
+- [ ] Das Interface wirkt intelligent, strukturiert und ästhetisch anspruchsvoll.
+- [ ] Hoher Lernerfolg durch Visualisierung von Algorithmen.

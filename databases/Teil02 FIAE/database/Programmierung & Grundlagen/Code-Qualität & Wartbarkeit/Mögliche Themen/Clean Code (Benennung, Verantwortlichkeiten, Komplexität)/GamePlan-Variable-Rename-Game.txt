@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Schärfung des Bewusstseins für aussagekräftige Namen zur Reduktion der kognitiven Last und Verbesserung der Code-Wartbarkeit.
-- Kontext: Clean Code, Selbstdokumentation, Team-Kommunikation.
-- UX-Prinzip:
-  - "The Fog Lifter": Der Code ist anfangs in dichten Nebel gehüllt; Variablen wie `a`, `b`, `tmp` sind kaum erkennbar.
-  - "Naming-Flashlight": Jedes Mal, wenn der Spieler einen kryptischen Namen durch einen präzisen Namen (z.B. `retryCounter`) ersetzt, lichtet sich ein Teil des Nebels.
-  - "Sunlight-Reveal": Bei 100% korrektem Naming erstrahlt der Code-Block in hellem Sonnenlicht und wird sofort verständlich.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Praktische Anwendung aussagekräftiger Bezeichner nach Clean-Code-Prinzipien zur Steigerung der Wartbarkeit.
+- Game-Mechanic: "The Name Auditor". Du bist der Prüfer in einem chaotischen Software-Archiv. Der Code funktioniert, aber die Variablen heißen `x`, `data1`, `tmp_f`. Du musst die "wahre Identität" dieser Variablen aus dem Kontext (Kommentare, Nutzung) ermitteln und ihnen treffende Business-Namen geben.
+- Challenge: 
+  - Level 1 (The Generic Fog): Benenne `int d; // days since login` in `daysSinceLastLogin` um.
+  - Level 2 (The Bad Prefix): Entferne ungarische Notation oder unnötige Präfixe/Suffixe (`strName`, `ListUser`).
+  - Level 3 (The Domain Master): Finde präzise Namen für komplexe Datenstrukturen in einem fiktiven Versicherungs-Szenario. Ein falscher Name führt zu "Semantic-Errors" (Penalty).
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Der kryptische Name (Ziel), 2 = Der Kontext des Codes (Hinweis), 3 = Die Auswahl der Alternativen.
-- [ ] Textbudget: Max. 8 Zeilen Code pro Mission.
-- [ ] "Cognitive Load Monitor": Ein Balken, der zeigt, wie schwer der Code aktuell zu lesen ist.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Readability-Rank" (Flesch-Index für Code), "Audit-Progress", "Naming-Consistency".
+- [ ] Scoring: "Clarity-Bonus" für Namen, die ohne Kommentar sofort verständlich sind. Punktabzug bei zu langen oder zu kurzen Namen.
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> misty-code-canvas -> naming-palette -> readability-gauge`.
-- [ ] Canvas: Ein Bereich mit "wolkigem" Overlay, das durch Interaktion transparent wird.
-- [ ] Palette: 3-4 Namensvorschläge am unteren Rand (Desktop 50% Breite, Mobile Daumen-optimiert).
+2. Screen-Layout (The Archive)
+- [ ] `scroll-vault -> code-scanner -> name-input-field -> audit-log`.
+- [ ] Code-Scanner: Ein Ausschnitt von 10-15 Zeilen mit hervorgehobenen "Bad Names" (rot blinkend).
+- [ ] Name-Input: Ein Feld, das bei jedem Tippen eine "Clarity-Vorschau" (Was assoziiert eine KI damit?) zeigt.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Tap-to-Clear" – Antippen der Variablen öffnet das Sonnen-Menü mit Namen.
-- [ ] CSS-Filter: `backdrop-filter: blur()` für den Nebel-Effekt.
+3. Kernvisuals und Effekte
+- [ ] Retro-Detective Ästhetik: Schreibmaschinen-Schriftart, Aktenordner-Icons, Kaffeetassen-Flecken (shared_theme.css), gedimmtes warmes Licht.
+- [ ] "Scan-Effect": Eine virtuelle Lupe fährt über den Code und lässt schlechte Namen "heraustreten".
+- [ ] "Ink-Correction": Wenn ein Name korrigiert wird, schreibt eine virtuelle Feder den neuen Namen über den alten.
 
-4. Kernvisuals
-- [ ] Wetter-Ästhetik: Von grauem Dunst zu strahlend blauem Himmel (shared_theme.css).
-- [ ] Glühende Namen: Präzise Namen leuchten in einem "reinen" Weiß; falsche Namen wirken "dreckig" oder grau.
-- [ ] High-Contrast IDE Theme im Hintergrund.
+4. Browser- und Device-Resilienz
+- [ ] `spellcheck="false"` für das Input-Feld, um Browser-Unterstreichungen zu unterdrücken.
+- [ ] Mobile: "Tap-to-Edit" Mechanik für die Variablennamen.
 
-5. Interaktion und Feedback
-- [ ] Aha-Moment: "Siehst du? Plötzlich versteht man, dass diese Schleife die fehlerhaften Logins zählt."
-- [ ] Nebel-Animation: Bei jeder richtigen Wahl "weht" ein Stück Wolke aus dem Bild.
-- [ ] Feedback zu Anti-Patterns: "Vorsicht! Präfixe wie `str` oder `int` machen den Code unnötig schwer – lichte den Nebel weiter!"
+5. Content-Strategie (The Records)
+- [ ] 20 reale Code-Szenarien: Von "E-Commerce Warenkorb" bis "IoT-Sensor-Stream".
 
-6. KPI-Klarheit
-- [ ] Readability-Index: "Klarheits-Grad: 100%".
-- [ ] Cognitive-Ease: "Leseaufwand: Minimal".
+6. QA-Paket
+- [ ] Test: Ist die visuelle Bestätigung ("Reading-Ease increases!") motivierend genug für den Spieler?
+- [ ] Test: Sind die Eingabefelder auf Mobile groß genug für ermüdungsfreies Tippen?
 
-7. Content-/Copy-Feinschliff
-- [ ] Reale Fälle: Rechnungs-Berechnung, Validierungs-Logik, Listen-Filterung.
-- [ ] Tonalität: Erhellend, klar, motivierend.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist der Nebel-Effekt auf dem Handy-Display performant (FPS-Check)?
-- [ ] Test: Sind die Tooltips mit den Namens-Vorschlägen auch in den Ecken des Bildschirms sichtbar?
-
-9. Abnahmekriterien
-- [ ] Der Spieler erlebt den emotionalen Unterschied zwischen "Code-Rätseln" und "Code-Lesen".
-- [ ] Das Interface wirkt wie ein exklusives Tool zur Code-Verschönerung.
-- [ ] Maximale Motivation zum "Aufräumen" durch visuelle Belohnung.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Namen sind die halbe Dokumentation".
+- [ ] Das Interface wirkt nostalgisch-wertvoll und beruhigend.
+- [ ] Hoher Lerneffekt für professionelle Team-Programmierung.

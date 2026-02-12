@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Entkopplung der Objekterzeugung von der Anwendungsklasse zur Erfüllung des Open-Closed-Prinzips und Erhöhung der Testbarkeit.
-- Kontext: Objekterzeugung, Entwurfsmuster, Framework-Design.
-- UX-Prinzip:
-  - "The Master Mold": Der Client-Code weiß nicht, WIE etwas entsteht, er drückt nur den Knopf für einen Typ (z. B. "Limousine", "SUV").
-  - "Hidden Production": Die Logik der Erstellung (Entscheidung über die konkrete Unterklasse) verbirgt sich hinter einer blickdichten Fabrikwand.
-  - "The Request Slot": Ein einheitlicher Schlitz, in den der Wunsch gesteckt wird, und am Ende kommt das fertige Objekt heraus.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler beherrschen die Entkopplung von Objekterzeugung durch das Factory Pattern zur Umsetzung flexibler System-Builds.
+- Game-Mechanic: "The Robot Assembler". Du steuerst eine automatisierte Fabrikhalle. Kunden bestellen "Export-Roboter". Du musst nicht wissen, wie die Roboter (PDF, CSV, JSON) innen aussehen – du musst nur den richtigen Auftrag in die Fabrik-Matrix schieben.
+- Challenge: 
+  - Level 1 (Production Line): Wähle den Typ. Die Fabrik spuckt das korrekte Modul aus.
+  - Level 2 (Hidden Logic): Die Fabrik muss basierend auf versteckten Bedingungen (Dateigröße, Ziel-OS) selbst entscheiden, welche "Sub-Klasse" sie baut.
+  - Level 3 (Expansion): Ein neues Produkt (XML) wird eingeführt. Beweise, dass dein Code (Open-Closed) nicht geändert werden muss, um das neue Produkt zu unterstützen.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Der Produkt-Typ Wunsch (Request), 2 = Die Fabrik-Logik (Innerer Switch/Map), 3 = Das resultierende Produkt.
-- [ ] Textbudget: Max. 10 Wörter pro Produkttyp.
-- [ ] "DecouplerHUD": Anzeige, dass der Client nur das Interface kennt, nicht die Fabrik-Klassen.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Production-Rate", "Factory-Uptime", "Object-Integrity" (Check gegen Interface).
+- [ ] Scoring: "Bulk-Order" Bonus für schnelle korrekte Zuweisungen. Abzug bei "Manual-Instancing" (wenn der Client versucht, Roboter selbst zu bauen).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> request-console -> factory-interior -> output-ramp`.
-- [ ] Factory-Interior: Schematische Darstellung der Weichen (Desktop 50% Breite, Mobile vertical Flow).
-- [ ] Output-Ramp: Ein Bereich, in dem die erzeugten Objekte stolz präsentiert werden.
+2. Screen-Layout (The Factory Floor)
+- [ ] `control-room -> factory-gate -> conveyor-belt -> shipping-bay`.
+- [ ] Gate: Ein blickdichter Vorhang (The Interface), hinter dem die Magie (Factory) passiert.
+- [ ] Conveyor: Hier fließen die "Bestellungen" (Requests) ein.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Tap-to-Produce" Mechanik.
-- [ ] Grid-Anordnung der Buttons für einhändige Bedienung.
+3. Kernvisuals und Effekte
+- [ ] Industrial-High-Tech Ästhetik: Gebürstetes Metall, Warnstreifen, Kran-Animationen, zischende Dampf-Effekte.
+- [ ] "Assemble-Flash": Wenn das Objekt hinter dem Gate fertiggestellt wird, blitzt ein starkes Arbeitslicht auf.
+- [ ] Output-Ramp: Die fertigen Klassen-Vorschaubilder fahren auf Schienen aus der Fabrik.
 
-4. Kernvisuals
-- [ ] Mechanik-Ästhetik: Metallische Oberflächen, Förderbänder, Industrielampen (shared_theme.css).
-- [ ] Schattenriss-Effekt: Der Produkttyp ist als Umriss sichtbar, bevor die Fabrik ihn realisiert.
-- [ ] High-Contrast Buttons für die Produktauswahl.
+4. Browser- und Device-Resilienz
+- [ ] `CSS Masks` für den Fabrik-Vorhang Effekt.
+- [ ] Mobile: "Swipe-to-Produce" Geste für maximale Haptik.
 
-5. Interaktion und Feedback
-- [ ] Produktions-Feedback: "Bestellung erhalten: Typ 'Elektro-Truck'. Fabrik wählt die passende Klasse aus..."
-- [ ] Erfolg: "Klick! Die Factory hat die richtige Instanz geliefert. Dein Code ist flexibel für neue Modelle (Open-Closed)."
-- [ ] Warnung: "Halt! Unbekannter Produkttyp – die Fabrik meldet einen Fehler (ExceptionHandling)."
+5. Content-Strategie (The Order-Log)
+- [ ] 15 Produkttypen: Von "Windows-UI-Button" bis "Database-Connector-Pro".
 
-6. KPI-Klarheit
-- [ ] Creation-Flexibility: "Erweiterbarkeit: 100%".
-- [ ] Client-Decoupling: "Entkopplungs-Grad: Hoch".
+6. QA-Paket
+- [ ] Test: Ist die Trennung zwischen Client (Besteller) und Factory (Bauer) optisch durch die Wand klar genug?
+- [ ] Test: Reagiert das UI flüssig auf schnelle Typ-Änderungen?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Fahrzeug-Werk", "UI-Widget-Generator", "Dokumenten-Parser-Schmiede".
-- [ ] Tonalität: Effizient, industriell, präzise.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist die Trennung zwischen Request (Links) und Produkt (Rechts) visuell eindeutig?
-- [ ] Test: Sind die Übergänge zwischen Wunsch und fertigem Objekt animiert (Motion Design)?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler verinnerlicht die Fabrik als "Single Point of Decision" für Objekterzeugung.
-- [ ] Das Interface wirkt wie ein Hochglanz-Konfigurator für Systemkomponenten.
-- [ ] Maximale Klarheit über das Prinzip "Programmiere gegen Interfaces, nicht gegen Implementierungen".
+7. Abnahme-Kriterien
+- [ ] Der Spieler versteht: Der Client kennt nur das Interface, die Fabrik die Details.
+- [ ] Das Interface wirkt wie ein professioneller Industrie-Simulator.
+- [ ] Hoher Lerneffekt für das Open-Closed Prinzip.

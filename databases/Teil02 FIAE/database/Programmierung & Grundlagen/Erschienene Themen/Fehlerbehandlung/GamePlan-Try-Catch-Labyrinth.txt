@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Beherrschung des Exception-Handlings (try-catch-finally) zur Vermeidung von Programmabstürzen bei Laufzeitfehlern.
-- Kontext: Robuste Softwareentwicklung, Error-Handling Strategien.
-- UX-Prinzip:
-  - "The Safety Net": Der Programmfluss ist ein herabfallendes Objekt (Datenpaket). Gefahrenstellen (Exceptions) sind Stacheln. Der Spieler spannt Auffangnetze (Catch-Blöcke).
-  - "Specific Traps": Jede Exception (NullPointer, DivisionByZero) braucht das passende Netz (Type-Matching).
-  - "The Cleanup Gate": Der `finally`-Block ist eine Schleuse, durch die das Paket IMMER durchmuss, egal ob es gefangen wurde oder nicht.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler beherrschen das Exception-Handling (Try, Catch, Finally, Throw) zur Erstellung robuster Software.
+- Game-Mechanic: "The Safety Net". Deine App ist ein Akrobat, der über ein Seil (Der Happy Path) läuft. Plötzlich bricht ein Seilstück (`NullPointerException`, `IndexOutOfBounds`). Du musst blitzschnell das Sicherheitsnetz (Den Catch-Block) an der richtigen Stelle aufspannen, damit die App nicht in den Abgrund (Crash) stürzt.
+- Challenge: 
+  - Level 1 (Der Sturz): Ein Fehler tritt auf. Wähle den richtigen Netz-Typ (Exception-Klasse), um den Akrobaten aufzufangen.
+  - Level 2 (The Clean-Up): Egal ob Sturz oder Erfolg – die Ressourcen (Bühnenlichter) müssen ausgeschaltet werden (`Finally`). 
+  - Level 3 (Chain-Reaction): Ein Fehler in einer tiefen Methode wird hochgeworfen (`rethrow`). Fange ihn dort ab, wo die User-Meldung erscheint.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Der Sturzpfad (Program-Flow), 2 = Die Netze (Catch-Logik), 3 = Der Stack-Trace (Status).
-- [ ] Textbudget: Kurze Exception-Namen (`IOException`, `ArithmeticException`).
-- [ ] "Visual Flow": Vertikaler Fall von oben nach unten.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "System-Resilience" (Health), "Stack-Trace History", "Active-Guard-Zone".
+- [ ] Scoring: "Recovery-Bonus" für sauberes Weiterlaufen nach einem Fehler. Abzug bei "Silent-Catch" (Leere Catch-Blöcke).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> danger-zone (Try) -> intervention-grid (Catch) -> cleanup-exit (Finally)`.
-- [ ] Intervention-Grid: Bereich, in dem der Spieler Catch-Blöcke per Drag & Drop platziert.
-- [ ] Stack-Monitor: Eine kleine Sidebar, die den aktuellen Zustand der Exception-Pipe anzeigt.
+2. Screen-Layout (The Performance Canvas)
+- [ ] `the-great-void -> tightrope (The Code Path) -> trap-doors (Exceptions) -> safety-log`.
+- [ ] Tightrope: Ein Pfad aus Code-Zeilen. Der Curser (Akrobat) läuft drüber.
+- [ ] Trap-Doors: Abschnitte, die bei Fehlern rot aufklappen.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Tap-to-Deploy-Net" Mechanik.
-- [ ] `safe-area-inset` für den "Run Execution" Button.
+3. Kernvisuals und Effekte
+- [ ] Cirque-du-Code Ästhetik: Dunkle Bühne, goldene Strahler, Seidenschnüre (Datenfluss), rote Warnleuchten.
+- [ ] "Catch-Snap": Wenn eine Exception gefangen wird, federt das Netz den Fall elastisch ab.
+- [ ] "Crash-Explosion": Wenn kein Catch vorhanden ist, zerfällt die App-Anzeige in digitale Pixel-Asche.
 
-4. Kernvisuals
-- [ ] Sicherheits-Ästhetik: Warnfarben (Gelb/Schwarz), Netze, Gummipuffer.
-- [ ] Absturz-Animation: Wenn kein Catch passt, zerspringt der Screen visuell in Scherben (Exception-Crash).
-- [ ] "Finally-Glow": Ein goldenes Tor am Ende des Codes, das sich immer öffnet.
+4. Browser- und Device-Resilienz
+- [ ] `linear-gradient` für das Seil-Leuchten.
+- [ ] Mobile: "Tap-to-Deploy" Netz an der Gefahrenstelle.
 
-5. Interaktion und Feedback
-- [ ] Catch-Feedback: "Gefangen! Die Division durch Null wurde abgefangen – das System läuft stabil weiter."
-- [ ] Crash-Feedback: "Systemfehler! Keine passende Behandlung für `NetworkTimeout`. Die App ist abgestürzt."
-- [ ] Finally-Logik: "Egal was passiert: Die Datenbank-Verbindung wurde im Finally-Block sicher geschlossen."
+5. Content-Strategie (The Hazards)
+- [ ] 20 Fehler-Szenarien: "Database Offline", "Divide by Zero", "Invalid JSON", "Network Timeout".
 
-6. KPI-Klarheit
-- [ ] Resilience-Score: "Stabilitäts-Grad: 100%".
-- [ ] Error-Coverage: "X / Y Fehlerszenarien abgesichert".
+6. QA-Paket
+- [ ] Test: Ist der Unterschied zwischen "spezifischem Catch" (z. B. `IOException`) und "generischem Catch" (`Exception`) visuell belohnt?
+- [ ] Test: Fühlt sich der `Finally` Block als notwendiger Abschluss haptisch richtig an?
 
-7. Content-/Copy-Feinschliff
-- [ ] Reale Fälle: "Datei nicht gefunden", "Server antwortet nicht", "Zahl zu groß", "Null-Referenz".
-- [ ] Tonalität: Wachsam, sicherheitsbewusst, stabilisierend.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Exception-Namen in den "Netzen" auf dem Smartphone lesbar?
-- [ ] Test: Läuft die Fall-Animation flüssig und ohne Ruckeln?
-
-9. Abnahmekriterien
-- [ ] Der Spieler versteht die rettende Funktion von Catch-Blöcken.
-- [ ] Das Interface wirkt wie ein Hochsicherheits-Fallschirm-Simulator.
-- [ ] Klarheit über die Notwendigkeit von Cleanup-Code (Finally).
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Exceptions sind keine Fehler, sondern Ausnahmezustände, die man managt.
+- [ ] Das Interface wirkt extrem hochwertig, spannend und lehrreich.
+- [ ] Keine Angst mehr vor dem Stack-Trace.

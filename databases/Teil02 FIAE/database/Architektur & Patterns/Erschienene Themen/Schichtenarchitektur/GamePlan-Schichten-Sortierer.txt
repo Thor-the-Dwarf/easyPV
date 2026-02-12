@@ -1,52 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Verständnis der logischen und physischen Trennung von Belangen (Separation of Concerns) in komplexen Softwaresystemen.
-- Kontext: Schichtenmodell (3-Tier/n-Tier), Clean Architecture, Wartbarkeit.
-- UX-Prinzip:
-  - "The Skyscraper": Die Architektur ist ein Hochhaus.
-  - "The Lobby" (Presentation): Wo der Gast (User) empfangen wird. Alles ist schick (UI) und interaktiv.
-  - "The Offices" (Business Logic): Wo die Arbeit getan, gerechnet und entschieden wird (Valdierung).
-  - "The Underground Vault" (Data Access): Wo die wertvollen Akten (Daten) im Tresor liegen.
-  - "High-Speed Elevator": Ein Aufzug, der nur von oben nach unten (Requests) und unten nach oben (Responses) fährt. Keine Kurzschlüsse!
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Beherrschung der hierarchischen Ordnung in n-Tier-Architekturen zur Vermeidung von Kreisabhängigkeiten und "Spaghetti-Integration".
+- Game-Mechanic: "The Layered Skyscraper". Du baust das "Architektur-Hochhaus" der easyPV. Komponenten (Bausteine) schweben ein. Du musst sie auf dem richtigen Stockwerk (Presentation, Business, Data, Infrastructure) platzieren.
+- Challenge: 
+  - Level 1 (Fundament): Setze die SQL-Queries in den Keller (Data Access).
+  - Level 2 (Büro-Alltag): Validierungs-Logik vs. UI-Buttons. Wer darf wen anrufen? Baue nur "Top-Down" Aufzüge.
+  - Level 3 (Architektur-Erdbeben): Das Hochhaus wackelt! Schalte die "Anti-Cycle" Dämpfer ein. Wer eine Schicht überspringt, verursacht Risse in der Fassade (Penalty).
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die vertikalen Schichten (Ebenen), 2 = Die Komponenten (Möbel/Personen), 3 = Die strengen Kommunikationsregeln.
-- [ ] Textbudget: Max. 3 Begriffe pro Ebene (z. B. "HTML Form", "Validation", "SQL Query").
-- [ ] "Strict Direction": Pfeile, die zeigen, dass die Lobby nicht direkt in den Keller darf (Bypassing-Verbot).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Height-Score", "Building-Stability" (%), "Vertical-Alignment" (Check).
+- [ ] Scoring: "Clean-Stack" Bonus für perfekte Isolierung. Game Over bei "Circular-Foundation" (Datenkreis zwischen Schichten).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> skyscraper-cross-section -> component-elevator -> storage-area`.
-- [ ] Cross-Section: Seitenansicht des Gebäudes (Desktop 50% Breite, Mobile 80dvh Höhe).
-- [ ] Elevator: Schwebendes Element am Rand, das die aktuelle Aufgabe transportiert.
+2. Screen-Layout (The Construction Site)
+- [ ] `city-skyline -> skyscraper-skeleton -> component-crane -> delivery-truck`.
+- [ ] Skeleton: Transparente Etagen mit Beschriftung (Desktop Sideview, Mobile Vertical Scroll).
+- [ ] Crane: Packt die eintreffenden Logik-Blöcke und hievt sie in die Schichten.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-Up/Down" zum Navigieren durch die Stockwerke.
-- [ ] `scroll-snap-type: y mandatory` für präzises Einrasten pro Schicht.
+3. Kernvisuals und Effekte
+- [ ] Architektur-Blueprint Ästhetik: Blaupausen-Texturen, technische Hilfslinien, helle Neon-Glow-Farben passend zum shared_theme.css.
+- [ ] "Structural-Snap": Beim Absetzen rastet der Block mit einem soliden Sound und kurzem Bildschirmbeben ein.
+- [ ] "Warning-Cracks": Bei Architektur-Verletzung (falsche Schicht) erscheinen Risse im Glas der Etage.
 
-4. Kernvisuals
-- [ ] Architektur-Ästhetik: Schnittzeichnungen, Glasfassaden, Tresorschlösser (shared_theme.css).
-- [ ] Farbcodierung: Gold/Hell für Presentation, Stahlblau für Business, Dunkelgrau/Neon für Data.
-- [ ] "Bypass-Warning": Ein rotes Alarmsignal, wenn Komponenten Schichten überspringen wollen.
+4. Browser- und Device-Resilienz
+- [ ] `scroll-snap-type: y mandatory` für die Stockwerks-Navigation auf Mobile.
+- [ ] `z-index` Management für die Bausteine-Ebenen.
 
-5. Interaktion und Feedback
-- [ ] Ebenen-Check: "Richtig! Die Rechnungsformel gehört in die Büro-Etage (Business Logic), nicht in den Keller zu den Rohdaten."
-- [ ] Aufzug-Effekt: "Die Anfrage fährt herunter... DB-Zugriff erfolgreich... Antwort wird in die Lobby geliefert."
-- [ ] Erfolg: "Gebäude standsicher! Die Schichten sind perfekt isoliert und kommunizieren nur über definierte Wege."
+5. Content-Strategie (The Building-Blocks)
+- [ ] 25 IT-Komponenten: Von `ReactComponent` über `SpringService` bis `HibernateRepo`.
 
-6. KPI-Klarheit
-- [ ] Tier-Isolation: "Schichtentrennung: Perfekt".
-- [ ] Interchangeability: "Austauschbarkeit der UI: Hoch".
+6. QA-Paket
+- [ ] Test: Ist die Richtung des Datenflusses (Top-Down) visuell intuitiv?
+- [ ] Test: Sind die Bausteine auf Handy-Displays groß genug für Drag & Drop (min 48px)?
 
-7. Content-/Copy-Feinschliff
-- [ ] Fachbegriffe: Presentation Layer, Application/Service Layer, Data Access Layer (DAL), Persistence.
-- [ ] Tonalität: Strukturiert, stabil, hierarchisch.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sieht der "Schnittplan" des Hochhauses auf einem schmalen Handy-Display noch imposant aus?
-- [ ] Test: Sind die Einrast-Animationen der Komponenten in den Schichten flüssig?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift die Schichten als Schutzbarrieren für logische Ordnung.
-- [ ] Das Interface wirkt wie eine exklusive Architektur-Präsentation.
-- [ ] Höchste Klarheit über die "Top-Down" Aufrufhierarchie.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verinnerlicht die Trennung von Belangen (Separation of Concerns).
+- [ ] Das Interface wirkt wie ein exklusives Architektur-Planungstool.
+- [ ] Maximale Punkte durch "Low Coupling, High Cohesion" Strategie.

@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Identifikation kritischer "Code Smells" (Long Method, God Class, Duplicated Code) und Anwendung gezielter Refactoring-Schritte.
+- Game-Mechanic: "The Code Cleaner". Du betrittst ein baufälliges "Legacy-Gebäude" (Das Projekt). Überall ist Schmutz (Smells). Du musst mit deinem Detektor (Analyse-Tool) die stinkenden Stellen finden und sie durch "Säubern" (Refactoring-Aktionen wie Extract Method) in strahlendes Gold verwandeln.
+- Challenge: 
+  - Level 1 (The Long-Shadow): Eine Methode mit 200 Zeilen. Benutze das "Extraktions-Skalpell", um sie in drei kleine, saubere Funktionen zu teilen.
+  - Level 2 (The Copy-Paste Fog): Finde identische Code-Blöcke in verschiedenen Räumen und ziehe sie in eine gemeinsame Utility-Basis zusammen.
+  - Level 3 (The God-Object): Eine Klasse, die alles tut. Zerschlage sie in spezialisierte Komponenten, ohne die Funktionalität zu brechen (Regression-Test-Glow).
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Smell-Intensity" (Gefahrenanzeige), "Cleanliness-Level", "Refactoring-Budget".
+- [ ] Scoring: "Beauty-Points" für besonders elegante Lösungen. Abzug, wenn man das Gebäude durch falsches Refactoring zum Einsturz bringt (Bug-Intro).
+
+2. Screen-Layout (The Abandoned Office)
+- [ ] `corridor -> legacy-source-code -> refactoring-toolbelt -> clean-code-dashboard`.
+- [ ] Source-Code: Ein vertikaler Textfluss, der an "verdreckten" Stellen grau-gelblich vernebelt ist.
+- [ ] Toolbelt: Symbole für "Extract Method", "Rename Variable", "Move Field".
+
+3. Kernvisuals und Effekte
+- [ ] Gritty-to-Gold Ästhetik: Zuerst staubig, grau, unordentlich. Nach dem Refactoring leuchtet der Code in klarem Weiß und Gold.
+- [ ] "Scrub-Animation": Während des Refactorings wischt ein virtueller Schwamm über den Code.
+- [ ] "Aha-Moment": Der "Smell-Nebel" lichtet sich und gibt den Blick auf die saubere Logik frei.
+
+4. Browser- und Device-Resilienz
+- [ ] `transition: filter 0.5s` für den Nebel-Effekt.
+- [ ] Mobile: "Swipe-to-Clean" Geste über dem Code-Block.
+
+5. Content-Strategie (The Smells)
+- [ ] 15 realistische Code-Sünden: Von "Hardcoded Config" bis "Magic Numbers".
+
+6. QA-Paket
+- [ ] Test: Ist die Verbesserung der Lesbarkeit (Complexity-Score sinkt) visuell motivierend genug?
+- [ ] Test: Sind die Refactoring-Optionen auf kleinen Bildschirmen gut bedienbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler entwickelt ein Gespür für "sauberen Code".
+- [ ] Das Interface wirkt atmosphärisch dicht, fast wie ein Escape-Room Spiel.
+- [ ] Hoher Lerneffekt für nachhaltige Software-Entwicklung.

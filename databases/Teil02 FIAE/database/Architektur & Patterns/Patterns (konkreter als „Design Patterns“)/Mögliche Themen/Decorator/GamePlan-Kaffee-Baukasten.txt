@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Dynamische Erweiterung von Objekten zur Laufzeit durch Komposition, ohne die bestehende Klassenstruktur aufzublähen.
-- Kontext: Open-Closed Principle, Flexible Objekterweiterung, Schachtelung von Logik.
-- UX-Prinzip:
-  - "The Accessory Shop": Ein Basis-Objekt (Kaffee, Rüstung, Textstream) wird mit Upgrades ausgestattet.
-  - "Nested Layers": Jedes Upgrade ist eine neue Schale, die das innere Objekt umschließt (Zwiebelprinzip).
-  - "Transparent Chain": Der Spieler sieht die verschachtelten Aufrufe (`cost() -> inner.cost() + addon`).
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis des Decorator-Patterns zur flexiblen Objekterweiterung ohne Vererbungshölle.
+- Game-Mechanic: "The Barista Challenge". Kunden bestellen abstrakte Kaffee-Variationen. Du hast einen einfachen "Espresso" (Base). Du musst ihn mit Decorators (Milch, Zucker, Sirup, Schirmchen) umhüllen.
+- Challenge: 
+  - Level 1 (Klassik): Espresso + Milch + Milchschaum (Cappuccino).
+  - Level 2 (Extreme-Barista): Verschachtelte Schichten. Wenn du den Sirup VOR der Milch hinzufügst, ändert sich der Preis anders? (Logik-Check).
+  - Level 3 (The Recursive Loop): Dekoriere einen Text-Stream mit Verschlüsselung, Kompression und Buffering. Achte auf die korrekte Reihenfolge (`encrypt(compress(data))`).
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Das Kern-Objekt (Basis), 2 = Die aktiven Add-ons (Decorator), 3 = Der akkumulierte Gesamtwert (Preis/Funktion).
-- [ ] Textbudget: Kurze Bezeichnungen wie "Milch (+0.50)", "Sahne (+0.70)".
-- [ ] "Nesting-Visual": Anzeige der Schachtelungstiefe (`Object -> D1 -> D2`).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Drink-Complexity" (Levels), "Revenue" ($), "Wrap-Speed".
+- [ ] Scoring: "Multi-Coat" Bonus für viele Schichten. Abzug bei "Broken Chains" (wenn ein Decorator den Kern "vergisst").
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> base-object-preview -> decorator-toolbox -> result-panel`.
-- [ ] Preview: Zentrale Grafik, die bei jeder Dekoration visuell wächst (Desktop 60% Breite, Mobile 50dvh Höhe).
-- [ ] Toolbox: Horizontale Leiste mit Zutaten/Modulen am unteren Rand.
+2. Screen-Layout (The Bar)
+- [ ] `coffee-shop -> drink-display -> ingredients-rack -> composition-chain`.
+- [ ] Drink-Display: Der Kaffee wächst visuell in die Höhe (Schicht für Schicht).
+- [ ] Chain: Eine visuelle Baum-Struktur im Hintergrund, die zeigt, wer wen umschließt.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Drag-to-Combine" Geste.
-- [ ] `will-change: transform` für flüssige Schachtelungs-Animationen.
+3. Kernvisuals und Effekte
+- [ ] Cozy-Café Ästhetik: Warme Farben, Kreide-Schriften, duftende Dampf-Animationen.
+- [ ] "Wrap-Animation": Ein neuer Decorator "stülpt" sich wie eine Glocke über das bestehende Objekt.
+- [ ] Pulse-Effect: Der Preis-Counter am oberen Rand rattert hoch, wenn eine Schicht einrastet.
 
-4. Kernvisuals
-- [ ] Kulinarik- oder Baukasten-Ästhetik: Appetitliche Icons oder technische Layer (shared_theme.css).
-- [ ] Schicht-Shader: Jede Ebene hat eine leicht andere Transparenz oder Farbe.
-- [ ] Flash-Glow: Jedes Mal, wenn ein Decorator hinzugefügt wird, leuchtet das Gesamtpaket kurz auf.
+4. Browser- und Device-Resilienz
+- [ ] `will-change: transform` für smoothe Layer-Überlagerungen.
+- [ ] Mobile: Drag & Drop mit haptischem Feedback (Vibration) beim Einrasten.
 
-5. Interaktion und Feedback
-- [ ] Layer-Feedback: "Klick! Die Milch-Schicht umschließt jetzt den Espresso. Neue Gesamtkosten werden berechnet..."
-- [ ] Preis-Pulse: Der Gesamtpreis im UI erhöht sich rhythmisch passend zum Hinzufügen.
-- [ ] Erfolg: "Perfekt konfiguriert! Dein dekoriertes Objekt ist flexibel und ohne Code-Duplikate erstellt."
+5. Content-Strategie (The Combinations)
+- [ ] 18 Zutaten/Module: Von "Vollmilch" bis "RSA-256 Encryption".
 
-6. KPI-Klarheit
-- [ ] Composition-Level: "Struktur-Sauberkeit: 100%".
-- [ ] Flexibility-Score: "Erweiterbarkeit: Maximal".
+6. QA-Paket
+- [ ] Test: Sind die Schichten auch bei hoher Anzahl (6+) noch einzeln anklickbar?
+- [ ] Test: Funktioniert die automatische Preiskalkulation synchron zu den Layer-Animationen?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Kaffee-Bestellung", "Gepanzerte Spielfigur", "Verschlüsselter Datenstrom (GZip -> Encryption -> File)".
-- [ ] Tonalität: Spielerisch, schmackhaft, logisch.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind 5 Schichten Dekoration auf dem Handy noch visuell trennbar?
-- [ ] Test: Funktioniert die rekursive Preismethode auch bei schnellen Klickfolgen synchron zum UI?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler versteht Komposition als bessere Alternative zur massiven Vererbung.
-- [ ] Das Interface wirkt wie ein moderner Produkt-Konfigurator.
-- [ ] Hoher Lerneffekt für das Open-Closed Prinzip.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift Vererbung vs. Komposition.
+- [ ] Das Interface wirkt einladend, appetitlich und intuitiv.
+- [ ] Klarheit über das Open-Closed Prinzip ("Open for extension, closed for modification").

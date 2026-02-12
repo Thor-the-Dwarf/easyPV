@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Beherrschung des Inversion of Control (IoC) Prinzips durch Dependency Injection (DI) zur Entkopplung von Systemkomponenten.
-- Kontext: Software-Architektur, Testbarkeit (Mocking), Wartbarkeit.
-- UX-Prinzip:
-  - "The Universal Socket": Eine Maschine (Klasse) hat kein fest verbautes Stromkabel mehr. Sie besitzt eine universelle Buchse (Interface).
-  - "Module-Swap": Der Spieler kann verschiedene Stecker (Abhängigkeiten) einstecken: Den "Real-Power-Plug" (Datenbank), den "Battery-Dummy" (Mock) oder das "Solar-Panel" (Cloud-Service).
-  - "Testing-Light": Sobald der Dummy eingesteckt wird, leuchtet eine "Test-Bereit" Lampe auf.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Praktisches Verständnis von Dependency Injection (DI) zur Steigerung der Testbarkeit und losen Kopplung.
+- Game-Mechanic: "The Surgery Assistant". Du bist im OP-Saal. Die Maschine (Service) braucht "Organe" (Abhängigkeiten). Du musst die richtigen Instrumente (Mocks oder Real-Services) in den Konstruktor-Slot "injizieren".
+- Challenge: 
+  - Level 1 (Routine): Einfache Injection eines Loggers.
+  - Level 2 (Notfall): Test-Szenario. Das echte System blutet (DB-Verbindung down). Du musst blitzschnell einen "Mock-Service" injizieren, um die Maschine zu stabilisieren.
+  - Level 3 (Multi-Organ-Transplant): Ein Objekt mit 5 Abhängigkeiten. Beachte die Reihenfolge und die Interface-Typen.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die universelle Buchse (Parameter), 2 = Die auswechselbaren Stecker (Objekte), 3 = Die interne Logik (Maschine).
-- [ ] Textbudget: Max. 10 Codezeilen für den Konstruktor-Vergleich.
-- [ ] "Decoupling-Visual": Visuelle Lücke zwischen Maschine und Stromquelle, die nur durch Injektion geschlossen wird.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Stability-Gauge" (Health), "Incision-Timer", "Injection-Accuracy".
+- [ ] Scoring: +1000 Pkt für "Mock-First" Strategie in Tests. Game Over bei "Hard-Coding" (Instanziierung per `new` im Konstruktor).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> machine-blueprint -> injection-dock -> component-inventory`.
-- [ ] Blueprint: Transparente Ansicht der Klasse mit den offenen Steckplätzen (Desktop mittig, Mobile 50dvh Höhe).
-- [ ] Inventory: Auswahl der verfügbaren Instanzen am unteren Rand (Drag & Drop fähig).
+2. Screen-Layout (The Surgery Tray)
+- [ ] `operating-room -> patient-class-schema -> instrument-tray -> injection-point`.
+- [ ] Patient-Schema: Ein technisches Röntgenbild der Klasse mit leuchtenden "Empty Slots".
+- [ ] Tray: Auswahl-Menü mit verschiedenen "Steckern" (DHL-Service, PayPal-Mock, SQL-Live, Memory-Dummy).
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Tap-to-Snap" Mechanik zum Verbinden von Komponenten.
-- [ ] `safe-area-inset` für das Inventar-Menü.
+3. Kernvisuals und Effekte
+- [ ] Tech-Medical Ästhetik: Steriles Weiß, Neon-Cyan, klares Interface, sanfte Unschärfe im Hintergrund.
+- [ ] "Injection-Click": Mechanisches Einrastgeräusch und Lichtblitz beim Match.
+- [ ] "Logic-Leak": Bei falscher Abhängigkeit "tropft" rotes Licht aus dem Interface.
 
-4. Kernvisuals
-- [ ] Elektronik-Ästhetik: Platinen-Layouts, Steckverbindungen, leuchtende Kontaktpunkte (shared_theme.css).
-- [ ] "Connection-Spark": Kurzes Aufblitzen beim erfolgreichen Einstecken einer Abhängigkeit.
-- [ ] High-Contrast Icons für Interface-Typen (z. B. `<I> DBService`).
+4. Browser- und Device-Resilienz
+- [ ] `touch-action: none` für verzögerungsfreies Platzieren der Komponenten.
+- [ ] Mobile: Fokus auf das "Werkzeug-Rad" zum schnellen Wechseln.
 
-5. Interaktion und Feedback
-- [ ] Match-Feedback: "Klick! Das `IShippingService` Interface akzeptiert den `DHLProvider`. Die Maschine läuft."
-- [ ] Test-Mode: Animation, wie ein Mock-Objekt (Dummy-Stecker) die Datenbank-Abfrage simuliert, ohne das echte System zu belasten.
-- [ ] Erfolg: "Klasse entkoppelt! Sie kann jetzt mit jedem Stecker betrieben werden, der in die Buchse passt."
+5. Content-Strategie (The Dependencies)
+- [ ] 15 Szenarien: Von "Order-Processor" bis "Secure-Auth-Gatekeeper".
 
-6. KPI-Klarheit
-- [ ] Degree-of-Decoupling: "Entkopplungs-Grad: 100%".
-- [ ] Testability-Boost: "Automatisierbarkeit: Maximal".
+6. QA-Paket
+- [ ] Test: Versteht der Spieler den visuellen Unterschied zwischen Interface-Typ und konkreter Klasse?
+- [ ] Test: Ist die physikalische Snapping-Funktion flüssig?
 
-7. Content-/Copy-Feinschliff
-- [ ] Reale Fälle: `Logger`, `DatabaseService`, `PaymentProvider`, `EmailClient`.
-- [ ] Tonalität: Technisch, modular, flexibel.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Interface-Beschriftungen auf einem kleinen Handy-Bildschirm erkennbar?
-- [ ] Test: Bleibt die Maschine "stehen", wenn die Abhängigkeit wieder herausgezogen wird (Null-Safety-Warnung)?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler versteht DI als physisches "Baukasten-Prinzip" für Software.
-- [ ] Das Interface wirkt wie ein exklusives Engineering-Tool für System-Architekten.
-- [ ] Klarheit über den massiven Vorteil für das Unit-Testing.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift DI als Befreiung von festen Abhängigkeiten.
+- [ ] Das Interface wirkt modern, technoid und wertvoll.
+- [ ] Hoher Lerneffekt für das Interface-Segregation Prinzip.

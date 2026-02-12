@@ -6,3 +6,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Implemented HTML/JS/JSON for game_kurve_der_veraenderung with 7-phase matching interaction.
 - Added click + drag assignment, scoring, and phase explanations.
 - Added render_game_to_text and advanceTime hooks.
+- Updated game_kurve_der_veraenderung visual theme to match Teil01 dark/cyan UI language.
+- Reworked portrait layout: statements panel moves first, phase curve remains horizontal-scrollable, and pool gets bounded height for usability.
+- Fixed visibility issue: statement cards now enforce dark text on light background.
+- Portrait mode validated (390x844): game sections stack in usable order and remain interactive.

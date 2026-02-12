@@ -1,0 +1,19 @@
+Anforderungen
+5. "Wertschöpfungs-Analyse"
+   - Ziel: Markiere Schritte als "Wertschöpfend" oder "Nicht wertschöpfend".
+   - Spielmechanik: 
+     - Schritt: "Kunde bezahlt". -> Wertschöpfend.
+     - Schritt: "Lagerung". -> Nicht wertschöpfend (Blindleistung).
+     - Schritt: "Montage". -> Wertschöpfend.
+     - Messbarkeit: Korrekte Klassifizierung.
+   - Lernziel: Fokus auf Wertschöpfung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_value_add.json')
+  - `steps`: ["value", "waste"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Farb-Highlighting (Grün=Wert, Rot=Müll).
+- [ ] Game-Engine Logic ('game_pm_value_add.js')
+  - Prozessschritte bewerten: Zahlt der Kunde dafür?
+- [ ] Integration
+  - Startbar über JSON.

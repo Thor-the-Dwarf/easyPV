@@ -1,0 +1,20 @@
+Anforderungen
+3. "Skript vs EXE"
+   - Ziel: Wie starte ich das?
+   - Spielmechanik: 
+     - Datei `script.py`. Doppelklick? -> Geht nur wenn Python installiert ist!
+     - Datei `game.exe`. Doppelklick? -> Geht immer.
+     - Aufgabe: Verschicke das Programm an Oma (hat kein Python).
+     - Lösung: Interpreter mitliefern oder kompilieren (PyInstaller).
+     - Messbarkeit: Abhängigkeit vom Interpreter verstehen.
+   - Lernziel: Runtime Environment.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_script_exe.json')
+  - `files`: ["script.py", "prog.exe"].
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Datei-Icons.
+- [ ] Game-Engine Logic ('game_prog_script_exe.js')
+  - Skript braucht Interpreter. EXE läuft direkt.
+- [ ] Integration
+  - Startbar über JSON.

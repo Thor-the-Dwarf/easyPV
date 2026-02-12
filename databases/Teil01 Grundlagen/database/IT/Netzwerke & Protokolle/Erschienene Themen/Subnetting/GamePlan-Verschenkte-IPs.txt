@@ -1,0 +1,20 @@
+Anforderungen
+2. "Verschenkte IPs"
+   - Ziel: Wähle die kleinste passende Maske (VLSM).
+   - Spielmechanik: 
+     - Bedarf: Point-to-Point Verbindung (2 IPs nötig).
+     - Vorschlag A: /24 (254 IPs). -> Verschwendung!
+     - Vorschlag B: /30 (2 IPs). -> Perfekt.
+     - Messbarkeit: Effizienz der Allokation.
+   - Lernziel: Variable Length Subnet Masking.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_subnet_waste.json')
+  - `needed`: 2.
+  - `options`: ["/24", "/30"].
+- [ ] Shared CSS Check ('network_ip.css')
+  - Mülltonnen-Symbol für verschwendete IPs.
+- [ ] Game-Engine Logic ('game_subnet_waste.js')
+  - Effizienz-Score.
+- [ ] Integration
+  - Startbar über JSON.

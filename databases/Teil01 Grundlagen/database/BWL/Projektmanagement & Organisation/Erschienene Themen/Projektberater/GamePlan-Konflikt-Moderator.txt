@@ -1,0 +1,19 @@
+Anforderungen
+3. "Konflikt-Moderator"
+   - Ziel: Löse einen Konflikt zwischen zwei Abteilungen als neutraler Dritter.
+   - Spielmechanik: 
+     - IT will A, Fachbereich will B.
+     - Berater-Intervention: "Macht, was ihr wollt" (Falsch). "Ich entscheide für A" (Falsch, keine Befugnis). "Lass uns die Ziele abgleichen (Workshop)" (Richtig).
+     - Messbarkeit: Deeskalation und Lösungsfindung.
+   - Lernziel: Moderationsrolle des Beraters.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_conflict.json')
+  - `tools`: ["round_table", "timeout", "cards"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Meeting-Tisch mit zerstrittenen Parteien.
+- [ ] Game-Engine Logic ('game_pm_conflict.js')
+  - Moderator-Eingriffe wählen.
+  - Situation deeskalieren.
+- [ ] Integration
+  - Startbar über JSON.

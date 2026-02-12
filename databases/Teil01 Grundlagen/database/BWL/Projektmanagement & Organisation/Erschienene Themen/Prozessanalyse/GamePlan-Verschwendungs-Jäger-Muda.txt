@@ -1,0 +1,21 @@
+Anforderungen
+3. "Verschwendungs-Jäger (Muda)"
+   - Ziel: Eliminiere 7 Arten der Verschwendung (Lean Management).
+   - Spielmechanik: 
+     - Video/Animation eines Büros.
+     - MA läuft unnötig weit zum Drucker (Bewegung).
+     - Aktenstapel warten auf Bearbeitung (Warten).
+     - Teile werden produziert, die keiner braucht (Überproduktion).
+     - Spieler klickt auf Verschwendung.
+     - Messbarkeit: Gefundene Muda-Arten.
+   - Lernziel: Prozessoptimierung / Lean Thinking.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_muda.json')
+  - `types`: ["Transport", "Inventory", "Waiting", "Overproduction"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Lupe / Fadenkreuz.
+- [ ] Game-Engine Logic ('game_pm_muda.js')
+  - 7 Verschwendungsarten finden (Lean Management).
+- [ ] Integration
+  - Startbar über JSON.

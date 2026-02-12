@@ -1,0 +1,19 @@
+Anforderungen
+4. "Eisberg-Modell Tauchgang"
+   - Ziel: Ordne Aussagen der Sachebene (sichtbar) oder Beziehungsebene (unsichtbar) zu.
+   - Spielmechanik: 
+     - Aussage: "Der Preis beträgt 50€." -> Sache.
+     - Aussage: "Ich fühle mich schlecht beraten." -> Beziehung.
+     - Aussage: "Haben Sie überhaupt Ahnung?" -> Beziehung (Angriff).
+     - Messbarkeit: 10 Aussagen sortieren.
+   - Lernziel: Kommunikationsebenen im Verkaufsgespräch.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_iceberg.json')
+  - `levels`: ["sach", "beziehung"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Eisberg-Grafik (Wasserlinie).
+- [ ] Game-Engine Logic ('game_pm_iceberg.js')
+  - Versteckte Motive unter Wasser finden (Angst, Prestige).
+- [ ] Integration
+  - Startbar über JSON.

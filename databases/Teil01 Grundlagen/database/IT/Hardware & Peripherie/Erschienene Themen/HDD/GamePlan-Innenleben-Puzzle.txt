@@ -1,0 +1,19 @@
+Anforderungen
+1. "Innenleben-Puzzle"
+   - Ziel: Benenne die Bauteile einer Festplatte.
+   - Spielmechanik: 
+     - Bild einer offenen HDD.
+     - Bauteile: "Platter (Magnetscheibe)", "Lesekopf", "Actuator Arm", "Spindel".
+     - Drag & Drop der Begriffe.
+     - Messbarkeit: Alle Teile korrekt benannt.
+   - Lernziel: Aufbau einer mechanischen HDD.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_hdd_inside.json')
+  - `parts`: ["Platter", "Head", "Actuator", "Spindle"].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Offene HDD Grafik.
+- [ ] Game-Engine Logic ('game_hdd_inside.js')
+  - Label-Zuordnung (Drag & Drop).
+- [ ] Integration
+  - Startbar über JSON.

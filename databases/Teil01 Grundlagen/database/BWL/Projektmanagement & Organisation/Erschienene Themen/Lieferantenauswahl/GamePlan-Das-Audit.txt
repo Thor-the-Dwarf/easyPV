@@ -1,0 +1,20 @@
+Anforderungen
+3. "Das Audit"
+   - Ziel: Prüfe einen neuen Lieferanten auf Herz und Nieren (Checkliste).
+   - Spielmechanik: 
+     - Video-Rundgang durch Fabrik (Simulation).
+     - Frage: "Ist ISO 9001 vorhanden?" -> Ja/Nein klicken.
+     - Frage: "Arbeitsschutz eingehalten?" -> Bild zeigt Arbeiter ohne Helm -> Nein.
+     - Messbarkeit: Korrekte Bewertung der Audit-Punkte.
+   - Lernziel: Qualitätsstandards bei Lieferanten prüfen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_audit.json')
+  - `checks`: ["iso9001", "work_conditions", "quality"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Audit-Protokoll UI.
+- [ ] Game-Engine Logic ('game_pm_audit.js')
+  - Vor-Ort Besuch simulieren.
+  - Mängel aufdecken.
+- [ ] Integration
+  - Startbar über JSON.

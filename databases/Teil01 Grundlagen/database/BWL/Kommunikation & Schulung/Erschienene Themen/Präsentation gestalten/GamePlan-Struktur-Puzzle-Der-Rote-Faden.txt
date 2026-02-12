@@ -1,0 +1,20 @@
+Anforderungen
+2. "Struktur-Puzzle: Der Rote Faden"
+   - Ziel: Bringe 6 Abschnitte einer Projektpräsentation in die logisch richtige Reihenfolge.
+   - Spielmechanik: 
+     - Bausteine: "Agenda", "Fazit", "Ist-Analyse", "Begrüßung", "Soll-Konzept", "Umsetzung".
+     - Spieler muss sie sortieren (Begrüßung -> Agenda -> Ist -> Soll -> Umsetzung -> Fazit).
+     - Messbarkeit: Korrekte Sequenz = 100%. Logikfehler (Fazit vor Analyse) = 0%.
+   - Lernziel: Aufbau einer schlüssigen Gliederung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_presentation_structure.json')
+  - `blocks`: ["Agenda", "Fazit", "Begrüßung"...].
+  - `order`: ["Begrüßung", "Agenda", ...]
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Vertikale Sortier-Liste.
+- [ ] Game-Engine Logic ('game_presentation_structure.js')
+  - Drag & Drop Sorting.
+  - Reihenfolge prüfen.
+- [ ] Integration
+  - Startbar über JSON.

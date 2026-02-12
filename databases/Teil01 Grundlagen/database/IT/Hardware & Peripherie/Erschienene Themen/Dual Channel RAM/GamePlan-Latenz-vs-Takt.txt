@@ -1,0 +1,21 @@
+Anforderungen
+4. "Latenz vs. Takt"
+   - Ziel: Berechne die wahre Geschwindigkeit.
+   - Spielmechanik: 
+     - RAM 1: 3200 MHz / CL 16.
+     - RAM 2: 3600 MHz / CL 18.
+     - Formel: Latenz in ns = CL / Takt * 2000.
+     - Spieler muss den schnelleren Riegel wählen.
+     - Messbarkeit: Korrekte Wahl des schnelleren RAMs.
+   - Lernziel: Technische Kennzahlen bewerten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ram_latency.json')
+  - `pairs`: [ { "cl": 16, "mhz": 3200 }, { "cl": 18, "mhz": 3600 } ].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Formel-Overlay (Taschenrechner-Look).
+- [ ] Game-Engine Logic ('game_ram_latency.js')
+  - Berechnungs-Validierung.
+  - Auswahl des Siegers.
+- [ ] Integration
+  - Startbar über JSON.

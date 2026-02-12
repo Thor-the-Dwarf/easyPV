@@ -1,0 +1,20 @@
+Anforderungen
+5. "Meilenstein-Trend-Analyse (MTA)"
+   - Ziel: Erkenne den Trend aus der Grafik (Verzögerung oder Pünktlichkeit?).
+   - Spielmechanik: 
+     - Kurve geht steil nach oben. -> Prognose: "Wird viel später fertig".
+     - Kurve ist waagerecht. -> Prognose: "Im Plan".
+     - Spieler muss Prognose auswählen.
+     - Messbarkeit: Korrekte Interpretation von 5 Diagrammen.
+   - Lernziel: MTA lesen und verstehen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_mta.json')
+  - `trends`: ["rising", "falling", "flat"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - MTA-Chart (Zeit vs Zeit).
+- [ ] Game-Engine Logic ('game_pm_mta.js')
+  - Linien interpretieren (Verzögerung erkennen).
+  - Prognose erstellen.
+- [ ] Integration
+  - Startbar über JSON.

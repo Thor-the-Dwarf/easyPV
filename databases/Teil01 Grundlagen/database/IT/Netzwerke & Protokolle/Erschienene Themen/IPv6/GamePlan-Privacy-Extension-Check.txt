@@ -1,0 +1,21 @@
+Anforderungen
+5. "Privacy-Extension-Check"
+   - Ziel: Schütze deine Identität.
+   - Spielmechanik: 
+     - Interface ID aus MAC-Adresse (EUI-64) -> User trackbar.
+     - Privacy Extensions an -> Zufällige Interface ID wechselt täglich.
+     - Spieler aktiviert Setting in Windows.
+     - Messbarkeit: IP ändert sich, User nicht mehr trackbar.
+   - Lernziel: EUI-64 vs Privacy Extensions.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ipv6_privacy.json')
+  - `tracking`: true.
+- [ ] Shared CSS Check ('network_ip.css')
+  - Tracker-Auge Icon.
+  - Toggle-Switch "Verschleiern".
+- [ ] Game-Engine Logic ('game_ipv6_privacy.js')
+  - EUI-64 (Statisch) vs Privacy (Random).
+  - "Verfolgbar"-Status Anzeige.
+- [ ] Integration
+  - Startbar über JSON.

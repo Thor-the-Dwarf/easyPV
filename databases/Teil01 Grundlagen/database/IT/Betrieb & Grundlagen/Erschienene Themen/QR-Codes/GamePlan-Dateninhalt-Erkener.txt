@@ -1,0 +1,19 @@
+Anforderungen
+3. "Dateninhalt-Erkener"
+   - Ziel: Was steckt im Code? Unterscheide URL, VCard, Text, Wifi.
+   - Spielmechanik: 
+     - Rohdaten: "WIFI:S:MyNet;T:WPA;P:1234;;". -> Typ: WLAN.
+     - Rohdaten: "BEGIN:VCARD...". -> Typ: Kontakt.
+     - Rohdaten: "https://...". -> Typ: Webseite.
+     - Messbarkeit: Korrekte Typ-Zuordnung.
+   - Lernziel: Standardisierte Formate im QR-Code.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_qr_type.json')
+  - `types`: ["wifi", "vcard", "url"].
+- [ ] Shared CSS Check ('basics_hardware.css')
+  - Scanner-Display.
+- [ ] Game-Engine Logic ('game_basics_qr_type.js')
+  - Rohdaten parsen (WIFI:...).
+- [ ] Integration
+  - Startbar über JSON.

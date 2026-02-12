@@ -1,0 +1,21 @@
+Anforderungen
+2. "CSS-Selektor-Sniper"
+   - Ziel: Triff das richtige Element.
+   - Spielmechanik: 
+     - Ziel: "Alle Absätze der Klasse 'intro'".
+     - Auswahl A: `p.intro` (Treffer).
+     - Auswahl B: `.intro p` (Falsch, Kinder).
+     - Auswahl C: `#intro` (Falsch, ID).
+     - Messbarkeit: Korrekter Selektor.
+   - Lernziel: CSS Spezifität.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_css_sniper.json')
+  - `targets`: [".class", "#id", "div > p"].
+- [ ] Shared CSS Check ('web_basics.css')
+  - Fadenkreuz UI.
+- [ ] Game-Engine Logic ('game_web_css_sniper.js')
+  - Highlighten der Elemente, die vom Selektor getroffen werden.
+  - "Treffer" wenn korrektes Element gewählt.
+- [ ] Integration
+  - Startbar über JSON.

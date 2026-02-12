@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Der Matrix-Architekt</title>
+  <link rel="stylesheet" href="./nutzwertanalyse.css">
+</head>
+<body class="nwa-page">
+<main class="nwa-app">
+  <section class="nwa-situation">
+    <h1>Der Matrix-Architekt</h1>
+    <p id="situation-customer"></p>
+    <p id="situation-plan"></p>
+  </section>
+
+  <section class="nwa-main">
+    <article class="nwa-table-wrap">
+      <div class="nwa-table-scroll">
+        <table class="nwa-table" id="nwa-table"></table>
+      </div>
+      <div class="nwa-foot">
+        <div class="nwa-progress">Fortschritt: <strong id="progress-label">0%</strong></div>
+        <button id="submit-btn" class="nwa-submit" type="button">Submit</button>
+        <div id="nwa-feedback" class="nwa-feedback">Vergib pro Zeile die Punkte 1 bis 4 ohne Dopplung. gP wird automatisch berechnet.</div>
+      </div>
+    </article>
+
+    <article id="compare-panel" class="nwa-compare-panel hidden" aria-live="polite">
+      <h2>Vergleichstabellen pro Kriterium</h2>
+      <div id="compare-tables" class="nwa-compare-tables"></div>
+    </article>
+  </section>
+</main>
+
+<script src="./game_der_matrix_architekt.js" defer></script>
+</body>
+</html>

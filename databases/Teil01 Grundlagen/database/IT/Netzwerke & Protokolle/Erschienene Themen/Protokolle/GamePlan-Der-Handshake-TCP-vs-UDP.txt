@@ -1,0 +1,20 @@
+Anforderungen
+3. "Der Handshake (TCP vs UDP)"
+   - Ziel: Verbindungsaufbau oder Feuer-frei?
+   - Spielmechanik: 
+     - Webseiten-Aufruf (TCP): SYN -> SYN-ACK -> ACK. (Muss warten).
+     - Video-Stream (UDP): Paket, Paket, Paket... (Kein Warten, Paketverlust egal).
+     - Aufgabe: Wähle das Protokoll für die Anwendung.
+     - Messbarkeit: Optimale Wahl (VoIP -> UDP, Mail -> TCP).
+   - Lernziel: Connection-oriented vs Connectionless.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_proto_handshake.json')
+  - `types`: ["TCP", "UDP"].
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Zeitstrahl Paketfluss.
+- [ ] Game-Engine Logic ('game_proto_handshake.js')
+  - Interaktiver Handshake (SYN klick -> ACK warten).
+  - UDP Button (Geballer).
+- [ ] Integration
+  - Startbar über JSON.

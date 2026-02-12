@@ -1,0 +1,19 @@
+Anforderungen
+3. "Der Befehlszyklus"
+   - Ziel: Bringe den Fetch-Decode-Execute Cycle in die richtige Reihenfolge.
+   - Spielmechanik: 
+     - Bausteine: "Befehl aus RAM holen", "Dekodieren", "Ausführen", "Ergebnis speichern".
+     - Zeitlimit pro Zyklus wird kürzer.
+     - Messbarkeit: Anzahl korrekter Zyklen in 60 Sek.
+   - Lernziel: Funktionsweise eines Prozessors (Von-Neumann).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cpu_cycle.json')
+  - `steps`: ["Fetch", "Decode", "Execute", "Store"].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Kreislauf-Diagramm (Slots).
+- [ ] Game-Engine Logic ('game_cpu_cycle.js')
+  - Sequenz-Anordnung (Drag & Drop oder Klick-Reihenfolge).
+  - Timer-Beschleunigung pro Runde.
+- [ ] Integration
+  - Startbar über JSON.

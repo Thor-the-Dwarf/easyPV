@@ -1,0 +1,20 @@
+Anforderungen
+5. "Wärmeleitpad vs Paste"
+   - Ziel: Was kommt wohin?
+   - Spielmechanik: 
+     - CPU: Hoher Anpressdruck -> Paste (für dünne Schicht).
+     - Spannungswandler (VRM) / VRAM auf GPU: Großer Spalt -> Pad (Dicke 1-2mm).
+     - Spieler macht Paste auf VRAM -> Spalt zu groß, kein Kontakt -> Überhitzung.
+     - Messbarkeit: Korrekte Wahl des Interface-Materials.
+   - Lernziel: Einsatzgebiete von Pads (Gap Filler).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_wlp_pad.json')
+  - `gaps`: [ { "component": "VRAM", "size": "1mm" } ].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Seitenansicht (Spaltmaß).
+- [ ] Game-Engine Logic ('game_wlp_pad.js')
+  - Werkzeugwahl (Pad vs Paste).
+  - Kontakt-Prüfung.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+4. "Preis-Dumping Warnung"
+   - Ziel: Erkenne, wann du draufzahlst.
+   - Spielmechanik: 
+     - Marktpreis: 50€/h.
+     - Deine Selbstkosten: 55€/h.
+     - Auftrag annehmen? -> Nein (Verlust).
+     - Oder: Kosten senken (Schneller arbeiten, billigeres Büro).
+     - Messbarkeit: Ablehnung unrentabler Aufträge.
+   - Lernziel: Preisuntergrenze.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_dumping.json')
+  - `market_price`: 80.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Warnleuchte.
+- [ ] Game-Engine Logic ('game_math_dumping.js')
+  - Kostenunterdeckung erkennen.
+- [ ] Integration
+  - Startbar über JSON.

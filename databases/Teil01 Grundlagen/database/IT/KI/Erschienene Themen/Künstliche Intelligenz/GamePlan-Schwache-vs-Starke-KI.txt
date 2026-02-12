@@ -1,0 +1,21 @@
+Anforderungen
+1. "Schwache vs. Starke KI"
+   - Ziel: Ordne die Szenarien der richtigen KI-Art zu.
+   - Spielmechanik: 
+     - "Schachcomputer (Deep Blue)". -> Schwach (Spezialist).
+     - "Navigationssystem". -> Schwach.
+     - "Data aus Star Trek (Bewusstsein)". -> Stark (Generalist).
+     - "ChatGPT". -> Schwach (Sprachmodell, kein Bewusstsein).
+     - Messbarkeit: 100% korrekte philosophische Einordnung.
+   - Lernziel: Grenzen heutiger KI-Systeme (ANI vs AGI).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ai_types.json')
+  - `scenarios`: [ { "name": "ChatGPT", "type": "ANI" }, { "name": "Data", "type": "AGI" } ].
+- [ ] Shared CSS Check ('ai_basics.css')
+  - Waage oder Kategorien-Boxen (ANI vs AGI).
+- [ ] Game-Engine Logic ('game_ai_types.js')
+  - Zuordnung.
+  - Definitions-Popups.
+- [ ] Integration
+  - Startbar über JSON.

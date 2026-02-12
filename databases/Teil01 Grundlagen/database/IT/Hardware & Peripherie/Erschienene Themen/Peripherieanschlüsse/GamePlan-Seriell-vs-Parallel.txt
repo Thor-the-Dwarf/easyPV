@@ -1,0 +1,19 @@
+Anforderungen
+3. "Seriell vs Parallel"
+   - Ziel: Erkenne die alten Schnittstellen.
+   - Spielmechanik: 
+     - Bild: 25-poliger breiter Stecker (LPT/Parallel). -> Drucker.
+     - Bild: 9-poliger Stecker (COM/Seriell RS232). -> Konsole/Modem.
+     - Messbarkeit: Korrekte Zuordnung.
+   - Lernziel: Legacy-Schnittstellen erkennen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_periph_legacy.json')
+  - `ports`: [ "LPT", "COM" ].
+  - `devices`: [ "Drucker", "Modem" ].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Pin-Zähler (25 vs 9).
+- [ ] Game-Engine Logic ('game_periph_legacy.js')
+  - Matching.
+- [ ] Integration
+  - Startbar über JSON.

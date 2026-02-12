@@ -1,0 +1,20 @@
+Anforderungen
+2. "Account-Policy-Setter"
+   - Ziel: Konfiguriere sichere Kontosperrrichtlinien.
+   - Spielmechanik: 
+     - "Account Lockout Threshold": 0 (Nie) -> Unsicher (Brute Force möglich).
+     - "Account Lockout Threshold": 3 Versuche -> Sicher.
+     - "Reset Counter after": 30 Min.
+     - Messbarkeit: Hacker-Bot scheitert nach 3 Versuchen.
+   - Lernziel: Schutz vor Brute Force.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_policy.json')
+  - `lockout_threshold`: 0.
+- [ ] Shared CSS Check ('security_defense.css')
+  - GPO Editor Mockup.
+- [ ] Game-Engine Logic ('game_sec_policy.js')
+  - Brute Force Angriff simulieren.
+  - Account Lockout greift.
+- [ ] Integration
+  - Startbar über JSON.

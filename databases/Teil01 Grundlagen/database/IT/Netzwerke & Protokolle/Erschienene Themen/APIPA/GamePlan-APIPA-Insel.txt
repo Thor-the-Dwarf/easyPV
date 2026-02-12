@@ -1,0 +1,24 @@
+Anforderungen
+2. "APIPA-Insel"
+   - Ziel: Verbinde zwei PCs ohne DHCP und ohne manuelle Konfig.
+   - Spielmechanik: 
+     - PC A und PC B direkt per Kabel verbunden.
+     - Beide auf "IP automatisch beziehen".
+     - Warten... APIPA greift (Beide kriegen 169.254...).
+     - Ping von A nach B funktioniert.
+     - Wenn User manuell 192.168... einträgt -> Fehler (Aufgabe war "ohne manuell").
+     - Messbarkeit: Erfolgreicher Ping im APIPA-Netz.
+   - Lernziel: Zero-Config Networking (Zeroconf).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_apipa_island.json')
+  - `scenario`: "isolation".
+  - `nodes`: ["PC_A", "PC_B"].
+- [ ] Shared CSS Check ('network_ip.css')
+  - Netzwerk-Topologie (2 PCs, Kabel).
+  - Status-LEDs (Link, DHCP Timeout).
+- [ ] Game-Engine Logic ('game_apipa_island.js')
+  - Timer für DHCP-Failover (Simuliert Wartezeit).
+  - Auto-IP Zuweisung (169.254...).
+- [ ] Integration
+  - Startbar über JSON.

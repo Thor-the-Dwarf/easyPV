@@ -1,0 +1,20 @@
+Anforderungen
+5. "Client vs Server (Wo läuft es?)"
+   - Ziel: Ordne die Technologie zu.
+   - Spielmechanik: 
+     - Code: `PHP`. -> Server.
+     - Code: `JavaScript (Frontend)`. -> Client/Browser.
+     - Code: `SQL`. -> Server (Datenbank).
+     - Code: `CSS`. -> Client/Browser (Rendering).
+     - Messbarkeit: Verständnis der Web-Architektur.
+   - Lernziel: Frontend vs Backend.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_client_server.json')
+  - `tasks`: ["render_html", "query_db", "validate_input"].
+- [ ] Shared CSS Check ('web_basics.css')
+  - Split-Screen (Browser vs Server-Rack).
+- [ ] Game-Engine Logic ('game_web_client_server.js')
+  - Zuordnung: Datenbankzugriff -> Server. Klick-Event -> Client.
+- [ ] Integration
+  - Startbar über JSON.

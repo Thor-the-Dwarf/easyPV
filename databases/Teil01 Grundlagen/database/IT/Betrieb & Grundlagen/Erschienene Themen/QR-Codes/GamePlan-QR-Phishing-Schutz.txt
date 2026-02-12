@@ -1,0 +1,19 @@
+Anforderungen
+4. "QR-Phishing-Schutz"
+   - Ziel: Scanne sicher! Erkenne gefährliche QR-Codes.
+   - Spielmechanik: 
+     - Spieler "scannt" Code (fiktiv).
+     - Vorschau-URL wird gezeigt: "sparkasse-verify-login.de.evil.com".
+     - Entscheidung: "Öffnen" oder "Blockieren".
+     - Messbarkeit: Alle Phishing-URLs blockiert.
+   - Lernziel: Sicherheitsrisiko "Quishing" (QR-Phishing).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_qr_phish.json')
+  - `url`: "evil.com".
+- [ ] Shared CSS Check ('basics_hardware.css')
+  - Handy-Kamera UI Overlay.
+- [ ] Game-Engine Logic ('game_basics_qr_phish.js')
+  - URL Vorschau prüfen.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,21 @@
+Anforderungen
+2. "Passwort-Tresor"
+   - Ziel: Sichere den Zugang (Authentifizierung).
+   - Spielmechanik: 
+     - Tresor hat PIN-Code.
+     - Hinzufügen: "Fingerabdruck" (Biometrie).
+     - Hinzufügen: "Schlüssel" (Token).
+     - Ziel: MFA aktivieren.
+     - Messbarkeit: Sicherheitslevel des Zugangs.
+   - Lernziel: Authentifizierungsfaktoren (Zugangskontrolle).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_vault.json')
+  - `factors`: ["pin", "finger", "token"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - Tresor-Interface.
+- [ ] Game-Engine Logic ('game_sec_vault.js')
+  - Faktoren hinzufügen.
+  - Sicherheits-Score.
+- [ ] Integration
+  - Startbar über JSON.

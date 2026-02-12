@@ -1,0 +1,18 @@
+Anforderungen
+1. "2048 - Das Original"
+   - Ziel: Kombiniere Zahlen bis 2048.
+   - Spielmechanik: 
+     - Klassisches Schiebe-Puzzle.
+     - 2+2=4. 4+4=8. ... 1024+1024=2048.
+     - Messbarkeit: Erreiche 2048.
+   - Lernziel: Die Reihe 2^n auswendig lernen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_2048.json')
+  - `grid`: 4.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Grid-View.
+- [ ] Game-Engine Logic ('game_math_2048.js')
+  - Mini-Version von 2048 Logic.
+- [ ] Integration
+  - Startbar über JSON.

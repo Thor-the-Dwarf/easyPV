@@ -1,0 +1,18 @@
+Anforderungen
+3. "Der Struktur-Puzzler"
+   - Ziel: Bringe die Gliederung eines Lastenhefts in die logische Reihenfolge.
+   - Spielmechanik: 
+     - Teile: "Ausgangssituation", "Ziele", "Anforderungen", "Rahmenbedingungen", "Abnahmekriterien".
+     - Sortieren von 1 bis 5.
+     - Messbarkeit: Korrekte Norm-Struktur.
+   - Lernziel: Aufbau eines professionellen Lastenhefts kennen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_spec_struct.json')
+  - `sections`: ["intro", "state", "target", "interfaces"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Gliederungs-Puzzle.
+- [ ] Game-Engine Logic ('game_pm_spec_struct.js')
+  - Logischer Aufbau (Ist-Zustand -> Soll-Konzept).
+- [ ] Integration
+  - Startbar über JSON.

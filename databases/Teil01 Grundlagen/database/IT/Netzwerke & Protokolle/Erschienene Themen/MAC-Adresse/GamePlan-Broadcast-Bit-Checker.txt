@@ -1,0 +1,20 @@
+Anforderungen
+2. "Broadcast-Bit-Checker"
+   - Ziel: Ist es Unicast, Multicast oder Broadcast?
+   - Spielmechanik: 
+     - FF:FF:FF:FF:FF:FF -> Broadcast.
+     - 01:00:5E:xx:xx:xx -> Multicast (IPv4).
+     - 00:11:22:33:44:55 -> Unicast.
+     - Messbarkeit: 100% korrekte Klassifizierung.
+   - Lernziel: Spezielle MAC-Adressen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_mac_bits.json')
+  - `addresses`: ["FF:FF:FF:FF:FF:FF", "01:00:5E...", "00:11..."].
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Lupe über erstem Byte.
+- [ ] Game-Engine Logic ('game_mac_bits.js')
+  - Bit-Analyse (Ist Bit 0 gesetzt?).
+  - Klassifizierung Buttons.
+- [ ] Integration
+  - Startbar über JSON.

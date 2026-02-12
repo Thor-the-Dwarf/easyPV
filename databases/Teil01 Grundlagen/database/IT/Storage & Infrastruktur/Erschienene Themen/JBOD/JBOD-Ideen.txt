@@ -1,0 +1,46 @@
+1. "Just A Bunch Of Disks"
+   - Ziel: Erweitere den Speicher billig.
+   - Spielmechanik: 
+     - HDD 1: 500 GB. HDD 2: 1 TB.
+     - JBOD (Spanning): Windows sieht 1.5 TB Laufwerk D:.
+     - RAID 0: Würde nur 2x 500GB nutzen (Rest verschenkt).
+     - Messbarkeit: Maximale Kapazitätsausnutzung.
+   - Lernziel: Unterschied JBOD vs RAID.
+
+2. "Ausfall-Roulette"
+   - Ziel: Welche Daten sind weg?
+   - Spielmechanik: 
+     - JBOD über 3 Platten.
+     - Datei A liegt auf Platte 1. Datei B auf Platte 2.
+     - Platte 2 fällt aus.
+     - Ergebnis: Datei A noch da. Datei B weg. (Bei RAID 0 wäre ALLES weg).
+     - Messbarkeit: Verständnis des Fehlerverhaltens.
+   - Lernziel: Risikobewertung JBOD.
+
+3. "Kein Speed-Gewinn"
+   - Ziel: Vergleiche Performance.
+   - Spielmechanik: 
+     - Kopiere Datei auf JBOD -> Speed einer Platte (100 MB/s).
+     - Kopiere Datei auf RAID 0 -> Speed beider Platten (200 MB/s).
+     - JBOD ist NICHT schneller.
+     - Messbarkeit: Korrekte Erwartungshaltung.
+   - Lernziel: Performance-Eigenschaften.
+
+4. "Recycling-Hof"
+   - Ziel: Nutze alte Platten sinnvoll.
+   - Spielmechanik: 
+     - Kiste mit Platten: 80GB, 250GB, 500GB.
+     - Ziel: Ein großes "Datengrab" für unkritische Filme.
+     - RAID geht nicht (unterschiedliche Größen).
+     - JBOD geht -> Alles zusammenkleben.
+     - Messbarkeit: 830 GB Nutzkapazität.
+   - Lernziel: Use-Case für JBOD.
+
+5. "Einzellaufwerke Modus"
+   - Ziel: Verwalte die Laufwerksbuchstaben.
+   - Spielmechanik: 
+     - JBOD kann auch heißen: Jede Disk einzeln (D:, E:, F:).
+     - User will E: formatieren.
+     - D: und F: bleiben heil.
+     - Messbarkeit: Saubere Trennung.
+   - Lernziel: Konfigurationsarten.

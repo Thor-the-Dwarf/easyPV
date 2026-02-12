@@ -1,0 +1,21 @@
+Anforderungen
+3. "Der nächste Nachbar"
+   - Ziel: Finde die passende Potenz für den Speicher.
+   - Spielmechanik: 
+     - Datenmenge: 500 MB.
+     - RAM-Stick Größen: 256, 512, 1024.
+     - Wähle: 512 MB.
+     - Datenmenge: 513 MB.
+     - Wähle: 1024 MB (512 reicht nicht!).
+     - Messbarkeit: Nächsthöhere Potenz wählen.
+   - Lernziel: Hardware-Grenzen sind Potenzen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_power2_neighbor.json')
+  - `num`: 500.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Zahlenstrahl.
+- [ ] Game-Engine Logic ('game_math_power2_neighbor.js')
+  - Finde die nächste 2er Potenz (512).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,19 @@
+Anforderungen
+1. "Projekt oder Routine?"
+   - Ziel: Entscheide bei 10 Aufgaben: Ist das ein Projekt oder Tagesgeschäft (Linie)?
+   - Spielmechanik: 
+     - "Monatliche Lohnabrechnung". -> Routine.
+     - "Einführung neues Lohnsystem". -> Projekt.
+     - "Weltreise planen". -> Projekt.
+     - Messbarkeit: 100% korrekte Klassifizierung.
+   - Lernziel: Definition eines Projekts (Einmaligkeit, Zielvorgabe, Begrenzung) vs. Routine (Wiederholung).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_type.json')
+  - `tasks`: ["series", "project"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Sortier-Eimer.
+- [ ] Game-Engine Logic ('game_pm_type.js')
+  - Abgrenzung: Einmalig, Neuartig, Begrenzt (Projekt) vs Wiederkehrend (Prozess).
+- [ ] Integration
+  - Startbar über JSON.

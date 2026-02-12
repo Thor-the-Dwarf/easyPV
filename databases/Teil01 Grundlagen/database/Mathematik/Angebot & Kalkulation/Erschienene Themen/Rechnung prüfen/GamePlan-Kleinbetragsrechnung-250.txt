@@ -1,0 +1,19 @@
+Anforderungen
+5. "Kleinbetragsrechnung (< 250€)"
+   - Ziel: Was darf fehlen?
+   - Spielmechanik: 
+     - Tankquittung über 50€.
+     - Enthält Name des Kunden nicht.
+     - Ist das schlimm? Nein, bei Kleinbeträgen erlaubt.
+     - Messbarkeit: Korrekte Akzeptanz vereinfachter Rechnungen.
+   - Lernziel: Erleichterungen im Steuerrecht.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_small_invoice.json')
+  - `amount`: 200.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Kassenbon vs A4-Rechnung.
+- [ ] Game-Engine Logic ('game_math_small_invoice.js')
+  - Vereinfachte Pflichtangaben bis 250€.
+- [ ] Integration
+  - Startbar über JSON.

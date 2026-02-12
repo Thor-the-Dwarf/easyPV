@@ -1,0 +1,50 @@
+1. "SLA-Kalkulator"
+   - Ziel: Berechne, ob die Verfügbarkeit von 99,9% eingehalten wurde.
+   - Spielmechanik: 
+     - Monat hat 30 Tage (43.200 Minuten).
+     - Ausfallzeit war 1 Stunde (60 Min).
+     - 99,9% erlaubt 43 Minuten Ausfall.
+     - 60 > 43 -> SLA verletzt.
+     - Spieler muss "Verletzt" oder "Eingehalten" wählen.
+     - Messbarkeit: Korrekte mathematische Bewertung.
+   - Lernziel: Rechnen mit Verfügbarkeitsprozenten.
+
+2. "Der Pönale-Rechner"
+   - Ziel: Berechne die Vertragsstrafe korrekt.
+   - Spielmechanik: 
+     - Vertrag: "Pro angefangene Stunde Ausfall 500€ Strafe."
+     - Ausfall: 3 Stunden 10 Minuten.
+     - Rechnung: 4 x 500€ = 2000€.
+     - Multipe Choice: 1500€, 2000€, 1583€.
+     - Messbarkeit: Richtiges Ergebnis.
+   - Lernziel: Finanzielle Konsequenzen von SLAs.
+
+3. "Reaktionszeit vs. Wiederherstellung"
+   - Ziel: Unterscheide die Zeiten im Ticket-System.
+   - Spielmechanik: 
+     - SLA: Reaktion 1h, Lösung 4h.
+     - 10:00 Uhr: Ticket kommt.
+     - 10:30 Uhr: "Wir kümmern uns" (Reaktion OK).
+     - 14:15 Uhr: "Server läuft wieder" (Lösung > 4h -> Verletzt!).
+     - Spieler muss den Status der beiden SLAs bewerten.
+     - Messbarkeit: Zeitdifferenzen korrekt interpretieren.
+   - Lernziel: SLA-Metriken.
+
+4. "KPI-Dashboard-Builder"
+   - Ziel: Wähle die richtigen KPIs für ein Service-Level-Reporting.
+   - Spielmechanik: 
+     - Kunde will Bericht über "Performance".
+     - Bausteine: "Uptime", "Antwortzeit", "Wetter", "Mitarbeiterlaune".
+     - Spieler zieht messbare, relevante KPIs in den Bericht.
+     - Messbarkeit: Relevanz der gewählten Kennzahlen.
+   - Lernziel: Messgrößen für Dienstleistungsqualität.
+
+5. "Der Wartungsfenster-Planer"
+   - Ziel: Plane Wartung so, dass sie nicht als Ausfall zählt.
+   - Spielmechanik: 
+     - SLA erlaubt Wartung Sonntags 02:00 - 06:00 Uhr.
+     - Aufgabe: "Update einspielen (Dauer 3h)".
+     - Spieler schiebt Termin auf Montag 10 Uhr -> Alarm! (SLA-Bruch).
+     - Spieler schiebt auf So 03:00 -> Ok.
+     - Messbarkeit: Einhaltung der vereinbarten Ausnahmen.
+   - Lernziel: Unterschied geplante vs. ungeplante Downtime.

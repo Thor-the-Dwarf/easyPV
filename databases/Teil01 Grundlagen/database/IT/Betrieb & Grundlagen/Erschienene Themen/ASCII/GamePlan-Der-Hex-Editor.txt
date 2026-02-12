@@ -1,0 +1,20 @@
+Anforderungen
+2. "Der Hex-Editor"
+   - Ziel: Manipuliere einen Text, indem du die Hex-Werte änderst.
+   - Spielmechanik: 
+     - Text: "Hallo". Hex: 48 61 6C 6C 6F.
+     - Aufgabe: Mach daraus "Halls". (Ändere 6F zu 73).
+     - Spieler tippt Hex-Code ein.
+     - Messbarkeit: Zielwort erreicht.
+   - Lernziel: Hexadezimale Darstellung von ASCII.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_hex_edit.json')
+  - `text`: "Hallo", `target`: "Halls".
+- [ ] Shared CSS Check ('basics_general.css')
+  - Hex-Grid View (wie HxD).
+- [ ] Game-Engine Logic ('game_basics_hex_edit.js')
+  - Input-Validierung (0-9, A-F).
+  - Live-Update ASCII Spalte.
+- [ ] Integration
+  - Startbar über JSON.

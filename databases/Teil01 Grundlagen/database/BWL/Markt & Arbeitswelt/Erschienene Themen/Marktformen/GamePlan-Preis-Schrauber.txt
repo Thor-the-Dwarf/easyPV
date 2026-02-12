@@ -1,0 +1,21 @@
+Anforderungen
+2. "Preis-Schrauber"
+   - Ziel: Simuliere die Preissetzungsmacht in verschiedenen Marktformen.
+   - Spielmechanik: 
+     - Szenario 1: Du bist Monopolist (Wasserwerk). Erhöhe Preis um 50%. Reaktion: Kunden müssen zahlen -> Umsatz steigt.
+     - Szenario 2: Du bist Polypolist (Bäcker). Erhöhe Preis um 50%. Reaktion: Kunden gehen zur Konkurrenz -> Umsatz 0.
+     - Spieler muss für 3 Szenarien den Gewinn maximieren durch richtige Preisstrategie.
+     - Messbarkeit: Erreichter Gewinn im Vergleich zum maximal Möglichen.
+   - Lernziel: Verständnis der Preisbildung und Konkurrenzsituation.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_markt_preis.json')
+  - `scenarios`: { "type": "Monopol", "elasticity": 0.5 }.
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Preis-Regler.
+  - Umsatz-Kurve (Canvas CanvasChart?).
+- [ ] Game-Engine Logic ('game_markt_preis.js')
+  - Mathe-Modell: Preis * Menge(Preis) = Umsatz.
+  - Menge sinkt je nach Elastizität.
+- [ ] Integration
+  - Startbar über JSON.

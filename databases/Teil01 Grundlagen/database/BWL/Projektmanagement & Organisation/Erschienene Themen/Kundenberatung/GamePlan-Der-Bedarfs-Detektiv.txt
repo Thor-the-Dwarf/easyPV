@@ -1,0 +1,20 @@
+Anforderungen
+3. "Der Bedarfs-Detektiv"
+   - Ziel: Finde durch Fragen heraus, was der Kunde *wirklich* braucht.
+   - Spielmechanik: 
+     - Verdecktes Kundenprofil (z.B. "will Status").
+     - Spieler stellt Fragen.
+     - Am Ende Produktvorschlag: "Goldene Uhr" (Status) oder "Robuste Uhr" (Funktion).
+     - Trefferwahrscheinlichkeit steigt mit Anzahl sinnvoller Fragen.
+     - Messbarkeit: Korrektes Produkt verkauft = 100%.
+   - Lernziel: Kaufmotive erkennen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_sales_needs.json')
+  - `questions`: ["open", "closed"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Dialog-System.
+- [ ] Game-Engine Logic ('game_pm_sales_needs.js')
+  - Offene Fragen stellen ("Wofür brauchen Sie...").
+- [ ] Integration
+  - Startbar über JSON.

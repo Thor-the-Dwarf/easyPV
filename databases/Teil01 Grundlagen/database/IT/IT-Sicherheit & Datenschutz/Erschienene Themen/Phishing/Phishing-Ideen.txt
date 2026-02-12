@@ -1,0 +1,48 @@
+1. "URL-Detektiv"
+   - Ziel: Unterscheide echte URL von Fake URL (Typosquatting).
+   - Spielmechanik: 
+     - "paypal.com" -> Echt.
+     - "paypaI.com" (Großes i) -> Fake.
+     - "paypal-login-secure.de" -> Fake.
+     - "amazon.de" -> Echt.
+     - Messbarkeit: 10 URLs in 60s prüfen. Fehler = Account gehackt.
+   - Lernziel: Genaues Lesen von Domains.
+
+2. "Header-Analyzer"
+   - Ziel: Wer ist der wahre Absender?
+   - Spielmechanik: 
+     - Anzeige Name: "Chef".
+     - Header "From": "ceo@firma.de".
+     - Header "Return-Path": "hacker@evil.ru".
+     - Warnung: Return-Path stimmt nicht mit From überein!
+     - Messbarkeit: Erkennung des Spoofings.
+   - Lernziel: Email-Header lesen.
+
+3. "Der CEO-Fraud (Enkeltrick)"
+   - Ziel: Überweise NICHT das Geld.
+   - Spielmechanik: 
+     - Mail vom "Chef": "Bin im Meeting, überweise sofort 10k an diesen Kunden, eilt sehr!"
+     - Druckaufbau.
+     - Richtige Reaktion: "Rückruf beim Chef" oder "Prozess einhalten".
+     - Falsche Reaktion: "Überweisen".
+     - Messbarkeit: Geld bleibt in der Firma.
+   - Lernziel: Psychologische Manipulation erkennen.
+
+4. "Link-Hover-Training"
+   - Ziel: Fahre mit der Maus über den Link, bevor du klickst.
+   - Spielmechanik: 
+     - Text im Button: "Hier klicken zur Verifikation".
+     - Tooltip zeigt: "http://bit.ly/xyz" oder "http://evil.com".
+     - Aufgabe: Entscheide Klick / Nicht-Klick.
+     - Messbarkeit: 0 Klicks auf schädliche Links.
+   - Lernziel: Mouse-Over Technik.
+
+5. "Die gefälschte Login-Seite"
+   - Ziel: Finde die 3 Fehler auf der Webseite.
+   - Spielmechanik: 
+     - Seite sieht aus wie Microsoft 365 Login.
+     - Fehler 1: Kein HTTPS (Schloss fehlt) oder Zertifikatsfehler.
+     - Fehler 2: URL "micosoft.com".
+     - Fehler 3: Design leicht verschoben.
+     - Messbarkeit: Alle Fehler markiert.
+   - Lernziel: Visuelle Prüfung von Landingpages.

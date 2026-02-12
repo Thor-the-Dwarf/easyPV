@@ -1,0 +1,19 @@
+Anforderungen
+2. "Der Forensiker"
+   - Ziel: Finde den Zeitpunkt des Hackerangriffs im Logfile.
+   - Spielmechanik: 
+     - Scrollbarer Text. Tausende Zeilen "User login ok".
+     - Plötzlich: "Failed login admin" (x50).
+     - Spieler muss die Zeile markieren, wo es losging (Brute Force Start).
+     - Messbarkeit: Zeitstempel korrekt identifiziert (+/- 1 Min).
+   - Lernziel: Mustererkennung in Logdaten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_log_forensic.json')
+  - `trigger`: "failed_login".
+- [ ] Shared CSS Check ('basics_admin.css')
+  - Log-Viewer (Texteditor mit Zeilennummern).
+- [ ] Game-Engine Logic ('game_basics_log_forensic.js')
+  - Anomalie finden und Highlighting.
+- [ ] Integration
+  - Startbar über JSON.

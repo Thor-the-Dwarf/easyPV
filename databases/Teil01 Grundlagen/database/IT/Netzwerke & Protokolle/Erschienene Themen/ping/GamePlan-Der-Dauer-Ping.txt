@@ -1,0 +1,21 @@
+Anforderungen
+4. "Der Dauer-Ping"
+   - Ziel: Überwache die Stabilität.
+   - Spielmechanik: 
+     - `ping -t`.
+     - Linie läuft... "Reply, Reply, Reply, Timeout, Reply".
+     - Paketverlust: 1%.
+     - Gaming unmöglich / VoIP stottert.
+     - Ursache suchen (z.B. WLAN-Interferenz).
+     - Messbarkeit: Erkennen von Packet Loss.
+   - Lernziel: Netzwerkqualität messen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ping_cont.json')
+  - `loss`: 0.05.
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Terminal-Output Scrolling.
+- [ ] Game-Engine Logic ('game_ping_cont.js')
+  - Erkennung von "Request timed out" Mustern.
+- [ ] Integration
+  - Startbar über JSON.

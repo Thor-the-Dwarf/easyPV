@@ -1,0 +1,20 @@
+Anforderungen
+4. "Wildcard vs. Single Domain"
+   - Ziel: Wähle den kostengünstigsten Zertifikatstyp.
+   - Spielmechanik: 
+     - Bedarf: "www.shop.de", "mail.shop.de", "dev.shop.de".
+     - Option A: 3x Single Zertifikate (Teuer).
+     - Option B: 1x Wildcard "*.shop.de" (Günstig, deckt alle Subdomains).
+     - Option C: Multi-Domain (SAN).
+     - Messbarkeit: Beste Wahl getroffen.
+   - Lernziel: Typen von Zertifikaten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_cert_type.json')
+  - `domains`: ["www", "mail", "dev"].
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Warenkorb für Zertifikate.
+- [ ] Game-Engine Logic ('game_sec_cert_type.js')
+  - Kostenrechnung (3x Single vs 1x Wildcard).
+- [ ] Integration
+  - Startbar über JSON.

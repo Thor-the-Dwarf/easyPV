@@ -1,0 +1,20 @@
+Anforderungen
+4. "Genehmigungs-Lauf"
+   - Ziel: Hole die Unterschrift vom Auftraggeber.
+   - Spielmechanik: 
+     - Dokument wird "eingereicht".
+     - Kunde hat Fragen (Rücksprache). Spieler muss antworten.
+     - Kunde: "Ist das im Preis drin?" -> Spieler: "Ja/Nein" (Verweis auf Vertrag).
+     - Ziel: Unterschrift sicherstellen.
+     - Messbarkeit: Anzahl der Iterationen bis zur Unterschrift.
+   - Lernziel: Pflichtenheft als Vertragsgrundlage.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_approve.json')
+  - `signers`: ["customer", "pm"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Unterschriften-Mappe.
+- [ ] Game-Engine Logic ('game_pm_approve.js')
+  - Prozesskette: Erst Pflichtenheft unterschreiben, dann coden!
+- [ ] Integration
+  - Startbar über JSON.

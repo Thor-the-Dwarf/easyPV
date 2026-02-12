@@ -1,0 +1,20 @@
+Anforderungen
+3. "Sprach-Neutralität"
+   - Ziel: Versteht das jeder Entwickler?
+   - Spielmechanik: 
+     - Pseudocode: `Setze i auf 0`. (Gut).
+     - Pseudocode: `i := 0;` (Pascal-Syntax -> Zu spezifisch).
+     - Pseudocode: `int i = 0;` (C-Syntax -> Zu spezifisch).
+     - Ziel: Ein Python- und ein Java-Entwickler müssen es beide verstehen.
+     - Messbarkeit: Abstraktionsgrad bewerten.
+   - Lernziel: Kommunikation im Team.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_code_neutral.json')
+  - `phrases`: ["SET x TO 5", "x = 5;"].
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Flaggensymbol (Neutral).
+- [ ] Game-Engine Logic ('game_code_neutral.js')
+  - Syntax entfernen, reine Logik behalten.
+- [ ] Integration
+  - Startbar über JSON.

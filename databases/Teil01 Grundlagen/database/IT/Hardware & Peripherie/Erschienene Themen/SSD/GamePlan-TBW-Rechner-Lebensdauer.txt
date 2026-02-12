@@ -1,0 +1,22 @@
+Anforderungen
+2. "TBW-Rechner (Lebensdauer)"
+   - Ziel: Wie lange hält die SSD?
+   - Spielmechanik: 
+     - TBW (Terabytes Written): 600 TB.
+     - Täglicher Schreibwert: 50 GB.
+     - Formel: 600.000 / 50 = 12.000 Tage.
+     - Frage: "Hält sie 10 Jahre?" (3650 Tage).
+     - Antwort: Ja.
+     - Messbarkeit: Korrekte Haltbarkeitsprognose.
+   - Lernziel: Verschleiß von Flash-Speicher.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ssd_tbw.json')
+  - `tbw`: 600.
+  - `dailyWrite`: 50.
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Lebensbalken / Kalender.
+- [ ] Game-Engine Logic ('game_ssd_tbw.js')
+  - Mathe-Rechner Eingabe.
+- [ ] Integration
+  - Startbar über JSON.

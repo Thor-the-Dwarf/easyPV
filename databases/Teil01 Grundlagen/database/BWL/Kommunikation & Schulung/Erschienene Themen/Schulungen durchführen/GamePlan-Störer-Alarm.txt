@@ -1,0 +1,21 @@
+Anforderungen
+4. "Störer-Alarm"
+   - Ziel: Reagiere adäquat auf 4 typische Störungen im Seminar.
+   - Spielmechanik: 
+     - Situation: "Teilnehmer spielt am Handy."
+     - Optionen: A: Anschreien. B: Ignorieren. C: Frage stellen/Einbinden. D: Rauswerfen.
+     - Situation: "Zwei unterhalten sich laut."
+     - Messbarkeit: Wahl der pädagogisch sinnvollsten Reaktion (meist C oder freundlicher Hinweis) gibt Punkte. Eskalation gibt Abzug.
+   - Lernziel: Souveräner Umgang mit Störungen / Classroom Management.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_training_disrupt.json')
+  - `disruptions`: "Handy-Spieler".
+  - `reactions`: [ { "action": "Ignorieren", "score": -10 }, { "action": "Einbinden", "score": 20 } ].
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Szenario-Bild/Beschreibung.
+  - Reaktions-Karten.
+- [ ] Game-Engine Logic ('game_training_disrupt.js')
+  - Auswahl & Konsequenz (Text-Feedback).
+- [ ] Integration
+  - Startbar über JSON.

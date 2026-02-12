@@ -1,0 +1,19 @@
+Anforderungen
+5. "Banner-Grabbing-Schutz"
+   - Ziel: Verstecke die Versionsnummern des Servers.
+   - Spielmechanik: 
+     - Hacker scannt: "Apache 2.4.1 (Ubuntu)". -> Findet Exploit für 2.4.1.
+     - Admin (Spieler) ändert Config: "ServerSignature Off", "ServerTokens Prod".
+     - Hacker scannt: "Apache". -> Findet keinen spezifischen Exploit.
+     - Messbarkeit: Erfolgreiche Verschleierung (Security by Obscurity als Zusatz).
+   - Lernziel: Information Disclosure verhindern.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_banner.json')
+  - `signature`: "Apache 2.4.1".
+- [ ] Shared CSS Check ('security_defense.css')
+  - Server-Config Datei & Terminal Output.
+- [ ] Game-Engine Logic ('game_sec_banner.js')
+  - Scanner-Output vor/nach Härtung.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+2. "Kommentar-Match"
+   - Ziel: Welcher Kommentar passt zum Block?
+   - Spielmechanik: 
+     - Code: "if (age < 18) { return; }"
+     - Kommentar A: "Prüfe ob volljährig, sonst Abbruch".
+     - Kommentar B: "Alter muss genau 18 sein".
+     - Kommentar C: "Gebe das Alter zurück".
+     - Messbarkeit: 100% korrekte Zuordnung.
+   - Lernziel: Code-Verständnis dokumentieren.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_code_comment_match.json')
+  - `comments`: ["loop start", "init"].
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Zuordnen Code <-> Kommentar.
+- [ ] Game-Engine Logic ('game_code_comment_match.js')
+  - Was macht dieser Block?
+- [ ] Integration
+  - Startbar über JSON.

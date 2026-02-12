@@ -1,0 +1,19 @@
+Anforderungen
+1. "Berater-Rollen-Quiz"
+   - Ziel: Ordne 5 Aufgaben der Rolle "Externer Berater" oder "Interner Projektleiter" zu.
+   - Spielmechanik: 
+     - Aufgabe: "Methoden-Coaching". -> Berater.
+     - Aufgabe: "Personalverantwortung / Disziplinarisch". -> Projektleiter (Meist intern).
+     - Aufgabe: "Neutraler Blick von außen". -> Berater.
+     - Messbarkeit: Korrekte Rollenschärfung.
+   - Lernziel: Aufgaben und Grenzen eines Projektberaters.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_consult_roles.json')
+  - `roles`: ["expert", "coach", "facilitator"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Rollenkarten.
+- [ ] Game-Engine Logic ('game_pm_consult_roles.js')
+  - Abgrenzung: Wann coach ich, wann gebe ich Rat?
+- [ ] Integration
+  - Startbar über JSON.

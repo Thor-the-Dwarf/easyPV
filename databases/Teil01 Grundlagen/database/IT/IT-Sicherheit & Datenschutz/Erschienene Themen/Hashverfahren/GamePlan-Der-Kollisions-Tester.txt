@@ -1,0 +1,19 @@
+Anforderungen
+1. "Der Kollisions-Tester"
+   - Ziel: Erzeuge zwei verschiedene Inputs, die den gleichen Hash haben (theoretisch).
+   - Spielmechanik: 
+     - MD5 (unsicher). Spieler ändert ein Bit in Datei A. Hash ändert sich komplett (Avalanche Effect).
+     - Aber: Findet er eine Kollision? (Bei MD5 heute machbar, im Spiel simuliert).
+     - Messbarkeit: Verständnis, dass Hashfunktion eigentlich kollisionsfrei sein sollte.
+   - Lernziel: Einweg-Funktion und Kollisionsresistenz.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_preimage.json')
+  - `algo`: "md5".
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Datei-Hex-Editor (simuliert).
+- [ ] Game-Engine Logic ('game_sec_preimage.js')
+  - Bit-Flip -> Hash Avalanche.
+  - Kollision (simuliert da real zu aufwendig).
+- [ ] Integration
+  - Startbar über JSON.

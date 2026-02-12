@@ -1,0 +1,21 @@
+Anforderungen
+5. "Container-Checker"
+   - Ziel: Was steckt im Container? (Video/Audio Codecs).
+   - Spielmechanik: 
+     - Datei: "Film.mkv".
+     - Inhalt analysieren: Videostream (H.264), Audiostream (MP3), Untertitel (SRT).
+     - Frage: "Kann Player X (unterstützt nur H.265) das abspielen?"
+     - Antwort: Nein.
+     - Messbarkeit: Korrekte Kompatibilitätsprüfung.
+   - Lernziel: Unterschied zwischen Container (MKV, AVI) und Codec.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_container.json')
+  - `file`: "movie.mkv".
+- [ ] Shared CSS Check ('basics_general.css')
+  - Analyse-Tool UI (MediaInfo Style).
+- [ ] Game-Engine Logic ('game_basics_container.js')
+  - Streams (Video, Audio, Sub) identifizieren.
+  - Codec-Check.
+- [ ] Integration
+  - Startbar über JSON.

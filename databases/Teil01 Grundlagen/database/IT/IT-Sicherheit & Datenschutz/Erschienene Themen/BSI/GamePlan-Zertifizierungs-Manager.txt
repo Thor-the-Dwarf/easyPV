@@ -1,0 +1,18 @@
+Anforderungen
+5. "Zertifizierungs-Manager"
+   - Ziel: Bringe das Unternehmen zur ISO 27001 Zertifizierung auf Basis von Grundschutz.
+   - Spielmechanik: 
+     - Schritte: 1. Strukturanalyse, 2. Schutzbedarf, 3. Modellierung, 4. Basis-Sicherheitscheck.
+     - Spieler muss die richtige Reihenfolge einhalten.
+     - Messbarkeit: Erfolgreicher Audit-Abschluss.
+   - Lernziel: Ablauf einer BSI-Zertifizierung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_cert_man.json')
+  - `steps`: ["struct", "need", "model", "check"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Prozess-Fortschrittsbalken.
+- [ ] Game-Engine Logic ('game_sec_cert_man.js')
+  - Reihenfolge sortieren.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,22 @@
+Anforderungen
+4. "RAID im NAS"
+   - Ziel: Eine Platte stirbt, Daten bleiben.
+   - Spielmechanik: 
+     - 2-Bay NAS.
+     - RAID 1 (Spiegelung) eingerichtet.
+     - Spieler zieht Platte 1 raus (Simulation Defekt).
+     - NAS piept, aber Daten sind via Platte 2 noch da.
+     - Spieler steckt neue Platte rein -> "Rebuild" startet.
+     - Messbarkeit: Kein Datenverlust.
+   - Lernziel: RAID-Level für Heim/SOHO.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_nas_raid.json')
+  - `bays`: 2. `raid`: 1.
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - NAS mit herausziehbaren Trays.
+- [ ] Game-Engine Logic ('game_nas_raid.js')
+  - Hot-Swap Simulation.
+  - Rebuild-Statusanzeige.
+- [ ] Integration
+  - Startbar über JSON.

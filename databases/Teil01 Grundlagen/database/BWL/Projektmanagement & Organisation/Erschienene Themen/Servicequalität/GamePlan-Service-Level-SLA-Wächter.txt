@@ -1,0 +1,21 @@
+Anforderungen
+3. "Service-Level (SLA) Wächter"
+   - Ziel: Erfülle den SLA (z.B. "Antwort in 4h").
+   - Spielmechanik: 
+     - Tickets kommen rein mit Timer.
+     - Ticket A (läuft in 1h ab), Ticket B (läuft in 10 Min ab).
+     - Spieler muss B zuerst bearbeiten.
+     - Wenn Timer abläuft -> SLA Bruch (Strafe).
+     - Messbarkeit: Eingehaltene SLAs in %.
+   - Lernziel: Priorisierung nach Service-Levels.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_sla_monitor.json')
+  - `status`: ["green", "yellow", "red"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Monitoring Dashboard.
+- [ ] Game-Engine Logic ('game_pm_sla_monitor.js')
+  - Echtzeit-Überwachung simuliert.
+  - Eskalation bei Rot.
+- [ ] Integration
+  - Startbar über JSON.

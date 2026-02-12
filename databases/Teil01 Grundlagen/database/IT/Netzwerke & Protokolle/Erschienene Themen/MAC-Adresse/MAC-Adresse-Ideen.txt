@@ -1,0 +1,46 @@
+1. "Hersteller-Detektiv (OUI)"
+   - Ziel: Identifiziere das Gerät anhand der MAC-Adresse.
+   - Spielmechanik: 
+     - MAC: "00:1A:11:XX:XX:XX". -> Google (Nest).
+     - MAC: "BC:5F:F4:XX:XX:XX". -> ASRock.
+     - MAC: "DC:A6:32:XX:XX:XX". -> Raspberry Pi.
+     - Messbarkeit: Korrekte Zuordnung Hersteller <-> OUI.
+   - Lernziel: Aufbau der MAC (OUI + NIC).
+
+2. "Broadcast-Bit-Checker"
+   - Ziel: Ist es Unicast, Multicast oder Broadcast?
+   - Spielmechanik: 
+     - FF:FF:FF:FF:FF:FF -> Broadcast.
+     - 01:00:5E:xx:xx:xx -> Multicast (IPv4).
+     - 00:11:22:33:44:55 -> Unicast.
+     - Messbarkeit: 100% korrekte Klassifizierung.
+   - Lernziel: Spezielle MAC-Adressen.
+
+3. "Der MAC-Filter"
+   - Ziel: Sichere das WLAN (altmodisch).
+   - Spielmechanik: 
+     - Router erlaubt nur MAC A und MAC B.
+     - Gerät C (Hacker) will rein. -> Blockiert.
+     - Gerät C ändert MAC auf MAC A (Spoofing). -> Kommt rein.
+     - Messbarkeit: Verständnis, dass MAC-Filter kein echter Schutz sind.
+   - Lernziel: MAC-Spoofing und Sicherheit.
+
+4. "Switch-Table-Builder"
+   - Ziel: Fülle die SAT (Source Address Table).
+   - Spielmechanik: 
+     - Switch ist leer.
+     - Paket kommt von PC A (Port 1) an PC B (Port 2).
+     - Switch lernt: "MAC A liegt an Port 1".
+     - Paket kommt von PC B an PC A.
+     - Switch weiß: "A ist an 1", leitet direkt weiter (kein Flodding).
+     - Messbarkeit: Korrekte Einträge in der Tabelle.
+   - Lernziel: Learning-Funktion vom Switch.
+
+5. "Physikalisch vs Logisch"
+   - Ziel: Unterscheide MAC und IP.
+   - Spielmechanik: 
+     - Reise durch das Netz über 3 Router.
+     - Frage: "Ändert sich die Quell-IP?" -> Nein.
+     - Frage: "Ändert sich die Quell-MAC?" -> Ja (bei jedem Hop).
+     - Messbarkeit: Korrektes Verständnis der Adress-Änderung beim Routing.
+   - Lernziel: Layer 2 vs Layer 3 Adressierung.

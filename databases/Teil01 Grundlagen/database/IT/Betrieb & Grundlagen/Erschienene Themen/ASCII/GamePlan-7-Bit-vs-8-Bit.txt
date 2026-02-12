@@ -1,0 +1,19 @@
+Anforderungen
+5. "7-Bit vs 8-Bit"
+   - Ziel: Welche Zeichen passen in 7-Bit ASCII (US) und welche brauchen Extended (8-Bit)?
+   - Spielmechanik: 
+     - Zeichen fallen: "A", "ä", "$", "ß", "@", "€".
+     - Eimer links: "Standard ASCII (0-127)". Eimer rechts: "Extended / Unicode".
+     - "ä" -> Rechts. "A" -> Links.
+     - Messbarkeit: Korrekte Sortierung.
+   - Lernziel: Grenzen des Standard-ASCII Codes.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_ascii_7vs8.json')
+  - `chars`: ["A", "ä", "$", "ß"].
+- [ ] Shared CSS Check ('basics_general.css')
+  - Zwei-Eimer-Sys (Links/Rechts).
+- [ ] Game-Engine Logic ('game_basics_ascii_7vs8.js')
+  - Drag & Drop Sortierung (0-127 vs 128-255).
+- [ ] Integration
+  - Startbar über JSON.

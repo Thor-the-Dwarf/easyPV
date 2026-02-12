@@ -1,0 +1,22 @@
+Anforderungen
+4. "Broadcast-Jäger"
+   - Ziel: Wie sieht ein ARP-Request aus?
+   - Spielmechanik: 
+     - Wireshark-Ansicht.
+     - Ziel-MAC im Request: FF:FF:FF:FF:FF:FF (Broadcast).
+     - Frage: "Wer hört das?" -> Alle im Subnetz.
+     - Frage: "Geht das über den Router?" -> Nein.
+     - Messbarkeit: Verständnis der Broadcast-Domain.
+   - Lernziel: Scope von ARP.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_arp_bcast.json')
+  - `packet`: "ARP Request".
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Wireshark-ähnliche Listenansicht.
+  - Netzwerk-Karte (Wer leuchtet auf?).
+- [ ] Game-Engine Logic ('game_arp_bcast.js')
+  - Broadcast-Propagation (Alle außer Sender blinken).
+  - Router-Blockade (Broadcast stoppt am Router).
+- [ ] Integration
+  - Startbar über JSON.

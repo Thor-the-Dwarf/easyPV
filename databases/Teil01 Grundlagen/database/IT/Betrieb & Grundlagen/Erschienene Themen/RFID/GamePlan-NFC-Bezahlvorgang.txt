@@ -1,0 +1,21 @@
+Anforderungen
+5. "NFC-Bezahlvorgang"
+   - Ziel: Sichere Kommunikation im Nahfeld (Near Field Communication).
+   - Spielmechanik: 
+     - Abstand Simulator.
+     - Karte 10cm weg -> Geht nicht.
+     - Karte 2cm weg -> Kopplung erfolgt.
+     - Energieübertragung startet (Induktion).
+     - Messbarkeit: Erfolgreiche Transaktion durch korrekten Abstand.
+   - Lernziel: Wirkprinzip induktive Kopplung (HF).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_nfc.json')
+  - `distance`: 10.
+- [ ] Shared CSS Check ('basics_hardware.css')
+  - Terminal und Smartphone.
+- [ ] Game-Engine Logic ('game_basics_nfc.js')
+  - Abstands-Check (< 4cm).
+  - Kopplungssignal.
+- [ ] Integration
+  - Startbar über JSON.

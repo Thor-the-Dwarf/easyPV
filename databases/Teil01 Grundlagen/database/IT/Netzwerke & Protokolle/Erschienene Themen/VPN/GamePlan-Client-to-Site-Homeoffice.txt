@@ -1,0 +1,22 @@
+Anforderungen
+2. "Client-to-Site (Homeoffice)"
+   - Ziel: Wähle dich ins Firmennetz ein.
+   - Spielmechanik: 
+     - Mitarbeiter im Hotel (WLAN unsicher).
+     - VPN-Client starten.
+     - Tunnel baut auf.
+     - Virtuelle IP aus dem Firmennetz erhalten.
+     - Zugriff auf Fileserver möglich.
+     - Messbarkeit: Sicherer Zugriff von außen.
+   - Lernziel: Remote Access VPN.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_vpn_client.json')
+  - `user`: "remote".
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Laptop im Hotel (Hintergrund).
+  - VPN-Client Fenster.
+- [ ] Game-Engine Logic ('game_vpn_client.js')
+  - Connect-Button -> Tunnel-Animation -> Access granted.
+- [ ] Integration
+  - Startbar über JSON.

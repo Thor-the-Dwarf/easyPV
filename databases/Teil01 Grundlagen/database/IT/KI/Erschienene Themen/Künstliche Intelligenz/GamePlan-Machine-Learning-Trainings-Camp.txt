@@ -1,0 +1,24 @@
+Anforderungen
+2. "Machine Learning Trainings-Camp"
+   - Ziel: Trainiere ein KI-Modell, um Katzen von Hunden zu unterscheiden.
+   - Spielmechanik: 
+     - Phase 1: Labeling. Bilder werden gezeigt. Spieler klickt "Katze" oder "Hund", um Ground Truth zu erzeugen.
+     - Phase 2: Training. Modell lernt (Balken füllt sich).
+     - Phase 3: Test. Neue Bilder kommen. Modell rät.
+     - Wenn Trainingsdaten schlecht waren (Falsche Labels) -> Modell versagt.
+     - Messbarkeit: Accuracy des Modells > 90%.
+   - Lernziel: Supervised Learning Prozess (Datenqualität).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ai_ml_training.json')
+  - `images`: ["cat", "dog", "cat", "dog"].
+  - `threshold`: 0.9.
+- [ ] Shared CSS Check ('ai_basics.css')
+  - Trainings-Fortschrittsbalken.
+  - Bild-Klassifikator UI.
+- [ ] Game-Engine Logic ('game_ai_ml_training.js')
+  - Labeling-Phase.
+  - Training-Phase (Visualisierung Loss-Funktion).
+  - Test-Phase.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,19 @@
+Anforderungen
+3. "Gewinn-Maximierer"
+   - Ziel: Wo ist der größte Hebel?
+   - Spielmechanik: 
+     - Szenario A: Einkaufspreis um 5% senken. -> Gewinn +20%.
+     - Szenario B: Verkaufsmenge um 5% steigern. -> Gewinn +5%.
+     - Einkauf ist meist der stärkste Hebel ("Im Einkauf liegt der Gewinn").
+     - Messbarkeit: Strategisch richtige Entscheidung.
+   - Lernziel: Sensitivitätsanalyse.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_profit_max.json')
+  - `cost`: 50, `elasticity`: "high".
+- [ ] Shared CSS Check ('math_basics.css')
+  - Regler Verkaufspreis.
+- [ ] Game-Engine Logic ('game_math_profit_max.js')
+  - Preiselastizität simpel (Preis hoch -> Menge runter -> Gewinn?).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,19 @@
+Anforderungen
+1. "Vom Text zum Code"
+   - Ziel: Übersetze die natürliche Sprache in Struktur.
+   - Spielmechanik: 
+     - Text: "Solange der Kunde nicht bezahlt hat, sende Mahnung."
+     - Pseudocode: `WHILE (Kunde.Bezahlt == FALSE) DO SendeMahnung() END`.
+     - Falsch: `IF (Kunde...)` (Sendet nur einmal, nicht "solange").
+     - Messbarkeit: Logik 1:1 abgebildet.
+   - Lernziel: Kontrollstrukturen erkennen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_code_text_to_pseudo.json')
+  - `text`: "Solange nicht fertig, weiter machen".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Übersetzungs-Pfeil.
+- [ ] Game-Engine Logic ('game_code_text_to_pseudo.js')
+  - "Solange" -> `WHILE`. "Wenn" -> `IF`.
+- [ ] Integration
+  - Startbar über JSON.

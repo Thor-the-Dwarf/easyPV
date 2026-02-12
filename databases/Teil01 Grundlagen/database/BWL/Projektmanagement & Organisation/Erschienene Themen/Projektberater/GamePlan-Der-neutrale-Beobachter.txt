@@ -1,0 +1,21 @@
+Anforderungen
+2. "Der neutrale Beobachter"
+   - Ziel: Identifiziere in einem Meeting 3 Projekt-Probleme, die der interne PL "betriebsblind" übersieht.
+   - Spielmechanik: 
+     - Dialog läuft.
+     - "Wir machen das wie immer." (Problem: Keine Innovation).
+     - "Der Chef will das so." (Problem: Hierarchie statt Sachgrund).
+     - Spieler klickt "Hier einhaken!".
+     - Messbarkeit: Gefundene blinde Flecken.
+   - Lernziel: Mehrwert des externen Blicks.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_observer.json')
+  - `perspective`: "external".
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Brille / Perspektivwechsel Icon.
+- [ ] Game-Engine Logic ('game_pm_observer.js')
+  - Betriebsblindheit aufdecken.
+  - Objektives Feedback geben.
+- [ ] Integration
+  - Startbar über JSON.

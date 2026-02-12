@@ -1,0 +1,21 @@
+Anforderungen
+1. "HTML-Struktur-Puzzler"
+   - Ziel: Baue das Grundgerüst.
+   - Spielmechanik: 
+     - Bausteine: `<html>`, `<head>`, `<body>`, `<title>`.
+     - Richtig: `<html>` aussen. `<head>` oben. `<body>` unten.
+     - `<title>` gehört in den `<head>`.
+     - `<h1>` gehört in den `<body>`.
+     - Messbarkeit: Valider DOM-Baum.
+   - Lernziel: HTML5 Boilerplate.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_html_struct.json')
+  - `tags`: ["html", "head", "body", "title", "h1"].
+- [ ] Shared CSS Check ('web_basics.css')
+  - DOM-Baum Visualisierung.
+- [ ] Game-Engine Logic ('game_web_html_struct.js')
+  - Drag & Drop in Baumstruktur.
+  - Validierung: title in head? h1 in body?
+- [ ] Integration
+  - Startbar über JSON.

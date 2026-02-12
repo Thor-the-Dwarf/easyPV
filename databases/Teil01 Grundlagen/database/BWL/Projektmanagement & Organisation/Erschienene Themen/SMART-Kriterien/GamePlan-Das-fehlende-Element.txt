@@ -1,0 +1,20 @@
+Anforderungen
+5. "Das fehlende Element"
+   - Ziel: Welcher SMART-Teil fehlt?
+   - Spielmechanik: 
+     - Satz: "Wir steigern den Umsatz um 10%." (Termin fehlt!).
+     - Auswahl: S, M, A, R oder T?
+     - Spieler wählt "T".
+     - Messbarkeit: Lücke erkennen.
+   - Lernziel: Analyse unvollständiger Ziele.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_smart_missing.json')
+  - `examples`: ["incomplete_goals"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Lückentext-Generator.
+- [ ] Game-Engine Logic ('game_pm_smart_missing.js')
+  - Analyse: Was fehlt? (z.B. Termin).
+  - Ergänzen.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,21 @@
+Anforderungen
+2. "Freibleibend vs Bindend"
+   - Ziel: Komm aus der Nummer wieder raus.
+   - Spielmechanik: 
+     - Angebot A: "Gültig bis 31.12.". (Bindend).
+     - Angebot B: "Solange Vorrat reicht". (Freibleibend).
+     - Szenario: Lager leer.
+     - Bei A: Schadensersatzpflicht!
+     - Bei B: "Leider ausverkauft" (Kein Problem).
+     - Messbarkeit: Richtiges Klausel gewählt.
+   - Lernziel: Bindungswirkung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_offer_binding.json')
+  - `clause`: "freibleibend".
+- [ ] Shared CSS Check ('math_basics.css')
+  - Ampel (Grün = Bindend, Gelb = Freibleibend).
+- [ ] Game-Engine Logic ('game_math_offer_binding.js')
+  - Rechtswirkung von Freizeichnungsklauseln.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,22 @@
+Anforderungen
+4. "Multipathing (MPIO)"
+   - Ziel: Überlebe den Kabelbruch.
+   - Spielmechanik: 
+     - Server hat 2 HBA-Karten. Storage hat 2 Controller.
+     - 4 Pfade möglich.
+     - Ohne MPIO: Server sieht 4x die gleiche Festplatte (Verwirrung!).
+     - Mit MPIO: Server sieht 1 Festplatte mit 4 Wegen.
+     - Kabel ziehen -> Traffic schwenkt um.
+     - Messbarkeit: Redundanter Zugriff.
+   - Lernziel: Pfad-Redundanz.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_san_mpio.json')
+  - `paths`: 4.
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Mehrere "Kabel"-Verbindungen.
+- [ ] Game-Engine Logic ('game_san_mpio.js')
+  - Ein Kabel kappen -> Daten fließen über anderes.
+  - Ohne MPIO -> Fehler.
+- [ ] Integration
+  - Startbar über JSON.

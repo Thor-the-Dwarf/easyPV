@@ -1,0 +1,21 @@
+Anforderungen
+4. "Verhandlungs-Profi"
+   - Ziel: Drücke den Preis um 10% ohne die Beziehung zu gefährden.
+   - Spielmechanik: 
+     - Dialog mit Lieferant.
+     - Option A: "Zu teuer, tschüss." (Abbruch).
+     - Option B: "Wenn wir 1000 Stück mehr nehmen, geht noch was?" (Mengenrabatt).
+     - Option C: "Die Konkurrenz ist billiger." (Druck).
+     - Messbarkeit: Erreichter Rabatt bei positivem Beziehungsscore.
+   - Lernziel: Verhandlungsstrategien (Win-Win vs. Win-Lose).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_negotiation.json')
+  - `style`: "win_win".
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Verhandlungstisch / Dialog UI.
+- [ ] Game-Engine Logic ('game_pm_negotiation.js')
+  - BATNA (Best Alternative To a Negotiated Agreement) finden.
+  - Harvard-Konzept anwenden.
+- [ ] Integration
+  - Startbar über JSON.

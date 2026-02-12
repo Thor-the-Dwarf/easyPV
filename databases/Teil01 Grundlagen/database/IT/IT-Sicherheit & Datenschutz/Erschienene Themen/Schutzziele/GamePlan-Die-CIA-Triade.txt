@@ -1,0 +1,19 @@
+Anforderungen
+1. "Die CIA-Triade"
+   - Ziel: Ordne Verletzungen dem Schutzziel zu.
+   - Spielmechanik: 
+     - "Passwortliste veröffentlicht". -> Vertraulichkeit (Confidentiality) verletzt.
+     - "Webseite per DDoS offline". -> Verfügbarkeit (Availability) verletzt.
+     - "Kontodaten in DB manipuliert". -> Integrität (Integrity) verletzt.
+     - Messbarkeit: 100% Zuordnung.
+   - Lernziel: CIA / VIV Definitionen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_cia_triad.json')
+  - `breaches`: ["leak", "ddos", "manipulation"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Triade Visualisierung (Interaktiv).
+- [ ] Game-Engine Logic ('game_sec_cia_triad.js')
+  - Verletzung zuordnen.
+- [ ] Integration
+  - Startbar über JSON.

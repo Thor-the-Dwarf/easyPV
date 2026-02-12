@@ -1,0 +1,20 @@
+Anforderungen
+3. "Dispo-Falle"
+   - Ziel: Vermeide teure Überziehung.
+   - Spielmechanik: 
+     - Konto im Minus: 1000€.
+     - Dispo-Zins: 12%.
+     - Kreditkarte wäre: 0% (wenn in 30 Tagen gezahlt) oder Ratenkredit: 5%.
+     - Aufgabe: Umschulden.
+     - Messbarkeit: Zinskosten minimiert.
+   - Lernziel: Verschiedene Zinssätze im Alltag.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_overdraft.json')
+  - `limit`: -500.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Roter Kontostand.
+- [ ] Game-Engine Logic ('game_math_overdraft.js')
+  - Teure Zinsen berechnen (12-15%).
+- [ ] Integration
+  - Startbar über JSON.

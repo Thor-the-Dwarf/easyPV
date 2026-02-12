@@ -1,0 +1,20 @@
+Anforderungen
+1. "Stakeholder-Mapping"
+   - Ziel: Platziere 5 Stakeholder korrekt in der Matrix (Einfluss vs. Interesse).
+   - Spielmechanik: 
+     - "CEO" (Hoher Einfluss, Hohes Interesse). -> Oben rechts (Key Player).
+     - "Anwohner bei Bauprojekt" (Wenig Einfluss, Hohes Interesse). -> Unten rechts (Informieren).
+     - "Lieferant für Büromaterial" (Wenig Einfluss, Wenig Interesse). -> Unten links.
+     - Messbarkeit: Korrekte Positionierung in der 4-Felder-Matrix.
+   - Lernziel: Stakeholder kategorisieren.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_stake_map.json')
+  - `groups`: ["internal", "external", "customer", "team"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Zwiebel-Modell / Kreise.
+- [ ] Game-Engine Logic ('game_pm_stake_map.js')
+  - Identifikation aller Gruppen.
+  - "Vergessene" Stakeholder finden.
+- [ ] Integration
+  - Startbar über JSON.

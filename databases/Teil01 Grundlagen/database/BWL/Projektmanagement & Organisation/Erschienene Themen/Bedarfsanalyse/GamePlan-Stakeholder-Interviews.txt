@@ -1,0 +1,37 @@
+Anforderungen
+5. "Stakeholder-Interviews"
+   - Ziel: Befrage alle 3 relevanten Abteilungen, um den Gesamtbedarf zu ermitteln.
+   - Spielmechanik: 
+     - Projekt: "Neues CRM".
+     - Klickbar: "Vertrieb", "IT", "Marketing".
+     - Wenn man einen vergisst (z.B. IT nicht gefragt), scheitert das Projekt am Ende ("Server inkompatibel").
+     - Messbarkeit: Vollständigkeit der Bedarfsanalyse.
+   - Lernziel: Vollständigkeit bei der Erhebung.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Die richtige Fragestellung im Interview.
+- [ ] Ziel: Wähle die effektivste Frage für den jeweiligen Stakeholder.
+
+2. Screen-Layout
+- [ ] Chat-Interface Metapher.
+- [ ] Stakeholder-Profilbild oben.
+- [ ] 3 Antwort-Optionen als Buttons unten.
+
+3. Browser- und Device-Resilienz
+- [ ] Mobile-First Styling.
+- [ ] Vermeidung von Überlappungen bei langen Texten.
+
+4. Kernvisuals
+- [ ] Personas (Icons oder Avatare).
+- [ ] Notizblock-Optik für die "Erkenntnisse".
+
+5. Interaktion und Feedback
+- [ ] Nach Auswahl: Reaktion des Stakeholders (Mimik-Änderung).
+- [ ] Kurze Erklärung, warum die Frage gut/schlecht war.
+
+6. KPI-Klarheit
+- [ ] "Zufriedenheit des Stakeholders" (Balken).
+
+7. QA-Paket
+- [ ] Text-Overflow Tests.

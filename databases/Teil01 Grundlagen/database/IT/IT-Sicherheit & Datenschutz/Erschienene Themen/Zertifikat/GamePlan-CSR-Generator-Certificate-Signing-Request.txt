@@ -1,0 +1,21 @@
+Anforderungen
+3. "CSR-Generator (Certificate Signing Request)"
+   - Ziel: Beantrage ein Zertifikat.
+   - Spielmechanik: 
+     - Schritt 1: Private Key erzeugen (Geheim halten!).
+     - Schritt 2: Public Key + Infos (CN, O, C) in CSR packen.
+     - Schritt 3: CSR an CA senden.
+     - Fehler: Private Key an CA senden (Sicherheitsbruch!).
+     - Messbarkeit: Sicherer Prozessablauf.
+   - Lernziel: Beantragungsprozess.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_csr.json')
+  - `cn`: "myshop.com".
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Terminal / Formular Wizard.
+- [ ] Game-Engine Logic ('game_sec_csr.js')
+  - KeyPair Gen.
+  - CSR erstellen ohne Private Key zu senden.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,19 @@
+Anforderungen
+5. "Public vs Private vs Hybrid"
+   - Ziel: Wo speicherst du die Patientendaten?
+   - Spielmechanik: 
+     - "Webseite Marketing" -> Public Cloud (Billig, skalierbar).
+     - "Patientenakte" -> Private Cloud / On-Prem (Datenschutz).
+     - "Verbindung" -> Hybrid Cloud.
+     - Messbarkeit: Compliance eingehalten.
+   - Lernziel: Deployment Models.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cloud_types.json')
+  - `data_types`: ["PublicWeb", "SensitivePatient"].
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Wolken-Icons (Öffentlich, Privat, Schloss).
+- [ ] Game-Engine Logic ('game_cloud_types.js')
+  - Sortier-Aufgabe (Wohin mit den Daten?).
+- [ ] Integration
+  - Startbar über JSON.

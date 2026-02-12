@@ -1,0 +1,19 @@
+Anforderungen
+5. "Das Wofür-Quiz"
+   - Ziel: Verstehe den Zweck des Lastenhefts.
+   - Spielmechanik: 
+     - Frage: "Warum schreiben wir das?"
+     - Antwortwahl: "Damit der Auftragnehmer ein Angebot kalkulieren kann" (Richtig) vs. "Damit wir Arbeit haben".
+     - Mehrere Szenarien.
+     - Messbarkeit: 5/5 korrekten Zweck erkannt.
+   - Lernziel: Lastenheft als Basis für Ausschreibung und Vertrag.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_spec_why.json')
+  - `purpose`: "requirements".
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Quiz-UI.
+- [ ] Game-Engine Logic ('game_pm_spec_why.js')
+  - Zweck verstehen: Grundlage für Angebot.
+- [ ] Integration
+  - Startbar über JSON.

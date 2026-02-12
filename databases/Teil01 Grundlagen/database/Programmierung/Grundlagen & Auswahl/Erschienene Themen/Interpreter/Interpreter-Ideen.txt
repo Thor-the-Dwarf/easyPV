@@ -1,0 +1,51 @@
+1. "Der Zeilen-Schrittmacher"
+   - Ziel: Debugge das Skript.
+   - Spielmechanik: 
+     - Button "Step Over".
+     - Zeiger springt von Zeile 1 auf 2.
+     - Variable ändert sich live.
+     - Fehler in Zeile 3 -> Crash.
+     - Erkenntnis: Ich konnte Zeile 1 und 2 noch sehen.
+     - Messbarkeit: Verständnis der sequentiellen Abarbeitung.
+   - Lernziel: Laufzeit-Verhalten.
+
+2. "REPL-Simulator"
+   - Ziel: Nutze die interaktive Konsole.
+   - Spielmechanik: 
+     - Eingabe: `2 + 2`. Enter.
+     - Ausgabe: `4`.
+     - Eingabe: `print("Hallo")`. Enter.
+     - Ausgabe: `Hallo`.
+     - Das ist der "Read-Eval-Print Loop".
+     - Messbarkeit: Direkte Interaktion nutzen.
+   - Lernziel: Schnelles Testen von Code.
+
+3. "Skript vs EXE"
+   - Ziel: Wie starte ich das?
+   - Spielmechanik: 
+     - Datei `script.py`. Doppelklick? -> Geht nur wenn Python installiert ist!
+     - Datei `game.exe`. Doppelklick? -> Geht immer.
+     - Aufgabe: Verschicke das Programm an Oma (hat kein Python).
+     - Lösung: Interpreter mitliefern oder kompilieren (PyInstaller).
+     - Messbarkeit: Abhängigkeit vom Interpreter verstehen.
+   - Lernziel: Runtime Environment.
+
+4. "Typisierung zur Laufzeit (Dynamisch)"
+   - Ziel: Ändere den Typ.
+   - Spielmechanik: 
+     - `a = 5` (Integer).
+     - `a = "Hallo"` (String).
+     - Interpreter meckert nicht (Dynamische Typisierung).
+     - Compiler-Sprache (Java) würde meckern (Statisch).
+     - Messbarkeit: Flexibilität erkennen.
+   - Lernziel: Typ-Systeme in Skriptsprachen.
+
+5. "Der langsame Loop"
+   - Ziel: Warum dauert das so lange?
+   - Spielmechanik: 
+     - Zähle bis 1 Million.
+     - C-Programm: 0.001 Sek.
+     - Python-Skript: 0.1 Sek.
+     - Interpreter muss jede Zeile bei jedem Durchlauf neu parsen/übersetzen.
+     - Messbarkeit: Overhead des Interpreters erkennen.
+   - Lernziel: Performance-Nachteile.

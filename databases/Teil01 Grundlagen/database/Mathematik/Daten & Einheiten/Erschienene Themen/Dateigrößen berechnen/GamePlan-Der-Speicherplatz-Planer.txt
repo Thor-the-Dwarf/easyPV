@@ -1,0 +1,21 @@
+Anforderungen
+2. "Der Speicherplatz-Planer"
+   - Ziel: Passt das auf den Stick?
+   - Spielmechanik: 
+     - USB-Stick: 4 GB.
+     - 1000 Fotos à 5 MB.
+     - Summe: 5000 MB = 5 GB.
+     - Passt nicht!
+     - Aufgabe: Kompression wählen oder Löschen.
+     - Messbarkeit: Stick nicht überfüllt.
+   - Lernziel: Kapazitätsplanung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_storage_plan.json')
+  - `drive`: 1000.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Festplatten-Torte.
+- [ ] Game-Engine Logic ('game_math_storage_plan.js')
+  - Wie viele 4GB Filme passen auf 1TB?
+- [ ] Integration
+  - Startbar über JSON.

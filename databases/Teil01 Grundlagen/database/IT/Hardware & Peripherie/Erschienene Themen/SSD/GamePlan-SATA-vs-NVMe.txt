@@ -1,0 +1,21 @@
+Anforderungen
+1. "SATA vs NVMe"
+   - Ziel: Wähle das richtige Protokoll für den M.2 Slot.
+   - Spielmechanik: 
+     - Board-Slot A: "M-Key (NVMe only)".
+     - Board-Slot B: "B-Key (SATA only)".
+     - SSD 1: NVMe (Eine Kerbe). SSD 2: SATA (Zwei Kerben).
+     - Spieler steckt falsch -> Geht nicht rein oder wird nicht erkannt.
+     - Messbarkeit: Funktionierende Laufwerke.
+   - Lernziel: M.2 ist nur der Formfaktor, nicht das Protokoll!
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ssd_protocol.json')
+  - `slots`: ["m_key", "b_key"].
+  - `drives`: ["nvme", "sata"].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - M.2 Stick Details (Keys).
+- [ ] Game-Engine Logic ('game_ssd_protocol.js')
+  - Steck-Logik (Passform).
+- [ ] Integration
+  - Startbar über JSON.

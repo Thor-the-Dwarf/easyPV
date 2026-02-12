@@ -1,0 +1,21 @@
+Anforderungen
+2. "Der Buch-Übersetzer (Compiler)"
+   - Ziel: Erzeuge die EXE.
+   - Spielmechanik: 
+     - Input: Source Code.
+     - Prozess: Kompilieren... (Ladebalken).
+     - Output: Binary (Maschinencode).
+     - Vorteil: Binary läuft ohne Source Code beim Kunden.
+     - Messbarkeit: Verständnis des Build-Prozesses.
+   - Lernziel: Distribution von Software.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_compiler.json')
+  - `steps`: ["parse", "link", "exe"].
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Buchdruckerei.
+- [ ] Game-Engine Logic ('game_prog_compiler.js')
+  - Ganzes "Buch" (Code) wird VORHER übersetzt.
+  - Syntaxfehler verhindern Erstellung.
+- [ ] Integration
+  - Startbar über JSON.

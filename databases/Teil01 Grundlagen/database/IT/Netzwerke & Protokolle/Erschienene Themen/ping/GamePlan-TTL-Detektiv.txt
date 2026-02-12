@@ -1,0 +1,19 @@
+Anforderungen
+1. "TTL-Detektiv"
+   - Ziel: Schätze das Betriebssystem oder die Hops anhand der TTL.
+   - Spielmechanik: 
+     - Ping Antwort: TTL=64. -> Linux/Mac (meistens) oder lokales Netz.
+     - Ping Antwort: TTL=128. -> Windows (meistens).
+     - Ping Antwort: TTL=53. -> Startwert war wohl 64, also 11 Router (Hops) dazwischen.
+     - Messbarkeit: Korrekte Schätzung der Distanz/des OS.
+   - Lernziel: Time To Live Feld im IP-Header.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ping_ttl.json')
+  - `ttls`: [64, 128, 53].
+- [ ] Shared CSS Check ('network_protocols.css')
+  - OS-Logos (Tux, Windows Fenster).
+- [ ] Game-Engine Logic ('game_ping_ttl.js')
+  - Deduktions-Logik (TTL -> OS).
+- [ ] Integration
+  - Startbar über JSON.

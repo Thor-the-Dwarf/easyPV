@@ -1,0 +1,20 @@
+Anforderungen
+4. "Die trockene Ausführung (Dry Run)"
+   - Ziel: Finde den Logikfehler ohne PC.
+   - Spielmechanik: 
+     - Algorithmus zur Berechnung des Durchschnitts.
+     - `Summe = 0`. `Zähler = 0`.
+     - `Durchschnitt = Summe / Zähler`.
+     - Fehler: Division durch Null beim Start!
+     - Messbarkeit: Absturz im Kopf vorhersagen.
+   - Lernziel: Edge Cases.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_test_dry_run.json')
+  - `vars`: {"i": 0, "sum": 0}.
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Trace-Tabelle (Schreibtischtest).
+- [ ] Game-Engine Logic ('game_test_dry_run.js')
+  - Werte manuell nachtragen pro Zeile.
+- [ ] Integration
+  - Startbar über JSON.

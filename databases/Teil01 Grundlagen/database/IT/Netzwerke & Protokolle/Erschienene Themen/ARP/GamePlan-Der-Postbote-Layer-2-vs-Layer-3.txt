@@ -1,0 +1,22 @@
+Anforderungen
+1. "Der Postbote (Layer 2 vs Layer 3)"
+   - Ziel: Löse die IP-Adresse in eine MAC-Adresse auf.
+   - Spielmechanik: 
+     - Paket an 192.168.1.5.
+     - ARP-Cache leer. -> Paket wartet.
+     - ARP-Request: "Who has 192.168.1.5? Tell 192.168.1.1".
+     - ARP-Reply: "192.168.1.5 is at AA:BB:CC:DD:EE:FF".
+     - Paket wird gesendet.
+     - Messbarkeit: Korrekter Ablauf des ARP-Handshakes.
+   - Lernziel: Adress Resolution Protocol Funktion.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_arp_postman.json')
+  - `srcIP`: "10.0.0.1". `dstIP`: "10.0.0.2".
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Paket-Karton (IP drauf) in Umschlag (MAC drauf).
+- [ ] Game-Engine Logic ('game_arp_postman.js')
+  - Schritt-für-Schritt Kapselung.
+  - "Who has" Sprechblase.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,19 @@
+Anforderungen
+5. "Single vs. Dual Sourcing"
+   - Ziel: Wähle die richtige Strategie für 4 Bauteile.
+   - Spielmechanik: 
+     - Bauteil: "Standard-Schraube". -> Dual/Multiple (Risiko streuen, Preisdruck).
+     - Bauteil: "Patentierter Spezialmotor". -> Single (Partnerschaft, keine Alternative).
+     - Messbarkeit: Strategische Passung.
+   - Lernziel: Sourcing-Strategien verstehen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_sourcing.json')
+  - `strategies`: ["single", "dual", "multiple"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Waage (Abhängigkeit vs Preisvorteil).
+- [ ] Game-Engine Logic ('game_pm_sourcing.js')
+  - Szenario: Streik beim einzigen Lieferanten -> Fail.
+  - Backup-Lieferant aktivieren.
+- [ ] Integration
+  - Startbar über JSON.

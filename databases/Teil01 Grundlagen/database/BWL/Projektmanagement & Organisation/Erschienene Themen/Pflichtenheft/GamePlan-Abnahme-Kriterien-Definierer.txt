@@ -1,0 +1,21 @@
+Anforderungen
+3. "Abnahme-Kriterien-Definierer"
+   - Ziel: Lege fest, wann die Arbeit im Pflichtenheft als "erledigt" gilt.
+   - Spielmechanik: 
+     - Feature: "Login".
+     - Kriterium A: "Login geht irgendwie." (Zu vage).
+     - Kriterium B: "User kann sich mit Email/PW einloggen und sieht Dashboard." (Messbar).
+     - Spieler wählt B.
+     - Messbarkeit: Qualität der Kriterien.
+   - Lernziel: Definition von "Done".
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_acceptance.json')
+  - `criteria`: ["measurable", "clear"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Ziel-Flagge.
+- [ ] Game-Engine Logic ('game_pm_acceptance.js')
+  - Wann gilt das Projekt als fertig?
+  - Definition of Done.
+- [ ] Integration
+  - Startbar über JSON.

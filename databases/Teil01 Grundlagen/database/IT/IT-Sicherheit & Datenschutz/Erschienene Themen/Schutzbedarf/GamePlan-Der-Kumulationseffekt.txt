@@ -1,0 +1,19 @@
+Anforderungen
+3. "Der Kumulationseffekt"
+   - Ziel: Erkenne, wann sich kleine Daten zu einem großen Risiko summieren.
+   - Spielmechanik: 
+     - 1 Datensatz "Name": Normal.
+     - 1.000.000 Datensätze "Name": Hoch (Massenabfluss ist kritisch).
+     - Spieler muss entscheiden: "Einzeln unkritisch, Masse kritisch?".
+     - Messbarkeit: Korrekte Bewertung der Menge.
+   - Lernziel: Kumulationseffekt.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_cumulation.json')
+  - `count`: 1000000.
+- [ ] Shared CSS Check ('security_management.css')
+  - Datenhaufen wächst an.
+- [ ] Game-Engine Logic ('game_sec_cumulation.js')
+  - Risikominderung durch Verteilung.
+- [ ] Integration
+  - Startbar über JSON.

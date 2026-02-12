@@ -1,0 +1,21 @@
+Anforderungen
+2. "RAID-Kalkulator"
+   - Ziel: Berechne Netto-Kapazität und Ausfalltoleranz.
+   - Spielmechanik: 
+     - 3x 1TB Platten.
+     - RAID 0: 3 TB (0 Ausfall).
+     - RAID 1: Geht nicht mit 3 (oder 1TB nutzbar).
+     - RAID 5: 2 TB (1 Ausfall).
+     - Spieler muss RAID 5 wählen für Balance.
+     - Messbarkeit: Beste Nutzung der Hardware.
+   - Lernziel: RAID-Level 0, 1, 5, 10.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_redundancy_calc.json')
+  - `disks`: 3. `size`: 1.
+- [ ] Shared CSS Check ('storage_backup.css')
+  - Interaktives Grid (Nutzdaten vs Parität).
+- [ ] Game-Engine Logic ('game_redundancy_calc.js')
+  - RAID-Level wählen -> Kapazität und Redundanz berechnen.
+- [ ] Integration
+  - Startbar über JSON.

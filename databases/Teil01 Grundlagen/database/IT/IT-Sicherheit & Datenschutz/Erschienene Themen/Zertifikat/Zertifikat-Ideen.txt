@@ -1,0 +1,51 @@
+1. "Zertifikats-Checker"
+   - Ziel: Warum kommt die Browser-Warnung?
+   - Spielmechanik: 
+     - Browser zeigt rotes Schloss.
+     - Zertifikat ansehen.
+     - Fehler 1: "Expired" (Datum abgelaufen).
+     - Fehler 2: "Common Name Mismatch" (Zertifikat für a.com, Seite ist b.com).
+     - Fehler 3: "Self-Signed" (Nicht vertrauenswürdig).
+     - Spieler muss den Grund anklicken.
+     - Messbarkeit: Diagnosekompetenz.
+   - Lernziel: Validierung von X.509 Zertifikaten.
+
+2. "Chain of Trust"
+   - Ziel: Baue die Vertrauenskette bis zur Root-CA.
+   - Spielmechanik: 
+     - End-Zertifikat (Webseite).
+     - Intermediate CA.
+     - Root CA (im Browser gespeichert).
+     - Puzzle: Verbinde die Glieder. Wenn Kette unterbrochen -> Ungültig.
+     - Messbarkeit: Komplette Kette erstellt.
+   - Lernziel: Hierarchisches Vertrauensmodell.
+
+3. "CSR-Generator (Certificate Signing Request)"
+   - Ziel: Beantrage ein Zertifikat.
+   - Spielmechanik: 
+     - Schritt 1: Private Key erzeugen (Geheim halten!).
+     - Schritt 2: Public Key + Infos (CN, O, C) in CSR packen.
+     - Schritt 3: CSR an CA senden.
+     - Fehler: Private Key an CA senden (Sicherheitsbruch!).
+     - Messbarkeit: Sicherer Prozessablauf.
+   - Lernziel: Beantragungsprozess.
+
+4. "Wildcard vs. Single Domain"
+   - Ziel: Wähle den kostengünstigsten Zertifikatstyp.
+   - Spielmechanik: 
+     - Bedarf: "www.shop.de", "mail.shop.de", "dev.shop.de".
+     - Option A: 3x Single Zertifikate (Teuer).
+     - Option B: 1x Wildcard "*.shop.de" (Günstig, deckt alle Subdomains).
+     - Option C: Multi-Domain (SAN).
+     - Messbarkeit: Beste Wahl getroffen.
+   - Lernziel: Typen von Zertifikaten.
+
+5. "Der Mittelsmann (MitM)"
+   - Ziel: Verstehe, wie Zertifikate vor Man-in-the-Middle schützen.
+   - Spielmechanik: 
+     - Hacker klinkt sich ein.
+     - Ohne Zertifikat: Hacker liest alles mit.
+     - Mit Zertifikat: Hacker muss falsches Zertifikat unterjubeln.
+     - User (Spieler) prüft Fingerprint. Stimmt nicht überein -> Verbindung kappen!
+     - Messbarkeit: Angriff erkannt.
+   - Lernziel: Schutzfunktion im HTTPS-Handshake.

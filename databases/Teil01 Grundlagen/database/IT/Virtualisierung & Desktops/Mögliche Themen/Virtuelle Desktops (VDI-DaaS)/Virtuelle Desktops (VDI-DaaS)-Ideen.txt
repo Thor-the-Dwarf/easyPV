@@ -1,0 +1,47 @@
+1. "Lokaler PC vs VDI"
+   - Ziel: Entscheide, wo gerechnet wird.
+   - Spielmechanik: 
+     - Szenario: "Mitarbeiter rendert 4K Video". -> Braucht GPU.
+     - PC: "Thin Client (Schwach)". -> Geht nicht.
+     - VDI: "CAD-VM im Rechenzentrum mit GRID-Karte". -> Geht!
+     - Szenario: "Offline arbeiten im Zug". -> PC (Fat Client) nötig.
+     - Messbarkeit: Korrekte Arbeitsumgebung gewählt.
+   - Lernziel: Wo findet die Verarbeitung statt?
+
+2. "Golden Image Master"
+   - Ziel: Updates für 500 User in 1 Minute.
+   - Spielmechanik: 
+     - 500 VMs basieren auf "Golden Image v1.0".
+     - Update "Office 2025" kommt.
+     - Spieler installiert Update in "Golden Image v1.1".
+     - Klick auf "Recompose".
+     - Alle 500 User haben beim nächsten Login das neue Office.
+     - Messbarkeit: Konsistente Umgebung.
+   - Lernziel: Linked Clones / Master Image Verwaltung.
+
+3. "Persistant vs Non-Persistant"
+   - Ziel: Konfiguriere den Desktop-Pool.
+   - Spielmechanik: 
+     - Callcenter (Schichtbetrieb): User braucht keine persönlichen Daten. -> Non-Persistant (Reset nach Logout). Clean & Schnell.
+     - Entwickler (Individuelle Tools): Braucht Admin-Rechte & eigene Installationen. -> Persistant (Eigene VM).
+     - Messbarkeit: Effizienz vs Flexibilität.
+   - Lernziel: Desktop-Pool-Typen.
+
+4. "Latenz-Killer"
+   - Ziel: Optimiere das Protokoll (PCoIP / Blast / ICA).
+   - Spielmechanik: 
+     - User tippt "A", Buchstabe erscheint 1 Sekunde später. (Latenz 200ms).
+     - Bandbreite ist niedrig (Mobilfunk).
+     - Maßnahmen: "Audio-Qualität senken", "Farbtiefe reduzieren", "UDP statt TCP nutzen".
+     - Messbarkeit: Flüssiges Arbeiten trotz schlechtem Netz.
+   - Lernziel: Protokoll-Tuning bei VDI.
+
+5. "Der Thin-Client-Sparfuchs"
+   - Ziel: Spare Strom und Geld.
+   - Spielmechanik: 
+     - Büro mit 100 PCs (500 Watt, 1000€).
+     - Ersetze durch 100 Raspberry Pis (5 Watt, 50€) + VDI Server.
+     - Stromrechnung sinkt massiv.
+     - Hardware-Kosten sinken.
+     - Messbarkeit: TCO (Total Cost of Ownership) Berechnung.
+   - Lernziel: Wirtschaftlichkeit von VDI.

@@ -1,0 +1,19 @@
+Anforderungen
+1. "Rabatt vs Skonto vs Bonus"
+   - Ziel: Kennst du den Unterschied?
+   - Spielmechanik: 
+     - "Sofortabzug auf der Rechnung" -> Rabatt.
+     - "Abzug bei schneller Zahlung" -> Skonto.
+     - "Rückvergütung am Jahresende" -> Bonus.
+     - Messbarkeit: Begriffe korrekt zugeordnet.
+   - Lernziel: Konditionenarten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_discount_types.json')
+  - `types`: ["rabatt", "skonto", "bonus"].
+- [ ] Shared CSS Check ('math_basics.css')
+  - Zuordnungs-Spiel.
+- [ ] Game-Engine Logic ('game_math_discount_types.js')
+  - Wann wird was abgezogen? Reihenfolge!
+- [ ] Integration
+  - Startbar über JSON.

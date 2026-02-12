@@ -1,0 +1,20 @@
+Anforderungen
+3. "CC-Blindflug-Vermeider"
+   - Ziel: Setze die Empfänger (An, CC, BCC) für 5 Szenarien korrekt.
+   - Spielmechanik: 
+     - Szenario: "Schicke Angebot an Kunde Müller, Chef soll Bescheid wissen, Azubi soll heimlich mitlesen."
+     - Spieler zieht Personen in die Felder An, CC, BCC.
+     - Messbarkeit: Korrekte Verteilung = 100%. Falsches Feld (z.B. Azubi in CC statt BCC) = Fehler.
+   - Lernziel: Korrekter Einsatz der Adressfelder, Datenschutz (BCC).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_email_cc.json')
+  - `scenarios`: { "desc": "...", "people": ["Chef", "Kunde"], "solution": { "to": ["Kunde"], "cc": ["Chef"] } }.
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Adressfeld-Simulation (An, CC, BCC Dropzones).
+  - Kontakte als Draggable Chips.
+- [ ] Game-Engine Logic ('game_email_cc.js')
+  - Drag & Drop in Felder.
+  - Validierung der Verteilung.
+- [ ] Integration
+  - Startbar über JSON.

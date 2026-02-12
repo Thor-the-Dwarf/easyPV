@@ -1,0 +1,20 @@
+Anforderungen
+1. "Zinsformel Z=K*p*t/100*360"
+   - Ziel: Berechne die Zinsen für einen Zeitraum.
+   - Spielmechanik: 
+     - Kapital: 10.000€.
+     - Zinssatz: 5%.
+     - Zeit: 180 Tage (Halbes Jahr).
+     - Zins = 10000 * 5 * 180 / 36000 = 250€.
+     - Messbarkeit: Korrekter Euro-Betrag.
+   - Lernziel: Kaufmännische Zinsformel (360 Tage).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_interest_formula.json')
+  - `k`: 1000, `p`: 5, `t`: 30.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Formel-Builder.
+- [ ] Game-Engine Logic ('game_math_interest_formula.js')
+  - Kaufmännische Zinsformel anwenden.
+- [ ] Integration
+  - Startbar über JSON.

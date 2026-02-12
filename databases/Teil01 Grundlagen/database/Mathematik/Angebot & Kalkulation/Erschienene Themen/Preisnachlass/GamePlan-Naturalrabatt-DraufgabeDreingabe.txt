@@ -1,0 +1,20 @@
+Anforderungen
+5. "Naturalrabatt (Draufgabe/Dreingabe)"
+   - Ziel: Verstehe "10 + 1".
+   - Spielmechanik: 
+     - Draufgabe: 10 bezahlen, 11 bekommen. (Menge erhöht, Preis gleich).
+     - Dreingabe: 10 bekommen, 9 bezahlen. (Menge gleich, Preis gesenkt).
+     - Aufgabe: "Wir brauchen genau 100 Stück".
+     - Bei Draufgabe muss man weniger bestellen.
+     - Messbarkeit: Lagerbestand stimmt exakt.
+   - Lernziel: Warenwirtschaftliche Buchung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_natural_discount.json')
+  - `buy`: 10.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Warenkörbe ("Nimm 3 zahl 2").
+- [ ] Game-Engine Logic ('game_math_natural_discount.js')
+  - Draufgabe (10 bestellen, 11 bekommen) vs Dreingabe (10 bestellen, 10 bekommen aber nur 9 zahlen).
+- [ ] Integration
+  - Startbar über JSON.

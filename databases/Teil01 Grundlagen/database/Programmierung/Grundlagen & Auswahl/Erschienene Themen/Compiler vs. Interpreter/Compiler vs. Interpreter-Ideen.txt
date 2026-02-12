@@ -1,0 +1,49 @@
+1. "Der Simultan-Übersetzer (Interpreter)"
+   - Ziel: Übersetze Zeile für Zeile.
+   - Spielmechanik: 
+     - Spieler ist der Interpreter.
+     - Zeile 1: "Print A". -> Aktion ausführen.
+     - Zeile 2: "Error". -> Sofort Stopp! (Vor Zeile 3).
+     - Vergleich: Compiler hätte VOR dem Start schon gemeckert.
+     - Messbarkeit: Verhalten bei Laufzeitfehlern verstehen.
+   - Lernziel: Ausführungsmodell Interpreter.
+
+2. "Der Buch-Übersetzer (Compiler)"
+   - Ziel: Erzeuge die EXE.
+   - Spielmechanik: 
+     - Input: Source Code.
+     - Prozess: Kompilieren... (Ladebalken).
+     - Output: Binary (Maschinencode).
+     - Vorteil: Binary läuft ohne Source Code beim Kunden.
+     - Messbarkeit: Verständnis des Build-Prozesses.
+   - Lernziel: Distribution von Software.
+
+3. "Speed-Run"
+   - Ziel: Wer startet schneller? Wer rennt schneller?
+   - Spielmechanik: 
+     - Skript (Python): Startet sofort (Win), aber Loop läuft langsam.
+     - Programm (C++): Braucht Build-Zeit (Start langsam), aber Loop rennt (Win).
+     - Szenario: "Schnelles Prototyping". -> Wähle Interpreter.
+     - Szenario: "High Performance Engine". -> Wähle Compiler.
+     - Messbarkeit: Richtige Wahl für den Usecase.
+   - Lernziel: Performance-Charakteristika.
+
+4. "Plattform-Unabhängigkeit (Java VM)"
+   - Ziel: Write Once, Run Anywhere.
+   - Spielmechanik: 
+     - Source Code -> Java Compiler -> Bytecode (.class).
+     - Windows-PC: Hat JVM -> Spielt Bytecode ab.
+     - Mac: Hat JVM -> Spielt Bytecode ab.
+     - C++ Code -> Muss für Mac NEU kompiliert werden.
+     - Messbarkeit: Unterschied Native Binary vs Bytecode.
+   - Lernziel: Hybrid-Ansätze (JIT).
+
+5. "Sprachen-Zuordner"
+   - Ziel: Was ist was?
+   - Spielmechanik: 
+     - "Python" -> Interpreter.
+     - "C" -> Compiler.
+     - "JavaScript" -> Interpreter (im Browser).
+     - "Rust" -> Compiler.
+     - Messbarkeit: Korrekte Klassifizierung.
+   - Lernziel: Marktübersicht.

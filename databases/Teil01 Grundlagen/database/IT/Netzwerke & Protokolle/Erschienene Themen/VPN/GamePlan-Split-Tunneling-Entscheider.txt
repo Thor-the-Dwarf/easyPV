@@ -1,0 +1,22 @@
+Anforderungen
+3. "Split-Tunneling-Entscheider"
+   - Ziel: Soll der Netflix-Traffic durchs VPN?
+   - Spielmechanik: 
+     - Full Tunnel: Alles geht durchs VPN (Sicher, aber Firmen-Internet langsam).
+     - Split Tunnel: Nur Firmen-Traffic durchs VPN. Netflix direkt ins Internet.
+     - User schaut 4K Video.
+     - Bei Full Tunnel -> VPN überlastet (Fail).
+     - Bei Split Tunnel -> Alles flüssig (Win).
+     - Messbarkeit: Bandbreiten-Management.
+   - Lernziel: Routing im VPN-Client.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_vpn_split.json')
+  - `traffic`: ["intra", "netflix"].
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Bandbreiten-Tacho.
+- [ ] Game-Engine Logic ('game_vpn_split.js')
+  - Routing-Pfade definieren.
+  - Performance-Auswirkung.
+- [ ] Integration
+  - Startbar über JSON.

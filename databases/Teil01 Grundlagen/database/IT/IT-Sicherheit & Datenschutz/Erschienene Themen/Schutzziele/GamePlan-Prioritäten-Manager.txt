@@ -1,0 +1,19 @@
+Anforderungen
+3. "Prioritäten-Manager"
+   - Ziel: Wähle das wichtigste Ziel für das System.
+   - Spielmechanik: 
+     - "Herzschrittmacher". -> Wichtigstes Ziel: Verfügbarkeit (Leben hängt dran).
+     - "Online-Banking Login". -> Wichtigstes Ziel: Vertraulichkeit.
+     - "Blockchain". -> Wichtigstes Ziel: Integrität.
+     - Messbarkeit: Korrektes Schutzziel priorisiert.
+   - Lernziel: Abhängigkeit vom Kontext.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_prio.json')
+  - `systems`: ["pacemaker", "banking", "blockchain"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Prioritäten-Regler (Slider).
+- [ ] Game-Engine Logic ('game_sec_prio.js')
+  - Kontext-basierte Entscheidung treffen.
+- [ ] Integration
+  - Startbar über JSON.

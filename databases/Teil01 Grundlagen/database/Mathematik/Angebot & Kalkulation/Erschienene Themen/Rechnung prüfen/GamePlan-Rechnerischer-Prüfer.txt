@@ -1,0 +1,19 @@
+Anforderungen
+2. "Rechnerischer Prüfer"
+   - Ziel: Stimmt die Summe?
+   - Spielmechanik: 
+     - Menge: 5. Einzelpreis: 20€. Gesamt: 120€.
+     - Fehler! 5*20 = 100€.
+     - Reklamation schreiben.
+     - Messbarkeit: Rechenfehler identifiziert.
+   - Lernziel: Sachliche vs Rechnerische Prüfung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_calc_check.json')
+  - `lines`: [{"qty": 2, "price": 10}].
+- [ ] Shared CSS Check ('math_basics.css')
+  - Taschenrechner.
+- [ ] Game-Engine Logic ('game_math_calc_check.js')
+  - Summenfehler finden (Zeilensumme, MwSt).
+- [ ] Integration
+  - Startbar über JSON.

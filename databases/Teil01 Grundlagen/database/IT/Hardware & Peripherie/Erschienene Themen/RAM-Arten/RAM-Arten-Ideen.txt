@@ -1,0 +1,45 @@
+1. "DDR-Generationen"
+   - Ziel: Finde den richtigen Riegel für das Board anhand der Kerbe.
+   - Spielmechanik: 
+     - Slot: DDR4 (Kerbe mittig-rechts).
+     - Riegel: DDR3 (Kerbe links), DDR4 (Passt), DDR5 (Kerbe fast mittig).
+     - Spieler versucht zu stecken.
+     - Messbarkeit: Mechanische Kompatibilität (Kodierung).
+   - Lernziel: Inkompatibilität der DDR-Standards.
+
+2. "SO-DIMM vs DIMM"
+   - Ziel: Rüste den Laptop auf.
+   - Spielmechanik: 
+     - PC offen, Laptop offen.
+     - Kiste mit RAM: Lange Riegel (DIMM), Kurze Riegel (SO-DIMM).
+     - Spieler zieht langes RAM in Laptop -> Passt nicht.
+     - Messbarkeit: Richtiger Formfaktor gewählt.
+   - Lernziel: Bauformen für Mobilgeräte vs Desktop.
+
+3. "ECC-Checker"
+   - Ziel: Welcher Server braucht ECC-RAM?
+   - Spielmechanik: 
+     - Szenario: "Home-PC zum Zocken". -> Non-ECC (Billiger, schneller).
+     - Szenario: "Datenbank-Server der Bank". -> ECC (Error Correction Code, Sicherheit gegen Bitflips).
+     - Messbarkeit: Entscheidung Kosten vs Datensicherheit.
+   - Lernziel: Funktion und Einsatz von ECC.
+
+4. "SPD-Ausleser"
+   - Ziel: Lies die Werte aus dem "Serial Presence Detect" Chip.
+   - Spielmechanik: 
+     - Tool zeigt Hex-Werte.
+     - "Timings: 16-18-18-38".
+     - Spannung: "1.35V".
+     - Aufgabe: Stelle diese Werte im BIOS manuell ein, weil XMP nicht geht.
+     - Messbarkeit: Bootfähiges System.
+   - Lernziel: Wie RAM sich beim System anmeldet.
+
+5. "Der Kapazitäts-Mix"
+   - Ziel: Berechne den nutzbaren Speicher bei Mischbestückung.
+   - Spielmechanik: 
+     - 4GB + 8GB Riegel gesteckt.
+     - Flex-Mode: 4GB von Riegel 1 + 4GB von Riegel 2 laufen Dual Channel.
+     - Restliche 4GB laufen Single Channel.
+     - Frage: "Wie viel RAM läuft schnell?" (8GB). "Wie viel langsam?" (4GB).
+     - Messbarkeit: Verständnis von Flex-Memory-Mode.
+   - Lernziel: Asymmetrische Bestückung.

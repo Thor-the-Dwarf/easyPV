@@ -1,0 +1,48 @@
+1. "Kardinalitäts-Klub"
+   - Ziel: Bestimme die Beziehung (1:1, 1:n, m:n).
+   - Spielmechanik: 
+     - "Lehrer -- unterrichtet -- Klasse". -> 1:n (oder m:n je nach Schule, hier vereinfacht).
+     - "Person -- hat -- Ausweis". -> 1:1.
+     - "Kunde -- kauft -- Artikel". -> m:n.
+     - Messbarkeit: Korrekte Zuordnung.
+   - Lernziel: Grundlagen der Relationen.
+
+2. "Chen-Notation-Check"
+   - Ziel: Was bedeuten die Formen?
+   - Spielmechanik: 
+     - Rechteck -> Entität (Tabelle).
+     - Raute -> Beziehung.
+     - Ellipse -> Attribut.
+     - Unterstrichene Ellipse -> Primärschlüssel.
+     - Messbarkeit: Formen korrekt benennen.
+   - Lernziel: Notation nach Chen.
+
+3. "Crow's Foot (Krähenfuß) Trainer"
+   - Ziel: Lies die Symbole am Ende der Linie.
+   - Spielmechanik: 
+     - Symbol: Strich-Strich (||). -> Genau eins (Mandatory One).
+     - Symbol: Kreis-Krähenfuß (0<). -> Null oder viele (Optional Many).
+     - Symbol: Strich-Krähenfuß (|<). -> Eins oder viele (Mandatory Many).
+     - Messbarkeit: Korrekte Übersetzung in Text ("Mindestens ein...").
+   - Lernziel: Martin-Notation / Krähenfuß.
+
+4. "Der Attribut-Sortierer"
+   - Ziel: Welche Attribute gehören zum "Kunden"?
+   - Spielmechanik: 
+     - "Kundennummer" (Ja, PK).
+     - "Name" (Ja).
+     - "Bestelldatum" (Nein, gehört zur Bestellung!).
+     - "PLZ" (Ja).
+     - "Artikelbezeichnung" (Nein).
+     - Messbarkeit: Saubere Attribut-Zuteilung.
+   - Lernziel: Normalisierung (Intuitive Ebene).
+
+5. "Rekursive Beziehung"
+   - Ziel: Modelliere eine Hierarchie.
+   - Spielmechanik: 
+     - Entität: "Mitarbeiter".
+     - Beziehung: "ist Chef von".
+     - Linie geht von Mitarbeiter zurück zu Mitarbeiter.
+     - Kardinalität: 1 Chef hat n Mitarbeiter.
+     - Messbarkeit: Korrekter "Self-Reference" Pfeil.
+   - Lernziel: Sonderform der Beziehung.

@@ -1,0 +1,20 @@
+Anforderungen
+3. "Latenz-Addierer"
+   - Ziel: Warum dauert das Kopieren vieler kleiner Dateien so lange?
+   - Spielmechanik: 
+     - 1 große Datei (1 GB): Dauert 100 Sek.
+     - 10.000 kleine Dateien (1 GB): Dauert 500 Sek.
+     - Grund: Overhead pro Datei (Handshake, Header).
+     - Lösung: Zippen (Archiv erstellen) vor Übertragung.
+     - Messbarkeit: Strategie "Zip first" gewählt.
+   - Lernziel: Protokoll-Overhead.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_latency.json')
+  - `hops`: [10, 20, 5].
+- [ ] Shared CSS Check ('math_basics.css')
+  - Route-Map.
+- [ ] Game-Engine Logic ('game_math_latency.js')
+  - RTT (Round Trip Time) Summe.
+- [ ] Integration
+  - Startbar über JSON.

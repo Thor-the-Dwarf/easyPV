@@ -1,0 +1,19 @@
+Anforderungen
+3. "Aktivitäten-Zuordner"
+   - Ziel: In welcher Phase passiert das? (10 Aktivitäten).
+   - Spielmechanik: 
+     - "Soll-Ist-Vergleich". -> Steuerung/Durchführung.
+     - "Team zusammenstellen". -> Initialisierung/Planung.
+     - "Lessons Learned Workshop". -> Abschluss.
+     - Messbarkeit: Korrekte Zuordnung = 100%.
+   - Lernziel: Inhalte der Phasen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_phase_sort.json')
+  - `phases`: ["init", "plan", "execute", "control", "close"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Swimlanes oder Eimer für Phasen.
+- [ ] Game-Engine Logic ('game_pm_phase_sort.js')
+  - Tätigkeiten (z.B. "Lastenheft erstellen") zu Phase (Init) zuordnen.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,22 @@
+Anforderungen
+2. "Datenautobahn-Simulator"
+   - Ziel: Vergleiche den Durchsatz (Single vs Dual).
+   - Spielmechanik: 
+     - Datenpakete müssen über eine Brücke.
+     - Single Channel: 1 Spur (Stau).
+     - Dual Channel: 2 Spuren (Flüssig).
+     - Spieler schaltet Modus um, um Stau abzubauen.
+     - Messbarkeit: Zeitdauer für Datentransfer von 10GB.
+   - Lernziel: Verdopplung der theoretischen Bandbreite (128 Bit statt 64 Bit).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ram_dual.json')
+  - `lanes`: 1 (Single) oder 2 (Dual).
+  - `dataVolume`: 100.
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Autobahn-Metapher (Spuren).
+- [ ] Game-Engine Logic ('game_ram_dual.js')
+  - Flow-Simulation (Pakete bewegen sich).
+  - Umschalter Single/Dual.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,21 @@
+Anforderungen
+5. "Der stumme Verkäufer"
+   - Ziel: Liegt hier ein Angebot vor? (Invitatio ad offerendum).
+   - Spielmechanik: 
+     - Ware im Schaufenster mit Preisschild.
+     - Kunde geht rein, legt Geld auf Tisch. Muss Verkäufer verkaufen?
+     - Antwort: Nein (Schaufenster ist kein Antrag).
+     - Szenario: Ware im Regal im Supermarkt vs. Ware an der Kasse.
+     - Messbarkeit: Korrekte Rechtsfolge (Vertragszwang ja/nein).
+   - Lernziel: Unterscheidung Rechtsbindungswille.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_law_vending.json')
+  - `actions`: ["insert_coin", "select_product", "product_out"].
+- [ ] Shared CSS Check ('contract_law.css')
+  - Automaten-Sim (Vending Machine).
+- [ ] Game-Engine Logic ('game_law_vending.js')
+  - Konkludentes Handeln visualisieren.
+  - Wann ist der Vertrag geschlossen?
+- [ ] Integration
+  - Startbar über JSON.

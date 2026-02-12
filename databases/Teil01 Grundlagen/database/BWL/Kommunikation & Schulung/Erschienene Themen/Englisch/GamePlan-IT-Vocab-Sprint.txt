@@ -1,0 +1,21 @@
+Anforderungen
+1. "IT-Vocab-Sprint"
+   - Ziel: Ordne 20 englischen IT-Fachbegriffen ihre deutsche Bedeutung zu (Zeitlimit 2 Min).
+   - Spielmechanik: 
+     - Begriff kommt geflogen: "Maintenance".
+     - 4 Ziele unten: "Wartung", "Sicherheit", "Entwicklung", "Verwaltung".
+     - Spieler muss Begriff in das richtige Ziel lenken/klicken.
+     - Messbarkeit: Anzahl richtiger Zuordnungen in der Zeit. Highscore-basiert.
+   - Lernziel: Festigung des fachspezifischen Wortschatzes.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_englisch_itvocab.json')
+  - `vocab`: [ { "en": "Maintenance", "de": "Wartung" } ].
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Falling Words Animation (oder ähnlich).
+  - Ziel-Eimer am Boden.
+- [ ] Game-Engine Logic ('game_englisch_itvocab.js')
+  - Physik/Movement Loop.
+  - Kollisionserkennung Begriff <-> Eimer.
+- [ ] Integration
+  - Startbar über JSON.

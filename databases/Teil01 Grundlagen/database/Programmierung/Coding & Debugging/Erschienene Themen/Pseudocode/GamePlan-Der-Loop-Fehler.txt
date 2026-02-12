@@ -1,0 +1,22 @@
+Anforderungen
+5. "Der Loop-Fehler"
+   - Ziel: Finde die Endlosschleife im Konzept.
+   - Spielmechanik: 
+     - `Setze i = 1`
+     - `SOLANGE i > 0`
+     - `  Drucke i`
+     - `  Setze i = i + 1`
+     - Fehler: i wird immer größer, Bedingung immer wahr.
+     - Korrektur: `SOLANGE i < 10` oder `i = i - 1`.
+     - Messbarkeit: Logikfehler im Entwurf finden.
+   - Lernziel: Validierung vor der Implementation.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_code_loop_error.json')
+  - `error`: "infinite".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Endlosschleife-Kringel.
+- [ ] Game-Engine Logic ('game_code_loop_error.js')
+  - Abbruchbedingung vergessen -> Crash simulieren (sanft).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,46 @@
+1. "Dienste-Abschalter"
+   - Ziel: Minimiere die Angriffsfläche (Attack Surface).
+   - Spielmechanik: 
+     - Server läuft. Offene Ports: 80 (Web), 21 (FTP), 23 (Telnet), 3389 (RDP).
+     - Aufgabe: Webserver härten.
+     - Aktionen: Telnet aus (Unsicher!). FTP aus (Unsicher -> SFTP nehmen!).
+     - Messbarkeit: Nur noch Port 80/443 offen.
+   - Lernziel: Unnötige Dienste deaktivieren.
+
+2. "Account-Policy-Setter"
+   - Ziel: Konfiguriere sichere Kontosperrrichtlinien.
+   - Spielmechanik: 
+     - "Account Lockout Threshold": 0 (Nie) -> Unsicher (Brute Force möglich).
+     - "Account Lockout Threshold": 3 Versuche -> Sicher.
+     - "Reset Counter after": 30 Min.
+     - Messbarkeit: Hacker-Bot scheitert nach 3 Versuchen.
+   - Lernziel: Schutz vor Brute Force.
+
+3. "Standard-Passwort-Killer"
+   - Ziel: Ändere alle Default-Logins.
+   - Spielmechanik: 
+     - Router: "admin/admin". -> Ändern!
+     - Drucker: "admin/1234". -> Ändern!
+     - Datenbank: "sa/". -> Ändern!
+     - Wenn eines vergessen wird -> Bot übernimmt Gerät.
+     - Messbarkeit: Alle Geräte abgesichert.
+   - Lernziel: Standard-Credentials als Risiko.
+
+4. "Rechte-Minimierer (Least Privilege)"
+   - Ziel: Nimm dem User unnötige Admin-Rechte weg.
+   - Spielmechanik: 
+     - User "Müller" ist in Gruppe "Domänen-Admins". (Fehler!).
+     - User "Müller" braucht nur "Drucken" und "Fileshare".
+     - Spieler verschiebt User in "Domänen-Benutzer".
+     - Funktionalitätstest: Kann er drucken? Ja. Kann er Server löschen? Nein.
+     - Messbarkeit: Sicherheit erhöht, Funktion erhalten.
+   - Lernziel: Prinzip der geringsten Rechte.
+
+5. "Banner-Grabbing-Schutz"
+   - Ziel: Verstecke die Versionsnummern des Servers.
+   - Spielmechanik: 
+     - Hacker scannt: "Apache 2.4.1 (Ubuntu)". -> Findet Exploit für 2.4.1.
+     - Admin (Spieler) ändert Config: "ServerSignature Off", "ServerTokens Prod".
+     - Hacker scannt: "Apache". -> Findet keinen spezifischen Exploit.
+     - Messbarkeit: Erfolgreiche Verschleierung (Security by Obscurity als Zusatz).
+   - Lernziel: Information Disclosure verhindern.

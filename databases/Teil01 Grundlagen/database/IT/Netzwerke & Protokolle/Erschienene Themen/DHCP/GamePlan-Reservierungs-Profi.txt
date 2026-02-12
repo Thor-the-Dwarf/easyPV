@@ -1,0 +1,22 @@
+Anforderungen
+5. "Reservierungs-Profi"
+   - Ziel: Der Chef will immer die gleiche IP.
+   - Spielmechanik: 
+     - MAC Adresse vom Chef-Laptop finden.
+     - Im DHCP-Server "Reservation" anlegen.
+     - IP: 192.168.1.99.
+     - Test: Chef rebootet -> Bekommt .99.
+     - Messbarkeit: Chef zufrieden.
+   - Lernziel: Statische Zuweisung per DHCP.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_dhcp_reserv.json')
+  - `targetVIP`: "Boss".
+  - `fixedIP`: "192.168.1.99".
+- [ ] Shared CSS Check ('network_ip.css')
+  - DHCP-Konsole Mockup.
+- [ ] Game-Engine Logic ('game_dhcp_reserv.js')
+  - MAC-Copy-Paste.
+  - IP-Zuordnung erstellen.
+- [ ] Integration
+  - Startbar über JSON.

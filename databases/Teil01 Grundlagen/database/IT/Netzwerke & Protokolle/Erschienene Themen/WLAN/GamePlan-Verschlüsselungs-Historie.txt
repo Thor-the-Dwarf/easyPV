@@ -1,0 +1,19 @@
+Anforderungen
+3. "Verschlüsselungs-Historie"
+   - Ziel: Hacke das WEP-Netz (Simulation).
+   - Spielmechanik: 
+     - WEP -> In Sekunden geknackt (IV-Collisions).
+     - WPA2-CCMP -> Sicher (nur Brute Force auf schwaches PW möglich).
+     - WPA3 -> Sehr sicher (SAE Handshake verhindert Offline Dictionary Attack).
+     - Messbarkeit: Sicherheitsniveau bewerten.
+   - Lernziel: Standards (WEP, WPA, WPA2, WPA3).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_wifi_sec.json')
+  - `stds`: ["WEP", "WPA2", "WPA3"].
+- [ ] Shared CSS Check ('network_wifi.css')
+  - Schloss-Icons (Rostig bis Tresor).
+- [ ] Game-Engine Logic ('game_wifi_sec.js')
+  - Attack-Simulation Dauer (Sekunden vs Jahre).
+- [ ] Integration
+  - Startbar über JSON.

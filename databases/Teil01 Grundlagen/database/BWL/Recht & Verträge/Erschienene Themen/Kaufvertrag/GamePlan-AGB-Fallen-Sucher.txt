@@ -1,0 +1,43 @@
+Anforderungen
+4. "AGB-Fallen-Sucher"
+   - Ziel: Finde ungültige Klauseln in den AGB.
+   - Spielmechanik: 
+     - Klausel: "Rückgabe nur in Originalverpackung." (Ungültig).
+     - Klausel: "Gewährleistung auf 1 Jahr verkürzt bei Gebrauchtware." (Gültig).
+     - Klausel: "Lieferung irgendwann." (Ungültig).
+     - Spieler markiert die "roten" Klauseln.
+     - Messbarkeit: 3/3 ungültige Klauseln gefunden.
+   - Lernziel: Verbraucherschutz und AGB-Recht.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: AGB-Text mit versteckten ungültigen Klauseln.
+- [ ] Aufgabe: "Markiere alles, was dich stutzig macht."
+- [ ] UI-Metapher: "Anwaltlicher Prüfmodus" (Rotstift).
+
+2. Screen-Layout
+- [ ] Dokumenten-View (Papier-Hintergrund, Serifen-Font).
+- [ ] Scrollbarer Textbereich mit Zeilennummern.
+- [ ] Sidebar: "Gefundene Fehler: 0/3".
+
+3. Browser- und Device-Resilienz
+- [ ] Text muss auf Mobile gut lesbar sein (mind. 16px, Zeilenhöhe 1.5).
+- [ ] Text-Selection-Mode muss "Markierungs"-Feeling haben (Highlighting).
+
+4. Kernvisuals
+- [ ] §-Paragraphen Symbole im Hintergrund.
+- [ ] "Ungültig"-Stempel Animation bei Fund.
+- [ ] Roter Marker-Strich durchgestrichener Text.
+
+5. Interaktion und Feedback
+- [ ] Tippe auf einen Absatz -> Er wird markiert.
+- [ ] Sofort-Feedback: "Korrekt! Rückgabe nur in OVP ist unzulässig."
+- [ ] Bei Fehler (gültige Klausel): "Nein, das ist erlaubt (§ 437 BGB)."
+
+6. KPI-Klarheit
+- [ ] "Abwehr-Quote": Wie viele Fallen erkannt?
+- [ ] Zeit bis zur Unterschrift (optional).
+
+7. QA-Paket
+- [ ] Touch-Targets für Absätze prüfen.
+- [ ] Highlighting-Farbe auf Dark Mode testen.

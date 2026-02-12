@@ -1,0 +1,20 @@
+Anforderungen
+5. "Brutto-Netto Falle"
+   - Ziel: Sag dem Endkunden den richtigen Preis.
+   - Spielmechanik: 
+     - Kalkulierter Satz: 100€ (Netto).
+     - Kunde ist Privatperson: Muss MwSt (19%) zahlen.
+     - Angebotspreis: 119€.
+     - Kunde ist Firma: Zahlt 100€ (Vorsteuerabzug).
+     - Messbarkeit: Korrekte Ausweisung der Steuer.
+   - Lernziel: Umsatzsteuer im Angebot.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_vat.json')
+  - `price`: 100, `customer`: "b2c".
+- [ ] Shared CSS Check ('math_basics.css')
+  - Preisschilder (Klein gedrucktes).
+- [ ] Game-Engine Logic ('game_math_vat.js')
+  - 19% draufschlagen vs inkludiert haben.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+4. "Puffer-Manager"
+   - Ziel: Plane Sicherheit ein.
+   - Spielmechanik: 
+     - Summe der Tasks: 40 Tage.
+     - Risiko-Zuschlag: 20%.
+     - Geplantes Ende: 48 Tage.
+     - Ereignis: Krankheit (3 Tage). -> Puffer fängt es auf.
+     - Messbarkeit: Termin gehalten.
+   - Lernziel: Risikomanagement.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_buffer.json')
+  - `risk`: "high".
+- [ ] Shared CSS Check ('math_basics.css')
+  - Gummiband-Visualisierung (Puffer).
+- [ ] Game-Engine Logic ('game_math_buffer.js')
+  - PERT-Schätzung (O+4M+P)/6.
+- [ ] Integration
+  - Startbar über JSON.

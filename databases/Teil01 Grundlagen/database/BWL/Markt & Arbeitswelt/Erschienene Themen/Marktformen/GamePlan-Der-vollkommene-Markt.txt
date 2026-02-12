@@ -1,0 +1,19 @@
+Anforderungen
+5. "Der vollkommene Markt"
+   - Ziel: Finde die 5 Bedingungen des vollkommenen Marktes.
+   - Spielmechanik: 
+     - Eine Wolke mit Begriffen schwebt vorbei ("Markttransparenz", "Homogene Güter", "Werbung", "Präferenzen", "Keine zeitlichen Unterschiede").
+     - Spieler muss nur die Begriffe anklicken, die zum *vollkommenen Markt* gehören. (Werbung und Präferenzen wären falsch).
+     - Messbarkeit: 5 Richtige finden = 100%. Falschen Begriff klicken = -20%.
+   - Lernziel: Theoretische Voraussetzungen des Marktmodells kennen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_markt_vollkommen.json')
+  - `terms`: [ { "text": "Homogenität", "correct": true }, { "text": "Werbung", "correct": false } ].
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Wolken-Animation oder Bubble-Pop.
+- [ ] Game-Engine Logic ('game_markt_vollkommen.js')
+  - Moving Objects.
+  - Klick-Filterung.
+- [ ] Integration
+  - Startbar über JSON.

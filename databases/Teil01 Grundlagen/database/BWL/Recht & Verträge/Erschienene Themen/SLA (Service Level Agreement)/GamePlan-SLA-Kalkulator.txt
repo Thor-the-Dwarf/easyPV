@@ -1,0 +1,22 @@
+Anforderungen
+1. "SLA-Kalkulator"
+   - Ziel: Berechne, ob die Verfügbarkeit von 99,9% eingehalten wurde.
+   - Spielmechanik: 
+     - Monat hat 30 Tage (43.200 Minuten).
+     - Ausfallzeit war 1 Stunde (60 Min).
+     - 99,9% erlaubt 43 Minuten Ausfall.
+     - 60 > 43 -> SLA verletzt.
+     - Spieler muss "Verletzt" oder "Eingehalten" wählen.
+     - Messbarkeit: Korrekte mathematische Bewertung.
+   - Lernziel: Rechnen mit Verfügbarkeitsprozenten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sla_calc.json')
+  - `availability_target`: 99.9.
+- [ ] Shared CSS Check ('contract_law.css')
+  - Taschenrechner UI.
+- [ ] Game-Engine Logic ('game_sla_calc.js')
+  - Berechnung Ausfallzeit pro Jahr (bei 99.9% = 8.76h).
+  - Vergleich Ist vs Soll.
+- [ ] Integration
+  - Startbar über JSON.

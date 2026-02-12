@@ -1,0 +1,21 @@
+Anforderungen
+3. "Die Pipeline-Verstopfung"
+   - Ziel: Warum kommt hinten nichts an?
+   - Spielmechanik: 
+     - `Get-Service | Stop-Process`.
+     - Fehler: `Get-Service` liefert Service-Objekte. `Stop-Process` erwartet Prozess-Objekte (oder ID).
+     - Typen passen nicht zusammen!
+     - Richtig: `Get-Service | Stop-Service`.
+     - Messbarkeit: Objekt-Typ-Kompatibilität geprüft.
+   - Lernziel: Pipeline Input by Value/Property.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ps_pipeline.json')
+  - `pipe`: "|".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Rohrleitung.
+- [ ] Game-Engine Logic ('game_ps_pipeline.js')
+  - Objekt-Typen prüfen (Passt Output A in Input B?).
+  - `$_` (Current Object).
+- [ ] Integration
+  - Startbar über JSON.

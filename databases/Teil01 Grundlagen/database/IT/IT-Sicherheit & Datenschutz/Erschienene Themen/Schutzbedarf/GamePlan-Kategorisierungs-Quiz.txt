@@ -1,0 +1,19 @@
+Anforderungen
+1. "Kategorisierungs-Quiz"
+   - Ziel: Ordne die Daten der Schutzbedarfskategorie zu (Normal, Hoch, Sehr Hoch).
+   - Spielmechanik: 
+     - "Telefonliste intern". -> Normal.
+     - "Entwicklungspläne geheim (Firmenexistenz)". -> Sehr Hoch.
+     - "Verträge mit Kunden". -> Hoch.
+     - Messbarkeit: 100% Übereinstimmung mit BSI-Standard.
+   - Lernziel: Schutzbedarfsfeststellung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_cat_quiz.json')
+  - `items`: ["phonebook", "secret_plans", "contracts"].
+- [ ] Shared CSS Check ('security_management.css')
+  - 3 Ablagefächer (Normal, Hoch, Sehr Hoch).
+- [ ] Game-Engine Logic ('game_sec_cat_quiz.js')
+  - Einsortieren.
+- [ ] Integration
+  - Startbar über JSON.

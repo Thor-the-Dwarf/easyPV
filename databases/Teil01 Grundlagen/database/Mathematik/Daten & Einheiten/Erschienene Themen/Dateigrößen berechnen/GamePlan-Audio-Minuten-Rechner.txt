@@ -1,0 +1,20 @@
+Anforderungen
+3. "Audio-Minuten-Rechner"
+   - Ziel: Wie viel MP3 passt drauf?
+   - Spielmechanik: 
+     - 1 Minute MP3 (128 kbit/s) ≈ 1 MB.
+     - Speicher: 700 MB (CD).
+     - Wie viele Minuten Musik? -> 700 Minuten.
+     - WAV (unkomprimiert) ≈ 10 MB/Min -> nur 70 Minuten.
+     - Messbarkeit: Korrekte Schätzung der Laufzeit.
+   - Lernziel: Datenraten bei Medien.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_audio_size.json')
+  - `mp3_rate`: 128.
+- [ ] Shared CSS Check ('math_basics.css')
+  - MP3-Player.
+- [ ] Game-Engine Logic ('game_math_audio_size.js')
+  - 1 Min MP3 (128kbit) ≈ 1 MB.
+- [ ] Integration
+  - Startbar über JSON.

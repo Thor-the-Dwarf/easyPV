@@ -1,0 +1,21 @@
+Anforderungen
+3. "Der veraltete Cache (Stale Data)"
+   - Ziel: Verhindere inkonsistente Daten.
+   - Spielmechanik: 
+     - Preis in DB: 100€.
+     - Preis im Cache: 80€ (alt).
+     - User kauft für 80€ -> Verlust für Shop.
+     - Aufgabe: Cache invalidieren (TTL setzen oder Write-Through).
+     - Messbarkeit: User sieht immer den aktuellen Preis.
+   - Lernziel: Cache Invalidation.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cache_stale.json')
+  - `db_price`: 100, `cache_price`: 80.
+- [ ] Shared CSS Check ('storage_basics.css')
+  - Shop-Frontend und DB-Backend Ansicht.
+- [ ] Game-Engine Logic ('game_cache_stale.js')
+  - Invalidate Button.
+  - Kauf-Prozess (Verlust bei Stale Data).
+- [ ] Integration
+  - Startbar über JSON.

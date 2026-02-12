@@ -1,0 +1,21 @@
+Anforderungen
+1. "Tool-Selector"
+   - Ziel: Wähle das richtige KI-Tool für die Aufgabe.
+   - Spielmechanik: 
+     - Aufgabe: "Marketing-Text schreiben". -> Jasper / ChatGPT.
+     - Aufgabe: "Code debuggen". -> GitHub Copilot.
+     - Aufgabe: "Logo entwerfen". -> Midjourney / DALL-E.
+     - Aufgabe: "Meeting transkribieren". -> Otter.ai / Teams Premium.
+     - Messbarkeit: 100% korrekte Werkzeugwahl.
+   - Lernziel: Marktübersicht KI-Anwendungen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ki_tools.json')
+  - `tasks`: ["marketing", "code", "image", "transcription"].
+  - `tools`: ["Jasper", "Copilot", "Midjourney", "Otter"].
+- [ ] Shared CSS Check ('ai_robotics.css')
+  - App-Store / Toolbox UI.
+- [ ] Game-Engine Logic ('game_ki_tools.js')
+  - Matching Game (Aufgabe -> Werkzeug).
+- [ ] Integration
+  - Startbar über JSON.

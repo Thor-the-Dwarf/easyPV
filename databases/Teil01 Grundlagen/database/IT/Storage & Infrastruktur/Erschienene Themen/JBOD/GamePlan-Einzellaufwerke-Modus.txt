@@ -1,0 +1,19 @@
+Anforderungen
+5. "Einzellaufwerke Modus"
+   - Ziel: Verwalte die Laufwerksbuchstaben.
+   - Spielmechanik: 
+     - JBOD kann auch heißen: Jede Disk einzeln (D:, E:, F:).
+     - User will E: formatieren.
+     - D: und F: bleiben heil.
+     - Messbarkeit: Saubere Trennung.
+   - Lernziel: Konfigurationsarten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_jbod_single.json')
+  - `mounts`: ["D:", "E:", "F:"].
+- [ ] Shared CSS Check ('storage_basics.css')
+  - Laufwerks-Verwaltung (Disk Management).
+- [ ] Game-Engine Logic ('game_jbod_single.js')
+  - Formatieren einer Partition -> Andere bleiben heil.
+- [ ] Integration
+  - Startbar über JSON.

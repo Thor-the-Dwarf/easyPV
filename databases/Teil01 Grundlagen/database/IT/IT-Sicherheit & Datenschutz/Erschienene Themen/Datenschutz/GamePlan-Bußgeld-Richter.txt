@@ -1,0 +1,18 @@
+Anforderungen
+3. "Bußgeld-Richter"
+   - Ziel: Verhängen Sie das Bußgeld im richtigen Rahmen (2% oder 4% / 10 Mio oder 20 Mio).
+   - Spielmechanik: 
+     - Verstoß: "Passwort-Zettel am Monitor". -> Kleiner Verstoß.
+     - Verstoß: "Datenleck von 1 Mio Kunden vertuscht". -> Max Strafe (4% Jahresumsatz).
+     - Messbarkeit: Verhältnismäßigkeit der Strafe.
+   - Lernziel: Drohpotential der DSGVO.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_gdpr_fine.json')
+  - `violation`: "leak_1m".
+- [ ] Shared CSS Check ('security_management.css')
+  - Richter-Hammer Animation.
+- [ ] Game-Engine Logic ('game_sec_gdpr_fine.js')
+  - Strafmaß festlegen (2% vs 4%).
+- [ ] Integration
+  - Startbar über JSON.

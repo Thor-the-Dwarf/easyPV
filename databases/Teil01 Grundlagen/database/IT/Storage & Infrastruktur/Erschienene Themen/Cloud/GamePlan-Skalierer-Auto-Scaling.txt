@@ -1,0 +1,22 @@
+Anforderungen
+3. "Skalierer (Auto-Scaling)"
+   - Ziel: Halte die Webseite am Leben beim "Höhle der Löwen" Auftritt.
+   - Spielmechanik: 
+     - Besucherzahlen explodieren.
+     - Server CPU 100%. Webseite langsam.
+     - Spieler aktiviert "Auto-Scaling Group".
+     - Neue Instanzen starten automatisch. CPU sinkt auf 40%.
+     - Messbarkeit: Uptime 100% trotz Traffic-Spike.
+   - Lernziel: Elastizität.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cloud_scaling.json')
+  - `traffic`: "increasing".
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Lastkurve Diagramm.
+  - Server-Rack (Instanzen erscheinen).
+- [ ] Game-Engine Logic ('game_cloud_scaling.js')
+  - Auto-Scaler konfigurieren (Min/Max Instanzen).
+  - Reaktion auf Traffic-Welle.
+- [ ] Integration
+  - Startbar über JSON.

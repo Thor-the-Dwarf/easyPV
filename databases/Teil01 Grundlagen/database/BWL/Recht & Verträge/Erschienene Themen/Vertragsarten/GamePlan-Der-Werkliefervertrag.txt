@@ -1,0 +1,37 @@
+Anforderungen
+2. "Der Werkliefervertrag"
+   - Ziel: Wann gilt Kaufrecht, wann Werkvertragsrecht?
+   - Spielmechanik: 
+     - "Tischler baut Schrank nach Maß". -> Werkliefervertrag.
+     - "Kauf von Serienmöbeln". -> Kaufvertrag.
+     - Spieler muss entscheiden, welches Gesetzbuch gilt.
+     - Messbarkeit: Korrekte Zuordnung.
+   - Lernziel: § 650 BGB.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Stoffherkunft & Arbeit.
+- [ ] Frage: Kaufrecht oder Werkvertragsrecht?
+- [ ] Szenario: "Tischler baut Schrank (Stoff vom Tischler)".
+
+2. Screen-Layout
+- [ ] Waage / Slider: Anteil Material vs Anteil Arbeit.
+- [ ] Entscheidungsschalter unten.
+
+3. Browser- und Device-Resilienz
+- [ ] Slider touch-optimiert.
+
+4. Kernvisuals
+- [ ] Material-Icons (Holz) vs Werkzeug-Icons (Säge).
+- [ ] § 650 BGB Highlight.
+
+5. Interaktion und Feedback
+- [ ] Bei "Serienware" -> Kaufrecht dominiert.
+- [ ] Bei "Maßanfertigung mit eigenem Stoff" -> Werkvertrag.
+- [ ] Feedback erklärt die Nuance.
+
+6. KPI-Klarheit
+- [ ] Richtige Einordnung.
+
+7. QA-Paket
+- [ ] Definition "bewegliche Sache" prüfen.

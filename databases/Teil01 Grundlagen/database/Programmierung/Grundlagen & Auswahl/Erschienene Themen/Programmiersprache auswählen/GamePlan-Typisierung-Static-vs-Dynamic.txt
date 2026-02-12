@@ -1,0 +1,21 @@
+Anforderungen
+4. "Typisierung (Static vs Dynamic)"
+   - Ziel: Verhindere Laufzeitfehler.
+   - Spielmechanik: 
+     - Projekt: "Steuerungssoftware für Herzschrittmacher".
+     - Anforderung: Muss extrem sicher sein. Compiler soll alles prüfen.
+     - Wahl: Python (Dynamisch) oder Ada/C (Statisch)?
+     - Richtig: Statisch getypte Sprache.
+     - Messbarkeit: Risikominimierung durch Sprachwahl.
+   - Lernziel: Safety-Critical Systems.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_typing.json')
+  - `code`: "int x = 'hallo'".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Lehrer mit Rotstift (Compiler).
+- [ ] Game-Engine Logic ('game_prog_typing.js')
+  - Statisch: Fehler vor Start.
+  - Dynamisch: Fehler bei Ausführung.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,49 @@
+1. "Router-Advertisement-Lauscher"
+   - Ziel: Wie kommt die IPv6 zum Client?
+   - Spielmechanik: 
+     - Client bootet. Sendet "Router Solicitation" (RS).
+     - Router antwortet mit "Router Advertisement" (RA).
+     - RA enthält Prefix "2001:db8::/64".
+     - Client baut sich den Rest selbst.
+     - Messbarkeit: Client hat global routbare IPv6.
+   - Lernziel: Funktionsweise SLAAC (Stateless Address Autoconfiguration).
+
+2. "EUI-64-Generierer"
+   - Ziel: Baue die Host-ID aus der MAC.
+   - Spielmechanik: 
+     - MAC: 00:11:22:33:44:55.
+     - Schritt 1: In die Mitte "FF FE" einfügen -> 0011:22FF:FE33:4455.
+     - Schritt 2: 7. Bit invertieren (Universal/Local Bit). 00 -> 02.
+     - Ergebnis: 0211:22FF:FE33:4455.
+     - Messbarkeit: Korrekte Interface ID berechnet.
+   - Lernziel: EUI-64 Algorithmus.
+
+3. "Der fehlende DNS"
+   - Ziel: Identifiziere das Problem von reinem SLAAC.
+   - Spielmechanik: 
+     - Client hat IP via SLAAC. Ping zu 2001:4860:4860::8888 geht.
+     - Ping google.de geht nicht.
+     - Grund: SLAAC (ursprünglich) übermittelt keinen DNS-Server! (RDNSS kam später).
+     - Lösung: Stateless DHCPv6 dazu nehmen (nur für DNS).
+     - Messbarkeit: Namensauflösung klappt.
+   - Lernziel: Grenzen von SLAAC (Other Configuration Flag).
+
+4. "Flags-Setzer (M und O Bit)"
+   - Ziel: Steuere das Verhalten der Clients per Router-Flag.
+   - Spielmechanik: 
+     - Ziel: Client soll IP per DHCPv6 holen (Stateful).
+     - Aktion: Setze "M-Flag" (Managed) im Router Advertisement auf 1.
+     - Ziel: Client soll IP per SLAAC, aber DNS per DHCP holen.
+     - Aktion: M=0, "O-Flag" (Other) = 1.
+     - Messbarkeit: Client verhält sich wie gewünscht.
+   - Lernziel: ICMPv6 Router Advertisement Flags.
+
+5. "Duplicate Address Detection (DAD)"
+   - Ziel: Verhindere IP-Konflikte bei Autokonfiguration.
+   - Spielmechanik: 
+     - Client generiert seine IP.
+     - Bevor er sie nutzt, schreit er: "Hat die schon wer? (Neighbor Solicitation)".
+     - Wenn Antwort -> IP verwerfen.
+     - Wenn Stille -> IP nutzen.
+     - Messbarkeit: Verständnis des DAD-Prozesses.
+   - Lernziel: Sicherheit bei SLAAC.

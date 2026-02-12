@@ -1,0 +1,20 @@
+Anforderungen
+3. "Speed-Run"
+   - Ziel: Wer startet schneller? Wer rennt schneller?
+   - Spielmechanik: 
+     - Skript (Python): Startet sofort (Win), aber Loop läuft langsam.
+     - Programm (C++): Braucht Build-Zeit (Start langsam), aber Loop rennt (Win).
+     - Szenario: "Schnelles Prototyping". -> Wähle Interpreter.
+     - Szenario: "High Performance Engine". -> Wähle Compiler.
+     - Messbarkeit: Richtige Wahl für den Usecase.
+   - Lernziel: Performance-Charakteristika.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_speed.json')
+  - `race`: "c_vs_python".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Rennbahn.
+- [ ] Game-Engine Logic ('game_prog_speed.js')
+  - Kompilierter Code (C++) gewinnt Sprint.
+- [ ] Integration
+  - Startbar über JSON.

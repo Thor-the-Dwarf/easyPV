@@ -1,0 +1,20 @@
+Anforderungen
+3. "Der Variablen-Verfolger"
+   - Ziel: Welchen Wert hat A am Ende?
+   - Spielmechanik: 
+     - A = 5.
+     - B = A + 2.
+     - A = B * 2.
+     - Frage: Was ist A? (14).
+     - Messbarkeit: Korrekter Endwert.
+   - Lernziel: State Changes verfolgen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_code_var_trace.json')
+  - `var`: "counter".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Lupe auf Variable.
+- [ ] Game-Engine Logic ('game_code_var_trace.js')
+  - Wertänderungen über den Codeverlauf tracken.
+- [ ] Integration
+  - Startbar über JSON.

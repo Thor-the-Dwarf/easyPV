@@ -1,0 +1,46 @@
+1. "Port-Matcher"
+   - Ziel: Welcher Dienst läuft auf welchem Port?
+   - Spielmechanik: 
+     - HTTP -> 80.
+     - HTTPS -> 443.
+     - SSH -> 22.
+     - FTP -> 21.
+     - DNS -> 53.
+     - Messbarkeit: 100% korrekte Zuordnung (Drag & Drop).
+   - Lernziel: Well-Known Ports.
+
+2. "ICMP-Ping-Pong"
+   - Ziel: Was macht Ping eigentlich?
+   - Spielmechanik: 
+     - Sender schickt "Echo Request" (Type 8).
+     - Empfänger muss antworten "Echo Reply" (Type 0).
+     - Wenn Empfänger Firewall an hat ("Drop ICMP") -> Timeout.
+     - Messbarkeit: Erfolgreicher Ping-Ablauf.
+   - Lernziel: ICMP Typen.
+
+3. "Der Handshake (TCP vs UDP)"
+   - Ziel: Verbindungsaufbau oder Feuer-frei?
+   - Spielmechanik: 
+     - Webseiten-Aufruf (TCP): SYN -> SYN-ACK -> ACK. (Muss warten).
+     - Video-Stream (UDP): Paket, Paket, Paket... (Kein Warten, Paketverlust egal).
+     - Aufgabe: Wähle das Protokoll für die Anwendung.
+     - Messbarkeit: Optimale Wahl (VoIP -> UDP, Mail -> TCP).
+   - Lernziel: Connection-oriented vs Connectionless.
+
+4. "FTP-Modus (Aktiv vs Passiv)"
+   - Ziel: Komm durch die Firewall.
+   - Spielmechanik: 
+     - Client hinter NAT will FTP machen.
+     - Aktiv-Modus: Server will Verbindung zu Client aufbauen -> Firewall blockt!
+     - Passiv-Modus: Client baut beide Verbindungen auf -> Firewall erlaubt.
+     - Messbarkeit: Datentransfer startet.
+   - Lernziel: Tücken von FTP und NAT.
+
+5. "Protokoll-Analysator"
+   - Ziel: Erkenne das Protokoll am Header-Inhalt.
+   - Spielmechanik: 
+     - "GET /index.html" -> HTTP.
+     - "EHLO mail.server.com" -> SMTP.
+     - "USER anonymous" -> FTP.
+     - Messbarkeit: Protokoll identifiziert.
+   - Lernziel: Textbasierte Protokolle lesen.

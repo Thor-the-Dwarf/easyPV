@@ -1,0 +1,21 @@
+Anforderungen
+5. "Exponenten-Schätzer"
+   - Ziel: Wie viele Stellen hat die Zahl?
+   - Spielmechanik: 
+     - IPv6 hat 128 Bit.
+     - Wie viele Adressen? 2^128.
+     - Ist das mehr als Sandkörner auf der Erde? Ja, viel mehr.
+     - 2^32 (IPv4) = 4 Milliarden.
+     - 2^64 = 18 Trillionen.
+     - Messbarkeit: Größenordnungen einschätzen.
+   - Lernziel: Exponentielles Wachstum.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_exponent_guess.json')
+  - `target`: 1024.
+- [ ] Shared CSS Check ('math_basics.css')
+  - "2 hoch X".
+- [ ] Game-Engine Logic ('game_math_exponent_guess.js')
+  - Mapping 10 -> 1024, 16 -> 65536.
+- [ ] Integration
+  - Startbar über JSON.

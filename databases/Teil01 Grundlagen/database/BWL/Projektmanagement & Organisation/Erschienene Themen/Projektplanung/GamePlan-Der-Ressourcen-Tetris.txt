@@ -1,0 +1,20 @@
+Anforderungen
+1. "Der Ressourcen-Tetris"
+   - Ziel: Plane 3 Mitarbeiter so ein, dass niemand überlastet ist (>100%).
+   - Spielmechanik: 
+     - Kalenderwoche. Aufgaben (Dauer: 4h, 8h, 2h).
+     - Mitarbeiter A (hat schon 30h), B (10h), C (40h).
+     - Aufgabe reinziehen. Wenn C gewählt -> Fehler "Überlast". Wenn B gewählt -> Ok.
+     - Messbarkeit: Auslastung aller MA zwischen 80-100%.
+   - Lernziel: Ressourcenplanung und Kapazitätsabgleich.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_resource.json')
+  - `resources`: ["dev", "design", "qa"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Kalender / Gantt-Chart Style.
+- [ ] Game-Engine Logic ('game_pm_resource.js')
+  - Überlastung vermeiden (Rot markieren).
+  - Kapazitätsabgleich.
+- [ ] Integration
+  - Startbar über JSON.

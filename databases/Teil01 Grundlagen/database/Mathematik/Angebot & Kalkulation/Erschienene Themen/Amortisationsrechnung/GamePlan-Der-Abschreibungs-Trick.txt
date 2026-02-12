@@ -1,0 +1,20 @@
+Anforderungen
+5. "Der Abschreibungs-Trick"
+   - Ziel: Unterschied Cashflow vs Bilanz.
+   - Spielmechanik: 
+     - PC gekauft für 3000€.
+     - Cashflow heute: -3000€.
+     - Kosten in Bilanz (AfA 3 Jahre): -1000€/Jahr.
+     - Amortisation bezieht sich meist auf Cashflow (Wann ist das Geld wieder da?).
+     - Messbarkeit: Begriffsunterscheidung.
+   - Lernziel: Liquiditätswirkung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_depreciation.json')
+  - `value`: 3000, `years`: 3.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Buchwert-Tabelle.
+- [ ] Game-Engine Logic ('game_math_depreciation.js')
+  - AfA Linear. Restwert am Ende.
+- [ ] Integration
+  - Startbar über JSON.

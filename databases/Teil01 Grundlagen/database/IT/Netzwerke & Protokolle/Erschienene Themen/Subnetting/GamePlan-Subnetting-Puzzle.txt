@@ -1,0 +1,21 @@
+Anforderungen
+5. "Subnetting-Puzzle"
+   - Ziel: Teile ein /24 Netz in 4 gleich große Netze.
+   - Spielmechanik: 
+     - Ausgang: 192.168.1.0/24.
+     - Ziel: 4 Abteilungen à 60 Hosts.
+     - Lösung: /26 Maske (Blockgröße 64).
+     - Netze: .0, .64, .128, .192.
+     - Messbarkeit: Keine Überlappung, Platz reicht.
+   - Lernziel: Netzplanung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_subnet_puzzle.json')
+  - `depts`: 4. `hosts`: 60.
+- [ ] Shared CSS Check ('network_ip.css')
+  - Kuchen-Diagramm (Netzaufteilung).
+- [ ] Game-Engine Logic ('game_subnet_puzzle.js')
+  - CIDR wählen -> Kuchen teilt sich.
+  - Prüfen ob Hosts reinpassen.
+- [ ] Integration
+  - Startbar über JSON.

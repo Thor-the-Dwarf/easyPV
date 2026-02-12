@@ -1,0 +1,20 @@
+Anforderungen
+4. "Micro-Computer-Bastler"
+   - Ziel: Was kann ein Raspberry Pi?
+   - Spielmechanik: 
+     - Aufgabe: "Digital Signage Anzeige steuern (günstig)".
+     - Wahl: PC (500€) vs Pi (50€). -> Pi gewinnt.
+     - Aufgabe: "High-End Gaming". -> PC gewinnt.
+     - Messbarkeit: Wirtschaftlichste Hardware gewählt.
+   - Lernziel: Einsatzgebiete von Einplatinencomputern.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_periph_micro.json')
+  - `task`: "Digital Signage".
+  - `budget`: "low".
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Raspberry Pi vs Tower PC Grafik.
+- [ ] Game-Engine Logic ('game_periph_micro.js')
+  - Budget-Vergleich.
+- [ ] Integration
+  - Startbar über JSON.

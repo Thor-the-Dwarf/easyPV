@@ -1,0 +1,37 @@
+Anforderungen
+4. "Leih oder Miete?"
+   - Ziel: Unterscheide Leihe (Kostenlos) und Miete (Entgeltlich).
+   - Spielmechanik: 
+     - "Ich gebe dir mein Buch für 5€ pro Woche." -> Miete.
+     - "Ich gebe dir mein Buch, bring es morgen wieder." -> Leihe.
+     - "Bohrmaschine ausleihen im Baumarkt". -> Miete (Umgangssprache vs. Recht).
+     - Messbarkeit: Korrekte juristische Terminologie.
+   - Lernziel: Juristische Definitionen vs. Alltagssprache.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Unterscheidung Entgeltlichkeit.
+- [ ] Frage: "Kostet es was?"
+- [ ] Kontext: Umgangssprachliche Falle ("Ich 'leihe' mir eine DVD aus der Videothek").
+
+2. Screen-Layout
+- [ ] Quick-Fire Karten "Gratis" vs "Kostet".
+- [ ] Große Tasten links/rechts.
+
+3. Browser- und Device-Resilienz
+- [ ] Daumen-Steuerung optimiert.
+
+4. Kernvisuals
+- [ ] €-Zeichen (Miete).
+- [ ] Geschenk-Icon / Herz (Leihe).
+
+5. Interaktion und Feedback
+- [ ] "Videothek" -> Leihe -> "Falsch! Juristisch ist das Miete, weil du zahlst."
+- [ ] "Nachbar gibt Bohrmaschine für ein Bier" -> Grauzone/Miete (Tausch).
+- [ ] "Buch aus Bibliothk kostenlos" -> Leihe.
+
+6. KPI-Klarheit
+- [ ] "Juristen-Level" (Laie -> Profi).
+
+7. QA-Paket
+- [ ] Beispiele eindeutig wählen.

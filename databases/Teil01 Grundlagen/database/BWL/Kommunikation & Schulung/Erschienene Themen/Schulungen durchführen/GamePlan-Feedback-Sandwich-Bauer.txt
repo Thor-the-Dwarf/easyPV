@@ -1,0 +1,20 @@
+Anforderungen
+2. "Feedback-Sandwich-Bauer"
+   - Ziel: Konstruiere aus Textbausteinen ein korrektes Feedback-Sandwich (Positiv - Kritik - Positiv).
+   - Spielmechanik: 
+     - Bausteine liegen ungeordnet: "Das war alles Mist", "Du hast dich gut vorbereitet", "An der Struktur musst du arbeiten", "Der Einstieg war super", "Du bist unfähig".
+     - Spieler muss 3 auswählen und stapeln: 1. Gut ("Einstieg super"), 2. Kritik ("Struktur arbeiten"), 3. Gut/Motivierend ("Gut vorbereitet").
+     - Messbarkeit: Korrekte Struktur & Tonfall = 100%. Destruktive Kritik gewählt ("Mist") = Game Over.
+   - Lernziel: Konstruktives Feedback geben.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_training_feedback.json')
+  - `phrases`: [ { "text": "...", "type": "positive" }, { "text": "...", "type": "critique" } ].
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Burger-Bau-Metapher (Visuals?).
+  - Stapel-Logik.
+- [ ] Game-Engine Logic ('game_training_feedback.js')
+  - 3 Slots füllen.
+  - Prüfen: Slot 1=Pos, Slot 2=Crit, Slot 3=Pos.
+- [ ] Integration
+  - Startbar über JSON.

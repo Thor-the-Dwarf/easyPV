@@ -1,0 +1,20 @@
+Anforderungen
+5. "Änderungs-Manager (Change Request)"
+   - Ziel: Entscheide korrekt bei nachträglicher Änderung.
+   - Spielmechanik: 
+     - Pflichtenheft ist unterschrieben.
+     - Kunde will "Doch noch eine Suchfunktion".
+     - Option A: "Ok, mach ich schnell." (Falsch! Scope Creep).
+     - Option B: "Change Request schreiben + Mehrkosten anbieten." (Richtig).
+     - Messbarkeit: Korrektes Prozessverhalten.
+   - Lernziel: Umgang mit Änderungen nach Vertragsabschluss.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_cr.json')
+  - `flow`: "cr_process".
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Stempel-Prozess.
+- [ ] Game-Engine Logic ('game_pm_cr.js')
+  - Nachträgliche Änderung -> CR schreiben -> Bewerten -> Genehmigen.
+- [ ] Integration
+  - Startbar über JSON.

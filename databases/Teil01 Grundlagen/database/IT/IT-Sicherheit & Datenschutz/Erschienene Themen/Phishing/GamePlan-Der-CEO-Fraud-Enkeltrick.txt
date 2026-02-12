@@ -1,0 +1,21 @@
+Anforderungen
+3. "Der CEO-Fraud (Enkeltrick)"
+   - Ziel: Überweise NICHT das Geld.
+   - Spielmechanik: 
+     - Mail vom "Chef": "Bin im Meeting, überweise sofort 10k an diesen Kunden, eilt sehr!"
+     - Druckaufbau.
+     - Richtige Reaktion: "Rückruf beim Chef" oder "Prozess einhalten".
+     - Falsche Reaktion: "Überweisen".
+     - Messbarkeit: Geld bleibt in der Firma.
+   - Lernziel: Psychologische Manipulation erkennen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_ceo_fraud.json')
+  - `urgency`: "high".
+- [ ] Shared CSS Check ('security_attack.css')
+  - Email-Client Mockup.
+- [ ] Game-Engine Logic ('game_sec_ceo_fraud.js')
+  - Stress-Faktoren erkennen.
+  - Verifikations-Prozess.
+- [ ] Integration
+  - Startbar über JSON.

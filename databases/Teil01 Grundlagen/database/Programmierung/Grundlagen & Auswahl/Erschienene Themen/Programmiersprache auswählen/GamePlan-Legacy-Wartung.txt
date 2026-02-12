@@ -1,0 +1,22 @@
+Anforderungen
+3. "Legacy-Wartung"
+   - Ziel: Finde den Dinosaurier.
+   - Spielmechanik: 
+     - Bank-Mainframe aus 1970.
+     - Sprache gesucht.
+     - Auswahl: Rust? Go? COBOL?
+     - Richtig: COBOL.
+     - Statistik: 80% aller Finanztransaktionen laufen auf COBOL.
+     - Messbarkeit: Historisches Wissen.
+   - Lernziel: Bestandssysteme.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_legacy.json')
+  - `system`: "mainframe".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Retro-Monitor (Grün auf Schwarz).
+- [ ] Game-Engine Logic ('game_prog_legacy.js')
+  - COBOL identifizieren.
+  - Warum nicht einfach neu schreiben? (Risiko/Kosten).
+- [ ] Integration
+  - Startbar über JSON.

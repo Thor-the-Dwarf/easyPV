@@ -1,0 +1,20 @@
+Anforderungen
+4. "Variablen-Wirrwarr ($)"
+   - Ziel: Wo fehlt das Dollarzeichen?
+   - Spielmechanik: 
+     - Zuweisung: `a = 5`. (Falsch in PS).
+     - Richtig: `$a = 5`.
+     - Ausgabe: `Write-Host a`. (Gibt Buchstabe "a" aus).
+     - Richtig: `Write-Host $a`. (Gibt "5" aus).
+     - Messbarkeit: Variablen-Syntax korrigiert.
+   - Lernziel: PowerShell Variablen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ps_vars.json')
+  - `var`: "$MyVar".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Dollar-Zeichen Highlight.
+- [ ] Game-Engine Logic ('game_ps_vars.js')
+  - Typische Fehler: Vergessenes $ bei Nutzung.
+- [ ] Integration
+  - Startbar über JSON.

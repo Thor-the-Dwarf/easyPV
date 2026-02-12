@@ -1,0 +1,20 @@
+Anforderungen
+1. "Brute-Force-Rechner"
+   - Ziel: Schätze, wie lange ein Passwort geknackt werden kann.
+   - Spielmechanik: 
+     - PW: "123456". -> Zeit: "Sofort".
+     - PW: "Password". -> Zeit: "Sofort".
+     - PW: "H4ll0!". -> Zeit: "Stunden" (Zu kurz).
+     - PW: "Ich.Liebe.Dich.123!". -> Zeit: "Jahrhunderte".
+     - Messbarkeit: Korrekte Einschätzung der Entropie.
+   - Lernziel: Länge schlägt Komplexität.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_brute.json')
+  - `pws`: ["123", "complex"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - Zeit-Anzeige (Jahre/Stunden).
+- [ ] Game-Engine Logic ('game_sec_brute.js')
+  - Entropie-Berechnung (simuliert).
+- [ ] Integration
+  - Startbar über JSON.

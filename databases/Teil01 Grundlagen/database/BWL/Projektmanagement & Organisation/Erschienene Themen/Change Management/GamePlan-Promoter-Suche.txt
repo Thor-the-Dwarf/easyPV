@@ -1,0 +1,35 @@
+Anforderungen
+5. "Promoter-Suche"
+   - Ziel: Finde den "Machtpromoter" und den "Fachpromoter" im Organigramm.
+   - Spielmechanik: 
+     - Profile: "Chef, entscheidet Budget" (Macht). "IT-Nerd, kennt Details" (Fach). "Azubi".
+     - Drag & Drop der Rollen auf die Personen.
+     - Messbarkeit: Richtige Identifikation der Schlüsselpersonen.
+   - Lernziel: Rollen im Change-Management (Promotoren-Modell).
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Identifikation von Unterstützern im Team.
+- [ ] Ziel: Finde die 3 "Power-User".
+
+2. Screen-Layout
+- [ ] Social-Network Map (Nodes).
+- [ ] Detail-Ansicht pro Person.
+
+3. Browser- und Device-Resilienz
+- [ ] Pan & Zoom für die Node-Map.
+- [ ] Minimale Controls.
+
+4. Kernvisuals
+- [ ] Personen-Icons mit "Energie-Level".
+- [ ] Verbindungs-Linien zwischen Personen.
+
+5. Interaktion und Feedback
+- [ ] Person markieren als Promoter.
+- [ ] "Erfolg!" Animation.
+
+6. KPI-Klarheit
+- [ ] "Netzwerk-Stärke".
+
+7. QA-Paket
+- [ ] Touch-Interaction auf dem Graph.

@@ -1,0 +1,20 @@
+Anforderungen
+5. "Das 20-20-20 Quiz"
+   - Ziel: Beantworte und führe die Augenübung korrekt durch (Webcam-Option oder Simulation).
+   - Spielmechanik: 
+     - Frage: "Was besagt die 20-20-20 Regel?" (Alle 20 Min, 20 Fuß weit sehen, 20 Sek lang).
+     - Timed-Challenge: "Klicke jetzt alle 20 Sekunden auf das ferne Objekt".
+     - Messbarkeit: Rhythmus einhalten.
+   - Lernziel: Entlastung der Augen am Bildschirm.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ergo_202020.json')
+  - `questions`: Theorie-Fragen.
+  - `timer`: 20s Challenge.
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Timer-Animation (Kreis/Balken).
+  - Unschärfe-Effekt (Simulation Relaxing).
+- [ ] Game-Engine Logic ('game_ergo_202020.js')
+  - Hybrid: Erst Quiz, dann interaktive Pause (User muss klicken).
+- [ ] Integration
+  - Startbar über JSON.

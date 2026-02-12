@@ -1,0 +1,22 @@
+Anforderungen
+4. "Die Service-Wüste"
+   - Ziel: Finde 5 Service-Sünden im Laden.
+   - Spielmechanik: 
+     - Mitarbeiter telefoniert privat.
+     - Dreckiger Boden.
+     - Ware nicht ausgepreist.
+     - Lange Schlange, nur 1 Kasse offen.
+     - Spieler klickt Fehler an.
+     - Messbarkeit: Gefundene Mängel.
+   - Lernziel: Wahrnehmung der Servicequalität am Point of Sale.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_service_desert.json')
+  - `interactions`: ["bad", "good"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Wüsten-Hintergrund vs Oase.
+- [ ] Game-Engine Logic ('game_pm_service_desert.js')
+  - Kunde wandelt Wüste in Oase durch guten Service.
+  - Negativ-Beispiele korrigieren.
+- [ ] Integration
+  - Startbar über JSON.

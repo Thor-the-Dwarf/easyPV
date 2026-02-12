@@ -1,0 +1,14 @@
+{
+  "name": "teil01-grundlagen",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:index": "node scripts/build-database-index.mjs",
+    "dev": "node scripts/dev-server.mjs",
+    "prepare": "npm run build:index"
+  },
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}

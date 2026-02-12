@@ -1,0 +1,22 @@
+Anforderungen
+4. "Kosten-Falle"
+   - Ziel: Senke die Cloud-Rechnung.
+   - Spielmechanik: 
+     - Rechnung: 5000€/Monat.
+     - Analyse: "Zombie-Instanzen" (Laufen, tun aber nichts).
+     - Analyse: "Over-Provisioning" (Server zu groß gewählt).
+     - Maßnahme: Rightsizing und Abschalten.
+     - Messbarkeit: Kosten < 1000€.
+   - Lernziel: Pay-as-you-go Risiken.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cloud_cost.json')
+  - `bill`: 5000.
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Rechnungs-Übersicht.
+  - Server-Liste (Running/Stopped).
+- [ ] Game-Engine Logic ('game_cloud_cost.js')
+  - Kosten-Optimierungs-Puzzle.
+  - "Stop"-Button für ungenutzte VMs.
+- [ ] Integration
+  - Startbar über JSON.

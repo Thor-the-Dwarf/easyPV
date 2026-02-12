@@ -1,0 +1,49 @@
+1. "DORA-Explorer"
+   - Ziel: Bringe den 4-Way-Handshake in die richtige Reihenfolge.
+   - Spielmechanik: 
+     - D - Discover (Client schreit "Hilfe?").
+     - O - Offer (Server sagt "Nimm doch die 1.2.3.4").
+     - R - Request (Client sagt "Gerne, nehm ich!").
+     - A - Acknowledge (Server sagt "Ok, gehört dir für 24h").
+     - Messbarkeit: Korrekte Sequenz in < 10 Sek.
+   - Lernziel: DHCP-Ablauf.
+
+2. "Scope-Manager"
+   - Ziel: Konfiguriere den DHCP-Bereich.
+   - Spielmechanik: 
+     - Netz: 192.168.1.0/24.
+     - Gateway: .1, Server: .2, Drucker: .200-.250 (fest).
+     - Aufgabe: DHCP Scope anlegen.
+     - Fehler: Start .1 (Kollision mit Gateway!).
+     - Richtig: Start .10 - End .199.
+     - Messbarkeit: Keine IP-Konflikte.
+   - Lernziel: Adressbereiche und Ausschlüsse.
+
+3. "Lease-Time-Strategist"
+   - Ziel: Wähle die optimale Lease Time.
+   - Spielmechanik: 
+     - Ort: "Café mit freiem WLAN" (Viele Gäste, kurz da). -> Lease: 1 Stunde.
+     - Ort: "Büro mit Desktop-PCs" (Fest). -> Lease: 7 Tage.
+     - Fehler: Im Café Lease auf 7 Tage -> Pool läuft voll (IP exhaustion).
+     - Messbarkeit: DHCP-Pool ist nie zu 100% voll.
+   - Lernziel: Ressourcenmanagement IP-Adressen.
+
+4. "Der falsche DHCP (Rogue Server)"
+   - Ziel: Finde und deaktiviere den Störer.
+   - Spielmechanik: 
+     - Mitarbeiter hat "WLAN-Router von Zuhause" eingesteckt.
+     - Clients kriegen falsche IPs (192.168.0.x statt 10.0.0.x).
+     - Internet geht nicht.
+     - Spieler muss den Port am Switch abschalten (DHCP Snooping).
+     - Messbarkeit: Netzwerk wieder stabil.
+   - Lernziel: Sicherheitsproblem Rogue DHCP.
+
+5. "Reservierungs-Profi"
+   - Ziel: Der Chef will immer die gleiche IP.
+   - Spielmechanik: 
+     - MAC Adresse vom Chef-Laptop finden.
+     - Im DHCP-Server "Reservation" anlegen.
+     - IP: 192.168.1.99.
+     - Test: Chef rebootet -> Bekommt .99.
+     - Messbarkeit: Chef zufrieden.
+   - Lernziel: Statische Zuweisung per DHCP.

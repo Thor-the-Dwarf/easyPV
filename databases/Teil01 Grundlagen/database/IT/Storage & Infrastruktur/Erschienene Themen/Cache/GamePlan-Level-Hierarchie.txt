@@ -1,0 +1,23 @@
+Anforderungen
+2. "Level-Hierarchie"
+   - Ziel: Wo liegen die Daten?
+   - Spielmechanik: 
+     - CPU braucht Variable X.
+     - Suche L1 (Win, ultra schnell).
+     - Suche L2 (Ok).
+     - Suche L3 (Geht so).
+     - Suche RAM (Langsam).
+     - Suche SSD (Ewig).
+     - Messbarkeit: Zugriffshierarchie verstehen.
+   - Lernziel: Speicherpyramide.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cache_hierarchy.json')
+  - `levels`: ["L1", "L2", "L3", "RAM", "SSD"].
+- [ ] Shared CSS Check ('storage_basics.css')
+  - Pyramiden-Diagramm.
+- [ ] Game-Engine Logic ('game_cache_hierarchy.js')
+  - Klick-Reise nach Daten (CPU -> L1 -> ...).
+  - Geschwindigkeits-Vergleich.
+- [ ] Integration
+  - Startbar über JSON.

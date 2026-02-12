@@ -1,0 +1,19 @@
+Anforderungen
+2. "Kaufen vs Mieten (Leasing)"
+   - Ziel: Was ist billiger auf 3 Jahre?
+   - Spielmechanik: 
+     - Kauf Drucker: 500€ + 36 * 10€ (Toner) = 860€.
+     - Miete Drucker: 36 * 20€ (All-In) = 720€.
+     - Entscheidung: Mieten!
+     - Messbarkeit: Günstigere Option gewählt.
+   - Lernziel: TCO Vergleich.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_buy_rent.json')
+  - `buy`: 2000, `rent`: 100.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Zeitstrahl Kostenverlauf.
+- [ ] Game-Engine Logic ('game_math_buy_rent.js')
+  - Schnittpunkt finden (nach 20 Monaten ist Miete teurer).
+- [ ] Integration
+  - Startbar über JSON.

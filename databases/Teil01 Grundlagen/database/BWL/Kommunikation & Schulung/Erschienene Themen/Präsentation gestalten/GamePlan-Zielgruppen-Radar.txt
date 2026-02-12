@@ -1,0 +1,20 @@
+Anforderungen
+5. "Zielgruppen-Radar"
+   - Ziel: Passe den Präsentationsstil an die Zielgruppe an (3 Szenarien).
+   - Spielmechanik: 
+     - Szenario: "Präsentation vor der Geschäftsführung".
+     - Wähle Stil: "Detailliert & Technisch", "Kurz & Ergebnisorientiert", "Lustig & Verspielt".
+     - Szenario: "Schulung für Azubis".
+     - Messbarkeit: Richtige Passung (GF will Ergebnisse, Azubis brauchen Erklärung/Motivation) = Punkte.
+   - Lernziel: Adressatengerechte Aufbereitung von Informationen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_presentation_audience.json')
+  - `audiences`: [ { "name": "Geschäftsführung", "needs": "short_results" } ].
+  - `styles`: [ "detailliert", "kurz", "lustig" ].
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Profil-Karten der Zielgruppe.
+- [ ] Game-Engine Logic ('game_presentation_audience.js')
+  - Matching-Logik: Passt Stil zu Audience?
+- [ ] Integration
+  - Startbar über JSON.

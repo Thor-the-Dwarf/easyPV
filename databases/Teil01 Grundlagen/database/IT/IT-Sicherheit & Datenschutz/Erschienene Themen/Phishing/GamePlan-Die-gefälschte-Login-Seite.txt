@@ -1,0 +1,20 @@
+Anforderungen
+5. "Die gefälschte Login-Seite"
+   - Ziel: Finde die 3 Fehler auf der Webseite.
+   - Spielmechanik: 
+     - Seite sieht aus wie Microsoft 365 Login.
+     - Fehler 1: Kein HTTPS (Schloss fehlt) oder Zertifikatsfehler.
+     - Fehler 2: URL "micosoft.com".
+     - Fehler 3: Design leicht verschoben.
+     - Messbarkeit: Alle Fehler markiert.
+   - Lernziel: Visuelle Prüfung von Landingpages.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_fake_login.json')
+  - `errors`: ["no_https", "typo_url", "design"].
+- [ ] Shared CSS Check ('security_attack.css')
+  - Browser-Fenster Mockup.
+- [ ] Game-Engine Logic ('game_sec_fake_login.js')
+  - Fehler anklicken (Spot the difference).
+- [ ] Integration
+  - Startbar über JSON.

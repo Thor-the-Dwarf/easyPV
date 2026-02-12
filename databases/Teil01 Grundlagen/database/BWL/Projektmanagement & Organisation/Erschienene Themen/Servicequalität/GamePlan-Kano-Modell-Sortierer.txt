@@ -1,0 +1,20 @@
+Anforderungen
+2. "Kano-Modell Sortierer"
+   - Ziel: Ordne Eigenschaften den Kategorien Basis, Leistung, Begeisterung zu.
+   - Spielmechanik: 
+     - Auto "hat 4 Räder". -> Basismerkmal (selbstverständlich).
+     - Auto "verbraucht wenig Benzin". -> Leistungsmerkmal (je weniger desto besser).
+     - Auto "hat eingebauten Kaffeepiloten". -> Begeisterungsmerkmal (Wow-Effekt).
+     - Messbarkeit: Korrekte Einordnung im Kano-Modell.
+   - Lernziel: Kundenerwartungen klassifizieren.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_kano.json')
+  - `features`: ["Basis", "Leistung", "Begeisterung"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Kano-Diagramm (Zufriedenheit vs Erfüllung).
+- [ ] Game-Engine Logic ('game_pm_kano.js')
+  - Features zuordnen (z.B. "WLAN im Hotel" = heute Basis).
+  - Zeitlicher Wandel (Begeisterung wird zu Basis).
+- [ ] Integration
+  - Startbar über JSON.

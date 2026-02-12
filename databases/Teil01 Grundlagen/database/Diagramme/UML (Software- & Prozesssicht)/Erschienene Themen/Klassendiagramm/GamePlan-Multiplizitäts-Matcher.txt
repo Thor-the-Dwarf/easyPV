@@ -1,0 +1,10 @@
+Anforderungen
+3. "Multiplizitäts-Matcher"
+   - Ziel: Wie viele Objekte sind verknüpft?
+   - Spielmechanik: 
+     - "Kunde" 1 ... * "Rechnung". (Ein Kunde hat viele Rechnungen).
+     - "Rechnung" 1 ... 1 "Kunde". (Rechnung gehört genau einem Kunden).
+     - Falsch: "Rechnung" * ... * "Kunde". (Quatsch).
+     - Messbarkeit: Logisch korrekte Kardinalitäten.
+   - Lernziel: Assoziationen lesen.
+

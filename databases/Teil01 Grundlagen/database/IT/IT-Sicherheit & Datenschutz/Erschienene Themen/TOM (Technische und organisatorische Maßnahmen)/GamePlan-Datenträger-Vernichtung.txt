@@ -1,0 +1,19 @@
+Anforderungen
+5. "Datenträger-Vernichtung"
+   - Ziel: Wähle die richtige Vernichtungsmethode (DIN 66399).
+   - Spielmechanik: 
+     - "Papier mit Geheimdaten". -> Schredder P-4 (Partikelschnitt).
+     - "HDD mit Kundendaten". -> Schredder H-4 / Degausser.
+     - Falsch: "Papierkorb" oder "Formatieren".
+     - Messbarkeit: Daten unwiederbringlich gelöscht.
+   - Lernziel: Sichere Entsorgung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_shred.json')
+  - `media`: ["paper", "hdd"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - Schredder-Animation.
+- [ ] Game-Engine Logic ('game_sec_shred.js')
+  - DIN-Stufe wählen.
+- [ ] Integration
+  - Startbar über JSON.

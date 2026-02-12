@@ -1,0 +1,46 @@
+1. "Symmetrisch vs. Asymmetrisch"
+   - Ziel: Wähle das richtige Verfahren.
+   - Spielmechanik: 
+     - "Massendaten (HDD, Video)". -> Symmetrisch (AES) weil schnell.
+     - "Schlüsselaustausch / Email an Fremde". -> Asymmetrisch (RSA) weil sicher (Public/Private Key).
+     - Messbarkeit: Performance und Funktionalität.
+   - Lernziel: Vor- und Nachteile der Verfahren.
+
+2. "Der Caesar-Chiffre-Knacker"
+   - Ziel: Entschlüssele den Text durch Häufigkeitsanalyse.
+   - Spielmechanik: 
+     - Text: "KDOOR".
+     - Buchstabe "O" kommt oft vor -> Könnte "E" oder "A" sein.
+     - Shift um 3 ("A" -> "D"). K -> H.
+     - Lösung: "HALLO".
+     - Messbarkeit: Geknackter Text.
+   - Lernziel: Funktionsweise von Substitution.
+
+3. "Public Key Infrastruktur (Alice & Bob)"
+   - Ziel: Sende eine vertrauliche Nachricht an Bob.
+   - Spielmechanik: 
+     - Verfügbare Schlüssel: Alices Private, Alices Public, Bobs Private, Bobs Public.
+     - Womit verschlüsselt Alice? -> Bobs Public Key.
+     - Womit entschlüsselt Bob? -> Bobs Private Key.
+     - Fehler: Mit Alices Public Key verschlüsselt -> Nur Alice kann es lesen.
+     - Messbarkeit: Bob kann Nachricht lesen.
+   - Lernziel: Asymmetrische Verschlüsselung verstehen.
+
+4. "Digitale Signatur"
+   - Ziel: Unterschreibe die Mail fälschungssicher.
+   - Spielmechanik: 
+     - Alice will unterschreiben.
+     - Womit? -> Alices Private Key (Signieren).
+     - Bob prüft. Womit? -> Alices Public Key (Verifizieren).
+     - (Gegenteil zur Verschlüsselung!).
+     - Messbarkeit: Korrekte Schlüsselwahl.
+   - Lernziel: Authentizität durch Signatur.
+
+5. "Verschlüsselungs-Stärken"
+   - Ziel: Sortiere nach Sicherheit.
+   - Spielmechanik: 
+     - "ROT13" (Spielzeug).
+     - "DES" (56 Bit, veraltet, unsicher).
+     - "AES-256" (Standard, sicher).
+     - Messbarkeit: Korrekte Hierarchie.
+   - Lernziel: Algorithmen bewerten.

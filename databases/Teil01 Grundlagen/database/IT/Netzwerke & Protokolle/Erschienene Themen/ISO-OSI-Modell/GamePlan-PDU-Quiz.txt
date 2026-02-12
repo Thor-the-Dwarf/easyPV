@@ -1,0 +1,20 @@
+Anforderungen
+4. "PDU-Quiz"
+   - Ziel: Wie heißt die Dateneinheit auf Layer X?
+   - Spielmechanik: 
+     - Layer 1: "Bits".
+     - Layer 2: "Frames".
+     - Layer 3: "Packets".
+     - Layer 4: "Segments" (TCP) / "Datagrams" (UDP).
+     - Messbarkeit: Korrekte Fachbegriffe.
+   - Lernziel: Protocol Data Units.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_iso_pdu.json')
+  - `pairs`: [ {"l":1, "p":"Bit"}, {"l":2, "p":"Frame"}, {"l":3, "p":"Packet"} ].
+- [ ] Shared CSS Check ('network_basics.css')
+  - Schichten-Modell Ansicht.
+- [ ] Game-Engine Logic ('game_iso_pdu.js')
+  - Label-Matching.
+- [ ] Integration
+  - Startbar über JSON.

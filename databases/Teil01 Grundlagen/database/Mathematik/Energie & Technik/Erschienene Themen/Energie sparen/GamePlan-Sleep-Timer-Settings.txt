@@ -1,0 +1,19 @@
+Anforderungen
+3. "Sleep-Timer-Settings"
+   - Ziel: Optimiere die Energieoptionen im OS.
+   - Spielmechanik: 
+     - Aktuell: "Bildschirm aus: Nie". "Standby: Nie".
+     - Stromrechnung hoch.
+     - Ziel: Monitor aus nach 5 Min. PC Standby nach 15 Min.
+     - Messbarkeit: Korrekte Einstellungen im Menü gefunden.
+   - Lernziel: Betriebssystem-Konfiguration.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_sleeptimer.json')
+  - `settings`: [5, 15, 60, "never"].
+- [ ] Shared CSS Check ('math_basics.css')
+  - OS-Einstellungen UI.
+- [ ] Game-Engine Logic ('game_math_sleeptimer.js')
+  - Zeit bis Sleep * Anzahl Mitarbeiter.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,22 @@
+Anforderungen
+2. "Gateway-Falle"
+   - Ziel: Konfiguriere den Weg ins Internet.
+   - Spielmechanik: 
+     - IP: 192.168.1.5, Maske: /24.
+     - Router IP: 192.168.1.1.
+     - User trägt Gateway ein: 192.168.1.5 (Sich selbst). -> Kein Internet.
+     - User trägt Gateway ein: 192.168.1.1. -> Internet geht.
+     - Messbarkeit: Ping zu 8.8.8.8 erfolgreich.
+   - Lernziel: Funktion des Default Gateway.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_net_gateway.json')
+  - `router`: "192.168.1.1".
+  - `client`: "192.168.1.5".
+- [ ] Shared CSS Check ('network_ip.css')
+  - Windows-Netzwerkeigenschaften Fenster.
+- [ ] Game-Engine Logic ('game_net_gateway.js')
+  - Gateway-Check (Darf nicht eigene IP sein).
+  - Ping ins "Internet".
+- [ ] Integration
+  - Startbar über JSON.

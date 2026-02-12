@@ -1,0 +1,20 @@
+Anforderungen
+4. "Thunderbolt-Kette"
+   - Ziel: Verbinde 3 Geräte (Monitor, HDD, Dock) per Daisy-Chaining.
+   - Spielmechanik: 
+     - Gerät A hat TB-In und TB-Out.
+     - Gerät B hat nur TB-In.
+     - Aufgabe: PC -> HDD -> Monitor.
+     - Wenn Monitor in der Mitte (hat vllt kein Out) -> Kette unterbrochen.
+     - Messbarkeit: Alle Geräte erkannt.
+   - Lernziel: Topologie von Thunderbolt.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_periph_tb.json')
+  - `devices`: [ { "name": "HDD", "twoports": true }, { "name": "Monitor", "twoports": false } ].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Geräte-Rückseiten.
+- [ ] Game-Engine Logic ('game_periph_tb.js')
+  - Reihenfolge-Logik (Endgerät muss ans Ende).
+- [ ] Integration
+  - Startbar über JSON.

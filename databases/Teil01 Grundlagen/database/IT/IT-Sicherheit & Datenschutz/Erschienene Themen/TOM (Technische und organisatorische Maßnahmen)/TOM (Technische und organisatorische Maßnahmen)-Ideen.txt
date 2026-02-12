@@ -1,0 +1,48 @@
+1. "Technisch oder Organisatorisch?"
+   - Ziel: Sortiere die Maßnahmen korrekt.
+   - Spielmechanik: 
+     - "Firewall installieren". -> Technisch.
+     - "Sicherheitsrichtlinie schreiben". -> Organisatorisch.
+     - "Schulung durchführen". -> Organisatorisch.
+     - "Zutrittskarte ausgeben". -> Technisch (System) / Organisatorisch (Prozess) -> Diskussionsfall, hier: Technisch (Mittel).
+     - "Vier-Augen-Prinzip anordnen". -> Organisatorisch.
+     - Messbarkeit: Korrekte Kategorie nach DSGVO/BSI.
+   - Lernziel: Unterscheidung TOMs.
+
+2. "TOM-Designer"
+   - Ziel: Wähle geeignete TOMs für ein Risiko.
+   - Spielmechanik: 
+     - Risiko: "Laptop Diebstahl im Zug".
+     - Option A: "Firewall". (Hilft nicht).
+     - Option B: "Festplattenverschlüsselung". (Technisch, hilft).
+     - Option C: "Anweisung: Laptops nie unbeaufsichtigt lassen". (Organisatorisch, hilft).
+     - Messbarkeit: Wirksamkeit der gewählten TOMs.
+   - Lernziel: Risikominimierung durch Maßnahmen.
+
+3. "Physikalische Sicherheit"
+   - Ziel: Sichere den Serverraum.
+   - Spielmechanik: 
+     - Bausteine kaufen: "Feuerlöscher (CO2)", "Klimaanlage", "Zutrittskontrolle", "Videoüberwachung".
+     - Budget-Management.
+     - Ereignis: "Feuer bricht aus".
+     - Wenn CO2-Löscher da -> Schaden gering. Wenn Wasserlöscher -> Server kaputt.
+     - Messbarkeit: Überleben des Serverraums.
+   - Lernziel: Infrastrukturelle TOMs.
+
+4. "Zutritt vs Zugang vs Zugriff"
+   - Ziel: Ordne die Maßnahmen der Ebene zu.
+   - Spielmechanik: 
+     - "Zaun / Pförtner". -> Zutritt (Gelände/Gebäude).
+     - "Login / Passwort". -> Zugang (System).
+     - "Dateiberechtigungen (ACL)". -> Zugriff (Daten).
+     - Messbarkeit: 100% korrekte Zuordnung.
+   - Lernziel: Die 3 Z's der Sicherheit.
+
+5. "Datenträger-Vernichtung"
+   - Ziel: Wähle die richtige Vernichtungsmethode (DIN 66399).
+   - Spielmechanik: 
+     - "Papier mit Geheimdaten". -> Schredder P-4 (Partikelschnitt).
+     - "HDD mit Kundendaten". -> Schredder H-4 / Degausser.
+     - Falsch: "Papierkorb" oder "Formatieren".
+     - Messbarkeit: Daten unwiederbringlich gelöscht.
+   - Lernziel: Sichere Entsorgung.

@@ -1,0 +1,21 @@
+Anforderungen
+4. "Festplatten-Verschlüsseler"
+   - Ziel: Schütze den Laptop vor Diebstahl (BitLocker).
+   - Spielmechanik: 
+     - Laptop wird geklaut.
+     - Szenario A: Keine Encryption. Dieb liest HDD aus -> Game Over.
+     - Szenario B: BitLocker + TPM an. Dieb sieht Datensalat -> Win.
+     - Aufgabe: Aktiviere BitLocker und speichere Recovery Key.
+     - Messbarkeit: Daten bleiben sicher.
+   - Lernziel: Full Disk Encryption (FDE).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_fde.json')
+  - `state`: "unencrypted".
+- [ ] Shared CSS Check ('security_defense.css')
+  - Laptop-Icon / HDD-Symbol.
+- [ ] Game-Engine Logic ('game_sec_fde.js')
+  - BitLocker aktivieren.
+  - Diebstahl-Simulation (Ergebnis Text lesbar vs Salat).
+- [ ] Integration
+  - Startbar über JSON.

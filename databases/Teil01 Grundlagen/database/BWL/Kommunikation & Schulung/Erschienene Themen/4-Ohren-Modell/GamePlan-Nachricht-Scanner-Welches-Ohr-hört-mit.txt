@@ -1,0 +1,21 @@
+Anforderungen
+1. "Nachricht-Scanner: Welches Ohr hört mit?"
+   - Ziel: Ordne 10 Aussagen korrekt den 4 Ohren zu (Sachinhalt, Selbstoffenbarung, Beziehung, Appell).
+   - Spielmechanik: 
+     - Aussage: "Es ist kalt hier."
+     - 4 Buttons: "Sache", "Ich", "Du", "Tu was".
+     - Spieler muss schnell entscheiden.
+     - Messbarkeit: 10 Aussagen x 10 Punkte. Highscore möglich. 100% = alles richtig zugeordnet.
+   - Lernziel: Schnelles Erkennen der Kommunikationsebenen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_4ohren_scanner.json')
+  - `statements`: [ { "text": "...", "correctEar": "sache" } ].
+- [ ] Shared CSS Check ('kommunikation.css')
+  - 4 Große Buzzer/Buttons für die Ohren.
+  - Schnelles Feedback (Grün/Rot Flash).
+- [ ] Game-Engine Logic ('game_4ohren_scanner.js')
+  - Rapid-Fire Modus: Nächste Frage sofort nach Klick.
+  - Score-Chain bei Serien-Richtigen.
+- [ ] Integration
+  - Startbar über JSON.

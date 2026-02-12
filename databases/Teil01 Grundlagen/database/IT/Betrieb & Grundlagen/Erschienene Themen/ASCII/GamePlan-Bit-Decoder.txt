@@ -1,0 +1,19 @@
+Anforderungen
+1. "Bit-Decoder"
+   - Ziel: Übersetze 5 Buchstaben korrekt in ihren 8-Bit Binärcode (ASCII-Tabelle nutzen).
+   - Spielmechanik: 
+     - Buchstabe "A" (65).
+     - Binär-Schalter: [0][1][0][0][0][0][0][1] (64+1).
+     - Spieler muss die Schalter kippen.
+     - Messbarkeit: Korrekte Binärfolge.
+   - Lernziel: Zusammenhang Zeichen <-> Binärcode.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_ascii_bin.json')
+  - `target`: "A" (65).
+- [ ] Shared CSS Check ('basics_general.css')
+  - 8 Dip-Schalter Grafik.
+- [ ] Game-Engine Logic ('game_basics_ascii_bin.js')
+  - Binär zu Dezimal zu ASCII Wandlung.
+- [ ] Integration
+  - Startbar über JSON.

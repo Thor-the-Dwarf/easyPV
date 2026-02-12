@@ -1,0 +1,23 @@
+Anforderungen
+3. "Cache-Cleaner"
+   - Ziel: Lösche veraltete Einträge.
+   - Spielmechanik: 
+     - Netzwerkkarte getauscht -> IP gleich, MAC neu.
+     - Ping geht nicht, weil alte MAC im ARP-Cache.
+     - Befehl: `arp -d *` (Windows) oder `ip neigh flush` (Linux).
+     - Ping geht wieder.
+     - Messbarkeit: Verbindung wiederhergestellt.
+   - Lernziel: Troubleshooting ARP-Cache.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_arp_clean.json')
+  - `oldMac`: "AA:BB...".
+  - `newMac`: "CC:DD...".
+- [ ] Shared CSS Check ('network_layer2.css')
+  - CLI-Fenster.
+  - ARP-Tabelle Visualisierung.
+- [ ] Game-Engine Logic ('game_arp_clean.js')
+  - Befehlseingabe Simulation.
+  - Tabellen-Update Animation.
+- [ ] Integration
+  - Startbar über JSON.

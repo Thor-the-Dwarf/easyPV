@@ -1,0 +1,21 @@
+Anforderungen
+4. "Alterungs-Simulator"
+   - Ziel: Erkenne, wann Paste gewechselt werden muss.
+   - Spielmechanik: 
+     - Jahr 1: Paste flüssig, Temp 60°C.
+     - Jahr 5: Paste bröckelig/hart, Temp 90°C.
+     - Spieler muss "Repaste" klicken.
+     - Messbarkeit: Temperatur wieder normal.
+   - Lernziel: Austrocknung und Wartung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_wlp_aging.json')
+  - `years`: 5.
+  - `state`: "dry".
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Paste-Textur (Flüssig vs Bröckelig).
+- [ ] Game-Engine Logic ('game_wlp_aging.js')
+  - Zeitraffer Slider.
+  - Interaktion "Repaste".
+- [ ] Integration
+  - Startbar über JSON.

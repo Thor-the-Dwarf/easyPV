@@ -1,0 +1,19 @@
+Anforderungen
+1. "NAS vs DAS vs SAN"
+   - Ziel: So schließt man es an.
+   - Spielmechanik: 
+     - DAS (Direct Attached): USB-Kabel an PC.
+     - NAS (Network Attached): LAN-Kabel an Switch.
+     - SAN (Storage Area Network): Glasfaser (Fibre Channel) an Switch.
+     - Messbarkeit: Korrekte Verkabelung.
+   - Lernziel: Speicher-Anbindungen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_nas_conn.json')
+  - `cables`: ["USB", "Ethernet", "Fibre"].
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Geräterückseiten (Ports).
+- [ ] Game-Engine Logic ('game_nas_conn.js')
+  - Stecker zuordnen (USB->DAS, RJ45->NAS, LWL->SAN).
+- [ ] Integration
+  - Startbar über JSON.

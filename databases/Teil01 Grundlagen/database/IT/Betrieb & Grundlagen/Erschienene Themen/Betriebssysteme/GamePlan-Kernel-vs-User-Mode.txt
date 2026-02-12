@@ -1,0 +1,19 @@
+Anforderungen
+1. "Kernel vs. User Mode"
+   - Ziel: Ordne 10 Prozesse der richtigen Ebene zu (Ring 0 vs Ring 3).
+   - Spielmechanik: 
+     - "Browser öffnet Webseite" -> User Mode.
+     - "Festplatten-Treiber schreibt Block" -> Kernel Mode.
+     - "Word stürzt ab" -> User Mode.
+     - Messbarkeit: Korrekte Schichten-Zuordnung.
+   - Lernziel: Sicherheitsarchitektur von Oses.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_kernel_user.json')
+  - `tasks`: ["browser", "driver"].
+- [ ] Shared CSS Check ('basics_os.css')
+  - Ring-Modell Grafik (Ring 0 innen, Ring 3 außen).
+- [ ] Game-Engine Logic ('game_basics_kernel_user.js')
+  - Zuordnung Drag & Drop.
+- [ ] Integration
+  - Startbar über JSON.

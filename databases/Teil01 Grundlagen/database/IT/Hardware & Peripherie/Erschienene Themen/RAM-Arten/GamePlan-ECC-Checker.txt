@@ -1,0 +1,18 @@
+Anforderungen
+3. "ECC-Checker"
+   - Ziel: Welcher Server braucht ECC-RAM?
+   - Spielmechanik: 
+     - Szenario: "Home-PC zum Zocken". -> Non-ECC (Billiger, schneller).
+     - Szenario: "Datenbank-Server der Bank". -> ECC (Error Correction Code, Sicherheit gegen Bitflips).
+     - Messbarkeit: Entscheidung Kosten vs Datensicherheit.
+   - Lernziel: Funktion und Einsatz von ECC.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ram_ecc.json')
+  - `scenarios`: [ { "use": "Bank-Server", "needEcc": true } ].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Serverraum vs Gaming-Zimmer Art.
+- [ ] Game-Engine Logic ('game_ram_ecc.js')
+  - Entscheidung (ECC ja/nein).
+- [ ] Integration
+  - Startbar über JSON.

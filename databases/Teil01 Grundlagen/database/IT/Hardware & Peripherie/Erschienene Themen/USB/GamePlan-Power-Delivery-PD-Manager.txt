@@ -1,0 +1,20 @@
+Anforderungen
+3. "Power Delivery (PD) Manager"
+   - Ziel: Lade den Laptop über USB-C.
+   - Spielmechanik: 
+     - Netzteil A: 5V/1A (5W) -> Laptop lädt nicht.
+     - Netzteil B: 20V/3A (60W) -> Laptop lädt.
+     - Spieler muss das PD-fähige Netzteil und Kabel wählen (E-Marker Chip im Kabel!).
+     - Messbarkeit: Akku wird voll.
+   - Lernziel: USB als Stromversorgung (bis 100W/240W).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_usb_pd.json')
+  - `reqWatts`: 60.
+  - `chargers`: [5, 60].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Netzteile und Kabel (E-Marker Indikator).
+- [ ] Game-Engine Logic ('game_usb_pd.js')
+  - Watt-Matching.
+- [ ] Integration
+  - Startbar über JSON.

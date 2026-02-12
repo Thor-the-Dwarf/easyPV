@@ -1,0 +1,20 @@
+Anforderungen
+2. "ICMP-Ping-Pong"
+   - Ziel: Was macht Ping eigentlich?
+   - Spielmechanik: 
+     - Sender schickt "Echo Request" (Type 8).
+     - Empfänger muss antworten "Echo Reply" (Type 0).
+     - Wenn Empfänger Firewall an hat ("Drop ICMP") -> Timeout.
+     - Messbarkeit: Erfolgreicher Ping-Ablauf.
+   - Lernziel: ICMP Typen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_proto_icmp.json')
+  - `req`: 8. `rep`: 0.
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Tischtennis-Platte Metapher (Ping Pong).
+- [ ] Game-Engine Logic ('game_proto_icmp.js')
+  - Ballwechsel (Request -> Reply).
+  - Netz-Fehler (Timeout).
+- [ ] Integration
+  - Startbar über JSON.

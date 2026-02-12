@@ -1,0 +1,22 @@
+Anforderungen
+3. "Responsive-Tester"
+   - Ziel: Mach es mobilfreundlich.
+   - Spielmechanik: 
+     - Webseite auf Desktop: 3 Spalten nebeneinander.
+     - Webseite auf Handy: Immer noch 3 Spalten (viel zu klein!).
+     - Lösung: Media Query `@media (max-width: 600px)`.
+     - Änderung: `flex-direction: column`.
+     - Ergebnis: Spalten untereinander.
+     - Messbarkeit: Lesbarkeit auf kleinen Screens.
+   - Lernziel: Media Queries.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_responsive.json')
+  - `viewports`: ["mobile", "tablet", "desktop"].
+- [ ] Shared CSS Check ('web_basics.css')
+  - Resizable Frame.
+- [ ] Game-Engine Logic ('game_web_responsive.js')
+  - Breakpoints simulieren (@media).
+  - Umbruch-Verhalten prüfen.
+- [ ] Integration
+  - Startbar über JSON.

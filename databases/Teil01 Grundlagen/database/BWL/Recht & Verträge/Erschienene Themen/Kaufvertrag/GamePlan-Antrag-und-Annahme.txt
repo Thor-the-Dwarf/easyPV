@@ -1,0 +1,21 @@
+Anforderungen
+1. "Antrag und Annahme"
+   - Ziel: Bringe 5 Dialoge zu einem rechtssicheren Kaufvertrag.
+   - Spielmechanik: 
+     - Verkäufer: "Ich biete dir das Handy für 100€ an." (Antrag).
+     - Käufer: "Ja, aber nur für 90€." (Ablehnung + Neuer Antrag!).
+     - Verkäufer: "Ok." (Annahme). -> Vertrag zustande gekommen.
+     - Spieler muss den Zeitpunkt des Vertragsschlusses markieren.
+     - Messbarkeit: Korrekte Identifikation des "Matching Point".
+   - Lernziel: Zwei übereinstimmende Willenserklärungen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_law_offer.json')
+  - `steps`: ["invitatio", "antrag", "annahme", "zugang"].
+- [ ] Shared CSS Check ('contract_law.css')
+  - Zeitstrahl / Nachrichten-Verlauf.
+- [ ] Game-Engine Logic ('game_law_offer.js')
+  - Zustandekommen des Vertrages (2 übereinstimmende Willenserklärungen).
+  - Schaufenster-Beispiel (Invitatio ad offerendum).
+- [ ] Integration
+  - Startbar über JSON.

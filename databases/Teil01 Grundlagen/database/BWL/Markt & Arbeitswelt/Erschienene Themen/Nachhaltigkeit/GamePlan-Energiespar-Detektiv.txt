@@ -1,0 +1,19 @@
+Anforderungen
+5. "Energiespar-Detektiv"
+   - Ziel: Finde 5 Energieverschwender im virtuellen Büro.
+   - Spielmechanik: 
+     - Begehung eines Raumes.
+     - Klickbare Objekte: Standby-Leuchte am Drucker (Fehler), Fenster auf bei Heizung an (Fehler), Alter Kühlschrank A+++ (Gut).
+     - Messbarkeit: Anzahl gefundener Verschwender in 60 Sek.
+   - Lernziel: Sensibilisierung für Energieverbrauch im Alltag.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sust_energy.json')
+  - `scene`: Bild-URL.
+  - `hotspots`: [ { "rect": [x,y,w,h], "desc": "Standby" } ].
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Bild mit Klick-Overlay.
+- [ ] Game-Engine Logic ('game_sust_energy.js')
+  - Hidden Object Mechanic.
+- [ ] Integration
+  - Startbar über JSON.

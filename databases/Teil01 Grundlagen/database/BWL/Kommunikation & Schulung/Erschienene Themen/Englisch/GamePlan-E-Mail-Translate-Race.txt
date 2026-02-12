@@ -1,0 +1,20 @@
+Anforderungen
+5. "E-Mail-Translate-Race"
+   - Ziel: Wähle für 5 deutsche E-Mail-Phrasen das korrekte englische Äquivalent.
+   - Spielmechanik: 
+     - Links: "Sehr geehrte Damen und Herren".
+     - Rechts Auswahl: "Hello all", "Dear Sir or Madam", "Hi Guys".
+     - Spieler muss die formell korrekte Entsprechung wählen.
+     - Messbarkeit: 5/5 korrekt = 100%.
+   - Lernziel: Standardfloskeln für die englische Geschäftskorrespondenz beherrschen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_englisch_email.json')
+  - `pairs`: { "de": "Sehr geehrte...", "en_options": ["Dear...", "Hi..."], "correct": 0 }.
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Split-Screen (Deutsch / Englisch).
+- [ ] Game-Engine Logic ('game_englisch_email.js')
+  - Quiz-Mechanik.
+  - Zeitdruck.
+- [ ] Integration
+  - Startbar über JSON.

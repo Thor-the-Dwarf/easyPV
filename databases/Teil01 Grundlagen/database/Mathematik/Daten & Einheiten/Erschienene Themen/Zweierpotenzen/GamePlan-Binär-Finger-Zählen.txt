@@ -1,0 +1,19 @@
+Anforderungen
+2. "Binär-Finger-Zählen"
+   - Ziel: Zähle bis 31 mit einer Hand.
+   - Spielmechanik: 
+     - Daumen = 1. Zeigefinger = 2. Mittel = 4. Ring = 8. Klein = 16.
+     - Zeige Zahl 19.
+     - Daumen (1) + Zeige (2) + Klein (16) = 19.
+     - Messbarkeit: Korrekte Finger-Kombination.
+   - Lernziel: Stellenwertsystem.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_binary_finger.json')
+  - `bits`: 5.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Hand mit Fingern (0/1).
+- [ ] Game-Engine Logic ('game_math_binary_finger.js')
+  - 1, 2, 4, 8, 16. Summe bilden.
+- [ ] Integration
+  - Startbar über JSON.

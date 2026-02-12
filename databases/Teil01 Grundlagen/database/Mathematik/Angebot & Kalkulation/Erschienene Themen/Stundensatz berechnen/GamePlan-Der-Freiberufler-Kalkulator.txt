@@ -1,0 +1,22 @@
+Anforderungen
+1. "Der Freiberufler-Kalkulator"
+   - Ziel: Was muss ich verlangen, um 3000€ netto zu haben?
+   - Spielmechanik: 
+     - Wunsch-Netto: 3000€.
+     - + Steuer/Versicherung (ca. 40%): 2000€.
+     - + Kosten (Büro, Laptop): 1000€.
+     - Ziel-Umsatz: 6000€.
+     - Billable Hours (nicht 160h, sondern ca. 100h wg. Akquise/Krankheit).
+     - Satz: 6000 / 100 = 60€/h. (Plus Auflagen!).
+     - Messbarkeit: Stundensatz deckt Kosten.
+   - Lernziel: Realistische Auslastungsquote.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_freelancer.json')
+  - `days_billable`: 150.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Jahresplaner (Krankheit, Urlaub abziehen).
+- [ ] Game-Engine Logic ('game_math_freelancer.js')
+  - Zielgehalt / fakturierbare Stunden = Stundensatz.
+- [ ] Integration
+  - Startbar über JSON.

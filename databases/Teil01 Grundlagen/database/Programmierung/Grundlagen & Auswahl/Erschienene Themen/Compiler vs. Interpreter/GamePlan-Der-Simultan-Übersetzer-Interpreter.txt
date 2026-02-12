@@ -1,0 +1,20 @@
+Anforderungen
+1. "Der Simultan-Übersetzer (Interpreter)"
+   - Ziel: Übersetze Zeile für Zeile.
+   - Spielmechanik: 
+     - Spieler ist der Interpreter.
+     - Zeile 1: "Print A". -> Aktion ausführen.
+     - Zeile 2: "Error". -> Sofort Stopp! (Vor Zeile 3).
+     - Vergleich: Compiler hätte VOR dem Start schon gemeckert.
+     - Messbarkeit: Verhalten bei Laufzeitfehlern verstehen.
+   - Lernziel: Ausführungsmodell Interpreter.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_interpreter.json')
+  - `mode`: "live".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Dolmetscher-Kabine.
+- [ ] Game-Engine Logic ('game_prog_interpreter.js')
+  - Abbruch erst zur Laufzeit bei Fehler.
+- [ ] Integration
+  - Startbar über JSON.

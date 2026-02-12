@@ -1,0 +1,50 @@
+1. "Der Plattform-Entscheider"
+   - Ziel: Wähle das richtige Tool für das OS.
+   - Spielmechanik: 
+     - Ziel: "iPhone App entwickeln". -> Swift.
+     - Ziel: "Android App entwickeln". -> Kotlin/Java.
+     - Ziel: "Webseite (Frontend)". -> JavaScript.
+     - Ziel: "Hardware-Treiber". -> C / C++.
+     - Messbarkeit: Korrekte Zuordnung Sprache <-> Plattform.
+   - Lernziel: Ökosysteme.
+
+2. "Performance vs Entwicklungszeit"
+   - Ziel: Was ist wichtiger?
+   - Spielmechanik: 
+     - Szenario: "High Frequency Trading (HFT)" (Muss in Nanosekunden reagieren). -> C++ / Rust.
+     - Szenario: "Kleines Skript zum Dateien sortieren" (Soll in 5 Min fertig programmiert sein). -> Python.
+     - Falsch: Python für HFT (Zu langsam).
+     - Falsch: C++ für Aufräum-Skript (Zu aufwendig).
+     - Messbarkeit: Ökonomisch sinnvolle Wahl.
+   - Lernziel: Trade-offs.
+
+3. "Legacy-Wartung"
+   - Ziel: Finde den Dinosaurier.
+   - Spielmechanik: 
+     - Bank-Mainframe aus 1970.
+     - Sprache gesucht.
+     - Auswahl: Rust? Go? COBOL?
+     - Richtig: COBOL.
+     - Statistik: 80% aller Finanztransaktionen laufen auf COBOL.
+     - Messbarkeit: Historisches Wissen.
+   - Lernziel: Bestandssysteme.
+
+4. "Typisierung (Static vs Dynamic)"
+   - Ziel: Verhindere Laufzeitfehler.
+   - Spielmechanik: 
+     - Projekt: "Steuerungssoftware für Herzschrittmacher".
+     - Anforderung: Muss extrem sicher sein. Compiler soll alles prüfen.
+     - Wahl: Python (Dynamisch) oder Ada/C (Statisch)?
+     - Richtig: Statisch getypte Sprache.
+     - Messbarkeit: Risikominimierung durch Sprachwahl.
+   - Lernziel: Safety-Critical Systems.
+
+5. "Das Web-Backend"
+   - Ziel: Womit läuft der Server?
+   - Spielmechanik: 
+     - "Enterprise Java" -> Spring Boot.
+     - "Microsoft Shop" -> C# (.NET).
+     - "Start-up / Data Science" -> Python (Django/Flask).
+     - "Start-up / Echtzeit" -> Node.js.
+     - Messbarkeit: Passende Frameworks und Sprachen kennen.
+   - Lernziel: Backend-Technologien.

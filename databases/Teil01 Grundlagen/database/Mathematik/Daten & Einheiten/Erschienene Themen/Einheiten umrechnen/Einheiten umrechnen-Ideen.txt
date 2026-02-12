@@ -1,0 +1,49 @@
+1. "Kilo vs Kibi (SI vs IEC)"
+   - Ziel: Warum fehlen mir Gigabytes?
+   - Spielmechanik: 
+     - Festplatte gekauft: "1 TB" (Hersteller meint 10^12 Byte).
+     - Windows zeigt an: "931 GB" (Meint eigentlich GiB, 2^40).
+     - User reklamiert "Kaputt". -> Falsch.
+     - User sagt "Umrechnungsfaktor". -> Richtig.
+     - Messbarkeit: Korrekte Erklärung des Phänomens.
+   - Lernziel: Dezimal- vs Binärpräfixe.
+
+2. "Zeit-Wandler"
+   - Ziel: Rechne Millisekunden in Stunden.
+   - Spielmechanik: 
+     - Ping: 50 ms.
+     - Upload dauert 3.600.000 ms.
+     - Sind das... 1 Stunde? Ja.
+     - Taschenrechner verboten (Kopfrechnen mit Nullen streichen).
+     - Messbarkeit: Korrekte Größenordnung.
+   - Lernziel: Faktor 1000 bei Zeit (milli, mikro, nano).
+
+3. "Flächen-Rechner (RZ-Planung)"
+   - Ziel: Wie viele Racks passen rein?
+   - Spielmechanik: 
+     - Raum: 10m x 10m = 100 qm.
+     - Rack: 80cm x 100cm = 0.8 qm.
+     - Einfach teilen? Nein, Gänge beachten!
+     - 100 qm / 2 (Gänge) = 50 qm Nutzfläche.
+     - ca. 60 Racks.
+     - Messbarkeit: Realistische Raumplanung.
+   - Lernziel: Einheitenbezug zur Praxis.
+
+4. "dpi-Scanner"
+   - Ziel: Auflösung umrechnen.
+   - Spielmechanik: 
+     - Bild: 4 Zoll breit.
+     - Scan mit 300 dpi (Dots per Inch).
+     - Pixelbreite = 4 * 300 = 1200 Pixel.
+     - User tippt 1200 ein.
+     - Messbarkeit: Zusammenhang Zoll und Pixel.
+   - Lernziel: Bildauflösung.
+
+5. "Hertz-Frequenz-Umformer"
+   - Ziel: Von Periodendauer zur Frequenz.
+   - Spielmechanik: 
+     - CPU Taktzyklus dauert 0.5 Nanosekunden (0.5 * 10^-9 s).
+     - f = 1 / T.
+     - f = 1 / 0.5 * 10^9 = 2 * 10^9 Hz = 2 GHz.
+     - Messbarkeit: Korrekte Taktrate ermittelt.
+   - Lernziel: T = 1/f.

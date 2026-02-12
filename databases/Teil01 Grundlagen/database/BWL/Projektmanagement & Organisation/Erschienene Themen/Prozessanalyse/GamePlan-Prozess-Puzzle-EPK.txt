@@ -1,0 +1,21 @@
+Anforderungen
+4. "Prozess-Puzzle: EPK"
+   - Ziel: Baue eine korrekte Ereignisgesteuerte Prozesskette (EPK).
+   - Spielmechanik: 
+     - Regel: Ereignis -> Funktion -> Ereignis.
+     - Bausteine liegen bereit. Konnektoren (Und, Oder, XOR).
+     - Spieler muss logisch verknüpfen.
+     - Fehler: Zwei Funktionen hintereinander ohne Ereignis.
+     - Messbarkeit: Syntaktisch korrekte EPK.
+   - Lernziel: Modellierungsregeln EPK.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_epk.json')
+  - `elements`: ["Event", "Function", "XOR", "AND"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - EPK-Symbole (Sechseck, Rechteck).
+- [ ] Game-Engine Logic ('game_pm_epk.js')
+  - Kette bauen: Ereignis -> Funktion -> Ereignis.
+  - Logik-Prüfung.
+- [ ] Integration
+  - Startbar über JSON.

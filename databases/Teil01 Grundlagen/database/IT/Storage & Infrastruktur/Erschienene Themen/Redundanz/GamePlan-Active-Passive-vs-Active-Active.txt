@@ -1,0 +1,21 @@
+Anforderungen
+4. "Active-Passive vs Active-Active"
+   - Ziel: Nutze die Ressourcen.
+   - Spielmechanik: 
+     - Cluster mit 2 Knoten.
+     - Active-Passive: Knoten 2 schläft (Verschwendung, aber sicher).
+     - Active-Active: Beide arbeiten (Lastverteilung).
+     - Fällt einer aus -> Der andere muss 100% Last tragen (Vorsicht Überlastung!).
+     - Messbarkeit: Verständnis der Cluster-Modi.
+   - Lernziel: Failover-Konzepte.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_redundancy_cluster.json')
+  - `nodes`: 2.
+- [ ] Shared CSS Check ('storage_backup.css')
+  - Loadbalancer und Server-Icons.
+- [ ] Game-Engine Logic ('game_redundancy_cluster.js')
+  - Lastverteilung (50/50 vs 100/0).
+  - Failover-Test.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,19 @@
+Anforderungen
+4. "Verfahrensverzeichnis-Builder"
+   - Ziel: Dokumentiere eine Verarbeitungstätigkeit korrekt.
+   - Spielmechanik: 
+     - Prozess: "Gehaltsabrechnung".
+     - Felder: "Zweck", "Kategorie Daten", "Löschfrist", "Empfänger".
+     - Spieler zieht "Finanzamt" auf "Empfänger". "10 Jahre" auf "Löschfrist".
+     - Messbarkeit: Vollständiges VVT.
+   - Lernziel: Dokumentationspflichten (Art. 30).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_vvt.json')
+  - `process`: "payroll".
+- [ ] Shared CSS Check ('security_management.css')
+  - Tabellen-Editor.
+- [ ] Game-Engine Logic ('game_sec_vvt.js')
+  - Felder korrekt zuordnen (Zweck, Löschfrist etc.).
+- [ ] Integration
+  - Startbar über JSON.

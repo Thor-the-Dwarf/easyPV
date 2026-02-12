@@ -1,0 +1,21 @@
+Anforderungen
+3. "Der Halluzinations-Check"
+   - Ziel: Finde die falsche Faktenbehauptung der KI.
+   - Spielmechanik: 
+     - KI-Text über "Die Geschichte des Internets".
+     - Satz: "Das Internet wurde 1789 von Napoleon erfunden." -> Halluzination!
+     - Satz: "ARPANET startete 1969." -> Korrekt.
+     - Spieler muss den Fehler markieren.
+     - Messbarkeit: Faktencheck-Kompetenz.
+   - Lernziel: Vertraue niemals blind dem Output.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ki_hallucination.json')
+  - `facts`: ["true", "false"].
+- [ ] Shared CSS Check ('ai_robotics.css')
+  - Text-Editor Highlighting.
+- [ ] Game-Engine Logic ('game_ki_hallucination.js')
+  - Text-Markierung (Rotstift).
+  - Validierung gegen Fakten-Datenbank.
+- [ ] Integration
+  - Startbar über JSON.

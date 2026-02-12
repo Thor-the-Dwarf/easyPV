@@ -1,0 +1,50 @@
+1. "P = U * I Rechner"
+   - Ziel: Berechne die Leistung.
+   - Spielmechanik: 
+     - Gegeben: Spannung 230 V. Strom 2 A.
+     - Formel: P = 230 * 2 = 460 Watt.
+     - User tippt Ergebnis ein.
+     - Messbarkeit: Korrektes Ergebnis.
+   - Lernziel: Grundformel der Elektrotechnik.
+
+2. "Netzteil-Dimensionierung"
+   - Ziel: Wähle das richtige Netzteil für den PC.
+   - Spielmechanik: 
+     - Komponenten: CPU (100W) + GPU (250W) + Rest (50W) = 400W.
+     - Puffer nötig (ca. 20-30%). -> Ziel: 500-600W.
+     - Auswahl A: 300W (Zu wenig -> Crash).
+     - Auswahl B: 1000W (Zu viel -> Ineffizient im Teillastbereich).
+     - Auswahl C: 550W (Perfekt).
+     - Messbarkeit: System läuft stabil und effizient.
+   - Lernziel: Komponenten-Addierung.
+
+3. "Der Stromkreis-Check (Absicherung)"
+   - Ziel: Fliegt die Sicherung?
+   - Spielmechanik: 
+     - Sicherung: 16 Ampere bei 230 Volt. -> Max 3680 Watt.
+     - Gerät 1: Heizlüfter (2000W).
+     - Gerät 2: Wasserkocher (2000W).
+     - Summe: 4000W.
+     - Ergebnis: Sicherung fliegt.
+     - Aufgabe: Geräte auf zwei Stromkreise verteilen.
+     - Messbarkeit: Sicherung bleibt drin.
+   - Lernziel: Maximale Last pro Phase.
+
+4. "kWh-Ermittler"
+   - Ziel: Berechne den Verbrauch über Zeit.
+   - Spielmechanik: 
+     - Gerät: 100 Watt.
+     - Laufzeit: 10 Stunden.
+     - Rechnung: 100W * 10h = 1000 Wh = 1 kWh.
+     - Messbarkeit: Korrekte Umrechnung W in kWh.
+   - Lernziel: Arbeit (Energie) = Leistung * Zeit.
+
+5. "Scheinleistung vs Wirkleistung (Cos Phi)"
+   - Ziel: Verstehe den Unterschied.
+   - Spielmechanik: 
+     - Netzteil hat 500W Wirkleistung.
+     - Cos Phi (Leistungsfaktor) ist 0.8.
+     - Scheinleistung = 500 / 0.8 = 625 VA.
+     - USV muss für 625 VA ausgelegt sein, nicht 500W!
+     - Messbarkeit: USV nicht überlastet.
+   - Lernziel: Dimensionierung bei Induktiver Last.

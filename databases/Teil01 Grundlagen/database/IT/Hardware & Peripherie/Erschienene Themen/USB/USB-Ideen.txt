@@ -1,0 +1,47 @@
+1. "Generationen-Speed-Test"
+   - Ziel: Ordne die Farbe der Geschwindigkeit zu.
+   - Spielmechanik: 
+     - Buchse Schwarz (2.0) -> 480 Mbit/s.
+     - Buchse Blau (3.0/3.1 Gen1) -> 5 Gbit/s.
+     - Buchse Rot/Teal (3.1 Gen2) -> 10 Gbit/s.
+     - Messbarkeit: 100% korrekte Zuordnung.
+   - Lernziel: Farbcodierung und Geschwindigkeitsklassen.
+
+2. "Stecker-Puzzle: Typ C"
+   - Ziel: Finde den Vorteil von USB-C.
+   - Spielmechanik: 
+     - Typ A: Muss gedreht werden. (3 Versuche nötig, Murphy's Law Simulation).
+     - Typ C: Passt sofort, egal wie rum.
+     - Aufgabe: Stecke 10 Kabel in 10 Sekunden. Typ C gewinnt.
+     - Messbarkeit: Zeitvorteil.
+   - Lernziel: Reversibilität von USB-C.
+
+3. "Power Delivery (PD) Manager"
+   - Ziel: Lade den Laptop über USB-C.
+   - Spielmechanik: 
+     - Netzteil A: 5V/1A (5W) -> Laptop lädt nicht.
+     - Netzteil B: 20V/3A (60W) -> Laptop lädt.
+     - Spieler muss das PD-fähige Netzteil und Kabel wählen (E-Marker Chip im Kabel!).
+     - Messbarkeit: Akku wird voll.
+   - Lernziel: USB als Stromversorgung (bis 100W/240W).
+
+4. "Länge läuft"
+   - Ziel: Beachte die maximalen Kabellängen.
+   - Spielmechanik: 
+     - USB 2.0 Kabel 10m -> Signalstörung. (Max 5m passiv).
+     - USB 3.0 Kabel 5m -> Signalstörung. (Max 3m passiv).
+     - Aufgabe: Drucker in 10m Entfernung anschließen.
+     - Lösung: "Aktives Repeater-Kabel" oder "Hub" dazwischen setzen.
+     - Messbarkeit: Funktionierende Verbindung über Distanz.
+   - Lernziel: Dämpfung und Maximallängen.
+
+5. "Der Hub-Flaschenhals"
+   - Ziel: Überlaste den Hub nicht.
+   - Spielmechanik: 
+     - 1x USB 3.0 Port (5 Gbit/s).
+     - Hub angeschlossen.
+     - Geräte: 2x SSD (je 4 Gbit/s Traffic).
+     - Traffic > Bandbreite (8 > 5) -> Transfer bricht ein.
+     - Lösung: Geräte auf verschiedene Root-Hubs verteilen.
+     - Messbarkeit: Maximale Geschwindigkeit für alle Geräte.
+   - Lernziel: Shared Bandwidth bei Hubs.

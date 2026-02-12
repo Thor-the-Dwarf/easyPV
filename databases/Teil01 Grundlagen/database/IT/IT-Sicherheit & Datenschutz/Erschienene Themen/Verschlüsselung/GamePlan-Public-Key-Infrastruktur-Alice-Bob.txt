@@ -1,0 +1,21 @@
+Anforderungen
+3. "Public Key Infrastruktur (Alice & Bob)"
+   - Ziel: Sende eine vertrauliche Nachricht an Bob.
+   - Spielmechanik: 
+     - Verfügbare Schlüssel: Alices Private, Alices Public, Bobs Private, Bobs Public.
+     - Womit verschlüsselt Alice? -> Bobs Public Key.
+     - Womit entschlüsselt Bob? -> Bobs Private Key.
+     - Fehler: Mit Alices Public Key verschlüsselt -> Nur Alice kann es lesen.
+     - Messbarkeit: Bob kann Nachricht lesen.
+   - Lernziel: Asymmetrische Verschlüsselung verstehen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_pki_msg.json')
+  - `goal`: "confidential_to_bob".
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Chat-Flow Alice -> Bob.
+  - Schlüssel-Inventar.
+- [ ] Game-Engine Logic ('game_sec_pki_msg.js')
+  - Richtigen Key zum Verschlüsseln wählen (Bob Pub).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,22 @@
+Anforderungen
+3. "ALE-Rechner (Annual Loss Expectancy)"
+   - Ziel: Lohnt sich die Sicherheitsmaßnahme?
+   - Spielmechanik: 
+     - Schaden (SLE): 10.000€.
+     - Häufigkeit (ARO): 1x im Jahr.
+     - ALE = 10.000€.
+     - Maßnahme kostet 500€/Jahr. -> Machen!
+     - Maßnahme kostet 20.000€/Jahr. -> Nicht machen.
+     - Messbarkeit: Wirtschaftliche Entscheidung.
+   - Lernziel: Quantitative Risikoanalyse.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_ale.json')
+  - `sle`: 10000, `aro`: 1.
+- [ ] Shared CSS Check ('security_management.css')
+  - Taschenrechner UI.
+- [ ] Game-Engine Logic ('game_sec_ale.js')
+  - Formel: ALE = SLE * ARO.
+  - Kosten/Nutzen Vergleich.
+- [ ] Integration
+  - Startbar über JSON.

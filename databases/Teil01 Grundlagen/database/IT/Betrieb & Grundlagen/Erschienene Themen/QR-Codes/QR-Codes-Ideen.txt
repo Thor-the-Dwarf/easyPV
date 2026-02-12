@@ -1,0 +1,43 @@
+1. "QR-Code-Konstrukteur"
+   - Ziel: Baue die 3 Eckpfeiler (Position Detection Patterns) an die richtige Stelle.
+   - Spielmechanik: 
+     - Leeres Quadrat-Raster.
+     - 3 Große "Augen" (Quadrate).
+     - Spieler muss sie platzieren: Oben-Links, Oben-Rechts, Unten-Links. (Unten-Rechts ist leer!).
+     - Messbarkeit: Korrekte Positionierung der Finder Patterns.
+   - Lernziel: Aufbau eines QR-Codes.
+
+2. "Fehlerkorrektur-Level"
+   - Ziel: Wähle das richtige Error-Correction-Level (L, M, Q, H).
+   - Spielmechanik: 
+     - Szenario: "Code kommt auf ein Plakat, sauberer Druck". -> Level L (Wenig Redundanz, Code wird kleiner).
+     - Szenario: "Code kommt auf LKW-Plane, wird dreckig, Logo in der Mitte". -> Level H (30% Redundanz, Code wird komplexer/größer).
+     - Messbarkeit: Optimale Wahl für den Einsatzzweck.
+   - Lernziel: Trade-off Datendichte vs. Robustheit.
+
+3. "Dateninhalt-Erkener"
+   - Ziel: Was steckt im Code? Unterscheide URL, VCard, Text, Wifi.
+   - Spielmechanik: 
+     - Rohdaten: "WIFI:S:MyNet;T:WPA;P:1234;;". -> Typ: WLAN.
+     - Rohdaten: "BEGIN:VCARD...". -> Typ: Kontakt.
+     - Rohdaten: "https://...". -> Typ: Webseite.
+     - Messbarkeit: Korrekte Typ-Zuordnung.
+   - Lernziel: Standardisierte Formate im QR-Code.
+
+4. "QR-Phishing-Schutz"
+   - Ziel: Scanne sicher! Erkenne gefährliche QR-Codes.
+   - Spielmechanik: 
+     - Spieler "scannt" Code (fiktiv).
+     - Vorschau-URL wird gezeigt: "sparkasse-verify-login.de.evil.com".
+     - Entscheidung: "Öffnen" oder "Blockieren".
+     - Messbarkeit: Alle Phishing-URLs blockiert.
+   - Lernziel: Sicherheitsrisiko "Quishing" (QR-Phishing).
+
+5. "Matrix-Größen-Schätzer"
+   - Ziel: Passt der Text in den Code?
+   - Spielmechanik: 
+     - Text: "Hallo". -> Kleiner Code (21x21 Module).
+     - Text: "Der komplette Text von Faust I". -> Zu groß für QR (Limit ca. 3KB/4000 Zeichen alphanum).
+     - Spieler muss entscheiden: "Passt" oder "Passt nicht / Braucht anderen Code".
+     - Messbarkeit: Verständnis der Kapazitätsgrenzen.
+   - Lernziel: Limits der QR-Technologie.

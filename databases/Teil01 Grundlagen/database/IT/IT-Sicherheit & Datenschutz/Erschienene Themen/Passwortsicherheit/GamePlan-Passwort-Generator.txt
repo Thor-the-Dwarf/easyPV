@@ -1,0 +1,20 @@
+Anforderungen
+2. "Passwort-Generator"
+   - Ziel: Baue ein PW, das alle Regeln erfüllt.
+   - Spielmechanik: 
+     - Regeln: >12 Zeichen, Groß, Klein, Zahl, Sonderzeichen, kein Wörterbuchwort.
+     - Spieler tippt.
+     - Validator prüft live (Rot/Grün).
+     - Messbarkeit: Gültiges PW erstellt.
+   - Lernziel: Passwort-Richtlinien (Policy) einhalten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_pw_gen.json')
+  - `rules`: ["len>12", "upper", "lower", "digit", "special"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - Eingabefeld mit Live-Check.
+- [ ] Game-Engine Logic ('game_sec_pw_gen.js')
+  - Regex-Validierung.
+  - Feedback UI.
+- [ ] Integration
+  - Startbar über JSON.

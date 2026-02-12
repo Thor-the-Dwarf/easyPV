@@ -1,0 +1,20 @@
+Anforderungen
+2. "Zinseszins-Effekt"
+   - Ziel: Werde Millionär.
+   - Spielmechanik: 
+     - Anlage 1000€ bei 5%.
+     - Nach 1 Jahr: 1050€.
+     - Nach 2 Jahren: 1050 * 1.05 = 1102.50€ (Nicht 1100).
+     - Nach 100 Jahren: Gigantisch.
+     - Messbarkeit: Exponentielles Wachstum verstanden.
+   - Lernziel: Exponentialrechnung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_compound.json')
+  - `years`: 10.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Exponentielle Kurve.
+- [ ] Game-Engine Logic ('game_math_compound.js')
+  - K * q^n. Zins auf Zins.
+- [ ] Integration
+  - Startbar über JSON.

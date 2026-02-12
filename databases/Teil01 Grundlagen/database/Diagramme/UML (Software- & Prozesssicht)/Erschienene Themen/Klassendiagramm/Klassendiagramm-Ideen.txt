@@ -1,0 +1,47 @@
+1. "Vererbungs-Baum"
+   - Ziel: Baue die Hierarchie korrekt.
+   - Spielmechanik: 
+     - Klasse "Fahrzeug" (Parent).
+     - Klassen "Auto", "LKW" (Kinder).
+     - Pfeil mit hohlem Dreieck zum Parent.
+     - Attribute von Fahrzeug ("Motor") werden vererbt.
+     - Messbarkeit: Korrekte Vererbungslinien.
+   - Lernziel: Generalisierung / Spezialisierung.
+
+2. "Sichtbarkeits-Detektiv"
+   - Ziel: Wer darf zugreifen? (+, -, #).
+   - Spielmechanik: 
+     - "+" (Public) -> Jeder darf.
+     - "-" (Private) -> Nur ich selbst.
+     - "#" (Protected) -> Ich und meine Kinder.
+     - Szenario: Fremde Klasse will auf Attribut zugreifen.
+     - Spieler muss "+" setzen oder Getter/Setter bauen.
+     - Messbarkeit: Kapselung eingehalten.
+   - Lernziel: Access Modifiers.
+
+3. "Multiplizitäts-Matcher"
+   - Ziel: Wie viele Objekte sind verknüpft?
+   - Spielmechanik: 
+     - "Kunde" 1 ... * "Rechnung". (Ein Kunde hat viele Rechnungen).
+     - "Rechnung" 1 ... 1 "Kunde". (Rechnung gehört genau einem Kunden).
+     - Falsch: "Rechnung" * ... * "Kunde". (Quatsch).
+     - Messbarkeit: Logisch korrekte Kardinalitäten.
+   - Lernziel: Assoziationen lesen.
+
+4. "Abstrakte Klassen vs Interfaces"
+   - Ziel: Wähle das richtige Konzept.
+   - Spielmechanik: 
+     - "Lebewesen" -> Abstrakt (Kann nicht instanziiert werden).
+     - "Fliegbar" -> Interface (Kann von Vogel und Flugzeug implementiert werden).
+     - Kursivschrift für Abstrakte Klassen.
+     - Gestrichelter Pfeil für Interface-Implementierung.
+     - Messbarkeit: Korrekte Syntax.
+   - Lernziel: Erweiterte OOP-Konzepte in UML.
+
+5. "Komposition vs Aggregation"
+   - Ziel: Wie stark ist die Bindung? (Existenzabhängigkeit).
+   - Spielmechanik: 
+     - "Auto" und "Motor". Auto weg -> Motor weg (nutzlos). -> Komposition (Gefüllte Raute).
+     - "Auto" und "Wunderbaum". Auto weg -> Wunderbaum noch da. -> Aggregation (Leere Raute).
+     - Messbarkeit: Symbol korrekt gewählt.
+   - Lernziel: Strenge der Beziehung.

@@ -1,0 +1,21 @@
+Anforderungen
+4. "Prompt-Optimierer (Wenig Token, viel Inhalt)"
+   - Ziel: Erreiche das beste Ergebnis mit den wenigsten Wörtern.
+   - Spielmechanik: 
+     - Prompt A: "Mach mir bitte ein Bild von einer Katze, die rot ist und auf dem Dach sitzt, danke." (20 Token).
+     - Prompt B: "Red cat on roof, photo realistic, 8k." (8 Token).
+     - Ergebnis B ist genauer/besser und billiger (API-Kosten).
+     - Messbarkeit: Effizienz-Score.
+   - Lernziel: Präzise Kommunikation mit LLMs.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ki_prompt.json')
+  - `goal`: "cat_on_roof".
+- [ ] Shared CSS Check ('ai_robotics.css')
+  - Chat-Interface.
+  - Token-Counter Display.
+- [ ] Game-Engine Logic ('game_ki_prompt.js')
+  - Prompt-Editor (Live Token Count).
+  - Ergebnis-Qualitäts-Simulator.
+- [ ] Integration
+  - Startbar über JSON.

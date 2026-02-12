@@ -1,0 +1,21 @@
+Anforderungen
+3. "Sender-Empfänger-Brücke"
+   - Ziel: Baue 3 Nachrichten so zusammen, dass sie als Appell verstanden werden.
+   - Spielmechanik: 
+     - Zielvorgabe: "Bringe den Kollegen dazu, das Fenster zu schließen."
+     - Textbausteine: "Es zieht", "Mir ist kalt", "Schließ bitte das Fenster", "Fenster auf!".
+     - Spieler zieht Baustein auf das "Appell-Ohr".
+     - Messbarkeit: Korrekter Baustein gewählt (klarer Appell) = Erfolg. Zu indirekt = Fehler.
+   - Lernziel: Formulierung von klaren Botschaften für bestimmte Ohren.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_4ohren_bruecke.json')
+  - `tasks`: { "goal": "Appell", "blocks": ["...", "..."] }.
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Baustein-Container.
+  - Ziel-Ohr Darstellung.
+- [ ] Game-Engine Logic ('game_4ohren_bruecke.js')
+  - Filter-Logik: Welche Bausteine passen zum Ziel-Ohr?
+  - Feedback bei falscher Zuordnung.
+- [ ] Integration
+  - Startbar über JSON.

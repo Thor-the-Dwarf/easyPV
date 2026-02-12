@@ -1,0 +1,22 @@
+Anforderungen
+3. "Der Zeit-Manager"
+   - Ziel: Plane eine 60-Minuten-Schulung ohne den Rahmen zu sprengen.
+   - Spielmechanik: 
+     - Leere Zeitleiste (0-60 Min).
+     - Phasen mit Dauer: Begrüßung (5'), Theorie (20'), Übung (30'), Pause (15'), Puffer (10').
+     - Spieler muss Elemente hineinziehen. Summe darf 60 nicht überschreiten, muss aber mind. 50 füllen.
+     - Messbarkeit: Wenn Zeitplan > 60' oder < 45' -> Fehler. Wenn Pausen vergessen -> Fehler.
+   - Lernziel: Zeitmanagement und realistische Planung von Lerneinheiten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_training_time.json')
+  - `blocks`: [ { "name": "Begrüßung", "time": 5 }, ... ].
+  - `totalTime`: 60.
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Zeitstrahl-Visualisierung (Progress Bar).
+  - Blöcke mit variabler Breite.
+- [ ] Game-Engine Logic ('game_training_time.js')
+  - Rechnen: Summe der ausgewählten Blöcke.
+  - Validierung: Min/Max Zeit.
+- [ ] Integration
+  - Startbar über JSON.

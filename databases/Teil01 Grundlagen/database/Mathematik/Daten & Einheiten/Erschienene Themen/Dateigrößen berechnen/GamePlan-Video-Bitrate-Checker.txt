@@ -1,0 +1,22 @@
+Anforderungen
+4. "Video-Bitrate-Checker"
+   - Ziel: Berechne den Stream.
+   - Spielmechanik: 
+     - Film: 90 Min. Größe: 4.5 GB.
+     - 4500 MB / 90 Min = 50 MB/Min.
+     - 50 MB / 60 Sek = 0.83 MB/s.
+     - 0.83 * 8 ≈ 6.6 Mbit/s.
+     - DSL 6000 reicht knapp nicht -> Ruckelt!
+     - DSL 16000 nötig.
+     - Messbarkeit: Korrekte Bandbreiten-Anforderung.
+   - Lernziel: Zusammenhang Größe/Zeit/Speed.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_video_size.json')
+  - `bitrate`: 5, `minutes`: 10.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Filmrolle.
+- [ ] Game-Engine Logic ('game_math_video_size.js')
+  - Bitrate * Zeit = Größe.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,24 @@
+Anforderungen
+5. "Der Hub-Flaschenhals"
+   - Ziel: Überlaste den Hub nicht.
+   - Spielmechanik: 
+     - 1x USB 3.0 Port (5 Gbit/s).
+     - Hub angeschlossen.
+     - Geräte: 2x SSD (je 4 Gbit/s Traffic).
+     - Traffic > Bandbreite (8 > 5) -> Transfer bricht ein.
+     - Lösung: Geräte auf verschiedene Root-Hubs verteilen.
+     - Messbarkeit: Maximale Geschwindigkeit für alle Geräte.
+   - Lernziel: Shared Bandwidth bei Hubs.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_usb_hub.json')
+  - `hubBandwidth`: 5000.
+  - `devices`: [ { "load": 4000 }, { "load": 4000 } ].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Hub-Topologie.
+  - Traffic-Flow Ampel.
+- [ ] Game-Engine Logic ('game_usb_hub.js')
+  - Summenbildung Traffic.
+  - Bottleneck-Warnung.
+- [ ] Integration
+  - Startbar über JSON.

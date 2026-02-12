@@ -1,0 +1,20 @@
+Anforderungen
+4. "Faraday-Käfig-Experiment"
+   - Ziel: Warum liest der Scanner nicht?
+   - Spielmechanik: 
+     - RFID-Tag in Pappschachtel -> Geht.
+     - RFID-Tag in Alufolie -> Geht nicht (Abschirmung).
+     - RFID-Tag auf Metalloberfläche -> Problematisch (Reflexion/Dämpfung).
+     - Spieler muss störende Materialien entfernen.
+     - Messbarkeit: Erfolgreicher Scan.
+   - Lernziel: Störfaktoren bei Funkübertragung (Konduktive Materialien).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_rfid_shield.json')
+  - `material`: "alu".
+- [ ] Shared CSS Check ('basics_hardware.css')
+  - Physik-Labor Aufbau.
+- [ ] Game-Engine Logic ('game_basics_rfid_shield.js')
+  - Signalstärke messen (0% bei Alu).
+- [ ] Integration
+  - Startbar über JSON.

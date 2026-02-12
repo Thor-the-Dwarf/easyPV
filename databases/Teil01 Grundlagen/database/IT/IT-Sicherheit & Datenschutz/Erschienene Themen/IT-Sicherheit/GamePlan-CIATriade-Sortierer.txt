@@ -1,0 +1,19 @@
+Anforderungen
+1. "CIA.Triade-Sortierer"
+   - Ziel: Ordne Maßnahmen den Schutzzielen zu (Confidentiality, Integrity, Availability).
+   - Spielmechanik: 
+     - "Verschlüsselung". -> Vertraulichkeit.
+     - "Backup / RAID". -> Verfügbarkeit.
+     - "Hashwerte / Digitale Signatur". -> Integrität.
+     - Messbarkeit: 100% korrekte Zuordnung.
+   - Lernziel: Die drei Säulen der IT-Sicherheit.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_cia.json')
+  - `triad`: ["Confidentiality", "Integrity", "Availability"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Dreieck-Visualisierung (CIA).
+- [ ] Game-Engine Logic ('game_sec_cia.js')
+  - Begriffe zuordnen (Verschlüsselung -> C, Hash -> I, RAID -> A).
+- [ ] Integration
+  - Startbar über JSON.

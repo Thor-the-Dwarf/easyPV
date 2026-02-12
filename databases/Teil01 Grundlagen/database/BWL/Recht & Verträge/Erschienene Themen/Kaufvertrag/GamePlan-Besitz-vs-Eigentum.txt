@@ -1,0 +1,21 @@
+Anforderungen
+3. "Besitz vs. Eigentum"
+   - Ziel: Wer ist Eigentümer, wer Besitzer?
+   - Spielmechanik: 
+     - Dieb klaut Fahrrad. (Besitzer: Dieb. Eigentümer: Bestohlener).
+     - Mieter wohnt in Wohnung.
+     - Kunde kauft Ware auf Raten (Eigentumsvorbehalt).
+     - Zuordnung per Drag & Drop auf die Personen.
+     - Messbarkeit: Korrekte Trennung der Begriffe.
+   - Lernziel: Abstraktionsprinzip.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_law_possession.json')
+  - `scenarios`: ["theft", "rent", "buy", "borrow"].
+- [ ] Shared CSS Check ('contract_law.css')
+  - Zuordnungs-Spiel (Person -> Sache).
+- [ ] Game-Engine Logic ('game_law_possession.js')
+  - Unterscheidung tatsächliche Herrschaft (Besitz) vs rechtliche Herrschaft (Eigentum).
+  - Eigentumsvorbehalt.
+- [ ] Integration
+  - Startbar über JSON.

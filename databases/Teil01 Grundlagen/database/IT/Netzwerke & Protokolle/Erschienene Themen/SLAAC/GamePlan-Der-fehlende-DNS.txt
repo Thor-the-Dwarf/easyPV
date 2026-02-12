@@ -1,0 +1,20 @@
+Anforderungen
+3. "Der fehlende DNS"
+   - Ziel: Identifiziere das Problem von reinem SLAAC.
+   - Spielmechanik: 
+     - Client hat IP via SLAAC. Ping zu 2001:4860:4860::8888 geht.
+     - Ping google.de geht nicht.
+     - Grund: SLAAC (ursprünglich) übermittelt keinen DNS-Server! (RDNSS kam später).
+     - Lösung: Stateless DHCPv6 dazu nehmen (nur für DNS).
+     - Messbarkeit: Namensauflösung klappt.
+   - Lernziel: Grenzen von SLAAC (Other Configuration Flag).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_slaac_dns.json')
+  - `config`: "slaac_only".
+- [ ] Shared CSS Check ('network_ip.css')
+  - Browser Fehler "DNS Probe Finished NXDOMAIN".
+- [ ] Game-Engine Logic ('game_slaac_dns.js')
+  - RDNSS Option aktivieren oder Stateless DHCPv6 hinzufügen.
+- [ ] Integration
+  - Startbar über JSON.

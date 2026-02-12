@@ -1,0 +1,20 @@
+Anforderungen
+1. "IT-Grundschutz-Check"
+   - Ziel: Fülle den Grundschutz-Baustein für einen Server aus.
+   - Spielmechanik: 
+     - Baustein: "SYS.1.1 Allgemeiner Server".
+     - Anforderung: "Virenschutz installiert?" -> Ja/Nein.
+     - Anforderung: "USB-Ports deaktiviert?" -> Ja/Nein.
+     - Spieler muss die Maßnahmen als "Umgesetzt" markieren.
+     - Messbarkeit: 100% Konformität mit BSI-Empfehlung.
+   - Lernziel: Arbeiten mit dem IT-Grundschutz-Kompendium.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_grundschutz.json')
+  - `module`: "SYS.1.1".
+- [ ] Shared CSS Check ('security_management.css')
+  - Checklist Formular (BSI Style).
+- [ ] Game-Engine Logic ('game_sec_grundschutz.js')
+  - Compliance Check (Ja/Nein/Teilweise).
+- [ ] Integration
+  - Startbar über JSON.

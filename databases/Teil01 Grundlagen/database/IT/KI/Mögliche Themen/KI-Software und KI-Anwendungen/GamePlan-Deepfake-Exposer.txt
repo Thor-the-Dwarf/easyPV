@@ -1,0 +1,20 @@
+Anforderungen
+2. "Deepfake-Exposer"
+   - Ziel: Erkenne das gefälschte Bild/Audio.
+   - Spielmechanik: 
+     - Bild zeigt Person mit 6 Fingern. -> Fake.
+     - Audio: Stimme klingt blechern/monoton bei Emotionen. -> Fake.
+     - Bild: Text im Hintergrund ist Zeichensalat. -> Fake.
+     - Messbarkeit: Alle Fakes markiert.
+   - Lernziel: Artefakte von generativer KI erkennen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ki_deepfake.json')
+  - `artifacts`: ["hands", "eyes", "text"].
+- [ ] Shared CSS Check ('ai_robotics.css')
+  - Lupe-Cursor für Inspektion.
+- [ ] Game-Engine Logic ('game_ki_deepfake.js')
+  - Bild-Analyse Minigame.
+  - Klick auf Fehler -> Punkte.
+- [ ] Integration
+  - Startbar über JSON.

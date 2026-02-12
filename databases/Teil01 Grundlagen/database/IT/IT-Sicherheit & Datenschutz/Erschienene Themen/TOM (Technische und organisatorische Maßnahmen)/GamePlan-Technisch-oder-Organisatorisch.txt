@@ -1,0 +1,21 @@
+Anforderungen
+1. "Technisch oder Organisatorisch?"
+   - Ziel: Sortiere die Maßnahmen korrekt.
+   - Spielmechanik: 
+     - "Firewall installieren". -> Technisch.
+     - "Sicherheitsrichtlinie schreiben". -> Organisatorisch.
+     - "Schulung durchführen". -> Organisatorisch.
+     - "Zutrittskarte ausgeben". -> Technisch (System) / Organisatorisch (Prozess) -> Diskussionsfall, hier: Technisch (Mittel).
+     - "Vier-Augen-Prinzip anordnen". -> Organisatorisch.
+     - Messbarkeit: Korrekte Kategorie nach DSGVO/BSI.
+   - Lernziel: Unterscheidung TOMs.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_tom_sort.json')
+  - `items`: ["firewall", "policy", "training"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - Zwei Listen/Spalten.
+- [ ] Game-Engine Logic ('game_sec_tom_sort.js')
+  - Zuordnung T vs O.
+- [ ] Integration
+  - Startbar über JSON.

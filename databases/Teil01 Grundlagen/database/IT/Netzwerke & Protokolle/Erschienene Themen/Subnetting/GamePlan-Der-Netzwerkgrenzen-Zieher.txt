@@ -1,0 +1,19 @@
+Anforderungen
+1. "Der Netzwerkgrenzen-Zieher"
+   - Ziel: Bestimme Netz-ID und Broadcast-Adresse.
+   - Spielmechanik: 
+     - IP: 192.168.1.55 /24. -> Netz: .1.0, Broadcast: .1.255.
+     - IP: 192.168.1.55 /26. -> Netz: .1.0, Broadcast: .1.63 (Blockgröße 64).
+     - Spieler markiert den Bereich auf dem Zahlenstrahl.
+     - Messbarkeit: Korrekte Grenzen.
+   - Lernziel: CIDR und Blockgrößen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_subnet_bounds.json')
+  - `cidr`: 26.
+- [ ] Shared CSS Check ('network_ip.css')
+  - Zahlenstrahl 0-255.
+- [ ] Game-Engine Logic ('game_subnet_bounds.js')
+  - Slider für Netzgrenzen setzen (0, 64, 128...).
+- [ ] Integration
+  - Startbar über JSON.

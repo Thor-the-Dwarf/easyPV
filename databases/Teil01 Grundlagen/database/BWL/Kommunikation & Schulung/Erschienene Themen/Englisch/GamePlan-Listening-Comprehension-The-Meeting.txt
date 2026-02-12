@@ -1,0 +1,21 @@
+Anforderungen
+4. "Listening-Comprehension: The Meeting"
+   - Ziel: Beantworte 3 Fragen zum Inhalt eines (simulierten) englischen Meetings richtig.
+   - Spielmechanik: 
+     - Kurzer Text-Dialog oder Audio (falls möglich) läuft ab (Thema z.B. Deadline-Verschiebung).
+     - Danach Frage: "When is the new deadline?"
+     - Multiple Choice Antworten.
+     - Messbarkeit: Richtige Antwort = Punkte. Prüft Verstehen, nicht nur Vokabeln.
+   - Lernziel: Hör-/Leseverstehen im geschäftlichen Kontext.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_englisch_listening.json')
+  - `dialog`: Text transcript (oder Audio-URL).
+  - `questions`: [ { "q": "...", "a": ["...", "..."], "correct": 0 } ].
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Audio-Player (dummy/real).
+  - Chat-Verlauf Darstellung.
+- [ ] Game-Engine Logic ('game_englisch_listening.js')
+  - Sequentieller Ablauf: Hören/Lesen -> Fragen.
+- [ ] Integration
+  - Startbar über JSON.

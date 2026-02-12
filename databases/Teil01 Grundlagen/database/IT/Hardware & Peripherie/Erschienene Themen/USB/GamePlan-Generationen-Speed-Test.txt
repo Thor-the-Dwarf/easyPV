@@ -1,0 +1,20 @@
+Anforderungen
+1. "Generationen-Speed-Test"
+   - Ziel: Ordne die Farbe der Geschwindigkeit zu.
+   - Spielmechanik: 
+     - Buchse Schwarz (2.0) -> 480 Mbit/s.
+     - Buchse Blau (3.0/3.1 Gen1) -> 5 Gbit/s.
+     - Buchse Rot/Teal (3.1 Gen2) -> 10 Gbit/s.
+     - Messbarkeit: 100% korrekte Zuordnung.
+   - Lernziel: Farbcodierung und Geschwindigkeitsklassen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_usb_gen.json')
+  - `colors`: ["black", "blue", "teal"].
+  - `speeds`: [480, 5000, 10000].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - USB-Buchsen Farben.
+- [ ] Game-Engine Logic ('game_usb_gen.js')
+  - Zuordnung.
+- [ ] Integration
+  - Startbar über JSON.

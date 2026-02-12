@@ -1,0 +1,49 @@
+1. "SATA vs NVMe"
+   - Ziel: Wähle das richtige Protokoll für den M.2 Slot.
+   - Spielmechanik: 
+     - Board-Slot A: "M-Key (NVMe only)".
+     - Board-Slot B: "B-Key (SATA only)".
+     - SSD 1: NVMe (Eine Kerbe). SSD 2: SATA (Zwei Kerben).
+     - Spieler steckt falsch -> Geht nicht rein oder wird nicht erkannt.
+     - Messbarkeit: Funktionierende Laufwerke.
+   - Lernziel: M.2 ist nur der Formfaktor, nicht das Protokoll!
+
+2. "TBW-Rechner (Lebensdauer)"
+   - Ziel: Wie lange hält die SSD?
+   - Spielmechanik: 
+     - TBW (Terabytes Written): 600 TB.
+     - Täglicher Schreibwert: 50 GB.
+     - Formel: 600.000 / 50 = 12.000 Tage.
+     - Frage: "Hält sie 10 Jahre?" (3650 Tage).
+     - Antwort: Ja.
+     - Messbarkeit: Korrekte Haltbarkeitsprognose.
+   - Lernziel: Verschleiß von Flash-Speicher.
+
+3. "Zellen-Typen (SLC, MLC, TLC, QLC)"
+   - Ziel: Wähle die SSD für den Einsatzzweck.
+   - Spielmechanik: 
+     - "Enterprise Log-Server (Viel Schreiben)". -> SLC/MLC (Teuer, haltbar).
+     - "Archiv-Datengrab (Wenig Schreiben, viel Lesen)". -> QLC (Billig, nicht haltbar).
+     - "Gaming PC". -> TLC (Guter Mix).
+     - Messbarkeit: Optimale Technologie gewählt.
+   - Lernziel: Bits pro Zelle vs Haltbarkeit/Performance.
+
+4. "Trim-Befehl"
+   - Ziel: Verhindere, dass die SSD langsam wird.
+   - Spielmechanik: 
+     - SSD füllt sich mit "gelöschten" Daten (die der Controller noch als voll sieht).
+     - Schreibgeschwindigkeit sinkt auf 10 MB/s.
+     - Spieler drückt "Trim ausführen".
+     - Controller räumt auf -> Speed wieder 500 MB/s.
+     - Messbarkeit: Performance-Wiederherstellung.
+   - Lernziel: Garbage Collection bei SSDs.
+
+5. "Der IOPS-Racer"
+   - Ziel: Vergleiche random vs sequential read.
+   - Spielmechanik: 
+     - Autorennen.
+     - HDD: Schnell auf der Geraden (Sequential), bleibt in Kurven stehen (Random IOPS schlecht wegen Seek Time).
+     - SSD: Raste durch die Kurven (Hohe IOPS).
+     - Wette auf den Sieger beim "Windows Boot" (Viele kleine Dateien -> Random).
+     - Messbarkeit: Wette auf SSD gewonnen.
+   - Lernziel: Warum SSDs das Systemgefühl beschleunigen (Zugriffszeit).

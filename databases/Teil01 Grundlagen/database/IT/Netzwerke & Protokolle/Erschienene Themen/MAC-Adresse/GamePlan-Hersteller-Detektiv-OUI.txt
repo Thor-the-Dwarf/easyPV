@@ -1,0 +1,20 @@
+Anforderungen
+1. "Hersteller-Detektiv (OUI)"
+   - Ziel: Identifiziere das Gerät anhand der MAC-Adresse.
+   - Spielmechanik: 
+     - MAC: "00:1A:11:XX:XX:XX". -> Google (Nest).
+     - MAC: "BC:5F:F4:XX:XX:XX". -> ASRock.
+     - MAC: "DC:A6:32:XX:XX:XX". -> Raspberry Pi.
+     - Messbarkeit: Korrekte Zuordnung Hersteller <-> OUI.
+   - Lernziel: Aufbau der MAC (OUI + NIC).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_mac_oui.json')
+  - `db`: { "00:1A:11": "Google", "DC:A6:32": "Raspberry" }.
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Suchmaske / Scanner.
+- [ ] Game-Engine Logic ('game_mac_oui.js')
+  - Lookup-Simulation.
+  - Multiple Choice.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+2. "Quellen-Check: Fake oder Fakt?"
+   - Ziel: Bewerte die Glaubwürdigkeit von 5 Quellen für eine Facharbeit.
+   - Spielmechanik: 
+     - Quelle 1: "Wikipedia-Artikel ohne Belege". -> Mittel.
+     - Quelle 2: "Blog von Hans123". -> Niedrig.
+     - Quelle 3: "Whitepaper von Microsoft". -> Hoch (Hersteller).
+     - Quelle 4: "BSI Lagebericht". -> Sehr Hoch (Behörde).
+     - Messbarkeit: Korrekte Vertrauensstufe gewählt.
+   - Lernziel: Medienkompetenz und Quellenkritik.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_sources.json')
+  - `sources`: ["wiki", "blog", "whitepaper"].
+- [ ] Shared CSS Check ('basics_admin.css')
+  - Ranking-Liste.
+- [ ] Game-Engine Logic ('game_basics_sources.js')
+  - Vertrauenswürdigkeit einstufen.
+- [ ] Integration
+  - Startbar über JSON.

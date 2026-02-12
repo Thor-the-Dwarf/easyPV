@@ -1,0 +1,23 @@
+Anforderungen
+5. "Sockel-Matcher"
+   - Ziel: Welche CPU passt auf welches Mainboard?
+   - Spielmechanik: 
+     - CPU: "Intel Core i9-12900K" (LGA 1700).
+     - CPU: "AMD Ryzen 5 5600X" (AM4).
+     - Boards: "Z690", "B550".
+     - Drag & Drop. Falscher Sockel -> Pins verbogen (Game Over).
+     - Messbarkeit: 5 korrekte Paarungen.
+   - Lernziel: Kompatibilität von Sockeln (LGA vs PGA).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cpu_socket.json')
+  - `cpus`: [ { "name": "i9", "socket": "1700" } ].
+  - `boards`: [ { "name": "Z690", "socket": "1700" } ].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - CPU-Unterseite (Pins/Pads).
+  - Mainboard-Sockel Visuals.
+- [ ] Game-Engine Logic ('game_cpu_socket.js')
+  - Matching-Logik.
+  - Fail-State Animation (Verbogene Pins).
+- [ ] Integration
+  - Startbar über JSON.

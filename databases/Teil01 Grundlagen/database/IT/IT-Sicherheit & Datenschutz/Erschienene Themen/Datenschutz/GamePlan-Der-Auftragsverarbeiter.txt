@@ -1,0 +1,19 @@
+Anforderungen
+5. "Der Auftragsverarbeiter"
+   - Ziel: Prüfe, ob ein AV-Vertrag nötig ist.
+   - Spielmechanik: 
+     - "Wir hosten Webseite bei Provider X". -> AV-Vertrag nötig.
+     - "Der Postbote bringt Briefe". -> Kein AV-Vertrag (Postgeheimnis).
+     - "Putzfirma leert Papierkörbe". -> Verschwiegenheitserklärung (aber kein AV).
+     - Messbarkeit: Korrekte juristische Einordnung.
+   - Lernziel: Unterscheidung Auftragsverarbeitung vs. Fremdleistung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_av.json')
+  - `partners`: ["hoster", "mailman", "cleaner"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Vertrags-Dokument Icon.
+- [ ] Game-Engine Logic ('game_sec_av.js')
+  - Entscheidung: AV-Vertrag nötig? (Ja/Nein).
+- [ ] Integration
+  - Startbar über JSON.

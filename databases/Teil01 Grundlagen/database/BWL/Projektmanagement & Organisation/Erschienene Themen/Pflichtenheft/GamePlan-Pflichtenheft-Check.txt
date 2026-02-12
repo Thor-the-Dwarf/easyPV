@@ -1,0 +1,19 @@
+Anforderungen
+1. "Pflichtenheft-Check"
+   - Ziel: Unterscheide 10 Inhalte: Gehören sie ins Pflichtenheft oder Lastenheft?
+   - Spielmechanik: 
+     - Inhalt: "Datenbank-Design (ERM)". -> Pflichtenheft (WIE).
+     - Inhalt: "Ziel: Umsatzsteigerung". -> Lastenheft (WAS/WOZU).
+     - Inhalt: "GUI-Mockups". -> Pflichtenheft (Lösung).
+     - Messbarkeit: Korrekte Zuordnung.
+   - Lernziel: Abgrenzung der Dokumente.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_ph_check.json')
+  - `content`: ["tech_spec", "gui", "data"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Klemmbrett Checkliste.
+- [ ] Game-Engine Logic ('game_pm_ph_check.js')
+  - Vollständigkeitsprüfung (Fehlt das Datenmodell?).
+- [ ] Integration
+  - Startbar über JSON.

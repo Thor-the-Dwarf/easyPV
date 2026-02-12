@@ -1,0 +1,20 @@
+Anforderungen
+2. "Der Scheduler"
+   - Ziel: Teile CPU-Zeit so zu, dass kein Prozess verhungert (Starvation).
+   - Spielmechanik: 
+     - 3 Prozesse warten: Video (Echtzeit), Virusscan (Hintergrund), Texteditor (Interaktiv).
+     - Zeitslots verteilen: A A B C A...
+     - Wenn Video stottert -> Fehler. Wenn Virusscan nie drankommt -> Fehler.
+     - Messbarkeit: Alle Prozesse erhalten Minimum an Ressourcen.
+   - Lernziel: Multitasking und Scheduling-Strategien.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_scheduler.json')
+  - `processes`: ["video", "virus", "text"].
+- [ ] Shared CSS Check ('basics_os.css')
+  - CPU-Zeitstrahl (Gantt-Chart).
+- [ ] Game-Engine Logic ('game_basics_scheduler.js')
+  - Round Robin Simulator.
+  - Starvation erkennen.
+- [ ] Integration
+  - Startbar über JSON.

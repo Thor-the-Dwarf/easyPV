@@ -1,0 +1,20 @@
+Anforderungen
+5. "Channel-Architekt"
+   - Ziel: Baue ein Quad-Channel System (Server).
+   - Spielmechanik: 
+     - Server-Board mit 8 Slots.
+     - Ziel: 4 Riegel für Quad-Channel.
+     - Anleitung lesen: "A1, B1, C1, D1".
+     - Messbarkeit: Korrekte Bestückung.
+   - Lernziel: Skalierung über Dual Channel hinaus (HEDT/Server).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ram_quad.json')
+  - `slots`: 8.
+  - `config`: "quad".
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Server-Mainboard Draufsicht.
+- [ ] Game-Engine Logic ('game_ram_quad.js')
+  - Slot-Belegung prüfen (A1, B1, C1, D1).
+- [ ] Integration
+  - Startbar über JSON.

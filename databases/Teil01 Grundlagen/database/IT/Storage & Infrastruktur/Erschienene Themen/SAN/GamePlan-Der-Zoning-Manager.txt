@@ -1,0 +1,21 @@
+Anforderungen
+3. "Der Zoning-Manager"
+   - Ziel: Trenne die Geräte im FC-Switch (Sicherheit).
+   - Spielmechanik: 
+     - "Soft Zoning" (per WWN) oder "Hard Zoning" (per Port).
+     - Ziel: Tape-Library darf nicht von Webserver gesehen werden.
+     - Zone A: DB-Server + Storage.
+     - Zone B: Mail-Server + Storage.
+     - Messbarkeit: Geräte sehen nur ihre Partner.
+   - Lernziel: Sicherheit im Fabric.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_san_zoning.json')
+  - `zones`: ["A", "B"].
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Fibre-Channel Switch Ansicht (Ports).
+- [ ] Game-Engine Logic ('game_san_zoning.js')
+  - Linien ziehen (Zoning).
+  - Zugriffstest (Sieht Tape den Webserver? Nein -> Gut).
+- [ ] Integration
+  - Startbar über JSON.

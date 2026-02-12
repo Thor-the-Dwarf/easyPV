@@ -1,0 +1,22 @@
+Anforderungen
+2. "Golden Image Master"
+   - Ziel: Updates für 500 User in 1 Minute.
+   - Spielmechanik: 
+     - 500 VMs basieren auf "Golden Image v1.0".
+     - Update "Office 2025" kommt.
+     - Spieler installiert Update in "Golden Image v1.1".
+     - Klick auf "Recompose".
+     - Alle 500 User haben beim nächsten Login das neue Office.
+     - Messbarkeit: Konsistente Umgebung.
+   - Lernziel: Linked Clones / Master Image Verwaltung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_vdi_golden.json')
+  - `version`: "1.0", `update`: "Office 2025".
+- [ ] Shared CSS Check ('virtualization_vdi.css')
+  - Baumstruktur (Master -> Clones).
+- [ ] Game-Engine Logic ('game_vdi_golden.js')
+  - "Recompose" Button Effekt (Welle läuft durch alle VMs).
+  - Validierung: Haben alle VMs das Update?
+- [ ] Integration
+  - Startbar über JSON.

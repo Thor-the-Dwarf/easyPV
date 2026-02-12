@@ -1,0 +1,20 @@
+Anforderungen
+4. "Gemeinkosten-Verteiler"
+   - Ziel: Wer zahlt den Strom?
+   - Spielmechanik: 
+     - Stromrechnung 10.000€.
+     - Abteilung A (100qm), Abteilung B (900qm).
+     - Verteilung nach Fläche.
+     - A zahlt 1000€, B zahlt 9000€.
+     - Messbarkeit: Verursachergerechte Umlage.
+   - Lernziel: Kostenstellenrechnung / Verteilungsschlüssel.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_overhead_alloc.json')
+  - `overhead`: 1000.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Verteilschlüssel (z.B. nach Kopfzahl oder m²).
+- [ ] Game-Engine Logic ('game_math_overhead_alloc.js')
+  - Zuschlagskalkulation.
+- [ ] Integration
+  - Startbar über JSON.

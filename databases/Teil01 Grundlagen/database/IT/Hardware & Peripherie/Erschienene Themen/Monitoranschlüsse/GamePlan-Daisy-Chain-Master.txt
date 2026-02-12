@@ -1,0 +1,20 @@
+Anforderungen
+4. "Daisy-Chain-Master"
+   - Ziel: Verbinde 3 Monitore mit nur einem Kabel zum PC (MST).
+   - Spielmechanik: 
+     - Technologie: DisplayPort Multi-Stream Transport.
+     - Player zieht Kabel: PC -> Monitor 1 -> Monitor 2 -> Monitor 3.
+     - Wenn er HDMI nimmt -> Geht nicht (meistens).
+     - Messbarkeit: Alle 3 Monitore zeigen Bild.
+   - Lernziel: Feature von DisplayPort.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_monitor_daisy.json')
+  - `count`: 3.
+  - `cable`: "DisplayPort".
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Rückseiten von 3 Monitoren.
+- [ ] Game-Engine Logic ('game_monitor_daisy.js')
+  - Verkabelungs-Logik (Out -> In).
+- [ ] Integration
+  - Startbar über JSON.

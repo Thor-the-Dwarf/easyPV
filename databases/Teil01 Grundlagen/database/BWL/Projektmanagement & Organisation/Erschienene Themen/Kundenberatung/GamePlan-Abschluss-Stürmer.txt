@@ -1,0 +1,21 @@
+Anforderungen
+5. "Abschluss-Stürmer"
+   - Ziel: Erkenne Kaufsignale und schließe den Vertrag ab.
+   - Spielmechanik: 
+     - Dialog läuft.
+     - Signal: "Wann könnten Sie liefern?" -> Jetzt Button "Kaufabschluss anbieten" drücken!
+     - Signal: "Ich weiß noch nicht..." -> Button "Beratung fortsetzen".
+     - Wer bei "Ich weiß nicht" abschließen will -> Kunde springt ab (Game Over).
+     - Wer bei Kaufsignal weiterschwafelt -> Kunde genervt.
+   - Lernziel: Timing für den Vertragsabschluss (Closing).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_closing.json')
+  - `signals`: ["buy", "wait"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Indikatoren-Anzeige.
+- [ ] Game-Engine Logic ('game_pm_closing.js')
+  - Kaufsignale erkennen.
+  - Abschlussfrage stellen.
+- [ ] Integration
+  - Startbar über JSON.

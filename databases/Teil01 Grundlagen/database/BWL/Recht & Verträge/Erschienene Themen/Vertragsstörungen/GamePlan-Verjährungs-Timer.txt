@@ -1,0 +1,42 @@
+Anforderungen
+5. "Verjährungs-Timer"
+   - Ziel: Ist der Anspruch verjährt? (Regelverjährung 3 Jahre).
+   - Spielmechanik: 
+     - Rechnung vom 05.05.2020.
+     - Heute: 02.01.2024.
+     - Verjährungsbeginn: 31.12.2020. Ende: 31.12.2023.
+     - Spieler muss entscheiden: "Verjährt" oder "Nicht verjährt".
+     - Messbarkeit: Korrekte Fristberechnung.
+   - Lernziel: §§ 195, 199 BGB.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Zeitstrahl mit Fristen.
+- [ ] Aufgabe: "Ist der Anspruch noch durchsetzbar?"
+- [ ] Kontext: Verjährungsbeginn (Jahresende!) und Regelfrist (3 Jahre).
+
+2. Screen-Layout
+- [ ] Horizontaler Zeitstrahl (Jahre).
+- [ ] Markierungen: "Rechnung", "Verjährungsbeginn", "Verjährungsende".
+- [ ] Große Entscheidung: "Verjährt" vs "Nicht verjährt".
+
+3. Browser- und Device-Resilienz
+- [ ] Timeline muss auf Mobile scrollbar oder vertikal stackbar sein.
+- [ ] Datum-Labels gut lesbar.
+
+4. Kernvisuals
+- [ ] Sanduhr-Icon (Zeit läuft ab).
+- [ ] Kalenderblätter, die "umblättern".
+- [ ] Roter "VERJÄHRT"-Stempel.
+
+5. Interaktion und Feedback
+- [ ] User setzt Marker auf "Heute" auf dem Zeitstrahl.
+- [ ] System prüft: Liegt "Heute" nach "Verjährungsende"?
+- [ ] Feedback: "Richtig! Frist begann 31.12.2020, endete 31.12.2023."
+
+6. KPI-Klarheit
+- [ ] Korrekte Fristberechnung in %.
+
+7. QA-Paket
+- [ ] Sonderfälle testen (Hemmung, Neubeginn).
+- [ ] Datumslogik validieren.

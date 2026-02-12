@@ -1,0 +1,73 @@
+Anforderungen (reverse engineered)
+- Ziel: AP1-IT-Prototyp mit klarem Fokus auf den eigentlichen Fallkern (Signal im Bild) und schneller Entscheidung.
+- Kontext: Browser-realistisch (Desktop, kleines Laptopfenster, mobile Browser inkl. Adressleiste).
+- UX-Prinzip:
+  - Der Kernfall muss visuell dominieren.
+  - Header/Meta nur so groß wie noetig.
+  - Entscheidungen ohne Scroll-Huerde sichtbar.
+  - Keine Vorab-Aufloesung.
+  - Feedback erst nach Auswahl, kurz und sympathisch.
+
+Arbeitspakete (wie sie haetten aussehen muessen)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten festlegen (1 = Fallkern, 2 = Entscheidungen, 3 = Progress).
+- [ ] Textbudget definieren (max. 1 kurzer Titel + 1 kurze Frage + 1 kurze Fallbeschreibung).
+- [ ] Nicht-essenzielle Copy entfernen (keine doppelten/erklaerenden Intro-Container).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Containerstruktur auf 3 Ebenen begrenzen: `page -> card -> content`.
+- [ ] Bildsektion vergroessern (Desktop > 50% Breite, Mobile > 30dvh Hoehe).
+- [ ] Entscheidungssektion unmittelbar neben/unter Kernfall platzieren.
+- [ ] Header komprimieren (kleine Titelzeile + klare KPI-Labels).
+
+3. Browser- und Device-Resilienz (Global-Optimierung)
+- [ ] `min-height: 100dvh` statt `100vh` verwenden.
+- [ ] Safe-Area/Insets beruecksichtigen (`env(safe-area-inset-*)`).
+- [ ] Breakpoints fuer mindestens:
+  - Mobile Portrait (<=720px)
+  - Standard Desktop
+  - Low-height Desktop (z. B. <=820px Hoehe)
+- [ ] Kein horizontaler Overflow, Touch-Ziele >= 48px.
+
+4. Kernvisuals (Signal darf nicht mikroskopisch sein)
+- [ ] Fallgrafiken so gestalten, dass der relevante Inhalt >60% der Flaeche einnimmt.
+- [ ] Mini-Innencontainer im Bild entfernen.
+- [ ] High-Contrast-Typo fuer Schluesselwerte (z. B. Soll/Ist).
+- [ ] `object-fit` strategisch pro Layout einsetzen (fuer Fokus ggf. `cover`, sonst `contain`).
+
+5. Interaktion und Feedback
+- [ ] Vor Auswahl nur Frage + Optionen anzeigen.
+- [ ] Nach Auswahl:
+  - Kurzer freundlicher Ton (z. B. "Sauber.", "Fast.")
+  - Deine Auswahl vs. richtige Einordnung
+  - Kurzbegruendung in 1-2 Saetzen
+- [ ] CTA "Weiter" erst nach Antwort einblenden.
+
+6. KPI-Klarheit
+- [ ] KPI-Werte immer mit Label anzeigen (z. B. Fortschritt, Treffer, Quote).
+- [ ] Unklare Zahlen ohne Beschriftung verbieten.
+- [ ] Progressbar an beantwortete Faelle koppeln.
+
+7. Content-/Copy-Feinschliff
+- [ ] Gewuenschten sympathischen Untertitel integrieren.
+- [ ] Mikrotexte konsistent halten (gleicher Sprachstil, keine Redundanz).
+- [ ] Lange Falltexte automatisch kuerzen (Trunkierung mit Ellipse, wenn noetig).
+
+8. QA-Paket (verpflichtend)
+- [ ] Screenshot-Check Desktop.
+- [ ] Screenshot-Check kleines Browserfenster.
+- [ ] Screenshot-Check Mobile.
+- [ ] Funktionstest: Auswahl, Feedback, Weiter, Endscreen.
+- [ ] Text-State Hook validieren (`render_game_to_text`).
+
+9. Abnahmekriterien
+- [ ] Kernfall ist auf den ersten Blick dominant.
+- [ ] Optionen ohne Scrollen sichtbar (typische Fensterhoehen).
+- [ ] Kein abgeschnittener oder mikroskopischer Kerninhalt.
+- [ ] KPI-Bedeutung sofort erkennbar.
+- [ ] UX wirkt kompakt, klar, sympathisch.
+
+Beispiel-Definition of Done
+- Screenshot zeigt: grosser Fallinhalt links, klare Frage + Antwortbuttons rechts/unterhalb.
+- Header belegt deutlich weniger Platz als Fall+Antwortbereich.
+- Mobile/Browser-Ansicht bleibt ohne Layoutbruch und ohne Overflow nutzbar.

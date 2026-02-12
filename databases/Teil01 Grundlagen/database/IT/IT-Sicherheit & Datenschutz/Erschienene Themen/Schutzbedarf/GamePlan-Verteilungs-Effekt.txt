@@ -1,0 +1,19 @@
+Anforderungen
+4. "Verteilungs-Effekt"
+   - Ziel: Senke den Schutzbedarf durch Verteilung.
+   - Spielmechanik: 
+     - Backup auf einem Band: Sehr Hoch (Single Point of Failure).
+     - Backup auf 3 Standorte verteilt: Verfügbarkeit pro Standort geringer kritisch? (Komplexes Thema, hier vereinfacht: Risiko sinkt durch Redundanz).
+     - Ziel: Verfügbarkeit sichern.
+     - Messbarkeit: Strategie wählen.
+   - Lernziel: Verteilungseffekt (weniger relevant im BSI Grundschutz, aber logisch wichtig).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_distrib.json')
+  - `backup`: "distributed".
+- [ ] Shared CSS Check ('security_management.css')
+  - Karte mit Standorten.
+- [ ] Game-Engine Logic ('game_sec_distrib.js')
+  - Risikominderung durch Verteilung.
+- [ ] Integration
+  - Startbar über JSON.

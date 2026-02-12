@@ -1,0 +1,20 @@
+Anforderungen
+2. "Ausfall-Roulette"
+   - Ziel: Welche Daten sind weg?
+   - Spielmechanik: 
+     - JBOD über 3 Platten.
+     - Datei A liegt auf Platte 1. Datei B auf Platte 2.
+     - Platte 2 fällt aus.
+     - Ergebnis: Datei A noch da. Datei B weg. (Bei RAID 0 wäre ALLES weg).
+     - Messbarkeit: Verständnis des Fehlerverhaltens.
+   - Lernziel: Risikobewertung JBOD.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_jbod_fail.json')
+  - `disks`: 3. `files`: ["A", "B", "C"].
+- [ ] Shared CSS Check ('storage_basics.css')
+  - Festplatten-Icon mit Datei-Symbolen drauf.
+- [ ] Game-Engine Logic ('game_jbod_fail.js')
+  - Platte entfernen -> Nur Dateien dieser Platte weg.
+- [ ] Integration
+  - Startbar über JSON.

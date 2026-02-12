@@ -1,0 +1,21 @@
+Anforderungen
+1. "Lokaler PC vs VDI"
+   - Ziel: Entscheide, wo gerechnet wird.
+   - Spielmechanik: 
+     - Szenario: "Mitarbeiter rendert 4K Video". -> Braucht GPU.
+     - PC: "Thin Client (Schwach)". -> Geht nicht.
+     - VDI: "CAD-VM im Rechenzentrum mit GRID-Karte". -> Geht!
+     - Szenario: "Offline arbeiten im Zug". -> PC (Fat Client) nötig.
+     - Messbarkeit: Korrekte Arbeitsumgebung gewählt.
+   - Lernziel: Wo findet die Verarbeitung statt?
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_vdi_choice.json')
+  - `tasks`: ["video_render", "offline_work", "office"].
+- [ ] Shared CSS Check ('virtualization_vdi.css')
+  - Waage oder Entscheidungs-Matrix.
+- [ ] Game-Engine Logic ('game_vdi_choice.js')
+  - Drag & Drop Task auf "PC" oder "VDI".
+  - Feedback bei falscher Wahl (z.B. "Kein Netz im Zug").
+- [ ] Integration
+  - Startbar über JSON.

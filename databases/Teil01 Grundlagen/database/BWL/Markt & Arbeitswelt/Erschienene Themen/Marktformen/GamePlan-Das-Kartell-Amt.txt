@@ -1,0 +1,20 @@
+Anforderungen
+3. "Das Kartell-Amt"
+   - Ziel: Identifiziere in 5 Dialogen verbotene Preisabsprachen (Oligopol-Gefahr).
+   - Spielmechanik: 
+     - Chat-Protokoll: "Lass uns beide den Preis auf 1,50€ setzen."
+     - Spieler muss entscheiden: "Legal" oder "Illegal".
+     - Messbarkeit: 5 Fälle. Richtig erkannt = 20%. Falsch = 0%.
+   - Lernziel: Gefahren und Verbote im Oligopol (Kartellbildung).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_markt_kartell.json')
+  - `chats`: [ { "text": "...", "illegal": true } ].
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Messenger-Style.
+  - "Stempel"-Animation (LEGAL / ILLEGAL).
+- [ ] Game-Engine Logic ('game_markt_kartell.js')
+  - Chat-Flow.
+  - Entscheidung per Button.
+- [ ] Integration
+  - Startbar über JSON.

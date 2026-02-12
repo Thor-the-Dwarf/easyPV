@@ -1,0 +1,62 @@
+{
+  "id": "finanzierungs_sortiermaschine_v1",
+  "title": "Finanzierungs-Sortiermaschine",
+  "subtitle": "Sortiere Begriffe schnell in die richtige Finanzierungsart.",
+  "categories": [
+    { "key": "leasing", "label": "Leasing", "color": "#38bdf8" },
+    { "key": "kredit", "label": "Kreditkauf", "color": "#facc15" },
+    { "key": "eigenkapital", "label": "Eigenkapital", "color": "#4ade80" }
+  ],
+  "terms": [
+    {
+      "text": "Bilanzneutral beim Nutzer",
+      "category": "leasing",
+      "explanation": "Leasingobjekte werden haeufig nicht als eigenes Anlagevermoegen beim Nutzer gefuehrt."
+    },
+    {
+      "text": "Eigentum geht sofort auf Kaeufer ueber",
+      "category": "kredit",
+      "explanation": "Beim Kreditkauf wird das Gut direkt erworben, finanziert wird der Kaufpreis."
+    },
+    {
+      "text": "Monatliche Raten ohne Eigentumserwerb",
+      "category": "leasing",
+      "explanation": "Typisch fuer Leasing: Nutzung gegen Rate, Eigentum verbleibt beim Leasinggeber."
+    },
+    {
+      "text": "Keine Zinsbelastung durch Fremdkapital",
+      "category": "eigenkapital",
+      "explanation": "Eigenkapitalfinanzierung benoetigt keinen Bankkredit und damit keine Kreditzinsen."
+    },
+    {
+      "text": "Abschreibung beim Unternehmen als Eigentuemer",
+      "category": "kredit",
+      "explanation": "Bei Kauf (auch kreditfinanziert) schreibt der Eigentuemer das Anlagegut ab."
+    },
+    {
+      "text": "Liquiditaet wird geschont durch verteilte Nutzungskosten",
+      "category": "leasing",
+      "explanation": "Leasing reduziert hohe Anfangsinvestitionen und verteilt Kosten ueber Laufzeiten."
+    },
+    {
+      "text": "Hohe Anfangsausgabe aus eigenen Mitteln",
+      "category": "eigenkapital",
+      "explanation": "Eigenkapital bedeutet Finanzierung aus vorhandenen eigenen Geldmitteln."
+    },
+    {
+      "text": "Kreditvertrag mit Tilgung und Zinsen",
+      "category": "kredit",
+      "explanation": "Der Kreditkauf basiert auf Darlehen inkl. Rueckzahlung und Zinsaufwand."
+    },
+    {
+      "text": "Rueckgabe am Laufzeitende moeglich",
+      "category": "leasing",
+      "explanation": "Leasingvertraege enthalten oft Optionen wie Rueckgabe oder Anschlussleasing."
+    },
+    {
+      "text": "Unabhaengig von Bankkonditionen finanzieren",
+      "category": "eigenkapital",
+      "explanation": "Eigenkapital ist nicht von Kreditwuerdigkeit oder Kreditkonditionen abhaengig."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+1. "Kanal-Planer (2.4 GHz)"
+   - Ziel: Vermeide Überlappungen.
+   - Spielmechanik: 
+     - Nachbar A auf Kanal 1.
+     - Nachbar B auf Kanal 6.
+     - Spieler wählt Kanal 3 -> Überlappt mit beiden! (Schlecht).
+     - Spieler wählt Kanal 11 -> Frei (Gut).
+     - Regel: 1, 6, 11 (überlappungsfrei).
+     - Messbarkeit: Datendurchsatz optimiert.
+   - Lernziel: Frequenzspektrum und Kanalbreite.
+
+2. "5 GHz vs 2.4 GHz"
+   - Ziel: Reichweite vs Speed.
+   - Spielmechanik: 
+     - Szenario: "Dicke Betonwand". -> 2.4 GHz (Dringt besser durch).
+     - Szenario: "Im gleichen Raum, Gaming". -> 5 GHz (Schneller, weniger Störungen).
+     - Messbarkeit: Beste Verbindungsqualität für den Ort.
+   - Lernziel: Physikalische Eigenschaften der Frequenzen.
+
+3. "Verschlüsselungs-Historie"
+   - Ziel: Hacke das WEP-Netz (Simulation).
+   - Spielmechanik: 
+     - WEP -> In Sekunden geknackt (IV-Collisions).
+     - WPA2-CCMP -> Sicher (nur Brute Force auf schwaches PW möglich).
+     - WPA3 -> Sehr sicher (SAE Handshake verhindert Offline Dictionary Attack).
+     - Messbarkeit: Sicherheitsniveau bewerten.
+   - Lernziel: Standards (WEP, WPA, WPA2, WPA3).
+
+4. "Hidden SSID (Sicher?)"
+   - Ziel: Finde das versteckte Netz.
+   - Spielmechanik: 
+     - SSID Broadcast ist aus.
+     - Amateur denkt: "Ich bin unsichtbar/sicher".
+     - Hacker wartet, bis ein Client sich verbindet ("Probe Request").
+     - SSID taucht im Klartext auf.
+     - Messbarkeit: Erkenntnis "Hidden SSID ist kein Sicherheitsfeature, nur Obscurity".
+   - Lernziel: Beacon Frames und Probe Requests.
+
+5. "Ekahau-Heatmap (Ausleuchtung)"
+   - Ziel: Platziere die Access Points (APs) optimal.
+   - Spielmechanik: 
+     - Grundriss Büroräume.
+     - Spieler setzt APs.
+     - Heatmap zeigt Signalstärke (Grün bis Rot).
+     - Ziel: Alle Büros grün, keine Löcher.
+     - Aber: Nicht zu viele (Interferenz!).
+     - Messbarkeit: Abdeckung > -65dBm überall.
+   - Lernziel: WLAN-Planung.

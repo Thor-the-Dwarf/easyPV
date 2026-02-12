@@ -1,0 +1,20 @@
+Anforderungen
+2. "Betreffzeilen-Bingo"
+   - Ziel: Wähle für 10 E-Mails die präziseste Betreffzeile aus.
+   - Spielmechanik: 
+     - E-Mail-Inhalt wird kurz gezeigt (z.B. Terminverschiebung Projekt X).
+     - 3 Betreff-Optionen: "Wichtig!", "Termin", "Verschiebung Projekt X auf 12.10.".
+     - Spieler muss die beste (informativste) wählen.
+     - Messbarkeit: Richtig = 100%. Zu allgemein ("Wichtig") = 0%.
+   - Lernziel: Aussagestarke Betreffzeilen formulieren (Effizienz).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_email_betreff.json')
+  - `tasks`: { "bodyPreview": "...", "options": [ "...", "...", "..." ], "correctIndex": 2 }.
+- [ ] Shared CSS Check ('kommunikation.css')
+  - E-Mail-Client List View.
+- [ ] Game-Engine Logic ('game_email_betreff.js')
+  - Auswahl-Logik.
+  - Erklärung warum die anderen schlecht waren ("Zu vage", "Zu lang").
+- [ ] Integration
+  - Startbar über JSON.

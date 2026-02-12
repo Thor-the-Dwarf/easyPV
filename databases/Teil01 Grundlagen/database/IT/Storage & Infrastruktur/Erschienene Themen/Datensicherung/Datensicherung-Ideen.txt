@@ -1,0 +1,47 @@
+1. "Die 3-2-1 Regel"
+   - Ziel: Erstelle ein valides Backup-Konzept.
+   - Spielmechanik: 
+     - Benutzer hat Daten nur auf Laptop (1 Kopie).
+     - Laptop geklaut -> Daten weg. (Fail).
+     - Konzept: 3 Kopien, 2 Medien (HDD, Tape), 1 Offsite (Cloud/Tresor).
+     - Messbarkeit: Datenrettung nach Katastrophe erfolgreich.
+   - Lernziel: Goldene Regel des Backups.
+
+2. "Generationen-Prinzip (GVS)"
+   - Ziel: Rotiere die Bänder korrekt (Großvater-Vater-Sohn).
+   - Spielmechanik: 
+     - Freitag: Vollsicherung (Vater).
+     - Mo-Do: Inkrementell (Sohn).
+     - Monatsende: Archivierung (Großvater).
+     - Aufgabe: Welches Band brauche ich für Stand von "letzten Dienstag"?
+     - Messbarkeit: Korrekte Band-Auswahl.
+   - Lernziel: Backup-Strategien und Rotation.
+
+3. "Voll vs Inkrementell vs Differentiell"
+   - Ziel: Entscheide: Speicherplatz oder Restore-Zeit?
+   - Spielmechanik: 
+     - Szenario: Restore muss schnell gehen (max 1h).
+     - Strategie "Inkrementell": Muss Full + Mo + Di + Mi + Do einspielen (Dauert lange).
+     - Strategie "Differentiell": Muss Full + Do einspielen (Schnell).
+     - Messbarkeit: RTO (Recovery Time Objective) eingehalten.
+   - Lernziel: Backup-Methoden-Vergleich.
+
+4. "RPO vs RTO"
+   - Ziel: Stelle die SLA (Service Level Agreement) zufrieden.
+   - Spielmechanik: 
+     - RPO (Recovery Point Objective): Max 1h Datenverlust erlaubt.
+     - Backup läuft nur jede Nacht (24h).
+     - Crash um 16:00 Uhr. Daten seit 00:00 weg (16h Verlust). -> SLA verletzt.
+     - Lösung: Snapshots alle 30 Min.
+     - Messbarkeit: SLA grün.
+   - Lernziel: Kennzahlen der Datensicherung.
+
+5. "Restore-Test-Drill"
+   - Ziel: Prüfe, ob das Backup überhaupt geht.
+   - Spielmechanik: 
+     - Backup läuft seit 3 Jahren "erfolgreich".
+     - Chef: "Zeig mal Datei X".
+     - Versuch Restore: "Fehler, Band unlesbar / CRC Error".
+     - Erkenntnis: Ein Backup, das nicht getestet wurde, existiert nicht.
+     - Messbarkeit: Regelmäßige Test-Wiederherstellung.
+   - Lernziel: Validierung.

@@ -1,0 +1,21 @@
+Anforderungen
+5. "Der Wartungsfenster-Planer"
+   - Ziel: Plane Wartung so, dass sie nicht als Ausfall zählt.
+   - Spielmechanik: 
+     - SLA erlaubt Wartung Sonntags 02:00 - 06:00 Uhr.
+     - Aufgabe: "Update einspielen (Dauer 3h)".
+     - Spieler schiebt Termin auf Montag 10 Uhr -> Alarm! (SLA-Bruch).
+     - Spieler schiebt auf So 03:00 -> Ok.
+     - Messbarkeit: Einhaltung der vereinbarten Ausnahmen.
+   - Lernziel: Unterschied geplante vs. ungeplante Downtime.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sla_maintenance.json')
+  - `windows`: ["Night", "Weekend", "Workday"].
+- [ ] Shared CSS Check ('contract_law.css')
+  - Zeitplaner / Scheduler.
+- [ ] Game-Engine Logic ('game_sla_maintenance.js')
+  - Konfliktprüfung (Wartung während Hauptgeschäftszeit = Fail).
+  - SLA-Ausschlusszeiten berücksichtigen.
+- [ ] Integration
+  - Startbar über JSON.

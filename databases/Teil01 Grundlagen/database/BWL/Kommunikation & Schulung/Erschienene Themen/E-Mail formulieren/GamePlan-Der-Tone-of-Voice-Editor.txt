@@ -1,0 +1,22 @@
+Anforderungen
+1. "Der Tone-of-Voice Editor"
+   - Ziel: Mache eine wütende E-Mail geschäftstauglich (5 Sätze umschreiben).
+   - Spielmechanik: 
+     - Ausgangstext: "Das ist der letzte Mist, ich will mein Geld sofort zurück!"
+     - Spieler klickt auf aggressive Wörter ("Mist", "sofort", "letzte").
+     - Wählt aus Dropdown eine bessere Variante ("unzufrieden", "bitte um Erstattung", "mangelhaft").
+     - Messbarkeit: Jedes korrekt ersetzte Wort gibt Punkte. Ziel: "Business-Score" von 100%.
+   - Lernziel: Professioneller Sprachgebrauch und Deeskalation.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_email_editor.json')
+  - `emails`: { "badText": "...", "replacements": { "mist": ["unzufrieden", "ok"], ... } }.
+- [ ] Shared CSS Check ('kommunikation.css')
+  - "Editor"-Look (Textarea-Simulation).
+  - Highlight-Span für schlechte Wörter.
+- [ ] Game-Engine Logic ('game_email_editor.js')
+  - Text-Parsing: Bad-Words markieren.
+  - Dropdown-Menu bei Klick auf Markierung.
+  - Score-Berechnung (Professionalitäts-Index).
+- [ ] Integration
+  - Startbar über JSON.

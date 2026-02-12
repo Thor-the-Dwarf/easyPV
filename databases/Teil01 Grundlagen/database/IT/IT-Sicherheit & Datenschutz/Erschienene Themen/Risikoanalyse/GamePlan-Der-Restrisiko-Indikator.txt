@@ -1,0 +1,22 @@
+Anforderungen
+5. "Der Restrisiko-Indikator"
+   - Ziel: Senke das Risiko unter die Akzeptanzschwelle.
+   - Spielmechanik: 
+     - Balken "Risiko" ist rot (100%).
+     - Maßnahme 1: Firewall (-30%).
+     - Maßnahme 2: Schulung (-20%).
+     - Restrisiko: 50%. Immer noch zu hoch?
+     - Maßnahme 3: Versicherung.
+     - Messbarkeit: Erreichen des geforderten Sicherheitsniveaus.
+   - Lernziel: Umgang mit Restrisiko.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_residual.json')
+  - `risk`: 100. `measures`: [30, 20].
+- [ ] Shared CSS Check ('security_management.css')
+  - Risiko-Thermometer (Rot -> Grün).
+- [ ] Game-Engine Logic ('game_sec_residual.js')
+  - Maßnahmen anwenden -> Risiko sinkt.
+  - Akzeptanzschwelle prüfen.
+- [ ] Integration
+  - Startbar über JSON.

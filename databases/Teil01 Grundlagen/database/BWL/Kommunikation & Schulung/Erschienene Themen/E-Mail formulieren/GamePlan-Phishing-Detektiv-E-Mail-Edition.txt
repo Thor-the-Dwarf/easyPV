@@ -1,0 +1,21 @@
+Anforderungen
+5. "Phishing-Detektiv (E-Mail Edition)"
+   - Ziel: Identifiziere 5 gefälschte Geschäfts-E-Mails.
+   - Spielmechanik: 
+     - Posteingang mit 10 Mails. 5 echt, 5 Fake.
+     - Merkmale: Absender-Adresse (amazon@gmx.de statt amazon.de), Dringlichkeit ("Sofort zahlen!"), Tippfehler.
+     - Spiler markiert Mails als "Spam" oder "Ok".
+     - Messbarkeit: Jede korrekte Klassifizierung = 20%. Jede falsche (echte Mail gelöscht oder Phishing geöffnet) = Game Over/Punktabzug.
+   - Lernziel: Sicherheitsbewusstsein bei E-Mail-Kommunikation.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_email_phishing.json')
+  - `mails`: [ { "sender": "amzon@gmx.net", "subject": "...", "isPhishing": true, "clues": ["sender", "link"] } ].
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Posteingangs-Liste.
+  - Detail-Ansicht bei Klick.
+- [ ] Game-Engine Logic ('game_email_phishing.js')
+  - Markierungs-Werkzeug (Klick auf Verdächtiges).
+  - Entscheidung Buttons: "Löschen" vs "Behalten".
+- [ ] Integration
+  - Startbar über JSON.

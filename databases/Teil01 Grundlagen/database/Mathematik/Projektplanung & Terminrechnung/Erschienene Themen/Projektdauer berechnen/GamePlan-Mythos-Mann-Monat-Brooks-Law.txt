@@ -1,0 +1,20 @@
+Anforderungen
+3. "Mythos Mann-Monat (Brook's Law)"
+   - Ziel: Beschleunige das Projekt (Vorsicht!).
+   - Spielmechanik: 
+     - Projekt ist verspätet.
+     - Spieler fügt 10 neue Leute hinzu.
+     - Ergebnis: Projekt dauert LÄNGER (wg. Einarbeitung/Kommunikation).
+     - Lernziel: "Adding manpower to a late software project makes it later".
+     - Messbarkeit: Entscheidung "Keine neuen Leute, lieber Scope reduzieren".
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_brooks.json')
+  - `devs`: 5, `late`: true.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Team-Größe Slider.
+- [ ] Game-Engine Logic ('game_math_brooks.js')
+  - Kommunikationsaufwand steigt quadratisch n(n-1)/2.
+  - Projekt verzögert sich weiter.
+- [ ] Integration
+  - Startbar über JSON.

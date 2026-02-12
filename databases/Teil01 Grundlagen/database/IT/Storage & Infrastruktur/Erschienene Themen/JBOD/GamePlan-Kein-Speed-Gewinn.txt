@@ -1,0 +1,19 @@
+Anforderungen
+3. "Kein Speed-Gewinn"
+   - Ziel: Vergleiche Performance.
+   - Spielmechanik: 
+     - Kopiere Datei auf JBOD -> Speed einer Platte (100 MB/s).
+     - Kopiere Datei auf RAID 0 -> Speed beider Platten (200 MB/s).
+     - JBOD ist NICHT schneller.
+     - Messbarkeit: Korrekte Erwartungshaltung.
+   - Lernziel: Performance-Eigenschaften.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_jbod_speed.json')
+  - `speed_single`: 100.
+- [ ] Shared CSS Check ('storage_basics.css')
+  - Tacho / Speedometer.
+- [ ] Game-Engine Logic ('game_jbod_speed.js')
+  - Schreibtest auf JBOD (eine Disk schreibt) vs RAID 0 (beide schreiben).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,48 @@
+1. "NAS vs DAS vs SAN"
+   - Ziel: So schließt man es an.
+   - Spielmechanik: 
+     - DAS (Direct Attached): USB-Kabel an PC.
+     - NAS (Network Attached): LAN-Kabel an Switch.
+     - SAN (Storage Area Network): Glasfaser (Fibre Channel) an Switch.
+     - Messbarkeit: Korrekte Verkabelung.
+   - Lernziel: Speicher-Anbindungen.
+
+2. "Freigabe-Manager (SMB/CIFS)"
+   - Ziel: Erstelle einen Share für die Abteilung.
+   - Spielmechanik: 
+     - Ordner erstellen: "Marketing".
+     - User "Grafiker" braucht Schreibrechte.
+     - User "Gast" darf nicht rein.
+     - Mapping: "net use Z: \\nas\marketing".
+     - Messbarkeit: Grafiker kann speichern, Gast wird blockiert.
+   - Lernziel: Network Shares einrichten.
+
+3. "Der Medien-Server"
+   - Ziel: Streame Video auf den TV.
+   - Spielmechanik: 
+     - Protokollwahl: SMB (TV kann das oft nicht).
+     - Protokollwahl: DLNA / UPnP (TV findet es automatisch).
+     - Spieler aktiviert DLNA-Dienst am NAS.
+     - Messbarkeit: Film läuft am TV.
+   - Lernziel: Multimedia-Funktionen von NAS.
+
+4. "RAID im NAS"
+   - Ziel: Eine Platte stirbt, Daten bleiben.
+   - Spielmechanik: 
+     - 2-Bay NAS.
+     - RAID 1 (Spiegelung) eingerichtet.
+     - Spieler zieht Platte 1 raus (Simulation Defekt).
+     - NAS piept, aber Daten sind via Platte 2 noch da.
+     - Spieler steckt neue Platte rein -> "Rebuild" startet.
+     - Messbarkeit: Kein Datenverlust.
+   - Lernziel: RAID-Level für Heim/SOHO.
+
+5. "Das NAS als Cloud (Private Cloud)"
+   - Ziel: Zugriff von unterwegs ohne Dropbox.
+   - Spielmechanik: 
+     - NAS Zuhause steht.
+     - DynDNS / QuickConnect einrichten.
+     - Spieler steht am Flughafen mit Handy.
+     - Foto-Upload aufs NAS Zuhause.
+     - Messbarkeit: Erfolgreicher Remote-Zugriff.
+   - Lernziel: NAS vs Public Cloud.

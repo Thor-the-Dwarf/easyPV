@@ -1,0 +1,18 @@
+Anforderungen
+3. "Aktive vs Passive Tags"
+   - Ziel: Wähle den richtigen Transponder-Typ.
+   - Spielmechanik: 
+     - Szenario: "Billiges Etikett auf Joghurtbecher". -> Passiv (Keine Batterie, billig).
+     - Szenario: "Container-Tracking im Hafen, Sensordaten senden". -> Aktiv (Batterie, Reichweite).
+     - Messbarkeit: Entscheidung Kosten/Nutzen.
+   - Lernziel: Bauarten von Transpondern.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_rfid_type.json')
+  - `usecases`: ["yogurt", "container"].
+- [ ] Shared CSS Check ('basics_hardware.css')
+  - Transponder-Karten.
+- [ ] Game-Engine Logic ('game_basics_rfid_type.js')
+  - Zuordnung Aktiv/Passiv.
+- [ ] Integration
+  - Startbar über JSON.

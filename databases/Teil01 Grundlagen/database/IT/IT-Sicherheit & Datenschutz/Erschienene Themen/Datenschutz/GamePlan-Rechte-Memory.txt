@@ -1,0 +1,19 @@
+Anforderungen
+2. "Rechte-Memory"
+   - Ziel: Finde die Rechte der Betroffenen.
+   - Spielmechanik: 
+     - Icon "Auge" -> Recht auf Auskunft (Art. 15).
+     - Icon "Mülleimer" -> Recht auf Löschung (Art. 17).
+     - Icon "Stift" -> Recht auf Berichtigung (Art. 16).
+     - Messbarkeit: Paare aus Icon und Artikel finden.
+   - Lernziel: Betroffenenrechte kennen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_gdpr_rights.json')
+  - `rights`: ["info", "delete", "edit"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Memory-Karten Grid.
+- [ ] Game-Engine Logic ('game_sec_gdpr_rights.js')
+  - Icons zu Artikeln matchen.
+- [ ] Integration
+  - Startbar über JSON.

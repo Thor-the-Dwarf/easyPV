@@ -1,0 +1,20 @@
+Anforderungen
+2. "Meilenstein-Setzer"
+   - Ziel: Platziere Meilensteine sinnvoll am Ende jeder Phase.
+   - Spielmechanik: 
+     - Phase "Planung" ist zu Ende. Welcher Meilenstein gehört hierhin?
+     - A: "Projektauftrag unterschrieben" (Zu früh, Initialisierung).
+     - B: "Lastenheft/Plan genehmigt" (Richtig).
+     - C: "Software fertig" (Zu spät).
+     - Messbarkeit: Logische Verknüpfung von Phase und Ergebnis.
+   - Lernziel: Meilensteine als Quality Gates.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_milestone.json')
+  - `events`: ["kickoff", "design_freeze", "go_live"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Diamant-Symbole auf Zeitachse.
+- [ ] Game-Engine Logic ('game_pm_milestone.js')
+  - Sinnvolle Punkte für Meilensteine wählen (Ergebnis liegt vor).
+- [ ] Integration
+  - Startbar über JSON.

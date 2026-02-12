@@ -1,0 +1,19 @@
+Anforderungen
+2. "Fehlerkorrektur-Level"
+   - Ziel: Wähle das richtige Error-Correction-Level (L, M, Q, H).
+   - Spielmechanik: 
+     - Szenario: "Code kommt auf ein Plakat, sauberer Druck". -> Level L (Wenig Redundanz, Code wird kleiner).
+     - Szenario: "Code kommt auf LKW-Plane, wird dreckig, Logo in der Mitte". -> Level H (30% Redundanz, Code wird komplexer/größer).
+     - Messbarkeit: Optimale Wahl für den Einsatzzweck.
+   - Lernziel: Trade-off Datendichte vs. Robustheit.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_qr_ec.json')
+  - `scenarios`: ["clean", "dirty"].
+- [ ] Shared CSS Check ('basics_hardware.css')
+  - QR-Generator Settings.
+- [ ] Game-Engine Logic ('game_basics_qr_ec.js')
+  - Level L vs H wählen.
+  - Beschädigung simulieren.
+- [ ] Integration
+  - Startbar über JSON.

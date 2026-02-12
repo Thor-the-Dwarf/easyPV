@@ -1,0 +1,20 @@
+Anforderungen
+1. "Fix vs Variabel"
+   - Ziel: Ordne die Kostenarten zu.
+   - Spielmechanik: 
+     - "Miete" -> Fix.
+     - "Rohstoffe (Holz)" -> Variabel.
+     - "Strom (Produktion)" -> Variabel.
+     - "Gehalt Sekretärin" -> Fix.
+     - Messbarkeit: 100% korrekte Zuordnung.
+   - Lernziel: Kostenartenrechnung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_cost_types.json')
+  - `costs`: ["rent", "material"].
+- [ ] Shared CSS Check ('math_basics.css')
+  - Sortier-Spiel.
+- [ ] Game-Engine Logic ('game_math_cost_types.js')
+  - Miete = Fix. Material = Variabel.
+- [ ] Integration
+  - Startbar über JSON.

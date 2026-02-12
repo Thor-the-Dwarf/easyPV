@@ -1,0 +1,20 @@
+Anforderungen
+3. "Der Rabatt-Rechner"
+   - Ziel: Gib nicht zu viel Prozent.
+   - Spielmechanik: 
+     - Kunde will 10%.
+     - Deine Marge ist nur 8%.
+     - Wenn du 10% gibst -> Verlustgeschäft.
+     - Maximaler Rabatt: 5%.
+     - Messbarkeit: Gewinn bleibt > 0.
+   - Lernziel: Auswirkung von Rabatten auf den Gewinn.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_offer_discount.json')
+  - `pos_total`: 1000.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Angebotsschreiben UI.
+- [ ] Game-Engine Logic ('game_math_offer_discount.js')
+  - Endsumme korrekt mindern.
+- [ ] Integration
+  - Startbar über JSON.

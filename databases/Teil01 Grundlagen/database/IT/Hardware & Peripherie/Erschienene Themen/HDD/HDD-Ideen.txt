@@ -1,0 +1,45 @@
+1. "Innenleben-Puzzle"
+   - Ziel: Benenne die Bauteile einer Festplatte.
+   - Spielmechanik: 
+     - Bild einer offenen HDD.
+     - Bauteile: "Platter (Magnetscheibe)", "Lesekopf", "Actuator Arm", "Spindel".
+     - Drag & Drop der Begriffe.
+     - Messbarkeit: Alle Teile korrekt benannt.
+   - Lernziel: Aufbau einer mechanischen HDD.
+
+2. "Defragmentierungs-Simulator"
+   - Ziel: Ordne die Datenblöcke, damit der Lesekopf nicht springen muss.
+   - Spielmechanik: 
+     - Datei A: Blöcke 1, 5, 8 (Verteilt -> Fragmentiert).
+     - Aufgabe: Verschiebe Blöcke so, dass A auf 1, 2, 3 liegt.
+     - Messbarkeit: Lesegeschwindigkeit steigt (weniger Seek-Time).
+   - Lernziel: Warum Defrag bei HDDs nötig ist (und bei SSDs nicht!).
+
+3. "RPM-Racer"
+   - Ziel: Wähle die richtige Drehzahl für den Zweck.
+   - Spielmechanik: 
+     - "Archiv / Backup (Leise, Kühl)". -> 5.400 rpm.
+     - "Server / High Speed". -> 10.000 / 15.000 rpm (SAS).
+     - "Standard Desktop". -> 7.200 rpm.
+     - Messbarkeit: Passende Hardware-Wahl.
+   - Lernziel: Performance-Klassen.
+
+4. "Größen-Rechner"
+   - Ziel: Berechne die Brutto-Netto-Kapazität (Dezimal vs Binär).
+   - Spielmechanik: 
+     - Hersteller sagt "1 TB" (10^12 Byte).
+     - Windows zeigt "931 GiB" (2^40 Byte).
+     - Kunde beschwert sich: "Wo sind meine 70 GB?"
+     - Spieler muss wählen: "Diebstahl" (Falsch) oder "Umrechnungsfaktor" (Richtig).
+     - Messbarkeit: Verständnis des TiB vs TB Problems.
+   - Lernziel: Einheiten (SI vs IEC).
+
+5. "Datenrettungs-Labor"
+   - Ziel: Rette Daten von einer kaputten HDD (Headcrash).
+   - Spielmechanik: 
+     - Geräusch: "Click of Death".
+     - Analyse: Lesekopf defekt.
+     - Maßnahme: "Im Reinraum öffnen & Platter auslesen" (Teuer, aber geht).
+     - Falsch: "Software nutzen" (Macht es schlimmer).
+     - Messbarkeit: Richtige Diagnose und Vorgehensweise.
+   - Lernziel: Empfindlichkeit mechanischer Speicher.

@@ -1,0 +1,21 @@
+Anforderungen
+3. "Das Rechte-Matrix-Puzzle"
+   - Ziel: Setze die Zugriffsberechtigungen (ACL) nach dem Least-Privilege-Prinzip.
+   - Spielmechanik: 
+     - Usergruppen: "Azubi", "Chef", "Admin".
+     - Dateien: "Lernplan", "Bilanz", "System-Config".
+     - Azubi darf: Lernplan (Lesen). Bilanz (Verboten).
+     - Chef darf: Bilanz (Lesen/Schreiben).
+     - Messbarkeit: Keine Überberechtigung (Sicherheitsrisiko) und keine Unterberechtigung (Arbeit blockiert).
+   - Lernziel: Zugriffskontrolle (Authorization).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_acl.json')
+  - `users`: ["azubi", "chef"], `files`: ["plan", "balance"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - Matrix-Grid (Wer darf was).
+- [ ] Game-Engine Logic ('game_sec_acl.js')
+  - Haken setzen (Read/Write).
+  - Validierung gegen Least-Privilege.
+- [ ] Integration
+  - Startbar über JSON.

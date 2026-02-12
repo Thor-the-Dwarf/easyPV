@@ -1,0 +1,21 @@
+Anforderungen
+4. "Greifraum-Sortierer"
+   - Ziel: Ordne 10 Gegenstände den Greifräumen (Mittelzone, Erweitert, Fern) zu.
+   - Spielmechanik: 
+     - Objekte: Tastatur, Maus, Locher, Aktenordner, Telefon, Stift.
+     - Zonen auf dem Tisch markiert: Zone 1 (Häufig), Zone 2 (Gelegentlich), Zone 3 (Selten).
+     - Spieler zieht Maus in Zone 1, Locher in Zone 3.
+     - Messbarkeit: Korrekte Platzierung nach Nutzungshäufigkeit = Punkte.
+   - Lernziel: Effiziente und belastungsarme Arbeitsplatzorganisation.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ergo_reach.json')
+  - `items`: ["Maus", "Locher"].
+  - `zones`: [1, 2, 3].
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Tisch-Draufsicht mit Zonen-Ringen.
+- [ ] Game-Engine Logic ('game_ergo_reach.js')
+  - Drag & Drop Items in Ringe.
+  - Auswertung nach Häufigkeit.
+- [ ] Integration
+  - Startbar über JSON.

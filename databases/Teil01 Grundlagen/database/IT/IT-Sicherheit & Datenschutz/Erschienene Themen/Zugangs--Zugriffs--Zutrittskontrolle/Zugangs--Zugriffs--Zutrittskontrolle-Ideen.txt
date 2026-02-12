@@ -1,0 +1,47 @@
+1. "Die 3 Z-Zuordnung"
+   - Ziel: Sortiere Maßnahmen in die 3 Kategorien (Zutritt, Zugang, Zugriff).
+   - Spielmechanik: 
+     - "Schranke am Parkplatz". -> Zutritt.
+     - "Benutzername eingeben". -> Zugang.
+     - "Leserecht auf Datei 'Gehalt.xlsx'". -> Zugriff.
+     - "Biometrie am Serverraum". -> Zutritt.
+     - Messbarkeit: 100% korrekte Klassifizierung.
+   - Lernziel: Begriffsdefinition nach BSI/DSGVO.
+
+2. "Passwort-Tresor"
+   - Ziel: Sichere den Zugang (Authentifizierung).
+   - Spielmechanik: 
+     - Tresor hat PIN-Code.
+     - Hinzufügen: "Fingerabdruck" (Biometrie).
+     - Hinzufügen: "Schlüssel" (Token).
+     - Ziel: MFA aktivieren.
+     - Messbarkeit: Sicherheitslevel des Zugangs.
+   - Lernziel: Authentifizierungsfaktoren (Zugangskontrolle).
+
+3. "Das Rechte-Matrix-Puzzle"
+   - Ziel: Setze die Zugriffsberechtigungen (ACL) nach dem Least-Privilege-Prinzip.
+   - Spielmechanik: 
+     - Usergruppen: "Azubi", "Chef", "Admin".
+     - Dateien: "Lernplan", "Bilanz", "System-Config".
+     - Azubi darf: Lernplan (Lesen). Bilanz (Verboten).
+     - Chef darf: Bilanz (Lesen/Schreiben).
+     - Messbarkeit: Keine Überberechtigung (Sicherheitsrisiko) und keine Unterberechtigung (Arbeit blockiert).
+   - Lernziel: Zugriffskontrolle (Authorization).
+
+4. "Zutritts-System-Planer"
+   - Ziel: Entwerfe ein Zonenkonzept für das Gebäude.
+   - Spielmechanik: 
+     - Zone 1 (Öffentlich): Empfang.
+     - Zone 2 (Intern): Büros. -> Drehkreuz mit Karte.
+     - Zone 3 (Hochsicher): Serverraum. -> Schleuse mit Biometrie.
+     - Messbarkeit: Angemessene Sicherung der Zonen.
+   - Lernziel: Physische Sicherheit und Schalenmodell.
+
+5. "Der Identitäts-Dieb"
+   - Ziel: Erkenne den Unterschied zwischen Identifizierung und Authentifizierung.
+   - Spielmechanik: 
+     - "Ich behaupte, ich bin Hans". -> Identifizierung (Name nennen).
+     - "Ich beweise es mit dem Ausweis". -> Authentifizierung (Nachweis erbringen).
+     - Quiz-Situationen.
+     - Messbarkeit: Korrekte Begriffsverwendung.
+   - Lernziel: Grundlagen des IAM (Identity & Access Management).

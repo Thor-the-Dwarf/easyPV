@@ -1,0 +1,22 @@
+Anforderungen
+2. "LSUG-Reihenfolge"
+   - Ziel: Berechne, welche Richtlinie gewinnt (Precedence).
+   - Spielmechanik: 
+     - Local: "Hintergrund Rot".
+     - Site: "Hintergrund Blau".
+     - Domain: "Nicht konfiguriert".
+     - OU: "Hintergrund Grün".
+     - Frage: "Welche Farbe hat der Hintergrund?"
+     - Lösung: Grün (OU gewinnt zuletzt).
+     - Messbarkeit: Korrektes Endergebnis ermittelt.
+   - Lernziel: Abarbeitungsreihenfolge (Local, Site, Domain, OU).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_gpo_lsug.json')
+  - `configs`: ["local=red", "site=blue", "ou=green"].
+- [ ] Shared CSS Check ('basics_admin.css')
+  - Hierarchie-Pyramide.
+- [ ] Game-Engine Logic ('game_basics_gpo_lsug.js')
+  - "Winning Policy" berechnen.
+- [ ] Integration
+  - Startbar über JSON.

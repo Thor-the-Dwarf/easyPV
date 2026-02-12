@@ -1,0 +1,20 @@
+Anforderungen
+1. "Excel vs Datenbank"
+   - Ziel: Wann reicht die Tabelle nicht mehr?
+   - Spielmechanik: 
+     - User hat 100 Kunden. -> Excel reicht.
+     - User hat 1 Million Kunden + Parallelzugriff von 5 Mitarbeitern.
+     - Excel stürzt ab / "Datei gesperrt".
+     - Datenbank (Server) löst das Problem (Concurrency).
+     - Messbarkeit: Erkennen der Grenzen von Spreadsheets.
+   - Lernziel: Mehrbenutzerfähigkeit.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_db_vs_excel.json')
+  - `users`: 100.
+- [ ] Shared CSS Check ('db_basics.css')
+  - Feuer im Excel-Sheet.
+- [ ] Game-Engine Logic ('game_db_vs_excel.js')
+  - Concurrent Access Problem demonstrieren.
+- [ ] Integration
+  - Startbar über JSON.

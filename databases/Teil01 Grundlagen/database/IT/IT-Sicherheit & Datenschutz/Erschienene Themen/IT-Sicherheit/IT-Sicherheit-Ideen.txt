@@ -1,0 +1,47 @@
+1. "CIA.Triade-Sortierer"
+   - Ziel: Ordne Maßnahmen den Schutzzielen zu (Confidentiality, Integrity, Availability).
+   - Spielmechanik: 
+     - "Verschlüsselung". -> Vertraulichkeit.
+     - "Backup / RAID". -> Verfügbarkeit.
+     - "Hashwerte / Digitale Signatur". -> Integrität.
+     - Messbarkeit: 100% korrekte Zuordnung.
+   - Lernziel: Die drei Säulen der IT-Sicherheit.
+
+2. "Schwachstellen-Scanner"
+   - Ziel: Finde die CVE (Common Vulnerabilities and Exposures).
+   - Spielmechanik: 
+     - System-Scan läuft.
+     - Ergebnis: "Windows XP gefunden". -> Kritisch (EOL).
+     - Ergebnis: "SMBv1 aktiv". -> Kritisch (WannaCry).
+     - Spieler muss Patches auswählen.
+     - Messbarkeit: System-Score steigt auf "Sicher".
+   - Lernziel: Vulnerability Management.
+
+3. "Social-Engineering-Abwehr"
+   - Ziel: Erkenne den Angriffsversuch am Telefon / Vishing.
+   - Spielmechanik: 
+     - Anruf: "Hier ist der Admin, ich brauche dein Passwort zum Testen."
+     - Reaktion A: Passwort geben. (Fail).
+     - Reaktion B: Rückruf unter interner Nummer anbieten. (Win).
+     - Messbarkeit: Passwort nicht preisgegeben.
+   - Lernziel: Human Factor in der Security.
+
+4. "Physical-Security-Check"
+   - Ziel: Finde die physischen Lücken.
+   - Spielmechanik: 
+     - Bild vom Serverraum.
+     - Tür steht offen (Keil). -> Fehler.
+     - Fenster im Erdgeschoss ohne Gitter. -> Fehler.
+     - Putzfrau unbeaufsichtigt. -> Fehler.
+     - Messbarkeit: Alle Risiken markiert.
+   - Lernziel: Zutrittsschutz und Perimetersicherheit.
+
+5. "Incident-Response-Commander"
+   - Ziel: Reagiere richtig auf einen Vorfall.
+   - Spielmechanik: 
+     - Alarm: "Ransomware auf PC 5".
+     - Option A: "PC 5 vom Netz trennen (Kabel ziehen)". (Richtig, Containment).
+     - Option B: "Backup einspielen während PC noch im Netz ist". (Falsch, Backup wird verschlüsselt).
+     - Option C: "Lösegeld zahlen". (Falsch).
+     - Messbarkeit: Schaden begrenzt.
+   - Lernziel: Erste Hilfe bei Cyberangriffen.

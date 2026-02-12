@@ -1,0 +1,20 @@
+Anforderungen
+5. "Das Anmelde-Skript"
+   - Ziel: Binde ein Logon-Script via GPO ein.
+   - Spielmechanik: 
+     - Skript "net use Z: \\server\share".
+     - GPO öffnen -> Windows Settings -> Scripts -> Logon.
+     - Datei hinzufügen.
+     - Messbarkeit: Laufwerk Z: ist nach Simulation da.
+   - Lernziel: Automatisierung über GPOs.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_gpo_script.json')
+  - `script`: "net use".
+- [ ] Shared CSS Check ('basics_admin.css')
+  - GPO Editor Baumstruktur.
+- [ ] Game-Engine Logic ('game_basics_gpo_script.js')
+  - Pfad navigieren (User -> Windows -> Scripts).
+  - Skript zuweisen.
+- [ ] Integration
+  - Startbar über JSON.

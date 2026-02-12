@@ -1,0 +1,19 @@
+Anforderungen
+5. "Verschlüsselungs-Stärken"
+   - Ziel: Sortiere nach Sicherheit.
+   - Spielmechanik: 
+     - "ROT13" (Spielzeug).
+     - "DES" (56 Bit, veraltet, unsicher).
+     - "AES-256" (Standard, sicher).
+     - Messbarkeit: Korrekte Hierarchie.
+   - Lernziel: Algorithmen bewerten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_algo_rank.json')
+  - `algos`: ["rot13", "des", "aes"].
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Stärke-Balken / Ranking-Liste.
+- [ ] Game-Engine Logic ('game_sec_algo_rank.js')
+  - Sortierung nach Sicherheit.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+5. "RARP-Historiker"
+   - Ziel: Was ist das Gegenteil?
+   - Spielmechanik: 
+     - Diskless Workstation bootet. Kennt nur ihre MAC.
+     - Ruft: "Wer bin ich? (RARP / BOOTP / DHCP)".
+     - Server antwortet: "Du bist 192.168.1.50".
+     - Messbarkeit: Zuordnung Reverse ARP.
+   - Lernziel: Historischer Vorläufer von DHCP.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_arp_rarp.json')
+  - `mode`: "rarp".
+  - `client`: "diskless".
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Retro-Computer Look.
+- [ ] Game-Engine Logic ('game_arp_rarp.js')
+  - Frage-Antwort Spiel (MAC -> IP).
+- [ ] Integration
+  - Startbar über JSON.

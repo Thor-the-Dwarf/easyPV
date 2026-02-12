@@ -1,0 +1,19 @@
+Anforderungen
+3. "Voll vs Inkrementell vs Differentiell"
+   - Ziel: Entscheide: Speicherplatz oder Restore-Zeit?
+   - Spielmechanik: 
+     - Szenario: Restore muss schnell gehen (max 1h).
+     - Strategie "Inkrementell": Muss Full + Mo + Di + Mi + Do einspielen (Dauert lange).
+     - Strategie "Differentiell": Muss Full + Do einspielen (Schnell).
+     - Messbarkeit: RTO (Recovery Time Objective) eingehalten.
+   - Lernziel: Backup-Methoden-Vergleich.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_backup_strat.json')
+  - `strategies`: ["full", "inc", "diff"].
+- [ ] Shared CSS Check ('storage_backup.css')
+  - Block-Grafik (Änderungen farbig markiert).
+- [ ] Game-Engine Logic ('game_backup_strat.js')
+  - Simulation Speicherbedarf vs Restore-Dauer.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,21 @@
+Anforderungen
+5. "Restore-Test-Drill"
+   - Ziel: Prüfe, ob das Backup überhaupt geht.
+   - Spielmechanik: 
+     - Backup läuft seit 3 Jahren "erfolgreich".
+     - Chef: "Zeig mal Datei X".
+     - Versuch Restore: "Fehler, Band unlesbar / CRC Error".
+     - Erkenntnis: Ein Backup, das nicht getestet wurde, existiert nicht.
+     - Messbarkeit: Regelmäßige Test-Wiederherstellung.
+   - Lernziel: Validierung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_backup_test.json')
+  - `integrity`: 0.8.
+- [ ] Shared CSS Check ('storage_backup.css')
+  - Ladebalken mit Fehlerabbruch.
+- [ ] Game-Engine Logic ('game_backup_test.js')
+  - "Test"-Button. Zufallsfehler.
+  - Erkenntnis-Message bei Fail.
+- [ ] Integration
+  - Startbar über JSON.

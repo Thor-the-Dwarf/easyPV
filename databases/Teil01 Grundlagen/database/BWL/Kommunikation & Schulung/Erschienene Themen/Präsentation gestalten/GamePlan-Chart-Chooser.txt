@@ -1,0 +1,21 @@
+Anforderungen
+3. "Chart-Chooser"
+   - Ziel: Wähle für 5 Datensätze das jeweils passendste Diagramm.
+   - Spielmechanik: 
+     - Aufgabe: "Vergleich von Marktanteilen (5 Firmen)".
+     - Auswahl: Liniendiagramm, Kreisdiagramm, Balkendiagramm.
+     - Aufgabe: "Umsatzentwicklung über 10 Jahre".
+     - Auswahl: Liniendiagramm, Kreisdiagramm.
+     - Messbarkeit: Richtige Wahl (z.B. Kreis für Anteile, Linie für Zeitverlauf) = Punkte.
+   - Lernziel: Visualisierungskompetenz – Daten richtig darstellen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_presentation_charts.json')
+  - `scenarios`: { "dataDesc": "Marktanteile", "correctChart": "pie" }.
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Icons für Diagramm-Typen.
+- [ ] Game-Engine Logic ('game_presentation_charts.js')
+  - Auswahl-Logik.
+  - Erklärung bei Fehler.
+- [ ] Integration
+  - Startbar über JSON.

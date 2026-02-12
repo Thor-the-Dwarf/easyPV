@@ -1,0 +1,21 @@
+Anforderungen
+1. "Rubber Duck Debugging"
+   - Ziel: Erkläre den Code Zeile für Zeile der Ente.
+   - Spielmechanik: 
+     - Code-Snippet wird gezeigt (z.B. eine Schleife).
+     - User muss aus 3 Erklärungen die "für Laien verständliche" wählen.
+     - "X = X + 1" -> "Erhöhe den Zähler um Eins". (Richtig).
+     - "X = X + 1" -> "X Referenz wird neu zugewiesen". (Zu technisch / falsch).
+     - Messbarkeit: Korrekte Übersetzung in natürliche Sprache.
+   - Lernziel: Code Literacy.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_code_rubber_duck.json')
+  - `duck`: "yellow".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Quietscheente.
+- [ ] Game-Engine Logic ('game_code_rubber_duck.js')
+  - Code Zeile für Zeile der Ente erklären.
+  - "Aha!" Moment simulieren.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,38 @@
+Anforderungen
+3. "Formvorschriften-Quiz"
+   - Ziel: Welche Form braucht dieser Vertrag? (Schriftlich, Notariell, Mündlich/Frei).
+   - Spielmechanik: 
+     - "Brötchenkauf". -> Formfrei.
+     - "Ausbildungsvertrag". -> Schriftlich.
+     - "Grundstückskauf". -> Notariell.
+     - "Kündigung". -> Schriftlich.
+     - Messbarkeit: 100% richtige Form.
+   - Lernziel: Formzwang vs. Formfreiheit.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Form bedürftigkeit (Schriftform, Notar, Mündlich).
+- [ ] Szenario: "Kauf eines Grundstücks".
+- [ ] Auswahl: "Handschlag reicht", "E-Mail reicht", "Notar muss her".
+
+2. Screen-Layout
+- [ ] Quiz-Show Interface (Große Buttons).
+- [ ] Dokument-Icon im Zentrum.
+
+3. Browser- und Device-Resilienz
+- [ ] Buttons füllen Breite auf Mobile.
+
+4. Kernvisuals
+- [ ] Notar-Stempel.
+- [ ] Handschlag.
+- [ ] Signatur-Feder.
+
+5. Interaktion und Feedback
+- [ ] Immobilienkauf -> Handschlag -> "Nichtig! Grundstückskauf braucht Notar."
+- [ ] Brötchenkauf -> Notar -> "Übertreibung! Mündlich reicht."
+
+6. KPI-Klarheit
+- [ ] % Richtig.
+
+7. QA-Paket
+- [ ] Textlängen prüfen.

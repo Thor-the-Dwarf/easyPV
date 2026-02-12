@@ -1,0 +1,36 @@
+Anforderungen
+4. "Lieferanten-Abhängigkeits-Check"
+   - Ziel: Erkenne Single-Sourcing-Risiken.
+   - Spielmechanik: 
+     - Szenario: "Wir kaufen alles bei Lieferant A."
+     - Ereignis: "Lieferant A streikt." -> Produktion steht still.
+     - Aufgabe: Baue Redundanz auf. Verteile Bestellmenge auf Lieferant A, B und C (Dual/Multiple Sourcing).
+     - Messbarkeit: Produktionsstabilität bei Ausfall eines Lieferanten.
+   - Lernziel: Risikostreuung (Multiple Sourcing).
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Risiko-Analyse der Abhängigkeit von einem Lieferanten.
+- [ ] Ziel: Bewerte die Abhängigkeit als "Kritisch" oder "Unkritisch".
+
+2. Screen-Layout
+- [ ] Tachometer/Tachymeter-Anzeige.
+- [ ] 5 Check-Fragen.
+
+3. Browser- und Device-Resilienz
+- [ ] Ein-Spalten Layout (Checkliste).
+- [ ] Dashboard oben fixiert.
+
+4. Kernvisuals
+- [ ] Risiko-Farben (Grün bis Rot).
+- [ ] Ketten-Metapher (Wie stark ist die Bindung?).
+
+5. Interaktion und Feedback
+- [ ] Fragen beantworten -> Tacho bewegt sich.
+- [ ] Abschluss-Urteil: "Single-Sourcing Risiko!"
+
+6. KPI-Klarheit
+- [ ] Risiko-Index (0-100).
+
+7. QA-Paket
+- [ ] Tacho-Animation Smoothness.

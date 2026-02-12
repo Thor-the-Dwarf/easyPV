@@ -1,0 +1,50 @@
+1. "Der IP-Konflikt"
+   - Ziel: Finde den Fehler im Netz.
+   - Spielmechanik: 
+     - PC 1: 192.168.0.10.
+     - PC 2: 192.168.0.10.
+     - Fehlermeldung: "Adresskonflikt". Beide PCs offline.
+     - Lösung: PC 2 auf .11 ändern.
+     - Messbarkeit: Netzwerk stabil.
+   - Lernziel: Eindeutigkeit von IPs.
+
+2. "Gateway-Falle"
+   - Ziel: Konfiguriere den Weg ins Internet.
+   - Spielmechanik: 
+     - IP: 192.168.1.5, Maske: /24.
+     - Router IP: 192.168.1.1.
+     - User trägt Gateway ein: 192.168.1.5 (Sich selbst). -> Kein Internet.
+     - User trägt Gateway ein: 192.168.1.1. -> Internet geht.
+     - Messbarkeit: Ping zu 8.8.8.8 erfolgreich.
+   - Lernziel: Funktion des Default Gateway.
+
+3. "DNS-Dilemma"
+   - Ziel: Warum geht Google.de nicht?
+   - Spielmechanik: 
+     - Ping 8.8.8.8 -> Geht (Internet da).
+     - Ping google.de -> "Host not found".
+     - Diagnose: DNS-Server fehlt oder ist falsch.
+     - Lösung: Trage 8.8.8.8 oder Router-IP als DNS ein.
+     - Messbarkeit: Namensauflösung funktioniert.
+   - Lernziel: Trennung von Connectivity und Name Resolution.
+
+4. "Das falsche Subnetz"
+   - Ziel: Warum sehen sich die PCs nicht?
+   - Spielmechanik: 
+     - PC A: 192.168.1.10 / 255.255.255.0.
+     - PC B: 192.168.2.10 / 255.255.255.0.
+     - Switch dazwischen (Layer 2).
+     - Ping A -> B geht nicht (anderes Netz, Router fehlt).
+     - Lösung: Maske ändern auf /16 ODER Router einbauen ODER IP ändern.
+     - Messbarkeit: Erfolgreicher Ping.
+   - Lernziel: Subnetzgrenzen.
+
+5. "Loopback-Test"
+   - Ziel: Ist die Netzwerkkarte kaputt oder das Kabel?
+   - Spielmechanik: 
+     - Kein Netz.
+     - Ping 127.0.0.1.
+     - Wenn Fail -> Treiber/Karte kaputt.
+     - Wenn Ok -> Karte ok, Kabel prüfen.
+     - Messbarkeit: Korrekte Diagnose.
+   - Lernziel: Localhost Diagnose.

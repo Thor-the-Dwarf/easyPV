@@ -1,0 +1,20 @@
+Anforderungen
+3. "Pfad-Abdeckung (Branch Coverage)"
+   - Ziel: Finde Input-Werte, um alle Zweige zu testen.
+   - Spielmechanik: 
+     - `IF (a > 10) THEN ... ELSE ...`
+     - Testfall 1: a=5 (Else Zweig).
+     - Testfall 2: a=11 (Then Zweig).
+     - Testfall 3: a=10 (Grenzwert, Else Zweig).
+     - Messbarkeit: 100% Code Coverage erreicht.
+   - Lernziel: Testdaten-Erstellung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_test_coverage.json')
+  - `branches`: ["if true", "else"].
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Flussdiagramm mit markierten Pfaden.
+- [ ] Game-Engine Logic ('game_test_coverage.js')
+  - Haben wir jeden Zweig 1x getestet?
+- [ ] Integration
+  - Startbar über JSON.

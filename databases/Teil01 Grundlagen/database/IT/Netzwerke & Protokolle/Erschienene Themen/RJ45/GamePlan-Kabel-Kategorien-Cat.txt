@@ -1,0 +1,20 @@
+Anforderungen
+3. "Kabel-Kategorien (Cat)"
+   - Ziel: Wähle das Kabel für 10 Gigabit.
+   - Spielmechanik: 
+     - Gegeben: 10 Gbit Switch.
+     - Kabel Cat 5e -> Nur 1 Gbit (oder 2.5/5 auf kurze Strecke).
+     - Kabel Cat 7 -> 10 Gbit sicher.
+     - Spieler verlegt Kabel. Speedtest.
+     - Messbarkeit: Volle Bandbreite erreicht.
+   - Lernziel: Kabelstandards und Schirmung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_rj45_cat.json')
+  - `reqSpeed`: 10000.
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Kabeltrommeln (Cat 5e, 6, 7).
+- [ ] Game-Engine Logic ('game_rj45_cat.js')
+  - Kabel verlegen -> Speedtest Animation.
+- [ ] Integration
+  - Startbar über JSON.

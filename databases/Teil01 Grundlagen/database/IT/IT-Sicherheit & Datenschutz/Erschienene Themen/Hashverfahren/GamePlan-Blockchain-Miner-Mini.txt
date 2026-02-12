@@ -1,0 +1,21 @@
+Anforderungen
+5. "Blockchain-Miner (Mini)"
+   - Ziel: Finde eine Nonce, sodass der Hash mit "0000" beginnt.
+   - Spielmechanik: 
+     - Input: "Transaktion XY".
+     - Nonce: 1 -> Hash "8F..."
+     - Nonce: 2 -> Hash "7A..."
+     - ...
+     - Spieler klickt "Auto-Mine". Stoppt bei Hash "0000...".
+     - Messbarkeit: Funktionsprinzip Proof-of-Work verstanden.
+   - Lernziel: Hash in der Blockchain.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_miner.json')
+  - `target`: "0000".
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Mining-Dashboard (Hashrate).
+- [ ] Game-Engine Logic ('game_sec_miner.js')
+  - Nonce inkrementieren bis Hash passt.
+- [ ] Integration
+  - Startbar über JSON.

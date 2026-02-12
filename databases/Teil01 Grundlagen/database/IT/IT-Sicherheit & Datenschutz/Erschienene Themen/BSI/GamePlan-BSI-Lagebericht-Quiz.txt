@@ -1,0 +1,18 @@
+Anforderungen
+4. "BSI-Lagebericht-Quiz"
+   - Ziel: Erkenne die aktuellen Top-Bedrohungen.
+   - Spielmechanik: 
+     - Schlagzeilen laufen durch: "Ransomware", "DDoS", "Spam", "Klimawandel".
+     - Spieler muss die Bedrohungen aus dem aktuellen BSI-Bericht "fangen".
+     - Messbarkeit: Relevante Cyber-Bedrohungen erkannt.
+   - Lernziel: Awareness für aktuelle Gefahrenlage.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_bsi_quiz.json')
+  - `topics`: ["ransomware", "ddos", "spam", "climate"].
+- [ ] Shared CSS Check ('security_management.css')
+  - News-Ticker Laufschrift.
+- [ ] Game-Engine Logic ('game_sec_bsi_quiz.js')
+  - Relevante Themen herauspicken.
+- [ ] Integration
+  - Startbar über JSON.

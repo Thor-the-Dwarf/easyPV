@@ -1,0 +1,20 @@
+Anforderungen
+3. "Pausen-Prophet"
+   - Ziel: Plane Pausen nach der Bildschirmarbeitsverordnung für einen 8h-Tag.
+   - Spielmechanik: 
+     - Zeitstrahl. Spieler muss Pausenblöcke setzen.
+     - Regeln: Spätestens nach 60-90 Min eine Pause. "Mikropausen" vs "Erholungspausen".
+     - Messbarkeit: Einhalten der Richtlinien (Gesundheitsschutz). Zu wenige Pausen = Abzug.
+   - Lernziel: Gesetzliche Vorgaben und gesundes Arbeiten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ergo_breaks.json')
+  - `shiftLength`: 480 (min).
+  - `rules`: { "maxWorkBlock": 90, "minBreak": 5 }.
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Zeitstrahl Tagesablauf.
+  - Pausen-Blöcke (Draggable).
+- [ ] Game-Engine Logic ('game_ergo_breaks.js')
+  - Validierung Algorithmus: Sind die Abstände zu groß?
+- [ ] Integration
+  - Startbar über JSON.

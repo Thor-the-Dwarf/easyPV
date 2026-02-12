@@ -1,0 +1,19 @@
+Anforderungen
+4. "Asset-Wertermittlung"
+   - Ziel: Was ist am wichtigsten?
+   - Spielmechanik: 
+     - Inventar: "Kaffeemaschine", "Kundendatenbank", "Webserver", "Bürostuhl".
+     - Sortiere nach Kritikalität für den Geschäftsprozess.
+     - Datenbank > Webserver > Stuhl > Kaffee.
+     - Messbarkeit: Korrekte Priorisierung.
+   - Lernziel: Kronjuwelen-Prinzip.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_asset.json')
+  - `assets`: ["coffee", "db", "server", "chair"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Inventar-Liste mit Wert-Badges.
+- [ ] Game-Engine Logic ('game_sec_asset.js')
+  - Priorisierung Drag & Drop.
+- [ ] Integration
+  - Startbar über JSON.

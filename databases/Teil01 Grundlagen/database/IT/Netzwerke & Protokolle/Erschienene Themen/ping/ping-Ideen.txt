@@ -1,0 +1,46 @@
+1. "TTL-Detektiv"
+   - Ziel: Schätze das Betriebssystem oder die Hops anhand der TTL.
+   - Spielmechanik: 
+     - Ping Antwort: TTL=64. -> Linux/Mac (meistens) oder lokales Netz.
+     - Ping Antwort: TTL=128. -> Windows (meistens).
+     - Ping Antwort: TTL=53. -> Startwert war wohl 64, also 11 Router (Hops) dazwischen.
+     - Messbarkeit: Korrekte Schätzung der Distanz/des OS.
+   - Lernziel: Time To Live Feld im IP-Header.
+
+2. "MTU-Tester (Fragmentierung)"
+   - Ziel: Finde die maximale Paketgröße (Path MTU Discovery manuell).
+   - Spielmechanik: 
+     - `ping -f -l 1500` -> "Packet needs to be fragmented but DF set".
+     - `ping -f -l 1472` -> Antwort! (1472 Data + 28 Header = 1500).
+     - Spieler muss den Wert durch Probieren finden.
+     - Messbarkeit: Korrekte MTU ermittelt.
+   - Lernziel: MTU, Fragmentierung und Don't Fragment Bit.
+
+3. "Namensauflösung vs Erreichbarkeit"
+   - Ziel: Interpretiere die Fehlermeldung.
+   - Spielmechanik: 
+     - "Ping request could not find host xyz". -> DNS Fehler.
+     - "Reply from ... Destination host unreachable". -> Routing Fehler.
+     - "Request timed out". -> Firewall oder Kabel ab.
+     - Messbarkeit: Korrekte Diagnose.
+   - Lernziel: Ping-Output verstehen.
+
+4. "Der Dauer-Ping"
+   - Ziel: Überwache die Stabilität.
+   - Spielmechanik: 
+     - `ping -t`.
+     - Linie läuft... "Reply, Reply, Reply, Timeout, Reply".
+     - Paketverlust: 1%.
+     - Gaming unmöglich / VoIP stottert.
+     - Ursache suchen (z.B. WLAN-Interferenz).
+     - Messbarkeit: Erkennen von Packet Loss.
+   - Lernziel: Netzwerkqualität messen.
+
+5. "Localhost vs Eigene IP"
+   - Ziel: Prüfe den Stack.
+   - Spielmechanik: 
+     - Ping 127.0.0.1 -> Prüft Software-Stack.
+     - Ping 192.168.1.10 (Eigene IP) -> Prüft NIC bis zum Treiber.
+     - Ping 192.168.1.1 (Router) -> Prüft physikalische Verbindung (Kabel/WLAN).
+     - Messbarkeit: Systematische Eingrenzung.
+   - Lernziel: Diagnosestufen.

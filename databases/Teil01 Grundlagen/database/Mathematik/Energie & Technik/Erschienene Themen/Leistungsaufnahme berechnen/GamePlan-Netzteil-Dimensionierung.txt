@@ -1,0 +1,22 @@
+Anforderungen
+2. "Netzteil-Dimensionierung"
+   - Ziel: Wähle das richtige Netzteil für den PC.
+   - Spielmechanik: 
+     - Komponenten: CPU (100W) + GPU (250W) + Rest (50W) = 400W.
+     - Puffer nötig (ca. 20-30%). -> Ziel: 500-600W.
+     - Auswahl A: 300W (Zu wenig -> Crash).
+     - Auswahl B: 1000W (Zu viel -> Ineffizient im Teillastbereich).
+     - Auswahl C: 550W (Perfekt).
+     - Messbarkeit: System läuft stabil und effizient.
+   - Lernziel: Komponenten-Addierung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_psu.json')
+  - `load`: 450.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Netzteil-Effizienz-Kurve.
+- [ ] Game-Engine Logic ('game_math_psu.js')
+  - Puffer einplanen (TDP vs Realer Verbrauch).
+  - 80 Plus Zertifizierung.
+- [ ] Integration
+  - Startbar über JSON.

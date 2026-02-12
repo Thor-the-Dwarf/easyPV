@@ -1,0 +1,22 @@
+Anforderungen
+5. "Das NAS als Cloud (Private Cloud)"
+   - Ziel: Zugriff von unterwegs ohne Dropbox.
+   - Spielmechanik: 
+     - NAS Zuhause steht.
+     - DynDNS / QuickConnect einrichten.
+     - Spieler steht am Flughafen mit Handy.
+     - Foto-Upload aufs NAS Zuhause.
+     - Messbarkeit: Erfolgreicher Remote-Zugriff.
+   - Lernziel: NAS vs Public Cloud.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_nas_cloud.json')
+  - `remote`: true.
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Smartphone UI (Upload).
+  - Weltkugel mit Verbindungslinie.
+- [ ] Game-Engine Logic ('game_nas_cloud.js')
+  - DynDNS Setup Steps.
+  - Upload Animation über Internet.
+- [ ] Integration
+  - Startbar über JSON.

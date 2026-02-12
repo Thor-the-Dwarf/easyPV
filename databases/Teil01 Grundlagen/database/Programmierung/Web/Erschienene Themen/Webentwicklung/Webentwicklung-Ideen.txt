@@ -1,0 +1,50 @@
+1. "HTML-Struktur-Puzzler"
+   - Ziel: Baue das Grundgerüst.
+   - Spielmechanik: 
+     - Bausteine: `<html>`, `<head>`, `<body>`, `<title>`.
+     - Richtig: `<html>` aussen. `<head>` oben. `<body>` unten.
+     - `<title>` gehört in den `<head>`.
+     - `<h1>` gehört in den `<body>`.
+     - Messbarkeit: Valider DOM-Baum.
+   - Lernziel: HTML5 Boilerplate.
+
+2. "CSS-Selektor-Sniper"
+   - Ziel: Triff das richtige Element.
+   - Spielmechanik: 
+     - Ziel: "Alle Absätze der Klasse 'intro'".
+     - Auswahl A: `p.intro` (Treffer).
+     - Auswahl B: `.intro p` (Falsch, Kinder).
+     - Auswahl C: `#intro` (Falsch, ID).
+     - Messbarkeit: Korrekter Selektor.
+   - Lernziel: CSS Spezifität.
+
+3. "Responsive-Tester"
+   - Ziel: Mach es mobilfreundlich.
+   - Spielmechanik: 
+     - Webseite auf Desktop: 3 Spalten nebeneinander.
+     - Webseite auf Handy: Immer noch 3 Spalten (viel zu klein!).
+     - Lösung: Media Query `@media (max-width: 600px)`.
+     - Änderung: `flex-direction: column`.
+     - Ergebnis: Spalten untereinander.
+     - Messbarkeit: Lesbarkeit auf kleinen Screens.
+   - Lernziel: Media Queries.
+
+4. "JavaScript-Event-Handler"
+   - Ziel: Mach den Button lebendig.
+   - Spielmechanik: 
+     - Button ist tot.
+     - Code: `btn.addEventListener(...)`.
+     - Event wählen: 'click'.
+     - Funktion: `alert('Hallo')`.
+     - Messbarkeit: Klick löst Aktion aus.
+   - Lernziel: DOM-Interaktion.
+
+5. "Client vs Server (Wo läuft es?)"
+   - Ziel: Ordne die Technologie zu.
+   - Spielmechanik: 
+     - Code: `PHP`. -> Server.
+     - Code: `JavaScript (Frontend)`. -> Client/Browser.
+     - Code: `SQL`. -> Server (Datenbank).
+     - Code: `CSS`. -> Client/Browser (Rendering).
+     - Messbarkeit: Verständnis der Web-Architektur.
+   - Lernziel: Frontend vs Backend.

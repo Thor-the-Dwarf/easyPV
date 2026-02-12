@@ -1,0 +1,21 @@
+Anforderungen
+3. "Der MAC-Filter"
+   - Ziel: Sichere das WLAN (altmodisch).
+   - Spielmechanik: 
+     - Router erlaubt nur MAC A und MAC B.
+     - Gerät C (Hacker) will rein. -> Blockiert.
+     - Gerät C ändert MAC auf MAC A (Spoofing). -> Kommt rein.
+     - Messbarkeit: Verständnis, dass MAC-Filter kein echter Schutz sind.
+   - Lernziel: MAC-Spoofing und Sicherheit.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_mac_filter.json')
+  - `allowed`: ["A", "B"].
+  - `hacker`: "C".
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Router-Webinterface Mockup.
+- [ ] Game-Engine Logic ('game_mac_filter.js')
+  - Spoofing-Button.
+  - Zugangstest (Rot -> Grün).
+- [ ] Integration
+  - Startbar über JSON.

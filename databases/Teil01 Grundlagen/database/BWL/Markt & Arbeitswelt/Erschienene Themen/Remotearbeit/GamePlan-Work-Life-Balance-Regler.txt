@@ -1,0 +1,21 @@
+Anforderungen
+5. "Work-Life-Balance-Regler"
+   - Ziel: Erhalte deine Energie über eine Arbeitswoche > 50%.
+   - Spielmechanik: 
+     - Simulation einer Woche. Nachrichten kommen rein ("Chef ruft um 20 Uhr an").
+     - Entscheidung: "Dran gehen" (Energie -, Karriere +) oder "Feierabend machen" (Energie +, Karriere neutral).
+     - Ziel: Nicht ausbrennen (<0 Energie) und Job behalten (>0 Karriere).
+     - Messbarkeit: Überleben der Woche mit Energie > 50%.
+   - Lernziel: Grenzen setzen und Entgrenzung der Arbeit vermeiden.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_remote_balance.json')
+  - `weeks`: 1.
+  - `events`: [ { "msg": "Call 20h", "energy": -20, "career": 10 } ].
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - 2 Balken (Energie, Karriere).
+  - Smartphone-Notification UI.
+- [ ] Game-Engine Logic ('game_remote_balance.js')
+  - Resource-Management Entscheidung.
+- [ ] Integration
+  - Startbar über JSON.

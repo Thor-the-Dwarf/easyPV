@@ -1,0 +1,20 @@
+Anforderungen
+5. "Georedundanz"
+   - Ziel: Überlebe das Erdbeben / Flugzeugabsturz.
+   - Spielmechanik: 
+     - Rechenzentrum Frankfurt brennt.
+     - Daten nur in Frankfurt? -> Game Over.
+     - Replikation nach Magdeburg (200km weg). -> Failover möglich.
+     - Messbarkeit: Business Continuity Management (BCM).
+   - Lernziel: Standortverteilung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_redundancy_geo.json')
+  - `locs`: ["Frankfurt", "Magdeburg"].
+- [ ] Shared CSS Check ('storage_backup.css')
+  - Landkarte DE.
+- [ ] Game-Engine Logic ('game_redundancy_geo.js')
+  - Katastrophen-Event (Feuer in FFM).
+  - Umschwenken auf Magdeburg.
+- [ ] Integration
+  - Startbar über JSON.

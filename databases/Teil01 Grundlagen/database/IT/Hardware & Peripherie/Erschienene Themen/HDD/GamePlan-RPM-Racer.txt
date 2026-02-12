@@ -1,0 +1,19 @@
+Anforderungen
+3. "RPM-Racer"
+   - Ziel: Wähle die richtige Drehzahl für den Zweck.
+   - Spielmechanik: 
+     - "Archiv / Backup (Leise, Kühl)". -> 5.400 rpm.
+     - "Server / High Speed". -> 10.000 / 15.000 rpm (SAS).
+     - "Standard Desktop". -> 7.200 rpm.
+     - Messbarkeit: Passende Hardware-Wahl.
+   - Lernziel: Performance-Klassen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_hdd_rpm.json')
+  - `useCases`: [ { "case": "Desktop", "rpm": 7200 } ].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Tacho-Visualisierung.
+- [ ] Game-Engine Logic ('game_hdd_rpm.js')
+  - Matching UseCase -> RPM.
+- [ ] Integration
+  - Startbar über JSON.

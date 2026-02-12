@@ -1,0 +1,21 @@
+Anforderungen
+5. "RZ-Kühlung (PUE-Optimierer)"
+   - Ziel: Senke den PUE-Wert (Power Usage Effectiveness).
+   - Spielmechanik: 
+     - Rechenzentrum läuft.
+     - Klimaanlage auf 18°C (Zu kalt, teuer).
+     - "Hot Aisle / Cold Aisle" Trennung fehlt.
+     - Maßnahmen: Klima auf 24°C, Gänge kapseln.
+     - Messbarkeit: PUE nähert sich 1.0 an.
+   - Lernziel: Green IT im Rechenzentrum.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_pue.json')
+  - `it_load`: 100, `cooling`: 50.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Serverraum Temperatur-Anzeige.
+- [ ] Game-Engine Logic ('game_math_pue.js')
+  - PUE = Gesamtenergie / IT-Energie.
+  - Ziel: Nahe 1.0 kommen.
+- [ ] Integration
+  - Startbar über JSON.

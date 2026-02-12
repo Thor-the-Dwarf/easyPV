@@ -1,0 +1,20 @@
+Anforderungen
+1. "Der Break-Even-Point"
+   - Ziel: Wann habe ich das Geld wieder drin?
+   - Spielmechanik: 
+     - Investition: 1000€.
+     - Ersparnis: 100€ pro Monat.
+     - Dauer: 10 Monate (Amortisationszeit).
+     - User muss den Monat im Kalender markieren.
+     - Messbarkeit: Korrekter Zeitpunkt.
+   - Lernziel: Rückflussdauer (Payback Period).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_bep.json')
+  - `fixed`: 1000, `margin`: 10.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Gewinnschwelle Diagramm.
+- [ ] Game-Engine Logic ('game_math_bep.js')
+  - Stückzahl = Fixkosten / DB pro Stück.
+- [ ] Integration
+  - Startbar über JSON.

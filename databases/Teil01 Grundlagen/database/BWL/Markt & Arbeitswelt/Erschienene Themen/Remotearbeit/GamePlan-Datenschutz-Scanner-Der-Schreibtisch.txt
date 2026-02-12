@@ -1,0 +1,20 @@
+Anforderungen
+2. "Datenschutz-Scanner: Der Schreibtisch"
+   - Ziel: Finde 5 Sicherheitsrisiken in einem Foto eines Home-Office-Arbeitsplatzes.
+   - Spielmechanik: 
+     - Bild: Ein Fenster im Hintergrund (Bildschirm einsehbar?), Passwort-Zettel am Monitor, Firmenakten offen liegen, Alexa-Lautsprecher an.
+     - Spieler klickt auf die Risiken.
+     - Messbarkeit: Gefundene Risiken / Gesamtzahl (5). Zeitlimit 45 Sek.
+   - Lernziel: Informationssicherheit im privaten Umfeld.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_remote_security.json')
+  - `scene`: Bild-URL.
+  - `risks`: [ "password_note", "open_window" ].
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Lupe-Cursor (optional).
+  - Marker setzen.
+- [ ] Game-Engine Logic ('game_remote_security.js')
+  - Fehler-Suche im Bild.
+- [ ] Integration
+  - Startbar über JSON.

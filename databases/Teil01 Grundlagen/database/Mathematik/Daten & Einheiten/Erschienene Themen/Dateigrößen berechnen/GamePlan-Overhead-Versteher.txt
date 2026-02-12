@@ -1,0 +1,20 @@
+Anforderungen
+5. "Overhead-Versteher"
+   - Ziel: Warum ist die Datei größer als der Inhalt?
+   - Spielmechanik: 
+     - Textdatei mit 1 Zeichen ("a") = 1 Byte.
+     - Dateisystem belegt aber 4 KB (Clustergröße)!
+     - 1000 Dateien à 1 Byte belegen 4 MB auf der Disk.
+     - User wundert sich "Disk voll".
+     - Messbarkeit: Verständnis von Slack Space / Cluster Size.
+   - Lernziel: Nettodaten vs Bruttodaten auf Datenträger.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_overhead.json')
+  - `filesize`: 1000.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Paket-Visualisierung (Payload + Header).
+- [ ] Game-Engine Logic ('game_math_overhead.js')
+  - Nettodaten vs Bruttodaten.
+- [ ] Integration
+  - Startbar über JSON.

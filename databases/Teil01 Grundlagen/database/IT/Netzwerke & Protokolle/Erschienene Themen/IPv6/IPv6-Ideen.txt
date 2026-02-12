@@ -1,0 +1,49 @@
+1. "Hex-Kürzer (Notation)"
+   - Ziel: Verkürze die IPv6 Adresse korrekt.
+   - Spielmechanik: 
+     - Input: 2001:0db8:0000:0000:0000:0000:1428:57ab.
+     - Regel 1: Führende Nullen weg (2001:db8...).
+     - Regel 2: Nullen-Blöcke zu "::" (einmalig!).
+     - Lösung: 2001:db8::1428:57ab.
+     - Falsch: 2001:db8::1428::57ab (Zwei mal "::" verboten).
+     - Messbarkeit: Valide Kurzschreibweise.
+   - Lernziel: IPv6 Syntax-Regeln.
+
+2. "Adress-Typen-Quiz"
+   - Ziel: Was ist das für eine Adresse?
+   - Spielmechanik: 
+     - "fe80::..." -> Link Local (Wie APIPA, aber immer da).
+     - "::1" -> Loopback (localhost).
+     - "2001:..." -> Global Unicast (Öffentlich).
+     - "ff00:..." -> Multicast.
+     - Messbarkeit: 100% korrekte Zuordnung.
+   - Lernziel: Adressbereiche IPv6.
+
+3. "Kein-NAT-Mehr"
+   - Ziel: Verstehe den Paradigmenwechsel.
+   - Spielmechanik: 
+     - IPv4 Netz: Router macht NAT. Private IPs innen.
+     - IPv6 Netz: Jedes Gerät hat globale IP. Router routet nur (Firewall schützt).
+     - Aufgabe: "Port Forwarding einrichten?" -> Nein! Einfach Firewall-Regel "Allow traffic to Device IP".
+     - Messbarkeit: Dienst erreichbar ohne NAT.
+   - Lernziel: Ende zu Ende Konnektivität.
+
+4. "Prefix-Rechner (/64)"
+   - Ziel: Teile das Netz.
+   - Spielmechanik: 
+     - Provider gibt Prefix: 2001:abc:123::/48.
+     - Firma braucht Subnetze.
+     - Standard-Subnetzgröße: /64.
+     - Subnetz 1: 2001:abc:123:0001::/64.
+     - Subnetz 2: 2001:abc:123:0002::/64.
+     - Messbarkeit: Korrekte Subnetz-IDs.
+   - Lernziel: Hexadezimales Subnetting.
+
+5. "Privacy-Extension-Check"
+   - Ziel: Schütze deine Identität.
+   - Spielmechanik: 
+     - Interface ID aus MAC-Adresse (EUI-64) -> User trackbar.
+     - Privacy Extensions an -> Zufällige Interface ID wechselt täglich.
+     - Spieler aktiviert Setting in Windows.
+     - Messbarkeit: IP ändert sich, User nicht mehr trackbar.
+   - Lernziel: EUI-64 vs Privacy Extensions.

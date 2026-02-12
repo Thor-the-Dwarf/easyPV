@@ -1,0 +1,20 @@
+Anforderungen
+4. "kWh-Ermittler"
+   - Ziel: Berechne den Verbrauch über Zeit.
+   - Spielmechanik: 
+     - Gerät: 100 Watt.
+     - Laufzeit: 10 Stunden.
+     - Rechnung: 100W * 10h = 1000 Wh = 1 kWh.
+     - Messbarkeit: Korrekte Umrechnung W in kWh.
+   - Lernziel: Arbeit (Energie) = Leistung * Zeit.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_kwh.json')
+  - `power`: 100, `hours`: 10.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Stromzähler-Display.
+- [ ] Game-Engine Logic ('game_math_kwh.js')
+  - Berechnung W -> kW -> kWh.
+  - Formel P * t.
+- [ ] Integration
+  - Startbar über JSON.

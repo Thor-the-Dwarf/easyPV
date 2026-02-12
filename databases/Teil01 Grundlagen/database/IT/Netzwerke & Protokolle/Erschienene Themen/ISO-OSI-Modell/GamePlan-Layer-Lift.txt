@@ -1,0 +1,21 @@
+Anforderungen
+1. "Layer-Lift"
+   - Ziel: Ordne Protokolle/Geräte der richtigen Schicht zu.
+   - Spielmechanik: 
+     - "Switch" -> Layer 2 (Data Link).
+     - "IP-Adresse" -> Layer 3 (Network).
+     - "TCP" -> Layer 4 (Transport).
+     - "Kabel" -> Layer 1 (Physical).
+     - "HTTP" -> Layer 7 (Application).
+     - Messbarkeit: Aufzug fährt in den richtigen Stock.
+   - Lernziel: Die 7 Schichten auswendig können.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_iso_lift.json')
+  - `items`: ["Switch", "Router", "IP", "MAC", "HTTP"].
+- [ ] Shared CSS Check ('network_basics.css')
+  - Aufzugs-Panel (Knöpfe 1-7).
+- [ ] Game-Engine Logic ('game_iso_lift.js')
+  - Quiz-Mechanik (Item erscheint -> Stockwerk wählen).
+- [ ] Integration
+  - Startbar über JSON.

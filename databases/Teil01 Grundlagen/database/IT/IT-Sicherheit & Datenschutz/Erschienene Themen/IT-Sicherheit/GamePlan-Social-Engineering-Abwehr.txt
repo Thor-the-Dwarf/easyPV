@@ -1,0 +1,20 @@
+Anforderungen
+3. "Social-Engineering-Abwehr"
+   - Ziel: Erkenne den Angriffsversuch am Telefon / Vishing.
+   - Spielmechanik: 
+     - Anruf: "Hier ist der Admin, ich brauche dein Passwort zum Testen."
+     - Reaktion A: Passwort geben. (Fail).
+     - Reaktion B: Rückruf unter interner Nummer anbieten. (Win).
+     - Messbarkeit: Passwort nicht preisgegeben.
+   - Lernziel: Human Factor in der Security.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_social.json')
+  - `call`: "fake_admin".
+- [ ] Shared CSS Check ('security_management.css')
+  - Telefon-Interface / Chat-Fenster.
+- [ ] Game-Engine Logic ('game_sec_social.js')
+  - Dialog-Optionen wählen.
+  - Erkennen von Druck/Manipulation.
+- [ ] Integration
+  - Startbar über JSON.

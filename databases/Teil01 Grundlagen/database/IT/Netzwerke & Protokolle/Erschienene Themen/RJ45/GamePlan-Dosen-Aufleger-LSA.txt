@@ -1,0 +1,21 @@
+Anforderungen
+5. "Dosen-Aufleger (LSA)"
+   - Ziel: Lege die Adern in die Netzwerkdose zielsicher auf.
+   - Spielmechanik: 
+     - LSA-Anlegewerkzeug nutzen.
+     - Ader nicht ganz drin -> Wackelkontakt.
+     - Ader zu weit abisoliert -> Nebensprechen (Next).
+     - Überschuss abschneiden.
+     - Messbarkeit: Messprotokoll "Pass".
+   - Lernziel: Installationstechnik.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_rj45_lsa.json')
+  - `tool`: "LSA".
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Netzwerkdose Innenleben.
+- [ ] Game-Engine Logic ('game_rj45_lsa.js')
+  - Click-Timing oder Präzision (Werkzeug ansetzen).
+  - Audio (Klick-Geräusch).
+- [ ] Integration
+  - Startbar über JSON.

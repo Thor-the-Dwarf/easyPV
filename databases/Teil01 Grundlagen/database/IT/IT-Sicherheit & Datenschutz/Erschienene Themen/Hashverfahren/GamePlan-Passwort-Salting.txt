@@ -1,0 +1,21 @@
+Anforderungen
+3. "Passwort-Salting"
+   - Ziel: Erschwere Rainbow-Table Attacken.
+   - Spielmechanik: 
+     - User A PW: "123456". Hash: "X".
+     - User B PW: "123456". Hash: "X" (Schlecht!).
+     - Aufgabe: Füge Salt hinzu.
+     - User A: "123456" + "Salt1" -> Hash "Y".
+     - User B: "123456" + "Salt2" -> Hash "Z".
+     - Messbarkeit: Eindeutige Hashes trotz gleichem PW.
+   - Lernziel: Schutz gespeicherter Passwörter.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_salt_hash.json')
+  - `pw`: "123".
+- [ ] Shared CSS Check ('security_crypto.css')
+  - (Redundant mit Passwortsicherheit/Salt-Streuer -> Ggf. anderen Fokus wählen oder verweisen. Hier: Fokus auf Hash-Algorithmus).
+- [ ] Game-Engine Logic ('game_sec_salt_hash.js')
+  - Visualisierung: H(PW + Salt).
+- [ ] Integration
+  - Startbar über JSON.

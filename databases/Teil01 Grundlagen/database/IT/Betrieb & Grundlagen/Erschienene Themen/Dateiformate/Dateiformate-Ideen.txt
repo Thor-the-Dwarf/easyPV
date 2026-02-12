@@ -1,0 +1,47 @@
+1. "Header-Hacker"
+   - Ziel: Identifiziere den Dateityp anhand der ersten Bytes (Magic Numbers).
+   - Spielmechanik: 
+     - Hex-View: "FF D8 FF..." -> ?
+     - Auswahl: JPG, PNG, PDF, PK (Zip).
+     - Richtig: JPG.
+     - "25 50 44 46..." -> PDF.
+     - Messbarkeit: 5 Dateien korrekt identifiziert.
+   - Lernziel: Identifikation jenseits der Dateiendung.
+
+2. "Kompressions-Champion"
+   - Ziel: Wähle das beste Format um Platz zu sparen.
+   - Spielmechanik: 
+     - Objekt: "Foto von Sonnenuntergang". -> JPG (Verlustbehaftet, gut). BMP (Groß, schlecht).
+     - Objekt: "Logo mit klaren Kanten". -> PNG/SVG.
+     - Objekt: "Textdokument". -> TXT/ZIP.
+     - Messbarkeit: Kleinste Dateigröße bei akzeptabler Qualität gewählt.
+   - Lernziel: Verlustbehaftete vs. verlustfreie Kompression.
+
+3. "Vektor vs. Pixel"
+   - Ziel: Vergrößere Bilder ohne Qualitätsverlust.
+   - Spielmechanik: 
+     - Kunde will Plakatwand-Druck.
+     - Bild A (JPG, 500x500px). -> Vergrößern -> Pixelig (Fehler).
+     - Bild B (SVG). -> Vergrößern -> Scharf (Erfolg).
+     - Messbarkeit: Zufriedenheit des Kunden mit der Druckqualität.
+   - Lernziel: Skalierbarkeit von Vektorgrafiken.
+
+4. "Endungen-Match"
+   - Ziel: Ordne Dateiendungen dem Programm zu.
+   - Spielmechanik: 
+     - .xlsx -> Excel.
+     - .psd -> Photoshop.
+     - .html -> Browser.
+     - .py -> Python Interpreter.
+     - Messbarkeit: 10 Paare korrekt verbunden.
+   - Lernziel: Standard-Assoziationen.
+
+5. "Container-Checker"
+   - Ziel: Was steckt im Container? (Video/Audio Codecs).
+   - Spielmechanik: 
+     - Datei: "Film.mkv".
+     - Inhalt analysieren: Videostream (H.264), Audiostream (MP3), Untertitel (SRT).
+     - Frage: "Kann Player X (unterstützt nur H.265) das abspielen?"
+     - Antwort: Nein.
+     - Messbarkeit: Korrekte Kompatibilitätsprüfung.
+   - Lernziel: Unterschied zwischen Container (MKV, AVI) und Codec.

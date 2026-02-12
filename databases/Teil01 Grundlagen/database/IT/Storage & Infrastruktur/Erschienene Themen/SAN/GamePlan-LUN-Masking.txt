@@ -1,0 +1,22 @@
+Anforderungen
+1. "LUN-Masking"
+   - Ziel: Weise den Speicher dem richtigen Server zu.
+   - Spielmechanik: 
+     - Storage Array hat 100 TB.
+     - LUN 1 (10 TB) erstellt.
+     - Wer darf zugreifen? Server A.
+     - Zugriff: Mapping WWN (World Wide Name) von Server A auf LUN 1.
+     - Wenn Server B zugreift -> Datenkorruption! (Außer Cluster-Filesystem).
+     - Messbarkeit: Exklusiver Zugriff gesichert.
+   - Lernziel: Zugriffskontrolle im SAN.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_san_lun.json')
+  - `host`: "ServerA", `lun`: "LUN1".
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Storage-Management Inerface.
+- [ ] Game-Engine Logic ('game_san_lun.js')
+  - WWN Mapping eintragen.
+  - Zugriff verweigern für falschen Host.
+- [ ] Integration
+  - Startbar über JSON.

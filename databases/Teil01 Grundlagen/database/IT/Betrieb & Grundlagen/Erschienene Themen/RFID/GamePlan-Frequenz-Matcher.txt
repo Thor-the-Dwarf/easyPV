@@ -1,0 +1,19 @@
+Anforderungen
+1. "Frequenz-Matcher"
+   - Ziel: Wähle die richtige Frequenz (LF, HF, UHF) für die Anwendung.
+   - Spielmechanik: 
+     - "Tier-Chip (Haustier)". -> LF (Low Frequency, Kurzstrecke, durch Wasser/Gewebe).
+     - "Bezahlkarte / Perso (NFC)". -> HF (High Frequency, 13.56 MHz).
+     - "Logistik-Palette durch Tor fahren". -> UHF (Ultra High Frequency, Hohe Reichweite, Pulk).
+     - Messbarkeit: Korrekte Zuordnung Anwendung <-> Frequenzband.
+   - Lernziel: Physikalische Eigenschaften der Frequenzen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_rfid_freq.json')
+  - `bands`: ["lf", "hf", "uhf"].
+- [ ] Shared CSS Check ('basics_hardware.css')
+  - Spektrum-Skala.
+- [ ] Game-Engine Logic ('game_basics_rfid_freq.js')
+  - Anwendung -> Frequenz zuordnen.
+- [ ] Integration
+  - Startbar über JSON.

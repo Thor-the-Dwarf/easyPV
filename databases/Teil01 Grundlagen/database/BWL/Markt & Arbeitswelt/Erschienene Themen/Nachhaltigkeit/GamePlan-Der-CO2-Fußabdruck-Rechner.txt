@@ -1,0 +1,22 @@
+Anforderungen
+1. "Der CO2-Fußabdruck-Rechner"
+   - Ziel: Senke den CO2-Ausstoß eines Büros um 50% durch Investitionsentscheidungen.
+   - Spielmechanik: 
+     - Budget: 10.000€. Start-CO2: 10 Tonnen.
+     - Maßnahmen kaufen: "LED-Lampen" (Kosten 500€, -1t CO2), "Ökostrom-Tarif" (Kosten 0€ + laufend, -4t CO2), "Neue Fenster" (Kosten 8.000€, -2t CO2).
+     - Spieler muss Budget einhalten und Ziel erreichen.
+     - Messbarkeit: Ziel erreicht = 100%. Budget überschritten = Game Over.
+   - Lernziel: Effizienz von Maßnahmen bewerten (Green IT).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sust_co2.json')
+  - `budget`: 10000.
+  - `upgrades`: [ { "name": "LED", "cost": 500, "co2red": 1 } ].
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Dashboard (Budget, CO2-Tacho).
+  - Shop-Items.
+- [ ] Game-Engine Logic ('game_sust_co2.js')
+  - Warenkorb-Logik.
+  - Win-Condition Check.
+- [ ] Integration
+  - Startbar über JSON.

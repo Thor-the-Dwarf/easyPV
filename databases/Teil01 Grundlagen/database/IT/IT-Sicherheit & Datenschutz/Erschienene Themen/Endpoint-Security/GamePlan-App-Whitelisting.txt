@@ -1,0 +1,19 @@
+Anforderungen
+5. "App-Whitelisting"
+   - Ziel: Erlaube nur legitime Software.
+   - Spielmechanik: 
+     - Liste: "Word.exe", "Calc.exe".
+     - User will "AngryBirds.exe" starten -> Blocked.
+     - User will "Ransomware.exe" starten -> Blocked.
+     - Messbarkeit: 0% Malware-Infektion dank Whitelist.
+   - Lernziel: Prinzip der positiven Sicherheitsliste (vs Blacklist).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_whitelist.json')
+  - `allowed`: ["word", "calc"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - Prozess-Liste / Startmenü.
+- [ ] Game-Engine Logic ('game_sec_whitelist.js')
+  - Start-Versuch blockieren wenn nicht auf Liste.
+- [ ] Integration
+  - Startbar über JSON.

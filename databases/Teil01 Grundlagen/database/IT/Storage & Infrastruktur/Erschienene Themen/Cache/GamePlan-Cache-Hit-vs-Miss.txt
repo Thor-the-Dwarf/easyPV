@@ -1,0 +1,22 @@
+Anforderungen
+1. "Cache-Hit vs Miss"
+   - Ziel: Optimiere die Antwortzeit der Anwendung.
+   - Spielmechanik: 
+     - User fragt "Artikel 123" an.
+     - Im Cache? Ja -> Antwort in 1ms (Hit).
+     - Im Cache? Nein -> DB-Anfrage (Miss, dauert 500ms).
+     - Cache ist voll (FIFO).
+     - Strategie: Behalte häufige Artikel (LRU - Least Recently Used) im Cache.
+     - Messbarkeit: Durchschnittliche Antwortzeit < 10ms.
+   - Lernziel: Caching-Strategien.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cache_hit.json')
+  - `size`: 5. `requests`: ["A", "B", "A", "C", "D", "B", "E", "F"].
+- [ ] Shared CSS Check ('storage_basics.css')
+  - Speicher-Riegel Visualisierung.
+- [ ] Game-Engine Logic ('game_cache_hit.js')
+  - LRU-Algorithmus (Ältestes fliegt raus).
+  - Zeitmessung (Hit=schnell, Miss=langsam).
+- [ ] Integration
+  - Startbar über JSON.

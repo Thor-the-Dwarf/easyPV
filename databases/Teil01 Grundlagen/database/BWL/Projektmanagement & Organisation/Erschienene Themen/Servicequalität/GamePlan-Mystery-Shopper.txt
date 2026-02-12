@@ -1,0 +1,20 @@
+Anforderungen
+5. "Mystery Shopper"
+   - Ziel: Bewerte ein Verkaufsgespräch anhand einer Checkliste.
+   - Spielmechanik: 
+     - Dialog läuft ab.
+     - Checkliste: "Begrüßung erfolgt?", "Bedarf ermittelt?", "Zusatzverkauf angeboten?", "Verabschiedung?".
+     - Spieler hakt ab (Ja/Nein).
+     - Messbarkeit: Übereinstimmung mit Musterlösung.
+   - Lernziel: Messbarkeit von Servicequalität.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_mystery.json')
+  - `checklist`: ["friendliness", "cleanliness", "competence"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Klemmbrett / Checkliste UI.
+- [ ] Game-Engine Logic ('game_pm_mystery.js')
+  - Verdeckte Beobachtung -> Bewertung abgeben.
+  - Bericht erstellen.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+2. "Stecker-Puzzle: Typ C"
+   - Ziel: Finde den Vorteil von USB-C.
+   - Spielmechanik: 
+     - Typ A: Muss gedreht werden. (3 Versuche nötig, Murphy's Law Simulation).
+     - Typ C: Passt sofort, egal wie rum.
+     - Aufgabe: Stecke 10 Kabel in 10 Sekunden. Typ C gewinnt.
+     - Messbarkeit: Zeitvorteil.
+   - Lernziel: Reversibilität von USB-C.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_usb_plug.json')
+  - `types`: ["A", "C"].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Stecker-Animation.
+- [ ] Game-Engine Logic ('game_usb_plug.js')
+  - "Superposition" bei Typ A (geht oft nicht beim 1. Mal).
+  - Typ C geht immer.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+4. "Write-Through vs Write-Back"
+   - Ziel: Wähle zwischen Sicherheit und Geschwindigkeit.
+   - Spielmechanik: 
+     - Szenario "Bank-Transaktion". -> Write-Through (Sofort in DB schreiben, sicher).
+     - Szenario "User-Avatar Upload". -> Write-Back (Erst in Cache, später DB, schneller).
+     - Stromausfall simulation. Bei Write-Back sind Daten weg.
+     - Messbarkeit: Datenverlust vs Performance.
+   - Lernziel: Schreibstrategien.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cache_write.json')
+  - `mode`: "select".
+- [ ] Shared CSS Check ('storage_basics.css')
+  - Datenfluss-Pfeile (CPU -> Cache -> DB).
+- [ ] Game-Engine Logic ('game_cache_write.js')
+  - Crash-Button (Stromausfall).
+  - Daten-Integritäts-Check.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+2. "Struktur-Analyse-Puzzler"
+   - Ziel: Baue das Netz des Unternehmens nach (Strukturanalyse).
+   - Spielmechanik: 
+     - Objekte: Router, Server, Client, Gebäude.
+     - Aufgabe: Zeichne die Abhängigkeiten.
+     - Router verbindet Gebäude mit Internet.
+     - Server hängt am Router.
+     - Messbarkeit: Logisch korrektes Netzdiagramm.
+   - Lernziel: Erster Schritt der BSI-Methodik.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_struct.json')
+  - `objects`: ["router", "server", "client", "building"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Netzplan-Editor (Vereinfacht).
+- [ ] Game-Engine Logic ('game_sec_struct.js')
+  - Verbindungen ziehen (Abhängigkeiten).
+- [ ] Integration
+  - Startbar über JSON.

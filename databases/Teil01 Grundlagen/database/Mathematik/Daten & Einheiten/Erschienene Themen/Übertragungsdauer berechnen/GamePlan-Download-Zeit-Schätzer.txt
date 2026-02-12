@@ -1,0 +1,22 @@
+Anforderungen
+1. "Download-Zeit-Schätzer"
+   - Ziel: Wie lange dauert der 10 GB Patch?
+   - Spielmechanik: 
+     - Leitung: DSL 50.000 (50 Mbit/s).
+     - Datei: 10 GB = 80.000 Mbit.
+     - Zeit: 80.000 / 50 = 1600 Sekunden.
+     - 1600 / 60 ≈ 27 Minuten.
+     - User wählt "ca. eine halbe Stunde".
+     - Messbarkeit: Realistische Zeitschätzung.
+   - Lernziel: Große Datenmengen über Zeit.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_download_calc.json')
+  - `size`: 10000, `speed`: 50.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Progress Bar.
+- [ ] Game-Engine Logic ('game_math_download_calc.js')
+  - Umrechnung Byte/Bit beachten!
+  - 10GB = 80Gbit.
+- [ ] Integration
+  - Startbar über JSON.

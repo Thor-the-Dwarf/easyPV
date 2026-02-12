@@ -1,0 +1,18 @@
+Anforderungen
+3. "Steuerzeichen-Jäger"
+   - Ziel: Finde die unsichtbaren Steuerzeichen im Datenstrom.
+   - Spielmechanik: 
+     - Datenstrom: "Hello[CR][LF]World[TAB]!".
+     - Aufgabe: Klicke auf "Carriage Return" und "Line Feed".
+     - Messbarkeit: Korrekte Identifikation der Non-Printing Characters.
+   - Lernziel: Bedeutung von CR, LF, TAB, NULL.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_control_chars.json')
+  - `stream`: "Hello[CR][LF]World".
+- [ ] Shared CSS Check ('basics_general.css')
+  - Debugger-Ansicht (Sonderzeichen sichtbar machen).
+- [ ] Game-Engine Logic ('game_basics_control_chars.js')
+  - Hidden Characters finden und klicken.
+- [ ] Integration
+  - Startbar über JSON.

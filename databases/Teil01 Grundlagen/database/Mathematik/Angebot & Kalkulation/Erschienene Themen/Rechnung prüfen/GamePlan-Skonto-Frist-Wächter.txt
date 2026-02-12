@@ -1,0 +1,21 @@
+Anforderungen
+4. "Skonto-Frist-Wächter"
+   - Ziel: Zahle rechtzeitig.
+   - Spielmechanik: 
+     - Rechnungsdatum: 1. Mai.
+     - "2% Skonto bei Zahlung bis 14 Tage".
+     - Heute: 20. Mai.
+     - Darf ich Skonto ziehen? Nein.
+     - Wenn ich es trotzdem tue -> Nachforderung + Mahngebühr.
+     - Messbarkeit: Korrekte Zahlungshöhe je nach Datum.
+   - Lernziel: Zahlungsziele einhalten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_skonto_date.json')
+  - `days`: 14.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Kalender Fristablauf.
+- [ ] Game-Engine Logic ('game_math_skonto_date.js')
+  - Datum + Tage = Zahlungsziel.
+- [ ] Integration
+  - Startbar über JSON.

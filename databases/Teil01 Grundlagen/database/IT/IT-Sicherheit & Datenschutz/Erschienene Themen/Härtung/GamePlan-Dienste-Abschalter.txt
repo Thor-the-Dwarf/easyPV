@@ -1,0 +1,19 @@
+Anforderungen
+1. "Dienste-Abschalter"
+   - Ziel: Minimiere die Angriffsfläche (Attack Surface).
+   - Spielmechanik: 
+     - Server läuft. Offene Ports: 80 (Web), 21 (FTP), 23 (Telnet), 3389 (RDP).
+     - Aufgabe: Webserver härten.
+     - Aktionen: Telnet aus (Unsicher!). FTP aus (Unsicher -> SFTP nehmen!).
+     - Messbarkeit: Nur noch Port 80/443 offen.
+   - Lernziel: Unnötige Dienste deaktivieren.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_services.json')
+  - `ports`: [21, 23, 80, 443, 3389].
+- [ ] Shared CSS Check ('security_defense.css')
+  - Dienste-Liste (Services.msc).
+- [ ] Game-Engine Logic ('game_sec_services.js')
+  - Unnötiges abschalten (Telnet, FTP).
+- [ ] Integration
+  - Startbar über JSON.

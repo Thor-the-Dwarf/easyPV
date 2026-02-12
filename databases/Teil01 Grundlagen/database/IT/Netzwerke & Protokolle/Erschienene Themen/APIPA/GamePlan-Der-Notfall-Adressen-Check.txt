@@ -1,0 +1,20 @@
+Anforderungen
+1. "Der Notfall-Adressen-Check"
+   - Ziel: Erkenne, wann APIPA greift.
+   - Spielmechanik: 
+     - Szenario 1: DHCP Server antwortet. IP: 192.168.1.10.
+     - Szenario 2: DHCP Server down. IP: 169.254.x.y (APIPA).
+     - Szenario 3: Kabel gezogen. IP: 0.0.0.0 (oder Media disconnected).
+     - Messbarkeit: Korrekte Diagnose des Netzwerkstatus anhand der IP.
+   - Lernziel: Erkennungsmerkmal 169.254.0.0/16.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_apipa_check.json')
+  - `states`: ["dhcp_ok", "dhcp_down", "cable_unplugged"].
+- [ ] Shared CSS Check ('network_ip.css')
+  - `ipconfig`-Command Output Style.
+- [ ] Game-Engine Logic ('game_apipa_check.js')
+  - Random Szenario Generator.
+  - Diagnose-Quiz Buttons.
+- [ ] Integration
+  - Startbar über JSON.

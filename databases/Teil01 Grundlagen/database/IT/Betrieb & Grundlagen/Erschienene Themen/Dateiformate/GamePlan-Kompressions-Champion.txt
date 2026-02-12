@@ -1,0 +1,20 @@
+Anforderungen
+2. "Kompressions-Champion"
+   - Ziel: Wähle das beste Format um Platz zu sparen.
+   - Spielmechanik: 
+     - Objekt: "Foto von Sonnenuntergang". -> JPG (Verlustbehaftet, gut). BMP (Groß, schlecht).
+     - Objekt: "Logo mit klaren Kanten". -> PNG/SVG.
+     - Objekt: "Textdokument". -> TXT/ZIP.
+     - Messbarkeit: Kleinste Dateigröße bei akzeptabler Qualität gewählt.
+   - Lernziel: Verlustbehaftete vs. verlustfreie Kompression.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_compression.json')
+  - `source`: "photo.raw".
+- [ ] Shared CSS Check ('basics_general.css')
+  - Export-Dialog Mockup.
+- [ ] Game-Engine Logic ('game_basics_compression.js')
+  - Format wählen (JPG, PNG, ZIP).
+  - Ergebnis-Bewertung (Größe vs Qualität).
+- [ ] Integration
+  - Startbar über JSON.

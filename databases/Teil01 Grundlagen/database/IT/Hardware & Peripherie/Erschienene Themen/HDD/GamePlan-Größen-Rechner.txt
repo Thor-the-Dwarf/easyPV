@@ -1,0 +1,21 @@
+Anforderungen
+4. "Größen-Rechner"
+   - Ziel: Berechne die Brutto-Netto-Kapazität (Dezimal vs Binär).
+   - Spielmechanik: 
+     - Hersteller sagt "1 TB" (10^12 Byte).
+     - Windows zeigt "931 GiB" (2^40 Byte).
+     - Kunde beschwert sich: "Wo sind meine 70 GB?"
+     - Spieler muss wählen: "Diebstahl" (Falsch) oder "Umrechnungsfaktor" (Richtig).
+     - Messbarkeit: Verständnis des TiB vs TB Problems.
+   - Lernziel: Einheiten (SI vs IEC).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_hdd_size.json')
+  - `tb`: 1.
+  - `gib`: 931.
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Packungs-Beilage vs Windows-Explorer Anzeige.
+- [ ] Game-Engine Logic ('game_hdd_size.js')
+  - Multiple Choice Verständnisfrage.
+- [ ] Integration
+  - Startbar über JSON.

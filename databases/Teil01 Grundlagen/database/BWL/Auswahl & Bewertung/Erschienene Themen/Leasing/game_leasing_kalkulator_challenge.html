@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leasing-Kalkulator-Challenge</title>
+  <link rel="stylesheet" href="./leasing.css">
+</head>
+<body class="kalk-page">
+  <main class="kalk-app">
+    <header class="kalk-head">
+      <h1>Leasing-Kalkulator-Challenge</h1>
+      <p>Rate unter 200 EUR bringen, ohne mehr als 2.000 EUR Anzahlung.</p>
+    </header>
+
+    <section class="kalk-layout">
+      <article class="kalk-asset-card">
+        <img class="kalk-asset-img" src="./assets/leasing-kalkulator-asset.svg" alt="Leasingangebot">
+      </article>
+
+      <article class="kalk-panel">
+        <div class="kalk-targets">
+          <div><span>Zielrate</span><strong>&le; <span id="target-rate">200</span> EUR</strong></div>
+          <div><span>Anzahlung max</span><strong>&le; <span id="target-down">2000</span> EUR</strong></div>
+        </div>
+
+        <div class="kalk-inputs">
+          <label class="kalk-field">
+            <span>Laufzeit (Monate)</span>
+            <input id="term-range" type="range">
+            <input id="term-input" type="number" inputmode="numeric" min="12" max="60" step="6">
+          </label>
+
+          <label class="kalk-field">
+            <span>Anzahlung (EUR)</span>
+            <input id="down-range" type="range">
+            <input id="down-input" type="number" inputmode="numeric" min="0" max="5000" step="100">
+          </label>
+
+          <label class="kalk-field">
+            <span>Kilometer / Jahr</span>
+            <input id="km-range" type="range">
+            <input id="km-input" type="number" inputmode="numeric" min="5000" max="40000" step="1000">
+          </label>
+        </div>
+
+        <div class="kalk-result">
+          <div class="kalk-rate"><span>Monatsrate</span><strong id="monthly-rate">0 EUR</strong></div>
+          <div class="kalk-status" id="kalk-status">Passe die Werte an.</div>
+          <div class="kalk-bars">
+            <div class="kalk-bar"><span>Rate</span><div class="track"><div id="rate-bar" class="fill bad"></div></div></div>
+            <div class="kalk-bar"><span>Anzahlung</span><div class="track"><div id="down-bar" class="fill bad"></div></div></div>
+          </div>
+        </div>
+
+        <button id="check-btn" class="kalk-check" type="button">Pruefen</button>
+      </article>
+    </section>
+  </main>
+
+  <script src="./game_leasing_kalkulator_challenge.js" defer></script>
+</body>
+</html>

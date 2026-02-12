@@ -1,0 +1,20 @@
+Anforderungen
+3. "Remote-Tool-Master"
+   - Ziel: Wähle für 4 Aufgaben das korrekte Kollaborationstool.
+   - Spielmechanik: 
+     - Aufgabe: "Schnelle kurze Frage an Kollegen". -> Chat (Teams/Slack).
+     - Aufgabe: "Gemeinsam an Dokument arbeiten". -> Cloud-Doc (Sharepoint/Google Docs).
+     - Aufgabe: "Offizieller Projektstatus". -> E-Mail.
+     - Aufgabe: "Wochenplanung visualisieren". -> Kanban-Board (Trello/Jira).
+     - Messbarkeit: Richtige Tool-Wahl = Punkte.
+   - Lernziel: Medienkompetenz und Effizienz in der digitalen Zusammenarbeit.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_remote_tools.json')
+  - `tasks`: { "desc": "Chat", "tool": "slack" }.
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Tool-Logos als Buttons.
+- [ ] Game-Engine Logic ('game_remote_tools.js')
+  - Quiz-Format.
+- [ ] Integration
+  - Startbar über JSON.

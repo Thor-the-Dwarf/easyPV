@@ -1,0 +1,19 @@
+Anforderungen
+2. "Risiko-Radar: Lieferkette"
+   - Ziel: Identifiziere 5 Risiken bei einem internationalen Lieferanten.
+   - Spielmechanik: 
+     - Weltkarte. Lieferant sitzt in Krisengebiet X. Transportweg durch Piratengebiet Y. Währungsschwankung Z.
+     - Spieler klickt auf Risikofaktoren.
+     - Messbarkeit: Gefundene Risiken.
+   - Lernziel: Risikomanagement in der Beschaffung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_supply_risk.json')
+  - `risks`: ["political", "financial", "natural"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Weltkarte mit Risiko-Zonen.
+- [ ] Game-Engine Logic ('game_pm_supply_risk.js')
+  - Risiken identifizieren.
+  - Gegenmaßnahmen (Lagerhaltung, Diversifizierung).
+- [ ] Integration
+  - Startbar über JSON.

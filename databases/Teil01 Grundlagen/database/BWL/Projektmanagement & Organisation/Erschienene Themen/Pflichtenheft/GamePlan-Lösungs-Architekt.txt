@@ -1,0 +1,19 @@
+Anforderungen
+2. "Lösungs-Architekt"
+   - Ziel: Formuliere eine technische Lösung für eine Anforderung.
+   - Spielmechanik: 
+     - Anforderung (Lastenheft): "System muss mobil verfügbar sein."
+     - Lösungswahl (Pflichtenheft): "Wir entwickeln eine native iOS-App" vs "Wir kaufen PCs".
+     - Messbarkeit: Passende technische Antwort auf die Anforderung.
+   - Lernziel: Übersetzung von Anforderungen in Lösungen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_ph_arch.json')
+  - `modules`: ["db", "backend", "frontend"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Architektur-Blueprint.
+- [ ] Game-Engine Logic ('game_pm_ph_arch.js')
+  - Komponenten zusammenstecken.
+  - Umsetzung des Lastenhefts in Technik.
+- [ ] Integration
+  - Startbar über JSON.

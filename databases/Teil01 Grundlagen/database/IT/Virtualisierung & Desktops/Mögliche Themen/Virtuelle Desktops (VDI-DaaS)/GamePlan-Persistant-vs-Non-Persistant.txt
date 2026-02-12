@@ -1,0 +1,19 @@
+Anforderungen
+3. "Persistant vs Non-Persistant"
+   - Ziel: Konfiguriere den Desktop-Pool.
+   - Spielmechanik: 
+     - Callcenter (Schichtbetrieb): User braucht keine persönlichen Daten. -> Non-Persistant (Reset nach Logout). Clean & Schnell.
+     - Entwickler (Individuelle Tools): Braucht Admin-Rechte & eigene Installationen. -> Persistant (Eigene VM).
+     - Messbarkeit: Effizienz vs Flexibilität.
+   - Lernziel: Desktop-Pool-Typen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_vdi_persist.json')
+  - `users`: ["agent", "dev"].
+- [ ] Shared CSS Check ('virtualization_vdi.css')
+  - Desktop-Reset Animation (Papierkorb leert sich).
+- [ ] Game-Engine Logic ('game_vdi_persist.js')
+  - Logout Simulation.
+  - Prüfen: Sind die Daten noch da?
+- [ ] Integration
+  - Startbar über JSON.

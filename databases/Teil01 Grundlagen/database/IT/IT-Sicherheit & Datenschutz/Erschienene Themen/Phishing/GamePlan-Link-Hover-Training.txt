@@ -1,0 +1,20 @@
+Anforderungen
+4. "Link-Hover-Training"
+   - Ziel: Fahre mit der Maus über den Link, bevor du klickst.
+   - Spielmechanik: 
+     - Text im Button: "Hier klicken zur Verifikation".
+     - Tooltip zeigt: "http://bit.ly/xyz" oder "http://evil.com".
+     - Aufgabe: Entscheide Klick / Nicht-Klick.
+     - Messbarkeit: 0 Klicks auf schädliche Links.
+   - Lernziel: Mouse-Over Technik.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_hover.json')
+  - `links`: ["good", "evil"].
+- [ ] Shared CSS Check ('security_attack.css')
+  - Webseiten-Buttons. Tooltip-Styling.
+- [ ] Game-Engine Logic ('game_sec_hover.js')
+  - Mouseover Logik.
+  - Entscheidung Klick/Nicht-Klick.
+- [ ] Integration
+  - Startbar über JSON.

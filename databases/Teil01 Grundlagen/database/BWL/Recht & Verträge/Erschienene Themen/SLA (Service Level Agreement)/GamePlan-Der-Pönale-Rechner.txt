@@ -1,0 +1,40 @@
+Anforderungen
+2. "Der Pönale-Rechner"
+   - Ziel: Berechne die Vertragsstrafe korrekt.
+   - Spielmechanik: 
+     - Vertrag: "Pro angefangene Stunde Ausfall 500€ Strafe."
+     - Ausfall: 3 Stunden 10 Minuten.
+     - Rechnung: 4 x 500€ = 2000€.
+     - Multipe Choice: 1500€, 2000€, 1583€.
+     - Messbarkeit: Richtiges Ergebnis.
+   - Lernziel: Finanzielle Konsequenzen von SLAs.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Der Ausfall-Zeitraum und der Vertragssatz.
+- [ ] Aufgabe: Berechne die Strafe.
+- [ ] Kontext: SLA-Vertrag liegt vor.
+
+2. Screen-Layout
+- [ ] Taschenrechner-Interface (integriert oder System).
+- [ ] Vertragsklausel oben fixiert ("500€ pro angefangener Stunde").
+- [ ] Log-File mit Ausfallzeiten.
+
+3. Browser- und Device-Resilienz
+- [ ] Input `type="number"`.
+- [ ] Ergebnis muss klar hervorgehoben werden.
+
+4. Kernvisuals
+- [ ] Geld-Stapel, der kleiner wird (oder Schuldenberg).
+- [ ] Rechnungsvorlage.
+
+5. Interaktion und Feedback
+- [ ] User gibt Betrag ein.
+- [ ] Validierung: "Hast du 'angefangene' Stunde beachtet?"
+- [ ] Vergleich: Deine Rechnung vs Korrekte Rechnung.
+
+6. KPI-Klarheit
+- [ ] Abweichung vom korrekten Betrag.
+
+7. QA-Paket
+- [ ] Rundungsfehler ausschließen.

@@ -1,0 +1,20 @@
+Anforderungen
+4. "Protokoll-Wahl (SSL vs IPsec)"
+   - Ziel: Umgehe die Firewall des Hotels.
+   - Spielmechanik: 
+     - Hotel blockt IPsec (Port 500/4500 UDP).
+     - VPN verbindet nicht.
+     - Spieler wechselt auf SSL-VPN (Port 443 TCP, wie HTTPS).
+     - Hotel-Firewall lässt es durch.
+     - Messbarkeit: Verbindung erfolgreich.
+   - Lernziel: Firewall-Traversal.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_vpn_ssl.json')
+  - `firewall`: "block_udp_500".
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Port-Scanner Ansicht.
+- [ ] Game-Engine Logic ('game_vpn_ssl.js')
+  - Protokoll-Switch (IPsec fail -> SSL success).
+- [ ] Integration
+  - Startbar über JSON.

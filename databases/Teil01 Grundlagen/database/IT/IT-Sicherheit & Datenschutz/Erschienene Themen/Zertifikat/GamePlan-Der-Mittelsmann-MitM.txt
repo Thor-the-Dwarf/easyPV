@@ -1,0 +1,21 @@
+Anforderungen
+5. "Der Mittelsmann (MitM)"
+   - Ziel: Verstehe, wie Zertifikate vor Man-in-the-Middle schützen.
+   - Spielmechanik: 
+     - Hacker klinkt sich ein.
+     - Ohne Zertifikat: Hacker liest alles mit.
+     - Mit Zertifikat: Hacker muss falsches Zertifikat unterjubeln.
+     - User (Spieler) prüft Fingerprint. Stimmt nicht überein -> Verbindung kappen!
+     - Messbarkeit: Angriff erkannt.
+   - Lernziel: Schutzfunktion im HTTPS-Handshake.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_mitm.json')
+  - `attacker`: true.
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Netzwerk-Stream Visualisierung.
+- [ ] Game-Engine Logic ('game_sec_mitm.js')
+  - Zertifikats-Fingerprint Vergleich.
+  - Warnung bei Mismatch.
+- [ ] Integration
+  - Startbar über JSON.

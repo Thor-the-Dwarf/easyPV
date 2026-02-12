@@ -1,0 +1,21 @@
+Anforderungen
+1. "Die Erbse vs. Der Spachtel"
+   - Ziel: Trage die perfekte Menge Paste auf.
+   - Spielmechanik: 
+     - Zu wenig: Luftlücken -> Hitze (Hotspots).
+     - Zu viel: Paste quillt an den Seiten raus -> Sauerei (bei leitfähiger Paste Kurzschluss!).
+     - Perfekt: Erbsengröße in die Mitte, Anpressdruck verteilt es.
+     - Messbarkeit: Temperatur unter Last und Sauberkeit des Sockels.
+   - Lernziel: Applikationsmethoden.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_wlp_apply.json')
+  - `method`: "pea".
+- [ ] Shared CSS Check ('hardware_components.css')
+  - CPU-Heatspreader Draufsicht.
+  - Tuben-Werkzeug Cursor.
+- [ ] Game-Engine Logic ('game_wlp_apply.js')
+  - Maus-Druck simuliert Menge.
+  - Verteilungs-Simulation (Glasplatte drückt).
+- [ ] Integration
+  - Startbar über JSON.

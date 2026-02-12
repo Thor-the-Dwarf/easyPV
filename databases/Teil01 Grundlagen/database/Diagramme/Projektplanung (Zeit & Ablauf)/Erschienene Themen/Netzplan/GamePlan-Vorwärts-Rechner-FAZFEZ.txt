@@ -1,0 +1,12 @@
+Anforderungen
+1. "Vorwärts-Rechner (FAZ/FEZ)"
+   - Ziel: Wann sind wir frühstens fertig?
+   - Spielmechanik: 
+     - Start bei 0.
+     - Vorgang A (Dauer 5) -> FAZ 0, FEZ 5.
+     - Vorgang B (Dauer 3) startet nach A -> FAZ 5, FEZ 8.
+     - Vorgang C parallel zu B (Dauer 10).
+     - Merge bei D: Welcher Wert wird übernommen? Der Größte! (Max-Prinzip).
+     - Messbarkeit: Korrektes Projektende berechnet.
+   - Lernziel: Vorwärtskalkulation.
+

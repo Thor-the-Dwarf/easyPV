@@ -1,0 +1,21 @@
+Anforderungen
+2. "Material-Check"
+   - Ziel: Wähle die richtige Paste.
+   - Spielmechanik: 
+     - "Silikon-Standard": Billig, trocknet aus.
+     - "Silber-Partikel": Besser, leitet Strom (Gefahr!).
+     - "Flüssigmetall": Beste Kühlung, frisst Alu-Kühler an (Korrosion!).
+     - Kühler-Boden ist Aluminium -> Flüssigmetall verboten!
+     - Messbarkeit: Kühler überlebt und kühlt gut.
+   - Lernziel: Chemische Verträglichkeit (Gallium vs Aluminium).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_wlp_material.json')
+  - `coolerMaterial`: "aluminum".
+  - `pasteType`: "liquid_metal".
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Chemische Reaktion Visualisierung (Korrosion).
+- [ ] Game-Engine Logic ('game_wlp_material.js')
+  - Warnung / Game Over bei Inkompatibilität.
+- [ ] Integration
+  - Startbar über JSON.

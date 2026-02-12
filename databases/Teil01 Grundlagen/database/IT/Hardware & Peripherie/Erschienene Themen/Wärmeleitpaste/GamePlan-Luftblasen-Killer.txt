@@ -1,0 +1,20 @@
+Anforderungen
+3. "Luftblasen-Killer"
+   - Ziel: Warum Paste? Fülle die mikroskopischen Lücken.
+   - Spielmechanik: 
+     - Zoom auf CPU-Oberfläche (Rau wie eine Gebirgslandschaft).
+     - Kühlerboden (auch rau).
+     - Ohne Paste: Kontaktfläche nur 10% (Rest Luft = Isolator).
+     - Mit Paste: Kontaktfläche 100%.
+     - Messbarkeit: Wärmewiderstand sinkt.
+   - Lernziel: Funktion der WLP (Luft verdrängen).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_wlp_air.json')
+  - `zoom`: "micro".
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Mikroskop-Ansicht (Rauheit Oberfläche).
+- [ ] Game-Engine Logic ('game_wlp_air.js')
+  - Füll-Animation (Paste verdrängt Luft).
+- [ ] Integration
+  - Startbar über JSON.

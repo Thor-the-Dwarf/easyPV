@@ -1,0 +1,22 @@
+Anforderungen
+3. "Patch-Day-Manager"
+   - Ziel: Installiere kritische Updates auf 100 Clients.
+   - Spielmechanik: 
+     - Dashboard zeigt: 10 PCs "Vulnerable".
+     - Aktion: "Deploy Patch".
+     - Risiko: "Reboot during meeting" (User sauer).
+     - Strategie: Patch um 02:00 Uhr nachts.
+     - Wake-on-LAN nutzen.
+     - Messbarkeit: Alle PCs gepatcht am nächsten Morgen.
+   - Lernziel: Patch-Management Strategien.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_patch.json')
+  - `clients`: 100.
+- [ ] Shared CSS Check ('security_defense.css')
+  - Admin-Dashboard mit Status-LEDs.
+- [ ] Game-Engine Logic ('game_sec_patch.js')
+  - Zeitplaner (WOL + Patch).
+  - Erfolgsquote.
+- [ ] Integration
+  - Startbar über JSON.

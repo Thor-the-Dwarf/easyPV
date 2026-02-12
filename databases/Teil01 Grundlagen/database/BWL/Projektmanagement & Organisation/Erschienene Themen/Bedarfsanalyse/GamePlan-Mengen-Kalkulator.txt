@@ -1,0 +1,37 @@
+Anforderungen
+4. "Mengen-Kalkulator"
+   - Ziel: Berechne den genauen Materialbedarf für einen Auftrag.
+   - Spielmechanik: 
+     - Auftrag: "Baue 10 Tische." (1 Tisch = 4 Beine, 1 Platte, 12 Schrauben).
+     - Lagerbestand: 30 Beine, 5 Platten.
+     - Frage: "Was müssen wir bestellen?"
+     - Eingabe: "10 Beine, 5 Platten, 120 Schrauben".
+     - Messbarkeit: Korrekte Bestellmenge = 100%. Rechenfehler = Abzug.
+   - Lernziel: Konkrete Bedarfsrechnung (Sekundärbedarf).
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Die mathematische Ermittlung des Mengenbedarfs.
+- [ ] Ziel: Berechne den Bedarf basierend auf Eckdaten.
+
+2. Screen-Layout
+- [ ] Rechner-Interface.
+- [ ] Anzeige der Formel in kleinen Schritten.
+
+3. Browser- und Device-Resilienz
+- [ ] Numerisches Keypad auf Mobile.
+- [ ] Layout-Stabilität bei Fokus auf Inputs.
+
+4. Kernvisuals
+- [ ] Tabellen-Optik (Excel-Stil).
+- [ ] Hervorhebung des Ziel-Feldes.
+
+5. Interaktion und Feedback
+- [ ] Live-Validierung der Eingabe.
+- [ ] Schrittweise Auflösung des Rechenwegs bei Fehlern.
+
+6. KPI-Klarheit
+- [ ] Genauigkeit (Abweichung).
+
+7. QA-Paket
+- [ ] Corner-Cases (0-Werte, sehr große Zahlen).

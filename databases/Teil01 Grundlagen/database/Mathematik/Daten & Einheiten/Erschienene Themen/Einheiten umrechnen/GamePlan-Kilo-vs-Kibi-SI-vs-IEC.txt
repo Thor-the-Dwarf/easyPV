@@ -1,0 +1,20 @@
+Anforderungen
+1. "Kilo vs Kibi (SI vs IEC)"
+   - Ziel: Warum fehlen mir Gigabytes?
+   - Spielmechanik: 
+     - Festplatte gekauft: "1 TB" (Hersteller meint 10^12 Byte).
+     - Windows zeigt an: "931 GB" (Meint eigentlich GiB, 2^40).
+     - User reklamiert "Kaputt". -> Falsch.
+     - User sagt "Umrechnungsfaktor". -> Richtig.
+     - Messbarkeit: Korrekte Erklärung des Phänomens.
+   - Lernziel: Dezimal- vs Binärpräfixe.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_si_iec.json')
+  - `val`: 1000.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Waage (1000 vs 1024).
+- [ ] Game-Engine Logic ('game_math_si_iec.js')
+  - Herstellerangabe (TB) vs Windows-Anzeige (TiB).
+- [ ] Integration
+  - Startbar über JSON.

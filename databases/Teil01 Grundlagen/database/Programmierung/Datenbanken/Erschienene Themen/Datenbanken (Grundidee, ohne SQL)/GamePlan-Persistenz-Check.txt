@@ -1,0 +1,21 @@
+Anforderungen
+4. "Persistenz-Check"
+   - Ziel: Überlebe den Neustart.
+   - Spielmechanik: 
+     - Variable im RAM: Strom weg -> Daten weg.
+     - Datenbank auf HDD: Strom weg -> Daten noch da.
+     - Aufgabe: "Speichere den Spielstand".
+     - In Variable speichern (Fail).
+     - In DB speichern (Win).
+     - Messbarkeit: Verständnis von flüchtigem vs persistentem Speicher.
+   - Lernziel: Dauerhafte Speicherung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_db_persistence.json')
+  - `event`: "power_loss".
+- [ ] Shared CSS Check ('db_basics.css')
+  - Stecker ziehen.
+- [ ] Game-Engine Logic ('game_db_persistence.js')
+  - RAM (Variable) ist weg. HDD (DB) ist noch da.
+- [ ] Integration
+  - Startbar über JSON.

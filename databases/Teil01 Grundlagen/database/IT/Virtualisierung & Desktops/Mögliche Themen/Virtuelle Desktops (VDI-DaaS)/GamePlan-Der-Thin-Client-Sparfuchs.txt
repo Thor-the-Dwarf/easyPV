@@ -1,0 +1,22 @@
+Anforderungen
+5. "Der Thin-Client-Sparfuchs"
+   - Ziel: Spare Strom und Geld.
+   - Spielmechanik: 
+     - Büro mit 100 PCs (500 Watt, 1000€).
+     - Ersetze durch 100 Raspberry Pis (5 Watt, 50€) + VDI Server.
+     - Stromrechnung sinkt massiv.
+     - Hardware-Kosten sinken.
+     - Messbarkeit: TCO (Total Cost of Ownership) Berechnung.
+   - Lernziel: Wirtschaftlichkeit von VDI.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_vdi_tco.json')
+  - `costs`: { "pc": 1000, "pi": 50, "pwr_pc": 500, "pwr_pi": 5 }.
+- [ ] Shared CSS Check ('virtualization_vdi.css')
+  - Stromzähler Animation.
+  - Geldstapel Visualisierung.
+- [ ] Game-Engine Logic ('game_vdi_tco.js')
+  - ROI-Rechner (Return on Invest).
+  - Slider für Anzahl Arbeitsplätze.
+- [ ] Integration
+  - Startbar über JSON.

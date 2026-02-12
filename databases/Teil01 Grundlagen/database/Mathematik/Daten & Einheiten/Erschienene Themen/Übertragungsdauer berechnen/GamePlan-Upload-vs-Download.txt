@@ -1,0 +1,21 @@
+Anforderungen
+4. "Upload vs Download"
+   - Ziel: Das Backup dauert ewig!
+   - Spielmechanik: 
+     - Leitung: VDSL 100/40 (Download 100, Upload 40).
+     - Download Film (5GB): Schnell.
+     - Upload Backup (5GB): Langsam (Faktor 2.5).
+     - User beschwert sich "Internet kaputt".
+     - Admin erklärt "Asymmetrische Leitung".
+     - Messbarkeit: Korrekte Diagnose.
+   - Lernziel: ADSL/VDSL Asymmetrie.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_up_down.json')
+  - `tech`: "dsl".
+- [ ] Shared CSS Check ('math_basics.css')
+  - Asymmetrische Pfeile.
+- [ ] Game-Engine Logic ('game_math_up_down.js')
+  - Faktor 1:10 bei ADSL beachten.
+- [ ] Integration
+  - Startbar über JSON.

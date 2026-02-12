@@ -1,0 +1,19 @@
+Anforderungen
+4. "Boolesche Operatoren"
+   - Ziel: Filtere die Ergebnismenge exakt.
+   - Spielmechanik: 
+     - Ziel: Finde Autos, die Rot ODER Blau sind, aber NICHT von VW.
+     - Bausteine: "Auto", "Rot", "Blau", "VW", "AND", "OR", "NOT".
+     - Lösung: "Auto AND (Rot OR Blau) NOT VW".
+     - Messbarkeit: Korrekte Logik-Kette.
+   - Lernziel: Logische Verknüpfungen bei der Recherche.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_bool.json')
+  - `query`: "car AND (red OR blue) NOT vw".
+- [ ] Shared CSS Check ('basics_admin.css')
+  - Venn-Diagramm oder Suchschlitz-Builder.
+- [ ] Game-Engine Logic ('game_basics_bool.js')
+  - Ergebnismenge filtern.
+- [ ] Integration
+  - Startbar über JSON.

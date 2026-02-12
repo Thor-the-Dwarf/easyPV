@@ -1,0 +1,20 @@
+Anforderungen
+4. "Physical-Security-Check"
+   - Ziel: Finde die physischen Lücken.
+   - Spielmechanik: 
+     - Bild vom Serverraum.
+     - Tür steht offen (Keil). -> Fehler.
+     - Fenster im Erdgeschoss ohne Gitter. -> Fehler.
+     - Putzfrau unbeaufsichtigt. -> Fehler.
+     - Messbarkeit: Alle Risiken markiert.
+   - Lernziel: Zutrittsschutz und Perimetersicherheit.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_phys.json')
+  - `hazards`: ["open_door", "no_grid", "unattended_cleaner"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Interaktives Bild (Serverraum).
+- [ ] Game-Engine Logic ('game_sec_phys.js')
+  - Hidden Object Game (Fehler anklicken).
+- [ ] Integration
+  - Startbar über JSON.

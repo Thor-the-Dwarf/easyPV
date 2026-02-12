@@ -1,0 +1,21 @@
+Anforderungen
+1. "Marktform-Matchmaker"
+   - Ziel: Ordne 10 Praxisbeispiele korrekt den Marktformen (Monopol, Oligopol, Polypol) zu.
+   - Spielmechanik: 
+     - Beispiel: "Deutsche Bahn (Fernverkehrsschienennetz)". -> Eimer "Monopol".
+     - Beispiel: "Tankstellen in einer Stadt". -> Eimer "Oligopol".
+     - Beispiel: "Bäcker in Berlin". -> Eimer "Polypol".
+     - Messbarkeit: 10 Runden. Jede richtige Zuordnung = 10 Punkte. 100% = 100 Punkte.
+   - Lernziel: Unterscheidung der Marktformen anhand von Anbietern und Nachfragern.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_markt_matchmaker.json')
+  - `examples`: "Deutsche Bahn".
+  - `buckets`: ["Monopol", "Oligopol", "Polypol"].
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - 3 Eimer/Spalten.
+  - Drag Items.
+- [ ] Game-Engine Logic ('game_markt_matchmaker.js')
+  - Drag & Drop Zuordnung.
+- [ ] Integration
+  - Startbar über JSON.

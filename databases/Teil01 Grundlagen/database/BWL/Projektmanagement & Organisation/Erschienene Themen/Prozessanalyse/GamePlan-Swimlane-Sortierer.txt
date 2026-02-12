@@ -1,0 +1,21 @@
+Anforderungen
+2. "Swimlane-Sortierer"
+   - Ziel: Ordne Aktivitäten der richtigen Abteilung (Schwimmbahn) zu.
+   - Spielmechanik: 
+     - Prozess: "Urlaubsantrag".
+     - Bahnen: "Mitarbeiter", "Chef", "HR".
+     - Karte: "Antrag ausfüllen" -> MA.
+     - Karte: "Genehmigen" -> Chef.
+     - Karte: "Urlaubstage verbuchen" -> HR.
+     - Messbarkeit: Korrekte Zuordnung.
+   - Lernziel: Verantwortlichkeiten in Prozessen (BPMN Swimlanes).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_swimlane.json')
+  - `lanes`: ["Customer", "Sales", "IT"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Schwimmbahnen-Layout.
+- [ ] Game-Engine Logic ('game_pm_swimlane.js')
+  - Wer macht was? Aufgaben in Lane ziehen.
+- [ ] Integration
+  - Startbar über JSON.

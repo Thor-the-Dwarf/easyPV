@@ -1,0 +1,19 @@
+Anforderungen
+2. "Mann-Tage-Rechner"
+   - Ziel: Wie viele Leute brauchst du?
+   - Spielmechanik: 
+     - Aufwand: 20 Mann-Tage.
+     - Zeitvorgabe: 5 Tage.
+     - Rechnung: 20 / 5 = 4 Mitarbeiter (Vollzeit).
+     - Messbarkeit: Korrekte Teamgröße.
+   - Lernziel: Ressourceneinsatz.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_mandays.json')
+  - `days`: 20, `team`: 4.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Taschenrechner.
+- [ ] Game-Engine Logic ('game_math_mandays.js')
+  - Dauer = Aufwand / Ressource.
+- [ ] Integration
+  - Startbar über JSON.

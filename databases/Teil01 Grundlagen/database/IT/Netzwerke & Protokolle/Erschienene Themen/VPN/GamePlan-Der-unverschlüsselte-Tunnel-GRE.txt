@@ -1,0 +1,21 @@
+Anforderungen
+5. "Der unverschlüsselte Tunnel (GRE)"
+   - Ziel: Verstehe den Unterschied Kapselung vs Verschlüsselung.
+   - Spielmechanik: 
+     - GRE-Tunnel eingerichtet -> Ping geht.
+     - Hacker sniffed mit Wireshark.
+     - Ergebnis: Klartext lesbar!
+     - Lösung: IPsec über GRE legen.
+     - Messbarkeit: Hacker sieht nur noch Datensalat.
+   - Lernziel: GRE kapselt nur, IPsec schützt.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_vpn_gre.json')
+  - `enc`: "none".
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Röntgen-Blick auf Tunnel.
+- [ ] Game-Engine Logic ('game_vpn_gre.js')
+  - Sniffer-Tool zeigt Klartext.
+  - IPsec aktivieren -> Text wird unlesbar.
+- [ ] Integration
+  - Startbar über JSON.

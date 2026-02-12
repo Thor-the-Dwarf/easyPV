@@ -1,0 +1,50 @@
+1. "Der Balken-Schieber"
+   - Ziel: Plane das Projekt ohne Überlappung der Abhängigkeiten.
+   - Spielmechanik: 
+     - "Vorgang A: Fundament gießen" (2 Tage).
+     - "Vorgang B: Mauern bauen" (3 Tage).
+     - Abhängigkeit: B kann erst starten, wenn A fertig (Ende-Anfang).
+     - Spieler schiebt Balken B an Tag 1 -> Fehler.
+     - Spieler schiebt Balken B an Tag 3 -> Richtig.
+     - Messbarkeit: Logisch korrekter Ablauf.
+   - Lernziel: Sequentielle Abhängigkeiten.
+
+2. "Kritischer-Pfad-Finder"
+   - Ziel: Welche Aufgabe darf sich nicht verzögern?
+   - Spielmechanik: 
+     - Diagramm mit parallelen Strängen.
+     - Strang oben: 5 Tage Puffer.
+     - Strang unten: 0 Tage Puffer (Kritischer Pfad).
+     - Aufgabe: "Markiere die kritischen Vorgänge rot".
+     - Messbarkeit: Kritischen Pfad identifiziert.
+   - Lernziel: Critical Path Method (CPM).
+
+3. "Ressourcen-Konflikt"
+   - Ziel: Der Maurer kann nicht an zwei Orten sein.
+   - Spielmechanik: 
+     - Vorgang A (Mauer Nord): Braucht Maurer.
+     - Vorgang B (Mauer Süd): Braucht Maurer.
+     - Beide Vorgänge parallel gezeichent -> Ressource überlastet (rot).
+     - Spieler muss B nach hinten schieben (Ressourcenglättung).
+     - Messbarkeit: Konfliktfreie Planung.
+   - Lernziel: Ressourcenansicht im Gantt.
+
+4. "Meilenstein-Marker"
+   - Ziel: Setze die Rauten (Diamonds).
+   - Spielmechanik: 
+     - "Projektstart" -> Tag 0.
+     - "Rohbau fertig" -> Tag 10.
+     - Meilensteine haben Dauer 0.
+     - Spieler zieht Balken (Dauer 5) als Meilenstein -> Fehler.
+     - Spieler zieht Raute -> Richtig.
+     - Messbarkeit: Meilensteine korrekt definiert.
+   - Lernziel: Meilenstein-Konzept.
+
+5. "Der Verzug-Simulator"
+   - Ziel: Wie verschiebt sich das Ende?
+   - Spielmechanik: 
+     - Vorgang A dauert länger (+2 Tage).
+     - Automatische Verschiebung aller Nachfolger.
+     - Neues Enddatum berechnen.
+     - Messbarkeit: Korrekte Prognose des neuen Endtermins.
+   - Lernziel: Dynamik/Auswirkung von Verzögerungen.

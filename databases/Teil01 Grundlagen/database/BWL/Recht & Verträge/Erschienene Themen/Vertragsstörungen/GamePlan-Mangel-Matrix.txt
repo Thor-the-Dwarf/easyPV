@@ -1,0 +1,37 @@
+Anforderungen
+1. "Mangel-Matrix"
+   - Ziel: Klassifiziere 5 Mängel korrekt (Sachmangel, Rechtsmangel).
+   - Spielmechanik: 
+     - "Auto hat Kratzer". -> Sachmangel (Beschaffenheit).
+     - "Montageanleitung fehlt (IKEA-Klausel)". -> Sachmangel.
+     - "Verkäufer war gar nicht Eigentümer (Diebesgut)". -> Rechtsmangel.
+     - Messbarkeit: Korrekte Art des Mangels erkennen.
+   - Lernziel: § 434 vs § 435 BGB.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Klassifizierung von Mängeln.
+- [ ] Kategorien: "Sachmangel", "Rechtsmangel", "Montagemangel".
+- [ ] Input: Fallbeispiel ("IKEA-Klausel").
+
+2. Screen-Layout
+- [ ] Matrix-Grid (3x2 oder Liste).
+- [ ] Drag & Drop der Fälle in die Boxen.
+
+3. Browser- und Device-Resilienz
+- [ ] Boxen wrappen auf Mobile.
+- [ ] Kurze Texte auf den Kärtchen.
+
+4. Kernvisuals
+- [ ] Icons für die Mangelarten (Hammer = Beschaffenheit, Buch = Recht, Schraubenzieher = Montage).
+- [ ] Warn-Dreiecke.
+
+5. Interaktion und Feedback
+- [ ] Karte loslassen -> Snappt in Box oder fliegt zurück.
+- [ ] Erklärung bei Fehler: "Falsche Anleitung ist Sachmangel (§ 434 abs 2), nicht Rechtsmangel."
+
+6. KPI-Klarheit
+- [ ] Trefferquote.
+
+7. QA-Paket
+- [ ] Lesbarkeit der Icons.

@@ -1,0 +1,21 @@
+Anforderungen
+3. "Mischkalkulation"
+   - Ziel: Biete einen Pauschalpreis an.
+   - Spielmechanik: 
+     - Senior (150€/h) arbeitet 2h.
+     - Junior (80€/h) arbeitet 8h.
+     - Gesamtkosten: 300 + 640 = 940€.
+     - Gesamtstunden: 10h.
+     - Durchschnittssatz: 94€/h.
+     - Messbarkeit: Korrekter gewichteter Durchschnitt.
+   - Lernziel: Personalkosten-Mix.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_mixed_calc.json')
+  - `products`: ["senior", "junior"].
+- [ ] Shared CSS Check ('math_basics.css')
+  - Mix-Regler.
+- [ ] Game-Engine Logic ('game_math_mixed_calc.js')
+  - Durchschnitts-Stundensatz berechnen.
+- [ ] Integration
+  - Startbar über JSON.

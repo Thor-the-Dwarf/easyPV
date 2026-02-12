@@ -1,0 +1,19 @@
+Anforderungen
+2. "Anforderungs-Check: SMART?"
+   - Ziel: Bewerte 5 Anforderungen aus einem Lastenheft: Sind sie eindeutig/testbar?
+   - Spielmechanik: 
+     - Satz: "Die Software soll benutzerfreundlich sein." -> Falsch (Nicht messbar).
+     - Satz: "Die Antwortzeit muss unter 2 Sekunden liegen." -> Richtig (Messbar).
+     - Spieler markiert "Gültig" oder "Ungültig".
+     - Messbarkeit: Erkennungsquote schwammiger Formulierungen.
+   - Lernziel: Qualität von Anforderungen bewerten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_spec_smart.json')
+  - `reqs`: ["smart", "vague"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Check & Cross Animation.
+- [ ] Game-Engine Logic ('game_pm_spec_smart.js')
+  - Schwammige Formulierungen streichen ("schnell", "schön").
+- [ ] Integration
+  - Startbar über JSON.

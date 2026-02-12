@@ -1,0 +1,47 @@
+1. "Log-Level-Filter"
+   - Ziel: Konfiguriere das Logging so, dass die Festplatte nicht explodiert, aber Fehler gefangen werden.
+   - Spielmechanik: 
+     - Level: DEBUG (Alles), INFO (Viel), WARN (Mittel), ERROR (Wichtig).
+     - Szenario: Produktionsserver läuft stabil.
+     - Einstellung DEBUG -> Festplatte voll in 10 Min (Fail).
+     - Einstellung ERROR -> Zu wenig Infos bei Problemen.
+     - Einstellung INFO/WARN -> Optimal.
+     - Messbarkeit: Balance zwischen Datengröße und Informationsgehalt.
+   - Lernziel: Log-Levels (Severity) verstehen.
+
+2. "Der Forensiker"
+   - Ziel: Finde den Zeitpunkt des Hackerangriffs im Logfile.
+   - Spielmechanik: 
+     - Scrollbarer Text. Tausende Zeilen "User login ok".
+     - Plötzlich: "Failed login admin" (x50).
+     - Spieler muss die Zeile markieren, wo es losging (Brute Force Start).
+     - Messbarkeit: Zeitstempel korrekt identifiziert (+/- 1 Min).
+   - Lernziel: Mustererkennung in Logdaten.
+
+3. "Format-Parser"
+   - Ziel: Mappe die Log-Zeile auf die Datenbankfelder.
+   - Spielmechanik: 
+     - Log: "192.168.1.1 - - [10/Oct/2023] GET /index.html 200".
+     - Felder: "IP", "Timestamp", "Method", "Status".
+     - Spieler zieht "200" auf "Status", "GET" auf "Method".
+     - Messbarkeit: 100% korrekte Feldzuordnung.
+   - Lernziel: Struktur von Standard-Logs (z.B. Apache Combined).
+
+4. "Log-Rotation-Manager"
+   - Ziel: Richte Logrotate ein, um alte Daten zu archivieren.
+   - Spielmechanik: 
+     - Regel: "Täglich rotieren, 7 Tage aufheben, Komprimieren".
+     - Simulation: Tag 1 -> log, Tag 2 -> log.1, ... Tag 8 -> log.7 wird gelöscht.
+     - Spieler muss Parameter setzen "daily", "rotate 7", "compress".
+     - Messbarkeit: Speicherplatz bleibt stabil über 2 Wochen Simulation.
+   - Lernziel: Verwaltung von Logdateien.
+
+5. "Event-ID-Jagd"
+   - Ziel: Was bedeutet dieser Windows-Fehlercode?
+   - Spielmechanik: 
+     - Ereignisanzeige: Event ID 4624 (Erfolgreicher Login).
+     - Event ID 4625 (Fehlgeschlagener Login).
+     - Aufgabe: "Finde alle fehlgeschlagenen Logins".
+     - Filter setzen auf ID 4625.
+     - Messbarkeit: Gefundene Anzahl der Events.
+   - Lernziel: Arbeiten mit Event IDs (Windows Event Viewer).

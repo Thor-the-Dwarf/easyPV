@@ -1,0 +1,21 @@
+Anforderungen
+1. "Tunnel-Bauer (Site-to-Site)"
+   - Ziel: Verbinde zwei Firmenstandorte.
+   - Spielmechanik: 
+     - Standort A: 192.168.1.0/24. Gateway öffentlich: 80.80.80.80.
+     - Standort B: 192.168.2.0/24. Gateway öffentlich: 90.90.90.90.
+     - Konfig: Phase 1 (IKE) und Phase 2 (IPsec).
+     - Pre-Shared Key muss gleich sein.
+     - Messbarkeit: Ping von Netz A nach Netz B klappt.
+   - Lernziel: VPN-Grundkonzept.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_vpn_s2s.json')
+  - `siteA`: "HQ", `siteB`: "Branch".
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Weltkarte mit 2 Standorten.
+- [ ] Game-Engine Logic ('game_vpn_s2s.js')
+  - PSK Matching (Key muss gleich sein).
+  - Phase 1/2 Status LEDs.
+- [ ] Integration
+  - Startbar über JSON.

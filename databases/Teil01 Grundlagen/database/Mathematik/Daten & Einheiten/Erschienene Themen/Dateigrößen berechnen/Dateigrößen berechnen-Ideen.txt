@@ -1,0 +1,53 @@
+1. "Bit vs Byte Falle"
+   - Ziel: Rechne den Speed in die Datei um.
+   - Spielmechanik: 
+     - Internet: 100 Mbit/s.
+     - Datei: 100 MByte.
+     - Dauer: 1 Sekunde? Falsch!
+     - Rechnung: 100 MByte * 8 = 800 Mbit.
+     - Dauer: 800 / 100 = 8 Sekunden.
+     - Messbarkeit: Korrektes Verhältnis 1:8 angewendet.
+   - Lernziel: Unterschied b und B.
+
+2. "Der Speicherplatz-Planer"
+   - Ziel: Passt das auf den Stick?
+   - Spielmechanik: 
+     - USB-Stick: 4 GB.
+     - 1000 Fotos à 5 MB.
+     - Summe: 5000 MB = 5 GB.
+     - Passt nicht!
+     - Aufgabe: Kompression wählen oder Löschen.
+     - Messbarkeit: Stick nicht überfüllt.
+   - Lernziel: Kapazitätsplanung.
+
+3. "Audio-Minuten-Rechner"
+   - Ziel: Wie viel MP3 passt drauf?
+   - Spielmechanik: 
+     - 1 Minute MP3 (128 kbit/s) ≈ 1 MB.
+     - Speicher: 700 MB (CD).
+     - Wie viele Minuten Musik? -> 700 Minuten.
+     - WAV (unkomprimiert) ≈ 10 MB/Min -> nur 70 Minuten.
+     - Messbarkeit: Korrekte Schätzung der Laufzeit.
+   - Lernziel: Datenraten bei Medien.
+
+4. "Video-Bitrate-Checker"
+   - Ziel: Berechne den Stream.
+   - Spielmechanik: 
+     - Film: 90 Min. Größe: 4.5 GB.
+     - 4500 MB / 90 Min = 50 MB/Min.
+     - 50 MB / 60 Sek = 0.83 MB/s.
+     - 0.83 * 8 ≈ 6.6 Mbit/s.
+     - DSL 6000 reicht knapp nicht -> Ruckelt!
+     - DSL 16000 nötig.
+     - Messbarkeit: Korrekte Bandbreiten-Anforderung.
+   - Lernziel: Zusammenhang Größe/Zeit/Speed.
+
+5. "Overhead-Versteher"
+   - Ziel: Warum ist die Datei größer als der Inhalt?
+   - Spielmechanik: 
+     - Textdatei mit 1 Zeichen ("a") = 1 Byte.
+     - Dateisystem belegt aber 4 KB (Clustergröße)!
+     - 1000 Dateien à 1 Byte belegen 4 MB auf der Disk.
+     - User wundert sich "Disk voll".
+     - Messbarkeit: Verständnis von Slack Space / Cluster Size.
+   - Lernziel: Nettodaten vs Bruttodaten auf Datenträger.

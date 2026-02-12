@@ -1,0 +1,47 @@
+1. "Das Pizza-Modell (Service Models)"
+   - Ziel: Wer kümmert sich um was? (IaaS, PaaS, SaaS, On-Prem).
+   - Spielmechanik: 
+     - "Pizza selber backen" -> On-Premise (Alles selber machen).
+     - "Tiefkühlpizza & eigener Ofen" -> IaaS (Infrastruktur gemietet).
+     - "Lieferservice" -> PaaS (Nur Essen, kein Ofen nötig).
+     - "Im Restaurant essen" -> SaaS (Rundum-Sorglos).
+     - Messbarkeit: Konzepte korrekt zugeordnet.
+   - Lernziel: IaaS / PaaS / SaaS Unterscheidung.
+
+2. "Shared Responsibility Model"
+   - Ziel: Wer ist schuld am Hack?
+   - Spielmechanik: 
+     - Szenario: AWS S3 Bucket ist öffentlich -> Datenleck.
+     - Schuldfrage: AWS (Infrastruktur) oder Kunde (Konfig)? -> Kunde.
+     - Szenario: Festplatte im Rechenzentrum geht kaputt. -> AWS.
+     - Messbarkeit: Verantwortlichkeiten korrekt trennen.
+   - Lernziel: Sicherheitsgrenzen in der Cloud.
+
+3. "Skalierer (Auto-Scaling)"
+   - Ziel: Halte die Webseite am Leben beim "Höhle der Löwen" Auftritt.
+   - Spielmechanik: 
+     - Besucherzahlen explodieren.
+     - Server CPU 100%. Webseite langsam.
+     - Spieler aktiviert "Auto-Scaling Group".
+     - Neue Instanzen starten automatisch. CPU sinkt auf 40%.
+     - Messbarkeit: Uptime 100% trotz Traffic-Spike.
+   - Lernziel: Elastizität.
+
+4. "Kosten-Falle"
+   - Ziel: Senke die Cloud-Rechnung.
+   - Spielmechanik: 
+     - Rechnung: 5000€/Monat.
+     - Analyse: "Zombie-Instanzen" (Laufen, tun aber nichts).
+     - Analyse: "Over-Provisioning" (Server zu groß gewählt).
+     - Maßnahme: Rightsizing und Abschalten.
+     - Messbarkeit: Kosten < 1000€.
+   - Lernziel: Pay-as-you-go Risiken.
+
+5. "Public vs Private vs Hybrid"
+   - Ziel: Wo speicherst du die Patientendaten?
+   - Spielmechanik: 
+     - "Webseite Marketing" -> Public Cloud (Billig, skalierbar).
+     - "Patientenakte" -> Private Cloud / On-Prem (Datenschutz).
+     - "Verbindung" -> Hybrid Cloud.
+     - Messbarkeit: Compliance eingehalten.
+   - Lernziel: Deployment Models.

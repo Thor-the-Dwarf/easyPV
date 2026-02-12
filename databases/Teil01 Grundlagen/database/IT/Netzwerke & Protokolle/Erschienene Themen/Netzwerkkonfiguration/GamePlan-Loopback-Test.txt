@@ -1,0 +1,21 @@
+Anforderungen
+5. "Loopback-Test"
+   - Ziel: Ist die Netzwerkkarte kaputt oder das Kabel?
+   - Spielmechanik: 
+     - Kein Netz.
+     - Ping 127.0.0.1.
+     - Wenn Fail -> Treiber/Karte kaputt.
+     - Wenn Ok -> Karte ok, Kabel prüfen.
+     - Messbarkeit: Korrekte Diagnose.
+   - Lernziel: Localhost Diagnose.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_net_loopback.json')
+  - `steps`: ["127.0.0.1", "OwnIP", "Gateway"].
+- [ ] Shared CSS Check ('network_ip.css')
+  - Checkliste Diagnoseschritte.
+- [ ] Game-Engine Logic ('game_net_loopback.js')
+  - Reihenfolge einhalten.
+  - Feedback pro Schritt.
+- [ ] Integration
+  - Startbar über JSON.

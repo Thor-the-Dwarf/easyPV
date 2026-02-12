@@ -1,0 +1,22 @@
+Anforderungen
+1. "Kanal-Planer (2.4 GHz)"
+   - Ziel: Vermeide Überlappungen.
+   - Spielmechanik: 
+     - Nachbar A auf Kanal 1.
+     - Nachbar B auf Kanal 6.
+     - Spieler wählt Kanal 3 -> Überlappt mit beiden! (Schlecht).
+     - Spieler wählt Kanal 11 -> Frei (Gut).
+     - Regel: 1, 6, 11 (überlappungsfrei).
+     - Messbarkeit: Datendurchsatz optimiert.
+   - Lernziel: Frequenzspektrum und Kanalbreite.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_wifi_chan.json')
+  - `others`: [1, 6].
+- [ ] Shared CSS Check ('network_wifi.css')
+  - Frequenz-Spektrum Parabeln.
+- [ ] Game-Engine Logic ('game_wifi_chan.js')
+  - Kanalwahl (1-13).
+  - Überlappungs-Feedback.
+- [ ] Integration
+  - Startbar über JSON.

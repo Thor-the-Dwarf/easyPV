@@ -1,0 +1,19 @@
+Anforderungen
+3. "Server-Typen"
+   - Ziel: Was ist das? (Tower, Rack, Blade).
+   - Spielmechanik: 
+     - Bild zeigt flachen Server zum Einschieben. -> Rack-Server.
+     - Bild zeigt Server, der aussieht wie normaler PC. -> Tower-Server.
+     - Bild zeigt Modul für Chassis. -> Blade.
+     - Messbarkeit: Korrekte Benennung.
+   - Lernziel: Bauformen im Rechenzentrum.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_periph_server.json')
+  - `images`: [ "rack_server.png", "blade.png" ].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Serverraum Visuals.
+- [ ] Game-Engine Logic ('game_periph_server.js')
+  - Bild-Erkennung / Benennung.
+- [ ] Integration
+  - Startbar über JSON.

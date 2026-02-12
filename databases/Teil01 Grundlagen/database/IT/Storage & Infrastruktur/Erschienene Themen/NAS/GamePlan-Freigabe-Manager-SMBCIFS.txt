@@ -1,0 +1,21 @@
+Anforderungen
+2. "Freigabe-Manager (SMB/CIFS)"
+   - Ziel: Erstelle einen Share für die Abteilung.
+   - Spielmechanik: 
+     - Ordner erstellen: "Marketing".
+     - User "Grafiker" braucht Schreibrechte.
+     - User "Gast" darf nicht rein.
+     - Mapping: "net use Z: \\nas\marketing".
+     - Messbarkeit: Grafiker kann speichern, Gast wird blockiert.
+   - Lernziel: Network Shares einrichten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_nas_share.json')
+  - `users`: ["Grafiker", "Gast"].
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Ordner-Icons mit Schloss/Freigabe-Symbol.
+- [ ] Game-Engine Logic ('game_nas_share.js')
+  - Rechtematrix konfigurieren (Read/Write/Deny).
+  - Zugriffstests.
+- [ ] Integration
+  - Startbar über JSON.

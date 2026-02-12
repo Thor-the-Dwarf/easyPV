@@ -1,0 +1,20 @@
+Anforderungen
+1. "Header-Hacker"
+   - Ziel: Identifiziere den Dateityp anhand der ersten Bytes (Magic Numbers).
+   - Spielmechanik: 
+     - Hex-View: "FF D8 FF..." -> ?
+     - Auswahl: JPG, PNG, PDF, PK (Zip).
+     - Richtig: JPG.
+     - "25 50 44 46..." -> PDF.
+     - Messbarkeit: 5 Dateien korrekt identifiziert.
+   - Lernziel: Identifikation jenseits der Dateiendung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_magic_bytes.json')
+  - `bytes`: "FF D8 FF".
+- [ ] Shared CSS Check ('basics_general.css')
+  - Hex-Dump Ausschnitt.
+- [ ] Game-Engine Logic ('game_basics_magic_bytes.js')
+  - Quiz: Welcher Dateityp ist das?
+- [ ] Integration
+  - Startbar über JSON.

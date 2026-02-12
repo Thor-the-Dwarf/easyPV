@@ -1,0 +1,22 @@
+Anforderungen
+5. "Der IOPS-Racer"
+   - Ziel: Vergleiche random vs sequential read.
+   - Spielmechanik: 
+     - Autorennen.
+     - HDD: Schnell auf der Geraden (Sequential), bleibt in Kurven stehen (Random IOPS schlecht wegen Seek Time).
+     - SSD: Raste durch die Kurven (Hohe IOPS).
+     - Wette auf den Sieger beim "Windows Boot" (Viele kleine Dateien -> Random).
+     - Messbarkeit: Wette auf SSD gewonnen.
+   - Lernziel: Warum SSDs das Systemgefühl beschleunigen (Zugriffszeit).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ssd_iops.json')
+  - `track`: "curvy".
+  - `winner`: "ssd".
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Auto-Rennbahn Visualisierung.
+- [ ] Game-Engine Logic ('game_ssd_iops.js')
+  - Simulations-Ablauf.
+  - Wetten-Mechanik.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,50 @@
+1. "Der Syntax-Adler"
+   - Ziel: Finde das fehlende Zeichen.
+   - Spielmechanik: 
+     - Code: `Write-Host "Hallo Welt`
+     - Fehler: Fehlendes Anführungszeichen am Ende.
+     - Code: `if ($a -eq 5 { ... }`
+     - Fehler: Fehlende Klammer `)`.
+     - Messbarkeit: Syntaxfehler markiert.
+   - Lernziel: Genauigkeit beim Coden.
+
+2. "Verb-Noun Prinzip"
+   - Ziel: Korrigiere den Befehl.
+   - Spielmechanik: 
+     - User tippt: `Get-Computer`. (Falsch).
+     - PowerShell Standard: `Get-ComputerInfo` oder `Get-Content`.
+     - Regel: Verb-Substantiv (Singular!).
+     - Falsch: `Get-Files`. Richtig: `Get-ChildItem`.
+     - Messbarkeit: Validem Cmdlet finden.
+   - Lernziel: PowerShell Naming Convention.
+
+3. "Die Pipeline-Verstopfung"
+   - Ziel: Warum kommt hinten nichts an?
+   - Spielmechanik: 
+     - `Get-Service | Stop-Process`.
+     - Fehler: `Get-Service` liefert Service-Objekte. `Stop-Process` erwartet Prozess-Objekte (oder ID).
+     - Typen passen nicht zusammen!
+     - Richtig: `Get-Service | Stop-Service`.
+     - Messbarkeit: Objekt-Typ-Kompatibilität geprüft.
+   - Lernziel: Pipeline Input by Value/Property.
+
+4. "Variablen-Wirrwarr ($)"
+   - Ziel: Wo fehlt das Dollarzeichen?
+   - Spielmechanik: 
+     - Zuweisung: `a = 5`. (Falsch in PS).
+     - Richtig: `$a = 5`.
+     - Ausgabe: `Write-Host a`. (Gibt Buchstabe "a" aus).
+     - Richtig: `Write-Host $a`. (Gibt "5" aus).
+     - Messbarkeit: Variablen-Syntax korrigiert.
+   - Lernziel: PowerShell Variablen.
+
+5. "Der gefährliche Leerzeichen-Fehler"
+   - Ziel: Parameter vs Vergleich.
+   - Spielmechanik: 
+     - Code: `if ($a -eq $b)` -> Ok.
+     - Code: `Get-ChildItem -Path C:\` -> Ok.
+     - Code: `$a = 5 + 5` -> Ok.
+     - Code: `Funktion ($a, $b)` -> Falsch! (Das übergibt ein Array als 1. Parameter).
+     - Richtig: `Funktion -Param1 $a -Param2 $b` oder `Funktion $a $b`.
+     - Messbarkeit: Aufrufkonvention von Funktionen vs Methoden verstanden.
+   - Lernziel: Argument Passing in Shells.

@@ -1,0 +1,21 @@
+Anforderungen
+4. "RPO vs RTO"
+   - Ziel: Stelle die SLA (Service Level Agreement) zufrieden.
+   - Spielmechanik: 
+     - RPO (Recovery Point Objective): Max 1h Datenverlust erlaubt.
+     - Backup läuft nur jede Nacht (24h).
+     - Crash um 16:00 Uhr. Daten seit 00:00 weg (16h Verlust). -> SLA verletzt.
+     - Lösung: Snapshots alle 30 Min.
+     - Messbarkeit: SLA grün.
+   - Lernziel: Kennzahlen der Datensicherung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_backup_sla.json')
+  - `crash_time`: 16. `last_backup`: 0.
+- [ ] Shared CSS Check ('storage_backup.css')
+  - Zeitstrahl mit Markierungen.
+- [ ] Game-Engine Logic ('game_backup_sla.js')
+  - Backup-Frequenz erhöhen -> RPO sinkt.
+  - Restore-Speed erhöhen -> RTO sinkt.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,19 @@
+Anforderungen
+2. "Shared Responsibility Model"
+   - Ziel: Wer ist schuld am Hack?
+   - Spielmechanik: 
+     - Szenario: AWS S3 Bucket ist öffentlich -> Datenleck.
+     - Schuldfrage: AWS (Infrastruktur) oder Kunde (Konfig)? -> Kunde.
+     - Szenario: Festplatte im Rechenzentrum geht kaputt. -> AWS.
+     - Messbarkeit: Verantwortlichkeiten korrekt trennen.
+   - Lernziel: Sicherheitsgrenzen in der Cloud.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cloud_resp.json')
+  - `incidents`: ["disk_failure", "open_s3_bucket"].
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Schieberegler / Trennlinie (Provider vs Customer).
+- [ ] Game-Engine Logic ('game_cloud_resp.js')
+  - Verantwortung zuschieben (Ping-Pong).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,21 @@
+Anforderungen
+4. "Typisierung zur Laufzeit (Dynamisch)"
+   - Ziel: Ändere den Typ.
+   - Spielmechanik: 
+     - `a = 5` (Integer).
+     - `a = "Hallo"` (String).
+     - Interpreter meckert nicht (Dynamische Typisierung).
+     - Compiler-Sprache (Java) würde meckern (Statisch).
+     - Messbarkeit: Flexibilität erkennen.
+   - Lernziel: Typ-Systeme in Skriptsprachen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_dynamic_typing.json')
+  - `vars`: ["x = 5", "x = 'hallo'"].
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Variable als Container.
+- [ ] Game-Engine Logic ('game_prog_dynamic_typing.js')
+  - Typ ändert sich zur Laufzeit (Python/JS Style).
+  - Kein Compiler-Fehler.
+- [ ] Integration
+  - Startbar über JSON.

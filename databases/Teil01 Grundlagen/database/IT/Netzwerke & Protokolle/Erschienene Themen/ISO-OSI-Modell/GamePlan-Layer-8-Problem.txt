@@ -1,0 +1,20 @@
+Anforderungen
+5. "Layer-8-Problem"
+   - Ziel: Ein Scherz, aber real.
+   - Spielmechanik: 
+     - Alle technischen Layers sind grün (Ok).
+     - Problem: User hat Monitor nicht eingeschaltet.
+     - Diagnose: "Layer 8 Error" (User).
+     - Messbarkeit: Problem zwischen Stuhl und Tastatur gefunden.
+   - Lernziel: Der menschliche Faktor.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_iso_layer8.json')
+  - `error`: "user_error".
+- [ ] Shared CSS Check ('network_basics.css')
+  - Büro-Szene.
+- [ ] Game-Engine Logic ('game_iso_layer8.js')
+  - Klickbare Bereiche (Monitor-Knopf, Kabel, PC, User).
+  - Easter Egg bei Klick auf User.
+- [ ] Integration
+  - Startbar über JSON.

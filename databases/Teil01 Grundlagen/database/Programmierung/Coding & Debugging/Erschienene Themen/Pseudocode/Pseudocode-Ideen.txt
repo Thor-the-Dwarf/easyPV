@@ -1,0 +1,51 @@
+1. "Vom Text zum Code"
+   - Ziel: Übersetze die natürliche Sprache in Struktur.
+   - Spielmechanik: 
+     - Text: "Solange der Kunde nicht bezahlt hat, sende Mahnung."
+     - Pseudocode: `WHILE (Kunde.Bezahlt == FALSE) DO SendeMahnung() END`.
+     - Falsch: `IF (Kunde...)` (Sendet nur einmal, nicht "solange").
+     - Messbarkeit: Logik 1:1 abgebildet.
+   - Lernziel: Kontrollstrukturen erkennen.
+
+2. "Algorithmus-Entwerfer"
+   - Ziel: Beschreibe "Bubble Sort" ohne Code.
+   - Spielmechanik: 
+     - Blöcke ordnen:
+     - 1. Wiederhole bis sortiert.
+     - 2. Gehe durch Liste.
+     - 3. Wenn Element > Nachfolger -> Tauschen.
+     - Messbarkeit: Ablauf funktioniert logisch.
+   - Lernziel: Algorithmic Thinking.
+
+3. "Sprach-Neutralität"
+   - Ziel: Versteht das jeder Entwickler?
+   - Spielmechanik: 
+     - Pseudocode: `Setze i auf 0`. (Gut).
+     - Pseudocode: `i := 0;` (Pascal-Syntax -> Zu spezifisch).
+     - Pseudocode: `int i = 0;` (C-Syntax -> Zu spezifisch).
+     - Ziel: Ein Python- und ein Java-Entwickler müssen es beide verstehen.
+     - Messbarkeit: Abstraktionsgrad bewerten.
+   - Lernziel: Kommunikation im Team.
+
+4. "Schachtel-Meister"
+   - Ziel: Rücke richtig ein.
+   - Spielmechanik: 
+     - `WENN Sonne scheint`
+     - `  Gehe raus`
+     - `SONST`
+     - `  Bleib drin`
+     - Wenn Einrückung fehlt -> Logik unklar.
+     - Messbarkeit: Strukturierte Darstellung.
+   - Lernziel: Lesbarkeit.
+
+5. "Der Loop-Fehler"
+   - Ziel: Finde die Endlosschleife im Konzept.
+   - Spielmechanik: 
+     - `Setze i = 1`
+     - `SOLANGE i > 0`
+     - `  Drucke i`
+     - `  Setze i = i + 1`
+     - Fehler: i wird immer größer, Bedingung immer wahr.
+     - Korrektur: `SOLANGE i < 10` oder `i = i - 1`.
+     - Messbarkeit: Logikfehler im Entwurf finden.
+   - Lernziel: Validierung vor der Implementation.

@@ -1,0 +1,20 @@
+Anforderungen
+1. "Werktage vs Kalendertage"
+   - Ziel: Wann sind wir fertig?
+   - Spielmechanik: 
+     - Start: Freitag, 1. Mai. Dauer: 3 Tage.
+     - Samstag/Sonntag wird nicht gearbeitet.
+     - Tag 1: Fr. Tag 2: Mo. Tag 3: Di.
+     - Ende: Dienstag, 5. Mai. NOT Sunday.
+     - Messbarkeit: Korrektes Enddatum im Kalender geklickt.
+   - Lernziel: Arbeitszeit-Kalender.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_workdays.json')
+  - `start`: "2023-12-20", `duration`: 10.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Kalender mit Feiertagen.
+- [ ] Game-Engine Logic ('game_math_workdays.js')
+  - Wochenenden und Feiertage überspringen.
+- [ ] Integration
+  - Startbar über JSON.

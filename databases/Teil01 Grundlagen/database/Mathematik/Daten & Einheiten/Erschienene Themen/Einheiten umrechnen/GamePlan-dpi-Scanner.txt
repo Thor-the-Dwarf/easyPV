@@ -1,0 +1,20 @@
+Anforderungen
+4. "dpi-Scanner"
+   - Ziel: Auflösung umrechnen.
+   - Spielmechanik: 
+     - Bild: 4 Zoll breit.
+     - Scan mit 300 dpi (Dots per Inch).
+     - Pixelbreite = 4 * 300 = 1200 Pixel.
+     - User tippt 1200 ein.
+     - Messbarkeit: Zusammenhang Zoll und Pixel.
+   - Lernziel: Bildauflösung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_dpi.json')
+  - `dots`: 300.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Scanner-Licht.
+- [ ] Game-Engine Logic ('game_math_dpi.js')
+  - Dots per Inch -> Pixel Maße berechnen.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+4. "Funktions-Namer"
+   - Ziel: Gib dem Kind einen Namen.
+   - Spielmechanik: 
+     - Funktion berechnet (Preis * 1.19).
+     - Name A: "func1". (Schlecht).
+     - Name B: "addTax". (Gut).
+     - Name C: "removeUser". (Falsch).
+     - Messbarkeit: Clean Code Prinzipien.
+   - Lernziel: Semantik im Code.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_code_func_name.json')
+  - `body`: "return a + b".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Namen-Generator.
+- [ ] Game-Engine Logic ('game_code_func_name.js')
+  - Guten Namen finden (z.B. `calculateSum` statt `doIt`).
+- [ ] Integration
+  - Startbar über JSON.

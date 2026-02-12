@@ -1,0 +1,47 @@
+1. "Steckplatz-Logik"
+   - Ziel: Stecke 2 RAM-Riegel so, dass Dual Channel aktiv ist.
+   - Spielmechanik: 
+     - Mainboard mit 4 Slots (A1, A2, B1, B2). Farben oft A1/B1 und A2/B2 gleich.
+     - Handbuch sagt: "Bestückung A2 + B2".
+     - Spieler zieht Riegel. Wenn er A1 + A2 nimmt -> Single Channel (Fehler).
+     - Messbarkeit: Bandbreite (Dual = 100%, Single = 50%).
+   - Lernziel: Korrekte Bestückung für Performance.
+
+2. "Datenautobahn-Simulator"
+   - Ziel: Vergleiche den Durchsatz (Single vs Dual).
+   - Spielmechanik: 
+     - Datenpakete müssen über eine Brücke.
+     - Single Channel: 1 Spur (Stau).
+     - Dual Channel: 2 Spuren (Flüssig).
+     - Spieler schaltet Modus um, um Stau abzubauen.
+     - Messbarkeit: Zeitdauer für Datentransfer von 10GB.
+   - Lernziel: Verdopplung der theoretischen Bandbreite (128 Bit statt 64 Bit).
+
+3. "Riegel-Matching"
+   - Ziel: Welche Riegel harmonieren am besten?
+   - Spielmechanik: 
+     - Riegel A: 8GB, 3200MHz, CL16.
+     - Pool: Riegel B (8GB, 3200, CL16), Riegel C (16GB), Riegel D (2666MHz).
+     - Ziel: Riegel B wählen.
+     - Wenn D gewählt -> System läuft nur mit 2666MHz (Flaschenhals).
+     - Messbarkeit: Systemleistung nach Upgrade.
+   - Lernziel: Symmetrie bei Dual Channel.
+
+4. "Latenz vs. Takt"
+   - Ziel: Berechne die wahre Geschwindigkeit.
+   - Spielmechanik: 
+     - RAM 1: 3200 MHz / CL 16.
+     - RAM 2: 3600 MHz / CL 18.
+     - Formel: Latenz in ns = CL / Takt * 2000.
+     - Spieler muss den schnelleren Riegel wählen.
+     - Messbarkeit: Korrekte Wahl des schnelleren RAMs.
+   - Lernziel: Technische Kennzahlen bewerten.
+
+5. "Channel-Architekt"
+   - Ziel: Baue ein Quad-Channel System (Server).
+   - Spielmechanik: 
+     - Server-Board mit 8 Slots.
+     - Ziel: 4 Riegel für Quad-Channel.
+     - Anleitung lesen: "A1, B1, C1, D1".
+     - Messbarkeit: Korrekte Bestückung.
+   - Lernziel: Skalierung über Dual Channel hinaus (HEDT/Server).

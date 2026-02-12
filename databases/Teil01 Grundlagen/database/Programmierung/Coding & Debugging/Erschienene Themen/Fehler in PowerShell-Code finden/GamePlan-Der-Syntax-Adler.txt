@@ -1,0 +1,21 @@
+Anforderungen
+1. "Der Syntax-Adler"
+   - Ziel: Finde das fehlende Zeichen.
+   - Spielmechanik: 
+     - Code: `Write-Host "Hallo Welt`
+     - Fehler: Fehlendes Anführungszeichen am Ende.
+     - Code: `if ($a -eq 5 { ... }`
+     - Fehler: Fehlende Klammer `)`.
+     - Messbarkeit: Syntaxfehler markiert.
+   - Lernziel: Genauigkeit beim Coden.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ps_syntax.json')
+  - `snippet`: "if ($a -eq 5) { }".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Syntax-Highlighter.
+- [ ] Game-Engine Logic ('game_ps_syntax.js')
+  - `-eq` statt `==`.
+  - Klammern `{}` vs `()`.
+- [ ] Integration
+  - Startbar über JSON.

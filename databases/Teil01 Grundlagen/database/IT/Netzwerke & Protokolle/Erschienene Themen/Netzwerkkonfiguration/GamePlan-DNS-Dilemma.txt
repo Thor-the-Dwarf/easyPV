@@ -1,0 +1,21 @@
+Anforderungen
+3. "DNS-Dilemma"
+   - Ziel: Warum geht Google.de nicht?
+   - Spielmechanik: 
+     - Ping 8.8.8.8 -> Geht (Internet da).
+     - Ping google.de -> "Host not found".
+     - Diagnose: DNS-Server fehlt oder ist falsch.
+     - Lösung: Trage 8.8.8.8 oder Router-IP als DNS ein.
+     - Messbarkeit: Namensauflösung funktioniert.
+   - Lernziel: Trennung von Connectivity und Name Resolution.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_net_dns.json')
+  - `sites`: ["google.de", "8.8.8.8"].
+- [ ] Shared CSS Check ('network_ip.css')
+  - Browser und Terminal Fenster.
+- [ ] Game-Engine Logic ('game_net_dns.js')
+  - Fehler-Simulation (Name not resolved).
+  - DNS-Eintrag Feld füllen.
+- [ ] Integration
+  - Startbar über JSON.

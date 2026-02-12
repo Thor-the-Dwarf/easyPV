@@ -1,0 +1,20 @@
+Anforderungen
+1. "URL-Detektiv"
+   - Ziel: Unterscheide echte URL von Fake URL (Typosquatting).
+   - Spielmechanik: 
+     - "paypal.com" -> Echt.
+     - "paypaI.com" (Großes i) -> Fake.
+     - "paypal-login-secure.de" -> Fake.
+     - "amazon.de" -> Echt.
+     - Messbarkeit: 10 URLs in 60s prüfen. Fehler = Account gehackt.
+   - Lernziel: Genaues Lesen von Domains.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_url.json')
+  - `urls`: ["paypal.com", "paypaI.com", "amazon.de"].
+- [ ] Shared CSS Check ('security_attack.css')
+  - Adressleiste Großansicht.
+- [ ] Game-Engine Logic ('game_sec_url.js')
+  - Homograph Attacken erkennen.
+- [ ] Integration
+  - Startbar über JSON.

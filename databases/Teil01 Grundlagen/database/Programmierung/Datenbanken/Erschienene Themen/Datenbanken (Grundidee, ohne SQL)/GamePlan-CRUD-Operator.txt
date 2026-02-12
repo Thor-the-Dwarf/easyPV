@@ -1,0 +1,21 @@
+Anforderungen
+2. "CRUD-Operator"
+   - Ziel: Mache alles, was man mit Daten tun kann.
+   - Spielmechanik: 
+     - C: Create (Neuen Kunden anlegen).
+     - R: Read (Kunden suchen).
+     - U: Update (Adresse ändern).
+     - D: Delete (Kunden löschen).
+     - Aufgabe: "Müller ist umgezogen". -> Wähle "Update".
+     - Messbarkeit: Richtige Operation gewählt.
+   - Lernziel: Akronym CRUD.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_db_crud.json')
+  - `ops`: ["C", "R", "U", "D"].
+- [ ] Shared CSS Check ('db_basics.css')
+  - Datenbank-Operationen Buttons.
+- [ ] Game-Engine Logic ('game_db_crud.js')
+  - Create (Insert), Read (Select), Update, Delete.
+- [ ] Integration
+  - Startbar über JSON.

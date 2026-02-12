@@ -1,0 +1,22 @@
+Anforderungen
+1. "Der Ergonomie-Einrichter"
+   - Ziel: Stelle Stuhl, Tisch und Monitor so ein, dass alle Winkel korrekt sind (3 grüne Haken).
+   - Spielmechanik: 
+     - Seitenansicht einer Person am Tisch.
+     - Schieberegler für: Tischhöhe, Stuhlhöhe, Monitorneigung, Abstand.
+     - Zielwerte: Arme 90°, Beine 90°, Blicklinie oberkante Monitor, Abstand 50-80cm.
+     - Messbarkeit: Abweichung von Idealwerten. Alle Bereiche im grünen Bereich = 100%.
+   - Lernziel: Korrekte Sitzhaltung und Arbeitsplatzeinstellung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ergo_setup.json')
+  - `bodyParts`: ["arm", "leg", "eye"].
+  - `ranges`: { "arm": [85, 95] }.
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Seitenansicht Männchen (SVG manipulierbar).
+  - Slider für Höhen/Winkel.
+- [ ] Game-Engine Logic ('game_ergo_setup.js')
+  - Slider verändern SVG-Geometrie.
+  - Echtzeit-Feedback (Farbe der Gelenke).
+- [ ] Integration
+  - Startbar über JSON.

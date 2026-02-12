@@ -1,0 +1,21 @@
+Anforderungen
+1. "Der Plattform-Entscheider"
+   - Ziel: Wähle das richtige Tool für das OS.
+   - Spielmechanik: 
+     - Ziel: "iPhone App entwickeln". -> Swift.
+     - Ziel: "Android App entwickeln". -> Kotlin/Java.
+     - Ziel: "Webseite (Frontend)". -> JavaScript.
+     - Ziel: "Hardware-Treiber". -> C / C++.
+     - Messbarkeit: Korrekte Zuordnung Sprache <-> Plattform.
+   - Lernziel: Ökosysteme.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_platform.json')
+  - `target`: "ios".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Geräte-Icons (iPhone, Android, PC).
+- [ ] Game-Engine Logic ('game_prog_platform.js')
+  - iOS -> Swift / Obj-C.
+  - Android -> Kotlin / Java.
+- [ ] Integration
+  - Startbar über JSON.

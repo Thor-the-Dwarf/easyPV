@@ -1,0 +1,18 @@
+Anforderungen
+1. "Phasen-Sortierer"
+   - Ziel: Bringe die 4/5 Phasen in die richtige zeitliche Reihenfolge.
+   - Spielmechanik: 
+     - Karten: "Initialisierung", "Planung", "Durchführung/Steuerung", "Abschluss".
+     - Drag & Drop auf Zeitstrahl.
+     - Messbarkeit: Korrekte Sequenz.
+   - Lernziel: Was kommt wann?
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_phases.json')
+  - `order`: [1, 2, 3, 4, 5].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Zeitstrahl Puzzle.
+- [ ] Game-Engine Logic ('game_pm_phases.js')
+  - Richtige Reihenfolge DIN 69901.
+- [ ] Integration
+  - Startbar über JSON.

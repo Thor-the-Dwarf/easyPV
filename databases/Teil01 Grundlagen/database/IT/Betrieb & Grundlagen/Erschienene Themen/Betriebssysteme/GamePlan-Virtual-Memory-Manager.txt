@@ -1,0 +1,20 @@
+Anforderungen
+5. "Virtual Memory Manager"
+   - Ziel: Verhindere "Out of Memory" durch Paging.
+   - Spielmechanik: 
+     - RAM ist voll (8GB). Neue App braucht 2GB.
+     - Spieler muss "alte" Daten (seit 1h nicht genutzt) auf die Festplatte (Swap/Pagefile) auslagern.
+     - Wenn er aktive Daten auslagert -> System wird langsam (Punktabzug).
+     - Messbarkeit: Systemstabilität und Performance.
+   - Lernziel: Virtueller Arbeitsspeicher und Swapping.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_vmem.json')
+  - `ram`: 8000.
+- [ ] Shared CSS Check ('basics_os.css')
+  - Speicher-Balken (RAM + Swap).
+- [ ] Game-Engine Logic ('game_basics_vmem.js')
+  - Paging simulieren (LRU - Least Recently Used).
+  - Thrashing vermeiden.
+- [ ] Integration
+  - Startbar über JSON.

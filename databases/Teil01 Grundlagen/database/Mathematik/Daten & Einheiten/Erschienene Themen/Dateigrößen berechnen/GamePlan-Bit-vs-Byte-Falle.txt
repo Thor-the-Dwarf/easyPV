@@ -1,0 +1,21 @@
+Anforderungen
+1. "Bit vs Byte Falle"
+   - Ziel: Rechne den Speed in die Datei um.
+   - Spielmechanik: 
+     - Internet: 100 Mbit/s.
+     - Datei: 100 MByte.
+     - Dauer: 1 Sekunde? Falsch!
+     - Rechnung: 100 MByte * 8 = 800 Mbit.
+     - Dauer: 800 / 100 = 8 Sekunden.
+     - Messbarkeit: Korrektes Verhältnis 1:8 angewendet.
+   - Lernziel: Unterschied b und B.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_bit_byte.json')
+  - `value`: 8.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Umrechnungs-Slider.
+- [ ] Game-Engine Logic ('game_math_bit_byte.js')
+  - "b" vs "B". Faktor 8.
+- [ ] Integration
+  - Startbar über JSON.

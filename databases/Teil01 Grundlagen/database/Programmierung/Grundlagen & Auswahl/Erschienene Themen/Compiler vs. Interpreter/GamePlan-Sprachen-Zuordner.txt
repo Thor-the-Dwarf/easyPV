@@ -1,0 +1,20 @@
+Anforderungen
+5. "Sprachen-Zuordner"
+   - Ziel: Was ist was?
+   - Spielmechanik: 
+     - "Python" -> Interpreter.
+     - "C" -> Compiler.
+     - "JavaScript" -> Interpreter (im Browser).
+     - "Rust" -> Compiler.
+     - Messbarkeit: Korrekte Klassifizierung.
+   - Lernziel: Marktübersicht.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_lang_sort.json')
+  - `langs`: ["python", "c", "java", "js"].
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Eimer: Kompiliert vs Interpretiert (vs Hybrid).
+- [ ] Game-Engine Logic ('game_prog_lang_sort.js')
+  - Drag & Drop Zuordnung.
+- [ ] Integration
+  - Startbar über JSON.

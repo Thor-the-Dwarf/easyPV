@@ -1,0 +1,46 @@
+1. "Frequenz-Matcher"
+   - Ziel: Wähle die richtige Frequenz (LF, HF, UHF) für die Anwendung.
+   - Spielmechanik: 
+     - "Tier-Chip (Haustier)". -> LF (Low Frequency, Kurzstrecke, durch Wasser/Gewebe).
+     - "Bezahlkarte / Perso (NFC)". -> HF (High Frequency, 13.56 MHz).
+     - "Logistik-Palette durch Tor fahren". -> UHF (Ultra High Frequency, Hohe Reichweite, Pulk).
+     - Messbarkeit: Korrekte Zuordnung Anwendung <-> Frequenzband.
+   - Lernziel: Physikalische Eigenschaften der Frequenzen.
+
+2. "Der Pulk-Scanner"
+   - Ziel: Scanne alle 50 Artikel im Einkaufswagen gleichzeitig (Bulk Reading).
+   - Spielmechanik: 
+     - Warenband läuft. Scanner ist an.
+     - Anti-Kollisions-Verfahren simulieren: Scanner fragt Tags ab.
+     - Wenn Kollision -> "Silence" Befehl an Tag senden.
+     - Ziel: Zähler auf 50 bringen.
+     - Messbarkeit: Erfasste Tags in % (Verständnis der Anti-Kollision).
+   - Lernziel: Vorteil von RFID gegenüber Barcode (Sichtverbindung nicht nötig).
+
+3. "Aktive vs Passive Tags"
+   - Ziel: Wähle den richtigen Transponder-Typ.
+   - Spielmechanik: 
+     - Szenario: "Billiges Etikett auf Joghurtbecher". -> Passiv (Keine Batterie, billig).
+     - Szenario: "Container-Tracking im Hafen, Sensordaten senden". -> Aktiv (Batterie, Reichweite).
+     - Messbarkeit: Entscheidung Kosten/Nutzen.
+   - Lernziel: Bauarten von Transpondern.
+
+4. "Faraday-Käfig-Experiment"
+   - Ziel: Warum liest der Scanner nicht?
+   - Spielmechanik: 
+     - RFID-Tag in Pappschachtel -> Geht.
+     - RFID-Tag in Alufolie -> Geht nicht (Abschirmung).
+     - RFID-Tag auf Metalloberfläche -> Problematisch (Reflexion/Dämpfung).
+     - Spieler muss störende Materialien entfernen.
+     - Messbarkeit: Erfolgreicher Scan.
+   - Lernziel: Störfaktoren bei Funkübertragung (Konduktive Materialien).
+
+5. "NFC-Bezahlvorgang"
+   - Ziel: Sichere Kommunikation im Nahfeld (Near Field Communication).
+   - Spielmechanik: 
+     - Abstand Simulator.
+     - Karte 10cm weg -> Geht nicht.
+     - Karte 2cm weg -> Kopplung erfolgt.
+     - Energieübertragung startet (Induktion).
+     - Messbarkeit: Erfolgreiche Transaktion durch korrekten Abstand.
+   - Lernziel: Wirkprinzip induktive Kopplung (HF).

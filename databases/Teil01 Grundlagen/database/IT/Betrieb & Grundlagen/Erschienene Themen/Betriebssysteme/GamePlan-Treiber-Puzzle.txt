@@ -1,0 +1,20 @@
+Anforderungen
+4. "Treiber-Puzzle"
+   - Ziel: Installiere die korrekten Treiber für die Hardware.
+   - Spielmechanik: 
+     - PC im Gerätemanager: "Unbekanntes Gerät (Grafikkarte)".
+     - Treiber-CDs: "Nvidia", "Realtek (Audio)", "Intel (Chipsatz)".
+     - Spieler zieht Nvidia auf Grafikkarte.
+     - Messbarkeit: Funktionierendes System (Keine gelben Ausrufezeichen).
+   - Lernziel: Hardware-Abstraktion durch Treiber.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_drivers.json')
+  - `hardware`: "gpu_nvidia".
+- [ ] Shared CSS Check ('basics_os.css')
+  - Geräte-Manager UI.
+- [ ] Game-Engine Logic ('game_basics_drivers.js')
+  - Treiber installieren.
+  - Konfliktlösung.
+- [ ] Integration
+  - Startbar über JSON.

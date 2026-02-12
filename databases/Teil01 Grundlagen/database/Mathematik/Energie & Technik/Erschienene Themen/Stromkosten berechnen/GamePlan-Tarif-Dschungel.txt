@@ -1,0 +1,22 @@
+Anforderungen
+3. "Tarif-Dschungel"
+   - Ziel: Wähle den besten Stromtarif.
+   - Spielmechanik: 
+     - Tarif A: 30 Cent/kWh + 10€ Grundgebühr/Monat.
+     - Tarif B: 40 Cent/kWh + 0€ Grundgebühr.
+     - Verbrauch: 200 kWh/Monat.
+     - Rechnung A: 60 + 10 = 70€.
+     - Rechnung B: 80 + 0 = 80€.
+     - Messbarkeit: Tarif A gewählt.
+   - Lernziel: Grundpreis vs Arbeitspreis.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_tariff.json')
+  - `base_price`: 10, `kwh_price`: 0.30.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Vertrags-Vergleichs-Rechner.
+- [ ] Game-Engine Logic ('game_math_tariff.js')
+  - y = mx + c (Verbrauch * Preis + Grundgebühr).
+  - Schnittpunkt berechnen.
+- [ ] Integration
+  - Startbar über JSON.

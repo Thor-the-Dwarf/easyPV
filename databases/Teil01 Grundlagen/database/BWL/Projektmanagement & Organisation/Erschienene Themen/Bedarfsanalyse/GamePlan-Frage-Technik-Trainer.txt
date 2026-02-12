@@ -1,0 +1,36 @@
+Anforderungen
+3. "Frage-Technik-Trainer"
+   - Ziel: Wähle die offene Frage, um mehr Informationen zu erhalten.
+   - Spielmechanik: 
+     - Situation: Kunde schweigt.
+     - Option A: "Wollen Sie rot?" (Geschlossen).
+     - Option B: "Welche Farbe bevorzugen Sie und warum?" (Offen).
+     - Messbarkeit: Anzahl gewählter offener Fragen in 5 Dialogen.
+   - Lernziel: Informationsgewinnung durch Fragetechniken.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Unterschiedliche Fragetechniken (offen, geschlossen, suggestiv).
+- [ ] Ziel: Ordne die Technik dem Satz zu.
+
+2. Screen-Layout
+- [ ] Dropdown-Selektoren direkt im Text oder Drag-Zonen.
+- [ ] Fokus auf den Satzinhalt.
+
+3. Browser- und Device-Resilienz
+- [ ] Große Klickflächen für Optionen.
+- [ ] `user-select: none` für saubere Bedienung.
+
+4. Kernvisuals
+- [ ] Sprechblasen-Icons.
+- [ ] "Frage-Typ"-Labels (farblich codiert).
+
+5. Interaktion und Feedback
+- [ ] Visuelle Bestätigung bei korrekter Zuordnung.
+- [ ] "Tipp"-Button für Definitionen.
+
+6. KPI-Klarheit
+- [ ] "Rhetorik-Score".
+
+7. QA-Paket
+- [ ] Funktionstest der Auswahl-Logik.

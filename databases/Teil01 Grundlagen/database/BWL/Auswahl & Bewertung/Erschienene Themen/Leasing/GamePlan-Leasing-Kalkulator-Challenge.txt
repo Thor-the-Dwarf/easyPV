@@ -1,0 +1,44 @@
+Anforderungen
+3. "Leasing-Kalkulator-Challenge"
+   - Ziel: Konfiguriere einen Leasingvertrag so, dass die Rate unter 200€ liegt, aber die Anzahlung maximal 2.000€ beträgt.
+   - Spielmechanik: 
+     - Regler für: Laufzeit, Sonderzahlung (Anzahlung), Kilometerleistung.
+     - Startwert: Rate 400€ (zu hoch).
+     - Spieler muss Laufzeit erhöhen oder Sonderzahlung anpassen, um das Ziel zu erreichen.
+     - Aber: Wenn er Sonderzahlung auf 5.000€ schiebt -> Fehler "Budget überschritten".
+     - Messbarkeit: Wenn Rate <= 200€ UND Anzahlung <= 2000€ -> 100% Erfolg. Sonst 0%.
+   - Lernziel: Interdependenz der Leasing-Parameter (höhere Laufzeit = niedrigere Rate, etc.).
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Die EINE fehlende Zahl.
+- [ ] Kontext: Ein übersichtliches Leasing-Angebot (wie Autohaus).
+- [ ] Keine komplexen Formeln anzeigen, sondern Logik "erfühlbar" machen.
+
+2. Screen-Layout
+- [ ] Split-Screen: Links das Auto/Asset, Rechts die Zahlen.
+- [ ] Mobile: Asset oben klein, Zahlen unten groß.
+- [ ] Eingabefeld (oder Slider) muss Fokus haben.
+
+3. Browser- und Device-Resilienz
+- [ ] Numerische Tastatur auf Mobile erzwingen (`input type="number"`).
+- [ ] Inputs groß genug (>48px Höhe).
+- [ ] Prevent Zoom on Focus (Font-Size >= 16px).
+
+4. Kernvisuals
+- [ ] Hochwertiges Asset-Bild (Auto, Laptop).
+- [ ] Rechnung wie ein Kassenbon oder Vertrag gestalten.
+- [ ] Realtime-Update (wenn Slider genutzt wird).
+
+5. Interaktion und Feedback
+- [ ] "Rechne..." Animation bei Bestätigung.
+- [ ] Visueller Vergleich: "Dein Preis" vs "Echter Preis".
+- [ ] Balken-Diagramm für den Vergleich (Rot/Grün).
+
+6. KPI-Klarheit
+- [ ] Abweichung in % anzeigen.
+- [ ] "Du bist ein Mathe-Genie" vs "Händler freut sich".
+
+7. QA-Paket
+- [ ] Input-Validierung (Keine Buchstaben).
+- [ ] Layout-Check bei ausgeklappter Tastatur (Virtual Keyboard).

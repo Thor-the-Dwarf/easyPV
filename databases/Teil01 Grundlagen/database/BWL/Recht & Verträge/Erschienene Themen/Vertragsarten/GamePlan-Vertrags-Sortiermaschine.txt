@@ -1,0 +1,40 @@
+Anforderungen
+1. "Vertrags-Sortiermaschine"
+   - Ziel: Ordne 10 Beispiele der richtigen Vertragsart zu (Werkvertrag, Dienstvertrag, Kaufvertrag, Mietvertrag).
+   - Spielmechanik: 
+     - "Haarschnitt beim Friseur". -> Werkvertrag (Erfolg geschuldet) oder Dienstvertrag? (Streitfall, meist Werk).
+     - "Arztbesuch". -> Dienstvertrag (Kein Heilversprechen).
+     - "Taxi". -> Werkvertrag (Transport an Ziel).
+     - "Auto leihen gegen Geld". -> Mietvertrag.
+     - Messbarkeit: Juristisch korrekte Einordnung.
+   - Lernziel: Abgrenzung Erfolg (Werk) vs. Bemühen (Dienst).
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Zuordnung Beispiel -> Vertragstyp.
+- [ ] Typen: Kauf, Miet, Pacht, Leihe, Darlehen.
+- [ ] Beispiel: "Fruchtziehung erlaubt (Apfelbaum ernten)".
+
+2. Screen-Layout
+- [ ] Sortiermaschine (Rohrpost-System).
+- [ ] Ball mit Aufschrift fliegt rein.
+- [ ] Weichensteller (Buttons) für die Rohre.
+
+3. Browser- und Device-Resilienz
+- [ ] Animation darf Bedienung nicht blockieren.
+- [ ] Text auf Ball lesbar (mit Pause-Option).
+
+4. Kernvisuals
+- [ ] Apfel (Pacht).
+- [ ] Buch (Leihe).
+- [ ] Geld (Darlehen).
+
+5. Interaktion und Feedback
+- [ ] "Äpfel ernten" -> Miete -> "Falsch! Miete ist nur Nutzung, Pacht ist Nutzung + Fruchtgenuss."
+- [ ] Ball wird rot/grün gefärbt.
+
+6. KPI-Klarheit
+- [ ] Highscore.
+
+7. QA-Paket
+- [ ] Geschwindigkeit der Bälle anpassbar.

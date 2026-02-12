@@ -1,0 +1,20 @@
+Anforderungen
+2. "TOM-Designer"
+   - Ziel: Wähle geeignete TOMs für ein Risiko.
+   - Spielmechanik: 
+     - Risiko: "Laptop Diebstahl im Zug".
+     - Option A: "Firewall". (Hilft nicht).
+     - Option B: "Festplattenverschlüsselung". (Technisch, hilft).
+     - Option C: "Anweisung: Laptops nie unbeaufsichtigt lassen". (Organisatorisch, hilft).
+     - Messbarkeit: Wirksamkeit der gewählten TOMs.
+   - Lernziel: Risikominimierung durch Maßnahmen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_tom.json')
+  - `risk`: "theft".
+- [ ] Shared CSS Check ('security_defense.css')
+  - Maßnahmen-Baukasten.
+- [ ] Game-Engine Logic ('game_sec_tom.js')
+  - Mix aus T und O wählen.
+- [ ] Integration
+  - Startbar über JSON.

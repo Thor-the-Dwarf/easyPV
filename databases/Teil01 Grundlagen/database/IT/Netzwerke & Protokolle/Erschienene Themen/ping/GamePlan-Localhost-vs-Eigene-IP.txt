@@ -1,0 +1,19 @@
+Anforderungen
+5. "Localhost vs Eigene IP"
+   - Ziel: Prüfe den Stack.
+   - Spielmechanik: 
+     - Ping 127.0.0.1 -> Prüft Software-Stack.
+     - Ping 192.168.1.10 (Eigene IP) -> Prüft NIC bis zum Treiber.
+     - Ping 192.168.1.1 (Router) -> Prüft physikalische Verbindung (Kabel/WLAN).
+     - Messbarkeit: Systematische Eingrenzung.
+   - Lernziel: Diagnosestufen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ping_diag.json')
+  - `targets`: ["127.0.0.1", "192.168.1.10", "192.168.1.1"].
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Diagnose-Baum Grafik.
+- [ ] Game-Engine Logic ('game_ping_diag.js')
+  - Step-by-Step Fehler-Eingrenzung.
+- [ ] Integration
+  - Startbar über JSON.

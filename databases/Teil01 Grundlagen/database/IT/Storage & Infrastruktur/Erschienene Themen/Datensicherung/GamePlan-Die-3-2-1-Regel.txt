@@ -1,0 +1,20 @@
+Anforderungen
+1. "Die 3-2-1 Regel"
+   - Ziel: Erstelle ein valides Backup-Konzept.
+   - Spielmechanik: 
+     - Benutzer hat Daten nur auf Laptop (1 Kopie).
+     - Laptop geklaut -> Daten weg. (Fail).
+     - Konzept: 3 Kopien, 2 Medien (HDD, Tape), 1 Offsite (Cloud/Tresor).
+     - Messbarkeit: Datenrettung nach Katastrophe erfolgreich.
+   - Lernziel: Goldene Regel des Backups.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_backup_321.json')
+  - `assets`: ["Laptop", "HDD", "Cloud"].
+- [ ] Shared CSS Check ('storage_backup.css')
+  - Inventar-Slots.
+- [ ] Game-Engine Logic ('game_backup_321.js')
+  - Katastrophen-Simulator (Feuer, Diebstahl).
+  - Check: Sind Daten noch irgendwo?
+- [ ] Integration
+  - Startbar über JSON.

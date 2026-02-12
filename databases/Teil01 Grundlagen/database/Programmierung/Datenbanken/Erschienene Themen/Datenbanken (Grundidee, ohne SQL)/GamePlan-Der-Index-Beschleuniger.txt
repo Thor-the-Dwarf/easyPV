@@ -1,0 +1,20 @@
+Anforderungen
+5. "Der Index-Beschleuniger"
+   - Ziel: Finde den Namen im Telefonbuch.
+   - Spielmechanik: 
+     - Ohne Index: Muss jede Seite lesen (Full Table Scan). Dauert 10 Sek.
+     - Mit Index (Alphabetisch sortiert): Binäre Suche. Dauert 0.1 Sek.
+     - Spieler legt Index auf Spalte "Nachname".
+     - Anfrage wird blitzschnell.
+     - Messbarkeit: Performance-Optimierung.
+   - Lernziel: Nutzen von Indizes.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_db_index.json')
+  - `rows`: 1000.
+- [ ] Shared CSS Check ('db_basics.css')
+  - Telefonbuch A-Z.
+- [ ] Game-Engine Logic ('game_db_index.js')
+  - Full Table Scan vs Index Lookup (Zeitvergleich).
+- [ ] Integration
+  - Startbar über JSON.

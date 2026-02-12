@@ -1,0 +1,20 @@
+Anforderungen
+4. "Subnetz-Rechner (Klasse B)"
+   - Ziel: Berechne die Subnetzmaske für APIPA.
+   - Spielmechanik: 
+     - APIPA nutzt 169.254.0.0/16.
+     - Maske: 255.255.0.0.
+     - User tippt 255.255.255.0 -> Falsch.
+     - Messbarkeit: Korrekte CIDR-Notation / Maske.
+   - Lernziel: Adressbereich der Automatic Private IP Addressing.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_apipa_calc.json')
+  - `ip`: "169.254.0.0".
+  - `cidr`: 16.
+- [ ] Shared CSS Check ('network_ip.css')
+  - Taschenrechner / Eingabefeld.
+- [ ] Game-Engine Logic ('game_apipa_calc.js')
+  - Validierung der Eingabe (255.255.0.0).
+- [ ] Integration
+  - Startbar über JSON.

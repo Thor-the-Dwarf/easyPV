@@ -1,0 +1,21 @@
+Anforderungen
+4. "Subnetting-Brücke"
+   - Ziel: Wie viele IPs habe ich?
+   - Spielmechanik: 
+     - 2 Host-Bits -> 2^2 = 4 IPs.
+     - 5 Host-Bits -> 2^5 = 32 IPs.
+     - 8 Host-Bits -> 2^8 = 256 IPs.
+     - 10 Host-Bits -> 2^10 = 1024 IPs.
+     - Quiz: "Wie viel ist 2 hoch 10?" -> "Kilo" (1024).
+     - Messbarkeit: Schnelles Abrufen der Werte.
+   - Lernziel: 2^10 = 1024 als Ankerpunkt.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_subnet_bridge.json')
+  - `mask`: 24.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Netzwerkgrenze.
+- [ ] Game-Engine Logic ('game_math_subnet_bridge.js')
+  - Zusammenhang /24 -> 256 IPs -> 2^8.
+- [ ] Integration
+  - Startbar über JSON.

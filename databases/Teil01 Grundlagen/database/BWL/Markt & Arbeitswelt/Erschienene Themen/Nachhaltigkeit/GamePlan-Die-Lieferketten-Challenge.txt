@@ -1,0 +1,21 @@
+Anforderungen
+4. "Die Lieferketten-Challenge"
+   - Ziel: Baue eine faire und ökologische Lieferkette für einen Laptop.
+   - Spielmechanik: 
+     - Station: Rohstoffe. Wahl zwischen "Konfliktminerale (Billig)" und "Zertifizierter Abbau (Teuer)".
+     - Station: Transport. Wahl zwischen "Luftfracht (Schnell)" und "Schiff/Bahn (CO2-arm)".
+     - Am Ende gibt es einen "Nachhaltigkeits-Score" und einen "Preis".
+     - Ziel: Nachhaltigkeits-Score > 80 bei Preis < X.
+     - Messbarkeit: Erreichen der Schwellenwerte.
+   - Lernziel: Sozial-ökologische Aspekte der Beschaffung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sust_chain.json')
+  - `steps`: [ { "name": "Rohstoff", "choices": [...] } ].
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Pfad-Visualisierung (Stationen).
+- [ ] Game-Engine Logic ('game_sust_chain.js')
+  - Step-by-Step Decision.
+  - Score-Accumulation (Nachhaltigkeit vs Kosten).
+- [ ] Integration
+  - Startbar über JSON.

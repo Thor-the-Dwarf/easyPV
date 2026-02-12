@@ -1,0 +1,20 @@
+Anforderungen
+3. "Analog vs. Digital"
+   - Ziel: Vermeide Signalwandlung.
+   - Spielmechanik: 
+     - PC hat VGA. Monitor hat DVI-D (Nur Digital).
+     - Adapter: "VGA auf DVI" (Geht nicht passiv!). -> Braucht aktiven Konverter.
+     - Messbarkeit: Bild erscheint auf Monitor.
+   - Lernziel: Signaltypen (Analog VGA vs Digital HDMI/DP).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_monitor_ad.json')
+  - `source`: "VGA". `sink`: "DVI-D".
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Stecker/Buchsen Grafik.
+  - Konverter-Box.
+- [ ] Game-Engine Logic ('game_monitor_ad.js')
+  - Kabel-Kombination prüfen.
+  - Signalfluss-Simulation.
+- [ ] Integration
+  - Startbar über JSON.

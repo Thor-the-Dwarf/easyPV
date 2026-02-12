@@ -1,0 +1,19 @@
+Anforderungen
+5. "Schadens-Szenarien"
+   - Ziel: Bewerte die Auswirkung einer Verletzung.
+   - Spielmechanik: 
+     - Szenario: "Alle Kundendaten öffentlich im Netz".
+     - Folge: "Imageverlust, Bußgeld, Kunden weg". -> Existenzbedrohend -> Schutzbedarf Sehr Hoch.
+     - Szenario: "Drucker im 1. OG geht nicht". -> Ärgerlich -> Normal.
+     - Messbarkeit: Schadenhöhe korrekt eingeschätzt.
+   - Lernziel: Auswirkungsorientierte Analyse.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_impact.json')
+  - `scenarios`: ["leak", "printer_fail"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Schadens-Barometer.
+- [ ] Game-Engine Logic ('game_sec_impact.js')
+  - Einschätzung der Schadenshöhe.
+- [ ] Integration
+  - Startbar über JSON.

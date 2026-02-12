@@ -1,0 +1,18 @@
+Anforderungen
+4. "Lücken-Finder"
+   - Ziel: Finde die fehlende Information im Lastenheft-Abschnitt.
+   - Spielmechanik: 
+     - Text: "Es sollen 50 PCs geliefert werden." (Was fehlt? Termin? Ort? Ausstattung?).
+     - Auswahl: "Termin fehlt".
+     - Messbarkeit: Identifikation der Lücke.
+   - Lernziel: Vollständigkeit von Spezifikationen prüfen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_spec_gap.json')
+  - `doc`: "incomplete".
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Dokumenten-View mit Lücken.
+- [ ] Game-Engine Logic ('game_pm_spec_gap.js')
+  - Fehlende Infos identifizieren (z.B. "Farbe nicht definiert").
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,19 @@
+Anforderungen
+3. "Format-Parser"
+   - Ziel: Mappe die Log-Zeile auf die Datenbankfelder.
+   - Spielmechanik: 
+     - Log: "192.168.1.1 - - [10/Oct/2023] GET /index.html 200".
+     - Felder: "IP", "Timestamp", "Method", "Status".
+     - Spieler zieht "200" auf "Status", "GET" auf "Method".
+     - Messbarkeit: 100% korrekte Feldzuordnung.
+   - Lernziel: Struktur von Standard-Logs (z.B. Apache Combined).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_log_parser.json')
+  - `format`: "apache_combined".
+- [ ] Shared CSS Check ('basics_admin.css')
+  - Drag & Drop Mapping Felder.
+- [ ] Game-Engine Logic ('game_basics_log_parser.js')
+  - Regex-Matching visualisieren.
+- [ ] Integration
+  - Startbar über JSON.

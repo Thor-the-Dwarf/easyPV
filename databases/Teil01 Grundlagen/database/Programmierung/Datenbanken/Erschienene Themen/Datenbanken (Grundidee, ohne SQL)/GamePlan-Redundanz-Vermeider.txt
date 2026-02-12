@@ -1,0 +1,21 @@
+Anforderungen
+3. "Redundanz-Vermeider"
+   - Ziel: Räume die Daten auf.
+   - Spielmechanik: 
+     - Tabelle: Kunde Müller, Stadt Berlin.
+     - Tabelle: Kunde Meier, Stadt Berlin.
+     - Stadt "Berlin" steht 2x da.
+     - Bei Änderung "Berlin -> Berlin (City)" müssen 2 Zeilen geändert werden.
+     - Lösung: Eigene Tabelle "Städte". Referenz ID.
+     - Messbarkeit: Prinzip der Normalisierung (intuitiv).
+   - Lernziel: Datenkonsistenz.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_db_redundancy.json')
+  - `data`: ["Müller, Berlin", "Müller, Berlin"].
+- [ ] Shared CSS Check ('db_basics.css')
+  - Doppelte Einträge rot markieren.
+- [ ] Game-Engine Logic ('game_db_redundancy.js')
+  - Normalisierung (einfach). Adresse nur 1x speichern.
+- [ ] Integration
+  - Startbar über JSON.

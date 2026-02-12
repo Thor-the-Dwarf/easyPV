@@ -1,0 +1,21 @@
+Anforderungen
+1. "Router-Advertisement-Lauscher"
+   - Ziel: Wie kommt die IPv6 zum Client?
+   - Spielmechanik: 
+     - Client bootet. Sendet "Router Solicitation" (RS).
+     - Router antwortet mit "Router Advertisement" (RA).
+     - RA enthält Prefix "2001:db8::/64".
+     - Client baut sich den Rest selbst.
+     - Messbarkeit: Client hat global routbare IPv6.
+   - Lernziel: Funktionsweise SLAAC (Stateless Address Autoconfiguration).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_slaac_ra.json')
+  - `prefix`: "2001::/64".
+- [ ] Shared CSS Check ('network_ip.css')
+  - Listening Ear Icon.
+- [ ] Game-Engine Logic ('game_slaac_ra.js')
+  - RS senden -> Warten -> RA empfangen.
+  - Prefix übernehmen.
+- [ ] Integration
+  - Startbar über JSON.

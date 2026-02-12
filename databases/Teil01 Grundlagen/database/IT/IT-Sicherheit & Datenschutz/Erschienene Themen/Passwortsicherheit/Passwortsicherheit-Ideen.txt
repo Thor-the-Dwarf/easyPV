@@ -1,0 +1,49 @@
+1. "Brute-Force-Rechner"
+   - Ziel: Schätze, wie lange ein Passwort geknackt werden kann.
+   - Spielmechanik: 
+     - PW: "123456". -> Zeit: "Sofort".
+     - PW: "Password". -> Zeit: "Sofort".
+     - PW: "H4ll0!". -> Zeit: "Stunden" (Zu kurz).
+     - PW: "Ich.Liebe.Dich.123!". -> Zeit: "Jahrhunderte".
+     - Messbarkeit: Korrekte Einschätzung der Entropie.
+   - Lernziel: Länge schlägt Komplexität.
+
+2. "Passwort-Generator"
+   - Ziel: Baue ein PW, das alle Regeln erfüllt.
+   - Spielmechanik: 
+     - Regeln: >12 Zeichen, Groß, Klein, Zahl, Sonderzeichen, kein Wörterbuchwort.
+     - Spieler tippt.
+     - Validator prüft live (Rot/Grün).
+     - Messbarkeit: Gültiges PW erstellt.
+   - Lernziel: Passwort-Richtlinien (Policy) einhalten.
+
+3. "Der MFA-Master"
+   - Ziel: Sichere den Account mit Multi-Faktor-Authentifizierung (MFA).
+   - Spielmechanik: 
+     - Hacker hat PW. Loggt sich ein.
+     - Spieler: "Halt! MFA aktivieren".
+     - Faktor 1: Wissen (PW). Faktor 2: Besitz (Smartphone/Token). Faktor 3: Biometrie.
+     - Aufgabe: Wähle eine 2-Faktor-Kombi.
+     - Fehler: PW + PIN (Beides Wissen -> Keine 2FA).
+     - Messbarkeit: Korrekte Faktoren-Kombination.
+   - Lernziel: Wissen, Besitz, Sein / 2FA.
+
+4. "Credential-Stuffing-Defense"
+   - Ziel: Verhindere, dass ein geleaktes PW überall funktioniert.
+   - Spielmechanik: 
+     - User verwendet "Schatzi1" für Facebook, Amazon und Firmen-Email.
+     - Facebook wird gehackt.
+     - Hacker probiert "Schatzi1" bei Amazon.
+     - Spieler muss User zwingen: "Einzigartige Passwörter nutzen" (z.B. Passwort-Manager).
+     - Messbarkeit: Anzahl der kompromittierten Accounts = 1 (nur Facebook), nicht alle.
+   - Lernziel: Password Reuse vermeiden.
+
+5. "Der Salt-Streuer"
+   - Ziel: Warum werden Hashes gesalzen?
+   - Spielmechanik: 
+     - Datenbank mit Hashes.
+     - Hacker hat Rainbow Table (Liste vorberechneter Hashes).
+     - Ohne Salt: Hacker findet "123456" sofort.
+     - Mit Salt: Rainbow Table wertlos. Hacker muss neu rechnen (dauert zu lange).
+     - Messbarkeit: Verständnis des Schutzes durch Salting.
+   - Lernziel: Schutz gegen Precomputation Attacks.

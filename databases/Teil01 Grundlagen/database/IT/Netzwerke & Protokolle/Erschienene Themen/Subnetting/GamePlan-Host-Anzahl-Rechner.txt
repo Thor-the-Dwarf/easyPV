@@ -1,0 +1,19 @@
+Anforderungen
+4. "Host-Anzahl-Rechner"
+   - Ziel: Wie viele Geräte passen rein?
+   - Spielmechanik: 
+     - Maske /24 -> 8 Host-Bits. 2^8 - 2 = 254.
+     - Maske /20 -> 12 Host-Bits. 2^12 - 2 = 4094.
+     - Formel anwenden: 2^n - 2.
+     - Messbarkeit: Korrekte Anzahl.
+   - Lernziel: Zusammenhang Bits vs Hosts.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_subnet_hosts.json')
+  - `cidr`: 24.
+- [ ] Shared CSS Check ('network_ip.css')
+  - Formel-Overlay (2^h - 2).
+- [ ] Game-Engine Logic ('game_subnet_hosts.js')
+  - Berechnung und Validierung.
+- [ ] Integration
+  - Startbar über JSON.

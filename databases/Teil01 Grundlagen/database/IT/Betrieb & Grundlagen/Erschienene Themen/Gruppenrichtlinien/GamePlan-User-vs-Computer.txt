@@ -1,0 +1,19 @@
+Anforderungen
+3. "User vs. Computer"
+   - Ziel: Entscheide, ob die Einstellung in die Computer- oder Benutzerkonfiguration gehört.
+   - Spielmechanik: 
+     - "Software-Installation für alle PCs im Raum 101". -> Computer.
+     - "Desktop-Hintergrund für Vertriebsmitarbeiter". -> User.
+     - "WLAN-Passwort für Firmen-Laptops". -> Computer.
+     - Messbarkeit: Korrekte Zuordnung.
+   - Lernziel: Geltungsbereiche von GPOs.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_gpo_scope.json')
+  - `settings`: ["wallpaper", "wifi"].
+- [ ] Shared CSS Check ('basics_admin.css')
+  - Zwei Bereiche (Computer Config / User Config).
+- [ ] Game-Engine Logic ('game_basics_gpo_scope.js')
+  - Sortierung.
+- [ ] Integration
+  - Startbar über JSON.

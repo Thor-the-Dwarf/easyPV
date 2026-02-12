@@ -1,0 +1,22 @@
+Anforderungen
+1. "Vorwärtskalkulation (Schema)"
+   - Ziel: Vom Einkaufspreis zum Listenpreis.
+   - Spielmechanik: 
+     - Lücken-Text Schema:
+     - Listeneinkaufspreis - Liefererrabatt = Zieleinkaufspreis.
+     - Zieleinkaufspreis - Skonto = Bareinkaufspreis.
+     - + Bezugskosten = Bezugspreis (Einstandspreis).
+     - + Handlungskosten + Gewinn = Barverkaufspreis.
+     - ...
+     - Messbarkeit: Lücken korrekt gefüllt.
+   - Lernziel: Das Kalkulationsschema auswendig können.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_calc_forward.json')
+  - `purchase_price`: 50.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Das klassische Schema (LBP -> ZBP -> BVP...).
+- [ ] Game-Engine Logic ('game_math_calc_forward.js')
+  - Schritt-für-Schritt Berechnung bis zum Listenverkaufspreis.
+- [ ] Integration
+  - Startbar über JSON.

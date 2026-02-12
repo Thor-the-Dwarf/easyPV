@@ -1,0 +1,20 @@
+Anforderungen
+5. "Einfluss-Schätzer"
+   - Ziel: Wer kann das Projekt stoppen?
+   - Spielmechanik: 
+     - Projekt "Neues Logo".
+     - Personen: Azubi, Marketing-Leiter, Pförtner, Kunde.
+     - Spieler muss die Person mit "Veto-Recht" finden (Marketing-Leiter/Kunde).
+     - Messbarkeit: Identifikation der Machtbasis.
+   - Lernziel: Formelle und informelle Macht erkennen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_stake_influence.json')
+  - `matrix`: "influence_interest".
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Matrix (Einfluss vs Interesse).
+- [ ] Game-Engine Logic ('game_pm_stake_influence.js')
+  - Personen auf Matrix platzieren.
+  - Strategie ableiten (Informieren / Einbinden).
+- [ ] Integration
+  - Startbar über JSON.

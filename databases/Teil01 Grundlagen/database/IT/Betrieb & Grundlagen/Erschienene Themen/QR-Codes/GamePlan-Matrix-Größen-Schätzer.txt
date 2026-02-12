@@ -1,0 +1,19 @@
+Anforderungen
+5. "Matrix-Größen-Schätzer"
+   - Ziel: Passt der Text in den Code?
+   - Spielmechanik: 
+     - Text: "Hallo". -> Kleiner Code (21x21 Module).
+     - Text: "Der komplette Text von Faust I". -> Zu groß für QR (Limit ca. 3KB/4000 Zeichen alphanum).
+     - Spieler muss entscheiden: "Passt" oder "Passt nicht / Braucht anderen Code".
+     - Messbarkeit: Verständnis der Kapazitätsgrenzen.
+   - Lernziel: Limits der QR-Technologie.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_qr_capacity.json')
+  - `text_len`: 3000.
+- [ ] Shared CSS Check ('basics_hardware.css')
+  - Matrix-Raster Visualisierung.
+- [ ] Game-Engine Logic ('game_basics_qr_capacity.js')
+  - Limit prüfen (Version 1-40).
+- [ ] Integration
+  - Startbar über JSON.

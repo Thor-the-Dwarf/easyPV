@@ -1,0 +1,20 @@
+Anforderungen
+1. "Audio-Kabel-Stecker"
+   - Ziel: Ordne die Farben der Klinkenstecker (3,5mm) den Buchsen zu.
+   - Spielmechanik: 
+     - Stecker: Grün (Ausgabe/Kopfhörer), Rosa (Mikrofon), Blau (Line-In).
+     - PC-Rückseite mit farbigen Ringen.
+     - Falsche Zuordnung -> Kein Ton oder kein Input.
+     - Messbarkeit: 100% korrekte Verkabelung.
+   - Lernziel: PC-Audio-Standard (AC97/HD Audio Farben).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_periph_audio.json')
+  - `plugs`: ["cyan", "lime", "pink"].
+  - `jacks`: ["line-in", "out", "mic"].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - PC-Rückseite Audio-Panel.
+- [ ] Game-Engine Logic ('game_periph_audio.js')
+  - Color-Matching Drag & Drop.
+- [ ] Integration
+  - Startbar über JSON.

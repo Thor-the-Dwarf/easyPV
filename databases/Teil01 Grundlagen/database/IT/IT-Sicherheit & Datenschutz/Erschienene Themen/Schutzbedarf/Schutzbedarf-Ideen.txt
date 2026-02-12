@@ -1,0 +1,44 @@
+1. "Kategorisierungs-Quiz"
+   - Ziel: Ordne die Daten der Schutzbedarfskategorie zu (Normal, Hoch, Sehr Hoch).
+   - Spielmechanik: 
+     - "Telefonliste intern". -> Normal.
+     - "Entwicklungspläne geheim (Firmenexistenz)". -> Sehr Hoch.
+     - "Verträge mit Kunden". -> Hoch.
+     - Messbarkeit: 100% Übereinstimmung mit BSI-Standard.
+   - Lernziel: Schutzbedarfsfeststellung.
+
+2. "CIA-Vererbung (Maximumprinzip)"
+   - Ziel: Bestimme den Schutzbedarf des Gesamtsystems.
+   - Spielmechanik: 
+     - Server speichert: "Telefonliste (Normal)" und "Patientendaten (Sehr hoch)".
+     - Welchen Schutzbedarf hat der Server?
+     - Antwort: Sehr Hoch (Das kritischste Element bestimmt den Bedarf).
+     - Messbarkeit: Anwendung des Maximumprinzips.
+   - Lernziel: Abhängigkeiten und Vererbung.
+
+3. "Der Kumulationseffekt"
+   - Ziel: Erkenne, wann sich kleine Daten zu einem großen Risiko summieren.
+   - Spielmechanik: 
+     - 1 Datensatz "Name": Normal.
+     - 1.000.000 Datensätze "Name": Hoch (Massenabfluss ist kritisch).
+     - Spieler muss entscheiden: "Einzeln unkritisch, Masse kritisch?".
+     - Messbarkeit: Korrekte Bewertung der Menge.
+   - Lernziel: Kumulationseffekt.
+
+4. "Verteilungs-Effekt"
+   - Ziel: Senke den Schutzbedarf durch Verteilung.
+   - Spielmechanik: 
+     - Backup auf einem Band: Sehr Hoch (Single Point of Failure).
+     - Backup auf 3 Standorte verteilt: Verfügbarkeit pro Standort geringer kritisch? (Komplexes Thema, hier vereinfacht: Risiko sinkt durch Redundanz).
+     - Ziel: Verfügbarkeit sichern.
+     - Messbarkeit: Strategie wählen.
+   - Lernziel: Verteilungseffekt (weniger relevant im BSI Grundschutz, aber logisch wichtig).
+
+5. "Schadens-Szenarien"
+   - Ziel: Bewerte die Auswirkung einer Verletzung.
+   - Spielmechanik: 
+     - Szenario: "Alle Kundendaten öffentlich im Netz".
+     - Folge: "Imageverlust, Bußgeld, Kunden weg". -> Existenzbedrohend -> Schutzbedarf Sehr Hoch.
+     - Szenario: "Drucker im 1. OG geht nicht". -> Ärgerlich -> Normal.
+     - Messbarkeit: Schadenhöhe korrekt eingeschätzt.
+   - Lernziel: Auswirkungsorientierte Analyse.

@@ -1,0 +1,21 @@
+Anforderungen
+5. "Das Wasserfall-Modell"
+   - Ziel: Verstehe die Starrheit der Phasen im Wasserfall.
+   - Spielmechanik: 
+     - Man ist in Phase 3 (Realisierung).
+     - Fehler in Phase 1 (Anforderung) gefunden.
+     - Weg zurück ist versperrt oder extrem teuer ("Kosten x10").
+     - Aufgabe: Fehler beheben.
+     - Messbarkeit: Erkennen, dass Rücksprünge teuer sind.
+   - Lernziel: Vor- und Nachteile klassischer Phasenmodelle.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_waterfall.json')
+  - `flow`: "linear".
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Treppenstufen-Visualisierung.
+- [ ] Game-Engine Logic ('game_pm_waterfall.js')
+  - Simulation: Fehler in Phase 1 kostet in Phase 4 viel.
+  - Rücksprung-Sperre visualisieren.
+- [ ] Integration
+  - Startbar über JSON.

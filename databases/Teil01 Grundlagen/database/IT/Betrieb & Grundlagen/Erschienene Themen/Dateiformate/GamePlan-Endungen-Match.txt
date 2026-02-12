@@ -1,0 +1,20 @@
+Anforderungen
+4. "Endungen-Match"
+   - Ziel: Ordne Dateiendungen dem Programm zu.
+   - Spielmechanik: 
+     - .xlsx -> Excel.
+     - .psd -> Photoshop.
+     - .html -> Browser.
+     - .py -> Python Interpreter.
+     - Messbarkeit: 10 Paare korrekt verbunden.
+   - Lernziel: Standard-Assoziationen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_extensions.json')
+  - `pairs`: [".xlsx", "Excel"].
+- [ ] Shared CSS Check ('basics_general.css')
+  - Verbindungs-Linien (Connect Points).
+- [ ] Game-Engine Logic ('game_basics_extensions.js')
+  - Mapping Extension -> App.
+- [ ] Integration
+  - Startbar über JSON.

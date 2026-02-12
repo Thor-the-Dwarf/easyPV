@@ -1,0 +1,117 @@
+{
+  "title": "Der Matrix-Architekt",
+  "scenario": {
+    "customer": "Ein mittelstaendisches Ingenieurbuero (38 Arbeitsplaetze) ersetzt seine veraltete IT-Ausstattung.",
+    "plan": "In den naechsten 3 Jahren sollen neue CAD-Arbeitsplaetze, hybride Meetings und ein wartungsarmes Client-Management aufgebaut werden."
+  },
+  "alternatives": [
+    { "id": "notebook", "label": "Notebook", "short": "NB" },
+    { "id": "aio", "label": "All-in-One-PC", "short": "AIO" },
+    { "id": "thin", "label": "Thin-Client", "short": "TC" },
+    { "id": "desktop", "label": "Desktop", "short": "DT" }
+  ],
+  "criteria": [
+    {
+      "nr": 1,
+      "name": "Platzbedarf",
+      "weight_percent": 15,
+      "values": {
+        "notebook": { "punkte": 3, "gp": "0,45" },
+        "aio": { "punkte": 2, "gp": "0,30" },
+        "thin": { "punkte": 4, "gp": "0,60" },
+        "desktop": { "punkte": 1, "gp": "0,15" }
+      },
+      "reasoning": {
+        "notebook": "sehr kompakt ist und auf kleinen Schreibtischen wenig Platz benoetigt",
+        "aio": "Monitor und Rechner kombiniert, aber weniger flexibel als mobile Loesungen bleibt",
+        "thin": "das kleinste lokale Geraet ist und besonders platzsparend aufgestellt wird",
+        "desktop": "separates Gehaeuse plus Monitor den meisten Stellplatz beansprucht"
+      }
+    },
+    {
+      "nr": 2,
+      "name": "Ergonomie",
+      "weight_percent": 20,
+      "values": {
+        "notebook": { "punkte": 1, "gp": "0,20" },
+        "aio": { "punkte": 3, "gp": "0,60" },
+        "thin": { "punkte": 2, "gp": "0,40" },
+        "desktop": { "punkte": 4, "gp": "0,80" }
+      },
+      "reasoning": {
+        "notebook": "ohne Docking-Setup oft zu kleine Displays und unguenstige Haltung erzeugt",
+        "aio": "grosses Display und aufgeraeumte Verkabelung fuer ergonomische Arbeitsplaetze bietet",
+        "thin": "mit externer Peripherie akzeptabel ist, aber stark von der Ausstattung abhaengt",
+        "desktop": "mit frei waehlbarem Monitor, Tastatur und Hoehenanpassung am ergonomischsten konfigurierbar ist"
+      }
+    },
+    {
+      "nr": 3,
+      "name": "Performance",
+      "weight_percent": 10,
+      "values": {
+        "notebook": { "punkte": 2, "gp": "0,20" },
+        "aio": { "punkte": 3, "gp": "0,30" },
+        "thin": { "punkte": 1, "gp": "0,10" },
+        "desktop": { "punkte": 4, "gp": "0,40" }
+      },
+      "reasoning": {
+        "notebook": "solide Leistung liefert, aber thermisch schneller limitiert",
+        "aio": "alltagstauglich ist, aber bei hoher Last hinter Top-Workstations liegt",
+        "thin": "rechenintensive Aufgaben meist serverseitig auslagert und lokal begrenzt bleibt",
+        "desktop": "die hoechste lokale Rechenleistung fuer CAD und Multitasking bereitstellt"
+      }
+    },
+    {
+      "nr": 4,
+      "name": "Verfuegbarkeit",
+      "weight_percent": 20,
+      "values": {
+        "notebook": { "punkte": 2, "gp": "0,40" },
+        "aio": { "punkte": 1, "gp": "0,20" },
+        "thin": { "punkte": 4, "gp": "0,80" },
+        "desktop": { "punkte": 3, "gp": "0,60" }
+      },
+      "reasoning": {
+        "notebook": "mobil einsetzbar ist, aber bei Defekt oft komplett ausfaellt",
+        "aio": "als Komplettgeraet bei Hardwareproblemen schwerer schnell tauschbar ist",
+        "thin": "bei Defekt sehr schnell ersetzt werden kann und Daten zentral verfuegbar bleiben",
+        "desktop": "modular austauschbar ist, aber mehr lokale Wartungszeit benoetigt"
+      }
+    },
+    {
+      "nr": 5,
+      "name": "Kosten Wartung + Erweiterung",
+      "weight_percent": 15,
+      "values": {
+        "notebook": { "punkte": 1, "gp": "0,15" },
+        "aio": { "punkte": 2, "gp": "0,30" },
+        "thin": { "punkte": 4, "gp": "0,60" },
+        "desktop": { "punkte": 3, "gp": "0,45" }
+      },
+      "reasoning": {
+        "notebook": "Erweiterungen begrenzt sind und Reparaturen oft teuer ausfallen",
+        "aio": "Aufruestung eingeschraenkt ist und Komponenten schwerer erreichbar sind",
+        "thin": "zentral verwaltet wird und die geringsten lokalen Wartungskosten verursacht",
+        "desktop": "gut aufruestbar ist, aber mehr Einzelteile gewartet werden muessen"
+      }
+    },
+    {
+      "nr": 6,
+      "name": "Preis",
+      "weight_percent": 20,
+      "values": {
+        "notebook": { "punkte": 1, "gp": "0,20" },
+        "aio": { "punkte": 3, "gp": "0,60" },
+        "thin": { "punkte": 4, "gp": "0,80" },
+        "desktop": { "punkte": 2, "gp": "0,40" }
+      },
+      "reasoning": {
+        "notebook": "bei vergleichbarer Business-Qualitaet meist am teuersten pro Arbeitsplatz ist",
+        "aio": "preislich im Mittelfeld liegt und Peripherie teilweise integriert",
+        "thin": "in der Anschaffung am guenstigsten ist, wenn Server-Infrastruktur bereits besteht",
+        "desktop": "oft gutes Preis-Leistungs-Verhaeltnis bietet, aber Zusatzgeraete erfordert"
+      }
+    }
+  ]
+}

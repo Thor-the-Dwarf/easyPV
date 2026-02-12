@@ -1,0 +1,19 @@
+Anforderungen
+1. "Lastenheft vs. Pflichtenheft"
+   - Ziel: Sortiere 10 Eigenschaften korrekt zu (Auftraggeber vs. Auftragnehmer).
+   - Spielmechanik: 
+     - Karte: "WAS wofür gemacht werden soll". -> Lastenheft (AG).
+     - Karte: "WIE es umgesetzt wird". -> Pflichtenheft (AN).
+     - Karte: "Vom Kunden geschrieben". -> Lastenheft.
+     - Messbarkeit: 100% korrekte Trennung der Begriffe.
+   - Lernziel: Grundlegende Unterscheidung der Dokumente (DIN 69901-5).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_lh_vs_ph.json')
+  - `side`: ["client", "contractor"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Split-Screen (Auftraggeber vs Auftragnehmer).
+- [ ] Game-Engine Logic ('game_pm_lh_vs_ph.js')
+  - Zuordnung (Was vs Wie).
+- [ ] Integration
+  - Startbar über JSON.

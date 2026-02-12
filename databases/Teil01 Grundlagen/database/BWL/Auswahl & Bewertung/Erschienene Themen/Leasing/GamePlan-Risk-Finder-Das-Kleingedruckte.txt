@@ -1,0 +1,42 @@
+Anforderungen
+2. "Risk-Finder: Das Kleingedruckte"
+   - Ziel: Markiere alle 5 versteckten Kostenfallen im Vertragstext.
+   - Spielmechanik: 
+     - Ein Vertragstext scrollt durch.
+     - Wörter wie "Andienungspflicht", "Restwertrisiko", "Vollamortisation" sind versteckt.
+     - Spieler muss sie anklicken.
+     - Messbarkeit: 5 Begriffe = 100%. Jeder übersehene Begriff = -20%. Falsche Klicks = -10%.
+   - Lernziel: Fachbegriffe ("Buzzwords") im Kontext erkennen.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Der Vertragstext.
+- [ ] Aufgabe: "Finde die Falle".
+- [ ] Lupe als Werkzeug (Metapher).
+
+2. Screen-Layout
+- [ ] Dokumenten-View (Papier-Hintergrund).
+- [ ] Text gut lesbar (Serif-Font für Vertrags-Feeling, aber lesbar!).
+- [ ] Zeilennummern zur Orientierung.
+
+3. Browser- und Device-Resilienz
+- [ ] Pinch-to-Zoom unterstützen oder Lupe-Widget implementieren.
+- [ ] Text muss auf Mobile umbrechen (kein horizontales Scrollen des Dokuments).
+- [ ] High-DPI Support für scharfen Text.
+
+4. Kernvisuals
+- [ ] Text-Marker Effekt (Gelb/Rot) beim Markieren.
+- [ ] Stempel "Abgelehnt" bei gefundener Falle.
+
+5. Interaktion und Feedback
+- [ ] Klick auf Wort/Satz markiert diesen.
+- [ ] Sofort-Auflösung: "Richtig! Restwertrisiko liegt beim Leasingnehmer."
+- [ ] Falsch: "Nein, das ist eine Standardklausel."
+
+6. KPI-Klarheit
+- [ ] "Gefundene Risiken: 2 von 3".
+- [ ] Zeitdruck (optional): "Unterschrift fällig in: 30s".
+
+7. QA-Paket
+- [ ] Lesbarkeit auf kleinen Screens prüfen.
+- [ ] Hit-Area der Wörter prüfen (nicht zu fummelig).

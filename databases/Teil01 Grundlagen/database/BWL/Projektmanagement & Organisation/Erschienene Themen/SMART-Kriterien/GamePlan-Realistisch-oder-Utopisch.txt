@@ -1,0 +1,18 @@
+Anforderungen
+4. "Realistisch oder Utopisch?"
+   - Ziel: Bewerte das "R" (Realistisch) in 5 Zielen.
+   - Spielmechanik: 
+     - Szenario: "Start-up ohne Geld will Marktführer in 3 Monaten werden." -> Utopisch.
+     - Szenario: "Umsatz +2% im nächsten Jahr." -> Realistisch.
+     - Messbarkeit: Einschätzung der Machbarkeit.
+   - Lernziel: Realismus bei Zielsetzung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_smart_real.json')
+  - `check`: "realism".
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Waage Realität vs Traum.
+- [ ] Game-Engine Logic ('game_pm_smart_real.js')
+  - Machbarkeits-Check (Ressourcen vs Ziel).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+4. "KPI-Dashboard-Builder"
+   - Ziel: Wähle die richtigen KPIs für ein Service-Level-Reporting.
+   - Spielmechanik: 
+     - Kunde will Bericht über "Performance".
+     - Bausteine: "Uptime", "Antwortzeit", "Wetter", "Mitarbeiterlaune".
+     - Spieler zieht messbare, relevante KPIs in den Bericht.
+     - Messbarkeit: Relevanz der gewählten Kennzahlen.
+   - Lernziel: Messgrößen für Dienstleistungsqualität.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sla_kpi.json')
+  - `kpis`: ["Uptime", "PacketLoss", "Latency", "Tickets"].
+- [ ] Shared CSS Check ('contract_law.css')
+  - Dashboard-Widgets (Charts, Gauges).
+- [ ] Game-Engine Logic ('game_sla_kpi.js')
+  - Drag & Drop Widgets auf Dashboard.
+  - Schwellwert-Definition (Rot/Grün).
+- [ ] Integration
+  - Startbar über JSON.

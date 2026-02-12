@@ -1,0 +1,19 @@
+Anforderungen
+4. "Arbeitspaket-Schnürer"
+   - Ziel: Zerlege ein Teilprojekt in sinnvolle Arbeitspakete (PSP).
+   - Spielmechanik: 
+     - Oberbegriff: "Marketing-Kampagne".
+     - Bausteine zuordnen: "Flyer drucken" (Ja), "Server kaufen" (Nein, gehört zu IT).
+     - Messbarkeit: 100% korrekte Zuordnung zum Teilprojekt.
+   - Lernziel: Projektstrukturplan (PSP) Logik.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_wbs.json')
+  - `structure`: "tree".
+- [ ] Shared CSS Check ('pm_basics.css')
+  - PSP (Projektstrukturplan) Baumansicht.
+- [ ] Game-Engine Logic ('game_pm_wbs.js')
+  - Zerlegung in Arbeitspakete (Nicht zu groß, nicht zu klein).
+  - Zuordnung Verantwortliche.
+- [ ] Integration
+  - Startbar über JSON.

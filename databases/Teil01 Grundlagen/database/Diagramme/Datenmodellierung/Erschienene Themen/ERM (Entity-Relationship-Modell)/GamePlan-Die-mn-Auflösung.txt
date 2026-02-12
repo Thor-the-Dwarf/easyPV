@@ -1,0 +1,11 @@
+Anforderungen
+4. "Die m:n Auflösung"
+   - Ziel: Mach das Modell datenbankfähig.
+   - Spielmechanik: 
+     - "Schüler" (m) <-> "Fach" (n).
+     - Problem: Geht so nicht in SQL.
+     - Lösung: Zwischentabelle "Noten" (Schüler_ID, Fach_ID).
+     - Beziehung wird zu: 1:n und m:1.
+     - Messbarkeit: Korrekte Auflösungstabelle erstellt.
+   - Lernziel: Zwischentabellen / Assoziative Entitäten.
+

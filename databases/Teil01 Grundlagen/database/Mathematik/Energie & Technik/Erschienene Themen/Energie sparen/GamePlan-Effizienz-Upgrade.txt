@@ -1,0 +1,19 @@
+Anforderungen
+2. "Effizienz-Upgrade"
+   - Ziel: Tausche die Geräte gegen bessere Modelle.
+   - Spielmechanik: 
+     - Glühbirne (60W) -> LED (7W).
+     - Alter Kühlschrank (A++) -> Neuer (A).
+     - Gaming PC (500W) -> Laptop (50W) für Office-Arbeit.
+     - Messbarkeit: Gleiche Leistung bei 10% Energieverbrauch.
+   - Lernziel: Hardware-Effizienzklassen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_efficiency.json')
+  - `old`: "hdd", `new`: "ssd".
+- [ ] Shared CSS Check ('math_basics.css')
+  - Hardware-Vergleich.
+- [ ] Game-Engine Logic ('game_math_efficiency.js')
+  - ROI Berechnung des Austauschs.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,23 @@
+Anforderungen
+5. "Doppelte Rabatte"
+   - Ziel: Kunde und Lieferant wollen Rabatt.
+   - Spielmechanik: 
+     - Du bekommst 10% vom Lieferant.
+     - Kunde will 10% von dir.
+     - Nullsummenspiel? Nein!
+     - 100€ -> -10% -> 90€ Einkauf.
+     - Verkauf 100€ -> -10% -> 90€ Umsatz.
+     - Gewinn = 0€ (wenn keine Handlungskosten da wären).
+     - Aber Handlungskosten sind da -> Verlust!
+     - Messbarkeit: Erkenntnis: Verkaufsrabatt muss einkalkuliert werden (oben drauf schlagen).
+   - Lernziel: Rabatt im Verkaufspreis einpreisen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_double_discount.json')
+  - `list_price`: 100.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Kalkulations-Schema Liste.
+- [ ] Game-Engine Logic ('game_math_double_discount.js')
+  - Liefererrabatt UND Kundenskonto richtig einordnen.
+- [ ] Integration
+  - Startbar über JSON.

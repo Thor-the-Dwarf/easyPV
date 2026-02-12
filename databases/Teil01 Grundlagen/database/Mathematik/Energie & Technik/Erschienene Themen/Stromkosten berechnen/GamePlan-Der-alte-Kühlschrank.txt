@@ -1,0 +1,20 @@
+Anforderungen
+5. "Der alte Kühlschrank"
+   - Ziel: Neu kaufen oder behalten?
+   - Spielmechanik: 
+     - Alter KS: 500 kWh/Jahr = 200€.
+     - Neuer KS: 150 kWh/Jahr = 60€. Ersparnis 140€/Jahr.
+     - Preis Neuer KS: 420€.
+     - Amortisation: 3 Jahre.
+     - Messbarkeit: Entscheidung "Kaufen, wenn Nutzungsdauer > 3 Jahre".
+   - Lernziel: Investitionsrechnung Energie.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_fridge.json')
+  - `class`: "A+++".
+- [ ] Shared CSS Check ('math_basics.css')
+  - Energie-Label.
+- [ ] Game-Engine Logic ('game_math_fridge.js')
+  - Neukauf vs Weiterbetrieb (Amortisation).
+- [ ] Integration
+  - Startbar über JSON.

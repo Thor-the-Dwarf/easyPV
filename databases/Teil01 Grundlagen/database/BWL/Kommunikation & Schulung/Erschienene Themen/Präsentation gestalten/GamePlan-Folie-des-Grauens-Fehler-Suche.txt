@@ -1,0 +1,20 @@
+Anforderungen
+1. "Folie des Grauens: Fehler-Suche"
+   - Ziel: Finde alle 7 Design-Sünden auf einer Horror-Folie.
+   - Spielmechanik: 
+     - Eine überladene Folie wird gezeigt (Comic Sans, neongelb auf weiß, zu viel Text, Pixel-Bild).
+     - Spieler klickt auf die Fehler.
+     - Messbarkeit: Jeder gefundene Fehler (z.B. "Kontrast zu gering") = Punkte. Zeitlimit 60 Sek.
+   - Lernziel: Gestaltungsregeln (Lesbarkeit, Kontrast, "Weniger ist mehr") erkennen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_presentation_horror.json')
+  - `layout`: HTML-String der Horror-Folie oder Bild.
+  - `errors`: [ { "id": "comic-sans", "rect": [x,y,w,h] } ].
+- [ ] Shared CSS Check ('kommunikation.css')
+  - "Hässliche" Klassen (für die Horror-Folie).
+  - Marker-Overlay.
+- [ ] Game-Engine Logic ('game_presentation_horror.js')
+  - Klick-Koordinaten prüfen (bei Bild) oder Element-Klick (bei HTML).
+- [ ] Integration
+  - Startbar über JSON.

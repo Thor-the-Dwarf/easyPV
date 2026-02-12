@@ -1,0 +1,19 @@
+Anforderungen
+5. "Der Angriffs-Simulator"
+   - Ziel: Welches Ziel greift diese Attacke an?
+   - Spielmechanik: 
+     - Angriff: "Ransomware". -> Ziel: Verfügbarkeit (Daten weg).
+     - Angriff: "Man-in-the-Middle (Sniffing)". -> Ziel: Vertraulichkeit.
+     - Angriff: "SQL-Injection (Daten ändern)". -> Ziel: Integrität.
+     - Messbarkeit: Analyse von Angriffsmustern.
+   - Lernziel: Bedrohungen klassifizieren.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_attack_sim.json')
+  - `attacks`: ["ransomware", "sniffing", "sql_injection"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Zielscheibe (C, I, A).
+- [ ] Game-Engine Logic ('game_sec_attack_sim.js')
+  - Welches Ziel wird getroffen?
+- [ ] Integration
+  - Startbar über JSON.

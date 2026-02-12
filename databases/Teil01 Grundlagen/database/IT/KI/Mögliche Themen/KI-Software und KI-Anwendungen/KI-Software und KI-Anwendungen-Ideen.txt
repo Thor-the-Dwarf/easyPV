@@ -1,0 +1,46 @@
+1. "Tool-Selector"
+   - Ziel: Wähle das richtige KI-Tool für die Aufgabe.
+   - Spielmechanik: 
+     - Aufgabe: "Marketing-Text schreiben". -> Jasper / ChatGPT.
+     - Aufgabe: "Code debuggen". -> GitHub Copilot.
+     - Aufgabe: "Logo entwerfen". -> Midjourney / DALL-E.
+     - Aufgabe: "Meeting transkribieren". -> Otter.ai / Teams Premium.
+     - Messbarkeit: 100% korrekte Werkzeugwahl.
+   - Lernziel: Marktübersicht KI-Anwendungen.
+
+2. "Deepfake-Exposer"
+   - Ziel: Erkenne das gefälschte Bild/Audio.
+   - Spielmechanik: 
+     - Bild zeigt Person mit 6 Fingern. -> Fake.
+     - Audio: Stimme klingt blechern/monoton bei Emotionen. -> Fake.
+     - Bild: Text im Hintergrund ist Zeichensalat. -> Fake.
+     - Messbarkeit: Alle Fakes markiert.
+   - Lernziel: Artefakte von generativer KI erkennen.
+
+3. "Der Halluzinations-Check"
+   - Ziel: Finde die falsche Faktenbehauptung der KI.
+   - Spielmechanik: 
+     - KI-Text über "Die Geschichte des Internets".
+     - Satz: "Das Internet wurde 1789 von Napoleon erfunden." -> Halluzination!
+     - Satz: "ARPANET startete 1969." -> Korrekt.
+     - Spieler muss den Fehler markieren.
+     - Messbarkeit: Faktencheck-Kompetenz.
+   - Lernziel: Vertraue niemals blind dem Output.
+
+4. "Prompt-Optimierer (Wenig Token, viel Inhalt)"
+   - Ziel: Erreiche das beste Ergebnis mit den wenigsten Wörtern.
+   - Spielmechanik: 
+     - Prompt A: "Mach mir bitte ein Bild von einer Katze, die rot ist und auf dem Dach sitzt, danke." (20 Token).
+     - Prompt B: "Red cat on roof, photo realistic, 8k." (8 Token).
+     - Ergebnis B ist genauer/besser und billiger (API-Kosten).
+     - Messbarkeit: Effizienz-Score.
+   - Lernziel: Präzise Kommunikation mit LLMs.
+
+5. "Copyright-Anwalt"
+   - Ziel: Darf ich das verwenden?
+   - Spielmechanik: 
+     - Bild mit KI generiert. U.S. Copyright Office sagt: "Kein Copyright möglich". -> "Public Domain".
+     - Künstler-Stil kopiert ("in style of Picasso"). -> Grauzone / Risiko.
+     - Firmeninterne Daten in öffentliche KI gepastet. -> Datenschutzverstoß!
+     - Messbarkeit: Rechtliche Risikobewertung.
+   - Lernziel: Rechtliche Aspekte (Urheberrecht, DSGVO).

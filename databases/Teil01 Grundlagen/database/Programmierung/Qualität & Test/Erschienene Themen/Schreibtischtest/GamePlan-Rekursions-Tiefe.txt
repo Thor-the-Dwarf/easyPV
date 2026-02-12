@@ -1,0 +1,21 @@
+Anforderungen
+5. "Rekursions-Tiefe"
+   - Ziel: Wann bricht es ab?
+   - Spielmechanik: 
+     - `Func(n): IF n=0 Return. ELSE Func(n-1)`.
+     - Aufruf `Func(3)`.
+     - Stack: 3 -> 2 -> 1 -> 0 (Abbruch).
+     - Wie oft aufgerufen? 4 mal.
+     - Messbarkeit: Korrekter Stack-Trace.
+   - Lernziel: Rekursionsverständnis.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_test_recursion.json')
+  - `func`: "factorial(3)".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Stack-Visualisierung.
+- [ ] Game-Engine Logic ('game_test_recursion.js')
+  - Stapel wächst nach unten.
+  - Abbruchbedingung prüfen.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,256 @@
+:root {
+  --bg-a: #0d1a30;
+  --bg-b: #0a1122;
+  --surface: rgba(5, 14, 33, 0.82);
+  --text: #e7edf8;
+  --muted: #aab8ce;
+}
+
+* { box-sizing: border-box; }
+
+body.nwa-page {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(900px 380px at 82% -10%, rgba(56, 189, 248, 0.18), transparent),
+    linear-gradient(180deg, var(--bg-a), var(--bg-b));
+}
+
+.nwa-app {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.nwa-situation,
+.nwa-table-wrap,
+.nwa-compare-panel {
+  border: 1px solid #3d5470;
+  border-radius: 14px;
+  background: rgba(5, 14, 33, 0.82);
+}
+
+.nwa-situation,
+.nwa-table-wrap,
+.nwa-compare-panel {
+  padding: 12px;
+}
+
+.nwa-situation h1 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3.8vw, 2rem);
+}
+
+.nwa-situation p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.nwa-main {
+  margin-top: 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.nwa-table-scroll,
+.nwa-compare-scroll {
+  width: 100%;
+  overflow: auto;
+}
+
+.nwa-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+  color: #111827;
+  background: #ffffff;
+  table-layout: fixed;
+}
+
+.nwa-table th,
+.nwa-table td {
+  border: 1px solid #4b5563;
+  text-align: center;
+  padding: 6px;
+  height: 54px;
+}
+
+.nwa-table thead th {
+  background: #eceff4;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.nwa-table thead tr:nth-child(2) th {
+  background: #f6f8fb;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.nwa-col-nr { width: 56px; }
+.nwa-col-krit { width: 190px; }
+.nwa-col-gew { width: 115px; }
+.nwa-col-small { width: 82px; }
+
+.nwa-fixed {
+  background: #f8fafc;
+  font-weight: 700;
+}
+
+.nwa-select {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid #a9b8cc;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 4px 6px;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.nwa-select.is-correct {
+  border-color: #22c55e;
+  background: #ecfdf5;
+}
+
+.nwa-select.is-wrong {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.nwa-gp-cell {
+  background: #f8fafc;
+  font-weight: 700;
+  color: #475569;
+}
+
+.nwa-gp-cell.is-filled {
+  background: #ecfdf5;
+  color: #166534;
+}
+
+.nwa-sum-cell {
+  background: #eef2ff;
+  font-weight: 800;
+  color: #1e3a8a;
+}
+
+.nwa-foot {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.nwa-progress {
+  font-weight: 700;
+}
+
+.nwa-submit {
+  width: 100%;
+  min-height: 48px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #67e8f9, #38bdf8);
+  color: #083344;
+}
+
+.nwa-feedback {
+  border: 1px solid #465d79;
+  border-radius: 10px;
+  padding: 10px;
+  color: #d4e1f3;
+  background: rgba(2, 9, 25, 0.64);
+}
+
+.nwa-feedback.ok {
+  border-color: rgba(34, 197, 94, 0.7);
+  color: #bbf7d0;
+}
+
+.nwa-feedback.bad {
+  border-color: rgba(239, 68, 68, 0.78);
+  color: #fecaca;
+}
+
+.nwa-compare-panel h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.nwa-compare-tables {
+  display: grid;
+  gap: 10px;
+}
+
+.nwa-criterion-block {
+  border: 1px solid #4d6788;
+  border-radius: 10px;
+  padding: 8px;
+  background: rgba(2, 9, 25, 0.52);
+}
+
+.nwa-criterion-block h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.nwa-criterion-table {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: collapse;
+  background: #fff;
+  color: #111827;
+}
+
+.nwa-criterion-table th,
+.nwa-criterion-table td {
+  border: 1px solid #64748b;
+  padding: 8px;
+  vertical-align: top;
+}
+
+.nwa-criterion-table th {
+  background: #e2e8f0;
+  font-weight: 800;
+  text-align: left;
+}
+
+.nwa-compare-rowhead {
+  background: #f1f5f9;
+  font-weight: 800;
+  min-width: 130px;
+}
+
+.nwa-compare-cell {
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .nwa-app {
+    padding: 8px;
+  }
+
+  .nwa-situation,
+  .nwa-table-wrap,
+  .nwa-compare-panel {
+    padding: 8px;
+    border-radius: 12px;
+  }
+
+  .nwa-table th,
+  .nwa-table td {
+    padding: 4px;
+    height: 50px;
+  }
+}

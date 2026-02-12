@@ -1,0 +1,20 @@
+Anforderungen
+1. "Der Beschwerde-Manager"
+   - Ziel: Wandle 3 unzufriedene Kunden in Fans um (Net Promoter Score steigern).
+   - Spielmechanik: 
+     - Kunde meckert ("Essen war kalt").
+     - Reaktion A: "Pech gehabt." -> Score sinkt.
+     - Reaktion B: "Entschuldigung + Gutschein." -> Score steigt.
+     - Messbarkeit: NPS am Ende > 8.
+   - Lernziel: Beschwerdemanagement als Chance.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_complaint.json')
+  - `steps`: ["listen", "apologize", "solve", "thank"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Telefon / Email Interface.
+- [ ] Game-Engine Logic ('game_pm_complaint.js')
+  - EVA-Prinzip (Erst Verstehen, dann Antworten).
+  - Deeskalations-Training.
+- [ ] Integration
+  - Startbar über JSON.

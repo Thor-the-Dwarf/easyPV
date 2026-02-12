@@ -1,0 +1,43 @@
+1. "Bit-Decoder"
+   - Ziel: Übersetze 5 Buchstaben korrekt in ihren 8-Bit Binärcode (ASCII-Tabelle nutzen).
+   - Spielmechanik: 
+     - Buchstabe "A" (65).
+     - Binär-Schalter: [0][1][0][0][0][0][0][1] (64+1).
+     - Spieler muss die Schalter kippen.
+     - Messbarkeit: Korrekte Binärfolge.
+   - Lernziel: Zusammenhang Zeichen <-> Binärcode.
+
+2. "Der Hex-Editor"
+   - Ziel: Manipuliere einen Text, indem du die Hex-Werte änderst.
+   - Spielmechanik: 
+     - Text: "Hallo". Hex: 48 61 6C 6C 6F.
+     - Aufgabe: Mach daraus "Halls". (Ändere 6F zu 73).
+     - Spieler tippt Hex-Code ein.
+     - Messbarkeit: Zielwort erreicht.
+   - Lernziel: Hexadezimale Darstellung von ASCII.
+
+3. "Steuerzeichen-Jäger"
+   - Ziel: Finde die unsichtbaren Steuerzeichen im Datenstrom.
+   - Spielmechanik: 
+     - Datenstrom: "Hello[CR][LF]World[TAB]!".
+     - Aufgabe: Klicke auf "Carriage Return" und "Line Feed".
+     - Messbarkeit: Korrekte Identifikation der Non-Printing Characters.
+   - Lernziel: Bedeutung von CR, LF, TAB, NULL.
+
+4. "ASCII-Art-Repair"
+   - Ziel: Repariere ein zerstörtes ASCII-Bild.
+   - Spielmechanik: 
+     - Bild aus Zeichen, aber einige sind falsch (z.B. Buchstaben statt Slashes).
+     - Palette: / \ | _
+     - Spieler muss die Zeichen ersetzen, bis das Bild erkennbar ist.
+     - Messbarkeit: Übereinstimmung mit Originalvorlage > 90%.
+   - Lernziel: Zeichen als grafische Elemente.
+
+5. "7-Bit vs 8-Bit"
+   - Ziel: Welche Zeichen passen in 7-Bit ASCII (US) und welche brauchen Extended (8-Bit)?
+   - Spielmechanik: 
+     - Zeichen fallen: "A", "ä", "$", "ß", "@", "€".
+     - Eimer links: "Standard ASCII (0-127)". Eimer rechts: "Extended / Unicode".
+     - "ä" -> Rechts. "A" -> Links.
+     - Messbarkeit: Korrekte Sortierung.
+   - Lernziel: Grenzen des Standard-ASCII Codes.

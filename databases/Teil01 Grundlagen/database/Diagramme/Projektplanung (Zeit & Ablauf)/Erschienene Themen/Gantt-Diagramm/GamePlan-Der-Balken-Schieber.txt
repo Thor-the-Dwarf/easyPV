@@ -1,0 +1,12 @@
+Anforderungen
+1. "Der Balken-Schieber"
+   - Ziel: Plane das Projekt ohne Überlappung der Abhängigkeiten.
+   - Spielmechanik: 
+     - "Vorgang A: Fundament gießen" (2 Tage).
+     - "Vorgang B: Mauern bauen" (3 Tage).
+     - Abhängigkeit: B kann erst starten, wenn A fertig (Ende-Anfang).
+     - Spieler schiebt Balken B an Tag 1 -> Fehler.
+     - Spieler schiebt Balken B an Tag 3 -> Richtig.
+     - Messbarkeit: Logisch korrekter Ablauf.
+   - Lernziel: Sequentielle Abhängigkeiten.
+

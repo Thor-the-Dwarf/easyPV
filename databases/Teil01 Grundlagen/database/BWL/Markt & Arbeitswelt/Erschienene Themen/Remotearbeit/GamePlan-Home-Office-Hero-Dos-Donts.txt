@@ -1,0 +1,19 @@
+Anforderungen
+1. "Home-Office-Hero: Do's & Don'ts"
+   - Ziel: Sortiere 10 Verhaltensweisen in "Produktiv" und "Unproduktiv".
+   - Spielmechanik: 
+     - Karte: "Im Pyjama arbeiten". -> Don't (Unproduktiv/Psychologie).
+     - Karte: "Feste Pausenzeiten". -> Do.
+     - Karte: "Laptop auf dem Küchentisch zwischen Essen". -> Don't.
+     - Messbarkeit: 10 Karten. Sortierfehler = Punktabzug. Score 0-100%.
+   - Lernziel: Selbstorganisation und Disziplin im Homeoffice.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_remote_dos.json')
+  - `cards`: [ { "text": "Pyjama", "type": "dont" } ].
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - 2 Stapel (Do / Don't).
+- [ ] Game-Engine Logic ('game_remote_dos.js')
+  - Kartensortierung.
+- [ ] Integration
+  - Startbar über JSON.

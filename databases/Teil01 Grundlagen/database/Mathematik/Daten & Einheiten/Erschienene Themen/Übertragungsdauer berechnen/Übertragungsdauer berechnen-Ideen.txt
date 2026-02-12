@@ -1,0 +1,51 @@
+1. "Download-Zeit-Schätzer"
+   - Ziel: Wie lange dauert der 10 GB Patch?
+   - Spielmechanik: 
+     - Leitung: DSL 50.000 (50 Mbit/s).
+     - Datei: 10 GB = 80.000 Mbit.
+     - Zeit: 80.000 / 50 = 1600 Sekunden.
+     - 1600 / 60 ≈ 27 Minuten.
+     - User wählt "ca. eine halbe Stunde".
+     - Messbarkeit: Realistische Zeitschätzung.
+   - Lernziel: Große Datenmengen über Zeit.
+
+2. "Flaschenhals-Finder"
+   - Ziel: Was bremst?
+   - Spielmechanik: 
+     - Server Uplink: 1 Gbit.
+     - Backbone: 100 Gbit.
+     - Kunden-WLAN: 54 Mbit.
+     - Kunden-DSL: 16 Mbit. -> Das ist der Flaschenhals!
+     - Übertragung läuft nur mit 16 Mbit.
+     - Messbarkeit: Schwächstes Glied identifiziert.
+   - Lernziel: Ende-zu-Ende Bandbreite.
+
+3. "Latenz-Addierer"
+   - Ziel: Warum dauert das Kopieren vieler kleiner Dateien so lange?
+   - Spielmechanik: 
+     - 1 große Datei (1 GB): Dauert 100 Sek.
+     - 10.000 kleine Dateien (1 GB): Dauert 500 Sek.
+     - Grund: Overhead pro Datei (Handshake, Header).
+     - Lösung: Zippen (Archiv erstellen) vor Übertragung.
+     - Messbarkeit: Strategie "Zip first" gewählt.
+   - Lernziel: Protokoll-Overhead.
+
+4. "Upload vs Download"
+   - Ziel: Das Backup dauert ewig!
+   - Spielmechanik: 
+     - Leitung: VDSL 100/40 (Download 100, Upload 40).
+     - Download Film (5GB): Schnell.
+     - Upload Backup (5GB): Langsam (Faktor 2.5).
+     - User beschwert sich "Internet kaputt".
+     - Admin erklärt "Asymmetrische Leitung".
+     - Messbarkeit: Korrekte Diagnose.
+   - Lernziel: ADSL/VDSL Asymmetrie.
+
+5. "WLAN Netto vs Brutto"
+   - Ziel: Warum kommen von 300 Mbit nur 100 an?
+   - Spielmechanik: 
+     - WLAN-Packung sagt "300 Mbit/s".
+     - Messung: 120 Mbit/s.
+     - Grund: Shared Medium, Header, Kollisionen. (Faustregel: Netto ≈ 50% Brutto).
+     - Messbarkeit: Realistische Erwartungshaltung.
+   - Lernziel: Marketing vs Physik.

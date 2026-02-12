@@ -1,0 +1,19 @@
+Anforderungen
+1. "GPO-Administrator"
+   - Ziel: Setze eine Gruppenrichtlinie (GPO), um den Zugriff auf die Systemsteuerung zu sperren.
+   - Spielmechanik: 
+     - Baumstruktur (User Configuration -> Administrative Templates...).
+     - Spieler muss sich zum richtigen Pfad durchklicken.
+     - Setting: "Prohibit access to Control Panel" -> Enabled.
+     - Messbarkeit: Korrekter Pfad und korrekter Status (Enabled) gewählt.
+   - Lernziel: Navigation im GPO-Editor.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_gpo_admin.json')
+  - `target`: "disable_control_panel".
+- [ ] Shared CSS Check ('basics_admin.css')
+  - Admin Templates Browser.
+- [ ] Game-Engine Logic ('game_basics_gpo_admin.js')
+  - Einstellung finden und aktivieren.
+- [ ] Integration
+  - Startbar über JSON.

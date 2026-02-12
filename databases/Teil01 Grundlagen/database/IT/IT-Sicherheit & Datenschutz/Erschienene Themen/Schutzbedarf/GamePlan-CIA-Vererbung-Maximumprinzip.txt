@@ -1,0 +1,19 @@
+Anforderungen
+2. "CIA-Vererbung (Maximumprinzip)"
+   - Ziel: Bestimme den Schutzbedarf des Gesamtsystems.
+   - Spielmechanik: 
+     - Server speichert: "Telefonliste (Normal)" und "Patientendaten (Sehr hoch)".
+     - Welchen Schutzbedarf hat der Server?
+     - Antwort: Sehr Hoch (Das kritischste Element bestimmt den Bedarf).
+     - Messbarkeit: Anwendung des Maximumprinzips.
+   - Lernziel: Abhängigkeiten und Vererbung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_max_principle.json')
+  - `data_types`: ["normal", "very_high"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Server-Icon mit "Füllstand" Farbe.
+- [ ] Game-Engine Logic ('game_sec_max_principle.js')
+  - Höchste Klasse gewinnt.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,45 @@
+1. "Die CIA-Triade"
+   - Ziel: Ordne Verletzungen dem Schutzziel zu.
+   - Spielmechanik: 
+     - "Passwortliste veröffentlicht". -> Vertraulichkeit (Confidentiality) verletzt.
+     - "Webseite per DDoS offline". -> Verfügbarkeit (Availability) verletzt.
+     - "Kontodaten in DB manipuliert". -> Integrität (Integrity) verletzt.
+     - Messbarkeit: 100% Zuordnung.
+   - Lernziel: CIA / VIV Definitionen.
+
+2. "Authentizität vs. Integrität"
+   - Ziel: Unterscheide die Ziele genau.
+   - Spielmechanik: 
+     - Szenario: "Die Mail kommt wirklich vom Chef". -> Authentizität.
+     - Szenario: "Der Inhalt der Mail wurde nicht verändert". -> Integrität.
+     - Szenario: "Ich kann nicht leugnen, die Mail gesendet zu haben". -> Verbindlichkeit (Non-repudiation).
+     - Messbarkeit: Feine Unterscheidung der Begriffe.
+   - Lernziel: Erweiterte Schutzziele.
+
+3. "Prioritäten-Manager"
+   - Ziel: Wähle das wichtigste Ziel für das System.
+   - Spielmechanik: 
+     - "Herzschrittmacher". -> Wichtigstes Ziel: Verfügbarkeit (Leben hängt dran).
+     - "Online-Banking Login". -> Wichtigstes Ziel: Vertraulichkeit.
+     - "Blockchain". -> Wichtigstes Ziel: Integrität.
+     - Messbarkeit: Korrektes Schutzziel priorisiert.
+   - Lernziel: Abhängigkeit vom Kontext.
+
+4. "Maßnahmen-Matcher"
+   - Ziel: Welche Technik schützt welches Ziel?
+   - Spielmechanik: 
+     - "Verschlüsselung". -> Vertraulichkeit.
+     - "Prüfsumme (Hash)". -> Integrität.
+     - "USV (Notstrom)". -> Verfügbarkeit.
+     - "Digitale Signatur". -> Authentizität & Integrität.
+     - Messbarkeit: Korrekte Paare.
+   - Lernziel: Technische Umsetzung der Ziele.
+
+5. "Der Angriffs-Simulator"
+   - Ziel: Welches Ziel greift diese Attacke an?
+   - Spielmechanik: 
+     - Angriff: "Ransomware". -> Ziel: Verfügbarkeit (Daten weg).
+     - Angriff: "Man-in-the-Middle (Sniffing)". -> Ziel: Vertraulichkeit.
+     - Angriff: "SQL-Injection (Daten ändern)". -> Ziel: Integrität.
+     - Messbarkeit: Analyse von Angriffsmustern.
+   - Lernziel: Bedrohungen klassifizieren.

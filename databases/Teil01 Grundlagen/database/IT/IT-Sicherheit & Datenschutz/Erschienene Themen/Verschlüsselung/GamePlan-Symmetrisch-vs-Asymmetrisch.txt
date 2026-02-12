@@ -1,0 +1,18 @@
+Anforderungen
+1. "Symmetrisch vs. Asymmetrisch"
+   - Ziel: Wähle das richtige Verfahren.
+   - Spielmechanik: 
+     - "Massendaten (HDD, Video)". -> Symmetrisch (AES) weil schnell.
+     - "Schlüsselaustausch / Email an Fremde". -> Asymmetrisch (RSA) weil sicher (Public/Private Key).
+     - Messbarkeit: Performance und Funktionalität.
+   - Lernziel: Vor- und Nachteile der Verfahren.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_sym_asym.json')
+  - `usecases`: ["hdd", "email"].
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Waage (Speed vs Key-Exchange).
+- [ ] Game-Engine Logic ('game_sec_sym_asym.js')
+  - Methodenwahl basierend auf Szenario.
+- [ ] Integration
+  - Startbar über JSON.

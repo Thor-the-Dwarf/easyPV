@@ -1,0 +1,22 @@
+Anforderungen
+5. "Der DHCP-Restaurator"
+   - Ziel: Werde APIPA wieder los.
+   - Spielmechanik: 
+     - PC hängt in APIPA fest.
+     - Aufgabe: Repariere den DHCP-Server.
+     - Dienst neustarten -> PC sendet Discover -> Bekommt 192.168.x.x.
+     - APIPA-Adresse verschwindet.
+     - Messbarkeit: PC hat wieder routbare IP.
+   - Lernziel: APIPA ist nur Fallback.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_apipa_fix.json')
+  - `startParams`: { "dhcpStatus": "stopped" }.
+- [ ] Shared CSS Check ('network_ip.css')
+  - Server-Rack Visualisierung.
+  - "Dienst"-Schalter UI.
+- [ ] Game-Engine Logic ('game_apipa_fix.js')
+  - Service Start -> Broadcast Animation.
+  - IP-Wechsel Animation (169... -> 192...).
+- [ ] Integration
+  - Startbar über JSON.

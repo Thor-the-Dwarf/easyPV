@@ -1,0 +1,38 @@
+Anforderungen
+1. "Wunsch vs. Bedarf"
+   - Ziel: Trenne in 10 Aussagen "Nice-to-have" von "Must-have".
+   - Spielmechanik: 
+     - Kunde sagt: "Das Auto muss fahren." -> Must-have (Bedarf).
+     - Kunde sagt: "Rote Farbe wäre schön." -> Nice-to-have (Wunsch).
+     - Messbarkeit: 10 Aussagen korrekt sortiert = 100%.
+   - Lernziel: Unterscheidung zwischen harter Anforderung und weichem Wunsch.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Die Unterscheidung zwischen emotionalem Wunsch und sachlichem Bedarf.
+- [ ] Ziel: Klassifiziere 5 Aussagen korrekt.
+- [ ] UI-Metapher: "Wunsch-Box" vs. "Bedarfs-Box".
+
+2. Screen-Layout
+- [ ] Zwei klare Zielzonen (links/rechts).
+- [ ] Zentrale Karte mit der Aussage.
+- [ ] Mobile: Stacked Layout (Wunsch oben, Bedarf unten).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` verwenden.
+- [ ] Touch-Ziele >= 48px.
+- [ ] Kein horizontaler Scroll.
+
+4. Kernvisuals
+- [ ] Wunsch: Cloud/Dream-Optik.
+- [ ] Bedarf: Werkzeugkasten/Checklisten-Optik.
+
+5. Interaktion und Feedback
+- [ ] Drag & Drop oder Klick-Zuordnung.
+- [ ] Sofortiges Feedback: "Richtig, das ist ein Wunsch (subjektiv)."
+
+6. KPI-Klarheit
+- [ ] Trefferquote in %.
+
+7. QA-Paket
+- [ ] Screenshot-Check Desktop & Mobile.

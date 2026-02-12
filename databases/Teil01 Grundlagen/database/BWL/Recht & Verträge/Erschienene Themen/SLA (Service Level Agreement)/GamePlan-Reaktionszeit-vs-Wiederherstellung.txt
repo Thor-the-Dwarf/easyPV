@@ -1,0 +1,41 @@
+Anforderungen
+3. "Reaktionszeit vs. Wiederherstellung"
+   - Ziel: Unterscheide die Zeiten im Ticket-System.
+   - Spielmechanik: 
+     - SLA: Reaktion 1h, Lösung 4h.
+     - 10:00 Uhr: Ticket kommt.
+     - 10:30 Uhr: "Wir kümmern uns" (Reaktion OK).
+     - 14:15 Uhr: "Server läuft wieder" (Lösung > 4h -> Verletzt!).
+     - Spieler muss den Status der beiden SLAs bewerten.
+     - Messbarkeit: Zeitdifferenzen korrekt interpretieren.
+   - Lernziel: SLA-Metriken.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Uhren / Timer.
+- [ ] Szenario: Ticket kommt rein. Zeit läuft.
+- [ ] Unterscheidung: "Erste Antwort" vs "Lösung fertig".
+
+2. Screen-Layout
+- [ ] Dashboard mit Tickets.
+- [ ] Countdown-Timer (Rot werdend).
+- [ ] Aktions-Buttons: "Antworten", "Lösen".
+
+3. Browser- und Device-Resilienz
+- [ ] Timer-Animation flüssig (requestAnimationFrame).
+- [ ] Notifications im Spiel (Toasts).
+
+4. Kernvisuals
+- [ ] Stopuhr-Icon.
+- [ ] Stress-Level Visualisierung (Puls).
+
+5. Interaktion und Feedback
+- [ ] User muss "Antworten" klicken bevor Timer 1 (Reaktion) abläuft.
+- [ ] User muss "Lösen" klicken bevor Timer 2 (Wiederherstellung) abläuft.
+- [ ] Feedback: "SLA verletzt! Pönale fällig."
+
+6. KPI-Klarheit
+- [ ] Eingehaltene SLAs in %.
+
+7. QA-Paket
+- [ ] Zeitraffer-Funktion testen (Keiner will 4h warten).

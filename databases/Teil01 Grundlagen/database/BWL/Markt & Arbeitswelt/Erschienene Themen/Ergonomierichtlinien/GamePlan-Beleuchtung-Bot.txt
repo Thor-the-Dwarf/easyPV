@@ -1,0 +1,20 @@
+Anforderungen
+2. "Beleuchtung-Bot"
+   - Ziel: Platziere Lampen und Bildschirm blendfrei (Lux-Meter im grünen Bereich).
+   - Spielmechanik: 
+     - Draufsicht Raum. Fenster links.
+     - Spieler zieht Bildschirm. Wenn Fenster im Rücken -> Spiegelung (Fehler). Wenn Fenster vorne -> Blendung (Fehler). Richtig: 90° zum Fenster.
+     - Messbarkeit: Korrekte Position = 100%.
+   - Lernziel: Vermeidung von Reflexionen und Blendung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ergo_light.json')
+  - `setup`: { "windowPos": "left", "screenAngle": 0 }.
+  - `goal`: "90degree".
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Draufsicht Arbeitsplatz (Canvas oder CSS Grid).
+- [ ] Game-Engine Logic ('game_ergo_light.js')
+  - Rotation des Bildschirms per Maus/Touch.
+  - Winkel-Berechnung. Reflektions-Check.
+- [ ] Integration
+  - Startbar über JSON.

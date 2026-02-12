@@ -1,0 +1,21 @@
+Anforderungen
+4. "Plattform-Unabhängigkeit (Java VM)"
+   - Ziel: Write Once, Run Anywhere.
+   - Spielmechanik: 
+     - Source Code -> Java Compiler -> Bytecode (.class).
+     - Windows-PC: Hat JVM -> Spielt Bytecode ab.
+     - Mac: Hat JVM -> Spielt Bytecode ab.
+     - C++ Code -> Muss für Mac NEU kompiliert werden.
+     - Messbarkeit: Unterschied Native Binary vs Bytecode.
+   - Lernziel: Hybrid-Ansätze (JIT).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_jvm.json')
+  - `targets`: ["win", "linux", "mac"].
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Bytecode Zwischenschicht.
+- [ ] Game-Engine Logic ('game_prog_jvm.js')
+  - "Write Once, Run Anywhere".
+  - VM als Adapter.
+- [ ] Integration
+  - Startbar über JSON.

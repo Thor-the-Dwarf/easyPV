@@ -1,0 +1,19 @@
+Anforderungen
+2. "Mobile vs. Stationär"
+   - Ziel: Entscheide: Laptop, Tablet oder Desktop?
+   - Spielmechanik: 
+     - Anforderung: "Außendienst, Unterschriften beim Kunden". -> Tablet.
+     - Anforderung: "Videobearbeitung im Büro, 4 Monitore". -> Desktop.
+     - Anforderung: "Student, Bibliothek & Hausarbeit". -> Laptop.
+     - Messbarkeit: 5 Szenarien korrekt zugeordnet.
+   - Lernziel: Formfaktoren und Einsatzzwecke.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_periph_mobile.json')
+  - `scenarios`: [ { "desc": "Außendienst", "device": "Tablet" } ].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Geräte-Icons.
+- [ ] Game-Engine Logic ('game_periph_mobile.js')
+  - Zuordnung.
+- [ ] Integration
+  - Startbar über JSON.

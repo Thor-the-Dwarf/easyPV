@@ -1,0 +1,21 @@
+Anforderungen
+5. "Der Kapazitäts-Mix"
+   - Ziel: Berechne den nutzbaren Speicher bei Mischbestückung.
+   - Spielmechanik: 
+     - 4GB + 8GB Riegel gesteckt.
+     - Flex-Mode: 4GB von Riegel 1 + 4GB von Riegel 2 laufen Dual Channel.
+     - Restliche 4GB laufen Single Channel.
+     - Frage: "Wie viel RAM läuft schnell?" (8GB). "Wie viel langsam?" (4GB).
+     - Messbarkeit: Verständnis von Flex-Memory-Mode.
+   - Lernziel: Asymmetrische Bestückung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ram_flex.json')
+  - `stick1`: 4096.
+  - `stick2`: 8192.
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Speicherblock-Visualisierung (Gestackt).
+- [ ] Game-Engine Logic ('game_ram_flex.js')
+  - Berechnung Dual-Area vs Single-Area.
+- [ ] Integration
+  - Startbar über JSON.

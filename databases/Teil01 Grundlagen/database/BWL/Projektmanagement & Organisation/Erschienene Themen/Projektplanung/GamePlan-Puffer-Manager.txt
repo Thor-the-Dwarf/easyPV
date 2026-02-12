@@ -1,0 +1,21 @@
+Anforderungen
+3. "Puffer-Manager"
+   - Ziel: Reagiere auf Verzögerungen, ohne den Endtermin zu reißen.
+   - Spielmechanik: 
+     - Kritischer Pfad ist rot markiert. Pufferaufgaben grün.
+     - Ereignis: "Aufgabe A dauert länger".
+     - Wenn A rot ist -> Projekt verschiebt sich -> Maßnahme "Crashing" (Mehr Leute).
+     - Wenn A grün ist -> Egal (Puffer nutzen).
+     - Messbarkeit: Projektabschluss im Zeitrahmen.
+   - Lernziel: Kritischer Pfad und Pufferzeiten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_buffer.json')
+  - `buffer`: "20%".
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Zeitstrahl mit Puffer-Zonen.
+- [ ] Game-Engine Logic ('game_pm_buffer.js')
+  - Puffer verbrauchen bei "Unexpected Events".
+  - Projektende halten.
+- [ ] Integration
+  - Startbar über JSON.

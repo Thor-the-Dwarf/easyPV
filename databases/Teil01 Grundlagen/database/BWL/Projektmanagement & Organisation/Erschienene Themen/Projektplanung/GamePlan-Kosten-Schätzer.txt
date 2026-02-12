@@ -1,0 +1,21 @@
+Anforderungen
+2. "Kosten-Schätzer"
+   - Ziel: Schätze die Projektkosten mit max. 10% Abweichung.
+   - Spielmechanik: 
+     - Aufgabe: "Server aufsetzen".
+     - Parameter: 2 Tage Arbeit (Tagessatz 800€) + Hardware (2000€).
+     - Spieler tippt Schätzung ein.
+     - Kalkulator zeigt echtes Ergebnis (3600€).
+     - Messbarkeit: Abweichung vom mathematisch korrekten Wert.
+   - Lernziel: Bottom-Up-Kalkulation verstehen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_cost_est.json')
+  - `methods`: ["expert", "analogy", "parametric"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Schätz-Tabelle / Planning Poker Karten.
+- [ ] Game-Engine Logic ('game_pm_cost_est.js')
+  - Kostenschätzung durchführen.
+  - Abweichung Real vs Plan.
+- [ ] Integration
+  - Startbar über JSON.

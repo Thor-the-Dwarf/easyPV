@@ -1,0 +1,23 @@
+Anforderungen
+4. "Switch-Table-Builder"
+   - Ziel: Fülle die SAT (Source Address Table).
+   - Spielmechanik: 
+     - Switch ist leer.
+     - Paket kommt von PC A (Port 1) an PC B (Port 2).
+     - Switch lernt: "MAC A liegt an Port 1".
+     - Paket kommt von PC B an PC A.
+     - Switch weiß: "A ist an 1", leitet direkt weiter (kein Flodding).
+     - Messbarkeit: Korrekte Einträge in der Tabelle.
+   - Lernziel: Learning-Funktion vom Switch.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_mac_learning.json')
+  - `ports`: 4.
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Switch-Draufsicht und Tabelle.
+- [ ] Game-Engine Logic ('game_mac_learning.js')
+  - Paket-Animation.
+  - Tabellen-Eintrag erscheint (Learning).
+  - Forwarding-Logik (Flooding vs Direct).
+- [ ] Integration
+  - Startbar über JSON.

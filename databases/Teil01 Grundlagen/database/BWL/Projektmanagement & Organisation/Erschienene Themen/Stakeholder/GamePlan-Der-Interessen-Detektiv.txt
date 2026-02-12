@@ -1,0 +1,21 @@
+Anforderungen
+2. "Der Interessen-Detektiv"
+   - Ziel: Errate das verborgene Interesse hinter der Position.
+   - Spielmechanik: 
+     - Betriebsrat sagt: "Wir lehnen die neue Software ab."
+     - Warum?
+     - A: "Sie mögen Computer nicht."
+     - B: "Sie fürchten Arbeitsplatzverlust / Überwachung." (Richtiges Interesse).
+     - Messbarkeit: Identifikation des wahren Motivs.
+   - Lernziel: Interessenanalyse.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_stake_interest.json')
+  - `hidden_agendas`: true.
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Detektiv-Lupe UI.
+- [ ] Game-Engine Logic ('game_pm_stake_interest.js')
+  - Wahre Motive herausfinden (Interview-Sim).
+  - Konfliktpotential analysieren.
+- [ ] Integration
+  - Startbar über JSON.

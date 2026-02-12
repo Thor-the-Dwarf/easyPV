@@ -1,0 +1,24 @@
+Anforderungen
+2. "ARP-Spoofing (Man-in-the-Middle)"
+   - Ziel: Abwehren eines Angriffs.
+   - Spielmechanik: 
+     - Angreifer sendet: "Ich bin das Gateway (192.168.1.1)!"
+     - Opfer aktualisiert ARP-Tabelle mit MAC des Angreifers.
+     - Traffic fließt zum Angreifer.
+     - Gegenmaßnahme: "Static ARP Entry" setzen oder "Dynamic ARP Inspection (DAI)" am Switch aktivieren.
+     - Messbarkeit: Traffic fließt wieder zum echten Gateway.
+   - Lernziel: Sicherheitsrisiko von ARP.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_arp_spoof.json')
+  - `attacker`: "Eve".
+  - `victim`: "Alice".
+  - `gateway`: "Router".
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Flussdiagramm mit Paketen.
+  - "Böse" rote Pakete.
+- [ ] Game-Engine Logic ('game_arp_spoof.js')
+  - ARP-Table Manipulation.
+  - Defence-Button (Static Entry setzen).
+- [ ] Integration
+  - Startbar über JSON.

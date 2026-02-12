@@ -1,0 +1,20 @@
+Anforderungen
+4. "Skonto zieht man vom Brutto"
+   - Ziel: Berechne den Überweisungsbetrag.
+   - Spielmechanik: 
+     - Rechnung: 100€ Netto + 19€ MwSt = 119€ Brutto.
+     - 2% Skonto.
+     - Falsch: 2% von 100€ abziehen.
+     - Richtig: 2% von 119€ abziehen = 2.38€. Überweisung: 116.62€.
+     - Messbarkeit: Buchhaltung stimmt.
+   - Lernziel: Skonto-Basis.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_skonto_brutto.json')
+  - `amount`: 119.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Überweisungsträger.
+- [ ] Game-Engine Logic ('game_math_skonto_brutto.js')
+  - Skonto berechnet sich vom GESAMTBETRAG (Brutto).
+- [ ] Integration
+  - Startbar über JSON.

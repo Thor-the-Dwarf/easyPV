@@ -1,0 +1,20 @@
+Anforderungen
+1. "DDR-Generationen"
+   - Ziel: Finde den richtigen Riegel für das Board anhand der Kerbe.
+   - Spielmechanik: 
+     - Slot: DDR4 (Kerbe mittig-rechts).
+     - Riegel: DDR3 (Kerbe links), DDR4 (Passt), DDR5 (Kerbe fast mittig).
+     - Spieler versucht zu stecken.
+     - Messbarkeit: Mechanische Kompatibilität (Kodierung).
+   - Lernziel: Inkompatibilität der DDR-Standards.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ram_generations.json')
+  - `slotType`: "DDR4".
+  - `sticks`: ["DDR3", "DDR4", "DDR5"].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Riegel-Geometrie (Kerben-Position).
+- [ ] Game-Engine Logic ('game_ram_generations.js')
+  - Kollisionsabfrage (Passt die Kerbe?).
+- [ ] Integration
+  - Startbar über JSON.

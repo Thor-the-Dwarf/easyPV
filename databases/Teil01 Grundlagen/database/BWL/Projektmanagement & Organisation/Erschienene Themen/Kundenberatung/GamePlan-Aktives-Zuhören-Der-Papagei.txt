@@ -1,0 +1,20 @@
+Anforderungen
+1. "Aktives Zuhören: Der Papagei"
+   - Ziel: Wähle die beste Paraphrasierung (Zusammenfassung) des Kundenproblems.
+   - Spielmechanik: 
+     - Kunde: "Mein Internet ist langsam, aber nur abends."
+     - Option A: "Kaufen Sie einen neuen Router." (Lösung, kein Zuhören).
+     - Option B: "Sie sagen, die Geschwindigkeit bricht abends ein?" (Paraphrase).
+     - Messbarkeit: Anzahl gewählter Paraphrasen in 5 Dialogschritten.
+   - Lernziel: Technik des aktiven Zuhörens / Spiegelns.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_listening.json')
+  - `technique`: "paraphrase".
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Papagei-Icon.
+- [ ] Game-Engine Logic ('game_pm_listening.js')
+  - Paraphrasieren (In eigenen Worten wiederholen).
+  - Feedback "Verstanden".
+- [ ] Integration
+  - Startbar über JSON.

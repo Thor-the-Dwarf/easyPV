@@ -1,0 +1,19 @@
+Anforderungen
+5. "Abschluss-Bericht schreiben"
+   - Ziel: Formuliere 3 klare Handlungsempfehlungen für die Zukunft.
+   - Spielmechanik: 
+     - Analyse-Ergebnis liegt vor ("Kommunikation war schlecht").
+     - Empfehlung bauen: "Öfter reden" (Zu vage). "Wöchentliches Jour Fixe einführen" (Konkret).
+     - Messbarkeit: Qualität (SMART) der Empfehlungen.
+   - Lernziel: Nachhaltigkeit von Beratungsergebnissen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_consult_report.json')
+  - `struct`: ["summary", "analysis", "recommendation"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Dokument-Builder.
+- [ ] Game-Engine Logic ('game_pm_consult_report.js')
+  - Bausteine ordnen.
+  - Management Summary schreiben (Kurz & Knapp).
+- [ ] Integration
+  - Startbar über JSON.

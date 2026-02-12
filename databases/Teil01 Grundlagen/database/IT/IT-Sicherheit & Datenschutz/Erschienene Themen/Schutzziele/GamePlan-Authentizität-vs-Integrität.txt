@@ -1,0 +1,19 @@
+Anforderungen
+2. "Authentizität vs. Integrität"
+   - Ziel: Unterscheide die Ziele genau.
+   - Spielmechanik: 
+     - Szenario: "Die Mail kommt wirklich vom Chef". -> Authentizität.
+     - Szenario: "Der Inhalt der Mail wurde nicht verändert". -> Integrität.
+     - Szenario: "Ich kann nicht leugnen, die Mail gesendet zu haben". -> Verbindlichkeit (Non-repudiation).
+     - Messbarkeit: Feine Unterscheidung der Begriffe.
+   - Lernziel: Erweiterte Schutzziele.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_auth_int.json')
+  - `concepts`: ["auth", "integrity", "non_repudiation"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Briefumschlag/Stempel Metapher.
+- [ ] Game-Engine Logic ('game_sec_auth_int.js')
+  - Szenarien unterscheiden (Absender vs Inhalt).
+- [ ] Integration
+  - Startbar über JSON.

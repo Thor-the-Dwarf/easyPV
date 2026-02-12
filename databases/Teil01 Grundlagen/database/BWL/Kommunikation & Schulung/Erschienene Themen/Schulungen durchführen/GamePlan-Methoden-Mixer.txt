@@ -1,0 +1,20 @@
+Anforderungen
+1. "Methoden-Mixer"
+   - Ziel: Weise 5 Lerninhalten die effizienteste Lehrmethode zu.
+   - Spielmechanik: 
+     - Inhalt: "Bedienung einer neuen Software lernen". -> Methode: "Übung am PC" (nicht "Vortrag").
+     - Inhalt: "Neue Unternehmensziele vorstellen". -> Methode: "Vortrag/Präsentation".
+     - Inhalt: "Teamkonflikte lösen". -> Methode: "Rollenspiel/Workshop".
+     - Messbarkeit: Richtige Zuordnung = 100%. Suboptimale Methode (z.B. Vortrag für Software-Bedienung) = 20-50%.
+   - Lernziel: Didaktische Kompetenz, Methodenwissen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_training_methods.json')
+  - `contents`: "Software lernen".
+  - `methods`: ["Vortrag", "Übung"].
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Mixer-Optik (optional) oder Matching.
+- [ ] Game-Engine Logic ('game_training_methods.js')
+  - Drag & Drop Content -> Methode.
+- [ ] Integration
+  - Startbar über JSON.

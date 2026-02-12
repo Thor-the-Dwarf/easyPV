@@ -1,0 +1,23 @@
+Anforderungen
+5. "Datenrettungs-Labor"
+   - Ziel: Rette Daten von einer kaputten HDD (Headcrash).
+   - Spielmechanik: 
+     - Geräusch: "Click of Death".
+     - Analyse: Lesekopf defekt.
+     - Maßnahme: "Im Reinraum öffnen & Platter auslesen" (Teuer, aber geht).
+     - Falsch: "Software nutzen" (Macht es schlimmer).
+     - Messbarkeit: Richtige Diagnose und Vorgehensweise.
+   - Lernziel: Empfindlichkeit mechanischer Speicher.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_hdd_rescue.json')
+  - `symptom`: "click_of_death".
+  - `solution`: "cleanroom".
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Labor-Szenario.
+  - Audio-Einbindung (Klick-Geräusch).
+- [ ] Game-Engine Logic ('game_hdd_rescue.js')
+  - Diagnose-Tool.
+  - Maßnahmen-Auswahl.
+- [ ] Integration
+  - Startbar über JSON.

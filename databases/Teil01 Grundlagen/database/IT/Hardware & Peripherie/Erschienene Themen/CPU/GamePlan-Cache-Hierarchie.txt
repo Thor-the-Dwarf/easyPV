@@ -1,0 +1,22 @@
+Anforderungen
+4. "Cache-Hierarchie"
+   - Ziel: Finde die Daten am schnellsten Ort (L1, L2, L3, RAM).
+   - Spielmechanik: 
+     - CPU fordert "Variable X".
+     - Suchzeit startet.
+     - Spieler klickt L1 (Treffer? Nein). L2 (Treffer? Ja -> Schnell).
+     - Wenn er erst im RAM sucht -> Langsam.
+     - Messbarkeit: Durchschnittliche Zugriffszeit.
+   - Lernziel: Geschwindigkeitsvorteil von Caches.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cpu_cache.json')
+  - `levels`: [ "L1", "L2", "L3", "RAM" ].
+  - `dataLocation`: "L2".
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Pyramiden-Darstellung oder konzentrische Kreise für Cache-Levels.
+- [ ] Game-Engine Logic ('game_cpu_cache.js')
+  - Such-Mechanik (Klick auf Level).
+  - Zeitstrahl-Penalty bei falscher Wahl (RAM Zugriff dauert lange).
+- [ ] Integration
+  - Startbar über JSON.

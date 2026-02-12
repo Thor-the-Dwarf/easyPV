@@ -1,0 +1,20 @@
+Anforderungen
+2. "Der kaskadierte Rabatt"
+   - Ziel: Rechne richtig (nicht addieren!).
+   - Spielmechanik: 
+     - Preis: 100€.
+     - Rabatt 1: 10%. -> 90€.
+     - Rabatt 2: 10% (auf die 90€!). -> 9€ Abzug.
+     - Endpreis: 81€ (Nicht 80€!).
+     - Messbarkeit: Korrektes Endergebnis.
+   - Lernziel: Reihenfolge der Rabatte.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_cascading_discount.json')
+  - `discounts`: [10, 5].
+- [ ] Shared CSS Check ('math_basics.css')
+  - Stufen-Rechner.
+- [ ] Game-Engine Logic ('game_math_cascading_discount.js')
+  - 10% + 5% ist NICHT 15%. Grundwert ändert sich.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,21 @@
+Anforderungen
+1. "Log-Level-Filter"
+   - Ziel: Konfiguriere das Logging so, dass die Festplatte nicht explodiert, aber Fehler gefangen werden.
+   - Spielmechanik: 
+     - Level: DEBUG (Alles), INFO (Viel), WARN (Mittel), ERROR (Wichtig).
+     - Szenario: Produktionsserver läuft stabil.
+     - Einstellung DEBUG -> Festplatte voll in 10 Min (Fail).
+     - Einstellung ERROR -> Zu wenig Infos bei Problemen.
+     - Einstellung INFO/WARN -> Optimal.
+     - Messbarkeit: Balance zwischen Datengröße und Informationsgehalt.
+   - Lernziel: Log-Levels (Severity) verstehen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_log_level.json')
+  - `levels`: ["DEBUG", "INFO", "WARN", "ERROR"].
+- [ ] Shared CSS Check ('basics_admin.css')
+  - Regler für Verbosity.
+- [ ] Game-Engine Logic ('game_basics_log_level.js')
+  - Simulation: Disk Space vs Info-Gehalt.
+- [ ] Integration
+  - Startbar über JSON.

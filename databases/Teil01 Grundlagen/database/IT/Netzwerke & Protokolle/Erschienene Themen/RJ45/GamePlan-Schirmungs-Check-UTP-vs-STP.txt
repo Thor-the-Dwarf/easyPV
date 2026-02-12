@@ -1,0 +1,20 @@
+Anforderungen
+4. "Schirmungs-Check (UTP vs STP)"
+   - Ziel: Verlege Kabel neben Stromleitung.
+   - Spielmechanik: 
+     - UTP (Unshielded): Störung durch Stromkabel -> Paketverlust.
+     - S/FTP (Shielded): Keine Störung.
+     - Aufgabe: Industriehalle verkabeln.
+     - Messbarkeit: Störungsfreie Übertragung.
+   - Lernziel: EMV-Einflüsse.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_rj45_shield.json')
+  - `env`: "industrial".
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Stromkabel (Interferenzwellen).
+- [ ] Game-Engine Logic ('game_rj45_shield.js')
+  - UTP: Signal verzerrt.
+  - STP: Signal sauber.
+- [ ] Integration
+  - Startbar über JSON.

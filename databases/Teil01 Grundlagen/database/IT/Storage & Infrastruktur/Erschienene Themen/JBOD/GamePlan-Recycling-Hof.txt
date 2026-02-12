@@ -1,0 +1,21 @@
+Anforderungen
+4. "Recycling-Hof"
+   - Ziel: Nutze alte Platten sinnvoll.
+   - Spielmechanik: 
+     - Kiste mit Platten: 80GB, 250GB, 500GB.
+     - Ziel: Ein großes "Datengrab" für unkritische Filme.
+     - RAID geht nicht (unterschiedliche Größen).
+     - JBOD geht -> Alles zusammenkleben.
+     - Messbarkeit: 830 GB Nutzkapazität.
+   - Lernziel: Use-Case für JBOD.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_jbod_recycle.json')
+  - `disks`: [80, 250, 500].
+- [ ] Shared CSS Check ('storage_basics.css')
+  - "Frankenstein"-Server Bau.
+- [ ] Game-Engine Logic ('game_jbod_recycle.js')
+  - Volume erstellen aus Resten.
+  - Gesamtsumme berechnen.
+- [ ] Integration
+  - Startbar über JSON.

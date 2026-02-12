@@ -1,0 +1,21 @@
+Anforderungen
+4. "Länge läuft"
+   - Ziel: Beachte die maximalen Kabellängen.
+   - Spielmechanik: 
+     - USB 2.0 Kabel 10m -> Signalstörung. (Max 5m passiv).
+     - USB 3.0 Kabel 5m -> Signalstörung. (Max 3m passiv).
+     - Aufgabe: Drucker in 10m Entfernung anschließen.
+     - Lösung: "Aktives Repeater-Kabel" oder "Hub" dazwischen setzen.
+     - Messbarkeit: Funktionierende Verbindung über Distanz.
+   - Lernziel: Dämpfung und Maximallängen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_usb_len.json')
+  - `kabel30`: 5.
+  - `kabel20`: 10.
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Raumplan mit Entfernungen.
+- [ ] Game-Engine Logic ('game_usb_len.js')
+  - Distanzprüfung vs Standard.
+- [ ] Integration
+  - Startbar über JSON.

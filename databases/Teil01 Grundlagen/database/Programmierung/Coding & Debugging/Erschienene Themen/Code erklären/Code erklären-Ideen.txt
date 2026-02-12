@@ -1,0 +1,47 @@
+1. "Rubber Duck Debugging"
+   - Ziel: Erkläre den Code Zeile für Zeile der Ente.
+   - Spielmechanik: 
+     - Code-Snippet wird gezeigt (z.B. eine Schleife).
+     - User muss aus 3 Erklärungen die "für Laien verständliche" wählen.
+     - "X = X + 1" -> "Erhöhe den Zähler um Eins". (Richtig).
+     - "X = X + 1" -> "X Referenz wird neu zugewiesen". (Zu technisch / falsch).
+     - Messbarkeit: Korrekte Übersetzung in natürliche Sprache.
+   - Lernziel: Code Literacy.
+
+2. "Kommentar-Match"
+   - Ziel: Welcher Kommentar passt zum Block?
+   - Spielmechanik: 
+     - Code: "if (age < 18) { return; }"
+     - Kommentar A: "Prüfe ob volljährig, sonst Abbruch".
+     - Kommentar B: "Alter muss genau 18 sein".
+     - Kommentar C: "Gebe das Alter zurück".
+     - Messbarkeit: 100% korrekte Zuordnung.
+   - Lernziel: Code-Verständnis dokumentieren.
+
+3. "Der Variablen-Verfolger"
+   - Ziel: Welchen Wert hat A am Ende?
+   - Spielmechanik: 
+     - A = 5.
+     - B = A + 2.
+     - A = B * 2.
+     - Frage: Was ist A? (14).
+     - Messbarkeit: Korrekter Endwert.
+   - Lernziel: State Changes verfolgen.
+
+4. "Funktions-Namer"
+   - Ziel: Gib dem Kind einen Namen.
+   - Spielmechanik: 
+     - Funktion berechnet (Preis * 1.19).
+     - Name A: "func1". (Schlecht).
+     - Name B: "addTax". (Gut).
+     - Name C: "removeUser". (Falsch).
+     - Messbarkeit: Clean Code Prinzipien.
+   - Lernziel: Semantik im Code.
+
+5. "Der Lücken-Text"
+   - Ziel: Fülle die Logik-Lücke.
+   - Spielmechanik: 
+     - "Um alle Zahlen von 1 bis 10 zu drucken, brauche ich eine ____".
+     - Auswahl: "Schleife" / "Datenbank" / "Variable".
+     - Messbarkeit: Begriffsverständnis.
+   - Lernziel: Programmier-Konzepte.

@@ -1,0 +1,19 @@
+Anforderungen
+1. "Der Pflichtangaben-Scanner"
+   - Ziel: Ist die Rechnung vorsteuerabzugsberechtigt?
+   - Spielmechanik: 
+     - Rechnung kommt rein.
+     - Checkliste: Steuernummer? Ja. Datum? Ja. Fortlaufende Nummer? Nein!
+     - Ergebnis: Zurück an Absender. (Sonst kein Vorsteuerabzug vom Finanzamt).
+     - Messbarkeit: Formfehler gefunden.
+   - Lernziel: §14 UStG.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_invoice_legal.json')
+  - `fields`: ["tax_id", "date", "number"].
+- [ ] Shared CSS Check ('math_basics.css')
+  - Rechnungs-Dokument Lupe.
+- [ ] Game-Engine Logic ('game_math_invoice_legal.js')
+  - Fehlt die Steuernummer? -> Vorsteuerabzug gefährdet.
+- [ ] Integration
+  - Startbar über JSON.

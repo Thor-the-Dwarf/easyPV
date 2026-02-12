@@ -1,0 +1,19 @@
+Anforderungen
+1. "QR-Code-Konstrukteur"
+   - Ziel: Baue die 3 Eckpfeiler (Position Detection Patterns) an die richtige Stelle.
+   - Spielmechanik: 
+     - Leeres Quadrat-Raster.
+     - 3 Große "Augen" (Quadrate).
+     - Spieler muss sie platzieren: Oben-Links, Oben-Rechts, Unten-Links. (Unten-Rechts ist leer!).
+     - Messbarkeit: Korrekte Positionierung der Finder Patterns.
+   - Lernziel: Aufbau eines QR-Codes.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_qr_build.json')
+  - `parts`: ["finder_pattern"].
+- [ ] Shared CSS Check ('basics_hardware.css')
+  - Leeres Grid.
+- [ ] Game-Engine Logic ('game_basics_qr_build.js')
+  - Patterns positionieren (3 Ecken).
+- [ ] Integration
+  - Startbar über JSON.

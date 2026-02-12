@@ -1,0 +1,23 @@
+Anforderungen
+1. "Cores vs. Threads"
+   - Ziel: Ordne die Aufgaben den Kernen optimal zu (Hyperthreading).
+   - Spielmechanik: 
+     - CPU hat 4 Kerne / 8 Threads.
+     - Aufgaben kommen rein: "Video rendern" (Braucht 4 Threads), "Email checken" (Braucht 1 Thread).
+     - Spieler zieht Aufgaben auf die logischen Prozessoren.
+     - Wenn ein physischer Kern überlastet ist -> Hitzestau.
+     - Messbarkeit: Optimale Auslastung ohne Überhitzung.
+   - Lernziel: Verständnis von physischen und logischen Kernen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cpu_cores.json')
+  - `cores`: 4. `threadsPerCore`: 2.
+  - `tasks`: [ { "name": "Render", "threads": 4 }, { "name": "Mail", "threads": 1 } ].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - CPU-Visualisierung (Kerne als Container).
+  - Heatmap-Overlay (Rot bei Überlast).
+- [ ] Game-Engine Logic ('game_cpu_cores.js')
+  - Drag & Drop Tasks auf Threads.
+  - Load-Balancing Berechnung.
+- [ ] Integration
+  - Startbar über JSON.

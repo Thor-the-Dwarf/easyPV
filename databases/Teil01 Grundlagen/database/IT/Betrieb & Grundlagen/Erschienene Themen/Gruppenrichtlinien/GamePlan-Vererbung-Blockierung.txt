@@ -1,0 +1,20 @@
+Anforderungen
+4. "Vererbung & Blockierung"
+   - Ziel: Sorge dafür, dass die Chefs trotz Verbot USB-Sticks nutzen dürfen.
+   - Spielmechanik: 
+     - Oben (Firma): "USB verboten".
+     - Unten (OU Chefs): "Vererbung deaktivieren" oder "GPO USB erlauben" + "Enforced" beachten.
+     - Aufgabe: Konfiguriere die OU so, dass USB geht.
+     - Messbarkeit: USB funktioniert bei Chefs, aber nicht beim Rest.
+   - Lernziel: Vererbung, Block Inheritance, Enforced.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_gpo_inherit.json')
+  - `ou`: "management".
+- [ ] Shared CSS Check ('basics_admin.css')
+  - OU-Baum mit Vererbungspfeilen.
+- [ ] Game-Engine Logic ('game_basics_gpo_inherit.js')
+  - Block Inheritance setzen.
+  - Enforced (erzwungen) beachten.
+- [ ] Integration
+  - Startbar über JSON.

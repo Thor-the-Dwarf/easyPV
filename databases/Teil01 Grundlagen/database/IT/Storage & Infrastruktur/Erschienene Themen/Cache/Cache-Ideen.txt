@@ -1,0 +1,51 @@
+1. "Cache-Hit vs Miss"
+   - Ziel: Optimiere die Antwortzeit der Anwendung.
+   - Spielmechanik: 
+     - User fragt "Artikel 123" an.
+     - Im Cache? Ja -> Antwort in 1ms (Hit).
+     - Im Cache? Nein -> DB-Anfrage (Miss, dauert 500ms).
+     - Cache ist voll (FIFO).
+     - Strategie: Behalte häufige Artikel (LRU - Least Recently Used) im Cache.
+     - Messbarkeit: Durchschnittliche Antwortzeit < 10ms.
+   - Lernziel: Caching-Strategien.
+
+2. "Level-Hierarchie"
+   - Ziel: Wo liegen die Daten?
+   - Spielmechanik: 
+     - CPU braucht Variable X.
+     - Suche L1 (Win, ultra schnell).
+     - Suche L2 (Ok).
+     - Suche L3 (Geht so).
+     - Suche RAM (Langsam).
+     - Suche SSD (Ewig).
+     - Messbarkeit: Zugriffshierarchie verstehen.
+   - Lernziel: Speicherpyramide.
+
+3. "Der veraltete Cache (Stale Data)"
+   - Ziel: Verhindere inkonsistente Daten.
+   - Spielmechanik: 
+     - Preis in DB: 100€.
+     - Preis im Cache: 80€ (alt).
+     - User kauft für 80€ -> Verlust für Shop.
+     - Aufgabe: Cache invalidieren (TTL setzen oder Write-Through).
+     - Messbarkeit: User sieht immer den aktuellen Preis.
+   - Lernziel: Cache Invalidation.
+
+4. "Write-Through vs Write-Back"
+   - Ziel: Wähle zwischen Sicherheit und Geschwindigkeit.
+   - Spielmechanik: 
+     - Szenario "Bank-Transaktion". -> Write-Through (Sofort in DB schreiben, sicher).
+     - Szenario "User-Avatar Upload". -> Write-Back (Erst in Cache, später DB, schneller).
+     - Stromausfall simulation. Bei Write-Back sind Daten weg.
+     - Messbarkeit: Datenverlust vs Performance.
+   - Lernziel: Schreibstrategien.
+
+5. "Browser-Cache-Cleaner"
+   - Ziel: Warum sehe ich die neue Webseite nicht?
+   - Spielmechanik: 
+     - Entwickler (Spieler) ändert Logo auf Rot.
+     - Kunde sieht immer noch Grün.
+     - Diagnose: Browser hat alte CSS gecached.
+     - Lösung: "Strg+F5" oder Versionierung "style.css?v=2".
+     - Messbarkeit: Logo ist rot.
+   - Lernziel: Client-Side Caching.

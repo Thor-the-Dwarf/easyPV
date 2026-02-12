@@ -1,0 +1,21 @@
+Anforderungen
+2. "Chain of Trust"
+   - Ziel: Baue die Vertrauenskette bis zur Root-CA.
+   - Spielmechanik: 
+     - End-Zertifikat (Webseite).
+     - Intermediate CA.
+     - Root CA (im Browser gespeichert).
+     - Puzzle: Verbinde die Glieder. Wenn Kette unterbrochen -> Ungültig.
+     - Messbarkeit: Komplette Kette erstellt.
+   - Lernziel: Hierarchisches Vertrauensmodell.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_chain.json')
+  - `certs`: ["root", "inter", "leaf"].
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Kettenglieder Grafik.
+- [ ] Game-Engine Logic ('game_sec_chain.js')
+  - Kette zusammenbauen.
+  - Validierung (Signaturen).
+- [ ] Integration
+  - Startbar über JSON.

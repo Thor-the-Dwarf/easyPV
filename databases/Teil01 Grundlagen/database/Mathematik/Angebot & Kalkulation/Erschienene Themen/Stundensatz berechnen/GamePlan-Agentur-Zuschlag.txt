@@ -1,0 +1,20 @@
+Anforderungen
+2. "Agentur-Zuschlag"
+   - Ziel: Berechne den Verkaufspreis.
+   - Spielmechanik: 
+     - Interner Kostensatz (Mitarbeiter Gehalt): 30€/h.
+     - Gemeinkostenzuschlag (Büro, HR... 100%): +30€ = 60€ Selbstkosten.
+     - Gewinnzuschlag (20%): +12€ = 72€.
+     - Verkaufspreis netto: 72€.
+     - Messbarkeit: Korrekte Zuschlagskalkulation von unten nach oben.
+   - Lernziel: Selbstkosten vs Verkaufspreis.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_agency_fee.json')
+  - `rate`: 15.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Rechnungsposten "Overhead".
+- [ ] Game-Engine Logic ('game_math_agency_fee.js')
+  - Prozentrechnung Aufschlag.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+1. "Das Pizza-Modell (Service Models)"
+   - Ziel: Wer kümmert sich um was? (IaaS, PaaS, SaaS, On-Prem).
+   - Spielmechanik: 
+     - "Pizza selber backen" -> On-Premise (Alles selber machen).
+     - "Tiefkühlpizza & eigener Ofen" -> IaaS (Infrastruktur gemietet).
+     - "Lieferservice" -> PaaS (Nur Essen, kein Ofen nötig).
+     - "Im Restaurant essen" -> SaaS (Rundum-Sorglos).
+     - Messbarkeit: Konzepte korrekt zugeordnet.
+   - Lernziel: IaaS / PaaS / SaaS Unterscheidung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cloud_pizza.json')
+  - `models`: ["IaaS", "PaaS", "SaaS", "OnPrem"].
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Pizza-Grafiken (Teig, Belag, Ofen, Tisch).
+- [ ] Game-Engine Logic ('game_cloud_pizza.js')
+  - Drag & Drop Zutaten auf Verantwortungsbereiche.
+- [ ] Integration
+  - Startbar über JSON.

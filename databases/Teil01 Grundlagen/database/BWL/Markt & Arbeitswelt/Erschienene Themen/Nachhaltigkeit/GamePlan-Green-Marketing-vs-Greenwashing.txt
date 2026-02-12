@@ -1,0 +1,20 @@
+Anforderungen
+3. "Green-Marketing vs. Greenwashing"
+   - Ziel: Entlarve 5 Werbeaussagen als "Greenwashing" oder "Echt".
+   - Spielmechanik: 
+     - Slogan: "Unsere Verpackung ist grün bedruckt!" -> Greenwashing.
+     - Slogan: "Wir reduzieren CO2 um 10% durch Solarzellen." -> Echt.
+     - Spieler swipet Entscheidungen.
+     - Messbarkeit: 5 Fälle. 100% bei richtiger Erkennung.
+   - Lernziel: Kritische Bewertung von Nachhaltigkeitsversprechen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sust_washing.json')
+  - `claims`: [ { "text": "...", "type": "washing" } ].
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Swipe Cards (Tinder-Mechanik).
+- [ ] Game-Engine Logic ('game_sust_washing.js')
+  - Entscheidung (Echt/Fake).
+  - Aufklärungstext nach Entscheidung.
+- [ ] Integration
+  - Startbar über JSON.

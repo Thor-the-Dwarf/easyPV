@@ -1,0 +1,21 @@
+Anforderungen
+2. "Standby-Kosten-Schreck"
+   - Ziel: Lohnt sich die schaltbare Steckdose?
+   - Spielmechanik: 
+     - Standby: 10 Watt.
+     - Jahr: 8760h * 10W = 87.6 kWh.
+     - Kosten: ca. 35 €.
+     - Steckdose kostet 10 €.
+     - Entscheidung: Ja, lohnt sich nach 3-4 Monaten (ROI).
+     - Messbarkeit: Kaufentscheidung wirtschaftlich korrekt.
+   - Lernziel: ROI von Sparmaßnahmen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_standby_cost.json')
+  - `watts`: 5.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Münzen fallen aus Gerät.
+- [ ] Game-Engine Logic ('game_math_standby_cost.js')
+  - 5W * 24h * 365d -> Euro.
+- [ ] Integration
+  - Startbar über JSON.

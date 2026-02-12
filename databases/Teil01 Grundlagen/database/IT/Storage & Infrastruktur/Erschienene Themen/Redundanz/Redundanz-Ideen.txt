@@ -1,0 +1,49 @@
+1. "Single Point of Failure (SPOF) Finder"
+   - Ziel: Eliminiere den Flaschenhals.
+   - Spielmechanik: 
+     - 2 Webserver (Gut).
+     - 2 Firewalls (Gut).
+     - 1 Switch (Schlecht!).
+     - Wenn Switch ausfällt -> Alles tot.
+     - Aufgabe: Zweiten Switch hinzufügen + Uplink.
+     - Messbarkeit: System überlebt Komponentenausfall.
+   - Lernziel: Hochverfügbarkeit (HA).
+
+2. "RAID-Kalkulator"
+   - Ziel: Berechne Netto-Kapazität und Ausfalltoleranz.
+   - Spielmechanik: 
+     - 3x 1TB Platten.
+     - RAID 0: 3 TB (0 Ausfall).
+     - RAID 1: Geht nicht mit 3 (oder 1TB nutzbar).
+     - RAID 5: 2 TB (1 Ausfall).
+     - Spieler muss RAID 5 wählen für Balance.
+     - Messbarkeit: Beste Nutzung der Hardware.
+   - Lernziel: RAID-Level 0, 1, 5, 10.
+
+3. "Netzteil-Redundanz"
+   - Ziel: Versorge den Server sicher.
+   - Spielmechanik: 
+     - Server hat 2 Netzteile (PSU).
+     - Beide an Stromkreis A? -> Sicherung A fliegt -> Server aus. (Fail).
+     - PSU 1 an Kreis A, PSU 2 an Kreis B (oder USV). -> Sicherung A fliegt -> Server läuft weiter.
+     - Messbarkeit: Fehlertolerante Verkabelung.
+   - Lernziel: Infrastruktur-Redundanz (A/B Feed).
+
+4. "Active-Passive vs Active-Active"
+   - Ziel: Nutze die Ressourcen.
+   - Spielmechanik: 
+     - Cluster mit 2 Knoten.
+     - Active-Passive: Knoten 2 schläft (Verschwendung, aber sicher).
+     - Active-Active: Beide arbeiten (Lastverteilung).
+     - Fällt einer aus -> Der andere muss 100% Last tragen (Vorsicht Überlastung!).
+     - Messbarkeit: Verständnis der Cluster-Modi.
+   - Lernziel: Failover-Konzepte.
+
+5. "Georedundanz"
+   - Ziel: Überlebe das Erdbeben / Flugzeugabsturz.
+   - Spielmechanik: 
+     - Rechenzentrum Frankfurt brennt.
+     - Daten nur in Frankfurt? -> Game Over.
+     - Replikation nach Magdeburg (200km weg). -> Failover möglich.
+     - Messbarkeit: Business Continuity Management (BCM).
+   - Lernziel: Standortverteilung.

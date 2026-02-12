@@ -1,0 +1,21 @@
+Anforderungen
+2. "Flaschenhals-Finder"
+   - Ziel: Was bremst?
+   - Spielmechanik: 
+     - Server Uplink: 1 Gbit.
+     - Backbone: 100 Gbit.
+     - Kunden-WLAN: 54 Mbit.
+     - Kunden-DSL: 16 Mbit. -> Das ist der Flaschenhals!
+     - Übertragung läuft nur mit 16 Mbit.
+     - Messbarkeit: Schwächstes Glied identifiziert.
+   - Lernziel: Ende-zu-Ende Bandbreite.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_bottleneck.json')
+  - `segments`: [1000, 100, 10].
+- [ ] Shared CSS Check ('math_basics.css')
+  - Rohrleitungen (Dick -> Dünn).
+- [ ] Game-Engine Logic ('game_math_bottleneck.js')
+  - Langsamstes Glied bestimmt die Gesamtgeschwindigkeit.
+- [ ] Integration
+  - Startbar über JSON.

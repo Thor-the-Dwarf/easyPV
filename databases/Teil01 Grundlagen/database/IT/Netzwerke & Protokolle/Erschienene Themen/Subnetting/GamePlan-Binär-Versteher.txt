@@ -1,0 +1,20 @@
+Anforderungen
+3. "Binär-Versteher"
+   - Ziel: Berechne das logische UND.
+   - Spielmechanik: 
+     - IP: 11000000... (192...)
+     - Mask: 11111111... (255...)
+     - UND-Operation: 1+1=1, 1+0=0.
+     - Ergebnis = Netz-ID.
+     - Messbarkeit: Korrekte binäre Rechnung.
+   - Lernziel: Wie der Router Routing-Entscheidungen trifft.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_subnet_binary.json')
+  - `ip`: "192...", `mask`: "255...".
+- [ ] Shared CSS Check ('network_ip.css')
+  - Binär-Matrix (16 Bit untereinander).
+- [ ] Game-Engine Logic ('game_subnet_binary.js')
+  - Logisches UND Visualisierung (Spaltenweise).
+- [ ] Integration
+  - Startbar über JSON.

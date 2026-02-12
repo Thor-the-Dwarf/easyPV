@@ -1,0 +1,21 @@
+Anforderungen
+5. "Der Audiosignal-Test"
+   - Ziel: Welches Kabel überträgt auch Ton?
+   - Spielmechanik: 
+     - Ziel: Film schauen mit Ton am TV.
+     - Kabel VGA -> Kein Ton.
+     - Kabel DVI -> Meist kein Ton.
+     - Kabel HDMI -> Bild + Ton.
+     - Messbarkeit: Ton ist hörbar.
+   - Lernziel: Features der Schnittstellen (Audio/Video).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_monitor_audio.json')
+  - `cables`: [ { "type": "VGA", "audio": false }, { "type": "HDMI", "audio": true } ].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - TV und PC.
+  - Soundwellen-Animation.
+- [ ] Game-Engine Logic ('game_monitor_audio.js')
+  - Kabelwahl -> Soundcheck.
+- [ ] Integration
+  - Startbar über JSON.

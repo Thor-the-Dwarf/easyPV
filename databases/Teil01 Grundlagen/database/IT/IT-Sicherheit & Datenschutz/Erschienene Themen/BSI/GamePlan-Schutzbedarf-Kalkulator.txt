@@ -1,0 +1,19 @@
+Anforderungen
+3. "Schutzbedarf-Kalkulator"
+   - Ziel: Bestimme den Schutzbedarf (Normal, Hoch, Sehr Hoch).
+   - Spielmechanik: 
+     - Asset: "Kantine-Speiseplan". -> Normal.
+     - Asset: "Patientendaten". -> Sehr Hoch.
+     - Asset: "Buchhaltung". -> Hoch.
+     - Messbarkeit: Korrekte Einstufung nach CIA-Triade (Vertraulichkeit, Integrität, Verfügbarkeit).
+   - Lernziel: Schutzbedarfsfeststellung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_need_calc.json')
+  - `assets`: ["canteen", "patient", "accounting"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Ampel-System (Grün/Gelb/Rot).
+- [ ] Game-Engine Logic ('game_sec_need_calc.js')
+  - Einstufung nach Maximumprinzip (implizit).
+- [ ] Integration
+  - Startbar über JSON.

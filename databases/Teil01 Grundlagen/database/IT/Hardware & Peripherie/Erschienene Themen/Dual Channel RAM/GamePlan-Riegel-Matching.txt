@@ -1,0 +1,22 @@
+Anforderungen
+3. "Riegel-Matching"
+   - Ziel: Welche Riegel harmonieren am besten?
+   - Spielmechanik: 
+     - Riegel A: 8GB, 3200MHz, CL16.
+     - Pool: Riegel B (8GB, 3200, CL16), Riegel C (16GB), Riegel D (2666MHz).
+     - Ziel: Riegel B wählen.
+     - Wenn D gewählt -> System läuft nur mit 2666MHz (Flaschenhals).
+     - Messbarkeit: Systemleistung nach Upgrade.
+   - Lernziel: Symmetrie bei Dual Channel.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ram_match.json')
+  - `baseStick`: { "size": 8, "mhz": 3200 }.
+  - `pool`: [ ... ].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - RAM-Riegel Details (Label lesen).
+- [ ] Game-Engine Logic ('game_ram_match.js')
+  - Vergleichs-Logik (Specs matchen).
+  - Performance-Score Berechnung.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,21 @@
+Anforderungen
+5. "Scheinleistung vs Wirkleistung (Cos Phi)"
+   - Ziel: Verstehe den Unterschied.
+   - Spielmechanik: 
+     - Netzteil hat 500W Wirkleistung.
+     - Cos Phi (Leistungsfaktor) ist 0.8.
+     - Scheinleistung = 500 / 0.8 = 625 VA.
+     - USV muss für 625 VA ausgelegt sein, nicht 500W!
+     - Messbarkeit: USV nicht überlastet.
+   - Lernziel: Dimensionierung bei Induktiver Last.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_power_triangle.json')
+  - `phi`: 0.8.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Zeigerdiagramm (Leistungsdreieck).
+- [ ] Game-Engine Logic ('game_math_power_triangle.js')
+  - S = U * I. P = U * I * cos(phi).
+  - Bierglas-Analogie (Schaum = Blindleistung).
+- [ ] Integration
+  - Startbar über JSON.

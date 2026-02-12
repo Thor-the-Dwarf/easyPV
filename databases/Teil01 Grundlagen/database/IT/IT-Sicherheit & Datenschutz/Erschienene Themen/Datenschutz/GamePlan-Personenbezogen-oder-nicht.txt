@@ -1,0 +1,20 @@
+Anforderungen
+1. "Personenbezogen oder nicht?"
+   - Ziel: Sortiere Daten in "Schützenswert (DSGVO)" und "Unkritisch".
+   - Spielmechanik: 
+     - "IP-Adresse". -> Personenbezogen.
+     - "Maschinen-Seriennummer". -> Unkritisch.
+     - "Email-Adresse info@firma.de". -> Unkritisch (Juristische Person).
+     - "Email-Adresse hans.meier@firma.de". -> Personenbezogen.
+     - Messbarkeit: 100% korrekte Trennung.
+   - Lernziel: Definition personenbezogener Daten (Art. 4 DSGVO).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_pii.json')
+  - `data`: ["ip", "serial", "email_info", "email_name"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Trennwand (Link/Rechts Swipe).
+- [ ] Game-Engine Logic ('game_sec_pii.js')
+  - Sortierung PII vs Non-PII.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,23 @@
+Anforderungen
+2. "Takt-Tuner"
+   - Ziel: Übertakte die CPU stabil (Overclocking).
+   - Spielmechanik: 
+     - Regler für GHz und Spannung (V).
+     - Ziel: 5 GHz erreichen.
+     - Wenn Spannung zu hoch -> CPU brennt durch. Zu niedrig -> Bluescreen.
+     - Temperatur beachten! Kühler aufdrehen.
+     - Messbarkeit: Höchster stabiler Takt nach Stresstest.
+   - Lernziel: Zusammenhang Taktfrequenz, Spannung und Abwärme.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cpu_overclock.json')
+  - `targetClock`: 5000.
+  - `startVoltage`: 1.2.
+- [ ] Shared CSS Check ('hardware_components.css')
+  - BIOS-Interface Look.
+  - Diagramme (Temperatur, Takt).
+- [ ] Game-Engine Logic ('game_cpu_overclock.js')
+  - Simulation: Spannung * Faktor = Hitze.
+  - Stabilitäts-Check (Random Crash bei zu wenig V).
+- [ ] Integration
+  - Startbar über JSON.

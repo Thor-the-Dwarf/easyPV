@@ -1,0 +1,21 @@
+Anforderungen
+4. "Digitale Signatur"
+   - Ziel: Unterschreibe die Mail fälschungssicher.
+   - Spielmechanik: 
+     - Alice will unterschreiben.
+     - Womit? -> Alices Private Key (Signieren).
+     - Bob prüft. Womit? -> Alices Public Key (Verifizieren).
+     - (Gegenteil zur Verschlüsselung!).
+     - Messbarkeit: Korrekte Schlüsselwahl.
+   - Lernziel: Authentizität durch Signatur.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_sign.json')
+  - `keys`: ["ali_priv", "ali_pub"].
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Dokument mit Siegel-Stempel.
+- [ ] Game-Engine Logic ('game_sec_sign.js')
+  - Signier-Vorgang (Hash + PrivKey).
+  - Verify-Vorgang (PubKey).
+- [ ] Integration
+  - Startbar über JSON.

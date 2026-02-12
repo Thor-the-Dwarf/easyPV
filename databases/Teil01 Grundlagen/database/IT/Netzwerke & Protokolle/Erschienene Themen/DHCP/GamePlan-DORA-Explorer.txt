@@ -1,0 +1,21 @@
+Anforderungen
+1. "DORA-Explorer"
+   - Ziel: Bringe den 4-Way-Handshake in die richtige Reihenfolge.
+   - Spielmechanik: 
+     - D - Discover (Client schreit "Hilfe?").
+     - O - Offer (Server sagt "Nimm doch die 1.2.3.4").
+     - R - Request (Client sagt "Gerne, nehm ich!").
+     - A - Acknowledge (Server sagt "Ok, gehört dir für 24h").
+     - Messbarkeit: Korrekte Sequenz in < 10 Sek.
+   - Lernziel: DHCP-Ablauf.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_dhcp_dora.json')
+  - `steps`: ["Discover", "Offer", "Request", "Ack"].
+- [ ] Shared CSS Check ('network_ip.css')
+  - Sequenzdiagramm (Client links, Server rechts).
+- [ ] Game-Engine Logic ('game_dhcp_dora.js')
+  - Drag & Drop der Phasen.
+  - Pfeil-Animationen.
+- [ ] Integration
+  - Startbar über JSON.

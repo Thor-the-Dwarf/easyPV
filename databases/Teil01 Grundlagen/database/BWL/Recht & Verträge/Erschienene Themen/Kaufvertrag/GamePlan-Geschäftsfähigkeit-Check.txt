@@ -1,0 +1,37 @@
+Anforderungen
+2. "Geschäftsfähigkeit-Check"
+   - Ziel: Darf diese Person kaufen? (Wirksamkeit prüfen).
+   - Spielmechanik: 
+     - 5-Jähriger will Kaugummi kaufen (Geschäftsunfähig -> Nichtig, Ausnahme Botengang).
+     - 15-Jähriger will Mofa kaufen (Beschränkt -> Schwebend unwirksam).
+     - 15-Jähriger kauft Döner vom Taschengeld (Wirksam -> Taschengeldparagraph).
+     - Messbarkeit: 100% korrekte Rechtsbewertung.
+   - Lernziel: §§ 104 ff. BGB.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Alter der Person und Art des Geschäfts.
+- [ ] Ampel-Logik: Rot (Nichtig), Gelb (Schwebend), Grün (Wirksam).
+
+2. Screen-Layout
+- [ ] Personalausweis (Alter) + Produktbild (Kaufgegenstand).
+- [ ] Ampel-Buttons zur Auswahl.
+
+3. Browser- und Device-Resilienz
+- [ ] Große Buttons für die Ampelfarben.
+- [ ] Alter muss deutlich lesbar sein.
+
+4. Kernvisuals
+- [ ] ID-Card Metapher.
+- [ ] Taschengeld-Paragraphen Symbol (§ 110).
+
+5. Interaktion und Feedback
+- [ ] Klick auf Ampelfarbe.
+- [ ] Feedback: "Genehmigung der Eltern fehlt!" (bei Gelb).
+- [ ] "Botengang!" (Sonderfall berücksichtigen).
+
+6. KPI-Klarheit
+- [ ] "Jugendschutz-Score".
+
+7. QA-Paket
+- [ ] Farbenblindheit berücksichtigen (Rot/Grün mit Symbolen ergänzen).

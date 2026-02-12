@@ -1,0 +1,36 @@
+Anforderungen
+4. "Unmöglichkeits-Check"
+   - Ziel: Muss noch geliefert werden?
+   - Spielmechanik: 
+     - "Vase zerbrochen (Einzelstück)". -> Unmöglichkeit (Leistungspflicht entfällt).
+     - "Vase zerbrochen (Serienware)". -> Keine Unmöglichkeit (Muss neu beschafft werden).
+     - Messbarkeit: Entscheidung "Lieferpflicht ja/nein".
+   - Lernziel: Stückschuld vs. Gattungsschuld (§ 275 BGB).
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Kann geleistet werden?
+- [ ] Unterscheidung: Objektive vs Subjektive Unmöglichkeit.
+- [ ] Szenario: "Unikat verbrannt" vs "Geld nicht da".
+
+2. Screen-Layout
+- [ ] Fall-Karten Stapel ("Tinder-Style" Entscheidung).
+- [ ] Links: "Möglich", Rechts: "Unmöglich".
+
+3. Browser- und Device-Resilienz
+- [ ] Swipe-Gesten.
+- [ ] Fallback-Buttons.
+
+4. Kernvisuals
+- [ ] Feuer-Animation (für Zerstörung).
+- [ ] Geist-Icon (für Stückschuld).
+
+5. Interaktion und Feedback
+- [ ] Swipe Rechts ("Unmöglich"): "Genau, Stückschuld ist untergegangen."
+- [ ] Swipe Links ("Geldmangel"): "Falsch! Geld hat man zu haben."
+
+6. KPI-Klarheit
+- [ ] Score %
+
+7. QA-Paket
+- [ ] Swipe-Sensitivität.

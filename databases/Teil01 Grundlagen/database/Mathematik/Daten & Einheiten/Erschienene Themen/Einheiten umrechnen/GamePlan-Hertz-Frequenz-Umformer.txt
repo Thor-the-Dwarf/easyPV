@@ -1,0 +1,19 @@
+Anforderungen
+5. "Hertz-Frequenz-Umformer"
+   - Ziel: Von Periodendauer zur Frequenz.
+   - Spielmechanik: 
+     - CPU Taktzyklus dauert 0.5 Nanosekunden (0.5 * 10^-9 s).
+     - f = 1 / T.
+     - f = 1 / 0.5 * 10^9 = 2 * 10^9 Hz = 2 GHz.
+     - Messbarkeit: Korrekte Taktrate ermittelt.
+   - Lernziel: T = 1/f.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_freq.json')
+  - `ghz`: 2.4.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Oszilloskop Welle.
+- [ ] Game-Engine Logic ('game_math_freq.js')
+  - Periodendauer T = 1/f.
+- [ ] Integration
+  - Startbar über JSON.

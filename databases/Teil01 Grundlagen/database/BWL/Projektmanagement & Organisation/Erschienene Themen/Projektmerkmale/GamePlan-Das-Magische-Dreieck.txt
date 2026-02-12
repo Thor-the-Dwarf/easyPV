@@ -1,0 +1,21 @@
+Anforderungen
+3. "Das Magische Dreieck"
+   - Ziel: Balanciere Qualität, Zeit und Kosten.
+   - Spielmechanik: 
+     - Dreieck mit 3 Ecken.
+     - Ereignis: "Kunde will es schneller (Zeit runter)."
+     - Konsequenz: Kosten gehen hoch ODER Qualität geht runter. Spieler muss ausgleichen.
+     - Ziel: Dreieck darf nicht "zerreißen" (ein Wert auf 0).
+     - Messbarkeit: Projekterfolg im Gleichgewicht.
+   - Lernziel: Interdependenz der Projektziele.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_triangle.json')
+  - `corners`: ["scope", "time", "cost"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Interaktives Dreieck.
+- [ ] Game-Engine Logic ('game_pm_triangle.js')
+  - Schieberegler: Zeit runter -> Kosten hoch / Qualität runter.
+  - Interdependenzen verstehen.
+- [ ] Integration
+  - Startbar über JSON.

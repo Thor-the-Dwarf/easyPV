@@ -1,0 +1,21 @@
+Anforderungen
+4. "JavaScript-Event-Handler"
+   - Ziel: Mach den Button lebendig.
+   - Spielmechanik: 
+     - Button ist tot.
+     - Code: `btn.addEventListener(...)`.
+     - Event wählen: 'click'.
+     - Funktion: `alert('Hallo')`.
+     - Messbarkeit: Klick löst Aktion aus.
+   - Lernziel: DOM-Interaktion.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_js_events.json')
+  - `events`: ["onclick", "onmouseover", "onload"].
+- [ ] Shared CSS Check ('web_basics.css')
+  - Button mit Blitz-Symbol.
+- [ ] Game-Engine Logic ('game_web_js_events.js')
+  - Event-Firing simulieren.
+  - Callback-Funktion auslösen.
+- [ ] Integration
+  - Startbar über JSON.

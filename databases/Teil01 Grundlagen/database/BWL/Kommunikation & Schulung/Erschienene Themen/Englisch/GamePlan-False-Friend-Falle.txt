@@ -1,0 +1,19 @@
+Anforderungen
+3. "False-Friend-Falle"
+   - Ziel: Erkenne 10 "falsche Freunde" und korrigiere sie.
+   - Spielmechanik: 
+     - Satz: "I become a steak." (Falsch für "Ich bekomme").
+     - Spieler muss das falsche Wort ("become") markieren und das richtige ("get") aus einer Liste wählen.
+     - Messbarkeit: Gefundene Fehler / Korrekturen. 10/10 = 100%.
+   - Lernziel: Vermeidung typischer Übersetzungsfehler (Denglisch).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_englisch_falsefriends.json')
+  - `sentences`: { "text": "I become a steak", "errorWord": "become", "correction": "get" }.
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Text-Highlighting.
+- [ ] Game-Engine Logic ('game_englisch_falsefriends.js')
+  - Wort-Klick Handler.
+  - Korrektur-Auswahl.
+- [ ] Integration
+  - Startbar über JSON.

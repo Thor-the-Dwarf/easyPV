@@ -1,0 +1,20 @@
+Anforderungen
+1. "Lieferanten-Scoring-Model"
+   - Ziel: Berechne den Nutzwert für 3 Lieferanten und wähle den besten.
+   - Spielmechanik: 
+     - Tabelle mit Kriterien: Preis (40%), Qualität (30%), Termintreue (30%).
+     - Lieferant A: Preis 100 Pkt, Qualität 50 Pkt. Gesamtwert?
+     - Spieler muss rechnen: 40 + 15 = 55 Pkt.
+     - Messbarkeit: Korrekte Berechnung und Auswahl des Siegers.
+   - Lernziel: Anwendung der Nutzwertanalyse bei der Lieferantenwahl.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_vendor_score.json')
+  - `criteria`: ["price", "quality", "delivery"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Bewertungstabelle (Gewichtung x Note).
+- [ ] Game-Engine Logic ('game_pm_vendor_score.js')
+  - Nutzwertanalyse rechnen.
+  - Besten Lieferanten küren.
+- [ ] Integration
+  - Startbar über JSON.

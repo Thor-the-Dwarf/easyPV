@@ -1,0 +1,23 @@
+Anforderungen
+1. "Standby-Killer"
+   - Ziel: Finde die versteckten Verbraucher.
+   - Spielmechanik: 
+     - Büro-Szene.
+     - PC ist aus (0W).
+     - Monitor im Standby (2W).
+     - Drucker im Standby (5W).
+     - Kaffeemaschine an (1000W -> Standby 10W).
+     - Aufgabe: Drücke den Schalter an der Steckerleiste.
+     - Messbarkeit: Verbrauch sinkt auf 0W.
+   - Lernziel: Vermeidung von Leerlaufverlusten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_standby.json')
+  - `devices`: ["tv", "console", "pc"].
+- [ ] Shared CSS Check ('math_basics.css')
+  - Steckerleiste An/Aus.
+- [ ] Game-Engine Logic ('game_math_standby.js')
+  - Summe Standby-Verbrauch * 8760h.
+  - Einsparpotenzial berechnen.
+- [ ] Integration
+  - Startbar über JSON.

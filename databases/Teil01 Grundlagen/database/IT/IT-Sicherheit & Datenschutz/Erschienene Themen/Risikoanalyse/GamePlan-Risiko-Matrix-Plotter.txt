@@ -1,0 +1,19 @@
+Anforderungen
+1. "Risiko-Matrix-Plotter"
+   - Ziel: Platziere Risiken in der Matrix (Eintrittswahrscheinlichkeit x Schadenshöhe).
+   - Spielmechanik: 
+     - "Rechenzentrum brennt ab". -> Wahrsch: Gering. Schaden: Katastrophal.
+     - "Mitarbeiter vergisst PW". -> Wahrsch: Hoch. Schaden: Gering.
+     - "Ransomware". -> Wahrsch: Mittel. Schaden: Hoch.
+     - Messbarkeit: Korrekte Positionierung.
+   - Lernziel: Risikobewertung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_matrix.json')
+  - `axes`: ["Probability", "Impact"].
+- [ ] Shared CSS Check ('security_management.css')
+  - 5x5 Heatmap Grid.
+- [ ] Game-Engine Logic ('game_sec_matrix.js')
+  - Punkte auf Matrix setzen.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,22 @@
+Anforderungen
+2. "REPL-Simulator"
+   - Ziel: Nutze die interaktive Konsole.
+   - Spielmechanik: 
+     - Eingabe: `2 + 2`. Enter.
+     - Ausgabe: `4`.
+     - Eingabe: `print("Hallo")`. Enter.
+     - Ausgabe: `Hallo`.
+     - Das ist der "Read-Eval-Print Loop".
+     - Messbarkeit: Direkte Interaktion nutzen.
+   - Lernziel: Schnelles Testen von Code.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_repl.json')
+  - `inputs`: ["2+2", "print('hi')"].
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Terminal-Fenster (Schwarz/Grün).
+- [ ] Game-Engine Logic ('game_prog_repl.js')
+  - Mock-Konsole.
+  - Read-Eval-Print Loop visualisieren.
+- [ ] Integration
+  - Startbar über JSON.

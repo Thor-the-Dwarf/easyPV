@@ -1,0 +1,21 @@
+Anforderungen
+2. "Müll-Trennungs-Tetris"
+   - Ziel: Sortiere 20 Abfallarten korrekt (Papier, Plastik, Restmüll, Sondermüll/Elektro).
+   - Spielmechanik: 
+     - Objekte fallen herab: Batterien, Bananenschale, Briefumschlag mit Fenster, Toner-Kartusche.
+     - Spieler steuert Eimer unten.
+     - Tonkartusche in Restmüll = Falsch (Sondermüll/Recyling).
+     - Messbarkeit: Korrekte Sortierquote in %.
+   - Lernziel: Korrekte Entsorgung im gewerblichen Umfeld.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sust_trash.json')
+  - `items`: [ { "img": "battery", "bin": "special" } ].
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Fallende Items.
+  - 4 Tonnen am Boden.
+- [ ] Game-Engine Logic ('game_sust_trash.js')
+  - Arcade-Style Logic.
+  - Tonnen bewegen oder Item lenken.
+- [ ] Integration
+  - Startbar über JSON.

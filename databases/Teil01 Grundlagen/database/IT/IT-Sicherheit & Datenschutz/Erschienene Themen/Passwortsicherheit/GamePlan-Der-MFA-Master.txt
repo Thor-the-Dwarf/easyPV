@@ -1,0 +1,22 @@
+Anforderungen
+3. "Der MFA-Master"
+   - Ziel: Sichere den Account mit Multi-Faktor-Authentifizierung (MFA).
+   - Spielmechanik: 
+     - Hacker hat PW. Loggt sich ein.
+     - Spieler: "Halt! MFA aktivieren".
+     - Faktor 1: Wissen (PW). Faktor 2: Besitz (Smartphone/Token). Faktor 3: Biometrie.
+     - Aufgabe: Wähle eine 2-Faktor-Kombi.
+     - Fehler: PW + PIN (Beides Wissen -> Keine 2FA).
+     - Messbarkeit: Korrekte Faktoren-Kombination.
+   - Lernziel: Wissen, Besitz, Sein / 2FA.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_mfa.json')
+  - `factors`: ["pw", "sms", "bio", "pin"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - Login-Screen Erweiterung.
+- [ ] Game-Engine Logic ('game_sec_mfa.js')
+  - Kategorien (Wissen, Besitz, Sein) prüfen.
+  - Echtes 2FA vs "2x Wissen".
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,50 @@
+1. "Das Gateway-Labyrinth"
+   - Ziel: Entscheide den Pfad korrekt (XOR, AND, OR).
+   - Spielmechanik: 
+     - Auto kommt an Kreuzung (Gateway).
+     - XOR (Exklusiv): Links ODER Rechts. (Beides geht nicht -> Crash).
+     - AND (Parallel): Auto teilt sich auf (Klonen/Parallelisierung).
+     - OR (Inklusiv): Eins oder Beides.
+     - Messbarkeit: Prozess läuft fehlerfrei zum Ende.
+   - Lernziel: Logik der Gateways.
+
+2. "Token-Tracker"
+   - Ziel: Verfolge den Token durch den Prozess.
+   - Spielmechanik: 
+     - Prozessmodell gegeben. Start.
+     - Token läuft los.
+     - Aufgabe: "Wo ist der Token nach Schritt 3?"
+     - Falle: Paralleler Zweig (AND) -> Token verdoppelt sich.
+     - Messbarkeit: Korrekte Positionsangabe.
+   - Lernziel: Token-Fluss Prinzip.
+
+3. "Symbol-Shooter"
+   - Ziel: Schieße auf das falsche Symbol.
+   - Spielmechanik: 
+     - Begriff: "Nachricht senden". Symbole fliegen vorbei.
+     - Richtig: Briefumschlag (schwarz gefüllt).
+     - Falsch: Uhr (Timer), Mensch (User Task).
+     - Messbarkeit: Highscore durch schnelle Erkennung.
+   - Lernziel: Notation (Events, Tasks).
+
+4. "Der Deadlock-Detektiv"
+   - Ziel: Finde den Fehler im Prozess, der zum Stillstand führt.
+   - Spielmechanik: 
+     - Prozess mit Parallel-Split (AND).
+     - Zusammenführung mit XOR (Fehler! XOR wartet nicht auf beide).
+     - Token 1 kommt an -> Weiter. Token 2 kommt an -> Weiter.
+     - Ergebnis: Task danach wird 2x ausgeführt (Falsch).
+     - Richtig: AND-Join nutzen.
+     - Messbarkeit: Fehler markieren.
+   - Lernziel: Modellierungsregeln (Soundness).
+
+5. "Pool-Party"
+   - Ziel: Ordne die Aufgaben den Lanes zu.
+   - Spielmechanik: 
+     - Lanes: "Kunde", "Verkäufer", "Lagerist".
+     - Aufgabe: "Bestellung aufgeben" -> Kunde.
+     - Aufgabe: "Rechnung schreiben" -> Verkäufer.
+     - Aufgabe: "Paket packen" -> Lagerist.
+     - Falsches Lane -> "Der Kunde kann kein Paket packen!".
+     - Messbarkeit: 100% korrekte Swimlanes.
+   - Lernziel: Verantwortlichkeiten im Diagramm.

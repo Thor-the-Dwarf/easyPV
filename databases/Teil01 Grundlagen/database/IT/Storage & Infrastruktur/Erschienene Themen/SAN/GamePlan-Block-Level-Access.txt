@@ -1,0 +1,20 @@
+Anforderungen
+5. "Block-Level-Access"
+   - Ziel: Verstehe den Unterschied zum NAS.
+   - Spielmechanik: 
+     - NAS (File Level): Server sagt "Gib mir Datei host.txt". NAS liest und sendet.
+     - SAN (Block Level): Server sagt "Gib mir Block 4096 bis 8192". Server baut Dateisystem selbst (NTFS/EXT4).
+     - Szenario: Datenbank braucht Raw-Performance. -> SAN wählen.
+     - Messbarkeit: Wahl der richtigen Speicherarchitektur.
+   - Lernziel: Block vs File Storage.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_san_block.json')
+  - `mode`: "block".
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Dateisystem-Layer (NTFS) auf dem Server (nicht Storage).
+- [ ] Game-Engine Logic ('game_san_block.js')
+  - Anfragen "Block 100-200" vs "File X".
+  - Performance-Vorteil DB.
+- [ ] Integration
+  - Startbar über JSON.

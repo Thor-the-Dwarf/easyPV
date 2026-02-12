@@ -1,0 +1,21 @@
+Anforderungen
+2. "Resolution-Check"
+   - Ziel: Wähle das Kabel, das 4K bei 60Hz schafft.
+   - Spielmechanik: 
+     - Monitor: 4K UHD.
+     - Kabel A: VGA (Analog, schafft es nicht).
+     - Kabel B: HDMI 1.4 (Nur 30Hz).
+     - Kabel C: DisplayPort 1.2 / HDMI 2.0 (Schafft 60Hz).
+     - Messbarkeit: Bild ist flüssig & scharf.
+   - Lernziel: Bandbreitenlimits der Versionen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_monitor_res.json')
+  - `req`: "4k60".
+  - `cables`: [ { "name": "HDMI 1.4", "cap": "4k30" } ].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Monitor-Bild (Scharf vs Ruckelig).
+- [ ] Game-Engine Logic ('game_monitor_res.js')
+  - Auswahlprüfung.
+- [ ] Integration
+  - Startbar über JSON.

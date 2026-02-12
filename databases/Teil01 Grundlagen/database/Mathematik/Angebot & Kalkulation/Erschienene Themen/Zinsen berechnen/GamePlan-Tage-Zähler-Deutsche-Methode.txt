@@ -1,0 +1,20 @@
+Anforderungen
+4. "Tage-Zähler (Deutsche Methode)"
+   - Ziel: Wie viele Tage hat der Monat?
+   - Spielmechanik: 
+     - Methode 30/360 (Jeder Monat 30 Tage).
+     - Vom 28. Februar bis 1. März = 3 Tage (28, 29, 30).
+     - Real (act/act): 1 Tag (außer Schaltjahr).
+     - Bank rechnet meist 30/360.
+     - Messbarkeit: Korrekte Zinstage ermittelt.
+   - Lernziel: Zinsmethoden (30/360 vs act/act).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_day_count.json')
+  - `month`: "Feb".
+- [ ] Shared CSS Check ('math_basics.css')
+  - Kalender 30/360.
+- [ ] Game-Engine Logic ('game_math_day_count.js')
+  - Jeder Monat hat 30 Tage (auch Februar).
+- [ ] Integration
+  - Startbar über JSON.

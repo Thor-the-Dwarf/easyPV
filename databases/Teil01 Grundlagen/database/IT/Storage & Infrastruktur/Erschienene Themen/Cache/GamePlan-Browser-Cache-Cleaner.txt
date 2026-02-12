@@ -1,0 +1,21 @@
+Anforderungen
+5. "Browser-Cache-Cleaner"
+   - Ziel: Warum sehe ich die neue Webseite nicht?
+   - Spielmechanik: 
+     - Entwickler (Spieler) ändert Logo auf Rot.
+     - Kunde sieht immer noch Grün.
+     - Diagnose: Browser hat alte CSS gecached.
+     - Lösung: "Strg+F5" oder Versionierung "style.css?v=2".
+     - Messbarkeit: Logo ist rot.
+   - Lernziel: Client-Side Caching.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_cache_browser.json')
+  - `css_version`: 1.
+- [ ] Shared CSS Check ('storage_basics.css')
+  - Browser-Fenster Mockup (F5 Button).
+- [ ] Game-Engine Logic ('game_cache_browser.js')
+  - CSS-Reload Simulator.
+  - "Strg+F5" Key-Listener (Simuliert).
+- [ ] Integration
+  - Startbar über JSON.

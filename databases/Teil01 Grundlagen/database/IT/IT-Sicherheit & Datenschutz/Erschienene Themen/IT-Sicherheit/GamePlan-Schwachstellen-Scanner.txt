@@ -1,0 +1,21 @@
+Anforderungen
+2. "Schwachstellen-Scanner"
+   - Ziel: Finde die CVE (Common Vulnerabilities and Exposures).
+   - Spielmechanik: 
+     - System-Scan läuft.
+     - Ergebnis: "Windows XP gefunden". -> Kritisch (EOL).
+     - Ergebnis: "SMBv1 aktiv". -> Kritisch (WannaCry).
+     - Spieler muss Patches auswählen.
+     - Messbarkeit: System-Score steigt auf "Sicher".
+   - Lernziel: Vulnerability Management.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_vuln.json')
+  - `vulns`: ["xp_eol", "smbv1", "default_pw"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Scanner-Radar Animation.
+- [ ] Game-Engine Logic ('game_sec_vuln.js')
+  - Scan-Ergebnisse bewerten (Kritisch/Warnung).
+  - Patch-Auswahl.
+- [ ] Integration
+  - Startbar über JSON.

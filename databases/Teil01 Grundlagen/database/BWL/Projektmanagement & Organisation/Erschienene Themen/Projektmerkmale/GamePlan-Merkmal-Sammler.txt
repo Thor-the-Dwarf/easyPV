@@ -1,0 +1,19 @@
+Anforderungen
+2. "Merkmal-Sammler"
+   - Ziel: Finde die 5 DIN-Merkmale eines Projekts in einem Wimmelbild/Text.
+   - Spielmechanik: 
+     - Begriffe versteckt: "Einmaligkeit", "Neuartigkeit", "Ressourcenbegrenzung", "Zielvorgabe", "Komplexität".
+     - Anklicken.
+     - Messbarkeit: Alle 5 gefunden.
+   - Lernziel: DIN 69901 Definition kennen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_features.json')
+  - `features`: ["risky", "complex", "team", "goal"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Korb-Spiel.
+- [ ] Game-Engine Logic ('game_pm_features.js')
+  - Normale Aufgaben aussortieren.
+  - Projekt-Merkmale sammeln (DIN 69901).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+4. "Maßnahmen-Matcher"
+   - Ziel: Welche Technik schützt welches Ziel?
+   - Spielmechanik: 
+     - "Verschlüsselung". -> Vertraulichkeit.
+     - "Prüfsumme (Hash)". -> Integrität.
+     - "USV (Notstrom)". -> Verfügbarkeit.
+     - "Digitale Signatur". -> Authentizität & Integrität.
+     - Messbarkeit: Korrekte Paare.
+   - Lernziel: Technische Umsetzung der Ziele.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_measure_match.json')
+  - `techs`: ["encryption", "hash", "ups"].
+- [ ] Shared CSS Check ('security_management.css')
+  - Verbindungslinien ziehen.
+- [ ] Game-Engine Logic ('game_sec_measure_match.js')
+  - Technik -> Schutzziel Mapping.
+- [ ] Integration
+  - Startbar über JSON.

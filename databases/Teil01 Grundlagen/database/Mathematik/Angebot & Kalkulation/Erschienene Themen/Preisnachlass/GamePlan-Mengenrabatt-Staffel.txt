@@ -1,0 +1,20 @@
+Anforderungen
+3. "Mengenrabatt-Staffel"
+   - Ziel: Optimiere die Bestellmenge.
+   - Spielmechanik: 
+     - 1-9 Stück: 10€/Stk.
+     - Ab 10 Stück: 8€/Stk.
+     - Bedarf: 9 Stück = 90€.
+     - Trick: Bestelle 10 Stück = 80€. (Billiger + 1 Stk gratis).
+     - Messbarkeit: Erkennen der günstigeren Staffel.
+   - Lernziel: Staffepreise.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_volume_discount.json')
+  - `quantities`: [10, 50, 100].
+- [ ] Shared CSS Check ('math_basics.css')
+  - Preiskurve.
+- [ ] Game-Engine Logic ('game_math_volume_discount.js')
+  - Staffelpreise anwenden.
+- [ ] Integration
+  - Startbar über JSON.

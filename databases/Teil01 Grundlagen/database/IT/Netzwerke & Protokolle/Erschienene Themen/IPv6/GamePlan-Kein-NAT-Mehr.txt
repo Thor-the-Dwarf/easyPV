@@ -1,0 +1,20 @@
+Anforderungen
+3. "Kein-NAT-Mehr"
+   - Ziel: Verstehe den Paradigmenwechsel.
+   - Spielmechanik: 
+     - IPv4 Netz: Router macht NAT. Private IPs innen.
+     - IPv6 Netz: Jedes Gerät hat globale IP. Router routet nur (Firewall schützt).
+     - Aufgabe: "Port Forwarding einrichten?" -> Nein! Einfach Firewall-Regel "Allow traffic to Device IP".
+     - Messbarkeit: Dienst erreichbar ohne NAT.
+   - Lernziel: Ende zu Ende Konnektivität.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ipv6_nonat.json')
+  - `devices`: ["Webcam", "Server"].
+- [ ] Shared CSS Check ('network_ip.css')
+  - Firewall-Regelwerk Mockup.
+- [ ] Game-Engine Logic ('game_ipv6_nonat.js')
+  - Checkbox "Port Forwarding" (Falle!).
+  - Checkbox "Allow Rule" (Richtig).
+- [ ] Integration
+  - Startbar über JSON.

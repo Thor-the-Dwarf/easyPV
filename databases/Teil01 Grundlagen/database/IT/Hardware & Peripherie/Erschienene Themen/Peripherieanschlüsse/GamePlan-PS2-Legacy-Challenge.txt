@@ -1,0 +1,23 @@
+Anforderungen
+2. "PS/2 Legacy Challenge"
+   - Ziel: Schließe Maus und Tastatur an den alten PC an.
+   - Spielmechanik: 
+     - Stecker: Lila (Tastatur), Grün (Maus).
+     - Regel: Darf nicht im laufenden Betrieb gesteckt werden (Kein Hot-Plug!).
+     - Wenn PC an ist und Spieler steckt -> Controller brennt durch / geht nicht.
+     - Richtig: Erst stecken, dann PC einschalten.
+     - Messbarkeit: Funktionierende Peripherie.
+   - Lernziel: Unterschied Hot-Plug-fähig (USB) vs Legacy.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_periph_ps2.json')
+  - `state`: "on".
+  - `action`: "plug".
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Alter PC, PS/2 Buchsen.
+  - Funken-Effekt bei Hotplug.
+- [ ] Game-Engine Logic ('game_periph_ps2.js')
+  - State-Check (Is PC on?).
+  - Fail bei Hotplug.
+- [ ] Integration
+  - Startbar über JSON.

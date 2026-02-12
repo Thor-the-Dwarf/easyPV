@@ -1,0 +1,19 @@
+Anforderungen
+3. "Wareneingangs-Abgleich"
+   - Ziel: Haben wir das überhaupt bekommen?
+   - Spielmechanik: 
+     - Lieferschein sagt: "3 Laptops geliefert".
+     - Rechnung sagt: "4 Laptops berechnet".
+     - Abweichung! Nicht zahlen.
+     - Messbarkeit: Diskrepanz zwischen Belegen erkannt.
+   - Lernziel: Belegfluss (Bestellung -> Lieferschein -> Rechnung).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_invoice_check.json')
+  - `delivery`: ["item1", "item2"].
+- [ ] Shared CSS Check ('math_basics.css')
+  - Lieferschein vs Rechnung.
+- [ ] Game-Engine Logic ('game_math_invoice_check.js')
+  - Mengen und Preise abgleichen.
+- [ ] Integration
+  - Startbar über JSON.

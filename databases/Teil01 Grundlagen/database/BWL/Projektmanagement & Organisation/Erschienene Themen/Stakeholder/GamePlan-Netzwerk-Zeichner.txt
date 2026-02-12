@@ -1,0 +1,19 @@
+Anforderungen
+4. "Netzwerk-Zeichner"
+   - Ziel: Zeichne Beziehungen zwischen Stakeholdern ein (Konflikt oder Kooperation?).
+   - Spielmechanik: 
+     - Linie zwischen "Umweltschutzverein" und "Bauherr". -> Konflikt (Blitz-Symbol).
+     - Linie zwischen "Bauherr" und "Finanzamt". -> Kooperation/Abhängigkeit.
+     - Messbarkeit: Korrekte Bewertung der Beziehung.
+   - Lernziel: Beziehungsgeflecht verstehen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_stake_net.json')
+  - `relations`: ["positive", "negative", "neutral"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Soziogramm / Netzwerk-Graph.
+- [ ] Game-Engine Logic ('game_pm_stake_net.js')
+  - Beziehungen einzeichnen.
+  - "Spinne im Netz" finden.
+- [ ] Integration
+  - Startbar über JSON.

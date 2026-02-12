@@ -1,0 +1,20 @@
+Anforderungen
+2. "Crossover-Kabel nötig?"
+   - Ziel: Ein Verbindungskabel löten.
+   - Spielmechanik: 
+     - PC an PC (Alt): Braucht Crossover (Senden an Empfangen).
+     - PC an Switch: Braucht Patchkabel (Straight).
+     - PC an PC (Neu mit Auto-MDI-X): Egal.
+     - Aufgabe: Verbinde zwei uralte Switches.
+     - Messbarkeit: Link-LED leuchtet.
+   - Lernziel: MDI vs MDI-X.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_rj45_cross.json')
+  - `devices`: ["PC-PC", "PC-Switch", "Legacy-Switch-Switch"].
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Kabel-Querschnitt (Gekreuzt vs Gerade).
+- [ ] Game-Engine Logic ('game_rj45_cross.js')
+  - Kabelwahl pro Szenario.
+- [ ] Integration
+  - Startbar über JSON.

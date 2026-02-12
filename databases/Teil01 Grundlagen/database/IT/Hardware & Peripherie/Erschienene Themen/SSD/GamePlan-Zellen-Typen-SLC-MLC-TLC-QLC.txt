@@ -1,0 +1,19 @@
+Anforderungen
+3. "Zellen-Typen (SLC, MLC, TLC, QLC)"
+   - Ziel: Wähle die SSD für den Einsatzzweck.
+   - Spielmechanik: 
+     - "Enterprise Log-Server (Viel Schreiben)". -> SLC/MLC (Teuer, haltbar).
+     - "Archiv-Datengrab (Wenig Schreiben, viel Lesen)". -> QLC (Billig, nicht haltbar).
+     - "Gaming PC". -> TLC (Guter Mix).
+     - Messbarkeit: Optimale Technologie gewählt.
+   - Lernziel: Bits pro Zelle vs Haltbarkeit/Performance.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ssd_cells.json')
+  - `scenarios`: [ { "use": "Archiv", "type": "QLC" } ].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Zellebenen-Grafik (1 Bit vs 4 Bits).
+- [ ] Game-Engine Logic ('game_ssd_cells.js')
+  - Auswahl/Matching.
+- [ ] Integration
+  - Startbar über JSON.

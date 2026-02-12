@@ -1,0 +1,19 @@
+Anforderungen
+3. "Der Medien-Server"
+   - Ziel: Streame Video auf den TV.
+   - Spielmechanik: 
+     - Protokollwahl: SMB (TV kann das oft nicht).
+     - Protokollwahl: DLNA / UPnP (TV findet es automatisch).
+     - Spieler aktiviert DLNA-Dienst am NAS.
+     - Messbarkeit: Film läuft am TV.
+   - Lernziel: Multimedia-Funktionen von NAS.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_nas_media.json')
+  - `protocols`: ["SMB", "DLNA"].
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Smart TV Interface.
+- [ ] Game-Engine Logic ('game_nas_media.js')
+  - Protokoll-Discovery (DLNA taucht auf, SMB nicht).
+- [ ] Integration
+  - Startbar über JSON.

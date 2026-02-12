@@ -1,0 +1,22 @@
+Anforderungen
+5. "Ekahau-Heatmap (Ausleuchtung)"
+   - Ziel: Platziere die Access Points (APs) optimal.
+   - Spielmechanik: 
+     - Grundriss Büroräume.
+     - Spieler setzt APs.
+     - Heatmap zeigt Signalstärke (Grün bis Rot).
+     - Ziel: Alle Büros grün, keine Löcher.
+     - Aber: Nicht zu viele (Interferenz!).
+     - Messbarkeit: Abdeckung > -65dBm überall.
+   - Lernziel: WLAN-Planung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_wifi_map.json')
+  - `floorplan`: "office".
+- [ ] Shared CSS Check ('network_wifi.css')
+  - Heatmap Overlay (Canvas).
+- [ ] Game-Engine Logic ('game_wifi_map.js')
+  - AP platzieren -> Kreisberechnung (Radius).
+  - Coverage-Check.
+- [ ] Integration
+  - Startbar über JSON.

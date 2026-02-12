@@ -1,0 +1,20 @@
+Anforderungen
+5. "Duplicate Address Detection (DAD)"
+   - Ziel: Verhindere IP-Konflikte bei Autokonfiguration.
+   - Spielmechanik: 
+     - Client generiert seine IP.
+     - Bevor er sie nutzt, schreit er: "Hat die schon wer? (Neighbor Solicitation)".
+     - Wenn Antwort -> IP verwerfen.
+     - Wenn Stille -> IP nutzen.
+     - Messbarkeit: Verständnis des DAD-Prozesses.
+   - Lernziel: Sicherheit bei SLAAC.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_slaac_dad.json')
+  - `collision`: true.
+- [ ] Shared CSS Check ('network_ip.css')
+  - Netzwerk-Traffic (Solicitation Message).
+- [ ] Game-Engine Logic ('game_slaac_dad.js')
+  - Stop bei Antwort. Neue IP generieren.
+- [ ] Integration
+  - Startbar über JSON.

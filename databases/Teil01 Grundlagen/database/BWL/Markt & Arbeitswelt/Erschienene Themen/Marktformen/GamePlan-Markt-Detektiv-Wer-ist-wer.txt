@@ -1,0 +1,19 @@
+Anforderungen
+4. "Markt-Detektiv: Wer ist wer?"
+   - Ziel: Bestimme die Marktform anhand von Strukturdaten (Anbieterzahl/Nachfragerzahl).
+   - Spielmechanik: 
+     - Steckbrief: "Viele Anbieter, Wenige Nachfrager".
+     - Auswahl: Angebotsoligopol? Nachfragemonopol?
+     - Messbarkeit: 10 Kombinationen. Zeitlimit 60 Sek. Anzahl Richtige = Score.
+   - Lernziel: Systematische Einordnung nach dem ökonomischen Schema (Zweiseitiges Monopol etc.).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_markt_detektiv.json')
+  - `cases`: { "supply": "many", "demand": "few", "form": "Nachfrageoligopol" }.
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Steckbrief-Karte.
+  - Grid-Auswahl der Marktformen.
+- [ ] Game-Engine Logic ('game_markt_detektiv.js')
+  - Matrix-Logik (Anbieter x Nachfrager).
+- [ ] Integration
+  - Startbar über JSON.

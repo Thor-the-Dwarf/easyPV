@@ -1,0 +1,20 @@
+Anforderungen
+5. "Skonto-Option"
+   - Ziel: Motiviere zur schnellen Zahlung.
+   - Spielmechanik: 
+     - Zahlungsziel: 30 Tage netto.
+     - Option: "2% Skonto bei Zahlung in 10 Tagen".
+     - Kunde rechnet: Ist das besser als Bankzins? (Ja, 2% in 20 Tagen ist enormer Jahreszins).
+     - Kunde zahlt sofort -> Liquidität gesichert.
+     - Messbarkeit: Liquiditätsvorteil verstehen.
+   - Lernziel: Zahlungsbedingungen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_offer_skonto.json')
+  - `text`: "2% Skonto bei Zahlung binnen 10 Tagen".
+- [ ] Shared CSS Check ('math_basics.css')
+  - Text-Baustein Wähler.
+- [ ] Game-Engine Logic ('game_math_offer_skonto.js')
+  - Korrekte Formulierung prüfen.
+- [ ] Integration
+  - Startbar über JSON.

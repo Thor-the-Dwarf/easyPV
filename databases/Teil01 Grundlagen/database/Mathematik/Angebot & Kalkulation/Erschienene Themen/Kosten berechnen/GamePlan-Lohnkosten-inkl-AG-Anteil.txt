@@ -1,0 +1,20 @@
+Anforderungen
+5. "Lohnkosten inkl. AG-Anteil"
+   - Ziel: Was kostet der Mitarbeiter wirklich?
+   - Spielmechanik: 
+     - Bruttolohn: 3000€.
+     - Arbeitgeberanteil Sozialversicherung (ca. 20%): +600€.
+     - Totale Kosten: 3600€.
+     - Fehler: Nur mit 3000€ kalkuliert -> Verlust.
+     - Messbarkeit: "Personalzusatzkosten" berücksichtigt.
+   - Lernziel: Vollkostenrechnung Personal.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_labor_cost.json')
+  - `gross`: 3000.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Gehaltszettel vs Kostensicht Firma.
+- [ ] Game-Engine Logic ('game_math_labor_cost.js')
+  - Arbeitgeberanteil (~21%) draufrechnen.
+- [ ] Integration
+  - Startbar über JSON.

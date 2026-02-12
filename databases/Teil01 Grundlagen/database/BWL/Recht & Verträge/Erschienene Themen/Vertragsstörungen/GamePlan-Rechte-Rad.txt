@@ -1,0 +1,44 @@
+Anforderungen
+2. "Rechte-Rad"
+   - Ziel: Wähle das erlaubte Recht des Käufers bei Mangel (Vorrang der Nacherfüllung!).
+   - Spielmechanik: 
+     - Handy kaputt.
+     - Käufer schreit: "Geld zurück!" (Rücktritt).
+     - Spiel: Darf er das sofort? -> Nein.
+     - Richtig: Erst "Nacherfüllung" (Reparatur/Neulieferung) fordern.
+     - Erst nach 2. Fehlversuch -> Rücktritt.
+     - Messbarkeit: Einhaltung der juristischen Reihenfolge.
+   - Lernziel: Nacherfüllung vor Rücktritt/Minderung.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Stufe 1 (Nacherfüllung) vs Stufe 2 (Rücktritt/Minderung).
+- [ ] Spielprinzip: Glücksrad oder Entscheidungsbaum.
+- [ ] Paar: "Erstmalige Störung" + "Nacherfüllung".
+
+2. Screen-Layout
+- [ ] Rad-Interface (Drehbar) oder Entscheidungsbaum (Klickbar).
+- [ ] Zentral: Das aktuelle Recht (groß hervorgehoben).
+- [ ] Unten: "Darf ich das jetzt schon?" Button.
+
+3. Browser- und Device-Resilienz
+- [ ] Touch-Gesten für Rad-Drehen.
+- [ ] Alternative: Button-Steuerung.
+- [ ] Rad muss responsive sein (SVG).
+
+4. Kernvisuals
+- [ ] Symbole für Nachbesserung (Werkzeug) und Rücktritt (Tür).
+- [ ] Ampelphasen (Vorrang vor Nachrang).
+- [ ] Stoppschild bei zu frühem Rücktritt.
+
+5. Interaktion und Feedback
+- [ ] User wählt "Rücktritt" beim ersten Mangel -> "Zu früh! Erst Nacherfüllung fordern."
+- [ ] User wählt "Nacherfüllung" -> "Korrekt! § 439 BGB."
+- [ ] Nach 2. Fehlversuch: "Jetzt darfst du zurücktreten."
+
+6. KPI-Klarheit
+- [ ] "Rechtsweg-Score" (Korrekte Reihenfolge).
+
+7. QA-Paket
+- [ ] Rad-Mechanik testen.
+- [ ] Lesbarkeit der Rechte-Labels.

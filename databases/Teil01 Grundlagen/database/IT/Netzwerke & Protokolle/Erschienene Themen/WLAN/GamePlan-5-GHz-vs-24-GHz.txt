@@ -1,0 +1,18 @@
+Anforderungen
+2. "5 GHz vs 2.4 GHz"
+   - Ziel: Reichweite vs Speed.
+   - Spielmechanik: 
+     - Szenario: "Dicke Betonwand". -> 2.4 GHz (Dringt besser durch).
+     - Szenario: "Im gleichen Raum, Gaming". -> 5 GHz (Schneller, weniger Störungen).
+     - Messbarkeit: Beste Verbindungsqualität für den Ort.
+   - Lernziel: Physikalische Eigenschaften der Frequenzen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_wifi_freq.json')
+  - `obstacles`: ["concrete_wall"].
+- [ ] Shared CSS Check ('network_wifi.css')
+  - Wellen-Animation (Kurz/Lang).
+- [ ] Game-Engine Logic ('game_wifi_freq.js')
+  - Signalstärke-Berechnung nach Hindernis.
+- [ ] Integration
+  - Startbar über JSON.

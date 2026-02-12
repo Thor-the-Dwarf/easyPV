@@ -1,0 +1,19 @@
+Anforderungen
+1. "Pflichtbestandteile-Check"
+   - Ziel: Ist das Angebot rechtssicher?
+   - Spielmechanik: 
+     - Dokument wird angezeigt.
+     - User muss fehlende Teile reinziehen: "Datum", "Leistungszeitraum", "Steuernummer", "Empfänger".
+     - Wenn etwas fehlt -> Abmahnung/Ungültig.
+     - Messbarkeit: Vollständiges Dokument.
+   - Lernziel: Formale Anforderungen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_offer_legal.json')
+  - `elements`: ["date", "valid_until", "net_gross"].
+- [ ] Shared CSS Check ('math_basics.css')
+  - Checkliste.
+- [ ] Game-Engine Logic ('game_math_offer_legal.js')
+  - Fehlt die Bindefrist? Sind Preise netto/brutto klar?
+- [ ] Integration
+  - Startbar über JSON.

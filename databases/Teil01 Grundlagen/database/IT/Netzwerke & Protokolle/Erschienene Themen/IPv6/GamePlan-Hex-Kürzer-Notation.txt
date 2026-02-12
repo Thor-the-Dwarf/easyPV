@@ -1,0 +1,23 @@
+Anforderungen
+1. "Hex-Kürzer (Notation)"
+   - Ziel: Verkürze die IPv6 Adresse korrekt.
+   - Spielmechanik: 
+     - Input: 2001:0db8:0000:0000:0000:0000:1428:57ab.
+     - Regel 1: Führende Nullen weg (2001:db8...).
+     - Regel 2: Nullen-Blöcke zu "::" (einmalig!).
+     - Lösung: 2001:db8::1428:57ab.
+     - Falsch: 2001:db8::1428::57ab (Zwei mal "::" verboten).
+     - Messbarkeit: Valide Kurzschreibweise.
+   - Lernziel: IPv6 Syntax-Regeln.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ipv6_compress.json')
+  - `full`: "2001:0db8:0000:0000...".
+- [ ] Shared CSS Check ('network_ip.css')
+  - Text-Editor Feld.
+  - Zeichenzähler.
+- [ ] Game-Engine Logic ('game_ipv6_compress.js')
+  - Regel-Validator (Nur ein "::", führende Nullen weg).
+  - Echtzeit-Feedback.
+- [ ] Integration
+  - Startbar über JSON.

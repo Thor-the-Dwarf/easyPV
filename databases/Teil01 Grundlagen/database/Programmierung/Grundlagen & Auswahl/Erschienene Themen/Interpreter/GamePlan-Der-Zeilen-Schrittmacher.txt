@@ -1,0 +1,22 @@
+Anforderungen
+1. "Der Zeilen-Schrittmacher"
+   - Ziel: Debugge das Skript.
+   - Spielmechanik: 
+     - Button "Step Over".
+     - Zeiger springt von Zeile 1 auf 2.
+     - Variable ändert sich live.
+     - Fehler in Zeile 3 -> Crash.
+     - Erkenntnis: Ich konnte Zeile 1 und 2 noch sehen.
+     - Messbarkeit: Verständnis der sequentiellen Abarbeitung.
+   - Lernziel: Laufzeit-Verhalten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_stepper.json')
+  - `code`: ["a=1", "b=2", "print(a+b)"].
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Debugger-Pfeil am Rand.
+- [ ] Game-Engine Logic ('game_prog_stepper.js')
+  - Step-by-Step Ausführung.
+  - Variablen-Zustand anzeigen.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,19 @@
+Anforderungen
+4. "Der falsche Bildschirmschoner"
+   - Ziel: Räume mit dem Mythos auf.
+   - Spielmechanik: 
+     - User aktiviert "3D Röhren" Bildschirmschoner.
+     - Grafikkarte taktet hoch -> Verbrauch steigt!
+     - Richtig: "Bildschirm schwarz" oder "Monitor aus".
+     - Messbarkeit: Verbrauchsanzeige bewertet die Wahl.
+   - Lernziel: Bildschirmschoner sparen keinen Strom.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_screensaver.json')
+  - `mode`: "3d_pipes".
+- [ ] Shared CSS Check ('math_basics.css')
+  - Monitor-Overlay.
+- [ ] Game-Engine Logic ('game_math_screensaver.js')
+  - Vergleich: Screen Off (1W) vs 3D-Saver (150W).
+- [ ] Integration
+  - Startbar über JSON.

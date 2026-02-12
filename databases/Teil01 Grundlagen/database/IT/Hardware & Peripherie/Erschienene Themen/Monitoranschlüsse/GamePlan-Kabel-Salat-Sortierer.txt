@@ -1,0 +1,20 @@
+Anforderungen
+1. "Kabel-Salat Sortierer"
+   - Ziel: Erkenne den Stecker anhand des Bildes.
+   - Spielmechanik: 
+     - Bild: Breiter blauer Stecker mit Schrauben. -> VGA.
+     - Bild: Weißer Stecker. -> DVI.
+     - Bild: Kleiner asymmetrischer Stecker. -> DisplayPort (Ecke abgeschrägt).
+     - Bild: HDMI (Beidseitig abgeschrägt unten).
+     - Messbarkeit: Korrekte Benennung.
+   - Lernziel: Steckertypen unterscheiden.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_monitor_cable.json')
+  - `images`: ["vga.png", "dvi.png", "dp.png"].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Stecker-Detailansichten.
+- [ ] Game-Engine Logic ('game_monitor_cable.js')
+  - Quiz / Benennung.
+- [ ] Integration
+  - Startbar über JSON.

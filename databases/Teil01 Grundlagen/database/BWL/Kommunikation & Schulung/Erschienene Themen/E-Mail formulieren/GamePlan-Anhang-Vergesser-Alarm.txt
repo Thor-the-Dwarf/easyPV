@@ -1,0 +1,21 @@
+Anforderungen
+4. "Anhang-Vergesser-Alarm"
+   - Ziel: Finde in 3 E-Mails den Hinweis auf einen fehlenden Anhang.
+   - Spielmechanik: 
+     - E-Mail Text: "Anbei finden Sie..." oder "Siehe Anlage."
+     - Aber kein Anhang-Symbol ist aktiv.
+     - Spieler muss den "Senden"-Button blockieren/drücken: "Stopp! Anhang fehlt!".
+     - Messbarkeit: Reaktionszeit und Korrektheit. Wenn man "Senden" drückt trotz "Anbei...", gibt es Punktabzug.
+   - Lernziel: Achtsamkeit und Qualitätskontrolle vor dem Senden.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_email_anhang.json')
+  - `mails`: [ { "text": "Anbei...", "hasAttachment": false } ].
+- [ ] Shared CSS Check ('kommunikation.css')
+  - "Senden"-Button Interaktion.
+  - Pop-up Simulation ("Wirklich senden?").
+- [ ] Game-Engine Logic ('game_email_anhang.js')
+  - Timer läuft runter (Stress).
+  - Prüfung: Darf gesendet werden?
+- [ ] Integration
+  - Startbar über JSON.

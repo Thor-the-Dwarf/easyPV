@@ -1,0 +1,21 @@
+Anforderungen
+5. "Skonto als Jahreszins"
+   - Ziel: Rechne das Skonto in Zins p.a. um.
+   - Spielmechanik: 
+     - 2% Skonto für 20 Tage früher zahlen.
+     - Wie viele 20-Tage-Blöcke hat das Jahr? 360 / 20 = 18.
+     - Jahreszins = 2% * 18 = 36% p.a.!!
+     - Fazit: Nimm einen Kredit auf (5%), um Skonto zu ziehen (36% Gewinn).
+     - Messbarkeit: Erkenntnis der extremen Rentabilität von Skonto.
+   - Lernziel: Lieferantenkredit.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_eff_interest.json')
+  - `skonto`: 3, `days_gain`: 20.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Schock-Smiley (hoher Zins).
+- [ ] Game-Engine Logic ('game_math_eff_interest.js')
+  - Formel: (Skonto / (Zahlungsziel - Skontofrist)) * 360.
+  - Ergebnis ist oft > 50% p.a.!
+- [ ] Integration
+  - Startbar über JSON.

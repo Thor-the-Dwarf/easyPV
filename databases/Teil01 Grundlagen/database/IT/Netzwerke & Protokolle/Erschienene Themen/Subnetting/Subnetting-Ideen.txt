@@ -1,0 +1,46 @@
+1. "Der Netzwerkgrenzen-Zieher"
+   - Ziel: Bestimme Netz-ID und Broadcast-Adresse.
+   - Spielmechanik: 
+     - IP: 192.168.1.55 /24. -> Netz: .1.0, Broadcast: .1.255.
+     - IP: 192.168.1.55 /26. -> Netz: .1.0, Broadcast: .1.63 (Blockgröße 64).
+     - Spieler markiert den Bereich auf dem Zahlenstrahl.
+     - Messbarkeit: Korrekte Grenzen.
+   - Lernziel: CIDR und Blockgrößen.
+
+2. "Verschenkte IPs"
+   - Ziel: Wähle die kleinste passende Maske (VLSM).
+   - Spielmechanik: 
+     - Bedarf: Point-to-Point Verbindung (2 IPs nötig).
+     - Vorschlag A: /24 (254 IPs). -> Verschwendung!
+     - Vorschlag B: /30 (2 IPs). -> Perfekt.
+     - Messbarkeit: Effizienz der Allokation.
+   - Lernziel: Variable Length Subnet Masking.
+
+3. "Binär-Versteher"
+   - Ziel: Berechne das logische UND.
+   - Spielmechanik: 
+     - IP: 11000000... (192...)
+     - Mask: 11111111... (255...)
+     - UND-Operation: 1+1=1, 1+0=0.
+     - Ergebnis = Netz-ID.
+     - Messbarkeit: Korrekte binäre Rechnung.
+   - Lernziel: Wie der Router Routing-Entscheidungen trifft.
+
+4. "Host-Anzahl-Rechner"
+   - Ziel: Wie viele Geräte passen rein?
+   - Spielmechanik: 
+     - Maske /24 -> 8 Host-Bits. 2^8 - 2 = 254.
+     - Maske /20 -> 12 Host-Bits. 2^12 - 2 = 4094.
+     - Formel anwenden: 2^n - 2.
+     - Messbarkeit: Korrekte Anzahl.
+   - Lernziel: Zusammenhang Bits vs Hosts.
+
+5. "Subnetting-Puzzle"
+   - Ziel: Teile ein /24 Netz in 4 gleich große Netze.
+   - Spielmechanik: 
+     - Ausgang: 192.168.1.0/24.
+     - Ziel: 4 Abteilungen à 60 Hosts.
+     - Lösung: /26 Maske (Blockgröße 64).
+     - Netze: .0, .64, .128, .192.
+     - Messbarkeit: Keine Überlappung, Platz reicht.
+   - Lernziel: Netzplanung.

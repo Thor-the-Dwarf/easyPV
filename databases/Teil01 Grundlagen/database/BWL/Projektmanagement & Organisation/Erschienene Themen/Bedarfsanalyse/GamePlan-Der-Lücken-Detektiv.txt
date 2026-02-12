@@ -1,0 +1,36 @@
+Anforderungen
+2. "Der Lücken-Detektiv"
+   - Ziel: Identifiziere die Lücke zwischen IST und SOLL in 3 Szenarien.
+   - Spielmechanik: 
+     - IST: "Lager voll, Wartezeit 3 Tage."
+     - SOLL: "Just-in-Time Lieferung."
+     - Auswahl der korrekten Maßnahme zur Lückenschließung (z.B. "Bestellsystem anpassen" vs "Lager vergrößern").
+     - Messbarkeit: Wahl der effizientesten Maßnahme.
+   - Lernziel: Bedarfsermittlung aus Differenzanalyse.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Finden von fehlenden Infos in einer Bedarfsmatrix.
+- [ ] Ziel: Alle "Missing Pieces" identifizieren.
+
+2. Screen-Layout
+- [ ] Matrix-Grid.
+- [ ] Auswahl-Menü für Lücken.
+
+3. Browser- und Device-Resilienz
+- [ ] Horizontales Scrollen für breite Matrizen auf Mobile.
+- [ ] Sticky Headers.
+
+4. Kernvisuals
+- [ ] Puzzleteil-Optik für die einzufügenden Daten.
+- [ ] Lupe-Animation.
+
+5. Interaktion und Feedback
+- [ ] Click-to-Fill.
+- [ ] Fortschritts-Animation.
+
+6. KPI-Klarheit
+- [ ] "Vollständigkeits-Grad".
+
+7. QA-Paket
+- [ ] Matrix-Rendering Tests.

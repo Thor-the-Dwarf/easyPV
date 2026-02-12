@@ -1,0 +1,20 @@
+Anforderungen
+2. "Adress-Typen-Quiz"
+   - Ziel: Was ist das für eine Adresse?
+   - Spielmechanik: 
+     - "fe80::..." -> Link Local (Wie APIPA, aber immer da).
+     - "::1" -> Loopback (localhost).
+     - "2001:..." -> Global Unicast (Öffentlich).
+     - "ff00:..." -> Multicast.
+     - Messbarkeit: 100% korrekte Zuordnung.
+   - Lernziel: Adressbereiche IPv6.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ipv6_types.json')
+  - `types`: ["Global", "LinkLocal", "Multicast", "Loopback"].
+- [ ] Shared CSS Check ('network_ip.css')
+  - Matrix / Karten-Grid.
+- [ ] Game-Engine Logic ('game_ipv6_types.js')
+  - Zuordnungs-Spiel (Drag & Drop Prefix auf Typ).
+- [ ] Integration
+  - Startbar über JSON.

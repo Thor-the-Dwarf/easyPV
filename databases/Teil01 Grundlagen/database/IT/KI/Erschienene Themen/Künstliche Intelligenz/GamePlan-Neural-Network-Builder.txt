@@ -1,0 +1,23 @@
+Anforderungen
+3. "Neural Network Builder"
+   - Ziel: Verbinde die Neuronen (Input, Hidden, Output).
+   - Spielmechanik: 
+     - Input Layer: "Pixel 1", "Pixel 2".
+     - Hidden Layer: Gewichte einstellen (Linien dicker/dünner machen).
+     - Output Layer: "Ergebnis".
+     - Ziel: Einfache logische Funktion (XOR) abbilden.
+     - Messbarkeit: Netzwerk gibt korrekten Output für alle Inputs.
+   - Lernziel: Aufbau künstlicher neuronaler Netze (KNN).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ai_neural_net.json')
+  - `layers`: [2, 3, 1].
+  - `targetFunction`: "XOR".
+- [ ] Shared CSS Check ('ai_basics.css')
+  - Neuronen und Synapsen (Canvas/SVG).
+  - Gewichtung (Linienstärke).
+- [ ] Game-Engine Logic ('game_ai_neural_net.js')
+  - Drag & Drop Verbindungen.
+  - Forward-Propagation Visualisierung.
+- [ ] Integration
+  - Startbar über JSON.

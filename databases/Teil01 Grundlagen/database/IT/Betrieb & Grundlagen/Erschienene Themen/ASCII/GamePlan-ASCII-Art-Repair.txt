@@ -1,0 +1,20 @@
+Anforderungen
+4. "ASCII-Art-Repair"
+   - Ziel: Repariere ein zerstörtes ASCII-Bild.
+   - Spielmechanik: 
+     - Bild aus Zeichen, aber einige sind falsch (z.B. Buchstaben statt Slashes).
+     - Palette: / \ | _
+     - Spieler muss die Zeichen ersetzen, bis das Bild erkennbar ist.
+     - Messbarkeit: Übereinstimmung mit Originalvorlage > 90%.
+   - Lernziel: Zeichen als grafische Elemente.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_ascii_art.json')
+  - `art`: "owl".
+- [ ] Shared CSS Check ('basics_general.css')
+  - Grid-Editor für Zeichen.
+- [ ] Game-Engine Logic ('game_basics_ascii_art.js')
+  - Zeichen ersetzen (Falsch -> Richtig).
+  - Mustervergleich.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+2. "Maßnahmen-Strategie"
+   - Ziel: Wähle die Strategie: Vermeiden, Vermindern, Überwälzen, Akzeptieren.
+   - Spielmechanik: 
+     - Risiko: Feuer. -> Maßnahme: Versicherung (Überwälzen).
+     - Risiko: Datenverlust. -> Maßnahme: Backup (Vermindern).
+     - Risiko: Server im Keller wird nass. -> Maßnahme: Server in 1. Stock (Vermeiden).
+     - Risiko: Bleistift bricht ab. -> Akzeptieren.
+     - Messbarkeit: Passende Strategie.
+   - Lernziel: Risikobehandlung (Risk Treatment).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_strat.json')
+  - `risks`: ["fire", "data_loss", "pencil_break"].
+- [ ] Shared CSS Check ('security_management.css')
+  - 4 Eimer (Vermeiden, Vermindern, Überwälzen, Akzeptieren).
+- [ ] Game-Engine Logic ('game_sec_strat.js')
+  - Risiken in Eimer sortieren.
+- [ ] Integration
+  - Startbar über JSON.

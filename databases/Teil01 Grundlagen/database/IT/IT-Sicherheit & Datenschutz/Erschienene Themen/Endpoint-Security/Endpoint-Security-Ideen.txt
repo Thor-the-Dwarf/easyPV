@@ -1,0 +1,49 @@
+1. "Virenscanner-Konfigurator"
+   - Ziel: Stelle den Scanner so ein, dass er sicher, aber performant ist.
+   - Spielmechanik: 
+     - "On-Access Scan": An (Wichtig!).
+     - "Scan Archives (ZIP)": An (Aber langsam).
+     - "Heuristik": Hoch (Vorsicht False Positives!).
+     - Szenario: User beschwert sich "PC langsam".
+     - Optimierung: Archiv-Scan nur bei Zugriff, nicht bei Write.
+     - Messbarkeit: PC sicher und schnell.
+   - Lernziel: Balance Performance vs Sicherheit.
+
+2. "USB-Blocker"
+   - Ziel: Verhindere Datenabfluss über USB.
+   - Spielmechanik: 
+     - Richtlinie setzen: "Block all Mass Storage".
+     - Mitarbeiter steckt USB-Stick -> "Access Denied" (Erfolg).
+     - Mitarbeiter steckt Maus -> Funktioniert (Erfolg).
+     - Messbarkeit: Nur Speichergeräte blockiert.
+   - Lernziel: Device Control / DLP.
+
+3. "Patch-Day-Manager"
+   - Ziel: Installiere kritische Updates auf 100 Clients.
+   - Spielmechanik: 
+     - Dashboard zeigt: 10 PCs "Vulnerable".
+     - Aktion: "Deploy Patch".
+     - Risiko: "Reboot during meeting" (User sauer).
+     - Strategie: Patch um 02:00 Uhr nachts.
+     - Wake-on-LAN nutzen.
+     - Messbarkeit: Alle PCs gepatcht am nächsten Morgen.
+   - Lernziel: Patch-Management Strategien.
+
+4. "Festplatten-Verschlüsseler"
+   - Ziel: Schütze den Laptop vor Diebstahl (BitLocker).
+   - Spielmechanik: 
+     - Laptop wird geklaut.
+     - Szenario A: Keine Encryption. Dieb liest HDD aus -> Game Over.
+     - Szenario B: BitLocker + TPM an. Dieb sieht Datensalat -> Win.
+     - Aufgabe: Aktiviere BitLocker und speichere Recovery Key.
+     - Messbarkeit: Daten bleiben sicher.
+   - Lernziel: Full Disk Encryption (FDE).
+
+5. "App-Whitelisting"
+   - Ziel: Erlaube nur legitime Software.
+   - Spielmechanik: 
+     - Liste: "Word.exe", "Calc.exe".
+     - User will "AngryBirds.exe" starten -> Blocked.
+     - User will "Ransomware.exe" starten -> Blocked.
+     - Messbarkeit: 0% Malware-Infektion dank Whitelist.
+   - Lernziel: Prinzip der positiven Sicherheitsliste (vs Blacklist).

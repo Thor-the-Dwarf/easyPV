@@ -1,0 +1,21 @@
+Anforderungen
+4. "Schachtel-Meister"
+   - Ziel: Rücke richtig ein.
+   - Spielmechanik: 
+     - `WENN Sonne scheint`
+     - `  Gehe raus`
+     - `SONST`
+     - `  Bleib drin`
+     - Wenn Einrückung fehlt -> Logik unklar.
+     - Messbarkeit: Strukturierte Darstellung.
+   - Lernziel: Lesbarkeit.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_code_nesting.json')
+  - `depth`: 3.
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Einrückungs-Hilfslinien.
+- [ ] Game-Engine Logic ('game_code_nesting.js')
+  - IF in WHILE in FOR. Struktur visualisieren.
+- [ ] Integration
+  - Startbar über JSON.

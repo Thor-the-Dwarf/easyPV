@@ -1,0 +1,23 @@
+Anforderungen
+3. "Der Stromkreis-Check (Absicherung)"
+   - Ziel: Fliegt die Sicherung?
+   - Spielmechanik: 
+     - Sicherung: 16 Ampere bei 230 Volt. -> Max 3680 Watt.
+     - Gerät 1: Heizlüfter (2000W).
+     - Gerät 2: Wasserkocher (2000W).
+     - Summe: 4000W.
+     - Ergebnis: Sicherung fliegt.
+     - Aufgabe: Geräte auf zwei Stromkreise verteilen.
+     - Messbarkeit: Sicherung bleibt drin.
+   - Lernziel: Maximale Last pro Phase.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_fuse.json')
+  - `fuse`: 16, `voltage`: 230.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Sicherungskasten UI.
+- [ ] Game-Engine Logic ('game_math_fuse.js')
+  - P_max = 230V * 16A = 3680W.
+  - Prüfen ob Geräte-Summe Sicherung fliegt.
+- [ ] Integration
+  - Startbar über JSON.

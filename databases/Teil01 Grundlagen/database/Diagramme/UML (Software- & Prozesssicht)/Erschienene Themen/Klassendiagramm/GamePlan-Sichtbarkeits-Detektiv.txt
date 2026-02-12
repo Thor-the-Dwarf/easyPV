@@ -1,0 +1,12 @@
+Anforderungen
+2. "Sichtbarkeits-Detektiv"
+   - Ziel: Wer darf zugreifen? (+, -, #).
+   - Spielmechanik: 
+     - "+" (Public) -> Jeder darf.
+     - "-" (Private) -> Nur ich selbst.
+     - "#" (Protected) -> Ich und meine Kinder.
+     - Szenario: Fremde Klasse will auf Attribut zugreifen.
+     - Spieler muss "+" setzen oder Getter/Setter bauen.
+     - Messbarkeit: Kapselung eingehalten.
+   - Lernziel: Access Modifiers.
+

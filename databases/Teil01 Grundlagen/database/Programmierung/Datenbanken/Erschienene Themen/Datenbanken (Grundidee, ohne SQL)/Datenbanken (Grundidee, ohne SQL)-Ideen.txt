@@ -1,0 +1,52 @@
+1. "Excel vs Datenbank"
+   - Ziel: Wann reicht die Tabelle nicht mehr?
+   - Spielmechanik: 
+     - User hat 100 Kunden. -> Excel reicht.
+     - User hat 1 Million Kunden + Parallelzugriff von 5 Mitarbeitern.
+     - Excel stürzt ab / "Datei gesperrt".
+     - Datenbank (Server) löst das Problem (Concurrency).
+     - Messbarkeit: Erkennen der Grenzen von Spreadsheets.
+   - Lernziel: Mehrbenutzerfähigkeit.
+
+2. "CRUD-Operator"
+   - Ziel: Mache alles, was man mit Daten tun kann.
+   - Spielmechanik: 
+     - C: Create (Neuen Kunden anlegen).
+     - R: Read (Kunden suchen).
+     - U: Update (Adresse ändern).
+     - D: Delete (Kunden löschen).
+     - Aufgabe: "Müller ist umgezogen". -> Wähle "Update".
+     - Messbarkeit: Richtige Operation gewählt.
+   - Lernziel: Akronym CRUD.
+
+3. "Redundanz-Vermeider"
+   - Ziel: Räume die Daten auf.
+   - Spielmechanik: 
+     - Tabelle: Kunde Müller, Stadt Berlin.
+     - Tabelle: Kunde Meier, Stadt Berlin.
+     - Stadt "Berlin" steht 2x da.
+     - Bei Änderung "Berlin -> Berlin (City)" müssen 2 Zeilen geändert werden.
+     - Lösung: Eigene Tabelle "Städte". Referenz ID.
+     - Messbarkeit: Prinzip der Normalisierung (intuitiv).
+   - Lernziel: Datenkonsistenz.
+
+4. "Persistenz-Check"
+   - Ziel: Überlebe den Neustart.
+   - Spielmechanik: 
+     - Variable im RAM: Strom weg -> Daten weg.
+     - Datenbank auf HDD: Strom weg -> Daten noch da.
+     - Aufgabe: "Speichere den Spielstand".
+     - In Variable speichern (Fail).
+     - In DB speichern (Win).
+     - Messbarkeit: Verständnis von flüchtigem vs persistentem Speicher.
+   - Lernziel: Dauerhafte Speicherung.
+
+5. "Der Index-Beschleuniger"
+   - Ziel: Finde den Namen im Telefonbuch.
+   - Spielmechanik: 
+     - Ohne Index: Muss jede Seite lesen (Full Table Scan). Dauert 10 Sek.
+     - Mit Index (Alphabetisch sortiert): Binäre Suche. Dauert 0.1 Sek.
+     - Spieler legt Index auf Spalte "Nachname".
+     - Anfrage wird blitzschnell.
+     - Messbarkeit: Performance-Optimierung.
+   - Lernziel: Nutzen von Indizes.

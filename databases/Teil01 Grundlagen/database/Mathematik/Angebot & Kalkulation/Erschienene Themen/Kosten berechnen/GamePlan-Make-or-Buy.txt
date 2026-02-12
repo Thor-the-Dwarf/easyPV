@@ -1,0 +1,20 @@
+Anforderungen
+3. "Make or Buy"
+   - Ziel: Selber machen oder einkaufen?
+   - Spielmechanik: 
+     - Eigenfertigung: Fix 10.000€, Variabel 5€/Stück.
+     - Fremdbezug: 0€ Fix, Preis 10€/Stück.
+     - Bei 1000 Stück: Eigen=15k, Fremd=10k. -> Buy.
+     - Bei 3000 Stück: Eigen=25k, Fremd=30k. -> Make.
+     - Messbarkeit: Wirtschaftlichste Entscheidung bei gegebener Menge.
+   - Lernziel: Kritische Menge.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_mob.json')
+  - `fixed`: 5000, `var`: 10, `buy_price`: 20.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Schnittpunkt-Grafik.
+- [ ] Game-Engine Logic ('game_math_mob.js')
+  - Ab wann lohnt sich Eigenfertigung?
+- [ ] Integration
+  - Startbar über JSON.

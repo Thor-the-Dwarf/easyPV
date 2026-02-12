@@ -1,0 +1,19 @@
+Anforderungen
+1. "Google-Dorking-Master"
+   - Ziel: Finde ein PDF über "Sicherheit" auf der Seite "bund.de" mit einem Suchbefehl.
+   - Spielmechanik: 
+     - Eingabefeld.
+     - Spieler tippt: "site:bund.de filetype:pdf Sicherheit".
+     - Punkte für jeden richtigen Operator (site:, filetype:).
+     - Messbarkeit: Suchstring ist syntaktisch korrekt.
+   - Lernziel: Erweiterte Suchoperatoren nutzen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_dork.json')
+  - `goal`: "pdf_on_bund".
+- [ ] Shared CSS Check ('basics_admin.css')
+  - Google-Suchleiste.
+- [ ] Game-Engine Logic ('game_basics_dork.js')
+  - Operator-Check (site:, filetype:).
+- [ ] Integration
+  - Startbar über JSON.

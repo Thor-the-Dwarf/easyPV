@@ -1,0 +1,47 @@
+1. "Token-Flow"
+   - Ziel: Führe den Token durch die Logik.
+   - Spielmechanik: 
+     - Startpunkt (schwarzer Kreis).
+     - Entscheidung (Raute). [x < 0] oder [x >= 0].
+     - Spieler gibt Input x=5. Welchen Weg nimmt der Token?
+     - Messbarkeit: Korrekter Pfad gewählt.
+   - Lernziel: Kontrollfluss-Logik.
+
+2. "Parallelisierer (Fork & Join)"
+   - Ziel: Mach es schneller.
+   - Spielmechanik: 
+     - Prozess: "Kaffee kochen" (3 Min) und "Toasten" (2 Min).
+     - Sequentiell: 5 Min.
+     - Parallel (Fork-Balken): 3 Min (längster Task gewinnt).
+     - Wichtig: Join-Balken am Ende (Warten auf Beide).
+     - Messbarkeit: Korrekte Parallelisierungssyntax.
+   - Lernziel: Nebenläufigkeit.
+
+3. "Activity vs Action"
+   - Ziel: Zerlege die Aufgabe.
+   - Spielmechanik: 
+     - Activity "Rechnung bezahlen".
+     - Besteht aus Actions: "Login Bank", "Überweisung ausfüllen", "TAN eingeben".
+     - Aktion ist atomar (nicht unterbrechbar). Aktivität kann unterbrochen werden.
+     - Messbarkeit: Hierarchie-Ebene erkannt.
+   - Lernziel: Granularität.
+
+4. "Das fehlende Ende"
+   - Ziel: Beende den Prozess sauber.
+   - Spielmechanik: 
+     - Flow Final (Kreis mit X): Beendet nur diesen Pfad.
+     - Activity Final (Auge): Beendet ganzen Prozess (Kill all tokens).
+     - Szenario: Fehlerbehandlung. Soll alles stoppen? -> Activity Final.
+     - Szenario: Ein paralleler Ast ist fertig. -> Flow Final.
+     - Messbarkeit: Korrektes End-Symbol.
+   - Lernziel: Abschlussarten.
+
+5. "Eieruhr-Timer"
+   - Ziel: Warte auf das Ereignis.
+   - Spielmechanik: 
+     - Sanduhr-Symbol (Time Event).
+     - "Warte 10 Minuten" oder "Jeden Montag".
+     - Token bleibt hängen, bis Timer feuert.
+     - Interrupt Region: Wenn "Abbruch" gedrückt wird, verlassen wir sofort den Bereich.
+     - Messbarkeit: Zeitsteuerung korrekt modelliert.
+   - Lernziel: Zeit-Ereignisse.

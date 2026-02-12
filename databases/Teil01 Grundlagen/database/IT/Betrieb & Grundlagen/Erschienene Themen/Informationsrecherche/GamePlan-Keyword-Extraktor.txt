@@ -1,0 +1,21 @@
+Anforderungen
+3. "Keyword-Extraktor"
+   - Ziel: Formuliere die besten 3 Stichworte für ein Problem.
+   - Spielmechanik: 
+     - Problem: "Mein Windows 10 PC fährt langsam hoch nach dem Update gestern."
+     - Schlechte Suche: "Hilfe PC langsam".
+     - Gute Suche: "Windows 10 slow boot after update KB503...".
+     - Spieler muss unnötige Füllwörter streichen ("Mein", "PC", "gestern").
+     - Messbarkeit: Relevanz-Score der Keywords.
+   - Lernziel: Probleme auf Suchbegriffe reduzieren.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_keywords.json')
+  - `sentence`: "window 10 slow boot".
+- [ ] Shared CSS Check ('basics_admin.css')
+  - Text-Markierer (Highlighter).
+- [ ] Game-Engine Logic ('game_basics_keywords.js')
+  - Stopwörter entfernen.
+  - Relevanz bewerten.
+- [ ] Integration
+  - Startbar über JSON.

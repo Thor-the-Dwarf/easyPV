@@ -1,0 +1,21 @@
+Anforderungen
+5. "Der Salt-Streuer"
+   - Ziel: Warum werden Hashes gesalzen?
+   - Spielmechanik: 
+     - Datenbank mit Hashes.
+     - Hacker hat Rainbow Table (Liste vorberechneter Hashes).
+     - Ohne Salt: Hacker findet "123456" sofort.
+     - Mit Salt: Rainbow Table wertlos. Hacker muss neu rechnen (dauert zu lange).
+     - Messbarkeit: Verständnis des Schutzes durch Salting.
+   - Lernziel: Schutz gegen Precomputation Attacks.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_salt.json')
+  - `method`: "unsalted".
+- [ ] Shared CSS Check ('security_defense.css')
+  - Datenbank-Tabelle Ansicht.
+- [ ] Game-Engine Logic ('game_sec_salt.js')
+  - Rainbow Table Attacke (Sofort Treffer bei unsalted).
+  - Salt hinzufügen -> Hash ändert sich individuell.
+- [ ] Integration
+  - Startbar über JSON.

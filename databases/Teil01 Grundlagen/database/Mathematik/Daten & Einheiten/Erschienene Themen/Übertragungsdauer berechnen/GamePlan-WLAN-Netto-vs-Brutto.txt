@@ -1,0 +1,19 @@
+Anforderungen
+5. "WLAN Netto vs Brutto"
+   - Ziel: Warum kommen von 300 Mbit nur 100 an?
+   - Spielmechanik: 
+     - WLAN-Packung sagt "300 Mbit/s".
+     - Messung: 120 Mbit/s.
+     - Grund: Shared Medium, Header, Kollisionen. (Faustregel: Netto ≈ 50% Brutto).
+     - Messbarkeit: Realistische Erwartungshaltung.
+   - Lernziel: Marketing vs Physik.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_wifi_throughput.json')
+  - `standard`: "wifi6".
+- [ ] Shared CSS Check ('math_basics.css')
+  - Signal-Stärke.
+- [ ] Game-Engine Logic ('game_math_wifi_throughput.js')
+  - Overhead abziehen (~50%). 
+- [ ] Integration
+  - Startbar über JSON.

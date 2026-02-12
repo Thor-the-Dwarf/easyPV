@@ -1,0 +1,20 @@
+Anforderungen
+1. "Die 3 Z-Zuordnung"
+   - Ziel: Sortiere Maßnahmen in die 3 Kategorien (Zutritt, Zugang, Zugriff).
+   - Spielmechanik: 
+     - "Schranke am Parkplatz". -> Zutritt.
+     - "Benutzername eingeben". -> Zugang.
+     - "Leserecht auf Datei 'Gehalt.xlsx'". -> Zugriff.
+     - "Biometrie am Serverraum". -> Zutritt.
+     - Messbarkeit: 100% korrekte Klassifizierung.
+   - Lernziel: Begriffsdefinition nach BSI/DSGVO.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_3z.json')
+  - `items`: ["fence", "password", "acl"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - 3 Säulen/Kategorien (Zutritt, Zugang, Zugriff).
+- [ ] Game-Engine Logic ('game_sec_3z.js')
+  - Zuordnung Drag & Drop.
+- [ ] Integration
+  - Startbar über JSON.

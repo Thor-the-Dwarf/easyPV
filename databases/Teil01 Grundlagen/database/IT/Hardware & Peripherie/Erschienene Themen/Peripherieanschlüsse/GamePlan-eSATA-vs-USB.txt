@@ -1,0 +1,20 @@
+Anforderungen
+5. "eSATA vs USB"
+   - Ziel: Wähle den Anschluss für die externe Festplatte (Pre-USB 3.0 Ära).
+   - Spielmechanik: 
+     - Aufgabe: "Backup machen, schnell".
+     - Option A: USB 2.0 (480 Mbit/s).
+     - Option B: eSATA (3 Gbit/s).
+     - Spieler wählt eSATA.
+     - Messbarkeit: Backup-Zeit.
+   - Lernziel: Historische Schnittstellen-Performance.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_periph_esata.json')
+  - `opts`: ["usb2", "esata"].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Fortschrittsbalken (Kopiergeschwindigkeit).
+- [ ] Game-Engine Logic ('game_periph_esata.js')
+  - Geschwindigkeits-Vergleich.
+- [ ] Integration
+  - Startbar über JSON.

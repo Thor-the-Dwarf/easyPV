@@ -1,0 +1,19 @@
+Anforderungen
+1. "P = U * I Rechner"
+   - Ziel: Berechne die Leistung.
+   - Spielmechanik: 
+     - Gegeben: Spannung 230 V. Strom 2 A.
+     - Formel: P = 230 * 2 = 460 Watt.
+     - User tippt Ergebnis ein.
+     - Messbarkeit: Korrektes Ergebnis.
+   - Lernziel: Grundformel der Elektrotechnik.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_pui.json')
+  - `vals`: {"U": 230, "I": 2}.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Formelrad (Uri / Pui).
+- [ ] Game-Engine Logic ('game_math_pui.js')
+  - Fehlenden Wert berechnen.
+- [ ] Integration
+  - Startbar über JSON.

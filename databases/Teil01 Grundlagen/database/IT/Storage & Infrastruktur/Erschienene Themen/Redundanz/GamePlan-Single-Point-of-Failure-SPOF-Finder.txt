@@ -1,0 +1,22 @@
+Anforderungen
+1. "Single Point of Failure (SPOF) Finder"
+   - Ziel: Eliminiere den Flaschenhals.
+   - Spielmechanik: 
+     - 2 Webserver (Gut).
+     - 2 Firewalls (Gut).
+     - 1 Switch (Schlecht!).
+     - Wenn Switch ausfällt -> Alles tot.
+     - Aufgabe: Zweiten Switch hinzufügen + Uplink.
+     - Messbarkeit: System überlebt Komponentenausfall.
+   - Lernziel: Hochverfügbarkeit (HA).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_redundancy_spof.json')
+  - `topology`: "single_switch".
+- [ ] Shared CSS Check ('storage_backup.css')
+  - Netzwerk-Graph.
+- [ ] Game-Engine Logic ('game_redundancy_spof.js')
+  - Komponente anklicken -> Simulation Ausfall.
+  - Alles rot? -> SPOF gefunden.
+- [ ] Integration
+  - Startbar über JSON.

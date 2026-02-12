@@ -1,0 +1,38 @@
+Anforderungen
+5. "Vertrags-Puzzler: Wer schuldet was?"
+   - Ziel: Verbinde Vertragstyp mit der Hauptpflicht.
+   - Spielmechanik: 
+     - "Dienstvertrag" <-> "Leistung von Diensten (Zeit)".
+     - "Werkvertrag" <-> "Herbeiführen eines Erfolges".
+     - "Kaufvertrag" <-> "Übergabe und Übereignung".
+     - Messbarkeit: Korrekte Paare.
+   - Lernziel: Hauptleistungspflichten im BGB.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Hauptleistungspflichten.
+- [ ] Matching: Welcher Vertragstyp schuldet "Erfolg" vs "Tätigkeit"?
+- [ ] Dienstvertrag (Bemühen) vs Werkvertrag (Erfolg).
+
+2. Screen-Layout
+- [ ] Connect-the-Dots (Linien ziehen).
+- [ ] Links: Vertragstypen. Rechts: Schuldet...
+
+3. Browser- und Device-Resilienz
+- [ ] SVG-Linien müssen responsive sein.
+- [ ] Mobile: Tap-Select Paarung statt Ziehen.
+
+4. Kernvisuals
+- [ ] Arzt-Icon (Dienstvertrag).
+- [ ] Handwerker-Icon (Werkvertrag).
+- [ ] Zielscheibe (Erfolg).
+
+5. Interaktion und Feedback
+- [ ] Linie ziehen: Arzt -> Erfolg -> "Falsch! Schuldet nur fachgerechte Behandlung."
+- [ ] Linie ziehen: Maurer -> Erfolg -> "Richtig! Die Wand muss stehen."
+
+6. KPI-Klarheit
+- [ ] Anzahl Fehler.
+
+7. QA-Paket
+- [ ] Missverständnisse bei Dienstvertrag klären.

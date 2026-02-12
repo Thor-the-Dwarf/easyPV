@@ -1,0 +1,20 @@
+Anforderungen
+2. "Header-Analyzer"
+   - Ziel: Wer ist der wahre Absender?
+   - Spielmechanik: 
+     - Anzeige Name: "Chef".
+     - Header "From": "ceo@firma.de".
+     - Header "Return-Path": "hacker@evil.ru".
+     - Warnung: Return-Path stimmt nicht mit From überein!
+     - Messbarkeit: Erkennung des Spoofings.
+   - Lernziel: Email-Header lesen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_header.json')
+  - `from`: "ceo", `return_path`: "hacker".
+- [ ] Shared CSS Check ('security_attack.css')
+  - Code-View für Header.
+- [ ] Game-Engine Logic ('game_sec_header.js')
+  - Differenz finden.
+- [ ] Integration
+  - Startbar über JSON.

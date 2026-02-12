@@ -1,0 +1,49 @@
+1. "Vorwärts-Rechner (FAZ/FEZ)"
+   - Ziel: Wann sind wir frühstens fertig?
+   - Spielmechanik: 
+     - Start bei 0.
+     - Vorgang A (Dauer 5) -> FAZ 0, FEZ 5.
+     - Vorgang B (Dauer 3) startet nach A -> FAZ 5, FEZ 8.
+     - Vorgang C parallel zu B (Dauer 10).
+     - Merge bei D: Welcher Wert wird übernommen? Der Größte! (Max-Prinzip).
+     - Messbarkeit: Korrektes Projektende berechnet.
+   - Lernziel: Vorwärtskalkulation.
+
+2. "Rückwärts-Rechner (SAZ/SEZ)"
+   - Ziel: Wann müssen wir spätestens anfangen?
+   - Spielmechanik: 
+     - Projektende steht fest (Tag 100).
+     - Rückwärts rechnen: SEZ - Dauer = SAZ.
+     - Merge rückwärts: Welcher Wert wird übernommen? Der Kleinste! (Min-Prinzip).
+     - Messbarkeit: Korrekte Spätest-Werte.
+   - Lernziel: Rückwärtskalkulation.
+
+3. "Puffer-Finder (GP/FP)"
+   - Ziel: Wo ist Luft im Plan?
+   - Spielmechanik: 
+     - Gesamtpuffer (GP) = SAZ - FAZ.
+     - Freier Puffer (FP) = FAZ(Nachfolger) - FEZ(Vorgänger).
+     - Task mit GP=0 ist kritisch!
+     - Aufgabe: Berechne GP für alle Knoten.
+     - Messbarkeit: Korrekte Pufferwerte.
+   - Lernziel: Pufferarten.
+
+4. "Kritischer Pfad 2.0"
+   - Ziel: Markiere den Weg ohne Puffer.
+   - Spielmechanik: 
+     - Netzplan gegeben, alle Werte berechnet.
+     - Spieler muss die Knoten verbinden, wo FAZ=SAZ und FEZ=SEZ.
+     - Dieser Pfad bestimmt die Projektdauer.
+     - Messbarkeit: Kritischer Pfad rot markiert.
+   - Lernziel: Engpass-Analyse.
+
+5. "Der Knoten-Aufbau"
+   - Ziel: Wo steht was?
+   - Spielmechanik: 
+     - Leerer Kasten mit 3x3 Feldern (Standard DIN 69900).
+     - Wo ist die Dauer? (Mitte).
+     - Wo ist FAZ? (Oben links).
+     - Wo ist der Name? (Oben mitte).
+     - Drag & Drop der Begriffe.
+     - Messbarkeit: Korrekte Norm-Belegung.
+   - Lernziel: Netzplan-Knoten-Struktur.

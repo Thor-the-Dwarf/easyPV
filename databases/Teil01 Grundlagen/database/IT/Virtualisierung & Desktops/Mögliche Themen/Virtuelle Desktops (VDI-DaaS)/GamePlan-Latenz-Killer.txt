@@ -1,0 +1,21 @@
+Anforderungen
+4. "Latenz-Killer"
+   - Ziel: Optimiere das Protokoll (PCoIP / Blast / ICA).
+   - Spielmechanik: 
+     - User tippt "A", Buchstabe erscheint 1 Sekunde später. (Latenz 200ms).
+     - Bandbreite ist niedrig (Mobilfunk).
+     - Maßnahmen: "Audio-Qualität senken", "Farbtiefe reduzieren", "UDP statt TCP nutzen".
+     - Messbarkeit: Flüssiges Arbeiten trotz schlechtem Netz.
+   - Lernziel: Protokoll-Tuning bei VDI.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_vdi_latency.json')
+  - `scenarios`: ["lan", "wan", "3g"].
+- [ ] Shared CSS Check ('virtualization_vdi.css')
+  - Lag-Simulator (Verzögerte Eingabe).
+  - Einstellungs-Panel (PCoIP Settings).
+- [ ] Game-Engine Logic ('game_vdi_latency.js')
+  - Protokoll-Tuning (Qualität vs Speed).
+  - Reaktionszeit-Test.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,22 @@
+Anforderungen
+4. "Trim-Befehl"
+   - Ziel: Verhindere, dass die SSD langsam wird.
+   - Spielmechanik: 
+     - SSD füllt sich mit "gelöschten" Daten (die der Controller noch als voll sieht).
+     - Schreibgeschwindigkeit sinkt auf 10 MB/s.
+     - Spieler drückt "Trim ausführen".
+     - Controller räumt auf -> Speed wieder 500 MB/s.
+     - Messbarkeit: Performance-Wiederherstellung.
+   - Lernziel: Garbage Collection bei SSDs.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ssd_trim.json')
+  - `fragmentation`: "high".
+  - `speed`: "low".
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Performance-Graph.
+  - "Müll"-Blöcke Visualisierung.
+- [ ] Game-Engine Logic ('game_ssd_trim.js')
+  - Button Action -> Animation -> Stats update.
+- [ ] Integration
+  - Startbar über JSON.

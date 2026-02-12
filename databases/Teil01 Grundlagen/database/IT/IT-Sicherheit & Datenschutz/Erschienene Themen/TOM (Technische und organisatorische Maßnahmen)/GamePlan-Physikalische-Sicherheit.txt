@@ -1,0 +1,21 @@
+Anforderungen
+3. "Physikalische Sicherheit"
+   - Ziel: Sichere den Serverraum.
+   - Spielmechanik: 
+     - Bausteine kaufen: "Feuerlöscher (CO2)", "Klimaanlage", "Zutrittskontrolle", "Videoüberwachung".
+     - Budget-Management.
+     - Ereignis: "Feuer bricht aus".
+     - Wenn CO2-Löscher da -> Schaden gering. Wenn Wasserlöscher -> Server kaputt.
+     - Messbarkeit: Überleben des Serverraums.
+   - Lernziel: Infrastrukturelle TOMs.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_room.json')
+  - `budget`: 1000.
+- [ ] Shared CSS Check ('security_defense.css')
+  - Raum-Ausstattung Shop.
+- [ ] Game-Engine Logic ('game_sec_room.js')
+  - Komponenten kaufen.
+  - Katastrophen-Test (Feuer/Einbruch).
+- [ ] Integration
+  - Startbar über JSON.

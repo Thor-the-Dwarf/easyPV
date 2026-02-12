@@ -1,0 +1,20 @@
+Anforderungen
+4. "Cloud vs On-Premise Energiekosten"
+   - Ziel: Vergleiche die Stromrechnung.
+   - Spielmechanik: 
+     - On-Prem: Server kostet 2000€ Strom/Jahr + 1000€ Kühlung = 3000€.
+     - Cloud: VM kostet 4000€/Jahr (Alles inklusive).
+     - Nur auf Strom bezogen ist On-Prem billiger, aber TCO ist komplexer.
+     - Spiel fokusiert rein auf Energiekosten-Berechnung.
+     - Messbarkeit: Kosten korrekt summiert.
+   - Lernziel: Versteckte Kosten (Kühlung!).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_cloud_energy.json')
+  - `server_count`: 10.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Waage Cloud vs Keller.
+- [ ] Game-Engine Logic ('game_math_cloud_energy.js')
+  - Klimatisierungskosten mit einrechnen (Oft vergessen!).
+- [ ] Integration
+  - Startbar über JSON.

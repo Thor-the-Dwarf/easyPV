@@ -1,0 +1,44 @@
+1. "Kernel vs. User Mode"
+   - Ziel: Ordne 10 Prozesse der richtigen Ebene zu (Ring 0 vs Ring 3).
+   - Spielmechanik: 
+     - "Browser öffnet Webseite" -> User Mode.
+     - "Festplatten-Treiber schreibt Block" -> Kernel Mode.
+     - "Word stürzt ab" -> User Mode.
+     - Messbarkeit: Korrekte Schichten-Zuordnung.
+   - Lernziel: Sicherheitsarchitektur von Oses.
+
+2. "Der Scheduler"
+   - Ziel: Teile CPU-Zeit so zu, dass kein Prozess verhungert (Starvation).
+   - Spielmechanik: 
+     - 3 Prozesse warten: Video (Echtzeit), Virusscan (Hintergrund), Texteditor (Interaktiv).
+     - Zeitslots verteilen: A A B C A...
+     - Wenn Video stottert -> Fehler. Wenn Virusscan nie drankommt -> Fehler.
+     - Messbarkeit: Alle Prozesse erhalten Minimum an Ressourcen.
+   - Lernziel: Multitasking und Scheduling-Strategien.
+
+3. "Dateisystem-Detektiv"
+   - Ziel: Welches Dateisystem für welchen Zweck? (FAT32, NTFS, ext4).
+   - Spielmechanik: 
+     - "USB-Stick für PC und Mac, kleine Dateien". -> FAT32/ExFAT.
+     - "Windows Systemplatte mit Rechteverwaltung". -> NTFS.
+     - "Linux Server". -> ext4.
+     - Messbarkeit: Kompatibilität und Features richtig gewählt.
+   - Lernziel: Eigenschaften von File Systems.
+
+4. "Treiber-Puzzle"
+   - Ziel: Installiere die korrekten Treiber für die Hardware.
+   - Spielmechanik: 
+     - PC im Gerätemanager: "Unbekanntes Gerät (Grafikkarte)".
+     - Treiber-CDs: "Nvidia", "Realtek (Audio)", "Intel (Chipsatz)".
+     - Spieler zieht Nvidia auf Grafikkarte.
+     - Messbarkeit: Funktionierendes System (Keine gelben Ausrufezeichen).
+   - Lernziel: Hardware-Abstraktion durch Treiber.
+
+5. "Virtual Memory Manager"
+   - Ziel: Verhindere "Out of Memory" durch Paging.
+   - Spielmechanik: 
+     - RAM ist voll (8GB). Neue App braucht 2GB.
+     - Spieler muss "alte" Daten (seit 1h nicht genutzt) auf die Festplatte (Swap/Pagefile) auslagern.
+     - Wenn er aktive Daten auslagert -> System wird langsam (Punktabzug).
+     - Messbarkeit: Systemstabilität und Performance.
+   - Lernziel: Virtueller Arbeitsspeicher und Swapping.

@@ -1,0 +1,21 @@
+Anforderungen
+2. "Sentence-Builder: Support Ticket"
+   - Ziel: Bilde 5 korrekte englische Sätze für eine Problemlösung.
+   - Spielmechanik: 
+     - Deutsche Vorgabe: "Haben Sie den Computer neu gestartet?"
+     - Englisches Wort-Chaos: "you", "Have", "computer", "restarted", "the", "?".
+     - Spieler muss Wörter per Drag & Drop in die richtige Reihenfolge sortieren.
+     - Messbarkeit: Korrekter Satzbau = 100%. Grammatikfehler = Abzug.
+   - Lernziel: Grammatik und Satzbau in der Fachkommunikation.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_englisch_sentence.json')
+  - `tasks`: { "target": "Have you restarted...", "words": ["You", "Have", "restarted", ...] }.
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Wort-Bausteine (Draggable).
+  - Satz-Bauleiste (Dropzone).
+- [ ] Game-Engine Logic ('game_englisch_sentence.js')
+  - Sortier-Logik.
+  - Satz-Validierung (String-Vergleich).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,21 @@
+Anforderungen
+2. "Deckungsbeitrags-Rechner"
+   - Ziel: Deckt das Produkt die Fixkosten?
+   - Spielmechanik: 
+     - Preis: 100€. Variable Kosten: 60€.
+     - DB (Deckungsbeitrag) = 40€.
+     - Fixkosten: 4000€.
+     - Break-Even-Menge = 4000 / 40 = 100 Stück.
+     - Verkaufe 101 Stück -> Gewinn.
+     - Messbarkeit: Korrekte BEP-Menge.
+   - Lernziel: DB-Rechnung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_contribution_margin.json')
+  - `price`: 100, `var_cost`: 60.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Balkendiagramm (Erlös - varKosten = DB).
+- [ ] Game-Engine Logic ('game_math_contribution_margin.js')
+  - Deckt der DB die Fixkosten?
+- [ ] Integration
+  - Startbar über JSON.

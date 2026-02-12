@@ -1,0 +1,20 @@
+Anforderungen
+4. "Log-Rotation-Manager"
+   - Ziel: Richte Logrotate ein, um alte Daten zu archivieren.
+   - Spielmechanik: 
+     - Regel: "Täglich rotieren, 7 Tage aufheben, Komprimieren".
+     - Simulation: Tag 1 -> log, Tag 2 -> log.1, ... Tag 8 -> log.7 wird gelöscht.
+     - Spieler muss Parameter setzen "daily", "rotate 7", "compress".
+     - Messbarkeit: Speicherplatz bleibt stabil über 2 Wochen Simulation.
+   - Lernziel: Verwaltung von Logdateien.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_log_rotate.json')
+  - `retention`: 7.
+- [ ] Shared CSS Check ('basics_admin.css')
+  - Kalender / Zeitleiste.
+- [ ] Game-Engine Logic ('game_basics_log_rotate.js')
+  - Rotation simulieren (mv log log.1).
+  - Löschung alter Files.
+- [ ] Integration
+  - Startbar über JSON.

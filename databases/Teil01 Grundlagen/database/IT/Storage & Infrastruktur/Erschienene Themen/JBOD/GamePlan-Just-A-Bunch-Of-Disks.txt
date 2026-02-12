@@ -1,0 +1,19 @@
+Anforderungen
+1. "Just A Bunch Of Disks"
+   - Ziel: Erweitere den Speicher billig.
+   - Spielmechanik: 
+     - HDD 1: 500 GB. HDD 2: 1 TB.
+     - JBOD (Spanning): Windows sieht 1.5 TB Laufwerk D:.
+     - RAID 0: Würde nur 2x 500GB nutzen (Rest verschenkt).
+     - Messbarkeit: Maximale Kapazitätsausnutzung.
+   - Lernziel: Unterschied JBOD vs RAID.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_jbod_span.json')
+  - `disks`: [500, 1000].
+- [ ] Shared CSS Check ('storage_basics.css')
+  - Kapazitäts-Balken (Gestapelt).
+- [ ] Game-Engine Logic ('game_jbod_span.js')
+  - Vergleich JBOD Summe (1500) vs RAID 0 (1000, limitiert durch kleinste).
+- [ ] Integration
+  - Startbar über JSON.

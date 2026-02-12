@@ -1,0 +1,47 @@
+1. "Crimp-Master T568A vs T568B"
+   - Ziel: Sortiere die Adernfarben korrekt.
+   - Spielmechanik: 
+     - Standard B (Europa/USA meistens): Orange-Weiß, Orange, Grün-Weiß, Blau...
+     - Spieler zieht Adern in den Stecker.
+     - Wenn Adern vertauscht -> Kabeltester zeigt "Fail".
+     - Messbarkeit: Funktionierendes Patchkabel.
+   - Lernziel: Adernbelegung (Pinout).
+
+2. "Crossover-Kabel nötig?"
+   - Ziel: Ein Verbindungskabel löten.
+   - Spielmechanik: 
+     - PC an PC (Alt): Braucht Crossover (Senden an Empfangen).
+     - PC an Switch: Braucht Patchkabel (Straight).
+     - PC an PC (Neu mit Auto-MDI-X): Egal.
+     - Aufgabe: Verbinde zwei uralte Switches.
+     - Messbarkeit: Link-LED leuchtet.
+   - Lernziel: MDI vs MDI-X.
+
+3. "Kabel-Kategorien (Cat)"
+   - Ziel: Wähle das Kabel für 10 Gigabit.
+   - Spielmechanik: 
+     - Gegeben: 10 Gbit Switch.
+     - Kabel Cat 5e -> Nur 1 Gbit (oder 2.5/5 auf kurze Strecke).
+     - Kabel Cat 7 -> 10 Gbit sicher.
+     - Spieler verlegt Kabel. Speedtest.
+     - Messbarkeit: Volle Bandbreite erreicht.
+   - Lernziel: Kabelstandards und Schirmung.
+
+4. "Schirmungs-Check (UTP vs STP)"
+   - Ziel: Verlege Kabel neben Stromleitung.
+   - Spielmechanik: 
+     - UTP (Unshielded): Störung durch Stromkabel -> Paketverlust.
+     - S/FTP (Shielded): Keine Störung.
+     - Aufgabe: Industriehalle verkabeln.
+     - Messbarkeit: Störungsfreie Übertragung.
+   - Lernziel: EMV-Einflüsse.
+
+5. "Dosen-Aufleger (LSA)"
+   - Ziel: Lege die Adern in die Netzwerkdose zielsicher auf.
+   - Spielmechanik: 
+     - LSA-Anlegewerkzeug nutzen.
+     - Ader nicht ganz drin -> Wackelkontakt.
+     - Ader zu weit abisoliert -> Nebensprechen (Next).
+     - Überschuss abschneiden.
+     - Messbarkeit: Messprotokoll "Pass".
+   - Lernziel: Installationstechnik.

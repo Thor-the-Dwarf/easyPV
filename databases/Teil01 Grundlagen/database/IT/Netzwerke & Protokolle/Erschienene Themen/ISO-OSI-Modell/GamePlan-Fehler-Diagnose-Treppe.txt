@@ -1,0 +1,22 @@
+Anforderungen
+3. "Fehler-Diagnose-Treppe"
+   - Ziel: Finde den Fehler (Bottom-Up Approach).
+   - Spielmechanik: 
+     - Problem: "Webseite lädt nicht".
+     - Schritt 1 (L1): Kabel drin? Ja.
+     - Schritt 2 (L2): Link-Lampe an? Ja.
+     - Schritt 3 (L3): Ping geht? Nein! -> IP-Konfig falsch.
+     - Spieler spart Zeit, indem er systematisch sucht.
+     - Messbarkeit: Fehler auf Layer 3 lokalisiert.
+   - Lernziel: Troubleshooting Strategie.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_iso_diag.json')
+  - `layers`: [1, 2, 3].
+- [ ] Shared CSS Check ('network_basics.css')
+  - Treppen-Grafik (Layer 1 unten).
+- [ ] Game-Engine Logic ('game_iso_diag.js')
+  - Schrittweises Freischalten.
+  - Check-Aktionen ("Kabel prüfen", "Link-LED", "Ping").
+- [ ] Integration
+  - Startbar über JSON.

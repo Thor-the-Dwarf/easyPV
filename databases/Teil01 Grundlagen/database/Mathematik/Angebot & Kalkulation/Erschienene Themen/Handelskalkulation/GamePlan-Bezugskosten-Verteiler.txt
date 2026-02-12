@@ -1,0 +1,22 @@
+Anforderungen
+4. "Bezugskosten-Verteiler"
+   - Ziel: Verteile Fracht auf die Artikel.
+   - Spielmechanik: 
+     - Fracht: 50€.
+     - Artikel A (klein, teuer, 1 Stk).
+     - Artikel B (groß, billig, 10 Stk).
+     - Verteilung nach Wert oder Gewicht?
+     - Hier: Gewicht. B trägt 90% der Fracht.
+     - Dadurch wird B evtl. unrentabel.
+     - Messbarkeit: Logische Kostenumlage.
+   - Lernziel: Gewichtskalkulation.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_procurement.json')
+  - `transport`: 50.
+- [ ] Shared CSS Check ('math_basics.css')
+  - LKW Icon.
+- [ ] Game-Engine Logic ('game_math_procurement.js')
+  - Bezugskosten erhöhen den Einstandspreis (Bezugspreis).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,21 @@
+Anforderungen
+1. "Hardware-Profiler"
+   - Ziel: Stelle den optimalen PC für das Szenario zusammen.
+   - Spielmechanik: 
+     - Szenario: "CAD-Workstation". -> Braucht: Starke GPU (Quadro), Viel RAM, Teuer.
+     - Szenario: "Office-PC". -> Braucht: i3/i5, SSD, Leise, Günstig.
+     - Szenario: "Gaming-PC". -> Braucht: RGB, Starke GPU (GeForce), Gute Kühlung.
+     - Messbarkeit: Preis-Leistungs-Verhältnis und Erfüllung der Anforderungen.
+   - Lernziel: Anforderungsprofile erkennen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_periph_profiler.json')
+  - `profile`: "CAD".
+  - `requirements`: ["High RAM", "Pro GPU"].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - PC-Konfigurator Mockup.
+- [ ] Game-Engine Logic ('game_periph_profiler.js')
+  - Komponentenwahl.
+  - Score vs Anforderung.
+- [ ] Integration
+  - Startbar über JSON.

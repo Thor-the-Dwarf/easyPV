@@ -1,0 +1,47 @@
+1. "GPO-Administrator"
+   - Ziel: Setze eine Gruppenrichtlinie (GPO), um den Zugriff auf die Systemsteuerung zu sperren.
+   - Spielmechanik: 
+     - Baumstruktur (User Configuration -> Administrative Templates...).
+     - Spieler muss sich zum richtigen Pfad durchklicken.
+     - Setting: "Prohibit access to Control Panel" -> Enabled.
+     - Messbarkeit: Korrekter Pfad und korrekter Status (Enabled) gewählt.
+   - Lernziel: Navigation im GPO-Editor.
+
+2. "LSUG-Reihenfolge"
+   - Ziel: Berechne, welche Richtlinie gewinnt (Precedence).
+   - Spielmechanik: 
+     - Local: "Hintergrund Rot".
+     - Site: "Hintergrund Blau".
+     - Domain: "Nicht konfiguriert".
+     - OU: "Hintergrund Grün".
+     - Frage: "Welche Farbe hat der Hintergrund?"
+     - Lösung: Grün (OU gewinnt zuletzt).
+     - Messbarkeit: Korrektes Endergebnis ermittelt.
+   - Lernziel: Abarbeitungsreihenfolge (Local, Site, Domain, OU).
+
+3. "User vs. Computer"
+   - Ziel: Entscheide, ob die Einstellung in die Computer- oder Benutzerkonfiguration gehört.
+   - Spielmechanik: 
+     - "Software-Installation für alle PCs im Raum 101". -> Computer.
+     - "Desktop-Hintergrund für Vertriebsmitarbeiter". -> User.
+     - "WLAN-Passwort für Firmen-Laptops". -> Computer.
+     - Messbarkeit: Korrekte Zuordnung.
+   - Lernziel: Geltungsbereiche von GPOs.
+
+4. "Vererbung & Blockierung"
+   - Ziel: Sorge dafür, dass die Chefs trotz Verbot USB-Sticks nutzen dürfen.
+   - Spielmechanik: 
+     - Oben (Firma): "USB verboten".
+     - Unten (OU Chefs): "Vererbung deaktivieren" oder "GPO USB erlauben" + "Enforced" beachten.
+     - Aufgabe: Konfiguriere die OU so, dass USB geht.
+     - Messbarkeit: USB funktioniert bei Chefs, aber nicht beim Rest.
+   - Lernziel: Vererbung, Block Inheritance, Enforced.
+
+5. "Das Anmelde-Skript"
+   - Ziel: Binde ein Logon-Script via GPO ein.
+   - Spielmechanik: 
+     - Skript "net use Z: \\server\share".
+     - GPO öffnen -> Windows Settings -> Scripts -> Logon.
+     - Datei hinzufügen.
+     - Messbarkeit: Laufwerk Z: ist nach Simulation da.
+   - Lernziel: Automatisierung über GPOs.

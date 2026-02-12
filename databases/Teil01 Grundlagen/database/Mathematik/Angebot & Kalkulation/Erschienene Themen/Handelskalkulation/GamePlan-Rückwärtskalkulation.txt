@@ -1,0 +1,21 @@
+Anforderungen
+2. "Rückwärtskalkulation"
+   - Ziel: Wie viel darf das Teil im Einkaufen kosten?
+   - Spielmechanik: 
+     - Marktpreis (Brutto): 119€.
+     - Netto: 100€.
+     - Kundenrabatt weg, Gewinn weg, Kosten weg...
+     - Maximaler Einkaufspreis: 40€.
+     - Lieferant will 50€. -> Verhandeln oder Produkt streichen.
+     - Messbarkeit: "Target Costing" Prinzip verstanden.
+   - Lernziel: Vom Marktpreis rückwärts rechnen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_calc_backward.json')
+  - `market_price`: 99.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Pfeile von unten nach oben.
+- [ ] Game-Engine Logic ('game_math_calc_backward.js')
+  - Wie viel darf ich maximal im Einkauf zahlen?
+- [ ] Integration
+  - Startbar über JSON.

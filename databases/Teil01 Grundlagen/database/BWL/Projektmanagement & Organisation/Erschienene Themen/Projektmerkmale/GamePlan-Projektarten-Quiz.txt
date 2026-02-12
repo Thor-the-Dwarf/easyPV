@@ -1,0 +1,19 @@
+Anforderungen
+4. "Projektarten-Quiz"
+   - Ziel: Bestimme die Projektart für 4 Szenarien.
+   - Spielmechanik: 
+     - "Bau einer Brücke". -> Investitionsprojekt.
+     - "Entwicklung neuer Software". -> F&E-Projekt.
+     - "Fusion zweier Firmen". -> Organisationsprojekt.
+     - Messbarkeit: Korrekte Zuordnung.
+   - Lernziel: Arten von Projekten unterscheiden.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_kinds.json')
+  - `kinds`: ["invest", "org", "rd"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Quiz-Karten.
+- [ ] Game-Engine Logic ('game_pm_kinds.js')
+  - Zuordnung: "Neue Halle bauen" (Investition) vs "Neue Software" (IT/Org).
+- [ ] Integration
+  - Startbar über JSON.

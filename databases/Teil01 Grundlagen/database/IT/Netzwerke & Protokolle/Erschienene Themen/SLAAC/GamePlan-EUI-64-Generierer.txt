@@ -1,0 +1,21 @@
+Anforderungen
+2. "EUI-64-Generierer"
+   - Ziel: Baue die Host-ID aus der MAC.
+   - Spielmechanik: 
+     - MAC: 00:11:22:33:44:55.
+     - Schritt 1: In die Mitte "FF FE" einfügen -> 0011:22FF:FE33:4455.
+     - Schritt 2: 7. Bit invertieren (Universal/Local Bit). 00 -> 02.
+     - Ergebnis: 0211:22FF:FE33:4455.
+     - Messbarkeit: Korrekte Interface ID berechnet.
+   - Lernziel: EUI-64 Algorithmus.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_slaac_eui64.json')
+  - `mac`: "ABCD...".
+- [ ] Shared CSS Check ('network_ip.css')
+  - Bit-Flipper UI (7. Bit).
+  - "FFFE" Einschub Animation.
+- [ ] Game-Engine Logic ('game_slaac_eui64.js')
+  - Interaktiver Bauprozess.
+- [ ] Integration
+  - Startbar über JSON.

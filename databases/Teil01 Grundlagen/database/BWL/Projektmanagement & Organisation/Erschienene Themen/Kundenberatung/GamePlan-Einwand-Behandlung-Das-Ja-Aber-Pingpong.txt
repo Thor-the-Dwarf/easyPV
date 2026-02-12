@@ -1,0 +1,19 @@
+Anforderungen
+2. "Einwand-Behandlung: Das Ja-Aber-Pingpong"
+   - Ziel: Entschärfe 5 Kundeneinwände mit der richtigen Methode.
+   - Spielmechanik: 
+     - Einwand: "Das ist zu teuer."
+     - Reaktion: "Dafür hält es 10 Jahre länger." (Nutzenargumentation).
+     - Falsch: "Nein, ist es nicht." (Widerspruch).
+     - Messbarkeit: Erfolgreich behandelte Einwände = Punkte.
+   - Lernziel: Argumentationstechnik (Preis vs. Nutzen).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_objection.json')
+  - `methods`: ["yes_but", "boomerang", "reference"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Tischtennis-Animation.
+- [ ] Game-Engine Logic ('game_pm_objection.js')
+  - Einwand auffangen -> Entkräften (Ja-Aber Methode).
+- [ ] Integration
+  - Startbar über JSON.

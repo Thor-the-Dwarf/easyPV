@@ -1,0 +1,22 @@
+Anforderungen
+5. "Bias-Detektiv"
+   - Ziel: Finde den Fehler in den Trainingsdaten (Vorurteile).
+   - Spielmechanik: 
+     - KI sagt voraus: "Dieser Bewerber ist ungeeignet."
+     - Warum? Analyse der Daten: "KI wurde nur mit Männern trainiert."
+     - Aufgabe: Datensatz ausbalancieren (Frauen hinzufügen).
+     - Messbarkeit: KI entscheidet fair (50/50 Quote).
+   - Lernziel: Ethik und Bias in KI-Systemen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ai_bias.json')
+  - `candidates`: [ { "gender": "m", "score": 90 }, { "gender": "f", "score": 90 } ].
+  - `bias`: "gender".
+- [ ] Shared CSS Check ('ai_basics.css')
+  - Bewerber-Karten.
+  - Statistik-Dashboard (Bias-Indikator).
+- [ ] Game-Engine Logic ('game_ai_bias.js')
+  - Trainings-Simulation.
+  - Feedback-Loop (Bias korrigieren).
+- [ ] Integration
+  - Startbar über JSON.

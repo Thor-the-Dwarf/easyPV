@@ -1,0 +1,20 @@
+Anforderungen
+3. "Dateisystem-Detektiv"
+   - Ziel: Welches Dateisystem für welchen Zweck? (FAT32, NTFS, ext4).
+   - Spielmechanik: 
+     - "USB-Stick für PC und Mac, kleine Dateien". -> FAT32/ExFAT.
+     - "Windows Systemplatte mit Rechteverwaltung". -> NTFS.
+     - "Linux Server". -> ext4.
+     - Messbarkeit: Kompatibilität und Features richtig gewählt.
+   - Lernziel: Eigenschaften von File Systems.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_fs.json')
+  - `scenario`: "usb_mac_pc".
+- [ ] Shared CSS Check ('basics_os.css')
+  - Festplatten-Manager Icon.
+- [ ] Game-Engine Logic ('game_basics_fs.js')
+  - Formatierung wählen (FAT32, NTFS, EXT4).
+  - Feature-Check (Dateigröße > 4GB?).
+- [ ] Integration
+  - Startbar über JSON.

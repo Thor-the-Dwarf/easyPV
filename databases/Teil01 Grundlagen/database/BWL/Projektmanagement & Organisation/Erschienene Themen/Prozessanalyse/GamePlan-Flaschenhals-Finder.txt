@@ -1,0 +1,21 @@
+Anforderungen
+1. "Flaschenhals-Finder"
+   - Ziel: Finde den langsamsten Schritt (Engpass) im Prozess.
+   - Spielmechanik: 
+     - Fließband-Darstellung.
+     - Station A: 10 Stk/h. Station B: 5 Stk/h. Station C: 20 Stk/h.
+     - Vor B staut es sich.
+     - Spieler klickt auf B.
+     - Messbarkeit: Korrekte Identifikation des Engpasses (Theory of Constraints).
+   - Lernziel: Durchlaufzeiten und Engpässe erkennen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_bottleneck.json')
+  - `flow`: "constrained".
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Rohrsystem / Fließband Animation.
+- [ ] Game-Engine Logic ('game_pm_bottleneck.js')
+  - Stau erkennen.
+  - Kapazität an der engsten Stelle erhöhen.
+- [ ] Integration
+  - Startbar über JSON.

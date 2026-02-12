@@ -1,0 +1,18 @@
+Anforderungen
+3. "Maßnahmen-Planer"
+   - Ziel: Wähle die richtige Strategie für jeden Stakeholder.
+   - Spielmechanik: 
+     - Key Player (Mächtig & Interessiert). -> Strategie: "Eng einbinden / Kooperieren".
+     - Zuschauer (Mächtig & Desinteressiert). -> Strategie: "Zufriedenstellen".
+     - Messbarkeit: Passung Strategie zu Stakeholder-Typ.
+   - Lernziel: Kommunikation steuern.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_stake_action.json')
+  - `actions`: ["report", "manage_closely", "monitor"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - ToDo-Liste pro Stakeholder.
+- [ ] Game-Engine Logic ('game_pm_stake_action.js')
+  - Richtige Maßnahme zur richtigen Person.
+- [ ] Integration
+  - Startbar über JSON.

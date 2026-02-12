@@ -1,0 +1,21 @@
+Anforderungen
+1. "Der Jahres-Verbrauch"
+   - Ziel: Was kostet der Server pro Jahr?
+   - Spielmechanik: 
+     - Leistung: 500 Watt = 0.5 kW.
+     - Laufzeit: 24h * 365 = 8760 h.
+     - Gesamt: 0.5 * 8760 = 4380 kWh.
+     - Preis: 0.40 € / kWh.
+     - Kosten: 4380 * 0.40 = 1752 €.
+     - Messbarkeit: Korrekter Euro-Betrag.
+   - Lernziel: TCO (Total Cost of Ownership) OpEx.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_yearly_consumption.json')
+  - `daily`: 2.5.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Kalenderblatt-Abriss.
+- [ ] Game-Engine Logic ('game_math_yearly_consumption.js')
+  - Hochrechnung Tag -> Jahr.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,48 @@
+1. "Layer-Lift"
+   - Ziel: Ordne Protokolle/Geräte der richtigen Schicht zu.
+   - Spielmechanik: 
+     - "Switch" -> Layer 2 (Data Link).
+     - "IP-Adresse" -> Layer 3 (Network).
+     - "TCP" -> Layer 4 (Transport).
+     - "Kabel" -> Layer 1 (Physical).
+     - "HTTP" -> Layer 7 (Application).
+     - Messbarkeit: Aufzug fährt in den richtigen Stock.
+   - Lernziel: Die 7 Schichten auswendig können.
+
+2. "Paket-Packer (Encapsulation)"
+   - Ziel: Verpacke die Daten für den Versand.
+   - Spielmechanik: 
+     - Daten (L7) -> Segment (L4 +TCP Header) -> Paket (L3 +IP Header) -> Frame (L2 +MAC Header) -> Bits (L1).
+     - Spieler muss die Header in der richtigen Reihenfolge "draufkleben".
+     - Messbarkeit: Korrektes Zwiebel-Prinzip.
+   - Lernziel: Kapselung.
+
+3. "Fehler-Diagnose-Treppe"
+   - Ziel: Finde den Fehler (Bottom-Up Approach).
+   - Spielmechanik: 
+     - Problem: "Webseite lädt nicht".
+     - Schritt 1 (L1): Kabel drin? Ja.
+     - Schritt 2 (L2): Link-Lampe an? Ja.
+     - Schritt 3 (L3): Ping geht? Nein! -> IP-Konfig falsch.
+     - Spieler spart Zeit, indem er systematisch sucht.
+     - Messbarkeit: Fehler auf Layer 3 lokalisiert.
+   - Lernziel: Troubleshooting Strategie.
+
+4. "PDU-Quiz"
+   - Ziel: Wie heißt die Dateneinheit auf Layer X?
+   - Spielmechanik: 
+     - Layer 1: "Bits".
+     - Layer 2: "Frames".
+     - Layer 3: "Packets".
+     - Layer 4: "Segments" (TCP) / "Datagrams" (UDP).
+     - Messbarkeit: Korrekte Fachbegriffe.
+   - Lernziel: Protocol Data Units.
+
+5. "Layer-8-Problem"
+   - Ziel: Ein Scherz, aber real.
+   - Spielmechanik: 
+     - Alle technischen Layers sind grün (Ok).
+     - Problem: User hat Monitor nicht eingeschaltet.
+     - Diagnose: "Layer 8 Error" (User).
+     - Messbarkeit: Problem zwischen Stuhl und Tastatur gefunden.
+   - Lernziel: Der menschliche Faktor.

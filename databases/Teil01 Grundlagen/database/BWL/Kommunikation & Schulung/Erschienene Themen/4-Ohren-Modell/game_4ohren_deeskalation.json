@@ -1,0 +1,61 @@
+{
+  "title": "Der Deeskalations-Profi",
+  "subtitle": "Entschaerfe Konflikte durch klare Antworten auf der Sachebene.",
+  "scenarios": [
+    {
+      "id": "s1",
+      "trigger": "Kollege sagt wuetend: 'Nie raeumst du die Spuelmaschine aus!'",
+      "ear": "beziehung/appell",
+      "explanation": "Eine sachliche Antwort nimmt Druck raus und klaert den Fakt statt Schuldzuweisungen.",
+      "options": [
+        { "id": "a", "text": "Du hast recht, ich bin faul.", "kind": "beziehung", "score": 0 },
+        { "id": "b", "text": "Die Maschine war noch nicht fertig. Ich raeume sie in 10 Minuten aus.", "kind": "sache", "score": 100 },
+        { "id": "c", "text": "Immer meckerst du nur!", "kind": "gegenangriff", "score": 0 }
+      ]
+    },
+    {
+      "id": "s2",
+      "trigger": "Teamleiterin: 'Du bist schon wieder zu spaet mit dem Ticket.'",
+      "ear": "appell/beziehung",
+      "explanation": "Sachebene heisst: Status + konkrete Naechsteschritte liefern.",
+      "options": [
+        { "id": "a", "text": "Dann mach es doch selbst.", "kind": "gegenangriff", "score": 0 },
+        { "id": "b", "text": "Ich habe den Fehler reproduziert, Fix ist um 14:30 Uhr im Review.", "kind": "sache", "score": 100 },
+        { "id": "c", "text": "Ich kann auch nichts dafuer, dass alles chaotisch ist.", "kind": "rechtfertigung", "score": 0 }
+      ]
+    },
+    {
+      "id": "s3",
+      "trigger": "Kunde: 'Ihre Software ist unbrauchbar!'",
+      "ear": "beziehung",
+      "explanation": "Deeskalation gelingt mit praezisem Nachfragen und faktenbasierter Eingrenzung.",
+      "options": [
+        { "id": "a", "text": "So schlimm ist es nicht.", "kind": "abwertung", "score": 0 },
+        { "id": "b", "text": "Welche Funktion betrifft es konkret? Dann priorisieren wir den Fix sofort.", "kind": "sache", "score": 100 },
+        { "id": "c", "text": "Sie haben das System wahrscheinlich falsch bedient.", "kind": "schuldzuweisung", "score": 0 }
+      ]
+    },
+    {
+      "id": "s4",
+      "trigger": "Azubi: 'Niemand erklaert mir hier etwas!'",
+      "ear": "beziehung/appell",
+      "explanation": "Sachebene strukturiert Erwartung und Termin statt Emotion gegen Emotion.",
+      "options": [
+        { "id": "a", "text": "Dann musst du eben besser aufpassen.", "kind": "abwertung", "score": 0 },
+        { "id": "b", "text": "Nenn mir bitte zwei Themen. Wir planen heute 16:00 Uhr 20 Minuten dafuer ein.", "kind": "sache", "score": 100 },
+        { "id": "c", "text": "Ich habe dafuer jetzt wirklich keine Zeit.", "kind": "abblocken", "score": 0 }
+      ]
+    },
+    {
+      "id": "s5",
+      "trigger": "Projektpartner: 'Mit deinem Teil haengt das ganze Projekt fest.'",
+      "ear": "beziehung/appell",
+      "explanation": "Klarer Status, Risiko und Handlungsvorschlag senken Konfliktlevel sofort.",
+      "options": [
+        { "id": "a", "text": "Du uebertreibst total.", "kind": "abwehr", "score": 0 },
+        { "id": "b", "text": "Stand jetzt fehlen zwei API-Antworten. Ich liefere den Workaround bis 11:30 Uhr.", "kind": "sache", "score": 100 },
+        { "id": "c", "text": "Dann ist es halt so.", "kind": "resignation", "score": 0 }
+      ]
+    }
+  ]
+}

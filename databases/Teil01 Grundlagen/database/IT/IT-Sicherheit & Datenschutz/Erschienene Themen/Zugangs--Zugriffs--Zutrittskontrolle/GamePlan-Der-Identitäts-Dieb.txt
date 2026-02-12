@@ -1,0 +1,19 @@
+Anforderungen
+5. "Der Identitäts-Dieb"
+   - Ziel: Erkenne den Unterschied zwischen Identifizierung und Authentifizierung.
+   - Spielmechanik: 
+     - "Ich behaupte, ich bin Hans". -> Identifizierung (Name nennen).
+     - "Ich beweise es mit dem Ausweis". -> Authentifizierung (Nachweis erbringen).
+     - Quiz-Situationen.
+     - Messbarkeit: Korrekte Begriffsverwendung.
+   - Lernziel: Grundlagen des IAM (Identity & Access Management).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_iam.json')
+  - `concepts`: ["id", "auth"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - Ausweis / Dialog-Blasen.
+- [ ] Game-Engine Logic ('game_sec_iam.js')
+  - Identifizierung vs Authentifizierung unterscheiden.
+- [ ] Integration
+  - Startbar über JSON.

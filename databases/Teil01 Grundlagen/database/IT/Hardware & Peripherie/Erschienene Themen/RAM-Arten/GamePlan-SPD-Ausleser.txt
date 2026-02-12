@@ -1,0 +1,22 @@
+Anforderungen
+4. "SPD-Ausleser"
+   - Ziel: Lies die Werte aus dem "Serial Presence Detect" Chip.
+   - Spielmechanik: 
+     - Tool zeigt Hex-Werte.
+     - "Timings: 16-18-18-38".
+     - Spannung: "1.35V".
+     - Aufgabe: Stelle diese Werte im BIOS manuell ein, weil XMP nicht geht.
+     - Messbarkeit: Bootfähiges System.
+   - Lernziel: Wie RAM sich beim System anmeldet.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ram_spd.json')
+  - `spdData`: { "cl": 16, "trcd": 18, "trp": 18, "tras": 38, "volt": 1.35 }.
+- [ ] Shared CSS Check ('hardware_components.css')
+  - CPU-Z Style Fenster.
+  - BIOS Eingabemaske.
+- [ ] Game-Engine Logic ('game_ram_spd.js')
+  - Werte übertragen (Tippen/Drag).
+  - Validierung.
+- [ ] Integration
+  - Startbar über JSON.

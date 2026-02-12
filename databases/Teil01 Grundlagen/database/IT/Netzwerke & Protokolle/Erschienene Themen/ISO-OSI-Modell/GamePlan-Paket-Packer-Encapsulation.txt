@@ -1,0 +1,19 @@
+Anforderungen
+2. "Paket-Packer (Encapsulation)"
+   - Ziel: Verpacke die Daten für den Versand.
+   - Spielmechanik: 
+     - Daten (L7) -> Segment (L4 +TCP Header) -> Paket (L3 +IP Header) -> Frame (L2 +MAC Header) -> Bits (L1).
+     - Spieler muss die Header in der richtigen Reihenfolge "draufkleben".
+     - Messbarkeit: Korrektes Zwiebel-Prinzip.
+   - Lernziel: Kapselung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_iso_encap.json')
+  - `data`: "Payload".
+- [ ] Shared CSS Check ('network_basics.css')
+  - Matroschka-Puppen Prinzip oder Schachteln.
+- [ ] Game-Engine Logic ('game_iso_encap.js')
+  - Drag & Drop Header um Payload herum.
+  - Reihenfolge-Check.
+- [ ] Integration
+  - Startbar über JSON.

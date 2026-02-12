@@ -1,0 +1,21 @@
+Anforderungen
+4. "Der falsche DHCP (Rogue Server)"
+   - Ziel: Finde und deaktiviere den Störer.
+   - Spielmechanik: 
+     - Mitarbeiter hat "WLAN-Router von Zuhause" eingesteckt.
+     - Clients kriegen falsche IPs (192.168.0.x statt 10.0.0.x).
+     - Internet geht nicht.
+     - Spieler muss den Port am Switch abschalten (DHCP Snooping).
+     - Messbarkeit: Netzwerk wieder stabil.
+   - Lernziel: Sicherheitsproblem Rogue DHCP.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_dhcp_rogue.json')
+  - `servers`: ["Legal", "Rogue"].
+- [ ] Shared CSS Check ('network_ip.css')
+  - Büro-Plan mit Dosen und Switch.
+- [ ] Game-Engine Logic ('game_dhcp_rogue.js')
+  - Race Condition (Wer antwortet zuerst?).
+  - Port-Security Aktivierung (Click auf Switch-Port).
+- [ ] Integration
+  - Startbar über JSON.

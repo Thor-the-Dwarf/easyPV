@@ -1,0 +1,19 @@
+Anforderungen
+5. "Protokoll-Analysator"
+   - Ziel: Erkenne das Protokoll am Header-Inhalt.
+   - Spielmechanik: 
+     - "GET /index.html" -> HTTP.
+     - "EHLO mail.server.com" -> SMTP.
+     - "USER anonymous" -> FTP.
+     - Messbarkeit: Protokoll identifiziert.
+   - Lernziel: Textbasierte Protokolle lesen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_proto_analyze.json')
+  - `snippets`: ["GET /", "EHLO", "USER"].
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Hex-Editor / Text-Dump Ansicht.
+- [ ] Game-Engine Logic ('game_proto_analyze.js')
+  - Pattern-Matching / Quiz.
+- [ ] Integration
+  - Startbar über JSON.

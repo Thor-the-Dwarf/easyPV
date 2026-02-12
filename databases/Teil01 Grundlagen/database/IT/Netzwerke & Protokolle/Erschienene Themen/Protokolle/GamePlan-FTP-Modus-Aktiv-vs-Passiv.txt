@@ -1,0 +1,21 @@
+Anforderungen
+4. "FTP-Modus (Aktiv vs Passiv)"
+   - Ziel: Komm durch die Firewall.
+   - Spielmechanik: 
+     - Client hinter NAT will FTP machen.
+     - Aktiv-Modus: Server will Verbindung zu Client aufbauen -> Firewall blockt!
+     - Passiv-Modus: Client baut beide Verbindungen auf -> Firewall erlaubt.
+     - Messbarkeit: Datentransfer startet.
+   - Lernziel: Tücken von FTP und NAT.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_proto_ftp.json')
+  - `firewall`: "blocks_incoming".
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Verbindungslinien (Control & Data Channel).
+  - Firewall-Mauer.
+- [ ] Game-Engine Logic ('game_proto_ftp.js')
+  - Modus-Umschalter.
+  - Blockade-Animation bei Aktiv-Mode.
+- [ ] Integration
+  - Startbar über JSON.

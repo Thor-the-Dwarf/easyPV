@@ -1,0 +1,20 @@
+Anforderungen
+3. "Netzteil-Redundanz"
+   - Ziel: Versorge den Server sicher.
+   - Spielmechanik: 
+     - Server hat 2 Netzteile (PSU).
+     - Beide an Stromkreis A? -> Sicherung A fliegt -> Server aus. (Fail).
+     - PSU 1 an Kreis A, PSU 2 an Kreis B (oder USV). -> Sicherung A fliegt -> Server läuft weiter.
+     - Messbarkeit: Fehlertolerante Verkabelung.
+   - Lernziel: Infrastruktur-Redundanz (A/B Feed).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_redundancy_psu.json')
+  - `psus`: 2. `circuits`: ["A", "B"].
+- [ ] Shared CSS Check ('storage_backup.css')
+  - Rack-Rückseite mit Stromkabeln.
+- [ ] Game-Engine Logic ('game_redundancy_psu.js')
+  - Sicherung rausfliegen lassen.
+  - Check: Hat Server noch Strom?
+- [ ] Integration
+  - Startbar über JSON.

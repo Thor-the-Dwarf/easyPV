@@ -1,0 +1,20 @@
+Anforderungen
+2. "SO-DIMM vs DIMM"
+   - Ziel: Rüste den Laptop auf.
+   - Spielmechanik: 
+     - PC offen, Laptop offen.
+     - Kiste mit RAM: Lange Riegel (DIMM), Kurze Riegel (SO-DIMM).
+     - Spieler zieht langes RAM in Laptop -> Passt nicht.
+     - Messbarkeit: Richtiger Formfaktor gewählt.
+   - Lernziel: Bauformen für Mobilgeräte vs Desktop.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ram_sodimm.json')
+  - `device`: "laptop".
+  - `options`: ["dimm", "sodimm"].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Größenvergleich Riegel.
+- [ ] Game-Engine Logic ('game_ram_sodimm.js')
+  - Drag & Drop Formfaktor.
+- [ ] Integration
+  - Startbar über JSON.

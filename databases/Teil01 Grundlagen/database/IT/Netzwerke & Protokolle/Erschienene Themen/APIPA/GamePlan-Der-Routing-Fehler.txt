@@ -1,0 +1,20 @@
+Anforderungen
+3. "Der Routing-Fehler"
+   - Ziel: Warum geht das Internet nicht?
+   - Spielmechanik: 
+     - PC hat 169.254.10.10. Gateway ist leer (APIPA vergibt kein Gateway!).
+     - User will google.de pingen -> "Destination unreachable".
+     - User muss Problem benennen: "Kein Gateway bei APIPA möglich".
+     - Messbarkeit: Korrekte Fehleranalyse.
+   - Lernziel: Einschränkungen von APIPA (Kein Routing).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_apipa_route.json')
+  - `source`: "169.254.10.10".
+  - `target`: "8.8.8.8".
+- [ ] Shared CSS Check ('network_ip.css')
+  - Ping-Terminal Fenster.
+- [ ] Game-Engine Logic ('game_apipa_route.js')
+  - Check: Ist Gateway vorhanden? Nein -> Error.
+- [ ] Integration
+  - Startbar über JSON.

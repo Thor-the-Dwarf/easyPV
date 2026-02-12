@@ -1,0 +1,20 @@
+Anforderungen
+3. "Vektor vs. Pixel"
+   - Ziel: Vergrößere Bilder ohne Qualitätsverlust.
+   - Spielmechanik: 
+     - Kunde will Plakatwand-Druck.
+     - Bild A (JPG, 500x500px). -> Vergrößern -> Pixelig (Fehler).
+     - Bild B (SVG). -> Vergrößern -> Scharf (Erfolg).
+     - Messbarkeit: Zufriedenheit des Kunden mit der Druckqualität.
+   - Lernziel: Skalierbarkeit von Vektorgrafiken.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_vector_pixel.json')
+  - `zoom`: 500%.
+- [ ] Shared CSS Check ('basics_general.css')
+  - Lupe / Zoom-Canvas.
+- [ ] Game-Engine Logic ('game_basics_vector_pixel.js')
+  - Pixel-Effekt bei Rastergrafik rendern.
+  - Scharfe Kanten bei Vektor.
+- [ ] Integration
+  - Startbar über JSON.

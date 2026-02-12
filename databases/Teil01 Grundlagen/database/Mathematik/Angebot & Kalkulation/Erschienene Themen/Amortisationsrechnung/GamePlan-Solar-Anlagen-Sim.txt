@@ -1,0 +1,19 @@
+Anforderungen
+4. "Solar-Anlagen-Sim"
+   - Ziel: Dimensioniere die Anlage für schnelle Amortisation.
+   - Spielmechanik: 
+     - Dach vollmachen (teuer, viel Ertrag) vs Kleine Anlage (billig, Eigenverbrauch hoch).
+     - Szenario: Strompreis steigt.
+     - Amortisation sinkt von 15 auf 8 Jahre.
+     - Messbarkeit: Verständnis der Variablen (Anschaffung vs Ertrag).
+   - Lernziel: Dynamische Amortisation.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_solar.json')
+  - `invest`: 10000, `save_per_year`: 1000.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Solardach & Sonne.
+- [ ] Game-Engine Logic ('game_math_solar.js')
+  - Wann ist das Geld wieder drin? (10 Jahre).
+- [ ] Integration
+  - Startbar über JSON.

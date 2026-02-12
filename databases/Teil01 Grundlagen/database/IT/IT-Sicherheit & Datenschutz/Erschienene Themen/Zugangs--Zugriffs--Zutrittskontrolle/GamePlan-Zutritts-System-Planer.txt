@@ -1,0 +1,19 @@
+Anforderungen
+4. "Zutritts-System-Planer"
+   - Ziel: Entwerfe ein Zonenkonzept für das Gebäude.
+   - Spielmechanik: 
+     - Zone 1 (Öffentlich): Empfang.
+     - Zone 2 (Intern): Büros. -> Drehkreuz mit Karte.
+     - Zone 3 (Hochsicher): Serverraum. -> Schleuse mit Biometrie.
+     - Messbarkeit: Angemessene Sicherung der Zonen.
+   - Lernziel: Physische Sicherheit und Schalenmodell.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_zones.json')
+  - `zones`: ["public", "internal", "secure"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - Gebäude-Grundriss.
+- [ ] Game-Engine Logic ('game_sec_zones.js')
+  - Barrieren platzieren (Drehkreuz, Schleuse).
+- [ ] Integration
+  - Startbar über JSON.

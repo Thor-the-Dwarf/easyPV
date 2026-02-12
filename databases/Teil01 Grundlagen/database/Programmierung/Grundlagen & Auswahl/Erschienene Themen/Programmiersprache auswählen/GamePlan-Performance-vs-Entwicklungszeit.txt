@@ -1,0 +1,21 @@
+Anforderungen
+2. "Performance vs Entwicklungszeit"
+   - Ziel: Was ist wichtiger?
+   - Spielmechanik: 
+     - Szenario: "High Frequency Trading (HFT)" (Muss in Nanosekunden reagieren). -> C++ / Rust.
+     - Szenario: "Kleines Skript zum Dateien sortieren" (Soll in 5 Min fertig programmiert sein). -> Python.
+     - Falsch: Python für HFT (Zu langsam).
+     - Falsch: C++ für Aufräum-Skript (Zu aufwendig).
+     - Messbarkeit: Ökonomisch sinnvolle Wahl.
+   - Lernziel: Trade-offs.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_perf_dev.json')
+  - `goal`: "prototype".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Waage (Schnell fertig vs Schnell laufen).
+- [ ] Game-Engine Logic ('game_prog_perf_dev.js')
+  - Prototyp -> Python (Schnell entwickelt).
+  - High-Freq-Trading -> C++ (Schnell ausgeführt).
+- [ ] Integration
+  - Startbar über JSON.

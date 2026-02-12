@@ -1,0 +1,22 @@
+Anforderungen
+4. "Prefix-Rechner (/64)"
+   - Ziel: Teile das Netz.
+   - Spielmechanik: 
+     - Provider gibt Prefix: 2001:abc:123::/48.
+     - Firma braucht Subnetze.
+     - Standard-Subnetzgröße: /64.
+     - Subnetz 1: 2001:abc:123:0001::/64.
+     - Subnetz 2: 2001:abc:123:0002::/64.
+     - Messbarkeit: Korrekte Subnetz-IDs.
+   - Lernziel: Hexadezimales Subnetting.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ipv6_subnet.json')
+  - `base`: "2001:abc:123::/48".
+  - `targetSize`: "/64".
+- [ ] Shared CSS Check ('network_ip.css')
+  - Hex-Zähler Logik.
+- [ ] Game-Engine Logic ('game_ipv6_subnet.js')
+  - Nächstes Subnetz berechnen (+1 im 4. Block).
+- [ ] Integration
+  - Startbar über JSON.

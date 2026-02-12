@@ -1,0 +1,49 @@
+1. "Der Postbote (Layer 2 vs Layer 3)"
+   - Ziel: Löse die IP-Adresse in eine MAC-Adresse auf.
+   - Spielmechanik: 
+     - Paket an 192.168.1.5.
+     - ARP-Cache leer. -> Paket wartet.
+     - ARP-Request: "Who has 192.168.1.5? Tell 192.168.1.1".
+     - ARP-Reply: "192.168.1.5 is at AA:BB:CC:DD:EE:FF".
+     - Paket wird gesendet.
+     - Messbarkeit: Korrekter Ablauf des ARP-Handshakes.
+   - Lernziel: Adress Resolution Protocol Funktion.
+
+2. "ARP-Spoofing (Man-in-the-Middle)"
+   - Ziel: Abwehren eines Angriffs.
+   - Spielmechanik: 
+     - Angreifer sendet: "Ich bin das Gateway (192.168.1.1)!"
+     - Opfer aktualisiert ARP-Tabelle mit MAC des Angreifers.
+     - Traffic fließt zum Angreifer.
+     - Gegenmaßnahme: "Static ARP Entry" setzen oder "Dynamic ARP Inspection (DAI)" am Switch aktivieren.
+     - Messbarkeit: Traffic fließt wieder zum echten Gateway.
+   - Lernziel: Sicherheitsrisiko von ARP.
+
+3. "Cache-Cleaner"
+   - Ziel: Lösche veraltete Einträge.
+   - Spielmechanik: 
+     - Netzwerkkarte getauscht -> IP gleich, MAC neu.
+     - Ping geht nicht, weil alte MAC im ARP-Cache.
+     - Befehl: `arp -d *` (Windows) oder `ip neigh flush` (Linux).
+     - Ping geht wieder.
+     - Messbarkeit: Verbindung wiederhergestellt.
+   - Lernziel: Troubleshooting ARP-Cache.
+
+4. "Broadcast-Jäger"
+   - Ziel: Wie sieht ein ARP-Request aus?
+   - Spielmechanik: 
+     - Wireshark-Ansicht.
+     - Ziel-MAC im Request: FF:FF:FF:FF:FF:FF (Broadcast).
+     - Frage: "Wer hört das?" -> Alle im Subnetz.
+     - Frage: "Geht das über den Router?" -> Nein.
+     - Messbarkeit: Verständnis der Broadcast-Domain.
+   - Lernziel: Scope von ARP.
+
+5. "RARP-Historiker"
+   - Ziel: Was ist das Gegenteil?
+   - Spielmechanik: 
+     - Diskless Workstation bootet. Kennt nur ihre MAC.
+     - Ruft: "Wer bin ich? (RARP / BOOTP / DHCP)".
+     - Server antwortet: "Du bist 192.168.1.50".
+     - Messbarkeit: Zuordnung Reverse ARP.
+   - Lernziel: Historischer Vorläufer von DHCP.

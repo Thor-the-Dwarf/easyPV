@@ -1,0 +1,21 @@
+Anforderungen
+1. "Crimp-Master T568A vs T568B"
+   - Ziel: Sortiere die Adernfarben korrekt.
+   - Spielmechanik: 
+     - Standard B (Europa/USA meistens): Orange-Weiß, Orange, Grün-Weiß, Blau...
+     - Spieler zieht Adern in den Stecker.
+     - Wenn Adern vertauscht -> Kabeltester zeigt "Fail".
+     - Messbarkeit: Funktionierendes Patchkabel.
+   - Lernziel: Adernbelegung (Pinout).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_rj45_crimp.json')
+  - `standard`: "B".
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Stecker-Nahaufnahme (Transparent).
+  - Bunte Adern.
+- [ ] Game-Engine Logic ('game_rj45_crimp.js')
+  - Drag & Drop Adern in Reihenfolge.
+  - Validierung (OW, O, GW, B, BW, G, BW, B).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,21 @@
+Anforderungen
+1. "Virenscanner-Konfigurator"
+   - Ziel: Stelle den Scanner so ein, dass er sicher, aber performant ist.
+   - Spielmechanik: 
+     - "On-Access Scan": An (Wichtig!).
+     - "Scan Archives (ZIP)": An (Aber langsam).
+     - "Heuristik": Hoch (Vorsicht False Positives!).
+     - Szenario: User beschwert sich "PC langsam".
+     - Optimierung: Archiv-Scan nur bei Zugriff, nicht bei Write.
+     - Messbarkeit: PC sicher und schnell.
+   - Lernziel: Balance Performance vs Sicherheit.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_av_config.json')
+  - `settings`: ["on_access", "zip_scan", "heuristic"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - Einstellungs-Menü.
+- [ ] Game-Engine Logic ('game_sec_av_config.js')
+  - CPU-Last vs Sicherheit Balance.
+- [ ] Integration
+  - Startbar über JSON.

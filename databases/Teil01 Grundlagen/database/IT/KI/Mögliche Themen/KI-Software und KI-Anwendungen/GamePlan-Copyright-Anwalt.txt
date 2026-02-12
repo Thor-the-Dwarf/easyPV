@@ -1,0 +1,19 @@
+Anforderungen
+5. "Copyright-Anwalt"
+   - Ziel: Darf ich das verwenden?
+   - Spielmechanik: 
+     - Bild mit KI generiert. U.S. Copyright Office sagt: "Kein Copyright möglich". -> "Public Domain".
+     - Künstler-Stil kopiert ("in style of Picasso"). -> Grauzone / Risiko.
+     - Firmeninterne Daten in öffentliche KI gepastet. -> Datenschutzverstoß!
+     - Messbarkeit: Rechtliche Risikobewertung.
+   - Lernziel: Rechtliche Aspekte (Urheberrecht, DSGVO).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ki_copyright.json')
+  - `cases`: ["public_domain", "risk", "gdpr_violation"].
+- [ ] Shared CSS Check ('ai_robotics.css')
+  - Richterhammer / Paragraph-Symbol.
+- [ ] Game-Engine Logic ('game_ki_copyright.js')
+  - Entscheidungs-Quiz (Ampel-System).
+- [ ] Integration
+  - Startbar über JSON.

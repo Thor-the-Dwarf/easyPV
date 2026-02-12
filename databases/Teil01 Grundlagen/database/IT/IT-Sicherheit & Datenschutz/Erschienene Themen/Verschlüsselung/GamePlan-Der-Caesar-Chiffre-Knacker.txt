@@ -1,0 +1,21 @@
+Anforderungen
+2. "Der Caesar-Chiffre-Knacker"
+   - Ziel: Entschlüssele den Text durch Häufigkeitsanalyse.
+   - Spielmechanik: 
+     - Text: "KDOOR".
+     - Buchstabe "O" kommt oft vor -> Könnte "E" oder "A" sein.
+     - Shift um 3 ("A" -> "D"). K -> H.
+     - Lösung: "HALLO".
+     - Messbarkeit: Geknackter Text.
+   - Lernziel: Funktionsweise von Substitution.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_caesar.json')
+  - `text`: "KDOOR".
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Drehscheibe / Alphabet-Shift UI.
+- [ ] Game-Engine Logic ('game_sec_caesar.js')
+  - Verschiebung einstellen.
+  - Klartext prüfen.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,23 @@
+Anforderungen
+2. "Scope-Manager"
+   - Ziel: Konfiguriere den DHCP-Bereich.
+   - Spielmechanik: 
+     - Netz: 192.168.1.0/24.
+     - Gateway: .1, Server: .2, Drucker: .200-.250 (fest).
+     - Aufgabe: DHCP Scope anlegen.
+     - Fehler: Start .1 (Kollision mit Gateway!).
+     - Richtig: Start .10 - End .199.
+     - Messbarkeit: Keine IP-Konflikte.
+   - Lernziel: Adressbereiche und Ausschlüsse.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_dhcp_scope.json')
+  - `subnet`: "192.168.1.0/24".
+  - `staticDevices`: [1, 2, 200].
+- [ ] Shared CSS Check ('network_ip.css')
+  - Zahlenstrahl mit belegten IPs.
+- [ ] Game-Engine Logic ('game_dhcp_scope.js')
+  - Start- und End-IP Schieber.
+  - Kollisionsprüfung.
+- [ ] Integration
+  - Startbar über JSON.

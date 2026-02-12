@@ -1,0 +1,19 @@
+Anforderungen
+5. "Das Peripherie-Quiz"
+   - Ziel: Ein- oder Ausgabegerät? (EVA-Prinzip).
+   - Spielmechanik: 
+     - Objekt: Maus. -> Eingabe.
+     - Objekt: Monitor. -> Ausgabe.
+     - Objekt: Touchscreen. -> Ein- und Ausgabe (Kombiniert).
+     - Messbarkeit: 100% korrekte Sortierung.
+   - Lernziel: Grundlagen EVA.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_periph_quiz.json')
+  - `items`: [ { "name": "Maus", "type": "input" } ].
+- [ ] Shared CSS Check ('hardware_peripherie.css')
+  - Eimer/Zonen (Eingabe, Ausgabe, EIO).
+- [ ] Game-Engine Logic ('game_periph_quiz.js')
+  - Drag & Drop Sortierung.
+- [ ] Integration
+  - Startbar über JSON.

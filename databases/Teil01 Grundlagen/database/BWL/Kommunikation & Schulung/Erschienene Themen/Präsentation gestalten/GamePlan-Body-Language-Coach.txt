@@ -1,0 +1,19 @@
+Anforderungen
+4. "Body-Language-Coach"
+   - Ziel: Bewerte 5 Körperhaltungen von Avataren korrekt (Positiv/Negativ).
+   - Spielmechanik: 
+     - Bild zeigt Präsentator: Hände in der Tasche, Rücken zum Publikum, offene Gestik, Arme verschränkt.
+     - Spieler swiped: "Do" (Grün) oder "Don't" (Rot).
+     - Messbarkeit: Übereinstimmung mit Best Practices.
+   - Lernziel: Bewusstsein für nonverbale Kommunikation.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_presentation_body.json')
+  - `images`: [ { "src": "...", "rating": "bad", "feedback": "Zu verschlossen" } ].
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Tinder-Style Swipe Cards (oder Buttons).
+- [ ] Game-Engine Logic ('game_presentation_body.js')
+  - Swipe-Handler oder Button-Klick.
+  - Feedback Overlay.
+- [ ] Integration
+  - Startbar über JSON.

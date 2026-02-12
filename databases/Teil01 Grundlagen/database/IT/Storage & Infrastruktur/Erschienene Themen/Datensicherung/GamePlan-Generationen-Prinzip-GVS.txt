@@ -1,0 +1,20 @@
+Anforderungen
+2. "Generationen-Prinzip (GVS)"
+   - Ziel: Rotiere die Bänder korrekt (Großvater-Vater-Sohn).
+   - Spielmechanik: 
+     - Freitag: Vollsicherung (Vater).
+     - Mo-Do: Inkrementell (Sohn).
+     - Monatsende: Archivierung (Großvater).
+     - Aufgabe: Welches Band brauche ich für Stand von "letzten Dienstag"?
+     - Messbarkeit: Korrekte Band-Auswahl.
+   - Lernziel: Backup-Strategien und Rotation.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_backup_gvs.json')
+  - `tapes`: ["Mo", "Di", "Mi", "Do", "Fr", "Jan", "Feb"].
+- [ ] Shared CSS Check ('storage_backup.css')
+  - Magnetband-Bibliothek UI.
+- [ ] Game-Engine Logic ('game_backup_gvs.js')
+  - Kalender-Auswahl -> Richtiges Band wählen.
+- [ ] Integration
+  - Startbar über JSON.

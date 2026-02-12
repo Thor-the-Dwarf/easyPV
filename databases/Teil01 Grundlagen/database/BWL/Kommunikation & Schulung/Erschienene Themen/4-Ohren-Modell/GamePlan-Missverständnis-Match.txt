@@ -1,0 +1,21 @@
+Anforderungen
+5. "Missverständnis-Match"
+   - Ziel: Verbinde 5 Aussagen mit ihrem wahrscheinlichsten Missverständnis.
+   - Spielmechanik: 
+     - Links: "Die Ampel ist grün."
+     - Rechts: Optionen wie "Fahr endlich los! (Appell)", "Ich sehe Farben (Sache)", "Du bist ein schlechter Fahrer (Beziehung)".
+     - Spieler muss per Drag & Drop verbinden, wie es der *gereizte Beifahrer* hören würde.
+     - Messbarkeit: 5 Paare korrekt verbunden = 100%.
+   - Lernziel: Erkennen, wie Empfänger Nachrichten je nach Stimmung interpretieren.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_4ohren_missverstaendnis.json')
+  - `pairs`: [ { "aussage": "...", "missverstaendnis": "..." } ].
+- [ ] Shared CSS Check ('kommunikation.css')
+  - Drag & Drop Zonen (Links Aussagen, Rechts Interpretationen).
+  - Verbindungslinien (SVG) oder Slot-System.
+- [ ] Game-Engine Logic ('game_4ohren_missverstaendnis.js')
+  - Drag-Logic.
+  - Validierung der Paare.
+- [ ] Integration
+  - Startbar über JSON.

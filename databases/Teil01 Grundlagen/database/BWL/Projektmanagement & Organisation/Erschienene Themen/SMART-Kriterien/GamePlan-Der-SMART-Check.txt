@@ -1,0 +1,19 @@
+Anforderungen
+1. "Der SMART-Check"
+   - Ziel: Prüfe 5 Ziele auf SMART-Konformität (Spezifisch, Messbar, Attraktiv, Realistisch, Terminiert).
+   - Spielmechanik: 
+     - Ziel: "Wir wollen besser werden." -> Fehler: Nicht Spezifisch, Nicht Messbar.
+     - Ziel: "Wir steigern Umsatz um 10% bis 31.12." -> SMART.
+     - Spieler klickt "SMART" oder "Nicht SMART".
+     - Messbarkeit: 100% Erkennungsquote.
+   - Lernziel: Kriterien verinnerlichen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_smart_check.json')
+  - `goals`: ["good", "bad"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Stempel "Accepted" / "Rejected".
+- [ ] Game-Engine Logic ('game_pm_smart_check.js')
+  - Ziele scannen und bewerten.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,19 @@
+Anforderungen
+5. "Das Ziel-Kreuz"
+   - Ziel: Definiere für ein Projekt das "Nicht-Ziel" (Abgrenzung).
+   - Spielmechanik: 
+     - Projekt: "Neues Intranet einführen".
+     - Ziel: "Mitarbeiter informieren".
+     - Nicht-Ziel wählen: "Kunden-Website bauen" (Richtig, gehört nicht dazu). "Intranet designen" (Falsch, ist Teil davon).
+     - Messbarkeit: Korrekte Abgrenzung (Scope).
+   - Lernziel: Wichtigkeit von Nicht-Zielen zur Scope-Definition.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_goal_cross.json')
+  - `axes`: ["feature", "cost", "time", "quality"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Zielkreuz-Diagramm (Fadenkreuz).
+- [ ] Game-Engine Logic ('game_pm_goal_cross.js')
+  - Zieldefinition in 4 Dimensionen.
+- [ ] Integration
+  - Startbar über JSON.

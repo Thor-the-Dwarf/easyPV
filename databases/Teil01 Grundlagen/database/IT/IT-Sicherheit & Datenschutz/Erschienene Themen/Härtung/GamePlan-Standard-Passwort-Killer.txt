@@ -1,0 +1,21 @@
+Anforderungen
+3. "Standard-Passwort-Killer"
+   - Ziel: Ändere alle Default-Logins.
+   - Spielmechanik: 
+     - Router: "admin/admin". -> Ändern!
+     - Drucker: "admin/1234". -> Ändern!
+     - Datenbank: "sa/". -> Ändern!
+     - Wenn eines vergessen wird -> Bot übernimmt Gerät.
+     - Messbarkeit: Alle Geräte abgesichert.
+   - Lernziel: Standard-Credentials als Risiko.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_default_pw.json')
+  - `devices`: ["router", "printer", "db"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - Login-Masken verschiedener Geräte.
+- [ ] Game-Engine Logic ('game_sec_default_pw.js')
+  - Bot-Netz Scan Simulation.
+  - Erfolgreiche Übernahme verhindern.
+- [ ] Integration
+  - Startbar über JSON.

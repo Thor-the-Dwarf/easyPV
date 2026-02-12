@@ -1,0 +1,19 @@
+Anforderungen
+3. "Namensauflösung vs Erreichbarkeit"
+   - Ziel: Interpretiere die Fehlermeldung.
+   - Spielmechanik: 
+     - "Ping request could not find host xyz". -> DNS Fehler.
+     - "Reply from ... Destination host unreachable". -> Routing Fehler.
+     - "Request timed out". -> Firewall oder Kabel ab.
+     - Messbarkeit: Korrekte Diagnose.
+   - Lernziel: Ping-Output verstehen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ping_resolve.json')
+  - `errors`: ["unknown_host", "unreachable", "timeout"].
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Fehlermeldungs-Texte.
+- [ ] Game-Engine Logic ('game_ping_resolve.js')
+  - Zuordnung Fehler -> Ursache.
+- [ ] Integration
+  - Startbar über JSON.

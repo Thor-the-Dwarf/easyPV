@@ -1,0 +1,20 @@
+Anforderungen
+5. "Der langsame Loop"
+   - Ziel: Warum dauert das so lange?
+   - Spielmechanik: 
+     - Zähle bis 1 Million.
+     - C-Programm: 0.001 Sek.
+     - Python-Skript: 0.1 Sek.
+     - Interpreter muss jede Zeile bei jedem Durchlauf neu parsen/übersetzen.
+     - Messbarkeit: Overhead des Interpreters erkennen.
+   - Lernziel: Performance-Nachteile.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_prog_slow_loop.json')
+  - `iterations`: 1000.
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Tacho / Speedometer.
+- [ ] Game-Engine Logic ('game_prog_slow_loop.js')
+  - Interpreter-Overhead simulieren (pro Zeile Übersetzung).
+- [ ] Integration
+  - Startbar über JSON.

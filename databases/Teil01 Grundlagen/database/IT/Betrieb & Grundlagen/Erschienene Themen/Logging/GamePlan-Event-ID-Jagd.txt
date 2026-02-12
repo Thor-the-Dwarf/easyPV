@@ -1,0 +1,21 @@
+Anforderungen
+5. "Event-ID-Jagd"
+   - Ziel: Was bedeutet dieser Windows-Fehlercode?
+   - Spielmechanik: 
+     - Ereignisanzeige: Event ID 4624 (Erfolgreicher Login).
+     - Event ID 4625 (Fehlgeschlagener Login).
+     - Aufgabe: "Finde alle fehlgeschlagenen Logins".
+     - Filter setzen auf ID 4625.
+     - Messbarkeit: Gefundene Anzahl der Events.
+   - Lernziel: Arbeiten mit Event IDs (Windows Event Viewer).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_event_id.json')
+  - `id`: 4625.
+- [ ] Shared CSS Check ('basics_admin.css')
+  - Event Viewer UI Clone.
+- [ ] Game-Engine Logic ('game_basics_event_id.js')
+  - Filter erstellen.
+  - Liste filtern.
+- [ ] Integration
+  - Startbar über JSON.

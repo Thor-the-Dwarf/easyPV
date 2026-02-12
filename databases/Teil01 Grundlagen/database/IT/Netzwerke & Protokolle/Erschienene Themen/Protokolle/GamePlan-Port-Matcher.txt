@@ -1,0 +1,21 @@
+Anforderungen
+1. "Port-Matcher"
+   - Ziel: Welcher Dienst läuft auf welchem Port?
+   - Spielmechanik: 
+     - HTTP -> 80.
+     - HTTPS -> 443.
+     - SSH -> 22.
+     - FTP -> 21.
+     - DNS -> 53.
+     - Messbarkeit: 100% korrekte Zuordnung (Drag & Drop).
+   - Lernziel: Well-Known Ports.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_proto_ports.json')
+  - `services`: ["HTTP", "SSH", "DNS"].
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Server mit offenen Türen (Ports).
+- [ ] Game-Engine Logic ('game_proto_ports.js')
+  - Drag & Drop Service auf Port-Nummer.
+- [ ] Integration
+  - Startbar über JSON.

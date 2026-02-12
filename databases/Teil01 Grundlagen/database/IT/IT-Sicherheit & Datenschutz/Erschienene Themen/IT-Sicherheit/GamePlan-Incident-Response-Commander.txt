@@ -1,0 +1,21 @@
+Anforderungen
+5. "Incident-Response-Commander"
+   - Ziel: Reagiere richtig auf einen Vorfall.
+   - Spielmechanik: 
+     - Alarm: "Ransomware auf PC 5".
+     - Option A: "PC 5 vom Netz trennen (Kabel ziehen)". (Richtig, Containment).
+     - Option B: "Backup einspielen während PC noch im Netz ist". (Falsch, Backup wird verschlüsselt).
+     - Option C: "Lösegeld zahlen". (Falsch).
+     - Messbarkeit: Schaden begrenzt.
+   - Lernziel: Erste Hilfe bei Cyberangriffen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_incident.json')
+  - `scenario`: "ransomware_pc5".
+- [ ] Shared CSS Check ('security_management.css')
+  - Kommando-Zentrale Dashboard.
+- [ ] Game-Engine Logic ('game_sec_incident.js')
+  - Entscheidungsbaum (Kabel ziehen vs Zahlen).
+  - Score-Berechnung (Schadensminimierung).
+- [ ] Integration
+  - Startbar über JSON.

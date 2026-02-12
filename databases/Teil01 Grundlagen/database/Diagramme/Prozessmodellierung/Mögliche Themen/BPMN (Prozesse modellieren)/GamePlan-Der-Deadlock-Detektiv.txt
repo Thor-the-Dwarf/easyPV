@@ -1,0 +1,12 @@
+Anforderungen
+4. "Der Deadlock-Detektiv"
+   - Ziel: Finde den Fehler im Prozess, der zum Stillstand führt.
+   - Spielmechanik: 
+     - Prozess mit Parallel-Split (AND).
+     - Zusammenführung mit XOR (Fehler! XOR wartet nicht auf beide).
+     - Token 1 kommt an -> Weiter. Token 2 kommt an -> Weiter.
+     - Ergebnis: Task danach wird 2x ausgeführt (Falsch).
+     - Richtig: AND-Join nutzen.
+     - Messbarkeit: Fehler markieren.
+   - Lernziel: Modellierungsregeln (Soundness).
+

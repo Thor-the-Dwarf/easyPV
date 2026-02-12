@@ -1,0 +1,22 @@
+Anforderungen
+1. "Zertifikats-Checker"
+   - Ziel: Warum kommt die Browser-Warnung?
+   - Spielmechanik: 
+     - Browser zeigt rotes Schloss.
+     - Zertifikat ansehen.
+     - Fehler 1: "Expired" (Datum abgelaufen).
+     - Fehler 2: "Common Name Mismatch" (Zertifikat für a.com, Seite ist b.com).
+     - Fehler 3: "Self-Signed" (Nicht vertrauenswürdig).
+     - Spieler muss den Grund anklicken.
+     - Messbarkeit: Diagnosekompetenz.
+   - Lernziel: Validierung von X.509 Zertifikaten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_cert_check.json')
+  - `error`: "expired".
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Browser-Schloss Popup.
+- [ ] Game-Engine Logic ('game_sec_cert_check.js')
+  - Fehlerursache identifizieren.
+- [ ] Integration
+  - Startbar über JSON.

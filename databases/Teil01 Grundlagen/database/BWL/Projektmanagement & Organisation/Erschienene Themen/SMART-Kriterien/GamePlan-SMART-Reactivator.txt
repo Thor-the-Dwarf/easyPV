@@ -1,0 +1,19 @@
+Anforderungen
+2. "SMART-Reactivator"
+   - Ziel: Mache ein schlechtes Ziel SMART.
+   - Spielmechanik: 
+     - Ausgang: "Kunden sollen zufrieden sein."
+     - Bausteine hinzufügen: "Kundenzufriedenheitsscore", "> 8.0", "bis Q3".
+     - Spieler baut den Satz zusammen.
+     - Messbarkeit: Vollständigkeit aller 5 Dimensionen im Zielsatz.
+   - Lernziel: Formulierungskompetenz.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_smart_fix.json')
+  - `task`: "rewrite".
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Text-Editor.
+- [ ] Game-Engine Logic ('game_pm_smart_fix.js')
+  - Schlechtes Ziel ("Wir wollen mehr verkaufen") in gutes Ziel umformulieren.
+- [ ] Integration
+  - Startbar über JSON.

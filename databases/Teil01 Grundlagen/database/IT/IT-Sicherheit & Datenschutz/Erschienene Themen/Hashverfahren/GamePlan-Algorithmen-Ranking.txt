@@ -1,0 +1,18 @@
+Anforderungen
+4. "Algorithmen-Ranking"
+   - Ziel: Sortiere von "Unsicher" zu "Sicher".
+   - Spielmechanik: 
+     - MD5 -> SHA-1 -> SHA-256 -> SHA-3/BCrypt.
+     - Drag & Drop auf Zeitleiste.
+     - Messbarkeit: Korrekte historische Einordnung.
+   - Lernziel: Kryptografische Standards.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_hash_rank.json')
+  - `hashes`: ["md5", "sha1", "sha256"].
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Zeitstrahl.
+- [ ] Game-Engine Logic ('game_sec_hash_rank.js')
+  - Historische Einordnung.
+- [ ] Integration
+  - Startbar über JSON.

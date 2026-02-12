@@ -1,0 +1,20 @@
+Anforderungen
+4. "Flags-Setzer (M und O Bit)"
+   - Ziel: Steuere das Verhalten der Clients per Router-Flag.
+   - Spielmechanik: 
+     - Ziel: Client soll IP per DHCPv6 holen (Stateful).
+     - Aktion: Setze "M-Flag" (Managed) im Router Advertisement auf 1.
+     - Ziel: Client soll IP per SLAAC, aber DNS per DHCP holen.
+     - Aktion: M=0, "O-Flag" (Other) = 1.
+     - Messbarkeit: Client verhält sich wie gewünscht.
+   - Lernziel: ICMPv6 Router Advertisement Flags.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_slaac_flags.json')
+  - `goal`: "dhcp_for_dns".
+- [ ] Shared CSS Check ('network_ip.css')
+  - Router Checkboxen (M, O).
+- [ ] Game-Engine Logic ('game_slaac_flags.js')
+  - Logik-Tabelle (M=0, O=1 -> Stateless DHCP).
+- [ ] Integration
+  - Startbar über JSON.

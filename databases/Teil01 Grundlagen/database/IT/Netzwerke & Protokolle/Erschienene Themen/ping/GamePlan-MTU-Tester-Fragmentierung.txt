@@ -1,0 +1,19 @@
+Anforderungen
+2. "MTU-Tester (Fragmentierung)"
+   - Ziel: Finde die maximale Paketgröße (Path MTU Discovery manuell).
+   - Spielmechanik: 
+     - `ping -f -l 1500` -> "Packet needs to be fragmented but DF set".
+     - `ping -f -l 1472` -> Antwort! (1472 Data + 28 Header = 1500).
+     - Spieler muss den Wert durch Probieren finden.
+     - Messbarkeit: Korrekte MTU ermittelt.
+   - Lernziel: MTU, Fragmentierung und Don't Fragment Bit.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ping_mtu.json')
+  - `mtu`: 1500. `header`: 28.
+- [ ] Shared CSS Check ('network_protocols.css')
+  - Paket Waage / Größenmesser.
+- [ ] Game-Engine Logic ('game_ping_mtu.js')
+  - Binary Search Minigame (Zahl raten).
+- [ ] Integration
+  - Startbar über JSON.

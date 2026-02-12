@@ -1,0 +1,49 @@
+1. "Entität vs Instanz"
+   - Ziel: Unterscheide Bauplan und Objekt.
+   - Spielmechanik: 
+     - "Auto" -> Entität (Der Typ).
+     - "Mein roter Golf mit Kennzeichen XY" -> Instanz (Das Ding).
+     - "Kunde" -> Entität.
+     - "Herr Müller" -> Instanz.
+     - Messbarkeit: 100% Trennung von Klasse und Objekt.
+   - Lernziel: Abstraktionsebene.
+
+2. "Schlüssel-Meister (Primary Key)"
+   - Ziel: Wähle das beste Merkmal für den Primärschlüssel.
+   - Spielmechanik: 
+     - Kandidat: "Nachname" (Schlecht, Müller gibt es oft).
+     - Kandidat: "Email" (Besser, aber änderbar).
+     - Kandidat: "Kundennummer" (Perfekt, künstlich, stabil).
+     - Kandidat: "Ausweisnummer" (Gut, aber Datenschutz?).
+     - Messbarkeit: Stabilsten Schlüssel gewählt.
+   - Lernziel: Eigenschaften von Primärschlüsseln.
+
+3. "Fremdschlüssel-Verbinder (Foreign Key)"
+   - Ziel: Verknüpfe zwei Tabellen.
+   - Spielmechanik: 
+     - Tabelle "Kunde" (ID: 1, Name: Müller).
+     - Tabelle "Bestellung" (ID: 100, Datum: Heute).
+     - Aufgabe: Bestellung dem Müller zuordnen.
+     - Aktion: Schreibe "1" in Spalte "Kunden_ID" bei Bestellung.
+     - Messbarkeit: Referentielle Integrität hergestellt.
+   - Lernziel: Wie Relationen technisch funktionieren.
+
+4. "Die m:n Auflösung"
+   - Ziel: Mach das Modell datenbankfähig.
+   - Spielmechanik: 
+     - "Schüler" (m) <-> "Fach" (n).
+     - Problem: Geht so nicht in SQL.
+     - Lösung: Zwischentabelle "Noten" (Schüler_ID, Fach_ID).
+     - Beziehung wird zu: 1:n und m:1.
+     - Messbarkeit: Korrekte Auflösungstabelle erstellt.
+   - Lernziel: Zwischentabellen / Assoziative Entitäten.
+
+5. "Attribute-Tycoon"
+   - Ziel: Bestimme den Datentyp.
+   - Spielmechanik: 
+     - "Geburtsdatum" -> Date.
+     - "Hausnummer" -> String (wegen 12a).
+     - "Gehalt" -> Decimal/Currency.
+     - "Ist_Stammkunde" -> Boolean.
+     - Messbarkeit: Passende technische Typen für das Modell.
+   - Lernziel: Datentypen im Modell.

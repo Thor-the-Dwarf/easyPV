@@ -1,0 +1,20 @@
+Anforderungen
+2. "Zeit-Wandler"
+   - Ziel: Rechne Millisekunden in Stunden.
+   - Spielmechanik: 
+     - Ping: 50 ms.
+     - Upload dauert 3.600.000 ms.
+     - Sind das... 1 Stunde? Ja.
+     - Taschenrechner verboten (Kopfrechnen mit Nullen streichen).
+     - Messbarkeit: Korrekte Größenordnung.
+   - Lernziel: Faktor 1000 bei Zeit (milli, mikro, nano).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_time_conv.json')
+  - `ms`: 1000.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Uhr / Sanduhr.
+- [ ] Game-Engine Logic ('game_math_time_conv.js')
+  - ms -> s -> min -> h.
+- [ ] Integration
+  - Startbar über JSON.

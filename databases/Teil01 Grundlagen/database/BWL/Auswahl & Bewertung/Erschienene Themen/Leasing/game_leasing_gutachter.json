@@ -1,0 +1,84 @@
+{
+  "id": "ap1_it_mangelarten_v2",
+  "title": "Der gnadenlose Gutachter - AP1 IT",
+  "goal": "Ordne IT-Beschaffungssituationen den korrekten Maengelarten zu.",
+  "examContext": "Fachinformatiker Abschlusspruefung Teil 1: kaufmaennische Grundlagen, Vertrags- und Beschaffungsprozesse in IT-Projekten.",
+  "labels": {
+    "next": "Naechster Fall",
+    "restart": "Nochmal trainieren"
+  },
+  "feedbackTemplates": {
+    "correct": "Korrekt klassifiziert.",
+    "wrong": "Noch nicht korrekt.",
+    "generic": "Entscheidend ist, welche zugesicherte Eigenschaft, Menge oder Rechtslage verletzt wurde."
+  },
+  "defectTypes": [
+    {
+      "key": "sachmangel",
+      "label": "Sachmangel",
+      "examHint": "Beschaffenheit weicht von vereinbarter Soll-Eigenschaft ab."
+    },
+    {
+      "key": "qualitaetsmangel",
+      "label": "Qualitaetsmangel",
+      "examHint": "Lieferung funktioniert, aber Qualitaet/Leistung entspricht nicht der Anforderung."
+    },
+    {
+      "key": "mengenmangel",
+      "label": "Mengenmangel",
+      "examHint": "Falsche Stueckzahl wurde geliefert."
+    },
+    {
+      "key": "quantitaetsmangel",
+      "label": "Quantitaetsmangel",
+      "examHint": "Vereinbarte quantitative Werte/Leistung werden nicht erreicht."
+    },
+    {
+      "key": "rechtsmangel",
+      "label": "Rechtsmangel",
+      "examHint": "Nutzungs- oder Verfuegungsrechte fehlen oder sind eingeschraenkt."
+    }
+  ],
+  "cases": [
+    {
+      "id": "it1",
+      "imageUrl": "./assets/damage-01.svg",
+      "description": "Gelieferter Business-Laptop hat nur 8 GB RAM statt der bestellten 32 GB.",
+      "defectType": "sachmangel",
+      "explanation": "Die gelieferte Hardware weicht in der vereinbarten Beschaffenheit von der Bestellung ab.",
+      "ap1Reference": "Relevant fuer Beschaffung, Lasten-/Pflichtenabgleich und Wareneingangskontrolle."
+    },
+    {
+      "id": "it2",
+      "imageUrl": "./assets/damage-02.svg",
+      "description": "50 Monitore bestellt, aber nur 46 Monitore wurden angeliefert.",
+      "defectType": "mengenmangel",
+      "explanation": "Die Stueckzahl der Lieferung ist geringer als vertraglich vereinbart.",
+      "ap1Reference": "Relevant fuer Lieferscheinpruefung und kaufmaennische Buchung im Projekt."
+    },
+    {
+      "id": "it3",
+      "imageUrl": "./assets/damage-03.svg",
+      "description": "Switches liefern statt 10 Gbit/s im Lasttest nur 3-4 Gbit/s.",
+      "defectType": "quantitaetsmangel",
+      "explanation": "Die zugesicherte quantitative Leistungskennzahl wird nicht erreicht.",
+      "ap1Reference": "Relevant fuer SLA-/Anforderungspruefung und Abnahmekriterien."
+    },
+    {
+      "id": "it4",
+      "imageUrl": "./assets/damage-04.svg",
+      "description": "Neue SSDs zeigen unter Dauerlast hohe Ausfallraten und inkonsistente Schreibwerte.",
+      "defectType": "qualitaetsmangel",
+      "explanation": "Funktion ist grundsaetzlich vorhanden, die Qualitaet ist aber mangelhaft.",
+      "ap1Reference": "Relevant fuer Qualitaetssicherung, Testprotokolle und Lieferantenbewertung."
+    },
+    {
+      "id": "it5",
+      "imageUrl": "./assets/damage-05.svg",
+      "description": "Die gelieferte Software darf laut Lizenz nicht auf virtuellen Clients betrieben werden.",
+      "defectType": "rechtsmangel",
+      "explanation": "Es fehlen die notwendigen Nutzungsrechte fuer den vorgesehenen Einsatz.",
+      "ap1Reference": "Relevant fuer Lizenzmanagement, Vertragspruefung und Compliance."
+    }
+  ]
+}

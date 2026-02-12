@@ -1,0 +1,21 @@
+Anforderungen
+4. "Achtung Tippfehler"
+   - Ziel: Finde den Kalkulationsfehler.
+   - Spielmechanik: 
+     - Pos 1: 10h à 100€ = 1000€.
+     - Pos 2: 1x Server = 5000€.
+     - Summe: 5000€ (Tippfehler! Excel-Formel falsch).
+     - Wenn Angebot rausgeht -> 1000€ Verlust.
+     - Messbarkeit: Fehler gefunden vor Absenden.
+   - Lernziel: Sorgfaltspflicht.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_typo.json')
+  - `price`: 1000.
+- [ ] Shared CSS Check ('math_basics.css')
+  - Komma-Verschiebung Simulator.
+- [ ] Game-Engine Logic ('game_math_typo.js')
+  - 10.00 vs 1000 - Bindung an das Angebot!
+  - Anfechtung wegen Irrtum (§ 119 BGB).
+- [ ] Integration
+  - Startbar über JSON.

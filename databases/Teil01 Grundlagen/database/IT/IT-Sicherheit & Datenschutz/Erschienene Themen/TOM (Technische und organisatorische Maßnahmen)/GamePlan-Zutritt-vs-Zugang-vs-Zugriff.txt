@@ -1,0 +1,19 @@
+Anforderungen
+4. "Zutritt vs Zugang vs Zugriff"
+   - Ziel: Ordne die Maßnahmen der Ebene zu.
+   - Spielmechanik: 
+     - "Zaun / Pförtner". -> Zutritt (Gelände/Gebäude).
+     - "Login / Passwort". -> Zugang (System).
+     - "Dateiberechtigungen (ACL)". -> Zugriff (Daten).
+     - Messbarkeit: 100% korrekte Zuordnung.
+   - Lernziel: Die 3 Z's der Sicherheit.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_zzz.json')
+  - `items`: ["guard", "login", "file_perm"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - (Ähnlich wie 3-Z-Zuordnung, evtl. zusammenfassen oder Detail-Unterschied betonen).
+- [ ] Game-Engine Logic ('game_sec_zzz.js')
+  - Zuordnung.
+- [ ] Integration
+  - Startbar über JSON.

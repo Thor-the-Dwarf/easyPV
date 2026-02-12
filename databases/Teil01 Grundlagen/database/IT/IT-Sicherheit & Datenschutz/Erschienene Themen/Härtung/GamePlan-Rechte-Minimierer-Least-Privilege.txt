@@ -1,0 +1,21 @@
+Anforderungen
+4. "Rechte-Minimierer (Least Privilege)"
+   - Ziel: Nimm dem User unnötige Admin-Rechte weg.
+   - Spielmechanik: 
+     - User "Müller" ist in Gruppe "Domänen-Admins". (Fehler!).
+     - User "Müller" braucht nur "Drucken" und "Fileshare".
+     - Spieler verschiebt User in "Domänen-Benutzer".
+     - Funktionalitätstest: Kann er drucken? Ja. Kann er Server löschen? Nein.
+     - Messbarkeit: Sicherheit erhöht, Funktion erhalten.
+   - Lernziel: Prinzip der geringsten Rechte.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_privilege.json')
+  - `user`: "mueller", `group`: "admin".
+- [ ] Shared CSS Check ('security_defense.css')
+  - AD Benutzerverwaltung Mockup.
+- [ ] Game-Engine Logic ('game_sec_privilege.js')
+  - Gruppenmitgliedschaft ändern.
+  - Rechte-Check (Print=OK, Delete=Fail).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,18 @@
+Anforderungen
+2. "Fibre Channel vs iSCSI"
+   - Ziel: Wähle die Technologie.
+   - Spielmechanik: 
+     - Budget: Klein, Ethernet vorhanden. -> iSCSI (IP-basiert).
+     - Budget: Groß, Low Latency nötig. -> Fibre Channel (Lichtleiter, eigene Switche).
+     - Messbarkeit: Passende Technologie-Wahl.
+   - Lernziel: Protokolle im SAN.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_san_proto.json')
+  - `req`: "low_latency".
+- [ ] Shared CSS Check ('storage_nas_san.css')
+  - Glasfaser vs Kupferkabel Optik.
+- [ ] Game-Engine Logic ('game_san_proto.js')
+  - Budget-Rechner vs Performance-Anforderung.
+- [ ] Integration
+  - Startbar über JSON.

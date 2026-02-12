@@ -1,0 +1,21 @@
+Anforderungen
+2. "Verb-Noun Prinzip"
+   - Ziel: Korrigiere den Befehl.
+   - Spielmechanik: 
+     - User tippt: `Get-Computer`. (Falsch).
+     - PowerShell Standard: `Get-ComputerInfo` oder `Get-Content`.
+     - Regel: Verb-Substantiv (Singular!).
+     - Falsch: `Get-Files`. Richtig: `Get-ChildItem`.
+     - Messbarkeit: Validem Cmdlet finden.
+   - Lernziel: PowerShell Naming Convention.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ps_verb_noun.json')
+  - `cmdlets`: ["Get-File", "Get-ChildItem"].
+- [ ] Shared CSS Check ('prog_basics.css')
+  - PowerShell Blau.
+- [ ] Game-Engine Logic ('game_ps_verb_noun.js')
+  - Standard-Verben (Get, Set, New, Remove) prüfen.
+  - Singular Nouns erzwingen.
+- [ ] Integration
+  - Startbar über JSON.

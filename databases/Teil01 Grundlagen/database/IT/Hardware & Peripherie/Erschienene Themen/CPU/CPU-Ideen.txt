@@ -1,0 +1,47 @@
+1. "Cores vs. Threads"
+   - Ziel: Ordne die Aufgaben den Kernen optimal zu (Hyperthreading).
+   - Spielmechanik: 
+     - CPU hat 4 Kerne / 8 Threads.
+     - Aufgaben kommen rein: "Video rendern" (Braucht 4 Threads), "Email checken" (Braucht 1 Thread).
+     - Spieler zieht Aufgaben auf die logischen Prozessoren.
+     - Wenn ein physischer Kern überlastet ist -> Hitzestau.
+     - Messbarkeit: Optimale Auslastung ohne Überhitzung.
+   - Lernziel: Verständnis von physischen und logischen Kernen.
+
+2. "Takt-Tuner"
+   - Ziel: Übertakte die CPU stabil (Overclocking).
+   - Spielmechanik: 
+     - Regler für GHz und Spannung (V).
+     - Ziel: 5 GHz erreichen.
+     - Wenn Spannung zu hoch -> CPU brennt durch. Zu niedrig -> Bluescreen.
+     - Temperatur beachten! Kühler aufdrehen.
+     - Messbarkeit: Höchster stabiler Takt nach Stresstest.
+   - Lernziel: Zusammenhang Taktfrequenz, Spannung und Abwärme.
+
+3. "Der Befehlszyklus"
+   - Ziel: Bringe den Fetch-Decode-Execute Cycle in die richtige Reihenfolge.
+   - Spielmechanik: 
+     - Bausteine: "Befehl aus RAM holen", "Dekodieren", "Ausführen", "Ergebnis speichern".
+     - Zeitlimit pro Zyklus wird kürzer.
+     - Messbarkeit: Anzahl korrekter Zyklen in 60 Sek.
+   - Lernziel: Funktionsweise eines Prozessors (Von-Neumann).
+
+4. "Cache-Hierarchie"
+   - Ziel: Finde die Daten am schnellsten Ort (L1, L2, L3, RAM).
+   - Spielmechanik: 
+     - CPU fordert "Variable X".
+     - Suchzeit startet.
+     - Spieler klickt L1 (Treffer? Nein). L2 (Treffer? Ja -> Schnell).
+     - Wenn er erst im RAM sucht -> Langsam.
+     - Messbarkeit: Durchschnittliche Zugriffszeit.
+   - Lernziel: Geschwindigkeitsvorteil von Caches.
+
+5. "Sockel-Matcher"
+   - Ziel: Welche CPU passt auf welches Mainboard?
+   - Spielmechanik: 
+     - CPU: "Intel Core i9-12900K" (LGA 1700).
+     - CPU: "AMD Ryzen 5 5600X" (AM4).
+     - Boards: "Z690", "B550".
+     - Drag & Drop. Falscher Sockel -> Pins verbogen (Game Over).
+     - Messbarkeit: 5 korrekte Paarungen.
+   - Lernziel: Kompatibilität von Sockeln (LGA vs PGA).

@@ -1,0 +1,21 @@
+Anforderungen
+3. "Lease-Time-Strategist"
+   - Ziel: Wähle die optimale Lease Time.
+   - Spielmechanik: 
+     - Ort: "Café mit freiem WLAN" (Viele Gäste, kurz da). -> Lease: 1 Stunde.
+     - Ort: "Büro mit Desktop-PCs" (Fest). -> Lease: 7 Tage.
+     - Fehler: Im Café Lease auf 7 Tage -> Pool läuft voll (IP exhaustion).
+     - Messbarkeit: DHCP-Pool ist nie zu 100% voll.
+   - Lernziel: Ressourcenmanagement IP-Adressen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_dhcp_lease.json')
+  - `scenarios`: [ { "loc": "Cafe", "opt": "1h" }, { "loc": "Office", "opt": "7d" } ].
+- [ ] Shared CSS Check ('network_ip.css')
+  - Schieberegler für Zeit.
+  - "Pool Füllstand"-Anzeige.
+- [ ] Game-Engine Logic ('game_dhcp_lease.js')
+  - Zeitraffer-Simulation (Gäste kommen/gehen).
+  - Fail-State: Pool voll.
+- [ ] Integration
+  - Startbar über JSON.

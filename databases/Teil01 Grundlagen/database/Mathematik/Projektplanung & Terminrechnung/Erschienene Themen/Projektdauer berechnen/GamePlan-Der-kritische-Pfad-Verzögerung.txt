@@ -1,0 +1,20 @@
+Anforderungen
+5. "Der kritische Pfad (Verzögerung)"
+   - Ziel: Welche Verzögerung wirkt sich aus?
+   - Spielmechanik: 
+     - Pfad A: 10 Tage (Kritisch).
+     - Pfad B: 5 Tage (Puffer 5).
+     - Ereignis im Pfad B: +2 Tage Verzögerung. -> Projektende gleich.
+     - Ereignis im Pfad A: +1 Tag Verzögerung. -> Projektende +1.
+     - Messbarkeit: Auswirkung korrekt vorhergesagt.
+   - Lernziel: Abhängigkeiten verstehen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_math_critical_path.json')
+  - `nodes`: ["A", "B", "C"].
+- [ ] Shared CSS Check ('math_basics.css')
+  - Netzplan-Grafik.
+- [ ] Game-Engine Logic ('game_math_critical_path.js')
+  - Verzögerung auf kritischem Pfad = Projektende verschiebt sich.
+- [ ] Integration
+  - Startbar über JSON.

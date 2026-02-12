@@ -1,0 +1,21 @@
+Anforderungen
+4. "Die Videokonferenz-Etikette"
+   - Ziel: Bereite dich korrekt auf den Call vor (Checkliste abarbeiten).
+   - Spielmechanik: 
+     - Szenario: "Meeting in 5 Minuten."
+     - Interaktive Checkliste: "Hintergrund prüfen", "Mikro testen", "Lichtquelle im Rücken" (Falsch!), "Kamera auf Augenhöhe".
+     - Spieler muss die *korrekten* Schritte aktivieren und die falschen ("Licht im Rücken" macht dunkel) deaktivieren.
+     - Messbarkeit: Korrekter Setup-Score = 100%.
+   - Lernziel: Professionelles Auftreten in Online-Meetings.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_remote_etiquette.json')
+  - `checklist`: [ { "item": "Licht", "correctState": "front" } ].
+- [ ] Shared CSS Check ('markt_arbeit.css')
+  - Spiegel-Simulation (Webcam-Frame).
+  - Toggle-Buttons für Zustände.
+- [ ] Game-Engine Logic ('game_remote_etiquette.js')
+  - State-Toggling (Licht an/aus, Hintergrund an/aus).
+  - Score am Ende.
+- [ ] Integration
+  - Startbar über JSON.

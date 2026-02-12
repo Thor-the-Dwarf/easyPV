@@ -1,0 +1,21 @@
+Anforderungen
+1. "Der IP-Konflikt"
+   - Ziel: Finde den Fehler im Netz.
+   - Spielmechanik: 
+     - PC 1: 192.168.0.10.
+     - PC 2: 192.168.0.10.
+     - Fehlermeldung: "Adresskonflikt". Beide PCs offline.
+     - Lösung: PC 2 auf .11 ändern.
+     - Messbarkeit: Netzwerk stabil.
+   - Lernziel: Eindeutigkeit von IPs.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_net_conflict.json')
+  - `duplicate`: "192.168.0.10".
+- [ ] Shared CSS Check ('network_ip.css')
+  - Warn-Popups ("IP Conflict Detected").
+- [ ] Game-Engine Logic ('game_net_conflict.js')
+  - Eingabefeld zur Korrektur.
+  - Konflikt-Auflösung.
+- [ ] Integration
+  - Startbar über JSON.

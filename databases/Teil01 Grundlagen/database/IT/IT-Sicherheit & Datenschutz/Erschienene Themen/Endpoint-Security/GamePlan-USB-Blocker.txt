@@ -1,0 +1,19 @@
+Anforderungen
+2. "USB-Blocker"
+   - Ziel: Verhindere Datenabfluss über USB.
+   - Spielmechanik: 
+     - Richtlinie setzen: "Block all Mass Storage".
+     - Mitarbeiter steckt USB-Stick -> "Access Denied" (Erfolg).
+     - Mitarbeiter steckt Maus -> Funktioniert (Erfolg).
+     - Messbarkeit: Nur Speichergeräte blockiert.
+   - Lernziel: Device Control / DLP.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_usb.json')
+  - `devices`: ["stick", "mouse"].
+- [ ] Shared CSS Check ('security_defense.css')
+  - USB-Port Grafik.
+- [ ] Game-Engine Logic ('game_sec_usb.js')
+  - Device Class Filter (Block Storage, Allow HID).
+- [ ] Integration
+  - Startbar über JSON.

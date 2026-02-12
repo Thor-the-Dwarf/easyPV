@@ -1,0 +1,40 @@
+Anforderungen
+3. "Verzug-Alarm"
+   - Ziel: Wann ist der Schuldner im Verzug? (Mahnung nötig?).
+   - Spielmechanik: 
+     - Kalender. Liefertermin: "Mitte Oktober".
+     - Es ist 01.11. -> Verzug? Nein, Mahnung fehlt (Termin nicht kalendermäßig bestimmt).
+     - Liefertermin: "Fix am 20.10.".
+     - Es ist 21.10. -> Verzug (ohne Mahnung).
+     - Messbarkeit: Korrekte Entscheidung "Verzug erst mit Mahnung" oder "Sofort".
+   - Lernziel: Voraussetzungen des Schuldnerverzugs (§ 286 BGB).
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Kalender / Termine.
+- [ ] Frage: "Ist Verzug eingetreten? (Mahnung nötig?)".
+- [ ] Unterscheidung: "Fixgeschäft" vs "Kein Termin".
+
+2. Screen-Layout
+- [ ] Kalenderblatt-Ansicht.
+- [ ] Zeitstrahl mit Ereignissen ("Lieferung fällig", "Mahnung geschickt").
+- [ ] Großer Buzzer: "VERZUG!".
+
+3. Browser- und Device-Resilienz
+- [ ] Kalender muss responsive sein.
+- [ ] Datumsformate lokalisiert (dd.mm.yyyy).
+
+4. Kernvisuals
+- [ ] Wecker / Alarmglocke.
+- [ ] Brief-Icon (Mahnung).
+
+5. Interaktion und Feedback
+- [ ] User drückt "Verzug" zum richtigen Zeitpunkt.
+- [ ] Zu früh: "Keine Mahnung -> Kein Verzug (außer Fixgeschäft)".
+- [ ] Richtig: "Mahnung wirksam, Zinsen laufen."
+
+6. KPI-Klarheit
+- [ ] Reaktionsschnelligkeit.
+
+7. QA-Paket
+- [ ] Unterschied "Kalendermäßig bestimmt" vs "Nicht bestimmt" testen.

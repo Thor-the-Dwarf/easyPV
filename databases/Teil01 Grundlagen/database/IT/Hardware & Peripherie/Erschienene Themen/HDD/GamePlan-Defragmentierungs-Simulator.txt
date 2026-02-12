@@ -1,0 +1,18 @@
+Anforderungen
+2. "Defragmentierungs-Simulator"
+   - Ziel: Ordne die Datenblöcke, damit der Lesekopf nicht springen muss.
+   - Spielmechanik: 
+     - Datei A: Blöcke 1, 5, 8 (Verteilt -> Fragmentiert).
+     - Aufgabe: Verschiebe Blöcke so, dass A auf 1, 2, 3 liegt.
+     - Messbarkeit: Lesegeschwindigkeit steigt (weniger Seek-Time).
+   - Lernziel: Warum Defrag bei HDDs nötig ist (und bei SSDs nicht!).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_hdd_defrag.json')
+  - `blocks`: [1, 0, 1, 0, 1].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Sektoren-Grid (Klassischer Defrag Look).
+- [ ] Game-Engine Logic ('game_hdd_defrag.js')
+  - Sortier-Puzzle.
+- [ ] Integration
+  - Startbar über JSON.

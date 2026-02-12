@@ -1,0 +1,19 @@
+Anforderungen
+3. "Buchstaben-Zuordnung"
+   - Ziel: Was bedeutet S, M, A, R, T?
+   - Spielmechanik: 
+     - Begriff "Messbar" fliegt vorbei. -> In Eimer "M".
+     - Begriff "Terminiert" -> In Eimer "T".
+     - Begriff "Akzeptiert/Attraktiv" -> In Eimer "A".
+     - Messbarkeit: Korrekte Definitionen.
+   - Lernziel: Bedeutung der Abkürzung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_pm_smart_letters.json')
+  - `letters`: ["S", "M", "A", "R", "T"].
+- [ ] Shared CSS Check ('pm_basics.css')
+  - Drag & Drop Buchstaben.
+- [ ] Game-Engine Logic ('game_pm_smart_letters.js')
+  - Definitionen zuordnen (S = Spezifisch).
+- [ ] Integration
+  - Startbar über JSON.

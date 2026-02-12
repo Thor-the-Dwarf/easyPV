@@ -1,0 +1,22 @@
+Anforderungen
+1. "Steckplatz-Logik"
+   - Ziel: Stecke 2 RAM-Riegel so, dass Dual Channel aktiv ist.
+   - Spielmechanik: 
+     - Mainboard mit 4 Slots (A1, A2, B1, B2). Farben oft A1/B1 und A2/B2 gleich.
+     - Handbuch sagt: "Bestückung A2 + B2".
+     - Spieler zieht Riegel. Wenn er A1 + A2 nimmt -> Single Channel (Fehler).
+     - Messbarkeit: Bandbreite (Dual = 100%, Single = 50%).
+   - Lernziel: Korrekte Bestückung für Performance.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ram_slots.json')
+  - `manual`: "A2+B2".
+  - `slots`: ["A1", "A2", "B1", "B2"].
+- [ ] Shared CSS Check ('hardware_components.css')
+  - Mainboard-Ausschnitt.
+  - Highlight-Effekte.
+- [ ] Game-Engine Logic ('game_ram_slots.js')
+  - Drag & Drop Riegel in Slots.
+  - Validierung gegen "Handbuch".
+- [ ] Integration
+  - Startbar über JSON.

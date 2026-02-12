@@ -1,0 +1,21 @@
+Anforderungen
+2. "Der Pulk-Scanner"
+   - Ziel: Scanne alle 50 Artikel im Einkaufswagen gleichzeitig (Bulk Reading).
+   - Spielmechanik: 
+     - Warenband läuft. Scanner ist an.
+     - Anti-Kollisions-Verfahren simulieren: Scanner fragt Tags ab.
+     - Wenn Kollision -> "Silence" Befehl an Tag senden.
+     - Ziel: Zähler auf 50 bringen.
+     - Messbarkeit: Erfasste Tags in % (Verständnis der Anti-Kollision).
+   - Lernziel: Vorteil von RFID gegenüber Barcode (Sichtverbindung nicht nötig).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_rfid_bulk.json')
+  - `count`: 50.
+- [ ] Shared CSS Check ('basics_hardware.css')
+  - Förderband / Gate.
+- [ ] Game-Engine Logic ('game_basics_rfid_bulk.js')
+  - Anti-Collision Loop (Tags einzeln stummschalten).
+  - Zähler hochzählen.
+- [ ] Integration
+  - Startbar über JSON.

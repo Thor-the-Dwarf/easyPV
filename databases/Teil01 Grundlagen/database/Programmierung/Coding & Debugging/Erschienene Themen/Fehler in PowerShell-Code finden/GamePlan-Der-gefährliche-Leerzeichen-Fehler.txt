@@ -1,0 +1,21 @@
+Anforderungen
+5. "Der gefährliche Leerzeichen-Fehler"
+   - Ziel: Parameter vs Vergleich.
+   - Spielmechanik: 
+     - Code: `if ($a -eq $b)` -> Ok.
+     - Code: `Get-ChildItem -Path C:\` -> Ok.
+     - Code: `$a = 5 + 5` -> Ok.
+     - Code: `Funktion ($a, $b)` -> Falsch! (Das übergibt ein Array als 1. Parameter).
+     - Richtig: `Funktion -Param1 $a -Param2 $b` oder `Funktion $a $b`.
+     - Messbarkeit: Aufrufkonvention von Funktionen vs Methoden verstanden.
+   - Lernziel: Argument Passing in Shells.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ps_whitespace.json')
+  - `snippet`: "param ($a)".
+- [ ] Shared CSS Check ('prog_basics.css')
+  - Unsichtbare Zeichen anzeigen.
+- [ ] Game-Engine Logic ('game_ps_whitespace.js')
+  - Leerzeichen bei Parametern/Pfaden ohne Quotes.
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,21 @@
+Anforderungen
+5. "Physikalisch vs Logisch"
+   - Ziel: Unterscheide MAC und IP.
+   - Spielmechanik: 
+     - Reise durch das Netz über 3 Router.
+     - Frage: "Ändert sich die Quell-IP?" -> Nein.
+     - Frage: "Ändert sich die Quell-MAC?" -> Ja (bei jedem Hop).
+     - Messbarkeit: Korrektes Verständnis der Adress-Änderung beim Routing.
+   - Lernziel: Layer 2 vs Layer 3 Adressierung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_mac_routing.json')
+  - `route`: ["Host", "Router1", "Router2", "Target"].
+- [ ] Shared CSS Check ('network_layer2.css')
+  - Netzwerk-Karte mit Hops.
+  - Info-Panel (Aktuelle Source/Dest MAC/IP).
+- [ ] Game-Engine Logic ('game_mac_routing.js')
+  - Step-Button.
+  - MAC ändert sich, IP bleibt gleich (Highlight).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,20 @@
+Anforderungen
+2. "Integritäts-Check"
+   - Ziel: Prüfe, ob die Datei beim Download verändert wurde.
+   - Spielmechanik: 
+     - Original Hash (Webseite): "A1B2...".
+     - Download-Hash berechnen: "A1B2...". -> Ok.
+     - Manipulation simuliert (Man-in-the-Middle). Download-Hash: "C3D4...".
+     - Spieler muss "Löschen" klicken!
+     - Messbarkeit: Erkennung der Manipulation.
+   - Lernziel: Hash als digitaler Fingerabdruck.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_file_hash.json')
+  - `origin_hash`: "A1".
+- [ ] Shared CSS Check ('security_crypto.css')
+  - Download-Manager.
+- [ ] Game-Engine Logic ('game_sec_file_hash.js')
+  - Hash berechnen und vergleichen.
+- [ ] Integration
+  - Startbar über JSON.

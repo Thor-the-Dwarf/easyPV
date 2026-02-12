@@ -1,0 +1,49 @@
+1. "Risiko-Matrix-Plotter"
+   - Ziel: Platziere Risiken in der Matrix (Eintrittswahrscheinlichkeit x Schadenshöhe).
+   - Spielmechanik: 
+     - "Rechenzentrum brennt ab". -> Wahrsch: Gering. Schaden: Katastrophal.
+     - "Mitarbeiter vergisst PW". -> Wahrsch: Hoch. Schaden: Gering.
+     - "Ransomware". -> Wahrsch: Mittel. Schaden: Hoch.
+     - Messbarkeit: Korrekte Positionierung.
+   - Lernziel: Risikobewertung.
+
+2. "Maßnahmen-Strategie"
+   - Ziel: Wähle die Strategie: Vermeiden, Vermindern, Überwälzen, Akzeptieren.
+   - Spielmechanik: 
+     - Risiko: Feuer. -> Maßnahme: Versicherung (Überwälzen).
+     - Risiko: Datenverlust. -> Maßnahme: Backup (Vermindern).
+     - Risiko: Server im Keller wird nass. -> Maßnahme: Server in 1. Stock (Vermeiden).
+     - Risiko: Bleistift bricht ab. -> Akzeptieren.
+     - Messbarkeit: Passende Strategie.
+   - Lernziel: Risikobehandlung (Risk Treatment).
+
+3. "ALE-Rechner (Annual Loss Expectancy)"
+   - Ziel: Lohnt sich die Sicherheitsmaßnahme?
+   - Spielmechanik: 
+     - Schaden (SLE): 10.000€.
+     - Häufigkeit (ARO): 1x im Jahr.
+     - ALE = 10.000€.
+     - Maßnahme kostet 500€/Jahr. -> Machen!
+     - Maßnahme kostet 20.000€/Jahr. -> Nicht machen.
+     - Messbarkeit: Wirtschaftliche Entscheidung.
+   - Lernziel: Quantitative Risikoanalyse.
+
+4. "Asset-Wertermittlung"
+   - Ziel: Was ist am wichtigsten?
+   - Spielmechanik: 
+     - Inventar: "Kaffeemaschine", "Kundendatenbank", "Webserver", "Bürostuhl".
+     - Sortiere nach Kritikalität für den Geschäftsprozess.
+     - Datenbank > Webserver > Stuhl > Kaffee.
+     - Messbarkeit: Korrekte Priorisierung.
+   - Lernziel: Kronjuwelen-Prinzip.
+
+5. "Der Restrisiko-Indikator"
+   - Ziel: Senke das Risiko unter die Akzeptanzschwelle.
+   - Spielmechanik: 
+     - Balken "Risiko" ist rot (100%).
+     - Maßnahme 1: Firewall (-30%).
+     - Maßnahme 2: Schulung (-20%).
+     - Restrisiko: 50%. Immer noch zu hoch?
+     - Maßnahme 3: Versicherung.
+     - Messbarkeit: Erreichen des geforderten Sicherheitsniveaus.
+   - Lernziel: Umgang mit Restrisiko.

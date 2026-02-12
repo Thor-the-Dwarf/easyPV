@@ -1,0 +1,19 @@
+Anforderungen
+5. "Das Zitat-Puzzle"
+   - Ziel: Baue eine korrekte Quellenangabe.
+   - Spielmechanik: 
+     - Teile: "Autor", "Titel", "Jahr", "URL", "Abrufdatum".
+     - Formatvorgabe (z.B. APA).
+     - Spieler sortiert: "Mustermann, M. (2023). Das Buch. Abgerufen am..."
+     - Messbarkeit: Konformität mit Zitierregeln.
+   - Lernziel: Urheberrecht und wissenschaftliches Arbeiten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_basics_citation.json')
+  - `style`: "APA".
+- [ ] Shared CSS Check ('basics_admin.css')
+  - Text-Bausteine sortieren.
+- [ ] Game-Engine Logic ('game_basics_citation.js')
+  - Reihenfolge prüfen (Autor, Jahr, Titel...).
+- [ ] Integration
+  - Startbar über JSON.

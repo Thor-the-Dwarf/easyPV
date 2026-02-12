@@ -1,0 +1,48 @@
+1. "Akteur-Finder"
+   - Ziel: Wer interagiert mit dem System?
+   - Spielmechanik: 
+     - System: "Geldautomat".
+     - Akteure: "Kunde" (Ja), "Bankmitarbeiter" (Ja), "Geldschein" (Nein, passiv!), "Datenbank" (Vielleicht, als externer Akteur).
+     - Männchen-Symbol zuordnen.
+     - Messbarkeit: Relevante Akteure identifiziert.
+   - Lernziel: Systemgrenze definieren.
+
+2. "Include vs Extend"
+   - Ziel: Die ewige Verwirrung lösen.
+   - Spielmechanik: 
+     - "Geld abheben" -> Braucht immer "PIN eingeben". -> <<include>> (Pfeil zeigt zum Enthaltenen).
+     - "Geld abheben" -> Kann optional "Beleg drucken". -> <<extend>> (Pfeil zeigt zum Basis-Case).
+     - Messbarkeit: Korrekte Pfeilrichtung und Stereotyp.
+   - Lernziel: Pflicht vs Option.
+
+3. "Generalisierungs-Pfeil"
+   - Ziel: Vererbung bei Akteuren.
+   - Spielmechanik: 
+     - Akteur "Kunde".
+     - Akteur "VIP-Kunde" (kann alles was Kunde kann + Lounge Eintritt).
+     - Pfeil von VIP zu Kunde mit hohlem Dreieck.
+     - "VIP erbt von Kunde".
+     - Messbarkeit: Korrekte Hierarchie.
+   - Lernziel: Wiederverwendung von Eigenschaften.
+
+4. "System-Grenze ziehen"
+   - Ziel: Was gehört dazu?
+   - Spielmechanik: 
+     - Rechteck ("System Boundary").
+     - Use Cases kommen IN die Box.
+     - Akteure kommen VOR die Box.
+     - Assoziationslinien verbinden sie.
+     - Wenn Akteur in der Box steht -> Falsch.
+     - Messbarkeit: Syntaktisch korrektes Diagramm.
+   - Lernziel: Scope des Systems.
+
+5. "Szenario-Schreiber"
+   - Ziel: Vom Bild zum Text.
+   - Spielmechanik: 
+     - Use Case "Geld abheben".
+     - Schreibe den "Main Success Scenario" (Happy Path).
+     - 1. Karte rein. 2. PIN ok. 3. Betrag wählen. 4. Geld raus.
+     - Schreibe eine "Extension" (Alternative).
+     - 2a. PIN falsch -> Abbruch.
+     - Messbarkeit: Logischer Textablauf passend zum Oval.
+   - Lernziel: Detaillierung von Anwendungsfällen.

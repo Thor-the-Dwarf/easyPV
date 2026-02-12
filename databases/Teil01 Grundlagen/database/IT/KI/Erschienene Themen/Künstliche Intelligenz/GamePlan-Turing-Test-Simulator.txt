@@ -1,0 +1,21 @@
+Anforderungen
+4. "Turing-Test Simulator"
+   - Ziel: Finde den Bot im Chat.
+   - Spielmechanik: 
+     - 2 Chatpartner: A und B. Einer ist Mensch, einer Maschine.
+     - Spieler stellt Fragen ("Wie schmeckt Erdbeere?").
+     - Antworten analysieren.
+     - Maschine enttarnt sich durch zu perfekte oder unlogische Antworten.
+     - Messbarkeit: Korrekte Identifikation in 3 Runden.
+   - Lernziel: Definition von Intelligenz nach Turing.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ai_turing.json')
+  - `bots`: [ { "name": "A", "isHuman": false }, { "name": "B", "isHuman": true } ].
+- [ ] Shared CSS Check ('ai_basics.css')
+  - Chat-Interface.
+- [ ] Game-Engine Logic ('game_ai_turing.js')
+  - Dialog-Simulation (Pre-scripted oder generierte Antworten).
+  - Timer für Entscheidung.
+- [ ] Integration
+  - Startbar über JSON.

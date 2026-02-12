@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Verständnis der Funktionsweise und Komplexität von Sortieralgorithmen (O-Notation) durch visuelle Interaktion.
-- Kontext: Algorithmen & Datenstrukturen, Performance-Analyse.
-- UX-Prinzip:
-  - "The Sorting Dance": Die Zahlen sind Tänzer mit unterschiedlichen Gewichten (Größen). Beim Bubble-Sort tanzen immer zwei Nachbarn: Der Schwerere muss den Platz räumen.
-  - "Rhythmic Swapping": Der Tausch-Vorgang wird als rhythmische, flüssige Bewegung inszeniert.
-  - "The Progress Wave": In jedem Durchlauf wandert der größte "Tänzer" wie eine Welle ans Ende der Gruppe.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Beherrschung von Sortieralgorithmen (Bubble, Quick, Merge) und Verständnis ihrer Zeitkomplexität.
+- Game-Mechanic: "The Array Drill". Du bist der Kommandant einer unordentlichen Robotereinheit (Die Daten-Elemente). Sie stehen in einer Reihe, aber völlig wild sortiert. Du musst sie nach Größe ordnen. Nutze die "Befehle" (Algorithmen), um sie effizient zu tauschen.
+- Challenge: 
+  - Level 1 (Bubble-Sortier-Parade): Vergleiche direkte Nachbarn. Tausche sie, bis der größte Roboter am Ende "hochgeblubbert" ist.
+  - Level 2 (Dividé et Imperá): Nutze Quick-Sort. Wähle einen Anführer (Pivot) und teile die Einheit in "kleiner" und "größer".
+  - Level 3 (Speed-Drill): 1000 Elemente. Wähle den falschen Algorithmus (O(n²)) und die Zeit läuft dir davon. Beweise, dass du O(n log n) beherrschst.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die zwei Vergleichs-Elemente (Fokus), 2 = Das gesamte Feld, 3 = Der Operations-Zähler (Kosten).
-- [ ] Textbudget: Max. 10 Zahlen im Feld zur Wahrung der visuellen Klarheit.
-- [ ] "Complexity-Badge": Anzeige von O(n²) direkt neben dem Algorithmus.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Swap-Counter", "Comparisons-Count", "Complexity-Meter" (O-Notation Anzeige).
+- [ ] Scoring: "Efficiency-Stars" basierend auf der Anzahl der Swaps. Bonus für die Wahl des optimalen Algorithmus für die aktuelle Datenlage.
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> sorting-stage -> operation-counter -> algorithm-selector`.
-- [ ] Stage: Balkendiagramm-Ansicht (Desktop 80% Breite, Mobile 50dvh Höhe).
-- [ ] Controls: "Next Step" und "Play" Button am unteren Rand im Daumen-Fokus.
+2. Screen-Layout (The Drill Ground)
+- [ ] `command-tent -> array-formation -> sorting-tray -> execution-log`.
+- [ ] Array-Formation: Roboter-Icons unterschiedlicher Höhe in einer Reihe (Desktop 80% Breite, Mobile horizontal scrollbar).
+- [ ] Tray: Auswahl-Buttons für Algorithmus-Schritte (Swaü, Mark, Pivot).
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-to-Swap" Geste zur manuellen Durchführung des Algorithmus.
-- [ ] `transition: transform 0.3s ease-in-out` für geschmeidige Balkenbewegungen.
+3. Kernvisuals und Effekte
+- [ ] Cyber-Military Ästhetik: Tarnmuster-Overlays, Radar-Raster, metallische Soundeffekte, glühende Markierungen.
+- [ ] "Swap-Leap": Wenn zwei Elemente getauscht werden, springen sie im Bogen übereinander hinweg.
+- [ ] "Pivot-Beacon": Der Pivot-Punkt wird durch einen vertikalen Laserstrahl markiert.
 
-4. Kernvisuals
-- [ ] Dynamische Farben: Kleine Zahlen sind Hellblau (leicht), große Zahlen sind Dunkelviolett (schwer).
-- [ ] "Fokus-Spotlight": Die zwei Elemente, die gerade verglichen werden, leuchten hell auf.
-- [ ] Erfolg: Sobald alles sortiert ist, läuft ein "Glanz-Effekt" über alle Balken.
+4. Browser- und Device-Resilienz
+- [ ] `flex-direction: row` mit animiertem `order` oder `transform: translateX()` für die Positionswechsel.
+- [ ] Mobile: "Swipe-to-Swap" als manuelle Alternative zum Automatik-Modus.
 
-5. Interaktion und Feedback
-- [ ] Schritt-Anzeige: "12 ist größer als 8 -> Tausch!"
-- [ ] Effizienz-Vergleich: Eine zweite, kleine Ansicht zeigt parallel `QuickSort` zum direkten Vergleich der Geschwindigkeit.
-- [ ] Sound-Visualisierung: Tiefere Töne für große Zahlen, hohe Töne für kleine (auditives Feedback beim Tausch).
+5. Content-Strategie (The Formations)
+- [ ] 15 Szenarien: Von "Fast-Sortiert" bis "Worst-Case (Reverse Order)".
 
-6. KPI-Klarheit
-- [ ] Complexity-Level: "Durchläufe gesamt: X".
-- [ ] Performance-Grade: "Effizienz-Score: B (O(n²))".
+6. QA-Paket
+- [ ] Test: Ist die visuelle Last (viele Elemente) auf dem Smartphone noch übersichtlich?
+- [ ] Test: Wirkt der Zeitunterschied zwischen n² und n log n spürbar (Game-Timer)?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Unsortiert", "Fast sortiert", "Worst Case (umgekehrt)".
-- [ ] Tonalität: Spielerisch, analytisch, flüssig.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Balken-Beschriftungen auf dem Handy noch lesbar?
-- [ ] Test: Bleibt das UI performant bei 20+ Elementen und schneller Animation?
-
-9. Abnahmekriterien
-- [ ] Der Spieler begreift den Algorithmus als logische Sequenz von Vergleichen.
-- [ ] Das Interface wirkt wie ein ästhetisches Dashboard für Daten-Choreographie.
-- [ ] Klarheit über den hohen Aufwand von Bubble-Sort gegenüber moderneren Algorithmen.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Unterschiedliche Algorithmen für unterschiedliche Datenmengen".
+- [ ] Das Interface wirkt wie ein moderner Taktik-Simulator.
+- [ ] Maximale Punkte durch algorithmische Präzision.

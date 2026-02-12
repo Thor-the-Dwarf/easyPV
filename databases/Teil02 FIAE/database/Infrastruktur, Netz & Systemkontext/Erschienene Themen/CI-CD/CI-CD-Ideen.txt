@@ -1,0 +1,29 @@
+1. "Pipeline-Racer"
+   - Ziel: Verstehe den automatisierten Build-und-Test-Ablauf.
+   - Spielmechanik: 
+     - Ordne die Schritte: Code Commit -> Build -> Unit Test -> Linting -> Deployment.
+     - Lernziel: Fehler frühzeitig erkennen.
+
+2. "Build-Failure Detective"
+   - Ziel: Diagnostiziere Fehler im CI-Lauf.
+   - Spielmechanik: 
+     - Die Pipeline ist rot! Finde heraus, ob es am Test, am Code-Style oder am Environment liegt.
+     - Lernziel: Debugging von CI-Prozessen.
+
+3. "Continuous-Deployment Pilot"
+   - Ziel: Bring den Code sicher auf den Server.
+   - Spielmechanik: 
+     - Schalte das Deployment frei, wenn alle Tests grün sind.
+     - Lernziel: Automatisierung bis zur Produktion.
+
+4. "Artifact-Manager"
+   - Ziel: Verwalte Build-Ergebnisse.
+   - Spielmechanik: 
+     - Erzeuge eine .zip oder ein Docker Image aus dem Code und speichere es in der Registry.
+     - Lernziel: Releasemanagement.
+
+5. "Environment-Switcher"
+   - Ziel: Deploye auf verschiedene Stages.
+   - Spielmechanik: 
+     - Push auf `dev` -> Test-Server. Push auf `main` -> Production.
+     - Lernziel: Branching-Strategien für CI/CD.

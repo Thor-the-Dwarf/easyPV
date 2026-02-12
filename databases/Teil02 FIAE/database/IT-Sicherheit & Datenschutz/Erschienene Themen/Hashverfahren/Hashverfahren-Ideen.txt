@@ -1,0 +1,29 @@
+1. "One-Way-Street"
+   - Ziel: Verstehe die Einwegfunktion.
+   - Spielmechanik: 
+     - Von "Passwort123" zum Hash ist einfach. Kannst du vom Hash zurück zum Passwort? (Nein).
+     - Lernziel: Eigenschaften von Hashfunktionen.
+
+2. "Collision-Hunter"
+   - Ziel: Warum MD5 unsicher ist.
+   - Spielmechanik: 
+     - Finde zwei verschiedene Dateien mit demselben Hash (Simulation).
+     - Lernziel: Kollisionsresistenz.
+
+3. "Password-Hashing-Match"
+   - Ziel: Speichere Passwörter niemals im Klartext.
+   - Spielmechanik: 
+     - User gibt Passwort ein. Server speichert den Hash + Salt.
+     - Lernziel: Sichere Authentifizierungssysteme.
+
+4. "File-Integrity-Check"
+   - Ziel: Prüfe Downloads auf Korrektheit.
+   - Spielmechanik: 
+     - Vergleiche den angezeigten SHA-256 Hash auf der Webseite mit dem der Datei.
+     - Lernziel: Manipulationsschutz beim Software-Download.
+
+5. "Avalanche-Effect"
+   - Ziel: Kleine Änderung, große Wirkung.
+   - Spielmechanik: 
+     - Ändere einen Buchstaben in "Hello". Wie stark ändert sich der Hash? (Komplett).
+     - Lernziel: Sensitivität von Hash-Algorithmen.

@@ -1,0 +1,34 @@
+1. "Die Eine-Instanz-Herausforderung"
+   - Ziel: Verhindere das Wort `new`.
+   - Spielmechanik: 
+     - Mache den Konstruktor `private`. 
+     - Wie bekommt man jetzt ein Objekt? -> `getInstance()` Methode.
+     - Lernziel: Statische Instanzkontrolle.
+
+2. "Global State Tracker"
+   - Ziel: Nutze Singleton für Konfigurationen.
+   - Spielmechanik: 
+     - Ein Objekt hält den `API_KEY`. 
+     - Greife von verschiedenen Klassen darauf zu. Alle sehen den gleichen Key.
+     - Lernziel: Zentraler Zugriffspunkt.
+
+3. "Thread-Safety-Check"
+   - Ziel: Vorsicht bei Multi-Threading.
+   - Spielmechanik: 
+     - Zwei Prozesse rufen gleichzeitig `getInstance()` auf. 
+     - Entstehen zwei Instanzen? 
+     - Lösung: Nutze `synchronized` oder das "Bill Pugh" Design.
+     - Lernziel: Fortgeschrittene Singleton-Implementierung.
+
+4. "Singleton-Fahnder"
+   - Ziel: Finde Beispiele im Betriebssystem/Framework.
+   - Spielmechanik: 
+     - "File System", "Log Manager", "Window Manager".
+     - Lernziel: Praxisrelevanz erkennen.
+
+5. "Test-Blockade-Löser"
+   - Ziel: Warum Singletons schwer zu testen sind.
+   - Spielmechanik: 
+     - Ein Singleton lässt sich nicht leicht durch einen Mock ersetzen.
+     - Lerne: Oft besser Dependency Injection zu nutzen.
+     - Lernziel: Kritische Auseinandersetzung mit Patterns.

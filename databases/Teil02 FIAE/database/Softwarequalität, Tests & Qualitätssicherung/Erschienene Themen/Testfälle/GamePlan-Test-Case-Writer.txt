@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Erstellung präziser, reproduzierbarer und standardisierter Testfallbeschreibungen zur Sicherstellung der Softwarequalität.
+- Kontext: Test-Engineering, Dokumentation, QA-Management.
+- UX-Prinzip:
+  - "The Scientific Logbook": Ein Testfall ist ein wissenschaftliches Experiment. Werden die Schritte exakt befolgt, muss das Ergebnis immer gleich sein.
+  - "Formula-Building": Der Spieler kombiniert Bausteine (Inputs, Actions, Expected Result) zu einer wasserdichten Formel.
+  - "The Replication-Test": Ein virtueller "Zweit-Laborant" (Bot) versucht, den Testfall nachzubauen. Nur bei 100% Klarheit wird er akzeptiert.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Test-Schritte (Der Ablauf), 2 = Das Erwartete Ergebnis (Das Ziel), 3 = Vorbedingungen & Daten (Die Basis).
+- [ ] Textbudget: Max. 15 Wörter pro Testschritt.
+- [ ] "Ambiguity-Detector": Ein Scanner, der vage Begriffe (z.B. "Checke ob okay") rot markiert.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> logbook-canvas (Center) -> fragment-library (Bottom) -> validation-eye (Side)`.
+- [ ] Canvas: Ein strukturiertes Formular mit klarer Segmentierung (Desktop links-lastig für Flow).
+- [ ] Library: Schneller Zugriff auf Standard-Aktionen (z.B. "Klicke auf", "Eingabe von", "Erwarte Error").
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-to-Order" Mechanik für die Testschritte.
+- [ ] Automatischer Fokus auf das nächste Eingabefeld nach Auswahl eines Fragments.
+
+4. Kernvisuals
+- [ ] Labor-Dokument Ästhetik: Saubere Typografie, Rasterlinien, Blaudruck-Elemente, digitale Signaturen (shared_theme.css).
+- [ ] Prozeß-Flow: Jede Zeile im Testfall ist durch einen dünnen Faden mit der nächsten verbunden.
+- [ ] High-Contrast Badges für "PRIORITY: HIGH" etc.
+
+5. Interaktion und Feedback
+- [ ] Precision-Feedback: "Klick! Schritt hinzugefügt. 'Klicke auf Login-Button' ist eine klare Anweisung für den Tester."
+- [ ] Warn-System: "Halt! Ohne 'Erwartetes Ergebnis' führt der Testfall ins Nirgendwo. Füge eine Assert-Bedingung hinzu."
+- [ ] Erfolg: "Logbuch-Eintrag komplett. Dein Testfall ist bereit für die Labor-Serie (Test-Wiederholungen)."
+
+6. KPI-Klarheit
+- [ ] Reproducibility-Index: "Reproduzierbarkeit: 100%".
+- [ ] Documentation-Standard: "ISO-Konformität: Erreicht".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Passwort-Reset-Flow", "Negative Preis-Eingabe im Warenkorb", "Datei-Upload mit ungültigem Format".
+- [ ] Tonalität: Akkurat, methodisch, objektiv.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist das Editor-Layout auf dem Smartphone übersichtlich (Stacking der Felder)?
+- [ ] Test: Sind die Standard-Aktionen generisch genug für alle IT-Themen?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler entwickelt eine Abneigung gegen unpräzise Fehlermeldungen.
+- [ ] Das Interface wirkt wie ein Profi-Tool für Software-Tester.
+- [ ] Intuitive Bedienung der komplexen Dokumentationsstruktur.

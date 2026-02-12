@@ -1,0 +1,34 @@
+1. "Die Fabrik-Halle"
+   - Ziel: Erzeuge Objekte, ohne deren Klasse zu kennen.
+   - Spielmechanik: 
+     - `ObstFactory.create("Apfel")` -> liefert ein Apfel-Objekt.
+     - Später: Füge "Banane" hinzu, ohne den restlichen Code zu ändern.
+     - Lernziel: Entkopplung von Erzeugung und Nutzung.
+
+2. "Creator-Match"
+   - Ziel: Ordne Produkte den Fabriken zu.
+   - Spielmechanik: 
+     - `DialogFactory` (Windows) -> `WindowsButton`.
+     - `DialogFactory` (Mac) -> `MacButton`.
+     - Lernziel: Plattformunabhängige Objekterzeugung.
+
+3. "New-Operator-Entzug"
+   - Ziel: Verstehe, warum wir nicht überall `new` schreiben sollten.
+   - Spielmechanik: 
+     - Wenn wir `new User()` überall schreiben, ist der Code hart verdrahtet.
+     - Lösung: Nutze eine Factory.
+     - Lernziel: Flexibilität im Dependency-Management.
+
+4. "Shape-Factory-Puzzle"
+   - Ziel: Implementiere eine einfache Factory Logik.
+   - Spielmechanik: 
+     - Input: Typ-String. 
+     - Code: `switch(type) { case 'Circle': return new Circle(); ... }`.
+     - Lernziel: Logik der Objekterzeugung zentralisieren.
+
+5. "Static-Factory-Method"
+   - Ziel: Lerne die kompakte Form der Factory.
+   - Spielmechanik: 
+     - `User.createAdmin()` vs `new User(true, false, "Admin")`.
+     - Was ist lesbarer?
+     - Lernziel: Aussagekräftige Erzeugermethoden.

@@ -1,0 +1,39 @@
+1. "Spalten-Sieb"
+   - Ziel: Selektiere nur bestimmte Spalten.
+   - Spielmechanik: 
+     - Aufgabe: "Nur Namen und E-Mails anzeigen".
+     - SQL-Baukasten: SELECT [name, email] FROM [user].
+     - Messbarkeit: Vermeidung von unnötigem `SELECT *`.
+   - Lernziel: Information hiding & Performance.
+
+2. "Filter-Meister"
+   - Ziel: Nutze komplexe WHERE-Bedingungen.
+   - Spielmechanik: 
+     - "Alle Kunden aus Berlin ODER Hamburg, die seit 2023 dabei sind".
+     - Puzzle: `WHERE (city='Berlin' OR city='Hamburg') AND join_date >= '2023-01-01'`.
+     - Messbarkeit: Korrekte Klammersetzung bei AND/OR.
+   - Lernziel: Logische Operatoren in SQL.
+
+3. "Top-N-Ranking"
+   - Ziel: Nutze ORDER BY und LIMIT/TOP.
+   - Spielmechanik: 
+     - "Zeige die 3 teuersten Produkte".
+     - SQL: `ORDER BY price DESC LIMIT 3`.
+     - Messbarkeit: Richtige Sortierreihenfolge (ASC vs DESC).
+   - Lernziel: Datensätze einschränken und sortieren.
+
+4. "NULL-Detektor"
+   - Ziel: Verstehe den Umgang mit fehlenden Werten.
+   - Spielmechanik: 
+     - Aufgabe: "Finde alle User ohne Telefonnummer".
+     - SQL: `WHERE phone IS NULL`. (Nicht `= NULL`).
+     - Messbarkeit: Kenntnis der Drei-wertigen Logik (3VL).
+   - Lernziel: Null-Werte korrekt abfragen.
+
+5. "Alias-Künstler"
+   - Ziel: Nutze AS zur Umbenennung von Spalten.
+   - Spielmechanik: 
+     - Tabelle: `usr_fnm`, `usr_lnm`. 
+     - Aufgabe: Benenne sie in `Vorname` und `Nachname` um.
+     - Messbarkeit: Lesbarkeit der Ergebnismenge erhöhen.
+   - Lernziel: SQL-Aliase.

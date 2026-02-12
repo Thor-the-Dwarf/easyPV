@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Modellierung und Validierung von Zustandsübergängen (Transitionen) komplexer Objekte anhand externer Trigger.
+- Kontext: State-Machine Simulation, Status-Flow Mechanik.
+- UX-Prinzip:
+  - Der "Aktuelle Zustand" ist visuell hervorgehoben (Glow).
+  - Mögliche "Events" als klickbare Trigger-Buttons.
+  - "Flow-Validation": Der Spieler wählt das Event und muss den neuen Ziel-Zustand manuell bestätigen.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Aktueller Status (z. B. "In Bearbeitung"), 2 = Verfügbare Events, 3 = Zustands-Map (Gesamtübersicht).
+- [ ] Textbudget: Kurze Status-Namen (max. 15 Zeichen).
+- [ ] Keine Vor-Exkurse; "Entry/Exit"-Aktionen werden als kleine Text-Popups bei der Transition gezeigt.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> current-state-display -> event-trigger-zone -> state-map-preview`.
+- [ ] State-Display: Großes Icon/Label im Zentrum (Mobile 30dvh, Desktop 40% Breite).
+- [ ] Trigger-Zone: 4-6 große Buttons für mögliche Aktionen (>=48px).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] `overflow: hidden` für die Hauptseite; Karte des Automaten als Mini-Map in der Ecke (klickbar zum Zoomen).
+- [ ] Transition-Animationen (SVG-Pfade) passen sich dem Layout an.
+
+4. Kernvisuals
+- [ ] High-Gloss Status-Pillen: Unterschiedliche Farben für Start, Ende und Zwischenzustände.
+- [ ] Pulsierende Buttons: Zeigen an, welche Events im aktuellen Zustand valide sind.
+- [ ] Event-History: Ein kleiner "Breadcrumb"-Pfad zeigt die letzten 3 Zustände.
+
+5. Interaktion und Feedback
+- [ ] Sofort-Auswertung: "Korrekt! Nach 'Zahlung bestätigt' geht die Bestellung in 'Versandfertig'."
+- [ ] Fehlermanagement: "Unmögliche Transition! Ein 'Storniertes' Ticket kann nicht 'Abgeschlossen' werden." (Visuelles Signal: Durchgestrichener Pfad).
+- [ ] Animations-Flow: Karte des neuen Zustands "fliegt" ins Zentrum.
+
+6. KPI-Klarheit
+- [ ] Logic-Precision: "Keine Fehltritte: 100%".
+- [ ] Path-Complexity: "X von Y möglichen Wegen durchlaufen".
+
+7. Content-/Copy-Feinschliff
+- [ ] Typische State-Machines: "Ticket-Lifecycle", "Warenkorb-Status", "User-Account (Active/Suspended/Deleted)".
+- [ ] Tonalität: Logisch, deterministisch, präzise.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Buttons auf schmalen Handys (iPhone Mini) noch ohne Überlappung bedienbar?
+- [ ] Test: Sind die Pfad-Animationen bei schnellen Zustandswechseln performant?
+
+9. Abnahmekriterien
+- [ ] Das deterministische Verhalten von Zustandsautomaten wird intuitiv begriffen.
+- [ ] Das Interface wirkt wie ein Hochleistungs-Logik-Monitor.
+- [ ] Klarheit über "Zulässigkeit" vs. "Unmöglichkeit" von Ereignissen.

@@ -1,0 +1,29 @@
+1. "OAuth-Flow-Sequence"
+   - Ziel: Verstehe den Ablauf der Autorisierung über einen Drittanbieter.
+   - Spielmechanik: 
+     - Ordne die Schritte: User klickt "Login with Google" -> Redirect -> Grant Access -> Authorization Code -> Access Token.
+     - Lernziel: Sicherheitsprotokolle im Web.
+
+2. "Token-Validator"
+   - Ziel: Prüfe die Gültigkeit eines Access Tokens.
+   - Spielmechanik: 
+     - Ist der Token abgelaufen? Hat er die richtigen Scopes?
+     - Lernziel: Token-Management.
+
+3. "Scope-Match"
+   - Ziel: Minimiere die Rechtevergabe (Principle of Least Privilege).
+   - Spielmechanik: 
+     - Braucht die App "Vollzugriff" oder nur "Leserechte für Profil"?
+     - Lernziel: Datenschutz bei OAuth.
+
+4. "Redirect-URI-Check"
+   - Ziel: Verhindere Redirect-Angriffe.
+   - Spielmechanik: 
+     - Vergleiche die angeforderte URI mit der hinterlegten Whitelist.
+     - Lernziel: Sicherheit in der OAuth-Konfiguration.
+
+5. "Implicit-vs-Authorization-Code"
+   - Ziel: Kenne die verschiedenen Flows.
+   - Spielmechanik: 
+     - Welcher Flow ist sicherer für Web-Apps? (Auth Code Flow mit PKCE).
+     - Lernziel: Moderne Sicherheitsstandards.

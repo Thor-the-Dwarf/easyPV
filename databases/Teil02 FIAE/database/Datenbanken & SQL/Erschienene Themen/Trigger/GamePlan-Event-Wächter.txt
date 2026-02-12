@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Präzise zeitliche Steuerung automatisierter Datenbank-Aktionen (Trigger) zur Sicherstellung der Datenkonsistenz und Auditierung.
+- Kontext: Event-Driven Architecture, Datenbank-Automatisierung.
+- UX-Prinzip:
+  - "The Domino Chain": Die Initial-Action (INSERT, UPDATE, DELETE) ist der erste fallende Stein. Der Trigger ist der zweite Stein, der nur fällt, wenn Zeit (BEFORE/AFTER) und Logik passen.
+  - "Timing-Selector": Ein Schieberegler zwischen "BEFORE" (Validierung) und "AFTER" (Auditierung).
+  - "Logic-Bridge": Der Trigger-Code bildet die Brücke, die den Domino-Effekt weitergibt oder (bei Fehlern) stoppt.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Das auslösende Event (Trigger-Source), 2 = Der Zeitpunkt (BEFORE/AFTER), 3 = Die Folge-Aktion.
+- [ ] Textbudget: Max. 3 Worte pro Event-Phase (z. B. "Check Age", "Log Deletion").
+- [ ] "Logical Timeline": Visuelle Kette von links nach rechts (bzw. oben nach unten auf Mobile).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> event-source -> timing-switch -> triggered-action-preview`.
+- [ ] Timing-Switch: Zentrales interaktives Element (Desktop 40% Breite, Mobile 60% Breite).
+- [ ] Action-Preview: Zeigt live, was in der Datenbank passiert (z. B. neue Zeile in `audit_log`).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-to-Trigger" Geste zum Testen der Kette.
+- [ ] Responsive Icons: Domino-Steine passen ihre Größe dynamisch an.
+
+4. Kernvisuals
+- [ ] Ketten-Ästhetik: Mechanische Glieder, Zahnräder und leuchtende Signalpfade.
+- [ ] Pulsierendes Orange für das "BEFORE"-Fenster (Prävention).
+- [ ] Stabiles Blau für das "AFTER"-Fenster (Dokumentation).
+
+5. Interaktion und Feedback
+- [ ] Live-Simulation: Der erste Stein fällt -> kurzes Stocken am Trigger -> Kette läuft weiter oder bricht ab.
+- [ ] Feedback: "Stopp! Der BEFORE-Trigger hat die Eingabe abgewiesen (SIGNAL SQLSTATE). Die Tabelle bleibt leer."
+- [ ] Loop-Warnung: Rotes Warnsystem, wenn ein Trigger sich selbst aufrufen würde (Recursion Check).
+
+6. KPI-Klarheit
+- [ ] Consistency-Level: "Daten-Wächter aktiv: 100%".
+- [ ] Chain-Speed: "Automatisierungs-Grad: Hoch".
+
+7. Content-/Copy-Feinschliff
+- [ ] Business-Cases: "Passwort-Verschlüsselung (BEFORE)", "Lagerbestand-Historie (AFTER)", "Mail-Versand-Queue".
+- [ ] Tonalität: Wachsam, automatisiert, präzise.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist der Schieberegler auf schmalen Screens auch bei schnellen Taps stabil?
+- [ ] Test: Sind die Domino-Steine auch ohne Text verständlich?
+
+9. Abnahmekriterien
+- [ ] Das Verständnis für die Kausalität in Datenbanken wird durch die Domino-Metapher gestärkt.
+- [ ] Das Interface wirkt wie ein intelligentes Überwachungssystem.
+- [ ] Klarheit über den Unterschied zwischen "Prüfen" (BEFORE) und "Protokollieren" (AFTER).

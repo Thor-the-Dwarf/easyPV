@@ -1,0 +1,33 @@
+1. "Schichten-Sortierer"
+   - Ziel: Ordne Komponenten den richtigen Layern zu.
+   - Spielmechanik: 
+     - Schichten: Präsentation (UI), Logik (Service), Daten (DAO/DB).
+     - Ordne zu: "HTML-Button" (UI), "Zinsberechnung" (Logik), "SQL-Query" (Daten).
+     - Lernziel: Separation of Concerns.
+
+2. "Abhängigkeits-Check"
+   - Ziel: Verstehe, welche Schicht wen aufrufen darf.
+   - Spielmechanik: 
+     - Darf die Datenbankschicht direkt die UI ändern? -> Nein!
+     - Draw: Pfeile von oben nach unten (UI -> Logik -> Daten).
+     - Lernziel: Lose Kopplung & Architekturregeln.
+
+3. "Layer-Bypass-Fahnder"
+   - Ziel: Finde Architekturverletzungen (Lasagne-Code).
+   - Spielmechanik: 
+     - Entwickler ruft in der UI direkt die DB auf.
+     - Warum ist das schlecht? -> Wartbarkeit sinkt.
+     - Lernziel: Durchgängigkeit von Schichten.
+
+4. "Mock-the-Logic"
+   - Ziel: Teste eine Schicht isoliert.
+   - Spielmechanik: 
+     - Wir wollen die UI testen, aber die DB ist offline.
+     - Baue ein "Mock"-Objekt für die Logik-Schicht.
+     - Lernziel: Testbarkeit durch Schichtung.
+
+5. "Multi-Tier-Puzzle"
+   - Ziel: Erkenne 3-Tier vs Client-Server.
+   - Spielmechanik: 
+     - Baue ein System aus Browser, Webserver und DB-Server zusammen.
+     - Lernziel: Physische Verteilung von Schichten.

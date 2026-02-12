@@ -1,0 +1,30 @@
+1. "Pyramid-Stacker"
+   - Ziel: Baue eine gesunde Testverteilung auf.
+   - Spielmechanik: 
+     - Ordne Testarten der Schichten zu: Unten (viele Unit-Tests), Mitte (einige Integrationstests), Oben (wenige E2E-Tests).
+     - Lernziel: Wirtschaftliche Teststrategie.
+
+2. "Test-Level-Cost-Analyzer"
+   - Ziel: Verstehe die Kosten und Geschwindigkeit der Ebenen.
+   - Spielmechanik: 
+     - Unit-Test: 1ms, 0€. E2E-Test: 10s, 10€. 
+     - Warum wollen wir mehr Unit-Tests?
+     - Lernziel: ROI von Tests.
+
+3. "Ice-Cream-Cone-Antipattern"
+   - Ziel: Erkenne eine schlechte Teststrategie.
+   - Spielmechanik: 
+     - Dein System hat nur E2E-Tests und keine Unit-Tests. Warum ist das instabil?
+     - Lernziel: Vermeidung von Fehlplanung.
+
+4. "Finding-the-Balance"
+   - Ziel: Ergänze fehlende Schichten.
+   - Spielmechanik: 
+     - Du hast viele Unit-Tests, aber die Module passen nicht zusammen. Was fehlt? (Integrationstests).
+     - Lernziel: Ganzheitliche Qualitätssicherung.
+
+5. "Confidence-Level-Quiz"
+   - Ziel: Welcher Test gibt die meiste Sicherheit?
+   - Spielmechanik: 
+     - E2E gibt das meiste Vertrauen beim Kunden, Unit das meiste beim Dev.
+     - Lernziel: Zielgruppen von Tests.

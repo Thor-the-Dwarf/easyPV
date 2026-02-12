@@ -1,0 +1,41 @@
+{
+  "title": "Anforderungs-Sortierer",
+  "subtitle": "AP2-Training: Funktionale (FKT) und nicht-funktionale (NFA) Anforderungen korrekt zuordnen.",
+  "levels": [
+    { "name": "Lehrling", "time_limit_sec": 0, "cards": 10 },
+    { "name": "Profi", "time_limit_sec": 5, "cards": 10 },
+    { "name": "Master", "time_limit_sec": 4, "cards": 10 }
+  ],
+  "cards": [
+    { "text": "User kann Passwort zuruecksetzen", "tag": "FKT" },
+    { "text": "Webshop muss in unter 500ms antworten", "tag": "NFA" },
+    { "text": "Kunde kann Bestellung stornieren", "tag": "FKT" },
+    { "text": "System verfuegbar mit 99,9% im Monat", "tag": "NFA" },
+    { "text": "Admin kann Rollen und Rechte verwalten", "tag": "FKT" },
+    { "text": "Deployment ohne Downtime moeglich", "tag": "NFA" },
+    { "text": "Nutzer kann Rechnung als PDF laden", "tag": "FKT" },
+    { "text": "Anwendung ist wartbar und modular", "tag": "NFA" },
+    { "text": "Support-Mitarbeiter kann Tickets priorisieren", "tag": "FKT" },
+    { "text": "UI erfuellt WCAG 2.1 AA", "tag": "NFA" },
+    { "text": "Benutzer kann Adresse im Profil aendern", "tag": "FKT" },
+    { "text": "System startet nach Neustart in < 30 Sekunden", "tag": "NFA" },
+    { "text": "Kunde kann Gutschein beim Checkout einloesen", "tag": "FKT" },
+    { "text": "Datenbank muss horizontal skalierbar sein", "tag": "NFA" },
+    { "text": "Manager kann Export nach Excel ausfuehren", "tag": "FKT" },
+    { "text": "Fehlermeldungen sind eindeutig und verstaendlich", "tag": "NFA" },
+    { "text": "Nutzer kann Zwei-Faktor-Authentifizierung aktivieren", "tag": "FKT" },
+    { "text": "Sicherheitsupdates innerhalb von 48h einspielen", "tag": "NFA" },
+    { "text": "System protokolliert Login-Versuche", "tag": "FKT" },
+    { "text": "Anwendung laeuft auch auf Tablets stabil", "tag": "NFA" },
+    { "text": "Benutzer kann Benachrichtigungen konfigurieren", "tag": "FKT" },
+    { "text": "Codeabdeckung im CI mindestens 80%", "tag": "NFA" },
+    { "text": "Mitarbeiter kann Arbeitszeiten erfassen", "tag": "FKT" },
+    { "text": "API ist rueckwaertskompatibel fuer Minor-Releases", "tag": "NFA" },
+    { "text": "Kunde kann Produkte nach Kategorie filtern", "tag": "FKT" },
+    { "text": "System erfuellt DSGVO-Loeschanforderungen", "tag": "NFA" },
+    { "text": "Nutzer kann Sprache zwischen DE/EN umstellen", "tag": "FKT" },
+    { "text": "Recovery-Plan mit RTO <= 5 Minuten", "tag": "NFA" },
+    { "text": "User kann Favoritenliste verwalten", "tag": "FKT" },
+    { "text": "Build-Pipeline dauert maximal 8 Minuten", "tag": "NFA" }
+  ]
+}

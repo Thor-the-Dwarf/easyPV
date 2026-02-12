@@ -1,0 +1,37 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Beherrschung der User-Story-Syntax nach INVEST-Kriterien und Vermeidung von unklaren Anforderungen.
+- Game-Mechanic: "The Storyteller". Eine Slot-Machine, die Story-Fragmente (Rolle, Ziel, Nutzen) ausspuckt. Der Spieler muss diese in Sekundenbruchteilen zu einer logischen und wertvollen Story kombinieren.
+- Challenge: 
+  - Level 1: "Easy Build" - Fragmente passen farblich zusammen.
+  - Level 2: "Logic Trap" - Rolle passt grammatikalisch zum Ziel, aber der Nutzen ist unlogisch (z.B. "Als Admin möchte ich Schuhe kaufen... um die Serverlast zu senken").
+  - Level 3: "The INVEST-Boss" - Story muss zusätzlich "Independent" und "Small" genug sein.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD: "INVEST-Meter" (Qualitäts-Bar), "Stories Told" (Score), "Critical Time" (Countdown).
+- [ ] Scoring: "Bingo-Bonus" bei perfektem INVEST-Check. Abzug bei unlogischen Ketten ("Broken Story").
+
+2. Screen-Layout (The Slot Machine)
+- [ ] `casino-floor -> slot-machine -> fragment-rollers -> lever-pull`.
+- [ ] Rollers: Drei rotierende Trommeln (Als..., möchte ich..., um zu...).
+- [ ] Action: "Lock" Button pro Trommel, um ein Fragment zu fixieren.
+
+3. Kernvisuals und Effekte
+- [ ] Las-Vegas / Arcade Ästhetik: Blinkende Lichter, Gold-Chrome Oberflächen, mechanische Klick-Sounds.
+- [ ] "Jackpot": Visueller Konfetti-Regen bei einer perfekten User Story.
+
+4. Browser- und Device-Resilienz
+- [ ] `overflow-y: hidden` für das "Automaten-Gefühl".
+- [ ] Optimierte CSS Keyframe-Animationen für das Rollen der Trommeln.
+
+5. Content-Strategie (Story-Pool)
+- [ ] 20 Rollen, 20 Ziele, 20 Nutzen (viele absurde Kombinationen für den Challenge-Faktor).
+
+6. QA-Paket
+- [ ] Test: Ist die Animation der Trommeln flüssig auf Low-End Devices?
+- [ ] Test: Wird das INVEST-Kriterium "T" (Testable) im Spielverlauf spürbar?
+
+7. Abnahme-Kriterien
+- [ ] Die Syntax (Als/Ich möchte/Um zu) ist nach 3 Minuten Spielzeit instinktiv verankert.
+- [ ] Der Spieler lernt Qualität von Quantität bei User Stories zu unterscheiden.
+- [ ] Interface erzeugt eine "Nur noch eine Runde" Suchtwirkung durch Jackpot-Mechanik.

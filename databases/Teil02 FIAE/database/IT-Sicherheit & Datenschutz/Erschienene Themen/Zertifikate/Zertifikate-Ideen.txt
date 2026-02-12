@@ -1,0 +1,33 @@
+1. "Certificate-Chain Puzzle"
+   - Ziel: Verstehe die Vertrauenskette.
+   - Spielmechanik: 
+     - Website Zertifikat -> Intermediate CA -> Root CA.
+     - Baue die Kette zusammen.
+     - Lernziel: PKI (Public Key Infrastructure).
+
+2. "Padlock-Check (HTTPS)"
+   - Ziel: Erkenne ein gültiges SSL/TLS Zertifikat.
+   - Spielmechanik: 
+     - Klicke auf das Schloss im Browser. 
+     - Prüfe: Für welche Domain ausgestellt? Abgelaufen? Vertrauenswürdiger Aussteller?
+     - Lernziel: Sicherer Web-Verkehr.
+
+3. "Self-Signed Warnung"
+   - Ziel: Warum vertraut der Browser meinem eigenen Zertifikat nicht?
+   - Spielmechanik: 
+     - Erstelle ein Zertifikat. Rufe die Seite auf. 
+     - Große rote Warnung erscheint. Warum? -> Keine Vertrauenswürdige CA.
+     - Lernziel: Bedeutung von CAs.
+
+4. "Wildcard vs Einzel-Zertifikat"
+   - Ziel: Wähle das richtige Zertifikat für Subdomains.
+   - Spielmechanik: 
+     - Du hast: `shop.me.com`, `blog.me.com`, `api.me.com`. 
+     - Welches Zertifikat deckt alle ab? -> `*.me.com`.
+     - Lernziel: Effizientes Zertifikats-Management.
+
+5. "CSR-Generator"
+   - Ziel: Beantrage ein Zertifikat.
+   - Spielmechanik: 
+     - Erstelle einen Certificate Signing Request. Welche Infos müssen rein (CN, Org, Land)?
+     - Lernziel: Administrativer Prozess der Verschlüsselung.

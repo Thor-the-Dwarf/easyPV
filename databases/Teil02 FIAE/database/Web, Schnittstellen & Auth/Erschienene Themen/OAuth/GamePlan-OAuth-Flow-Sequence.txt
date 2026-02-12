@@ -1,0 +1,19 @@
+Anforderungen
+1. "OAuth-Flow-Sequence"
+   - Ziel: Verständnis des komplexen Ablaufs einer delegierten Autorisierung zur sicheren Integration von Drittanbieter-Identitäten.
+   - Spielmechanik: 
+     - Der Spieler muss die Phasen des OAuth 2.0 Flows (z.B. Authorization Code Flow) in die richtige zeitliche Reihenfolge bringen.
+     - Zuordnung von Begriffen wie "Access Token", "Refresh Token", "Scope" und "Callback-URL" zu den passenden Schritten.
+     - Simulation des Token-Austauschs zwischen Client, Authorization Server und Resource Server.
+     - Messbarkeit: Korrektheit der Prozesskette.
+   - Lernziel: Sichere Implementierung von "Login with..." Funktionalitäten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_oauth_steps.json')
+   - Protokoll-Phasen und Token-Definitionen.
+- [ ] Shared CSS Check ('web_apis.css')
+   - Sequenzdiagramm-Visualisierung.
+- [ ] Game-Engine Logic ('game_category_match.js')
+   - (Reihenfolge-Validierung).
+- [ ] Integration
+   - Tutorial: Warum man niemals Access Tokens in der URL übertragen sollte.

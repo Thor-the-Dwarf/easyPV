@@ -1,0 +1,40 @@
+1. "Drei-Punkt-Profi"
+   - Ziel: Berechne den Erwartungswert (m) nach der PERT-Formel.
+   - Spielmechanik: 
+     - Optimistisch (o): 2h, Realistisch (r): 5h, Pessimistisch (p): 14h.
+     - Formel: (o + 4*r + p) / 6. 
+     - Frage: Was ist der Schätzwert? -> 6h.
+     - Messbarkeit: Korrekte mathematische Anwendung.
+   - Lernziel: PERT-Schätzung.
+
+2. "Planning Poker Bot"
+   - Ziel: Schätze Komplexität statt Zeit.
+   - Spielmechanik: 
+     - Story: "Neues Logo einbauen" (Referenz: 1 Punkt).
+     - Story: "Komplettes Bezahlsystem mit Stripe". -> Wähle 8, 13 oder 21?
+     - Messbarkeit: Konsistenz in der relativen Schätzung.
+   - Lernziel: Relatives Schätzen & Story Points.
+
+3. "Risiko-Zuschlag"
+   - Ziel: Berücksichtige Unwägbarkeiten in der Schätzung.
+   - Spielmechanik: 
+     - Basisschätzung: 10 Tage. 
+     - Faktor: "Neue Technologie" (+20%), "Unklare Anforderungen" (+30%).
+     - Frage: Wie viel Puffer planst du ein?
+   - Lernziel: Sicherheitsbeiwert und Risikomanagement.
+
+4. "Experten-Delphi"
+   - Ziel: Konsens finden bei unterschiedlichen Schätzungen.
+   - Spielmechanik: 
+     - Senior sagt 2 Tage, Junior sagt 10 Tage. 
+     - Aktion: "Frage Junior warum so lang" vs. "Mittelwert nehmen" vs. "Junior ignorieren".
+     - Messbarkeit: Qualität der Teamentscheidung.
+   - Lernziel: Wideband Delphi Methode.
+
+5. "Parkinson-Gesetz-Jäger"
+   - Ziel: Erkenne, warum Schätzungen oft bis zum Ende ausgereizt werden.
+   - Spielmechanik: 
+     - Aufgabe fertig nach 2h (geplant 8h).
+     - Versuchung: "Noch ein bisschen am CSS feilen" (Gold-Plating).
+     - Messbarkeit: Effizienz in der Zeitnutzung.
+   - Lernziel: Parkinson's Law verstehen.

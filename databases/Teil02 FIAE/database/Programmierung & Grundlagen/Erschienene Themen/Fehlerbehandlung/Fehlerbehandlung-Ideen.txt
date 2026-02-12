@@ -1,0 +1,36 @@
+1. "Try-Catch-Labyrinth"
+   - Ziel: Fange Exceptions ab.
+   - Spielmechanik: 
+     - Baue ein `try { ... } catch (e) { ... } finally { ... }` Konstrukt zusammen.
+     - Wer fängt den Fehler "DivisionByZero"?
+     - Messbarkeit: Korrekte Schachtelung.
+   - Lernziel: Exception-Handling.
+
+2. "Error-Categorizer"
+   - Ziel: Unterscheide Checked von Unchecked Exceptions.
+   - Spielmechanik: 
+     - "File Not Found". -> Muss behandelt werden.
+     - "Null Pointer". -> Programmierfehler.
+     - Lernziel: Fehlerstrategien kennen.
+
+3. "Graceful-Degradation-Checker"
+   - Ziel: System stabil halten bei Einzelfehlern.
+   - Spielmechanik: 
+     - API ist offline. 
+     - Zeige: "Lädt nicht" (Fehler) vs. "Offline-Cache nutzen" (Gute Behandlung).
+     - Lernziel: User Experience bei Fehlern.
+
+4. "Custom-Exception-Builder"
+   - Ziel: Erstelle eigene Fehlerklassen.
+   - Spielmechanik: 
+     - `class InsufficientFundsException extends Error`.
+     - Wann wirfst du diesen Fehler?
+     - Lernziel: Domain-spezifische Fehlerbehandlung.
+
+5. "HTTP-Status-Match"
+   - Ziel: Ordne technische Fehler Codes zu.
+   - Spielmechanik: 
+     - "Nicht gefunden" -> 404.
+     - "Server Error" -> 500.
+     - "Nicht autorisiert" -> 401.
+     - Lernziel: Web-Standards.

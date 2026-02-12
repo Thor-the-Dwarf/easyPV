@@ -1,0 +1,19 @@
+Anforderungen
+1. "Hypervisor-Match"
+   - Ziel: Verständnis der verschiedenen Virtualisierungsschichten und deren Auswirkung auf die System-Performance und -Architektur.
+   - Spielmechanik: 
+     - Der Spieler muss Virtualisierungs-Szenarien den korrekten Hypervisor-Typen (Typ-1: Bare-Metal, Typ-2: Hosted) zuordnen.
+     - Analyse des Overheads: Vergleich der Ressourcen-Nutzung bei verschiedenen Schicht-Modellen.
+     - Auswahl passender Software-Lösungen (ESXi, Xen vs. VirtualBox, VMware Player) für spezifische Anwendungsfälle (Rechenzentrum vs. Entwicklung).
+     - Messbarkeit: Optimale Ausnutzung der Host-Hardware bei maximaler Stabilität.
+   - Lernziel: Befähigung zur Planung von Cloud-fähigen Infrastrukturen und Beherrschung von Virtualisierungs-Technologien.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_hypervisors.json')
+   - Hypervisor-Eigenschaften und Architektur-Boards.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Visuelle Darstellung der Hardware-Schichten).
+- [ ] Game-Engine Logic ('game_category_match.js')
+   - (Wiederverwendung der Matching-Logik).
+- [ ] Integration
+   - Tutorial: Warum Typ-1 Hypervisoren für Hochleistungs-Server unverzichtbar sind.

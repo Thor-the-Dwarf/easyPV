@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Präzise Identifikation von Entitäten und Attributen aus einer Textbeschreibung zur Erstellung eines konzeptionellen Datenmodells.
+- Kontext: Textanalyse-Tool, Fokus auf "Substantiv-zu-Symbol" Mapping.
+- UX-Prinzip:
+  - Der Quelltext (Story) dominiert die linke/obere Hälfte.
+  - Das interaktive ERM-Canvas (Platzhalter für Symbole) die rechte/untere Seite.
+  - "Highlight & Drop": Markierte Worte werden zu Symbolen auf dem Canvas.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Markierter Begriff im Text, 2 = Symbol-Typ (Rechteck/Oval), 3 = Canvas-Struktur.
+- [ ] Textbudget: Kurze, prozesslastige Beschreibungen (max. 30 Wörter).
+- [ ] Keine Vor-Handbücher; die Symbole (Entität/Attribut) werden beim ersten Drag erklärt.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> text-analyzer -> erm-canvas -> property-inspector`.
+- [ ] Text-Area: Desktop 45% Breite, Mobile 30dvh Höhe. Mit "Tap-to-Highlight" Feature.
+- [ ] Canvas: Unendlicher Grid-Hintergrund, Symbole rasten ein.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Split-Screen" mit verschiebbarem Trenner (Panel-Resize).
+- [ ] SVG-basierte Symbole für scharfe Darstellung auf allen Pixeldichten.
+
+4. Kernvisuals
+- [ ] ERM-Standard: Klare Rechtecke (Entität) und Ovale (Attribute) nach Chen- oder Krähenfuß-Notation.
+- [ ] Aktives Highlighting: Text leuchtet in der Farbe des zugeordneten Symbols.
+- [ ] Verbindungslinien: Zeichnen sich automatisch zwischen Entität und Attribut.
+
+5. Interaktion und Feedback
+- [ ] Drag-to-Define: Wort wird auf Karte gezogen -> Auswahlmenü (Entität/Attribut).
+- [ ] Sofort-Check: "Richtig. 'Kunde' ist das Objekt (Entität), 'Name' ist seine Eigenschaft (Attribut)."
+- [ ] Fehlermanagement: "Vorsicht! Ein Verb (z. B. 'bestellt') ist meist keine Entität, sondern eine Beziehung."
+
+6. KPI-Klarheit
+- [ ] Modeling-Progress: "8 von 10 Begriffen modelliert".
+- [ ] Consistency-Score: Zeigt an, wie logisch die Attribute verknüpft sind.
+
+7. Content-/Copy-Feinschliff
+- [ ] Realistische Szenarien: "Onlineshop-Bestellung", "Bibliotheks-Verleih", "Hotel-Reservierung".
+- [ ] Tonalität: Strukturiert, analytisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Ovale auf kleinen Screens noch groß genug für den Text?
+- [ ] Test: Funktioniert das Text-Highlighting zuverlässig auf Touch-Events?
+
+9. Abnahmekriterien
+- [ ] Die Transformation von unstrukturiertem Text zu strukturierten Datenmodellen wird haptisch erlebbar.
+- [ ] Das Interface wirkt wie ein modernes CASE-Tool (Computer-Aided Software Engineering).
+- [ ] Minimale Interaktions-Hürden beim Kategorisieren.

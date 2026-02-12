@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Abstraktion von Logik-Abläufen und deren präzise Implementierung in verschiedenen Hochsprachen (Cross-Language-Thinking).
+- Kontext: Algorithmen-Design, Syntax-Matching, Logik-Transfer.
+- UX-Prinzip:
+  - "The Translator's Bridge": Eine Brücke mit verschiedenen Mautstationen (Sprachen). Der Pseudocode-Gedanke (z. B. "Drucke alles von 1 bis 10") ist die Fracht.
+  - "Syntax-Cargo": Der Spieler packt die Fracht in die sprachspezifischen Container (Python-Syntax, Java-Klammern).
+  - "Logic-Pulse": Wenn die Logik übereinstimmt, leuchtet die Brücke in der Farbe der Zielsprache auf.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der abstrakte Wunsch (Pseudocode), 2 = Die Syntax-Bausteine (Ziel), 3 = Der Logik-Check.
+- [ ] Textbudget: Max. 10 Wörter für den Pseudocode-Auftrag.
+- [ ] "Lingua-Franca": Fokus auf universelle Logik (Loops, Conditions) statt auf Nischen-Syntax.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> thought-bubble (Pseudocode) -> syntax-bridge -> language-containers`.
+- [ ] Bridge-Area: Ein dynamischer Bereich, in dem Bausteine kombiniert werden (Desktop 50% Breite, Mobile 40dvh Höhe).
+- [ ] Containers: Symbole für JS, Python, Java am rechten Rand zum Umschalten der "Sichtweise".
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-to-Translate" Workflow – Auswahl aus einer Syntax-Dropdown-Liste.
+- [ ] `scroll-snap-type: x mandatory` für den Sprachen-Wechsel.
+
+4. Kernvisuals
+- [ ] Brücken-Ästhetik: Konstruktionselemente, Lichtfasern, die Logik-Signale transportieren.
+- [ ] High-Contrast Code: Jedes Sprach-Theme hat seine eigene Farbe (Python-Blau/Gelb, JS-Gelb, Java-Rot).
+- [ ] Ikonografische Wegweiser: Symbole für Schleifen (Loop-Icon) und Gabelungen (Wait-Icon).
+
+5. Interaktion und Feedback
+- [ ] Live-Translation: Während der Spieler Bausteine setzt, wird das Ergebnis im Pseudocode rück-übersetzt ("Das würde bedeuten: Mache X solange Y...").
+- [ ] Aha-Effekt: "Siehst du? Ob `print`, `console.log` oder `System.out.println` – die Logik ist identisch."
+- [ ] Fehler-Prall: Bei falscher Syntax prallt der Baustein mit einem Funken-Effekt von der Brücke ab.
+
+6. KPI-Klarheit
+- [ ] Abstraktions-Level: "Logik-Meister: S-Rank".
+- [ ] Language-Versatility: "Beherrschte Dialekte: 3/3".
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Aufgaben: "Summe berechnen", "Namen filtern", "Endlosschleife verhindern", "Array umkehren".
+- [ ] Tonalität: Erhellend, verbindend, strukturiert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Sprach-Icons auf einem kleinen Display gut unterscheidbar?
+- [ ] Test: Funktioniert das Umschalten zwischen den Sprachen ohne Datenverlust im aktiven Puzzle?
+
+9. Abnahmekriterien
+- [ ] Der Spieler verliert die Angst vor neuer Syntax durch das Verständnis der zugrundeliegenden Logik.
+- [ ] Das Interface wirkt wie ein moderner Hochgeschwindigkeits-Translater.
+- [ ] Maximaler Lerneffekt durch den direkten Vergleich.

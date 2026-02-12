@@ -1,0 +1,19 @@
+Anforderungen
+1. "Moderator-Simulator"
+   - Ziel: Vermittlung von Kompetenzen zur Durchführung von moderierten Usability-Tests und der Gewinnung objektiver Nutzerfeedbacks.
+   - Spielmechanik: 
+     - Simulation einer Test-Session mit einem virtuellen Probanden (AI-gesteuert oder Script).
+     - Der Proband macht einen Fehler oder zögert. Der Spieler muss als Moderator reagieren (z.B. "Nicht helfen", "Lautes Denken anregen").
+     - Identifikation von Suggestivfragen vs. neutrale Beobachtung.
+     - Messbarkeit: Objektivität und Erkenntnisgewinn aus der Session.
+   - Lernziel: Korrekte Durchführung von qualitativen Tests und Vermeidung von Beobachtungsfehlern.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ui_test_methods.json')
+   - Dialog-Optionen und Probandenverhalten.
+- [ ] Shared CSS Check ('business_mathematics.css')
+   - (Anpassung des Dialog-Systems).
+- [ ] Game-Engine Logic ('game_category_match.js')
+   - (Validierung der gewählten Interaktionen).
+- [ ] Integration
+   - Tutorial: Die "Think Aloud" Methode in der Praxis.

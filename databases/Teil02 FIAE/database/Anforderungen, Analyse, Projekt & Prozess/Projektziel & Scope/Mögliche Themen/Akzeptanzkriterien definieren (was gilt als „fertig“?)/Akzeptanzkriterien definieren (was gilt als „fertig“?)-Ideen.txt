@@ -1,0 +1,41 @@
+1. "Fertig oder nicht?"
+   - Ziel: Entscheide, ob eine User Story die Akzeptanzkriterien erfüllt.
+   - Spielmechanik: 
+     - Story: "Login Funktion".
+     - Kriterium: "Fehlermeldung bei falschem PW erscheint".
+     - Szene: User gibt falsches PW ein, Seite lädt einfach neu. -> Durchgefallen.
+     - Messbarkeit: Korrekte Prüfung gegen Kriterien.
+   - Lernziel: Definition of Done (DoD).
+
+2. "Kriterien-Baukasten"
+   - Ziel: Erstelle messbare Akzeptanzkriterien.
+   - Spielmechanik: 
+     - Vage: "Seite muss schnell sein". -> Besser: "Ladezeit < 1s".
+     - Vage: "Sicherer Prozess". -> Besser: "2-Faktor-Auth implementiert".
+     - Messbarkeit: Präzisierung von Anforderungen.
+   - Lernziel: Testbare Anforderungen formulieren.
+
+3. "Abnahme-Simulator"
+   - Ziel: Führe ein Abnahmegespräch mit dem Kunden.
+   - Spielmechanik: 
+     - Kunde fragt: "Warum ist das Feld nicht rot?". 
+     - Prüfe Kriterien: Stand das in der Akzeptanzliste? 
+     - Entscheidung: "Bug" oder "Change Request".
+   - Lernziel: Scope-Management.
+
+4. "Blackbox-Tester"
+   - Ziel: Leite Testfälle aus Akzeptanzkriterien ab.
+   - Spielmechanik: 
+     - Kriterium: "Zahlen von 1-100 erlaubt".
+     - Testeingabe: "101". -> Erwartetes Ergebnis: "Error".
+     - Messbarkeit: Logische Verknüpfung von Akzeptanz und Test.
+   - Lernziel: Software-Qualitätssicherung.
+
+5. "Ready-oder-Nicht?"
+   - Ziel: Unterscheide Definition of Ready (DoR) von Definition of Done (DoD).
+   - Spielmechanik: 
+     - "Design-Mockup liegt vor". -> Ready.
+     - "Unit-Tests sind grün". -> Done.
+     - "Story ist vom PO geschätzt". -> Ready.
+     - Messbarkeit: Prozessverständnis im Agilen.
+   - Lernziel: Prozess-Meilensteine im Sprint.

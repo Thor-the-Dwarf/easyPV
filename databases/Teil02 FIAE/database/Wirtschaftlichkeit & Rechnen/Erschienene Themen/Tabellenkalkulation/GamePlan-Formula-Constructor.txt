@@ -1,0 +1,19 @@
+Anforderungen
+1. "Formula-Constructor"
+   - Ziel: Beherrschung komplexer Tabellenfunktionen zur automatisierten Datenanalyse und Entscheidungsfindung.
+   - Spielmechanik: 
+     - Der Spieler baut funktionale Formeln (WENN, SVERWEIS, SUMMEWENN) aus einzelnen Syntax-Blöcken zusammen.
+     - Anwendung der korrekten Referenzierung (absolut vs. relativ) zur fehlerfreien Duplikation von Berechnungen.
+     - Analyse und Korrektur von typischen Formelfehlern (#WERT!, #BEZUG!).
+     - Messbarkeit: Korrektheit der berechneten Ergebnisse in einer Test-Tabelle.
+   - Lernziel: Effiziente Nutzung von Tabellenkalkulations-Software im kaufmännischen und technischen Kontext.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_econ_spreadsheet_formulas.json')
+   - Tabellen-Daten und Formel-Komponenten.
+- [ ] Shared CSS Check ('business_mathematics.css')
+   - (Nachbau der Tabellen-Zellen-Ansicht).
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Validierung der Formelsyntax).
+- [ ] Integration
+   - Tutorial: Warum absolute Zellbezüge ($A$1) beim Kopieren von Steuersätzen entscheidend sind.

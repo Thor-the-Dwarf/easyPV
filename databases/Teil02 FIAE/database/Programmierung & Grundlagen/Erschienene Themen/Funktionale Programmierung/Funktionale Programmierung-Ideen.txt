@@ -1,0 +1,35 @@
+1. "Map-Reduce-Filter Match"
+   - Ziel: Lerne die 3 Säulen der funktionalen Listenverarbeitung.
+   - Spielmechanik: 
+     - "Alle Preise verdoppeln". -> map().
+     - "Alle Preise > 100 behalten". -> filter().
+     - "Summe aller Preise bilden". -> reduce().
+     - Lernziel: Deklarativer Programmierstil.
+
+2. "Pure-Function-Check"
+   - Ziel: Erkenne Funktionen ohne Seiteneffekte.
+   - Spielmechanik: 
+     - Funktion A: Addiert zwei Zahlen. -> Pure.
+     - Funktion B: Schreibt in eine DB. -> Impure (Seiteneffekt).
+     - Lernziel: Vorhersehbarkeit von Code.
+
+3. "Lambda-Puzzle"
+   - Ziel: Schreibe kompakte anonyme Funktionen.
+   - Spielmechanik: 
+     - `(x, y) => x + y`.
+     - Baue ein Lambda für "Sortiere nach Länge".
+     - Lernziel: Moderne JavaScript / Java Syntax.
+
+4. "Immutability-Wächter"
+   - Ziel: Verstehe "unveränderliche" Daten.
+   - Spielmechanik: 
+     - Du darfst `const user` nicht ändern. Erstelle einen NEUEN User mit geändertem Alter.
+     - Spread-Operator Match: `{...user, age: 30}`.
+     - Lernziel: Datenkonsistenz in funktionalen Apps.
+
+5. "Pipe & Compose"
+   - Ziel: Verbinde Funktionen wie eine Daten-Pipeline.
+   - Spielmechanik: 
+     - Input -> `trim()` -> `toLowerCase()` -> `hash()`.
+     - Was ist das Endergebnis?
+     - Lernziel: Funktionskomposition.

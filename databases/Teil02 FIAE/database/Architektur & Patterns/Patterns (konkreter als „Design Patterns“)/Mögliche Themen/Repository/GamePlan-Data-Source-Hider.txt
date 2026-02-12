@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Vollständige Trennung der Domänenlogik von der Datenhaltungstechnik (Persistenz-Ignoranz) durch eine Repository-Abstraktion.
+- Kontext: Domain Driven Design, Schichtenarchitektur, Datenspeicherung.
+- UX-Prinzip:
+  - "The Librarian": Die Anwendung ist der Leser. Sie fragt den Bibliothekar (Repository) nach einem Buch (Entity).
+  - "Backend-Magic": Woher der Bibliothekar das Buch holt (SQL-Keller, In-Memory-Regal, Cloud-Archiv), bleibt für den Leser das Geheimnis des Bibliothekars.
+  - "Universal Command": Ein Befehl (`find(ID)`) funktioniert immer gleich, egal welches Backend gerade aktiv ist.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Anforderungs-Schnittstelle (The Counter), 2 = Der Datenaustausch-Vorgang, 3 = Die versteckten Backends.
+- [ ] Textbudget: Max. 8 Wörter pro Backend-Beschreibung (z.B. "Langsame Datenbank", "Schneller Cache").
+- [ ] "Isolation-Layer": Eine semi-transparente Wand zwischen Logik und Datenquelle.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> domain-desk -> repository-shield -> backend-storage`.
+- [ ] Shield: Eine schützende Barriere in der Bildschirmmitte (Desktop 40% Breite, Mobile 60% Breite).
+- [ ] Storage: Drei umschaltbare "Keller-Ansichten" am unteren Rand.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-to-change-Backend" Mechanik zum Testen der Austauschbarkeit.
+- [ ] `safe-area-inset` für das Kommando-Menü.
+
+4. Kernvisuals
+- [ ] Bibliotheks- oder Tresor-Ästhetik: Leder/Holz-Optik (klassisch) oder Datencenter (modern) (shared_theme.css).
+- [ ] Datenkapseln: Die Entities werden als wertvolle Container dargestellt, die durch den Schacht gereicht werden.
+- [ ] High-Contrast Status-Anzeige: "Active Backend: POSTGRESQL".
+
+5. Interaktion und Feedback
+- [ ] Austausch-Feedback: "Klick! Wir haben jetzt die Cloud gegen den Speicher getauscht. Die App merkt den Unterschied nicht!"
+- [ ] Erfolg: "Domäne geschützt! Deine Logik bleibt sauber, egal wie oft du die Datenbank änderst."
+- [ ] Performance-Check: Animation, wie Daten aus dem Speicher (schnell) vs. DB (langsam) am Tresen ankommen.
+
+6. KPI-Klarheit
+- [ ] Persistence-Ignorance: "Backend-Isolation: 100%".
+- [ ] Testability-Boost: "Mocking-Level: Exzellent".
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Fälle: "User-Repository", "Order-History", "Configuration-Store".
+- [ ] Tonalität: Organisiert, schützend, zuverlässig.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist der Kontrast zwischen "Sichtbarer Welt" (Desk) und "Verborgener Welt" (Keller) im Darkmode gut?
+- [ ] Test: Bleiben die Daten am Desk konsistent, wenn man mitten im Prozess das Backend wechselt?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler verinnerlicht das Repository als "Saubere Schnittstelle zur Außenwelt".
+- [ ] Das Interface wirkt wie ein exklusives Archiv-Management-System.
+- [ ] Maximaler Lerneffekt für das Prinzip der losen Kopplung.

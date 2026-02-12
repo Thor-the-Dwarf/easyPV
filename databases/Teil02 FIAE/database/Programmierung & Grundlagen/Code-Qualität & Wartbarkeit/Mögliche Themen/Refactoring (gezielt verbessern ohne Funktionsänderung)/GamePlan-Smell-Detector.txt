@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Identifikation und Lokalisierung von Code Smells zur Vorbereitung effektiver Refactoring-Maßnahmen.
+- Kontext: Technische Schulden, Code-Qualität, Wartbarkeitseingriffe.
+- UX-Prinzip:
+  - "The Code Nose": Der Spieler steuert eine "Schnüffel-Sonde" (Curser/Lupe) über den Code. In der Nähe von Smells vibriert das UI oder zeigt visuelle "Dämpfe".
+  - "Smell-Categories": Verschiedene Smells haben unterschiedliche Farben (z.B. Magic Numbers = Gelber Schwefel, Long Method = Grauer Rauch).
+  - "Neutralisation": Durch Auswahl des richtigen Refactoring-Werkzeugs (z.B. Extract Method) wird der Smell abgesaugt.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der "stinkende" Code-Abschnitt, 2 = Die Art des Smells, 3 = Das passende Gegenmittel.
+- [ ] Textbudget: Mittlere Code-Blöcke (15-20 Zeilen) zur Analyse von Strukturen.
+- [ ] "Smell-Detector HUD": Ein Display am Rand, das die Intensität des Geruchs anzeigt.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> code-inspection-chamber -> tool-belt -> complexity-meter`.
+- [ ] Inspection-Chamber: Ein Bereich mit speziellen Beleuchungseffekten für Smells (Desktop 70% Breite, Mobile 50dvh Höhe).
+- [ ] Tool-Belt: Symbole für Refactoring-Techniken am unteren Rand.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-to-Sniff" – Antippen einer Zeile zeigt die Smell-Analyse.
+- [ ] Haptisches Feedback (falls unterstützt): Kurze Vibration bei Smell-Kontakt.
+
+4. Kernvisuals
+- [ ] Sci-Fi Labor Ästhetik: Neonfarbene Gase, Biohazard-Icons, Scan-Linien (shared_theme.css).
+- [ ] Deformierter Code: Schlechter Code wirkt visuell "verbogen" oder unscharf, bis er gereinigt wird.
+- [ ] High-Contrast Marking für die Fundstellen.
+
+5. Interaktion und Feedback
+- [ ] Diagnose-Feedback: "Riecht nach 'Magic Numbers'! Warum steht hier `86400` statt einer Konstante `SECONDS_PER_DAY`?"
+- [ ] Reinigungs-Effekt: Der Code wird begradigt und die Dämpfe verschwinden mit einem Sauggeräusch.
+- [ ] Erfolg: "Labor gereinigt. Die Luft (Wartbarkeit) ist wieder rein."
+
+6. KPI-Klarheit
+- [ ] Detection-Accuracy: "Trefferrate: 100%".
+- [ ] Tech-Debt-Reduction: "Technische Schulden getilgt: X%".
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Smells: Long Parameter List, Data Clumps, Speculative Generality, Shotgun Surgery.
+- [ ] Tonalität: Analytisch, forschend, präzise.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die "Dampf-Effekte" auf kleinen Handy-Displays eindeutig den Codezeilen zugeordnet?
+- [ ] Test: Ist die Refactoring-Zuordnung auch für Einsteiger verständlich erklärt?
+
+9. Abnahmekriterien
+- [ ] Der Spieler entwickelt eine Intuition für "schlechte" Code-Muster.
+- [ ] Das Interface wirkt wie ein professionelles Analysetool der Zukunft.
+- [ ] Maximale Befriedigung beim "Säubern" komplexer Strukturen.

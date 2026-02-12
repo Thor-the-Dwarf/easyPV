@@ -1,0 +1,19 @@
+Anforderungen
+1. "RAID-Level-Sorter"
+   - Ziel: Beherrschung der verschiedenen RAID-Konzepte zur Optimierung von Datensicherheit, Kapazität und Schreib/Lese-Performance.
+   - Spielmechanik: 
+     - Der Spieler konfiguriert virtuelle Disk-Arrays durch Auswahl der RAID-Level (0, 1, 5, 6, 10).
+     - Simulation von Festplattenausfällen und Durchführung von Rebuild-Prozessen.
+     - Berechnung der Netto-Kapazität und der Ausfallwahrscheinlichkeit basierend auf der Anzahl der Disks.
+     - Messbarkeit: Optimale Balance zwischen Kosten, Performance und Sicherheit für ein gegebenes Lastprofil.
+   - Lernziel: Befähigung zur Planung und Administration von hochverfügbaren Storage-Systemen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_raid_levels.json')
+   - RAID-Eigenschaften und Disk-Szenarien.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Visuelle Darstellung des Disk-Arrays).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Berechnungs- und Simulationslogik).
+- [ ] Integration
+   - Info: Warum RAID 5 bei sehr großen Platten wegen langer Rebuild-Zeiten riskant ist.

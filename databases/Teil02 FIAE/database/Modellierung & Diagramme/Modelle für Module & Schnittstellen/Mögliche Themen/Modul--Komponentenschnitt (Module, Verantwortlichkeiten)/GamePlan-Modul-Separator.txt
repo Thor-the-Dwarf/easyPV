@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Optimierung der Software-Architektur durch Bildung hochkohärenter Module bei gleichzeitig loser Kopplung.
+- Kontext: Architektur-Werkstatt, Fokus auf Verantwortungsabgrenzung.
+- UX-Prinzip:
+  - "Modul-Kapseln" (Container) als Zielgebiete.
+  - "Funktions-Teilchen" (Floating Bubbles) müssen eingefangen und einsortiert werden.
+  - Visueller "Cohesion-Meter" pro Modul zeigt die Passgenauigkeit.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Funktion (z. B. "Login prüfen"), 2 = Die Modul-Kapseln (Auth, Rechnung, Logistik), 3 = Architektur-Score.
+- [ ] Textbudget: Max. 20 Zeichen pro Funktion zur Wahrung der Blasen-Optik.
+- [ ] Keine Vor-Anleitung; der "Cohesion-Meter" reagiert live auf jede Zuordnung.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> function-pool -> module-grid -> score-hud`.
+- [ ] Module-Grid: 3-4 große, farblich getrennte Bereiche (Desktop nebeneinander, Mobile 2x2 Grid).
+- [ ] Drag-Interaktion: Fließende Bewegung der Teilchen in die Kapseln.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-to-Assign" Mechanik für schnelle Daumenbedienung.
+- [ ] Responsive Containers: Kapseln passen ihre Größe dem Inhalt an (Auto-Layout).
+
+4. Kernvisuals
+- [ ] Kapsel-Look: Transparente "Glasmorphismus"-Container (shared_theme.css).
+- [ ] Magnet-Effekt: Teilchen werden von thematisch passenden Modulen leicht "angezogen" (visueller Hinweis).
+- [ ] Coupling-Lines: Dünne Linien zwischen Modulen zeigen notwendige Abhängigkeiten.
+
+5. Interaktion und Feedback
+- [ ] Sofort-Effekt: "Gute Wahl! 'Passwort-Reset' gehört zwingend zum Modul 'Identity'."
+- [ ] Architektur-Feedback: "Achtung! Du hast eine Rechnungs-Funktion in den Warenkorb gelegt -> Das erhöht die Kopplung unnötig!"
+- [ ] Cohesion-Sync: Modul färbt sich bei 100% Homogenität golden.
+
+6. KPI-Klarheit
+- [ ] Cohesion-Score (Innere Stabilität) pro Modul.
+- [ ] Coupling-Level (Gefährliche Abhängigkeit) für das Gesamtsystem.
+
+7. Content-/Copy-Feinschliff
+- [ ] Klare Modul-Szenarien: "E-Commerce", "HR-Portal", "Smart-Metering Dashboard".
+- [ ] Tonalität: Beratend, strukturierend, professionell.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Funktions-Blasen auf kleinen Screens auch bei 10 Stück pro Kapsel noch lesbar?
+- [ ] Test: Sind die Drag-Physik und Snap-In-Effekte flüssig (60fps)?
+
+9. Abnahmekriterien
+- [ ] Der Spieler lernt das abstrakte Prinzip der Kohäsion durch visuelle Homogenität.
+- [ ] Das Interface wirkt wie ein modernes Architektur-Design-Lab.
+- [ ] Hoher motivatorischer Anreiz durch das "Aufräum-Prinzip".

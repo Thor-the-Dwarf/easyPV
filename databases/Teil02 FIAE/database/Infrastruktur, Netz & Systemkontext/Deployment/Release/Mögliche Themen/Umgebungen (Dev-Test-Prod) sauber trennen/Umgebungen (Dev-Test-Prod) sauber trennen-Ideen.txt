@@ -1,0 +1,29 @@
+1. "Stage-the-Code Racer"
+   - Ziel: Trenne Entwicklung, Test und Produktion.
+   - Spielmechanik: 
+     - Code geht von `Dev` -> `Test`. Wenn OK -> `Prod`.
+     - Lernziel: Release-Zyklen.
+
+2. "Config-Override Simulator"
+   - Ziel: Nutze unterschiedliche Datenbanken für Stages.
+   - Spielmechanik: 
+     - In `Dev` nutzt du `localhost`, in `Prod` die Cloud-DB. Tausche die Config-Dateien aus.
+     - Lernziel: Environment-Management.
+
+3. "Bug-Reproducer (Prod vs. Test)"
+   - Ziel: Warum "Works on my machine" nicht reicht.
+   - Spielmechanik: 
+     - In `Prod` tritt ein Bug auf, im `Test` nicht. Finde den Unterschied in den Server-Versionen.
+     - Lernziel: Parität der Umgebungen.
+
+4. "Data-Privacy Match"
+   - Ziel: Nutze keine echten User-Daten im Test.
+   - Spielmechanik: 
+     - Ersetze die echte Kunden-DB durch anonymisierte Testdaten für die `Dev` Umgebung.
+     - Lernziel: Datenschutz in der Entwicklung.
+
+5. "Blue-Green Deployment Puzzle"
+   - Ziel: Update ohne Downtime.
+   - Spielmechanik: 
+     - Schalte den Load Balancer von der alten Umgebung (Blau) auf die neue (Grün) um.
+     - Lernziel: Hochverfügbare Rollouts.

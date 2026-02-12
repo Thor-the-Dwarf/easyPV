@@ -1,0 +1,19 @@
+Anforderungen
+1. "Authenticity-Check"
+   - Ziel: Vermittlung der Funktion und Bedeutung digitaler Signaturen zur Sicherung der Authentizität und Nicht-Abstreitbarkeit von Informationen.
+   - Spielmechanik: 
+     - Prozess-Simulation: Ein Dokument wird gesendet. Der Spieler muss den Public Key des Absenders nutzen, um die Signatur zu verifizieren.
+     - Erkennung von Manipulationen: Wenn das Dokument geändert wurde, bricht die Signatur-Prüfung ab.
+     - Zuordnung von Private Key (Signieren) und Public Key (Verifizieren).
+     - Messbarkeit: Korrekte Durchführung der Verifizierungskette.
+   - Lernziel: Verständnis der asymmetrischen Kryptografie im Kontext der Datenintegrität.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_digital_signature.json')
+   - Dokument-Hash-Paare und Schlüssel-Sätze.
+- [ ] Shared CSS Check ('web_apis.css')
+   - Visueller Checkmark-Indikator für gültige Signaturen.
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Hash-Vergleichs-Logik).
+- [ ] Integration
+   - Info: Warum eine Signatur keine Verschlüsselung ist, aber beide oft zusammen genutzt werden.

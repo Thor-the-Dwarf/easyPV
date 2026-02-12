@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Praktische Beherrschung rekursiver Abläufe und Vermeidung von Stack-Exceptions durch korrekte Abbruchbedingungen.
+- Kontext: Algorithmen-Theorie, Speicherverwaltung, Call-Stack Simulation.
+- UX-Prinzip:
+  - "The Matryoshka Tower": Jede Rekursion ist eine neue Ebene in einem Turm (oder eine kleinere Puppe im Inneren).
+  - "The Gravity Limit": Der Turm darf nur eine bestimmte Höhe erreichen (Stack Size), bevor er instabil wird und einstürzt.
+  - "Base-Case-Lock": Der Spieler muss den "Boden-Deckel" (Abbruchbedingung) genau im richtigen Moment schließen, um den Rücklauf (Return) zu starten.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der aktuelle Verschachtelungsgrad (Tiefe), 2 = Die Abbruchbedingung (Der Schlüssel), 3 = Der Return-Value Stream.
+- [ ] Textbudget: Max. 5 Zeilen rekursiver Code (z.B. `return n * fact(n-1)`).
+- [ ] "Safe-Zone Indicator": Ein Balken, der zeigt, wie nah man am Stack-Overflow ist.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> stack-tower -> code-inspector -> return-value-well`.
+- [ ] Tower-Area: Vertikaler Stapel von Funktions-Containern (Desktop mittig, Mobile bildschirmfüllend).
+- [ ] Controls: Ein großer "Base Case!" Button, um die Rekursion manuell oder logisch zu beenden.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-Up" zum Tiefer-Gehen, "Double-Tap" zum Setzen des Base-Case.
+- [ ] Animierter Auto-Scroll: Das UI folgt immer der "Spitze" der Rekursion.
+
+4. Kernvisuals
+- [ ] Architektonische Ästhetik: Stapelnde Elemente, gläserne Container, die Werte enthalten (shared_theme.css).
+- [ ] "Overflow-Vibration": Der Screen zittert, wenn der Stack fast voll ist.
+- [ ] Return-Licht: Wenn der Base-Case erreicht ist, fließen alle Werte als Lichtkugel von oben nach unten zurück.
+
+5. Interaktion und Feedback
+- [ ] Tiefen-Feedback: "Ebene 15 erreicht... Speicher wird knapp! Aktiviere jetzt den Base-Case!"
+- [ ] Erfolg: "Punktlandung! Die Rekursion wurde sicher aufgelöst. Ergebnis wurde erfolgreich berechnet."
+- [ ] Crash-Feedback: "BOOM! StackOverflowError. Du hast vergessen, dem Turm ein Fundament zu geben."
+
+6. KPI-Klarheit
+- [ ] Recursion-Efficiency: "Optimale Tiefe erreicht".
+- [ ] Memory-Safety Score: "Stabilität: 100%".
+
+7. Content-/Copy-Feinschliff
+- [ ] Beispiele: "Fakultät von N", "Fibonacci-Baum", "Ordnerstruktur durchsuchen", "Teile-und-Herrsche (MergeSort)".
+- [ ] Tonalität: Spannend, strukturiert, analytisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind 10 gestapelte Ebenen auf dem Handy noch erkennbar?
+- [ ] Test: Funktioniert die "Rücklauf-Animation" (das Zusammenfalten des Turms) flüssig?
+
+9. Abnahmekriterien
+- [ ] Der Spieler verinnerlicht das "In-die-Tiefe-gehen" und das "Zurückkommen" als zwei Phasen der Rekursion.
+- [ ] Das Interface wirkt wie ein präzises Diagnose-Instrument für Algorithmen.
+- [ ] Höchste Spannung beim Spiel gegen den Speicher-Absturz.

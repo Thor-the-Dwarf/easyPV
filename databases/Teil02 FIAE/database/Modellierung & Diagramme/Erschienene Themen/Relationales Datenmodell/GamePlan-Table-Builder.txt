@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Fehlerfreie Umsetzung eines ERMs in ein relationales Tabellenschema unter Einhaltung der Integritätsregeln (PK/FK).
+- Kontext: Schema-Designer, Fokus auf Tabellenstruktur und Verknüpfungen.
+- UX-Prinzip:
+  - Das ERM-Referenzbild ist permanent (minimiert) sichtbar.
+  - Der "Schema-Editor" ist die Hauptarbeitsfläche.
+  - Visuelle Verknüpfung: Linien ziehen von PK zu FK baut die Beziehung auf.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Tabellen-Definition (Name/Spalten), 2 = Schlüssel-Typen (PK/FK), 3 = Beziehungs-Linien.
+- [ ] Textbudget: Max. 5 Spalten pro Tabelle zur Wahrung der Übersicht.
+- [ ] Keine Intro-Container; der erste Tabellenkopf wartet bereits auf Input.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> erm-preview -> table-grid -> relationship-overlay`.
+- [ ] Table-Grid: Freie Platzierung der Tabellen-Boxen.
+- [ ] Controls: Kontextmenü pro Spalte (PK/FK Toggle).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Canvas-Zoom: Pinch-to-Zoom auf Mobile zur Navigation im Schema.
+- [ ] `overflow: hidden` für die Page, internes Scrolling für das Schema-Feld.
+
+4. Kernvisuals
+- [ ] Golden-Key Icon: Markiert Primärschlüssel prominent.
+- [ ] High-Contrast Linien: Zeigen die Richtung der Beziehung (1:n).
+- [ ] Tabellen-Stil: Inspiriert von modernen DB-Clients (DBeaver/DataGrip).
+
+5. Interaktion und Feedback
+- [ ] Auto-Mapping: "Fremdschlüssel erkannt! Die Spalte 'Kunden_ID' verweist nun auf die Tabelle 'Kunde'."
+- [ ] Fehler-Highlight: Widersprüchliche Datentypen leuchten rot auf.
+- [ ] "Normalize-Check": Warnung bei offensichtlichen Redundanzen.
+
+6. KPI-Klarheit
+- [ ] Integritäts-Status: "Beziehungen vollständig: 100%".
+- [ ] Schema-Score: "Normalisierungsgrad: High".
+
+7. Content-/Copy-Feinschliff
+- [ ] Realistische Schemen: "Kunde-Bestellung-Position", "Auto-Halter-Versicherung".
+- [ ] Tonalität: Präzise, technisch, datenzentriert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Überlappen sich die Beziehungs-Linien auf kleinen Screens (Crossover-Handling)?
+- [ ] Test: Sind die Schlüssel-Icons auch bei 12px Fontsize erkennbar?
+
+9. Abnahmekriterien
+- [ ] Der Spieler versteht die logische Notwendigkeit von Fremdschlüsseln für Daten-Relationen.
+- [ ] Das Interface wirkt wie ein professionelles Datenbank-Design-Tool.
+- [ ] Schnelle, flüssige Bedienung beim Erstellen der Spalten.

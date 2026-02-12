@@ -1,0 +1,29 @@
+1. "VM-Provisioning Speedrun"
+   - Ziel: Erstelle eine einsatzbereite virtuelle Maschine.
+   - Spielmechanik: 
+     - Wähle OS, CPU, RAM und Disk. Starte die Installation.
+     - Lernziel: Server-Bereitstellung.
+
+2. "Hardware-Consolidation Match"
+   - Ziel: Reduziere physische Server.
+   - Spielmechanik: 
+     - Du hast 5 alte physikalische Server. Packe sie alle als VMs auf einen modernen starken Host.
+     - Lernziel: Virtualisierungsvorteile.
+
+3. "Live-Migration Flight"
+   - Ziel: Verschiebe eine laufende VM.
+   - Spielmechanik: 
+     - Host A muss gewartet werden. Schiebe die VM auf Host B, ohne dass der User etwas merkt (vMotion).
+     - Lernziel: Hochverfügbarkeit.
+
+4. "Template-Manager"
+   - Ziel: Erstelle viele gleiche VMs schnell.
+   - Spielmechanik: 
+     - Erstelle ein "Golden Image" mit allen Updates. Klone es 10 mal.
+     - Lernziel: Automatisierung in der Administration.
+
+5. "Snapshot-Fail-Safe"
+   - Ziel: Schutz vor riskanten Änderungen.
+   - Spielmechanik: 
+     - Mache einen Snapshot, bevor du das kritische Datenbank-Upgrade startest.
+     - Lernziel: Fehlertoleranz.

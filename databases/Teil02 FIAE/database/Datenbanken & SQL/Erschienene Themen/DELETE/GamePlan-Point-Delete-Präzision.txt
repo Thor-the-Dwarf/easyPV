@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Chirurgisch präzises Löschen einzelner Datensätze über den Primärschlüssel zur Vermeidung von Massendatenverlust.
+- Kontext: Datenbank-Reinigung, Fokus auf Integrität und Selektion.
+- UX-Prinzip:
+  - "The Scalpel": Das Lösch-Werkzeug muss exakt auf die ID angesetzt werden.
+  - "Integritätssperre": Wenn die Zeile Kinder (Fremdschlüssel) hat, erscheint ein Warn-Icon, das die Konsequenz (Cascade vs. Restrict) anzeigt.
+  - "Ghost-Effect": Gelöschte Zeile löst sich in Rauch auf, während die anderen Zeilen unberührt bleiben.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Ziel-ID (PK), 2 = Der DELETE-Befehl (Code), 3 = Referentielle Integrität (Warn-Leuchten).
+- [ ] Textbudget: Max. 10 Wörter für das Lösch-Ziel.
+- [ ] Keine Vor-Handbücher; die Gefahr eines fehlerhaften Deletes wird durch das "Scalpel"-Visual haptisch.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> record-list -> detail-magnifier -> delete-shredder`.
+- [ ] Record-Area: Liste der Datensätze; der Ziel-Datensatz pulsiert dezent (Desktop 60% Breite, Mobile 40dvh Höhe).
+- [ ] Shredder: Die Lösch-Zone am unteren Rand. Erst wenn die WHERE-Klausel die korrekte ID enthält, öffnet sich der Schredder.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-to-Identify-ID" -> "Tap-to-Shred".
+- [ ] Safe-Areas für den finalen Bestätigungs-Button.
+
+4. Kernvisuals
+- [ ] Skalpell-Cursor: Der Mauszeiger/Touch-Punkt wird zum Präzisions-Werkzeug.
+- [ ] "Data Smoke": Partikel-Animation beim rechtssicheren Löschen.
+- [ ] High-Contrast PK-Label (FETT & GOLD).
+
+5. Interaktion und Feedback
+- [ ] Live-Preview: "Achtung! Deine WHERE-Bedingung würde 42 Zeilen löschen. Setze das Skalpell präziser an!"
+- [ ] Erfolg: "Patient operiert! Datensatz ID 702 wurde sicher entfernt. Die Tabelle ist sauber."
+- [ ] Integritäts-Feedback: "Klick blockiert! Löschen nicht möglich, da noch 5 Bestellungen an diesem Kunden hängen."
+
+6. KPI-Klarheit
+- [ ] Precision-Level: "Chirurgische Genauigkeit: 100%".
+- [ ] Integritäts-Score: "Referentielle Sicherheit: Gewährleistet".
+
+7. Content-/Copy-Feinschliff
+- [ ] Realistische Fälle: "Gesperrten User löschen", "Test-Bestellung entfernen", "Dublette terminieren".
+- [ ] Tonalität: Konzentriert, präzise, verantwortungsbewusst.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist der Schredder auf kleinen Handys nicht im Weg der Liste?
+- [ ] Test: Sind die Warn-Icons (FK-Beziehung) intuitiv verständlich?
+
+9. Abnahmekriterien
+- [ ] Der Spieler verinnerlicht, dass DELETE immer eine Identitätsprüfung (PK) erfordert.
+- [ ] Das Interface wirkt wie ein medizinisches Präzisions-Werkzeug.
+- [ ] Maximale Wirkung der Lösch-Animation.

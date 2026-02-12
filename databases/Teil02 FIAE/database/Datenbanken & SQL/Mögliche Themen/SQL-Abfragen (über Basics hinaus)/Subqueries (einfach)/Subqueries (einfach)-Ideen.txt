@@ -1,0 +1,35 @@
+1. "Query-in-Query"
+   - Ziel: Nutze das Ergebnis einer Abfrage in einer anderen.
+   - Spielmechanik: 
+     - Aufgabe: "Finde alle Produkte, deren Preis über dem Durchschnitt liegt".
+     - SQL: `WHERE price > (SELECT AVG(price) FROM product)`.
+     - Messbarkeit: Schachtelung der Befehle.
+   - Lernziel: Dynamische Filterung.
+
+2. "IN-Operator-Puzzle"
+   - Ziel: Filtere Liste gegen Subquery-Ergebnis.
+   - Spielmechanik: 
+     - "Alle Kunden, die schon mal 'Pizza' bestellt haben".
+     - `WHERE id IN (SELECT kunde_id FROM bestellung WHERE prod='Pizza')`.
+     - Lernziel: Mengenorientierte Abfragen.
+
+3. "Exists-Check"
+   - Ziel: Prüfe Existenz ohne Daten zu laden.
+   - Spielmechanik: 
+     - `WHERE EXISTS (SELECT 1 FROM backup WHERE user_id = u.id)`.
+     - Lerne: EXISTS bricht ab, sobald ein Treffer gefunden wurde (schnell!).
+     - Lernziel: Performance durch EXISTS statt IN.
+
+4. "Correlated-Subquery"
+   - Ziel: Verknüpfe innere Query mit der äußeren (u.id).
+   - Spielmechanik: 
+     - "Finde den letzten Login-Eintrag pro User".
+     - `SELECT * FROM logins l WHERE timestamp = (SELECT MAX(timestamp) FROM logins WHERE user_id = l.user_id)`.
+     - Lernziel: Komplexe Abhängigkeiten modellieren.
+
+5. "Subquery-vs-Join"
+   - Ziel: Entscheide, wann was besser ist.
+   - Spielmechanik: 
+     - "Oft ist JOIN performanter".
+     - Wandle eine Subquery in einen JOIN um.
+     - Lernziel: Query-Rewriting & Optimierung.

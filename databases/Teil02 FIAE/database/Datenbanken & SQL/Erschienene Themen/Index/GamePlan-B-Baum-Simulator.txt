@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Praktische Demonstration des Performance-Gewinns durch Indizierung (Suche in O(log n) vs O(n)).
+- Kontext: Performance-Optimierung, Datenstrukturen.
+- UX-Prinzip:
+  - "The Shortcut": Ein Rennen zwischen zwei Suchläufern. Der "Linear Runner" klappert jedes Haus (Record) ab; der "Index Flyer" springt elegant über Knotenbäume direkt zum Ziel.
+  - "Counting the Steps": Jeder Datenbank-Zugriff (I/O) wird als Schlag/Geräusch/Zähler visualisiert.
+  - "Node-Zoom": Das UI zoomt in die B-Baum-Knoten hinein, um den Entscheidungsprozess (links/rechts) zu zeigen.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Such-Animation (Aktion), 2 = I/O Counter (Kosten), 3 = Baum-Struktur (Logik).
+- [ ] Textbudget: Max. 10 Zeichen pro Knotenwert.
+- [ ] "Direct Comparison": Beide Suchmethoden laufen parallel oder nacheinander für maximale Kontrastwirkung.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> racetrack (Full Scan) -> index-tree (Index Seek) -> stopwatch`.
+- [ ] Tree-Area: SVG-basierter Graph (Desktop 60% Breite, Mobile 50dvh Höhe).
+- [ ] Controls: "Start Race" Button zentral; Zoom-Controls für den Baum.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] SVG-Auto-Layout: Der Baum ordnet seine Blätter je nach Screenbreite anders an.
+- [ ] Mobile: Fokus auf den "Gewinn" – Die Zeitersparnis ist das zentrale Element.
+
+4. Kernvisuals
+- [ ] Lichtpfade: Der Weg des Index-Suchlaufs leuchtet neon-farben auf.
+- [ ] Progress-Bar: Zeigt beim Full Scan, wie viel Prozent noch fehlen, während der Index schon fertig ist.
+- [ ] Sci-Fi Ästhetik: Dunkler Hintergrund, leuchtende Knotenverbindungen.
+
+5. Interaktion und Feedback
+- [ ] Schritt-für-Schritt Modus: "Wert 42 ist größer als 30 -> Wir gehen nach rechts!"
+- [ ] Aha-Moment: "Wahnsinn! Statt 250 Häuser abzusuchen, haben wir nur 4 Knoten-Entscheidungen gebraucht."
+- [ ] Maintenance-Warnung: "Index-Pflege kostet Zeit: Beim Einfügen eines neuen Hauses muss der Baum erst umgegraben werden!"
+
+6. KPI-Klarheit
+- [ ] Search-Optimization: "Faktor 50x schneller".
+- [ ] I/O Reduction: "Zugriffe gesenkt von 250 auf 4".
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Datenmengen: "Suche in 100.000 Kundendatensätzen".
+- [ ] Tonalität: Analytisch, beeindruckend, performance-fokussiert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Zahlen in den Baum-Knoten auf dem Smartphone noch lesbar?
+- [ ] Test: Bleibt die Animation ruckelfrei bei einer Baumtiefe von 4+?
+
+9. Abnahmekriterien
+- [ ] Der Spieler begreift den massiven Skalierungsvorteil von Indizes.
+- [ ] Das Interface wirkt wie ein Simulator für High-Frequency-Trading oder Big Data.
+- [ ] Maximale Anschaulichkeit der O(log n) Komplexität.

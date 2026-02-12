@@ -1,0 +1,19 @@
+Anforderungen
+1. "License-Selector-Match"
+   - Ziel: Verständnis der verschiedenen Open-Source-Lizenzmodelle und deren rechtliche Auswirkungen auf die Softwareverteilung und Kommerzialisierung.
+   - Spielmechanik: 
+     - Der Spieler muss verschiedenen Projektszenarien (z.B. "Firmeninterne Nutzung", "Veröffentlichung mit Copyleft-Zwang") die passende Lizenz (MIT, GPL, Apache, BSD) zuordnen.
+     - Analyse von Lizenztexten auf Erlaubnisse, Bedingungen und Einschränkungen.
+     - Simulation einer Compliance-Prüfung bei der Integration von Drittanbieter-Bibliotheken.
+     - Messbarkeit: Korrekte Auswahl der Lizenzen zur Erfüllung der Projektziele.
+   - Lernziel: Beherrschung der FOSS-Rechtsgrundlagen und Vermeidung von Lizenzverletzungen (License Compliance).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_oss_licenses.json')
+   - Lizenz-Typen und Szenario-Beschreibungen.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Klassifizierungs-Interfaces).
+- [ ] Game-Engine Logic ('game_category_match.js')
+   - (Wiederverwendung der Matching-Logik).
+- [ ] Integration
+   - Tutorial: Unterschied zwischen permissiven Lizenzen (MIT) und "Viralen" Lizenzen (GPL).

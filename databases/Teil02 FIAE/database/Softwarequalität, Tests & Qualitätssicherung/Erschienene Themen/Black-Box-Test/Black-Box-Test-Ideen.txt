@@ -1,0 +1,30 @@
+1. "Input-Logic-Mystery"
+   - Ziel: Teste ein System ohne den Quellcode zu kennen.
+   - Spielmechanik: 
+     - Gib Werte ein, beobachte das Ergebnis. Was macht die Black-Box?
+     - Lernziel: Anforderungsbasiertes Testen.
+
+2. "Spezifikations-Checker"
+   - Ziel: Teste gegen die Anforderungen.
+   - Spielmechanik: 
+     - "Das System soll bei falschem PW sperren".
+     - Prüfe, ob es das tut (ohne in den Code zu schauen).
+     - Lernziel: Validierung der Business Logic.
+
+3. "Boundary-Value-Game"
+   - Ziel: Nutze Grenzwertanalyse.
+   - Spielmechanik: 
+     - Schieberegler für Werte. Wo sind die Grenzen der Akzeptanz?
+     - Lernziel: Effiziente Testfallerstellung.
+
+4. "Äquivalenzklassen-Puzzle"
+   - Ziel: Reduziere die Anzahl der Testfälle.
+   - Spielmechanik: 
+     - Gruppiere Eingabewerte, die das gleiche Ergebnis liefern sollten.
+     - Lernziel: Testfall-Optimierung.
+
+5. "Error-Guessing-Detector"
+   - Ziel: Nutze Erfahrung, um Fehler zu finden.
+   - Spielmechanik: 
+     - Wo würde ein erfahrener Tester zuerst suchen? (Sonderzeichen, Leerstrings).
+     - Lernziel: Intuition im Testing.

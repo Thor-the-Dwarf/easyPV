@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Präzise Trennung von Zuständigkeiten (Model, View, Controller/ViewModel) zur Schaffung robuster und wartbarer User Interfaces.
+- Kontext: UI-Frameworks (React, Vue, Angular, JavaFX), Architektur-Patterns.
+- UX-Prinzip:
+  - "The Stage Crew": Ein Theaterauftritt. Die Dramaturgie/Text (Model), das Bühnenbild/Licht (View) und der Regisseur/Souffleur (Controller/ViewModel).
+  - "Task-Matching": Jede Aufgabe (z. B. "Datenbank laden", "Hintergrundfarbe ändern") muss dem richtigen Crew-Mitglied zugewiesen werden.
+  - "Information-Flow": Ein Zuschauer (User) drückt einen Knopf -> Der Regisseur sieht es -> Er bittet das Drehbuch um neue Daten -> Das Bühnenbild ändert sich.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Rollen-Icons (Akteure), 2 = Die Aufgaben-Liste (Missionen), 3 = Die Kommunikations-Pfade.
+- [ ] Textbudget: Max. 10 Wörter pro Aufgaben-Badge (z. B. "Wandle Eingabe in Zahl um").
+- [ ] "Clear Separation": Farblich getrennte Zonen (Model-Rot, View-Blau, Controller-Grün).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> theater-stage (Preview) -> role-dock (Target) -> task-inventory (Source)`.
+- [ ] Stage: Ein kleiner UI-Screenshot, der sich live aktualisiert, wenn Aufgaben gelöst werden.
+- [ ] Dock: Drei gleichgroße Bereiche in der Mitte (Desktop horizontal, Mobile vertikal).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-Task-to-Role" Mechanik.
+- [ ] `aspect-ratio` für die Theater-Bühne zur Vermeidung von Verzerrungen.
+
+4. Kernvisuals
+- [ ] Theater-Kultur Ästhetik: Vorhänge, Scheinwerfer, Skripte (shared_theme.css).
+- [ ] Dynamische Pfade: Leuchtende Linien zeigen den Datenfluss zwischen den Rollen an.
+- [ ] High-Contrast Typografie für die Rollenbeschriftungen.
+
+5. Interaktion und Feedback
+- [ ] Rollen-Feedback: "Klick! Der Controller nimmt die Eingabe entgegen und delegiert weiter. So gehört sich das."
+- [ ] Fehler-Warnung: "Stopp! Wenn das Model direkt das Layout ändert, herrscht Chaos auf der Bühne (Spaghetti-Code)!"
+- [ ] Erfolg: "Showtime! Deine Architektur steht, die Rollen sind perfekt getrennt."
+
+6. KPI-Klarheit
+- [ ] Structural-Integrity: "Architektur-Reinheit: 100%".
+- [ ] Maintenability-Index: "Wartbarkeit: Exzellent".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Nutzerprofil anzeigen", "Warenkorb füllen", "Passwort-Stärke validieren".
+- [ ] Tonalität: Dramaturgisch, strukturiert, professionell.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Rollen-Symbole auf einem kleinen Handy-Bildschirm eindeutig?
+- [ ] Test: Funktioniert die "Wellen-Animation" des Datenflusses auch bei schnellen Interaktionen?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler versteht MVC nicht als Formel, sondern als logisches Teamwork.
+- [ ] Das Interface wirkt wie eine kreative Leitwarte für Regisseure.
+- [ ] Absolut klares Verständnis für die Richtung des Datenflusses.

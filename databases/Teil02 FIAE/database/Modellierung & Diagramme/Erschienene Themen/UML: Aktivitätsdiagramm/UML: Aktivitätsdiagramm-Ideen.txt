@@ -1,0 +1,38 @@
+1. "Token-Runner"
+   - Ziel: Verstehe den Kontrollfluss im Aktivitätsdiagramm.
+   - Spielmechanik: 
+     - Bewege einen "Token" durch Start, Aktionen, Entscheidungen bis zum Ende.
+     - Frage: Wo landet der Token bei einer "Nein"-Entscheidung?
+     - Messbarkeit: Logisches Verfolgen des Pfads.
+   - Lernziel: Ablauflogik & Kontrollstrukturen.
+
+2. "Parallel-Power"
+   - Ziel: Nutze Fork und Join korrekt.
+   - Spielmechanik: 
+     - Aufgabe: "Vorbereitung Hauptgang" und "Vorbereitung Salat" (gleichzeitig).
+     - Setze Fork-Balken und Join-Balken an die richtige Stelle.
+     - Messbarkeit: Erkennen von Synchronisationspunkten.
+   - Lernziel: Nebenläufigkeit in Modellen.
+
+3. "Swimlane-Zuweiser"
+   - Ziel: Ordne Aktionen den richtigen Verantwortungsbereichen zu.
+   - Spielmechanik: 
+     - Swimlanes: "Kunde", "Webshop", "Lager".
+     - Aktion: "Ware verpacken". -> Lager.
+     - Messbarkeit: Korrekte Prozessverantwortung.
+   - Lernziel: Strukturierung von Prozessen (Activity Diagram).
+
+4. "Entscheidungs-Rätsel"
+   - Ziel: Definiere Bedingungen (Guards) an Decision-Nodes.
+   - Spielmechanik: 
+     - Knoten: "Geld abheben". 
+     - Guard A: "[Kontostand >= Betrag]". Guard B: "[Kontostand < Betrag]".
+     - Messbarkeit: Vollständigkeit und Exklusivität der Bedingungen.
+   - Lernziel: Logik-Prüfung in Diagrammen.
+
+5. "Signal-Empfänger"
+   - Ziel: Modelliere Signal-Sende- und Empfangsereignisse.
+   - Spielmechanik: 
+     - Prozess stoppt, bis "Zahlung eingegangen" Signal kommt.
+     - Benutze das richtige Symbol (Sanduhr/Fähnchen).
+   - Lernziel: Ereignisgesteuerte Abläufe.

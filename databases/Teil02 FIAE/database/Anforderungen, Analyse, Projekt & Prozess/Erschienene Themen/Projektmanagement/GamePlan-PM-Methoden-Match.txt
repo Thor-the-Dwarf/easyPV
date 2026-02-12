@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Auswahl des passenden Vorgehensmodells (Agil vs. Klassisch) durch Verortung von Projekten auf der Stacey-Matrix.
+- Game-Mechanic: "The Matrix Navigator". Projekte fliegen als Kometen auf das Gitter zu. Der Spieler muss sie mit dem richtigen "Fangstrahl" (Methodik) abfangen, bevor sie falsch einschlagen.
+- Challenge: 
+  - Level 1: Eindeutige Zonen (Einfach -> Wasserfall / Chaos -> Chaos).
+  - Level 2: "The Edge-Cases" - Projekte in der "Komplex"-Zone erfordern schnelles Umschalten zwischen Scrum und Kanban.
+  - Level 3: "Warp Speed" - Kometen werden schneller; Parameter ändern sich während des Fluges (Anforderungen werden unklar).
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Method-Fit" (Accuracy %), "Project-Success-Count" (Score), "Uncertainty-Level".
+- [ ] Scoring: "Direct Hit" Bonus für exakte Platzierung. Malus bei methodischem "Overkill" (Scrum für einfache Tasks).
+
+2. Screen-Layout (The Tactical Grid)
+- [ ] `navigator-cockpit -> stacey-grid -> method-arsenal -> incoming-radar`.
+- [ ] Stacey-Grid: Das Zentrum. X-Achse: Anforderungen (Klarheit), Y-Achse: Technik (Bekanntheit).
+- [ ] Arsenal: Auswahl der Waffen (Wasserfall, V-Modell, Scrum, Kanban).
+
+3. Kernvisuals und Effekte
+- [ ] Space-Strategy Ästhetik: Dunkler Raum, neonfarbene Vektoren, Zielerfassungs-Systeme.
+- [ ] "Hyper-Jump": Bei perfektem Method-Fit beschleunigt das Projekt visuell in den Erfolg.
+- [ ] Kontraststarke Zonen: Einfach (Blau), Kompliziert (Gelb), Komplex (Magenta), Chaos (Rot).
+
+4. Browser- und Device-Resilienz
+- [ ] `canvas` basierte Animation für hohe Performance.
+- [ ] Mobile: "Tap-and-Target" Steuerung.
+
+5. Content-Strategie (Project Comets)
+- [ ] 12 Szenarien: Von "Routinemäßiges Sicherheitsupdate" bis "Blockchain-basiertes KI-Start-up".
+
+6. QA-Paket
+- [ ] Test: Sind die Achsen der Stacey-Matrix im Spielverlauf korrekt erklärt?
+- [ ] Test: Fühlt sich die Zuordnung flüssig und logisch an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler versteht die Stacey-Matrix als Kompass für das Projektmanagement.
+- [ ] Das Interface wirkt wie ein hochmodernes Führungs-System.
+- [ ] Methodische Sicherheit bei der Rechtfertigung von Vorgehensmodellen.

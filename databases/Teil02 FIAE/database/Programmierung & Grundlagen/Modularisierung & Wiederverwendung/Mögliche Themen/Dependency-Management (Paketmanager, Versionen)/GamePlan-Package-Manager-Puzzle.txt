@@ -1,0 +1,51 @@
+Anforderungen (reverse engineered)
+- Ziel: Beherrschung von Paketmanagern und Semantic Versioning (SemVer) zur stabilen Verwaltung von Projektabhängigkeiten.
+- Kontext: Build-Management, NPM/Maven/Pip, Versionskonflikte.
+- UX-Prinzip:
+  - "The Dependency Bridge": Das Projekt ist eine Brücke. Die Bausteine sind Pakete (`express`, `lodash`). Sie müssen perfekt ineinandergreifen.
+  - "Version-Tuning": Jedes Paket hat einen Drehschalter für die Version (`^1.2.3`, `~2.0.0`). Ein falscher Dreh lässt die Brücke instabil werden (rot).
+  - "The Lock-Key": Erst wenn das LOCK-File (der Schlussstein) gesetzt wird, ist die Brücke für den Live-Betrieb bereit.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der Versionskonflikt (Bruchstelle), 2 = Die SemVer-Regeln (Lösung), 3 = Der Sicherheitsstatus (Audit).
+- [ ] Textbudget: Max. 5 Abhängigkeiten gleichzeitig zur Vermeidung von Komplexitäts-Explosion.
+- [ ] "Conflict-Visualizer": Linien zwischen den Paketen zeigen, wer welche Version von was braucht.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> dependency-map -> version-configurator -> audit-security-terminal`.
+- [ ] Map-Area: Ein Netz aus Kreisen (Paketen) und Linien (Abhängigkeiten) in der Mitte (Desktop 60% Breite, Mobile 50dvh Höhe).
+- [ ] Terminal: Kleiner Textbereich am unteren Rand für `audit fix` Befehle.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Pinch-to-Expand" zur Detailansicht von Paket-Metadaten.
+- [ ] `scroll-snap` für die Liste der installierten Module.
+
+4. Kernvisuals
+- [ ] Architektur-Ästhetik: Technische Zeichnungen, Baupläne, Verbindungs-Knoten (shared_theme.css).
+- [ ] Farbcodierung: Major Updates (Rot - Achtung!), Minor Updates (Gelb), Patch (Grün - Sicher).
+- [ ] High-Contrast Badges für die Versionsnummern.
+
+5. Interaktion und Feedback
+- [ ] Breaking-Change-Warnung: "Stopp! Update auf Version 3.0.0 würde die Brücke zum Einsturz bringen, da `core-lib` nicht mehr kompatibel ist."
+- [ ] Erfolg: "Brücke stabil! Alle Versionen passen zueinander, `package-lock.json` ist generiert."
+- [ ] Audit-Feedback: "Sicherheitslücke gefunden! Führe den `audit-fix` Zauberstab aus, um das Loch zu stopfen."
+
+6. KPI-Klarheit
+- [ ] Dependency-Health: "Stabilitäts-Index: 100%".
+- [ ] Security-Grade: "Vulnerabilitäten: 0".
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Namen: `npm`, `maven`, `composer`, `cargo`.
+- [ ] SemVer-Training: `^` vs `~` vs `exact` spielerisch erklären.
+- [ ] Tonalität: Strukturiert, sicherheitsbewusst, präzise.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die feinen Verbindungslinien auf einem Smartphone gut sichtbar?
+- [ ] Test: Ist die Bedeutung der SemVer-Symbole (`^`, `~`) im Spiel ohne Handbuch erlernbar?
+
+9. Abnahmekriterien
+- [ ] Der Spieler versteht das Risiko von "Dependency Hell" und wie man es systematisch löst.
+- [ ] Das Interface wirkt wie eine professionelle Kommandozentrale für Deployment-Sicherheit.
+- [ ] Gefühl der Kontrolle über komplexe Software-Ökosysteme.

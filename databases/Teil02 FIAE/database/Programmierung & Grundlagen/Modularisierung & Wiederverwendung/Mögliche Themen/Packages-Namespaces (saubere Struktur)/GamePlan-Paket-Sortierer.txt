@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Beherrschung von Organisationsstrukturen (Namespaces/Packages) zur Vermeidung von Namenskonflikten und Erhöhung der Code-Wartbarkeit.
+- Kontext: Modularisierung, Software-Architektur, Clean Code.
+- UX-Prinzip:
+  - "The Logistics Warehouse": Klassen sind herrenlose Pakete auf einer Laderampe. Sie müssen in die richtigen Regale (Packages) sortiert werden.
+  - "The Smart Label": Jedes Paket hat Tags (Zweck, Abhängigkeiten), die beim Sortieren helfen.
+  - "Namespace-Prefix": Die Paketpfade (`com.app.core`) sind wie Adressen auf den Regalfächern.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Das aktuelle Paket (Klasse), 2 = Die Regal-Hierarchie (Struktur), 3 = Die logische Zusammengehörigkeit.
+- [ ] Textbudget: Kurze Klassennamen (`User`, `DB`, `Config`).
+- [ ] "No-Clutter" Regale: Erst beim Hineinziehen öffnet sich die Unterstruktur des Pakets.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> loading-dock (Source) -> shelf-grid (Target) -> address-monitor`.
+- [ ] Grid-Area: Kachel-Ansicht der Hauptpakete (Desktop 70% Breite, Mobile scrollbare vertikale Liste).
+- [ ] Address-Monitor: Eine Zeile, die den resultierenden FQN (Fully Qualified Name) live anzeigt.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Drag-and-Drop" mit haptischem Feedback beim Einrasten.
+- [ ] `touch-action: pan-x` für die Seiten-Navigation in tiefen Archiven.
+
+4. Kernvisuals
+- [ ] Warehouse-Ästhetik: Karton-Texturen, Strichcodes, metallische Regale (shared_theme.css).
+- [ ] Ikonografische Tags: Ein Zahnrad für Hilfsklassen, eine Person für Domain-Models, ein Kabel für Infrastruktur.
+- [ ] High-Contrast Pfad-Anzeige (z.B. `java.util.Scanner` in Weiß auf Dunkelblau).
+
+5. Interaktion und Feedback
+- [ ] Snap-in-Logik: Klassen "rasten" mit einem Paketband-Geräusch ein.
+- [ ] Logik-Check: "Vorsicht! Eine Datenbank-Klasse in das 'Domain-Viertel' zu legen, bricht die Architekturregeln."
+- [ ] Erfolg: Das Regal schließt sich und wird als "Versandfertig" markiert (Code-Release-Metapher).
+
+6. KPI-Klarheit
+- [ ] Organizational-Order: "Ordnungsgrad: 100%".
+- [ ] Dependency-Safety: "Kopplungsrisiko: Minimal".
+
+7. Content-/Copy-Feinschliff
+- [ ] Professionelle Pakete: `api`, `dto`, `entities`, `exceptions`, `services`.
+- [ ] Tonalität: Strukturiert, ordentlich, verlässlich.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Pfadangaben auf einem Smartphone in Querformat noch lesbar?
+- [ ] Test: Lassen sich Pakete auch wieder aus den Regalen herausziehen (Undo-Logik)?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler versteht Pakete als notwendiges Ordnungsmittel für komplexe Systeme.
+- [ ] Das Interface wirkt wie ein professionelles Logistik-Management-System.
+- [ ] Stolz über ein sauber strukturiertes Projekt-Archiv.

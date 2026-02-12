@@ -1,0 +1,33 @@
+1. "Class-Partition-Match"
+   - Ziel: Teile den Eingabebereich in gültige und ungültige Klassen ein.
+   - Spielmechanik: 
+     - Eingabe: Monat (1-12). 
+     - Klassen: [1-12] (Gültig), [<1] (Ungültig), [>12] (Ungültig).
+     - Ordne Testwerte den Klassen zu.
+     - Lernziel: Reduktion der Testfälle durch Repräsentanten.
+
+2. "Boundary-vs-Class"
+   - Ziel: Unterscheide Grenzwerte von Äquivalenzklassen.
+   - Spielmechanik: 
+     - Wähle für die Klasse [1-100] die Testwerte: 1, 100 (Grenzen) und 50 (Repräsentant).
+     - Lernziel: Effiziente Testdatenwahl.
+
+3. "Invalid-Input-Challenge"
+   - Ziel: Erstelle Testfälle für ungültige Äquivalenzklassen.
+   - Spielmechanik: 
+     - Was passiert bei "abc" in einem Zahlenfeld?
+     - Lernziel: Robustheitstests.
+
+4. "Multiple-Dimensions"
+   - Ziel: Kombiniere Äquivalenzklassen von zwei Eingabefeldern.
+   - Spielmechanik: 
+     - Alter [0-100] + Mitgliedschaft [Ja/Nein].
+     - Wie viele Kombinationen sind minimal nötig?
+     - Lernziel: Testraum-Optimierung.
+
+5. "Truth-Table-Builder"
+   - Ziel: Nutze Entscheidungstabellen für komplexe Regeln.
+   - Spielmechanik: 
+     - Wenn Bedingung A und B, dann Aktion X.
+     - Hake die richtige Zelle in der Tabelle ab.
+     - Lernziel: Systematische Testfallermittlung.

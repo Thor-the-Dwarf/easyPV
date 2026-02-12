@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Kritische Sensibilisierung für die verheerenden Folgen von SQL-Updates ohne präzise WHERE-Klausel.
+- Kontext: Datenbank-Administration, "High-Stakes" Szenario (Echtzeit-Datenkorrektur).
+- UX-Prinzip:
+  - "The Detonator": Ein Update-Befehl ohne WHERE blinkt rot und warnt vor der Zerstörung der gesamten Tabelle.
+  - "Precision Lock": Der Spieler muss den Primärschlüssel manuell in die WHERE-Klausel "einrasten".
+  - "Affected Rows Counter": Live-Anzeige, wie viele Datensätze die aktuelle Query treffen würde.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = "Affected Rows" Warnung (Zentral), 2 = SQL-Editor (Action), 3 = Tabellen-Status (Preview).
+- [ ] Textbudget: Max. 10 Wörter für das Missionsziel (z. B. "Ändere NUR das Gehalt von CEO Müller").
+- [ ] "Safety First": Keine Bestätigung möglich, solange `affectedRows > 1` (im chirurgischen Modus).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> safety-monitor -> query-input -> live-table-diff`.
+- [ ] Monitor-Area: Große, rote Warn-Anzeige (Desktop 50% Breite, Mobile 30dvh Höhe).
+- [ ] Input: SQL-Baukasten mit hervorgehobenem `WHERE`-Slot.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Emergency Mode" Layout – Fokus auf den Bestätigungs-Button und die WHERE-Bedingung.
+- [ ] `overflow: hidden` für die Page; Tabelle ist innerhalb des Diffs scrollbar.
+
+4. Kernvisuals
+- [ ] "Danger-Glow": Das UI pulsiert rot, wenn `UPDATE` ohne `WHERE` im Editor steht.
+- [ ] Stempel-Animation: "SUCCESS: 1 ROW UPDATED" (Grün) vs. "CATASTROPHE: ALL ROWS WIPED" (Schwarz/Rot).
+- [ ] Daten-Vorschau: Zeilen, die sich ändern würden, leuchten im Vorab-Check gelb.
+
+5. Interaktion und Feedback
+- [ ] Live-Validierung: Sobald `WHERE id = 5` getippt wird, springt der Counter von "1.000.000" auf "1".
+- [ ] Haptisches Feedback: Kurzes Schütteln (Shake) bei riskanten Eingaben.
+- [ ] Analyse: "Puh! Ohne die ID hättest du gerade alle 5.000 Mitarbeiter zu Millionären gemacht (und die Firma ruiniert)."
+
+6. KPI-Klarheit
+- [ ] Precision-Rating: "Chirurgische Präzision: 100%".
+- [ ] Risk-Prevented: "Verhinderter Daten-GAU: Hoch".
+
+7. Content-/Copy-Feinschliff
+- [ ] Dramatische Szenarien: "Live-Korrektur der Kontostände", "Passwort-Reset für Root", "Rabatt-Aktion fixen".
+- [ ] Tonalität: Ernst, warnend, aber lehrreich (Safety-Mentor).
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist die Warnung auf kleinen Handys so dominant, dass man sie nicht ignorieren kann?
+- [ ] Test: Funktioniert der Live-Counter flüssig während der Texteingabe?
+
+9. Abnahmekriterien
+- [ ] Der Spieler verinnerlicht die Angst vor dem "nackten" UPDATE-Statement.
+- [ ] Das Interface wirkt wie ein Hochsicherheits-Terminal.
+- [ ] Maximale Konsequenz bei Fehlbedienung (visuelle "Daten-Explosion").

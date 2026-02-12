@@ -1,0 +1,36 @@
+1. "Mass-Update-Gefahr"
+   - Ziel: Erinnere an die WHERE-Klausel beim Updaten.
+   - Spielmechanik: 
+     - Aufgabe: "Erhöhe das Gehalt von 'Müller' um 100€".
+     - Warnung: Wenn du das WHERE vergisst, bekommen alle 100€!
+     - Messbarkeit: Setze das WHERE-Statement korrekt auf die ID oder den Namen.
+   - Lernziel: Vorsichtiger Umgang mit Bestandsdaten.
+
+2. "Set-Zuweiser"
+   - Ziel: Aktualisiere mehrere Felder gleichzeitig.
+   - Spielmechanik: 
+     - `UPDATE user SET status='aktiv', last_login=NOW() WHERE id=1`.
+     - Messbarkeit: Korrekte Komma-Trennung mehrerer Zuweisungen.
+   - Lernziel: Effiziente Datenpflege.
+
+3. "Mathematik im SQL"
+   - Ziel: Nutze den aktuellen Wert für die Berechnung.
+   - Spielmechanik: 
+     - `UPDATE stock SET amount = amount - 5 WHERE prod_id = 10`.
+     - Messbarkeit: Vermeidung des Lesens und Schreibens in zwei Schritten (Race Condition!).
+   - Lernziel: Atomare Updates.
+
+4. "Update-Verify"
+   - Ziel: Prüfe das Ergebnis nach dem Update.
+   - Spielmechanik: 
+     - Simuliere ein Update. Zeige die Tabelle "vorher" und "nachher".
+     - Hast du nur die richtigen Zeilen geändert?
+     - Messbarkeit: Visuelle Kontrolle der Ergebnismenge.
+   - Lernziel: Selbstkontrolle als Entwickler.
+
+5. "Integritäts-Verletzung"
+   - Ziel: Verstehe, warum ein Update fehlschlagen kann.
+   - Spielmechanik: 
+     - Update einer ID, die als Fremdschlüssel in einer anderen Tabelle verwendet wird (ohne CASCADE).
+     - Ergebnis: Error.
+   - Lernziel: Referentielle Integrität und Constraints.

@@ -1,0 +1,19 @@
+Anforderungen
+1. "Smart-Home-Connector"
+   - Ziel: Verständnis der Architektur und der Kommunikationsprotokolle im Internet der Dinge (IoT).
+   - Spielmechanik: 
+     - Aufbau einer vernetzten Umgebung durch Verbindung von Sensoren, Aktoren und einem zentralen Hub/Gateway.
+     - Auswahl passender Protokolle (MQTT, ZigBee, HTTP) für spezifische Anforderungen (Bandbreite vs. Stromsparen).
+     - Simulation des Datenflusses von der "Edge" bis zur Cloud-Analyse.
+     - Messbarkeit: Erfolgreiche Übertragung und Visualisierung der Sensordaten.
+   - Lernziel: Beherrschung von IoT-Systemlandschaften und Sensibilisierung für deren Sicherheitsaspekte.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_iot_topology.json')
+   - IoT-Komponenten und Protokoll-Eigenschaften.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Visuelle Darstellung der vernetzten Nodes).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Validierung der Signalwege).
+- [ ] Integration
+   - Info: Warum man für IoT-Geräte oft ein isoliertes Gast-WLAN nutzt.

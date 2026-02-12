@@ -1,0 +1,33 @@
+1. "Variable-Rename-Game"
+   - Ziel: Wähle aussagekräftige Namen für Variablen und Funktionen.
+   - Spielmechanik: 
+     - Code zeigt: `let a = 10; function b(c) { return a * c; }`.
+     - Der Spieler wählt bessere Namen: `taxRate`, `calculateTotal`, `price`.
+     - Lernziel: Lesbarkeit und Wartbarkeit.
+
+2. "Function-Size-Sorter"
+   - Ziel: Halte Funktionen klein und fokussiert (Single Responsibility).
+   - Spielmechanik: 
+     - Eine 100-Zeilen Funktion mit "User validieren", "DB speichern", "Mail senden".
+     - Der Spieler schneidet die Bereiche in separate Teilfunktionen aus.
+     - Lernziel: Modularisierung und SRP.
+
+3. "Comment-Catcher"
+   - Ziel: Vermeide redundante Kommentare durch klaren Code.
+   - Spielmechanik: 
+     - Kommentar: `// Erhöhe i um 1`. Code: `i++;`.
+     - Aktion: Lösche den Kommentar, er ist unnötig.
+     - Lernziel: Selbstdokumentierender Code.
+
+4. "Magic-Number-Scanner"
+   - Ziel: Ersetze magische Zahlen durch Konstanten.
+   - Spielmechanik: 
+     - `if (status === 7)`. 
+     - Aktion: Ersetze `7` durch `STATUS_COMPLETED`.
+     - Lernziel: Explizite Definition von Zuständen.
+
+5. "Condition-Simplifier"
+   - Ziel: Reduziere verschachtelte If-Statements (Arrow Code).
+   - Spielmechanik: 
+     - Nutze Guard-Clauses (`if (!valid) return;`) statt tiefer Verschachtelung.
+     - Lernziel: Kognitive Komplexität reduzieren.

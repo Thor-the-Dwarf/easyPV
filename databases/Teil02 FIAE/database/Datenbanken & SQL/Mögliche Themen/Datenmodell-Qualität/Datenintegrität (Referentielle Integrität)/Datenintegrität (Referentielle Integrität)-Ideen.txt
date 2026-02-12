@@ -1,0 +1,36 @@
+1. "Integritäts-Guard"
+   - Ziel: Unterscheide Entitäts- und Referentielle Integrität.
+   - Spielmechanik: 
+     - "Jede Zeile braucht einen eindeutigen PK". -> Entitätsintegrität.
+     - "Fremdschlüssel muss existierenden Datensatz treffen". -> Referentielle Integrität.
+     - Lernziel: Grundpfeiler der DB-Sicherheit.
+
+2. "Waisen-Kinder-Jagd"
+   - Ziel: Vermeide Datensätze ohne Eltern.
+   - Spielmechanik: 
+     - Lösche einen Kunden, der noch offene Rechnungen hat.
+     - SQL-Regel: RESTRICT verhindert das Löschen.
+     - Messbarkeit: Schutz der Datenbeziehungen.
+   - Lernziel: Foreign Key Constraints.
+
+3. "Cascading-Visualizer"
+   - Ziel: Verfolge automatische Lösch-Aktionen.
+   - Spielmechanik: 
+     - Lösche Haupt-Kategorie "Hardware".
+     - Beobachte: Alle Unter-Kategorien und Produkte darin werden mitgelöscht.
+     - Lerne: Mächtiges aber gefährliches Werkzeug.
+   - Lernziel: ON DELETE CASCADE.
+
+4. "Null-Integritäts-Puzzle"
+   - Ziel: Nutze SET NULL als Fallback.
+   - Spielmechanik: 
+     - Mitarbeiter verlässt die Firma. Wer betreut nun seine Projekte?
+     - Strategie: `ON DELETE SET NULL`.
+     - Lernziel: Flexible Handhabung von Referenzen.
+
+5. "Audit-Protokoll-Check"
+   - Ziel: Verifiziere die Einhaltung von Regeln über Zeit.
+   - Spielmechanik: 
+     - Prüfe ein Transaktionsprotokoll: Gab es jemals einen ungültigen Zustand?
+     - Lerne: DB sorgt dafür, dass das niemals passiert.
+   - Lernziel: Zuverlässigkeit relationaler Systeme.

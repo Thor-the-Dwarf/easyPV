@@ -1,0 +1,37 @@
+1. "Index-Schmiede"
+   - Ziel: Erstelle einen Index für schnellere Suche.
+   - Spielmechanik: 
+     - `CREATE INDEX idx_name ON user(name);`.
+     - Warum machen wir das? -> Performance-Schub bei SELECT.
+     - Messbarkeit: Korrekte Angabe von Index-Name, Tabelle und Spalte.
+   - Lernziel: Performance-Optimierung.
+
+2. "Unique-Index-Wächter"
+   - Ziel: Nutze Indizes zur Eindeutigkeit.
+   - Spielmechanik: 
+     - `CREATE UNIQUE INDEX idx_mail ON user(email);`.
+     - Was passiert, wenn jetzt zwei User die gleiche Mail nutzen wollen? -> Error.
+     - Lernziel: Datenintegrität durch Indizes sicherstellen.
+
+3. "Composite-Index-Puzzle"
+   - Ziel: Erstelle Indizes über mehrere Spalten.
+   - Spielmechanik: 
+     - Suche oft nach Vorname UND Nachname.
+     - `CREATE INDEX idx_person ON user(nachname, vorname);`.
+     - Lerne: Die Reihenfolge der Spalten ist wichtig!
+   - Lernziel: Fortgeschrittene Indizierung.
+
+4. "Index-Overhead-Rechner"
+   - Ziel: Verstehe die Schattenseiten von Indizes.
+   - Spielmechanik: 
+     - Index macht SELECT schneller. 
+     - Frage: Was passiert bei INSERT/UPDATE? -> Wird langsamer (Index muss gepflegt werden).
+     - Messbarkeit: Abwägung zwischen Lese- und Schreibgeschwindigkeit.
+   - Lernziel: Kosten-Nutzen-Analyse von Indizes.
+
+5. "Full-Text-Search-Setup"
+   - Ziel: Indiziere Texte für Mustersuche.
+   - Spielmechanik: 
+     - `CREATE FULLTEXT INDEX` auf Spalte `beschreibung`.
+     - Suche jetzt mit `MATCH(beschreibung) AGAINST('Tutorial')`.
+   - Lernziel: Volltextsuche in SQL.

@@ -1,0 +1,34 @@
+1. "Tag-Closer"
+   - Ziel: Achte auf wohlgeformtes XML.
+   - Spielmechanik: 
+     - `<user><name>Max</user>`. -> Falsch.
+     - Korrigiere die Schachtelung und die Tags.
+     - Lernziel: XML-Syntaxregeln.
+
+2. "Attribut vs. Element"
+   - Ziel: Entscheide, wie Daten strukturiert werden.
+   - Spielmechanik: 
+     - `<user id="1">` vs `<user><id>1</id></user>`.
+     - Lernziel: Design-Entscheidungen in XML.
+
+3. "Schema-Validator (XSD)"
+   - Ziel: Prüfe XML gegen eine Vorlage.
+   - Spielmechanik: 
+     - Die XSD sagt: "Alter muss eine Zahl sein". 
+     - Im XML steht "einhundert".
+     - Markiere den Fehler.
+     - Lernziel: Datentypen und Validierung in XML.
+
+4. "XPath-Suche"
+   - Ziel: Navigiere durch den XML-Baum.
+   - Spielmechanik: 
+     - `/firma/abteilung[@id='it']/mitarbeiter/name`.
+     - Welchen Wert findet dieser Pfad?
+     - Lernziel: Abfragesprachen für XML.
+
+5. "JSON vs XML Battle"
+   - Ziel: Erkenne Vor- und Nachteile.
+   - Spielmechanik: 
+     - Welches Format ist kompakter? -> JSON.
+     - Welches bietet striktere Validierung? -> XML.
+     - Lernziel: Formatwahl begründen.

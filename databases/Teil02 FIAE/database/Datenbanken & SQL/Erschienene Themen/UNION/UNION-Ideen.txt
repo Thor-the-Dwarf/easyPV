@@ -1,0 +1,38 @@
+1. "UNION-Kompatibilitäts-Check"
+   - Ziel: Prüfe, ob zwei Tabellen mit UNION kombiniert werden können.
+   - Spielmechanik: 
+     - Tabelle A (Int, String). Tabelle B (Int, String). -> Geht.
+     - Tabelle A (Int, String). Tabelle B (String, Int). -> Geht nicht.
+     - Messbarkeit: Gleiche Anzahl und gleicher Typ der Spalten erkennen.
+   - Lernziel: Voraussetzungen für Mengen-Operationen.
+
+2. "UNION vs. UNION ALL"
+   - Ziel: Verstehe den Umgang mit Duplikaten.
+   - Spielmechanik: 
+     - Liste 1: {A, B, C}. Liste 2: {C, D, E}.
+     - UNION Ergebnis: {A, B, C, D, E}.
+     - UNION ALL Ergebnis: {A, B, C, C, D, E}.
+     - Messbarkeit: Wahl der richtigen Variante je nach Bedarf.
+   - Lernziel: Mengenlehre in SQL.
+
+3. "Result-Set-Puzzle"
+   - Ziel: Kombiniere Ergebnisse aus verschiedenen Quellen.
+   - Spielmechanik: 
+     - "Alle Kunden" + "Alle Lieferanten" in eine Kontaktliste stecken.
+     - SQL: `SELECT name, 'Kunde' as typ FROM kunde UNION SELECT name, 'Lieferant' as typ FROM lieferant`.
+     - Messbarkeit: Sinnvolle Konsolidierung von Daten.
+   - Lernziel: Zusammenführung heterogener Daten.
+
+4. "Order-the-Union"
+   - Ziel: Sortiere das Endergebnis einer UNION-Abfrage.
+   - Spielmechanik: 
+     - Wo kommt das `ORDER BY` hin? -> Ganz ans Ende (nach dem letzten SELECT).
+     - Messbarkeit: Globale Sortierung über alle Teilmengen.
+   - Lernziel: SQL-Processing-Reihenfolge.
+
+5. "Dummy-Select-Helper"
+   - Ziel: Nutze statische Werte in UNION.
+   - Spielmechanik: 
+     - Aufgabe: "Füge eine Zeile 'Gesamt' am Ende hinzu".
+     - Trick: `UNION SELECT 'Gesamt', SUM(wert) FROM ...`.
+     - Lernziel: Berichts-Generierung mit SQL.

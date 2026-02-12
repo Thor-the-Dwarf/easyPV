@@ -1,0 +1,29 @@
+1. "Full-System-Walkthrough"
+   - Ziel: Teste das Gesamtsystem gegen die funktionalen Anforderungen.
+   - Spielmechanik: 
+     - Ein kompletter Geschäftsprozess von Anfang bis Ende (z.B. Online-Bestellung).
+     - Lernziel: System-Validierung.
+
+2. "Load-Balance-Simulator"
+   - Ziel: Teste das Verhalten unter Last (Nicht-funktionale Anforderung).
+   - Spielmechanik: 
+     - Erhöhe die Nutzeranzahl. Wann bricht das System zusammen?
+     - Lernziel: Performance- und Stabilitätstests.
+
+3. "Scenario-Testing-Quest"
+   - Ziel: Finde Fehler in komplexen Nutzungsszenarien.
+   - Spielmechanik: 
+     - "Nutzer bricht Zahlung ab, startet neu, nutzt Gutschein".
+     - Lernziel: Realitätsnahe Tests.
+
+4. "Negative-System-Testing"
+   - Ziel: Versuche das System gezielt zum Absturz zu bringen.
+   - Spielmechanik: 
+     - Gib unsinnige Daten ein, ziehe das Netzwerkkabel (simuliert).
+     - Lernziel: Robustheit des Gesamtsystems.
+
+5. "Environment-Check"
+   - Ziel: Teste in einer produktionsnahen Umgebung.
+   - Spielmechanik: 
+     - Hast du alle Server-Configs korrekt gesetzt?
+     - Lernziel: Deployment-Ready Überprüfung.

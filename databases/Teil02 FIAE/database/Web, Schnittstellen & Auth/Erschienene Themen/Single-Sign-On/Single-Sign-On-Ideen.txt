@@ -1,0 +1,29 @@
+1. "SSO-Hub-Simulation"
+   - Ziel: Einmal einloggen, überall Zugriff haben.
+   - Spielmechanik: 
+     - Logge dich im Identity Provider (IdP) ein. Welche Service Provider (SP) geben nun den Zugriff frei?
+     - Lernziel: Zentrales Identitätsmanagement.
+
+2. "SAML-Assertion-Puzzle"
+   - Ziel: Verstehe das XML-basierte Austauschformat.
+   - Spielmechanik: 
+     - Baue eine SAML-Antwort zusammen, die dem SP sagt: "User 1 ist authentifiziert".
+     - Lernziel: Technik hinter SSO (SAML/OIDC).
+
+3. "Log-Out-Chain"
+   - Ziel: Verstehe das Single-Log-Out (SLO) Prinzip.
+   - Spielmechanik: 
+     - Wenn ich mich bei App A auslogge, werden auch App B und C beendet.
+     - Lernziel: Sicherheit in der Session-Verwaltung.
+
+4. "Identity-Provider-Match"
+   - Ziel: Kenne bekannte SSO-Lösungen.
+   - Spielmechanik: 
+     - Okta, Azure AD, Keycloak, Auth0.
+     - Lernziel: Marktübersicht Auth-Provider.
+
+5. "Trust-Relationship-Checker"
+   - Ziel: Verstehe die Vertrauensstellung zwischen IdP und SP.
+   - Spielmechanik: 
+     - Tausche Zertifikate aus, um die Verbindung zu sichern.
+     - Lernziel: Kryptografische Absicherung von SSO.

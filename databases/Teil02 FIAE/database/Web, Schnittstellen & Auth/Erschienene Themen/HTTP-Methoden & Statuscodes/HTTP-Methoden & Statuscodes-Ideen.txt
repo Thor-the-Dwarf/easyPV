@@ -1,0 +1,38 @@
+1. "Statuscode-Match"
+   - Ziel: Kenne die Bedeutung der Zahlen-Clashes.
+   - Spielmechanik: 
+     - 200 -> OK.
+     - 404 -> Not Found.
+     - 500 -> Server Error.
+     - 201 -> Created.
+     - 403 -> Forbidden.
+     - Lernziel: Kommunikation zwischen Client und Server.
+
+2. "Safe vs Unsafe Methods"
+   - Ziel: Welche Methode ändert Daten?
+   - Spielmechanik: 
+     - GET, HEAD (Sicher/Safe - nur lesen).
+     - POST, PUT, DELETE (Unsicher - verändert Zustand).
+     - Lernziel: Sicherheitsprotokolle im Web.
+
+3. "Header-Detektiv"
+   - Ziel: Verstehe Metadaten im Request.
+   - Spielmechanik: 
+     - `Content-Type: application/json`.
+     - `Authorization: Bearer ...`.
+     - `User-Agent: Chrome`.
+     - Lernziel: Aufbau einer HTTP-Nachricht (Body vs. Header).
+
+4. "Redirect-Rallye"
+   - Ziel: Verstehe die 300er Codes.
+   - Spielmechanik: 
+     - 301 (Permanent) vs 302 (Temporär).
+     - Was muss der Browser tun? -> Die neue URL laden.
+     - Lernziel: Navigationsfluss im Web.
+
+5. "Fehler-Diagnose"
+   - Ziel: Leite aus dem Code die Ursache ab.
+   - Spielmechanik: 
+     - 401 bekommen. -> Du musst dich einloggen.
+     - 403 bekommen. -> Du bist eingeloggt, darfst das aber nicht.
+     - Lernziel: Debugging von Web-Apps.

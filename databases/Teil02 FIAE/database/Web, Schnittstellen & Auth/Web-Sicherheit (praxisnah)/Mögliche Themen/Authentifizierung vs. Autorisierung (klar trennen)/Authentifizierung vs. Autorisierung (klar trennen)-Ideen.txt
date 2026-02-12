@@ -1,0 +1,33 @@
+1. "Wer bist du? vs Was darfst du?"
+   - Ziel: Klare begriffliche Trennung.
+   - Spielmechanik: 
+     - Ausweis vorzeigen -> Authentifizierung (Identität).
+     - Ticket für den VIP-Bereich -> Autorisierung (Rechte).
+     - Lernziel: Security Fundamentals.
+
+2. "Login-Wächter (AuthN)"
+   - Ziel: Implementiere sichere Identitätsprüfung.
+   - Spielmechanik: 
+     - Passwort-Check, 2FA-Code eingeben.
+     - Lernziel: Schutz des User-Accounts.
+
+3. "Rechte-Matrix (AuthZ)"
+   - Ziel: Weise Rollen Berechtigungen zu (RBAC).
+   - Spielmechanik: 
+     - Admin darf löschen. User darf nur lesen.
+     - Prüfe: `if (user.role === 'admin') { ... }`.
+     - Lernziel: Zugriffskontrolle.
+
+4. "401 vs 403 Match"
+   - Ziel: Ordne Statuscodes den Konzepten zu.
+   - Spielmechanik: 
+     - "Nicht eingeloggt". -> 401 Unauthorized (AuthN).
+     - "Eingeloggt, aber kein Zugriff auf Admin-Panel". -> 403 Forbidden (AuthZ).
+     - Lernziel: Fehleranalyse im Web.
+
+5. "Social Login Flow"
+   - Ziel: Nutze externe Provider (OAuth2).
+   - Spielmechanik: 
+     - "Login mit Google". 
+     - Wer authentifiziert (Google)? Wer autorisiert den Zugriff (Meine App)?
+     - Lernziel: Moderne Auth-Patterns.

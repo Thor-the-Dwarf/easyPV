@@ -1,0 +1,36 @@
+1. "Kompatibilitäts-Stecker"
+   - Ziel: Verbinde zwei inkompatible Schnittstellen.
+   - Spielmechanik: 
+     - Interface A erwartet `getPriceInEuro()`. 
+     - Library B liefert `getCostInUSD()`.
+     - Baue den Adapter dazwischen.
+     - Lernziel: Zusammenführen von bestehendem Code.
+
+2. "Wrapper-Schutz"
+   - Ziel: Schütze deinen Code vor Änderungen in Drittanbieter-Libraries.
+   - Spielmechanik: 
+     - Nutze einen Adapter für die Logging-Library. 
+     - Wenn du die Library tauschst, musst du nur den Adapter anpassen.
+     - Lernziel: Unabhängigkeit von Externals.
+
+3. "Legacy-Connector"
+   - Ziel: Binde alten Code in ein modernes System ein.
+   - Spielmechanik: 
+     - Alte Klasse `OldPrinter` hat seltsame Methoden. 
+     - Neuer Code nutzt `IPrinter` Interface.
+     - Erstelle den `OldPrinterAdapter`.
+     - Lernziel: System-Modernisierung.
+
+4. "Adapter vs Bridge"
+   - Ziel: Erkenne den subtilen Unterschied.
+   - Spielmechanik: 
+     - Adapter: Verbindet Dinge, die nicht zusammenpassen.
+     - Bridge: Trennt Abstraktion von Implementierung von Anfang an.
+     - Lernziel: Design Pattern Nuancen.
+
+5. "Real-World-Analogien"
+   - Ziel: Verstehe das Konzept durch Alltagsobjekte.
+   - Spielmechanik: 
+     - Reisestecker-Adapter (DE -> UK).
+     - USB-C auf Klinke Adapter.
+     - Lernziel: Abstraktes Denken fördern.

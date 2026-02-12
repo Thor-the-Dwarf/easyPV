@@ -1,0 +1,35 @@
+1. "CSV-Mapper"
+   - Ziel: Mappe Spalten einer externen Quelldatei auf ein internes Datenbankschema.
+   - Spielmechanik: 
+     - Externe Datei: `Vorname, Nachname, Mail, Geb-Datum`. 
+     - Datenbank: `first_name, last_name, email, dob`. 
+     - Drag & Drop Verbindungslinien zwischen Quelle und Ziel ziehen.
+     - Lernziel: Grundlagen des Datenaustauschs (ETL - Extract, Transform, Load).
+
+2. "Bulk-Upload-Stresstest"
+   - Ziel: Verstehe die Performance-Auswirkungen von Massen-Imports.
+   - Spielmechanik: 
+     - Import von 10.000 Zeilen. 
+     - Wahl: "Mit Index" (langsam, da Index ständig aktualisiert wird) vs. "Index erst danach erstellen" (schnell).
+     - Lernziel: Optimierung von Import-Prozessen.
+
+3. "Fehler-Log-Analysator"
+   - Ziel: Identifiziere Datensätze, die beim Import abgelehnt wurden.
+   - Spielmechanik: 
+     - 100 Zeilen importiert, 5 Fehler. 
+     - Grund: "Datum im falschen Format" oder "String zu lang für Spalte". 
+     - Korrigiere die Quelldaten.
+     - Lernziel: Datenvalidierung und Fehlerbehebung.
+
+4. "SQL-Loader-Puzzle"
+   - Ziel: Nutze Werkzeuge wie `LOAD DATA INFILE` oder `COPY`.
+   - Spielmechanik: 
+     - Setze den Befehl korrekt zusammen (Pfade, Trennzeichen wie `;` oder `,`).
+     - Lernziel: Native Import-Tools der DBMS.
+
+5. "Update-vs-Insert (Upsert)"
+   - Ziel: Behandle Konflikte bei bereits existierenden Datensätzen.
+   - Spielmechanik: 
+     - "ON DUPLICATE KEY UPDATE". 
+     - Entscheide: Soll ein neuer User angelegt werden oder der alte aktualisiert?
+     - Lernziel: Synchronisation von Datenbeständen.

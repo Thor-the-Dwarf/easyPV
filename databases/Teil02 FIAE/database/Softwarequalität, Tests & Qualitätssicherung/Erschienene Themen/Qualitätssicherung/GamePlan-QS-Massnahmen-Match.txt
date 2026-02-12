@@ -1,0 +1,51 @@
+Anforderungen (reverse engineered)
+- Ziel: Differenziertes Verständnis der Qualitätssicherung durch Unterscheidung zwischen präventiven (konstruktiven) und detektiven (analytischen) Maßnahmen.
+- Kontext: QS-Strategie, Software-Lifecycle, Prozessoptimierung.
+- UX-Prinzip:
+  - "The Shield Wall": Die Software-Burg muss geschützt werden.
+  - "Constructive Armor" (Konstruktiv): Die dicken Mauern und die Ausbildung der Soldaten (Richtlinien, Schulungen, sauberes Design). Verhindert, dass Feinde (Bugs) überhaupt entstehen.
+  - "Analytical Radar" (Analytisch): Späher und Patrouillen (Tests, Reviews, Scans), die bereits eingedrungene Feinde aufspüren.
+  - "The Balance Scale": Eine goldene Waage zeigt, ob der Fokus zu stark auf dem "Finden" statt auf dem "Vermeiden" liegt.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die QS-Maßnahme (Agent), 2 = Die beiden Strategie-Zonen (Konstruktiv / Analytisch), 3 = Das Sicherheits-Level der Burg.
+- [ ] Textbudget: Max. 8 Wörter pro Maßnahmen-Kachel.
+- [ ] "Strategy-Map": Visuelle Einteilung des Sprints in Planungs- (Konstruktiv) und Prüf-Phasen (Analytisch).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> fortification-battlefield -> strategy-zones -> measure-inventory`.
+- [ ] Battlefield: Eine stilisierte Burg-Ansicht, die je nach QS-Mix stärker oder schwächer wirkt (Desktop mittig).
+- [ ] Zones: Zwei große Droptargets (Links: "Verhindern", Rechts: "Entdecken").
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-to-Categorize" Mechanik; Karten nach links (Bau) oder rechts (Prüf) wischen.
+- [ ] Responsive Design für die Burg-Illustration (Vektorgrafik).
+
+4. Kernvisuals
+- [ ] Strategie-Spiel Ästhetik: Klassische Blaupausen-Symbole vs. Lupe/Scan-Icons (shared_theme.css).
+- [ ] Sound-Effekte: Metallisches Schmiedegeräusch (Konstruktiv) vs. Radar-Ping (Analytisch).
+- [ ] High-Contrast Typografie für die Zonen-Titel.
+
+5. Interaktion und Feedback
+- [ ] Zonen-Feedback: "Klick! Programmierrichtlinien verschalen die Burgmauern. Bugs haben es jetzt schwerer, überhaupt zu schlüpfen."
+- [ ] Strategie-Tipp: "Siehst du? Nur zu testen (analytisch) ist teuer. Investiere mehr in Ausbildung (konstruktiv), um die Kosten zu senken!"
+- [ ] Erfolg: "Perfekter QS-Mix. Deine Burg ist uneinnehmbar und der Entwicklungsprozess hocheffizient."
+
+6. KPI-Klarheit
+- [ ] Balance-Score: "Präventions-Index: Hoch".
+- [ ] Security-Level: "Sicherheits-Status: Festung".
+
+7. Content-/Copy-Feinschliff
+- [ ] Maßnahmen: Code-Conventions, Unit-Tests, Pair Programming, Integrationstests, Automatisierte Linters, Review-Sitzungen.
+- [ ] Tonalität: Strategisch, schützend, weitsichtig.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist die Unterscheidung zwischen den Zonen auf einem Handy-Bildschirm durch Farbe und Symbolik eindeutig?
+- [ ] Test: Funktioniert die Waage-Animation ohne Ruckeln?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler begreift QS als duales System aus Vorsorge und Nachsorge.
+- [ ] Das Interface wirkt wie ein exklusives Strategie-Board für Qualitätsmanager.
+- [ ] Nachhaltiges Verständnis für die Kostenkurve von Fehlern (frühe Vermeidung vs. spätes Finden).

@@ -1,0 +1,38 @@
+1. "Table-Builder"
+   - Ziel: Überführe ein ERM in Tabellen.
+   - Spielmechanik: 
+     - Entität "Kunde" -> Erstelle Tabelle "Kunde" mit Spalten.
+     - Messbarkeit: Korrekte Benennung und Struktur.
+   - Lernziel: Physisches Datenbankdesign.
+
+2. "Fremdschlüssel-Check"
+   - Ziel: Setze Foreign Keys korrekt zur Verknüpfung.
+   - Spielmechanik: 
+     - Tabelle "Bestellung" braucht Link zum "Kunde".
+     - Wo kommt die `Kunde_ID` hin? -> In die Tabelle "Bestellung".
+     - Messbarkeit: Verständnis der Eltern-Kind-Beziehung.
+   - Lernziel: Referentielle Integrität.
+
+3. "Datentyp-Match"
+   - Ziel: Wähle den effizientesten Datentyp (SQL).
+   - Spielmechanik: 
+     - "Preis". -> DECIMAL.
+     - "Beschreibung". -> TEXT/VARCHAR.
+     - "Status (Aktiv/Inaktiv)". -> BOOLEAN/TINYINT.
+     - Messbarkeit: Speicherplatz-Optimierung.
+   - Lernziel: SQL-Basiswissen.
+
+4. "Referentielle Integrität"
+   - Ziel: Verstehe ON DELETE CASCADE / RESTRICT.
+   - Spielmechanik: 
+     - Lösche einen Kunden. Was passiert mit seinen Bestellungen?
+     - Wähle die Strategie, damit keine "Waisen" entstehen.
+   - Lernziel: Datenkonsistenz wahren.
+
+5. "Index-Booster"
+   - Ziel: Beschleunige Abfragen durch Indizes.
+   - Spielmechanik: 
+     - Suche nach "Nachname" in 1 Mio. Datensätzen dauert 5s.
+     - "CREATE INDEX" auf Nachname.
+     - Frage: Wie schnell ist es jetzt? -> < 0.1s.
+   - Lernziel: Performance-Optimierung in DBs.

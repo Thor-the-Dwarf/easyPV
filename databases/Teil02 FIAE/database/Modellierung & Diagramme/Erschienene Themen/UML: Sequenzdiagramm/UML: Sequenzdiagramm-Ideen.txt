@@ -1,0 +1,36 @@
+1. "Nachrichten-Reihenfolge"
+   - Ziel: Modelliere den zeitlichen Ablauf von Aufrufen.
+   - Spielmechanik: 
+     - 3 Objekte: :Frontend, :Backend, :DB.
+     - Sortiere: 1. login(), 2. findUser(), 3. result OK, 4. welcome().
+     - Messbarkeit: Chronologische Korrektheit von oben nach unten.
+   - Lernziel: Interaktionsmodellierung.
+
+2. "Lebenslinien-Retter"
+   - Ziel: Erkenne Aktivierungsbalken (Focus of Control).
+   - Spielmechanik: 
+     - Ziehe Balken auf die Lebenslinien. 
+     - Wie lange "lebt" das Backend-Objekt während der Anfrage?
+   - Lernziel: Zuständigkeiten und Laufzeiten.
+
+3. "Synchron vs. Asynchron"
+   - Ziel: Wähle den richtigen Pfeiltyp.
+   - Spielmechanik: 
+     - "Warten auf Antwort". -> Synchron (gefüllte Pfeilspitze).
+     - "Fire and Forget (Emitter)". -> Asynchron (offene Pfeilspitze).
+     - Messbarkeit: Verständnis des Blockierverhaltens.
+   - Lernziel: Kommunikationsarten in verteilten Systemen.
+
+4. "Loop & Alt-Fragmente"
+   - Ziel: Nutze kombinierte Fragmente für Schleifen und Bedingungen.
+   - Spielmechanik: 
+     - Zeichne einen Rahmen um die Sequenz: "loop(10)" oder "alt [if Erfolg]".
+     - Messbarkeit: Abstraktion von Logik im Sequenzdiagramm.
+   - Lernziel: Komplexe Abläufe strukturieren.
+
+5. "Self-Call-Expert"
+   - Ziel: Zeige interne Aufrufe (Self-Invocation).
+   - Spielmechanik: 
+     - Ein Objekt ruft die Methode `validate()` an sich selbst auf.
+     - Zeichne den runden Pfeil zurück auf das eigene Objekt.
+   - Lernziel: Interne Logik-Kaskaden.

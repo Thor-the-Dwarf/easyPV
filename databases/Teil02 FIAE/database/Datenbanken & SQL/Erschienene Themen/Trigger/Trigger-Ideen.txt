@@ -1,0 +1,37 @@
+1. "Event-Wächter (BEFORE-AFTER)"
+   - Ziel: Wähle den richtigen Zeitpunkt für einen Trigger.
+   - Spielmechanik: 
+     - "Eingabe validieren, bevor gespeichert wird". -> BEFORE INSERT.
+     - "Log-Eintrag schreiben, nachdem gelöscht wurde". -> AFTER DELETE.
+     - Messbarkeit: Korrekter Trigger-Typ für den Anwendungsfall.
+   - Lernziel: Trigger-Automatisierung.
+
+2. "Audit-Log-Generator"
+   - Ziel: Überwache Änderungen an einer Tabelle.
+   - Spielmechanik: 
+     - Jedesmal wenn `preis` sich ändert -> schreibe Alt- und Neuwert in `preis_history`.
+     - Nutze `NEW.preis` und `OLD.preis`.
+     - Messbarkeit: Lückenlose Dokumentation von Änderungen.
+   - Lernziel: Datensicherheit und Compliance.
+
+3. "Cascade-Effect-Rechner"
+   - Ziel: Verstehe Kettenreaktionen durch Trigger.
+   - Spielmechanik: 
+     - Trigger A löst Update auf Tabelle B aus. Trigger B löst Update auf C aus.
+     - Achtung: Verhindere Endlosschleifen!
+     - Messbarkeit: Logische Verfolgung der Aktionskette.
+   - Lernziel: Seiteneffekte in Datenbanken.
+
+4. "Integrity-Enforcer"
+   - Ziel: Prüfe Regeln, die zu komplex für Standard-Constraints sind.
+   - Spielmechanik: 
+     - "Ein User darf max. 3 offene Bestellungen haben".
+     - Schreibe Trigger, der bei der 4. Bestellung einen `SIGNAL SQLSTATE` (Error) wirft.
+   - Lernziel: Komplexe Business-Rules in der DB.
+
+5. "Trigger-Status-Check"
+   - Ziel: Aktiviere und deaktiviere Automatismen.
+   - Spielmechanik: 
+     - Für einen großen Datenimport: Deaktiviere Trigger (für mehr Speed).
+     - Danach: Aktiviere sie wieder.
+   - Lernziel: DB-Administration & Wartung.

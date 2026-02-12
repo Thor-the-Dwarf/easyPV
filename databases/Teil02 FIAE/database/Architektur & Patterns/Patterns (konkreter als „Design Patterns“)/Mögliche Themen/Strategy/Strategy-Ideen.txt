@@ -1,0 +1,34 @@
+1. "Bezahl-Methoden-Switcher"
+   - Ziel: Ändere Verhalten zur Laufzeit.
+   - Spielmechanik: 
+     - Strategien: `PayPalStrategy`, `CreditCardStrategy`.
+     - User wählt Button. Der Context (`Checkout`) nutzt die gewählte Klasse.
+     - Lernziel: Austauschbare Algorithmen.
+
+2. "Interface-Vertrag"
+   - Ziel: Definiere die gemeinsame Basis für alle Strategien.
+   - Spielmechanik: 
+     - Alle brauchen die Methode `pay(amount)`.
+     - Erstelle das Interface `PaymentMethod`.
+     - Lernziel: Programmieren gegen Schnittstellen.
+
+3. "Sortier-Strategie"
+   - Ziel: Nutze Strategy für verschiedene Sortier-Logiken.
+   - Spielmechanik: 
+     - Context: `ListSorter`. 
+     - Strategie A: `FastSort` (QuickSort). Strategie B: `EasySort` (BubbleSort).
+     - Lernziel: Entkopplung von Daten und Algorithmus.
+
+4. "If-Else-Killer"
+   - Ziel: Ersetze riesige Schalter-Logik durch Patterns.
+   - Spielmechanik: 
+     - Vorher: 10x `if (type == ...)`.
+     - Nachher: `strategy.execute()`. 
+     - Lernziel: Clean Code durch Polymorphie.
+
+5. "Zustand oder Strategie?"
+   - Ziel: Abgrenzung zum State Pattern.
+   - Spielmechanik: 
+     - Strategie: Ich wähle von außen, wie es gemacht wird.
+     - State: Das Objekt entscheidet intern je nach Zustand.
+     - Lernziel: Muster-Nuancen verstehen.

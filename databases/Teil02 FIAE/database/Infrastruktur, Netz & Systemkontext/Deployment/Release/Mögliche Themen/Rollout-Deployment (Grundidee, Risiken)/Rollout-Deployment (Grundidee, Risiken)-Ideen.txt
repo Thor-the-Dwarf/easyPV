@@ -1,0 +1,30 @@
+1. "Rollout-Risk-Assessment"
+   - Ziel: Bewerte die Gefahr eines Updates.
+   - Spielmechanik: 
+     - Freitag 17:00 Uhr -> Hohes Risiko. 
+     - Dienstag 10:00 Uhr mit Rollback-Plan -> Niedriges Risiko.
+     - Lernziel: Release-Planung.
+
+2. "Canary-Deployment Pilot"
+   - Ziel: Teste das Update an 5% der User.
+   - Spielmechanik: 
+     - Schalte das Feature für eine kleine Gruppe frei. Wenn keine Fehler kommen -> Rollout für alle.
+     - Lernziel: Progressive Delivery.
+
+3. "Rollback-Racer"
+   - Ziel: Reagiere schnell auf Fehler in Produktion.
+   - Spielmechanik: 
+     - Die App stürzt ab! Drücke den "Revert" Button und bring die Version von vor 10 Minuten zurück.
+     - Lernziel: Fehlermanagement.
+
+4. "Deployment-Method-Match"
+   - Ziel: Recreate vs. Rolling Update.
+   - Spielmechanik: 
+     - Recreate: Kurz offline, dann neu. Rolling: Einer nach dem anderen (keine Downtime).
+     - Lernziel: Deployment-Strategien.
+
+5. "Feature-Flag Toggle"
+   - Ziel: Aktiviere Features ohne neues Deployment.
+   - Spielmechanik: 
+     - Der Code ist auf dem Server, aber das Feature ist "Aus". Schalte den Schalter um.
+     - Lernziel: Entkopplung von Deployment und Release.

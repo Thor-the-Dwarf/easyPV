@@ -1,0 +1,51 @@
+Anforderungen (reverse engineered)
+- Ziel: Schnelle und präzise Klassifizierung von GoF-Design-Patterns zur Verbesserung der architektonischen Fachsprache.
+- Kontext: Design Patterns, Software-Architektur, Experten-Kommunikation.
+- UX-Prinzip:
+  - "The Architect's Blueprints": Patterns sind keine trockenen Diagramme, sondern bewährte Bautechniken.
+  - "Foundation Walls" (Creational): Wie erschaffen wir Objekte, ohne den Überblick zu verlieren?
+  - "Framework-Connectors" (Structural): Wie bauen wir komplexe Gebilde aus einfachen Teilen zusammen?
+  - "Social Rules" (Behavioral): Wie kommunizieren die Bewohner (Objekte) im Gebäude miteinander?
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Das konkrete Pattern (z.B. Singleton), 2 = Die drei Kategorien (Blueprints), 3 = Der Anwendungsfall.
+- [ ] Textbudget: Max. 5 Wörter pro Pattern-Kurzbeschreibung.
+- [ ] "Three-Pillar-Layout": Klare visuelle Trennung der Kategorien als Säulen eines Tempels.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> pattern-drafts (Source) -> category-columns (Target) -> expert-summary`.
+- [ ] Columns: Drei vertikale Slot-Bereiche (Desktop nebeneinander, Mobile horizontal scrollbare Karten).
+- [ ] Drafts: Leuchtende Blaupausen-Karten am unteren Rand.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-and-Drop" – Karten fliegen bei richtiger Wahl in die passende Säule.
+- [ ] CSS-Grid für die exakte Ausrichtung der Architektur-Elemente.
+
+4. Kernvisuals
+- [ ] Blaupausen-Ästhetik: Dunkelblaues Papier, weiße Linien, Raster-Hintergrund (shared_theme.css).
+- [ ] Ikonografische Symbole: Ein Zauberstab (Erzeugung), ein Puzzle-Teil (Struktur), eine Sprechblase (Verhalten).
+- [ ] High-Contrast Glow für aktive Kartenauswahl.
+
+5. Interaktion und Feedback
+- [ ] Einrast-Effekt: "Snap! Der Adapter ist ein Strukturmuster – er verbindet inkompatible Interfaces wie ein Bindeglied."
+- [ ] Fehler-Logik: "Vorsicht! Der Observer regelt das Verhalten (Events), nicht die Erzeugung von Objekten."
+- [ ] Wissens-Plus: Nach dem Einrasten erscheint ein 1-Satz-Szenario: "Wird oft für Event-Listen in UIs genutzt."
+
+6. KPI-Klarheit
+- [ ] Pattern-Mastery: "Architekten-Rang: Senior".
+- [ ] Taxonomy-Score: "X / 23 GoF-Patterns kategorisiert".
+
+7. Content-/Copy-Feinschliff
+- [ ] Top-Patterns: Singleton, Factory, Abstract Factory (C); Adapter, Decorator, Facade, Proxy (S); Observer, Strategy, State, Command (B).
+- [ ] Tonalität: Seriös, architektonisch, fundiert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die feinen Linien der Blaupausen-Ästhetik auf dem Handy auch scharf?
+- [ ] Test: Sind die Tooltips mit den Pattern-Beschreibungen auch bei Touch-Interaktion stabil?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler verankert das 3-Säulen-Modell der Software-Muster dauerhaft.
+- [ ] Das Interface wirkt wie ein exklusives Dossier für Software-Gurus.
+- [ ] Intuitive Bedienung trotz hoher fachlicher Tiefe.

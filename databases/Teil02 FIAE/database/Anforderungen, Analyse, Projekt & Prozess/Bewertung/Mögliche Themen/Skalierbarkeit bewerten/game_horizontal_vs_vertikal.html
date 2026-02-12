@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizontal vs. Vertikal</title>
+  <link rel="stylesheet" href="./skalierung.css">
+</head>
+<body class="scale-page">
+<main class="scale-app">
+  <header class="scale-head">
+    <h1>Horizontal vs. Vertikal</h1>
+    <p>Pruefungsmodus: Waehle die Strategie, die den SLA-Vertrag einhaelt.</p>
+    <div class="scale-kpis">
+      <div class="kpi"><span>Aufgabe</span><strong id="kpi-task">1/5</strong></div>
+      <div class="kpi"><span>Treffer</span><strong id="kpi-hits">0</strong></div>
+      <div class="kpi"><span>Quote</span><strong id="kpi-rate">0%</strong></div>
+      <div class="kpi"><span>RPS</span><strong id="kpi-rps">0</strong></div>
+    </div>
+  </header>
+
+  <section id="task-card" class="task-card"></section>
+  <section class="rack" id="rack"></section>
+  <section class="controls" id="controls"></section>
+  <section class="metrics-bar">
+    <div class="sim-label">SLA-Check Ergebnis</div>
+    <div class="track"><div id="sim-fill" class="fill"></div></div>
+    <div id="sim-feedback" class="sim-feedback">Waehle eine Strategie fuer die aktuelle Aufgabe.</div>
+    <button id="next-btn" class="next-btn hidden" type="button">Naechste Aufgabe</button>
+  </section>
+</main>
+
+<script src="./game_horizontal_vs_vertikal.js" defer></script>
+</body>
+</html>

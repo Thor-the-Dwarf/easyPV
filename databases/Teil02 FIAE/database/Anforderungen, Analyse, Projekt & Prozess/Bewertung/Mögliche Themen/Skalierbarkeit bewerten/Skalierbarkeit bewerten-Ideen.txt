@@ -1,0 +1,41 @@
+1. "Horizontal vs. Vertikal"
+   - Ziel: Wähle die richtige Skalierungsstrategie.
+   - Spielmechanik: 
+     - Problem: Server-CPU ist bei 100%.
+     - Lösung A: Mehr RAM in den Server (Vertikal).
+     - Lösung B: Zweiten Server daneben stellen (Horizontal/Lastverteilung).
+     - Messbarkeit: Kosten- und Verfügbarkeits-Abwägung.
+   - Lernziel: Skalierungsmodelle.
+
+2. "Bottleneck-Finder"
+   - Ziel: Identifiziere den Engpass im System bei steigender Last.
+   - Spielmechanik: 
+     - User-Anfragen steigen von 1k auf 1M.
+     - Dashboard zeigt: Webserver (CPU 20%), Datenbank (CPU 99%, Disk I/O hoch).
+     - Erkenne: Die Datenbank ist der Flaschenhals.
+     - Messbarkeit: Analyse von Systemmetriken.
+   - Lernziel: Performance-Monitoring & Profiling.
+
+3. "Load-Balancer-Challenge"
+   - Ziel: Verteile Anfragen auf mehrere Knoten.
+   - Spielmechanik: 
+     - 4 Server. Lastverteilung: Round Robin vs. Least Connections.
+     - Was passiert, wenn ein Server ausfällt?
+     - Messbarkeit: Gleichmäßige Auslastung des Clusters.
+   - Lernziel: Lastverteilung & Hochverfügbarkeit.
+
+4. "Daten-Wachstums-Kalkulator"
+   - Ziel: Schätze den Speicherbedarf in 2 Jahren.
+   - Spielmechanik: 
+     - Aktuell: 100 GB. Wachstum: 10 GB/Monat.
+     - Frage: Reicht die 500 GB Platte für die nächsten 3 Jahre? -> Nein.
+     - Messbarkeit: Kapazitätsplanung.
+   - Lernziel: Storage-Skalierung.
+
+5. "Stateless vs. Stateful"
+   - Ziel: Verstehe die Voraussetzung für Cloud-Skalierung.
+   - Spielmechanik: 
+     - App speichert User-Bilder lokal auf dem Server. 
+     - Problem bei Skalierung (Server 2 findet das Bild von Server 1 nicht).
+     - Lösung: Zentraler S3-Speicher nutzen.
+   - Lernziel: Cloud-Native Architektur-Prinzipien.

@@ -1,0 +1,29 @@
+1. "SQL-Injection-Puzzle"
+   - Ziel: Verstehe den Angriffsmechanismus.
+   - Spielmechanik: 
+     - Eingabe: `' OR '1'='1`. Was passiert in der DB-Abfrage?
+     - Lernziel: Logik-Manipulation durch Input.
+
+2. "Prepared-Statement-Hero"
+   - Ziel: Nutze die richtige Abwehrmaßnahme.
+   - Spielmechanik: 
+     - Ersetze den String-Concatenation Code durch Parameterized Queries.
+     - Lernziel: Sicherer Code durch Trennung von Daten und Befehl.
+
+3. "Data-Leak-Racer"
+   - Ziel: Finde heraus, wie viele Daten abgeflossen sind.
+   - Spielmechanik: 
+     - Durch die Injection werden alle User-Passwörter angezeigt. Schließe die Lücke!
+     - Lernziel: Auswirkungen von Injections.
+
+4. "Command-Injection-Defense"
+   - Ziel: Schütze Systembefehle.
+   - Spielmechanik: 
+     - `ping 127.0.0.1; rm -rf /`. Verhindere das Ausführen des zweiten Befehls.
+     - Lernziel: Gefahren bei Shell-Ausführungen.
+
+5. "Blind-SQL-Simulator"
+   - Ziel: Verstehe fortgeschrittene Techniken.
+   - Spielmechanik: 
+     - Die App sagt nur "Ja/Nein". Errate den Namen des Admins Buchstabe für Buchstabe.
+     - Lernziel: Geduld und Logik in der Security.

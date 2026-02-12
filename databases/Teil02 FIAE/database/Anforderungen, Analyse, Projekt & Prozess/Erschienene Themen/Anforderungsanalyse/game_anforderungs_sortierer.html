@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anforderungs-Sortierer</title>
+  <link rel="stylesheet" href="./anforderungsanalyse.css">
+</head>
+<body class="as-page">
+<main class="as-app">
+  <header class="as-head">
+    <h1>Anforderungs-Sortierer</h1>
+    <p>AP2-Training: Ordne Anforderungen sicher ein.</p>
+
+    <section class="as-context" aria-label="Spielerklaerung">
+      <p><strong>Aufgabe:</strong> Ordne jede Aussage als funktionale (FKT) oder nicht-funktionale Anforderung (NFA) ein.</p>
+      <p><strong>FKT (funktional):</strong> Was das System koennen muss.</p>
+      <p><strong>NFA (nicht-funktional):</strong> Wie gut, sicher, schnell oder stabil es laufen muss.</p>
+      <p class="as-example">Beispiel: "User kann Passwort zuruecksetzen" = FKT, "Antwortzeit unter 500 ms" = NFA.</p>
+    </section>
+
+    <div class="as-hud">
+      <div class="chip"><span>Level</span><strong id="hud-level">1</strong></div>
+      <div class="chip"><span>Score</span><strong id="hud-score">0</strong></div>
+      <div class="chip"><span>Streak</span><strong id="hud-streak">0</strong></div>
+      <div class="chip"><span>Best</span><strong id="hud-best">0</strong></div>
+      <div class="chip"><span>Karte</span><strong id="hud-card">1/10</strong></div>
+      <div class="chip"><span>Timer</span><strong id="hud-time">∞</strong></div>
+    </div>
+    <div class="xp"><div id="xp-fill" class="xp-fill"></div></div>
+  </header>
+
+  <section class="arena">
+    <div class="zone zone-left">NFA<br><small>Nicht-funktional (WIE)</small></div>
+    <article id="card" class="card"></article>
+    <div class="zone zone-right">FKT<br><small>Funktional (WAS)</small></div>
+  </section>
+
+  <section class="actions">
+    <button id="btn-nfa" class="btn nfa" type="button">Als NFA einordnen</button>
+    <button id="btn-fkt" class="btn fkt" type="button">Als FKT einordnen</button>
+  </section>
+
+  <section id="feedback" class="feedback">Start: Lies die Karte und entscheide FKT oder NFA.</section>
+</main>
+
+<script src="./game_anforderungs_sortierer.js" defer></script>
+</body>
+</html>

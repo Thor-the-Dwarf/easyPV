@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Logische Verknüpfung von Datensätzen aus mehreren Tabellen durch tiefes Verständnis von Primär- und Fremdschlüsseln.
+- Kontext: Daten-Integration, Fokus auf relationale Zusammenhänge.
+- UX-Prinzip:
+  - "The Relational Bridge": Die Tabellen stehen sich gegenüber; bei korrektem JOIN wächst eine Brücke (Verbindungslinie) zwischen den Keys.
+  - "Table Fusion": Bei Erfolg verschmelzen die Quelltabellen visuell zu einer neuen Ergebnismenge.
+  - "Key-Magnetism": Passende Schlüssel (PK/FK) ziehen sich beim Drag & Drop leicht an.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Quelltabellen (L/R), 2 = Join-Bedingung (Mitte), 3 = Result-Preview (Unten).
+- [ ] Textbudget: Max. 3 Beispiel-Zeilen pro Tabelle.
+- [ ] "No-Scroll" Strategie: Beide Tabellen müssen gleichzeitig ohne Scrollen sichtbar sein.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> multi-table-canvas -> join-selector -> result-view`.
+- [ ] Canvas: Desktop Side-by-Side (50/50), Mobile oben/unten (35/35 dvh).
+- [ ] Join-Zone: Zwischen den Tabellen; hier werden die Linien "festgemacht".
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] SVG-Connectors: Linien passen sich beim Fenster-Resize in Echtzeit an.
+- [ ] Mobile: "Touch-on-Key-A" then "Touch-on-Key-B" als robuste Interaktion.
+
+4. Kernvisuals
+- [ ] Schlüssel-Metaphorik: Goldene Schlösser (PK) und silberne Schlüssel (FK).
+- [ ] Fusion-Animation: Zeilen gleiten zusammen und bilden eine breitere "Record"-Karte.
+- [ ] High-Contrast Labels für die Tabellennamen (`kunde` vs `bestellung`).
+
+5. Interaktion und Feedback
+- [ ] Live-Join: Sobald die Linie steht, füllt sich die Ergebnis-Tabelle mit den gematchten Daten.
+- [ ] Fehlermanagement: "Leerer Join! 'bestellung.id' und 'kunde.id' haben keine gemeinsamen Werte. Meintest du den Fremdschlüssel?"
+- [ ] "Cartesian Product" Warnung: Wenn der Join fehlt und alle mit allen verknüpft werden (visuelles Chaos).
+
+6. KPI-Klarheit
+- [ ] Match-Rate: "100% der Bestellungen korrekt zugeordnet".
+- [ ] Logic-Precision: "Relationale Integrität gewahrt".
+
+7. Content-/Copy-Feinschliff
+- [ ] Alltags-Beispiele: "Kunde & Adresse", "Autor & Buch", "User & Profile".
+- [ ] Tonalität: Strukturiert, logisch, verbindend.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Schlüssel-Icons auf kleinen Handys (320px) treffsicher klickbar?
+- [ ] Test: Bleibt die Verbindungslinie stabil, wenn der User das Handy dreht (Orientation Change)?
+
+9. Abnahmekriterien
+- [ ] Das Konzept des "Zusammenführens" wird durch die Brücken-Metapher physisch greifbar.
+- [ ] Das Interface wirkt wie ein moderner Data-Architect Designer.
+- [ ] Sofortige Sichtbarkeit des Join-Ergebnisses (Erfolgserlebnis).

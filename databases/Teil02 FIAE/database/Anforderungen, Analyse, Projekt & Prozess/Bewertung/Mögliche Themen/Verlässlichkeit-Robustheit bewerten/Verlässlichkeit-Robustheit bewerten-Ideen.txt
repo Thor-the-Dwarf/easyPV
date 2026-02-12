@@ -1,0 +1,40 @@
+1. "Failover-Simulator"
+   - Ziel: Prüfe die Reaktion des Systems auf Ausfälle.
+   - Spielmechanik: 
+     - "Primäre Datenbank stürzt ab". 
+     - Automatischer Switch auf Backup? (Active/Passive).
+     - Frage: Wie viel Datenverlust gab es? (RPO/RTO).
+     - Messbarkeit: Messung der Downtime in Sekunden.
+   - Lernziel: Disaster Recovery & Hochverfügbarkeit.
+
+2. "MTBF vs. MTTR"
+   - Ziel: Berechne Kennzahlen der Verlässlichkeit.
+   - Spielmechanik: 
+     - System läuft 1000h, fällt 2x aus, Reparatur dauert je 5h.
+     - Berechne MTBF (Mean Time Between Failures) und MTTR (Mean Time To Repair).
+     - Messbarkeit: Mathematische Korrektheit der Qualitätsmetrik.
+   - Lernziel: Zuverlässigkeitstheorie.
+
+3. "Fehlertoleranz-Check"
+   - Ziel: Erkenne Single Points of Failure (SPoF).
+   - Spielmechanik: 
+     - Systemplan mit Internetleitung, Switch, Router, Server.
+     - Wo bricht alles zusammen, wenn ein Kabel gezogen wird?
+     - Markiere die SPoFs.
+   - Lernziel: Redundante Auslegung von Infrastruktur.
+
+4. "Chaos Monkey Mini"
+   - Ziel: Teste das System durch zufällige Störungen.
+   - Spielmechanik: 
+     - Schalte Server-Services zufällig aus.
+     - Kann der User trotzdem noch die Kernfunktionen nutzen?
+     - Messbarkeit: Robustheitsscore.
+   - Lernziel: Resilience Engineering / Chaos Engineering.
+
+5. "Logging-Detektiv"
+   - Ziel: Finde die Fehlerursache in Log-Files nach einem Crash.
+   - Spielmechanik: 
+     - Scan durch Textwüsten. 
+     - Suche nach "NullPointerException" oder "Out of Memory".
+     - Zeitstempel vergleichen.
+   - Lernziel: Debugging & Fehleranalyse.

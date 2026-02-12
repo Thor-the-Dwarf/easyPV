@@ -1,0 +1,33 @@
+1. "Pipeline der Übersetzung"
+   - Ziel: Kenne die Phasen des Compilers.
+   - Spielmechanik: 
+     - Lexikalische Analyse -> Syntax Analyse -> Semantische Analyse -> Code Generierung.
+     - Sortiere die Begriffe.
+     - Lernziel: Wie Computer Code verstehen.
+
+2. "Syntax-Error-Analyzer"
+   - Ziel: Finde Fehler, die der Compiler meldet.
+   - Spielmechanik: 
+     - "Unexpected token ';'". -> Wo fehlt was?
+     - "Variable 'x' used before declaration".
+     - Lernziel: Beheben von Compile-Time Errors.
+
+3. "Statische Analyse"
+   - Ziel: Prüfe Typen vor der Laufzeit.
+   - Spielmechanik: 
+     - Tool zeigt: "Funktion erwartet Number, bekommt String".
+     - Warum ist das gut, dass der Compiler das sieht?
+     - Lernziel: Sicherheit durch starke Typisierung.
+
+4. "Optimization-Bot"
+   - Ziel: Verstehe, wie Compiler Code schneller machen.
+   - Spielmechanik: 
+     - `x = 5 + 5` -> Compiler macht `x = 10` (Constant Folding).
+     - Identifiziere ungenutzten Code (Dead Code Elimination).
+     - Lernziel: Compiler-Optimierungen.
+
+5. "Binary-Match"
+   - Ziel: Was kommt am Ende raus?
+   - Spielmechanik: 
+     - Source Code -> Compiler -> Maschinencode (0101).
+     - Lernziel: Unterschied Hochsprache vs. Binärcode.

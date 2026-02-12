@@ -1,0 +1,37 @@
+1. "Zustands-Automat"
+   - Ziel: Führe ein Objekt durch verschiedene Zustände.
+   - Spielmechanik: 
+     - Objekt: "Bestellung". Zustände: Neu, Bezahlt, Versendet, Geliefert.
+     - Event: "Geld trifft ein". -> Wohin wechselt der Zustand?
+     - Messbarkeit: Logik der Zustandsübergänge.
+   - Lernziel: State-Machine-Konzept.
+
+2. "Transition-Triggern"
+   - Ziel: Definiere Bedingungen für Zustandswechsel.
+   - Spielmechanik: 
+     - Pfeil von "Sperre" zu "Offen". 
+     - Welches Event triggert das? -> "Gültigen Code eingeben".
+     - Messbarkeit: Ursache-Wirkung-Prinzip.
+   - Lernziel: Ereignisgesteuerte Modellierung.
+
+3. "Endzustand-Falle"
+   - Ziel: Identifiziere Sackgassen im Diagramm.
+   - Spielmechanik: 
+     - Finde Zustände, aus denen kein Pfeil mehr herausführt (außer zum schwarzen Kreis).
+     - Frage: Ist das gewollt?
+   - Lernziel: Robustheit von Workflows.
+
+4. "Zustände vs. Aktivitäten"
+   - Ziel: Unterscheide "Warten auf" (Zustand) von "Tun" (Aktivität).
+   - Spielmechanik: 
+     - Text: "Datei wird gedruckt". -> Aktivität.
+     - Text: "Drucker ist bereit". -> Zustand.
+     - Messbarkeit: Korrekte Trennung der Diagrammtypen.
+   - Lernziel: Semantik von UML-Modellen.
+
+5. "Entry / Exit / Do"
+   - Ziel: Beschreibe Aktionen innerhalb eines Zustands.
+   - Spielmechanik: 
+     - "Entry: Lampe an", "Do: Blink", "Exit: Lampe aus".
+     - Messbarkeit: Verständnis der internen Zustandslogik.
+   - Lernziel: Kapselung von Verhalten in Zuständen.

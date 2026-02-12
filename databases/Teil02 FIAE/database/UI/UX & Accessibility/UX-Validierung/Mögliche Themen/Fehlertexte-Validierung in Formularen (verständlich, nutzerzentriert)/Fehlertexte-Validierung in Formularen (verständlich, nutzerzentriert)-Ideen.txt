@@ -1,0 +1,30 @@
+1. "Error-Message-Refactor"
+   - Ziel: Verwandle technische Fehlermeldungen in hilfreiche Nutzerhinweise.
+   - Spielmechanik: 
+     - Vorher: "Error 500: Database constraint violated". 
+     - Nachher: "Bitte wählen Sie einen anderen Benutzernamen – dieser ist bereits vergeben."
+     - Lernziel: Nutzerzentrierte Kommunikation.
+
+2. "Form-Validation-Match"
+   - Ziel: Wo ist der beste Ort für eine Fehlermeldung?
+   - Spielmechanik: 
+     - Ordne Fehlermeldungen den Feldern zu (Inline vs. Globaler Error Summary).
+     - Lernziel: UI-Patterns für Validierung.
+
+3. "Politeness-Checker"
+   - Ziel: Vermeide Schuldzuweisungen an den Nutzer.
+   - Spielmechanik: 
+     - "Sie haben das Passwort falsch eingegeben!" vs. "Das Passwort ist leider nicht korrekt."
+     - Lernziel: UX-Tone of Voice.
+
+4. "Actionable-Error-Quest"
+   - Ziel: Sage dem Nutzer genau, wie er den Fehler beheben kann.
+   - Spielmechanik: 
+     - "Invalid Input" -> "Bitte geben Sie eine Zahl zwischen 1 und 10 ein."
+     - Lernziel: Hilfestellung statt Sackgasse.
+
+5. "Visual-Feedback-Racer"
+   - Ziel: Nutze Farben und Icons zur Unterstützung der Fehlermeldung.
+   - Spielmechanik: 
+     - Reicht nur die Farbe Rot? (Accessibility!). Füge ein Icon für Farbenblinde hinzu.
+     - Lernziel: Barrierefreie Fehlermeldungen.

@@ -1,0 +1,37 @@
+1. "Point-Delete-Präzision"
+   - Ziel: Lösche genau einen Datensatz sicher.
+   - Spielmechanik: 
+     - Aufgabe: "Lösche den Account von Max Mustermann".
+     - Wahl: `DELETE FROM user WHERE name='Max Mustermann'` vs. `WHERE id=123`.
+     - Lerne: ID ist sicherer (Eindeutigkeit).
+   - Lernziel: Präzises Löschen über Primärschlüssel.
+
+2. "Truncate vs. Delete"
+   - Ziel: Verstehe den Unterschied zwischen Tabellenleerung und Zeilenlöschung.
+   - Spielmechanik: 
+     - "Tabelle komplett leeren (schnell)". -> TRUNCATE.
+     - "Bestimmte Zeilen entfernen". -> DELETE.
+     - Messbarkeit: Wahl der performanten Methode.
+   - Lernziel: SQL-Performance & Logging.
+
+3. "Foreign-Key-Cascade"
+   - Ziel: Verstehe automatisches Löschen von Abhängigkeiten.
+   - Spielmechanik: 
+     - Lösche einen Artikel aus dem Shop. Was passiert mit den Shop-Bildern dazu?
+     - Szene: Bilder verschwinden automatisch. Warum? -> ON DELETE CASCADE.
+   - Lernziel: Datenpflege über Tabellengrenzen hinweg.
+
+4. "Soft-Delete-Simulator"
+   - Ziel: Lerne, Daten nicht physisch zu löschen.
+   - Spielmechanik: 
+     - Statt `DELETE` -> `UPDATE user SET deleted_at = NOW() WHERE id=1`.
+     - Zeige: In der `SELECT` Abfrage müssen wir jetzt `WHERE deleted_at IS NULL` hinzufügen.
+   - Lernziel: Reversibles Löschen & Audit-Trails.
+
+5. "Delete-Safety-Dialog"
+   - Ziel: UX-Aspekte beim Löschen.
+   - Spielmechanik: 
+     - Spieler drückt "Löschen". 
+     - Programmiere die Abfrage: "Möchten Sie wirklich? Ja/Nein".
+     - Messbarkeit: Schutz vor Datenverlust durch User-Fehler.
+   - Lernziel: Human-Computer-Interaction (HCI).

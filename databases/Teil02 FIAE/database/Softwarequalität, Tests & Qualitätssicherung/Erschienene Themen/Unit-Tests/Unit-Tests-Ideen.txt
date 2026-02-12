@@ -1,0 +1,32 @@
+1. "Assert-Match"
+   - Ziel: Lerne die Assertion-Methoden kennen.
+   - Spielmechanik: 
+     - `assertEquals(expected, actual)`. 
+     - `assertTrue(condition)`.
+     - `assertNull(object)`.
+     - Lernziel: Syntax von Testing-Frameworks (JUnit, Jest).
+
+2. "Isolations-Checker"
+   - Ziel: Teste nur eine Komponente (Unit).
+   - Spielmechanik: 
+     - Wir testen eine Klasse, die die DB nutzt. 
+     - Ersetze die DB durch einen Mock.
+     - Lernziel: Unabhängigkeit von Unit-Tests.
+
+3. "Test-Suite-Builder"
+   - Ziel: Gruppiere verwandte Tests.
+   - Spielmechanik: 
+     - Erstelle eine Sammlung von Tests für die "Auth"-Klasse.
+     - Lernziel: Strukturierung von Tests.
+
+4. "Red-Green-Refactor-Runner"
+   - Ziel: Verstehe Test Driven Development (TDD).
+   - Spielmechanik: 
+     - 1. Test schreiben (Rot) -> 2. Code schreiben (Grün) -> 3. Aufräumen (Refactor).
+     - Lernziel: TDD-Workflow.
+
+5. "Edge-Case-Scout"
+   - Ziel: Finde Grenzwerte für Unit-Tests.
+   - Spielmechanik: 
+     - Funktion erwartet Alter 0-120. Teste -1, 0, 120, 121.
+     - Lernziel: Vollständigkeit der Unit-Tests.

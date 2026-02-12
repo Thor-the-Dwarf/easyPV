@@ -1,0 +1,31 @@
+1. "Data-Source-Hider"
+   - Ziel: Verstehe das Repository als Abstraktion der Datenquelle.
+   - Spielmechanik: 
+     - Die App ruft `userRepo.findById(5)` auf. 
+     - Der App ist egal, ob die Daten aus SQL, NoSQL oder einem In-Memory-Cache kommen.
+     - Lernziel: Persistenz-Ignoranz.
+
+2. "CRUD-Method-Match"
+   - Ziel: Definiere Standard-Methoden.
+   - Spielmechanik: 
+     - Erstelle `save()`, `delete()`, `findAll()`, `findById()`.
+     - Lernziel: Einheitliche Schnittstelle für Datenzugriff.
+
+3. "Repository-Mocking-Test"
+   - Ziel: Nutze ein In-Memory-Repository für Unit-Tests.
+   - Spielmechanik: 
+     - Tausche die `SQLRepository` gegen eine `MockRepository` aus, um ohne DB zu testen.
+     - Lernziel: Geschwindigkeit und Unabhängigkeit von Tests.
+
+4. "Query-Abstractor"
+   - Ziel: Verstecke komplexe SQL Queries im Repository.
+   - Spielmechanik: 
+     - Statt `SELECT * FROM users WHERE active=1 AND login_count > 100`...
+     - Nutze `repo.findTopActiveUsers()`.
+     - Lernziel: Lesbarkeit der Geschäftslogik.
+
+5. "Unit-of-Work Match"
+   - Ziel: Sammle Änderungen vor dem Speichern.
+   - Spielmechanik: 
+     - Das Repository puffert Änderungen, bis `commit()` gerufen wird.
+     - Lernziel: Datenkonsistenz und Performance.

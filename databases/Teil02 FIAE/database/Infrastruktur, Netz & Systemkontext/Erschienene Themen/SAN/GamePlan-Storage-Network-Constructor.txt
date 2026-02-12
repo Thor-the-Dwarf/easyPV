@@ -1,0 +1,19 @@
+Anforderungen
+1. "Storage-Network-Constructor"
+   - Ziel: Verständnis der Architektur und Verwaltung von Storage Area Networks (SAN) zur Bereitstellung von Block-Speicher in Enterprise-Umgebungen.
+   - Spielmechanik: 
+     - Aufbau einer Fibre-Channel (FC) oder iSCSI Infrastruktur durch Verkabelung von Initiatoren (Server) und Targets (Storage).
+     - Konfiguration von Zoning am Switch und LUN-Masking am Storage-Array zur Segmentierung des Speichers.
+     - Implementierung von Multipathing zur Erhöhung der Verfügbarkeit.
+     - Messbarkeit: Erfolgreiches Mounten der LUNs auf den Ziel-Servern.
+   - Lernziel: Beherrschung komplexer Storage-Architekturen und deren Abgrenzung zum File-basierten NAS.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_san_config.json')
+   - Hardware-Komponenten und WWN/IQN Adressierung.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Netzwerk-Topologie-Editors).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Validierung der Pfad-Redundanz).
+- [ ] Integration
+   - Tutorial: Unterschied zwischen Block-IO (SAN) und File-IO (NAS).

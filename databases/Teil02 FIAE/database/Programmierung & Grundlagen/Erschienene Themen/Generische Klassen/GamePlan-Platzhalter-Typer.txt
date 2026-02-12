@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Verständnis der generischen Programmierung zur Erstellung flexibler und gleichzeitig typsicherer Schnittstellen.
+- Kontext: Fortgeschrittene Programmierung, Code-Wiederverwendung.
+- UX-Prinzip:
+  - "The Shape Shifter": Eine Box hat eine Öffnung in Form eines Platzhalters `T`. Sobald man ein Dreieck (Integer) hineinsteckt, nimmt die Box dauerhaft die Dreiecksform an.
+  - "Type-Lock": Versucht man danach einen Kreis (String) hineinzustecken, blinkt der Rand rot ("Compiler-Error").
+  - "Multi-Box": Generics für Paare (`K`, `V`) als zwei verbundene Kammern.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der Platzhalter `T` im Code, 2 = Der reale Typ-Ersatz (Integer, String), 3 = Die Box (Container).
+- [ ] Textbudget: Max. 10 Code-Fragmente.
+- [ ] "Logic over Syntax": Der Fokus liegt auf dem Konzept "Typ-Variabilität bei voller Sicherheit".
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> code-blueprint -> object-constructor -> type-safe-check`.
+- [ ] Blueprint: Der generische Code als leuchtender Umriss (Desktop 50% Breite, Mobile 40dvh Höhe).
+- [ ] Material-Lager: Verschiedene Typ-Icons am unteren Rand zum "Bestücken" des Blueprints.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-on-Placeholder -> Select-Type" Workflow.
+- [ ] `touch-action: manipulation` für schnelles Reagieren.
+
+4. Kernvisuals
+- [ ] Science-Fiction Ästhetik: Hologramme, Blueprint-Gitter, energetische Verbindungen.
+- [ ] Transformations-Animation: Der Buchstabe `T` verwandelt sich organisch in den Namen des gewählten Typs.
+- [ ] High-Contrast Icons für Klassen und Primitivtypen.
+
+5. Interaktion und Feedback
+- [ ] Type-Safety Check: "Passt! Du hast eine `List<Auto>` erstellt. Es dürfen nur Autos rein."
+- [ ] Error-Management: "Stopp! Du versuchst ein `Fahrrad` in eine `Box<Auto>` zu legen. Der Compiler verweigert den Dienst."
+- [ ] Aha-Effekt: "Siehst du? Mit EINEM Blueprint kannst du Boxen für ALLES bauen."
+
+6. KPI-Klarheit
+- [ ] Genericity-Level: "Wiederverwendbarkeit: Hoch".
+- [ ] Type-Safety: "Laufzeitfehler-Risiko: 0%".
+
+7. Content-/Copy-Feinschliff
+- [ ] Beispiele: `Repository<T>`, `Response<T>`, `Cache<K, V>`.
+- [ ] Tonalität: Abstrakt, logisch-ästhetisch, flexibel.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Buchstabentransformationen (`T` -> `Integer`) auf kleinen Screens flüssig?
+- [ ] Test: Funktionieren die "Type-Lock" Warnungen auch intuitiv für Einsteiger?
+
+9. Abnahmekriterien
+- [ ] Der Spieler verinnerlicht das Konzept der späten Festlegung von Typen.
+- [ ] Das Interface wirkt wie ein futuristischer Baukasten für Moleküle oder Bauteile.
+- [ ] Höchste Klarheit über den Unterschied zwischen Generics und `Object`.

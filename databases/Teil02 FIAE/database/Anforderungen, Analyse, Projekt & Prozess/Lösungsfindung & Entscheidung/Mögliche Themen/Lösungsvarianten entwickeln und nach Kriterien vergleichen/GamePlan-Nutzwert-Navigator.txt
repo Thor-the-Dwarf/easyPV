@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Objektive Entscheidungsfindung durch gewichtete Nutzwertanalyse und Sensitivitätsprüfung.
+- Game-Mechanic: "The NWA Master". Der Spieler schiebt Gewichte (Kriterien) auf einem Dashboard hin und her. Balken schlagen live aus. Das Ziel: Die stabilste Entscheidung finden, die auch bei leichten Änderungen der Parameter hält.
+- Challenge: 
+  - Level 1: "Simple Choice" - Wasserfall-Rechenaufgabe.
+  - Level 2: "Stakeholder Clash" - Verschiedene Rollen fordern andere Gewichtungen. Der Spieler muss einen Kompromiss navigieren.
+  - Level 3: "Stress Test" - Plötzliche Faktenänderungen (z.B. Preis steigt) zwingen zum schnellen Rebalancing.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Total-Score" (Counter), "Objectivity-Rating" (Compliance), "Decision-Confidence" (Level).
+- [ ] Scoring: Bonuspunkte für "Robust Decisions" (Sieger bleibt Sieger auch bei +/- 5% Änderung). Abzug bei "Biased Scoring".
+
+2. Screen-Layout (The Analyst Dashboard)
+- [ ] `control-panel -> criteria-sliders -> result-bars -> ranking-podium`.
+- [ ] Sliders: Vertikale Schieberegler mit Liquid-Füllung für haptisches Gefühl.
+- [ ] Podium: Die Top-3 Varianten steigen und fallen live (Animation: `translateY`).
+
+3. Kernvisuals und Effekte
+- [ ] Fintech-Ästhetik: Dunkler Modus, leuchtende Datenbalken, Glas-Morphismus.
+- [ ] "Winner-Glow": Die führende Variante pulsiert dezent in Gold.
+- [ ] Data-Flicker: Kurzes HUD-Flackern bei Parameter-Änderungen.
+
+4. Browser- und Device-Resilienz
+- [ ] `touch-action: pan-y` für präzise Slider-Steuerung auf Mobile.
+- [ ] `calc()` basierte Responsivität für die Tabellen-Spalten.
+
+5. Content-Strategie (The Case Studies)
+- [ ] 10 Szenarien: Cloud vs. On-Prem, Programmiersprachen-Wahl, Hardware-Beschaffung.
+
+6. QA-Paket
+- [ ] Test: Ist die Live-Kalkulation verzögerungsfrei (0ms perceived lag)?
+- [ ] Test: Versteht der Spieler den Impact der Gewichtung auf das Endergebnis?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler beherrscht das mathematische Gerüst der Nutzwertanalyse.
+- [ ] Das Interface wirkt wie ein exklusives Management-Dashboard für Millionenzahlungen.
+- [ ] Motivation, durch "What-if" Szenarien die beste Lösung zu finden.

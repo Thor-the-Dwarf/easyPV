@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Beherrschung funktionaler Programmiermethoden (Select, Transform, Accumulate) zur eleganten und fehlerfreien Datenverarbeitung.
+- Kontext: Deklarative Programmierung, Array-Methoden (JS/Python/Java Streams).
+- UX-Prinzip:
+  - "The Sorting Pipeline": Daten fließen durch eine maschinelle Fertigungsstraße.
+  - "Methoden-Module": `filter()` ist ein Aussortier-Roboter, `map()` ist eine Umform-Maschine, `reduce()` ist ein Schmelzofen.
+  - "Pipeline-Visualizsation": Der Spieler baut die Module in der richtigen Reihenfolge hintereinander, um das gewünschte Endprodukt zu erhalten.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der Datenfluss (Items moving), 2 = Das aktive Methoden-Modul, 3 = Lambda-Logik (Die Programmierung des Roboters).
+- [ ] Textbudget: Max. 20 Zeichen pro Lambda-Body (z. B. `x => x * 2`).
+- [ ] "Immutability-Glow": Das Original-Band (Input) läuft oben unberührt weiter; das neue Band (Output) entsteht darunter.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> input-stream -> pipeline-slots -> output-stream -> code-hud`.
+- [ ] Pipeline: Horizontaler Bereich in der Bildschirmmitte (Desktop 70% Breite, Mobile 40dvh Höhe).
+- [ ] Slots: 3-4 Plätze für Module; der Spieler zieht `filter`, `map` oder `reduce` hinein.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: Vertikale Pipeline (Wasserfall-Prinzip).
+- [ ] `scroll-snap` beim Betrachten der einzelnen Verarbeitungsstufen.
+
+4. Kernvisuals
+- [ ] Fabrik-Ästhetik: Förderbänder, Schweißfunken bei `map()`, Hitze-Glow bei `reduce()`.
+- [ ] Item-Icons: Bunte Datenpakete, die sich beim Durchlauf verändern (z. B. Form oder Farbe).
+- [ ] Neon-Pfeile: Zeigen die Richtung des Datenflusses an.
+
+5. Interaktion und Feedback
+- [ ] Live-Processing: Pakete fahren durch die Pipeline; bei `filter(x > 5)` fliegen falsche Pakete einfach vom Band.
+- [ ] Erfolg: "Zielvorgabe erreicht! Die Liste wurde gefiltert und verdoppelt."
+- [ ] Feedback zu `reduce()`: "Achtung! Aus einer ganzen Kiste voller Pakete wurde ein einziger Gesamtwert geschmolzen."
+
+6. KPI-Klarheit
+- [ ] Functional-Purity: "Seiteneffektfrei: 100%".
+- [ ] Pipeline-Efficiency: "Anzahl Operationen: X".
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Szenarien: "Veraltete Abos kündigen (filter)", "Preise inkl. MwSt berechnen (map)", "Gesamtumsatz ermitteln (reduce)".
+- [ ] Tonalität: Modern, prozessbasiert, effizient.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Lambda-Schriftzüge auf den Robotern auf dem Handy noch lesbar?
+- [ ] Test: Läuft die Förderband-Animation flüssig (CSS transform)?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler versteht den deklarativen "Was" statt "Wie" Ansatz.
+- [ ] Das Interface wirkt wie eine hochmoderne Logistik-Leitzentrale.
+- [ ] "Aha-Effekt" beim Vermeiden von imperativen For-Schleifen.

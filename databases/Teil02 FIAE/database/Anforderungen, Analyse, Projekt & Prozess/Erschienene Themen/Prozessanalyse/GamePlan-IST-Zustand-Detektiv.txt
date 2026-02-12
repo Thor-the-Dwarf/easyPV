@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Identifikation und Kategorisierung von Prozessschwachstellen (Wartezeiten, Medienbrüche, Redundanzen) zur Steigerung der Unternehmenseffizienz.
+- Game-Mechanic: "The Flaw Finder". Der Spieler betrachtet ein "Wimmelbild" eines Büro-Workflows. Per "Röntgenblick" (Hover) müssen Ineffizienzen aufgespürt und korrekt markiert werden.
+- Challenge: 
+  - Level 1: Offensichtliche Fehler (z.B. "Postbote bringt USB-Stick").
+  - Level 2: "Deep Analysis" - Komplexe Redundanzen (z.B. doppelte Datenhaltung in zwei Systemen).
+  - Level 3: "Time Attack" - Der Prozess läuft live ab; Fehler müssen identifiziert werden, bevor der "Stau" (Delay) zu groß wird.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Efficiency-Meter" (Health), "Flaws-Found" (Score), "Potential-Savings" (Time).
+- [ ] Scoring: "Double-Find" Bonus für zusammenhängende Fehler. Abzug bei "Falschem Alarm" (Optimale Prozessschritte stören).
+
+2. Screen-Layout (The Process Map)
+- [ ] `observation-deck -> workflow-panorama -> flaw-tags -> action-bar`.
+- [ ] Panorama: Isometrische Darstellung eines Büros/Systems mit animierten Datenflüssen.
+- [ ] Tags: Farbige Marker (Rot: Blocker, Gelb: Ineffizienz).
+
+3. Kernvisuals und Effekte
+- [ ] Blueprint-Ästhetik: Blaupausen-Look, weiße Linien, technische Overlays.
+- [ ] "Scan-Effect": Ein Lichtstrahl folgt dem Cursor und hebt Details hervor.
+- [ ] High-Contrast Icons für Fehlerarten (Blitz: Blocker, Uhr: Delay).
+
+4. Browser- und Device-Resilienz
+- [ ] `will-change: opacity` für flüssige Overlays.
+- [ ] Mobile: "Pinch-to-Zoom" für detaillierte Prozess-Untersuchungen.
+
+5. Content-Strategie (The Flaw-Pool)
+- [ ] 20 reale Szenarien: Medienbrüche (Papier -> Digital), Doppelarbeit, fehlende Freigaben, unklare Zuständigkeiten.
+
+6. QA-Paket
+- [ ] Test: Sind die Hotspots auf dem Handy groß genug für präzises Markieren?
+- [ ] Test: Fühlt sich die "Röntgen-Mechanik" belohnend an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler entwickelt ein scharfes Auge für Prozess-Sünden.
+- [ ] Das Interface wirkt wie ein hochmodernes Optimierungs-Tool.
+- [ ] Messbarer Lernerfolg durch "Savings-Log" am Ende des Levels.

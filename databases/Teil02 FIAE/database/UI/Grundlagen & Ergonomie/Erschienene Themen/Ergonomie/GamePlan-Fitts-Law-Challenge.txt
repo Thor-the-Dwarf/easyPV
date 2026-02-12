@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Verständnis des Fitts' Law zur Optimierung der Benutzerfreundlichkeit durch effiziente Zielerfassungs-Zeiten (T = a + b log2(2D/W)).
+- Kontext: Ergonomie, HCI (Human-Computer Interaction), Button-Design, Mobile UX.
+- UX-Prinzip:
+  - "The Target Range": Ein interaktiver Schießstand. Buttons sind Zielscheiben. Kleine, weit entfernte Scheiben bringen weniger Punkte pro Sekunde (Herausforderung).
+  - "Distance vs. Size": Das UI zeigt grafisch, wie die Zeit mit dem Abstand (D) wächst und mit der Breite (W) sinkt.
+  - "Friction-Visual": Wenn ein Ziel zu klein ist, wird der Cursor-Weg "mühsam" (visueller Widerstand).
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Das Ziel (Target), 2 = Der Timer (Echtzeit), 3 = Die Trefferrate (Präzision).
+- [ ] Textbudget: Max. 5 Wörter pro Ziel-Aufforderung (z.B. "Triff den 'In den Warenkorb' Button!").
+- [ ] "Heat-Map-Tracker": Zeichnet den Mauspfad als verblassende Spur auf.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> range-canvas -> stats-hud -> ergonomics-lesson`.
+- [ ] Range: Großer, freier Bereich für die Ziel-Interaktion (Desktop Vollbild-Zentrum).
+- [ ] HUD: Minimalistische Anzeige der Metriken in den Ecken (Glassmorphism-Stil).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Thumb-Zone-Check" – Teste, ob wichtige Aktionen im bequemen Bereich des Daumens liegen.
+- [ ] `touch-action: none` zur Vermeidung von ungewolltem Scrolling während des Spiels.
+
+4. Kernvisuals
+- [ ] Sport-Ästhetik: Neon-Vektoren, Fadenkreuze, digitale Stoppuhren, dynamische Kreise (shared_theme.css).
+- [ ] "The Bloom": Ziele pulsieren leicht, um Aufmerksamkeit zu lenken (Visual Cue).
+- [ ] High-Contrast Fehlerfarben bei Missclicks.
+
+5. Interaktion und Feedback
+- [ ] Hit-Feedback: "Klick! Ziel erreicht in 450ms. Die Größe (W) gleicht die Distanz (D) perfekt aus!"
+- [ ] Lern-Moment: "Siehst du? Den winzigen 'Abbrechen'-Link im Footer zu treffen, dauert doppelt so lange wie den großen 'Order'-Button."
+- [ ] Erfolg: "Ergonomie-Meister! Du hast das Gesetz der Zielerfassung verinnerlicht und baust ab jetzt schnellere Interfaces."
+
+6. KPI-Klarheit
+- [ ] Throughput-Rating: "Bits/Sekunde: X".
+- [ ] Error-Rate: "Fehlklicks: X%".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Login-Button vs. Forgot-Password", "Mobile Navigation (Daumen-Erreichbarkeit)", "Wichtige System-Warnungen".
+- [ ] Tonalität: Aktiv, wettbewerbsorientiert, analytisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist die Treffer-Validierung auf dem Smartphone präzise genug für kleine Finger?
+- [ ] Test: Sind die unterschiedlichen Schwierigkeitsgrade (Größe/Distanz) mathematisch korrekt skaliert?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler versteht das mathematische Verhältnis von Größe und Distanz.
+- [ ] Das Interface wirkt wie ein exklusives Trainings-Programm für UX-Designer.
+- [ ] Intuitive Beherrschung des theoretischen Fitts' Law Modells.

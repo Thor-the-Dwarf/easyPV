@@ -1,0 +1,32 @@
+1. "Kaffee-Baukasten"
+   - Ziel: Erweitere ein Basis-Objekt flexibel um Funktionen.
+   - Spielmechanik: 
+     - Basis: `EinfacherKaffee`.
+     - Decorator: `Milch`, `Zucker`, `Schoko`.
+     - Baue einen "Latte Macchiato" durch Verschachtelung: `new Milch(new Zucker(new Kaffee()))`.
+     - Lernziel: Dynamische Funktionserweiterung ohne Vererbung.
+
+2. "Logging-Wrapper"
+   - Ziel: Füge Logging hinzu, ohne die Kernlogik zu ändern.
+   - Spielmechanik: 
+     - `AuthService` (Kern). 
+     - `LoggingDecorator(AuthService)`.
+     - Lernziel: Cross-Cutting Concerns.
+
+3. "Compression-Stream-Chain"
+   - Ziel: Nutze Decorator wie in der Java I/O Library.
+   - Spielmechanik: 
+     - `new GZIPStream(new FileStream("data.txt"))`.
+     - Lernziel: Reale Anwendung in Standard-Bibliotheken.
+
+4. "Decorator vs. Subclassing"
+   - Ziel: Verstehe den Vorteil gegenüber Vererbung.
+   - Spielmechanik: 
+     - Warum brauchen wir für 3 Zutaten nicht 8 verschiedene Klassen? -> Kombinationsmöglichkeiten.
+     - Lernziel: Komposition über Vererbung.
+
+5. "Baukasten-UI"
+   - Ziel: Füge Scrollbars oder Ränder zu Fenstern hinzu.
+   - Spielmechanik: 
+     - `new ScrollDecorator(new BorderDecorator(new TextView()))`.
+     - Lernziel: Visualisierung der Verschachtelung.

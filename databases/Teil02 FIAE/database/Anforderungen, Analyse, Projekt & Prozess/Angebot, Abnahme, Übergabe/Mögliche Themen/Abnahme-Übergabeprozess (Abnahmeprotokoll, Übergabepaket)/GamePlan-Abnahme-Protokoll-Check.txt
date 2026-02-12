@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Juristisch korrekte Klassifizierung von Softwaremängeln zur Entscheidung über die Abnahmefähigkeit nach IT-Recht.
+- Game-Mechanic: "The Legal Filter". Du sitzt am Richtertisch. Mängel-Akten werden dir vorgelegt. Du musst entscheiden: Abnahme (Grün), Abnahme mit Vorbehalt (Gelb) oder Ablehnung (Rot).
+- Challenge: 
+  - Level 1: Eindeutige Blocker (System-Crash -> Ablehnung).
+  - Level 2: "The Typo Trap" - Ein Rechtschreibfehler ist KEIN Grund zur Ablehnungsverweigerung. Wer ablehnt, riskiert "Abnahmeverzug"-Punkte.
+  - Level 3: "Cumulative Failures" - Viele kleine Mängel ergeben zusammen einen wesentlichen Mangel. Das diplomatische Balancing wird abgeprüft.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Legal-Reputation" (Health), "Liability-Risk" (Gauge), "Cases-Closed" (Progress).
+- [ ] Scoring: "Justice-Bonus" für rechtlich saubere Urteile. Massiver Abzug bei unberechtigter Abnahmeverweigerung (IT-Recht-Fail).
+
+2. Screen-Layout (The Judge's Bench)
+- [ ] `courtroom -> case-file -> legal-stamps -> decision-ledger`.
+- [ ] Case-File: Das Mangel-Protokoll liegt physisch auf dem Tisch (Schatten, Textur).
+- [ ] Stamps: Drei große, haptische Stempel (APPROVED, MINOR, BLOCKED).
+
+3. Kernvisuals und Effekte
+- [ ] Law-Office Ästhetik: Dunkles Holz, Leder, Papier-Texturen, Gold-Akzente.
+- [ ] "Stamp-Slam": Bei Entscheidung knallt der Stempel mit Partikeleffekt auf das Papier.
+- [ ] Legal-Alert: Bei falscher Entscheidung erscheint ein "Gerichtsvollzieher" mit einer Mahnung.
+
+4. Browser- und Device-Resilienz
+- [ ] `rotate()` Effekte für die Aktenblätter.
+- [ ] Mobile: "Swipe-to-Stamp" Geste.
+
+5. Content-Strategie (The Case-Pool)
+- [ ] 15 reale Fälle: Von "Fehlender Dokumentation" bis "Sicherheitslücke in SQL".
+
+6. QA-Paket
+- [ ] Test: Fühlt sich die Unterscheidung zwischen "wesentlich" und "unwesentlich" durch das Feedback klarer an?
+- [ ] Test: Ist die Papier-Physik flüssig?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verinnerlicht die rechtlichen Hürden der Software-Abnahme.
+- [ ] Das Interface wirkt hochseriös und atmosphärisch dicht.
+- [ ] Fehler werden durch juristische Kurz-Erklärungen (BGB §) geheilt.

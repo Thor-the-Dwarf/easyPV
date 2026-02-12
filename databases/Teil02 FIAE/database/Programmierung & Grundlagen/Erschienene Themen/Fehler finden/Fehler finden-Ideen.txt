@@ -1,0 +1,35 @@
+1. "Syntax-Hunter"
+   - Ziel: Finde klassische Syntax-Fehler.
+   - Spielmechanik: 
+     - `if (x == 5 { console.log("Hi"); }` -> Fehlende Klammer.
+     - `let x = "Hallo"; y = x + 1;` -> Fehlende Variablendeklaration von y.
+     - Messbarkeit: Zeitlimit für die Fehlersuche.
+   - Lernziel: Korrekte Programmiersprachen-Grammatik.
+
+2. "Logic-Bug-Detective"
+   - Ziel: Erkenne Fehler, die keinen Absturz verursachen, aber falsche Ergebnisse liefern.
+   - Spielmechanik: 
+     - Funktion: `calculateArea(r) { return 2 * PI * r; }` (Umfang statt Fläche).
+     - Frage: Warum ist das Ergebnis falsch?
+     - Lernziel: Semantische Fehler finden.
+
+3. "Off-by-One-Falle"
+   - Ziel: Finden von Fehlern in Schleifengrenzen.
+   - Spielmechanik: 
+     - `for (let i = 0; i <= array.length; i++)` -> Crash bei letztem Element.
+     - Frage: Warum stürzt das Programm ab? -> Index out of bounds.
+     - Lernziel: Array-Indizierung verstehen.
+
+4. "Null-Pointer-Scanner"
+   - Ziel: Erkenne Zugriffe auf nicht-existente Objekte.
+   - Spielmechanik: 
+     - `user.address.city` (wenn `address` undefined ist).
+     - Lösung: Wie baut man einen Guard ein?
+     - Lernziel: Defensive Coding.
+
+5. "Race-Condition-Quiz"
+   - Ziel: Verstehe Fehler durch falsche Reihenfolge.
+   - Spielmechanik: 
+     - Task A liest Wert, Task B ändert ihn, Task A schreibt alten Wert zurück.
+     - Was ist das Problem?
+     - Lernziel: Nebenläufigkeitsprobleme erkennen.

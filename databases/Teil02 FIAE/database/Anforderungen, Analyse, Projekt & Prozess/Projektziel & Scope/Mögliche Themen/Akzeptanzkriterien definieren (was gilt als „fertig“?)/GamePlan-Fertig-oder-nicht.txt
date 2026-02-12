@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sicherung der Definition of Done (DoD) durch lückenlose Validierung von User Story Ergebnissen.
+- Game-Mechanic: "The DoD Validator". Du bist der Quality-Gatekeeper. Features (Züge) fahren auf das Gate zu. Du hast eine Lupe (Scanner) und musst die Checkliste gegen das Visual prüfen.
+- Challenge: 
+  - Level 1: "Green-Path" - Alles passt, nur absegnen.
+  - Level 2: "Detail-Bug" - Ein Kriterium (z.B. "Fehlermeldung bei falschem Login") fehlt im Visual. Ablehnen!
+  - Level 3: "The Silent Failure" - Das Visual sieht gut aus, aber die "Log-Files" (Zusatzinfo) zeigen einen Fehler.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Quality-Accuracy" (%), "Bugs-Caught" (Score), "Gate-Status" (Open/Closed).
+- [ ] Scoring: +1000 Pkt für das Finden versteckter Fehler. Abzug für "Wink-Durchlassen" (Fake-Go).
+
+2. Screen-Layout (The Quality Gate)
+- [ ] `gate-control -> feature-display -> dod-checklist -> verdict-buttons`.
+- [ ] Feature-Display: Hochauflösende Screenshots von UI-Elementen.
+- [ ] Checklist: Interaktive Check-Items, die bei Klick "grün" einrasten.
+
+3. Kernvisuals und Effekte
+- [ ] Cyber-Sanctum Ästhetik: Blau/Weiß/Neon-Grün, holografische Checklisten, Laser-Scan-Effekte.
+- [ ] "Stamp of Quality": Ein massiver digitaler Stempel ("APPROVED" / "REJECTED") knallt auf das Feature.
+- [ ] High-Contrast UI: Alles ist auf maximale Lesbarkeit der Kriterien getrimmt.
+
+4. Browser- und Device-Resilienz
+- [ ] `image-rendering: crisp-edges` für pixelgenaue Mockup-Betrachtung.
+- [ ] Mobile: Split-Screen View (Oben: Bild / Unten: Checkliste).
+
+5. Content-Strategie (The DoD-Pool)
+- [ ] 10 User-Story-Checklisten: Von Login-Screen bis zum komplexen PDF-Export.
+
+6. QA-Paket
+- [ ] Test: Reagiert das System korrekt, wenn ein Spieler "Approved" klickt, aber Haken fehlen?
+- [ ] Test: Sind die Mockups auf mobilen Displays scharf genug?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler entwickelt ein kompromissloses Qualitätsbewusstsein (DoD).
+- [ ] Das Interface wirkt wie ein hochmodernes Abnahme-Tool.
+- [ ] Befriedigender Workflow durch das "Abhaken"-Gefühl.

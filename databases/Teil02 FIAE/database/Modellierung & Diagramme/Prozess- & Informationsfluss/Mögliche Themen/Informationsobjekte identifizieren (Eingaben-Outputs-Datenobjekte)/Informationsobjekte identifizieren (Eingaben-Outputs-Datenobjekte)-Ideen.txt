@@ -1,0 +1,40 @@
+1. "Listen-Detektiv"
+   - Ziel: Extrahiere Datenfelder aus einem realen Dokument.
+   - Spielmechanik: 
+     - Zeige eine Papierrechnung.
+     - Was sind die Informationsobjekte? (Name, Anschrift, Summe, MwSt).
+     - Messbarkeit: Vollständigkeit der Datenextraktion.
+   - Lernziel: Datenanalyse.
+
+2. "Typen-Zuweiser"
+   - Ziel: Ordne Objekten Datentypen zu.
+   - Spielmechanik: 
+     - "Geburtsdatum" -> DATE.
+     - "E-Mail" -> STRING (mit Regex Check).
+     - "Preis" -> FLOAT/DECIMAL.
+     - Messbarkeit: Wahl der technisch passenden Repräsentation.
+   - Lernziel: Datenschema-Vorbereitung.
+
+3. "Objekt-Hierarchy"
+   - Ziel: Erkenne Kopf- und Positionsdaten.
+   - Spielmechanik: 
+     - "Bestellung" (Kopf) <-> "Bestellposition" (N Zeilen).
+     - Drag & Drop: Wo gehört die "Gesamtsumme" hin? (Kopf). Wo die "Menge"? (Position).
+     - Messbarkeit: Verständnis von strukturierten Daten.
+   - Lernziel: Datenmodellierung (Header/Detail).
+
+4. "Datenfluss-Richtung"
+   - Ziel: Definiere Input/Schnittstelle und Output.
+   - Spielmechanik: 
+     - Service: "Wetter-API". 
+     - Was schickst du hin (Input: PLZ)? Was kommt zurück (Output: Temperatur)?
+     - Messbarkeit: Schnittstellen-Logik.
+   - Lernziel: API-Verständnis.
+
+5. "Validierungs-Checker"
+   - Ziel: Erkenne ungültige Informationsobjekte.
+   - Spielmechanik: 
+     - "Alter: -5". -> Ungültig.
+     - "E-Mail: test@com". -> Ungültig (@ fehlt).
+     - Messbarkeit: Qualitätskontrolle am Dateneingang.
+   - Lernziel: Datenintegrität & Validierung.

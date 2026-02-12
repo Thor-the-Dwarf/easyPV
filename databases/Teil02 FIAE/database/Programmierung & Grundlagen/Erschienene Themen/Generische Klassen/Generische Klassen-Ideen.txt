@@ -1,0 +1,34 @@
+1. "Platzhalter-Typer (Generics)"
+   - Ziel: Verstehe den Sinn von `<T>`.
+   - Spielmechanik: 
+     - Klasse `Box<T>`. 
+     - Wenn T = `String`, was darf in die Box? -> Nur Texte.
+     - Messbarkeit: Typ-Sicherheit bei Datenstrukturen.
+   - Lernziel: Generische Programmierung.
+
+2. "Generic-List-Simulator"
+   - Ziel: Nutze generische Listen.
+   - Spielmechanik: 
+     - `List<Auto> garage = new ArrayList<>();`.
+     - Kannst du ein `Fahrrad` hinzufügen? -> Compiler Error.
+     - Lernziel: Early Bug Detection durch statische Typisierung.
+
+3. "Type-Erasure-Check"
+   - Ziel: Was passiert zur Laufzeit?
+   - Spielmechanik: 
+     - Info: Generics werden beim Compilieren oft entfernt. 
+     - Frage: Ist `Box<String>` und `Box<Integer>` zur Laufzeit die gleiche Basisklasse? -> Ja.
+     - Lernziel: Tieferes Verständnis der Runtime.
+
+4. "Kovarianz-Falle"
+   - Ziel: Verstehe Vererbung bei Generics.
+   - Spielmechanik: 
+     - `List<Hund>` ist NICHT automatisch `List<Tier>`.
+     - Warum? -> Man könnte sonst eine Katze in die Hundeliste mogeln.
+     - Lernziel: Typsystem-Spezialitäten.
+
+5. "Reusable-Pair"
+   - Ziel: Erstelle eine generische Klasse `Pair<K, V>`.
+   - Spielmechanik: 
+     - Baue die Klasse für (String, Integer) und (User, Role).
+     - Lernziel: Flexibler Code durch Abstraktion.

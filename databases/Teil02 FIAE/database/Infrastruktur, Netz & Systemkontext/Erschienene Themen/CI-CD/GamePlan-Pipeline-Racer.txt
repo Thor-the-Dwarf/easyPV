@@ -1,0 +1,19 @@
+Anforderungen
+1. "Pipeline-Racer"
+   - Ziel: Verständnis des linear automatisierten Ablaufs von der Code-Änderung bis zur Bereitstellung (CI/CD Pipeline).
+   - Spielmechanik: 
+     - Der Spieler erhält Bausteine eines Release-Prozesses (Compile, Lint, Unit-Test, Integration-Test, Deploy).
+     - Aufgabe: Anordnung in der logisch korrekten Reihenfolge ("Fail Fast" Prinzip).
+     - Reaktion auf fehlschlagende Stages: Analyse der Logfiles und Korrektur des Fehlers.
+     - Messbarkeit: Zeit bis zum erfolgreichen Deployment ("Time to Market").
+   - Lernziel: Beherrschung moderner DevOps-Workflows und Steigerung der Softwarequalität durch Automatisierung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_cicd_pipeline.json')
+   - Pipeline-Stages und Fehlerszenarien.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Visuelle Darstellung der Pipeline-Nodes).
+- [ ] Game-Engine Logic ('game_category_match.js')
+   - (Validierung der Prozess-Reihenfolge).
+- [ ] Integration
+   - Tutorial: Warum Tests VOR dem Deployment laufen müssen.

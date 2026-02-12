@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Umfassende Strukturprüfung von Quellcode durch systematisches Durchlaufen aller möglichen Ausführungspfade (Path/Branch Coverage).
+- Kontext: White-Box-Testing, Code-Analyse, Sicherheitstests, Bedingungsabdeckung.
+- UX-Prinzip:
+  - "The Cave Explorer": Der Code ist ein dunkles Höhlensystem (Control Flow Graph).
+  - "Flare-Deployment" (Testdaten): Der Spieler wirft "Leuchtkugeln" (Eingabedaten) in die Tunnel. Jede Kugel leuchtet den Pfad aus, den sie aufgrund der Logik-Eingänge nimmt.
+  - "Mapping the Dark": Ziel ist die vollständige Kartierung; jeder Geheimgang (`else`, `catch`, `default`) muss einmal hell erleuchtet sein.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die unentdeckten Pfade (Schatten), 2 = Die Eingabe-Konsole (Steuerung), 3 = Die Gesamtkarte (Graph).
+- [ ] Textbudget: Max. 10 Wörter pro Entscheidungsknoten.
+- [ ] "Heatmap-Overlay": Anzeige, welche Zeilen wie oft "beleuchtet" wurden.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> code-cave-viewer (Center) -> navigation-console -> map-legend`.
+- [ ] Viewer: Graphische Darstellung des Kontrollflusses mit interaktiven Verzweigungen (Desktop Full-Screen).
+- [ ] Console: Ein Dashboard zum Anpassen der Variablenwerte (Side-Panel).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-to-Navigate" im Graphen; modale Eingabe-Buttons für die Testdaten.
+- [ ] `canvas` oder `svg` basierte Animation der Lichtstrahlen im Graphen.
+
+4. Kernvisuals
+- [ ] Speläologie-Ästhetik: Felsige Texturen, Taschenlampen-Effekte, Glühwürmchen-Pfade (shared_theme.css).
+- [ ] "The Dead End": Totenköpfe markieren Passagen, die unmöglich zu erreichen sind (Unreachable Code).
+- [ ] High-Contrast Linien für aktive Pfade (Neon-Gelb auf Tiefschwarz).
+
+5. Interaktion und Feedback
+- [ ] Explorer-Feedback: "Signal! `UserIsAdmin = False` leitet die Kugel in den unteren Tunnel. Ein neuer Bereich wurde kartiert."
+- [ ] Coverage-Aha: "Halt! Du hast den `IOException` Pfad noch nie besucht. Probiere eine ungültige Pfad-Eingabe aus!"
+- [ ] Erfolg: "Höhlensystem komplett erfasst! Deine Testsuite lässt keinen Winkel deines Programms ungeprüft."
+
+6. KPI-Klarheit
+- [ ] Exploration-Percent: "Kartierungs-Grad: 100%".
+- [ ] Structural-Depth: "Pfadtiefe: X / Max Y".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Komplexe Kreditwürdigkeits-Prüfung", "Mehrstufiges Auth-System", "Mathematische Fallunterscheidungen".
+- [ ] Tonalität: Abenteuerlich, explorativ, gewissenhaft.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist der Kontrollfluss-Graph auf mobilen Bildschirmen intuitiv navigierbar (Zoom-Level)?
+- [ ] Test: Funktioniert die Echtzeit-Färbung der Pfade auch bei komplexen Verschachtelungen?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler versteht White-Box-Tests als aktive Jagd nach "unbekannten Ecken" im Code.
+- [ ] Das Interface wirkt wie eine hochwertige Navigationskonsole für Entdecker.
+- [ ] Volle Beherrschung des Konzepts "Strukturabdeckung".

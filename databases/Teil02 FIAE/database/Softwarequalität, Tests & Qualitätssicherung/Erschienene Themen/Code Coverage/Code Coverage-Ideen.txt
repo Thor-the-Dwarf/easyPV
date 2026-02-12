@@ -1,0 +1,30 @@
+1. "Coverage-Heatmap-Target"
+   - Ziel: Maximiere die Testabdeckung.
+   - Spielmechanik: 
+     - Code wird rot (ungetestet) dargestellt. 
+     - Jeder Test macht Zeilen grün.
+     - Lernziel: Metriken verstehen.
+
+2. "LCOV-Analyzer"
+   - Ziel: Lerne Coverage-Reports zu lesen.
+   - Spielmechanik: 
+     - Welches File hat die schlechteste Abdeckung? Wo müssen wir nachbessern?
+     - Lernziel: Tool-Kompetenz.
+
+3. "Branch-Coverage-Quest"
+   - Ziel: Erreiche 100% Zweigabdeckung.
+   - Spielmechanik: 
+     - `if (A || B)`. Reicht ein Testfall mit T/T? -> Nein (deckt nur einen Zweig der Logik ab).
+     - Lernziel: Tiefe der Abdeckung (Statement vs Branch).
+
+4. "Dead-Code-Detector"
+   - Ziel: Finde Code, der niemals erreicht werden kann (0% Coverage möglich).
+   - Spielmechanik: 
+     - Identifiziere redundante `if` oder `return` nach einem `throw`.
+     - Lernziel: Code-Hygiene.
+
+5. "False-Sense-of-Security"
+   - Ziel: Verstehe, dass 100% Coverage keine Fehlerfreiheit garantiert.
+   - Spielmechanik: 
+     - Zeilen sind grün, aber es gibt trotzdem einen Bug bei bestimmter Eingabe. Warum?
+     - Lernziel: Kritischer Umgang mit Metriken.

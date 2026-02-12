@@ -1,0 +1,19 @@
+Anforderungen
+1. "Stage-the-Code Racer"
+   - Ziel: Verständnis des Software-Lifecycle-Managements und der Bedeutung von isolierten Umgebungen zur Qualitätssicherung.
+   - Spielmechanik: 
+     - Der Spieler steuert den Release-Fluss eines Code-Pakets durch die Instanzen Dev, Test/QA und Produktion (Prod).
+     - Identifikation von fehlenden Konfigurations-Overrides (z.B. falsche DB-Zugänge pro Stage).
+     - Validierung der Datenparität und Einhaltung von Datenschutzvorgaben (keine Realdaten im Test).
+     - Messbarkeit: Fehlerfreier Durchlauf des Codes bis zum produktiven Rollout.
+   - Lernziel: Beherrschung von Environment-Management und Vermeidung von "Works on my machine" Fehlern.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_stages.json')
+   - Environment-Zustände und Config-Varianten.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Visuelle Darstellung der Server-Landschaft).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Tracking des Paket-Status über Stages hinweg).
+- [ ] Integration
+   - Info: Warum produktive Umgebungen niemals für Tests missbraucht werden dürfen.

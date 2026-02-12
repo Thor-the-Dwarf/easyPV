@@ -1,0 +1,19 @@
+Anforderungen
+1. "Break-Even-Calculator"
+   - Ziel: Befähigung zur Durchführung von Gewinnschwellenanalysen zur Beurteilung der Wirtschaftlichkeit von Software- oder Infrastrukturprojekten.
+   - Spielmechanik: 
+     - Der Spieler kalkuliert die fixen und variablen Kosten eines fiktiven Web-Dienstes.
+     - Bestimmung des Break-Even-Points: Ab welcher Nutzeranzahl oder welchem Verkaufsvolumen wird die Gewinnzone erreicht?
+     - Simulation von Preisänderungen und deren Auswirkung auf die Marktfähigkeit.
+     - Messbarkeit: Korrektheit der mathematischen Gewinnschwellen-Berechnung.
+   - Lernziel: Grundlegendes Verständnis der kaufmännischen Steuerung und Entscheidungsfindung in IT-Unternehmen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_econ_break_even.json')
+   - Kostenparameter und Erlös-Modelle.
+- [ ] Shared CSS Check ('business_mathematics.css')
+   - (Interaktives Diagramm-Visual für Kosten/Erlös).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Validierung der Kalkulations-Ergebnisse).
+- [ ] Integration
+   - Info: Warum Skaleneffekte (Economy of Scale) die variablen Stückkosten senken können.

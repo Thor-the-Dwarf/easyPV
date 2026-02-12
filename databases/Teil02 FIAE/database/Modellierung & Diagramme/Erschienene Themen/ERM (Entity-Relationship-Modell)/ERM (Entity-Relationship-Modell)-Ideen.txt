@@ -1,0 +1,38 @@
+1. "Entity-Finder"
+   - Ziel: Identifiziere Entitäten und Attribute.
+   - Spielmechanik: 
+     - "Kunde", "Vorname", "Bestellung", "Rechnungsnummer".
+     - Sortiere: Was ist eine Entität (Kasten)? Was ist ein Attribut (Oval)?
+     - Messbarkeit: Korrekte Trennung von Objekt und Eigenschaft.
+   - Lernziel: Grundelemente des ERM.
+
+2. "Beziehungs-Kardinalität"
+   - Ziel: Bestimme 1:1, 1:n und n:m Beziehungen.
+   - Spielmechanik: 
+     - "Mitarbeiter arbeitet in Abteilung". -> 1:n.
+     - "Student besucht Kurs". -> n:n.
+     - Messbarkeit: Logisches Verständnis der Mengenzuordnung.
+   - Lernziel: Relationen im Datenmodell.
+
+3. "Primärschlüssel-Jäger"
+   - Ziel: Wähle das beste Attribut als PK.
+   - Spielmechanik: 
+     - "Name", "Geburtsdatum", "KundenNr (Auto-Inc)".
+     - Warum ist "Name" schlecht? -> Nicht eindeutig.
+     - Messbarkeit: Wahl eines stabilen, eindeutigen Identifikators.
+   - Lernziel: Identität von Datensätzen.
+
+4. "n:m-Auflöser"
+   - Ziel: Löse eine n:m Beziehung mit einer Hilfstabelle auf.
+   - Spielmechanik: 
+     - "Buch" <-> "Autor".
+     - Baue die Zwischentabelle "Buch_Autor" ein.
+     - Messbarkeit: Korrekte Transformation in ein relationales Zwischenmodell.
+   - Lernziel: Normalisierung & Datenbankdesign.
+
+5. "Chen vs. Crow-Foot"
+   - Ziel: Erkenne verschiedene Notationen.
+   - Spielmechanik: 
+     - Match: "Raute" (Chen) vs. "Gabel" (Crow-Foot).
+     - Messbarkeit: Lesefähigkeit verschiedener Dialekte.
+   - Lernziel: Standard-Notationen im Database Engineering.

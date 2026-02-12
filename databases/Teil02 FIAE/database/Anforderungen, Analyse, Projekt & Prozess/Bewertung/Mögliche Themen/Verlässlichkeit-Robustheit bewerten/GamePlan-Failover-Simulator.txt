@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Beherrschung von Hochverfügbarkeits-Szenarien und Failover-Strategien zur Minimierung von Downtime.
+- Game-Mechanic: "The Chaos Engineer". Du bist im Kontrollzentrum eines Rechenzentrums. Plötzlich fallen Komponenten aus (Blitzeinschlag, Festplattendefekt). Du musst die Backup-Systeme (Active/Passive) manuell oder automatisch triggern.
+- Challenge: 
+  - Level 1: Einfacher DB-Ausfall (Switch to Slave).
+  - Level 2: "Split-Brain Crisis" - Beide Knoten behaupten, Master zu sein. Du musst den "Node-Kill" Button drücken.
+  - Level 3: "Cascading Failure" - Wenn du zu langsam bist, brennen weitere Komponenten durch (Feuertod-Grafik).
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "System-Health" (Graph), "Uptime-Timer" (SLA 99.99%), "RTO-Stoppuhr" (Recovery Time).
+- [ ] Scoring: +5000 Pkt für "Zero Data Loss" (RPO=0). Abzug für jede Sekunde Downtime.
+
+2. Screen-Layout (Mission Control)
+- [ ] `control-room -> system-map -> emergency-console -> diagnostic-feed`.
+- [ ] System-Map: Ein technischer Graph der Server-Struktur (Lines glow when active).
+- [ ] Console: Große Kippschalter und Drehregler für Failover-Aktionen.
+
+3. Kernvisuals und Effekte
+- [ ] Sci-Fi Control Center Ästhetik: Dunkler Hintergrund, CRT-Effekte, Scanlines, rote Warnleuchten.
+- [ ] "The Glitch": Bei Ausfall flimmert der Bildschirm (Distortion-Effekt).
+- [ ] Heat-Visual: Server-Icons färben sich bei Last/Ausfall von Blau nach glühend Rot.
+
+4. Browser- und Device-Resilienz
+- [ ] WebGL-Shader (optional) für CRT-Look.
+- [ ] Mobile: Fokus auf die "Zwei-Hand-Steuerung" (Buttons links/rechts).
+
+5. Content-Strategie (The Disasters)
+- [ ] 10 Katastrophen-Szenarien: DDoS, Power-Loss, Master-Master-Conflict, Sync-Lag.
+
+6. QA-Paket
+- [ ] Test: Erzeugt die RTO-Stoppuhr den nötigen "positiven Stress"?
+- [ ] Test: Sind die Schaltzustände (Active/Passive) visuell eindeutig?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift Hochverfügbarkeit als aktiven Prozess.
+- [ ] Das Interface wirkt extrem wertig und immersiv (Leitstand-Feeling).
+- [ ] Wissenstransfer: Warum ist Hot-Standby teurer aber sicherer?

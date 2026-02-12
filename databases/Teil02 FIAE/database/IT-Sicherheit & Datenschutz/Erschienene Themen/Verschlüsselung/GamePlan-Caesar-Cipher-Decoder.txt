@@ -1,0 +1,19 @@
+Anforderungen
+1. "Caesar-Cipher-Decoder"
+   - Ziel: Verständnis der historischen Grundlagen und der mathematischen Prinzipien der Kryptografie (Substitution).
+   - Spielmechanik: 
+     - Anzeige einer "geheimen" Nachricht, die durch Verschiebung im Alphabet verschlüsselt wurde.
+     - Der Spieler muss den Verschiebungs-Offset (Key) finden und die Nachricht decodieren.
+     - Vergleich von symmetrischen und asymmetrischen Verfahren (Theorie-Transfer).
+     - Messbarkeit: Erfolgreiche Entschlüsselung und korrekte Bestimmung des Offsets.
+   - Lernziel: Beherrschung kryptografischer Basis-Konzepte und Verständnis für die Bedeutung von Schlüssellängen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_crypto_basics.json')
+   - Verschlüsselte Texte und Schlüssel-Offsets.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Alphabet-Rads Visuals).
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Validierung des decodierten Textes).
+- [ ] Integration
+   - Tutorial: Warum die Caesar-Verschlüsselung heute in Millisekunden geknackt wird.

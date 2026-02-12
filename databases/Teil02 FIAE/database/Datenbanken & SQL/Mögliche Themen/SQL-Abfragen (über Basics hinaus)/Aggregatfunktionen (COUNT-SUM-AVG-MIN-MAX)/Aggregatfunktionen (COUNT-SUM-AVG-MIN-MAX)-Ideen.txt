@@ -1,0 +1,40 @@
+1. "Rechen-Meister"
+   - Ziel: Wähle die richtige Funktion für die Aufgabe.
+   - Spielmechanik: 
+     - "Wie viele User?" -> COUNT.
+     - "Gesamtsumme?" -> SUM.
+     - "Durchschnittsalter?" -> AVG.
+     - "Billigstes Produkt?" -> MIN.
+     - Messbarkeit: Korrekte Wahl des Operators.
+   - Lernziel: Statistische Auswertung in SQL.
+
+2. "COUNT(*) vs. COUNT(spalte)"
+   - Ziel: Verstehe den Umgang mit NULL-Werten.
+   - Spielmechanik: 
+     - Tabelle hat 10 Zeilen. In Spalte `telefon` sind 3x NULL.
+     - Frage: Was ergibt `COUNT(*)`? -> 10.
+     - Frage: Was ergibt `COUNT(telefon)`? -> 7.
+     - Messbarkeit: Wissen über die Ignoranz von NULL bei Aggregaten.
+   - Lernziel: Präzision in der Statistik.
+
+3. "Min-Max-Suche"
+   - Ziel: Finde Extremwerte in Zeiträumen.
+   - Spielmechanik: 
+     - "Wann war der allererste Login?" -> `MIN(login_date)`.
+     - "Wann war die letzte Aktivität?" -> `MAX(login_date)`.
+   - Lernziel: Zeitbezogene Auswertungen.
+
+4. "Aggregat-Challenge"
+   - Ziel: Berechne Werte im Kopf anhand einer kleinen Tabelle.
+   - Spielmechanik: 
+     - Werte: 10, 20, 30. 
+     - Frage: AVG? -> 20. SUM? -> 60.
+     - Messbarkeit: Schnelles Verständnis der Funktionen.
+   - Lernziel: Plausibilitätsprüfung von Daten.
+
+5. "Distinct-Aggregat"
+   - Ziel: Zähle nur unterschiedliche Werte.
+   - Spielmechanik: 
+     - 10 Bestellungen von 3 verschiedenen Kunden.
+     - `COUNT(DISTINCT kunde_id)` -> 3.
+     - Lernziel: Eindeutige Mengen zählen.

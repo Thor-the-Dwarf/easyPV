@@ -1,0 +1,29 @@
+1. "MAC-Address-Constructor"
+   - Ziel: Verstehe den Aufbau der physischen Adresse.
+   - Spielmechanik: 
+     - Baue 48-Bit (6 Byte) Addressen in Hexadezimal zusammen.
+     - Lernziel: Hardware-Identifikation.
+
+2. "Manufacturer-Lookup"
+   - Ziel: Finde den Hersteller eines Geräts.
+   - Spielmechanik: 
+     - Nutze die ersten 3 Bytes (OUI), um herauszufinden, ob es ein Cisco oder Apple Gerät ist.
+     - Lernziel: Netzwerkanalyse.
+
+3. "MAC-Filter-Wall"
+   - Ziel: Erlaube nur bekannte Geräte im WLAN.
+   - Spielmechanik: 
+     - Trage die MAC deines Laptops in die Whitelist des Routers ein.
+     - Lernziel: Einfache Zugangskontrolle.
+
+4. "Spoofing-Detective"
+   - Ziel: Erkenne gefälschte Adressen.
+   - Spielmechanik: 
+     - Ein Gerät ändert seine MAC, um eine Sperre zu umgehen. Markiere es!
+     - Lernziel: Sicherheit am Layer 2.
+
+5. "Unicast-Multicast-Broadcast Match"
+   - Ziel: Verschiedene Ziel-Adressen unterscheiden.
+   - Spielmechanik: 
+     - `FF:FF:FF:FF:FF:FF` -> Broadcast. 
+     - Lernziel: Netzwerk-Communication-Types.

@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Strategisches Abwägen zwischen Eigenentwicklung und Zukauf unter Berücksichtigung von Kosten, Zeit und strategischem Know-how.
+- Game-Mechanic: "The Strategic Scale". Faktoren erscheinen als Granit-Gewichte. Der Spieler muss diese auf der Waage (Make vs. Buy) platzieren, um die stabilste Projekt-Balance zu finden.
+- Challenge: 
+  - Level 1: Eindeutige Faktoren (z.B. "Kein internes Know-how" -> Buy).
+  - Level 2: "Budget-Squeeze" - Beide Optionen sind teuer; der Spieler muss das "kleinere Übel" gewichten.
+  - Level 3: "Strategic Shift" - Mitten im Wiegen ändert sich die Marktlage (z.B. "Konkurrent bringt Feature X").
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Decision-Stability" (%), "Remaining Budget" ($), "Time-to-Market" (Clock).
+- [ ] Scoring: Bonuspunkte für "Core-Competence Protection" (Make bei Kernwissen). Abzug bei "Vendor Lock-in" (Buy ohne Exit-Strategie).
+
+2. Screen-Layout (The Decision Lab)
+- [ ] `lab-bench -> the-great-scale -> weight-rack -> result-ticker`.
+- [ ] Scale: Hochdetaillierte 3D-Waage, die auf jedes Gramm (Gewichtung) reagiert.
+- [ ] Weight-Rack: Faktoren sind sortiert nach Kategorien (Ökonomisch, Technisch, Strategisch).
+
+3. Kernvisuals und Effekte
+- [ ] Labor-Atmosphäre: Kühle Blautöne, Metall-Texturen, punktuelle Beleuchtung.
+- [ ] "Breaking Point": Die Waagschale bekommt Risse, wenn ein Risiko-Faktor zu schwer wiegt.
+- [ ] High-Contrast Metriken: Live-Zahlen über den Waagschalen.
+
+4. Browser- und Device-Resilienz
+- [ ] `transition: rotate` für flüssige Waage-Handhabung.
+- [ ] `pointer-events: auto` für präzises Ablegen der Gewichte auf Mobile.
+
+5. Content-Strategie (Decision weights)
+- [ ] 20 Faktoren: Von "Hohe Fixkosten" über "Wartungsaufwand" bis zu "Customizing-Bedarf".
+
+6. QA-Paket
+- [ ] Test: Fühlt sich die Waage-Animation "schwer" und bedeutungsvoll an?
+- [ ] Test: Sind die Konsequenzen der Entscheidung am Ende logisch hergeleitet?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verinnerlicht Make-or-Buy als multidimensionale Entscheidung.
+- [ ] Das Interface wirkt wie ein exklusives Analyse-Modul.
+- [ ] Hoher Lerneffekt durch die visuelle Schwere der Argumente.

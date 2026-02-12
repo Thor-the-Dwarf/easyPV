@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Identifikation von Showstoppern in der Machbarkeitsanalyse und Treffen einer verantwortungsvollen Start-Entscheidung.
+- Game-Mechanic: "The Greenlight Guard". Der Spieler steht an der Release-Barriere. Projektphasen (Züge) wollen passieren. Nur wenn alle Fakten (Wirtschaft, Technik, Zeit) passen, darf die Schranke hoch.
+- Challenge: 
+  - Level 1: Klare "Go"-Szenarien.
+  - Level 2: "Shadow Risks" - Ein technisches Detail (z.B. "Legacy API") entpuppt sich als versteckter Blocker.
+  - Level 3: "Full Pressure" - Der Chef verlangt ein "Go", obwohl die Fakten "No-Go" schreien. Standhaftigkeit bringt Extra-Punkte.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Risk-Level" (Progress Bar), "Project-Future" (Score), "Stakeholder-Pressure" (Aggro-Meter).
+- [ ] Scoring: +1000 Pkt für einen mutigen Projektabbruch bei validen No-Go Gründen. Hoher Punktabzug bei Projekt-Crash nach falschem "Go".
+
+2. Screen-Layout (The Gate)
+- [ ] `control-tower -> the-gate -> fact-scanner -> trigger-console`.
+- [ ] The Gate: Eine massive Barriere in der Mitte.
+- [ ] Scanner: Zeigt beim Hovern über einen "Zug" (Projektphase) die Fakten an.
+
+3. Kernvisuals und Effekte
+- [ ] Sicherheits-Zentrum-Ästhetik: Dunkler Hintergrund, gelbe Warnbalken, rotierende Warnleuchten.
+- [ ] "The Crash": Wenn ein Projekt scheitert, explodiert der "Zug" visuell am Bildschirmrand.
+- [ ] High-Contrast Buttons: "GO" (Grün pulsierend) / "NO-GO" (Rot leuchtend).
+
+4. Browser- und Device-Resilienz
+- [ ] Animierte SVG-Schranke.
+- [ ] Mobile: Große Buttons im unteren Drittel (Daumen-Area).
+
+5. Content-Strategie (The Red Flags)
+- [ ] 15 Szenarien: Budgetmangel, fehlendes Personal, rechtliche Hürden (DSGVO), technische Unmöglichkeit.
+
+6. QA-Paket
+- [ ] Test: Ist die psychologische Hürde, "Nein" zu sagen, spielerisch spürbar?
+- [ ] Test: Reagiert das "Stakeholder-Pressure" Meter logisch auf Verzögerungen?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift die Machbarkeitsanalyse als Sicherheitsnetz des Projekts.
+- [ ] Interface erzeugt eine hohe Immersion (Verantwortungsgefühl).
+- [ ] Klare Unterscheidung zwischen Risiko (GO möglich) und Blocker (NO-GO zwingend).

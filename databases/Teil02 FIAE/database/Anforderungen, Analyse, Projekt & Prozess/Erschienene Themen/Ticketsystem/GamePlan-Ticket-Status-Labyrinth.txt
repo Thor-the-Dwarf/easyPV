@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sicherer Umgang mit Ticket-Status-Übergängen und Einhaltung von Compliance-Regeln im Software-Lifecycle.
+- Game-Mechanic: "The Workflow Runner". Ein Ticket ist ein Charakter, der durch ein Labyrinth aus Status-Kammern rennen muss. Der Spieler öffnet per Klick die korrekten Türen (Zulässige Transitions).
+- Challenge: 
+  - Level 1: Linearer Pfad (New -> In Progress -> Done).
+  - Level 2: "Rejection Loops" - Tickets werden zurückgewiesen und müssen durch Review-Schleifen.
+  - Level 3: "Compliance Mode" - Bestimmte Rollen (z.B. QA) müssen Türen öffnen; falsche Reihenfolge führt zum "Audit-Fail".
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Flow-Velocity" (Speed), "Compliance-Rating" (Accuracy), "Active-Audit-Warnings".
+- [ ] Scoring: +500 Pkt für "First-Time-Right" Workflows. Zeit-Bonus für schnelles Durchschleusen dringender Tickets.
+
+2. Screen-Layout (The Status Labyrinth)
+- [ ] `world-map -> transition-gates -> ticket-avatar -> logic-core`.
+- [ ] Gates: Leuchtende Tore mit Status-Beschriftung (z.B. "TESTING").
+- [ ] Avatar: Ein kleiner "Ticket-Brief-Icon", der flüssig von Node zu Node gleitet.
+
+3. Kernvisuals und Effekte
+- [ ] Circuit-Board Ästhetik: Leiterbahnen verbinden die Status-Nodes, neonfarbene Energieflüsse.
+- [ ] "Gate-Flash": Grünes Leuchten bei validem Klick, rotes Blitzen bei Regelverstoß.
+- [ ] Shadow-Trail: Der Pfad des Tickets wird hinter ihm als Audit-Trail gezeichnet.
+
+4. Browser- und Device-Resilienz
+- [ ] SVG-Graph-Engine für verlustfreies Zoomen.
+- [ ] Mobile: "Slide-to-Transition" (Wischen in die Richtung des nächsten Status).
+
+5. Content-Strategie (The Rule-Set)
+- [ ] Definition von 10 Standard-Workflows (Bug, Feature, Support-Anfrage).
+
+6. QA-Paket
+- [ ] Test: Sind die Übergangs-Regeln auch ohne Handbuch klar ersichtlich?
+- [ ] Test: Ist die Animation des Avatars flüssig genug (60 FPS)?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verinnerlicht die Logik von State-Machines.
+- [ ] Das Interface wirkt wie ein futuristisches Daten-Zentrum.
+- [ ] Motivierende Lernkurve durch komplexere Workflow-Graphen.

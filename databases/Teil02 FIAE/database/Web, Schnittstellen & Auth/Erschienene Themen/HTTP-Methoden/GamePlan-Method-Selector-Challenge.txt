@@ -1,0 +1,19 @@
+Anforderungen
+1. "Method-Selector-Challenge"
+   - Ziel: Korrekte Auswahl und Anwendung von HTTP-Verben basierend auf der beabsichtigten Aktion an einer Ressource.
+   - Spielmechanik: 
+     - Vorgabe von CRUD-Operationen (Create, Read, Update, Delete) auf Web-Ressourcen (z.B. "Neuen Blogpost erstellen").
+     - Der Spieler wählt die passende HTTP-Methode (GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS).
+     - Bewertung der Idempotenz und Sicherheit der gewählten Methode.
+     - Messbarkeit: Korrekte Wahl der Verben für standardkonforme Web-APIs.
+   - Lernziel: Verständnis der HTTP-Semantik und Vermeidung von Fehlern im API-Design.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_http_methods.json')
+   - Szenarien und Verhaltensregeln der Methoden.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Wahl-Interfaces).
+- [ ] Game-Engine Logic ('game_category_match.js')
+   - (Validierung der Methoden-Eigenschaften).
+- [ ] Integration
+   - Tutorial: Warum GET niemals Daten auf dem Server ändern sollte.

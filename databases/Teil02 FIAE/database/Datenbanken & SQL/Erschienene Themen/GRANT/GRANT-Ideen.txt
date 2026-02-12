@@ -1,0 +1,36 @@
+1. "Rechte-Verteiler"
+   - Ziel: Weise Usern die richtigen SQL-Berechtigungen zu.
+   - Spielmechanik: 
+     - `GRANT SELECT, INSERT ON user TO 'vertrieb';`.
+     - Messbarkeit: Kann der Vertrieb jetzt Daten löschen? -> Nein (kein DELETE).
+   - Lernziel: Datenbank-Sicherheit (Least Privilege).
+
+2. "Tabellen-Wächter"
+   - Ziel: Beschränke Rechte auf bestimmte Tabellen.
+   - Spielmechanik: 
+     - `GRANT ALL ON shop.* TO 'admin';`.
+     - Kann der Admin auf die `system` DB zugreifen? -> Nein (nur `shop.*`).
+     - Messbarkeit: Bereichsbezogene Berechtigungen.
+   - Lernziel: Security Scopes.
+
+3. "Mit ohne Weitergabe"
+   - Ziel: Nutze WITH GRANT OPTION korrekt.
+   - Spielmechanik: 
+     - `GRANT SELECT ON orders TO 'teamleiter' WITH GRANT OPTION;`.
+     - Was darf der Teamleiter jetzt? -> Das Recht an sein Team weitergeben.
+   - Lernziel: Delegierung von Rechten.
+
+4. "Role-Match"
+   - Ziel: Nutze Rollen statt Einzeluser.
+   - Spielmechanik: 
+     - Erstelle Rolle 'Backoffice'. Weise Rechte der Rolle zu. Weise User der Rolle zu.
+     - Effekt: Neuer Mitarbeiter kommt -> nur Rolle zuweisen (zeitsparend).
+   - Lernziel: Rollenbasiertes Rechtekonzept (RBAC).
+
+5. "Public-Gefahr"
+   - Ziel: Verstehe die Rolle PUBLIC.
+   - Spielmechanik: 
+     - `GRANT SELECT ON preisliste TO PUBLIC;`.
+     - Wer kann das jetzt sehen? -> Jeder angemeldete User.
+     - Achtung: Vorsicht bei sensiblen Daten!
+   - Lernziel: Standardsichtbarkeit in SQL.

@@ -1,0 +1,19 @@
+Anforderungen
+1. "MAC-Address-Constructor"
+   - Ziel: Verständnis des Aufbaus und der Eindeutigkeit physischer Hardware-Adressen (Media Access Control).
+   - Spielmechanik: 
+     - Konstruktion von validen MAC-Adressen aus Hexadezimal-Blöcken.
+     - Identifikation des Herstellers mittels OUI (Organizationally Unique Identifier).
+     - Abgrenzung zwischen lokal administrierten und weltweit eindeutigen Adressen.
+     - Messbarkeit: Korrektheit der 48-Bit Struktur und Hersteller-Zuordnung.
+   - Lernziel: Mathematisches Verständnis von Adressräumen und deren Bedeutung für die Netzwerk-Hardware.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_mac_struct.json')
+   - Hex-Blöcke und Hersteller-Listen.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Byte-Baukastens).
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Validierung des Hex-Formats).
+- [ ] Integration
+   - Tutorial: Was "MAC-Spoofing" bedeutet und warum es für Angreifer nützlich ist.

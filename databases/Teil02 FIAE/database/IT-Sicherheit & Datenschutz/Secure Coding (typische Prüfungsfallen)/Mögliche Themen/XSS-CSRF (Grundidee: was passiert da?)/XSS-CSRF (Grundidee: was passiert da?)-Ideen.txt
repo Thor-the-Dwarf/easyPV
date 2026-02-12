@@ -1,0 +1,31 @@
+1. "XSS-Reflector"
+   - Ziel: Verstehe, wie bösartiger Code in die Seite kommt.
+   - Spielmechanik: 
+     - Baue ein Script in die URL ein, das einen Alert auslöst.
+     - Lernziel: Gefahren von ungefilterten User-Inputs im HTML.
+
+2. "CSRF-Token-Match"
+   - Ziel: Schütze Aktionen vor fremden Seiten.
+   - Spielmechanik: 
+     - Füge ein verborgenes Token zum Formular hinzu. 
+     - Ohne Token lehnt der Server die Überweisung ab.
+     - Lernziel: Sitzungsschutz.
+
+3. "Stored-XSS-Defense"
+   - Ziel: Warum Persistenz gefährlich ist.
+   - Spielmechanik: 
+     - Ein Script wird in der Datenbank gespeichert und bei jedem User ausgeführt.
+     - Bereinige die DB-Einträge.
+     - Lernziel: Schutz von User-Daten.
+
+4. "Content-Security-Policy (CSP) Builder"
+   - Ziel: Kontrolliere, welche Scripte laufen dürfen.
+   - Spielmechanik: 
+     - Erlaube Scripte nur von der eigenen Domain.
+     - Lernziel: Hardening von Web-Apps.
+
+5. "Same-Site-Cookie Match"
+   - Ziel: Nutze moderne Browser-Sicherheit.
+   - Spielmechanik: 
+     - Setze das `SameSite=Strict` Attribut für Cookies.
+     - Lernziel: Automatischer Schutz vor CSRF.

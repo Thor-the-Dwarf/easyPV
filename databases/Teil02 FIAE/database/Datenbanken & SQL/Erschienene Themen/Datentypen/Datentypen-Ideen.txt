@@ -1,0 +1,40 @@
+1. "Type-Match-Game"
+   - Ziel: Ordne Daten dem passenden SQL-Typ zu.
+   - Spielmechanik: 
+     - "Hallo Welt". -> VARCHAR.
+     - "True". -> BOOLEAN/BIT.
+     - "3.1415". -> FLOAT/DOUBLE.
+     - "2023-12-31 23:59:59". -> DATETIME.
+     - Messbarkeit: Korrekte Typ-Zuweisung.
+   - Lernziel: Datenschemata verstehen.
+
+2. "Precision-Challenge (DECIMAL vs FLOAT)"
+   - Ziel: Wähle den Typ für Geld-Beträge.
+   - Spielmechanik: 
+     - Berechne 0.1 + 0.1 + 0.1 mit FLOAT -> Resultat: 0.300000000004.
+     - Berechne mit DECIMAL(10,2) -> Resultat: 0.30.
+     - Messbarkeit: Warum nehmen wir DECIMAL für Euro? -> Genauigkeit.
+   - Lernziel: Finanzmathematik in der DB.
+
+3. "Storage-Limiter (VARCHAR vs CHAR)"
+   - Ziel: Optimiere den Speicherplatz.
+   - Spielmechanik: 
+     - "PLZ" (immer 5 Zeichen). -> CHAR(5).
+     - "Bio-Text" (variabel). -> VARCHAR(255).
+     - Messbarkeit: Effiziente Nutzung des HDD-Speichers.
+   - Lernziel: Unterschied feste vs variable Länge.
+
+4. "Binary-Blob-Store"
+   - Ziel: Speichere Bilder/Dateien in der DB.
+   - Spielmechanik: 
+     - Profilbild hochladen. 
+     - Welcher Typ wird genutzt? -> BLOB (Binary Large Object).
+     - Messbarkeit: Wissen über LOB-Typen.
+   - Lernziel: Multimedia in Datenbanken.
+
+5. "Integer-Range-Check"
+   - Ziel: Wähle die Größe (TINYINT, INT, BIGINT).
+   - Spielmechanik: 
+     - Weltbevölkerung speichern (8 Mrd). -> BIGINT (INT geht nur bis ca. 2,1 Mrd).
+     - Hausnummern (1-500). -> SMALLINT.
+   - Lernziel: Wertebereiche von Datentypen.

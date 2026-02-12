@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Praktische Beherrschung hierarchischer, schema-freier Datenmodellierung (NoSQL) durch Nesting von Objekten und Arrays.
+- Kontext: Dokumentenorientierte Datenbanken (MongoDB, CouchDB), JSON-Strukturen.
+- UX-Prinzip:
+  - "The Flexible Box": Dokumente sind Kartons; man kann Kartons in Kartons legen (Objects) oder viele gleiche Items in eine Schublade schieben (Arrays).
+  - "Parent-Child Zooming": Durch Klick auf ein Objekt öffnet sich der "Inhalt" bildfüllend (Bohreffekt).
+  - "Structural Drag & Drop": Keys und Values werden in die Hierarchie "geclipst".
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Hierarchie-Ebene (Wo bin ich?), 2 = Key-Value Paare, 3 = Validitäts-Indikator.
+- [ ] Textbudget: Kurze Schlüsselnamen (`tags`, `address`, `meta`), keine langen Romane.
+- [ ] "Nesting Depth" Counter: Anzeige für die Schachtelungstiefe.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> breadcrumb-nav -> document-stage -> property-palette`.
+- [ ] Stage: Ein stufenlos zoombarer Bereich (Canvas), auf dem das JSON-Objekt wächst.
+- [ ] Palette: Bausteine (`{}`, `[]`, `"ABC"`, `123`) am rechten Rand (Desktop) oder unten (Mobile).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Pinch-to-Zoom" zur Navigation in tiefen JSON-Bäumen.
+- [ ] `object-fit: contain` für die grafische Darstellung der Boxen.
+
+4. Kernvisuals
+- [ ] Farbenfroher Origami-Look: Unterschiedliche Farben pro Schachtelungsebene (shared_theme.css).
+- [ ] Klammern-Paarung: Wenn man eine `{` anfasst, leuchtet die zugehörige `}` auf.
+- [ ] High-Contrast Code-Font für die Keys.
+
+5. Interaktion und Feedback
+- [ ] Snap-in-Logik: Bausteine rasten mit einem "Pop"-Effekt in das Objekt ein.
+- [ ] Schema-Flexibilität: "Wunderbar! In NoSQL kannst du für User A 'Hobbys' als Liste anlegen, während User B gar keine hat."
+- [ ] Fehler-Schütteln: Bei invalidem Komma oder fehlender Klammer schüttelt sich der betroffene Bereich.
+
+6. KPI-Klarheit
+- [ ] Document-Consistency: "Valid JSON: Yes".
+- [ ] Flexibility-Score: "Struktur-Grad: Adaptiv".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Social Media Post mit Kommentaren (Array)", "Smart Home Status", "Logistik-Tracking".
+- [ ] Tonalität: Modern, flexibel, dynamisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist der "Bohr-Effekt" beim Zoomen in Objekte flüssig ohne Textflimmern?
+- [ ] Test: Funktioniert das Verschachteln auch auf kleinen Touch-Flächen zuverlässig?
+
+9. Abnahmekriterien
+- [ ] Der Spieler verinnerlicht den Vorteil verschachtelter Dokumente gegenüber flachen SQL-Tabellen.
+- [ ] Das Interface wirkt wie ein moderner High-Tech Konfigurator.
+- [ ] "Aha-Moment" beim Thema Schema-Flexibilität.

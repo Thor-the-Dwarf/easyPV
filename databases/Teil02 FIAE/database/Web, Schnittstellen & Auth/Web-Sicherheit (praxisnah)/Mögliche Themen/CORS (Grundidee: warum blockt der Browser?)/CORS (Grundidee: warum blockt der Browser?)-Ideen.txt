@@ -1,0 +1,31 @@
+1. "Origin-Checker"
+   - Ziel: Verstehe die Same-Origin-Policy.
+   - Spielmechanik: 
+     - Browser auf `app.com` will Daten von `api.com`.
+     - Warum wird das standardmäßig blockiert?
+     - Lernziel: Schutz vor CSRF und Datendiebstahl.
+
+2. "Preflight-Pilot"
+   - Ziel: Verstehe den OPTIONS-Request.
+   - Spielmechanik: 
+     - Der Browser schickt erst eine "Anfrage zur Anfrage".
+     - Der Server muss sagen: "Ja, `app.com` darf POST mit JSON".
+     - Lernziel: Ablauf von komplexen Requests.
+
+3. "Header-Match-CORS"
+   - Ziel: Konfiguriere die richtigen Response-Header.
+   - Spielmechanik: 
+     - `Access-Control-Allow-Origin: *` vs `Access-Control-Allow-Origin: https://my-site.com`.
+     - Lernziel: Sichere CORS-Konfiguration.
+
+4. "Wildcard-Warnung"
+   - Ziel: Erkenne die Risiken von `*`.
+   - Spielmechanik: 
+     - Warum ist `Access-Control-Allow-Credentials: true` nicht mit `*` erlaubt?
+     - Lernziel: Deep Security in CORS.
+
+5. "CORS-Error-Detective"
+   - Ziel: Diagnostiziere Fehler in der Browser-Konsole.
+   - Spielmechanik: 
+     - "No 'Access-Control-Allow-Origin' header is present". Was musst du am Server ändern?
+     - Lernziel: Praktische Fehlerbehebung.

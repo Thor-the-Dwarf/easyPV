@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Übersetzung von geschäftlichen Anforderungen in technisch valide SQL-Strukturformeln (CREATE TABLE).
+- Kontext: Schema-Design, Fokus auf DDL-Syntax und Datentyp-Wahl.
+- UX-Prinzip:
+  - "The Blueprint to Build": Die Anforderungsliste ist eine Blaupause (links); das SQL-Statement ist die Baustelle (mitte); die resultierende Tabelle ist das fertige Gebäude (rechts).
+  - "Safe-Snap Architecture": Syntax-Blöcke (Datentypen, Constraints) rasten magnetisch in das SQL-Gerüst ein.
+  - "Live-Generation": Während der Code gebaut wird, wächst die visuelle Tabelle daneben mit.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Aktuelle SQL-Zeile (Fokus), 2 = Baustein-Auswahl, 3 = Visuelle Tabellen-Vorschau.
+- [ ] Textbudget: Max. 5 Wörter pro Anforderungsposition (z. B. "Muss eindeutige ID sein").
+- [ ] "Zero Syntax Error" Policy: Nur valide Bausteine sind wählbar (Guarded Interaction).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> blueprint-panel -> sql-constructor -> live-table-preview`.
+- [ ] Constructor-Area: Zentrales Element (Desktop 50% Breite, Mobile 40dvh Höhe).
+- [ ] Palette: Bausteine (PK, VARCHAR, NOT NULL) am unteren Rand als Karten (>=48px).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-to-Append" Modus – Bausteine fliegen nacheinander in die Query.
+- [ ] `overflow-x: auto` für lange Tabellen-Vorschauen auf schmalen Screens.
+
+4. Kernvisuals
+- [ ] Bau-Metaphorik: Kräne, Gerüste und Schaltpläne (shared_theme.css).
+- [ ] Syntax-Highlighting: IDE-Look für den SQL-Code.
+- [ ] High-Gloss Icons für Constraints (Schloss für PK, Ausrufezeichen für NOT NULL).
+
+5. Interaktion und Feedback
+- [ ] Snap-in-Feedback: "Korrekt! `NOT NULL` sorgt dafür, dass Name immer ausgefüllt sein muss."
+- [ ] Real-Time Rendering: Jede Zeile im Code erzeugt sofort die entsprechende Spalte im UI-Vorschaubild.
+- [ ] Erfolg: Die fertige Tabelle leuchtet golden auf; Beispieldaten fließen hinein.
+
+6. KPI-Klarheit
+- [ ] Schema-Solidity: "Stabilitäts-Index: 100%".
+- [ ] Requirements-Match: "X / Y Anforderungen technisch umgesetzt".
+
+7. Content-/Copy-Feinschliff
+- [ ] Professionelle Schemen: "Inventory_Master", "User_Permissions", "Transaction_Log".
+- [ ] Tonalität: Strukturiert, technisch, konstruktiv.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Überlappen sich die Bausteine auf dem Smartphone bei 5+ Optionen?
+- [ ] Test: Sind die Datentyp-Karten auch für Wurstfinger groß genug?
+
+9. Abnahmekriterien
+- [ ] Der Spieler verinnerlicht den formalen Aufbau einer DDL-Anweisung.
+- [ ] Das Interface wirkt wie ein CASE-Tool für moderne Architekten.
+- [ ] Hoher motivatorischer Anreiz durch das "Bau-Prinzip".

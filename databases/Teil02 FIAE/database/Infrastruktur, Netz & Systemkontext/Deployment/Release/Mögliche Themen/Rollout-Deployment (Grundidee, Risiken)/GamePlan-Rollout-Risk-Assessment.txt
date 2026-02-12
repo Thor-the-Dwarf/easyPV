@@ -1,0 +1,19 @@
+Anforderungen
+1. "Rollout-Risk-Assessment"
+   - Ziel: Befähigung zur Einschätzung und Minimierung von Risiken bei Software-Veröffentlichungen durch Wahl geeigneter Deployment-Strategien.
+   - Spielmechanik: 
+     - Analyse von Deployment-Szenarien und Auswahl der optimalen Methode (Blue-Green, Canary, Rolling Update).
+     - Durchführung von Rollback-Prozeduren bei kritischen Fehlern in der Live-Umgebung.
+     - Steuerung von Feature-Flags zur Entkopplung von technischem Deployment und geschäftlichem Release.
+     - Messbarkeit: Minimierung der Downtime und maximale Erfolgsquote der Rollouts.
+   - Lernziel: Beherrschung moderner Deployment-Strategien und Steigerung der System-Resilienz.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_deployment_risks.json')
+   - Rollout-Typen und Fehlermeldungen.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Interaktive Status-Konsole für Rollouts).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Simulation der Nutzer-Impacts).
+- [ ] Integration
+   - Tutorial: Warum ein Freitag-Nachmittag der schlechteste Zeitpunkt für ein Major-Update ist.

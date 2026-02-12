@@ -1,0 +1,32 @@
+1. "Blocking-UI-Escape"
+   - Ziel: Erkenne, wann die Benutzeroberfläche "einfriert".
+   - Spielmechanik: 
+     - Ein langer Task läuft synchron. User kann nichts klicken.
+     - Aktion: Mache den Task asynchron (`SetTimeout` oder `Promise`).
+     - Lernziel: Responsives App-Design.
+
+2. "Promise-Chain-Puzzle"
+   - Ziel: Verkette asynchrone Operationen.
+   - Spielmechanik: 
+     - `fetch().then().then().catch()`.
+     - Baue die Kette in der richtigen logischen Reihenfolge zusammen.
+     - Lernziel: Asynchroner Kontrollfluss.
+
+3. "Async-Await-Refactoring"
+   - Ziel: Schreibe asynchronen Code lesbarer.
+   - Spielmechanik: 
+     - Wandle ein "Callback-Hell" in `async/await` um.
+     - Lernziel: Syntax-Modernisierung.
+
+4. "Event-Loop-Visualizer"
+   - Ziel: Verstehe die Ausgabereihenfolge (Callstack vs Task Queue).
+   - Spielmechanik: 
+     - `console.log('1'); setTimeout(() => console.log('2'), 0); console.log('3');`
+     - Was ist die Reihenfolge? -> 1, 3, 2.
+     - Lernziel: JavaScript / NodeJS Interna.
+
+5. "Callback-Runner"
+   - Ziel: Nutze Callbacks für Event-Handling.
+   - Spielmechanik: 
+     - Button wird geklickt -> Übergebe die richtige Funktion als Callback.
+     - Lernziel: Event-Driven Programming.

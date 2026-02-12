@@ -1,0 +1,34 @@
+1. "Swagger-UI Entdecker"
+   - Ziel: Nutze die interaktive Dokumentation.
+   - Spielmechanik: 
+     - Suche in der Swagger-Seite den Button "Try it out".
+     - Fülle die Felder aus und sieh dir den Curl-Befehl an.
+     - Lernziel: Dokumentation zum "Anfassen".
+
+2. "YAML-Code-Puzzle"
+   - Ziel: Schreibe eine einfache API-Beschreibung.
+   - Spielmechanik: 
+     - `paths:`, `/users:`, `get:`, `responses:`.
+     - Bringe die Einrückungen in Ordnung (YAML).
+     - Lernziel: Specification First Approach.
+
+3. "Die lebende Dokumentation"
+   - Ziel: Verstehe den Vorteil von Code-Automation.
+   - Spielmechanik: 
+     - Du änderst eine Zeile im Backend-Code. 
+     - Zack! Die Swagger-Doku aktualisiert sich von selbst.
+     - Lernziel: Synchronität von Doku und Code.
+
+4. "Client-Generator"
+   - Ziel: Erzeuge Code aus der Doku.
+   - Spielmechanik: 
+     - Wirf die OpenAPI-YAML in den "Generator". 
+     - Erhalte fertige TypeScript-Klassen für den API-Aufruf.
+     - Lernziel: Effizienzsteigerung durch Tooling.
+
+5. "Security-Definition Match"
+   - Ziel: Dokumentiere wie man sich einloggt.
+   - Spielmechanik: 
+     - `securitySchemes`: `bearerAuth`. 
+     - Zeige das Schloss-Icon im Swagger UI.
+     - Lernziel: Transparenz über Sicherheitsmechanismen.

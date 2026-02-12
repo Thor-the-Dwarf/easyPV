@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Sicherer Import und Transformation unstrukturierter Rohdaten (CSV) in ein valides relationales Tabellenschema.
+- Kontext: Datenmigration, ETL-Prozesse (Extract, Transform, Load).
+- UX-Prinzip:
+  - "The Universal Adapter": Die CSV-Datei ist ein unordentlicher Stapel Kabel (Rohdaten); das Tabellen-Schema ist eine Reihe passgenauer Buchsen.
+  - "Cable-Mapping": Der Spieler zieht Verbindungslinien von den CSV-Spaltenköpfen zu den Datenbank-Spalten.
+  - "Real-Time Converter": Bei Datums- oder Zahlenformat-Abweichungen leuchtet ein "Adapter-Knoten" auf, der die Konvertierung vorschlägt.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Spalten-Zuordnung (Mapping), 2 = Datentyp-Kompatibilität, 3 = Import-Fortschritt.
+- [ ] Textbudget: Max. 10 Beispielzeilen aus der CSV zur Vorschau.
+- [ ] "Auto-Suggestion": Das System schlägt Übereinstimmungen basierend auf Namen vor (z. B. `usr_email` -> `email`).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> source-header (CSV) -> mapping-canvas -> target-header (DB) -> log-console`.
+- [ ] Source/Target: Zwei horizontale Leisten (Desktop oben/unten, Mobile links/rechts mit Swiping).
+- [ ] Canvas: Der mittlere Bereich für die Verbindungskabel (Bezier-Kurven).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-on-Source -> Tap-on-Target" Mechanik.
+- [ ] `overflow-x: auto` für breite CSV-Strukturen mit vielen Spalten.
+
+4. Kernvisuals
+- [ ] Kabel-Ästhetik: Leuchtende, farbige Linien für aktive Verbindungen.
+- [ ] Datentyp-Icons: Buchsen-Symbole für VARCHAR, INT, DATE.
+- [ ] Fehler-Visual: "Funkenflug" an Stellen, wo das Format nicht passt (z. B. Text in ein Dezimalfeld).
+
+5. Interaktion und Feedback
+- [ ] Live-Vorschau: "Daten werden transformiert: '01.01.24' wird zu '2024-01-01'."
+- [ ] Erfolg: Ein sattes "Einrast-Geräusch" (visuell) bei 100% korrektem Mapping.
+- [ ] Progress-Bar: "6.000 Datensätze werden eingelesen... SUCCESS."
+
+6. KPI-Klarheit
+- [ ] Migration-Consistency: 0-100%.
+- [ ] Data-Reliability Score: "Hoch" (keine fehlerhaften Zeilen).
+
+7. Content-/Copy-Feinschliff
+- [ ] Realistische Import-Fälle: "Kundenliste aus Excel", "Produktkatalog vom Lieferanten", "Logfiles".
+- [ ] Tonalität: Präzise, prozessorientiert, migrationssicher.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Verbindungskabel auf dem Smartphone überschneidungsfrei?
+- [ ] Test: Funktioniert das automatische Scrollen der Ziel-Leiste bei vielen Spalten?
+
+9. Abnahmekriterien
+- [ ] Der Spieler verinnerlicht die Notwendigkeit der Schema-Transformation beim Import.
+- [ ] Das Interface wirkt wie ein professionelles Migrations-Studio.
+- [ ] Hohe Fehlertoleranz durch visuelle Korrektur-Tipps.

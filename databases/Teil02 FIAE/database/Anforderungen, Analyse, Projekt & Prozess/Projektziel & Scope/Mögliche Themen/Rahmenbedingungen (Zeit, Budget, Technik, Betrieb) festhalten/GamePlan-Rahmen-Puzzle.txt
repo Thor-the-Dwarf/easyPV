@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Management von Projekt-Rahmenbedingungen (Restriktionen) und deren Auswirkungen auf den Handlungsspielraum.
+- Game-Mechanic: "The Constraint Cube". Ein 3D-Puzzle (Zauberwürfel-Metapher). Jede Seite ist eine Kategorie (Zeit, Budget, Technik, Recht). Der Spieler muss Rahmenbedingungen korrekt auf die Seiten drehen.
+- Challenge: 
+  - Level 1: "Sort & Slot" - Einfaches Zuordnen.
+  - Level 2: "Constraint Clash" - Zwei Rahmenbedingungen beißen sich (z.B. "Festpreis" + "Open End Scope"). Der Spieler muss den Konflikt identifizieren.
+  - Level 3: "External Shock" - Neue Gesetze oder Budgetkürzungen treten mitten im Spiel ein; das Puzzle ordnet sich neu.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Puzzle-Complexity" (Score), "Freedom-Meter" (Handlungsspielraum), "Conflict-Warnings".
+- [ ] Scoring: "Efficiency Bonus" für das Lösen ohne Fehlversuche. Abzug bei "Illegal Moves" (falsche Kategorie-Wahl).
+
+2. Screen-Layout (The 3D Cube View)
+- [ ] `the-universe -> the-rotation-cube -> condition-tray -> impact-log`.
+- [ ] Cube: Ein rotierendes 3D-Objekt (CSS-3D oder WebGL).
+- [ ] Tray: Heranfliegende "Constraints" als Platten, die auf den Würfel passen.
+
+3. Kernvisuals und Effekte
+- [ ] Space/Void Ästhetik: Dunkles All, leuchtende Raster, geometrische Perfektion.
+- [ ] "Lock-in": Ein satter mechanischer Sound, wenn eine Bedingung einrastet.
+- [ ] Pulsing-Red: Würfel-Seiten leuchten rot, wenn ein kategorisches Mismatch vorliegt.
+
+4. Browser- und Device-Resilienz
+- [ ] CSS `transform-style: preserve-3d` für leichte 3D-Performance.
+- [ ] Mobile: "Swipe-to-Rotate" und "Tap-to-Apply" Steuerung.
+
+5. Content-Strategie (The Hard Facts)
+- [ ] 20 Constraints: Von "Go-Live Weihnachtsgeschäft" bis "Kein Java erlaubt".
+
+6. QA-Paket
+- [ ] Test: Ist die 3D-Rotation flüssig auf mobilen Browsern?
+- [ ] Test: Werden die Konsequenzen der Rahmenbedingungen (Warum ist das ein Constraint?) klar vermittelt?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler entwickelt ein Bewusstsein für die Grenzen der Gestaltungsfreiheit.
+- [ ] Das Interface wirkt wie ein hochmodernes, fast meditatives Logikspiel.
+- [ ] Maximale Punkte durch korrektes Kategorisieren und Konflikt-Erkennung.

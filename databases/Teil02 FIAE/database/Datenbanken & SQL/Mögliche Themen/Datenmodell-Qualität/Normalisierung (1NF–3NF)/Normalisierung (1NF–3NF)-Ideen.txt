@@ -1,0 +1,37 @@
+1. "Zettelwirtschaft aufräumen (1NF)"
+   - Ziel: Erreiche Atomarität und keine Wiederholungsgruppen.
+   - Spielmechanik: 
+     - Spalte "Hobby" enthält "Lesen, Kochen". -> Fail.
+     - Aktion: Pro Hobby eine eigene Zeile (oder separate Tabelle).
+     - Messbarkeit: Eliminierung von Listen in Feldern.
+   - Lernziel: Erste Normalform (1NF).
+
+2. "Teil-Abhängigkeiten-Killer (2NF)"
+   - Ziel: Jedes Nicht-Key-Attribut muss vom VOLLEN PK abhängen.
+   - Spielmechanik: 
+     - PK ist (Bestell_ID, Artikel_ID). Spalte "KundenName".
+     - Frage: Hängt KundenName von der Artikel_ID ab? -> Nein, nur von Bestell_ID.
+     - Aktion: KundenName in eine eigene Tabelle auslagern.
+   - Lernziel: Zweite Normalform (2NF).
+
+3. "Transitve-Vermeider (3NF)"
+   - Ziel: Keine Abhängigkeiten zwischen Nicht-Key-Attributen.
+   - Spielmechanik: 
+     - Spalte "Abteilung_ID" -> Spalte "Abteilungsleiter".
+     - Frage: Reicht die Abteilungs_ID? -> Ja, der Leiter hängt an der ID, nicht am Mitarbeiter.
+     - Aktion: Lege Tabelle "Abteilung" an.
+   - Lernziel: Dritte Normalform (3NF).
+
+4. "Normalisierungs-Rallye"
+   - Ziel: Bringe eine Tabelle von 0 auf 3.
+   - Spielmechanik: 
+     - Klick-Game: Finde den Verstoß gegen die 1., 2. oder 3. NF in einem Datensatz.
+     - Lernziel: Schnelles Erkennen von Designfehlern.
+
+5. "Over-Normalization-Check"
+   - Ziel: Verstehe, wann man aufhören sollte.
+   - Spielmechanik: 
+     - Splitte eine Tabelle in 20 Mini-Tabellen.
+     - Frage: Wie viele JOINS brauchst du jetzt für eine einfache Namensliste? -> 19.
+     - Lerne: Zu viel Normalisierung kann die Performance töten.
+   - Lernziel: Pragmatismus im DB-Design.

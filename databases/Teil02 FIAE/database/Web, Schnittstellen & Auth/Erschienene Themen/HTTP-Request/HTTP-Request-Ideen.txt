@@ -1,0 +1,31 @@
+1. "Request-Constructor"
+   - Ziel: Baue einen validen HTTP-Request-String.
+   - Spielmechanik: 
+     - Baue: [METHOD] [PATH] [PROTOCOL] \n [HEADERS] \n\n [BODY].
+     - Lernziel: Roher Aufbau des Protokolls.
+
+2. "Query-Param-Matching"
+   - Ziel: Nutze Parameter in der URL.
+   - Spielmechanik: 
+     - `search?q=pv&page=2`. 
+     - Was ist der Key, was der Value?
+     - Lernziel: Datentransfer per URL.
+
+3. "Auth-Header-Quest"
+   - Ziel: Schütze deine Requests.
+   - Spielmechanik: 
+     - Füge den `Authorization: Bearer <token>` Header hinzu.
+     - Lernziel: Authentifizierung im Request.
+
+4. "Cookies-vs-Headers"
+   - Ziel: Verwalte Sitzungsinformationen.
+   - Spielmechanik: 
+     - Wo speichert man "Session-ID"? Im Cookie-Header oder im Body?
+     - Lernziel: State-Management.
+
+5. "Payload-Analyzer"
+   - Ziel: Verstehe verschiedene Content-Types.
+   - Spielmechanik: 
+     - `application/json` vs `multipart/form-data`. 
+     - Wann nutzt man was für Datei-Uploads?
+     - Lernziel: Datenformate im Request.

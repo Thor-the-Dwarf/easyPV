@@ -1,0 +1,37 @@
+1. "JSON-Vertrag-Validator"
+   - Ziel: Prüfe Datenformate gegen eine Spezifikation.
+   - Spielmechanik: 
+     - API erwartet: `{ "id": int, "email": string }`. 
+     - User schickt: `{ "id": "1", "email": "test@com" }`. 
+     - Fehler! Die "1" ist ein String. Korrigiere den Datentyp.
+     - Lernziel: Schnittstellen-Spezifikation (OpenAPI/JSON-Schema).
+
+2. "Fehler-Code-Roulette"
+   - Ziel: Ordne HTTP Status Codes den Fehlerfällen zu.
+   - Spielmechanik: 
+     - "Resource nicht gefunden". -> 404.
+     - "Interner Serverfehler (Crash)". -> 500.
+     - "Nicht autorisiert". -> 401.
+     - Lernziel: Standardisierte Fehlerbehandlung an Schnittstellen.
+
+3. "Input-Output-Match"
+   - Ziel: Verstehe die Transformation von Daten.
+   - Spielmechanik: 
+     - Input: `name: "Max Mustermann"`. 
+     - Operation: `strip()`, `uppercase()`. 
+     - Output: `MAX MUSTERMANN`.
+     - Lernziel: Datenverarbeitung in Modulen.
+
+4. "Zertifikats-Check (SSL/TLS)"
+   - Ziel: Sichere die Kommunikation ab.
+   - Spielmechanik: 
+     - Verbindung über HTTP (Unverschlüsselt) vs. HTTPS.
+     - "Mensch-in-der-Mitte" greift Daten ab, wenn kein Zertifikat da ist.
+     - Lernziel: Sicherheit an Schnittstellen.
+
+5. "Raten-Begrenzer (Rate Limiting)"
+   - Ziel: Schütze die Schnittstelle vor Überlastung.
+   - Spielmechanik: 
+     - Max 10 Requests/Sekunde. 
+     - User schickt 100 Requests. -> 429 Too Many Requests.
+     - Lernziel: Stabilität und Verfügbarkeit von APIs.

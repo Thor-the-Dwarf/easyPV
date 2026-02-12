@@ -1,0 +1,34 @@
+1. "Modul-Separator"
+   - Ziel: Trenne Systemfunktionen in unabhängige Module.
+   - Spielmechanik: 
+     - Funktionen: "Warenkorb berechnen", "User einloggen", "PDF Rechnung erzeugen".
+     - Ziehe sie in die Module: "E-Commerce", "Auth", "Reporting".
+     - Lernziel: Prinzip der Verantwortlichkeit (Single Responsibility).
+
+2. "Loose Coupling Challenge"
+   - Ziel: Minimiere Abhängigkeiten zwischen Komponenten.
+   - Spielmechanik: 
+     - Modert A ruft direkt private Variablen von Modul B auf. -> Bad Design.
+     - Lösung: Nutze eine definierte Schnittstelle (Interface).
+     - Lernziel: Design-Prinzipien (Kapselung).
+
+3. "Dependency-Graph-Puzzle"
+   - Ziel: Erkenne zirkuläre Abhängigkeiten.
+   - Spielmechanik: 
+     - A braucht B, B braucht C, C braucht A. -> Error! 
+     - Baue ein Interface dazwischen, um den Kreis zu durchbrechen.
+     - Lernziel: Strukturierung komplexer Systeme.
+
+4. "High-Cohesion-Check"
+   - Ziel: Halte zusammengehörige Funktionen in einem Modul.
+   - Spielmechanik: 
+     - Modul "User" enthält plötzlich Funktionen für "Mondphasen-Berechnung".
+     - Verschiebe die unpassende Funktion in ein neues Modul.
+     - Lernziel: Kohäsion von Softwarekomponenten.
+
+5. "Plugin-Architektur"
+   - Ziel: Erweitere das System ohne den Kern zu ändern.
+   - Spielmechanik: 
+     - Hauptmodul bietet einen "Slot" (Interface).
+     - Der Spieler schiebt verschiedene "Plugins" hinein (z.B. "Zahlung per PayPal").
+     - Lernziel: Erweiterbarkeit und Modularität.

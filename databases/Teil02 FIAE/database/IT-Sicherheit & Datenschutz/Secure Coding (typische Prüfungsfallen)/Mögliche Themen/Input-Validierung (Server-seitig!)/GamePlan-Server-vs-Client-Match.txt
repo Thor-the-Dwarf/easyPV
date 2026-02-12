@@ -1,0 +1,20 @@
+Anforderungen
+1. "Server-vs-Client Match"
+   - Ziel: Verständnis der komplementären Rollen von Client-seitiger (UX) und Server-seitiger (Security) Validierung zur Vermeidung von Umgehungs-Exploits.
+   - Spielmechanik: 
+     - Simulation einer Formular-Übermittlung.
+     - Der Spieler sieht, wie Client-Checks einfach umgangen werden können (z.B. mittels DevTools).
+     - Aufgabe: Implementierung robuster Validierungslogik auf dem Server (Validator-Middleware).
+     - Filterung auf unerlaubte Datentypen und Längen.
+     - Messbarkeit: Ablehnung von schädlichen Payloads trotz deaktiviertem JS im Browser.
+   - Lernziel: Einhaltung des "Never Trust User Input" Prinzips in der Webentwicklung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_input_val.json')
+   - Validierungs-Regeln und Bypass-Szenarien.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Visuelle Trennung von Frontend und Backend Logik).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Simulation der Payload-Prüfung).
+- [ ] Integration
+   - Info: Warum eine "Whitelist" immer sicherer ist als eine "Blacklist".

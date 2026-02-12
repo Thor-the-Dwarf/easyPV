@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Beherrschung der Daten-Strukturierung durch Gruppierung (GROUP BY) und nachgelagerte Filterung (HAVING).
+- Kontext: Reporting-Engine, Pivot-Logik.
+- UX-Prinzip:
+  - "The Pivot Reactor": Rohdaten fließen in den Reaktor, werden nach einer Eigenschaft (Spalte) sortiert und in "Clustern" ausgegeben.
+  - "The HAVING Sieve": Ein zweiter Filter am Ende, der nur die Gruppen durchlässt, die die Bedingung erfüllen.
+  - "Visual Buckets": Jedes Gruppen-Ergebnis landet in einem physischen Eimer mit Label.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Gruppierungskriterium (GROUP BY), 2 = Aggregierter Filter (HAVING), 3 = Gruppen-Statistik.
+- [ ] Textbudget: Max. 20 Zeichen pro Gruppen-Label.
+- [ ] Keine Vor-Exkurse; der Unterschied zwischen WHERE (vorher) und HAVING (nacher) wird visuell durch die Reaktor-Ebenen klar.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> raw-data-input -> grouping-reactor -> having-sieve -> report-buckets`.
+- [ ] Reaktor: Zentrales Element (Desktop 50% Breite, Mobile 40dvh Höhe).
+- [ ] Buckets: Am unteren Rand des Screens, füllen sich beim Durchlauf.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: Vertikale Abfolge der Ebenen; Buckets als horizontales Karussell.
+- [ ] `object-fit: contain` für Reaktor-Animationen.
+
+4. Kernvisuals
+- [ ] Industrie-Look: Zahnräder, Rohre und Sortierbänder (shared_theme.css).
+- [ ] Farb-Clustering: Datensätze gleicher Gruppe erhalten die gleiche Farbe, bevor sie in den Reaktor gehen.
+- [ ] High-Contrast Badges für die HAVING-Bedingung (z. B. "SUM > 1000").
+
+5. Interaktion und Feedback
+- [ ] Drag-to-Group: Spaltenkopf wird in den Reaktor gezogen -> Gruppen bilden sich.
+- [ ] Sieve-Effekt: Gruppen, die die HAVING-Bedingung nicht erfüllen, fallen "durch den Boden".
+- [ ] Analyse: "Korrekt. HAVING filtert das Ergebnis der Summenbildung, nicht die einzelnen Zeilen."
+
+6. KPI-Klarheit
+- [ ] Reporting-Genauigkeit: "Berichts-Integrität: 100%".
+- [ ] Group-Count: "4 Kategorien erfolgreich verdichtet".
+
+7. Content-/Copy-Feinschliff
+- [ ] Business-Reporting: "Umsatz nach Filiale", "Tickets pro Status", "User-Aktivität pro Monat".
+- [ ] Tonalität: Strukturiert, logisch, prozessorientiert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die "Buckets" auf schmalen Screens auch bei vielen Gruppen noch übersichtlich?
+- [ ] Test: Bleibt die Animation auch bei 50+ Datensätzen performant?
+
+9. Abnahmekriterien
+- [ ] Das mehrstufige Prinzip (Gruppieren -> Aggregieren -> Filtern) wird visuell transparent.
+- [ ] Das Interface wirkt wie ein mächtiger Daten-Sortier-Automat.
+- [ ] Maximale Anschaulichkeit der komplexen GROUP-BY Logik.

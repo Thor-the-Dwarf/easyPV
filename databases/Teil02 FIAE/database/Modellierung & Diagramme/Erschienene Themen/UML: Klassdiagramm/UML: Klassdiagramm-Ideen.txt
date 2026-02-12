@@ -1,0 +1,38 @@
+1. "Attribut-Scanner"
+   - Ziel: Definiere Attribute mit Sichtbarkeit und Datentyp.
+   - Spielmechanik: 
+     - Klasse: "Auto". 
+     - Puzzle: "- farbe: String", "+ kmStand: int".
+     - Messbarkeit: Korrekte UML-Syntax (Sichtbarkeit vorne!).
+   - Lernziel: Datenkapselung (Private/Public).
+
+2. "Beziehungs-Wirrwar"
+   - Ziel: Unterscheide Assoziation, Aggregation und Komposition.
+   - Spielmechanik: 
+     - "Auto und Motor". -> Komposition (starke Bindung).
+     - "Firma und Mitarbeiter". -> Aggregation (schwächere Bindung).
+     - Messbarkeit: Wahl der richtigen Raute (gefüllt vs. leer).
+   - Lernziel: Objektorientierte Modellierung.
+
+3. "Multiplizitäts-Check"
+   - Ziel: Setze Kardinalitäten an die Enden der Beziehungen.
+   - Spielmechanik: 
+     - "Ein Kurs kann viele Studenten haben". -> 0..*.
+     - "Ein Auto hat genau einen Motor". -> 1.
+     - Messbarkeit: Korrekte Logik der Mengenlehre.
+   - Lernziel: Datenbankähnliche Verknüpfungen in UML.
+
+4. "Generalisierungs-Match"
+   - Ziel: Erstelle eine Vererbungshierarchie.
+   - Spielmechanik: 
+     - Klassen: "Tier", "Hund", "Katze". 
+     - Verbinde sie mit "Ist-ein"-Pfeilen zur Oberklasse.
+     - Messbarkeit: Hierarchische Struktur erkennen.
+   - Lernziel: Abstraktion und Spezialisierung.
+
+5. "Methoden-Schmiede"
+   - Ziel: Definiere Operationen mit Parametern und Rückgabewert.
+   - Spielmechanik: 
+     - Operation: "+ berechneSumme(a: float, b: float): float".
+     - Messbarkeit: Korrekte Signatur-Syntax.
+   - Lernziel: Verhaltensmodellierung in Klassen.

@@ -1,0 +1,29 @@
+1. "Not-Just-HTTPS Match"
+   - Ziel: Verstehe, dass Verschlüsselung allein nicht reicht.
+   - Spielmechanik: 
+     - HTTPS ist an, aber der Server nutzt TLS 1.0 (Unsicher).
+     - Lernziel: Upgrade-Pflicht für Protokolle.
+
+2. "HSTS-Activator"
+   - Ziel: Erzwinge sichere Verbindungen.
+   - Spielmechanik: 
+     - Setze den `Strict-Transport-Security` Header.
+     - Lernziel: Schutz vor Downgrade-Angriffen.
+
+3. "Cipher-Suite-Sorter"
+   - Ziel: Wähle starke Algorithmen.
+   - Spielmechanik: 
+     - Ordne: AES-256 (Sicher) vs. RC4 (Unsicher).
+     - Lernziel: Konfiguration der Server-Sicherheit.
+
+4. "Mixed-Content-Detective"
+   - Ziel: Finde unsichere Ressourcen auf einer HTTPS-Seite.
+   - Spielmechanik: 
+     - Die Seite ist HTTPS, lädt aber ein Bild über HTTP. Warnung erscheint!
+     - Lernziel: Vollständige Verschlüsselung.
+
+5. "Certificate-Transparency-Check"
+   - Ziel: Verhindere gefälschte Zertifikate.
+   - Spielmechanik: 
+     - Prüfe, ob das Zertifikat in den öffentlichen Logs steht.
+     - Lernziel: Vertrauen im Web optimieren.

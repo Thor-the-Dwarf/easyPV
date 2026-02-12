@@ -1,0 +1,19 @@
+Anforderungen
+1. "XSS-Reflector"
+   - Ziel: Verständnis der Funktionsweise und Abwehr von Cross-Site Scripting (XSS) und Cross-Site Request Forgery (CSRF).
+   - Spielmechanik: 
+     - Durchführung eines reflektierten XSS Angriffs durch Manipulation von URL-Parametern.
+     - Abwehr durch Content-Escaping und Implementierung einer Content-Security-Policy (CSP).
+     - Schutz von Formularen durch CSRF-Tokens (Synchronizer Token Pattern).
+     - Messbarkeit: Erfolgreicher Schutz der Sitzung gegen fremde Scripte und Aktionen.
+   - Lernziel: Beherrschung von Web-Security Patterns zum Schutz der Endbenutzer-Sitzungen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_xss_csrf.json')
+   - Payload-Beispiele und CSP-Direktiven.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung der Konsole für Security-Header Management).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Validierung des Session-Schutzes).
+- [ ] Integration
+   - Tutorial: Unterschied zwischen CSRF (Aktion ausführen) und XSS (Code ausführen).

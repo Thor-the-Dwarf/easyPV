@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Ganzheitliche Umfeldanalyse und Identifikation von Abhängigkeiten zwischen internen und externen Stakeholdern.
+- Game-Mechanic: "The Radar Operator". Ein rotierender Radarstrahl scannt das Projektumfeld. Der Spieler muss auftauchende Stakeholder identifizieren und deren Einfluss-Sphäre (Innere/Äußere Kreise) korrekt zuweisen.
+- Challenge: 
+  - Level 1: Langsames Scanning, klare Unterscheidung zwischen "Intern" und "Extern".
+  - Level 2: "Inference Level" - Nur Schattenrisse/Andeutungen (z.B. "Finanzamt") müssen schnell zugeordnet werden.
+  - Level 3: "Noise & Interference" - Falsche Signale (Ablenkungen) müssen ignoriert werden.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD: Scan-Frequenz (Timer), Target-Count, Signal-Quality (Accuracy).
+- [ ] Scoring: +200 Pkt für Punktlandung im korrekten Sektor. Combo-Punkte für schnelles Erfassen mehrerer Ziele pro Scan-Umlauf.
+
+2. Screen-Layout (Operational View)
+- [ ] `radar-screen -> sonar-display -> info-bracket -> action-triggers`.
+- [ ] Sonar: Kreisrundes Display mit pulsierendem Scan-Strahl (CSS Animation: `rotate`).
+- [ ] Brackets: Dynamische Textfelder, die sich an die erfassten Ziele "heften".
+
+3. Kernvisuals und Effekte
+- [ ] Militärische Monitor-Ästhetik: Grün/Schwarz Kontrast, Pixel-Schriften (CRT-Effekt), Gitter-Overlays.
+- [ ] "Target Locked": Akustisches und visuelles Feedback bei erfolgreicher Identifikation.
+
+4. Browser- und Device-Resilienz
+- [ ] `overflow: hidden` auf dem Radar-Container.
+- [ ] Skalierbares Radial-Gitter (Responsive SVG).
+
+5. Content-Strategie (The Environment)
+- [ ] Interne Faktoren (Team, Betriebsrat, Budget).
+- [ ] Externe Faktoren (Gesetze, Markt, Kunden, Konkurrenz).
+
+6. QA-Paket
+- [ ] Test: Ist die Rotationsgeschwindigkeit des Radars auf Mobile nicht zu frustrierend?
+- [ ] Test: Funktionieren die "Tap-to-Identify" Trigger präzise auf den Signalen?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler erkennt das Projektumfeld als komplexes Netzwerk aus Einflüssen.
+- [ ] Das Interface fühlt sich wie ein technisches Präzisions-Instrument an.
+- [ ] Vollständige Klarheit über die Grenzen des internen vs. externen Umfelds.

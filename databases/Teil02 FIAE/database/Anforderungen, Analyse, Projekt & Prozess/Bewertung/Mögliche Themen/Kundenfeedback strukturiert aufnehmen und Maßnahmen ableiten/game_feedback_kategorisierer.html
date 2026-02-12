@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback-Kategorisierer</title>
+  <link rel="stylesheet" href="./kategorisierer.css">
+</head>
+<body class="fk-page">
+<main class="fk-app">
+  <header class="fk-head">
+    <h1>Feedback-Kategorisierer</h1>
+    <p>Klassifiziere Feedback in Bug, Feature, Support oder Lob.</p>
+    <div class="fk-kpis">
+      <div class="kpi"><span>Feedback</span><strong id="kpi-round">1/6</strong></div>
+      <div class="kpi"><span>Treffer</span><strong id="kpi-hits">0</strong></div>
+      <div class="kpi"><span>Triage-Quote</span><strong id="kpi-rate">0%</strong></div>
+    </div>
+  </header>
+
+  <section class="fk-layout">
+    <article id="feedback-root" class="fk-feedback"></article>
+    <aside class="fk-roadmap">
+      <h2>Roadmap-Vorschau</h2>
+      <div class="fk-columns">
+        <section class="col" data-col="bug"><h3>🐞 Bug</h3><ul id="road-bug"></ul></section>
+        <section class="col" data-col="feature"><h3>🚀 Feature</h3><ul id="road-feature"></ul></section>
+        <section class="col" data-col="support"><h3>🛟 Support</h3><ul id="road-support"></ul></section>
+        <section class="col" data-col="lob"><h3>💬 Lob</h3><ul id="road-lob"></ul></section>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<script src="./game_feedback_kategorisierer.js" defer></script>
+</body>
+</html>

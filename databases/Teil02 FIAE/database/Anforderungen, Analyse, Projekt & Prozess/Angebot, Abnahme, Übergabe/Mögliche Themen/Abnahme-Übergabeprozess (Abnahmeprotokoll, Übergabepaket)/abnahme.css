@@ -1,0 +1,165 @@
+:root {
+  --bg-a: #0f192f;
+  --bg-b: #091124;
+  --surface: rgba(5, 15, 33, 0.82);
+  --line: rgba(123, 146, 173, 0.46);
+  --ink: #e7efff;
+  --muted: #9fb2cf;
+  --green: #22c55e;
+  --amber: #f59e0b;
+  --red: #ef4444;
+}
+
+* { box-sizing: border-box; }
+
+body.abnahme-page {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 360px at 78% -10%, rgba(16, 185, 129, 0.18), transparent),
+    linear-gradient(180deg, var(--bg-a), var(--bg-b));
+}
+
+.abnahme-app {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: max(10px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) 12px max(10px, env(safe-area-inset-left));
+}
+
+.proto-head,
+.case-root {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.proto-head {
+  padding: 12px;
+}
+
+.proto-head h1 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3.8vw, 1.95rem);
+}
+
+.proto-head p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.kpis {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  gap: 8px;
+}
+
+.kpi {
+  border: 1px solid rgba(118, 142, 172, 0.48);
+  border-radius: 10px;
+  background: rgba(3, 10, 25, 0.64);
+  padding: 8px;
+  display: grid;
+  gap: 2px;
+}
+
+.kpi span {
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.kpi strong {
+  font-size: 1.02rem;
+}
+
+.case-root {
+  margin-top: 10px;
+  padding: 12px;
+}
+
+.issue-card {
+  border: 1px solid rgba(118, 142, 172, 0.46);
+  border-radius: 12px;
+  background: rgba(2, 9, 25, 0.68);
+  padding: 12px;
+}
+
+.issue-label {
+  color: #b5c6de;
+  font-size: 0.8rem;
+}
+
+.issue-text {
+  margin-top: 6px;
+  font-size: clamp(1rem, 2.8vw, 1.12rem);
+  line-height: 1.42;
+}
+
+.actions {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.action-btn {
+  border: 1px solid #9db4d1;
+  border-radius: 11px;
+  min-height: 58px;
+  background: #f8fbff;
+  color: #0f172a;
+  font-weight: 800;
+  text-align: left;
+  padding: 8px 10px;
+}
+
+.action-btn small {
+  display: block;
+  font-weight: 600;
+  font-size: 0.78rem;
+  margin-top: 2px;
+}
+
+.action-btn--ohne { border-left: 6px solid var(--green); }
+.action-btn--gering { border-left: 6px solid var(--amber); }
+.action-btn--wesentlich { border-left: 6px solid var(--red); }
+
+.feedback {
+  margin-top: 10px;
+  border: 1px solid #4f6482;
+  border-radius: 10px;
+  background: rgba(2, 9, 25, 0.7);
+  padding: 10px;
+  line-height: 1.4;
+}
+
+.feedback.ok { border-color: rgba(34, 197, 94, 0.76); color: #bbf7d0; }
+.feedback.bad { border-color: rgba(239, 68, 68, 0.8); color: #fecaca; }
+
+.next-btn,
+.restart-btn {
+  margin-top: 10px;
+  width: 100%;
+  min-height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.next-btn { color: #083344; background: linear-gradient(135deg, #67e8f9, #38bdf8); }
+.restart-btn { color: #052e16; background: linear-gradient(135deg, #86efac, #22c55e); }
+
+.result h2 { margin: 0 0 8px; }
+.result p { margin: 0 0 7px; }
+
+@media (max-width: 760px) {
+  .abnahme-app { padding: 8px; }
+
+  .proto-head,
+  .case-root { padding: 9px; border-radius: 12px; }
+
+  .actions { grid-template-columns: 1fr; }
+}

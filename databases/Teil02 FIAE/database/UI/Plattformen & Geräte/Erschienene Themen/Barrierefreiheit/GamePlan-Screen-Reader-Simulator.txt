@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Sensibilisierung für Barrierefreiheit (Digital Accessibility) und die Funktionsweise von Screenreadern.
+- Kontext: WCAG, ARIA-Labels, Semantisches HTML, Inklusion.
+- UX-Prinzip:
+  - "The Echo Room": Der Spieler sieht nichts (schwarzer Screen). Alle Objekte im Raum werden durch ihr "Echo" (Sprachausgabe) hörbar gemacht.
+  - "The Focus Ring": Ein leuchtender Kreis (der einzige Lichtblick) zeigt an, welches Element gerade "spricht".
+  - "Semantics-Hunt": Nur wenn HTML-Elemente korrekt gelabelt sind (z.B. `<nav>`, `<button aria-label="...">`), findet der Echo-Ruf seinen Weg zum Nutzer.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der aktive Fokus (Echo), 2 = Die Tastatur-Navigation (Tab/Enter), 3 = Der Fortschritt im Workflow.
+- [ ] Textbudget: Kurze, prägnante Beschreibungen für die Sprachausgabe (max. 10 Worte pro Item).
+- [ ] "Accessibility-Log": Eine Textliste, die anzeigt, was der Screenreader gerade vorliest.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> darkness-overlay -> focus-spotlight -> tts-panel`.
+- [ ] Darkness: Ein 100% schwarzes Overlay (shared_theme.css: --overlay-dark).
+- [ ] Spotlight: Ein einzelner, animierter Kreis um das fokussierte Element.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-to-Navigate" Geste (simuliert Screenreader-Handhabung auf dem Handy).
+- [ ] `aria-live="polite"` für Status-Updates der Simulation.
+
+4. Kernvisuals
+- [ ] Mystery-Ästhetik: Dunkler Hintergrund, schallwellen-ähnliche Animationen, minimale Fokus-Glints (shared_theme.css).
+- [ ] "Echo-Waves": Animierte Ringe beim Vorlesen eines Elements.
+- [ ] High-Contrast Badge: "BITTE SOUND EINSCHALTEN" (Initial-Screen).
+
+5. Interaktion und Feedback
+- [ ] Audio-Feedback: "Stimme sagt: 'Hauptmenü, Button, 3 von 5 Elementen'."
+- [ ] Aha-Moment: "Klick! Ohne den Alt-Text für das Bild hättest du gar nicht gewusst, dass hier der 'Bestätigen'-Button versteckt ist."
+- [ ] Erfolg: "Inklusions-Pionier! Du hast das Formular blind gemeistert und verstehst nun, warum Semantik Leben rettet."
+
+6. KPI-Klarheit
+- [ ] Accessibility-Score: "WCAG-Konformität: 100%".
+- [ ] Navigation-Efficiency: "Tastatur-Wege: Zeitersparnis durch gute Struktur".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Bestellvorgang im Dunkeln", "Nachrichten-Portal navigieren", "Fehlermeldungen in Formularen finden".
+- [ ] Tonalität: Respektvoll, empathisch, technisch fundiert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Funktioniert der "Blind-Mode" auch stabil, wenn CSS-Variablen überschrieben werden?
+- [ ] Test: Reagiert die TTS (Text-to-Speech) Simulation verzögerungsfrei auf Tastendruck?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler entwickelt tiefes Verständnis für die Notwendigkeit von ARIA und sauberem HTML.
+- [ ] Das Interface wirkt wie ein exklusives Empathie-Training für Web-Entwickler.
+- [ ] Absolute Sicherheit bei der Navigation ohne visuelle Hilfe.

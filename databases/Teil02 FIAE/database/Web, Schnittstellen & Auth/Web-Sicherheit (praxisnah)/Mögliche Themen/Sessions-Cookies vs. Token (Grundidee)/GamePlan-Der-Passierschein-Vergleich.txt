@@ -1,0 +1,19 @@
+Anforderungen
+1. "Der Passierschein-Vergleich"
+   - Ziel: Verständnis der Unterschiede zwischen zustandsbehafteten Sessions (Server-seitig) und zustandslosen Tokens (Client-seitig) zur Auswahl geeigneter Auth-Architekturen.
+   - Spielmechanik: 
+     - Simulation einer Web-Infrastruktur mit Load Balancer und mehreren Servern.
+     - Der Spieler erkennt Probleme (z.B. "Session-Sticky-Bit" nötig) und löst sie durch den Wechsel auf Token-basierte Authentifizierung (JWT).
+     - Vergleich der Speicherorte und Übertragungswege (Cookies vs. Authorization Header).
+     - Messbarkeit: Skalierbarkeit und Sicherheit der implementierten Architektur.
+   - Lernziel: Beherrschung von State-Management Strategien in modernen Web-Anwendungen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_sessions_tokens.json')
+   - Server-Infrastrukturen und Auth-Workflows.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Visuelle Darstellung von Memory-Inhalten auf Server vs. Client).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Simulation der Session-Verfügbarkeit).
+- [ ] Integration
+   - Tutorial: Warum JWTs keine Logout-Funktion "out of the box" haben.

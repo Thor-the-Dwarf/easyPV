@@ -1,0 +1,33 @@
+1. "Paket-Sortierer"
+   - Ziel: Ordne Klassen logischen Paketen zu.
+   - Spielmechanik: 
+     - `User`, `AuthService`, `EmailValidator`.
+     - Pakete: `domain`, `service`, `util`.
+     - Messbarkeit: Saubere Trennung der Verantwortlichkeiten.
+   - Lernziel: Package-Strukturierung.
+
+2. "Namespace-Konflikt-Löser"
+   - Ziel: Vermeide Namenskollisionen.
+   - Spielmechanik: 
+     - Zwei Libraries haben eine Klasse `Logger`.
+     - Lösung: `import de.firma.Logger` vs `import com.external.Logger`.
+     - Lernziel: Fully Qualified Names.
+
+3. "Visibility-Checker"
+   - Ziel: Nutze package-private vs public.
+   - Spielmechanik: 
+     - Klasse in Paket A darf nicht auf interne Klasse in Paket B zugreifen.
+     - Lernziel: Information Hiding auf Paket-Ebene.
+
+4. "Ordner-Puzzle"
+   - Ziel: Spiegle die Paketstruktur im Dateisystem.
+   - Spielmechanik: 
+     - Paket `com.myapp.util` -> Pfad: `com/myapp/util`.
+     - Lernziel: Konventionen moderner Programmiersprachen (Java/C#).
+
+5. "Export-Import-Simulator"
+   - Ziel: Definiere explizite Schnittstellen.
+   - Spielmechanik: 
+     - "Welche Funktionen einer Library sollen öffentlich sichtbar sein?".
+     - `exports { mainFunction }`.
+     - Lernziel: Modul-Systeme (ESM, Go-Modules).

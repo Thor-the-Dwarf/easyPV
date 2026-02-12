@@ -1,0 +1,19 @@
+Anforderungen
+1. "SQL-Injection-Puzzle"
+   - Ziel: Verständnis der Funktionsweise von SQL-Injection Angriffen und Befähigung zur Implementierung wirksamer Schutzmaßnahmen (Prepared Statements).
+   - Spielmechanik: 
+     - Der Spieler muss eine verwundbare DB-Abfrage durch gezielte Eingaben (z.B. `' OR '1'='1`) manipulieren.
+     - Umbau des Codes: Austausch von String-Konkatenation durch Parameterized Queries.
+     - Validierung der Eingabedaten gegen Whitelists.
+     - Messbarkeit: Immunität des Codes gegen Injektions-Vektoren.
+   - Lernziel: Sicherer Umgang mit Datenbank-Interaktionen und Schutz vor Datenabfluss.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_sql_injection.json')
+   - Verwundbare SQL-Strings und Injektions-Szenarien.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung der Konsole zur Code-Bearbeitung).
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Prüfung der SQL-Parameterized Syntax).
+- [ ] Integration
+   - Info: Warum Prepared Statements die einzige sichere Lösung gegen SQLi sind.

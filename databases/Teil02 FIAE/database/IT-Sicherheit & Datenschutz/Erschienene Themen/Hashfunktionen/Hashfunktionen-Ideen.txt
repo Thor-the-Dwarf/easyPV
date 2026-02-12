@@ -1,0 +1,31 @@
+1. "Die Einbahnstraße (One-Way)"
+   - Ziel: Verstehe, dass man Hashes nicht "entschlüsseln" kann.
+   - Spielmechanik: 
+     - Input "Passwort123" -> Hash "a1b2c3...".
+     - Versuche aus dem Hash das Wort zurückzugewinnen. Unmöglich!
+     - Lernziel: Determinismus und Einwegeigenschaft.
+
+2. "Kollisions-Checker"
+   - Ziel: Finde zwei Texte mit dem gleichen Hash (Theorie).
+   - Spielmechanik: 
+     - Ändere einen Buchstaben in einer Datei. 
+     - Beobachte: Der Hash ändert sich komplett (Avalanche Effect).
+     - Lernziel: Integritätsprüfung von Dateien.
+
+3. "Salt & Pepper Match"
+   - Ziel: Schütze Hashes vor Rainbow Tables.
+   - Spielmechanik: 
+     - Füge jedem Passwort einen zufälligen String (Salt) hinzu, bevor du hashmst.
+     - Lernziel: Schutz vor Massen-Angriffen auf Passwort-Datenbanken.
+
+4. "Mining-Simulation (Proof of Work)"
+   - Ziel: Finde einen Hash mit 4 führenden Nullen.
+   - Spielmechanik: 
+     - Ändere die "Nonce" (Zufallszahl) so lange, bis der Hash die Bedingung erfüllt.
+     - Lernziel: Rechenaufwand als Sicherheitsfaktor.
+
+5. "Checksumme verifizieren"
+   - Ziel: Prüfe ob ein Download heil ankam.
+   - Spielmechanik: 
+     - Vergleiche den MD5/SHA256 Hash auf der Website mit der heruntergeladenen Datei.
+     - Lernziel: Vertrauen in Softwarequellen.

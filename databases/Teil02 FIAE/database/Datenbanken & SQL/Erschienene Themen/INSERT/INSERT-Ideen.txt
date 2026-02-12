@@ -1,0 +1,38 @@
+1. "Value-Match"
+   - Ziel: Ordne Werte den richtigen Spalten zu.
+   - Spielmechanik: 
+     - `INSERT INTO user (id, name, age) VALUES (..., ..., ...)`.
+     - Werte: "Max" (String), 25 (Int), 101 (Int-ID).
+     - Messbarkeit: Übereinstimmung von Datentyp und Reihenfolge.
+   - Lernziel: Daten in Tabellen einfügen.
+
+2. "Auto-Increment-Check"
+   - Ziel: Verstehe automatische IDs.
+   - Spielmechanik: 
+     - Tabelle hat `id` als Auto-Inc.
+     - Frage: Musst du die ID im `INSERT` explizit angeben? -> Nein.
+     - Messbarkeit: Verständnis von Primärschlüssel-Generierung.
+   - Lernziel: Datenbank-Automatisierung.
+
+3. "Bulk-Insert-Multiplikator"
+   - Ziel: Füge mehrere Datensätze in einem Befehl ein.
+   - Spielmechanik: 
+     - `INSERT INTO product (name) VALUES ('Apfel'), ('Birne'), ('Banane')`.
+     - Messbarkeit: Effizienzsteigerung durch weniger Statements.
+   - Lernziel: Datenbank-Performance.
+
+4. "Constraint-Falle"
+   - Ziel: Beachte NOT NULL Bedingungen.
+   - Spielmechanik: 
+     - Versuch: `INSERT` ohne die Spalte 'email' (die NOT NULL ist).
+     - Ergebnis: Error.
+     - Messbarkeit: Fehlervermeidung durch Schema-Kenntnis.
+   - Lernziel: Datenintegrität beim Einfügen.
+
+5. "Date-Format-Puzzle"
+   - Ziel: Formatiere Datumsangaben korrekt.
+   - Spielmechanik: 
+     - Füge ein Datum ein (ISO 8601).
+     - Wahl: "24.12.2023" vs. "2023-12-24".
+     - Messbarkeit: Verwendung des Standard-SQL-Formats.
+   - Lernziel: Datentypen und Formate.

@@ -1,0 +1,39 @@
+1. "CRUD-Akronym-Puzzle"
+   - Ziel: Identifiziere die 4 Grundfunktionen.
+   - Spielmechanik: 
+     - Drag & Drop: Create, Read, Update, Delete.
+     - Ordne SQL-Befehle zu: INSERT, SELECT, UPDATE, DELETE.
+   - Lernziel: Basis-Datenbankoperationen.
+
+2. "Matrix-Master"
+   - Ziel: Erstelle eine CRUD-Matrix für Rollen und Tabellen.
+   - Spielmechanik: 
+     - Rolle "Gast": Darf Produkte [Read].
+     - Rolle "Admin": Darf Produkte [C, R, U, D].
+     - Messbarkeit: Korrekte Berechtigungslogik.
+   - Lernziel: Zugriffskontrolle & Rechtemanagement.
+
+3. "UI-CRUD-Match"
+   - Ziel: Ordne UI-Elemente CRUD-Funktionen zu.
+   - Spielmechanik: 
+     - "Mülleimer-Icon". -> Delete.
+     - "Lupe/Suche". -> Read.
+     - "Diskette/Speichern". -> Create/Update.
+     - Messbarkeit: UX-Verständnis.
+   - Lernziel: Interface-Design für Datenanwendungen.
+
+4. "Safe-Delete-Check"
+   - Ziel: Verhindere ungewolltes Löschen.
+   - Spielmechanik: 
+     - User klickt auf Delete. 
+     - Was fehlt? -> "Bestätigungs-Dialog" (Wollen Sie wirklich?).
+     - Messbarkeit: Datensicherheit durch User-Interaktion.
+   - Lernziel: Defensive Programmierung.
+
+5. "Update-Konflikt-Löser"
+   - Ziel: Erkenne Probleme bei gleichzeitigem Update (Lost Update).
+   - Spielmechanik: 
+     - User A und User B bearbeiten denselben Datensatz.
+     - Wer gewinnt? 
+     - Lösung: Optimistic Locking einsetzen.
+   - Lernziel: Transaction Management & Concurrency.

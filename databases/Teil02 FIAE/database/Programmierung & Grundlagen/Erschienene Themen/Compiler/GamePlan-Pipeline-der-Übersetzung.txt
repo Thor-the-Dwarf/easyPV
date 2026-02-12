@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Verständnis der schrittweisen Transformation von High-Level-Code in ausführbaren Maschinencode durch verschiedene Compiler-Phasen.
+- Kontext: Systemprogrammierung, Informatik-Grundlagen.
+- UX-Prinzip:
+  - "The Refining Plant": Der Code ist das Rohmaterial, das über ein Fließband durch verschiedene Veredelungs-Stationen (Lexer, Parser, Optimizer) läuft.
+  - "Output-Comparison": An jeder Station kann der Nutzer sehen, wie sich die Daten verändern (Tokens -> AST -> Binary).
+  - "The Waste Bin": Lexikalische Fehler fliegen als "Ausschuss" vom Band.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die aktuelle Veredelungs-Station, 2 = Der veränderte Datenzustand, 3 = Die zeitliche Abfolge.
+- [ ] Textbudget: Max. 5 Wörter pro Phasenbeschreibung.
+- [ ] "Visual Flow": Ein kontinuierlicher Strom von Code-Elementen von links nach rechts.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> refinery-belt -> station-detail-view -> binary-vault`.
+- [ ] Belt-Area: Das zentrale Fließband (Desktop 70% Breite, Mobile 40dvh Höhe).
+- [ ] Detail-View: Zoomt in die aktuelle Phase hinein, um die Transformation zu zeigen.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: Vertikale Fabrik-Anordnung (Top-Down Flow).
+- [ ] `scroll-snap-type: x mandatory` für die Phasen-Übersicht.
+
+4. Kernvisuals
+- [ ] Industrie-Stil: Metallische Oberflächen, leuchtende Sensoren, Funkenflug bei der Optimierung (shared_theme.css).
+- [ ] Daten-Format Wandlung: Text-Schnipsel werden zu bunten Blöcken (Tokens) und schließlich zu Nullen und Einsen.
+- [ ] High-Contrast Badges für die Phasen-Namen.
+
+5. Interaktion und Feedback
+- [ ] Phase-Unlock: Der Nutzer muss eine kleine Interaktion pro Station lösen (z.B. "Sortiere Tokens"), um das Band weiterlaufen zu lassen.
+- [ ] Erfolg: "Veredelung abgeschlossen! Dein Code ist jetzt hocheffizienter Maschinencode."
+- [ ] Fehlervideo: Kurze Animation, wie der Compiler bei Syntaxfehlern "verstopft".
+
+6. KPI-Klarheit
+- [ ] Compilation-Success: 0-100%.
+- [ ] Optimization-Factor: "Runtime-Effizienz gesteigert".
+
+7. Content-/Copy-Feinschliff
+- [ ] Realistische Phasen: Lexical Analysis, Syntax Analysis (Parsing), Semantic Analysis, Code Generation, Optimization.
+- [ ] Tonalität: Fachlich fundiert, prozesshaft, präzise.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die kleinen Token-Grafiken auf dem Handy erkennbar?
+- [ ] Test: Funktioniert die Fließband-Animation flüssig (CSS Keyframes)?
+
+9. Abnahmekriterien
+- [ ] Der Spieler versteht, dass "Compilieren" kein magischer Black-Box-Vorgang ist.
+- [ ] Das Interface wirkt wie ein modernes Industriesteuerungssystem.
+- [ ] Klarheit über die logische Reihe der Übersetzungsschritte.

@@ -1,0 +1,19 @@
+Anforderungen
+1. "Bit-to-Byte-Converter"
+   - Ziel: Sicherer Umgang mit digitalen Maßeinheiten und deren Umrechnung zur präzisen Planung von Speicher- und Übertragungskapazitäten.
+   - Spielmechanik: 
+     - Der Spieler muss Dateigrößen zwischen verschiedenen Einheiten (Bit, Byte, KB, MB, GB, TB) umrechnen.
+     - Berücksichtigung des Unterschieds zwischen Dezimal-Präfixen (SI: 1000) und Binär-Präfixen (IEC: 1024 / KiB).
+     - Berechnung des Speicherbedarfs für Multimedia-Inhalte (Bilder, Audio) basierend auf Auflösung und Bitrate.
+     - Messbarkeit: Mathematische Präzision bei der Kapazitätsplanung.
+   - Lernziel: Beherrschung der technischen Mengeneinheiten und deren Anwendung bei Infrastruktur-Entscheidungen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_econ_unit_conversion.json')
+   - Umrechnungsaufgaben und Formeln.
+- [ ] Shared CSS Check ('business_mathematics.css')
+   - (Anpassung des Rechen-Interfaces).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Validierung der numerischen Ergebnisse).
+- [ ] Integration
+   - Tutorial: Warum Festplattenhersteller mit 1000 rechnen, Betriebssysteme aber oft mit 1024.

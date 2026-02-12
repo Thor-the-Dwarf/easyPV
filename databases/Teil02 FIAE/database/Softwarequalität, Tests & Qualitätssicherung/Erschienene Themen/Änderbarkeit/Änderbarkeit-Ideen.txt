@@ -1,0 +1,29 @@
+1. "Lego-Code-Challenge"
+   - Ziel: Baue Komponenten, die leicht ausgetauscht werden können.
+   - Spielmechanik: 
+     - Ersetze ein Modul durch ein neues, ohne dass das restliche System bricht.
+     - Lernziel: Modularisierung und lose Kopplung.
+
+2. "Refactoring-Timer"
+   - Ziel: Schätze, wie lange eine Änderung dauert.
+   - Spielmechanik: 
+     - "Füge Feld 'E-Mail' hinzu". Bei schlechtem Code dauert es 5 Minuten, bei gutem 10 Sekunden.
+     - Lernziel: Wert von sauberem Code.
+
+3. "Dependency-Limiter"
+   - Ziel: Reduziere die Kopplung.
+   - Spielmechanik: 
+     - Zähle die Pfeile (Importe). Versuche die Anzahl der Abhängigkeiten zu minimieren.
+     - Lernziel: Kohäsion vs Kopplung.
+
+4. "Configuration-Hero"
+   - Ziel: Ändere Verhalten ohne Code-Änderung (per Config).
+   - Spielmechanik: 
+     - Ändere die MwSt im JSON-File statt im Quellcode.
+     - Lernziel: Flexibilität durch Parametrisierung.
+
+5. "Update-Safe-Checker"
+   - Ziel: Pluginsysteme verstehen.
+   - Spielmechanik: 
+     - Installiere ein Upgrade. Bleiben deine Anpassungen erhalten?
+     - Lernziel: Vererbung vs. Hooks.

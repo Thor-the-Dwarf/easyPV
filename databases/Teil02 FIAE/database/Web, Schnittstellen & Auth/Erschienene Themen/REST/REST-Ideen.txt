@@ -1,0 +1,34 @@
+1. "Resources-Url-Builder"
+   - Ziel: Designe saubere REST-Pfade.
+   - Spielmechanik: 
+     - Aufgabe: "Hole alle Kommentare von Post 5".
+     - Wahl: `/getComments?id=5` vs `/posts/5/comments`.
+     - Lernziel: Ressourcenorientiertes URL-Design.
+
+2. "Methoden-Match"
+   - Ziel: Nutze die richtigen Verben für Aktionen.
+   - Spielmechanik: 
+     - Neuen User anlegen. -> POST.
+     - User-Profil laden. -> GET.
+     - Passwort ändern. -> PUT/PATCH.
+     - Account löschen. -> DELETE.
+     - Lernziel: HTTP-Verben in REST.
+
+3. "Stateless-Checker"
+   - Ziel: Verstehe das Prinzip der Zustandslosigkeit.
+   - Spielmechanik: 
+     - Server vergisst den User nach jedem Request. 
+     - Was muss der Client mitschicken? -> Token/Auth-Header.
+     - Lernziel: Skalierbarkeit durch Statelessness.
+
+4. "JSON-Response-Puzzle"
+   - Ziel: Strukturiere eine standardkonforme Antwort.
+   - Spielmechanik: 
+     - Baue ein Objekt mit `data` und `links` (HATEOAS).
+     - Lernziel: REST-Reifegradmodelle (Richardson).
+
+5. "Idempotenz-Quiz"
+   - Ziel: Welche Methode darf man mehrfach aufrufen?
+   - Spielmechanik: 
+     - GET (Ja), DELETE (Ja), POST (Nein - erzeugt Duplikate).
+     - Lernziel: Zuverlässigkeit von APIs.

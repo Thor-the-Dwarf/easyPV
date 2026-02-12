@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Effiziente Nutzung vorhandener Klassenbibliotheken zur Vermeidung von redundanter Implementierung ("Don't reinvent the wheel").
+- Kontext: API-Kenntnis, Standard-Bibliotheken (Math, IO, Util, Net).
+- UX-Prinzip:
+  - "The Craftsman's Workshop": Der Spieler steht vor einer riesigen Werkzeugwand. Jedes Problem (Werkstück) erfordert den Griff zum korrekten Spezialwerkzeug.
+  - "The Master's Advice": Ein kurzer Hover-Tipp erklärt, warum z.B. die `Math`-Klasse besser ist als eine eigene Sinus-Formel.
+  - "Slotting In": Das Werkzeug-Icon muss perfekt in die Aussparung des Problems passen.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Das aktuelle Problem (Mission), 2 = Die Werkzeugwand (Libraries), 3 = Der Erfolgs-Code.
+- [ ] Textbudget: Max. 12 Wörter pro Problem-Definition.
+- [ ] "Direct Utility": Sofortige Anzeige des Codes, der das Problem mit der Library löst.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> workbench (Problem) -> tool-wall (Choices) -> results-shelf`.
+- [ ] Workbench: Zentraler Tisch, auf dem das Problem-Icon liegt (Desktop 60% Breite, Mobile 50dvh Höhe).
+- [ ] Tool-Wall: Übersichtliche Anordnung der Library-Kategorien am rechten Rand oder unten.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-to-Browse" durch die Werkzeuge.
+- [ ] `safe-area-inset` für das Code-Snippet Overlay.
+
+4. Kernvisuals
+- [ ] Werkstatt-Ästhetik: Holz-Texturen (rustikal) oder Carbon (modern), je nach shared_theme.css.
+- [ ] Ikonografisches Tooling: Ein Taschenrechner für `Math`, ein Briefumschlag für `Net`, eine Kalenderblatt für `Date`.
+- [ ] Glow-Effekte: Das richtige Werkzeug leuchtet dezent auf, wenn man das Problem "versteht".
+
+5. Interaktion und Feedback
+- [ ] Match-Feedback: "Klick! Mit der `java.time` API ist Datumsrechnung ein Kinderspiel."
+- [ ] Rad-Neuerfinder-Warnung: "Du versuchst einen HTTP-Request von Hand in Sockets zu schreiben? Nimm lieber die `HttpClient` Toolbox!"
+- [ ] Code-Preview: "So einfach geht's: `Math.sqrt(x);` – Fertig!"
+
+6. KPI-Klarheit
+- [ ] Efficiency-Score: "Entwicklungs-Geschwindigkeit: Meisterhaft".
+- [ ] Wheel-Reinvention-Level: "0% (Optimale Library-Ausnutzung)".
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Aufgaben: "Passwort hashen", "Große Dateien kopieren", "Zufallszahl zwischen 1 und 100", "Währung formatieren".
+- [ ] Tonalität: Hilfreich, erfahren, pragmatisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Werkzeug-Icons auf einem kleinen Handy-Bildschirm unterscheidbar?
+- [ ] Test: Funktioniert das Drag-and-Drop auch bei schnellen Gesten zuverlässig?
+
+9. Abnahmekriterien
+- [ ] Der Spieler erkennt den massiven Zeitgewinn durch Standard-APIs.
+- [ ] Das Interface wirkt wie ein gut sortierter Master-Workspace.
+- [ ] Hoher Transferwert für die tägliche Programmierpraxis.

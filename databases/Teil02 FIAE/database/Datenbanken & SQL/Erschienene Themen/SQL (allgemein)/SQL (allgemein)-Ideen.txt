@@ -1,0 +1,41 @@
+1. "SQL-Sortierer (DDL vs DML)"
+   - Ziel: Unterscheide Data Definition Language von Data Manipulation Language.
+   - Spielmechanik: 
+     - "CREATE TABLE". -> DDL.
+     - "UPDATE". -> DML.
+     - "DROP DATABASE". -> DDL.
+     - Messbarkeit: Korrekte Zuordnung der Sprach-Teilmengen.
+   - Lernziel: Struktur der SQL-Sprache.
+
+2. "Syntax-Puzzle"
+   - Ziel: Bringe SQL-Befehle in die richtige Reihenfolge.
+   - Spielmechanik: 
+     - Bausteine: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY.
+     - Ziehe sie in die syntaktisch korrekte Folge.
+     - Messbarkeit: Einhaltung der SQL-Grammatik.
+   - Lernziel: Grundgerüst einer SQL-Abfrage.
+
+3. "SQL-Detektiv"
+   - Ziel: Finde den Fehler in einem SQL-Statement.
+   - Spielmechanik: 
+     - `SELECT name FROM user WHERE id = 'abc';` (id ist int). -> Typfehler.
+     - `SELECT * FROM user GROUP BY department;` (ohne Aggregatfunktion). -> Logikfehler.
+     - Messbarkeit: Fehlererkennung und Korrekturvorschlag.
+   - Lernziel: Debugging von SQL.
+
+4. "Daten-Crawler"
+   - Ziel: Finde Daten in einer Tabellen-Visualisierung.
+   - Spielmechanik: 
+     - SQL: `SELECT * FROM user WHERE age > 20`.
+     - Klicke alle Zeilen in der Tabelle an, die zurückgegeben werden würden.
+     - Messbarkeit: Verständnis der WHERE-Klausel.
+   - Lernziel: Ergebnismengen visualisieren.
+
+5. "SQL-Vokabel-Match"
+   - Ziel: Lerne die Bedeutung der Schlüsselwörter.
+   - Spielmechanik: 
+     - "DISTINCT". -> Einmaliges Vorkommen.
+     - "BETWEEN". -> Bereichsprüfung.
+     - "LIKE %...%". -> Mustersuche.
+     - Messbarkeit: Korrekte Wortbedeutung.
+   - Lernziel: SQL-Operator-Kenntnis.

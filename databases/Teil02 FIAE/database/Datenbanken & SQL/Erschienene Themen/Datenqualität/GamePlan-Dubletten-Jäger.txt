@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Identifikation und Bereinigung redundanter Datensätze zur Steigerung der Datenqualität und Kostenreduktion.
+- Kontext: Data Cleansing, Master Data Management (MDM).
+- UX-Prinzip:
+  - "The DNA Scanner": Zwei Datensätze werden unter ein "Mikroskop" (Vergleichs-View) gelegt. Unterschiede in der "Sequenz" (Feldwerte) werden markiert.
+  - "Fuzzy Match Highlighting": Ähnliche Begriffe (z. B. "Strasse" vs. "Str.") leuchten gelb ("Fast-Match").
+  - "The Merger": Ein Klick kombiniert die besten Felder beider Zeilen zu einem "Master-Record".
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Ähnlichkeit der Datensätze (Match-Score), 2 = Die differierenden Felder, 3 = Die Merge-Entscheidung.
+- [ ] Textbudget: Max. 5 Felder pro Vergleich zur schnellen Beurteilung.
+- [ ] "Smart Selection": Das System wählt das vollständigere Feld automatisch vor.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> match-triage -> comparison-split -> master-record-preview`.
+- [ ] Comparison: Zwei vertikale Karten nebeneinander (Desktop), untereinander (Mobile).
+- [ ] Match-Score: Ein prominenter Kreis/Bogen (z. B. "92% Match") zwischen den Karten.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-Right to Merge, Swipe-Left to Keep Separate" (Tinder-Stil für Daten).
+- [ ] `safe-area-inset` für die finalen "Commit" Tasten.
+
+4. Kernvisuals
+- [ ] Labor-Ästhetik: Sauberes, medizinisches Theme mit Blautönen (shared_theme.css).
+- [ ] DNA-Helix Animation im Hintergrund bei der Suche nach Dubletten.
+- [ ] High-Contrast Diff: Geänderte Buchstaben leuchten neon-farben auf.
+
+5. Interaktion und Feedback
+- [ ] Konflikt-Management: "Achtung! Telefonnummern unterscheiden sich. Welches ist der Master?"
+- [ ] Effizienz-Feedback: "Puh! Durch das Mergen von 150 Dubletten sparst du 200€ Portokosten pro Monat."
+- [ ] Sound/Visual: Ein "Verschmelz-Effekt" (Animation), wenn zwei Zeilen zu einer werden.
+
+6. KPI-Klarheit
+- [ ] Uniqueness-Rate: "Qualitäts-Level: Platin".
+- [ ] Data-Dumping: "X Dubletten terminiert".
+
+7. Content-/Copy-Feinschliff
+- [ ] Alltags-Fälle: "Max Mustermann" vs. "M. Mustermann", "Apple Inc" vs. "Apple Deutschland".
+- [ ] Tonalität: Analytisch, präzise, qualitätsverliebt.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Passen die Vergleichs-Karten auf ein iPhone SE Display?
+- [ ] Test: Sind die Checkpoints für die Merge-Entscheidung (Radio-Buttons) gut treffbar?
+
+9. Abnahmekriterien
+- [ ] Der Spieler versteht den Wert "reiner" Daten für Geschäftsprozesse.
+- [ ] Das Interface wirkt wie ein Hochleistungs-Labor für Daten-DNA.
+- [ ] Maximale Geschwindigkeit bei der Triage von 10+ Match-Paaren.

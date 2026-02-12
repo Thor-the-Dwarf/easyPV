@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Beherrschung der Bedingungen zur horizontalen Zusammenführung von Ergebnismengen (UNION) unter Wahrung der Schema-Integrität.
+- Kontext: Mengenlehre in SQL, Daten-Aggregation aus verschiedenen Quellen.
+- UX-Prinzip:
+  - "The Magnet Merger": Zwei Abfrage-Ergebnisse (Tabellenkopfe) schweben aufeinander zu. Wenn Spaltenzahl und Typen passen, rasten sie magnetisch ein ("Snap!"). Wenn nicht, stoßen sie sich ab ("Bounce").
+  - "Column-Sync": Spalten mit gleichen Datentypen leuchten in der gleichen Farbe.
+  - "Duplicate Sieve": UNION verhält sich wie ein Sieb (filtert Duplikate), UNION ALL lässt alles durch (Wasserfall).
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Spalten-Struktur (Anzahl/Typ), 2 = Magnetischer Rast-Punkt, 3 = Ergebnismenge (Fusion).
+- [ ] Textbudget: Kurze Typ-Labels (INT, STR, DATE) direkt an den Magnet-Köpfen.
+- [ ] "Logic-Match": Nur kompatible Queries leuchten grün.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> query-a-header -> magnetic-gap -> query-b-header -> combined-preview`.
+- [ ] Header: Zwei horizontale Schienen (Desktop oben/unten, Mobile gestapelt).
+- [ ] Gap: Der interaktive Raum, in dem man die Queries "zusammenzieht".
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Pinch-together" Geste zum Ausführen der UNION-Operation.
+- [ ] `safe-area-inset` für die Umschaltung zwischen UNION und UNION ALL.
+
+4. Kernvisuals
+- [ ] Magnet-Ästhetik: Rote/blaue Pole, magnetische Feldlinien (shared_theme.css).
+- [ ] High-Contrast Type-Badges: Farbenfrohe Symbole für die Übereinstimmung.
+- [ ] "Fusion-Effect": Verbundene Tabellen glühen als eine neue, stabilere Einheit.
+
+5. Interaktion und Feedback
+- [ ] Snap-Feedback: "Perfekt! Beide Abfragen liefern 3 Spalten (ID, Name, Preis). Die Verbindung steht."
+- [ ] Abstoßung: "Fehler! Tabelle A hat einen String an Position 2, Tabelle B eine Zahl. Magnete stoßen sich ab!"
+- [ ] Duplicate-Filter: "Beachte: In der Mitte bleiben nur EINMAL 'Max Mustermann' übrig (UNION Distinct)."
+
+6. KPI-Klarheit
+- [ ] Set-Integrität: "Mengenkompatibilität: 100%".
+- [ ] Result-Volume: "Gesamtzeilen nach UNION: X".
+
+7. Content-/Copy-Feinschliff
+- [ ] Komplexe Fälle: "Kunden aus DE + Kunden aus AT", "Umsatz 2023 + Umsatz 2024", "Fehlerprotokolle von Server A + Server B".
+- [ ] Tonalität: Physikalisch, anziehend, logisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Spalten-Magneten auf kleinen Screens bei 5+ Spalten noch unterscheidbar?
+- [ ] Test: Ist die Abstoßungs-Animation bei Inkompatibilität haptisch spürbar (Shake)?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler verinnerlicht die strikten Regeln der Mengen-Vereinigung in SQL.
+- [ ] Das Interface wirkt wie ein futuristisches Labor für Elementarphysik.
+- [ ] Haptischer Spaß beim "Zusammenklicken" der Datenmengen.

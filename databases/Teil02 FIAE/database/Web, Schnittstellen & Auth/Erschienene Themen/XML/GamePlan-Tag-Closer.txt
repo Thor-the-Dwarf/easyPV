@@ -1,0 +1,19 @@
+Anforderungen
+1. "Tag-Closer"
+   - Ziel: Sicherstellung der Wohlgeformtheit von XML-Dokumenten zur fehlerfreien Datenübertragung zwischen heterogenen Systemen.
+   - Spielmechanik: 
+     - Präsentation eines fehlerhaften XML-Dokuments (z.B. falsche Schachtelung, fehlende End-Tags, ungültige Zeichen).
+     - Der Spieler muss die Syntaxfehler korrigieren, um das Dokument wieder "wohlgeformt" zu machen.
+     - Validierung gegen eine DTD oder XSD zur Prüfung der inhaltlichen Korrektheit.
+     - Messbarkeit: Syntaktische Korrektheit des XML-Inhalts.
+   - Lernziel: Verständnis der XML-Regeln und Vorbereitung auf die Arbeit mit Konfigurations- und Datenaustauschformaten.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_xml_syntax.json')
+   - Fehlerhafte XML-Inhalte und Korrektur-Vorlagen.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Syntax-Highlighting Editors).
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Validierung der XML-Wohlgeformtheit).
+- [ ] Integration
+   - Info: Warum XML im Vergleich zu JSON oft als "geschwätzig" gilt.

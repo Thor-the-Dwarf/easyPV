@@ -1,0 +1,300 @@
+# AP2 FIAE – Themen nach Themenclustern (Merge: erschienene Themen vs. mögliche Themen)
+
+## Anforderungen, Analyse, Projekt & Prozess
+**Erschienene Themen**
+- Anforderungsanalyse
+- Prozessanalyse
+- Umfeldanalyse
+- Machbarkeitsanalyse
+- Projektmanagement
+- Change Management
+- Stakeholder
+- User-Stories
+- Workshop
+- Ticketsystem
+- Fremdvergabe
+- Protokoll anfertigen
+- Dokumentation
+
+**Mögliche Themen**
+### Projektziel & Scope
+- Projektziele / gewünschte Ergebnisse sauber ableiten
+- Rahmenbedingungen (Zeit, Budget, Technik, Betrieb) festhalten
+- Akzeptanzkriterien definieren (was gilt als „fertig“?)
+
+### Planung & Steuerung
+- Aufwandsschätzung (z. B. Drei-Punkt-Schätzung)
+- Ressourcenplanung (personell/technisch)
+- Iterative Abstimmung mit Kunden (Review-/Feedback-Zyklen)
+
+### Lösungsfindung & Entscheidung
+- Lösungsvarianten entwickeln und nach Kriterien vergleichen
+- Wirtschaftlichkeit bewerten: Prozesskostenreduktion vs. Entwicklungskosten
+
+### Angebot, Abnahme, Übergabe
+- Leistungsbeschreibung (was wird geliefert?)
+- Angebot auf Basis Leistungsbeschreibung
+- Abnahme-/Übergabeprozess (Abnahmeprotokoll, Übergabepaket)
+- Schulungsbedarf ermitteln + Schulungskonzept ableiten
+
+### Bewertung
+- Skalierbarkeit bewerten
+- Verlässlichkeit/Robustheit bewerten
+- Kundenfeedback strukturiert aufnehmen und Maßnahmen ableiten
+
+---
+
+## Modellierung & Diagramme
+**Erschienene Themen**
+- UML: Use-Case-Diagramm
+- UML: Aktivitätsdiagramm
+- UML: Klassdiagramm
+- UML: Sequenzdiagramm
+- UML: Zustandsdiagramm
+- ERM (Entity-Relationship-Modell)
+- Relationales Datenmodell
+- CRUD (als Modell/Matrix)
+
+**Mögliche Themen**
+### Prozess- & Informationsfluss
+- Geschäftsprozesse modellhaft darstellen (Informationsfluss im Prozess)
+- Informationsobjekte identifizieren (Eingaben/Outputs/Datenobjekte)
+
+### Modelle für Module & Schnittstellen
+- Modul-/Komponentenschnitt (Module, Verantwortlichkeiten)
+- Schnittstellen-„Vertrag“ beschreiben (Input/Output/Fehlerfälle)
+
+---
+
+## Datenbanken & SQL
+**Erschienene Themen**
+- SQL (allgemein)
+- SELECT
+- INSERT
+- UPDATE
+- DELETE
+- UNION
+- CREATE TABLE
+- CREATE INDEX
+- Index
+- Datentypen
+- Stored Procedures
+- Trigger
+- Transaktionen
+- GRANT
+- REVOKE
+- Anomalien
+- Redundanz
+- Datenimport
+- Datenqualität
+- Dokumentenorientierte Datenbank
+
+**Mögliche Themen**
+### SQL-Abfragen (über Basics hinaus)
+- JOINs (INNER/LEFT) praxisnah
+- GROUP BY / HAVING
+- Aggregatfunktionen (COUNT/SUM/AVG/MIN/MAX)
+- Subqueries (einfach)
+- Constraints (PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL)
+- Views (Grundidee)
+
+### Datenmodell-Qualität
+- Normalisierung (1NF–3NF)
+- Datenintegrität (Referentielle Integrität)
+- Migrationen (Schema-Änderungen kontrolliert ausrollen)
+
+### Performance & Betrieb
+- Query-Optimierung (Grundidee, Index-Wirkung)
+- Sperren/Isolation (Grundidee: warum Transaktionen „blocken“ können)
+- Backup/Restore (DB-seitig, Grundidee)
+
+---
+
+## Programmierung & Grundlagen
+**Erschienene Themen**
+- Pseudocode
+- Fehler finden
+- Fehlerbehandlung
+- Rekursion
+- Sortieralgorithmen
+- Klassenbibliothek
+- Generische Klassen
+- Funktionale Programmierung
+- Compiler
+- Interpreter
+
+**Mögliche Themen**
+### Modularisierung & Wiederverwendung
+- Packages/Namespaces (saubere Struktur)
+- Dependency-Management (Paketmanager, Versionen)
+- Bibliotheken/Module gezielt einsetzen (Make vs. Use)
+
+### Code-Qualität & Wartbarkeit
+- Clean Code (Benennung, Verantwortlichkeiten, Komplexität)
+- SOLID-Prinzipien (Grundidee)
+- Refactoring (gezielt verbessern ohne Funktionsänderung)
+
+### Nebenläufigkeit & Performance (Grundidee)
+- Synchron vs. asynchron (wann wofür)
+- Nebenläufigkeit/Threads (typische Risiken: Race Conditions)
+
+---
+
+## Architektur & Patterns
+**Erschienene Themen**
+- Schichtenarchitektur
+- Design Patterns
+- Observer (Pattern)
+
+**Mögliche Themen**
+### Architektur-„Schubladen“ für AP2
+- MVC/MVVM (Grundidee, wann sinnvoll)
+- Dependency Injection (Grundidee: warum hilft das beim Testen?)
+
+### Patterns (konkreter als „Design Patterns“)
+- Factory
+- Strategy
+- Adapter
+- Decorator
+- Repository
+
+---
+
+## Softwarequalität, Tests & Qualitätssicherung
+**Erschienene Themen**
+- Softwarequalität
+- Qualitätssicherung
+- Testkonzept
+- Unit-Tests
+- Black-Box-Test
+- White-Box-Test
+- Regressionstests
+- Schreibtischtest
+- Äquivalenzklassen
+- Code Coverage
+- Code-Reviews
+- Änderbarkeit
+- Effizienz
+
+**Mögliche Themen**
+### Testarten (zusätzlich)
+- Integrationstest
+- Systemtest
+- Abnahmetest
+
+### Teststrategie
+- Testpyramide (Unit/Integration/E2E – Grundidee)
+- Mock/Stubs/Fakes (warum/wofür)
+
+### Automatisierung & Tooling
+- Static Analysis / Linting (Fehler früh finden)
+- Qualitätsmetriken (z. B. zyklomatische Komplexität – Grundidee)
+
+---
+
+## UI/UX & Accessibility
+**Erschienene Themen**
+- UI-Design
+- Mockups
+- Prototyping
+- Usability
+- User Experience
+- Barrierefreiheit
+
+**Mögliche Themen**
+### UI für mehrere Endgeräte
+- Responsive Design (Breakpoints, Layout-Strategien)
+- Plattform-/Device-Anforderungen (Touch vs. Maus, Screen-Größen)
+
+### UX-Validierung
+- Usability-Testmethoden (kurz: Beobachten, Aufgaben, Protokoll)
+- Fehlertexte/Validierung in Formularen (verständlich, nutzerzentriert)
+
+### Konsistenz
+- Designsystem/Styleguide (Grundidee: Wiedererkennbarkeit & Tempo)
+
+---
+
+## Web, Schnittstellen & Auth
+**Erschienene Themen**
+- HTTP
+- HTTP-Methoden
+- HTTP-Request
+- HTTP-Statuscodes
+- REST
+- SOAP-Service
+- OAuth
+- Single-Sign-On
+- XML
+- JSON
+
+**Mögliche Themen**
+### API-Design & Dokumentation
+- API-Kontrakt (Request/Response/Errors)
+- OpenAPI/Swagger (Grundidee: Maschinen-lesbare API-Doku)
+
+### Web-Sicherheit (praxisnah)
+- Authentifizierung vs. Autorisierung (klar trennen)
+- Sessions/Cookies vs. Token (Grundidee)
+- CORS (Grundidee: warum blockt der Browser?)
+
+---
+
+## IT-Sicherheit & Datenschutz
+**Erschienene Themen**
+- Endpoint-Security
+- Verschlüsselung
+- Digitale Signatur
+- Hashverfahren
+- Zertifikate
+- E-Mail-Sicherheit
+- Schwachstellenanalyse
+- Sicherheitsanforderungen
+- Risikoanalyse
+- Datenschutz
+
+**Mögliche Themen**
+### Secure Coding (typische Prüfungsfallen)
+- Input-Validierung (Server-seitig!)
+- Injection-Grundlagen (SQL-Injection als Klassiker)
+- XSS/CSRF (Grundidee: was passiert da?)
+
+### Schlüssel & Secrets
+- Secrets-Handling (keine Keys im Code/Repo)
+- TLS/HTTPS (Grundidee: warum „nur HTTPS“ nicht reicht)
+
+---
+
+## Infrastruktur, Netz & Systemkontext
+**Erschienene Themen**
+- Ethernet
+- MAC
+- SAN
+- RAID
+- IoT
+- Green IT
+- Open-Source
+- Versionsverwaltung
+- CI/CD
+
+**Mögliche Themen**
+### Deployment/Release
+- Umgebungen (Dev/Test/Prod) sauber trennen
+- Rollout/Deployment (Grundidee, Risiken)
+
+### Virtualisierung & Container
+- Virtualisierung (VM) – Grundidee
+- Container – Grundidee
+- Unterschiede VM vs. Container
+
+### Betrieb im Blick
+- Monitoring-Grundidee
+- Logging-Grundidee
+
+---
+
+## Wirtschaftlichkeit & Rechnen
+**Erschienene Themen**
+- Kostenarten
+- Tabellenkalkulation
+- Dateigrößen berechnen

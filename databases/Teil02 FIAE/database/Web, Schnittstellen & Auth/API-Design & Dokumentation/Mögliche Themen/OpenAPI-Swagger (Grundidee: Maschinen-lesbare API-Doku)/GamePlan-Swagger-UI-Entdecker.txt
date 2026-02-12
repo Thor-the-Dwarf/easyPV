@@ -1,0 +1,19 @@
+Anforderungen
+1. "Swagger-UI Entdecker"
+   - Ziel: Befähigung zur Nutzung und Erstellung maschinenlesbarer Schnittstellen-Dokumentationen zur Steigerung der Entwickler-Effizienz.
+   - Spielmechanik: 
+     - Interaktion mit einer simulierten Swagger-UI.
+     - Der Spieler muss Endpunkte explorieren, "Try it out" Funktionen nutzen und Parameter korrekt befüllen.
+     - Verknüpfung von OpenAPI-Definitionen (YAML) mit der resultierenden grafischen Dokumentation.
+     - Messbarkeit: Erfolgreiches Ausführen von Test-Requests über die UI.
+   - Lernziel: Beherrschung von Dokumentations-Standards und explorativem API-Testing.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_openapi_swagger.json')
+   - OpenAPI Specs und UI-Zustände.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Nachbau der Swagger-UI Komponenten).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Tracking der UI-Interaktionen).
+- [ ] Integration
+   - Tutorial: Von der YAML-Datei zum fertigen API-Client (Codegen).

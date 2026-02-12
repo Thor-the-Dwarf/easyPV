@@ -1,0 +1,19 @@
+Anforderungen
+1. "Wer bist du? vs Was darfst du?"
+   - Ziel: Präzise begriffliche und technische Abgrenzung zwischen Identitätsprüfung (Athentifizierung) und Berechtigungsprüfung (Autorisierung).
+   - Spielmechanik: 
+     - Klassifizierung von Sicherheitsereignissen (z.B. "Passwort-Check", "Rollen-Prüfung", "Zwei-Faktor-Login").
+     - Der Spieler ordnet die Ereignisse den Kategorien "Authentifizierung" oder "Autorisierung" zu.
+     - Simulation von Zugriffskontrollen (RBAC) in einem Unternehmenskontext.
+     - Messbarkeit: Korrekte Zuordnung der Sicherheitskonzepte.
+   - Lernziel: Verständnis der Security-Grundlagen und fehlerfreie Implementierung von Schutzmechanismen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_auth_concepts.json')
+   - Begriffspaare und Anwendungsfälle.
+- [ ] Shared CSS Check ('business_mathematics.css')
+   - (Anpassung des Klassifizierungs-Interfaces).
+- [ ] Game-Engine Logic ('game_category_match.js')
+   - (Wiederverwendung der Matching-Logik).
+- [ ] Integration
+   - Info: Warum ein gültiger Login (AuthN) noch keinen Zugriff auf alles (AuthZ) bedeutet.

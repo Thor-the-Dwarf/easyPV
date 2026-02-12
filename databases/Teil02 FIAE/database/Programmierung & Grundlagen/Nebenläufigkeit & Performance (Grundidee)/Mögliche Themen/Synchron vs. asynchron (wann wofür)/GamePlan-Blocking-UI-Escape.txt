@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Praktische Beherrschung asynchroner Programmiermuster (Promises, Async/Await) zur Vermeidung von UI-Blockaden und Steigerung der App-Performance.
+- Kontext: Web-Entwicklung, Event Loop, JavaScript, Responsivität.
+- UX-Prinzip:
+  - "The Frozen City": In der Stadt (der UI) herrscht Stillstand (Freeze). Nichts bewegt sich, weil ein riesiger Schneesturm (ein synchroner Long-Task) alles blockiert.
+  - "The Async-Tunnel": Der Spieler baut Tunnel (asynchrone Kanäle), in denen der Sturm im Hintergrund toben kann, während das Leben in der Stadt (Interaktionen) ungehindert weitergeht.
+  - "The Event Loop Clock": Ein sichtbares Uhrwerk, das zeigt, wann Tasks aus der Schlange (Queue) abgearbeitet werden.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die UI-Reaktionsfähigkeit (Frozen vs Alive), 2 = Die Event-Loop (Task Queue), 3 = Der asynchrone Code.
+- [ ] Textbudget: Max. 10 Zeilen Code für den Vergleich.
+- [ ] "Responsiveness Meter": Ein blinkendes Herz-Icon, das stehenbleibt, wenn das System einfriert.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> interactive-cityscape -> event-loop-gears -> code-refactoring-terminal`.
+- [ ] Cityscape: Eine lebendige Stadt-Animation (Desktop 60% Breite, Mobile 40dvh Höhe).
+- [ ] Gears: Ein animiertes Getriebe, das rot glüht, wenn ein Task zu lange dauert.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-to-Test-Responsiveness" – Der Spieler muss während des Hintergrund-Tasks einen Button drücken können.
+- [ ] `will-change: opacity, transform` für flüssige Stadt-Animationen.
+
+4. Kernvisuals
+- [ ] Kontrast-Ästhetik: Frostiges Blau (Static/Sync) vs. warmes Orange (Dynamic/Async) (shared_theme.css).
+- [ ] "Spinning Wheel of Death": Erscheint als riesiges Hindernis, wenn der Code synchron blockiert.
+- [ ] High-Contrast Code-Theming für Schlüsselwörter wie `await` und `fetch`.
+
+5. Interaktion und Feedback
+- [ ] Aha-Moment: "Die Stadt schläft nicht ein! Während die Daten aus dem All (Server) kommen, kann der User weiter tippen."
+- [ ] Flow-Feedback: "Perfekt! Du hast den schweren Task in ein Promise verpackt. Die Event-Loop kann jetzt weiteratmen."
+- [ ] Erfolg: "Stadt aufgewaut. Deine App reagiert sofort, egal wie groß die Datenberge sind."
+
+6. KPI-Klarheit
+- [ ] UI-Responsiveness: "Time-to-Interactive (TTI): Exzellent".
+- [ ] Loop-Health: "Durchsatz der Task-Queue: Optimal".
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Fälle: "Großer Datei-Upload", "API-Abfrage mit 5s Latenz", "Bildbearbeitung im Frontend".
+- [ ] Tonalität: Befreiend, dynamisch, modern.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist der Kontrast zwischen "Frozen" und "Alive" auf allen Displays deutlich erkennbar?
+- [ ] Test: Bleibt die Stadt-Animation wirklich flüssig, wenn im Hintergrund (asynchron) simuliert gearbeitet wird?
+
+9. Abnahmekriterien
+- [ ] Der Spieler verinnerlicht den gravierenden Vorteil von Non-blocking I/O.
+- [ ] Das Interface wirkt wie ein ästhetisches Dashboard für modernste Web-Technologie.
+- [ ] Maximaler Lerneffekt beim Thema "Event-Driven Programming".

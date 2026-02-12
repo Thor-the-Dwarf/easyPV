@@ -1,0 +1,51 @@
+{
+  "title": "Abnahme-Protokoll-Check",
+  "subtitle": "Bewerte Maengel rechtssicher: Ohne Mangel, Geringer Mangel oder Wesentlicher Mangel.",
+  "cases": [
+    {
+      "id": "c1",
+      "issue": "Typo in der FAQ-Ueberschrift, Funktionen arbeiten einwandfrei.",
+      "severity": "gering",
+      "correct_action": "gering",
+      "legal_hint": "Geringfuegige optische Fehler sind in der Regel kein Grund, die Abnahme komplett zu verweigern.",
+      "feedback_ok": "Korrekt. Das ist ein geringer Mangel: dokumentieren, Frist zur Nachbesserung setzen, Abnahme moeglich."
+    },
+    {
+      "id": "c2",
+      "issue": "Checkout bricht bei mehr als 10 gleichzeitigen Nutzern mit Server-Fehler ab.",
+      "severity": "wesentlich",
+      "correct_action": "wesentlich",
+      "legal_hint": "Wenn die vereinbarte Hauptfunktion nicht verlaesslich nutzbar ist, liegt regelmaessig ein wesentlicher Mangel vor.",
+      "feedback_ok": "Korrekt. Wesentlicher Mangel: Abnahme zurueckstellen, Blocker dokumentieren, Nachbesserung verlangen."
+    },
+    {
+      "id": "c3",
+      "issue": "Firmenlogo auf der Startseite 12px nach links verschoben.",
+      "severity": "gering",
+      "correct_action": "gering",
+      "legal_hint": "Reine Schoenheitsfehler ohne Funktionsbeeintraechtigung sind meist geringfuegig.",
+      "feedback_ok": "Korrekt. Geringer Mangel: kein Abnahme-Stopp, aber protokollieren und nachziehen lassen."
+    },
+    {
+      "id": "c4",
+      "issue": "Rollenrechte fehlen: normale User sehen Admin-Funktionen.",
+      "severity": "wesentlich",
+      "correct_action": "wesentlich",
+      "legal_hint": "Sicherheits- und Berechtigungsfehler betreffen den Vertragszweck wesentlich.",
+      "feedback_ok": "Korrekt. Wesentlicher Mangel: Abnahme verweigern bis der Rechtefehler behoben ist."
+    },
+    {
+      "id": "c5",
+      "issue": "Alle vereinbarten Features funktionieren, keine reproduzierbaren Fehler gefunden.",
+      "severity": "ohne",
+      "correct_action": "ohne",
+      "legal_hint": "Ohne relevanten Mangel kann die Abnahme erklaert werden; Verguetung wird faellig.",
+      "feedback_ok": "Korrekt. Ohne Mangel: Abnahme erklaeren und Uebergabe sauber dokumentieren."
+    }
+  ],
+  "actions": [
+    { "id": "ohne", "label": "Ohne Mangel", "icon": "OK", "desc": "Abnahme erklaeren" },
+    { "id": "gering", "label": "Geringer Mangel", "icon": "!", "desc": "Abnahme mit Vorbehalt" },
+    { "id": "wesentlich", "label": "Wesentlicher Mangel", "icon": "STOP", "desc": "Abnahme verweigern" }
+  ]
+}

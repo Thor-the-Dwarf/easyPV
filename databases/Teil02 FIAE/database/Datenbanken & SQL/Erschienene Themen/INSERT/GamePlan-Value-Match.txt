@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Fehlerfreies Befüllen von Tabellenspalten unter strikter Einhaltung von Datentypen und Spalten-Reihenfolge (INSERT).
+- Kontext: Datenerfassung, Fokus auf Syntax und Typ-Sicherheit.
+- UX-Prinzip:
+  - "The Loading Dock": Die Tabellenspalten sind "Container" an einer Rampe.
+  - "Data Packages": Die VALUES sind Pakete, die per Kran (Drag & Drop) in den passenden Container geladen werden müssen.
+  - "Type-Lock": Falsche Pakete (z. B. String-Paket in Date-Container) werden mechanisch abgewiesen (Bounce-Back).
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der "Values"-Stapel (Was muss rein?), 2 = Die Tabellen-Köpfe (Wo muss es rein?), 3 = SQL-Syntax Vorschau.
+- [ ] Textbudget: Kurze, prägnante Spaltennamen (`email`, `age`, `created_at`).
+- [ ] Keine Vor-Exkurse; die Spaltentypen (VARCHAR, INT) leuchten beim Greifen eines Pakets dezent auf.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> loading-ramp (Table) -> package-yard (Values) -> syntax-bar`.
+- [ ] Ramp-Area: Die Tabellenspalten stehen nebeneinander (Desktop 70% Breite, Mobile horizontales Swipen).
+- [ ] Packages: Am unteren Screen-Rand als Daumen-optimierte Karten (>=48px).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-Package -> Tap-Target-Column" für präzises Laden ohne Zittern.
+- [ ] Responsive Containers: Spaltenbreite passt sich dem Typsymbol an.
+
+4. Kernvisuals
+- [ ] Industrie-Ästhetik: Container-Look, Metall-Oberflächen, Warnschraffuren.
+- [ ] Paket-Icons: Text-Symbol, Zahlen-Symbol, Kalender-Symbol.
+- [ ] High-Contrast Typo für die Values (z. B. `'Max Mustermann'`, `25`, `'2024-01-01'`).
+
+5. Interaktion und Feedback
+- [ ] Snap-in-Effekt: Paket rastet mit einem "Klick-Geräusch" (visuell) in den Container ein.
+- [ ] Fehlermanagement: "Typ-Fehler! Ein Textpaket passt nicht in einen INTEGER-Container." (Paket springt zurück).
+- [ ] Erfolg: Die fertige Zeile schließt sich und fährt als LKW (visuell) aus dem Bild.
+
+6. KPI-Klarheit
+- [ ] Loading-Accuracy: "Ladegut gesichert: 100%".
+- [ ] Speed-Bonus: "Stapelgeschwindigkeit: Hoch".
+
+7. Content-/Copy-Feinschliff
+- [ ] Alltags-Daten: "Benutzerprofil", "Bestell-Kopf", "Sensor-Datenpunkt".
+- [ ] Tonalität: Logistisch, strukturiert, unmissverständlich.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Paket-Beschriftungen auf kleinen Handys noch lesbar?
+- [ ] Test: Funktioniert das "Einrasten" auch bei schnellen Wisch-Gesten?
+
+9. Abnahmekriterien
+- [ ] Der Spieler versteht die 1:1 Korrespondenz zwischen Spaltenliste und VALUES-Liste.
+- [ ] Das Interface wirkt wie ein gut organisierter Logistik-Hub.
+- [ ] Hoher Befriedigungsgrad beim sauberen "Bestücken" der Tabelle.

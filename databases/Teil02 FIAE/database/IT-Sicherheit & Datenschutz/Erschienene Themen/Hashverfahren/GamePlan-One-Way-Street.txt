@@ -1,0 +1,19 @@
+Anforderungen
+1. "One-Way-Street"
+   - Ziel: Verständnis der Eigenschaften kryptografischer Hashfunktionen (Einweg-Funktion, Kollisionsresistenz) zur Sicherung der Datenintegrität.
+   - Spielmechanik: 
+     - Eingabe von Texten und Beobachtung der resultierenden Hash-Werte (Avalanche Effect).
+     - Vergleich von Hashes zur Prüfung der Datei-Integrität (z.B. Download-Validierung).
+     - Simulation von Brute-Force Angriffen auf Hashes (Rainbow Tables).
+     - Messbarkeit: Korrekte Identifikation von manipulierten Daten durch Hash-Abgleich.
+   - Lernziel: Beherrschung von Integritäts-Checks und sicherem Passwort-Hashing (Salt & Pepper).
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_hashing_data.json')
+   - Texte und deren SHA-256 Hashes.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Hash-Generators im UI).
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Einfache Hash-Berechnungs-Logik).
+- [ ] Integration
+   - Tutorial: Warum man MD5 niemals für Passwörter nutzen darf.

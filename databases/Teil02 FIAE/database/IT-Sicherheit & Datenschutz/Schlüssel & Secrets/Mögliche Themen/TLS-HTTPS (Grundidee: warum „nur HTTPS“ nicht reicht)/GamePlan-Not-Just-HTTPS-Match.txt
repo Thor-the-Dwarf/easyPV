@@ -1,0 +1,19 @@
+Anforderungen
+1. "Not-Just-HTTPS Match"
+   - Ziel: Verständnis für die Bedeutung aktueller Verschlüsselungsprotokolle und Cipher Suites jenseits des reinen HTTPS-Zertifikats.
+   - Spielmechanik: 
+     - Analyse einer Server-Konfiguration (TLS-Versionen, Cipher Suites).
+     - Der Spieler muss veraltete oder unsichere Protokolle (z.B. SSL 3.0, TLS 1.0) deaktivieren und starke Verfahren (z.B. TLS 1.3, AES-GCM) erzwingen.
+     - Konfiguration von HSTS (HTTP Strict Transport Security) Headern.
+     - Messbarkeit: Erreichen eines "A+" Ratings in einer simulierten Security-Prüfung.
+   - Lernziel: Hardening von Web-Servern und Schutz der Transportwege vor modernen Entschlüsselungs-Angriffen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_tls_hardening.json')
+   - Konfigurations-Parameter und Sicherheits-Ratings.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Visuelle Darstellung der Verschlüsselungs-Stärke).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Bewertung der Konfigurations-Sicherheit).
+- [ ] Integration
+   - Tutorial: Warum Downgrade-Angriffe (POODLE etc.) SSL/TLS gefährden.

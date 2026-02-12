@@ -1,0 +1,29 @@
+1. "API-Connector-Rallye"
+   - Ziel: Teste das Zusammenspiel zweier Module über ihre Schnittstellen.
+   - Spielmechanik: 
+     - Modul A sendet Daten, Modul B empfängt sie. Passen die Formate?
+     - Lernziel: Schnittstellen-Kompatibilität.
+
+2. "Database-Integration-Check"
+   - Ziel: Verifiziere, dass der Service korrekt mit der Datenbank kommuniziert.
+   - Spielmechanik: 
+     - Speichere einen Datensatz und lade ihn wieder. Sind die Daten konsistent?
+     - Lernziel: Persistenz-Integration.
+
+3. "Big-Bang-vs-Incremental"
+   - Ziel: Lerne verschiedene Integrationsstrategien.
+   - Spielmechanik: 
+     - Alles auf einmal testen (Big Bang) vs. Schritt für Schritt (Top-Down/Bottom-Up).
+     - Lernziel: Strategische Testplanung.
+
+4. "Stub-and-Driver Puzzle"
+   - Ziel: Nutze Platzhalter für noch nicht existierende Module.
+   - Spielmechanik: 
+     - Baue einen "Driver" um das Modul zu starten oder einen "Stub" um eine Unterkomponente zu simulieren.
+     - Lernziel: Testbarkeit unfertiger Systeme.
+
+5. "E2E-Light"
+   - Ziel: Teste eine kleine Kette von Modulen.
+   - Spielmechanik: 
+     - Login -> Profile laden. Funktioniert der Übergabeprozess?
+     - Lernziel: Prozessketten-Validierung.

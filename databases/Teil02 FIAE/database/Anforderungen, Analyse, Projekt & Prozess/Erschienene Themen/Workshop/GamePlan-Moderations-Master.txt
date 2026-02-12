@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Auswahl und Einsatz optimaler Moderationsmethoden zur Steuerung von Gruppendynamik und Ergebnisfindung.
+- Game-Mechanic: "The Workshop Wizard". Der Spieler moderiert eine Gruppe von (KI-)Teilnehmern. Je nach "Vibe" im Raum (Müdigkeit, Konflikt, Euphorie) muss das richtige Tool aus dem Zauberkoffer gewählt werden.
+- Challenge: 
+  - Level 1: "Morning Session" - Sanftes Eisbrechen.
+  - Level 2: "Post-Lunch Dip" - Die Energie sinkt; Energizer oder radikaler Methodenwechsel nötig?
+  - Level 3: "Executive Heat" - Kritische Stakeholder prallen aufeinander. Deeskalations-Tools sind gefragt.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Group-Energy" (Puls-Kurve), "Result-Quality" (Star-Rating), "Agenda-Time" (Clock).
+- [ ] Scoring: Bonus für "Flow-State" (Teilnehmer arbeiten perfekt zusammen). Abzug bei "Method-Boredom" (Zu oft die gleiche Technik).
+
+2. Screen-Layout (The Creative Room)
+- [ ] `virtual-room -> attendee-avatars -> whiteboard -> wizard-pouch`.
+- [ ] Whiteboard: Zeigt live das Entstehen der Workshop-Ergebnisse (Post-its, Zeichnungen).
+- [ ] Pouch: Interaktiver Koffer mit Icons für "Brainstorming", "Priorisierung", "Feedback".
+
+3. Kernvisuals und Effekte
+- [ ] Modern-Co-Working Style: Helle Räume, Pflanzen, Kaffee-Icons, lebendige Farben.
+- [ ] "Light-Bulb Moment": Über den Avataren erscheinen Glühbirnen, wenn eine Methode zündet.
+- [ ] Mood-Shifting: Das Farbschema des Raumes wechselt sanft je nach Gruppenstimmung.
+
+4. Browser- und Device-Resilienz
+- [ ] WebGL oder CSS-Filter für Stimmungseffekte (Bloom, Saturation).
+- [ ] Mobile: Bottom-Drawer für die Methodenauswahl.
+
+5. Content-Strategie (The Toolkit)
+- [ ] 15 Moderationstechniken (World Café, Fishbowl, Dot-Voting, 5-Why).
+
+6. QA-Paket
+- [ ] Test: Wirkt das Feedback der Teilnehmer authentisch?
+- [ ] Test: Ist das Zeitmanagement im Level herausfordernd genug?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler fühlt sich kompetent in der Steuerung von Gruppenprozessen.
+- [ ] Das Interface wirkt inspirierend und einladend.
+- [ ] Tieferes Verständnis für die Phasen (Divergenz/Konvergenz) eines Workshops.

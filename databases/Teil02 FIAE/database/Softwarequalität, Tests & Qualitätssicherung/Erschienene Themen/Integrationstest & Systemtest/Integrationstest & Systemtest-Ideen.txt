@@ -1,0 +1,32 @@
+1. "Schnittstellen-Puzzle"
+   - Ziel: Prüfe das Datenformat zwischen zwei Services.
+   - Spielmechanik: 
+     - Service A schickt JSON. Service B erwartet XML.
+     - Error! Baue den Adapter oder ändere das Format.
+     - Lernziel: Fokus des Integrationstests.
+
+2. "End-to-End Runner"
+   - Ziel: Simuliere den kompletten User-Flow durch das System.
+   - Spielmechanik: 
+     - Login -> Warenkorb -> Kasse -> Bestellung. 
+     - Klicke die Komponenten an, die in diesem Systemtest beteiligt sind.
+     - Lernziel: Ganzheitliche Systemprüfung.
+
+3. "Umgebungs-Checker"
+   - Ziel: Teste auf einer realistischen Hardware.
+   - Spielmechanik: 
+     - Lokal geht alles. Auf dem Server knallt es wegen anderer Pfade.
+     - Lernziel: Systemkontext & Environment-Probleme.
+
+4. "Big-Bang vs Inkrementell"
+   - Ziel: Verstehe Integrationsstrategien.
+   - Spielmechanik: 
+     - Alles auf einmal zusammenstecken (Riskant!). 
+     - Top-Down oder Bottom-Up (Sicherer).
+     - Lernziel: Vorgehensmodelle bei der Integration.
+
+5. "Last- & Performance-Check"
+   - Ziel: Reagiert das System unter Volllast noch korrekt?
+   - Spielmechanik: 
+     - Simuliere 1000 gleichzeitige Zugriffe im Systemtest.
+     - Lernziel: Nicht-funktionale Anforderungen prüfen.

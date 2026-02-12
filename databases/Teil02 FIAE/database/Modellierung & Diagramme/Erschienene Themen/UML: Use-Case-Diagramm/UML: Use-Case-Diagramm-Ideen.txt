@@ -1,0 +1,39 @@
+1. "Akteur-Match"
+   - Ziel: Identifiziere Primär- und Sekundärakteure.
+   - Spielmechanik: 
+     - "Kunde möchte bestellen". -> Primärakteur: [Kunde].
+     - "Bezahlsystem autorisiert Kreditkarte". -> Sekundärakteur: [Bezahlsystem].
+     - Messbarkeit: Korrekte Zuordnung der Rollen am Systemrand.
+   - Lernziel: Akteure im UC-Diagramm definieren.
+
+2. "Include vs. Extend"
+   - Ziel: Unterscheide zwischen festen und optionalen Abläufen.
+   - Spielmechanik: 
+     - "Login" -> "Passwort prüfen". -> <<include>>.
+     - "Bestellung aufgeben" -> "Rabattcode nutzen". -> <<extend>>.
+     - Messbarkeit: Wahl der richtigen Pfeilrichtung und Stereotyp.
+   - Lernziel: Beziehungen im Use-Case-Diagramm.
+
+3. "Szenario-Zeichner"
+   - Ziel: Erstelle Use Cases aus einer Textbeschreibung.
+   - Spielmechanik: 
+     - Text: "Der Admin kann User löschen und das System konfigurieren".
+     - Drag & Drop: "Admin" (Akteur), "User löschen" (Ellipse), "Konfigurieren" (Ellipse).
+     - Messbarkeit: Vollständigkeit der modellierten Anforderungen.
+   - Lernziel: Textuelle Anforderung in Modell überführen.
+
+4. "Systemgrenzen-Wächter"
+   - Ziel: Entscheide, was innerhalb und was außerhalb des Systems liegt.
+   - Spielmechanik: 
+     - "Datenbank-Software". -> Außerhalb (Akteur/Infrastruktur).
+     - "Warenkorb-Logik". -> Innerhalb (Zuständigkeitsbereich).
+     - Messbarkeit: Definition des Systemscopes.
+   - Lernziel: Systemkontext abgrenzen.
+
+5. "UC-Qualitäts-Check"
+   - Ziel: Finde Fehler in einem Use-Case-Diagramm.
+   - Spielmechanik: 
+     - Fehler: "Pfeile zwischen Akteuren". -> Verboten.
+     - Fehler: "UC ohne Namen".
+     - Messbarkeit: Erkennen von Syntaxfehlern.
+   - Lernziel: UML-Konformität.

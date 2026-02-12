@@ -1,0 +1,35 @@
+1. "Request-Struktur-Match"
+   - Ziel: Definiere Pflichtfelder in der Anfrage.
+   - Spielmechanik: 
+     - Kontrakt sagt: `email` ist Pflicht.
+     - Schicke einen Body ohne `email`.
+     - Fehler: 400 Bad Request.
+     - Lernziel: Schnittstellen-Disziplin.
+
+2. "ErrorCode-Designer"
+   - Ziel: Definiere sprechende Fehlermeldungen im Kontrakt.
+   - Spielmechanik: 
+     - `ERROR_NOT_FOUND`, `ERROR_INVALID_INPUT`.
+     - Warum nicht einfach nur "Error"? -> Frontend braucht klare Info zum Reagieren.
+     - Lernziel: Kommunikation zwischen Teams.
+
+3. "Versioning-Puzzle"
+   - Ziel: Verwalte Änderungen ohne Breakings.
+   - Spielmechanik: 
+     - API v1 wird geändert. 
+     - Erstelle v2, damit alte Apps nicht abstürzen.
+     - `/api/v1/...` vs `/api/v2/...`.
+     - Lernziel: Abwärtskompatibilität.
+
+4. "Data-Type Enforcement"
+   - Ziel: Kontrolliere die Typen (String, Int, Date).
+   - Spielmechanik: 
+     - API erwartet `price` als Number. Client schickt "Gratis".
+     - Lernziel: Stabilitätsprüfung am API-Gateway.
+
+5. "Mocking nach Kontrakt"
+   - Ziel: Arbeite parallel am Frontend und Backend.
+   - Spielmechanik: 
+     - Backend ist noch nicht fertig. 
+     - Baue ein Mock-Backend, das genau die Daten liefert, die im Kontrakt stehen.
+     - Lernziel: Agile Entwicklungsprozesse.

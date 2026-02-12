@@ -1,0 +1,19 @@
+Anforderungen
+1. "SSO-Hub-Simulation"
+   - Ziel: Verständnis des Single-Sign-On Prinzips zur Reduzierung der Passwort-Müdigkeit und zentralen Verwaltung von Benutzeridentitäten.
+   - Spielmechanik: 
+     - Interaktion zwischen einem Identity Provider (IdP) und mehreren Service Providern (SP).
+     - Der Spieler loggt sich einmal zentral ein und muss dann Navigationsentscheidungen treffen, um ohne erneute Passworteingabe auf andere Applikationen zuzugreifen.
+     - Fehlerbehandlung: Was passiert, wenn die Vertrauensstellung (Trust) zwischen IdP und SP abläuft?
+     - Messbarkeit: Erfolgreicher Zugriff auf alle Applikationen mit einer einzigen Authentifizierung.
+   - Lernziel: Beherrschung von SSO-Architekturen und deren Vorteile für Sicherheit und UX.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_sso_landscape.json')
+   - Definition von IdP, SPs und Vertrauensbeziehungen.
+- [ ] Shared CSS Check ('business_mathematics.css')
+   - (Anpassung der Dashboard-Ansicht).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Tracking des Auth-Status über App-Grenzen hinweg).
+- [ ] Integration
+   - Tutorial: Unterschied zwischen SAML und OpenID Connect (OIDC).

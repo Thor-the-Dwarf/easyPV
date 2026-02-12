@@ -1,0 +1,32 @@
+1. "Method-Selector-Challenge"
+   - Ziel: Wähle die richtige Methode für einen Anwendungsfall.
+   - Spielmechanik: 
+     - "Suche nach Flug" -> GET. 
+     - "Buche Flug" -> POST.
+     - "Storniere Flug" -> DELETE.
+     - Lernziel: Semantik der HTTP-Verben.
+
+2. "Safe-vs-Unsafe"
+   - Ziel: Verstehe die Auswirkung auf den Serverzustand.
+   - Spielmechanik: 
+     - Welche Methoden dürfen den Zustand ändern? (POST, PUT, DELETE).
+     - Lernziel: Sicherheit von Operationen.
+
+3. "Idempotency-Racer"
+   - Ziel: Verhindere doppelte Aktionen.
+   - Spielmechanik: 
+     - Was passiert, wenn ich 5x auf DELETE klicke? -> Nichts (Idempotent).
+     - Was passiert bei 5x POST? -> 5 Buchungen (Nicht idempotent).
+     - Lernziel: Ververlässlichkeit von Web-Aktionen.
+
+4. "Form-Method-Check"
+   - Ziel: Nutze HTML-Formulare korrekt.
+   - Spielmechanik: 
+     - Warum nutzen wir POST für Passwörter? (Nicht in der URL sichtbar).
+     - Lernziel: Best Practices für Formulare.
+
+5. "Body-Presence-Puzzle"
+   - Ziel: Welche Methode darf einen Body mitschicken?
+   - Spielmechanik: 
+     - GET (Nein), POST (Ja), PUT (Ja).
+     - Lernziel: Aufbau von HTTP-Paketen.

@@ -1,0 +1,29 @@
+1. "Hypervisor-Match"
+   - Ziel: Unterscheide Typ-1 und Typ-2 Hypervisoren.
+   - Spielmechanik: 
+     - Ordne zu: Bare-Metal (ESXi, Hyper-V) vs. Hosted (VirtualBox, VMware Player).
+     - Lernziel: Effizienz von Virtualisierungsschichten.
+
+2. "Resource-Allocator"
+   - Ziel: Verteile CPU und RAM an virtuelle Maschinen.
+   - Spielmechanik: 
+     - Du hast 64 GB RAM. Wie viele 8 GB VMs kannst du starten, ohne den Host zu crashen?
+     - Lernziel: Kapazitätsplanung.
+
+3. "Snapshot-Time-Travel"
+   - Ziel: Nutze Snapshots zur Fehlerbehebung.
+   - Spielmechanik: 
+     - Update fehlgeschlagen -> OS bootet nicht mehr. Gehe zum Snapshot von gestern zurück.
+     - Lernziel: Backup-Strategien in VMs.
+
+4. "Hardware-Abstraktion Puzzle"
+   - Ziel: Verstehe den Vorteil von VM-Portabilität.
+   - Spielmechanik: 
+     - Verschiebe eine VM von einem Intel-Host auf einen AMD-Host. Warum funktioniert der Code im Gastsystem trotzdem?
+     - Lernziel: Unabhängigkeit von physischer Hardware.
+
+5. "Virtual-Network-Switch"
+   - Ziel: Vernetze VMs untereinander.
+   - Spielmechanik: 
+     - Erstelle ein "Internes Netz", damit VMs reden können, aber das Internet draußen bleibt.
+     - Lernziel: Netzwerkkonfiguration in virtuellen Umgebungen.

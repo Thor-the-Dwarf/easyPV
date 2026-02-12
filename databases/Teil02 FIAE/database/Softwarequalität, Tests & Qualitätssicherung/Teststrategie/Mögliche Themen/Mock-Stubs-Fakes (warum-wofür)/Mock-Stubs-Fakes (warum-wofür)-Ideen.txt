@@ -1,0 +1,31 @@
+1. "Test-Double-Match"
+   - Ziel: Unterscheide Mock, Stub, Fake und Spy.
+   - Spielmechanik: 
+     - "Gibt nur feste Daten zurück". -> Match: Stub.
+     - "Prüft, ob eine Methode gerufen wurde". -> Match: Mock.
+     - Lernziel: Fachbegriffe des Test-Isolierens.
+
+2. "Interface-Substitution"
+   - Ziel: Ersetze eine echte Klasse durch ein Double.
+   - Spielmechanik: 
+     - Wir haben kein Internet für das API-Modul. 
+     - Erstelle eine Fake-Klasse, die das Interface implementiert.
+     - Lernziel: Programmieren gegen Schnittstellen.
+
+3. "Behavior-Verification-Quest"
+   - Ziel: Prüfe mit Mocks die Interaktion.
+   - Spielmechanik: 
+     - Hat der `PaymentService` wirklich die `sendEmail()` Methode gerufen?
+     - Lernziel: Interaktionstests.
+
+4. "Dummy-Data-Puzzle"
+   - Ziel: Nutze Dummies für Parameter, die man nicht braucht.
+   - Spielmechanik: 
+     - Ein Konstruktor braucht 10 Objekte. Reiche leere Dummies durch.
+     - Lernziel: Reduzierung des Test-Setup Overheads.
+
+5. "State-vs-Interaction"
+   - Ziel: Verstehe den Unterschied zwischen klassischem Testing und Mocking.
+   - Spielmechanik: 
+     - Teste den Endzustand (Fake/Stub) vs. Teste den Weg dorthin (Mock/Spy).
+     - Lernziel: Test-Philosophien.

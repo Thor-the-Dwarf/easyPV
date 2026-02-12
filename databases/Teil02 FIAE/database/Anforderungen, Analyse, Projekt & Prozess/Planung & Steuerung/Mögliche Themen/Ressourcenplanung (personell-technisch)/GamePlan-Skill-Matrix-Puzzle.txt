@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Optimale Teambildung durch Matching von Skill-Profilen zu Projekt-Requirements zur Maximierung der Liefergeschwindigkeit.
+- Game-Mechanic: "The Skill Matcher". Ein Puzzle-Spiel: Projekt-Tasks haben "Einkerbungen" (Required Skills). Der Spieler muss die passenden Mitarbeiter-Steine (Skill-Cards) einsetzen.
+- Challenge: 
+  - Level 1: 1-zu-1 Match (z.B. SQL-Task braucht SQL-Skill).
+  - Level 2: "Skill-Gap" - Kein perfektes Match vorhanden. Der Spieler muss "Junior + Senior" kombinieren (Pairing).
+  - Level 3: "Resource Burnout" - Mitarbeiter haben ein Energie-Level. Dauerhafter Einsatz auf Hard-Tasks führt zum Ausfall.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Team-Velocity" (Speed), "Resource-Efficiency" (Cost), "Burnout-Warnung".
+- [ ] Scoring: "Synergy Bonus" für Teams, die sich ergänzen (Backend + Frontend). Abzug bei massiven Skill-Gaps.
+
+2. Screen-Layout (The Planning Board)
+- [ ] `task-backlog -> matching-slots -> team-bench -> fatigue-indicator`.
+- [ ] Slots: Vertiefungen im Board, die nur bestimmte Skill-Kacheln aufnehmen.
+- [ ] Bench: Die verfügbaren Spezialisten als animierte Icons am unteren Rand.
+
+3. Kernvisuals und Effekte
+- [ ] Modern Manager Style: Clean, helles Holz, Glas-Icons, sanfte Schatten (Apple-Ästhetik).
+- [ ] "Perfect Fit": Ein befriedigender Klick-Sound und ein kurzes Aufleuchten bei perfektem Match.
+- [ ] Fatigue-Glow: Mitarbeiter-Karten pulsieren rot, wenn sie Burnout-gefährdet sind.
+
+4. Browser- und Device-Resilienz
+- [ ] `drag-and-drop` API Support für Desktop, `touch-drag` Polyfill für Mobile.
+- [ ] Responsive Grid: 3 Spalten (Desktop) -> 1 Spalte (Mobile).
+
+5. Content-Strategie (The Specialists)
+- [ ] 15 Profile: Vom "Universalgenie" (kann alles ein bisschen) bis zum "Fach-Idioten" (kann nur eins, aber perfekt).
+
+6. QA-Paket
+- [ ] Test: Ist die Drag-Physik auf dem iPad geschmeidig?
+- [ ] Test: Sind die Skill-Symbole ohne Text lesbar (Ikonographie-Check)?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler lernt die Bedeutung von Ressourcen-Management und Team-Mix.
+- [ ] Das Interface wirkt wie ein Premium-HR-Tool.
+- [ ] Hoher Suchtfaktor durch "Optimal Team" Optimierung.

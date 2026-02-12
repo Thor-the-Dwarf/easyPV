@@ -1,0 +1,19 @@
+Anforderungen
+1. "Request-Constructor"
+   - Ziel: Verständnis des syntaktischen Aufbaus eines rohen HTTP-Requests zur Fehlersuche in Netzwerk-Kommunikationen.
+   - Spielmechanik: 
+     - Der Spieler muss einen validen HTTP-Request aus Bausteinen (Methode, Pfad, Protokoll, Header-Zeilen, Body) zusammenbauen.
+     - Korrekte Platzierung von Newlines (\n) und Leerstellen zur Trennung der Header vom Body.
+     - Auswahl passender Content-Types und Authorization-Header für gegebene Payloads.
+     - Messbarkeit: Wohlgeformtheit und Validität des resultierenden Request-Strings.
+   - Lernziel: Beherrschung der HTTP-Syntax und Vorbereitung auf Low-Level API-Testing.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_http_request_blocks.json')
+   - Request-Fragmente und Ziel-Vorgaben.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Drag & Drop Editors).
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Validierung der Request-Struktur).
+- [ ] Integration
+   - Tutorial: Warum ein vergessenes CRLF den gesamten Request unbrauchbar macht.

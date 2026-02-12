@@ -1,0 +1,20 @@
+Anforderungen
+1. "Origin-Checker"
+   - Ziel: Verständnis der Same-Origin-Policy (SOP) und der gezielten Lockerung durch Cross-Origin Resource Sharing (CORS) zur sicheren Kommunikation zwischen Domänen.
+   - Spielmechanik: 
+     - Der Spieler agiert als Browser, der Sicherheits-Checks durchführt.
+     - Vergleich von Protokoll, Host und Port der anfordernden Seite mit der Ziel-API.
+     - Konfiguration von Response-Headern (z.B. `Access-Control-Allow-Origin`) zur Freigabe legitimer Anfragen.
+     - Simulation von Preflight-Requests (OPTIONS).
+     - Messbarkeit: Korrekte Konfiguration und erfolgreiche Durchführung von Cross-Origin Requests.
+   - Lernziel: Beherrschung der Web-Sicherheitsarchitektur und Behebung typischer CORS-Fehler.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_cors_policy.json')
+   - Origin-Definitionen und Header-Sets.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Visuelle Darstellung der Sicherheits-Barrieren).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Validierung der Header-Kombinationen).
+- [ ] Integration
+   - Info: Warum `Access-Control-Allow-Origin: *` oft eine schlechte Idee ist.

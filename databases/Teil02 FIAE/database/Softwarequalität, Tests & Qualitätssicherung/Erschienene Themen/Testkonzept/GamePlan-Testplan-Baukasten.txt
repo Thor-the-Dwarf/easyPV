@@ -1,0 +1,51 @@
+Anforderungen (reverse engineered)
+- Ziel: Entwurf eines umfassenden Testkonzepts (Master Test Plan) unter Berücksichtigung von Ressourcen, Zeitplan und Testphasen.
+- Kontext: Testmanagement, IEEE 829 Standard, Strategische Planung.
+- UX-Prinzip:
+  - "The War Room Map": Das Softwareprojekt ist ein Territorium, das gesichert werden muss. Der Testplan ist die Strategiekarte.
+  - "Frontline-Deployment" (Teststufen): Wo greifen wir an? Unit-Tests an der Basis, Integrationstests an den Brücken, Systemtests an der Stadtmauer.
+  - "Resource-Staging": Wer (Team) testet was (Objekt) mit welchen Werkzeugen (Equipment)?
+  - "Victory-Conditions" (Abbruchkriterien): Wann stoppen wir den Angriff?
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Teststrategie (Das Ziel), 2 = Die Phasen (Zeitlinie), 3 = Die Ressourcen (Personal/Tools).
+- [ ] Textbudget: Max. 3 Begriffe pro Strategie-Baustein (z. B. "Unit, Jenkins, Automatisch").
+- [ ] "Critical-Path-Visual": Eine Linie, die zeigt, wie das Produkt durch die Teststufen wandern muss.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> war-room-map (Map View) -> mission-briefing -> HQ-Inventory (Source)`.
+- [ ] Map-View: Top-Down Ansicht der Software-Architektur als Spielfeld (Desktop Full-Width).
+- [ ] HQ-Inventory: Liste von Test-Typen und Ressourcen am rechten Rand.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-Briefing" - Durchblättern der Teilpläne; Tap-to-Deploy Mechanik.
+- [ ] `safe-area-inset` für die Strategie-Icons.
+
+4. Kernvisuals
+- [ ] Taktische Ästhetik: Radar-Scans, topografische Muster, Militär-Farben (Olive, Slate, Glow-Cyan) (shared_theme.css).
+- [ ] Deploy-Animation: Wenn ein Test-Level geplant wird, "fällt" ein Fallschirm auf das entsprechende Feld der Karte.
+- [ ] High-Contrast Typografie für "ABORT CRITERIA".
+
+5. Interaktion und Feedback
+- [ ] Staging-Feedback: "Klick! Unit-Tests am Jenkins-Außenposten platziert. Die erste Verteidigungslinie steht."
+- [ ] Risiko-Warnung: "Stopp! Ohne Ressourcenplanung ist der Feldzug (Testphase) zum Scheitern verurteilt."
+- [ ] Erfolg: "Strategie-Papier versiegelt! Dein Testkonzept deckt alle Risiken ab und ist bereit für den Einsatz."
+
+6. KPI-Klarheit
+- [ ] Strategic-Readiness: "Planungs-Qualität: 100%".
+- [ ] Resource-Allocation: "Personal/Tools: Optimal verteilt".
+
+7. Content-/Copy-Feinschliff
+- [ ] Bausteine nach IEEE 829: Testumgebung, Personal, Werkzeuge, Zeitplan, Risiken, Abnahmekriterien.
+- [ ] Tonalität: Strategisch, autoritär, weitsichtig.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist die "War Room Map" auf einem schmalen Handy-Display noch imposant und funktional?
+- [ ] Test: Sind die Fachbegriffe (Testobjekt, Teststufe) pädagogisch sinnvoll eingebunden?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler begreift Testen als Management-Aufgabe, nicht nur als Tippen.
+- [ ] Das Interface wirkt wie ein exklusives Strategie-Zentrum.
+- [ ] Höchste Klarheit über den strukturellen Aufbau eines normgerechten Testplans.

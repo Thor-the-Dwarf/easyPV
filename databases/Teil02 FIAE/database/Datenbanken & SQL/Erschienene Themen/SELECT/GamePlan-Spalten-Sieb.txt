@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Leistungsoptimierung durch gezielte Spaltenauswahl (Projektion) zur Vermeidung von unnötigem Daten-Overhead (`SELECT *`).
+- Kontext: API-Design, Performance-Tuning, Datenbank-Abfragen.
+- UX-Prinzip:
+  - "The High-Pass Filter": Eine breite Tabelle fließt durch ein Sieb; nur die benötigten Spalten fallen in den "Performance-Topf".
+  - "The Weight Counter": Ein Live-Display zeigt die kumulierte Datenlast (KB) der aktuellen Abfrage an.
+  - "Efficiency-Glow": Je weniger (relevante) Spalten gewählt werden, desto grüner leuchtet der Score.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Daten-Gewicht (KB-Counter), 2 = Spalten-Auswahl (Checkmarks), 3 = Ergebnismenge.
+- [ ] Textbudget: Kurze Missions-Briefings (z. B. "Wir brauchen NUR Name und Telefonnummer").
+- [ ] "No Asterisk" Rule: Der `*`-Knopf blinkt rot als Warnung vor Performance-Verlust.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> table-blueprint -> column-sieve -> performance-gauge`.
+- [ ] Blueprint: Alle verfügbaren Spalten als Karten (Desktop 3x3 Grid, Mobile vertikale Liste).
+- [ ] Sieve-Area: Visuelle Darstellung der "ausgewählten" Spalten als gefilterter Stream.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-to-Toggle" Spalten; fixierter Performance-Balken am unteren Rand.
+- [ ] Safe-Areas für den "Run Query" Button.
+
+4. Kernvisuals
+- [ ] Daten-Last Visual: Ein schwerer Block wird leichter, wenn Spalten abgewählt werden.
+- [ ] High-Contrast Icons für Datentypen in den Spaltenköpfen.
+- [ ] Glow-Effekte: Die gewählten Spalten leuchten "leicht" und signalisieren Aktivität.
+
+5. Interaktion und Feedback
+- [ ] Live-KB-Counter: "SELECT * -> 1.200 KB" vs. "SELECT email -> 45 KB".
+- [ ] Feedback: "Exzellent! Durch den Verzicht auf das 'Profilbild-Blob' hast du die Abfrage 10x schneller gemacht."
+- [ ] Warnung: "Willst du wirklich 25 Spalten laden? Das Handy des Nutzers wird glühen!"
+
+6. KPI-Klarheit
+- [ ] Data-Saving: "X% Bandbreite eingespart".
+- [ ] Efficiency-Rank: "Performance-Profi: S-Rank".
+
+7. Content-/Copy-Feinschliff
+- [ ] Realistische Tabellen: "Users" mit 30 Spalten, "Products" mit langen Beschreibungstexten.
+- [ ] Tonalität: Performance-bewusst, analytisch, pragmatisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die KB-Zahlen auf dem Smartphone prominent genug?
+- [ ] Test: Sind die Checkmarks auch bei schmalen Spaltennamen gut treffbar?
+
+9. Abnahmekriterien
+- [ ] Das Bewusstsein für "Data Waste" wird durch den KB-Counter physisch spürbar.
+- [ ] Das Interface wirkt wie ein modernes Monitoring-Tool für Datenbanken.
+- [ ] Maximale Motivation zur "schlanken" Abfrage.

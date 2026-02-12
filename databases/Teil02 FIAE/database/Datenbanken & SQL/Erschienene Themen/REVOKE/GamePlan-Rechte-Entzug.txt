@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Sicherer und lückenloser Entzug von Zugriffsrechten (REVOKE) bei Rollenwechsel oder Ausscheiden von Personal.
+- Kontext: IT-Sicherheit, Identity & Access Management (IAM).
+- UX-Prinzip:
+  - "The Digital Eviction": Der Spieler räumt einem User symbolisch das "Haus" (Datenbank-Zugriff) leer.
+  - "Lockdown-Effect": Beim Entzug schließt sich ein schweres Gatter über der Tabelle.
+  - "Access Denied Simulator": Ein Avatar des Nutzers versucht, eine Query auszuführen und prallt kläglich an der Firewall ab.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der aktive Rechte-Satz (Was ist noch da?), 2 = Der REVOKE-Befehl (Action), 3 = Die Sicherheitslücke (Gefahr).
+- [ ] Textbudget: Max. 5 Wörter für den Grund des Entzugs (z. B. "User hat gekündigt").
+- [ ] "Danger-Timer": Dringlichkeitssignal – je länger der User noch Rechte hat, desto roter wird der Screen.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> security-threat-alert -> user-permission-profile -> command-terminal`.
+- [ ] Profile-Area: Liste der aktiven Grants (Desktop 40% Breite, Mobile 50dvh Höhe).
+- [ ] Terminal: Retro-Code Bereich am unteren Rand für die Syntax-Bausteine.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-Away-Permissions" – Rechte werden mit einer Wischgeste "zerstört".
+- [ ] Kontrastreiches Theme (Schwarz/Rot/Acid-Grün) für Security-Atmosphäre.
+
+4. Kernvisuals
+- [ ] Firewall-Gitter: Legt sich über Tabellen-Icons.
+- [ ] "Denied" Stempel: Knallt visuell auf unautorisierte Zugriffsversuche.
+- [ ] Avatar-Reaktionen: Der User-Avatar wird trauriger/grauer, wenn Rechte schwinden.
+
+5. Interaktion und Feedback
+- [ ] Live-Check: "Query abgewehrt! Der Ex-Mitarbeiter kann keine Gehälter mehr auslesen. System sicher."
+- [ ] Syntax-Assist: "`REVOKE ALL` ist wie ein Hauptschlüssel-Entzug – sehr effektiv."
+- [ ] Haptisches Feedback: Mächtiger "Ruckler" (Screen-Shake), wenn eine kritische Sicherheitslücke geschlossen wird.
+
+6. KPI-Klarheit
+- [ ] Exposure-Time: "Lücke geschlossen in: 0.8s".
+- [ ] Safety-Score: "System-Integrität: 100%".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Praktikum beendet", "Abteilung gewechselt", "Verdacht auf Datenklau", "Default-Passwort nach Installation ändern".
+- [ ] Tonalität: Autoritäts-betont, sicherheitsfokussiert, kompromisslos.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist der "Access Denied" Simulator auch auf kleinen Screens groß genug für den Lerneffekt?
+- [ ] Test: Funktioniert der REVOKE-Baustein auch mit `CASCADE` (Mitschwingende Rechte)?
+
+9. Abnahmekriterien
+- [ ] Der Spieler verinnerlicht die Dringlichkeit und Präzision beim Rechteentzug.
+- [ ] Das Interface wirkt wie ein Terminal eines Cyber-Security-Officers.
+- [ ] Gefühl der Macht und Sicherheit bei der "System-Säuberung".

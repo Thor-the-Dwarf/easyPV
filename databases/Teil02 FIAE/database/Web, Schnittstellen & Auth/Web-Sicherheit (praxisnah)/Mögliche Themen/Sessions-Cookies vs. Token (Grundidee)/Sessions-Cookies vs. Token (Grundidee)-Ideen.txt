@@ -1,0 +1,34 @@
+1. "Der Passierschein-Vergleich"
+   - Ziel: Verstehe die Speicherorte (Server vs. Client).
+   - Spielmechanik: 
+     - Session: Name steht im Buch des Türstehers (Server).
+     - Token (JWT): Du trägst den Ausweis selbst bei dir (Client).
+     - Lernziel: Statefulness vs. Statelessness.
+
+2. "Cookie-Sicherheits-Check"
+   - Ziel: Nutze HttpOnly und Secure Flags.
+   - Spielmechanik: 
+     - Setze das `HttpOnly` Flag.
+     - Kann ein Hacker-Skript (XSS) den Cookie auslesen? -> Nein!
+     - Lernziel: Web-Sicherheit Basics.
+
+3. "JWT-Decoder Puzzle"
+   - Ziel: Verstehe den Aufbau eines JSON Web Tokens.
+   - Spielmechanik: 
+     - Header, Payload, Signature.
+     - Was passiert, wenn man die Payload ändert? -> Signatur passt nicht mehr (Ungültig).
+     - Lernziel: Kryptografische Integrität.
+
+4. "Skalierungs-Rennen"
+   - Ziel: Warum Tokens für Microservices besser sind.
+   - Spielmechanik: 
+     - 10 Server. Wenn Session auf Server 1 liegt, erkennt Server 2 den User nicht.
+     - Mit Token: Jeder Server kann ihn validieren.
+     - Lernziel: Moderne Web-Architekturen.
+
+5. "Expired-Timer-Challenge"
+   - Ziel: Behandle abgelaufene Logins.
+   - Spielmechanik: 
+     - Token läuft nach 1 Std ab. 
+     - Implementiere den "Refresh Token" Flow.
+     - Lernziel: Session-Management.

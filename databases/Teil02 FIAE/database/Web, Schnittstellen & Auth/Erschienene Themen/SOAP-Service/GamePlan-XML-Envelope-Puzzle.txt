@@ -1,0 +1,19 @@
+Anforderungen
+1. "XML-Envelope-Puzzle"
+   - Ziel: Verständnis der Protokoll-Struktur von SOAP-Nachrichten zur Integration in Enterprise-Umgebungen.
+   - Spielmechanik: 
+     - Der Spieler baut eine SOAP-Nachricht aus hierarchischen XML-Komponenten zusammen.
+     - Korrekte Verschachtelung von `Envelope`, `Header` und `Body`.
+     - Einbau von Namespace-Definitionen zur eindeutigen Identifikation der Dienste.
+     - Messbarkeit: XML-Wohlgeformtheit und Validität gegen die SOAP-Spezifikation.
+   - Lernziel: Beherrschung komplexer Schnittstellen-Protokolle und Fehlerbehandlung in SOAP-Faults.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_soap_xml.json')
+   - XML-Fragmente und Namespace-Vorgaben.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des hierarchischen Baukastens).
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Validierung der XML-Baumstruktur).
+- [ ] Integration
+   - Tutorial: Warum SOAP in Finanz- und Altsystemen immer noch Standard ist.

@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Chronologisch korrekte Modellierung der Objekt-Interaktion unter Berücksichtigung von synchronen/asynchronen Aufrufen.
+- Kontext: Workflow-Design, Fokus auf Zeitstrahl und Messaging.
+- UX-Prinzip:
+  - Die Lebenslinien (Lifelines) bilden das vertikale Grundgerüst.
+  - Nachrichten-Karten als verschiebbare "Bausteine".
+  - "Snap-to-Time": Bausteine rasten stufenweise auf dem Zeitstrahl ein.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Zeitliche Abfolge (Nachricht oben/unten), 2 = Nachrichtentyp (Pfeilspitze), 3 = Aktoren-Status.
+- [ ] Textbudget: Kurze Methoden-Namen (z. B. `getData()`, `return result`).
+- [ ] Keine Intro-Texte; die Pfeiltypen (gefüllt vs. offen) werden per Tooltip/Badge erklärt.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> sequence-canvas -> message-pool -> timeline-indicator`.
+- [ ] Canvas: Desktop 60% Breite, Mobile 50dvh Höhe. Mit horizontalem Scrolling für viele Lebenslinien.
+- [ ] Message-Pool: Drag-Ziele sind klar markierte Drop-Zonen zwischen den Lebenslinien.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Responsives Grid: Lebenslinien passen ihren Abstand dynamisch an.
+- [ ] Mobile: "Tap-on-Start, Tap-on-End" Methode zum Zeichnen von Pfeilen als Alternative zu Drag.
+
+4. Kernvisuals
+- [ ] Pfeil-Stile: Durchgezogen (synchron), Gestrichelt (Antwort/asynchron).
+- [ ] Aktivierungsbalken (Execution Specifications): Wachsen automatisch mit der Dauer der Nachrichtenschleife.
+- [ ] High-Contrast Icons für Akteure (User Icon, DB Icon).
+
+5. Interaktion und Feedback
+- [ ] Sofort-Validierung: "Stop! Das Backend kann nicht antworten, bevor es die Datenbank-Anfrage abgeschlossen hat."
+- [ ] Logik-Feedback: "Nachricht erfolgreich zugestellt. Fokus liegt nun bei :Datenbank."
+- [ ] Animation: Bei korrekter Sequenz "spielt" das Diagramm den Nachrichtenfluss einmal ab.
+
+6. KPI-Klarheit
+- [ ] Sequence-Accuracy: "Logik-Check bestanden".
+- [ ] Time-Efficiency: "Dauer des Prozesses: 3 Lifecycles".
+
+7. Content-/Copy-Feinschliff
+- [ ] Realistische Flows: "Login-Workflow", "Bezahlvorgang", "Datei-Upload".
+- [ ] Tonalität: Analytisch, prozessorientiert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Pfeilspitzen auf dem Smartphone eindeutig unterscheidbar?
+- [ ] Test: Funktioniert die automatische Größenanpassung der Aktivierungsbalken ohne Glitches?
+
+9. Abnahmekriterien
+- [ ] Der Spieler versteht das Konzept der synchronen Blockierung und asynchronen Kommunikation.
+- [ ] Das Interface wirkt wie ein modernes Sequenzdiagramm-Tool.
+- [ ] Minimale Klickwege bei komplexen Interaktionen.

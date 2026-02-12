@@ -1,0 +1,19 @@
+Anforderungen
+1. "Heuristik-Hunted"
+   - Ziel: Befähigung zur Durchführung von Experten-Reviews auf Basis etablierter Usability-Heuristiken (z.B. nach Nielsen).
+   - Spielmechanik: 
+     - Der Spieler untersucht eine Webseite auf klassische Gebrauchstauglichkeits-Fehler.
+     - Identifikation von Verstößen (z.B. "Fehlende Rückmeldung bei Klick", "Uneinheitliche Terminologie").
+     - Zuordnung der gefundenen Fehler zu den 10 Heuristiken von Jakob Nielsen.
+     - Messbarkeit: Anzahl und korrekte Klassifizierung der Usability-Leaks.
+   - Lernziel: Objektive Bewertung von Software-Gebrauchstauglichkeit und fachliche Argumentation.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ui_usability_heuristics.json')
+   - Fehlerhafte UI-Screens und zugehörige Nielsen-Vorgaben.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung der Lupen-Funktion für Detail-Analyse).
+- [ ] Game-Engine Logic ('game_debug_engine.js')
+   - (Tracking der gefundenen Mängel).
+- [ ] Integration
+   - Tutorial: Die Top 5 Usability-Sünden in Business-Software.

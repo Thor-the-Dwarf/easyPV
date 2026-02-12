@@ -1,0 +1,32 @@
+1. "Make-or-Use-Challenge"
+   - Ziel: Entscheide, wann eine externe Library sinnvoll ist.
+   - Spielmechanik: 
+     - Aufgabe: "JSON parsen". Eigene Logik schreiben? -> Nein, Standard-Lib nutzen (Sicherheit & Speed).
+     - Aufgabe: "Zwei Zahlen addieren". Externe Lib? -> Nein, selbst machen (Overhead).
+     - Lernziel: Kosten-Nutzen-Analyse von Abhängigkeiten.
+
+2. "Standard-Lib-Quiz"
+   - Ziel: Kenne die Bordmittel deiner Sprache.
+   - Spielmechanik: 
+     - Brauchst du für `Arrays.sort()` eine externe Library in Java? -> Nein (Standard-Lib).
+     - Lernziel: Reduktion von Third-Party Risiken.
+
+3. "Security-Check-Module"
+   - Ziel: Prüfe Bibliotheken auf bekannte Schwachstellen.
+   - Spielmechanik: 
+     - Deine Version von `Log4J` ist alt. 
+     - Tool zeigt: "Schwerwiegende Lücke".
+     - Aktion: Update auf Version X.Y.
+     - Lernziel: Supply Chain Security.
+
+4. "Documentation-Finder"
+   - Ziel: Finde Infos in einer Library-Doku.
+   - Spielmechanik: 
+     - Wie heißt die Methode zum Komprimieren in der `ZipLib`?
+     - Lernziel: Effiziente Recherche.
+
+5. "License-Match"
+   - Ziel: Prüfe Lizenzkompatibilität.
+   - Spielmechanik: 
+     - Darf man eine GPL-Library in einem kommerziell geschlossenen Produkt nutzen?
+     - Lernziel: Rechtliche Grundlagen der Softwareentwicklung.

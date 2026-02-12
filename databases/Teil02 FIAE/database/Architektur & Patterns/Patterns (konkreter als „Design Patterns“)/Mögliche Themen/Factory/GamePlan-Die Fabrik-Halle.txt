@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Entkopplung der Objekterzeugung von der Anwendungsklasse zur Erfüllung des Open-Closed-Prinzips und Erhöhung der Testbarkeit.
+- Kontext: Objekterzeugung, Entwurfsmuster, Framework-Design.
+- UX-Prinzip:
+  - "The Master Mold": Der Client-Code weiß nicht, WIE etwas entsteht, er drückt nur den Knopf für einen Typ (z. B. "Limousine", "SUV").
+  - "Hidden Production": Die Logik der Erstellung (Entscheidung über die konkrete Unterklasse) verbirgt sich hinter einer blickdichten Fabrikwand.
+  - "The Request Slot": Ein einheitlicher Schlitz, in den der Wunsch gesteckt wird, und am Ende kommt das fertige Objekt heraus.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der Produkt-Typ Wunsch (Request), 2 = Die Fabrik-Logik (Innerer Switch/Map), 3 = Das resultierende Produkt.
+- [ ] Textbudget: Max. 10 Wörter pro Produkttyp.
+- [ ] "DecouplerHUD": Anzeige, dass der Client nur das Interface kennt, nicht die Fabrik-Klassen.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> request-console -> factory-interior -> output-ramp`.
+- [ ] Factory-Interior: Schematische Darstellung der Weichen (Desktop 50% Breite, Mobile vertical Flow).
+- [ ] Output-Ramp: Ein Bereich, in dem die erzeugten Objekte stolz präsentiert werden.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-to-Produce" Mechanik.
+- [ ] Grid-Anordnung der Buttons für einhändige Bedienung.
+
+4. Kernvisuals
+- [ ] Mechanik-Ästhetik: Metallische Oberflächen, Förderbänder, Industrielampen (shared_theme.css).
+- [ ] Schattenriss-Effekt: Der Produkttyp ist als Umriss sichtbar, bevor die Fabrik ihn realisiert.
+- [ ] High-Contrast Buttons für die Produktauswahl.
+
+5. Interaktion und Feedback
+- [ ] Produktions-Feedback: "Bestellung erhalten: Typ 'Elektro-Truck'. Fabrik wählt die passende Klasse aus..."
+- [ ] Erfolg: "Klick! Die Factory hat die richtige Instanz geliefert. Dein Code ist flexibel für neue Modelle (Open-Closed)."
+- [ ] Warnung: "Halt! Unbekannter Produkttyp – die Fabrik meldet einen Fehler (ExceptionHandling)."
+
+6. KPI-Klarheit
+- [ ] Creation-Flexibility: "Erweiterbarkeit: 100%".
+- [ ] Client-Decoupling: "Entkopplungs-Grad: Hoch".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Fahrzeug-Werk", "UI-Widget-Generator", "Dokumenten-Parser-Schmiede".
+- [ ] Tonalität: Effizient, industriell, präzise.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist die Trennung zwischen Request (Links) und Produkt (Rechts) visuell eindeutig?
+- [ ] Test: Sind die Übergänge zwischen Wunsch und fertigem Objekt animiert (Motion Design)?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler verinnerlicht die Fabrik als "Single Point of Decision" für Objekterzeugung.
+- [ ] Das Interface wirkt wie ein Hochglanz-Konfigurator für Systemkomponenten.
+- [ ] Maximale Klarheit über das Prinzip "Programmiere gegen Interfaces, nicht gegen Implementierungen".

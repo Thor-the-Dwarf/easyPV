@@ -1,0 +1,19 @@
+Anforderungen
+1. "Commit-Message-Filter"
+   - Ziel: Sensibilisierung für eine saubere Projekthistorie und Beherrschung der Kern-Workflows der verteilten Versionsverwaltung (Git).
+   - Spielmechanik: 
+     - Der Spieler bewertet und filtert Commit-Messages nach Qualität und Aussagekraft (Conventional Commits).
+     - Durchführung von Git-Operationen (Branch, Commit, Merge, Rebase) in einem simulierten Team-Projekt.
+     - Auflösung von Merge-Konflikten durch manuelle Code-Selektion.
+     - Messbarkeit: Sauberkeit des Git-Graphs und Fehlerfreiheit der Merges.
+   - Lernziel: Befähigung zur effizienten Zusammenarbeit in Softwareprojekten und Nutzung der Historie zur Fehlerbehebung.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_vcs_git.json')
+   - Commit-Stories und Konflikt-Beispiele.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Visuelle Darstellung des Git-Trees).
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Validierung der Commit-Syntax).
+- [ ] Integration
+   - Info: Warum man niemals Passwörter in Git committet (und wie man sie löscht).

@@ -1,0 +1,54 @@
+Anforderungen (reverse engineered)
+- Ziel: Beherrschung von Test-Platzhaltern (Doubles) zur Isolation der Testobjekte und Vermeidung von Abhängigkeiten zu externen Systemen.
+- Kontext: Unit-Testing, Mocking Frameworks, Kopplung, Testbarkeit.
+- UX-Prinzip:
+  - "The Stunt Double": Dein Star-Modul (z. B. eine echte Datenbank) ist zu teuer oder gefährlich für tausendfache Test-Takes. Wir engagieren Stunt-Doubles.
+  - "The Cast": Jeder Double hat eine Rolle:
+    - Dummy: Einfacher Statist (wird nur herumgereicht).
+    - Stub: Antwort-Geber (liefert feste Skripte).
+    - Fake: Minimal-Ersatz (arbeitet wie das Original, aber einfacher).
+    - Mock: Agent Provocateur (prüft, ob die richtigen Befehle gerufen wurden).
+    - Spy: Der Beobachter (zeichnet heimlich auf, was passiert).
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Test-Herausforderung (Das Drehbuch), 2 = Der passende Double (Der Stuntman), 3 = Die Konfiguration des Verhaltens.
+- [ ] Textbudget: Max. 8 Wörter pro Rollen-Beschreibung.
+- [ ] "Isolation-Shield": Visueller Schutzschild um das Test-Objekt.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> film-set (Canvas) -> double-portfolio -> director-monitor`.
+- [ ] Film-Set: Zentrale Bühne, auf der das Modul getestet wird (Desktop mittig).
+- [ ] Portfolio: Karten-Karussell mit den verschiedenen Typen von Test-Doubles.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-to-Cast" Mechanik – Den Double auf die Bühne ziehen.
+- [ ] `safe-area-inset` für die Rollen-Details am unteren Rand.
+
+4. Kernvisuals
+- [ ] Hollywood-Ästhetik: Klappenbretter, Scheinwerfer, rote Teppiche, Filmrollen (shared_theme.css).
+- [ ] "The Swap": Flüssige Animation, wenn das echte Modul gegen einen Double ausgetauscht wird.
+- [ ] High-Contrast Icons für Dummy, Stub, Fake, Mock, Spy.
+
+5. Interaktion und Feedback
+- [ ] Casting-Feedback: "Klick! Stub engagiert. Er antwortet nun immer mit 'Login erfolgreich', ohne die echte Datenbank zu fragen."
+- [ ] Mock-Check: "Klick! Der Mock bestätigt: Die Methode `sendMail` wurde genau 1x aufgerufen. Test bestanden!"
+- [ ] Erfolg: "Drehbuch fehlerfrei verfilmt. Deine Tests sind schnell, isoliert und absolut verlässlich."
+
+6. KPI-Klarheit
+- [ ] Cast-Precision: "Rollen-Verständnis: 100%".
+- [ ] Test-Speed: "Beschleunigung durch Doubles: Massive".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "API Down Simulation", "E-Mail Versand prüfen", "Datenbank-Zugriff umgehen", "Zeit-Simulation".
+- [ ] Tonalität: Kreativ, professionell, unterhaltsam.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Funktionieren die "Rollen-Karten" auf kleinen Displays ohne Textabschluss?
+- [ ] Test: Sind die feinen Unterschiede (z.B. Mock vs. Spy) pädagogisch klar herausgearbeitet?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler verankert Doubles als unverzichtbares Werkzeug für schnelle Unit-Tests.
+- [ ] Das Interface wirkt wie ein exklusives Regie-Pult.
+- [ ] Absolute Sicherheit bei der Benennung der Double-Typen.

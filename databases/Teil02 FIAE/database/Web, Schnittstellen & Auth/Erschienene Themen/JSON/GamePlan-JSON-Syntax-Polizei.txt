@@ -1,0 +1,19 @@
+Anforderungen
+1. "JSON-Syntax-Polizei"
+   - Ziel: Vermeidung und Behebung häufiger Syntaxfehler beim Datenaustausch im Web mittels JSON.
+   - Spielmechanik: 
+     - Analyse von JSON-Strings auf syntaktische Fehler (z.B. fehlende Anführungszeichen bei Keys, falsche Datentypen, Kommafehler).
+     - Der Spieler korrigiert den JSON-String so, dass `JSON.parse()` ihn fehlerfrei verarbeiten kann.
+     - Zuordnung von JSON-Werten zu ihren korrekten Datentypen (String, Number, Object, Array, Boolean, Null).
+     - Messbarkeit: Korrektheit der JSON-Syntax und Datentypen.
+   - Lernziel: Beherrschung des Standard-Datenformats für moderne Web-APIs und Single Page Applications.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_json_policeman.json')
+   - Fehlerhafte JSON-Fragmente und Datentyp-Sets.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Syntax-Validators).
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Prüfung der JSON-Validität).
+- [ ] Integration
+   - Tutorial: JSON vs. JS-Objekte – worauf man achten muss.

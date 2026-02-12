@@ -1,0 +1,19 @@
+Anforderungen
+1. "Phishing-Mail-Triage"
+   - Ziel: Entwicklung von Awareness für Social Engineering und technische Merkmale betrügerischer E-Mails zur Steigerung der IT-Resilienz.
+   - Spielmechanik: 
+     - Analyse eines Posteingangs mit verschiedenen Mails.
+     - Der Spieler muss Indikatoren für Phishing finden (z.B. versteckte Links, falsche Absender-Domains, drängende Sprache).
+     - Klassifizierung der Mails in "Sicher", "Spam" oder "Phishing".
+     - Messbarkeit: Erkennungsquote von manipulierten E-Mails.
+   - Lernziel: Kritische Bewertung von Kommunikation und Schutz vor Account-Übernahmen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_email_phishing.json')
+   - Korpus von E-Mail Beispielen mit versteckten Markern.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Nachbau einer Mail-Client Ansicht).
+- [ ] Game-Engine Logic ('game_category_match.js')
+   - (Klassifizierungs-Logik).
+- [ ] Integration
+   - Tutorial: Warum SPF, DKIM und DMARC gegen Absender-Fälschungen helfen.

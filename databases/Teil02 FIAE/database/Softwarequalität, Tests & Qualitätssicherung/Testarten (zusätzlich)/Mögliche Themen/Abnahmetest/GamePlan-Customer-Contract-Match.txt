@@ -1,0 +1,51 @@
+Anforderungen (reverse engineered)
+- Ziel: Formale Abnahme eines Softwareprojekts durch Abgleich von vertraglichen Akzeptanzkriterien mit realen Systemergebnissen.
+- Kontext: Projektabschluss, Rechtssicherheit, Kunden-Abnahme (Acceptance Test).
+- UX-Prinzip:
+  - "The Formal Handover": Ein edler Verhandlungstisch. Auf der einen Seite der Vertrag, auf der anderen die Proofs.
+  - "The Checkmark-Battle": Der Spieler muss beweisen, dass jedes "Soll" im Vertrag ein "Ist" im System hat.
+  - "The Clause-Validator": Kritische Fehlermeldungen (Showstopper) verhindern das Umblättern der Vertragsseite.
+  - "Decision-Power": Der Spieler entscheidet: Abnahme, Abnahme mit Mängeln oder totale Ablehnung.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Das Akzeptanzkriterium (Vertrag), 2 = Der Beweis (System-Log/Bericht), 3 = Der Abnahme-Status.
+- [ ] Textbudget: Max. 12 Wörter pro Kriterium (z.B. "Anmeldung muss in unter 1 Sekunde erfolgen").
+- [ ] "Decision-Bar": Visuelle Anzeige der rechtlichen Konsequenzen der Wahl (Gefahrenübergang).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> negotiation-table -> contract-scroll -> evidence-folder`.
+- [ ] Table: Isometrische Sicht auf den Tisch mit Vertrag und Dokumentenmappe (Desktop mittig).
+- [ ] Scroll: Der Vertrag (links) reagiert auf Auswahl des Beweises (rechts).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Vertical-Stacking" - Oben der Vertragstext, unten der Beweis zum Anstempeln.
+- [ ] `scroll-snap` für das präzise Umblättern der Vertragsabschnitte.
+
+4. Kernvisuals
+- [ ] Business-Review Ästhetik: Hochwertiges Papier, Füllfederhalter-Textur, Siegelwachs, Lederelemente (shared_theme.css).
+- [ ] Sound-Effekte: Papierrascheln, sattes Stempelgeräusch bei Bestätigung.
+- [ ] High-Contrast Stempel ("ACCEPT", "REJECT", "DEFECT").
+
+5. Interaktion und Feedback
+- [ ] Validation-Feedback: "Klick! Performanztest bestätigt: 800ms. Kriterium 4.1 'Schnelligkeit' ist offiziell abgenommen."
+- [ ] Risiko-Dialog: "Stopp! Das Kriterium 'Datenverschlüsselung' hat einen Mangel. Willst du die Abnahme unter Vorbehalt unterzeichnen?"
+- [ ] Erfolg: "Projekt übergeben! Der Vertrag ist beidseitig signiert, die Gewährleistungsfrist beginnt jetzt."
+
+6. KPI-Klarheit
+- [ ] Compliance-Rate: "Vertragserfüllung: 100%".
+- [ ] Legal-Safety: "Abnahme-Entscheidung: Rechtssicher protokolliert".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Funktionalität gemäß Lastenheft", "Benutzbarkeit", "Sicherheits-Audits", "Dokumentations-Vollständigkeit".
+- [ ] Tonalität: Förmlich, seriös, verbindlich.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Wirkt das "Büro-Design" auch auf dem Handy seriös und gut navigierbar?
+- [ ] Test: Sind die Unterschiede zwischen "Abnahme mit Mängel" und "Ablehnung" pädagogisch eindeutig?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler begreift die Abnahme als formalen juristischen Akt.
+- [ ] Das Interface wirkt wie eine App für High-Level Projektmanager.
+- [ ] Volle Beherrschung des Prozesses vom Testbericht zum Protokoll.

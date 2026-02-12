@@ -1,0 +1,19 @@
+Anforderungen
+1. "StatusCode-Match"
+   - Ziel: Schnelle Identifikation und Interpretation von HTTP-Statuscodes zur effizienten Fehlerdiagnose und API-Nutzung.
+   - Spielmechanik: 
+     - Präsentation von Server-Antworten oder Fehlerszenarien (z.B. "Seite wurde dauerhaft verschoben", "Zugriff verweigert").
+     - Der Spieler ordnet den passenden 3-stelligen Code (z.B. 200, 301, 401, 404, 500) zu.
+     - Klassifizierung der Codes in ihre Gruppen (1xx bis 5xx).
+     - Messbarkeit: Geschwindigkeit und Korrektheit der Code-Zuordnung.
+   - Lernziel: Verständnis der Web-Semantik und fehlerfreies Handling von Server-Statusmeldungen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_http_status.json')
+   - Statuscodes, Beschreibungen und Szenarien.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Card-Matching Layouts).
+- [ ] Game-Engine Logic ('game_category_match.js')
+   - (Wiederverwendung der Matching-Logik).
+- [ ] Integration
+   - Tutorial: Unterschied zwischen 401 (Unauthenticated) und 403 (Unauthorized).

@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Theoretische und praktische Verankerung der ACID-Prinzipien zur Gewährleistung der Datenbank-Integrität in Transaktionen.
+- Kontext: Transaktionssteuerung, Sicherheit, Fehlertoleranz.
+- UX-Prinzip:
+  - "The Four Pillars": Das Fundament einer Bank (oder eines Tresors) ruht auf vier massiven Säulen (Atomarität, Konsistenz, Isolation, Dauerhaftigkeit).
+  - "The Stress Test": Ein simulierter Systemabsturz (Power Outage) prüft, ob die Säulen halten (Daten gerettet) oder ob das Gebäude einstürzt (Daten kaputt).
+  - "Mechanical Icons": Jedes Prinzip hat ein ikonisches mechanisches Symbol (z. B. eine Sicherung für Atomarität).
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Transaktions-Säulen (Kategorien), 2 = Die Beschreibungs-Steine (Wissen), 3 = Der Stabilitäts-Check.
+- [ ] Textbudget: Max. 8 Wörter pro Definition.
+- [ ] "Contextual Learning": Ein Banküberweisungs-Beispiel läuft im Hintergrund als roter Faden mit.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> transaction-building -> pillar-grid -> knowledge-quarry`.
+- [ ] Building: Visualisierung eines antiken Tempels (Desktop 50% Breite, Mobile 40dvh Höhe).
+- [ ] Quarry: Sammelbecken der ACID-Definitionen am unteren Rand.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-and-Socket" – Prinzip antippen, dann die leuchtende Säule wählen.
+- [ ] `safe-area-inset` für die "COMMIT/ROLLBACK" Buttons.
+
+4. Kernvisuals
+- [ ] Material: Stein-Texturen, Gold-Inlays für korrekte Zuordnungen (shared_theme.css).
+- [ ] "Crash-Animation": Ein Blitz schlägt ein, wenn Durability (Dauerhaftigkeit) fehlt.
+- [ ] Icons: Sicherung (A), Waage (C), Vorhang (I), Tresor (D).
+
+5. Interaktion und Feedback
+- [ ] Pillar-Feedback: "Richtig! Isolation bedeutet, dass Nutzer B nicht sieht, was Nutzer A gerade erst eintippt."
+- [ ] Error-Mode: Eine Säule bekommt Risse, wenn die falsche Definition zugeordnet wird.
+- [ ] Erfolg: Das Gebäude ist stabil und leuchtet nach dem Stresstest grün.
+
+6. KPI-Klarheit
+- [ ] Integrity-Score: "Datensicherheit: Unerschütterlich".
+- [ ] Knowledge-Accuracy: "ACID-Experten-Grad: 100%".
+
+7. Content-/Copy-Feinschliff
+- [ ] Einprägsame Slogans: "Alles oder Nichts" (Atomarität), "Regeln einhalten" (Konsistenz), "Allein auf der Welt" (Isolation), "Für die Ewigkeit" (Dauerhaftigkeit).
+- [ ] Tonalität: Seriös, stabil, sicher.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die 4 Säulen auf einem kleinen Display (Portrait) noch nebeneinander darstellbar?
+- [ ] Test: Bleibt der "Crash-Effekt" flüssig und überspringt keine Frames?
+
+9. Abnahmekriterien
+- [ ] Der Spieler lernt die Merkhilfe "ACID" durch visuelle Ankerpunkte.
+- [ ] Das Interface wirkt wie ein Hochsicherheits-Tresor.
+- [ ] Absolut klares Verständnis der Transaktions-Garantien.

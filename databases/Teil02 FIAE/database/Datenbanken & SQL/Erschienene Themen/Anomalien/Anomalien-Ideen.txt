@@ -1,0 +1,38 @@
+1. "Einfüge-Anomalie (Insert)"
+   - Ziel: Erkenne, warum Daten nicht gespeichert werden können.
+   - Spielmechanik: 
+     - Du willst eine neue Abteilung anlegen, hast aber noch keinen Mitarbeiter darin.
+     - Problem: Der PK ist (Mitarbeiter_ID, Abteilung_ID).
+     - Resultat: Abteilung kann ohne Mitarbeiter nicht existieren.
+   - Lernziel: Probleme un-normalisierter Tabellen.
+
+2. "Update-Anomalie-Puzzle"
+   - Ziel: Finde Inkonsistenzen nach einem Teil-Update.
+   - Spielmechanik: 
+     - "Müller" wohnt in "Hamburg" (steht in 10 Zeilen).
+     - Wir ändern nur 5 Zeilen auf "Berlin".
+     - Frage: Wo wohnt Müller jetzt laut DB? -> Chaos!
+     - Messbarkeit: Erkennen von redundanten Datenleichen.
+   - Lernziel: Datenredundanz vermeiden.
+
+3. "Lösch-Anomalie-Scanner"
+   - Ziel: Verhindere ungewollten Infoverlust.
+   - Spielmechanik: 
+     - Lösche den letzten Mitarbeiter einer Abteilung. 
+     - Oh Schreck: Die Info, dass es die Abteilung überhaupt gibt, ist jetzt auch weg!
+     - Messbarkeit: Trennung von Entitäten durch Normalisierung.
+   - Lernziel: Strukturelle Fehler im DB-Design finden.
+
+4. "Anomalie-Killer (Normalisierung)"
+   - Ziel: Überführe eine Tabelle in 2NF/3NF zur Heilung.
+   - Spielmechanik: 
+     - Spalte die Tabelle auf in `Mitarbeiter` und `Abteilungen`.
+     - Test: Treten die Anomalien noch auf? -> Nein.
+   - Lernziel: Normalisierung als Lösungsweg.
+
+5. "Redundanz-Check"
+   - Ziel: Zähle, wie oft dieselbe Info gespeichert ist.
+   - Spielmechanik: 
+     - Tabelle mit 100 Usern aus Berlin. "Berlin" steht 100x drin.
+     - Frage: Wie viel Platz sparen wir mit einer `Städte` Tabelle (ID -> Name)?
+   - Lernziel: Speicherplatz-Effizienz.

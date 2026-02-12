@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Sicherer Umgang mit der UML-Attributsyntax (Sichtbarkeit, Datentyp, Multiplizität) durch Analyse von Code-Snippets.
+- Kontext: Code-zu-Diagramm Editor, Fokus auf formale Korrektheit.
+- UX-Prinzip:
+  - Das Code-Fenster (Syntax-Highlighting) steht oben.
+  - Die UML-Klasse (Box) wird live darunter befüllt.
+  - "Syntax-Baukasten": Symbole (+ / - / #) werden per Klick an die richtige Stelle gesetzt.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Code-Zeile (z. B. `private String name`), 2 = UML-Zeile (`- name: String`), 3 = Sichtbarkeits-Key.
+- [ ] Textbudget: Nur die relevanten Code-Teile zeigen, kein "Lärm".
+- [ ] Keine Vor-Exkurse; die Bedeutung von `+` und `-` wird im Moment der Wahl erklärt.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> code-input -> uml-class-card -> syntax-toolbar`.
+- [ ] UML-Card: Dreigeteiltes Standard-Layout (Desktop 30% Breite, Mobile 80% Breite).
+- [ ] Toolbar: Große Schaltflächen für Symbole (>=48px) im Daumenbereich.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mono-Font: Verwendung von Roboto Mono o. ä. für den Code-Look.
+- [ ] Mobile: Vertikale Trennung; Code oben fixiert, UML-Box unten scrollbar.
+
+4. Kernvisuals
+- [ ] Code-Colors: Klassisches IDE-Syntax-Highlighting (shared_theme.css).
+- [ ] "Röntgenblick": Wenn Attribut korrekt -> kurzes grünes Aufleuchten der entsprechenden Code-Stelle.
+- [ ] Badge-System: Multiplizitäten (z. B. `[0..*]`) werden als kleine Tags dargestellt.
+
+5. Interaktion und Feedback
+- [ ] Live-Preview: Während der Spieler tippt/baut, füllt sich die UML-Grafik.
+- [ ] Sofort-Check: "Korrekt! 'private' wird in UML zu '-'."
+- [ ] Korrektur-Modus: Falsche Symbole werden rot geschüttelt ("Shake"-Animation).
+
+6. KPI-Klarheit
+- [ ] Syntax-Precision: "UML-Konformität: 100%".
+- [ ] Scanner-Progress: "X / Y Attribute extrahiert".
+
+7. Content-/Copy-Feinschliff
+- [ ] Echte Code-Beispiele: `public List<User> members`, `protected double balance;`.
+- [ ] Tonalität: Präzise, entwickler-fokussiert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist der Kontrast zwischen Code-Hintergrund und Text hoch genug?
+- [ ] Test: Sind die Multiplizitäts-Klammern auf dem Handy leicht zu treffen?
+
+9. Abnahmekriterien
+- [ ] Der Spieler lernt die Übersetzung von OOP-Konzepten in formale UML-Notation.
+- [ ] Das Interface wirkt wie ein professioneller Code-Analyse-Assistent.
+- [ ] Schneller, fehlerfreier Workflow.

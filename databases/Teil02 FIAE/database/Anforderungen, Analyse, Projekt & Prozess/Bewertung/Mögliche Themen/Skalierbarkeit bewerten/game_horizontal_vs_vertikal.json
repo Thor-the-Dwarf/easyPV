@@ -1,0 +1,91 @@
+{
+  "title": "Horizontal vs. Vertikal",
+  "subtitle": "Waehle je Aufgabe die passende Skalierungsstrategie.",
+  "strategies": {
+    "vertical": {
+      "label": "Vertikal (Power-up)",
+      "icon": "⚡",
+      "availability": 99.0,
+      "cpu_gain": 24,
+      "cost_factor": 1.0,
+      "complexity": "niedrig",
+      "risk": "Single Point of Failure bleibt bestehen."
+    },
+    "horizontal": {
+      "label": "Horizontal (Spread-out)",
+      "icon": "🔀",
+      "availability": 99.9,
+      "cpu_gain": 38,
+      "cost_factor": 1.18,
+      "complexity": "mittel",
+      "risk": "Mehr Betriebsaufwand, aber hohe Ausfallsicherheit."
+    }
+  },
+  "tasks": [
+    {
+      "id": "t1",
+      "traffic_rps": 1100,
+      "base_cpu": 94,
+      "base_cost_eur": 210,
+      "goal": {
+        "max_cost_eur": 220,
+        "min_availability": 98.9,
+        "max_cpu": 72
+      },
+      "correct_strategy": "vertical",
+      "explanation": "Kostenlimit ist eng. Vertikal senkt CPU ausreichend und bleibt im Budget."
+    },
+    {
+      "id": "t2",
+      "traffic_rps": 1600,
+      "base_cpu": 97,
+      "base_cost_eur": 280,
+      "goal": {
+        "max_cost_eur": 350,
+        "min_availability": 99.8,
+        "max_cpu": 65
+      },
+      "correct_strategy": "horizontal",
+      "explanation": "SLA >= 99.8% erzwingt praktisch Scale-out mit Load-Balancing."
+    },
+    {
+      "id": "t3",
+      "traffic_rps": 900,
+      "base_cpu": 89,
+      "base_cost_eur": 175,
+      "goal": {
+        "max_cost_eur": 200,
+        "min_availability": 99.0,
+        "max_cpu": 70
+      },
+      "correct_strategy": "vertical",
+      "explanation": "Bei moderater Last ist Vertikal wirtschaftlicher und zielkonform."
+    },
+    {
+      "id": "t4",
+      "traffic_rps": 2100,
+      "base_cpu": 99,
+      "base_cost_eur": 330,
+      "goal": {
+        "max_cost_eur": 420,
+        "min_availability": 99.9,
+        "max_cpu": 64
+      },
+      "correct_strategy": "horizontal",
+      "explanation": "Hohe Last plus 99.9% Verfuegbarkeit spricht klar fuer Horizontal."
+    },
+    {
+      "id": "t5",
+      "traffic_rps": 1250,
+      "base_cpu": 95,
+      "base_cost_eur": 240,
+      "goal": {
+        "max_cost_eur": 260,
+        "min_availability": 99.0,
+        "max_cpu": 74
+      },
+      "correct_strategy": "vertical",
+      "explanation": "Zielwerte lassen sich hier mit geringer Komplexitaet vertikal erreichen."
+    }
+  ]
+}

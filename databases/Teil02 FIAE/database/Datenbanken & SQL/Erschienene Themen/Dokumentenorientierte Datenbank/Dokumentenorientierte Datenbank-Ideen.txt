@@ -1,0 +1,37 @@
+1. "JSON-Struktur-Puzzle"
+   - Ziel: Erstelle ein Dokument für eine NoSQL DB.
+   - Spielmechanik: 
+     - `{ "name": "Max", "hobbys": ["Lesen", "Sport"], "adresse": { "PLZ": 20095 } }`.
+     - Baue die Hierarchie korrekt zusammen.
+     - Messbarkeit: Gültiges JSON-Format.
+   - Lernziel: Schema-freie Datenhaltung.
+
+2. "SQL vs NoSQL Match"
+   - Ziel: Wähle die richtige DB für den Use Case.
+   - Spielmechanik: 
+     - "Banküberweisungen (ACID)". -> SQL (Relational).
+     - "Social Media Feed mit variablen Beiträgen". -> NoSQL (Document).
+     - "Auswertung von Sensordaten (Big Data)". -> NoSQL.
+   - Lernziel: Datenbank-Technologien im Vergleich.
+
+3. "Nest or Reference?"
+   - Ziel: Entscheide zwischen Einbettung und Referenzierung.
+   - Spielmechanik: 
+     - "Kommentare zu einem Blogpost". -> Einbetten (Nest).
+     - "Produkte in mehreren Kategorien". -> Referenzieren (Reference).
+     - Lernziel: Modellierung in NoSQL-Systemen (wie MongoDB).
+
+4. "Flexi-Schema-Vorteil"
+   - Ziel: Füge ein neues Feld hinzu, ohne die DB zu sperren (ALTER TABLE).
+   - Spielmechanik: 
+     - Client schickt ein zusätzliches Feld `twitter_handle`. 
+     - Dokumenten-DB speichert es einfach ab.
+     - Lerne: Agilität bei Schema-Änderungen.
+   - Lernziel: Schema-on-Read Prinzip.
+
+5. "Query-the-JSON"
+   - Ziel: Lerne einfache NoSQL Abfragen (z.B. MongoDB Syntax).
+   - Spielmechanik: 
+     - `db.user.find({ "age": { "$gt": 18 } })`.
+     - Messbarkeit: Selektion von Dokumenten in der JSON-Welt.
+   - Lernziel: Programmatischer Zugriff auf NoSQL.

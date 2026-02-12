@@ -1,0 +1,32 @@
+1. "Zeile-für-Zeile"
+   - Ziel: Verstehe das Prinzip des Interpreters.
+   - Spielmechanik: 
+     - Code wird oben nach unten ausgeführt. 
+     - Fehler in Zeile 10. Was passierte mit Zeile 1-9? -> Wurden ausgeführt.
+     - Lernziel: Sofortiges Feedback (v.a. bei Python/JS).
+
+2. "Speed-Test: Compiler vs Interpreter"
+   - Ziel: Verstehe die Performance-Unterschiede.
+   - Spielmechanik: 
+     - Compiler: Lange Wartezeit am Anfang, schneller Lauf.
+     - Interpreter: Sofortiger Start, langsamerer Lauf.
+     - Lernziel: Wahl des richtigen Werkzeugs.
+
+3. "REPL-Game"
+   - Ziel: Nutze die interaktive Konsole.
+   - Spielmechanik: 
+     - Gib einen Befehl ein, bekomme sofort Ergebnis.
+     - Lernziel: Schnelles Prototyping.
+
+4. "JIT-Boost (Just-In-Time)"
+   - Ziel: Die Mischform verstehen (z.B. V8 Engine).
+   - Spielmechanik: 
+     - Interpreter bemerkt: "Diese Schleife läuft 1 Mio mal". 
+     - Aktion: "Kompiliere diesen Teil jetzt schnell!".
+     - Lernziel: Moderne Sprachoptimierung.
+
+5. "Bytecode-Puzzle"
+   - Ziel: Verstehe Java / .NET (Weder Fisch noch Fleisch).
+   - Spielmechanik: 
+     - Source -> Compiler -> Bytecode -> Interpreter (JVM).
+     - Lernziel: Plattformunabhängigkeit ("Write once, run anywhere").

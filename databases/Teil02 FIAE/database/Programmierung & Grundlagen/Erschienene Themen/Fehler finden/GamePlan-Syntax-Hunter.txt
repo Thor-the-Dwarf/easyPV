@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Maximale Schärfung der Wahrnehmung für syntaktische Fehler im Code unter Zeitdruck.
+- Kontext: Debugging, Code-Review Training.
+- UX-Prinzip:
+  - "The Glitch Sniper": Der Code ist ein Gitternetz; Fehler sind instabile "Glitches", die flackern oder farblich minimal abweichen.
+  - "Precise Hit": Der Spieler muss genau das falsche Zeichen (z.B. ein fehlendes `;`) "abschießen" (anklicken).
+  - "Combo-Multiplier": Schnelles Finden von Fehlern hintereinander erhöht den Score.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der Code-Block (Spielfeld), 2 = Der Timer (Druck), 3 = Die Fehler-Counter.
+- [ ] Textbudget: Max. 5-8 Zeilen Code pro Screen zur Vermeidung von Overload.
+- [ ] "No Clutter" Design: Dunkler Hintergrund, leuchtender Text (IDE-Feeling).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> code-matrix -> hud-info -> scanner-overlay`.
+- [ ] Matrix-Area: Zentraler Fokusbereich (Full Screen auf Mobile, 60% auf Desktop).
+- [ ] Scanner: Ein dezenter Lichtstrahl, der über den Code fährt, um die Konzentration zu lenken.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: Große Tap-Zonen für die fehlerhaften Zeichen (Padding-Trick).
+- [ ] `user-select: none` zur Verhinderung von versehentlicher Textmarkierung beim Klicken.
+
+4. Kernvisuals
+- [ ] Matrix/Neon Ästhetik: Dunkelgrüner/Blauer Text auf Schwarz.
+- [ ] Fehler-Animation: Ein Zeichen pulsiert minimal oder "zittert" (Glitch-Effekt).
+- [ ] Partikel-Effekt: Beim Treffer zerfällt das falsche Zeichen in Code-Fragmente.
+
+5. Interaktion und Feedback
+- [ ] Sofort-Treffer: Ein sates "Ping" und das Zeichen korrigiert sich automatisch.
+- [ ] Fehlschuss: Der Screen blitzt kurz rot auf (Penalty-Zeit).
+- [ ] Erfolg: "Code stabilisiert! Alle 5 Syntax-Fehler eliminiert."
+
+6. KPI-Klarheit
+- [ ] Accuracy: "Precision Level: 98%".
+- [ ] Detection-Speed: "Fehler pro Minute: X".
+
+7. Content-/Copy-Feinschliff
+- [ ] Typische Fallen: Fehlende Semikolons, falsche Klammern-Paarung `(}`, Tippfehler in Keywords `funtion`, Quote-Mismatch.
+- [ ] Tonalität: Hochkonzentriert, rasant, analytisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist das kleinste Semikolon auf einem Smartphone wirklich treffbar?
+- [ ] Test: Reagiert das Klick-Event ohne Latenz?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler verfällt in einen "Flow-Zustand" beim Code-Scanning.
+- [ ] Das Interface wirkt wie ein Cyber-Security-Eingriff-Tool.
+- [ ] Massive Steigerung der Auge-Code-Koordination.

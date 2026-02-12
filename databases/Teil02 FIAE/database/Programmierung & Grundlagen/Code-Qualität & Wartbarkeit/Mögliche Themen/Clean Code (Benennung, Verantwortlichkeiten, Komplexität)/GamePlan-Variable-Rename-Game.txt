@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Schärfung des Bewusstseins für aussagekräftige Namen zur Reduktion der kognitiven Last und Verbesserung der Code-Wartbarkeit.
+- Kontext: Clean Code, Selbstdokumentation, Team-Kommunikation.
+- UX-Prinzip:
+  - "The Fog Lifter": Der Code ist anfangs in dichten Nebel gehüllt; Variablen wie `a`, `b`, `tmp` sind kaum erkennbar.
+  - "Naming-Flashlight": Jedes Mal, wenn der Spieler einen kryptischen Namen durch einen präzisen Namen (z.B. `retryCounter`) ersetzt, lichtet sich ein Teil des Nebels.
+  - "Sunlight-Reveal": Bei 100% korrektem Naming erstrahlt der Code-Block in hellem Sonnenlicht und wird sofort verständlich.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der kryptische Name (Ziel), 2 = Der Kontext des Codes (Hinweis), 3 = Die Auswahl der Alternativen.
+- [ ] Textbudget: Max. 8 Zeilen Code pro Mission.
+- [ ] "Cognitive Load Monitor": Ein Balken, der zeigt, wie schwer der Code aktuell zu lesen ist.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> misty-code-canvas -> naming-palette -> readability-gauge`.
+- [ ] Canvas: Ein Bereich mit "wolkigem" Overlay, das durch Interaktion transparent wird.
+- [ ] Palette: 3-4 Namensvorschläge am unteren Rand (Desktop 50% Breite, Mobile Daumen-optimiert).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-to-Clear" – Antippen der Variablen öffnet das Sonnen-Menü mit Namen.
+- [ ] CSS-Filter: `backdrop-filter: blur()` für den Nebel-Effekt.
+
+4. Kernvisuals
+- [ ] Wetter-Ästhetik: Von grauem Dunst zu strahlend blauem Himmel (shared_theme.css).
+- [ ] Glühende Namen: Präzise Namen leuchten in einem "reinen" Weiß; falsche Namen wirken "dreckig" oder grau.
+- [ ] High-Contrast IDE Theme im Hintergrund.
+
+5. Interaktion und Feedback
+- [ ] Aha-Moment: "Siehst du? Plötzlich versteht man, dass diese Schleife die fehlerhaften Logins zählt."
+- [ ] Nebel-Animation: Bei jeder richtigen Wahl "weht" ein Stück Wolke aus dem Bild.
+- [ ] Feedback zu Anti-Patterns: "Vorsicht! Präfixe wie `str` oder `int` machen den Code unnötig schwer – lichte den Nebel weiter!"
+
+6. KPI-Klarheit
+- [ ] Readability-Index: "Klarheits-Grad: 100%".
+- [ ] Cognitive-Ease: "Leseaufwand: Minimal".
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Fälle: Rechnungs-Berechnung, Validierungs-Logik, Listen-Filterung.
+- [ ] Tonalität: Erhellend, klar, motivierend.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist der Nebel-Effekt auf dem Handy-Display performant (FPS-Check)?
+- [ ] Test: Sind die Tooltips mit den Namens-Vorschlägen auch in den Ecken des Bildschirms sichtbar?
+
+9. Abnahmekriterien
+- [ ] Der Spieler erlebt den emotionalen Unterschied zwischen "Code-Rätseln" und "Code-Lesen".
+- [ ] Das Interface wirkt wie ein exklusives Tool zur Code-Verschönerung.
+- [ ] Maximale Motivation zum "Aufräumen" durch visuelle Belohnung.

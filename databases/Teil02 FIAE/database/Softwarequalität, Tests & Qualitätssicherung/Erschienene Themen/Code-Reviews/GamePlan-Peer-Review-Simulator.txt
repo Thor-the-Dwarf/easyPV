@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Schärfung des Blicks für Code-Qualität, Standards und kollektive Verantwortung durch simuliertes Peer-Reviewing.
+- Kontext: Software-Qualitätssicherung, Team-Kollaboration, Best Practices.
+- UX-Prinzip:
+  - "The Quality Filter": Der Code fließt durch ein mehrstufiges Filtersystem. Der Spieler ist die "Membran", die Verunreinigungen (Bugs, Smells) zurückhält.
+  - "Constructive Feedback Loop": Kommentare sind keine Kritik, sondern "Veredelungsschritte".
+  - "Review-Highlighting": Gefundene Stellen leuchten bei Akzeptanz durch den "Original-Autor" (Bot) hell auf.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der Quellcode (Prüfobjekt), 2 = Die Review-Tools (Markierung, Kommentar), 3 = Die Review-Checkliste.
+- [ ] Textbudget: Max. 20 Zeilen Code pro Review-Sitzung.
+- [ ] "Quality-Score": Ein Echtzeit-Barometer, das steigt, wenn wichtige Punkte adressiert werden.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> review-workbench -> comment-sidebar -> checklist-overlay`.
+- [ ] Workbench: Zentrales Code-Fenster mit Zeilennummern (Desktop 70% Breite, Mobile Full-Screen).
+- [ ] Sidebar: Kontextsensitive Kommentare, die direkt neben der Zeile erscheinen.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-to-Comment" auf die Zeilennummer; modale Auswahl der Kommentar-Bausteine.
+- [ ] `overflow-x: auto` für breite Code-Zeilen mit horizontalem Scroll-Gefühl.
+
+4. Kernvisuals
+- [ ] Studio-Ästhetik: Clean, professionell, fokussiert; neutrales Grau mit Akzentfarben (shared_theme.css).
+- [ ] "Filter-Animation": Visuelle Darstellung, wie der Code "reiner" wird, je mehr Kommentare gelöst werden.
+- [ ] High-Contrast Syntax Highlighting (Dark/Light Mode kompatibel).
+
+5. Interaktion und Feedback
+- [ ] Kommentar-Feedback: "Guter Punkt! Eine Magic Number wie '86400' ist schwer zu lesen. Vorschlag: 'SECONDS_PER_DAY'."
+- [ ] Tonalitäts-Check: Bonus für besonders konstruktive Formulierungen ("Wäre es hier möglich, dass..." statt "Das ist falsch!").
+- [ ] Erfolg: "Review beendet. Durch deine Hilfe ist der Code jetzt wartbar und sicher für das Release."
+
+6. KPI-Klarheit
+- [ ] Issue-Detection-Rate: "Gefundene Schwachstellen: X / Y".
+- [ ] Feedback-Quality: "Tonalitäts-Level: Professionell".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Vergessenes Error-Handling", "Redundante Logik", "Namenskonvention-Verstoß", "Sicherheitslücke (SQL-Injektion)".
+- [ ] Tonalität: Sachlich, kollegial, qualitätsorientiert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Kommentar-Popups auf kleinen Displays platzsparend und verständlich?
+- [ ] Test: Funktioniert die Scroll-Kopplung zwischen Code und Kommentaren flüssig?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler begreift Reviewing als wichtigen Teil des Lernprozesses im Team.
+- [ ] Das Interface wirkt wie ein exklusives Werkzeug für "Code-Gurus".
+- [ ] Absolut klares Verständnis für den Unterschied zwischen subjektivem Geschmack und objektiven Standards.

@@ -1,0 +1,33 @@
+1. "Code-Pfad-Verfolger"
+   - Ziel: Verstehe die interne Struktur.
+   - Spielmechanik: 
+     - Du siehst den Quellcode mit vielen `if`s. 
+     - Markiere einen Pfad durch den Code, der die `return` Zeile in Zeile 50 erreicht.
+     - Lernziel: Strukturorientiertes Testen.
+
+2. "Branch-Coverage-Meister"
+   - Ziel: Decke alle logischen Entscheidungen ab.
+   - Spielmechanik: 
+     - `if (A && B)`. 
+     - Welche Wertekombinationen brauchst du für einen vollständigen Test?
+     - Lernziel: Bedingungsüberdeckung.
+
+3. "Data-Flow-Analyzer"
+   - Ziel: Verfolge den Weg einer Variable durch Funktionen.
+   - Spielmechanik: 
+     - Wo wird die Variable definiert, wo genutzt, wo gelöscht?
+     - Finde ungenutzte Zuweisungen.
+     - Lernziel: Statische Code-Analyse.
+
+4. "Exception-Thrower"
+   - Ziel: Provozierte Fehler an spezifischen Codezeilen.
+   - Spielmechanik: 
+     - Du weißt, dass Zeile 23 eine Division durch Null machen kann. 
+     - Erzeuge einen Input, der genau diesen Fehler triggert.
+     - Lernziel: Gezielt Grenzfälle im Code prüfen.
+
+5. "Loop-Testing-Challenge"
+   - Ziel: Teste Schleifen am Limit.
+   - Spielmechanik: 
+     - Teste eine Schleife mit 0, 1 und dem maximalen Durchlauf.
+     - Lernziel: Vermeidung von Endlosschleifen.

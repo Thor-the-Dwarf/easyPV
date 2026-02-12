@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Kapselung komplexer Geschäftslogik in serverseitige, wiederverwendbare Prozeduren (Stored Procedures) zur Performance-Steigerung und Code-Reduktion.
+- Kontext: Datenbank-Programmierung, Backend-Logik.
+- UX-Prinzip:
+  - "The Logic Factory": Die Prozedur ist eine geschlossene Werkhalle. Man füttert sie mit IN-Parametern (Rohstoffe), sie arbeitet intern (IF/THEN/ELSE) und liefert OUT-Parameter (Produkte).
+  - "The Call-Button": Ein großer, mechanischer Schalter zum Auslösen der Fabrik (`CALL procedure`).
+  - "Param-Docking": Parameter-Typen rasten visuell an den Ein- und Ausgängen der Fabrik ein.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Logik-Schleife (Bauch der Fabrik), 2 = Parameter-Definition (Input/Output), 3 = Ausführungs-Status.
+- [ ] Textbudget: Max. 10 Zeichen pro Parametername (`p_id`, `p_total`).
+- [ ] "No-Reload" Flow: Testwerte eingeben -> Fabrik läuft -> Ergebnis erscheint sofort ohne Seiten-Refresh.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> factory-inlet -> logic-engine -> factory-outlet`.
+- [ ] Logic-Engine: Ein transparentes Gehäuse, in dem man die SQL-Verzweigungen (IF/ELSE) als Schienen/Weichen sieht.
+- [ ] Controls: Schieberegler für IN-Werte am linken Rand.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: Vertikale Fabrik-Anordnung (Oben rein, unten raus).
+- [ ] `safe-area-inset` für den CALL-Schalter.
+
+4. Kernvisuals
+- [ ] Steampunk- oder Tech-Ästhetik: Zahnräder, Kolben und leuchtende Datenleitungen (shared_theme.css).
+- [ ] High-Contrast Code: Die Prozedur-Syntax leuchtet in der "Logic-Engine".
+- [ ] Icons: Trichter (IN), Paket (OUT), Lupe (INOUT).
+
+5. Interaktion und Feedback
+- [ ] Live-Ausführung: Der Datenpunkt (Lichtkugel) fließt durch die IF-Schienen der Fabrik.
+- [ ] Erfolg: "Produktion abgeschlossen! OUT-Parameter `total` berechnet: 42.00€."
+- [ ] Fehler-Warnung: "Stopp! Fehlender Input. Die Fabrik braucht Rohstoffe, um zu arbeiten."
+
+6. KPI-Klarheit
+- [ ] Procedural-Logic Score: 0-100%.
+- [ ] Efficiency-Gain: "Netzwerk-Last gesenkt (1 Call statt 10 Queries)".
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Business-Logik: "Rabatt berechnen", "Lagerbestand prüfen", "Kunde-zu-Gold-Status-Upgraden".
+- [ ] Tonalität: Funktional, maschinell, effizient.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die IN/OUT Labels auf dem Smartphone eindeutig unterscheidbar?
+- [ ] Test: Funktioniert die Weichen-Animation (IF-Logik) flüssig bei State-Wechseln?
+
+9. Abnahmekriterien
+- [ ] Der Spieler versteht die Prozedur als "Black Box" mit definierten Schnittstellen.
+- [ ] Das Interface wirkt wie ein mächtiges Backend-Steuerpult.
+- [ ] Haptisches Gefühl beim "Bauen" der internen Logik.

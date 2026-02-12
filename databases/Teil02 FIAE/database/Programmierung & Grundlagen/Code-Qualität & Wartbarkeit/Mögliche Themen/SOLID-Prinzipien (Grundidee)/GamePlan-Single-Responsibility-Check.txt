@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Praktische Anwendung des Single Responsibility Prinzips (SRP) zur Schaffung fokussierter, hochkohäsiver Klassen.
+- Kontext: SOLID-Prinzipien, Objektorientiertes Design, Refactoring.
+- UX-Prinzip:
+  - "The Swiss Army Knife Problem": Eine Klasse ist ein Taschenmesser mit 50 Klingen. Sie ist schwer, unhandlich und gefährlich zu warten.
+  - "Surgical Splitting": Der Spieler nutzt ein "Skalpell" (Trenn-Werkzeug), um die Klingen (Methoden) sauber in verschiedene Spezialwerkzeuge (neue Klassen) zu zerlegen.
+  - "Cohesion-Magnet": Methoden, die zusammengehören, ziehen sich gegenseitig an; Fremdkörper stoßen sich ab.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die überladene Klasse (Monster), 2 = Die logischen Funktionsgruppen, 3 = Die neue, schlanke Modularität.
+- [ ] Textbudget: Max. 5 Methoden pro Monster-Klasse zur schnellen Analyse.
+- [ ] "SRP-Bar": Zeigt an, wie viele Verantwortlichkeiten eine Klasse aktuell trägt (Ziel: 1).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> class-anatomy-viewer -> splitting-table -> component-gallery`.
+- [ ] Anatomy-Viewer: Zentrale Box mit Methoden-Tags (Desktop 50% Breite, Mobile 40dvh Höhe).
+- [ ] Component-Gallery: Am rechten Rand entstehen die neuen "Spezial-Tools" nach der Trennung.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Drag-Method-to-New-Class" Geste.
+- [ ] `overflow-x: auto` für das Gallerie-Board der neuen Klassen.
+
+4. Kernvisuals
+- [ ] Metallische Ästhetik: Klassensymbole als Werkzeuge; Monster-Klassen wirken "klumpig" und überladen.
+- [ ] "Breaking-Apart" Animation: Visuelle Teilung der Box mit Glanz-Effekten an den Schnittkanten.
+- [ ] High-Contrast Icons für Verantwortlichkeiten (z. B. Brief für Mail-Logic, HDD für DB-Logic).
+
+5. Interaktion und Feedback
+- [ ] Split-Feedback: "Schnitt perfekt! Die Mail-Logik hat in der `UserRepository` nichts zu suchen. Jetzt ist sie eine eigene `MailService` Instanz."
+- [ ] Erfolg: "System modularisiert. Jede Klasse hat jetzt genau EINE Aufgabe."
+- [ ] Warnung: "Halt! Du hast die Logik zu fein zerlegt – achte darauf, dass zusammengehörige Teile zusammenbleiben."
+
+6. KPI-Klarheit
+- [ ] Cohesion-Level: "Kohäsions-Grad: Exzellent".
+- [ ] Coupling-Reduction: "Abhängigkeiten minimiert".
+
+7. Content-/Copy-Feinschliff
+- [ ] Beispiele: `OrderManager` (der auch Mails sendet, PDFs erstellt und in die DB schreibt), `SmartHomeHub` (der Licht, Heizung und Security mischt).
+- [ ] Tonalität: Präzise, architektonisch, aufräumend.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Methoden-Namen auf kleinen Karten auf dem Smartphone noch lesbar?
+- [ ] Test: Funktioniert das "Herausschneiden" einer Methode auch bei hektischen Bewegungen flüssig?
+
+9. Abnahmekriterien
+- [ ] Der Spieler verinnerlicht das Ideal der kleinen, fokussierten Klasse.
+- [ ] Das Interface wirkt wie ein exklusives Design-Studio für Software-Architekten.
+- [ ] Höchste Klarheit über den Unterschied zwischen "Alles-Könner" und "Spezialist".

@@ -1,0 +1,34 @@
+1. "Single-Responsibility-Check"
+   - Ziel: Trenne Verantwortlichkeiten in Klassen.
+   - Spielmechanik: 
+     - Klasse `SmartPhone` kann: "Telefonieren", "Foto machen", "Akku laden", "PDF generieren".
+     - Welche Aufgabe gehört hier nicht rein? -> "PDF generieren".
+     - Lernziel: S in SOLID.
+
+2. "Open-Closed-Match"
+   - Ziel: Erweitere Code ohne ihn zu ändern.
+   - Spielmechanik: 
+     - Du hast neue Rabatt-Typen.
+     - Füge ein Interface `DiscountStrategy` hinzu statt in der Main-Klasse `if` hinzuzufügen.
+     - Lernziel: O in SOLID.
+
+3. "Liskov-Substitution-Test"
+   - Ziel: Unterklassen müssen ihre Basisklassen ersetzen können.
+   - Spielmechanik: 
+     - Klasse `Vogel` hat Methode `fliegen()`. Unterklasse `Pinguin` wirft `NotSupportedException`.
+     - Erkenne: Hier ist Liskov verletzt!
+     - Lernziel: L in SOLID.
+
+4. "Interface-Segregation-Sorter"
+   - Ziel: Erschaffe kleine, spezifische Interfaces.
+   - Spielmechanik: 
+     - Ein riesiges Interface `Worker` (eat, sleep, work, code).
+     - Trenne es auf in `Eatable`, `Workable`, etc.
+     - Lernziel: I in SOLID.
+
+5. "Dependency-Inversion-Bridge"
+   - Ziel: Kopple Code von konkreten Implementierungen ab.
+   - Spielmechanik: 
+     - `HighLevelClass` nutzt `SQLDatabase`.
+     - Schiebe ein Interface `Repository` dazwischen.
+     - Lernziel: D in SOLID.

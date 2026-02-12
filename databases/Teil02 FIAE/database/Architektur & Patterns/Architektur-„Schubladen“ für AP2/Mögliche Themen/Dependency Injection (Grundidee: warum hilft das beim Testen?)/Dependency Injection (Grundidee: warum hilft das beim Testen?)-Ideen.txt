@@ -1,0 +1,31 @@
+1. "Constructor-Injector"
+   - Ziel: Entkopple Klassen von ihren Abhängigkeiten durch Übergabe im Konstruktor.
+   - Spielmechanik: 
+     - Klasse `UserAction` braucht `Logger`. Statt `new Logger()` im Code zu schreiben:
+     - Aktion: Füge `Logger` als Parameter zum Konstruktor hinzu.
+     - Lernziel: Lose Kopplung.
+
+2. "Mocking-Challenge"
+   - Ziel: Verstehe, warum DI beim Testen hilft.
+   - Spielmechanik: 
+     - Wir testen `PaymentService`. Wir wollen nicht echtes Geld überweisen (DB!).
+     - Aktion: Schiebe einen `FakeDB` (Mock) per DI hinein.
+     - Lernziel: Testbarkeit von Systemen.
+
+3. "DI-Container-Puzzle"
+   - Ziel: Nutze Frameworks (Spring, NestJS, etc.) zur automatischen Verwaltung.
+   - Spielmechanik: 
+     - Registriere Klassen im Container. "Wenn jemand `Repository` will, gib ihm `SQLRepository`".
+     - Lernziel: Automatisierung des Objekt-Lifecycles.
+
+4. "Hard-Wired-Detector"
+   - Ziel: Finde hart verdrahtete Abhängigkeiten im Code.
+   - Spielmechanik: 
+     - Markiere alle `new` Aufrufe von Services innerhalb von anderen Services.
+     - Lernziel: Erkennung von Architektur-Mängeln.
+
+5. "Inversion-of-Control-Quiz"
+   - Ziel: Verstehe das Prinzip "Don't call us, we'll call you".
+   - Spielmechanik: 
+     - Wer behält die Kontrolle über die Objekterzeugung? (Der Aufrufer vs. das System).
+     - Lernziel: IoC-Konzept.

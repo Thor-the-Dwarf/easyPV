@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Strategische Planung der Testabdeckung nach dem Modell der Testpyramide zur Optimierung von Kosten und Build-Zeiten.
+- Kontext: Teststrategie, CI/CD, ROI von Automatisierten Tests, Antipatterns.
+- UX-Prinzip:
+  - "The Pyramid Architect": Du bist der Baumeister. Eine stabile Pyramide braucht eine breite Basis aus Unit-Test-Ziegeln.
+  - "Construction-Check": Werden die Schichten falsch gestapelt (Ice-Cream-Cone), wird das Bauwerk instabil und teuer.
+  - "Gravity-Physics": Unit-Tests (Unten) sind leicht und schnell. E2E-Tests (Oben) sind schwer und langsam. Das Gewicht muss passen.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Schichten (Ebenen), 2 = Die Mengenverteilung (Menge pro Schicht), 3 = Die Build-Zeit Anzeige.
+- [ ] Textbudget: Max. 5 Wörter pro Schicht-Name (z.B. "Unit: Schnell & Isoliert").
+- [ ] "Stability-Indicator": Zeigt an, ob die Pyramide zu kippen droht.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> building-site -> pyramid-frame -> measurement-dashboard`.
+- [ ] Building-Site: Eine Baustelle in der Wüste (Desktop mittig-unten).
+- [ ] Frame: Ein leeres Dreiecks-Raster, das befüllt werden muss.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Steine-Klopfen" Mechanik – Mehrmaliges Tippen erzeugt viele Unit-Ziegel; langes Halten erzeugt einen schweren E2E-Block.
+- [ ] `object-fit: contain` für die Pyramidengrafik.
+
+4. Kernvisuals
+- [ ] Antike-X-Sci-Fi Ästhetik: Sandfarben, glühende Energie-Ziegel, kranähnliche Drohnen (shared_theme.css).
+- [ ] "The Meltdown": Wenn die Pyramide zum Eisbecher wird, fängt sie an zu schmelzen (Visual: Tropfende Energie).
+- [ ] High-Contrast Metriken für Zeit (ms/min) und Kosten ($).
+
+5. Interaktion und Feedback
+- [ ] Stack-Feedback: "Klick! Du hast 100 Unit-Tests als Fundament gelegt. Deine Pipeline bleibt rasant."
+- [ ] Warn-Signal: "Vorsicht! Mehr E2E-Tests als Unit-Tests machen den Build extrem träge. Deine Entwickler warten zu lange auf Feedback."
+- [ ] Erfolg: "Die große Pyramide von Gizeh (Qualität) steht! Perfekter ROI und maximale Sicherheit bei jedem Commit."
+
+6. KPI-Klarheit
+- [ ] Strategy-Index: "Pyramiden-Konformität: 100%".
+- [ ] Build-Velocity: "Feedback-Zyklus: X Sekunden".
+
+7. Content-/Copy-Feinschliff
+- [ ] Ebenen: Unit Tests (Isoliert), Integration Tests (Verbunden), System/E2E-Tests (Ganzheitlich), Manuelle Tests (Die Kirsche).
+- [ ] Tonalität: Monumental, weise, wegweisend.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist die Pyramidenform auf dem Handy auch bei vielen Ziegeln noch klar erkennbar?
+- [ ] Test: Sind die Auswirkungen des "Ice-Cream-Cone" (Schmelz-Effekt) visuell dramatisch genug?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler begreift, warum 100% E2E-Tests eine schlechte Idee sind.
+- [ ] Das Interface wirkt wie ein episches Puzzle-Spiel.
+- [ ] Nachhaltige Verankerung des Testpyramiden-Konzepts als wirtschaftliche Notwendigkeit.

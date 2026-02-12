@@ -1,0 +1,38 @@
+1. "Rechte-Entzug"
+   - Ziel: Nimm einem User Berechtigungen wieder weg.
+   - Spielmechanik: 
+     - Mitarbeiter wechselt Abteilung. Darf nicht mehr löschen.
+     - `REVOKE DELETE ON user FROM 'mueller';`.
+     - Messbarkeit: Sofortiger Entzug des Zugriffs.
+   - Lernziel: Dynamische Berechtigungsverwaltung.
+
+2. "Cascade-Revoke-Check"
+   - Ziel: Verstehe, was passiert, wenn der "Geber" die Rechte verliert.
+   - Spielmechanik: 
+     - Admin A gab Admin B Rechte. 
+     - Wir entziehen Admin A die Rechte. 
+     - Was passiert bei Admin B? -> Verliert sie evtl. auch (abhängig vom DB-System).
+   - Lernziel: Vererbungsketten bei Rechten.
+
+3. "Fehler-Fahnder (Rechte)"
+   - Ziel: Diagnostiziere "Permission Denied" Fehler.
+   - Spielmechanik: 
+     - User meldet: "Kann Kunden nicht anlegen".
+     - Prüfe mit `SHOW GRANTS FOR user`.
+     - Erkenne: INSERT Recht fehlt.
+   - Lernziel: Support & Fehlerbehebung.
+
+4. "Minimum-Exposure-Taktik"
+   - Ziel: Reduziere Rechte auf das Nötigste.
+   - Spielmechanik: 
+     - User hat ALL PRIVILEGES. 
+     - Revoke fast alles, bis nur noch SELECT übrig ist.
+     - Test: Kann er trotzdem noch seinen Job machen? -> Ja.
+   - Lernziel: Hardening von Datenbank-Accounts.
+
+5. "Revoke-from-Role"
+   - Ziel: Ändere Rechte für eine ganze Gruppe.
+   - Spielmechanik: 
+     - `REVOKE UPDATE ON backup_data FROM 'standard_user_role';`.
+     - Effekt: Alle User in der Gruppe sind sofort eingeschränkt.
+   - Lernziel: Zentrales Security Management.

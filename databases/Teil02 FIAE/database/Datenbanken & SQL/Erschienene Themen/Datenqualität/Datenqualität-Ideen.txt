@@ -1,0 +1,34 @@
+1. "Dubletten-Jäger"
+   - Ziel: Identifiziere und bereinige doppelte Datensätze mit leicht abweichender Schreibweise.
+   - Spielmechanik: 
+     - "Max Mustermann" vs. "M. Mustermann" vs. "Maximilian Mustermann".
+     - Entscheide: Sind das dieselben Personen? Führe sie zusammen (Merge).
+     - Lernziel: Datenkonsistenz und De-Duplikation (DQM).
+
+2. "Constraint-Wächter"
+   - Ziel: Verhindere "Müll" in der Datenbank durch Definition technischer Regeln.
+   - Spielmechanik: 
+     - Alter: -5 Jahre. Postleitzahl: "ABCDE".
+     - Setze CHECK-Constraints und Datentypen ein, um solche Daten abzuwehren.
+     - Lernziel: GIGO-Prinzip (Garbage In, Garbage Out).
+
+3. "Vollständigkeits-Check"
+   - Ziel: Analysiere den Anteil von NULL-Werten in Pflichtfeldern.
+   - Spielmechanik: 
+     - Bar-Chart zeigt: 30% der Kunden haben keine E-Mail. 
+     - Aktion: Pflichtfeld-Constraint einführen oder Daten nacherheben.
+     - Lernziel: Datenvollständigkeit als Qualitätsmerkmal.
+
+4. "ISO-Format-Standardisierer"
+   - Ziel: Vereinheitliche unterschiedliche Formate in einer Spalte.
+   - Spielmechanik: 
+     - Datum: 12.1.24, 01/12/2024, 2024-01-12.
+     - Überführe alle in das SQL-Format `YYYY-MM-DD`.
+     - Lernziel: Standardisierung von Daten (Data Scrubbing).
+
+5. "Referential-Integrity-Scanner"
+   - Ziel: Finde "Waisenkinder" in der Datenbank.
+   - Spielmechanik: 
+     - Eine Bestellung zeigt auf eine `Kunden_ID`, die es gar nicht mehr gibt.
+     - Finde den Fehler und lösche die Leiche oder stelle den Kunden wieder her.
+     - Lernziel: Referentielle Integrität wahren.

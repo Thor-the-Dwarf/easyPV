@@ -1,0 +1,19 @@
+Anforderungen
+1. "Error-Message-Refactor"
+   - Ziel: Optimierung der Benutzerführung durch klare, verständliche und lösungsorientierte Fehlermeldungen in Formularen.
+   - Spielmechanik: 
+     - Präsentation von kryptischen oder unhöflichen Fehlermeldungen (z.B. "Invalid Input", "System Error 500", "Du hast das Passwort vergessen!").
+     - Der Spieler muss diese Meldungen in nutzerzentrierte Texte umformulieren, die das Problem erklären und eine Lösung anbieten.
+     - Zuordnung von Fehlermeldungen zu den betroffenen Formularfeldern (Inline-Feedback).
+     - Messbarkeit: Verständlichkeit und Hilfestellung der resultierenden Texte.
+   - Lernziel: Anwendung von UX-Writing Prinzipien und Verbesserung der Fehler-Resilienz aus Nutzersicht.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ui_error_refactoring.json')
+   - Technische Fehlertexte und deren nutzerzentrierte Pendants.
+- [ ] Shared CSS Check ('business_mathematics.css')
+   - (Anpassung des Text-Editors).
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Validierung der Text-Qualität).
+- [ ] Integration
+   - Tutorial: Warum "Error 404" für Endnutzer wenig hilfreich ist.

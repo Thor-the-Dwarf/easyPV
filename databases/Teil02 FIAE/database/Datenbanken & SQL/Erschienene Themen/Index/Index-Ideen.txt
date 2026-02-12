@@ -1,0 +1,38 @@
+1. "B-Baum-Simulator"
+   - Ziel: Verstehe die Technik hinter dem Index.
+   - Spielmechanik: 
+     - Suche in einer sortierten Liste (Binäre Suche) vs. unsortierte Liste.
+     - Wie viele Schritte brauchst du?
+     - Messbarkeit: Reduktion der Suchschritte von O(n) auf O(log n).
+   - Lernziel: Datenstrukturen für Indizes.
+
+2. "Index-Checkup"
+   - Ziel: Wähle die richtige Spalte für einen Index.
+   - Spielmechanik: 
+     - Spalte A: "ID" (Einzigartig). -> Top für Index.
+     - Spalte B: "Geschlecht" (Nur 2 Werte). -> Schlecht für Index (geringe Selektivität).
+     - Messbarkeit: Maximierung der Selektivität.
+   - Lernziel: Datenbank-Tuning.
+
+3. "Covering-Index-Bonus"
+   - Ziel: Bearbeite Abfragen nur im Index (ohne Tabellenzugriff).
+   - Spielmechanik: 
+     - Index auf (Name, Alter). 
+     - Abfrage: `SELECT alter FROM user WHERE name = 'Max'`.
+     - DB findet alles im Index -> Schnellster Pfad!
+   - Lernziel: Index-Design-Strategien.
+
+4. "Missing-Index-Report"
+   - Ziel: Analysiere langsame Queries.
+   - Spielmechanik: 
+     - Query zeigt "Table Scan" im Explain-Plan. 
+     - Lösung: Welchen Index schlägt das System vor?
+   - Lernziel: Nutzung von Datenbank-Analysetools.
+
+5. "Dead-Index-Cleaner"
+   - Ziel: Lösche ungenutzte Indizes.
+   - Spielmechanik: 
+     - Du hast 5 Indizes. Statistik zeigt: 2 wurden seit Monaten nicht genutzt.
+     - Aktion: `DROP INDEX`.
+     - Resultat: Schreibzugriffe werden schneller.
+   - Lernziel: Wartung der Datenbank.

@@ -1,0 +1,38 @@
+1. "Platz-Verschwender"
+   - Ziel: Berechne den Speicherverbrauch durch Redundanz.
+   - Spielmechanik: 
+     - "Abteilungsname (50 Zeichen)" wird in jeder der 10.000 Mitarbeiterzeilen gespeichert.
+     - Alternativ: "Abteilungs_ID (4 Byte)" + eine kleine Abteilungs-Tabelle.
+     - Frage: Wie viele KB/MB sparst du?
+   - Lernziel: Effizientes Datenbankdesign.
+
+2. "Widerspruchs-Falle"
+   - Ziel: Finde abweichende Werte für die gleiche Sache.
+   - Spielmechanik: 
+     - Zeile 1: "Katalogpreis: 10€". Zeile 2 (gleiches Produkt): "Katalogpreis: 12€".
+     - Welcher Wert ist die Wahrheit (Single Source of Truth)?
+     - Messbarkeit: Erkennen von Inkonsistenzen.
+   - Lernziel: Datenintegrität & Redundanz-Risiken.
+
+3. "Redundanz-Detektor"
+   - Ziel: Identifiziere transitive Abhängigkeiten.
+   - Spielmechanik: 
+     - Mitarbeiter -> Projektleiter -> PL-Telefonnummer.
+     - Wenn wir wissen, wer der PL ist, wissen wir automatisch die Nummer.
+     - Brauchen wir die Nummer in der Mitarbeiter-Zeile? -> Nein (Redundanz).
+   - Lernziel: 3. Normalform (3NF).
+
+4. "Geplante Redundanz"
+   - Ziel: Verstehe, wann Redundanz gut sein kann (Denormalisierung).
+   - Spielmechanik: 
+     - Abfrage der Gesamtsumme über 1 Mrd. Zeilen dauert zu lang.
+     - Lösung: Speichere die Summe redundant in der Kopf-Tabelle.
+     - Achtung: Muss bei jedem Verkauf aktualisiert werden!
+   - Lernziel: Read-Performance vs. Write-Consistency.
+
+5. "Lookup-Table-Match"
+   - Ziel: Ersetze Strings durch IDs.
+   - Spielmechanik: 
+     - Ersetze "Männlich", "Weiblich", "Divers" durch 1, 2, 3.
+     - Verknüpfe zur Lookup-Tabelle.
+   - Lernziel: Speicher-Optimierung und Normierung.

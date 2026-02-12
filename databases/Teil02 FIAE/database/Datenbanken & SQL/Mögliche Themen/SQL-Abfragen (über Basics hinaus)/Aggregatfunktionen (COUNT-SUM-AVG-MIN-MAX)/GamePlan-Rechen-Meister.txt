@@ -1,0 +1,49 @@
+Anforderungen (reverse engineered)
+- Ziel: Auswahl der mathematisch korrekten SQL-Aggregatfunktion zur effizienten Datenanalyse und Kennzahlen-Ermittlung.
+- Kontext: Business Intelligence, Statistik-Dashboard.
+- UX-Prinzip:
+  - "The Data Juicer": Die Rohdaten (Tabelle) werden oben "hineingeworfen", durch einen Funktions-Filter gepresst und unten kommt ein einziger, wertvoller Tropfen (das Ergebnis) heraus.
+  - "Dynamic Recalculation": Das Ergebnis-Display dreht sich wie ein mechanischer Zähler, wenn die Funktion gewechselt wird.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Das Ziel-Ergebnis (z. B. "Summe aller Gehälter"), 2 = Funktions-Auswahl (SUM, AVG, ...), 3 = Rohdaten-Vorschau.
+- [ ] Textbudget: Max. 2 Sätze für die Aufgabenstellung.
+- [ ] "One-Tap-Solve": Funktionen als große, klickbare Kapseln (Pillen-Design).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> analytical-goal -> data-stream -> aggregate-funnel -> final-result`.
+- [ ] Funnel-Area: Animierter Bereich in der Mitte des Screens (Desktop 40% Höhe, Mobile 30dvh).
+- [ ] Rohdaten: Als "Stream" oder Liste am oberen Rand.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: Vertikaler Fluss (Stream -> Funnel -> Result).
+- [ ] `scroll-padding` für die Rohdaten-Liste zur Wahrung des Fokus.
+
+4. Kernvisuals
+- [ ] Analytischer Look: Dunkles Theme mit neon-grünen/blauen Akzenten (BI-Dashboard).
+- [ ] Partikel-Effekte: Wenn Daten "aggregiert" werden, fließen kleine Lichtpunkte in den Funnel.
+- [ ] Typography: Digitale Segment-Anzeige für das Endergebnis.
+
+5. Interaktion und Feedback
+- [ ] Funktions-Feedback: "AVG gewählt: Alle Werte werden addiert und durch die Anzahl geteilt."
+- [ ] Spezial-Fall (NULL): "Achtung! COUNT(spalte) ignoriert NULL-Werte, COUNT(*) zählt alle."
+- [ ] Erfolg: Der berechnete Wert leuchtet prominent auf.
+
+6. KPI-Klarheit
+- [ ] Analyst-Level: "Daten-Durchblick: 100%".
+- [ ] Performance: "Rechenzeit (logisch): minimal".
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Metriken: "Durchschnittliche Ladezeit", "Maximaler Lagerbestand", "Anzahl offener Tickets".
+- [ ] Tonalität: Analytisch, präzise, faktenorientiert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist der Kontrast der Segment-Anzeige bei Tageslicht ausreichend?
+- [ ] Test: Sind die Aggregat-Namen (SUM, MIN, MAX) auch bei kurzen Buttons gut lesbar?
+
+9. Abnahmekriterien
+- [ ] Der Prozess der Datenreduktion (Aggregation) wird visuell als "Veredelung" inszeniert.
+- [ ] Das Interface wirkt wie ein High-End Controlling-Tool.
+- [ ] Minimale Ablenkung, Fokus auf die mathematische Logik.

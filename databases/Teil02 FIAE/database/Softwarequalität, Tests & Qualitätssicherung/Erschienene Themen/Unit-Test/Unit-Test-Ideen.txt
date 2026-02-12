@@ -1,0 +1,36 @@
+1. "Die kleinste Einheit"
+   - Ziel: Isoliere eine einzelne Funktion.
+   - Spielmechanik: 
+     - Teste die Funktion `add(a, b)`. 
+     - Hindernis: Die Funktion ruft intern eine DB auf.
+     - Lösung: Nutze ein Mock-Objekt für die DB.
+     - Lernziel: Isolation beim Unittest.
+
+2. "Arrange-Act-Assert"
+   - Ziel: Strukturiere einen Testfall.
+   - Spielmechanik: 
+     - Bringe die Code-Blöcke in Ordnung: 1. Setup Daten, 2. Funktion aufrufen, 3. Ergebnis prüfen.
+     - Lernziel: Standard-Pattern AAA.
+
+3. "Coverage-Jäger"
+   - Ziel: Erreiche 100% Code-Abdeckung.
+   - Spielmechanik: 
+     - Funktion hat ein `if-else`. 
+     - Schreibe zwei Tests, damit jede Zeile einmal "grün" wird.
+     - Lernziel: Statement & Branch Coverage.
+
+4. "Red-Green-Refactor"
+   - Ziel: Lerne TDD (Test Driven Development).
+   - Spielmechanik: 
+     - 1. Test schreiben (schlägt fehl/rot). 
+     - 2. Minimale Logik einbauen (wird grün).
+     - 3. Code aufräumen.
+     - Lernziel: Test-First-Ansatz.
+
+5. "Assert-Match"
+   - Ziel: Nutze die richtigen Assertions.
+   - Spielmechanik: 
+     - `assertEquals(5, result)`.
+     - `assertTrue(list.isEmpty())`.
+     - `assertNotNull(user)`.
+     - Lernziel: Test-Framework Syntax (JUnit/Jest).

@@ -1,0 +1,19 @@
+Anforderungen
+1. "Architecture-Puzzle (VM vs. Docker)"
+   - Ziel: Tiefes Verständnis der Unterschiede zwischen hardwarenaher Virtualisierung (VM) und Betriebssystem-Virtualisierung (Container) zur Optimierung von Workloads.
+   - Spielmechanik: 
+     - Aufbau der Software-Stacks für beide Technologien durch Anordnung der Schichten (Hardware, Host-OS, Hypervisor/Engine, Guest-OS, Libs, App).
+     - Vergleich der Ressourceneffizienz und Startzeiten in simulierten Lasttests.
+     - Auswahl der passenden Technologie für spezifische Szenarien (z.B. Microservices vs. Legacy Windows-Apps).
+     - Messbarkeit: Korrektheit der Architekturen und Effizienz der gewählten Lösung.
+   - Lernziel: Beherrschung moderner Abstraktionstechnologien und Begründung technologischer Design-Entscheidungen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_vm_vs_container.json')
+   - Schichten-Modelle und Performance-Metriken.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des vertikalen Stapel-Interfaces).
+- [ ] Game-Engine Logic ('game_category_match.js')
+   - (Validierung der Stack-Reihenfolge).
+- [ ] Integration
+   - Info: Warum Container den Kernel des Hosts teilen, VMs aber ein eigenes OS mitbringen.

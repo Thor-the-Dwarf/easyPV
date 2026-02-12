@@ -1,0 +1,38 @@
+1. "Schema-Architekt"
+   - Ziel: Entwirf die Syntax einer Tabellenerstellung.
+   - Spielmechanik: 
+     - Bausteine per Drag & Drop: `CREATE TABLE name (`, `id INT PRIMARY KEY`, `name VARCHAR(50)`, `);`.
+     - Messbarkeit: Korrekte Syntaxfolge und schließende Klammer/Semikolon.
+   - Lernziel: DDL-Grundlagen.
+
+2. "Constraint-Puzzle"
+   - Ziel: Setze die richtigen Bedingungen an Spalten.
+   - Spielmechanik: 
+     - "E-Mail muss ausgefüllt sein". -> NOT NULL.
+     - "E-Mail darf nur einmal vorkommen". -> UNIQUE.
+     - "Alter muss > 18 sein". -> CHECK (age > 18).
+     - Messbarkeit: Korrekte Anwendung von Constraints.
+   - Lernziel: Datenvalidierung auf DB-Ebene.
+
+3. "Default-Value-Check"
+   - Ziel: Setze Standardwerte für neue Zeilen.
+   - Spielmechanik: 
+     - `status VARCHAR DEFAULT 'aktiv'`. 
+     - Was passiert, wenn du beim Einfügen den Status weglässt?
+     - Messbarkeit: Verständnis von Defaults.
+   - Lernziel: DB-Automatisierung.
+
+4. "FK-Relationen-Zeichner"
+   - Ziel: Verknüpfe Tabellen mit FOREIGN KEY.
+   - Spielmechanik: 
+     - `FOREIGN KEY (kunde_id) REFERENCES kunde(id)`.
+     - Messbarkeit: Korrekte Referenzierung auf Primärschlüssel einer anderen Tabelle.
+   - Lernziel: Relationales Modell umsetzen.
+
+5. "Table-Drop-Warnung"
+   - Ziel: Unterscheide DROP von DELETE.
+   - Spielmechanik: 
+     - "Ich will die ganze Tabelle wegwerfen (Struktur + Daten)". -> DROP.
+     - "Ich will nur alle Daten löschen (Struktur bleibt)". -> TRUNCATE.
+     - Messbarkeit: Vermeidung von Datenverlust durch falsche Befehle.
+   - Lernziel: Tabellenmanagement.

@@ -1,0 +1,33 @@
+1. "Schlüssel-Match (Symmetrisch vs Asymmetrisch)"
+   - Ziel: Verstehe den Unterschied der Schlüsselpaare.
+   - Spielmechanik: 
+     - Symmetrisch: Ein Schloss, ein Schlüssel für beide Seiten (AES).
+     - Asymmetrisch: Public Key zum Abschließen, Private Key zum Öffnen (RSA).
+     - Lernziel: Kryptografische Grundkonzepte.
+
+2. "Der sichere Kanal (Public Key Austausch)"
+   - Ziel: Simuliere den Schlüsselaustausch.
+   - Spielmechanik: 
+     - Schicke deinen Public Key an den Server. Der Server verschlüsselt damit eine Nachricht. 
+     - Nur du kannst sie mit deinem Private Key lesen.
+     - Lernziel: Vertraulichkeit im Netz.
+
+3. "Man-in-the-Middle Abwehr"
+   - Ziel: Erkenne gefälschte Schlüssel.
+   - Spielmechanik: 
+     - Ein Hacker fängt den Key ab und schickt dir einen eigenen. 
+     - Wie prüfst du die Echtheit? -> Zertifikat und Root-CA.
+     - Lernziel: Authentizität von Kommunikationspartnern.
+
+4. "Passwort-Tresor"
+   - Ziel: Warum wir Passwörter nicht im Klartext speichern.
+   - Spielmechanik: 
+     - Sieh dir die Datenbank an. Stehen da echte Wörter oder Hieroglyphen?
+     - Lernziel: Verschlüsselung von gespeicherten Daten (At Rest).
+
+5. "Brute-Force Simulator"
+   - Ziel: Verstehe die Bedeutung der Schlüssellänge.
+   - Spielmechanik: 
+     - Probiere alle Kombinationen für einen 4-Bit Key (Sekunden).
+     - Wie lang dauert es bei 256-Bit? (Trillionen Jahre).
+     - Lernziel: Sicherheit durch Komplexität.

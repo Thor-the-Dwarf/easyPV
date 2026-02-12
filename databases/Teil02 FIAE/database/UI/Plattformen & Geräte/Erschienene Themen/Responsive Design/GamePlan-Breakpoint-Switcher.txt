@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Praktische Anwendung von Responsive Design und Media Queries zur nahtlosen UI-Anpassung.
+- Kontext: Mobile First, Breakpoints, Viewports, Liquid Layouts, CSS-Flexbox/Grid.
+- UX-Prinzip:
+  - "The Origami UI": Die Weboberfläche ist ein Blatt Papier, das sich beim Verkleinern des Viewports exakt an den Knickstellen (Breakpoints) faltet oder entfaltet.
+  - "Fluid-Scale": Elemente fließen wie Wasser zwischen den Zuständen (Transitionen).
+  - "Container-IQ": Module entscheiden je nach Breite selbst, wie sie sich präsentieren (z.B. Navigation -> Hamburger-Menü).
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die aktuelle Breite (px), 2 = Der Breakpoint-Indikator (Mobile/Tablet/Desktop), 3 = Die Layout-Umformung.
+- [ ] Textbudget: Kurze Tags pro Modul (z.B. "Spalten-Basis: 33%").
+- [ ] "Viewport-Ruler": Ein digitales Lineal am oberen Rand.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> resizer-environment -> device-frame -> layout-inspector`.
+- [ ] Environment: Eine minimalistische "Studio-Halterung" (shared_theme.css: --surface-bg).
+- [ ] Frame: Ein interaktives Fenster mit einem Dragg-Handle an der rechten Seite (Desktop mittig).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Dual-Thumb-Resizer" Geste zur Simulation der Breite.
+- [ ] `resize: horizontal` Simulation via JavaScript für exakte Kontrolle.
+
+4. Kernvisuals
+- [ ] Design-Studio Ästhetik: Blueprint-Raster, Millimeter-Anzeigen, technische Kanten, dynamische Schatten (shared_theme.css).
+- [ ] "The Snap": Wenn ein Breakpoint erreicht wird, "rastet" das Layout hörbar/spürbar ein.
+- [ ] High-Contrast Linien für Media-Query Grenzen (768px, 1024px...).
+
+5. Interaktion und Feedback
+- [ ] Switch-Feedback: "Klick! 768px unterschritten. Die Sidebar klappt ein – optimale Platznutzung für Tablets!"
+- [ ] Design-Check: "Achtung! Bei 350px Breite ragen die Bilder aus dem Container. Benutze `max-width: 100%`!"
+- [ ] Erfolg: "Responsive-Profi! Deine Seite faltet sich in jeder Breite zu einem perfekten Origami."
+
+6. KPI-Klarheit
+- [ ] Breakpoint-Efficiency: "Fehlerfreie Übergänge: 100%".
+- [ ] Layout-Fluidity: "Glatter Fluss ohne Brüche: Bestanden".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "E-Commerce Startseite", "Dichtes Daten-Dashboard", "Blog mit Seitenleiste".
+- [ ] Tonalität: Präzise, gestalterisch, dynamisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist der Resizer-Handle auf Smartphones groß genug, um ihn flüssig zu ziehen?
+- [ ] Test: Bleiben die Proportionen der UI-Elemente während der Skalierung harmonisch?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler verankert Breakpoints als bewusste Design-Entscheidungen, nicht als Zufall.
+- [ ] Das Interface wirkt wie ein Profi-Tool für Frontend-Entwickler.
+- [ ] Absolute Sicherheit im Umgang mit Viewport-Einheiten (vw, vh) und Media Queries.

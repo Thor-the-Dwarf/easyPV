@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Beherrschung der zyklomatischen Komplexität (McCabe) zur Vermeidung von "Spaghetti-Code" und Sicherstellung der Testbarkeit.
+- Kontext: Softwaremetriken, Code-Qualität, Risiko-Management.
+- UX-Prinzip:
+  - "The Maze Architect": Jede `if`-Abfrage, jede `for`-Schleife ist ein Abzweig im Labyrinth. Je mehr Abzweige, desto schwerer findet der Tester den Ausgang.
+  - "Complexity-Heat": Der Code glüht rot auf, wenn die Verschachtelung zu tief wird. 
+  - "Path-Counter": Eine Anzeige zählt die minimal notwendigen Testfälle, um alle Wege durch den Irrgarten zu begehen.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Verzweigungspunkte (Entscheidungen), 2 = Die aktuelle v(G)-Zahl, 3 = Der Schwellenwert (Max. 10).
+- [ ] Textbudget: Kurze, verschachtelte Funktionen (max. 15 Zeilen).
+- [ ] "Logic-Graph": Ein kleines, abstraktes Knotendiagramm neben dem Code, das mitwächst.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> code-blueprint -> maze-preview -> complexity-o-meter`.
+- [ ] Blueprint: Interaktiver Code-Bereich (Desktop links, Mobile oben).
+- [ ] Preview: Eine Labyrinth-Visualisierung, die die logischen Pfade darstellt.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-on-Keyword" (if, else, switch) zum Markieren der Entscheidungspunkte.
+- [ ] `safe-area-inset` für das HUD mit der Metrik-Anzeige.
+
+4. Kernvisuals
+- [ ] Architektur-Ästhetik: Isometrische Ansichten von Wänden und Gängen, technische Raster (shared_theme.css).
+- [ ] Warn-Glow: Bei v(G) > 10 fängt der Bildschirmrand an zu pulsieren (Kritischer Bereich).
+- [ ] High-Contrast IDs für die Zählung der Kanten und Knoten.
+
+5. Interaktion und Feedback
+- [ ] Zähl-Feedback: "Klick! Eine `switch`-Anweisung mit 4 Cases fügt 3 Entscheidungspunkte hinzu. v(G) steigt auf 5."
+- [ ] Aha-Moment: "Siehst du? Dieses Labyrinth hat jetzt 20 Sackgassen. Ein Unit-Test kann das niemals allein abdecken."
+- [ ] Erfolg: "Code unter Kontrolle! Du hast die Komplexität gebändigt und die Wartbarkeit gesichert."
+
+6. KPI-Klarheit
+- [ ] Metric-Precision: "v(G) Berechnung: 100% korrekt".
+- [ ] Reliability-Score: "Testaufwand-Prognose: X Testfälle nötig".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Login-Validierung", "Rabatt-System mit 10 Bedingungen", "Verschachtelte Datenverarbeitung".
+- [ ] Tonalität: Analytisch, warnend, strukturierend.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist das mitwachsende Knotendiagramm auf dem Handy noch erkennbar?
+- [ ] Test: Sind die Zählregeln für `AND/OR` Verknüpfungen in `if`-Statements korrekt hinterlegt?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler begreift hohe Komplexität als direkten Feind der Softwarequalität.
+- [ ] Das Interface wirkt wie ein hochmodernes Analyse-Dashboard für Code-Forensik.
+- [ ] Intuitive Bedienung der mathematischen Metrik.

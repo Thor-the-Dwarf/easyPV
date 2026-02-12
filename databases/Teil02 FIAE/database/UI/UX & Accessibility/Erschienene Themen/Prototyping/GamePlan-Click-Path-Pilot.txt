@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Erstellung und Validierung interaktiver Prototypen durch Verknüpfung statischer Screens.
+- Kontext: Prototyping, User-Flows, Klick-Pfade, Usability-Testing, Interaction Design.
+- UX-Prinzip:
+  - "The Nervous System": Statische Mockups sind die Organe (Zustände) einer Anwendung.
+  - "Synapse-Linking": Der Spieler zieht "Nervenstränge" (Verbindungen) von einem Button an Screen A zu Screen B.
+  - "Interaction-Pulse": Ein Klick sendet einen Lichtimpuls durch den Nervenstrang und erweckt die Anwendung zum Leben.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der aktive Button (Trigger), 2 = Das Ziel (Screen), 3 = Der Gesamt-Flow (The Path).
+- [ ] Textbudget: Max. 10 Wörter pro Task (z.B. "Erstelle den Pfad für 'Passwort vergessen'").
+- [ ] "Connection-Board": Eine Übersicht aller bisherigen Screens und deren Verknüpfungen.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> workbench-canvas -> interaction-palette -> flow-preview`.
+- [ ] Canvas: Ein großer Bereich mit frei verschiebbaren Screens (Desktop mittig-links).
+- [ ] Palette: Auswahl der Interaktions-Typen (Tap, Hover, Swipe) am Rand.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Drag-to-Link" mit Finger – Ziehen einer Linie von A nach B.
+- [ ] `touch-action: pan-x pan-y` für freie Navigation über die Screens.
+
+4. Kernvisuals
+- [ ] Bio-Tech Ästhetik: Dunkler Hintergrund, leuchtende neuronale Pfade, semi-transparente Screens, Puls-Effekte (shared_theme.css).
+- [ ] "The Flow": Ein wandernder Lichtpunkt zeigt den aktiven Navigationspfad bei der Simulation.
+- [ ] High-Contrast Trigger-Flächen (Hotspots).
+
+5. Interaktion und Feedback
+- [ ] Linking-Feedback: "Klick! Synapse gebildet. Der 'Kaufen'-Button leitet jetzt erfolgreich zur Checkout-Seite."
+- [ ] Validierungs-Aha: "Stopp! Du hast den Rückweg vergessen (Dead End). Verbinde den 'Zurück'-Pfeil mit der Startseite."
+- [ ] Erfolg: "Nervensystem komplett! Dein Prototyp ist jetzt interaktiv und bereit für den ersten Nutzer-Test."
+
+6. KPI-Klarheit
+- [ ] Path-Completeness: "Workflow-Abdeckung: 100%".
+- [ ] Flow-Logic: "Fehlerfreier Pfad: Zertifiziert".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "User Onboarding", "In-App Kauf", "Profil-Einstellungen", "Fehler-Behandlung (Reset)".
+- [ ] Tonalität: Technisch, lebendig, logisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Verbindungslinien auch bei vielen Screens auf dem Handy noch übersichtlich?
+- [ ] Test: Funktioniert der Wechsel zwischen "Edit" und "Play" Mode reibungslos?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler begreift Prototyping als das Definieren von Wegen, nicht von Bildern.
+- [ ] Das Interface wirkt wie ein Profi-Tool für Interaction Designer (Figma-Vibes).
+- [ ] Absolute Sicherheit im Entwurf von logischen Zustandsübergängen (State Management).

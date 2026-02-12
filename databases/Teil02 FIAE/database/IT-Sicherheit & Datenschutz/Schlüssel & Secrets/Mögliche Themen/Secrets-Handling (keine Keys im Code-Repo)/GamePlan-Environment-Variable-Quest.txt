@@ -1,0 +1,19 @@
+Anforderungen
+1. "Environment-Variable-Quest"
+   - Ziel: Verständnis der Trennung von Konfiguration und Code zur Vermeidung von Sicherheitslecks durch hartkodierte Secrets.
+   - Spielmechanik: 
+     - Der Spieler muss sensitive Daten (API-Keys, DB-Passwörter) aus dem Source-Code identifizieren und in eine geschützte `.env` Datei extrahieren.
+     - Konfiguration von `.gitignore`, um den Upload von Secrets in Repositories zu verhindern.
+     - Simulation eines CI/CD Prozesses, bei dem Secrets sicher injiziert werden.
+     - Messbarkeit: Abwesenheit von Secrets im Source-Code und erfolgreiches Laden der Konfiguration zur Laufzeit.
+   - Lernziel: Beherrschung des modernen Secret-Managements und Schutz der Infrastruktur vor Credential-Leaks.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_secrets_env.json')
+   - Source-Code Fragmente und Secret-Templates.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Editor-Interfaces).
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Validierung der .env Extraktion).
+- [ ] Integration
+   - Tutorial: Warum "hartkodierte" Keys das größte Sicherheitsrisiko in Open Source Projekten sind.

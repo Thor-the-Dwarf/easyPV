@@ -1,0 +1,31 @@
+1. "JSON-Syntax-Polizei"
+   - Ziel: Vermeide häufige Syntaxfehler.
+   - Spielmechanik: 
+     - `{ "name": 'Max' }`. -> Falsch (Einfache Anführungszeichen).
+     - `{ name: "Max" }`. -> Falsch (Key muss in Quotes).
+     - Lernziel: Strikte JSON-Syntax.
+
+2. "Datentyp-Zuweiser"
+   - Ziel: Nutze die 6 JSON-Typen korrekt.
+   - Spielmechanik: 
+     - String, Number, Object, Array, Boolean, Null.
+     - Ordne Werte zu: `[1, 2]` -> Array. `true` -> Boolean.
+     - Lernziel: Datentypen im Web-Datenaustausch.
+
+3. "Parse & Stringify Simulator"
+   - Ziel: Verstehe die Umwandlung im Code.
+   - Spielmechanik: 
+     - Objekt in JS -> `JSON.stringify()` -> String für das Netzwerk.
+     - Lernziel: Serialisierung und Deserialisierung.
+
+4. "Verschachtelungs-Profi"
+   - Ziel: Erstelle komplexe Strukturen.
+   - Spielmechanik: 
+     - Baue ein "Kunde mit einer Liste von Adressen" Objekt.
+     - Lernziel: Hierarchische Datenmodelle.
+
+5. "API-Payload-Check"
+   - Ziel: Extrahiere Info aus einer API-Antwort.
+   - Spielmechanik: 
+     - Zeige große JSON-Antwort. "Wie heißt die Stadt des zweiten Kontakts?".
+     - Lernziel: Datenanalyse in der Praxis.

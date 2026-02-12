@@ -1,0 +1,37 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Konstruktiver Umgang mit Kundenfeedback im Review-Prozess und Vermeidung von unkontrolliertem Scope-Creep.
+- Game-Mechanic: "The Feedback Champion". Der Spieler steht auf einer Bühne (Demo). Stakeholder werfen "Feedback-Bälle". Diese müssen gefangen und in die richtigen Körbe (Backlog, Bugfix, Reject) sortiert werden.
+- Challenge: 
+  - Level 1: Eindeutige Wünsche ("Das ist ein Fehler" -> Bugfix).
+  - Level 2: "The Nice-to-Have Trap" - Verlockende Features, die aber das Budget sprengen würden.
+  - Level 3: "Multiple Stakeholders" - CEO und Lead-Developer geben gegensätzliches Feedback. Wer hat Vorrang?
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Stakeholder-Happiness" (Smiley-Bar), "Backlog-Health" (Budget-Indicator), "Delivery-Confidence".
+- [ ] Scoring: "Diplomacy Bonus" für kluges Ablehnen ("Nein" sagen, ohne jemanden zu verärgern). Abzug bei "Backlog-Explosion".
+
+2. Screen-Layout (The Grand Review)
+- [ ] `stage -> speaker-pulpit -> crowd-bubbles -> triage-zone`.
+- [ ] Bubbles: Fliegende Sprechblasen mit Text + Avatar des Absenders.
+- [ ] Triage-Zone: Drei große "Impact-Zonen" am unteren Rand.
+
+3. Kernvisuals und Effekte
+- [ ] Event-Atmosphäre: Scheinwerfer-Licht, Applaus-Sound bei guter Entscheidung, Raunen bei schlechter Wahl.
+- [ ] "Backlog-Grow": Ein sichtbarer Stapel von Tasks wächst im Hintergrund an.
+
+4. Browser- und Device-Resilienz
+- [ ] `will-change: transform` für fliegende Sprechblasen.
+- [ ] Mobile: "Swipe-up" zum Ablehnen, "Tap" zum Akzeptieren.
+
+5. Content-Strategie (The Feed-Pool)
+- [ ] 20 authentische Zitate: "Können wir das in Rot haben?", "Das Feature brauchen wir morgen!", "Das war so nicht abgemacht".
+
+6. QA-Paket
+- [ ] Test: Fühlt sich die Entscheidungslast (Scope vs. Happiness) real an?
+- [ ] Test: Ist das Feedback-Tempo im Master-Level fordernd?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler lernt die Kunst des Feedbacks-Management in agilen Prozessen.
+- [ ] Das Interface wirkt lebendig, spielerisch und emotional involvierend.
+- [ ] Klarheit über die Grenzen des Sprints und des Backlogs.

@@ -1,0 +1,19 @@
+Anforderungen
+1. "Request-Response-Matching"
+   - Ziel: Grundlegendes Verständnis des zustandslosen Request-Response-Zyklus des HTTP-Protokolls.
+   - Spielmechanik: 
+     - Simulation einer Client-Server Interaktion.
+     - Der Spieler erhält verschiedene HTTP-Requests (z.B. "Lade Bild", "Sende Formular") und muss die logisch korrekte Response (Statuscode + Content-Type) zuordnen.
+     - Identifikation von Header-Feldern, die für die Kommunikation entscheidend sind.
+     - Messbarkeit: Korrekte Zuordnung der Kommunikationspaare.
+   - Lernziel: Beherrschung der Web-Grundlagen und Fehlersuche im Netzwerk-Stack.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_http_basics.json')
+   - Request-Response Paare und Header-Definitionen.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Visuelle Darstellung von Client- und Server-Boxen).
+- [ ] Game-Engine Logic ('game_category_match.js')
+   - (Wiederverwendung der Matching-Logik).
+- [ ] Integration
+   - Tutorial: Warum HTTP ein "zustandsloses" Protokoll ist.

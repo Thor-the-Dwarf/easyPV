@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Praktische Umsetzung der Zugriffskontrolle (DCL) nach dem Least-Privilege Prinzip zur Vermeidung von Datenmissbrauch.
+- Kontext: Security-Management, Rollen-Konzept.
+- UX-Prinzip:
+  - "The Gatekeeper": Der Spieler ist der Türsteher eines Datenbanksystems. Verschiedene Personen (User-Icons) wollen an verschiedene Tabellen.
+  - "Keycards" (Verben): GRANT SELECT, INSERT etc. sind Keycards, die der Spieler an die User verteilt.
+  - "Permission-Preview": Ein Blick durch das Schlüsselloch zeigt, was der User mit seinen aktuellen Rechten tun kann (und was nicht).
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Rollen-Anforderung (Wer will was?), 2 = Die Rechte-Toolbar (Aktionen), 3 = Die System-Grenze (Tabellen).
+- [ ] Textbudget: Max. 5 Wörter pro Erlaubnis (z. B. "Darf Gehälter nur lesen").
+- [ ] "Least Privilege" Counter: Anzeige für überflüssige Rechte (Punkteabzug bei zu viel Freiheit).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> user-request-lane -> database-lockbox -> permission-configurator`.
+- [ ] Lane: User kommen von links mit ihren Wünschen rein (Desktop 30% Breite, Mobile oberer Bereich).
+- [ ] Configurator: Interaktives Fenster zum Drag-and-Drop der Keycards.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-to-Approve" / "Swipe-to-Deny" für schnelle DCL-Entscheidungen.
+- [ ] High-Contrast Buttons für DCL-Keywords (GRANT, REVOKE, TO, ON).
+
+4. Kernvisuals
+- [ ] Security-Dashboard Look: Dunkle Oberflächen, Scancode-Visuals, Biometrie-Icons (shared_theme.css).
+- [ ] "Access-Denied" Splash: Wenn ein User ohne Recht zugreifen will, schließt sich das Gitter visuell.
+- [ ] Farbcodierung: SELECT (Grün), UPDATE/DELETE (Gelb/Rot), ALL (Warnendes Lila).
+
+5. Interaktion und Feedback
+- [ ] Live-Check: "Der User kann jetzt löschen – bist du sicher? Das ist für einen Azubi zu viel Macht!"
+- [ ] Erfolg: "Sicherheits-Audit bestanden! Alle Rollen haben genau die Rechte, die sie zum Arbeiten brauchen."
+- [ ] Sound/Visual: Ein sattes "Klack" beim Verriegeln einer Tabelle.
+
+6. KPI-Klarheit
+- [ ] Security-Level: "Vulnerabilitäts-Risiko: Minimal".
+- [ ] Privacy-Score: "Datenschutzkonformität (DSGVO): 100%".
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Rollen: "Support-Agent", "Buchhalter", "Interner Auditor", "App-Service-Account".
+- [ ] Tonalität: Autoritär, sicherheitsbewusst, präzise.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Tabellennamen auf der "Lockbox" auf kleinen Screens noch lesbar?
+- [ ] Test: Funktioniert der REVOKE-Mechanismus (Rechte wieder wegnehmen) ebenso intuitiv wie GRANT?
+
+9. Abnahmekriterien
+- [ ] Der Spieler realisiert, dass jedes nicht vergebene Recht die Sicherheit erhöht.
+- [ ] Das Interface wirkt wie ein Kontrollraum in einem Rechenzentrum.
+- [ ] Schnelle, fehlerfreie Zuweisung komplexer Berechtigungskombinationen.

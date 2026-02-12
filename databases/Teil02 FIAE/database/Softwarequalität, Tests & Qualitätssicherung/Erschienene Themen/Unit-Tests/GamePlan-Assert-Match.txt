@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Beherrschung von Unit-Testing Assertions zur automatisierten Verifizierung von Funktionszuständen und Logik-Ergebnissen.
+- Kontext: Unit-Testing Frameworks (JUnit, Jest, PyTest), Testgetriebene Entwicklung (TDD).
+- UX-Prinzip:
+  - "The Truth Detector": Jede Assertion ist ein präziser Sensor. Ist der Zustand (Actual) ungleich der Wahrheit (Expected), geht die rote Warnlampe an.
+  - "Sensor-Matching": Der Spieler muss für unterschiedliche Phänomene den richtigen Sensor wählen (z.B. `assertEquals` für Werte, `assertNull` für Leere).
+  - "Signal-Phase": Durchführung des Tests mit sofortiger Red/Green Rückmeldung (Pass/Fail).
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Das Signal (Success/Fail), 2 = Die Assertion (Sensor), 3 = Die Testdaten (Quelle).
+- [ ] Textbudget: Max. 8 Zeilen isolierter Code-Snippets.
+- [ ] "Truth-HUD": Anzeige von `Expected` vs. `Actual` in Echtzeit.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> logic-oscilloscope -> assertion-deck -> test-runner-log`.
+- [ ] Oscilloscope: Dynamische Visualisierung der Datenströme, die auf die Sensoren treffen (Desktop mittig).
+- [ ] Assertion-Deck: Ein "Schaltbrett" am unteren Rand mit den Test-Methoden.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-to-Snap" Mechanik zum Ankoppeln der richtigen Assertion an den Datenstrom.
+- [ ] `safe-area-inset` für das Runner-Log am unteren Rand.
+
+4. Kernvisuals
+- [ ] Cyber-Labor Ästhetik: Wellenformen, digitale Terminals, grün/rote Energieflüsse (shared_theme.css).
+- [ ] "The Assert-Shot": Ein kleiner Laserstrahl, der prüft, ob der Wert durch die Schablone passt.
+- [ ] High-Contrast Colors: Neongrün (Pass) vs. Alarm-Rot (Fail).
+
+5. Interaktion und Feedback
+- [ ] Match-Feedback: "Klick! `assertEquals(expected, actual)` eingesetzt. Der Wert 42 passt perfekt zur Erwartung."
+- [ ] Red-Light-Moment: "Bzzz! `assertTrue` ist fehlgeschlagen, da die Bedingung FALSE war. Test gescheitert!"
+- [ ] Erfolg: "Alle Sensoren auf GRÜN. Dein Modul ist mathematisch abgesichert."
+
+6. KPI-Klarheit
+- [ ] Assert-Accuracy: "Trefferrate der Sensoren: 100%".
+- [ ] Test-Stability: "Immunität gegen Regressionen: Gesteigert".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Listen-Größe prüfen", "Null-Values abfangen", "Exceptions provozieren", "Mathematische Ergebnisse".
+- [ ] Tonalität: Technisch, binär, verlässlich.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die `Expected/Actual` Vergleiche auch bei schmalen Displays lesbar?
+- [ ] Test: Sind die Fehlermeldungen bei einem 'False Assert' hilfreich ("Expected '404', but got '200'")?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler verankert Assertions als das "Herzstück" jeder automatisierten Qualitätssicherung.
+- [ ] Das Interface wirkt wie ein futuristisches Testzentrum für Mikrochips.
+- [ ] Maximale Klarheit über die Syntax gängiger Frameworks.

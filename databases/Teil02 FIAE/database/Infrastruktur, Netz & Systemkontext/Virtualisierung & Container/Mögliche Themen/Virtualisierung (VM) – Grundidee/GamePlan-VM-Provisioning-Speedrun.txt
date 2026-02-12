@@ -1,0 +1,19 @@
+Anforderungen
+1. "VM-Provisioning Speedrun"
+   - Ziel: Verständnis des administrativen Prozesses zur Bereitstellung und Verwaltung virtueller Infrastrukturen (Compute Resources).
+   - Spielmechanik: 
+     - Konfiguration von virtuellen Hardware-Eigenschaften (vCPUs, vRAM, vDisk, vNIC).
+     - Durchführung von Lifecycle-Aktionen: Snapshot erstellen, Klonen, Live-Migration (vMotion) zwischen physischen Hosts.
+     - Optimierung der Hardware-Konsolidierung (Density) auf einem Cluster.
+     - Messbarkeit: Geschwindigkeit der Bereitstellung und Einhaltung der Service-Level-Agreements (SLA).
+   - Lernziel: Beherrschung der virtuellen Administration und Verständnis für die Skalierbarkeit von IT-Ressourcen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_vm_lifecycle.json')
+   - VM-Profile und Administrations-Tasks.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung der Dashboard-Ansicht).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Tracking der Ressourcen-Verfügbarkeit).
+- [ ] Integration
+   - Info: Was "Thin Provisioning" bedeutet und wie es Speicherplatz spart.

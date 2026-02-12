@@ -1,0 +1,37 @@
+1. "Procedure-Baukasten"
+   - Ziel: Erstelle eine gespeicherte Prozedur.
+   - Spielmechanik: 
+     - `CREATE PROCEDURE get_user (IN uid INT) BEGIN ... END;`.
+     - Messbarkeit: Korrekte Syntax für Parameter und Rumpf.
+   - Lernziel: Logik auf den DB-Server auslagern.
+
+2. "Call-Manager"
+   - Ziel: Rufe Prozeduren mit Parametern auf.
+   - Spielmechanik: 
+     - `CALL update_stock(105, -1);`.
+     - Frage: Was bewirkt der Call im Hintergrund?
+     - Messbarkeit: Verstehen des Funktionsaufrufs.
+   - Lernziel: Abstraktion von SQL-Logik.
+
+3. "Security-Shield"
+   - Ziel: Nutze Prozeduren zur Zugriffskontrolle.
+   - Spielmechanik: 
+     - User darf NICHT direkt in Tabelle `gehalt` schreiben.
+     - User darf ABER Prozedur `set_gehalt()` ausführen (die intern prüft).
+     - Messbarkeit: Erhöhung der Sicherheit durch Abstraktionsschicht.
+   - Lernziel: Database Security Patterns.
+
+4. "Business-Logic-Offloader"
+   - Ziel: Verlagere Berechnungen in die Datenbank.
+   - Spielmechanik: 
+     - Berechne Mehrwertsteuer für 10.000 Zeilen. 
+     - Vergleich: Client zieht alle Daten vs. Prozedur macht es auf dem Server.
+     - Lerne: Spart Netzwerk-Traffic.
+   - Lernziel: Performance-Vorteile von Stored Procedures.
+
+5. "IF-ELSE in der DB"
+   - Ziel: Nutze Kontrollstrukturen in Procedures.
+   - Spielmechanik: 
+     - `IF balance > amount THEN update ELSE error END IF;`.
+     - Baue die Logik im Procedure-Rumpf zusammen.
+   - Lernziel: Programmierung innerhalb SQL (PL/SQL, T-SQL).

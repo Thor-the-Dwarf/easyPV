@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Differenzierung zwischen vertikaler (Scale-up) und horizontaler (Scale-out) Skalierung unter Berücksichtigung von SLA-Anforderungen.
+- Game-Mechanic: "The Scaling Tower". Traffic-Wellen (User-Icons) prallen auf dein System. Du musst entscheiden: Den einen Server "aufpumpen" (Größer machen) oder weitere Server "daneben stellen" (Klonen).
+- Challenge: 
+  - Level 1: Steigender Traffic (Scale-up reicht).
+  - Level 2: "Single Point of Failure" - Du hast den Server maximal aufgepumpt, dann fällt er aus -> Game Over. Lerneffekt: Du brauchst horizontale Redundanz!
+  - Level 3: "Load Balancer Master" - Verwalte 10 Server; achte auf die Kosten pro Server vs. Ausfallsicherheit.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "User-Load" (Pressure-Gauge), "Budget-Burn" ($), "Redundancy-Level" (Bonus).
+- [ ] Scoring: "Stability-Bonus" für ausfallsichere Setups. Abzug bei ungenutzten Ressourcen (Überkapazität).
+
+2. Screen-Layout (The Server Rack)
+- [ ] `skyline-view -> the-datacenter -> node-cluster -> upgrade-panel`.
+- [ ] Datacenter: Visuelle Darstellung von Blechkisten, die wachsen oder sich vermehren.
+- [ ] Upgrade-Panel: Zwei Schalter: "POWER UP" (Vertikal) / "CLONE" (Horizontal).
+
+3. Kernvisuals und Effekte
+- [ ] Modern Cloud Ästhetik: Isometrisch, Neon-Blau/Weiß, pulsierende Datenleitungen.
+- [ ] "Growth-Effect": Server werden physisch größer (Scale-up) oder neue Server "poppen" per Animation auf (Scale-out).
+- [ ] Traffic-Wellen: Sichtbare Schwärme von User-Icons fließen auf die Server zu.
+
+4. Browser- und Device-Resilienz
+- [ ] `flex-wrap: wrap` für die Server-Knoten.
+- [ ] Mobile: "Tap-to-Scale" Steuerung.
+
+5. Content-Strategie (The Growth-Curves)
+- [ ] 10 Szenarien: Black Friday Sale, Virales Video, langsames organisches Wachstum, Hacker-Angriff.
+
+6. QA-Paket
+- [ ] Test: Ist die Gefahr des "Single Point of Failure" spielerisch greifbar?
+- [ ] Test: Wirkt das Budget-Management einschränkend genug für taktische Tiefe?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler versteht die Vorfalle von horizontaler Skalierung (Scale-out) für die Cloud-Welt.
+- [ ] Das Interface wirkt modern, technoid und "skalierbar".
+- [ ] Befriedigendes Gefühl beim Meistern von massivem Traffic.

@@ -1,0 +1,31 @@
+1. "MVC-Role-Match"
+   - Ziel: Weise Aufgaben Model, View oder Controller zu.
+   - Spielmechanik: 
+     - "HTML Formular zeichnen" -> View.
+     - "Daten aus DB laden" -> Model.
+     - "Button-Klick verarbeiten" -> Controller.
+     - Lernziel: Klassische Trennung der Belange (SoC).
+
+2. "Data-Binding-Runner"
+   - Ziel: Verstehe MVVM (Model-View-ViewModel).
+   - Spielmechanik: 
+     - Ändere einen Wert im ViewModel -> Die View aktualisiert sich automatisch.
+     - Lernziel: Automatisches UI-Update ohne expliziten Controller.
+
+3. "Fat-Controller-Refactoring"
+   - Ziel: Halte Controller/ViewModels schlank.
+   - Spielmechanik: 
+     - Verschiebe komplexe Logik vom Controller ins "Service Layer" oder "Model".
+     - Lernziel: Wartbare Architektur.
+
+4. "Route-to-Action"
+   - Ziel: Verstehe den Flow einer Web-App.
+   - Spielmechanik: 
+     - URL `/user/edit/5` -> Welcher Controller und welche Methode wird aufgerufen?
+     - Lernziel: Routing-Basics in MVC.
+
+5. "State-Management-Challenge"
+   - Ziel: Wo liegt die Wahrheit (Single Source of Truth)?
+   - Spielmechanik: 
+     - Synchronisiere mehrere Views mit einem einzigen Model.
+     - Lernziel: Datenkonsistenz in UI-Apps.

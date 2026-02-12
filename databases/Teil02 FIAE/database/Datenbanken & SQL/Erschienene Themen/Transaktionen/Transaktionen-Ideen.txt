@@ -1,0 +1,42 @@
+1. "ACID-Sortierer"
+   - Ziel: Ordne die Eigenschaften von Transaktionen zu.
+   - Spielmechanik: 
+     - "Atomarität (A)". -> Alles oder nichts.
+     - "Konsistenz (C)". -> Keine Regelverletzung.
+     - "Isolation (I)". -> Gleichzeitige Abläufe stören nicht.
+     - "Dauerhaftigkeit (D)". -> Nach Crash noch da.
+     - Lernziel: ACID-Prinzipien.
+
+2. "Commit oder Rollback?"
+   - Ziel: Führe eine Banküberweisung sicher durch.
+   - Spielmechanik: 
+     - Schritt 1: Geld von A abziehen.
+     - Schritt 2: Stromausfall!
+     - Frage: Was muss passieren? -> ROLLBACK (Status wie vorher).
+     - Messbarkeit: Vermeidung von "Geld ist im Nirgendwo" Szenarien.
+   - Lernziel: Transaktionssteuerung.
+
+3. "Dirty-Read-Detektiv"
+   - Ziel: Erkenne Probleme bei fehlender Isolation.
+   - Spielmechanik: 
+     - Transaktion 1 ändert den Preis, hat aber noch nicht COMMITTED.
+     - Transaktion 2 liest den neuen Preis.
+     - Transaktion 1 macht ROLLBACK.
+     - Lerne: Transaktion 2 hat mit falschen Daten gearbeitet.
+   - Lernziel: Isolationslevel (Read Uncommitted).
+
+4. "Deadlock-Löser"
+   - Ziel: Löse eine gegenseitige Blockierung auf.
+   - Spielmechanik: 
+     - User A blockiert Tisch 1, will Tisch 2.
+     - User B blockiert Tisch 2, will Tisch 1.
+     - Frage: Wie brechen wir das auf? -> Eine Transaktion abbrechen.
+   - Lernziel: Nebenläufigkeitskontrolle.
+
+5. "Savepoint-Manager"
+   - Ziel: Mache Teil-Rollbacks.
+   - Spielmechanik: 
+     - Setze `SAVEPOINT sp1`. Ändre Daten.
+     - Fehler passiert. Rolle zurück NUR auf `sp1`.
+     - Lerne: Der Rest davor bleibt erhalten.
+   - Lernziel: Granulare Transaktionskontrolle.

@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Identifikation und Beseitigung von Redundanzen zur Reduktion der Datenbankgröße und Vermeidung von Anomalien.
+- Kontext: Normalisierung (1. zur 2. NF), Speicher-Optimierung.
+- UX-Prinzip:
+  - "The Data Diet": Eine "aufgeblähte" Tabelle (breit, schwer, viele Wiederholungen) muss durch das "Normalisierungs-Fitnessgerät" (Separation).
+  - "Duplicate-Highlighter": Gleiche Textblöcke (z. B. 100x "Abteilung Logistik") leuchten in einer Farbe.
+  - "Split & Link": Mit einer Schere zerschneidet der Spieler die Tabelle; die Texte werden durch schlanke IDs (Spielfiguren) ersetzt.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Redundanten Felder (Wiederholungen), 2 = Das Einsparungspotenzial (Byte-Waage), 3 = Die neue Tabellenstruktur.
+- [ ] Textbudget: Max. 10 Zeilen zur Visualisierung des Musters.
+- [ ] "Size-O-Meter": Live-Anzeige der geschätzten Tabellengröße in KB/MB.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> fat-table-view -> redundancy-analyzer -> slim-table-preview`.
+- [ ] Analyzer: Der Bereich, in dem gleiche Texte gruppiert werden (Desktop 60% Breite, Mobile 40dvh Höhe).
+- [ ] Waage: Ein mechanisches Display, das die Gewichtsdifferenz (Byte-Ersparnis) misst.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-to-Cut" – Die Geste zum Trennen der Spalten in eine neue Tabelle.
+- [ ] `scroll-snap-type` für die Tabellenansicht.
+
+4. Kernvisuals
+- [ ] Gewichts-Metaphorik: Schwere, rostige Tabellen vs. silberne, schlanke Tabellen (shared_theme.css).
+- [ ] Farb-Branding: Jeder redundante Begriff (`Marketing`, `Vertrieb`) hat einen eigenen Farbcode.
+- [ ] High-Contrast IDs: Die neuen Fremdschlüssel (FK) glänzen metallisch.
+
+5. Interaktion und Feedback
+- [ ] Live-Shrinking: Beim Auslagern schrumpft die Tabelle visuell zusammen (Animation).
+- [ ] Feedback: "Exzellent! Durch das Auslagern der Abteilung in eine Mastertabelle sparst du 40% Speicherplatz."
+- [ ] Anomalie-Warnung: "Vorher: Wenn sich der Abteilungsname ändert, hättest du 100 Zeilen anfassen müssen. Jetzt nur noch EINE."
+
+6. KPI-Klarheit
+- [ ] Shrink-Ratio: "Speicherplatz-Gewinn: 42%".
+- [ ] Maintenance-Gain: "Wartbarkeit: Massiv verbessert".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Kundenliste mit Stadt/PLZ Redundanz", "Produktliste mit Kategorie-Namen", "Mitarbeiter mit Standort-Info".
+- [ ] Tonalität: Effizienz-orientiert, aufräumend, logisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist der Vorher-Nachher Vergleich auf einem Smartphone-Display nebeneinander darstellbar (vielleicht vertikal lösen)?
+- [ ] Test: Sind die ID-Links zwischen den Tabellen nach dem Split klar erkennbar?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler versteht das physikalische Gewicht von Textredundanz in großen Datenmengen.
+- [ ] Das Interface wirkt wie ein modernes Aufräum-Tool ("KonMari für Daten").
+- [ ] Stolz über die erreichte Speicherplatz-Ersparnis.

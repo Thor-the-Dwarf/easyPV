@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Beherrschung des Observer-Design-Patterns zur Realisierung einer entkoppelten, ereignisgesteuerten Kommunikation (Publish/Subscribe).
+- Kontext: Event-Handling, UI-Binding, Nachrichtensysteme.
+- UX-Prinzip:
+  - "The Newsroom Ripple": Ein Nachrichtensprecher (Subject) steht im Zentrum. Die Abonnenten sind Radios, Fernseher und Smartphones, die im Raum verteilt sind.
+  - "The Ripple Effect": Sobald die Nachricht (Event) gesendet wird, breitet sich eine Lichtwelle vom Zentrum aus.
+  - "Subscriber-Toggle": Der Spieler schaltet Empfänger per Klick an (attach) oder aus (detach). Nur "aktive" Geräte leuchten bei einer Welle auf.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der Publisher (Sprecher), 2 = Die aktiven Abonnenten, 3 = Der Nachrichten-Inhalt (Signal).
+- [ ] Textbudget: Max. 5 Worte pro Nachricht (z. B. "Neuer Preis: 49.99€").
+- [ ] "Dynamic Crowd": Eine wachsende Anzahl von Observer-Icons, um die Skalierbarkeit zu zeigen.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> circular-broadcast-area -> subscriber-tray -> notification-log`.
+- [ ] Broadcast-Area: Ein kreisförmiges Layout mit dem Publisher in der Mitte (Desktop 60% Breite, Mobile Full-Screen).
+- [ ] Tray: Menü am Rand zum Hinzufügen neuer Observer-Typen (Email, SMS, Push).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Double-Tap Publisher" zum Senden eines Events.
+- [ ] `radial-gradient` Animationen für die Wellen-Visualisierung.
+
+4. Kernvisuals
+- [ ] Modern-Media Ästhetik: Saubere Flat-Icons, pulsierende Signale, dunkler Hintergrund (shared_theme.css).
+- [ ] Wellen-Effekt: Eine halbtransparente, leuchtende Kreiswelle, die über das Spielfeld wandert.
+- [ ] Empfangs-Animation: Observer wackeln kurz oder blitzen auf, wenn sie die Nachricht erhalten.
+
+5. Interaktion und Feedback
+- [ ] Subscription-Feedback: "Klick! Das Smartphone hört jetzt auf den Preis-Kanal. Es wird bei Updates benachrichtigt."
+- [ ] Real-Time Wave: "Bzzz! Event ausgelöst. 4 von 5 Observer haben die Nachricht erhalten."
+- [ ] Lose-Kopplung Hinweis: "Siehst du? Der Sprecher muss nicht wissen, WER zuhört – er ruft es einfach in den Raum."
+
+6. KPI-Klarheit
+- [ ] Observer-Load: "Aktive Abonnenten: X".
+- [ ] Propagation-Efficiency: "Nachrichtenzustellung: 100%".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Börsenkurse", "Wetter-Warnung", "Lagerbestand-Alarm", "Chat-Nachricht".
+- [ ] Tonalität: Dynamisch, vernetzt, aktuell.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Wellen-Animationen auf dem Handy flüssig (FPS-Budget)?
+- [ ] Test: Bleibt die Übersicht erhalten, wenn 20 Observer gleichzeitig im Raum sind?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler versteht den Vorteil der Entkopplung durch das Broadcast-Prinzip.
+- [ ] Das Interface wirkt wie eine moderne Leitwarte für Informationsfluss.
+- [ ] Haptischer Spaß beim "An- und Ausschalten" der Empfänger.

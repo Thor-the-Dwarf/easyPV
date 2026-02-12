@@ -1,0 +1,19 @@
+Anforderungen
+1. "Cloud-Stack-Puzzle"
+   - Ziel: Verständnis der verschiedenen Cloud-Service-Modelle (IaaS, PaaS, SaaS) und deren Abgrenzung zur on-premise Infrastruktur.
+   - Spielmechanik: 
+     - Der Spieler muss IT-Infrastruktur-Komponenten (Networking, Storage, Server, OS, Middleware, Data, App) den Verantwortungsbereichen (Provider vs. Kunde) zuordnen.
+     - Klassifizierung realer Dienste (z.B. AWS EC2, Google App Engine, Office 365) in die entsprechenden Modelle.
+     - Simulation von Migrations-Szenarien (z.B. "Vom eigenen Server zur Cloud-Datenbank").
+     - Messbarkeit: Korrekte Zuordnung der Verantwortlichkeiten und Dienstmodelle.
+   - Lernziel: Befähigung zur Auswahl geeigneter Cloud-Strategien und Verständnis des Shared Responsibility Modells.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_cloud_models.json')
+   - Service-Layer und Provider-Profile.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Stapel-Interfaces).
+- [ ] Game-Engine Logic ('game_category_match.js')
+   - (Validierung der Ebenen-Modelle).
+- [ ] Integration
+   - Tutorial: Warum SaaS die geringste, aber IaaS die höchste Kontrolle bietet.

@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Verständnis der Funktionsweise und Komplexität von Sortieralgorithmen (O-Notation) durch visuelle Interaktion.
+- Kontext: Algorithmen & Datenstrukturen, Performance-Analyse.
+- UX-Prinzip:
+  - "The Sorting Dance": Die Zahlen sind Tänzer mit unterschiedlichen Gewichten (Größen). Beim Bubble-Sort tanzen immer zwei Nachbarn: Der Schwerere muss den Platz räumen.
+  - "Rhythmic Swapping": Der Tausch-Vorgang wird als rhythmische, flüssige Bewegung inszeniert.
+  - "The Progress Wave": In jedem Durchlauf wandert der größte "Tänzer" wie eine Welle ans Ende der Gruppe.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die zwei Vergleichs-Elemente (Fokus), 2 = Das gesamte Feld, 3 = Der Operations-Zähler (Kosten).
+- [ ] Textbudget: Max. 10 Zahlen im Feld zur Wahrung der visuellen Klarheit.
+- [ ] "Complexity-Badge": Anzeige von O(n²) direkt neben dem Algorithmus.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> sorting-stage -> operation-counter -> algorithm-selector`.
+- [ ] Stage: Balkendiagramm-Ansicht (Desktop 80% Breite, Mobile 50dvh Höhe).
+- [ ] Controls: "Next Step" und "Play" Button am unteren Rand im Daumen-Fokus.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-to-Swap" Geste zur manuellen Durchführung des Algorithmus.
+- [ ] `transition: transform 0.3s ease-in-out` für geschmeidige Balkenbewegungen.
+
+4. Kernvisuals
+- [ ] Dynamische Farben: Kleine Zahlen sind Hellblau (leicht), große Zahlen sind Dunkelviolett (schwer).
+- [ ] "Fokus-Spotlight": Die zwei Elemente, die gerade verglichen werden, leuchten hell auf.
+- [ ] Erfolg: Sobald alles sortiert ist, läuft ein "Glanz-Effekt" über alle Balken.
+
+5. Interaktion und Feedback
+- [ ] Schritt-Anzeige: "12 ist größer als 8 -> Tausch!"
+- [ ] Effizienz-Vergleich: Eine zweite, kleine Ansicht zeigt parallel `QuickSort` zum direkten Vergleich der Geschwindigkeit.
+- [ ] Sound-Visualisierung: Tiefere Töne für große Zahlen, hohe Töne für kleine (auditives Feedback beim Tausch).
+
+6. KPI-Klarheit
+- [ ] Complexity-Level: "Durchläufe gesamt: X".
+- [ ] Performance-Grade: "Effizienz-Score: B (O(n²))".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Unsortiert", "Fast sortiert", "Worst Case (umgekehrt)".
+- [ ] Tonalität: Spielerisch, analytisch, flüssig.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Balken-Beschriftungen auf dem Handy noch lesbar?
+- [ ] Test: Bleibt das UI performant bei 20+ Elementen und schneller Animation?
+
+9. Abnahmekriterien
+- [ ] Der Spieler begreift den Algorithmus als logische Sequenz von Vergleichen.
+- [ ] Das Interface wirkt wie ein ästhetisches Dashboard für Daten-Choreographie.
+- [ ] Klarheit über den hohen Aufwand von Bubble-Sort gegenüber moderneren Algorithmen.

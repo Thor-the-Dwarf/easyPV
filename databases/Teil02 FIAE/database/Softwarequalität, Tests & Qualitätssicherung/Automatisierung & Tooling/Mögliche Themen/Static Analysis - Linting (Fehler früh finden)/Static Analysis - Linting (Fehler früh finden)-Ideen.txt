@@ -1,0 +1,31 @@
+1. "Linter-Error-Match"
+   - Ziel: Erkenne typische Linting-Warnungen.
+   - Spielmechanik: 
+     - "Variable definiert aber nie benutzt".
+     - "Fehlendes Semikolon".
+     - "Unreachable Code".
+     - Lernziel: Frühzeitige Fehlererkennung.
+
+2. "Styleguide-Guardian"
+   - Ziel: Setze Team-Standards automatisiert durch.
+   - Spielmechanik: 
+     - Passe die `.eslintrc` oder `.stylelintrc` an, um den gewünschten Code-Stil zu erzwingen.
+     - Lernziel: Konsistenz in Großprojekten.
+
+3. "Auto-Fix-Rallye"
+   - Ziel: Nutze Tools zur automatischen Korrektur.
+   - Spielmechanik: 
+     - Klicke "Fix all", aber achte darauf, ob sich die Logik ändert.
+     - Lernziel: Tool-Effizienz.
+
+4. "Security-Linting-Quest"
+   - Ziel: Finde Sicherheitslücken (z.B. SQL-Injection) durch statische Analyse.
+   - Spielmechanik: 
+     - Identifiziere unsichere Funktionen (`eval()`, `innerHTML`).
+     - Lernziel: Statische Sicherheits-Analyse.
+
+5. "Pre-commit-Hook Challenge"
+   - Ziel: Verhindere schlechten Code im Repo.
+   - Spielmechanik: 
+     - Konfiguriere einen Hook, der den Push abbricht, wenn der Linter meckert.
+     - Lernziel: Qualitätssicherung im Workflow.

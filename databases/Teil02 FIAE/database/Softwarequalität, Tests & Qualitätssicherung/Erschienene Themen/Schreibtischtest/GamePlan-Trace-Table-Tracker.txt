@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Präzise Verfolgung von Variablenzuständen und Kontrollflüssen in Algorithmen zur Schulung des logischen Verständnisses und Fehlersuche.
+- Kontext: White-Box-Testing, Schreibtischtest, Debugging-Grundlagen.
+- UX-Prinzip:
+  - "The Logic X-Ray": Der Spieler blickt durch die Hülle des Codes direkt auf das "Herz" (die Variablen).
+  - "Time-Travel": Der Spieler navigiert Zeile für Zeile durch die Zeit. Bei jedem "Tick" fließen Daten von einer Variable in die nächste.
+  - "State-Snapshot": Eine übersichtliche Tabelle, die wie ein EKG die Vitalwerte (Variablenwerte) des Algorithmus aufzeichnet.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die aktuelle Code-Zeile (Der Marker), 2 = Die Variablen-Spalten (Die Werte), 3 = Die Ergebnis-Zelle.
+- [ ] Textbudget: Max. 10 Zeilen Algorithmus (Loop/If-Strukturen).
+- [ ] "Instruction-Pointer": Ein leuchtender Pfeil, der genau auf den nächsten Befehl zeigt.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> code-theater -> trace-table -> variable-monitor`.
+- [ ] Theater: Fokus auf den Algorithmus mit aktiver Zeilen-Hervorhebung (Desktop links, Mobile oben).
+- [ ] Trace-Table: Interaktive Matrix zum Ausfüllen der Werte (Desktop rechts, Mobile unten).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-next-Line" Mechanik; Input-Felder mit optimiertem Num-Pad für Zahlen-Variablen.
+- [ ] `sticky-header` für die Tabellenköpfe (Variablennamen).
+
+4. Kernvisuals
+- [ ] Labor-Ästhetik: Blaues Röntgen-Licht, digitale Anzeigen, klare Linienraster (shared_theme.css).
+- [ ] "Flow-Particles": Kleine Daten-Partikel bewegen sich vom Code in die Tabellenzeile beim Eintrag.
+- [ ] High-Contrast State: Aktive Zelle leuchtet bei korrekter Eingabe grün auf.
+
+5. Interaktion und Feedback
+- [ ] Trace-Feedback: "Klick! Zeile 4: `i` ist jetzt 2, `sum` steigt auf 5. Korrekt dokumentiert!"
+- [ ] Fehler-Korrektur: "Stopp! Hast du das Inkrement am Ende der Schleife vergessen? Schau nochmal genau auf Zeile 8."
+- [ ] Erfolg: "Diagnose abgeschlossen! Du hast den Algorithmus komplett durchschaut und jeden Zustandswechsel korrekt erfasst."
+
+6. KPI-Klarheit
+- [ ] Trace-Accuracy: "Fehlerfreie Zeilen: X / Y".
+- [ ] Mental-Speed: "Verarbeitungsgeschwindigkeit: X Schritte / Minute".
+
+7. Content-/Copy-Feinschliff
+- [ ] Algorithmen: "Fakultät berechnen", "Array-Summierung", "String-Umkehrung", "Modulo-Check".
+- [ ] Tonalität: Konzentriert, präzise, detektivisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist die Tabelle auf dem Smartphone ohne horizontales Scrollen bedienbar (max. 3-4 Variablen)?
+- [ ] Test: Sind die Übergänge zwischen den "Zeitsprüngen" visuell nachvollziehbar?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler entwickelt ein intuitives Verständnis für die sequentielle Abarbeitung.
+- [ ] Das Interface wirkt wie ein exklusives Analyse-Tool für Code-Spezialisten.
+- [ ] Volle Beherrschung des Schreibtischtests als Vorstufe zum Debugging.

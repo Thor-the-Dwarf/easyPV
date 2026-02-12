@@ -1,0 +1,32 @@
+1. "Race-Condition-Simulator"
+   - Ziel: Verstehe Probleme bei gleichzeitigem Zugriff auf Variablen.
+   - Spielmechanik: 
+     - Zwei Threads zählen eine Variable hoch. Behalte den Überblick.
+     - Ohne Lock: Ergebnis ist falsch.
+     - Lernziel: Notwendigkeit von Synchronisation (Locks/Mutex).
+
+2. "Deadlock-Labyrinth"
+   - Ziel: Vermeide gegenseitige Blockaden.
+   - Spielmechanik: 
+     - Thread 1 hat A, will B. Thread 2 hat B, will A.
+     - Das Programm hängt. Wie lösen wir das?
+     - Lernziel: Deadlock-Prävention.
+
+3. "Worker-Pool-Manager"
+   - Ziel: Optimiere die Aufgabenverteilung.
+   - Spielmechanik: 
+     - 100 Aufgaben, 4 Worker (Threads).
+     - Verteile die Last gleichmäßig.
+     - Lernziel: Performance durch Parallelität.
+
+4. "Thread-Life-Cycle"
+   - Ziel: Verwalte den Status eines Threads (New, Runnable, Blocked, Dead).
+   - Spielmechanik: 
+     - Klicke auf den richtigen Status-Übergang.
+     - Lernziel: Low-Level Thread-Handling.
+
+5. "Shared-Memory-Quiz"
+   - Ziel: Verstehe den Unterschied zwischen Prozess (isolierter Speicher) und Thread (geteilter Speicher).
+   - Spielmechanik: 
+     - Wo kann man Variablen "einfach so" austauschen?
+     - Lernziel: Systemarchitektur Grundlagen.

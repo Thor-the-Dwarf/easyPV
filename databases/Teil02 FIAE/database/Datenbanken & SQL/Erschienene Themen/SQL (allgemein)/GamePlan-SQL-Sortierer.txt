@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Systematische Einordnung des SQL-Wortschatzes in DDL, DML, DCL und TCL zur theoretischen Beherrschung der Datenbanksprache.
+- Kontext: SQL-Taxonomie, Wissens-Strukturierung.
+- UX-Prinzip:
+  - "The Command Library": Ein antikes (oder hochmodernes) Archiv, in dem Befehle in die richtigen Regale sortiert werden müssen.
+  - "Function-Glow": Wenn man einen Befehl (z. B. `ALTER`) hält, leuchten die betroffenen Objekte (z. B. die Tabellenstruktur) dezent auf.
+  - "Library-Index": Ein interaktives Glossar, das sich beim Sortieren vervollständigt.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der SQL-Befehl (Aktion), 2 = Die Sprach-Kategorie (Regal), 3 = Kurze Funktionsbeschreibung.
+- [ ] Textbudget: Befehle in Großbuchstaben (SQL-Standard), Beschreibungen max. 5 Wörter.
+- [ ] "No-Clutter" Policy: Kategorien werden grafisch unterscheidbar (Farbe/Form).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> workbench (Commands) -> archive-walls (Categories) -> progress-hud`.
+- [ ] workbench: Am unteren Rand, Befehle als griffige "Steine" oder Karten (>=48px).
+- [ ] Archive-Walls: Vier große Sektionen (Desktop 2x2, Mobile 1x4 scrollbar).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Drag-and-Drop" optimiert für kleine Daumenwege (Workbench nah an den Regalen).
+- [ ] `touch-action: pan-y` zur sicheren Navigation auf Mobile.
+
+4. Kernvisuals
+- [ ] Regal-Metaphorik: DDL (Baupläne), DML (Inhalt), DCL (Schlüssel/Zertifikate), TCL (Uhr/Checkpoint).
+- [ ] High-Contrast Labels: "DEFINITION", "MANIPULATION", "CONTROL", "TRANSACTION".
+- [ ] Partikel-Effekte: Steine leuchten beim Einrasten kurz in der Kategoriefarbe auf.
+
+5. Interaktion und Feedback
+- [ ] Sofort-Validierung: "Richtig. `CREATE` definiert die Struktur (DDL)."
+- [ ] Lern-Moment: "Denk dran: `SELECT` verändert nichts, sondern liest nur Daten (DML)."
+- [ ] Fehlermanagement: Falscher Stein wird mit einem "Stein-auf-Metall" Sound visuell abgestoßen.
+
+6. KPI-Klarheit
+- [ ] Taxonomy-Mastery: %-Anzeige pro Kategorie.
+- [ ] Library-Completion: "X / Y Befehle archiviert".
+
+7. Content-/Copy-Feinschliff
+- [ ] Vollständiger Wortschatz: CREATE, DROP, ALTER (DDL), SELECT, INSERT, UPDATE, DELETE (DML), GRANT, REVOKE (DCL), COMMIT, ROLLBACK (TCL).
+- [ ] Tonalität: Strukturiert, akademisch fundiert, dennoch spielerisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die 4 Regale auf einem kleinen Display (iPhone 8) gleichzeitig sichtbar?
+- [ ] Test: Reagiert das Drag-Verhalten ohne Verzögerung (Latenz-Check)?
+
+9. Abnahmekriterien
+- [ ] Die theoretische Einteilung der SQL-Sprache wird durch die visuelle Trennung begreifbar.
+- [ ] Das Interface wirkt wie ein exklusives Archiv für Experten.
+- [ ] Maximale Ordnungsliebe wird belohnt.

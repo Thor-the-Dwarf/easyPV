@@ -1,0 +1,19 @@
+Anforderungen
+1. "Touch-Target-Master"
+   - Ziel: Sensibilisierung für die physischen Einschränkungen bei der Bedienung von Touch-Interfaces (Mobile/Tablet) zur Vermeidung von Fehlbedienungen.
+   - Spielmechanik: 
+     - Präsentation eines Navigationsmenüs mit variierenden Button-Größen und Abständen.
+     - Der Spieler simuliert Fingerklicks mit einem vergrößerten "Finger-Cursor".
+     - Ziel: Alle Menüpunkte fehlerfrei aktivieren, ohne benachbarte Links zu treffen.
+     - Messbarkeit: Fehlerquote und Zeit pro Interaktion.
+   - Lernziel: Einhaltung der 44x44 Pixel Regel für Touch-Ziele und Optimierung der Ergonomie auf kleinen Displays.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_ui_touch_targets.json')
+   - Verschiedene UI-Layouts (Dicht vs. Weit).
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Cursor-Stylings zu einem runden "Touch-Indicator").
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Überlappungs-Erkennung bei Klicks).
+- [ ] Integration
+   - Tutorial: Warum "Hover" Effekte auf dem Smartphone problematisch sind.

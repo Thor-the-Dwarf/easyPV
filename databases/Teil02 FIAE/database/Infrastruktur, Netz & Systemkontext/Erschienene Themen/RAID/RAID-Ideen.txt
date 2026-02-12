@@ -1,0 +1,29 @@
+1. "RAID-Level-Sorter"
+   - Ziel: Kenne die Unterschiede in Performance und Redundanz.
+   - Spielmechanik: 
+     - RAID 0 (Tempo), RAID 1 (Spiegelung), RAID 5 (Parität), RAID 10 (Kombi).
+     - Lernziel: Datensicherheit und Geschwindigkeit.
+
+2. "Disk-Failure Simulator"
+   - Ziel: Was passiert, wenn eine Platte stirbt?
+   - Spielmechanik: 
+     - Eine Platte in RAID 5 fällt aus. Läuft das System weiter? (Ja). Tausche sie aus (Rebuild).
+     - Lernziel: Ausfallsicherheit.
+
+3. "Capacity-Calculator"
+   - Ziel: Wie viel Netto-Speicher bleibt übrig?
+   - Spielmechanik: 
+     - 4 Platten à 1 TB. Wie viel Platz hast du in RAID 10? (2 TB).
+     - Lernziel: Planung von Storage-Systemen.
+
+4. "RAID-vs-Backup Match"
+   - Ziel: RAID ist KEIN Backup!
+   - Spielmechanik: 
+     - Du löscht eine Datei. RAID spiegelt die Löschung sofort. Wo ist deine Datei? (Weg).
+     - Lernziel: Abgrenzung von Sicherheitsmassnahmen.
+
+5. "Controller-Configurator"
+   - Ziel: Soft- vs. Hardware-RAID.
+   - Spielmechanik: 
+     - Baue ein RAID im BIOS/UEFI des Controllers.
+     - Lernziel: Systemnahe Administration.

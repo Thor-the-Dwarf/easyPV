@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Identifikation aller Rollen, die mit einem System interagieren, und deren korrekte Verortung in Bezug auf die Systemgrenze.
+- Kontext: Kontext-Analyse, Fokus auf Rollenverteilung.
+- UX-Prinzip:
+  - Die "System-Box" (Canvas) ist das Herzstück.
+  - Akteure (Strichmännchen-Karten) am Rand.
+  - "In or Out": Entscheidung, was zum System gehört und wer nur "Nutzer" ist.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Systemgrenze (Box), 2 = Akteur-Typ (Primär/Sekundär), 3 = Name/Rolle.
+- [ ] Textbudget: Max. 2 Begriffe pro Akteur (z. B. "Admin", "Banksystem").
+- [ ] Keine Vor-Anleitung; Symbole und Typen werden beim Platzieren validiert.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> system-canvas -> actor-tray -> role-inspector`.
+- [ ] System-Box: Zentriert, nimmt 60% des Screens ein (Desktop), 40dvh (Mobile).
+- [ ] Actor-Tray: Am linken/rechten Rand (Desktop) oder unten (Mobile).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-to-Select" Akteur -> "Tap-to-Place" Position.
+- [ ] SVG-Akteure: Scalable Stickman Layout mit Label-Kapseln.
+
+4. Kernvisuals
+- [ ] Aktor-Icons: Unterschiedliche Optik für menschliche Nutzer vs. externe technische Systeme.
+- [ ] Grenz-Stil: Klare, dickere Linie für die "System Boundary".
+- [ ] High-Contrast Labels innerhalb der Akteur-Karten.
+
+5. Interaktion und Feedback
+- [ ] Snap-to-Role: "Richtig. Das 'Kreditkartensystem' ist ein Sekundärakteur (externes System)."
+- [ ] Positions-Feedback: "Vorsicht! Akteure stehen laut UML immer AUSSERHALB des Systems." (Visueller Abstoßungs-Effekt bei Platzierung innen).
+- [ ] Verbindung: Automatische Linie zum Systemnamen bei korrekter Platzierung.
+
+6. KPI-Klarheit
+- [ ] Discovery-Rate: "9 von 10 Stakeholdern als Akteure identifiziert".
+- [ ] Context-Score: "Abgrenzungs-Schärfe: High".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Smart Home Zentrale", "Krankenhaus-Informationssystem", "E-Ticket Automat".
+- [ ] Tonalität: Analytisch, strukturiert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Überlappen die Akteur-Labels, wenn viele Akteure am Rand stehen?
+- [ ] Test: Sind "Primär-" und "Sekundärakteur" auch ohne Text durch Farben/Icons erkennbar?
+
+9. Abnahmekriterien
+- [ ] Der Spieler verinnerlicht die strikte Trennung zwischen "System" und "Umwelt".
+- [ ] Das Interface wirkt wie ein sauber strukturiertes Architekten-Tool.
+- [ ] Schneller Durchlauf bei hoher Informationsdichte.

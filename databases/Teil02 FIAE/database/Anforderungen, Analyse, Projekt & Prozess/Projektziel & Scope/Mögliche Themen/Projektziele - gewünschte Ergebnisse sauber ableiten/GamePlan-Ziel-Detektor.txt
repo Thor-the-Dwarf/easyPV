@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Identifikation und Hierarchisierung von Unternehmens- vs. Systemzielen zur strategischen Projektausrichtung.
+- Game-Mechanic: "The Goal Aligner". Ein Aufbauspiel: Systemziele sind die Fundamente, Unternehmensziele die Wolkenkratzer. Der Spieler muss die Ziele so stapeln, dass das Gebäude stabil steht (Hierarchie-Logik).
+- Challenge: 
+  - Level 1: "Simple Stack" - 1 Business Goal, 2 System Goals zuordnen.
+  - Level 2: "Conflict of Interest" - Zwei Systemziele konkurrieren (z.B. "Maximale Sicherheit" vs. "Minimale Ladezeit"). Der Spieler muss priorisieren.
+  - Level 3: "Strategic Pivot" - Das Unternehmensziel ändert sich ("Wachstum" -> "Stabilität"). Das Fundament muss umgebaut werden.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Architect-Level" (Experience), "Stability-Index" (Accuracy), "Strategic-Alignment".
+- [ ] Scoring: Bonuspunkte für "Lean Architecture" (Minimale Systemziele für maximales Business-Goal). Abzug bei instabilen Konstruktionen.
+
+2. Screen-Layout (The Construction Site)
+- [ ] `the-skyline -> goal-blocks -> connector-cables -> strategy-manual`.
+- [ ] Skyline: Visualisierung der Stadt, die durch Ziele "wächst".
+- [ ] Blocks: System-Ziele (Beton/Physisch) vs. Business-Ziele (Gold/Schwebend).
+
+3. Kernvisuals und Effekte
+- [ ] City-Builder Ästhetik: SimCity Vibes, isometrische Sicht, wachsende Gebäude.
+- [ ] "Alignment-Beam": Ein Energiestrahl verbindet zusammengehörige Ziele.
+- [ ] Collapse-Animation: Bei falscher Hierarchie stürzt das "Ziele-Gebäude" visuell ein.
+
+4. Browser- und Device-Resilienz
+- [ ] `perspective: 1000px` für 3D-Stapel-Gefühl.
+- [ ] Mobile: Vertikales Stapeln per Drag-to-Drop.
+
+5. Content-Strategie (The Strategic Goals)
+- [ ] 12 Business-Szenarien: E-Commerce, SaaS-Start-up, Behörden-Digitalisierung.
+
+6. QA-Paket
+- [ ] Test: Ist die Unterscheidung WAS (Business) vs. WIE (System) im Spielprozess klar?
+- [ ] Test: Fühlt sich das Stapeln physikalisch korrekt an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler versteht die kausale Kette von Technik zu Business-Value.
+- [ ] Das Interface wirkt spielerisch, aber dennoch hochgradig analytisch.
+- [ ] Hohe visuelle Belohnung durch die "Stadt-Metapher".

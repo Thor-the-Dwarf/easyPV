@@ -1,0 +1,19 @@
+Anforderungen
+1. "Resources-Url-Builder"
+   - Ziel: Entwurf standardkonformer und intuitiver REST-Schnittstellen durch ressourcenorientiertes URL-Design.
+   - Spielmechanik: 
+     - Vorgabe von Datenabfragen (z.B. "Alle Kommentare zu einem bestimmten Blogartikel").
+     - Der Spieler konstruiert die passende RESTful URL (z.B. `/posts/{id}/comments` statt `/getComments?post=id`).
+     - Verwendung korrekter Pluralformen und hierarchischer Pfade.
+     - Messbarkeit: Einhaltung der REST-Konventionen und Pfad-Logik.
+   - Lernziel: Design von sauber strukturierten und langlebigen Web-APIs.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_rest_urls.json')
+   - Datenmodelle und Abfrage-Anforderungen.
+- [ ] Shared CSS Check ('web_apis.css')
+   - URL-Baukasten-UI.
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Validierung der URL-Struktur).
+- [ ] Integration
+   - Info: Warum Query-Parameter für Filterung ok sind, aber nicht für Ressourcen-Identifikation.

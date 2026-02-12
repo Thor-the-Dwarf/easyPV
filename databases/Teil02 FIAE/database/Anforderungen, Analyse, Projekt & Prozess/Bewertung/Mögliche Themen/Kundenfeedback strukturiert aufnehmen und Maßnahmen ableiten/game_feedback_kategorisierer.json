@@ -1,0 +1,48 @@
+{
+  "title": "Feedback-Kategorisierer",
+  "subtitle": "Sortiere Kundenstimmen in den richtigen Prozesskanal.",
+  "tags": [
+    { "id": "bug", "label": "Bug", "icon": "🐞", "color": "red" },
+    { "id": "feature", "label": "Feature", "icon": "🚀", "color": "blue" },
+    { "id": "support", "label": "Support", "icon": "🛟", "color": "amber" },
+    { "id": "lob", "label": "Lob", "icon": "💬", "color": "green" }
+  ],
+  "feedbacks": [
+    {
+      "id": "f1",
+      "quote": "Nach dem Login sehe ich nur noch einen weissen Bildschirm.",
+      "correct_tag": "bug",
+      "explain": "White-Screen nach Login ist ein Funktionsfehler und gehoert in den Bug-Fix-Flow."
+    },
+    {
+      "id": "f2",
+      "quote": "Bitte fuegt endlich einen Darkmode hinzu.",
+      "correct_tag": "feature",
+      "explain": "Darkmode ist ein neuer Wunsch und daher ein Feature-Request."
+    },
+    {
+      "id": "f3",
+      "quote": "Ich finde die App richtig stark, danke ans Team!",
+      "correct_tag": "lob",
+      "explain": "Positives Feedback ist Lob und liefert Input fuer Kundenzufriedenheit."
+    },
+    {
+      "id": "f4",
+      "quote": "Wo aendere ich meine Rechnungsadresse? Ich finde die Option nicht.",
+      "correct_tag": "support",
+      "explain": "Hier braucht der Kunde primaer Hilfestellung statt Produktaenderung."
+    },
+    {
+      "id": "f5",
+      "quote": "Beim Bezahlen per Kreditkarte bricht der Vorgang bei 3D-Secure ab.",
+      "correct_tag": "bug",
+      "explain": "Abbruch im Zahlungsprozess ist ein kritischer Defekt."
+    },
+    {
+      "id": "f6",
+      "quote": "Kann man Exportberichte auch als CSV herunterladen?",
+      "correct_tag": "feature",
+      "explain": "CSV-Export erweitert den Funktionsumfang und ist somit ein Feature."
+    }
+  ]
+}

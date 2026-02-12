@@ -1,0 +1,37 @@
+1. "Gruppen-Sortierer"
+   - Ziel: Fasse Daten nach Kategorien zusammen.
+   - Spielmechanik: 
+     - Tabelle mit Verkäufen. 
+     - Aufgabe: "Berechne Umsatz PRO Stadt".
+     - SQL: `SELECT stadt, SUM(umsatz) FROM verkauf GROUP BY stadt`.
+     - Messbarkeit: Korrekte Verwendung von `GROUP BY`.
+   - Lernziel: Datenaggregation.
+
+2. "Having vs. Where"
+   - Ziel: Filter vor und nach der Gruppierung anwenden.
+   - Spielmechanik: 
+     - `WHERE umsatz > 10`: Filtert Einzelzeilen.
+     - `HAVING SUM(umsatz) > 1000`: Filtert die fertigen Gruppen.
+     - Messbarkeit: Platzierung des Filters an der richtigen Stelle.
+   - Lernziel: Aggregations-Logik.
+
+3. "Duplicate-Finder"
+   - Ziel: Finde doppelte Einträge in der DB.
+   - Spielmechanik: 
+     - `SELECT email, COUNT(*) FROM user GROUP BY email HAVING COUNT(*) > 1`.
+     - Messbarkeit: Identifikation von Daten-Dubletten.
+   - Lernziel: Datenreinigung mit SQL.
+
+4. "Umsatz-Statistik-Puzzle"
+   - Ziel: Kombiniere mehrere Aggregatfunktionen.
+   - Spielmechanik: 
+     - Finde pro Kategorie: `AVG(preis)`, `MAX(preis)` und `COUNT(*)`.
+     - Baue das SELECT Statement zusammen.
+   - Lernziel: Berichterstellung.
+
+5. "Group-by-Syntax-Falle"
+   - Ziel: Beachte die Regel der selektierten Spalten.
+   - Spielmechanik: 
+     - `SELECT name, stadt, COUNT(*) FROM user GROUP BY stadt;`.
+     - Erkenne: Das geht nicht! `name` muss auch gruppiert werden oder in eine Aggregatfunktion.
+     - Lernziel: SQL-Standard-Vorschriften.

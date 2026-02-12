@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Verständnis von lose Kopplung und hoher Kohäsion als Schlüssel für die Änderbarkeit (Maintainability).
+- Kontext: Software-Architektur, Dependency Injection, Interface-Segregation.
+- UX-Prinzip:
+  - "The Modular Spaceship": Die Software ist ein Raumschiff. Der Spieler muss es für verschiedene Missionen (Anforderungen) umbauen.
+  - "Snap-on Logic": Jedes Modul hat standardisierte Anschlüsse. Wenn die Kopplung zu eng ist (Hardcoding), bricht beim Tausch eines Moduls das halbe Schiff auseinander.
+  - "Impact-Heat": Rote Leitungen zeigen an, wo eine Änderung "durchschlägt" und andere Systeme beschädigt.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Schnittstelle (Soll-Bruchstelle), 2 = Das Austauschmodul, 3 = Der Stabilitäts-Index des Schiffs.
+- [ ] Textbudget: Max. 5 Begriffe pro Modul-Spezifikation (z.B. "Power: 100kW, Interface: Type-C").
+- [ ] "Coupling-Meter": Anzeige, wie stark zwei Module voneinander abhängen (Low/High).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> assembly-hangar -> module-blueprints -> mission-briefing`.
+- [ ] Hangar: Zentrale Werkstatt mit dem Raumschiff (Desktop mittig, 3D/Isometrisch).
+- [ ] Blueprints: Ein Slider mit verfügbaren Ersatzteilen am unteren Rand.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: Drag & Drop mit großen Touch-Targets; "Long-press" für Detail-Informationen zum Modul.
+- [ ] `snap-points` für das exakte Einrasten der Module an den Interfaces.
+
+4. Kernvisuals
+- [ ] Sci-Fi Hangar Ästhetik: Metallische Oberflächen, Hologramm-Displays, Laser-Schweißpunkte (shared_theme.css).
+- [ ] "The Break": Visuelle Risse im UI, wenn ein Modul inkompatibel ist oder zu viele Abhängigkeiten mitreißt.
+- [ ] High-Contrast Glow für aktive Verbindungsstellen.
+
+5. Interaktion und Feedback
+- [ ] Assembly-Feedback: "Klick! Das Triebwerk wurde erfolgreich durch ein Ionen-Modul ersetzt. Keine Änderungen am Navigationscomputer notwendig – saubere Trennung!"
+- [ ] Warn-Effekt: "Achtung! Du hast das Log-Modul direkt mit dem Zahlungssystem verlötet. Das macht spätere Änderungen extrem schwer!"
+- [ ] Erfolg: "Mission bereit! Dein Raumschiff ist so modular, dass es für jede zukünftige Anforderung gewappnet ist."
+
+6. KPI-Klarheit
+- [ ] Modifiability-Score: "Anpassungsfähigkeit: Maximal".
+- [ ] Coupling-Status: "Kopplungsgrad: Lose (Ideal)".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Austausch der Datenbank", "Hinzufügen eines Logging-Providers", "Wechsel von REST zu GraphQL".
+- [ ] Tonalität: Konstruktiv, visionär, stabil.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist das "Raumschiff" auf dem Smartphone-Display noch erkennbar und die Anschlüsse gut treffbar?
+- [ ] Test: Sind die Auswirkungen einer "engen Kopplung" im Spielverlauf logisch nachvollziehbar (Kettenreaktion)?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler versteht, dass gute Architektur das Ändern einfach macht.
+- [ ] Das Interface wirkt wie ein hochmodernes Konstruktions-Programm von SpaceX.
+- [ ] Vollständige Klarheit über den Unterschied zwischen Kopplung und Kohäsion.

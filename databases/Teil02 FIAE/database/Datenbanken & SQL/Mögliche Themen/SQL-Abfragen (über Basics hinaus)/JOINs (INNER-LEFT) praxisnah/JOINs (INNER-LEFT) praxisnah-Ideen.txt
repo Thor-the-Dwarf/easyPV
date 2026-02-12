@@ -1,0 +1,40 @@
+1. "Join-Puzzle"
+   - Ziel: Verknüpfe zwei Tabellen über einen gemeinsamen Schlüssel.
+   - Spielmechanik: 
+     - Tabelle `Kunde` (ID, Name) und Tabelle `Bestellung` (ID, Kunde_ID, Produkt).
+     - Baue SQL: `FROM Kunde JOIN Bestellung ON Kunde.ID = Bestellung.Kunde_ID`.
+     - Messbarkeit: Korrektheit der Verknüpfungsbedingung.
+   - Lernziel: Relationaler Verbund.
+
+2. "Inner vs. Left-Join-Check"
+   - Ziel: Erkenne den Unterschied in der Ergebnismenge.
+   - Spielmechanik: 
+     - Kunde A hat 0 Bestellungen, Kunde B hat 2.
+     - `INNER JOIN`: Kunde A verschwindet aus der Liste.
+     - `LEFT JOIN`: Kunde A bleibt drin (mit NULL bei Bestell-Infos).
+     - Messbarkeit: Wahl des Joins je nach Informationsbedarf.
+   - Lernziel: Join-Arten & Datenverlust-Vermeidung.
+
+3. "Venn-Diagramm-Match"
+   - Ziel: Ordne Joins den passenden Schnittmengen zu.
+   - Spielmechanik: 
+     - Zeige 2 Kreise. Markiere die linke Seite + Schnittmenge.
+     - Welcher Join ist das? -> LEFT JOIN.
+     - Messbarkeit: Visuelles Verständnis von Mengenoperationen.
+   - Lernziel: Theoretische Basis von Joins.
+
+4. "Self-Join-Rätsel"
+   - Ziel: Verknüpfe eine Tabelle mit sich selbst.
+   - Spielmechanik: 
+     - Tabelle `Mitarbeiter` mit Spalte `Vorgesetzter_ID`.
+     - Finde den Namen des Chefs für jeden Mitarbeiter.
+     - SQL: `JOIN Mitarbeiter chef ON mitarb.vorg_id = chef.id`.
+     - Lernziel: Hierarchien in einer Tabelle abbilden.
+
+5. "Eindeutigkeits-Falle"
+   - Ziel: Vermeide Duplikate durch ungenaue Joins.
+   - Spielmechanik: 
+     - Join über eine Spalte, die nicht eindeutig ist (z.B. Nachname).
+     - Resultat: Explodierende Zeilenzahl (Kartesisches Produkt Risiko).
+     - Messbarkeit: Nutzung von Primärschlüsseln beim Join.
+   - Lernziel: Datenqualität beim Abfragen.

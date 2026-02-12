@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Analyse und Maximierung der Testabdeckung (Test Coverage) zur Identifikation von ungetesteten Code-Logiken.
+- Kontext: Unit-Testing, Qualitätssicherung, White-Box-Testing, Code-Metriken.
+- UX-Prinzip:
+  - "The Spotlighter": Ein Code-Block ist eine dunke Bühne. Jeder Testfall ist ein Scheinwerfer, der einen bestimmten Pfad beleuchtet.
+  - "Shadowy Branches": Ungetestete `else`-Zweige bleiben im Schatten. 
+  - "Color-Coding": Grün = 100% Beleuchtet (Sicher), Gelb = Teilweise (Unsicher), Rot = Dunkel (Gefahr!).
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der ungetestete Code (Shadow), 2 = Die aktiven Testläufe (Licht), 3 = Der Gesamt-Coverage-Score (%).
+- [ ] Textbudget: Max. 12 Zeilen Code mit Verzweigungen.
+- [ ] "Branch-Monitor": Anzeige, wie viele Pfade ein `if/else` Konstrukt hat (z. B. 2/2 Pfade beleuchtet).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> stage-editor -> test-run-console -> coverage-meter`.
+- [ ] Stage: Der Code-Bereich mit dynamischen Lichteffekten (Desktop links, Mobile oben).
+- [ ] Console: Buttons zum "Abfeuern" von Testfällen oben rechts.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Tap-to-Test" Mechanik – Schnelles Triggern verschiedener Eingabe-Szenarien.
+- [ ] `mix-blend-mode: hard-light` für authentische Beleuchtungseffekte auf dem Code.
+
+4. Kernvisuals
+- [ ] Theater- oder Sci-Fi Ästhetik: Dunkle Oberflächen, helle Lichtkegel, Laserpointer (shared_theme.css).
+- [ ] "Dead-Zone-Visual": Ein Totenkopf-Icon oder Warnsymbol in Bereichen mit 0% Coverage.
+- [ ] High-Contrast Coverage Bar: Von Tiefrot zu Leuchtend Grün.
+
+5. Interaktion und Feedback
+- [ ] Lightning-Feedback: "Klick! Testfall 'Admin-Login' feuert... Die gesamte Validierungs-Logik erstrahlt in Grün!"
+- [ ] Fehler-Awareness: "Halt! Du hast 100% Zeilen-Abdeckung, aber der Fehlerfall im `catch`-Block liegt noch im Halbschatten (Zweigabdeckung)."
+- [ ] Erfolg: "Bühne voll erleuchtet! Dein Code ist lückenlos durch Tests abgesichert."
+
+6. KPI-Klarheit
+- [ ] Coverage-Percentage: "Abdeckungsgrad: 100%".
+- [ ] Logic-Confidence: "Sicherheit vor unerwarteten Pfaden: Maximal".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Komplexe Switch-Statements", "Try-Catch Strukturen", "Und-Verknüpfte Bedingungen".
+- [ ] Tonalität: Ausleuchtend, sicherheitsbewusst, präzise.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Funktionieren die Transparenz-Effekte ("Lichtkegel") performant auf mobilen Browsern?
+- [ ] Test: Ist der Unterschied zwischen Zeilen- und Zweigabdeckung visuell klar unterscheidbar?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler begreift Coverage als Hilfsmittel zum Finden von "blinden Flecken".
+- [ ] Das Interface wirkt wie eine hochwertige Profi-Konsole für QS-Experten.
+- [ ] Höchste Klarheit über die Grenzen von Metriken (Licht macht nicht fehlerfrei, nur sichtbar).

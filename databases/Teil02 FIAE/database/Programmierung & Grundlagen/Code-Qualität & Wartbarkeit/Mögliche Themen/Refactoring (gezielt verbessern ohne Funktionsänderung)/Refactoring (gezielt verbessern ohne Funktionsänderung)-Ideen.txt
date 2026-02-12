@@ -1,0 +1,31 @@
+1. "Smell-Detector"
+   - Ziel: Identifiziere "Code Smells" (schlechte Muster).
+   - Spielmechanik: 
+     - Markiere Stellen im Code: "Duplizierter Code", "Lange Parameterliste", "Große Klasse".
+     - Lernziel: Analyse-Kompetenz für Code-Qualität.
+
+2. "Extract-Method-Puzzle"
+   - Ziel: Lagere Code-Logik in eine neue Methode aus.
+   - Spielmechanik: 
+     - Markiere einen Block innerhalb einer langen Methode und gib ihm einen Namen.
+     - Lernziel: DRY-Prinzip (Don't Repeat Yourself).
+
+3. "Inline-Refactoring"
+   - Ziel: Reduziere unnötige Abstraktion.
+   - Spielmechanik: 
+     - Eine Methode wird nur an einer Stelle aufgerufen und ist sehr kurz.
+     - Ziehe den Inhalt direkt in den Aufrufer (Inline).
+     - Lernziel: Angemessene Komplexität.
+
+4. "Switch-to-Strategy"
+   - Ziel: Ersetze große Switch-Case Blöcke durch Polymorphie.
+   - Spielmechanik: 
+     - Wähle das passende Design-Pattern, um eine wachsende Fallunterscheidung zu bändigen.
+     - Lernziel: Erweiterbarkeit von Code.
+
+5. "Test-First-Refactoring"
+   - Ziel: Verändere Code sicher unter Schutz von Unit-Tests.
+   - Spielmechanik: 
+     - Starte Refactoring. Test-Anzeige zeigt "Grün".
+     - Wenn Test "Rot" wird -> Fehler gemacht!
+     - Lernziel: Sicherheit durch Test-Coverage.

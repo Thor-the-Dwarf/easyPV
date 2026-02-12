@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Beherrschung geschachtelter SQL-Abfragen (Subqueries) zur Auflösung komplexer Bedingungs-Abhängigkeiten.
+- Kontext: Fortgeschrittene Datenabfrage, "Deep Dive" Analyse.
+- UX-Prinzip:
+  - "The Russian Doll": Das UI besteht aus Layern. Man "öffnet" die Hauptquery, um die Subquery im Inneren zu finden und zu lösen.
+  - "Inner-First Execution": Das Ergebnis der Subquery leuchtet auf und wird als konstanter Wert in die Hauptquery "eingesetzt".
+  - "Zoom-Interaktion": Stufenloses Reinzoomen in die geschachtelte Logik.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Innere Query (Der Kern), 2 = Äußere Query (Der Rahmen), 3 = Daten-Pipeline.
+- [ ] Textbudget: Max. 10 Wörter pro Query-Teil.
+- [ ] "Logical Ordering": Erst den Kern lösen, dann die Hülle.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> overview-map -> outer-shell -> inner-core -> data-output`.
+- [ ] Core-Area: Zentriert, pulsiert bei Fokus (Desktop 30% Breite, Mobile 50% Breite).
+- [ ] Navigation: Breadcrumbs am oberen Rand zeigen die Schachtelungstiefe (`SELECT -> (SELECT) -> Output`).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] CSS-Variablen für "Layer-Depth": Subqueries haben einen Tiefeneffekt (Box-Shadow/Z-Index).
+- [ ] Mobile: Vollbild-Fokus auf die innere Query, danach automatischer Rücksprung zur Hülle.
+
+4. Kernvisuals
+- [ ] "Glass-Layer" Metapher: Die Queries liegen auf transparenten Ebenen übereinander (shared_theme.css).
+- [ ] Daten-Substitution: Das SQL-Statement der Subquery verwandelt sich nach Lösung in einen festen Wert (z.B. `(...)` wird zu `500€`).
+- [ ] Futuristische Typografie für die Code-Blöcke.
+
+5. Interaktion und Feedback
+- [ ] Step-by-Step Lösung: Innere Query berechnen -> Wert übernehmen -> Äußere Query ausführen.
+- [ ] Feedback: "Logik-Check: Die Subquery liefert den Durchschnittspreis (42€). Jetzt finden wir alle Produkte darüber."
+- [ ] Fehlermanagement: "Typ-Mismatch! Deine Subquery liefert eine Liste, aber die äußere Query erwartet einen Einzelwert."
+
+6. KPI-Klarheit
+- [ ] Logic-Depth: "Schachtelungstiefe: Level 2".
+- [ ] Query-Efficiency: "Verständnis-Score: Mastery".
+
+7. Content-/Copy-Feinschliff
+- [ ] Komplexe Fragen: "Mitarbeiter mit überdurchschnittlichem Gehalt", "Produkte ohne Verkäufe (NOT IN)".
+- [ ] Tonalität: Analytisch, tiefgründig, lösungsorientiert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist die Verschachtelung auf kleinen Handys visuell ohne Unordnung darstellbar?
+- [ ] Test: Funktioniert der Zoom-Wechsel zwischen Inner/Outer Query flüssig?
+
+9. Abnahmekriterien
+- [ ] Die Abhängigkeit ("Innere Query muss zuerst laufen") wird durch die Layer-Metapher unmissverständlich.
+- [ ] Das Interface wirkt wie ein moderner Logic-Debugger.
+- [ ] Maximale Klarheit bei hoher Komplexität.

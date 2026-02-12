@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Präzise Aufwandsschätzung unter Berücksichtigung von Unsicherheiten mittels PERT-Formel zur Erhöhung der Planungssicherheit.
+- Game-Mechanic: "The PERT Cockpit". Der Spieler bedient ein mathematisches Cockpit. Die drei Schätzwerte (O, R, P) müssen so balanciert werden, dass die "Nadel" der Sigma-Abweichung im grünen Bereich bleibt.
+- Challenge: 
+  - Level 1: Statische Werte eingeben und das Ergebnis (o+4r+p)/6 berechnen.
+  - Level 2: "Risk-Fluctuation" - Die Werte ändern sich dynamisch (z.B. "Entwickler wird krank"). Der Spieler muss das Cockpit re-kalibrieren.
+  - Level 3: "Estimation-Poker" - Mehrere Schätzungen abgleichen und den sichersten PERT-Wert unter Zeitdruck ermitteln.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Sigma-Risk-Meter" (Gauge), "Expected-Value" (Counter), "Calculation-Accuracy".
+- [ ] Scoring: "Precision Bonus" für mathematisch exakte Punktlandungen. Abzug bei zu hohem Sigma (Unsicherheits-Faktor zu groß).
+
+2. Screen-Layout (The Math Deck)
+- [ ] `formula-engine -> value-dials -> sigma-gauge -> estimate-display`.
+- [ ] Dials: Drei große Drehregler für Optimistisch (Grün), Realistisch (Blau) und Pessimistisch (Rot).
+- [ ] Gauge: Eine analoge Anzeige, die das statistische Risiko (Sigma) visualisiert.
+
+3. Kernvisuals und Effekte
+- [ ] Steampunk-Ingenieur Ästhetik: Messing-Zifferblätter, tickende Geräusche, analoge Nadel-Ausschläge.
+- [ ] "Calculated-Glow": Das Endergebnis leuchtet auf, wenn die Formel stabil ist.
+- [ ] Rauch-Effekt: Aus dem Cockpit kommt Dampf, wenn das Sigma-Risiko kritisch wird.
+
+4. Browser- und Device-Resilienz
+- [ ] SVG-Dials mit `transform: rotate` für haptisches Drehgefühl.
+- [ ] Mobile: Vertikale Schieberegler statt Drehknöpfen für bessere Einhandbedienung.
+
+5. Content-Strategie (The Tasks)
+- [ ] 12 Szenarien: Datenbank-Migration, API-Integration, UI-Refactoring, Security-Audit.
+
+6. QA-Paket
+- [ ] Test: Sind die Sigma-Berechnungen (p-o)/6 für den Spieler intuitiv verknüpft?
+- [ ] Test: Reagiert das Gauge flüssig auf Wertänderungen?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler versteht, warum 'Realistic' vierfach gewichtet wird.
+- [ ] Das Interface wirkt wie ein wertvolles Ingenieurs-Tool.
+- [ ] Mathematische Sicherheit bei der PERT-Anwendung.

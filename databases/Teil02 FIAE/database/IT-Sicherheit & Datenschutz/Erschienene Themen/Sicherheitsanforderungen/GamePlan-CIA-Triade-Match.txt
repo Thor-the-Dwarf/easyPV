@@ -1,0 +1,19 @@
+Anforderungen
+1. "CIA-Triade Match"
+   - Ziel: Verinnerlichung der Grundwerte der Informationssicherheit (CIA: Confidentiality, Integrity, Availability) als Basis für alle Security-Entscheidungen.
+   - Spielmechanik: 
+     - Analyse von Sicherheitsvorfällen (z.B. "Datenbank-Leak", "Webseite-Defacement", "DDoS-Angriff").
+     - Der Spieler ordnet den Vorfall dem verletzten Schutzziel der CIA-Triade zu.
+     - Auswahl geeigneter Gegenmaßnahmen zur Wiederherstellung des Schutzziels.
+     - Messbarkeit: Korrekte Klassifizierung der Vorfälle.
+   - Lernziel: Beherrschung der theoretischen Security-Grundlagen für Architektur-Entscheidungen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_cia_triad.json')
+   - Szenarien und Schutzziel-Definitionen.
+- [ ] Shared CSS Check ('business_mathematics.css')
+   - (Anpassung des Dreiecks-Visuals für CIA).
+- [ ] Game-Engine Logic ('game_category_match.js')
+   - (Wiederverwendung der Matching-Logik).
+- [ ] Integration
+   - Info: Warum Verfügbarkeit oft vernachlässigt wird, aber für Business-Kontinuität kritisch ist.

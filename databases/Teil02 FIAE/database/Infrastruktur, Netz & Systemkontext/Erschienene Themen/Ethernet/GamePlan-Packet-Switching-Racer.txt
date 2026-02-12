@@ -1,0 +1,20 @@
+Anforderungen
+1. "Packet-Switching Racer"
+   - Ziel: Verständnis der Funktionsweise von Ethernet auf Layer 2 und des Adressierungsmechanismus mittels MAC-Adressen.
+   - Spielmechanik: 
+     - Logische Steuerung eines Datenpakets durch ein lokales Netzwerk.
+     - Der Spieler agiert als Switch und muss eingehende Pakete basierend auf der Ziel-MAC an den korrekten Port weiterleiten.
+     - Aufbau und Verwaltung der MAC-Address-Table (SAT).
+     - Unterscheidung zwischen Unicast, Multicast und Broadcast.
+     - Messbarkeit: Fehlerfreie Zustellung der Pakete innerhalb des Zeitlimits.
+   - Lernziel: Beherrschung der Netzwerk-Grundlagen und Fehlersuche in lokalen Infrastrukturen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_infra_ethernet_switching.json')
+   - Netzwerk-Topologien und Paket-Streams.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Visuelle Darstellung von Switch-Ports und Paketen).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Tracking der Port-Zuweisungen).
+- [ ] Integration
+   - Info: Warum ein Switch effizienter ist als ein Hub (Kollisionsdomänen).

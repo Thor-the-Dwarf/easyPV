@@ -1,0 +1,31 @@
+1. "Path-Coverage-Pilot"
+   - Ziel: Teste alle möglichen Pfade durch den Code.
+   - Spielmechanik: 
+     - Ein Ablaufplan mit Verzweigungen. 
+     - Steuere das Programm so, dass jeder Pfad mindestens einmal durchlaufen wird.
+     - Lernziel: Strukturabdeckung im Testing.
+
+2. "Condition-Check"
+   - Ziel: Verstehe die Bedingungsüberdeckung.
+   - Spielmechanik: 
+     - `if (A && B)`. 
+     - Wähle Testdaten, damit alle Kombinationen von A und B (TF, FT, TT, FF) geprüft werden.
+     - Lernziel: Gründlichkeit bei logischen Auszügen.
+
+3. "Loop-Tester"
+   - Ziel: Finde Fehler in Schleifen.
+   - Spielmechanik: 
+     - Teste eine Schleife für 0 Durchläufe, 1 Durchlauf und viele Durchläufe.
+     - Lernziel: Grenzfälle der Iteration.
+
+4. "Data-Flow-Analyzer"
+   - Ziel: Verfolge Variablen von der Definition bis zur Nutzung.
+   - Spielmechanik: 
+     - Wo wird `x` gesetzt, wo wird es gelesen?
+     - Lernziel: Datenflussbasierte Testfallermittlung.
+
+5. "Code-Coverage-Game"
+   - Ziel: Erreiche 100% Zeilenüberdeckung.
+   - Spielmechanik: 
+     - Schreibe so viele Testfälle wie nötig, um alle Codezeilen grün zu markieren.
+     - Lernziel: Metriken der Testqualität.

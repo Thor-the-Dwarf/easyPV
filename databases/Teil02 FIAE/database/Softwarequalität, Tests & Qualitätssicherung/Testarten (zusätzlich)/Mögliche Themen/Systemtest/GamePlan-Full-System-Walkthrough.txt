@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: End-to-End Validierung des Gesamtsystems unter Realbedingungen zur Sicherstellung der Release-Reife.
+- Kontext: Systemtests, Geschäftsprozess-Testing, E2E (End-to-End), Resilienzprüfung.
+- UX-Prinzip:
+  - "The Grand Circuit": Eine Testfahrt auf dem Gesamtsystem-Ring. Der Spieler steuert ein Datenpaket durch alle Stationen (Frontend, Business-Logic, Datenbank, 3rd Party API).
+  - "Stress-Stations": Unterwegs treten Hindernisse auf (z.B. plötzliche Lastspitzen, Serverausfall).
+  - "Process-Chain": Ein leuchtender Pfad zeigt den Fortschritt durch den gesamten Geschäftsprozess (vom Klick bis zur Datenbank-Zelle).
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der aktuelle Prozessschritt (z.B. "Zahlung autorisieren"), 2 = Der Status der Subsysteme (Health-Check), 3 = Die E2E-Zeitlinie.
+- [ ] Textbudget: Max. 10 Wörter pro Workflow-Phase.
+- [ ] "System-Pulse": Ein zentraler Indikator für die Vitalität des Gesamtsystems.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> world-map-flow -> subsystem-dashboards -> event-ticker`.
+- [ ] World-Map: Eine stilisierte Karte der Systemlandschaft (Desktop mittig-oben).
+- [ ] Dashboards: Kleine Widgets für DB, API und Webserver am unteren Rand.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Swipe-through-Workflow"; Tap-to-Intervene bei Systemfehlern.
+- [ ] `overflow-x: hidden` um den Fokus auf dem Prozesspfad zu halten.
+
+4. Kernvisuals
+- [ ] High-Tech Dashboard Ästhetik: Dunkle Oberflächen, Echtzeit-Graphen, isometrische Server-Icons (shared_theme.css).
+- [ ] "The Flow": Ein pulsierender Lichtpunkt wandert von Station zu Station.
+- [ ] High-Contrast Health-Indicators (Grün: OK, Gelb: Slow, Rot: Down).
+
+5. Interaktion und Feedback
+- [ ] Journey-Feedback: "Klick! Schritt 3 'Warenkorb-Check' erfolgreich. Die Daten wurden korrekt an den Payment-Provider übergeben."
+- [ ] Stress-Test: "Warnung! Datenbank meldet 'Connection Timeout'. Wie reagiert das System? Wähle die Resilienz-Strategie!"
+- [ ] Erfolg: "Ziellinie überquert! Der komplette Geschäftsprozess ist stabil und performant. Systemtest bestanden."
+
+6. KPI-Klarheit
+- [ ] E2E-Stability: "Prozess-Sicherheit: 100%".
+- [ ] Resilience-Rating: "Fehlertoleranz: Exzellent".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Omnichannel-Kauf (Web -> App -> Pickup)", "Komplexe ERP-Anbindung", "Weltweite Synchronisation von Nutzerdaten".
+- [ ] Tonalität: Ganzheitlich, prozessorientiert, wachsam.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Subsystem-Dashboards auf dem Handy-Display noch informativ oder zu kleinteilig?
+- [ ] Test: Sind die Auswirkungen von Störungen im Spielverlauf spürbar und lehrreich?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler begreift das System als vernetztes Ganzes, das mehr ist als die Summe seiner Teile.
+- [ ] Das Interface wirkt wie ein exklusives Monitoring-Center für Release-Manager.
+- [ ] Absolute Klarheit über den Unterschied zwischen Modul-, Integrations- und Systemtest.

@@ -1,0 +1,19 @@
+Anforderungen
+1. "Request-Struktur-Match"
+   - Ziel: Verständnis der Bedeutung von Schnittstellen-Kontrakten zur Vermeidung von Fehlern in der Client-Server-Kommunikation.
+   - Spielmechanik: 
+     - Der Spieler erhält eine Kontrakt-Definition (z.B. "Ein User-Objekt muss `name` und `email` enthalten").
+     - Aufgabe: Aufbau oder Validierung von JSON-Payloads gegen diesen Kontrakt.
+     - Reaktion auf Verstöße (z.B. falsche Datentypen, fehlende Pflichtfelder) im Front- und Backend.
+     - Messbarkeit: Korrektheit der Datenstrukturen gemäß Kontrakt.
+   - Lernziel: Disziplin im API-Design und Stärkung der Zusammenarbeit zwischen Teams.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_web_api_contract.json')
+   - Kontrakt-Definitionen und Test-Daten.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung des Payload-Editors).
+- [ ] Game-Engine Logic ('game_syntax_builder.js')
+   - (Schema-Validierung).
+- [ ] Integration
+   - Info: Warum "Breaking Changes" den Kontrakt verletzen und wie man sie vermeidet.

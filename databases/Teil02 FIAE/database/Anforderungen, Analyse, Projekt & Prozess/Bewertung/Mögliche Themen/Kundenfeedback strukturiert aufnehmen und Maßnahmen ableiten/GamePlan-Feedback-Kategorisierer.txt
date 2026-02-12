@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Schnelle und präzise Triage von Kundenwünschen zur Steuerung der Produktentwicklung (Backlog vs. Bugfix).
+- Game-Mechanic: "The Feedback Inbox". Nachrichten fliegen als Papierflieger oder Envelopes in die Poststelle. Der Spieler muss sie in die richtigen Sortierfächer (Bug, Feature, Support, Trash) werfen.
+- Challenge: 
+  - Level 1: Klare Sprache ("Geht nicht" -> Bug).
+  - Level 2: "The Hidden Gem" - Lob, das eigentlich eine Feature-Idee enthält.
+  - Level 3: "Toxic Flood" - Aggressives Feedback richtig filtern, ohne die "Moderator-Sanity" (Score) zu verlieren.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Inbox-Zero-Timer", "Customer-Satisfaction" (Live), "Roadmap-Progress".
+- [ ] Scoring: "Multi-Sort" Bonus für fehlerfreie Serien. Abzug bei "Miss-Tagging" (Features als Bugs markieren).
+
+2. Screen-Layout (The Mailroom)
+- [ ] `sorting-office -> incoming-conveyor -> category-bins -> backlog-preview`.
+- [ ] Conveyor: Ein schneller Fluss an Nachrichten.
+- [ ] Bins: Bunte, leuchtende Container (Rot: BUG, Blau: FEATURE, Grün: SUPPORT).
+
+3. Kernvisuals und Effekte
+- [ ] Startup-Office Ästhetik: Hell, modern, viele Emojis, dynamische Farbakzente.
+- [ ] "Inbox-Zero Glow": Wenn der Tisch leer ist, gibt es einen belohnenden Gold-Flash.
+- [ ] Paper-Physics: Nachrichten knüllen sich zusammen, wenn sie in den "Trash" wandern.
+
+4. Browser- und Device-Resilienz
+- [ ] `touch-action: none` für verzögerungsfreies Drag-to-Bin.
+- [ ] Mobile: Daumen-optimierte Buttons am unteren Rand.
+
+5. Content-Strategie (The Message-Pool)
+- [ ] 20 authentische User-Zitate: "Fix it!", "Would be cool if...", "I love this app, but...", "Can't login".
+
+6. QA-Paket
+- [ ] Test: Ist das Spieltempo motivierend?
+- [ ] Test: Versteht der Spieler den Impact seiner Wahl auf die (simulierte) Roadmap?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler lernt die Bedeutung von strukturierter Triage im Product Management.
+- [ ] Das Interface wirkt frisch, schnell und unkompliziert.
+- [ ] Maximale Punkte durch "Inbox Zero" Strategie.

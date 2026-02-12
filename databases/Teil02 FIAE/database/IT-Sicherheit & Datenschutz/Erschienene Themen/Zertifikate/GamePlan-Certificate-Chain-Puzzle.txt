@@ -1,0 +1,19 @@
+Anforderungen
+1. "Certificate-Chain Puzzle"
+   - Ziel: Verständnis der hierarchischen Vertrauensmodelle (PKI) und der Validierung von SSL/TLS-Zertifikaten im Web-Kontext.
+   - Spielmechanik: 
+     - Der Spieler erhält ungeordnete Zertifikate (End-Entity, Intermediate CA, Root CA).
+     - Aufgabe: Aufbau der Trusted Chain durch Zuordnung der Aussteller (Issuer) und Inhaber (Subject).
+     - Prüfung der Gültigkeitsdauer und der Domain-Matching Regeln.
+     - Messbarkeit: Erfolgreicher Aufbau einer validen Vertrauenskette.
+   - Lernziel: Beherrschung von PKI-Strukturen und Fehlerdiagnose bei Zertifikatswarnungen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_sec_cert_chains.json')
+   - Zertifikats-Hierarchien und Metadaten.
+- [ ] Shared CSS Check ('web_apis.css')
+   - (Anpassung der Baum-Ansicht für Zertifikate).
+- [ ] Game-Engine Logic ('game_logic_validator.js')
+   - (Chain-Validation-Logik).
+- [ ] Integration
+   - Info: Warum der Browser einer Root-CA vertraut (vertrauenswürdiger Store).

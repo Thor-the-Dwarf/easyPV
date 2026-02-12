@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Erkennen und Verstehen der logischen Blockaden (Anomalien), die durch unzureichende Normalisierung und schlechtes Tabellendesign entstehen.
+- Kontext: Datenbank-Design-Kritik, Fokus auf Integrität und Strukturfehler.
+- UX-Prinzip:
+  - "The Missing Link": Der Spieler will eine neue Information (z. B. "Neues Projekt") erfassen, aber der Speicher-Button bleibt ausgegraut, weil die Struktur ihn zwingt, gleichzeitig einen Mitarbeiter anzulegen, den es noch nicht gibt.
+  - "The Blockage-Heatmap": Felder, die eine Eingabe verhindern, leuchten in einem warnenden Orange auf.
+  - "Blueprint-X-Ray": Ein Knopfdruck zeigt die "gebrochene" Logik im ERM hinter der Tabelle.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Das Eingabeformular (Versuch), 2 = Die Fehlermeldung (Blockade), 3 = Die Tabellenstruktur (Ursache).
+- [ ] Textbudget: Kurze, frustrierende Fehlermeldungen (z. B. "Fehler: Projekt kann ohne Mitarbeiter-ID nicht existieren!").
+- [ ] "Logical Deadlock": Simulation einer Sackgasse, aus der nur eine Strukturänderung (Normalisierung) herausführt.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> data-entry-form -> anomaly-warning -> structural-view`.
+- [ ] Form-Area: Klassisches Eingabe-Interface (Desktop 40% Breite, Mobile 50dvh Höhe).
+- [ ] Structural-View: Erscheint als Overlay oder Sidebar zur Fehleranalyse.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: Fokus auf das "Sackgassen-Gefühl"; Fehlermeldungen sind bildschirmfüllend und unübersehbar.
+- [ ] `scroll-lock` während der Anomalie-Animation.
+
+4. Kernvisuals
+- [ ] Warn-Farben: Dominantes Orange und pulsierendes Rot an den "verklebten" Fremdschlüssel-Feldern.
+- [ ] Zerbrechlichkeits-Metapher: Die Tabelle bekommt "Risse", wenn der Spieler versucht, inkonsistente Daten zu erzwingen.
+- [ ] High-Contrast Badges für Tabellen-Abhängigkeiten.
+
+5. Interaktion und Feedback
+- [ ] Negativ-Feedback: "Klick-Blockade" – Der Button schüttelt sich beim Drücken (Shake-Animation).
+- [ ] Aha-Effekt: "Siehst du das Problem? Du kannst kein Projekt anlegen, ohne einen Chef zu haben. Das ist eine Einfüge-Anomalie!"
+- [ ] Lösung: Ein "Schnitt-Werkzeug", mit dem der Spieler die Tabelle in zwei Teile zerteilt (Normalisierung).
+
+6. KPI-Klarheit
+- [ ] Anomaly-Detection: "Architekturfehler gefunden".
+- [ ] Design-Quality: Steigt nach der Tabellenseparation ("Normalisierungsgrad: 3. NF").
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Szenarien: "Projekt ohne Personal", "Abteilung ohne Räume", "Student ohne Kurs".
+- [ ] Tonalität: Analytisch, kritisch, lösungsorientiert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist die "Struktur-Vorschau" auf kleinen Handys noch erkennbar?
+- [ ] Test: Funktioniert die "Schnitt-Animation" (Normalisierung) auch per Touch-Geste?
+
+9. Abnahmekriterien
+- [ ] Der Spieler erlebt die Frustration schlechten Designs physikalisch durch die Blockade.
+- [ ] Das Interface wirkt wie ein Diagnosetool für Software-Architekten.
+- [ ] Klarheit über den Weg von der Redundanz zur sauberen Trennung.

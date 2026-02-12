@@ -1,0 +1,33 @@
+1. "Abo-System-Simulation"
+   - Ziel: Verstehe das Publisher-Subscriber Prinzip.
+   - Spielmechanik: 
+     - Publisher: "Youtube Kanal". Subscriber: "User 1", "User 2".
+     - Publisher lädt Video hoch. Wer bekommt die Nachricht?
+     - Lernziel: Event-gesteuerte Kommunikation.
+
+2. "Notify-Rallye"
+   - Ziel: Implementiere die `notify()` Methode.
+   - Spielmechanik: 
+     - In `notify()`: Durchlaufe alle User in der Liste und rufe `update()` auf.
+     - Lernziel: Interner Ablauf des Patterns.
+
+3. "Attach & Detach"
+   - Ziel: Verwalte die Abonnentenliste.
+   - Spielmechanik: 
+     - User meldet sich ab. 
+     - Was muss im Code passieren? -> `list.remove(user)`.
+     - Lernziel: Dynamische Verwaltung von Beobachtern.
+
+4. "UI-Data-Binding"
+   - Ziel: Nutze Observer für Benutzeroberflächen.
+   - Spielmechanik: 
+     - Variable `preis` ändert sich. 
+     - Die Preisanzeige (UI) aktualisiert sich automatisch. Wie geht das? -> `preis` ist das Subject.
+     - Lernziel: Praxisanwendung (v.a. in Frameworks wie Vue/React).
+
+5. "Event-Bubbling oder Observer?"
+   - Ziel: Abgrenzung zu anderen Techniken.
+   - Spielmechanik: 
+     - Vergleiche einen direkten Aufruf mit dem Observer-Aufruf.
+     - Vorteil: Publisher muss Subscriber nicht kennen (Entkopplung).
+     - Lernziel: Loses Kopplungs-Prinzip.

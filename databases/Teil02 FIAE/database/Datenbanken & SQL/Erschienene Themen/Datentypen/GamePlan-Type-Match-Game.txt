@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Auswahl des optimalen Datentyps zur Maximierung der Speicher-Effizienz und Sicherstellung der Daten-Präzision.
+- Kontext: Datenbank-Design, Ressourcen-Management.
+- UX-Prinzip:
+  - "The Memory Slab": Der Datentyp ist wie ein maßgeschneiderter Slot in einer Steinplatte. Ein kleiner Wert in einem zu großen Typ verschwendet wertvollen Platz (rotes Aufleuchten).
+  - "Precision-Indicator": Ein Messgerät zeigt an, ob der Typ die nötige Genauigkeit (z. B. Nachkommastellen bei Preisen) liefert.
+  - "Physical Sizing": Icons für Datentypen haben unterschiedliche visuelle Größen (Bit = Winzig, BigInt = Massiv).
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der reale Wert (z. B. "True/False"), 2 = Der Datentyp-Slot (BOOL), 3 = Verschwendeter Speicherplatz (Visual).
+- [ ] Textbudget: Max. 2 Wörter pro Wert-Beispiel.
+- [ ] "Efficiency-First": Das Spiel belohnt nicht nur Korrektheit, sondern auch die Wahl des kleinstmöglichen Typs (z. B. TINYINT statt INT bei Alter).
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> data-stream -> type-slots -> space-gauge`.
+- [ ] Slot-Area: Eine vertikale oder horizontale "Steinplatte" mit eingravierten Typ-Namen.
+- [ ] Data-Items: Herabfließend oder am unteren Rand als Stapel.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: Karte mit Wert wird auf den Typ-Slot "gestempelt".
+- [ ] Responsives Grid: Slots passen sich in der Anzahl der Bildschirmbreite an.
+
+4. Kernvisuals
+- [ ] Material-Look: Stein, Marmor oder gebürstetes Metall (shared_theme.css).
+- [ ] Glühende Werte: Die Werte leuchten in der Farbe ihrer Kategorie (Zahl, Text, Zeit, Logik).
+- [ ] Speicher-Balken: Zeigt live an: "Verbrauch: 8 Bytes" vs. "Verbrauch: 1 Byte".
+
+5. Interaktion und Feedback
+- [ ] Fit-Check: Wert wird in den Slot gezogen; bei Übergröße (z. B. langer Text in VARCHAR(5)) "platzt" der Slot visuell.
+- [ ] Feedback: "Gut gemacht! Ein BOOLEAN braucht nur 1 Bit – perfekt für 'Aktiv'-Flags."
+- [ ] Warnung: "Du nutzt DECIMAL(10,2) für eine Ganzzahl? Das ist mathematisch korrekt, aber verschwendet Platz!"
+
+6. KPI-Klarheit
+- [ ] Storage-Efficiency: 0-100%.
+- [ ] Accuracy-Score: "Daten-Integrität: Sicher".
+
+7. Content-/Copy-Feinschliff
+- [ ] Reale Datenpaare: "Temperatur" (DECIMAL), "ID" (INT), "Name" (VARCHAR), "Abo-Status" (BOOL), "Kommentar" (TEXT).
+- [ ] Tonalität: Präzise, ressourcenbewusst, analytisch.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die kleinen Typ-Unterschiede (SMALLINT vs BIGINT) visuell erkennbar?
+- [ ] Test: Funktioniert die "Verschwendungs-Anzeige" auch bei feinsten Typ-Wechseln?
+
+9. Abnahmekriterien
+- [ ] Der Spieler lernt, dass jeder Byte in einer Milliarden-Zeilen-Tabelle zählt.
+- [ ] Das Interface wirkt wie ein mystisches, aber präzises Stein-Tablett.
+- [ ] Haptisches "Slot-In" Gefühl bei der Bedienung.

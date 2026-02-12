@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der wirtschaftlichen Amortisation von IT-Investitionen durch Abwägung von Entwicklungskosten gegen Prozessersparnis.
+- Game-Mechanic: "The ROI Tycoon". Eine Finanz-Engine. Du hast ein Startkapital. Du musst in IT-Features investieren. Jedes Feature spart monatlich Kosten. Ziel: Den "Break-Even-Point" so schnell wie möglich erreichen.
+- Challenge: 
+  - Level 1: Ein einfaches Feature (z.B. "Auto-Mail").
+  - Level 2: "Shadow Costs" - Features haben Wartungskosten, die erst später zuschlagen.
+  - Level 3: "Market Volatility" - Das Budget wird gekürzt; du musst entscheiden, welche Investition den höchsten ROI pro Monat bringt (Rankingspiel).
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Wallet" (Cashflow), "Amortization-Time" (Clock), "Return-on-Investment" (Score).
+- [ ] Scoring: Bonuspunkte für "Lean Investing". Abzug bei "Over-Engineering" (Teure Features für kleine Probleme).
+
+2. Screen-Layout (The Financial Dashboard)
+- [ ] `stock-exchange -> investment-cards -> break-even-chart -> wallet-display`.
+- [ ] Chart: Ein dynamischer Graph, der Live-Prognosen zeichnet (Kosten vs. Profit).
+- [ ] Cards: Jedes IT-Projekt als "Aktie" mit ROI-Prognose.
+
+3. Kernvisuals und Effekte
+- [ ] Wall-Street Ästhetik: Dunkelgrün, leuchtende Zahlen, Finanz-Ticker-Animationen.
+- [ ] "Profit-Pop": Goldmünzen sprudeln aus der Wallet, wenn der Break-Even erreicht ist.
+- [ ] High-Contrast Metriken für Cashflow und Burn-Rate.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Grid` für das Dashboard-Feeling.
+- [ ] Mobile: Kompakter "Wallet-Focus" View.
+
+5. Content-Strategie (The Business Cases)
+- [ ] 12 Investitionen: Cloud-Migration, Test-Automatisierung, Legacy-Refactoring, AI-Chatbot.
+
+6. QA-Paket
+- [ ] Test: Ist der mathematische Zusammenhang zwischen Kosten und Ersparnis im Graph sofort erkennbar?
+- [ ] Test: Fühlt sich das "Investieren" belohnend an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift Wirtschaftlichkeit als Kern von IT-Projekten.
+- [ ] Das Interface wirkt wie ein Profi-Tool für CFOs.
+- [ ] Hohe Wiederspielbarkeit durch verschiedene Investitions-Strategien.

@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Systematisches Testen von Softwarekomponenten ohne Kenntnis der internen Implementierung (Black-Box-Prinzip).
+- Kontext: Grenzwertanalyse, Äquivalenzklassen, funktionales Testen.
+- UX-Prinzip:
+  - "The Black Box Oracle": Eine mysteriöse Maschine mit Schaltern (Eingaben) und Lichtern (Ausgaben). Der Spieler muss die Logik erraten, indem er sie provoziert.
+  - "Stress-Testing": Was passiert, wenn ich eine Million eingebe? Was bei einem Smilie?
+  - "Specification-Ghost": Eine halbtransparente Anleitung zeigt, wie die Box funktionieren SOLLTE. Der Spieler markiert Abweichungen.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Die Eingabe-Konsole, 2 = Die beobachtete Reaktion, 3 = Der Abgleich mit der Doku.
+- [ ] Textbudget: Max. 5 Eingabe-Parameter gleichzeitig.
+- [ ] "Exploration-Log": Eine Liste der bisherigen Versuche und deren Ergebnisse.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> oracle-interface -> observation-deck -> bug-report-sheet`.
+- [ ] Oracle-Interface: Ein mechanisch wirkendes Steuerpult (Desktop mittig, Mobile Full-Screen).
+- [ ] Report-Sheet: Per Tab erreichbare Liste der gefundenen Fehler.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: "Dial-and-Slider" Steuerung für numerische Eingaben.
+- [ ] `inputmode="numeric"` für mobile Tastaturoptimierung.
+
+4. Kernvisuals
+- [ ] Mystery-Ästhetik: Dunkler Metall-Look, glühende Röhren, Analog-Anzeigen (shared_theme.css).
+- [ ] "The Glitch": Visuelle Verzerrung im UI, wenn eine Eingabe die Box zum Absturz bringt.
+- [ ] High-Contrast Daten-Outputs (z. B. grelles Grün auf Schwarz).
+
+5. Interaktion und Feedback
+- [ ] Discovery-Feedback: "Aha! Bei negativen Werten gibt die Box immer 'ERROR' aus. Das steht aber anders in der Anleitung!"
+- [ ] Fehler-Markierung: Der Spieler zieht ein rotes "X" auf die Ausgabe, wenn sie falsch ist.
+- [ ] Erfolg: "Box entschlüsselt! Du hast alle 5 Spezifikationsfehler gefunden, ohne eine Zeile Code zu sehen."
+
+6. KPI-Klarheit
+- [ ] Detection-Rate: "Bugs gefunden: X / Y".
+- [ ] Input-Strategy: "Systematik der Grenzwertanalyse: Exzellent".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Altersverifikation", "Steuerberechnung", "Passwort-Generator", "Rabatt-Staffelung".
+- [ ] Tonalität: Geheimnisvoll, analytisch, herausfordernd.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Ist das "Pult"-Design auf einem kleinen Handy-Display noch gut bedienbar?
+- [ ] Test: Reagiert die Box korrekt auf extreme "Edge-Case" Eingaben (z.B. SQL-Injection Versuche)?
+
+9. Abnahme-Kriterien
+- [ ] Der Spieler verinnerlicht die Trennung von Spezifikation und Implementierung.
+- [ ] Das Interface wirkt wie ein exklusives Rätsel-Spiel für Qualitäts-Enthusiasten.
+- [ ] Höchste Klarheit über Grenzwertanalyse und Äquivalenzklassen.

@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Effiziente Nutzung vorhandener Klassenbibliotheken zur Vermeidung von redundanter Implementierung ("Don't reinvent the wheel").
-- Kontext: API-Kenntnis, Standard-Bibliotheken (Math, IO, Util, Net).
-- UX-Prinzip:
-  - "The Craftsman's Workshop": Der Spieler steht vor einer riesigen Werkzeugwand. Jedes Problem (Werkstück) erfordert den Griff zum korrekten Spezialwerkzeug.
-  - "The Master's Advice": Ein kurzer Hover-Tipp erklärt, warum z.B. die `Math`-Klasse besser ist als eine eigene Sinus-Formel.
-  - "Slotting In": Das Werkzeug-Icon muss perfekt in die Aussparung des Problems passen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Zuordnung der richtigen Entwicklerwerkzeuge zu den Phasen des Software-Lifecycles (Plan, Code, Build, Test, Deploy, Run).
+- Game-Mechanic: "The Tool Master". Du bist der Werkstatt-Meister in einer High-Tech Softwareschmiede. Eine Flut von Problemen (Tasks) kommt rein. Du musst blitzschnell das richtige Werkzeug aus deiner "Dev-Toolbox" (Git, Docker, IDE, Jira, Jenkins, npm) wählen und auf den Task anwenden.
+- Challenge: 
+  - Level 1 (Essentials): "Code muss versioniert werden" -> Ziehe `Git` drauf. "Aufgabe planen" -> `Jira`.
+  - Level 2 (The Automated Factory): "Build & Test automatisieren" -> `Jenkins`. "Umgebung isolieren" -> `Docker`.
+  - Level 3 (Full-Cycle): Ein Task wandert durch alle Phasen. Wechsle das Werkzeug synchron zum Fortschritt, ohne den Rhythmus zu verlieren.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Das aktuelle Problem (Mission), 2 = Die Werkzeugwand (Libraries), 3 = Der Erfolgs-Code.
-- [ ] Textbudget: Max. 12 Wörter pro Problem-Definition.
-- [ ] "Direct Utility": Sofortige Anzeige des Codes, der das Problem mit der Library löst.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Lifecycle-Progress" (Circular), "Mastery-Level", "Efficiency-Multiplier".
+- [ ] Scoring: "Chain-Reaction" Bonus für das richtige Werkzeug in Rekordzeit. Abzug bei "Tool-Mismatch" (z. B. Docker zum Versionieren nutzen).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> workbench (Problem) -> tool-wall (Choices) -> results-shelf`.
-- [ ] Workbench: Zentraler Tisch, auf dem das Problem-Icon liegt (Desktop 60% Breite, Mobile 50dvh Höhe).
-- [ ] Tool-Wall: Übersichtliche Anordnung der Library-Kategorien am rechten Rand oder unten.
+2. Screen-Layout (The Workbench)
+- [ ] `blueprint-table -> lifecycle-conveyor -> tool-belt -> terminal-display`.
+- [ ] Conveyor: Tasks fahren auf einem Fließband vorbei, jede Station ist eine SDLC-Phase.
+- [ ] Tool-Belt: Eine scrollbare Leiste mit hochauflösenden, gläsernen Tool-Icons.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-to-Browse" durch die Werkzeuge.
-- [ ] `safe-area-inset` für das Code-Snippet Overlay.
+3. Kernvisuals und Effekte
+- [ ] Industrial-Cyberpunk Ästhetik: Rostfreier Stahl, leuchtende Hologramme, mechanische Soundeffekte, klares Raster-Layout.
+- [ ] "Action-Snap": Wenn ein Tool auf einen Task trifft, rastet es mit einem mechanischen "Klock" ein.
+- [ ] "Phase-Transition": Die Hintergrundbeleuchtung ändert sich je nach SDLC-Phase (Plan = Blau, Deploy = Raketen-Gelb).
 
-4. Kernvisuals
-- [ ] Werkstatt-Ästhetik: Holz-Texturen (rustikal) oder Carbon (modern), je nach shared_theme.css.
-- [ ] Ikonografisches Tooling: Ein Taschenrechner für `Math`, ein Briefumschlag für `Net`, eine Kalenderblatt für `Date`.
-- [ ] Glow-Effekte: Das richtige Werkzeug leuchtet dezent auf, wenn man das Problem "versteht".
+4. Browser- und Device-Resilienz
+- [ ] `drop-shadow` Effekte für die Tool-Icons zur Erzeugung von Tiefe.
+- [ ] Mobile: "Swipe-Tools-to-Task" Steuerung, optimiert für den Daumen.
 
-5. Interaktion und Feedback
-- [ ] Match-Feedback: "Klick! Mit der `java.time` API ist Datumsrechnung ein Kinderspiel."
-- [ ] Rad-Neuerfinder-Warnung: "Du versuchst einen HTTP-Request von Hand in Sockets zu schreiben? Nimm lieber die `HttpClient` Toolbox!"
-- [ ] Code-Preview: "So einfach geht's: `Math.sqrt(x);` – Fertig!"
+5. Content-Strategie (The Tool-Catalog)
+- [ ] 20 reale Dev-Tools: Von Git und AWS bis hin zu SonarQube und Kubernetes.
 
-6. KPI-Klarheit
-- [ ] Efficiency-Score: "Entwicklungs-Geschwindigkeit: Meisterhaft".
-- [ ] Wheel-Reinvention-Level: "0% (Optimale Library-Ausnutzung)".
+6. QA-Paket
+- [ ] Test: Sind die Kurzbeschreibungen der Tools (beim Hover) prägnant genug für den Lerneffekt?
+- [ ] Test: Bleibt das Fließband bei 60 FPS auch bei hoher Task-Dichte?
 
-7. Content-/Copy-Feinschliff
-- [ ] Reale Aufgaben: "Passwort hashen", "Große Dateien kopieren", "Zufallszahl zwischen 1 und 100", "Währung formatieren".
-- [ ] Tonalität: Hilfreich, erfahren, pragmatisch.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Werkzeug-Icons auf einem kleinen Handy-Bildschirm unterscheidbar?
-- [ ] Test: Funktioniert das Drag-and-Drop auch bei schnellen Gesten zuverlässig?
-
-9. Abnahmekriterien
-- [ ] Der Spieler erkennt den massiven Zeitgewinn durch Standard-APIs.
-- [ ] Das Interface wirkt wie ein gut sortierter Master-Workspace.
-- [ ] Hoher Transferwert für die tägliche Programmierpraxis.
+7. Abnahme-Kriterien
+- [ ] Der Spieler lernt das moderne Dev-Ökosystem und dessen Zusammenspiel kennen.
+- [ ] Das Interface wirkt professionell, State-of-the-Art und motivierend.
+- [ ] Schneller, fehlerfreier Durchlauf durch den gesamten Lifecycle.

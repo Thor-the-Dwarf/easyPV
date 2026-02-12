@@ -1,51 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Schnelle und präzise Klassifizierung von GoF-Design-Patterns zur Verbesserung der architektonischen Fachsprache.
-- Kontext: Design Patterns, Software-Architektur, Experten-Kommunikation.
-- UX-Prinzip:
-  - "The Architect's Blueprints": Patterns sind keine trockenen Diagramme, sondern bewährte Bautechniken.
-  - "Foundation Walls" (Creational): Wie erschaffen wir Objekte, ohne den Überblick zu verlieren?
-  - "Framework-Connectors" (Structural): Wie bauen wir komplexe Gebilde aus einfachen Teilen zusammen?
-  - "Social Rules" (Behavioral): Wie kommunizieren die Bewohner (Objekte) im Gebäude miteinander?
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler beherrschen die Taxonomie der Design Patterns (Creational, Structural, Behavioral) für eine präzise Fachsprache.
+- Game-Mechanic: "The Pattern Archives". Du bist der Chef-Archivar in einer legendären Pattern-Bibliothek. Die "Blaupausen des Wissens" (Patterns) liegen unsortiert auf dem Tisch. Schiebe sie in die korrekten Kategorien (Die drei Säulen der Architektur), bevor die Bibliothek schließt.
+- Challenge: 
+  - Level 1 (Novize): Klare Klassiker wie "Singleton" (Creation) oder "Adapter" (Structure).
+  - Level 2 (Gelehrter): Muster, die sich ähneln (Strategy vs. State). Wo liegt der Fokus der Interaktion?
+  - Level 3 (Meister-Archivar): 15 Patterns in 30 Sekunden. Wer zögert, verliert "Archiv-Renommee".
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Das konkrete Pattern (z.B. Singleton), 2 = Die drei Kategorien (Blueprints), 3 = Der Anwendungsfall.
-- [ ] Textbudget: Max. 5 Wörter pro Pattern-Kurzbeschreibung.
-- [ ] "Three-Pillar-Layout": Klare visuelle Trennung der Kategorien als Säulen eines Tempels.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Library-Clock", "Sorting-Accuracy", "Archivist-Rank".
+- [ ] Scoring: "Fast-Sort" Multiplikator. Abzug bei "Category-Clash" (z.B. Erzeugungsmuster als Verhaltensmuster markiert).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> pattern-drafts (Source) -> category-columns (Target) -> expert-summary`.
-- [ ] Columns: Drei vertikale Slot-Bereiche (Desktop nebeneinander, Mobile horizontal scrollbare Karten).
-- [ ] Drafts: Leuchtende Blaupausen-Karten am unteren Rand.
+2. Screen-Layout (The Grand Library)
+- [ ] `library-hall -> classification-desk -> the-three-pillars -> card-deck`.
+- [ ] Pillars: Drei monumentale Säulen (CREATION / STRUCTURE / BEHAVIOR) mit passenden Icons.
+- [ ] Card-Deck: Fächerförmig ausgelegte Karten mit Pattern-Namen und kurzer "Summery".
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-and-Drop" – Karten fliegen bei richtiger Wahl in die passende Säule.
-- [ ] CSS-Grid für die exakte Ausrichtung der Architektur-Elemente.
+3. Kernvisuals und Effekte
+- [ ] Dark-Academia Ästhetik: Altes Papier, Tintenflecken, Kerzenschein-Shader, subtiler Staub-Effekt (`shared_theme.css` Variablen).
+- [ ] "Archive-Slam": Beim Sortieren gleitet die Karte wie von Zauberhand in die Säule und hinterlässt eine Leuchtspur.
+- [ ] "Wrong-Shelf-Dust": Bei Fehlern staubt das UI kurz grau auf (visuelles "Nein").
 
-4. Kernvisuals
-- [ ] Blaupausen-Ästhetik: Dunkelblaues Papier, weiße Linien, Raster-Hintergrund (shared_theme.css).
-- [ ] Ikonografische Symbole: Ein Zauberstab (Erzeugung), ein Puzzle-Teil (Struktur), eine Sprechblase (Verhalten).
-- [ ] High-Contrast Glow für aktive Kartenauswahl.
+4. Browser- und Device-Resilienz
+- [ ] `touch-action: pan-x` für das Durchblättern des Karten-Decks.
+- [ ] Mobile: Kartenstapel mittig, Wischen nach Oben/Links/Rechts zum Sortieren.
 
-5. Interaktion und Feedback
-- [ ] Einrast-Effekt: "Snap! Der Adapter ist ein Strukturmuster – er verbindet inkompatible Interfaces wie ein Bindeglied."
-- [ ] Fehler-Logik: "Vorsicht! Der Observer regelt das Verhalten (Events), nicht die Erzeugung von Objekten."
-- [ ] Wissens-Plus: Nach dem Einrasten erscheint ein 1-Satz-Szenario: "Wird oft für Event-Listen in UIs genutzt."
+5. Content-Strategie (The Pattern-Library)
+- [ ] Alle 23 GoF-Muster sind als Karten hinterlegt.
 
-6. KPI-Klarheit
-- [ ] Pattern-Mastery: "Architekten-Rang: Senior".
-- [ ] Taxonomy-Score: "X / 23 GoF-Patterns kategorisiert".
+6. QA-Paket
+- [ ] Test: Sind die Erklärungen auf der Rückseite der Karten (Flip-Animation) hilfreich im Lernmoment?
+- [ ] Test: Ist die Wisch-Geste auf allen Browsern flüssig?
 
-7. Content-/Copy-Feinschliff
-- [ ] Top-Patterns: Singleton, Factory, Abstract Factory (C); Adapter, Decorator, Facade, Proxy (S); Observer, Strategy, State, Command (B).
-- [ ] Tonalität: Seriös, architektonisch, fundiert.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die feinen Linien der Blaupausen-Ästhetik auf dem Handy auch scharf?
-- [ ] Test: Sind die Tooltips mit den Pattern-Beschreibungen auch bei Touch-Interaktion stabil?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler verankert das 3-Säulen-Modell der Software-Muster dauerhaft.
-- [ ] Das Interface wirkt wie ein exklusives Dossier für Software-Gurus.
-- [ ] Intuitive Bedienung trotz hoher fachlicher Tiefe.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verinnerlicht die drei Kategorien der Entwurfsmuster.
+- [ ] Das Interface wirkt extrem atmosphärisch, mystisch und wertvoll.
+- [ ] Sofortige Korrektur durch prägnante "Warum?"-Texte im Fehlerfall.

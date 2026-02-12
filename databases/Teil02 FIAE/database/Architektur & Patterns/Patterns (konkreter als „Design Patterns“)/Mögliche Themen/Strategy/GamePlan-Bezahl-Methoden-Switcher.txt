@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Implementierung einer Familie austauschbarer Algorithmen (Strategien), die zur Laufzeit gewechselt werden können, um Verzweigungs-Logik (If-Else) zu eliminieren.
-- Kontext: Algorithmen-Austausch, Zahlungsarten, Sortier-Strategien, Verhaltensänderung.
-- UX-Prinzip:
-  - "The Weapon Wheel": In einem Spiel wählt man die Waffe (Strategie) für die aktuelle Situation. Die Hand (der Kontext), die sie hält, bleibt gleich.
-  - "Slotting In": Der Spieler sieht einen offenen Slot im Hauptalgorithmus, in den verschiedene "Logik-Chips" (Strategien) passen.
-  - "Zero-If Logic": Visuelle Demonstration, wie hunderte `if`-Abfragen durch eine einzige, saubere 호출 (Aufruf) an die aktuelle Strategie ersetzt werden.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler beherrschen das Strategy-Pattern, um Algorithmen zur Laufzeit auszutauschen und `if-else` Friedhöfe zu vermeiden.
+- Game-Mechanic: "The Merchant's Gearbox". Du fährst einen Lieferwagen (Die App). Die Straße (Der Kontext) ändert sich ständig (Zahlungsart, Versandweg, Steuersatz). Du musst das Getriebe (Strategy-Slot) umschalten, damit der richtige Algorithmus greift.
+- Challenge: 
+  - Level 1 (Urban-Pay): Schalte auf "PayPal", wenn der Kunde eine E-Mail hat.
+  - Level 2 (Global-Commerce): Dynamischer Wechsel basierend auf dem Land. Schalte "Vat-Strategy Germany" oder "Vat-Strategy USA" aktiv.
+  - Level 3 (Black Friday): 1000 Transaktionen pro Sekunde. Wechsle instinktiv zwischen "High-Performance-Sort" und "Deep-Validation-Sort".
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die aktive Strategie (The Gear), 2 = Das gemeinsame Interface (The Foundation), 3 = Der Ausführungskontext.
-- [ ] Textbudget: Max. 5 Begriffe pro Strategie-Karte.
-- [ ] "Decision HUD": Anzeige, welcher "Chip" gerade eingesteckt ist.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Gear-State" (Active Strategy), "Transmission-Smoothness" (Accuracy), "Logic-Speed".
+- [ ] Scoring: +2000 Pkt für "Zero-If" Code-Design. Abzug bei "Logic-Mismatch" (falsche Strategie für die Situation).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> strategy-wheel -> execution-arena -> logic-preview`.
-- [ ] Wheel-Design: Ein kreisförmiges Menü in der Mitte (Desktop 50% Breite, Mobile Full-Screen Touch Zone).
-- [ ] Arena: Hier wird das Ergebnis der gewählten Strategie live simuliert.
+2. Screen-Layout (The Cockpit)
+- [ ] `dashboard -> strategy-shifter -> simulation-window -> logic-chip-slot`.
+- [ ] Shifter: Ein großer, haptischer Schaltknüppel (Desktop Drag, Mobile Swipe).
+- [ ] Simulation: Eine "Straße", auf der man sieht, wie der Algorithmus die Daten verarbeitet.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Circle-Swipe" Geste zum Durchschalten der Strategien.
-- [ ] `touch-action: none` für verlustfreie Gestensteuerung im Rad.
+3. Kernvisuals und Effekte
+- [ ] Retro-Futurism / Racing Ästhetik: Neon-Vektoren, Tachometer-Optik, glühende Schalthebel.
+- [ ] "Gear-Shift": Beim Wechsel klackt das UI mechanisch ein und die Farbe der Logik-Wellen ändert sich.
+- [ ] "Smooth-Ride": Wenn die Strategie passt, fließt der Datenstrom mit 60 FPS dahin.
 
-4. Kernvisuals
-- [ ] Gaming-Ästhetik: Neon-Menüs, taktische Overlays, Sound-Effekte beim Umschalten (shared_theme.css).
-- [ ] Logik-Chips: Jede Strategie wird als physisches Modul mit verschiedenen Schaltkreis-Mustern dargestellt.
-- [ ] High-Contrast "Active"-Glow.
+4. Browser- und Device-Resilienz
+- [ ] `touch-action: none` für verzögerungsfreies Schalten.
+- [ ] Mobile: Fokus auf das haptische Feedback (Vibration) beim Gangwechsel.
 
-5. Interaktion und Feedback
-- [ ] Switch-Feedback: "Klick! Strategie wechselt auf 'Kreditkarte'. Die Gebührenberechnung passt sich sofort an."
-- [ ] Aha-Moment: "Schau dir den Code an: Keine `if-else` Ketten mehr! Nur noch `payment.pay()`."
-- [ ] Erfolg: "Maximale Flexibilität! Du kannst morgen eine 'Krypto-Strategie' hinzufügen, ohne den Checkout-Code zu berühren."
+5. Content-Strategie (The Context-Drive)
+- [ ] 20 Verkehrs-Situationen (Kontexte): Von "Anonymem Checkout" bis "Express-Luftfracht".
 
-6. KPI-Klarheit
-- [ ] Code-Cleanliness: "Conditional-Complexity: Minimal".
-- [ ] Extensibility-Score: "Erweiterbarkeit: Unendlich".
+6. QA-Paket
+- [ ] Test: Ist der Vorteil von Strategy gegenüber `if-else` im "Code-View" (Overlay) ersichtlich?
+- [ ] Test: Fühlt sich das Umschalten der Strategien belohnend an?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Zahlungsarten am Kiosk", "Routenplanung (Auto vs. Rad vs. Fuß)", "Rabatt-Aktionen".
-- [ ] Tonalität: Taktisch, clever, modular.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist das "Weapon Wheel" auf dem Smartphone mit dem Daumen gut bedienbar?
-- [ ] Test: Reagiert die Simulations-Arena verzögerungsfrei auf den Strategiewechsel?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift Polymorphie als mächtige Waffe gegen Unübersichtlichkeit.
-- [ ] Das Interface wirkt wie ein exklusives Skill-Tree System aus einem Top-Spiel.
-- [ ] Volle Klarheit über das Prinzip "Kapsle, was sich ändert".
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift Strategy als Werkzeug für sauberen, erweiterbaren Code.
+- [ ] Das Interface wirkt wie ein High-End Racing-Simulator für Software.
+- [ ] Maximale Punkte durch vorausschauende Strategie-Wahl.

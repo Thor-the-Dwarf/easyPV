@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Präzise Identifikation von Entitäten und Attributen aus einer Textbeschreibung zur Erstellung eines konzeptionellen Datenmodells.
-- Kontext: Textanalyse-Tool, Fokus auf "Substantiv-zu-Symbol" Mapping.
-- UX-Prinzip:
-  - Der Quelltext (Story) dominiert die linke/obere Hälfte.
-  - Das interaktive ERM-Canvas (Platzhalter für Symbole) die rechte/untere Seite.
-  - "Highlight & Drop": Markierte Worte werden zu Symbolen auf dem Canvas.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler beherrschen die Identifikation von Informationsobjekten (Entitäten) und deren Eigenschaften out-of-the-box aus unstrukturierten Texten.
+- Game-Mechanic: "The Entity Hunter". Du bist ein Späher in der "Wildnis der Daten". Ein Text-Szenario (Die Story) erscheint. Du musst die "Beute" (Entitäten = Substantive) markieren und sie per Drag in deine "Sammlung" (ERM-Canvas) ziehen.
+- Challenge: 
+  - Level 1 (Offensichtlich): Texte mit klaren Objekten wie "Auto", "Farbe", "Besitzer".
+  - Level 2 (Abstrakt): Objekte wie "Vertrag", "Gültigkeit" oder "Status-Historie". Erkenne sie als Entitäten, nicht als Attribute.
+  - Level 3 (The Relational King): Spüre auch die "Beziehungs-Verben" auf (z. B. "lebt in", "gehört zu") und verbinde die Entitäten auf dem Canvas.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Markierter Begriff im Text, 2 = Symbol-Typ (Rechteck/Oval), 3 = Canvas-Struktur.
-- [ ] Textbudget: Kurze, prozesslastige Beschreibungen (max. 30 Wörter).
-- [ ] Keine Vor-Handbücher; die Symbole (Entität/Attribut) werden beim ersten Drag erklärt.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Discovery-Radar" (Markierungstiefe), "Model-Integrity", "Hunter-Instinct" (Speed).
+- [ ] Scoring: "Multi-Find" Bonus für das korrekte Markieren ganzer Sätze. Abzug bei "Noise-Capture" (Markieren von Füllwörtern).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> text-analyzer -> erm-canvas -> property-inspector`.
-- [ ] Text-Area: Desktop 45% Breite, Mobile 30dvh Höhe. Mit "Tap-to-Highlight" Feature.
-- [ ] Canvas: Unendlicher Grid-Hintergrund, Symbole rasten ein.
+2. Screen-Layout (The Scouting Ground)
+- [ ] `scroll-map -> text-analyzer-display -> erm-canvas-preview -> hunter-inventory`.
+- [ ] Text-Analyzer: Desktop 50% Breite, Mobile 40dvh Höhe. Mit interaktivem "Text-Highlighting".
+- [ ] ERM-Canvas: Eine wachsende Skizze auf der rechten Seite, die sich live befüllt.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Split-Screen" mit verschiebbarem Trenner (Panel-Resize).
-- [ ] SVG-basierte Symbole für scharfe Darstellung auf allen Pixeldichten.
+3. Kernvisuals und Effekte
+- [ ] Nature-Survivor / Tech-Scout Ästhetik: Organische Texturen (Papier, Leder) gemischt mit digitalen Overlays, nachtsicht-grünes Highlighting.
+- [ ] "Capture-Effect": Markiertes Wort wird beim Loslassen zu einer 3D-Karte, die auf das Canvas fliegt.
+- [ ] "Relationship-Web": Linien ziehen sich wie Spinnfäden zwischen den Entitäten, wenn eine Beziehung erkannt wird.
 
-4. Kernvisuals
-- [ ] ERM-Standard: Klare Rechtecke (Entität) und Ovale (Attribute) nach Chen- oder Krähenfuß-Notation.
-- [ ] Aktives Highlighting: Text leuchtet in der Farbe des zugeordneten Symbols.
-- [ ] Verbindungslinien: Zeichnen sich automatisch zwischen Entität und Attribut.
+4. Browser- und Device-Resilienz
+- [ ] `selectionchange` Event-Handling für präzises Text-Markieren auf allen Geräten.
+- [ ] Mobile: "Long-Press to Hunt" Mechanik.
 
-5. Interaktion und Feedback
-- [ ] Drag-to-Define: Wort wird auf Karte gezogen -> Auswahlmenü (Entität/Attribut).
-- [ ] Sofort-Check: "Richtig. 'Kunde' ist das Objekt (Entität), 'Name' ist seine Eigenschaft (Attribut)."
-- [ ] Fehlermanagement: "Vorsicht! Ein Verb (z. B. 'bestellt') ist meist keine Entität, sondern eine Beziehung."
+5. Content-Strategie (The Stories)
+- [ ] 12 Szenarien: "Tierheim-Verwaltung", "Raumschiff-Logistik", "Pizza-Lieferdienst", "Smart-Contract Flow".
 
-6. KPI-Klarheit
-- [ ] Modeling-Progress: "8 von 10 Begriffen modelliert".
-- [ ] Consistency-Score: Zeigt an, wie logisch die Attribute verknüpft sind.
+6. QA-Paket
+- [ ] Test: Ist das Drag & Drop von Text-Snippets auf das Canvas barrierefrei (Touch-Targets)?
+- [ ] Test: Sind die Tooltips für "Entität vs. Attribut" im Moment der Gefahr hilfreich?
 
-7. Content-/Copy-Feinschliff
-- [ ] Realistische Szenarien: "Onlineshop-Bestellung", "Bibliotheks-Verleih", "Hotel-Reservierung".
-- [ ] Tonalität: Strukturiert, analytisch.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Ovale auf kleinen Screens noch groß genug für den Text?
-- [ ] Test: Funktioniert das Text-Highlighting zuverlässig auf Touch-Events?
-
-9. Abnahmekriterien
-- [ ] Die Transformation von unstrukturiertem Text zu strukturierten Datenmodellen wird haptisch erlebbar.
-- [ ] Das Interface wirkt wie ein modernes CASE-Tool (Computer-Aided Software Engineering).
-- [ ] Minimale Interaktions-Hürden beim Kategorisieren.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert die Begriffe Entität, Attribut und Beziehung intuitiv.
+- [ ] Das Interface wirkt modern, atmosphärisch und hochwertig.
+- [ ] Maximale Punkte durch präzises Filtern der relevanten Business-Objekte.

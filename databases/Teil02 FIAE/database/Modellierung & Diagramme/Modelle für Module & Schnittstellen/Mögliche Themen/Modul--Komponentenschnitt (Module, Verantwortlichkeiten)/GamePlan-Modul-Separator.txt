@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Optimierung der Software-Architektur durch Bildung hochkohärenter Module bei gleichzeitig loser Kopplung.
-- Kontext: Architektur-Werkstatt, Fokus auf Verantwortungsabgrenzung.
-- UX-Prinzip:
-  - "Modul-Kapseln" (Container) als Zielgebiete.
-  - "Funktions-Teilchen" (Floating Bubbles) müssen eingefangen und einsortiert werden.
-  - Visueller "Cohesion-Meter" pro Modul zeigt die Passgenauigkeit.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Praktische Anwendung der Prinzipien Kohäsion und Kopplung zur Gestaltung einer sauberen Modul-Architektur.
+- Game-Mechanic: "The Module Surgeon". Du hast einen kranken "Monolith-Patienten". Seine Funktionen (Organe) sind völlig durcheinander. Du musst sie mit dem Skalpell trennen und in die richtigen spezialisierten "Kulturschalen" (Module) einbetten.
+- Challenge: 
+  - Level 1 (Organ-Sort): Sortiere "Login" und "Password-Hash" in das Auth-Modul. 
+  - Level 2 (Infection-Risk): Hochgradige Kopplung! Wenn du eine Funktion verschiebst, die 5 andere "mitzieht", sinkt die System-Stabilität. Finde den saubersten Schnitt.
+  - Level 3 (Cohesion-Crisis): Ein Modul hat zu viele Aufgaben (Eierlegende Wollmilchsau). Spalte es auf und beweise deine Architektur-Präzision.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Funktion (z. B. "Login prüfen"), 2 = Die Modul-Kapseln (Auth, Rechnung, Logistik), 3 = Architektur-Score.
-- [ ] Textbudget: Max. 20 Zeichen pro Funktion zur Wahrung der Blasen-Optik.
-- [ ] Keine Vor-Anleitung; der "Cohesion-Meter" reagiert live auf jede Zuordnung.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "System-Vitals" (Stability), "Cohesion-Meter" (per Module), "Inter-Dependency-Count".
+- [ ] Scoring: "Architect-Excellence" Bonus für "Low Coupling, High Cohesion". Abzug bei "Spaghetti-Integration" (viele Linien zwischen Modulen).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> function-pool -> module-grid -> score-hud`.
-- [ ] Module-Grid: 3-4 große, farblich getrennte Bereiche (Desktop nebeneinander, Mobile 2x2 Grid).
-- [ ] Drag-Interaktion: Fließende Bewegung der Teilchen in die Kapseln.
+2. Screen-Layout (The Lab)
+- [ ] `sanitized-room -> monolithic-core -> petri-dishes (Modules) -> dependency-lines`.
+- [ ] Core: Ein amorpher Klumpen aus Funktionen in der Mitte.
+- [ ] Petri-Dishes: Kreisförmige Zielzonen am Rand, die farblich codiert sind (Blue-Payment, Red-User, Green-Logistics).
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-to-Assign" Mechanik für schnelle Daumenbedienung.
-- [ ] Responsive Containers: Kapseln passen ihre Größe dem Inhalt an (Auto-Layout).
+3. Kernvisuals und Effekte
+- [ ] Medical-Tech Ästhetik: Saubere Glas-Effekte, flüssige Animationen, mikroskopischer Look, sanftes Pulsieren der stabilen Module.
+- [ ] "Separation-Slice": Wenn du eine Funktion vom Kern trennst, "reißt" die visuelle Verbindung mit einem klebrigen Effekt ab (Kopplungssymbolik).
+- [ ] "Crystal-Clear": Ein Modul kristallisiert visuell, wenn es 100% kohärent ist.
 
-4. Kernvisuals
-- [ ] Kapsel-Look: Transparente "Glasmorphismus"-Container (shared_theme.css).
-- [ ] Magnet-Effekt: Teilchen werden von thematisch passenden Modulen leicht "angezogen" (visueller Hinweis).
-- [ ] Coupling-Lines: Dünne Linien zwischen Modulen zeigen notwendige Abhängigkeiten.
+4. Browser- und Device-Resilienz
+- [ ] `will-change: transform` für flüssiges Dragging der Funktions-Bubbles.
+- [ ] Mobile: "Double-Tap to Isolate" Mechanik.
 
-5. Interaktion und Feedback
-- [ ] Sofort-Effekt: "Gute Wahl! 'Passwort-Reset' gehört zwingend zum Modul 'Identity'."
-- [ ] Architektur-Feedback: "Achtung! Du hast eine Rechnungs-Funktion in den Warenkorb gelegt -> Das erhöht die Kopplung unnötig!"
-- [ ] Cohesion-Sync: Modul färbt sich bei 100% Homogenität golden.
+5. Content-Strategie (The Functions)
+- [ ] 25 Geschäftsfunktionen: Von `CalculateTax` bis `SendPushNotification`.
 
-6. KPI-Klarheit
-- [ ] Cohesion-Score (Innere Stabilität) pro Modul.
-- [ ] Coupling-Level (Gefährliche Abhängigkeit) für das Gesamtsystem.
+6. QA-Paket
+- [ ] Test: Sind die Abhängigkeits-Linien (Coupling) auch bei 10+ Modulen noch übersichtlich (Smart-Routing der Linien)?
+- [ ] Test: Fühlt sich das "Trennen" der Funktionen haptisch richtig an (Widerstand)?
 
-7. Content-/Copy-Feinschliff
-- [ ] Klare Modul-Szenarien: "E-Commerce", "HR-Portal", "Smart-Metering Dashboard".
-- [ ] Tonalität: Beratend, strukturierend, professionell.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Funktions-Blasen auf kleinen Screens auch bei 10 Stück pro Kapsel noch lesbar?
-- [ ] Test: Sind die Drag-Physik und Snap-In-Effekte flüssig (60fps)?
-
-9. Abnahmekriterien
-- [ ] Der Spieler lernt das abstrakte Prinzip der Kohäsion durch visuelle Homogenität.
-- [ ] Das Interface wirkt wie ein modernes Architektur-Design-Lab.
-- [ ] Hoher motivatorischer Anreiz durch das "Aufräum-Prinzip".
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift die mathematische Schönheit einer sauberen Modul-Trennung.
+- [ ] Das Interface wirkt wie ein exklusives High-Standard Research Tool.
+- [ ] Volle Punkte durch strategisches Minimieren von Abhängigkeiten.

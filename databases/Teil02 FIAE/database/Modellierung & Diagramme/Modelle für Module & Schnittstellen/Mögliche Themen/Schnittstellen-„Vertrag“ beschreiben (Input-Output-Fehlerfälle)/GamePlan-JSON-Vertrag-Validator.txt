@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Sicherstellung der Schnittstellen-Compliance durch Validierung von JSON-Payloads gegen formale Schemata (OpenAPI/JSONSchema).
-- Kontext: API-Labor, Fokus auf Datentypen und Struktur.
-- UX-Prinzip:
-  - "The Contract" (Schema) ist das statische Gesetz (linke Spalte).
-  - "The Incoming Data" (Payloads) fließen in der rechten Spalte ein.
-  - "Scanner-Interaktion": Der Spieler aktiviert einen Scan, der Fehler im JSON-Code rot markiert.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sicherer Umgang mit API-Schnittstellenbeschreibungen (Schemas) und Validierung von Request/Response Objekten.
+- Game-Mechanic: "The API Border Control". Du bist der Grenzbeamte an einem Hyper-Speed Datenhafen. Datenpakete (JSON) rasen heran. Du hast das "Gesetzbuch" (Das Schema). Du musst jedes Paket scannen. Passt ein Typ nicht (`String` statt `Int`) oder fehlt ein `Required`-Feld? ABGEWIESEN!
+- Challenge: 
+  - Level 1 (Basics): Einfache Typ-Checks. "Alter als Zahl erwartet".
+  - Level 2 (Structure-Check): Fehlende Pflichtfelder in verschachtelten Objekten (`address.zip` fehlt).
+  - Level 3 (Regex-Rallye): Validiere Formate wie E-Mails oder Datums-Strings gegen den Vertrag unter extremem Zeitdruck.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Payload-Fehler (rotes Highlight), 2 = Schema-Regel (Referenz), 3 = Validitäts-Status.
-- [ ] Textbudget: Nur essentielles JSON-Snippet zeigen, kein "Deep Nesting" Ballast.
-- [ ] Keine Intro-Container; der erste "Broken" Payload wartet bereits auf den Scan.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Border-Security-Level", "Packet-Frequency", "Scan-Accuracy".
+- [ ] Scoring: "Secure-Pass" Bonus für schnelles Akzeptieren korrekter Pakete. Abzug für "Protocol-Violation" (falsche Entscheidung).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> api-inspector -> side-by-side-diff -> status-badge`.
-- [ ] Inspector-Area: Desktop 50/50 Split, Mobile vertikale Kartenfolge mit "Compare"-Modus.
-- [ ] Controls: "Accept" / "Reject" Buttons großflächig am unteren Rand.
+2. Screen-Layout (The Terminal)
+- [ ] `dock-bay -> schema-hologram -> payload-scanner -> reject-bin`.
+- [ ] Schema-Hologram: Ein statischer Referenz-Code-Block auf der linken Seite.
+- [ ] Payload-Scanner: Ein fließender Strom von JSON-Karten, die in der Mitte pausieren.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Code-Font: Verwendung von Fira Code o. ä. für maximale Lesbarkeit von Sonderzeichen.
-- [ ] Mobile: "Mini-Diff" Ansicht (nur geänderte/falsche Zeilen einblenden).
+3. Kernvisuals und Effekte
+- [ ] Cyber-Airport Ästhetik: Kaltes Neon-Blau, transparente UI-Panels, ASCII-Art Scanner-Linien, digitale Störgeräusche bei Fehlern.
+- [ ] "Laser-Scan": Eine horizontale Laserlinie fährt über den JSON-Code. Fehlerhafte Zeilen glühen rot auf.
+- [ ] "Data-Stream": Hintergrund-Animationen von binärem Code, der vorbeihuscht.
 
-4. Kernvisuals
-- [ ] Scanner-Linie: Eine horizontale Lichtlinie fährt über den Code bei der Validierung.
-- [ ] Error-Bubbles: Text-Popups direkt an der Zeile ("Expected 'integer', got 'string'").
-- [ ] High-Contrast Code-Theming ( shared_theme.css).
+4. Browser- und Device-Resilienz
+- [ ] `font-family: 'Courier New', monospace` für den authentischen API-Look.
+- [ ] Mobile: "Swipe Left (Reject) / Swipe Right (Accept)" Steuerung.
 
-5. Interaktion und Feedback
-- [ ] Sofort-Scan: Reaktion innerhalb von <200ms nach Tastendruck.
-- [ ] Feedback: "Stopp! Das Feld 'email' fehlt im Payload, ist aber im Vertrag als 'required' markiert."
-- [ ] Lerneffekt: Schema-Snippet leuchtet bei Fehlersuche parallel zur fehlerhaften Zeile auf.
+5. Content-Strategie (The Payloads)
+- [ ] 20 reale API-Bodies: Von "Google-Auth-Response" bis "IoT-Sensor-Ping".
 
-6. KPI-Klarheit
-- [ ] Schema-Compilance: "X / Y Payloads korrekt beurteilt".
-- [ ] Bug-Detection-Speed: "Mittlere Reaktionszeit: 1.2s".
+6. QA-Paket
+- [ ] Test: Sind "Missing-Field" Fehler auch bei tief verschachtelten JSONs auf Mobile gut sichtbar (Auto-Scroll-to-Error)?
+- [ ] Test: Reagiert das Haptic-Feedback bei "Reject" passend zur Cyber-Ästhetik?
 
-7. Content-/Copy-Feinschliff
-- [ ] Realistische API-Szenarien: "User-Registration", "Payment-Callback", "IoT-Sensor-Data".
-- [ ] Tonalität: Technisch, präzise, analytisch.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist der Code auch auf kleinen Displays ohne extremes horizontales Scrollen lesbar (Line-Wrap)?
-- [ ] Test: Funktionieren die klickbaren Fehlermarkierungen auch auf Touch?
-
-9. Abnahmekriterien
-- [ ] Das Verständnis für strickte Schnittstellenverträge wird durch die "Scanner-Metapher" vertieft.
-- [ ] Das Interface wirkt wie ein professionelles API-Debugging-Tool (ähnlich wie Postman/Insomnia).
-- [ ] Reibungslose, hochperformante Code-Analyse.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert das Prinzip der strikten Typisierung und Pflichtfelder.
+- [ ] Das Interface wirkt wie ein futuristisches Tool für IT-Security Experten.
+- [ ] Hoher Lerneffekt für OpenAPI und JSON-Schema.

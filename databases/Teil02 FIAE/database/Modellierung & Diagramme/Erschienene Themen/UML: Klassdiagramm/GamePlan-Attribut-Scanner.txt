@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Sicherer Umgang mit der UML-Attributsyntax (Sichtbarkeit, Datentyp, Multiplizität) durch Analyse von Code-Snippets.
-- Kontext: Code-zu-Diagramm Editor, Fokus auf formale Korrektheit.
-- UX-Prinzip:
-  - Das Code-Fenster (Syntax-Highlighting) steht oben.
-  - Die UML-Klasse (Box) wird live darunter befüllt.
-  - "Syntax-Baukasten": Symbole (+ / - / #) werden per Klick an die richtige Stelle gesetzt.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Präzise Analyse von OOP-Code und Übersetzung in formale UML-Klassendiagramm-Syntax (Sichtbarkeit, Datentypen, Multiplizitäten).
+- Game-Mechanic: "The Blueprint Auditor". Du bist der Qualitätsprüfer für Software-Blaupausen. Code-Snippets (Java/C#) fließen über den Schirm. Du musst sie scannen und die UML-Klassenkarte mit den korrekten Symbolen (+, -, #, ~) und Multiplizitäten (`0..*`) "stempeln".
+- Challenge: 
+  - Level 1 (Public-Private): Einfache Felder extrahieren. Markiere Sichtbarkeit und Datentyp.
+  - Level 2 (The Multiplicator): Handle Listen und Arrays. Setze die Multiplizität korrekt (z. B. `List<Order>` -> `[0..*]`).
+  - Level 3 (Inheritance & Nesting): Analyse geschützte (#) Attribute in Unterklassen und komplexe verschachtelte Typen.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Code-Zeile (z. B. `private String name`), 2 = UML-Zeile (`- name: String`), 3 = Sichtbarkeits-Key.
-- [ ] Textbudget: Nur die relevanten Code-Teile zeigen, kein "Lärm".
-- [ ] Keine Vor-Exkurse; die Bedeutung von `+` und `-` wird im Moment der Wahl erklärt.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Conformity-Check" (Accuracy), "Scan-Speed" (Time), "UML-Compliance" (XP).
+- [ ] Scoring: "Double-Stamp" Bonus für fehlerfreie Extraktion ganzer Klassen. Abzug bei Syntax-Fehlern (z. B. falsche Doppelpunkt-Position).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> code-input -> uml-class-card -> syntax-toolbar`.
-- [ ] UML-Card: Dreigeteiltes Standard-Layout (Desktop 30% Breite, Mobile 80% Breite).
-- [ ] Toolbar: Große Schaltflächen für Symbole (>=48px) im Daumenbereich.
+2. Screen-Layout (The Auditor's Desk)
+- [ ] `blueprint-viewer -> source-code-terminal -> uml-class-card -> syntax-stamp-tool`.
+- [ ] Code-Terminal: Monospace-Font mit farbigem Syntax-Highlighting.
+- [ ] Class-Card: Ein physisch wirkendes Dokument, das sich füllt.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mono-Font: Verwendung von Roboto Mono o. ä. für den Code-Look.
-- [ ] Mobile: Vertikale Trennung; Code oben fixiert, UML-Box unten scrollbar.
+3. Kernvisuals und Effekte
+- [ ] Blueprint-Blue Ästhetik: Dunkle Blaupausen-Textur, weiße Tusche-Linien, Raster-Hintergrund.
+- [ ] "Scan-Beam": Ein Laserstrahl fährt über den Code, wenn ein Attribut erkannt wurde.
+- [ ] "Stamp-Effect": Ein physisches Stampfen und Geräusch, wenn ein Symbol (+/-) auf die Karte gesetzt wird.
 
-4. Kernvisuals
-- [ ] Code-Colors: Klassisches IDE-Syntax-Highlighting (shared_theme.css).
-- [ ] "Röntgenblick": Wenn Attribut korrekt -> kurzes grünes Aufleuchten der entsprechenden Code-Stelle.
-- [ ] Badge-System: Multiplizitäten (z. B. `[0..*]`) werden als kleine Tags dargestellt.
+4. Browser- und Device-Resilienz
+- [ ] `font-family: 'Roboto Mono', monospace` für den Code-Kontext.
+- [ ] Mobile: "Tap-to-Label" Mechanik. Code oben fixiert (Split-Screen).
 
-5. Interaktion und Feedback
-- [ ] Live-Preview: Während der Spieler tippt/baut, füllt sich die UML-Grafik.
-- [ ] Sofort-Check: "Korrekt! 'private' wird in UML zu '-'."
-- [ ] Korrektur-Modus: Falsche Symbole werden rot geschüttelt ("Shake"-Animation).
+5. Content-Strategie (The Syntax-Cases)
+- [ ] 20 Snippets: Von `private int age;` bis `protected Set<Category> tags;`.
 
-6. KPI-Klarheit
-- [ ] Syntax-Precision: "UML-Konformität: 100%".
-- [ ] Scanner-Progress: "X / Y Attribute extrahiert".
+6. QA-Paket
+- [ ] Test: Sind die kleinen UML-Symbole auf Smartphone-Screens ohne zu zoomen erkennbar?
+- [ ] Test: Fühlt sich das "Übertragen" von Code zu UML wie eine Belohnung an?
 
-7. Content-/Copy-Feinschliff
-- [ ] Echte Code-Beispiele: `public List<User> members`, `protected double balance;`.
-- [ ] Tonalität: Präzise, entwickler-fokussiert.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist der Kontrast zwischen Code-Hintergrund und Text hoch genug?
-- [ ] Test: Sind die Multiplizitäts-Klammern auf dem Handy leicht zu treffen?
-
-9. Abnahmekriterien
-- [ ] Der Spieler lernt die Übersetzung von OOP-Konzepten in formale UML-Notation.
-- [ ] Das Interface wirkt wie ein professioneller Code-Analyse-Assistent.
-- [ ] Schneller, fehlerfreier Workflow.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert die UML-Notation (Sichtbarkeit : Name : Typ) im Langzeitgedächtnis.
+- [ ] Das Interface wirkt wie ein professionelles Architektur-Werkzeug.
+- [ ] Fehlerfreies Mapping von OOP auf UML.

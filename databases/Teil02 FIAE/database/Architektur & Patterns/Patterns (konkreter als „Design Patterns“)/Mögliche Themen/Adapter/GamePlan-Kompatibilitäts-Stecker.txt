@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Nahtlose Integration inkompatibler Systeme oder Legacy-Code durch eine vermittelnde Adapter-Struktur.
-- Kontext: System-Integration, Legacy-Modernisierung, Wrapper-Interfaces.
-- UX-Prinzip:
-  - "The Universal Translator": Zwei Delegationen (Klassen) sprechen unterschiedliche Sprachen. Der Adapter ist der Simultandolmetscher in der Mitte.
-  - "Bridge-Sync": Visuelle Darstellung, wie ein runder Stecker (Target Interface) durch den Konverter in eine eckige Buchse (Adaptee) passt.
-  - "Real-Time Translation": Der Spieler sieht, wie Datenpakete den Adapter betreten und im Format transformiert wieder verlassen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Praktische Anwendung des Adapter-Patterns zur Verbindung inkompatibler Schnittstellen.
+- Game-Mechanic: "The International Bridge". Du bist Grenzbeamter zwischen der "Legacy-Republik" (altes XML-Format) und dem "Cloud-Königreich" (modernes JSON). Du musst Adapter-Kabel bauen, die Signale live transformieren.
+- Challenge: 
+  - Level 1 (Traveler): Ein einfacher US-to-EU Stecker (Methoden-Rename).
+  - Level 2 (Data-Refining): Wandle einen `getTemperaturCelsius()` Aufruf in `getFahrenheit()` um. Die Logik muss IM Adapter sitzen!
+  - Level 3 (Mass-Integration): Ein ganzer Bus an Legacy-Anrufen muss durch einen Multi-Universal-Adapter gefiltert werden. Erzeuge keinen Overload!
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Übersetzungsschicht (Mitte), 2 = Die inkompatiblen Endpunkte, 3 = Der Datenfluss.
-- [ ] Textbudget: Max. 5 Begriffe pro Schnittstelle (z.B. `getUSD()`, `getEUR()`).
-- [ ] "Compatibility-Visual": Eine Brücke, die sich erst schließt, wenn der Adapter korrekt programmiert ist.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Conversion-Rate" (Signal-Stärke), "Volt-Safety" (Err-Rate), "Latency-Bar".
+- [ ] Scoring: +1000 Pkt für "Zero-Touch-Logik" (wenn die originalen Systeme nicht geändert wurden). massive Abzüge bei Modifikation der Ziel-Klasse.
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> source-system -> adapter-bridge -> target-system`.
-- [ ] Bridge-Area: Ein technischer Bereich mit "Logik-Controllern" (Desktop 60% Breite, Mobile 40dvh Höhe).
-- [ ] Dashboard: Status-LEDs für "Input Signal" und "Output Signal".
+2. Screen-Layout (The Converter Hub)
+- [ ] `tech-border -> source-port (Square) -> adapter-socket -> target-port (Circle)`.
+- [ ] Port-Visuals: Unterschiedliche mechanische Anschlüsse (PINS, USB, Parallel), die nicht zusammenpassen.
+- [ ] Socket: Ein modulares Bauteil in der Mitte, in das Logik-Steine (Code-Fragmente) geschoben werden.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-to-Connect" Geste zum Aktivieren der Brücke.
-- [ ] `safe-area-inset` für die Steuersymbole am unteren Rand.
+3. Kernvisuals und Effekte
+- [ ] Cyberpunk-Repair-Shop Ästhetik: Neon-Leitungen, Funkenflug, industrielle Sounds, Hologramm-Displays.
+- [ ] "Spark-Effect": Wenn das Signal durch den Adapter fließt und transformiert wird.
+- [ ] HUD Overlay: "Translating: legacy_id -> new_uuid".
 
-4. Kernvisuals
-- [ ] High-Tech Ästhetik: Blaupausen, Laserlinien, digitale Umformer (shared_theme.css).
-- [ ] Signal-Transformation: Datenpakete ändern beim Durchqueren des Adapters ihre Form (z. B. von Kreis zu Quadrat).
-- [ ] High-Contrast Badges für Interface-Namen.
+4. Browser- und Device-Resilienz
+- [ ] SVG-Filter für "Elektronik-Glow" Effekte.
+- [ ] Mobile: Fokus auf das "Zusammenstecken" der Ports per Drag.
 
-5. Interaktion und Feedback
-- [ ] Translation-Feedback: "Signal übersetzt! Der Adapter wandelt den `LegacyLog()` Aufruf erfolgreich in ein `ModernJSON()` Format um."
-- [ ] Erfolg: "Verbindung steht! Die zwei Systeme kommunizieren jetzt perfekt, ohne voneinander zu wissen."
-- [ ] Fehler-Visual: Statisches Rauschen auf der Brücke bei inkompatibler Logik.
+5. Content-Strategie (The Plugs)
+- [ ] 12 Adapter-Typen: Von "Logging-Wrapper" bis "3rd Party Payment-Gate".
 
-6. KPI-Klarheit
-- [ ] Translation-Accuracy: "Übersetzungs-Qualität: 100%".
-- [ ] Legacy-Integration Score: "System-Kompatibilität: Maximal".
+6. QA-Paket
+- [ ] Test: Ist die grafische Metapher von "eckig in rund" durch den Adapter verständlich?
+- [ ] Test: Sind die Code-Fragmente für die Transformation auch auf kleinen Screens lesbar?
 
-7. Content-/Copy-Feinschliff
-- [ ] Reale Fälle: "USD zu EUR Umrechner", "Altes Logging -> Neues Cloud-Log", "Sonderschnittstelle für Legacy-Hardware".
-- [ ] Tonalität: Vermittelnd, technisch, brückenbauend.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist der Transformations-Vorgang der Datenpakete auf dem Smartphone flüssig erkennbar?
-- [ ] Test: Sind die Tooltips für die Funktionsbeschreibungen im Adapter-Code stabil?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift den Adapter als diplomatischen Vermittler zwischen Welten.
-- [ ] Das Interface wirkt wie eine hochmoderne Kommandozentrale für System-Integration.
-- [ ] Klarheit über das Prinzip "Wrap, don't rewrite".
+7. Abnahme-Kriterien
+- [ ] Der Spieler kapiert das Prinzip: Wrapper um Legacy-Code bauen, statt ihn anzufassen.
+- [ ] Das Interface wirkt extrem cool, dynamisch und technisch anspruchsvoll.
+- [ ] Hohe Lerneffizienz für API-Design und Interoperabilität.

@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Identifikation aller Rollen, die mit einem System interagieren, und deren korrekte Verortung in Bezug auf die Systemgrenze.
-- Kontext: Kontext-Analyse, Fokus auf Rollenverteilung.
-- UX-Prinzip:
-  - Die "System-Box" (Canvas) ist das Herzstück.
-  - Akteure (Strichmännchen-Karten) am Rand.
-  - "In or Out": Entscheidung, was zum System gehört und wer nur "Nutzer" ist.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler beherrschen die Definition von Systemgrenzen und die Identifikation von Akteuren (Primär/Sekundär) nach UML-Standard.
+- Game-Mechanic: "The Theater Stage". Du bist der Regisseur eines IT-Dramas. Das System ist die Bühne (Die Box). Dir werden "Casting-Karten" (Stakeholder, Systeme, Rollen) gegeben. Du musst entscheiden: Gehört dieser Akteur AUF die Bühne (Teil des Systems) oder DAVOR (Nutzer/Nachbarsystem)?
+- Challenge: 
+  - Level 1 (Publikum): Eindeutige Nutzer wie "Kunde" (Extern). 
+  - Level 2 (Hinter der Bühne): Externe Systeme wie "Bezahl-Provider" oder "Zentrallager". Sind sie Teil unserer Logik oder Partner? 
+  - Level 3 (Inside-Out): Unterscheidung zwischen "System-Funktion" (Innere Use Cases) und dem Akteur, der sie auslöst. Wer im System bleibt, verursacht "Boundary-Leaks" (Penalty).
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Systemgrenze (Box), 2 = Akteur-Typ (Primär/Sekundär), 3 = Name/Rolle.
-- [ ] Textbudget: Max. 2 Begriffe pro Akteur (z. B. "Admin", "Banksystem").
-- [ ] Keine Vor-Anleitung; Symbole und Typen werden beim Platzieren validiert.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Boundary-Safety" (%), "Casting-Success", "Stage-Load".
+- [ ] Scoring: "Double-Role" Bonus für die korrekte Trennung von Primär- und Sekundär-Akteuren. Abzug bei "Intrusion" (Akteure in der Systembox).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> system-canvas -> actor-tray -> role-inspector`.
-- [ ] System-Box: Zentriert, nimmt 60% des Screens ein (Desktop), 40dvh (Mobile).
-- [ ] Actor-Tray: Am linken/rechten Rand (Desktop) oder unten (Mobile).
+2. Screen-Layout (The Stage)
+- [ ] `auditorium -> system-boundary (The Box) -> casting-deck -> spotlight-inspector`.
+- [ ] System-Boundary: Eine glühende Box in der Mitte. Alles darin ist "System-Inhalt" (Use Cases), alles draußen ist "Akteur".
+- [ ] Casting-Deck: Fächer mit Akteur-Karten (Strichmännchen-Stil).
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Tap-to-Select" Akteur -> "Tap-to-Place" Position.
-- [ ] SVG-Akteure: Scalable Stickman Layout mit Label-Kapseln.
+3. Kernvisuals und Effekte
+- [ ] Theater-Show Ästhetik: Scheinwerfer-Lichtkegel, edle Vorhänge am Rand, klares modernes Box-Design für die Systemgrenze.
+- [ ] "Spotlight-Effect": Wenn du eine Karte ziehst, folgt ihr ein Lichtkegel.
+- [ ] "Boundary-Bounce": Wenn du einen Akteur in die Box schiebst, prallt er mit einem "Zap"-Effekt ab und fliegt nach draußen.
 
-4. Kernvisuals
-- [ ] Aktor-Icons: Unterschiedliche Optik für menschliche Nutzer vs. externe technische Systeme.
-- [ ] Grenz-Stil: Klare, dickere Linie für die "System Boundary".
-- [ ] High-Contrast Labels innerhalb der Akteur-Karten.
+4. Browser- und Device-Resilienz
+- [ ] `z-index` Layering für die Vorhang-Overlays.
+- [ ] Mobile: "Swipe-and-Snap" für die Akteur-Karten.
 
-5. Interaktion und Feedback
-- [ ] Snap-to-Role: "Richtig. Das 'Kreditkartensystem' ist ein Sekundärakteur (externes System)."
-- [ ] Positions-Feedback: "Vorsicht! Akteure stehen laut UML immer AUSSERHALB des Systems." (Visueller Abstoßungs-Effekt bei Platzierung innen).
-- [ ] Verbindung: Automatische Linie zum Systemnamen bei korrekter Platzierung.
+5. Content-Strategie (The Cast)
+- [ ] 18 Rollen: Von "Administrator" bis "Regen-Sensor (Extern API)".
 
-6. KPI-Klarheit
-- [ ] Discovery-Rate: "9 von 10 Stakeholdern als Akteure identifiziert".
-- [ ] Context-Score: "Abgrenzungs-Schärfe: High".
+6. QA-Paket
+- [ ] Test: Ist die visuelle Trennung zwischen "System" und "Umwelt" auch im Darkmode (shared_theme.css) messerscharf?
+- [ ] Test: Reagiert das Snap-In-Verhalten der Akteure am Rand flüssig?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Smart Home Zentrale", "Krankenhaus-Informationssystem", "E-Ticket Automat".
-- [ ] Tonalität: Analytisch, strukturiert.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Überlappen die Akteur-Labels, wenn viele Akteure am Rand stehen?
-- [ ] Test: Sind "Primär-" und "Sekundärakteur" auch ohne Text durch Farben/Icons erkennbar?
-
-9. Abnahmekriterien
-- [ ] Der Spieler verinnerlicht die strikte Trennung zwischen "System" und "Umwelt".
-- [ ] Das Interface wirkt wie ein sauber strukturiertes Architekten-Tool.
-- [ ] Schneller Durchlauf bei hoher Informationsdichte.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Akteure sind immer EXTERN.
+- [ ] Das Interface wirkt wie ein exklusives Regie-Pult für Software-Architekten.
+- [ ] Hoher Lerneffekt für Kontext-Diagramme und Use Cases.

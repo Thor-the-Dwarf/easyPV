@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Praktische Validierung komplexer Prozesslogik durch Simulation eines Token-Laufs im UML-Aktivitätsdiagramm.
-- Kontext: Prozess-Simulator, "Pathfinding" Spielmechanik.
-- UX-Prinzip:
-  - Das Diagramm (Graph) füllt den Visual-Viewport.
-  - Der "Token" ist ein leuchtender Punkt, der dem Pfad folgt.
-  - Entscheidungs-Stopp: An Decision-Nodes pausiert die Simulation für User-Input (Guard-Check).
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Praktisches Verständnis von UML-Aktivitätsdiagrammen durch Simulation komplexer Kontrollflüsse und Forks/Joins.
+- Game-Mechanic: "The Pipeline Runner". Du steuerst ein Datenpaket (Der Token) durch eine verzweigte Pipeline. An Decision-Nodes (Guards) musst du die richtigen Bedingungen erfüllen, an Forks teilt sich dein Token – beide müssen ans Ziel kommen!
+- Challenge: 
+  - Level 1 (Linear): Ein einfacher Workflow ohne Abzweigungen zum Aufwärmen.
+  - Level 2 (Decision-Maze): Triff Guards wie `IsAuthorized` oder `StockAvailable`. Wählst du falsch, landet der Token im "Dead-End" und das Level resettet.
+  - Level 3 (Parallel-Race): Ein Fork teilt den Token. Du musst beide gleichzeitig managen (Sync-Check), bevor sie am Join-Knoten wieder vereint werden.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Aktuelle Token-Position, 2 = Nächste mögliche Pfade, 3 = Eingabewerte (Guards).
-- [ ] Textbudget: Max. 3 Wörter pro Aktion (z. B. "PDF erzeugen").
-- [ ] Keine Anleitung; der "Start-Knoten" pulsiert zur Initialisierung.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Flow-Pressure" (Timer), "Token-Health" (Accuracy), "Sync-Status" (für Parallelismus).
+- [ ] Scoring: "Fast-Flow" Bonus für schnelle Guard-Entscheidungen. Punkte für jede korrekt durchlaufene Aktion.
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> diagram-viewport -> guard-controls -> execution-log`.
-- [ ] Viewport: Desktop 70% Breite, Mobile 60dvh Höhe. Zentriert auf den aktiven Knoten.
-- [ ] Guard-Buttons: Großflächig (>=48px), erscheinen nur im Kontext einer Entscheidung.
+2. Screen-Layout (The Pipeline Map)
+- [ ] `void-space -> diagram-canvas -> guard-selector -> execution-log`.
+- [ ] Canvas: Ein technisches Blaupausen-Gitter, auf dem das Diagramm als leuchtende Röhrenstruktur liegt.
+- [ ] Selector: Erscheint bei Decision-Nodes als große Overlay-Buttons ("TRUE" / "FALSE").
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] SVG-Paths: Dynamische Dicke je nach Zoom-Level.
-- [ ] Mobile: "Follow-Token" Modus (Viewport scrollt automatisch mit).
+3. Kernvisuals und Effekte
+- [ ] Cyber-Automation Ästhetik: Dunkler Hintergrund, neon-grüne Linien für aktive Pfade, rote Warnungen bei Dead-Locks.
+- [ ] "Token-Glow": Der Token fließt als Lichtpuls durch die Röhren. Bei einem Join verschmelzen zwei Pulse zu einem größeren.
+- [ ] "Join-Activation": Der Join-Knoten pulsiert gelb, während er auf den zweiten Token wartet.
 
-4. Kernvisuals
-- [ ] Glow-Effekte: Aktive Kanten leuchten in der Farbe des Tokens.
-- [ ] Animation: Smooth Transition zwischen den Knoten (Cubic-Bezier).
-- [ ] Parallelitäts-Anzeige: Wenn der Token sich an einer Fork teilt, werden zwei Punkte sichtbar.
+4. Browser- und Device-Resilienz
+- [ ] SVG-basierte Grafik für verlustfreies Zoomen (Desktop Center, Mobile Follow-Mode).
+- [ ] `touch-action: pan-x pan-y` für flüssiges Verschieben des Diagramms.
 
-5. Interaktion und Feedback
-- [ ] Sofort-Effekt: "Pfad gewählt: 'Saldo > 0' führt zum Buchungsschritt."
-- [ ] Fehlermanagement: Wenn der falsche Pfad gewählt wird -> "Dead Lock" Animation und Tipp.
-- [ ] Erfolg: Konfetti-Effekt beim Erreichen des "Final Nodes".
+5. Content-Strategie (The Workflows)
+- [ ] 12 Szenarien: "CI/CD Pipeline", "User-Registration", "E-Mail Dispatcher", "Börsen-Auftrag".
 
-6. KPI-Klarheit
-- [ ] Path-Efficiency: "Prozessdauer (simuliert): 45ms".
-- [ ] Node-Coverage: "7 / 10 Aktionen durchlaufen".
+6. QA-Paket
+- [ ] Test: Ist das Timing zwischen Fork und Join fair (bleibt genug Zeit für beide Pfade)?
+- [ ] Test: Sind die Tooltips für Guards auf kleinen Screens gut lesbar?
 
-7. Content-/Copy-Feinschliff
-- [ ] IT-nahe Prozesse: "Login-Workflow", "CI/CD Pipeline", "Bestell-Storno".
-- [ ] Tonalität: Logisch, prozessorientiert, dynamisch.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Decision-Rhomben auf dem Smartphone klar von Aktionen (Rechtecke) unterscheidbar?
-- [ ] Test: Läuft die Animation flüssig auf Low-End Devices?
-
-9. Abnahmekriterien
-- [ ] Die abstrakte Kontrollfluss-Logik wird durch die Token-Metapher "angreifbar".
-- [ ] Das Interface wirkt wie ein State-of-the-Art Prozess-Monitor.
-- [ ] Maximale Visualisierungs-Qualität.
+7. Abnahme-Kriterien
+- [ ] Der Spieler versteht UML-Prozesslogik als dynamischen Fluss.
+- [ ] Das Interface wirkt wie ein moderner Prozess-Debugger.
+- [ ] Hohe Lerneffizienz für Parallelität und Bedingungen.

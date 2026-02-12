@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Chronologisch korrekte Modellierung der Objekt-Interaktion unter Berücksichtigung von synchronen/asynchronen Aufrufen.
-- Kontext: Workflow-Design, Fokus auf Zeitstrahl und Messaging.
-- UX-Prinzip:
-  - Die Lebenslinien (Lifelines) bilden das vertikale Grundgerüst.
-  - Nachrichten-Karten als verschiebbare "Bausteine".
-  - "Snap-to-Time": Bausteine rasten stufenweise auf dem Zeitstrahl ein.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Chronologische Modellierung von System-Interaktionen unter Berücksichtigung von synchronen und asynchronen Rufen.
+- Game-Mechanic: "The Message Relay". Du bist der Paket-Verteiler im Millisekunden-Bereich. Nachrichten (Pfeile) schießen zwischen den Servern (Lebenslinien) hin und her. Du musst sie in der exakt richtigen zeitlichen Reihenfolge platzieren, sonst bricht die Verbindung ab.
+- Challenge: 
+  - Level 1 (Echo): Einfacher Request-Response Kreislauf.
+  - Level 2 (The Multi-Tasker): Mehrere Objekte gleichzeitig. Wer antwortet wem zuerst? (Datenbank vs. Authentifizierung).
+  - Level 3 (Asynchronous Storm): Drücke auf "Senden", bevor die Antwort des ersten Rufs da ist. Beachte asynchrone Pfeile (offene Spitzen) und parallele Ausführung.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Zeitliche Abfolge (Nachricht oben/unten), 2 = Nachrichtentyp (Pfeilspitze), 3 = Aktoren-Status.
-- [ ] Textbudget: Kurze Methoden-Namen (z. B. `getData()`, `return result`).
-- [ ] Keine Intro-Texte; die Pfeiltypen (gefüllt vs. offen) werden per Tooltip/Badge erklärt.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Network-Latency" (Timer), "Sequence-Broken" (Alert), "Message-Stack".
+- [ ] Scoring: "Sync-Master" Bonus für fehlerfreie synchrone Aufrufe. Abzug bei unlogischen Abfolgen (Antwort vor Anfrage).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> sequence-canvas -> message-pool -> timeline-indicator`.
-- [ ] Canvas: Desktop 60% Breite, Mobile 50dvh Höhe. Mit horizontalem Scrolling für viele Lebenslinien.
-- [ ] Message-Pool: Drag-Ziele sind klar markierte Drop-Zonen zwischen den Lebenslinien.
+2. Screen-Layout (The Data Matrix)
+- [ ] `grid-space -> lifeline-pylons -> message-trajectory -> time-ruler`.
+- [ ] Pylons: Vertikale Leuchtstäbe (Objekte), die "Aktivierungsbalken" zeigen, wenn sie beschäftigt sind.
+- [ ] Time-Ruler: Eine Skala am Rand, die von oben nach unten läuft.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Responsives Grid: Lebenslinien passen ihren Abstand dynamisch an.
-- [ ] Mobile: "Tap-on-Start, Tap-on-End" Methode zum Zeichnen von Pfeilen als Alternative zu Drag.
+3. Kernvisuals und Effekte
+- [ ] Matrix-Grid Ästhetik: Digitale Regen-Texturen, technische Raster, fließende Laserpfeile.
+- [ ] "Pulse-Collision": Wenn eine Nachricht ankommt, sendet die Lebenslinie kreisförmige Signalwellen aus.
+- [ ] "Activation-Grow": Der graue Balken auf der Lebenslinie wächst dynamisch, solange der Prozess "blockiert" ist.
 
-4. Kernvisuals
-- [ ] Pfeil-Stile: Durchgezogen (synchron), Gestrichelt (Antwort/asynchron).
-- [ ] Aktivierungsbalken (Execution Specifications): Wachsen automatisch mit der Dauer der Nachrichtenschleife.
-- [ ] High-Contrast Icons für Akteure (User Icon, DB Icon).
+4. Browser- und Device-Resilienz
+- [ ] `CSS Grid` für die präzise Ausrichtung der Lebenslinien.
+- [ ] Mobile: Horizontales Wischen zwischen den Akteuren, falls das Diagramm zu breit wird.
 
-5. Interaktion und Feedback
-- [ ] Sofort-Validierung: "Stop! Das Backend kann nicht antworten, bevor es die Datenbank-Anfrage abgeschlossen hat."
-- [ ] Logik-Feedback: "Nachricht erfolgreich zugestellt. Fokus liegt nun bei :Datenbank."
-- [ ] Animation: Bei korrekter Sequenz "spielt" das Diagramm den Nachrichtenfluss einmal ab.
+5. Content-Strategie (The Interaction)
+- [ ] 12 Szenarien: "Login-Handshake", "Payment-Gateway Auth", "Database-Query", "File-Upload Async".
 
-6. KPI-Klarheit
-- [ ] Sequence-Accuracy: "Logik-Check bestanden".
-- [ ] Time-Efficiency: "Dauer des Prozesses: 3 Lifecycles".
+6. QA-Paket
+- [ ] Test: Sind die unterschiedlichen Pfeilspitzen (gefüllt vs. offen) auf 300 PPI Displays eindeutig?
+- [ ] Test: Fühlt sich das "Einrasten" der Nachrichten auf dem Zeitstrahl taktisch gut an?
 
-7. Content-/Copy-Feinschliff
-- [ ] Realistische Flows: "Login-Workflow", "Bezahlvorgang", "Datei-Upload".
-- [ ] Tonalität: Analytisch, prozessorientiert.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Pfeilspitzen auf dem Smartphone eindeutig unterscheidbar?
-- [ ] Test: Funktioniert die automatische Größenanpassung der Aktivierungsbalken ohne Glitches?
-
-9. Abnahmekriterien
-- [ ] Der Spieler versteht das Konzept der synchronen Blockierung und asynchronen Kommunikation.
-- [ ] Das Interface wirkt wie ein modernes Sequenzdiagramm-Tool.
-- [ ] Minimale Klickwege bei komplexen Interaktionen.
+7. Abnahme-Kriterien
+- [ ] Der Spieler versteht: Zeit fließt von oben nach unten.
+- [ ] Das Interface wirkt wie ein High-End Netzwerk-Monitor.
+- [ ] Keine Verwirrung über synchrone vs. asynchrone Logik.

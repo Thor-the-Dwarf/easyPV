@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Vollständige Trennung der Domänenlogik von der Datenhaltungstechnik (Persistenz-Ignoranz) durch eine Repository-Abstraktion.
-- Kontext: Domain Driven Design, Schichtenarchitektur, Datenspeicherung.
-- UX-Prinzip:
-  - "The Librarian": Die Anwendung ist der Leser. Sie fragt den Bibliothekar (Repository) nach einem Buch (Entity).
-  - "Backend-Magic": Woher der Bibliothekar das Buch holt (SQL-Keller, In-Memory-Regal, Cloud-Archiv), bleibt für den Leser das Geheimnis des Bibliothekars.
-  - "Universal Command": Ein Befehl (`find(ID)`) funktioniert immer gleich, egal welches Backend gerade aktiv ist.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Beherrschung des Repository-Patterns zur Kapselung von Persistenz-Details.
+- Game-Mechanic: "The Library Ghost". Du bist in einer unendlichen Bibliothek. Suchanfragen der "User-Client" Geister flattern herein. Du musst die Daten holen, OHNE dass der Geist sieht, welcher Keller (Files, DB, API) gerade geöffnet wird.
+- Challenge: 
+  - Level 1: "Simple Fetch". Hol das Buch aus dem "Memory-Regal".
+  - Level 2: "Backend-Swap". Die DB brennt! Schalte das Repository blitzschnell auf "Fallback-Cache" um, während die Anfragen weiterlaufen.
+  - Level 3: "Complexity-Shield". Verstecke komplexe SQL-Joins hinter einer sauberen `getTopSellers()` Methode. Werden SQL-Secrets nach oben geleakt? (Penalty!).
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Anforderungs-Schnittstelle (The Counter), 2 = Der Datenaustausch-Vorgang, 3 = Die versteckten Backends.
-- [ ] Textbudget: Max. 8 Wörter pro Backend-Beschreibung (z.B. "Langsame Datenbank", "Schneller Cache").
-- [ ] "Isolation-Layer": Eine semi-transparente Wand zwischen Logik und Datenquelle.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Abstraction-Seal" (Integrity-Score), "Ghost-Happiness" (Satisfaction), "Backend-State".
+- [ ] Scoring: +500 Pkt für "Leak-Free" Operations. Abzug bei "Leaking-Details" (wenn DB-Begriffe in der Domäne auftauchen).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> domain-desk -> repository-shield -> backend-storage`.
-- [ ] Shield: Eine schützende Barriere in der Bildschirmmitte (Desktop 40% Breite, Mobile 60% Breite).
-- [ ] Storage: Drei umschaltbare "Keller-Ansichten" am unteren Rand.
+2. Screen-Layout (The Secret Counter)
+- [ ] `library-hall -> the-counter-interface -> the-hidden-storages -> data-packets`.
+- [ ] Interface: Ein schmaler, sauberer Schlitz (Domain-Layer), durch den Anfragen kommen.
+- [ ] Hidden-Storages: Verschiedene, düstere Bereiche im Hintergrund, die nur durch das Repository "beleuchtet" werden.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-to-change-Backend" Mechanik zum Testen der Austauschbarkeit.
-- [ ] `safe-area-inset` für das Kommando-Menü.
+3. Kernvisuals und Effekte
+- [ ] Dark-Academy / Mystery Ästhetik: Schwebendes Pergament, magische Siegel, Leuchteffekte bei Datenfluss.
+- [ ] "Seal-Pulse": Ein goldenes Siegel auf dem Repository-Schlitz pulsiert, wenn die Kapselung perfekt ist.
+- [ ] "Smoke-Effect": Bei Details-Leak (Fehler) verraucht die schöne Kachel-Optik in grauen Pixelmatsch.
 
-4. Kernvisuals
-- [ ] Bibliotheks- oder Tresor-Ästhetik: Leder/Holz-Optik (klassisch) oder Datencenter (modern) (shared_theme.css).
-- [ ] Datenkapseln: Die Entities werden als wertvolle Container dargestellt, die durch den Schacht gereicht werden.
-- [ ] High-Contrast Status-Anzeige: "Active Backend: POSTGRESQL".
+4. Browser- und Device-Resilienz
+- [ ] `backdrop-filter: blur()` für die Glass-Morphism Trennung der Layer.
+- [ ] Mobile: Hochkant-Stacking (Client oben, Repo-Schild Mitte, Backends unten).
 
-5. Interaktion und Feedback
-- [ ] Austausch-Feedback: "Klick! Wir haben jetzt die Cloud gegen den Speicher getauscht. Die App merkt den Unterschied nicht!"
-- [ ] Erfolg: "Domäne geschützt! Deine Logik bleibt sauber, egal wie oft du die Datenbank änderst."
-- [ ] Performance-Check: Animation, wie Daten aus dem Speicher (schnell) vs. DB (langsam) am Tresen ankommen.
+5. Content-Strategie (The Records)
+- [ ] 12 Business-Objekte: `Customer`, `Invoice`, `StockItem`, `ProductRating`.
 
-6. KPI-Klarheit
-- [ ] Persistence-Ignorance: "Backend-Isolation: 100%".
-- [ ] Testability-Boost: "Mocking-Level: Exzellent".
+6. QA-Paket
+- [ ] Test: Fühlt sich der Wechsel der Datenbanken "beiläufig" genug an?
+- [ ] Test: Versteht der User den Zweck des "Schildes" (Abstraktion)?
 
-7. Content-/Copy-Feinschliff
-- [ ] Reale Fälle: "User-Repository", "Order-History", "Configuration-Store".
-- [ ] Tonalität: Organisiert, schützend, zuverlässig.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist der Kontrast zwischen "Sichtbarer Welt" (Desk) und "Verborgener Welt" (Keller) im Darkmode gut?
-- [ ] Test: Bleiben die Daten am Desk konsistent, wenn man mitten im Prozess das Backend wechselt?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler verinnerlicht das Repository als "Saubere Schnittstelle zur Außenwelt".
-- [ ] Das Interface wirkt wie ein exklusives Archiv-Management-System.
-- [ ] Maximaler Lerneffekt für das Prinzip der losen Kopplung.
+7. Abnahme-Kriterien
+- [ ] Der Spieler versteht die Persistenz-Ignoranz als strategischen Vorteil.
+- [ ] Das Interface wirkt atmosphärisch, geheimnisvoll und hochwertig.
+- [ ] Keine Verwirrung über die Trennung von DAO und Repository.

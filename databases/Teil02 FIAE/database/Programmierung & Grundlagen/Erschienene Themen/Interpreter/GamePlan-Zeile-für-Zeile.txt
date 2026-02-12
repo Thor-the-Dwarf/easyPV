@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Verständnis der sequentiellen, interaktiven Programmausführung (Interpretation) und deren Konsequenzen für Debugging und State-Management.
-- Kontext: Interpreter-Logik (Python, JS, PHP), Fokus auf Ausführungsfluss.
-- UX-Prinzip:
-  - "The Light Trail": Ein Interpreter ist eine Taschenlampe in der Dunkelheit (Code). Er leuchtet immer nur die aktuelle Zeile aus.
-  - "The State-Tracer": Sobald die Taschenlampe weiterzieht, bleiben geänderte Variablenwerte als leuchtende Fußabdrücke am Rand liegen.
-  - "Runtime-Crash": Wenn die Taschenlampe auf einen Fehler trifft, erlischt sie sofort – die Zeilen davor bleiben aber "benutzt" (Seiteneffekte).
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der Arbeitsweise eines Interpreters (Parsing, Evaluation) im Vergleich zum Compiler.
+- Game-Mechanic: "The Language Wizard". Du bist ein Zauberer in einem antiken Turm. Schriftrollen mit seltsamen Befehlen (DSL / Pseudocode) rollen herein. Du musst jeden Befehl SOFORT (Zeile für Zeile) in eine magische Aktion (Visual-Effect) umwandeln.
+- Challenge: 
+  - Level 1 (Echo-Magic): Einfache Befehle wie `Say "Hello"`.
+  - Level 2 (Variables & Logic): Speichere Werte in "Mana-Kristallen" (Variablen) und führe `IF`-Sprüche aus. Deine Interpretation muss exakt der Grammatik folgen.
+  - Level 3 (Runtime-Error): Ein falscher Befehl schleicht sich ein. Du musst ihn beim Lesen (Laufzeit) erkennen und stoppen, bevor der Zauber nach hinten losgeht.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die aktive Code-Zeile (Fokus), 2 = Aktueller Variablen-Status (Footprints), 3 = Fehlermeldung (Crash-Point).
-- [ ] Textbudget: Max. 10 kurze Codezeilen zur Wahrung der Übersicht.
-- [ ] "Zero Wait" Execution: Schritt-für-Schritt Steuerung über einen großen "Forward"-Button.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Syntax-Stamina", "Mana-Storage" (Variables), "Interpretation-Log".
+- [ ] Scoring: "Clean-Cast" Bonus für fehlerfreie Ausführung ganzer Skripte. Abzug bei "Grammar-Mismatch".
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> dark-code-room -> variable-footprints -> control-deck`.
-- [ ] Code-Room: Schwarzer/Dunkler Hintergrund (Desktop 60% Breite, Mobile 50dvh Höhe).
-- [ ] Control-Deck: Am unteren Rand; "Next Step" Button im Daumen-Fokus.
+2. Screen-Layout (The Wizard's Desk)
+- [ ] `mystic-chamber -> parchment-scroll (The Code) -> crystal-ball (Output) -> spell-components`.
+- [ ] Scroll: Eine endlose Liste von Code-Zeilen, die von oben nach unten gescannt werden.
+- [ ] Crystal-Ball: Hier erscheinen die Ergebnisse (Icons, Partikel, UI-Updates).
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-Down" zum Ausführen der nächsten Zeile.
-- [ ] `mix-blend-mode` für den Taschenlampen-Effekt (Light-Spotlight).
+3. Kernvisuals und Effekte
+- [ ] Mystic-Tech Ästhetik: Altes Pergament kombiniert mit glühenden Runen, schwebende Kristalle, Partikel-Staub.
+- [ ] "Line-Scanner": Eine leuchtende Rune fährt die aktuelle Zeile entlang und liest sie lautlos vor.
+- [ ] "Execution-Burst": Wenn ein Befehl ausgeführt wird, schießt ein kleiner Lichtstrahl von der Zeile in die Kristallkugel.
 
-4. Kernvisuals
-- [ ] Spotlight-Effekt: Aktive Zeile ist hellweiß/gelb, Rest des Codes ist abgedunkelt (Opacity 0.2).
-- [ ] "Variable-Bubbles": Kleine, schwebende Kapseln am Rand, die bei jeder Zuweisung kurz aufleuchten.
-- [ ] High-Contrast Code-Theming (shared_theme.css).
+4. Browser- und Device-Resilienz
+- [ ] `CSS Filters` (Sepia, Hue-Rotate) für den Pergament-Look.
+- [ ] Mobile: "Swipe-to-Next-Line" für schrittweise Interpretation.
 
-5. Interaktion und Feedback
-- [ ] Step-by-Step Sync: "Zeile 3 ausgeführt: `x` ist jetzt `10`. Die Taschenlampe zieht weiter."
-- [ ] Runtime-Feedback: "BUMM! Division durch Null in Zeile 5. Die Taschenlampe ist aus. Variablen `x` und `y` behalten ihre Werte."
-- [ ] Vergleich: Ein kleiner "Compiler-Button" zeigt kurz, dass dieser den ganzen Block auf einmal schlucken würde.
+5. Content-Strategie (The Spells)
+- [ ] 10 kleine DSLs: Von "Robot-Control" bis "Simple-Calculator".
 
-6. KPI-Klarheit
-- [ ] Interpreter-Progress: "Zeile 5 von 10 erreicht".
-- [ ] Memory-Load: Anzahl der aktiven Variablen in der aktuellen Session.
+6. QA-Paket
+- [ ] Test: Ist der Unterschied zum Compiler (ganze Datei auf einmal) durch die zeilenweise Interpretation klar?
+- [ ] Test: Sind Fehlermeldungen (Syntax-Oops) im Zauberer-Jargon trotzdem technisch korrekt?
 
-7. Content-/Copy-Feinschliff
-- [ ] Einfache Skripte: "Schleife mit Zähler", "Mathematische Berechnung", "API-Call Simulation".
-- [ ] Tonalität: Entdeckend, schrittweise, erhellend.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist der Spotlight-Effekt auf dem Handy auch bei Sonnenlicht gut erkennbar?
-- [ ] Test: Springt die Taschenlampe auch bei schnellen Klick-Sequenzen korrekt mit?
-
-9. Abnahmekriterien
-- [ ] Der Spieler begreift Interpretation als "Live-Handeln" im Gegensatz zur statischen Kompilierung.
-- [ ] Das Interface wirkt wie ein exklusiver Code-Debugger.
-- [ ] Absolut intuitive Verfolgung von variablen Zuständen.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift den Interpreter als "Laufzeit-Übersetzer".
+- [ ] Das Interface wirkt extrem atmosphärisch und haptisch wertvoll.
+- [ ] Maximale Punkte durch präzises Folgen der Grammatik-Regeln.

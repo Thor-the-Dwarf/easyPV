@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Fehlerfreie Umsetzung eines ERMs in ein relationales Tabellenschema unter Einhaltung der Integritätsregeln (PK/FK).
-- Kontext: Schema-Designer, Fokus auf Tabellenstruktur und Verknüpfungen.
-- UX-Prinzip:
-  - Das ERM-Referenzbild ist permanent (minimiert) sichtbar.
-  - Der "Schema-Editor" ist die Hauptarbeitsfläche.
-  - Visuelle Verknüpfung: Linien ziehen von PK zu FK baut die Beziehung auf.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Praktische Umsetzung von logischen Modellen (ERM) in physische Tabellenschemata unter Berücksichtigung der 1. bis 3. Normalform.
+- Game-Mechanic: "The Data Architect". Du baust das Daten-Skelett einer neuen Welt. Dir werden Entity-Beschreibungen zugeworfen. Du musst sie in Tabellen gießen, Primärschlüssel (PK) schmieden und Fremdschlüssel (FK) wie Brückenseile zu anderen Tabellen spannen.
+- Challenge: 
+  - Level 1 (Relational Base): Erstelle eine Tabelle und markiere den PK (ID-Spalte).
+  - Level 2 (The Connector): Verbinde "Bestellung" mit "Kunde". Ziehe das Seil vom FK zum richtigen PK der Ziel-Tabelle.
+  - Level 3 (Normal-Force): Ein "Daten-Smell" (Redundanz) wird erkannt. Du musst eine Tabelle aufspalten, um die 3. Normalform zu erreichen, während der Datenfluss aktiv ist.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Tabellen-Definition (Name/Spalten), 2 = Schlüssel-Typen (PK/FK), 3 = Beziehungs-Linien.
-- [ ] Textbudget: Max. 5 Spalten pro Tabelle zur Wahrung der Übersicht.
-- [ ] Keine Intro-Container; der erste Tabellenkopf wartet bereits auf Input.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Normalization-Grade" (1NF-3NF), "Integrity-Score" (Health), "Relationship-Counter".
+- [ ] Scoring: +1000 Pkt für "Redundancy-Free" Design. massive Abzüge bei Zirkelbezügen zwischen Tabellen.
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> erm-preview -> table-grid -> relationship-overlay`.
-- [ ] Table-Grid: Freie Platzierung der Tabellen-Boxen.
-- [ ] Controls: Kontextmenü pro Spalte (PK/FK Toggle).
+2. Screen-Layout (The Blueprint Canvas)
+- [ ] `infinite-grid -> ERM-minimap -> table-workbench -> line-connector`.
+- [ ] Workbench: Ein Arbeitsbereich, in dem Tabellen als metallische Boxen schweben und verschiebbar sind.
+- [ ] Line-Connector: Ein interaktives Tool zum Ziehen von Verbindungen zwischen PINS (Spalten).
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Canvas-Zoom: Pinch-to-Zoom auf Mobile zur Navigation im Schema.
-- [ ] `overflow: hidden` für die Page, internes Scrolling für das Schema-Feld.
+3. Kernvisuals und Effekte
+- [ ] DB-Client Ästhetik: Dunkler Modus, klares SQL-Blau, goldene Schlüssel-Icons, leuchtende Beziehungslinien.
+- [ ] "Key-Glow": Wenn eine Spalte zum PK wird, erscheint ein goldener Schimmer.
+- [ ] "Normalization-Pulse": Die Tabelle pulsiert grün, wenn sie die nächste Normalform erreicht.
 
-4. Kernvisuals
-- [ ] Golden-Key Icon: Markiert Primärschlüssel prominent.
-- [ ] High-Contrast Linien: Zeigen die Richtung der Beziehung (1:n).
-- [ ] Tabellen-Stil: Inspiriert von modernen DB-Clients (DBeaver/DataGrip).
+4. Browser- und Device-Resilienz
+- [ ] `Pinch-to-Zoom` auf dem Canvas für große Schemata.
+- [ ] Mobile: "Tap-and-Link" Modus anstelle von Drag für präzise Verbindungen.
 
-5. Interaktion und Feedback
-- [ ] Auto-Mapping: "Fremdschlüssel erkannt! Die Spalte 'Kunden_ID' verweist nun auf die Tabelle 'Kunde'."
-- [ ] Fehler-Highlight: Widersprüchliche Datentypen leuchten rot auf.
-- [ ] "Normalize-Check": Warnung bei offensichtlichen Redundanzen.
+5. Content-Strategie (The Schemas)
+- [ ] 12 Szenarien: "Webshop", "Uni-Verwaltung", "Library-System", "IoT-Sensor-Log".
 
-6. KPI-Klarheit
-- [ ] Integritäts-Status: "Beziehungen vollständig: 100%".
-- [ ] Schema-Score: "Normalisierungsgrad: High".
+6. QA-Paket
+- [ ] Test: Sind die PK/FK Icons (Schlüssel/Link) bei hoher Zoomstufe noch differenzierbar?
+- [ ] Test: Bleiben die Linien beim Verschieben der Tabellen flüssig und ohne "Ghosting"?
 
-7. Content-/Copy-Feinschliff
-- [ ] Realistische Schemen: "Kunde-Bestellung-Position", "Auto-Halter-Versicherung".
-- [ ] Tonalität: Präzise, technisch, datenzentriert.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Überlappen sich die Beziehungs-Linien auf kleinen Screens (Crossover-Handling)?
-- [ ] Test: Sind die Schlüssel-Icons auch bei 12px Fontsize erkennbar?
-
-9. Abnahmekriterien
-- [ ] Der Spieler versteht die logische Notwendigkeit von Fremdschlüsseln für Daten-Relationen.
-- [ ] Das Interface wirkt wie ein professionelles Datenbank-Design-Tool.
-- [ ] Schnelle, flüssige Bedienung beim Erstellen der Spalten.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift die relationale Integrität als "Kleber" der Datenwelt.
+- [ ] Das Interface wirkt professionell, sauber und wertvoll (DBeaver-Style).
+- [ ] Maximale Punkte durch strikte Normalisierung.

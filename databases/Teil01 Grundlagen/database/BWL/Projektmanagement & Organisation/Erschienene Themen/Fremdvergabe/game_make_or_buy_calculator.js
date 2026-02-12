@@ -202,7 +202,7 @@
       el.feedback.textContent = `Nicht korrekt. Deine Wahl: ${pickLabel}. Richtig waere: ${expectedLabel}.`;
     }
 
-    el.resultBox.textContent = `Kostenabstand: ${euro(ev.difference)}. Günstiger ist: ${cheaper}.`;
+    el.resultBox.textContent = `Kostenabstand: ${euro(ev.difference)}. Guenstiger ist: ${cheaper}.`;
   }
 
   function renderFinal() {

@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Verständnis der Auswirkungen von Algorithmen und Datenstrukturen auf den Ressourcenverbrauch (CPU, RAM, Energie).
-- Kontext: Effizienz, Performance-Optimierung, Green IT, Mobiles Computing.
-- UX-Prinzip:
-  - "The Battery Watch": Code ist Energie. Jede ineffiziente Schleife ist ein "Stromfresser", der die Laufzeit (Batterie) des Geräts verkürzt.
-  - "Efficiency-Dual": Zwei Lösungswege treten gegeneinander an. Ein "Amperemeter" zeigt den Echtzeit-Ausschlag bei der Verarbeitung großer Datenmengen.
-  - "Optimization-Unlock": Durch Anwendung von Techniken (z.B. Indexierung) sinkt die CPU-Kurve drastisch.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Identifikation und Behebung von Ressourcenverschwendung (CPU, RAM, Netzwerk) zur Steigerung der Software-Effizienz.
+- Game-Mechanic: "The Resource Miser". Du bist der knallharte Buchhalter in einem Rechenzentrum. Jedes Byte kostet Gold! Deine App verbraucht zu viele Ressourcen. Du musst den Code scannen und "Verschwender" (z. B. unnötige Schleifen, Speicherleaks, fette Bilder) finden und eliminieren.
+- Challenge: 
+  - Level 1 (The Memory Leak): Finde ein Objekt, das niemals aus dem Speicher gelöscht wird. "Clowne" es weg, bevor der RAM überläuft.
+  - Level 2 (The CPU-Hog): Eine Schleife berechnet 1000x das Gleiche. Nutze Caching (Memoization), um die CPU-Zyklen zu halbieren.
+  - Level 3 (The Payload-Diet): Ein API-Call sendet 10MB Daten, obwohl nur 1KB gebraucht wird. Stutze das JSON-Objekt auf das Minimum.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Last-Kurven (CPU/RAM), 2 = Die Code-Vergleichs-Kacheln, 3 = Die Optimierungs-Werkzeuge.
-- [ ] Textbudget: Max. 5 Zeilen Code pro Vergleichsobjekt.
-- [ ] "Resource-HUD": Anzeige von ms (Zeit) und MB (Speicher) pro Durchlauf.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "System-Health (Temp)", "RAM-Usage-Bar", "CPU-Pressure", "Waste-Detected Count".
+- [ ] Scoring: "Efficiency-Whiz" Bonus für die maximale Einsparung bei minimalem Code-Eingriff. Abzug für "Performance-Regressionen".
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> performance-dashboard -> split-screen-code -> tools-palette`.
-- [ ] Dashboard: Dynamische Diagramme (Liniengrafik) im oberen Bereich (Desktop 30dvh, Mobile 20dvh).
-- [ ] Split-Screen: Direkter Vergleich der Implementierungen (Desktop nebeneinander).
+2. Screen-Layout (The Server Rack)
+- [ ] `rack-monitor -> code-thermoscan -> resource-profiler (Charts) -> optimization-workbench`.
+- [ ] Code-Thermoscan: Code-Teile leuchten orange/rot, wenn sie ineffizient sind.
+- [ ] Resource-Profiler: Live-Graphen, die nach jeder Optimierung sinken.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: Vertikale Anordnung der Vergleiche; Tab-Switch für die Last-Graphen.
-- [ ] `will-change: transform` für flüssige Diagramm-Updates während der Simulation.
+3. Kernvisuals und Effekte
+- [ ] Cyber-Clean Ästhetik: Weißes Licht, gläserne Panels, fließende blaue Datenströme, Alarm-Rot bei Overload, kühles Interface (Shared Theme kompatibel).
+- [ ] "Heat-Dissipation": Wenn ein Fehler gefixt wird, entweicht virtueller Dampf und die Farbe wechselt von Rot zu Blau.
+- [ ] "Efficiency-Sparkle": Ein sanftes Schimmern über dem optimierten Code-Block.
 
-4. Kernvisuals
-- [ ] Technik-Ästhetik: Tachometer, Oszilloskop-Look, pulsierende Energie-Linien (shared_theme.css).
-- [ ] Last-Vibration: Das UI "zittert" leicht bei 100% CPU-Last.
-- [ ] High-Contrast Farben: Sparsame Algorithmen leuchten in "Eco-Grün", Verschwender in "Warn-Rot".
+4. Browser- und Device-Resilienz
+- [ ] `Intersection Observer` für das flüssige Nachladen der Profiler-Daten.
+- [ ] Mobile: "Tap-to-Optimize" auf die roten Hotspots.
 
-5. Interaktion und Feedback
-- [ ] Simulations-Feedback: "Bzzz! Die lineare Suche in 1 Million Datensätzen überhitzt die CPU. Probier's mal mit einem Index!"
-- [ ] Optimierungs-Aha: "Klick! Durch Caching sinkt die Antwortzeit von 500ms auf 2ms. Die Batterie freut sich."
-- [ ] Erfolg: "Effizienz-Champion! Deine Software läuft jetzt 5x länger auf mobilen Geräten."
+5. Content-Strategie (The Waste-Logs)
+- [ ] 15 Ineffizienz-Fälle: Von "Nested Loops" bis "Redundant Database Queries".
 
-6. KPI-Klarheit
-- [ ] Efficiency-Gain: "Ressourcen-Ersparnis: X%".
-- [ ] Performance-Rating: "Eco-Rating: A++".
+6. QA-Paket
+- [ ] Test: Fühlt sich der Zeitdruck durch die "RAM-Usage-Bar" motivierend an?
+- [ ] Test: Sind die Einsparungen (z. B. "20% faster") visuell befriedigend aufbereitet?
 
-7. Content-/Copy-Feinschliff
-- [ ] Reale Fälle: "Nested Loops vs. Hash Map", "Strings zusammenfügen (Builder vs. Concatenation)", "Datenbank-Query ohne Index".
-- [ ] Tonalität: Analytisch, ressourcenbewusst, leistungsorientiert.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Graphen der Diagramme auf dem Handy-Display auch bei hohem Tempo flüssig?
-- [ ] Test: Sind die Einheiten (ms, MB) für die Zielgruppe (FIAE) verständlich skaliert?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift, dass "funktioniert" nicht gleich "gut" ist.
-- [ ] Das Interface wirkt wie ein exklusives Performance-Labor.
-- [ ] Starkes Bewusstsein für die Umwelt- und Kostenfolgen von ineffizientem Code.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Performance ist ein Feature".
+- [ ] Das Interface wirkt modern, technologisch und hochgradig reaktiv.
+- [ ] Fokus auf nachhaltige und ressourcenschonende Programmierung.

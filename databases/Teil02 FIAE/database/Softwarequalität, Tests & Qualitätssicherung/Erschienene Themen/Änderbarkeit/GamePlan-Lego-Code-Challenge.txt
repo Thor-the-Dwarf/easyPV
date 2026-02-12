@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Verständnis von lose Kopplung und hoher Kohäsion als Schlüssel für die Änderbarkeit (Maintainability).
-- Kontext: Software-Architektur, Dependency Injection, Interface-Segregation.
-- UX-Prinzip:
-  - "The Modular Spaceship": Die Software ist ein Raumschiff. Der Spieler muss es für verschiedene Missionen (Anforderungen) umbauen.
-  - "Snap-on Logic": Jedes Modul hat standardisierte Anschlüsse. Wenn die Kopplung zu eng ist (Hardcoding), bricht beim Tausch eines Moduls das halbe Schiff auseinander.
-  - "Impact-Heat": Rote Leitungen zeigen an, wo eine Änderung "durchschlägt" und andere Systeme beschädigt.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verbesserung der Code-Struktur zur Steigerung der Wartbarkeit und zukünftigen Änderbarkeit (Refactoring).
+- Game-Mechanic: "The Lego Refurbisher". Du hast ein altes, verkrustetes Lego-Modell (Legacy Code) geerbt. Der Kunde will eine neue Etage, aber alles ist zusammengeklebt (Hohe Kopplung) und unbeschriftet. Du musst Steine lösen, sie säubern (Refactoring), logisch gruppieren und so wieder zusammensetzen, dass Erweiterungen ein Kinderspiel werden.
+- Challenge: 
+  - Level 1 (The Glue-Trap): Löse eine hart-codierte Abhängigkeit auf. Ersetze sie durch ein flexibles Bauteil.
+  - Level 2 (The Identity-Crisis): Benenne 5 Steine um, damit man sofort weiß, was sie tun (Naming).
+  - Level 3 (The Modular Expansion): Baue das Modell so um, dass man eine neue Funktion in <10 Sekunden anstecken kann.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Schnittstelle (Soll-Bruchstelle), 2 = Das Austauschmodul, 3 = Der Stabilitäts-Index des Schiffs.
-- [ ] Textbudget: Max. 5 Begriffe pro Modul-Spezifikation (z.B. "Power: 100kW, Interface: Type-C").
-- [ ] "Coupling-Meter": Anzeige, wie stark zwei Module voneinander abhängen (Low/High).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Technical-Debt-Meter", "Change-Agility Index", "Refactor-Progress", "Decoupling-Level".
+- [ ] Scoring: "Clean-Code-Pro" Bonus für die Reduktion von technischer Schuld. Abzug bei "Breaking-Changes" (wenn das Modell beim Umbau zusammenbricht).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> assembly-hangar -> module-blueprints -> mission-briefing`.
-- [ ] Hangar: Zentrale Werkstatt mit dem Raumschiff (Desktop mittig, 3D/Isometrisch).
-- [ ] Blueprints: Ein Slider mit verfügbaren Ersatzteilen am unteren Rand.
+2. Screen-Layout (The Workshop)
+- [ ] `model-view (The Legacy Code) -> separator-tool -> renaming-station -> component-shelf`.
+- [ ] Model-View: Ein "wirrer Haufen" aus Code-Blöcken, die per Linien verbunden sind (Spaghetti-Graph).
+- [ ] Component-Shelf: Hier legst du deine frisch "gewaschenen" (refactoreten) Module ab.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: Drag & Drop mit großen Touch-Targets; "Long-press" für Detail-Informationen zum Modul.
-- [ ] `snap-points` für das exakte Einrasten der Module an den Interfaces.
+3. Kernvisuals und Effekte
+- [ ] Workshop-Utility Ästhetik: Werkstatt-Farben (Grau, Orange, Blau), praktische Symbole, das Geräusch von klickenden Steinen, helle Ausleuchtung.
+- [ ] "Clean-Glow": Wenn ein Code-Block refactored wurde, verliert er seinen "Dreck" (graue Textur) und wird leuchtend bunt.
+- [ ] "Magnetic-Snap": Beim Zusammenbau ziehen sich saubere Module fast von selbst an.
 
-4. Kernvisuals
-- [ ] Sci-Fi Hangar Ästhetik: Metallische Oberflächen, Hologramm-Displays, Laser-Schweißpunkte (shared_theme.css).
-- [ ] "The Break": Visuelle Risse im UI, wenn ein Modul inkompatibel ist oder zu viele Abhängigkeiten mitreißt.
-- [ ] High-Contrast Glow für aktive Verbindungsstellen.
+4. Browser- und Device-Resilienz
+- [ ] `Pointer Events` für das präzise Greifen und Ziehen der Code-Steine.
+- [ ] Mobile: "Double-Tap to Refactor".
 
-5. Interaktion und Feedback
-- [ ] Assembly-Feedback: "Klick! Das Triebwerk wurde erfolgreich durch ein Ionen-Modul ersetzt. Keine Änderungen am Navigationscomputer notwendig – saubere Trennung!"
-- [ ] Warn-Effekt: "Achtung! Du hast das Log-Modul direkt mit dem Zahlungssystem verlötet. Das macht spätere Änderungen extrem schwer!"
-- [ ] Erfolg: "Mission bereit! Dein Raumschiff ist so modular, dass es für jede zukünftige Anforderung gewappnet ist."
+5. Content-Strategie (The Legacy-Models)
+- [ ] 12 "kaputte" Code-Szenarien aus echten (fiktiven) Schrott-Projekten.
 
-6. KPI-Klarheit
-- [ ] Modifiability-Score: "Anpassungsfähigkeit: Maximal".
-- [ ] Coupling-Status: "Kopplungsgrad: Lose (Ideal)".
+6. QA-Paket
+- [ ] Test: Ist der Vorher/Nachher-Effekt (Technikschuld sinkt) motivierend genug?
+- [ ] Test: Fühlt sich das "Auseinandernehmen" des Codes zerstörerisch oder befreiend an?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Austausch der Datenbank", "Hinzufügen eines Logging-Providers", "Wechsel von REST zu GraphQL".
-- [ ] Tonalität: Konstruktiv, visionär, stabil.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist das "Raumschiff" auf dem Smartphone-Display noch erkennbar und die Anschlüsse gut treffbar?
-- [ ] Test: Sind die Auswirkungen einer "engen Kopplung" im Spielverlauf logisch nachvollziehbar (Kettenreaktion)?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler versteht, dass gute Architektur das Ändern einfach macht.
-- [ ] Das Interface wirkt wie ein hochmodernes Konstruktions-Programm von SpaceX.
-- [ ] Vollständige Klarheit über den Unterschied zwischen Kopplung und Kohäsion.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Wartbarkeit spart Zeit in der Zukunft".
+- [ ] Das Interface wirkt praktisch, anfassbar und motivierend.
+- [ ] Fokus auf saubere Software-Evolution.

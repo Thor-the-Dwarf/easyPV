@@ -10,3 +10,5 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Reworked portrait layout: statements panel moves first, phase curve remains horizontal-scrollable, and pool gets bounded height for usability.
 - Fixed visibility issue: statement cards now enforce dark text on light background.
 - Portrait mode validated (390x844): game sections stack in usable order and remain interactive.
+- Started implementation for GamePlan-Make-or-Buy-Calculator: added new game HTML/JS/JSON in Fremdvergabe folder.
+- Implemented 5-case cost comparison flow with slider, bars, scoring, and break-even helper.

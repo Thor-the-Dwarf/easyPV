@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Präzise Verfolgung von Variablenzuständen und Kontrollflüssen in Algorithmen zur Schulung des logischen Verständnisses und Fehlersuche.
-- Kontext: White-Box-Testing, Schreibtischtest, Debugging-Grundlagen.
-- UX-Prinzip:
-  - "The Logic X-Ray": Der Spieler blickt durch die Hülle des Codes direkt auf das "Herz" (die Variablen).
-  - "Time-Travel": Der Spieler navigiert Zeile für Zeile durch die Zeit. Bei jedem "Tick" fließen Daten von einer Variable in die nächste.
-  - "State-Snapshot": Eine übersichtliche Tabelle, die wie ein EKG die Vitalwerte (Variablenwerte) des Algorithmus aufzeichnet.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Manuelle Verfolgung von Variablenwerten und Programmzuständen zur Identifikation von Logikfehlern (Schreibtischtest).
+- Game-Mechanic: "The Logic Step-Counter". Du bist ein Uhrmacher für digitale Taschenuhren. Jedes Zahnrad (Anweisung) muss perfekt in das nächste greifen. Du hast keinen Computer, nur Papier und Stift (Die Trace-Table). Du musst Zeile für Zeile durch den Code gehen und die exakten Werte der Zahnräder (Variablen) in deine Tabelle eintragen.
+- Challenge: 
+  - Level 1 (The Simple Loop): Verfolge eine `FOR`-Schleife von 1 bis 5. Was steht in `sum` am Ende?
+  - Level 2 (The Nested Trap): Eine Schleife in einer Schleife. Behalte den Überblick über `i` und `j`, ohne dich zu verschreiben.
+  - Level 3 (The Array-Snake): Verfolge einen Algorithmus, der ein Array durchläuft und Werte tauscht (z. B. ein Mini-Sort). Ein falscher Eintrag und die Uhr bleibt stehen!
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die aktuelle Code-Zeile (Der Marker), 2 = Die Variablen-Spalten (Die Werte), 3 = Die Ergebnis-Zelle.
-- [ ] Textbudget: Max. 10 Zeilen Algorithmus (Loop/If-Strukturen).
-- [ ] "Instruction-Pointer": Ein leuchtender Pfeil, der genau auf den nächsten Befehl zeigt.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Clock-Integrity" (%), "Current-Line-Marker", "Variable-Snapshot-List".
+- [ ] Scoring: "Precision-Craft" Bonus für eine fehlerfreie Tabelle. Abzug bei "Derailment" (falscher Wert eingetragen).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> code-theater -> trace-table -> variable-monitor`.
-- [ ] Theater: Fokus auf den Algorithmus mit aktiver Zeilen-Hervorhebung (Desktop links, Mobile oben).
-- [ ] Trace-Table: Interaktive Matrix zum Ausfüllen der Werte (Desktop rechts, Mobile unten).
+2. Screen-Layout (The Watchmaker's Desk)
+- [ ] `magnifying-glass-view (Code) -> trace-ledger (Table) -> variable-display -> step-button`.
+- [ ] Trace-Ledger: Eine klassische Tabelle mit Spalten für Zeilennummer, Bedingung und Variablen.
+- [ ] Step-Button: Ein kleiner Hebel, der dich zur nächsten logischen Zeile bringt.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Tap-next-Line" Mechanik; Input-Felder mit optimiertem Num-Pad für Zahlen-Variablen.
-- [ ] `sticky-header` für die Tabellenköpfe (Variablennamen).
+3. Kernvisuals und Effekte
+- [ ] Vintage-Engineering Ästhetik: Altes Papier, Messing-Elemente, Tinte, weiches gelbes Licht, das Ticken einer Uhr im Hintergrund.
+- [ ] "Ink-Write": Beim Eintragen in die Tabelle erscheint eine handschriftliche Animation.
+- [ ] "Gear-Sync": Wenn der Wert korrekt ist, dreht sich ein Zahnrad im Hintergrund ein Stück weiter.
 
-4. Kernvisuals
-- [ ] Labor-Ästhetik: Blaues Röntgen-Licht, digitale Anzeigen, klare Linienraster (shared_theme.css).
-- [ ] "Flow-Particles": Kleine Daten-Partikel bewegen sich vom Code in die Tabellenzeile beim Eintrag.
-- [ ] High-Contrast State: Aktive Zelle leuchtet bei korrekter Eingabe grün auf.
+4. Browser- und Device-Resilienz
+- [ ] `overflow-x: auto` für die Trace-Tabelle auf Mobile.
+- [ ] Mobile: "Tap-to-Cell" zum schnellen Ausfüllen der Werte.
 
-5. Interaktion und Feedback
-- [ ] Trace-Feedback: "Klick! Zeile 4: `i` ist jetzt 2, `sum` steigt auf 5. Korrekt dokumentiert!"
-- [ ] Fehler-Korrektur: "Stopp! Hast du das Inkrement am Ende der Schleife vergessen? Schau nochmal genau auf Zeile 8."
-- [ ] Erfolg: "Diagnose abgeschlossen! Du hast den Algorithmus komplett durchschaut und jeden Zustandswechsel korrekt erfasst."
+5. Content-Strategie (The Blueprints)
+- [ ] 12 klassische Algos für den Schreibtischtest: Von "Fibonacci" bis "Euklidischer Algorithmus".
 
-6. KPI-Klarheit
-- [ ] Trace-Accuracy: "Fehlerfreie Zeilen: X / Y".
-- [ ] Mental-Speed: "Verarbeitungsgeschwindigkeit: X Schritte / Minute".
+6. QA-Paket
+- [ ] Test: Ist die Tabelle auch bei vielen Variablen auf kleinen Screens noch bedienbar?
+- [ ] Test: Hilft der "Current-Line-Marker", um nicht in der Zeile zu verrutschen?
 
-7. Content-/Copy-Feinschliff
-- [ ] Algorithmen: "Fakultät berechnen", "Array-Summierung", "String-Umkehrung", "Modulo-Check".
-- [ ] Tonalität: Konzentriert, präzise, detektivisch.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist die Tabelle auf dem Smartphone ohne horizontales Scrollen bedienbar (max. 3-4 Variablen)?
-- [ ] Test: Sind die Übergänge zwischen den "Zeitsprüngen" visuell nachvollziehbar?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler entwickelt ein intuitives Verständnis für die sequentielle Abarbeitung.
-- [ ] Das Interface wirkt wie ein exklusives Analyse-Tool für Code-Spezialisten.
-- [ ] Volle Beherrschung des Schreibtischtests als Vorstufe zum Debugging.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Manchmal ist der Kopf der beste Debugger.
+- [ ] Das Interface wirkt nostalgisch, präzise und beruhigend.
+- [ ] Hoher Lerneffekt für algorithmisches Denken.

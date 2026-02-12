@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Erstellung präziser, reproduzierbarer und standardisierter Testfallbeschreibungen zur Sicherstellung der Softwarequalität.
-- Kontext: Test-Engineering, Dokumentation, QA-Management.
-- UX-Prinzip:
-  - "The Scientific Logbook": Ein Testfall ist ein wissenschaftliches Experiment. Werden die Schritte exakt befolgt, muss das Ergebnis immer gleich sein.
-  - "Formula-Building": Der Spieler kombiniert Bausteine (Inputs, Actions, Expected Result) zu einer wasserdichten Formel.
-  - "The Replication-Test": Ein virtueller "Zweit-Laborant" (Bot) versucht, den Testfall nachzubauen. Nur bei 100% Klarheit wird er akzeptiert.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Systematisches Entwerfen von Testfällen mit Vorbedingungen, Testdaten, Handlungsschritten und erwarteten Ergebnissen.
+- Game-Mechanic: "The Scenario Writer". Du bist der Drehbuchautor für einen Stunt-Film. Dein Stuntman (Die Software) muss gefährliche Manöver ausführen. Du schreibst das Drehbuch (Den Testfall): "Wenn das Auto mit 100km/h gegen die Wand fährt (Input), muss der Airbag aufgehen (Expected Result)." Wenn dein Drehbuch ungenau ist, passiert ein Unfall!
+- Challenge: 
+  - Level 1 (The Standard Stunt): Schreibe einen Testfall für einen erfolgreichen Login (Positive Test).
+  - Level 2 (The Crash-Test): Schreibe einen Testfall für eine ungültige Kreditkartennummer (Negative Test). Berücksichtige die Fehlermeldung.
+  - Level 3 (The Epic Sequence): Ein komplexer Multi-Step-Stunt. "Warenkorb füllen -> Rabattcode nutzen -> Versandart wählen". Jeder Schritt braucht eine exakte Beschreibung.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Test-Schritte (Der Ablauf), 2 = Das Erwartete Ergebnis (Das Ziel), 3 = Vorbedingungen & Daten (Die Basis).
-- [ ] Textbudget: Max. 15 Wörter pro Testschritt.
-- [ ] "Ambiguity-Detector": Ein Scanner, der vage Begriffe (z.B. "Checke ob okay") rot markiert.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Story-Clarity", "Safety-Score", "Precondition-Alert".
+- [ ] Scoring: "Director's-Cut" Bonus für vollständige und präzise Testbeschreibungen. Abzug bei "Vague-Steps" (zu ungenaue Anweisungen).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> logbook-canvas (Center) -> fragment-library (Bottom) -> validation-eye (Side)`.
-- [ ] Canvas: Ein strukturiertes Formular mit klarer Segmentierung (Desktop links-lastig für Flow).
-- [ ] Library: Schneller Zugriff auf Standard-Aktionen (z.B. "Klicke auf", "Eingabe von", "Erwarte Error").
+2. Screen-Layout (The Movie Set)
+- [ ] `storyboard-view -> script-editor (Test Case Template) -> stunt-preview (Expected Result Animation)`.
+- [ ] Script-Editor: Felder für ID, Titel, Vorbedingung, Schritte, Erwartetes Ergebnis.
+- [ ] Stunt-Preview: Eine kleine Animation, die zeigt, was bei Erfolg/Fehler passieren sollte.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-to-Order" Mechanik für die Testschritte.
-- [ ] Automatischer Fokus auf das nächste Eingabefeld nach Auswahl eines Fragments.
+3. Kernvisuals und Effekte
+- [ ] Cinema-Vintage Ästhetik: Regiestuhl-Icon, Filmklappe, Spotlights, Schwarz-Weiß-Look mit Farbakzenten (shared_theme.css kompatibel).
+- [ ] "Action-Impact": Wenn ein Testfall fertig ist, schlägt die Filmklappe zu ("Action!").
+- [ ] "Script-Check": Korrekte Felder leuchten golden auf, fehlende Informationen blinken rot wie eine Warnleuchte am Set.
 
-4. Kernvisuals
-- [ ] Labor-Dokument Ästhetik: Saubere Typografie, Rasterlinien, Blaudruck-Elemente, digitale Signaturen (shared_theme.css).
-- [ ] Prozeß-Flow: Jede Zeile im Testfall ist durch einen dünnen Faden mit der nächsten verbunden.
-- [ ] High-Contrast Badges für "PRIORITY: HIGH" etc.
+4. Browser- und Device-Resilienz
+- [ ] `CSS Flexbox` für das Formular-Design (Responsives Grid).
+- [ ] Mobile: "Voice-to-Text" Option (simuliert) für die schnelle Eingabe.
 
-5. Interaktion und Feedback
-- [ ] Precision-Feedback: "Klick! Schritt hinzugefügt. 'Klicke auf Login-Button' ist eine klare Anweisung für den Tester."
-- [ ] Warn-System: "Halt! Ohne 'Erwartetes Ergebnis' führt der Testfall ins Nirgendwo. Füge eine Assert-Bedingung hinzu."
-- [ ] Erfolg: "Logbuch-Eintrag komplett. Dein Testfall ist bereit für die Labor-Serie (Test-Wiederholungen)."
+5. Content-Strategie (The Scripts)
+- [ ] 15 Test-Szenarien aus echten Business-Apps und Games.
 
-6. KPI-Klarheit
-- [ ] Reproducibility-Index: "Reproduzierbarkeit: 100%".
-- [ ] Documentation-Standard: "ISO-Konformität: Erreicht".
+6. QA-Paket
+- [ ] Test: Ist die Unterscheidung zwischen "Action" und "Expected Result" für den Spieler intuitiv?
+- [ ] Test: Wirkt das Film-Theme motivierend für die eigentlich trockene Dokumentations-Arbeit?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Passwort-Reset-Flow", "Negative Preis-Eingabe im Warenkorb", "Datei-Upload mit ungültigem Format".
-- [ ] Tonalität: Akkurat, methodisch, objektiv.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist das Editor-Layout auf dem Smartphone übersichtlich (Stacking der Felder)?
-- [ ] Test: Sind die Standard-Aktionen generisch genug für alle IT-Themen?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler entwickelt eine Abneigung gegen unpräzise Fehlermeldungen.
-- [ ] Das Interface wirkt wie ein Profi-Tool für Software-Tester.
-- [ ] Intuitive Bedienung der komplexen Dokumentationsstruktur.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Ein guter Testfall ist so genau, dass ihn jeder nachspielen kann".
+- [ ] Das Interface wirkt kreativ, professionell und unterhaltsam.
+- [ ] Fokus auf präzise technische Dokumentation.

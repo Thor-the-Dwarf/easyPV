@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Identifikation und Behebung von Seiteneffekten (Regressionen) nach Code-Änderungen durch gezielte Wiederholungstests.
-- Kontext: CI/CD, Regressions-Testing, Impact Analysis, Testautomatisierung.
-- UX-Prinzip:
-  - "The Regression Radar": Eine Änderung ist ein Einschlag im System. Der Radar scannt die gesamte Oberfläche nach "Echos" (neuen Fehlern) in entfernten Modulen.
-  - "Impact-Heatmap": Module, die eng mit der Änderung verknüpft sind, glühen heißer auf und erfordern dringendere Tests.
-  - "Pipeline-Run": Der Spieler triggert die Test-Batterien und beobachtet die "grüne Welle" (Erfolg) oder den "roten Alarm" (Regression).
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sicherstellen, dass neue Code-Änderungen keine bestehenden Funktionalitäten beeinträchtigen (Regressionstest).
+- Game-Mechanic: "The Time Butler". Du bist der Wächter des "Gestern". Ein neues Feature (Das Kind) will ins Haus. Doch Vorsicht: Es könnte die alten Möbel (Bestehende Funktionen) zerschlagen. Du lässt das Feature nur rein, wenn alle alten "Sicherheitsschranken" (Automatisierte Tests) grün bleiben.
+- Challenge: 
+  - Level 1 (The Small Fix): Ein kleiner Bugfix wird eingespielt. Scanne das Haus – ist die Kaffeemaschine (Andere Funktion) noch heil?
+  - Level 2 (The Feature-Bomb): Ein Riesen-Modul wird hinzugefügt. Der Butler muss 50 Tests gleichzeitig überwachen. Wo brennt es?
+  - Level 3 (The Ghost-Bug): Eine Änderung an der Datenbank wirkt sich auf das Reporting aus. Finde den Seiteneffekt, bevor der Butler verzweifelt.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Code-Änderung (Zentrum), 2 = Die abhängigen Module (Satelliten), 3 = Der Pipeline-Status.
-- [ ] Textbudget: Max. 3 Worte pro Modul-Name (z.B. "Payment Gateway", "User Auth").
-- [ ] "Impact-Score": Prozentuale Wahrscheinlichkeit, dass Modul X durch Änderung Y bricht.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Legacy-Stability-Gauge", "Regression-Dschungel-Radar", "Active-Guard-Points".
+- [ ] Scoring: "Bulletproof-Bonus" für Änderungen ohne einen einzigen Regressionsfehler. Abzug bei "Collateral-Damage" (Seiten-Effekte).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> dependency-radar-view -> test-selection-panel -> deployment-status`.
-- [ ] Radar-View: Eine kreisförmige Map der Modul-Architektur (Desktop 60% Breite, Mobile Full-Screen).
-- [ ] Panel: Checkliste der verfügbaren Automatisierungs-Scripts am Rand.
+2. Screen-Layout (The Victorian Mansion)
+- [ ] `grand-hallway -> feature-gate -> testing-chambers (The Suites) -> result-telegraph`.
+- [ ] Feature-Gate: Hier klopfen die neuen Code-Pakete an.
+- [ ] Testing-Chambers: Jede Kammer repräsentiert ein bestehendes Modul, das im Hintergrund "grün" leuchten muss.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Pinch-to-Zoom" in der Modul-Map; Tap-to-Trigger für Tests.
-- [ ] CSS-Animationen für den rotierenden Radar-Strahl.
+3. Kernvisuals und Effekte
+- [ ] Steampunk-Mansion Ästhetik: Holz-Paneele, kupferne Zahnräder, grüne Gaslampen (Pass), roter Dampf (Fail), tickende Uhren.
+- [ ] "Radar-Ping": Bei jeder Änderung geht ein Schallwellen-Effekt durch das Haus. Alles, was rot aufblitzt, ist kaputt.
+- [ ] "The Butler's Nod": Bei erfolgreichem Test nickt eine animierte Butler-Silhouette am Rand.
 
-4. Kernvisuals
-- [ ] Cyber-Security Ästhetik: Dunkler Hintergrund, grüne Scan-Linien, blinkende Warnpunkte (shared_theme.css).
-- [ ] "Ripple-Effect": Animierte Kreise, die von der geänderten Stelle ausgehen.
-- [ ] High-Contrast Status-Icons: Kreuz (Fail), Haken (Pass), Kreis (Running).
+4. Browser- und Device-Resilienz
+- [ ] `mix-blend-mode` für die Radar-Lichteffekte.
+- [ ] Mobile: "Tap-to-Scan" für die schnelle Analyse.
 
-5. Interaktion und Feedback
-- [ ] Scan-Feedback: "Ping! Die Änderung am 'Login-Service' hat ein Echo im 'Warenkorb-Modul' ausgelöst. Regressionstest wird empfohlen."
-- [ ] Pipeline-Moment: "Simulation läuft... Test 14/20 fehlgeschlagen! Regression im Checkout gefunden. Fix erforderlich."
-- [ ] Erfolg: "Radar sauber! Alle Seiteneffekte wurden durch die Regression-Suite abgefangen. Sicher für Deployment."
+5. Content-Strategie (The Library)
+- [ ] 18 realistische Regressions-Szenarien: "CSS-Änderung bricht Formular", "Library-Update zerstört Auth".
 
-6. KPI-Klarheit
-- [ ] Regression-Coverage: "X % des Impact-Radius abgedeckt".
-- [ ] Build-Stability: "Pipeline-Status: STABLE".
+6. QA-Paket
+- [ ] Test: Ist das frustrierende Gefühl einer Regression ("Warum geht das jetzt nicht mehr?!") spielerisch gut eingefangen?
+- [ ] Test: Bleibt das Steampunk-Design auch ohne Hardcoding (shared_theme.css) konsistent?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Datenbank-Migration", "API-Update", "Refactoring der Utility-Klasse", "Security-Patch".
-- [ ] Tonalität: Wachsam, automatisiert, prozesssicher.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Verbindungen im Dependency-Radar auf einem Smartphone noch entwirrbar?
-- [ ] Test: Sind die Auswirkungen der Test-Selektion (Zeitersparnis vs. Risiko) pädagogisch spürbar?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler versteht, dass jede Änderung ein Risiko für das Unbeteiligte birgt.
-- [ ] Das Interface wirkt wie eine hochmoderne DevOps-Zentrale.
-- [ ] Hohes Bewusstsein für den Wert von automatisierten Tests in der Wartungsphase.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Jede Änderung braucht einen Sicherheits-Scan.
+- [ ] Das Interface wirkt nostalgisch, charmant und hochgradig interaktiv.
+- [ ] Hoher Lerneffekt für CI/CD und Test-Automatisierung.

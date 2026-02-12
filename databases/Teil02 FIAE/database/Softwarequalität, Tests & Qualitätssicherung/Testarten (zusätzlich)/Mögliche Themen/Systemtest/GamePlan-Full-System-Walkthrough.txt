@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: End-to-End Validierung des Gesamtsystems unter Realbedingungen zur Sicherstellung der Release-Reife.
-- Kontext: Systemtests, Geschäftsprozess-Testing, E2E (End-to-End), Resilienzprüfung.
-- UX-Prinzip:
-  - "The Grand Circuit": Eine Testfahrt auf dem Gesamtsystem-Ring. Der Spieler steuert ein Datenpaket durch alle Stationen (Frontend, Business-Logic, Datenbank, 3rd Party API).
-  - "Stress-Stations": Unterwegs treten Hindernisse auf (z.B. plötzliche Lastspitzen, Serverausfall).
-  - "Process-Chain": Ein leuchtender Pfad zeigt den Fortschritt durch den gesamten Geschäftsprozess (vom Klick bis zur Datenbank-Zelle).
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Ganzheitliches Testen eines vollständigen Systems gegen die funktionalen Anforderungen (Systemtest).
+- Game-Mechanic: "The System Tour Guide". Du begleitest einen VIP-Gast (Der User) durch dein digitales Luxus-Hotel (Das System). Er will den kompletten Weg gehen: Check-in (Login), Zimmer-Service (Order), Check-out (Payment). Du musst sicherstellen, dass JEDE Tür aufgeht und kein Gast im Fahrstuhl stecken bleibt.
+- Challenge: 
+  - Level 1 (The Happy Path): Ein reibungsloser Durchlauf ohne Hindernisse. Finde alle notwendigen Klicks.
+  - Level 2 (The Grumpy Guest): Der User macht Unfug (falsche Eingaben). Findet er trotzdem den Weg oder landet er in einer Sackgasse (Bug-Ende)?
+  - Level 3 (Full Capacity): Teste das System unter Last. Bleiben die Türen auch bei 100 parallelen Gästen geschmeidig?
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Der aktuelle Prozessschritt (z.B. "Zahlung autorisieren"), 2 = Der Status der Subsysteme (Health-Check), 3 = Die E2E-Zeitlinie.
-- [ ] Textbudget: Max. 10 Wörter pro Workflow-Phase.
-- [ ] "System-Pulse": Ein zentraler Indikator für die Vitalität des Gesamtsystems.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "User-Satisfaction-Meter", "Path-Progress-Bar", "Bug-Compass" (Gefahrenzonen).
+- [ ] Scoring: "Perfect-Stay" Bonus für einen fehlerfreien End-to-End Durchlauf. Abzug für "Dead-Ends" (404s oder Whitescreens).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> world-map-flow -> subsystem-dashboards -> event-ticker`.
-- [ ] World-Map: Eine stilisierte Karte der Systemlandschaft (Desktop mittig-oben).
-- [ ] Dashboards: Kleine Widgets für DB, API und Webserver am unteren Rand.
+2. Screen-Layout (The Hotel Lobby)
+- [ ] `hotel-map -> functional-rooms (Pages) -> navigation-corridors -> guest-view (The User)`.
+- [ ] Hotel-Map: Eine hierarchische Ansicht aller Systemfunktionen.
+- [ ] Corridors: Die Verbindungen zwischen den Komponenten.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-through-Workflow"; Tap-to-Intervene bei Systemfehlern.
-- [ ] `overflow-x: hidden` um den Fokus auf dem Prozesspfad zu halten.
+3. Kernvisuals und Effekte
+- [ ] Boutique-Art-Deco Ästhetik: Goldene Linien, edles Schwarz, flüssige Raumübergänge, dezente Jazz-Anklänge im Audio.
+- [ ] "Room-Unlock": Wenn eine Funktion erfolgreich getestet wurde, öffnet sich eine prachtvolle Flügeltür.
+- [ ] "Glitch-Shadow": Wenn ein Fehler auftritt, flackert der Raum unheimlich und wird grau.
 
-4. Kernvisuals
-- [ ] High-Tech Dashboard Ästhetik: Dunkle Oberflächen, Echtzeit-Graphen, isometrische Server-Icons (shared_theme.css).
-- [ ] "The Flow": Ein pulsierender Lichtpunkt wandert von Station zu Station.
-- [ ] High-Contrast Health-Indicators (Grün: OK, Gelb: Slow, Rot: Down).
+4. Browser- und Device-Resilienz
+- [ ] `scroll-snap-type` für nahtlose Übergänge zwischen den Test-Szenarien.
+- [ ] Mobile: "Swipe-to-Navigate" durch die App-Zustände.
 
-5. Interaktion und Feedback
-- [ ] Journey-Feedback: "Klick! Schritt 3 'Warenkorb-Check' erfolgreich. Die Daten wurden korrekt an den Payment-Provider übergeben."
-- [ ] Stress-Test: "Warnung! Datenbank meldet 'Connection Timeout'. Wie reagiert das System? Wähle die Resilienz-Strategie!"
-- [ ] Erfolg: "Ziellinie überquert! Der komplette Geschäftsprozess ist stabil und performant. Systemtest bestanden."
+5. Content-Strategie (The Tours)
+- [ ] 15 E2E-Szenarien: Von "E-Commerce-Kauf" bis "Flug-Buchung".
 
-6. KPI-Klarheit
-- [ ] E2E-Stability: "Prozess-Sicherheit: 100%".
-- [ ] Resilience-Rating: "Fehlertoleranz: Exzellent".
+6. QA-Paket
+- [ ] Test: Fühlt sich die Rolle des "Tour-Guides" für den Spieler verantwortlich an?
+- [ ] Test: Sind die Anforderungen (Was muss der Gast erreichen?) im HUD immer präsent?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Omnichannel-Kauf (Web -> App -> Pickup)", "Komplexe ERP-Anbindung", "Weltweite Synchronisation von Nutzerdaten".
-- [ ] Tonalität: Ganzheitlich, prozessorientiert, wachsam.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Subsystem-Dashboards auf dem Handy-Display noch informativ oder zu kleinteilig?
-- [ ] Test: Sind die Auswirkungen von Störungen im Spielverlauf spürbar und lehrreich?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift das System als vernetztes Ganzes, das mehr ist als die Summe seiner Teile.
-- [ ] Das Interface wirkt wie ein exklusives Monitoring-Center für Release-Manager.
-- [ ] Absolute Klarheit über den Unterschied zwischen Modul-, Integrations- und Systemtest.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Ein Systemtest prüft das große Ganze aus Sicht des Nutzers".
+- [ ] Das Interface wirkt exquisit, modern und einladend.
+- [ ] Maximale Punkte durch vollständige Test-Abdeckung aller Pfade.

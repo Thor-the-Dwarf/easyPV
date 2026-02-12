@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Schärfung des Blicks für Code-Qualität, Standards und kollektive Verantwortung durch simuliertes Peer-Reviewing.
-- Kontext: Software-Qualitätssicherung, Team-Kollaboration, Best Practices.
-- UX-Prinzip:
-  - "The Quality Filter": Der Code fließt durch ein mehrstufiges Filtersystem. Der Spieler ist die "Membran", die Verunreinigungen (Bugs, Smells) zurückhält.
-  - "Constructive Feedback Loop": Kommentare sind keine Kritik, sondern "Veredelungsschritte".
-  - "Review-Highlighting": Gefundene Stellen leuchten bei Akzeptanz durch den "Original-Autor" (Bot) hell auf.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler beherrschen die Methode des Code-Reviews zur Qualitätssteigerung und Fehlerprävention (Vier-Augen-Prinzip).
+- Game-Mechanic: "The Four-Eyes-Scan". Du bist der "Code-Prophet". Ein Kollege reicht seinen Code ein. Du schaust durch eine magische Brille (Die Review-View), die "Gerüche" (Smells), "Unsauberkeiten" und "Logik-Löcher" farblich markiert. Du musst entscheiden: "LGTM" (Looks Good To Me) oder "Request Changes"?
+- Challenge: 
+  - Level 1 (The Typo-Fix): Finde einfache Flüchtigkeitsfehler und vergessene Kommentare.
+  - Level 2 (The Logic-Gap): Der Code sieht gut aus, aber eine `NullPointer`-Gefahr lauert im Schatten. Markiere sie!
+  - Level 3 (The Performance-Killer): Finde die `O(n²)` Schleife im Herzstück. Schlage eine bessere Lösung vor, um den "Propheten-Rang" zu steigen.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Der Quellcode (Prüfobjekt), 2 = Die Review-Tools (Markierung, Kommentar), 3 = Die Review-Checkliste.
-- [ ] Textbudget: Max. 20 Zeilen Code pro Review-Sitzung.
-- [ ] "Quality-Score": Ein Echtzeit-Barometer, das steigt, wenn wichtige Punkte adressiert werden.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Insight-Level", "Review-Thoroughness", "Approval-Rating".
+- [ ] Scoring: "Eagle-Eye" Bonus für das Finden von Fehlern, die automatisierte Tests übersehen haben. Abzug bei "Nitpicking" (unwichtige Stilfragen überbewerten).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> review-workbench -> comment-sidebar -> checklist-overlay`.
-- [ ] Workbench: Zentrales Code-Fenster mit Zeilennummern (Desktop 70% Breite, Mobile Full-Screen).
-- [ ] Sidebar: Kontextsensitive Kommentare, die direkt neben der Zeile erscheinen.
+2. Screen-Layout (The Zen Garden)
+- [ ] `meditation-mat -> dual-code-pane -> comment-scrolls -> floating-action-icons`.
+- [ ] Dual-Code-Pane: Links der neue Code, rechts die Kommentare (Desktop 50/50, Mobile Tab-Switch).
+- [ ] Floating-Action-Icons: "Approve", "Comment", "Reject" schweben als gläserne Orbs am Rand.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Tap-to-Comment" auf die Zeilennummer; modale Auswahl der Kommentar-Bausteine.
-- [ ] `overflow-x: auto` für breite Code-Zeilen mit horizontalem Scroll-Gefühl.
+3. Kernvisuals und Effekte
+- [ ] Zen-Tech Ästhetik: Minimalismus, sanfte Pastelltöne, Wasser-Animationen im Hintergrund, ruhiger Ambient-Sound.
+- [ ] "Glass-Overlay": Wenn du auf eine Codezeile klickst, öffnet sich ein transparentes Fenster für deinen Kommentar.
+- [ ] "Enlightenment": Nach einem perfekten Review erstrahlt der Code in einem sanften weißen Licht.
 
-4. Kernvisuals
-- [ ] Studio-Ästhetik: Clean, professionell, fokussiert; neutrales Grau mit Akzentfarben (shared_theme.css).
-- [ ] "Filter-Animation": Visuelle Darstellung, wie der Code "reiner" wird, je mehr Kommentare gelöst werden.
-- [ ] High-Contrast Syntax Highlighting (Dark/Light Mode kompatibel).
+4. Browser- und Device-Resilienz
+- [ ] `backdrop-filter: blur()` für die gläsernen UI-Elemente.
+- [ ] Mobile: "Swipe-to-Comment" Funktion.
 
-5. Interaktion und Feedback
-- [ ] Kommentar-Feedback: "Guter Punkt! Eine Magic Number wie '86400' ist schwer zu lesen. Vorschlag: 'SECONDS_PER_DAY'."
-- [ ] Tonalitäts-Check: Bonus für besonders konstruktive Formulierungen ("Wäre es hier möglich, dass..." statt "Das ist falsch!").
-- [ ] Erfolg: "Review beendet. Durch deine Hilfe ist der Code jetzt wartbar und sicher für das Release."
+5. Content-Strategie (The Manuscripts)
+- [ ] 20 Code-Auszüge mit versteckten "Sünden": Von SQL-Injection bis Hardcoded Secrets.
 
-6. KPI-Klarheit
-- [ ] Issue-Detection-Rate: "Gefundene Schwachstellen: X / Y".
-- [ ] Feedback-Quality: "Tonalitäts-Level: Professionell".
+6. QA-Paket
+- [ ] Test: Fühlt sich die Interaktion "wertschätzend" an (positives Feedback für den Reviewer)?
+- [ ] Test: Sind die Code-Diffs (Highlighting) auf Mobile noch präzise anklickbar?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Vergessenes Error-Handling", "Redundante Logik", "Namenskonvention-Verstoß", "Sicherheitslücke (SQL-Injektion)".
-- [ ] Tonalität: Sachlich, kollegial, qualitätsorientiert.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Kommentar-Popups auf kleinen Displays platzsparend und verständlich?
-- [ ] Test: Funktioniert die Scroll-Kopplung zwischen Code und Kommentaren flüssig?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift Reviewing als wichtigen Teil des Lernprozesses im Team.
-- [ ] Das Interface wirkt wie ein exklusives Werkzeug für "Code-Gurus".
-- [ ] Absolut klares Verständnis für den Unterschied zwischen subjektivem Geschmack und objektiven Standards.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Reviews sind Training für das eigene Auge.
+- [ ] Das Interface wirkt modern, beruhigend und hochgradig ästhetisch.
+- [ ] Fokus auf konstruktive Softwarequalität.

@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Validierung der Software gegen die vertraglich vereinbarten Akzeptanzkriterien aus Sicht des Auftraggebers.
-- Kontext: Lastenheft, Abnahmeprotokoll, Projektende, Qualitätsmanagement.
-- UX-Prinzip:
-  - "The Quality Gate": Ein massives, mechanisches Tor. Jedes abgetippte Akzeptanzkriterium ist ein Riegel, der sich öffnet.
-  - "Stamping-Process": Der Spieler hat einen "Abgenommen"-, "Mängel"- und "Abgelehnt"-Stempel.
-  - "Checklist-Sync": Visuelle Verbindung zwischen dem Anforderungsdokument (Links) und dem Systemverhalten (Rechts).
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verifizierung der Software gegen die vertraglich vereinbarten Akzeptanzkriterien (Abnahme).
+- Game-Mechanic: "The Customer Handover". Der Moment der Wahrheit! Ein kritischer Kunde steht vor dir. Er hält die "Checkliste der Wünsche" (Akzeptanzkriterien) in der Hand. Du musst ihm live beweisen, dass jedes Feature (Das Geschenk) genau so funktioniert, wie er es wollte. Klickst du falsch, sinkt das Vertrauen.
+- Challenge: 
+  - Level 1 (The Basic Wish): "Der Button muss blau sein". Zeige es ihm und erhalte einen grünen Haken.
+  - Level 2 (The Edge-Case): "Das System darf bei Überlast nicht abstürzen". Simuliere die Last und überzeuge den Skeptiker.
+  - Level 3 (The Signature): Alle 10 Kriterien müssen gleichzeitig erfüllt sein. Nur dann unterschreibt er das "Abnahmeprotokoll" (The Epic Win).
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Das Akzeptanzkriterium (Die Bedingung), 2 = Der Erfüllungsnachweis (Report), 3 = Die Abnahme-Entscheidung.
-- [ ] Textbudget: Max. 12 Wörter pro Kriterium (z. B. "System muss 500 gleichzeitige Logins in <2s verarbeiten").
-- [ ] "Compliance-Monitor": Ein Balken, der von "Prototyp" zu "Marktreif" wandert.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Trust-Meter" (The Customer), "Checklist-Completion" (%), "Signature-Progress".
+- [ ] Scoring: "Deal-Closer" Bonus für 100% Übereinstimmung beim ersten Versuch. Abzug bei "Explanation-Debt" (wenn man Fehler wegdiskutieren muss).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> specification-scroll -> system-feedback -> decision-desk`.
-- [ ] Specification: Eine pergamentartige Liste (Desktop links, Mobile oben).
-- [ ] Feedback: Videosequenz oder Log-Eintrag der Softwareaktion.
+2. Screen-Layout (The Boardroom)
+- [ ] `grand-table -> the-contract (Checklist) -> live-demo-screen -> customer-mood-avatar`.
+- [ ] Checklist: Ein edles Dokument auf der rechten Seite, auf dem Haken gesetzt werden.
+- [ ] Live-Demo: Ein interaktiver Bereich in der Mitte, in dem man die Features ausprobiert.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-to-Stamp" Mechanik.
-- [ ] `scroll-snap` für das Durchblättern der Kriterienliste.
+3. Kernvisuals und Effekte
+- [ ] Business-Chic Ästhetik: Dunkles Holz, Leder-Texturen, glänzende Kugelschreiber, modernes UI-Design für die Demo.
+- [ ] "Signature-Animation": Wenn alle Haken gesetzt sind, erscheint eine prunkvolle Unterschrift mit Tinten-Spritzeffekten.
+- [ ] "Nod-of-Approval": Der Kunden-Avatar nickt zufrieden, wenn ein Kriterium erfüllt ist.
 
-4. Kernvisuals
-- [ ] Büro-Ästhetik: Edle Schreibtischanmutung, Siegelwachs, schwere Aktenordner (shared_theme.css).
-- [ ] Sound-Effekte: Sattes "Klack" beim Stempeln eines Kriteriums.
-- [ ] High-Contrast Badges für "FAIL" und "PASS".
+4. Browser- und Device-Resilienz
+- [ ] `CSS Masks` für die Tinten-Animation beim Unterschreiben.
+- [ ] Mobile: "Tap-to-Sign" Mechanik.
 
-5. Interaktion und Feedback
-- [ ] Stempel-Feedback: "Stempel gesetzt! Kriterium 4.2 (Performance) ist erfüllt. Das Tor öffnet sich ein Stück weiter."
-- [ ] Konflikt-Management: "Mangel gefunden! Die Passwort-Verschlüsselung entspricht nicht dem Standard – Abnahme unter Vorbehalt."
-- [ ] Erfolg: "Projekt übergeben! Alle Siegel sind gesetzt, die Software geht in den Live-Betrieb."
+5. Content-Strategie (The Contracts)
+- [ ] 15 Verträge: Von "Einfache Website" bis "Komplexes Banking-Modul".
 
-6. KPI-Klarheit
-- [ ] Acceptance-Rate: "X von Y Kriterien erfüllt".
-- [ ] Quality-Confidence: "Vertrauens-Level des Kunden: Hoch".
+6. QA-Paket
+- [ ] Test: Sind die Akzeptanzkriterien klar genug formuliert (kein Interpretationsspielraum)?
+- [ ] Test: Wirkt das "Vertrauens-Meter" motivierend oder deprimierend (Balancing)?
 
-7. Content-/Copy-Feinschliff
-- [ ] Reale Kriterien: "Datenschutzkonformität", "Barrierefreiheit", "Last-Stabilität", "UI-Design-Treue".
-- [ ] Tonalität: Amtlich, verantwortungsbewusst, entscheidungsfreudig.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sieht das "Stempel-Design" auf dem Smartphone hochwertig und nicht kitschig aus?
-- [ ] Test: Ist die Entscheidungshierarchie (Was passiert bei einem 'Nein'?) pädagogisch sinnvoll erklärt?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift die Abnahme als formalen Akt mit geschäftlicher Tragweite.
-- [ ] Das Interface wirkt wie ein exklusives Entscheidungswerkzeug für CTOs.
-- [ ] Höchste Klarheit über funktionale vs. nicht-funktionale Anforderungen.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Abnahme bedeutet: Geliefert wie bestellt".
+- [ ] Das Interface wirkt professionell, State-of-the-Art und hochgradig immersiv.
+- [ ] Feierlicher Moment beim "Closing the Deal".

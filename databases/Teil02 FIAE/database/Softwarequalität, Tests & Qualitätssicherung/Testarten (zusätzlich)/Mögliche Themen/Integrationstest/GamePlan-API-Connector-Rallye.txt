@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Verifizierung der Schnittstellen (Interfaces) und des Zusammenspiels zwischen verschiedenen Modulen.
-- Kontext: Integrationstests, API-Testing, JSON/XML-Validierung, Middleware.
-- UX-Prinzip:
-  - "The Digital Handshake": Zwei Roboterarme (Module) versuchen, sich die Hand zu geben. Wenn die Handform (Datenstruktur) nicht passt, scheitert der Kontakt.
-  - "Protocol-Match": Der Spieler konfiguriert die Schnittstellen-Parameter, damit die Daten reibungslos fließen können.
-  - "The Data-Stream": Visualisierung von Daten-Paketen, die von Modul A zu Modul B "reisen" und dabei auf Barrieren (Inkompatibilität) stoßen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler beherrschen das Testen von Schnittstellen und das Zusammenspiel mehrerer Subsysteme (Integrationstest).
+- Game-Mechanic: "The Machine Connector". Du bist der Chef-Ingenieur einer modularen Mega-Fabrik. Verschiedene Maschinen (Subsysteme) wurden einzeln gebaut. Deine Aufgabe: Verbinde sie mit den richtigen Daten-Kabeln (APIs). Wenn die Signale nicht passen (Type-Mismatch), explodiert die Verbindung!
+- Challenge: 
+  - Level 1 (The Basic Flow): Verbinde "User-Service" mit "Auth-Service". Achte auf den korrekten Token-Transfer.
+  - Level 2 (The Data Cascade): Ein Signal durchläuft 3 Maschinen. Teste, ob die Daten am Ende noch valide sind oder unterwegs "korrumpiert" wurden.
+  - Level 3 (The Error Storm): Eine Maschine fällt aus. Teste das Error-Handling der anderen Maschinen. Bleibt das Gesamtsystem stabil (Resilience)?
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Der Daten-Flow (Unterwegs), 2 = Die Schnittstellen-Definition (Soll), 3 = Der Response-Header (Ist).
-- [ ] Textbudget: Max. 5 Zeilen JSON-Fragment pro Request/Response.
-- [ ] "Handshake-Meter": Zeigt an, wie harmonisch die Module interagieren (0-100%).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Signal-Strength" (%), "Integration-Success-Rate", "Connection-Heatmap".
+- [ ] Scoring: "Sync-Master" Bonus für flüssigen Datenfluss über alle Knoten. Abzug bei "Interface-Violations" (falsche Parameter).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> network-tunnel -> api-terminals -> log-monitor`.
-- [ ] Tunnel: Zentrale Röhre, durch die Datenpakete flitzen (Desktop horizontal).
-- [ ] Terminals: Interaktive Eingabefelder für Modul A (Sender) und Modul B (Empfänger).
+2. Screen-Layout (The Factory Floor)
+- [ ] `birdseye-factory -> module-nodes -> data-cables (Draggable) -> oscilloscope-output`.
+- [ ] Module-Nodes: Quadratische Blöcke mit In/Out-Ports.
+- [ ] Oscilloscope: Ein kleiner Screen, der die Live-Datenpakete beim Durchlaufen der Kabel anzeigt.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Tap-to-Inspect" für Datenpakete im Tunnel; Drag & Drop für Connector-Bausteine.
-- [ ] `will-change: left` für flüssige Paket-Animationen auf allen Geräten.
+3. Kernvisuals und Effekte
+- [ ] Industrial-Cyber Ästhetik: Rostiger Stahl, neonleuchtende Kabel, Funkenflug bei Verbindungsfehlern, tiefer Bass-Sound beim Einrasten.
+- [ ] "Cable-Glow": Ein korrekt angeschlossenes Kabel fängt an, rhythmisch in der Farbe des Datenstroms zu pulsieren.
+- [ ] "Break-Effect": Bei inkompatiblen Schnittstellen schmort das Kabel durch und ein Warnsignal ertönt.
 
-4. Kernvisuals
-- [ ] Cyber-Infrastruktur Ästhetik: Leuchtende Glasfaserkabel, binäre Muster, blinkende Status-LEDs (shared_theme.css).
-- [ ] "The Crash": Visuelle Funkenbildung, wenn ein Paket auf ein inkompatibles Interface trifft.
-- [ ] High-Contrast Code-Badges (GET, POST, 200 OK, 404 NOT FOUND).
+4. Browser- und Device-Resilienz
+- [ ] `Bezier Curves` für die flexiblen, ziehbaren Verbindungskabel.
+- [ ] Mobile: "Drag-and-Snap" für die Kabelenden.
 
-5. Interaktion und Feedback
-- [ ] Connect-Feedback: "Klick! Datentyp 'String' passt in das Feld 'Username'. Die Verbindung ist stabil."
-- [ ] Fehler-Analyse: "Bzzz! Der Controller erwartet ein Datum im Format 'YYYY-MM-DD', du hast aber 'DD.MM.YYYY' gesendet. Handshake gescheitert!"
-- [ ] Erfolg: "Brücke gebaut! Alle Module kommunizieren fehlerfrei miteinander."
+5. Content-Strategie (The Blueprints)
+- [ ] 12 reale API-Integrationen: Von "Stripe-Payment" bis "OpenStack-Orchestration".
 
-6. KPI-Klarheit
-- [ ] Interface-Accuracy: "Schnittstellen-Konformität: 100%".
-- [ ] Data-Integrity: "Datenverlust im Exchange: 0%".
+6. QA-Paket
+- [ ] Test: Ist die Richtung des Datenflusses (Input/Output) visuell sofort klar?
+- [ ] Test: Sind die Error-Meldungen (z. B. "Missing Field in JSON") im Fabrik-Kontext trotzdem präzise?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Frontend meldet sich beim Login-Backend", "Bezahldienst sendet Webhook an Warenkorb", "Microservice-A ruft Stammdaten von Service-B ab".
-- [ ] Tonalität: Technisch, präzise, vernetzt.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die JSON-Fragmente auf einem Handy-Display lesbar und editierbar?
-- [ ] Test: Funktioniert die Simulation von Timeouts und Netzwerkverzögerungen erkennbar?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler versteht, dass "funktionierende Module" einzeln nichts über das Gesamtsystem aussagen.
-- [ ] Das Interface wirkt wie ein Profi-Diagnose-Tool für Netzwerktechniker.
-- [ ] Volle Beherrschung der Konzepte Request, Response und Payload.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Das Ganze ist mehr als die Summe seiner Teile.
+- [ ] Das Interface wirkt wuchtig, technisch und befriedigend komplex.
+- [ ] Hoher Lerneffekt für Microservices und SOA.

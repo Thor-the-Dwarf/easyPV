@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Systematisches Testen von Softwarekomponenten ohne Kenntnis der internen Implementierung (Black-Box-Prinzip).
-- Kontext: Grenzwertanalyse, Äquivalenzklassen, funktionales Testen.
-- UX-Prinzip:
-  - "The Black Box Oracle": Eine mysteriöse Maschine mit Schaltern (Eingaben) und Lichtern (Ausgaben). Der Spieler muss die Logik erraten, indem er sie provoziert.
-  - "Stress-Testing": Was passiert, wenn ich eine Million eingebe? Was bei einem Smilie?
-  - "Specification-Ghost": Eine halbtransparente Anleitung zeigt, wie die Box funktionieren SOLLTE. Der Spieler markiert Abweichungen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Durchführung von Funktionstests ohne Kenntnis der inneren Struktur/Quellcode (Black-Box-Testing).
+- Game-Mechanic: "The Secret Box". Vor dir steht ein schwarzer Tresor (Das System). Du siehst nur die Knöpfe (Eingaben) und den Auswurfschlitz (Ausgaben). Du musst durch systematisches Testen herausfinden: Welche Kombination an Knöpfen führt zum Erfolg? Was passiert bei illegalen Versuchen?
+- Challenge: 
+  - Level 1 (Der Code-Knacker): Finde die richtige Eingabe für eine triviale Logik (z. B. Passwort-Check ohne den Code zu sehen).
+  - Level 2 (The Boundary Shadow): Teste die Grenzwerte. Was passiert bei `Minus-Werten` oder `Unendlich`?
+  - Level 3 (The Mystery Machine): Eine komplexe Logik hinter der Wand. Erstelle eine Map aus Inputs und Outputs, um das Verhaltensmuster zu entschlüsseln.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Eingabe-Konsole, 2 = Die beobachtete Reaktion, 3 = Der Abgleich mit der Doku.
-- [ ] Textbudget: Max. 5 Eingabe-Parameter gleichzeitig.
-- [ ] "Exploration-Log": Eine Liste der bisherigen Versuche und deren Ergebnisse.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Logic-Discovery-Rate" (%), "Input-Efficiency", "Vulnerability-Found Counter".
+- [ ] Scoring: "Smart-Explorer" Bonus für das Finden aller Edge-Cases mit minimalen Versuchen. Abzug für "Random-Spamming" (Planloses Drücken).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> oracle-interface -> observation-deck -> bug-report-sheet`.
-- [ ] Oracle-Interface: Ein mechanisch wirkendes Steuerpult (Desktop mittig, Mobile Full-Screen).
-- [ ] Report-Sheet: Per Tab erreichbare Liste der gefundenen Fehler.
+2. Screen-Layout (The Dark Room)
+- [ ] `safe-front -> input-console -> result-chute -> analysis-board`.
+- [ ] Safe-Front: Eine massive, schwarze Box-Animation in der Mitte.
+- [ ] Analysis-Board: Eine Tafel, auf der deine bisherigen Test-Ergebnisse (Input/Output Paare) automatisch mit Kreide skizziert werden.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Dial-and-Slider" Steuerung für numerische Eingaben.
-- [ ] `inputmode="numeric"` für mobile Tastaturoptimierung.
+3. Kernvisuals und Effekte
+- [ ] Minimalist-Noir Ästhetik: Tiefes Schwarz, harte Schatten, ein einzelner Lichtkegel von oben, mechanische Klick-Geräusche.
+- [ ] "Output-Slide": Bei jeder Eingabe schießt ein kleiner Zettel mit dem Resultat aus dem Schlitz.
+- [ ] "Light-Up": Wenn du ein logisches Muster knackst, leuchtet ein Teil des Tresors von innen heraus auf.
 
-4. Kernvisuals
-- [ ] Mystery-Ästhetik: Dunkler Metall-Look, glühende Röhren, Analog-Anzeigen (shared_theme.css).
-- [ ] "The Glitch": Visuelle Verzerrung im UI, wenn eine Eingabe die Box zum Absturz bringt.
-- [ ] High-Contrast Daten-Outputs (z. B. grelles Grün auf Schwarz).
+4. Browser- und Device-Resilienz
+- [ ] `box-shadow` und `radial-gradient` für die dramatische Beleuchtung.
+- [ ] Mobile: "Dial-the-Inputs" Mechanik per Drehrad.
 
-5. Interaktion und Feedback
-- [ ] Discovery-Feedback: "Aha! Bei negativen Werten gibt die Box immer 'ERROR' aus. Das steht aber anders in der Anleitung!"
-- [ ] Fehler-Markierung: Der Spieler zieht ein rotes "X" auf die Ausgabe, wenn sie falsch ist.
-- [ ] Erfolg: "Box entschlüsselt! Du hast alle 5 Spezifikationsfehler gefunden, ohne eine Zeile Code zu sehen."
+5. Content-Strategie (The Vaults)
+- [ ] 12 geheimnisvolle Logik-Module: Von "Rabatt-Rechner" bis "Kredit-Check".
 
-6. KPI-Klarheit
-- [ ] Detection-Rate: "Bugs gefunden: X / Y".
-- [ ] Input-Strategy: "Systematik der Grenzwertanalyse: Exzellent".
+6. QA-Paket
+- [ ] Test: Ist die Spannung ("Was ist da drin?") über das ganze Spiel spürbar?
+- [ ] Test: Hilft das "Analysis-Board" dem Spieler, den Überblick über seine Test-Historie zu behalten?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Altersverifikation", "Steuerberechnung", "Passwort-Generator", "Rabatt-Staffelung".
-- [ ] Tonalität: Geheimnisvoll, analytisch, herausfordernd.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist das "Pult"-Design auf einem kleinen Handy-Display noch gut bedienbar?
-- [ ] Test: Reagiert die Box korrekt auf extreme "Edge-Case" Eingaben (z.B. SQL-Injection Versuche)?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler verinnerlicht die Trennung von Spezifikation und Implementierung.
-- [ ] Das Interface wirkt wie ein exklusives Rätsel-Spiel für Qualitäts-Enthusiasten.
-- [ ] Höchste Klarheit über Grenzwertanalyse und Äquivalenzklassen.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Testen geht auch ohne den Code zu lesen.
+- [ ] Das Interface wirkt mysteriös, fokussiert und state-of-the-art.
+- [ ] Hoher Drang zum "Logik-Enträtseln".

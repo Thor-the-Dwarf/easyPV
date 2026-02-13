@@ -1,227 +1,317 @@
 /* 
- * Point Delete - Styles
- * Aesthetic: Medical / Surgical Precision / Clean Room
+ * Point Delete - Upgraded Styles
+ * Aesthetic: High-End Surgical Precision / Clean-Tech / Laboratory
  */
 
 :root {
-    --bg-clinical: #f5f5f5;
-    --bg-surface: #ffffff;
-    --text-main: #333333;
-    --accent-danger: #d32f2f;
-    --accent-focus: #0288d1;
-    --accent-locked: #ffc107;
-    --grid-line: #e0e0e0;
+    --lab-bg: #0a0c10;
+    --surface-clean: #161a22;
+    --pk-gold: #ffcf40;
+    --accent-scifi: #00e5ff;
+    --danger-red: #ff3d00;
+    --text-dim: #8b949e;
+    --text-bright: #f0f6fc;
+    --border-subtle: rgba(255, 255, 255, 0.05);
 }
 
 body {
     margin: 0;
     padding: 0;
-    background: var(--bg-clinical);
-    color: var(--text-main);
-    font-family: 'Roboto', sans-serif;
+    background: var(--lab-bg);
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.03) 0%, transparent 80%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    color: var(--text-bright);
+    font-family: 'Roboto Mono', monospace;
     height: 100vh;
-    overflow: hidden;
-    user-select: none;
-    cursor: crosshair;
-    /* Scalpel Feel */
-}
-
-.game-app {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    background: var(--bg-surface);
+    overflow: hidden;
+    cursor: crosshair;
 }
 
 /* --- HUD --- */
-.hud {
-    background: #333;
-    color: #fff;
-    padding: 1rem 2rem;
+.header-bar {
+    padding: 1.2rem 2.5rem;
+    background: rgba(10, 12, 16, 0.9);
+    border-bottom: 2px solid var(--accent-scifi);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
-.mission-text {
-    font-size: 1.1rem;
-    font-weight: bold;
+#mission-text {
+    font-size: 0.9rem;
+    color: var(--text-bright);
+    opacity: 0.8;
+    max-width: 600px;
 }
 
-.status-indicator {
-    padding: 5px 10px;
-    background: #000;
-    border-radius: 4px;
-    font-family: monospace;
-    color: #00e676;
+.system-status {
+    font-size: 0.7rem;
+    color: var(--accent-scifi);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* --- Operation Theater --- */
+/* --- Theater --- */
 .theater {
     flex: 1;
-    padding: 2rem;
-    background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 50px 50px;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    padding: 2rem 3rem;
+    overflow-y: auto;
+    gap: 2rem;
 }
 
-/* Records List */
+.table-label {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+}
+
+/* Record List */
 .record-list {
-    width: 100%;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 .record-row {
+    background: var(--surface-clean);
+    border: 1px solid var(--border-subtle);
+    padding: 1.2rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    border-bottom: 1px solid #eee;
+    gap: 2rem;
+    border-radius: 4px;
     cursor: crosshair;
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-}
-
-.record-row:last-child {
-    border-bottom: none;
+    overflow: hidden;
 }
 
 .record-row:hover {
-    background: #e3f2fd;
+    border-color: rgba(0, 229, 255, 0.3);
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateX(10px);
 }
 
 .record-row.selected {
-    background: #ffcdd2;
-    /* Red tint for 'to be deleted' */
-    border-left: 5px solid var(--accent-danger);
+    border-color: var(--danger-red);
+    box-shadow: inset 0 0 15px rgba(255, 61, 0, 0.1);
 }
 
 .record-row.locked {
-    background: #fff8e1;
-    cursor: not-allowed;
-    opacity: 0.8;
+    opacity: 0.5;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.record-row.locked:hover {
+    transform: none;
+    border-color: var(--border-subtle);
 }
 
 .col-id {
-    font-family: monospace;
-    font-weight: bold;
-    color: #555;
-    width: 50px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--pk-gold);
+    min-width: 80px;
+    text-shadow: 0 0 10px rgba(255, 207, 64, 0.3);
 }
 
 .col-data {
     flex: 1;
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.85rem;
 }
 
-.fade-out {
-    animation: fadeOut 0.5s forwards;
+.attribute {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        height: 0;
-        padding: 0;
-        margin: 0;
-    }
+.attr-key {
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
 }
 
-/* Constraints Warning */
+.attr-val {
+    color: var(--text-bright);
+}
+
 .constraint-badge {
-    background: var(--accent-locked);
-    color: #000;
-    font-size: 0.7rem;
-    padding: 2px 5px;
-    border-radius: 3px;
-    text-transform: uppercase;
+    background: rgba(255, 61, 0, 0.1);
+    color: var(--danger-red);
+    border: 1px solid var(--danger-red);
+    font-size: 0.6rem;
+    padding: 2px 8px;
+    border-radius: 10px;
     font-weight: bold;
 }
 
-/* Shredder (Button) */
-.shredder-area {
-    padding: 2rem;
-    background: #eee;
-    border-top: 1px solid #ccc;
-    text-align: center;
+/* --- Control Bar --- */
+.control-bar {
+    background: rgba(10, 12, 16, 0.95);
+    padding: 2rem 3rem;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.btn-delete {
-    background: var(--accent-danger);
-    color: #fff;
-    border: none;
-    padding: 1rem 4rem;
-    font-size: 1.5rem;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.1s;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.btn-delete:hover {
-    background: #b71c1c;
-    transform: scale(1.05);
-}
-
-.btn-delete:active {
-    transform: scale(0.95);
-}
-
-.btn-delete:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-    box-shadow: none;
-    transform: none;
-}
-
-/* Result Overlay */
-.result-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.9);
+.shredder-zone {
+    width: 100%;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
+}
+
+.where-clause {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+}
+
+.where-clause b {
+    color: var(--pk-gold);
+    text-shadow: 0 0 5px var(--pk-gold);
+}
+
+.btn-delete {
+    padding: 15px 60px;
+    background: transparent;
+    border: 2px solid var(--danger-red);
+    color: var(--danger-red);
+    font-weight: bold;
+    font-family: inherit;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-delete:not(:disabled):hover {
+    background: var(--danger-red);
+    color: #fff;
+    box-shadow: 0 0 30px rgba(255, 61, 0, 0.4);
+}
+
+.btn-delete:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+    border-color: var(--text-dim);
+    color: var(--text-dim);
+}
+
+/* Animations */
+.fade-out {
+    animation: data-smoke 0.8s forwards ease-in;
+}
+
+@keyframes data-smoke {
+    0% {
+        transform: scale(1);
+        filter: blur(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1) rotate(1deg);
+        filter: blur(10px);
+        color: var(--danger-red);
+    }
+
+    100% {
+        transform: scale(0.8) translateY(-50px);
+        filter: blur(40px);
+        opacity: 0;
+    }
+}
+
+.shake {
+    animation: surgical-shake 0.4s;
+}
+
+@keyframes surgical-shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+        border-color: var(--danger-red);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* Result Overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 12, 16, 0.95);
+    display: flex;
+    align-items: center;
     justify-content: center;
-    z-index: 100;
-    text-align: center;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 .result-card {
-    padding: 3rem;
-    background: #fff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    border-top: 5px solid var(--accent-focus);
+    padding: 4rem;
+    background: var(--surface-clean);
+    border: 1px solid var(--accent-scifi);
+    text-align: center;
+    max-width: 500px;
+}
+
+#btn-next {
+    width: 100%;
+    padding: 12px;
+    background: var(--accent-scifi);
+    color: #000;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .hidden {
     display: none !important;
 }
 
-/* Scalpel Effect */
-.scalpel-cursor {
-    width: 20px;
-    height: 20px;
-    border: 2px solid red;
-    border-radius: 50%;
-    position: absolute;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    display: none;
-    /* Just using CSS cursor crosshair for now, simpler */
+@media (max-width: 768px) {
+    .theater {
+        padding: 1rem;
+    }
+
+    .col-id {
+        min-width: 50px;
+        font-size: 1rem;
+    }
+
+    .btn-delete {
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
+    }
 }

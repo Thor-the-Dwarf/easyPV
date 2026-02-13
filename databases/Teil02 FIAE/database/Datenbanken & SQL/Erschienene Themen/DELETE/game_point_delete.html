@@ -4,42 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SQL DELETE - Precision Tool</title>
+    <title>Point-Delete - Surgical Intelligence</title>
     <!-- Adjust path -->
     <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
     <link rel="stylesheet" href="point_delete.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="game-app">
         <!-- HUD -->
-        <header class="hud">
-            <div id="mission-text" class="mission-text">Loading Mission...</div>
-            <div class="status-indicator">MODE: SURGICAL</div>
+        <header class="header-bar">
+            <div id="mission-text">INITIALIZING_LAB_SENSORS...</div>
+            <div class="system-status">
+                SYSTEM_STABILITY: <span style="color:#2ecc71;">NODE_CLEAN</span><br>
+                OPERATION: <span id="status-val">READY</span>
+            </div>
         </header>
 
         <!-- Operation Theater -->
         <main class="theater">
-            <div id="record-list" class="record-list">
-                <!-- Records -->
-            </div>
-
-            <div class="shredder-area">
-                <button id="btn-delete" class="btn-delete" disabled>DELETE RECORD</button>
+            <div class="table-info">
+                <div class="table-label">LIVE_DATABASE_BUFFER // ACTIVE_RECORDS</div>
+                <div id="record-list" class="record-list">
+                    <!-- Records injected here -->
+                </div>
             </div>
         </main>
 
+        <!-- Control Bar -->
+        <footer class="control-bar">
+            <div class="shredder-zone">
+                <div id="where-clause" class="where-clause">
+                    WHERE id = <b>?</b>
+                </div>
+                <button id="btn-delete" class="btn-delete" disabled>ELIMINATE_RECORD</button>
+            </div>
+        </footer>
+
         <!-- Result Overlay -->
-        <div id="result-overlay" class="result-overlay hidden">
+        <div id="overlay" class="overlay hidden">
             <div class="result-card">
-                <h2 style="color:var(--accent-focus); margin-bottom:1rem;">OPERATION SUCCESSFUL</h2>
-                <div class="hud-value" style="font-size: 1.5rem; margin: 2rem 0; color:#333" id="final-result">...</div>
-                <button id="btn-next" class="btn-delete" style="background: var(--accent-focus); font-size:1rem;">NEXT
-                    MISSION</button>
+                <h1 style="color:var(--pk-gold); margin-top:0; letter-spacing:8px;">RECORD_REMOVED</h1>
+                <div
+                    style="margin: 2rem 0; font-size: 0.9rem; color: var(--text-dim); line-height: 1.8; text-align: left;">
+                    > OPERATION_SUCCESS: 100%<br>
+                    > COLLATERAL_DAMAGE: 0<br>
+                    > INTEGRITY_VERIFIED: YES
+                </div>
+
+                <button id="btn-next">PROCESS_NEXT_TARGET</button>
             </div>
         </div>
     </div>
+
+    <!-- Script -->
     <script src="game_point_delete.js"></script>
 </body>
 

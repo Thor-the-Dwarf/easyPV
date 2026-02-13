@@ -30,10 +30,10 @@ body {
 .csuite-drawer {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 0.4rem;
   width: calc(100% - 0.8rem);
-  height: calc(100% - 0.8rem);
-  transform: translate(-50%, -50%) scale(0.92);
+  height: 52px;
+  transform: translateX(-50%);
   transform-origin: center;
   border-radius: 20px;
   border: 1px solid hsl(195 100% 62% / 0.42);
@@ -41,27 +41,28 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 26px 56px rgba(0, 0, 0, 0.5), 0 0 26px hsl(195 100% 62% / 0.16);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.24s ease, transform 0.24s ease;
+  transition: height 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .csuite-drawer.is-open {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-  pointer-events: auto;
+  height: calc(100% - 0.8rem);
 }
 
 .drawer-head {
   height: 52px;
+  min-height: 52px;
   padding: 0 0.8rem 0 1rem;
-  border-bottom: 1px solid hsl(195 100% 62% / 0.22);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.csuite-drawer.is-open .drawer-head {
+  border-bottom: 1px solid hsl(195 100% 62% / 0.22);
 }
 
 .drawer-title {
@@ -90,6 +91,10 @@ body {
 .drawer-body {
   flex: 1;
   min-height: 0;
+}
+
+.csuite-drawer:not(.is-open) .drawer-body {
+  display: none;
 }
 
 .generic-frame {

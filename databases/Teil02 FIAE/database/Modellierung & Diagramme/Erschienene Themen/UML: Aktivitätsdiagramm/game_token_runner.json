@@ -1,0 +1,192 @@
+{
+    "meta": {
+        "topic": "UML Activity Diagrams",
+        "mechanic": "pipeline_runner",
+        "version": "1.0"
+    },
+    "scenarios": [
+        {
+            "id": 1,
+            "title": "Basic Dispatch",
+            "instruction": "A simple linear flow. Start the pulse and watch the token traverse Tasks A and B.",
+            "nodes": [
+                {
+                    "id": "start",
+                    "type": "start",
+                    "x": 50,
+                    "y": 200
+                },
+                {
+                    "id": "taskA",
+                    "type": "task",
+                    "label": "Validate Order",
+                    "x": 200,
+                    "y": 200
+                },
+                {
+                    "id": "taskB",
+                    "type": "task",
+                    "label": "Generate Invoice",
+                    "x": 400,
+                    "y": 200
+                },
+                {
+                    "id": "end",
+                    "type": "end",
+                    "x": 600,
+                    "y": 200
+                }
+            ],
+            "edges": [
+                {
+                    "from": "start",
+                    "to": "taskA"
+                },
+                {
+                    "from": "taskA",
+                    "to": "taskB"
+                },
+                {
+                    "from": "taskB",
+                    "to": "end"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "The Security Guard",
+            "instruction": "Decision time. Check if the user is authorized before granting access.",
+            "nodes": [
+                {
+                    "id": "start",
+                    "type": "start",
+                    "x": 50,
+                    "y": 200
+                },
+                {
+                    "id": "decision",
+                    "type": "decision",
+                    "label": "IsAuthorized?",
+                    "x": 250,
+                    "y": 200
+                },
+                {
+                    "id": "access",
+                    "type": "task",
+                    "label": "Grant Access",
+                    "x": 450,
+                    "y": 100
+                },
+                {
+                    "id": "deny",
+                    "type": "task",
+                    "label": "Show Error",
+                    "x": 450,
+                    "y": 300
+                },
+                {
+                    "id": "end",
+                    "type": "end",
+                    "x": 650,
+                    "y": 200
+                }
+            ],
+            "edges": [
+                {
+                    "from": "start",
+                    "to": "decision"
+                },
+                {
+                    "from": "decision",
+                    "to": "access",
+                    "guard": "TRUE"
+                },
+                {
+                    "from": "decision",
+                    "to": "deny",
+                    "guard": "FALSE"
+                },
+                {
+                    "from": "access",
+                    "to": "end"
+                },
+                {
+                    "from": "deny",
+                    "to": "end"
+                }
+            ],
+            "correctGuard": "TRUE"
+        },
+        {
+            "id": 3,
+            "title": "Parallel Processing",
+            "instruction": "A Fork splits the workflow. Both paths must complete before reaching the Join node.",
+            "nodes": [
+                {
+                    "id": "start",
+                    "type": "start",
+                    "x": 50,
+                    "y": 200
+                },
+                {
+                    "id": "fork",
+                    "type": "fork",
+                    "x": 200,
+                    "y": 200
+                },
+                {
+                    "id": "ship",
+                    "type": "task",
+                    "label": "Ship Goods",
+                    "x": 400,
+                    "y": 100
+                },
+                {
+                    "id": "bill",
+                    "type": "task",
+                    "label": "Send Bill",
+                    "x": 400,
+                    "y": 300
+                },
+                {
+                    "id": "join",
+                    "type": "join",
+                    "x": 600,
+                    "y": 200
+                },
+                {
+                    "id": "end",
+                    "type": "end",
+                    "x": 750,
+                    "y": 200
+                }
+            ],
+            "edges": [
+                {
+                    "from": "start",
+                    "to": "fork"
+                },
+                {
+                    "from": "fork",
+                    "to": "ship"
+                },
+                {
+                    "from": "fork",
+                    "to": "bill"
+                },
+                {
+                    "from": "ship",
+                    "to": "join"
+                },
+                {
+                    "from": "bill",
+                    "to": "join"
+                },
+                {
+                    "from": "join",
+                    "to": "end"
+                }
+            ]
+        }
+    ]
+}

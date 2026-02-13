@@ -1,0 +1,208 @@
+/* 
+ * Token-Runner - Styles
+ * Aesthetic: Cyber-Automation / Neon Pipeline
+ */
+
+:root {
+    --bg-cyber: #05070a;
+    --panel-bg: rgba(10, 15, 25, 0.95);
+    --neon-green: #39ff14;
+    --neon-blue: #00f3ff;
+    --neon-red: #ff3131;
+    --pipe-color: #1a2a3a;
+    --grid-color: #0d1a26;
+    --text-main: #b0c4de;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-cyber);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* --- HUD --- */
+.hud {
+    padding: 1rem 2rem;
+    background: var(--panel-bg);
+    border-bottom: 2px solid var(--grid-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+    z-index: 100;
+}
+
+.sync-status {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--neon-blue);
+    text-transform: uppercase;
+}
+
+/* --- Canvas --- */
+.canvas-container {
+    flex: 1;
+    position: relative;
+    background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 50px 50px;
+    overflow: hidden;
+}
+
+#pipeline-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Nodes --- */
+.node-circle {
+    fill: var(--bg-cyber);
+    stroke: var(--pipe-color);
+    stroke-width: 3;
+}
+
+.node-task {
+    fill: #111;
+    stroke: var(--pipe-color);
+    stroke-width: 2;
+    rx: 8;
+}
+
+.node-decision {
+    fill: #111;
+    stroke: var(--pipe-color);
+    stroke-width: 2;
+    transform: rotate(45deg);
+}
+
+.node-start {
+    fill: var(--neon-green);
+    stroke: none;
+}
+
+.node-end {
+    fill: var(--bg-cyber);
+    stroke: var(--neon-red);
+    stroke-width: 4;
+}
+
+.node-label {
+    fill: var(--text-main);
+    font-size: 14px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+/* --- Edges/Pipes --- */
+.pipe-line {
+    stroke: var(--pipe-color);
+    stroke-width: 6;
+    fill: none;
+    stroke-linecap: round;
+}
+
+.pipe-active {
+    stroke: var(--neon-green);
+    transition: stroke 0.5s;
+}
+
+/* --- Token Pulse --- */
+.token-pulse {
+    fill: var(--neon-green);
+    filter: blur(2px);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+/* --- Controls --- */
+.control-bar {
+    padding: 1.5rem;
+    background: var(--panel-bg);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    border-top: 1px solid var(--grid-color);
+}
+
+.btn-cyber {
+    padding: 0.8rem 2.5rem;
+    background: transparent;
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    border-radius: 4px;
+}
+
+.btn-cyber:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+/* --- Decision Overlay --- */
+.decision-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--panel-bg);
+    padding: 2rem;
+    border: 2px solid var(--neon-blue);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    z-index: 500;
+}
+
+.guard-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.guard-btn:hover {
+    background: var(--neon-green);
+    color: #000;
+}
+
+/* --- Feedback Overlay --- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.mission-card {
+    background: #0d1117;
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--neon-green);
+    text-align: center;
+    max-width: 500px;
+}
+
+.hidden {
+    display: none !important;
+}

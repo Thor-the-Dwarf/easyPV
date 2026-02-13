@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Runner - UML Pipeline</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="token_runner.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div style="flex:1;">
+                <h1 style="font-size: 1.1rem; margin:0; color:var(--neon-blue);">PIPELINE_RUNNER // UML_v2.0</h1>
+            </div>
+
+            <div class="sync-status">
+                SYNC_STATUS: <span id="sync-text">SCANNING...</span>
+            </div>
+
+            <div style="flex:1; text-align:right; font-size:0.75rem; color:#444;">
+                FLOW_PRESSURE: STABLE
+            </div>
+        </header>
+
+        <!-- Main Canvas -->
+        <main class="canvas-container">
+            <svg id="pipeline-svg">
+                <!-- Diagram nodes and edges injected here -->
+            </svg>
+
+            <!-- Instructions Overlay -->
+            <div id="instruction"
+                style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 10px 20px; border-radius: 4px; font-size: 0.9rem; color: #888; border-left: 3px solid var(--neon-green);">
+                Initialisiere Pipeline-Daten...
+            </div>
+
+            <!-- Decision Box (Hidden) -->
+            <div id="decision-box" class="decision-box hidden">
+                <h3 style="margin-top:0; color:var(--neon-blue);">GUARD_CHECK</h3>
+                <p id="guard-text" style="color:#aaa;">Bedingung prüfen...</p>
+                <div style="display: flex; justify-content: center; gap: 10px;">
+                    <button class="guard-btn" data-val="TRUE">TRUE</button>
+                    <button class="guard-btn" data-val="FALSE">FALSE</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Controls -->
+        <footer class="control-bar">
+            <button id="btn-release" class="btn-cyber">▶ RELEASE_TOKEN</button>
+        </footer>
+
+        <!-- Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="mission-card">
+                <h2 style="color:var(--neon-green); margin-top:0;">PIPELINE_COMPLETE</h2>
+                <div style="margin: 1.5rem 0; font-size: 0.95rem; color: #8b949e; line-height: 1.6;">
+                    Exzellent! Der Token hat die Pipeline ohne Deadlocks oder Guard-Fehler durchlaufen.
+                </div>
+
+                <div
+                    style="background:rgba(0, 243, 255, 0.05); padding:1rem; margin-bottom:1.5rem; font-family:monospace; font-size:0.8rem; text-align: left;">
+                    > RUNTIME_INTEGRITY: 100%<br>
+                    > SYNC_EFFICIENCY: HIGH<br>
+                    > CONTROL_FLOW: VALIDATED
+                </div>
+
+                <button id="btn-next" class="btn-cyber">NÄCHSTER WORKFLOW</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_token_runner.js"></script>
+</body>
+
+</html>

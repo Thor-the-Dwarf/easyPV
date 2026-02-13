@@ -36,7 +36,27 @@
   }
 
   updateDrawerToggleUi();
-  fabPractice.addEventListener('click', toggleDrawer);
+  fabPractice.addEventListener('click', function () {
+    const payload = {
+      type: 'generic:start-practice',
+      folder: folder || '',
+      json: json || ''
+    };
+
+    try {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage(payload, '*');
+        return;
+      }
+    } catch (_) {
+      // ignore cross-window errors
+    }
+
+    const fallbackParams = new URLSearchParams();
+    if (json) fallbackParams.set('json', json);
+    if (folder) fallbackParams.set('folder', folder);
+    window.location.href = './generic_c_suite/generic_c_suite.html' + (fallbackParams.toString() ? '?' + fallbackParams.toString() : '');
+  });
   drawerToggle.addEventListener('click', toggleDrawer);
 
   if (fabFeedback) {

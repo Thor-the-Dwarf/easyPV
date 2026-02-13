@@ -78,8 +78,20 @@
           themeToggleBtn.addEventListener('click', toggleTheme);
           initResizer();
           applyDrawerWidth();
+          initGenericPageBridge();
 
           initIndex();
+        }
+
+        function initGenericPageBridge() {
+          window.addEventListener('message', function (event) {
+            const data = event && event.data;
+            if (!data || data.type !== 'generic:start-practice') return;
+
+            const jsonUrl = typeof data.json === 'string' ? data.json : '';
+            const folderLabel = typeof data.folder === 'string' ? data.folder : 'Spielordner';
+            openPracticeView(jsonUrl, folderLabel);
+          });
         }
 
         function loadState() {
@@ -445,11 +457,33 @@
           if (!contentHost) return;
           const folderLabel = node && node.name ? node.name : 'Spielordner';
           const jsonUrl = new URL(String(node.jsonRelPath || ''), window.location.href).href;
-          const src =
+          const src = buildGenericPageSrc(folderLabel, jsonUrl);
+          contentHost.innerHTML =
+            '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
+        }
+
+        function buildGenericPageSrc(folderLabel, jsonUrl) {
+          return (
             './generic_pages/generic_page.html?folder=' +
             encodeURIComponent(folderLabel) +
             '&json=' +
-            encodeURIComponent(jsonUrl);
+            encodeURIComponent(jsonUrl)
+          );
+        }
+
+        function buildPracticeSrc(folderLabel, jsonUrl) {
+          return (
+            './generic_pages/generic_c_suite/generic_c_suite.html?folder=' +
+            encodeURIComponent(folderLabel) +
+            '&json=' +
+            encodeURIComponent(jsonUrl)
+          );
+        }
+
+        function openPracticeView(jsonUrl, folderLabel) {
+          if (!contentHost) return;
+          const src =
+            buildPracticeSrc(folderLabel || 'Spielordner', jsonUrl || '');
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
         }

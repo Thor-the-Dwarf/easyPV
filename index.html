@@ -203,27 +203,142 @@
 
         function normalizeTree(nodes) {
           const normalized = [];
+          const dedupeMap = new Map();
 
           (Array.isArray(nodes) ? nodes : []).forEach((node) => {
             if (!node || !node.isFolder) return;
 
-            const children = normalizeTree(Array.isArray(node.children) ? node.children : []);
-            const clone = {
-              id: node.id,
-              name: node.name,
-              isFolder: true,
-              children: children
-            };
+            const entries = normalizeNode(node);
+            entries.forEach((entry) => {
+              const key = canonicalName(entry.name);
+              if (!dedupeMap.has(key)) {
+                dedupeMap.set(key, entry);
+                normalized.push(entry);
+                return;
+              }
 
-            if (String(clone.name).toLowerCase() === 'database') {
-              normalized.push.apply(normalized, clone.children);
-              return;
-            }
-
-            normalized.push(clone);
+              const existing = dedupeMap.get(key);
+              existing.children = mergeChildren(existing.children, entry.children);
+            });
           });
 
           return normalized;
+        }
+
+        function normalizeNode(node) {
+          const rawName = String(node.name || '');
+          const cleanedName = decodeLegacyName(rawName);
+          const normalizedChildren = normalizeTree(Array.isArray(node.children) ? node.children : []);
+
+          if (cleanedName.toLowerCase() === 'database') {
+            return normalizedChildren;
+          }
+
+          if (cleanedName === 'M') {
+            return normalizedChildren;
+          }
+
+          if (/\bPr$/.test(cleanedName) && normalizedChildren.length > 0) {
+            return normalizedChildren;
+          }
+
+          if (isLegacyArtifact(rawName, cleanedName)) {
+            return normalizedChildren;
+          }
+
+          const normalizedNode = {
+            id: node.id,
+            name: cleanedName,
+            isFolder: true,
+            children: normalizedChildren
+          };
+
+          // Repariert alte, falsch gesplittete Namensketten wie:
+          // "Code-Qualit" -> "u00e4t " -> "u0026 Wartbarkeit".
+          collapseNameFragments(normalizedNode);
+          return [normalizedNode];
+        }
+
+        function collapseNameFragments(node) {
+          while (node.children.length === 1) {
+            const child = node.children[0];
+            if (!child || !child.isFolder) break;
+            if (!isLikelyNameFragment(child.name)) break;
+
+            node.name = joinNameParts(node.name, child.name);
+            node.children = child.children;
+          }
+        }
+
+        function isLikelyNameFragment(name) {
+          const value = String(name || '').trim();
+          if (!value) return true;
+          if (/^[&/]/.test(value)) return true;
+          if (/^[äöüß]/i.test(value)) return true;
+          return false;
+        }
+
+        function joinNameParts(left, right) {
+          const a = String(left || '').trimEnd();
+          const b = String(right || '').trimStart();
+
+          if (!a) return b;
+          if (!b) return a;
+
+          if (b.startsWith('&') || b.startsWith('/')) return a + ' ' + b;
+          if (/[A-Za-zÄÖÜäöüß]$/.test(a) && /^[a-zäöüß]/i.test(b)) return a + b;
+          return a + ' ' + b;
+        }
+
+        function decodeLegacyName(raw) {
+          return String(raw || '')
+            .replace(/u([0-9a-fA-F]{4})/g, function (_, hex) {
+              return String.fromCharCode(parseInt(hex, 16));
+            })
+            .replace(/\s+/g, ' ')
+            .trim();
+        }
+
+        function isLegacyArtifact(rawName, cleanedName) {
+          const raw = String(rawName || '').trim();
+          const clean = String(cleanedName || '').trim();
+
+          if (!raw && !clean) return true;
+          // Byte-Split-Artefakte wie "303", "274fungsfallen" aus alten Pfaden ausblenden.
+          if (/^[0-9]{3}([A-Za-z].*)?$/.test(raw)) return true;
+          return false;
+        }
+
+        function canonicalName(value) {
+          return String(value || '')
+            .toLowerCase()
+            .replace(/\s+/g, ' ')
+            .trim();
+        }
+
+        function mergeChildren(baseChildren, addChildren) {
+          const merged = [];
+          const index = new Map();
+
+          (Array.isArray(baseChildren) ? baseChildren : []).forEach((item) => {
+            const key = canonicalName(item.name);
+            index.set(key, item);
+            merged.push(item);
+          });
+
+          (Array.isArray(addChildren) ? addChildren : []).forEach((item) => {
+            const key = canonicalName(item.name);
+            if (!index.has(key)) {
+              index.set(key, item);
+              merged.push(item);
+              return;
+            }
+
+            const existing = index.get(key);
+            existing.children = mergeChildren(existing.children, item.children);
+          });
+
+          return merged;
         }
 
         function buildTree(container, nodes, level) {

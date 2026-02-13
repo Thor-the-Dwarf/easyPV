@@ -1,0 +1,226 @@
+/* 
+ * Rights Manager - Styles
+ * Aesthetic: Security Dashboard / Cyberpunk / Access Control
+ */
+
+:root {
+    --bg-dark: #0a0e14;
+    --bg-panel: #1b212c;
+    --text-main: #a7b6c2;
+    --accent-grant: #0f9d58;
+    /* Green */
+    --accent-revoke: #db4437;
+    /* Red */
+    --accent-info: #4285f4;
+    /* Blue */
+    --glow-color: rgba(66, 133, 244, 0.5);
+    --border-color: #2f3b4c;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Share Tech Mono', monospace;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+    background-image: radial-gradient(circle at 50% 50%, #161b25 10%, transparent 80%);
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* --- Header --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--bg-panel);
+    border-bottom: 2px solid var(--accent-info);
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+.security-badge {
+    color: var(--accent-info);
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.protocol-status {
+    background: #000;
+    border: 1px solid var(--border-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* --- Main Interface --- */
+.main-interface {
+    flex: 1;
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* User Card (Left) */
+.user-card {
+    width: 250px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-left: 4px solid #fff;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    background: #333;
+    border-radius: 50%;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.user-name {
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+.access-req {
+    font-size: 0.8rem;
+    color: #888;
+    border-top: 1px solid #333;
+    padding-top: 0.5rem;
+}
+
+/* Access Control Center (Middle) */
+.access-control {
+    flex: 1;
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+}
+
+.table-target {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #333;
+    padding-bottom: 1rem;
+}
+
+.perm-switches {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.perm-switch {
+    background: #111;
+    border: 1px solid #444;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.perm-switch:hover {
+    border-color: #fff;
+}
+
+.perm-switch.active {
+    background: rgba(15, 157, 88, 0.2);
+    border-color: var(--accent-grant);
+    color: var(--accent-grant);
+    box-shadow: 0 0 10px rgba(15, 157, 88, 0.4);
+}
+
+.btn-commit {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--accent-info);
+    color: #fff;
+    border: none;
+    font-family: inherit;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-commit:hover {
+    background: #3367d6;
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+/* Status Log (Bottom/Right overlay) */
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    animation: scan 3s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% {
+        top: 0%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+/* Result Overlay */
+.result-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 14, 20, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.result-card {
+    border: 2px solid var(--accent-info);
+    padding: 3rem;
+    background: #000;
+    box-shadow: 0 0 30px var(--accent-info);
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}

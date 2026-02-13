@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rights Manager - Access Control</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="rights_manager.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <div class="scan-line"></div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="security-badge">SECURE_GATE // GRANT</div>
+            <div class="protocol-status">PROTOCOL: ACTIVE</div>
+        </header>
+
+        <!-- Main Interface -->
+        <main class="main-interface">
+
+            <!-- User Card -->
+            <div class="user-card">
+                <div id="user-avatar" class="user-avatar">?</div>
+                <div id="user-name" class="user-name">Loading...</div>
+                <div id="access-req" class="access-req">...</div>
+            </div>
+
+            <!-- Control -->
+            <div class="access-control">
+                <div id="table-target" class="table-target">TARGET: ...</div>
+
+                <div id="perm-switches" class="perm-switches">
+                    <!-- Switches -->
+                </div>
+
+                <button id="btn-commit" class="btn-commit">APPLY PERMISSIONS</button>
+            </div>
+
+        </main>
+
+        <!-- Result Overlay -->
+        <div id="result-overlay" class="result-overlay hidden">
+            <div class="result-card">
+                <h2 style="color:var(--accent-info); margin-bottom:1rem;">AUDIT LOG</h2>
+                <div class="hud-value" style="font-size: 1.2rem; margin: 2rem 0; color:#fff" id="final-result">...</div>
+                <button id="btn-next" class="btn-commit" style="font-size:1rem;">NEXT TICKET</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_rights_manager.js"></script>
+</body>
+
+</html>

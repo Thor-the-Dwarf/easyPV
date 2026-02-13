@@ -1,0 +1,54 @@
+{
+    "meta": {
+        "topic": "GRANT & REVOKE",
+        "mechanic": "access_control",
+        "version": "1.0"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Intern Access",
+            "description": "The new Intern 'Max' needs to see the product list. He must NOT change anything.",
+            "user": "Max (Intern)",
+            "targetTable": "Products",
+            "required": [
+                "SELECT"
+            ],
+            "forbidden": [
+                "INSERT",
+                "UPDATE",
+                "DELETE"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Inventory Manager",
+            "description": "Sarah manages stock. She needs to update prices and add new items. Deletion is for Admins only.",
+            "user": "Sarah (Stock Mgr)",
+            "targetTable": "Products",
+            "required": [
+                "SELECT",
+                "INSERT",
+                "UPDATE"
+            ],
+            "forbidden": [
+                "DELETE"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Audit Mode",
+            "description": "The Auditor needs full read access to 'Orders'. NO changes allowed!",
+            "user": "Auditor_Bot",
+            "targetTable": "Orders",
+            "required": [
+                "SELECT"
+            ],
+            "forbidden": [
+                "INSERT",
+                "UPDATE",
+                "DELETE"
+            ]
+        }
+    ]
+}

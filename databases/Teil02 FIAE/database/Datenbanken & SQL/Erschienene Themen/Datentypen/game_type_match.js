@@ -6,56 +6,37 @@
         levelIdx: 0,
         itemIdx: 0,
         score: 0,
-        efficiency: 100, // Percentage
+        efficiency: 100,
         currentItem: null,
-        gameOver: false
+        isComplete: false
     };
 
     const el = {
-        levelTitle: document.getElementById('level-title'),
-        itemSpawner: document.getElementById('item-spawner'),
-        slotsContainer: document.getElementById('slots-container'),
-        scoreVal: document.getElementById('score-val'),
-        efficiencyVal: document.getElementById('efficiency-val'),
-        feedback: document.getElementById('feedback-overlay'),
-        resultScreen: document.getElementById('result-screen'),
-        finalResult: document.getElementById('final-result'),
-        nextBtn: document.getElementById('next-btn')
+        title: document.getElementById('level-title'),
+        spawner: document.getElementById('item-spawner'),
+        slabs: document.getElementById('slabs-grid'),
+        score: document.getElementById('score-val'),
+        efficiency: document.getElementById('efficiency-val'),
+        toast: document.getElementById('feed-toast'),
+        overlay: document.getElementById('overlay'),
+        resFinal: document.getElementById('res-final'),
+        btnNext: document.getElementById('btn-next')
     };
 
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-    function playTone(type) {
+    function playSound(freq, type = 'sine', duration = 0.1) {
         if (audioCtx.state === 'suspended') audioCtx.resume();
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
         osc.connect(gain);
         gain.connect(audioCtx.destination);
-        const now = audioCtx.currentTime;
-
-        if (type === 'good') {
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(440, now);
-            osc.frequency.exponentialRampToValueAtTime(880, now + 0.1);
-            gain.gain.setValueAtTime(0.2, now);
-            gain.gain.linearRampToValueAtTime(0, now + 0.2);
-            osc.start();
-            osc.stop(now + 0.2);
-        } else if (type === 'wet') { // Click/Stone sound
-            osc.type = 'triangle';
-            osc.frequency.setValueAtTime(100, now);
-            gain.gain.setValueAtTime(0.5, now);
-            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.1);
-            osc.start();
-            osc.stop(now + 0.1);
-        } else if (type === 'bad') {
-            osc.type = 'sawtooth';
-            osc.frequency.setValueAtTime(100, now);
-            gain.gain.setValueAtTime(0.3, now);
-            gain.gain.linearRampToValueAtTime(0, now + 0.3);
-            osc.start();
-            osc.stop(now + 0.3);
-        }
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
     }
 
     async function init() {
@@ -63,149 +44,133 @@
             const resp = await fetch('game_type_match.json');
             state.config = await resp.json();
 
-            el.nextBtn.addEventListener('click', () => {
-                window.location.reload();
-            });
+            el.btnNext.onclick = () => {
+                el.overlay.classList.add('hidden');
+                startLevel(state.levelIdx + 1);
+            };
 
-            renderSlots();
+            renderSlabs();
             startLevel(0);
-        } catch (e) {
-            console.error(e);
-        }
+        } catch (e) { console.error(e); }
     }
 
-    function renderSlots() {
-        el.slotsContainer.innerHTML = '';
+    function renderSlabs() {
+        el.slabs.innerHTML = '';
         state.config.slots.forEach(slot => {
             const div = document.createElement('div');
-            div.className = 'type-slot';
+            div.className = 'type-slab';
             div.dataset.id = slot.id;
-
             div.innerHTML = `
-            <div class="slot-label">${slot.label}</div>
-            <div class="slot-capacity">${slot.description}</div>
+            <div class="slab-title">${slot.label}</div>
+            <div class="slab-desc">${slot.description}</div>
           `;
 
-            div.addEventListener('dragover', e => {
-                e.preventDefault();
-                div.classList.add('hover');
-            });
-            div.addEventListener('dragleave', () => div.classList.remove('hover'));
-            div.addEventListener('drop', e => handleDrop(e, slot.id));
+            div.ondragover = e => { e.preventDefault(); div.classList.add('hover'); };
+            div.ondragleave = () => div.classList.remove('hover');
+            div.ondrop = e => handleDrop(div, slot.id);
+            div.onclick = () => { if (state.currentItem) handleSelection(div, slot.id); };
 
-            el.slotsContainer.appendChild(div);
+            el.slabs.appendChild(div);
         });
     }
 
     function startLevel(idx) {
         if (idx >= state.config.levels.length) {
-            endGame(true, "All Data Stored Efficiently!");
+            location.reload();
             return;
         }
         state.levelIdx = idx;
         state.itemIdx = 0;
+        state.isComplete = false;
 
-        const level = state.config.levels[idx];
-        el.levelTitle.textContent = `Level ${idx + 1}: ${level.title}`;
+        const lv = state.config.levels[idx];
+        el.title.textContent = `LAB_PROCEDURE // ${lv.title}`;
 
         spawnItem();
     }
 
     function spawnItem() {
-        const level = state.config.levels[state.levelIdx];
-        if (state.itemIdx >= level.items.length) {
+        const lv = state.config.levels[state.levelIdx];
+        if (state.itemIdx >= lv.items.length) {
             startLevel(state.levelIdx + 1);
             return;
         }
 
-        const itemData = level.items[state.itemIdx];
-        state.currentItem = itemData;
+        state.currentItem = lv.items[state.itemIdx];
+        el.spawner.innerHTML = '';
 
-        el.itemSpawner.innerHTML = '';
         const div = document.createElement('div');
         div.className = 'data-item';
+        div.textContent = state.currentItem.value;
         div.draggable = true;
-        div.textContent = itemData.value;
-        div.title = itemData.info;
+        div.ondragstart = e => {
+            e.dataTransfer.setData('text/plain', div.textContent);
+            div.style.opacity = '0.5';
+        };
+        div.ondragend = () => div.style.opacity = '1';
 
-        div.addEventListener('dragstart', e => {
-            e.dataTransfer.setData('text/plain', itemData.value);
-            playTone('wet');
-        });
-
-        el.itemSpawner.appendChild(div);
+        el.spawner.appendChild(div);
     }
 
-    function handleDrop(e, slotId) {
-        e.preventDefault();
-        document.querySelectorAll('.type-slot').forEach(s => s.classList.remove('hover'));
+    function handleDrop(slab, slotId) {
+        slab.classList.remove('hover');
+        handleSelection(slab, slotId);
+    }
 
+    function handleSelection(slab, slotId) {
         if (!state.currentItem) return;
-
         const item = state.currentItem;
-        let result = 'bad';
-        let msg = "";
 
         if (item.best === slotId) {
-            result = 'good';
-            msg = "PERFECT FIT!";
+            playSound(880);
+            showToast("PERFECT_FIT", "var(--green-fit)");
             state.score += 100;
+            advanceItem();
         } else if (item.ok.includes(slotId)) {
-            result = 'warn';
-            msg = "Inefficient but Valid.";
-            state.score += 50;
+            playSound(440, 'triangle');
+            showToast("INEFFICIENT_ALLOCATION", "var(--gold-primary)");
+            state.score += 40;
             state.efficiency -= 10;
+            advanceItem();
         } else {
-            result = 'bad';
-            msg = "TYPE ERROR / OVERFLOW!";
+            playSound(110, 'sawtooth', 0.3);
+            slab.classList.add('shake');
+            setTimeout(() => slab.classList.remove('shake'), 400);
+            showToast("TYPE_OVERFLOW_ERROR", "var(--red-overflow)");
             state.score -= 50;
             state.efficiency -= 20;
         }
 
-        showFeedback(msg, result);
         updateHUD();
-
-        if (result === 'good') playTone('good');
-        else playTone('bad');
-
-        state.itemIdx++;
-
-        if (state.efficiency <= 0) {
-            endGame(false, "Storage Overflow! Database Crashed.");
-        } else {
-            setTimeout(spawnItem, 1000);
-        }
+        if (state.efficiency <= 0) endGame("CRITICAL_STORAGE_FAILURE");
     }
 
-    function showFeedback(msg, type) {
-        el.feedback.textContent = msg;
-        el.feedback.style.display = 'block';
-        el.feedback.style.borderColor = type === 'good' ? 'var(--neon-green)' : (type === 'warn' ? 'var(--gold)' : 'var(--neon-red)');
+    function advanceItem() {
+        const itemEl = el.spawner.firstChild;
+        if (itemEl) itemEl.classList.add('item-fit');
 
-        // Animate item removal
-        const itemEl = el.itemSpawner.firstChild;
-        if (itemEl) {
-            itemEl.classList.add(type === 'good' ? 'success' : (type === 'warn' ? 'warn' : 'error'));
-            setTimeout(() => itemEl.remove(), 500);
-        }
+        state.itemIdx++;
+        state.currentItem = null;
+        setTimeout(spawnItem, 600);
+    }
 
-        setTimeout(() => {
-            el.feedback.style.display = 'none';
-        }, 1000);
+    function showToast(txt, color) {
+        el.toast.textContent = txt;
+        el.toast.style.borderColor = color;
+        el.toast.style.color = color;
+        el.toast.style.display = 'block';
+        setTimeout(() => el.toast.style.display = 'none', 1000);
     }
 
     function updateHUD() {
-        el.scoreVal.textContent = state.score;
-        el.efficiencyVal.textContent = state.efficiency + "%";
-        if (state.efficiency < 50) el.efficiencyVal.style.color = 'var(--neon-red)';
+        el.score.textContent = state.score;
+        el.efficiency.textContent = `${state.efficiency}%`;
+        el.efficiency.style.color = state.efficiency < 40 ? 'var(--red-overflow)' : 'var(--text-bright)';
     }
 
-    function endGame(win, msg) {
-        state.gameOver = true;
-        el.itemSpawner.innerHTML = '';
-        el.finalResult.textContent = msg;
-        el.nextBtn.textContent = win ? "FINISH" : "RETRY";
-        el.resultScreen.classList.remove('hidden');
+    function endGame(msg) {
+        el.resFinal.textContent = msg;
+        el.overlay.classList.remove('hidden');
     }
 
     init();

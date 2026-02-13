@@ -24,24 +24,32 @@
     </div>
   </header>
 
-  <section class="conveyor-wrap" aria-label="Conveyor belt">
-    <div class="belt-track"></div>
-    <article id="snippet-card" class="snippet-card">
-      <div class="card-head">
-        <span id="snippet-badge" class="badge">USAGE</span>
-        <span id="snippet-hint" class="hint">Fokus: User-Verstaendnis</span>
-      </div>
-      <p id="snippet-text">Druecke Mission starten.</p>
-    </article>
-    <div class="readability"><div id="read-fill" class="read-fill"></div></div>
-  </section>
-
   <section class="target-bins" aria-label="Target bins">
-    <button id="bin-admin" class="bin admin" type="button">Blau-Container<br><strong>Tech/Admin</strong></button>
-    <button id="start-btn" class="start" type="button">Mission starten</button>
-    <button id="next-btn" class="start hidden" type="button">Naechstes Fragment</button>
-    <button id="restart-btn" class="start hidden" type="button">Neu starten</button>
-    <button id="bin-user" class="bin user" type="button">Gruen-Container<br><strong>User/FAQ</strong></button>
+    <button id="bin-admin" class="bin admin" type="button"><span>Tech / Admin</span><strong>Dokumentation</strong></button>
+
+    <div class="center-column">
+      <section class="conveyor-wrap" aria-label="Conveyor belt">
+        <article id="snippet-card" class="snippet-card">
+          <div class="card-head">
+            <span id="snippet-badge" class="badge">USAGE</span>
+            <span id="snippet-hint" class="hint">Fokus: User-Verstaendnis</span>
+          </div>
+          <p id="snippet-text">Druecke Mission starten.</p>
+        </article>
+      </section>
+
+      <div class="readability">
+        <div id="read-fill" class="read-fill"></div>
+      </div>
+
+      <div class="action-row">
+        <button id="start-btn" class="start" type="button">Mission starten</button>
+        <button id="next-btn" class="start hidden" type="button">Naechstes Fragment</button>
+        <button id="restart-btn" class="start hidden" type="button">Neu starten</button>
+      </div>
+    </div>
+
+    <button id="bin-user" class="bin user" type="button"><span>User / FAQ</span><strong>Dokumentation</strong></button>
   </section>
 
   <section class="confusion-meter" aria-label="Confusion meter">

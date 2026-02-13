@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Identifikation, Bewertung und Priorisierung von IT-Risiken basierend auf Eintrittswahrscheinlichkeit und Schadensausmaß.
+- Game-Mechanic: "The Risk-Calculator". Du bist der Risikomanager einer Raumstation. Überall lauern Gefahren: Meteoriten (Zufall), technisches Versagen (Verschleiß), Computer-Viren (Hacker). Du hast nur ein begrenztes Budget für Schutzmaßnahmen. Du musst jedes Risiko bewerten: "Wenn ein Meteorit trifft, ist die Station weg (Schaden 100%), aber die Chance ist gering (5%). Wenn ein Virus kommt, ist die Kommunikation gestört (Schaden 20%), aber die Chance ist hoch (80%)." Wo installierst du den Schutzschirm zuerst?
+- Challenge: 
+  - Level 1 (The Matrix Intro): Ordne 5 Bedrohungen in die Risiko-Matrix ein (Achsen: Schaden vs. Wahrscheinlichkeit).
+  - Level 2 (The Mitigation Battle): Entscheide für 3 Risiken: Vermeiden, Vermindern, Übertragen (Versicherung) oder Akzeptieren.
+  - Level 3 (The Sudden Crisis): Ein neues Risiko taucht auf, das alles bisherige in den Schatten stellt. Wirf deinen Plan um und reagiere in Echtzeit, um das Überleben der Station zu sichern.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Risk-Heatmap (5x5 Matrix)", "Impact-Slider", "Probability-Dial", "Mitigation-Cost counter".
+- [ ] Scoring: "Safety-Strategist" Bonus für die Reduktion des "Total-Residual-Risk" (Restrisiko) auf ein Minimum. Abzug für "Unmitigated Critical Risks".
+
+2. Screen-Layout (The Command Deck)
+- [ ] `risk-radar -> assessment-worksheet -> heat-map (The Grid) -> budget-allocation`.
+- [ ] Risk-Radar: Zeigt einkommende Bedrohungen als blinkende Punkte an.
+- [ ] Heat-Map: Ein klassisches Quadranten-Modell (Grün, Gelb, Orange, Rot).
+
+3. Kernvisuals und Effekte
+- [ ] Sci-Fi Command Ästhetik: Dunkler Hintergrund, holographische Gitter-Linien, Radar-Sweeps, Warn-Töne, professionelle Datenvisualisierungen (Shared Theme kompatibel).
+- [ ] "Grid-Snap": Wenn man ein Risiko-Icon auf die Heatmap zieht, rastet es mit einem digitalen Sound ein.
+- [ ] "Safety-Radius": Maßnahmen erzeugen einen sichtbaren grünen Kreis um die Risiken, der sie "schrumpfen" lässt.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Flexbox` für das Layout der Risiko-Karten.
+- [ ] Mobile: "Swipe-to-Categorize" Geste.
+
+5. Content-Strategie (The Danger-Files)
+- [ ] 12 Real-Life IT-Bedrohungen: Von "Stromausfall" bis "Ransomware-Attacke".
+
+6. QA-Paket
+- [ ] Test: Erzeugt die Heatmap ein sofortiges Verständnis für Prioritäten?
+- [ ] Test: Wird der Unterschied zwischen "Brutto-Risiko" und "Netto-Risiko" (nach Maßnahmen) klar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Man kann nicht jedes Risiko ausschalten, aber man muss die wichtigsten kennen.
+- [ ] Das Interface wirkt analytisch, übersichtlich und hochmodern.
+- [ ] Fokus auf strategische IT-Sicherheit.

@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Praktisches Verständnis von System-Monitoring (Health-Checks, Metriken) und die proaktive Reaktion auf Schwellenwert-Überschreitungen.
+- Game-Mechanic: "The Watchman". Du sitzt in einer Radar-Station auf einem einsamen Berg. Vor dir liegen Bildschirme, die den Gesundheitszustand einer fernen Stadt (dein System) zeigen. Du siehst: Stromverbrauch (CPU), Wasserdruck (RAM), Verkehr (Netzwerk). Wenn eine Nadel in den roten Bereich zuckt, musst du handeln, BEVOR die Lichter in der Stadt ausgehen.
+- Challenge: 
+  - Level 1 (The Constant Pulse): Erstelle einen einfachen "Liveness-Check" (Ping), der alle 5 Sekunden prüft, ob die Stadt noch antwortet.
+  - Level 2 (The Threshold alert): Setze einen Alarm: Wenn die CPU-Last über 80% steigt, schalte eine Sirene ein und fahre zusätzliche "Reserve-Generatoren" (Skalierung) hoch.
+  - Level 3 (The Predictive Glimpse): Analysiere den Trend über 24 Stunden. Der Wasserdruck (RAM) steigt langsam aber stetig (Memory Leak). Finde den Zeitpunkt des drohenden Kollapses und starte das System kontrolliert neu.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Dashboard-with-Gauges", "Historical-Trend-Graph", "Alarm-Configuration-Panel", "Incident-Log".
+- [ ] Scoring: "Proactivity-Bonus" für Alarme, die ausgelöst werden, bevor ein Fehler auftritt. Abzug für "False-Alarms" (zu sensible Alarme) und "Downtime-Seconds".
+
+2. Screen-Layout (The Command Center)
+- [ ] `dashboard-monitor -> threshold-adjustable-sliders -> alert-notification-list -> action-buttons`.
+- [ ] Dashboard-Monitor: Große Rundinstrumente für die Kernmetriken.
+- [ ] Threshold-Sliders: Interaktive Schieber direkt an den Rundinstrumenten zum Setzen der Alarmgrenzen.
+
+3. Kernvisuals und Effekte
+- [ ] Radar-Station-Retro Ästhetik: Dunkles Grün, Phosphor-Leuchten, kreisförmige Radar-Scans, statisches Rauschen im Audio, mechanische Warn-Sirenen (Shared Theme kompatibel).
+- [ ] "Needle-Jitter": Wenn ein Wert instabil wird, fängt die Tachonadel an zu zittern.
+- [ ] "City-Lights": Im Hintergrund sieht man eine stilisierte Stadt, deren Lichter flackern oder ausgehen, wenn das Monitoring vernachlässigt wird.
+
+4. Browser- und Device-Resilienz
+- [ ] `SVG Path` Transformationen für die animierten Graphen.
+- [ ] Mobile: "Vibration-Feedback" bei kritischen Alarmen.
+
+5. Content-Strategie (The Health-Reports)
+- [ ] 12 Monitoring-Profile: Von "Static Website" bis "Global Microservice Grid".
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen "Liveness" (Läuft es?) und "Readiness" (Kann es Anfragen verarbeiten?) klar?
+- [ ] Test: Fühlt sich das Interface wie ein mächtiges Überwachungswerkzeug an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Monitoring ermöglicht Agieren statt nur Reagieren.
+- [ ] Das Interface wirkt fokussiert, professionell und hochgradig visuell.
+- [ ] Fokus auf Schwellenwerte und Hochverfügbarkeit.

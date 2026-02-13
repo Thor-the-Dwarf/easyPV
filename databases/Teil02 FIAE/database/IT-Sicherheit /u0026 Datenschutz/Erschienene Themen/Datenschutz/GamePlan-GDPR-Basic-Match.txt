@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Vermittlung der Grundprinzipien der DSGVO (Datensparsamkeit, Transparenz, Zweckbindung) und deren Umsetzung in IT-Systemen.
+- Game-Mechanic: "The GDPR Shield". Du bist der Datenschutz-Beauftragte eines Web-Portals. Berge von User-Daten (Namen, Kreditkarten, IP-Adressen, Schuhgrößen) fließen in dein System. Du hast einen Schutzschild mit verschiedenen Filtern: "Darf ich das speichern?" (Zweckbindung), "Muss ich das wirklich wissen?" (Datensparsamkeit), "Habe ich die Erlaubnis?" (Einwilligung). Blocke alles ab, was den User-Datenschutz verletzt, sonst droht das "Bußgeld-Gewitter"!
+- Challenge: 
+  - Level 1 (The Registration Form): Ein Formular will die Telefonnummer als Pflichtfeld für einen Newsletter. Greife ein und mache es optional (Datensparsamkeit).
+  - Level 2 (The Right to be Forgotten): Ein User will gelöscht werden. Finde alle Fragmente seiner Daten in den verschiedenen Datenbank-Tabellen und führe eine restlose Löschung (oder Anonymisierung) durch.
+  - Level 3 (The Data-Breach Drill): Ein Hacker hat Daten gestohlen. Du hast 72 Stunden Zeit! Informiere die Behörden und die User – wähle die richtigen Worte und Kanäle.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Compliance-Status (Bar)", "User-Trust-Meter", "Privacy-Policy Display", "Penalty-Alert ($)".
+- [ ] Scoring: "Privacy-Champion" Bonus für minimalen Daten-Footprint bei maximalem User-Nutzen. Abzug für "GDPR-Violations".
+
+2. Screen-Layout (The Privacy-Dashboard)
+- [ ] `data-flow-visualizer -> filter-switches -> user-control-center -> legal-notification-area`.
+- [ ] Data-Flow: Zeigt Daten als "Pakete", die in verschiedene Datenbanken fließen wollen.
+- [ ] Filter-Switches: Interaktive Hebel für die DSGVO-Prinzipien.
+
+3. Kernvisuals und Effekte
+- [ ] Clean-Law Ästhetik: Helles Blau, viel Weißraum, gläserne Flächen, sanfte Bestätigungstöne, bei Verstößen ein hartes bürokratisches Stempelgeräusch (Shared Theme kompatibel).
+- [ ] "Data-Shredder": Wenn Daten gelöscht werden, zerfallen sie visuell in kleine Pixel-Staubpartikel.
+- [ ] "Consent-Glow": Wenn ein User explizit zustimmt, leuchtet der Datenstrom in einem "sicheren" Grün auf.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Flexbox` für die Darstellung des Datenflusses.
+- [ ] Mobile: "Tap-to-Block" Geste für unzulässige Daten-Sammelwut.
+
+5. Content-Strategie (The Compliance-Audits)
+- [ ] 12 Praxis-Szenarien: Von "Cookie-Banner Design" bis "Auftragsdatenverarbeitung (AVV)".
+
+6. QA-Paket
+- [ ] Test: Wird die Bedeutung von "Privacy by Design" (Sicherheit von Anfang an) spielerisch spürbar?
+- [ ] Test: Fühlt sich das Thema "Datenschutz" nicht mehr trocken, sondern wie ein aktiver Schutz für Menschen an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Datenschutz ist ein Grundrecht und Qualitätsmerkmal moderner Software.
+- [ ] Das Interface wirkt sauber, vertrauenserweckend und rechtssicher.
+- [ ] Fokus auf Compliance und User-Souveränität.

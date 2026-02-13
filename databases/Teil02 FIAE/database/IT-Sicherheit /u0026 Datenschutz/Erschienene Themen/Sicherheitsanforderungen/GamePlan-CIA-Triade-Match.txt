@@ -1,0 +1,42 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Beherrschung des fundamentalen Modells der Informationssicherheit: Vertraulichkeit (Confidentiality), Integrität (Integrity) und Verfügbarkeit (Availability).
+- Game-Mechanic: "The CIA Guardian". Du bist der Wächter über den "Kern der Informationen" in einer digitalen Kathedrale.
+  - C (Confidentiality): Nur Befugte dürfen den Kern sehen. (Verschlüsselung, Zugriffsschutz).
+  - I (Integrity): Der Kern darf nicht unbemerkt verändert werden. (Hashwerte, Signaturen).
+  - A (Availability): Der Kern muss erreichbar sein, wenn er gebraucht wird. (Redundanz, Backup).
+  Wenn du eine Säule stärkst, schwächst du manchmal eine andere (z.B. zu viel Verschlüsselung bremst die Verfügbarkeit). Finde die perfekte Balance!
+- Challenge: 
+  - Level 1 (The Leak): Ein Unbefugter liest eine Datei. Stärke die Säule C durch Passwort-Schutz.
+  - Level 2 (The Silent Corrupter): Jemand ändert heimlich eine "0" in eine "1" in der Datenbank. Aktiviere die Säule I durch Checksummen-Prüfung.
+  - Level 3 (The DDoS Storm): Die Kathedrale wird geflutet! Rette die Säule A durch Lastverteilung (Load Balancing).
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Triad-Polygon (Dreiecks-Grafik)", "Asset-Value-Indicator", "Threat-Scanner", "Defense-Budget ($)".
+- [ ] Scoring: "Balance-Master" Bonus für das gleichmäßige Halten aller drei Säulen auf hohem Niveau. Abzug für ein "Total-Collapse" einer Säule.
+
+2. Screen-Layout (The Temple Vault)
+- [ ] `the-data-core -> three-pillars-of-cia -> defense-menu -> incoming-threats`.
+- [ ] Three-Pillars: Drei massive Säulen um den Kern, die jeweils ihre eigene "Energie-Anzeige" haben.
+- [ ] Defense-Menu: Maßnahmen wie "AES-Encryption" (C+), "SHA-Hashing" (I+), "Mirroring" (A+).
+
+3. Kernvisuals und Effekte
+- [ ] Mystical-Tech Ästhetik: Dunkler Marmor, leuchtende Runen für C, I und A, epische Orchester-Klänge, die bei Bedrohung dramatischer werden (Shared Theme kompatibel).
+- [ ] "Pillar-Cracks": Wenn eine Säule unter Beschuss steht, bekommt sie sichtbare Risse.
+- [ ] "Core-Glow": Wenn alle drei Säulen stabil sind, strahlt der Kern in einem perfekten Weiß.
+
+4. Browser- und Device-Resilienz
+- [ ] `Canvas API` für die flüssige Darstellung des Triaden-Polygons.
+- [ ] Mobile: "Tap-to-Reinforce" die schwächste Säule.
+
+5. Content-Strategie (The Security Doctrines)
+- [ ] 15 Real-Szenarien: Von "Krankenakte (C ist Prio)" bis "Wetter-Ticker (A ist Prio)".
+
+6. QA-Paket
+- [ ] Test: Wird die gegenseitige Beeinflussung der CIA-Ziele (Trade-offs) spielerisch deutlich?
+- [ ] Test: Fühlt sich das Dreiecks-Modell intuitiv verstehbar an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Security ist kein Zustand, sondern ein abgewogener Prozess.
+- [ ] Das Interface wirkt sakral, majestätisch und sicherheitsrelevant.
+- [ ] Fokus auf IT-Grundschutz und ISO-27001 Denkmuster.

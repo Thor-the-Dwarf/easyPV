@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der Bedeutung von System-Logging für Fehleranalyse, Sicherheit (Audit-Trail) und Nachvollziehbarkeit.
+- Game-Mechanic: "The Log-Scribe". Du bist der Chronist in einem riesigen, mechanischen Turm. Überall passieren Dinge: Zahnräder drehen sich, Dampf entweicht, manchmal bricht etwas. Du hast eine endlose Papierrolle. Du musst entscheiden: Was schreibst du auf? "Zahnrad A dreht sich" (DEBUG - zu viel Rauschen!), "Dampf ist heiß" (INFO) oder "DRUCK KRITISCH" (ERROR)? Wenn der Turm explodiert und du hast nichts aufgeschrieben, ist dein Job weg!
+- Challenge: 
+  - Level 1 (The Noise Filter): Du wirst mit Nachrichten überflutet. Filter alle `DEBUG` und `TRACE` Nachrichten heraus, damit du nur die wichtigen `INFO` und `WARN` Events siehst.
+  - Level 2 (The Forensic Audit): Ein Einbruch ist passiert! Durchsuche die Logs der letzten Nacht nach einer spezifischen IP-Adresse oder einem ungültigen Login-Versuch.
+  - Level 3 (The Log-Rotation): Deine Papierrolle ist voll. Implementiere ein System, um alte Logs zu archivieren und Platz für neue zu schaffen, ohne wichtige Beweise zu vernichten.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Log-Level-Selector (OFF, ERROR, WARN, INFO, DEBUG)", "Message-Stream (Live)", "Storage-Capacity-Gauge", "Search-Bar".
+- [ ] Scoring: "Detective-Points" für das schnelle Finden von Fehlern im Log-Stream. Abzug für "Log-Flooding" (wenn die Disk durch zu viele Debug-Logs vollgeschrieben wird).
+
+2. Screen-Layout (The Chronicle Desk)
+- [ ] `scroll-stream (The Logs) -> magnifying-glass -> filter-switches -> archive-chest`.
+- [ ] Scroll-Stream: Ein fließender Text-Bereich, in dem Nachrichten in verschiedenen Farben (Rot=Error, Gelb=Warn, Türkis=Info) erscheinen.
+- [ ] Archive-Chest: Visualisierung des Speicherplatzes für alte Log-Dateien.
+
+3. Kernvisuals und Effekte
+- [ ] Steampunk-Chronicle Ästhetik: Dunkles Leder, Messing-Elemente, das Geräusch einer ratternden Schreibmaschine oder eines Federkiels, Tintenkleckse bei Fehlermeldungen (Shared Theme kompatibel).
+- [ ] "Text-Highlight": Wenn man eine Log-Zeile anklickt, wird sie golden markiert und Details (Timestamp, Thread-ID) erscheinen als Hologramm.
+- [ ] "Alert-Buzzer": Bei einer `FATAL` oder `ERROR` Nachricht vibriert der Screen kurz und ein rotes Licht am Tisch leuchtet auf.
+
+4. Browser- und Device-Resilienz
+- [ ] `virtual-scrolling` für den Log-Stream, um auch bei 10.000 Zeilen flüssig zu bleiben.
+- [ ] Mobile: "Swipe-to-Filter" Geste.
+
+5. Content-Strategie (The Event-Logs)
+- [ ] 15 Log-Szenarien: Von "Application Start" bis "Database Connection Timeout".
+
+6. QA-Paket
+- [ ] Test: Wird die Wichtigkeit von Timestamps und korrekten Log-Leveln im Gameplay deutlich?
+- [ ] Test: Schafft das Interface den Spagat zwischen "Daten-Menge" und "Übersichtlichkeit"?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Logs sind das Gedächtnis des Systems. Ohne Logs keine Fehlerbehebung.
+- [ ] Das Interface wirkt ehrwürdig, technisch fundiert und atmosphärisch dicht.
+- [ ] Fokus auf Wartbarkeit und Incident-Management.

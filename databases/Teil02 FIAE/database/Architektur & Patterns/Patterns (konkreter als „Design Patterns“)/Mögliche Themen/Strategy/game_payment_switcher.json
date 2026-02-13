@@ -1,0 +1,97 @@
+{
+    "meta": {
+        "topic": "Strategy Pattern",
+        "mechanic": "context_switching",
+        "version": "1.0"
+    },
+    "strategies": [
+        {
+            "id": "paypal",
+            "label": "PayPal Strategy",
+            "icon": "🅿️",
+            "color": "#003087",
+            "type": "payment"
+        },
+        {
+            "id": "credit_card",
+            "label": "Credit Card Strategy",
+            "icon": "💳",
+            "color": "#1a1f71",
+            "type": "payment"
+        },
+        {
+            "id": "crypto",
+            "label": "Crypto Strategy",
+            "icon": "₿",
+            "color": "#f7931a",
+            "type": "payment"
+        },
+        {
+            "id": "vat_de",
+            "label": "VAT (Germany)",
+            "icon": "🇩🇪",
+            "color": "#dd0000",
+            "type": "tax"
+        },
+        {
+            "id": "vat_us",
+            "label": "Sales Tax (USA)",
+            "icon": "🇺🇸",
+            "color": "#3c3b6e",
+            "type": "tax"
+        }
+    ],
+    "contexts": [
+        {
+            "id": "ctx_pp",
+            "text": "Customer chose PayPal",
+            "requiredStrategy": "paypal",
+            "type": "payment"
+        },
+        {
+            "id": "ctx_cc",
+            "text": "Customer uses VISA",
+            "requiredStrategy": "credit_card",
+            "type": "payment"
+        },
+        {
+            "id": "ctx_btc",
+            "text": "Payment via Bitcoin",
+            "requiredStrategy": "crypto",
+            "type": "payment"
+        },
+        {
+            "id": "ctx_berlin",
+            "text": "Shipping to Berlin",
+            "requiredStrategy": "vat_de",
+            "type": "tax"
+        },
+        {
+            "id": "ctx_ny",
+            "text": "Shipping to New York",
+            "requiredStrategy": "vat_us",
+            "type": "tax"
+        }
+    ],
+    "levels": [
+        {
+            "id": 1,
+            "title": "Payment Processor",
+            "speed": 3000,
+            "scenarios": [
+                "ctx_pp",
+                "ctx_cc",
+                "ctx_btc"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Global Tax",
+            "speed": 2500,
+            "scenarios": [
+                "ctx_berlin",
+                "ctx_ny"
+            ]
+        }
+    ]
+}

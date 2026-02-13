@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy Pattern - Gearbox</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="payment_switcher.css">
+</head>
+
+<body>
+    <div class="game-app">
+
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="hud-label">LOGIC SPEED</span>
+                <span class="hud-value" id="speed-val">0 MIPS</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">OPTIMIZATION SCORE</span>
+                <span class="hud-value" id="score-val">0</span>
+            </div>
+        </header>
+
+        <!-- Simulation Window -->
+        <main class="simulation-window" id="simulation-window">
+            <div class="road-line"></div>
+            <!-- Context Cards Spawn Here -->
+
+            <!-- Feedback Slot -->
+            <div class="feedback-slot">
+                <div id="feedback-bar" class="feedback-bar"></div>
+            </div>
+        </main>
+
+        <!-- Gear Shifter -->
+        <div id="gear-shifter" class="gear-shifter">
+            <!-- Buttons generated here -->
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card"
+                style="background: rgba(0,0,0,0.8); border: 4px solid var(--neon-pink); padding: 3rem; text-align:center;">
+                <h2 style="color:var(--neon-pink); margin-bottom:1rem; font-size:2rem; font-style:italic">RACE FINISHED
+                </h2>
+                <div class="hud-value" style="font-size: 4rem; margin: 2rem 0; color:#fff" id="final-score">0</div>
+                <button id="restart-btn" class="btn-retro">PLAY AGAIN</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_payment_switcher.js"></script>
+</body>
+
+</html>

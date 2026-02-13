@@ -1,0 +1,206 @@
+{
+    "meta": {
+        "topic": "Projektmanagement",
+        "mechanic": "stacey_matrix_match",
+        "version": "1.0"
+    },
+    "methods": [
+        {
+            "id": "waterfall",
+            "label": "Wasserfall",
+            "color": "#2196F3",
+            "description": "Linear, sequenziell. Für klare Anforderungen & Technik."
+        },
+        {
+            "id": "vmodel",
+            "label": "V-Modell",
+            "color": "#00BCD4",
+            "description": "Erweitert Wasserfall um Testphasen. Hohe Qualitätssicherung."
+        },
+        {
+            "id": "scrum",
+            "label": "Scrum",
+            "color": "#FFC107",
+            "description": "Iterativ, inkrementell. Für komplexe Projekte mit Team-Fokus."
+        },
+        {
+            "id": "kanban",
+            "label": "Kanban",
+            "color": "#FF9800",
+            "description": "Flow-basiert. Für Service/Wartung oder kontinuierliche Aufgaben."
+        }
+    ],
+    "levels": [
+        {
+            "id": 1,
+            "name": "Level 1: Klare Verhältnisse",
+            "speed": 1.0,
+            "scenarios": [
+                {
+                    "id": "l1_s1",
+                    "title": "Sicherheits-Update Server",
+                    "description": "Routine-Patch einspielen. Anforderungen 100% klar, Technik 100% bekannt.",
+                    "req_clarity": 95,
+                    "tech_certainty": 95,
+                    "best_method": "waterfall",
+                    "allowed_methods": [
+                        "waterfall",
+                        "vmodel"
+                    ],
+                    "explanation": "Standard-Prozess, keine Überraschungen -> Einfach -> Wasserfall."
+                },
+                {
+                    "id": "l1_s2",
+                    "title": "Innovatives KI-Startup",
+                    "description": "Markt unbekannt, Technologie experimentell. Alles ändert sich täglich.",
+                    "req_clarity": 10,
+                    "tech_certainty": 10,
+                    "best_method": "scrum",
+                    "allowed_methods": [
+                        "scrum"
+                    ],
+                    "explanation": "Hohe Unsicherheit -> Chaos/Komplex -> Agil (Scrum) um zu lernen."
+                },
+                {
+                    "id": "l1_s3",
+                    "title": "Behörden-Software V2",
+                    "description": "Strenge Vorgaben, genaues Lastenheft, Abnahmekriterien fixiert.",
+                    "req_clarity": 90,
+                    "tech_certainty": 80,
+                    "best_method": "vmodel",
+                    "allowed_methods": [
+                        "vmodel",
+                        "waterfall"
+                    ],
+                    "explanation": "Hohe Formalität und klare Specs -> V-Modell ist ideal für Validierung."
+                },
+                {
+                    "id": "l1_s4",
+                    "title": "Support-Tickets abarbeiten",
+                    "description": "Kontinuierlicher Eingang von kleinen Bugs und Anfragen.",
+                    "req_clarity": 50,
+                    "tech_certainty": 80,
+                    "best_method": "kanban",
+                    "allowed_methods": [
+                        "kanban"
+                    ],
+                    "explanation": "Laufender Betrieb, kein festes Projekt-Ende -> Kanban für Flow."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Level 2: Die Grauzonen",
+            "speed": 1.5,
+            "scenarios": [
+                {
+                    "id": "l2_s1",
+                    "title": "Webshop Relaunch",
+                    "description": "Tech-Stack bekannt (Shopify), aber Design & UX noch in der Findung.",
+                    "req_clarity": 40,
+                    "tech_certainty": 90,
+                    "best_method": "scrum",
+                    "allowed_methods": [
+                        "scrum",
+                        "kanban"
+                    ],
+                    "explanation": "Anforderungen unklar, Technik stabil -> Kompliziert/Komplex -> Agil."
+                },
+                {
+                    "id": "l2_s2",
+                    "title": "Migration Legacy-DB",
+                    "description": "Ziel ist klar (Daten rüber), aber alte DB ist eine 'Black Box'.",
+                    "req_clarity": 90,
+                    "tech_certainty": 30,
+                    "best_method": "scrum",
+                    "allowed_methods": [
+                        "scrum",
+                        "kanban"
+                    ],
+                    "explanation": "Technisches Risiko hoch -> Iteratives Vorgehen (Spikes) nötig."
+                },
+                {
+                    "id": "l2_s3",
+                    "title": "Marketing-Kampagne",
+                    "description": "Viele kleine Tasks, Deadlines fix, aber Inhalte dynamisch.",
+                    "req_clarity": 60,
+                    "tech_certainty": 100,
+                    "best_method": "kanban",
+                    "allowed_methods": [
+                        "kanban"
+                    ],
+                    "explanation": "Operatives Tagesgeschäft mit klarem Fokus auf Durchsatz -> Kanban."
+                },
+                {
+                    "id": "l2_s4",
+                    "title": "Bau eines Rechenzentrums",
+                    "description": "Physisches Projekt. Fundament muss vor Dach kommen.",
+                    "req_clarity": 85,
+                    "tech_certainty": 90,
+                    "best_method": "waterfall",
+                    "allowed_methods": [
+                        "waterfall"
+                    ],
+                    "explanation": "Physische Abhängigkeiten erzwingen Sequenz -> Wasserfall."
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Level 3: Warp Speed",
+            "speed": 2.2,
+            "scenarios": [
+                {
+                    "id": "l3_s1",
+                    "title": "Disruptive App-Idee",
+                    "description": "Killer-Feature gesucht. 'Wir wissen es, wenn wir es sehen'.",
+                    "req_clarity": 5,
+                    "tech_certainty": 50,
+                    "best_method": "scrum",
+                    "allowed_methods": [
+                        "scrum"
+                    ],
+                    "explanation": "Maximale Flexibilität nötig. Kurze Sprints für Feedback."
+                },
+                {
+                    "id": "l3_s2",
+                    "title": "Großprojekt Flughafen",
+                    "description": "Riesig, viele Stakeholder, Brandschutzauflagen ändern sich spät.",
+                    "req_clarity": 20,
+                    "tech_certainty": 80,
+                    "best_method": "scrum",
+                    "allowed_methods": [
+                        "scrum",
+                        "vmodel"
+                    ],
+                    "explanation": "Komplexität durch Größe -> Agiles Skalieren oder V-Modell mit Change-Management."
+                },
+                {
+                    "id": "l3_s3",
+                    "title": "Server-Crash Response",
+                    "description": "System down! Datenbank korrupt! Sofort handeln!",
+                    "req_clarity": 0,
+                    "tech_certainty": 0,
+                    "best_method": "kanban",
+                    "allowed_methods": [
+                        "kanban"
+                    ],
+                    "explanation": "Chaos! Keine Zeit für Sprints. Ticket -> Fix -> Deploy -> Repeat. (Kanban-Mode)"
+                },
+                {
+                    "id": "l3_s4",
+                    "title": "ISO-Zertifizierung",
+                    "description": "Prozesse müssen exakt dokumentiert und auditierbar sein.",
+                    "req_clarity": 100,
+                    "tech_certainty": 100,
+                    "best_method": "vmodel",
+                    "allowed_methods": [
+                        "vmodel",
+                        "waterfall"
+                    ],
+                    "explanation": "Auditierbarkeit verlangt formale Dokumentation -> V-Modell."
+                }
+            ]
+        }
+    ]
+}

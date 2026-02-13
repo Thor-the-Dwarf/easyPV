@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Methoden Match - Die Matrix</title>
+    <!-- Use shared theme from relative path (5 levels up to root of database usually implies .../Teil01 Grundlagen) -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="pm_methoden_match.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-panel">
+                <div class="hud-item">
+                    <span class="hud-label">Score</span>
+                    <span class="hud-value" id="score-val">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Radar</span>
+                    <span class="hud-value radar-warning" id="radar-msg">⚠️ INCOMING</span>
+                </div>
+            </div>
+            <div class="hud-panel">
+                <div class="hud-item">
+                    <span class="hud-label">System</span>
+                    <span class="hud-value">STACEY-OS v1.0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Stage -->
+        <main class="game-stage">
+            <div class="stacey-grid">
+                <div class="grid-bg"></div>
+                <!-- Zones mapped visually -->
+                <!-- Bottom Left (Simple) -->
+                <div class="zone" style="grid-column: 1; grid-row: 2; color: hsl(var(--zone-simple))"
+                    data-label="EINFACH"></div>
+                <!-- Bottom Right (Complicated/Tech?) -->
+                <div class="zone" style="grid-column: 2; grid-row: 2; color: hsl(var(--zone-compl))"
+                    data-label="KOMPLIZIERT"></div>
+                <!-- Top Left (Complicated/Req?) -->
+                <div class="zone" style="grid-column: 1; grid-row: 1; color: hsl(var(--zone-compl))"
+                    data-label="KOMPLIZIERT"></div>
+                <!-- Top Right (Complex/Chaos) -->
+                <div class="zone" style="grid-column: 2; grid-row: 1; color: hsl(var(--zone-chaos))" data-label="CHAOS">
+                </div>
+
+                <div class="axis-label axis-x">Anforderungs-Unklarheit ➔</div>
+                <div class="axis-label axis-y">Technologie-Unbekanntheit ➔</div>
+            </div>
+
+            <!-- Target Info -->
+            <div id="target-info" class="target-info">
+                <div class="target-title" id="target-title">Target Locked</div>
+                <div class="target-stats">
+                    <span id="target-req">Req: 0%</span>
+                    <span id="target-tech">Tech: 0%</span>
+                </div>
+            </div>
+
+            <!-- Feedback -->
+            <div id="feedback-msg" class="feedback-msg">HIT</div>
+        </main>
+
+        <!-- Arsenal -->
+        <footer class="arsenal">
+            <!-- Buttons injected by JS -->
+        </footer>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card">
+                <h2>Simulation Beendet</h2>
+                <p>Finaler Method-Fit Score:</p>
+                <div class="hud-value" style="font-size: 3rem; margin: 1rem 0;" id="final-score">0</div>
+                <button id="restart-btn" class="btn primary">Neustart</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game_pm_methoden_match.js"></script>
+</body>
+
+</html>

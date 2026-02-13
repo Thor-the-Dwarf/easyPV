@@ -1,0 +1,386 @@
+/* 
+ * PM-Methoden-Match - Styles
+ * Based on shared_theme.css variables
+ * Aesthetic: Space Strategy / Neon Grid
+ */
+
+:root {
+    --zone-simple: 210 90% 60%;
+    /* Blue */
+    --zone-compl: 45 100% 50%;
+    /* Yellow/Orange */
+    --zone-complex: 300 100% 50%;
+    /* Magenta */
+    --zone-chaos: 0 100% 60%;
+    /* Red */
+
+    --method-waterfall: 210 90% 60%;
+    --method-scrum: 45 100% 50%;
+    --method-vmodel: 180 100% 50%;
+    --method-kanban: 30 100% 60%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at center, hsl(var(--bg-surface)), hsl(var(--bg)));
+    color: hsl(var(--txt));
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* --- HUD --- */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background: hsl(var(--bg-surface) / 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid hsl(var(--glass-border));
+    z-index: 20;
+}
+
+.hud-panel {
+    display: flex;
+    gap: 2rem;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: hsl(var(--txt-muted));
+    letter-spacing: 0.05em;
+}
+
+.hud-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: hsl(var(--primary));
+    font-family: monospace;
+}
+
+.radar-warning {
+    color: hsl(var(--zone-chaos));
+    animation: pulse 1s infinite;
+    display: none;
+}
+
+.radar-warning.active {
+    display: block;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* --- Main Stage (Stacey Grid) --- */
+.game-stage {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stacey-grid {
+    position: absolute;
+    width: 90vmin;
+    height: 90vmin;
+    border-left: 2px solid hsl(var(--txt-muted));
+    border-bottom: 2px solid hsl(var(--txt-muted));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.axis-label {
+    position: absolute;
+    font-size: 0.8rem;
+    color: hsl(var(--txt-muted));
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.axis-x {
+    bottom: -25px;
+    right: 0;
+}
+
+.axis-y {
+    top: 0;
+    left: -25px;
+    transform: rotate(-90deg);
+    transform-origin: top right;
+}
+
+/* Zones */
+.zone {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 900;
+    opacity: 0.1;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.zone::after {
+    content: attr(data-label);
+}
+
+/* Quadrants mapped roughly to Stacey Matrix representation in this game */
+/* 
+   Technik (Y)
+   ^
+   | Chaos | Complex
+   |-------|--------
+   | Simple| Complicated
+   -----------------> Anforderung (X)
+   
+   Wait, Stacey Matrix is usually:
+   X: Requirements (Clear -> Unclear)
+   Y: Tech (Known -> Unknown)
+   
+   Close to origin (0,0) = Simple.
+   Far from origin = Chaos.
+   Middle = Complicated/Complex.
+   
+   Let's map visuals:
+   Bottom-Left: Simple
+   Top-Right: Chaos (or close to)
+   
+   But traditionally it's a curve. For the game grid:
+   BL: Simple
+   BR: Complicated (Unclear Req, Known Tech)? Or Complicated (Clear Req, Unknown Tech)?
+   Actually, Stacey Matrix:
+   Simple: Close to agreement & certainty.
+   Complicated: Far from certainty OR agreement.
+   Complex: Far from certainty AND agreement.
+   Chaos: Very far/Anarchy.
+   
+   I'll map grid simply:
+   Top-Right (High Uncertainty): Chaos/Complex
+   Bottom-Left (Low Uncertainty): Simple
+   Top-Left (Unknown Tech, Clear Req): Complicated
+   Bottom-Right (Known Tech, Unclear Req): Complicated
+   
+   Visuals:
+   BL: Blue
+   TR: Red/Magenta
+*/
+
+.grid-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.comet {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #fff;
+    z-index: 10;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    animation: wobble 2s infinite ease-in-out;
+}
+
+.comet-tail {
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #fff);
+    right: 50%;
+    top: 50%;
+    transform-origin: right center;
+    transform: translateY(-50%) rotate(var(--angle, 0deg));
+    opacity: 0.5;
+}
+
+@keyframes wobble {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* --- Arsenal (Controls) --- */
+.arsenal {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: hsl(var(--bg-surface) / 0.8);
+    border-top: 1px solid hsl(var(--glass-border));
+    z-index: 30;
+}
+
+.method-btn {
+    background: hsl(var(--bg-surface) / 0.5);
+    border: 1px solid hsl(var(--glass-border));
+    color: hsl(var(--txt));
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.method-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: hsl(var(--btn-color, var(--primary)));
+}
+
+.method-btn:hover {
+    transform: translateY(-2px);
+    background: hsl(var(--bg-surface));
+    box-shadow: 0 0 15px hsl(var(--btn-color) / 0.3);
+}
+
+.method-btn.selected {
+    background: hsl(var(--btn-color) / 0.2);
+    border-color: hsl(var(--btn-color));
+    box-shadow: 0 0 20px hsl(var(--btn-color) / 0.4);
+}
+
+/* Info Panel / Target Lock */
+.target-info {
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    width: 300px;
+    background: hsl(var(--bg-surface) / 0.9);
+    border: 1px solid hsl(var(--glass-border));
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    display: none;
+    z-index: 25;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.target-info.active {
+    display: block;
+    animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.target-title {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: hsl(var(--primary));
+}
+
+.target-stats {
+    font-size: 0.8rem;
+    color: hsl(var(--txt-muted));
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+/* Feedback */
+.feedback-msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.5s;
+    z-index: 100;
+}
+
+.feedback-msg.show {
+    opacity: 1;
+    transform: translate(-50%, -60%) scale(1.2);
+}
+
+.msg-hit {
+    color: hsl(var(--success));
+}
+
+.msg-miss {
+    color: hsl(var(--error));
+}
+
+/* Result Screen */
+.result-screen {
+    position: absolute;
+    inset: 0;
+    background: hsl(var(--bg) / 0.95);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none !important;
+}

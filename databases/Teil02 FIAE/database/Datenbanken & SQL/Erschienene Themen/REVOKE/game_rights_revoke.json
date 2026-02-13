@@ -1,0 +1,93 @@
+{
+    "meta": {
+        "topic": "SQL REVOKE",
+        "mechanic": "security_terminal",
+        "version": "1.0"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Intern Internship Over",
+            "description": "User 'John_Doe' has finished his internship. Revoke his SELECT privilege on the 'Salaries' table.",
+            "target": {
+                "user": "John_Doe",
+                "privilege": "SELECT",
+                "table": "Salaries"
+            },
+            "activeGrants": [
+                {
+                    "privilege": "SELECT",
+                    "table": "Salaries",
+                    "id": "p1"
+                },
+                {
+                    "privilege": "SELECT",
+                    "table": "Public_Info",
+                    "id": "p2"
+                }
+            ],
+            "reason": "Contract Ended"
+        },
+        {
+            "id": 2,
+            "title": "Role Change: Junior to Senior",
+            "description": "User 'Dev_Jane' is now a Senior. Revoke her LIMITED 'UPDATE' on 'Production' as she will get 'ALL' later. Start by removing the 'UPDATE' right.",
+            "target": {
+                "user": "Dev_Jane",
+                "privilege": "UPDATE",
+                "table": "Production"
+            },
+            "activeGrants": [
+                {
+                    "privilege": "SELECT",
+                    "table": "Production",
+                    "id": "p3"
+                },
+                {
+                    "privilege": "UPDATE",
+                    "table": "Production",
+                    "id": "p4"
+                },
+                {
+                    "privilege": "INSERT",
+                    "table": "Production",
+                    "id": "p5"
+                }
+            ],
+            "reason": "Promotion/Access Refactor"
+        },
+        {
+            "id": 3,
+            "title": "Security Incident!",
+            "description": "Suspicious activity detected on User 'Attacker_X'. Revoke ALL privileges on the 'Financials' table IMMEDIATELY!",
+            "target": {
+                "user": "Attacker_X",
+                "privilege": "ALL",
+                "table": "Financials"
+            },
+            "activeGrants": [
+                {
+                    "privilege": "SELECT",
+                    "table": "Financials",
+                    "id": "p6"
+                },
+                {
+                    "privilege": "INSERT",
+                    "table": "Financials",
+                    "id": "p7"
+                },
+                {
+                    "privilege": "UPDATE",
+                    "table": "Financials",
+                    "id": "p8"
+                },
+                {
+                    "privilege": "DELETE",
+                    "table": "Financials",
+                    "id": "p9"
+                }
+            ],
+            "reason": "Unauthorized Access Detected"
+        }
+    ]
+}

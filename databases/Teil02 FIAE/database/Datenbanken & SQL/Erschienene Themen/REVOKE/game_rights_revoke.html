@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL REVOKE - Security Terminal</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="rights_revoke.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <div class="scanlines"></div>
+
+        <!-- Alert Bar -->
+        <header class="alert-bar">
+            SYSTEM ALERT: UNSAFE ACCESS PERMISSIONS DETECTED
+        </header>
+
+        <!-- Terminal Workspace -->
+        <main class="terminal-content">
+
+            <div id="mission-alert" style="color:var(--accent-red); font-size: 1.1rem; margin-bottom: 1rem;">
+                > <span id="mission-desc">Loading mission...</span>
+            </div>
+
+            <div class="profile-card">
+                <div class="card-label">USER_ACCESS_PROFILE</div>
+                <div class="user-info">
+                    <h2 id="user-name">NAME_RECORD_MISSING</h2>
+                    <div id="reason-box" style="color:var(--text-dim); font-size:0.8rem; margin-top:5px;">...</div>
+                </div>
+
+                <div id="grants-grid" class="grants-grid">
+                    <!-- Grants injected here -->
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Command Input -->
+        <footer class="command-bar">
+            <div id="syntax-line" class="syntax-display">
+                <!-- Syntax injected here -->
+            </div>
+
+            <div class="buttons-area">
+                <button class="btn-terminal" data-cmd="SELECT" data-type="privilege">SELECT</button>
+                <button class="btn-terminal" data-cmd="INSERT" data-type="privilege">INSERT</button>
+                <button class="btn-terminal" data-cmd="UPDATE" data-type="privilege">UPDATE</button>
+                <button class="btn-terminal" data-cmd="DELETE" data-type="privilege">DELETE</button>
+                <button class="btn-terminal" data-cmd="ALL" data-type="privilege"
+                    style="color:var(--accent-red)">ALL</button>
+
+                <div style="width:100%; height:1px; background:#222; margin: 10px 0;"></div>
+
+                <button class="btn-terminal" data-cmd="Salaries" data-type="table">Salaries</button>
+                <button class="btn-terminal" data-cmd="Production" data-type="table">Production</button>
+                <button class="btn-terminal" data-cmd="Financials" data-type="table">Financials</button>
+
+                <button id="btn-execute" class="btn-terminal btn-execute">EXECUTE_REVOKE_PROTOCOL</button>
+            </div>
+        </footer>
+
+        <!-- Overlays -->
+        <div id="denied-overlay" class="denied-overlay">
+            <div style="text-align: center;">
+                <div class="stamp">ACCESS_DENIED</div>
+                <div style="margin-top:2rem; color:var(--text-green)">
+                    <ctrl94> SECURITY PROTOCOL SUCCESSFUL. ACCESS VOIDED.
+                </div>
+                <button id="btn-next" class="btn-terminal btn-next">CONTINUE_SCAN_NEXT</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_rights_revoke.js"></script>
+</body>
+
+</html>

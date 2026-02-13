@@ -1,0 +1,266 @@
+/* 
+ * Rights Revoke - Styles
+ * Aesthetic: Security Terminal / Cyber-Security / Acid Green & Warning Red
+ */
+
+:root {
+    --bg-black: #050505;
+    --bg-darker: #0a0a0a;
+    --text-green: #00ff41;
+    --text-dim: #008f11;
+    --accent-red: #ff3131;
+    --glow-red: rgba(255, 49, 49, 0.5);
+    --border-dim: #1a1a1a;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-black);
+    color: var(--text-green);
+    font-family: 'Share Tech Mono', monospace;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--text-dim);
+    box-sizing: border-box;
+}
+
+/* --- ALERT BAR --- */
+.alert-bar {
+    background: var(--accent-red);
+    color: #000;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        opacity: 0.8;
+    }
+
+    to {
+        opacity: 1;
+        box-shadow: 0 0 10px var(--glow-red);
+    }
+}
+
+/* --- TERMINAL CONTENT --- */
+.terminal-content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+}
+
+.profile-card {
+    background: var(--bg-darker);
+    border: 1px solid var(--text-dim);
+    padding: 1.5rem;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+    position: relative;
+}
+
+.card-label {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: var(--bg-black);
+    padding: 0 10px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+.user-info {
+    margin-bottom: 2rem;
+}
+
+.user-info h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Permissions Grid */
+.grants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.grant-item {
+    border: 1px solid var(--text-dim);
+    padding: 1rem;
+    background: rgba(0, 255, 65, 0.02);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.grant-item:hover {
+    background: rgba(0, 255, 65, 0.05);
+    border-color: var(--text-green);
+}
+
+.grant-item.revoked {
+    border-color: var(--accent-red);
+    background: rgba(255, 49, 49, 0.1);
+    color: var(--accent-red);
+    text-decoration: line-through;
+    pointer-events: none;
+}
+
+.grant-item .btn-revoke-tiny {
+    font-size: 0.7rem;
+    border: 1px solid var(--accent-red);
+    color: var(--accent-red);
+    padding: 2px 5px;
+    text-transform: uppercase;
+}
+
+/* --- COMMAND BAR --- */
+.command-bar {
+    background: var(--bg-darker);
+    border-top: 2px solid var(--text-dim);
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.syntax-display {
+    background: #000;
+    padding: 1rem;
+    border: 1px solid #333;
+    font-family: inherit;
+    font-size: 1.2rem;
+    color: #888;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.syntax-display span {
+    color: var(--text-green);
+    margin-right: 8px;
+}
+
+.buttons-area {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-terminal {
+    background: transparent;
+    border: 1px solid var(--text-dim);
+    color: var(--text-green);
+    padding: 0.8rem 1.5rem;
+    font-family: inherit;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.btn-terminal:hover {
+    background: var(--text-green);
+    color: #000;
+}
+
+.btn-execute {
+    margin-left: auto;
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+    font-weight: bold;
+}
+
+.btn-execute:hover {
+    background: var(--accent-red);
+    color: #fff;
+    box-shadow: 0 0 15px var(--glow-red);
+}
+
+/* --- OVERLAYS --- */
+.denied-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.denied-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.stamp {
+    font-size: 5rem;
+    color: var(--accent-red);
+    border: 10px solid var(--accent-red);
+    padding: 1rem 3rem;
+    transform: rotate(-15deg) scale(2);
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+}
+
+.denied-overlay.active .stamp {
+    animation: stampPop 0.4s forwards;
+}
+
+@keyframes stampPop {
+    0% {
+        transform: rotate(-15deg) scale(5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(-15deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.btn-next {
+    margin-top: 2rem;
+    font-size: 1.5rem !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* SCANLINE FX */
+.scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 999;
+}

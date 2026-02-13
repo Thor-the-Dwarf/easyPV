@@ -8,7 +8,23 @@
   </head>
   <body>
     <main class="generic-page">
-      <iframe id="content-frame" class="generic-frame" title="Generic C-Suite Content" loading="eager"></iframe>
+      <section class="csuite-drawer is-open" id="c-suite-drawer" aria-label="C-Suite Drawer">
+        <header class="drawer-head">
+          <div class="drawer-title">C-Suite Ansicht</div>
+          <button
+            type="button"
+            class="drawer-close"
+            id="drawer-close"
+            aria-label="C-Suite schließen"
+            title="Schließen"
+          >
+            ✕
+          </button>
+        </header>
+        <div class="drawer-body" id="drawer-body">
+          <iframe id="content-frame" class="generic-frame" title="Generic C-Suite Content" loading="eager"></iframe>
+        </div>
+      </section>
 
       <div class="fab-stack" aria-label="Aktionen">
         <button type="button" class="fab" id="fab-feedback" aria-label="Feedback geben" title="Feedback geben">

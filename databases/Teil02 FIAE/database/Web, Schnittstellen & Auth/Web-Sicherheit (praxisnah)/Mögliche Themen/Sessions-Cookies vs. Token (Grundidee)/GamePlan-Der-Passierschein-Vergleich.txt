@@ -1,19 +1,40 @@
-Anforderungen
-1. "Der Passierschein-Vergleich"
-   - Ziel: Verständnis der Unterschiede zwischen zustandsbehafteten Sessions (Server-seitig) und zustandslosen Tokens (Client-seitig) zur Auswahl geeigneter Auth-Architekturen.
-   - Spielmechanik: 
-     - Simulation einer Web-Infrastruktur mit Load Balancer und mehreren Servern.
-     - Der Spieler erkennt Probleme (z.B. "Session-Sticky-Bit" nötig) und löst sie durch den Wechsel auf Token-basierte Authentifizierung (JWT).
-     - Vergleich der Speicherorte und Übertragungswege (Cookies vs. Authorization Header).
-     - Messbarkeit: Skalierbarkeit und Sicherheit der implementierten Architektur.
-   - Lernziel: Beherrschung von State-Management Strategien in modernen Web-Anwendungen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Vergleich und Auswahl des passenden Session-Managements (Statusbehaftete Sessions/Cookies vs. Statuslose Token/JWT).
+- Game-Mechanic: "The Passport Office". Du leitest das Meldeamt einer Digital-Region. Es gibt zwei Systeme:
+  1. Das Archiv-System (Sessions): Du behältst das Original-Dokument im Schrank und gibst dem User nur eine Nummer (Session-ID). Jedes Mal, wenn er kommt, musst du im Archiv suchen.
+  2. Das Urkunden-System (Tokens): Du gibst dem User ein versiegeltes, fälschungssicheres Visum (JWT), auf dem alles draufsteht. Er trägt es selbst herum. Du musst nichts speichern, nur das Siegel prüfen.
+- Challenge: 
+  - Level 1 (The Speed Race): Schicke 100 User mit Token durch die Kontrolle. Wie viel Zeit sparst du ohne Archiv-Suche?
+  - Level 2 (The Revocation Crisis): Ein User verliert seinen Pass. Wie "löschst" du ein Token, das du gar nicht gespeichert hast? Nutze eine "Blacklist" oder kurze Laufzeiten.
+  - Level 3 (The Payload-Heavy): Das Token wird zu groß (Too many Claims). Wechsel zum Session-Modell, um die Bandbreite zu schonen.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_sessions_tokens.json')
-   - Server-Infrastrukturen und Auth-Workflows.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Visuelle Darstellung von Memory-Inhalten auf Server vs. Client).
-- [ ] Game-Engine Logic ('game_logic_validator.js')
-   - (Simulation der Session-Verfügbarkeit).
-- [ ] Integration
-   - Tutorial: Warum JWTs keine Logout-Funktion "out of the box" haben.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Server-Memory-Load", "Network-Payload (Bytes)", "Verification-Speed", "State-Type indicator".
+- [ ] Scoring: "Architecture-Master" Bonus für die Wahl des richtigen Modells je nach Szenario. Abzug bei "Overhead-Ineffizienz".
+
+2. Screen-Layout (The Office Counter)
+- [ ] `counter-view -> document-shaper (Config) -> user-queue -> validation-stamp`.
+- [ ] Document-Shaper: Hier konfigurierst du Cookies (HttpOnly, Secure) oder JWT Payload.
+- [ ] User-Queue: Avatare, die entweder eine kleine Nummer (ID) oder ein großes leuchtendes Dokument (Token) über den Tresen reichen.
+
+3. Kernvisuals und Effekte
+- [ ] Bureaucracy-Modern Ästhetik: Klare Linien, viel Weißraum, gläserne Trennwände, das Geräusch von Stempeln, digitale Akten-Animationen (Shared Theme kompatibel).
+- [ ] "Seal-Check": Ein blauer Scanner-Strahl fährt über das Token. Wenn valide, erscheint ein grüner Haken.
+- [ ] "Archive-Open": Ein mechanisches Geräusch und eine kurze Animation eines sich öffnenden Schranks bei Sessions.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Flexbox` für die Warteschlange.
+- [ ] Mobile: "Tap-to-Sign" oder "Tap-to-Scan".
+
+5. Content-Strategie (The Case Files)
+- [ ] 12 Architektur-Szenarien: Von "Einfacher Blog" bis "High-Traffic Microservice-Mesh".
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen "Server-Speicher" (Sessions) und "Client-Speicher" (Tokens) visuell deutlich?
+- [ ] Test: Sind die Sicherheits-Attribute von Cookies (`HttpOnly`, `SameSite`) im Spiel funktional relevant?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift die Trade-offs zwischen Speicher, Geschwindigkeit und Sicherheit.
+- [ ] Das Interface wirkt sauber, effizient und hochprofessionell.
+- [ ] Fokus auf skalierbare Web-Architekturen.

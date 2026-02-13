@@ -1,19 +1,38 @@
-Anforderungen
-1. "Swagger-UI Entdecker"
-   - Ziel: Befähigung zur Nutzung und Erstellung maschinenlesbarer Schnittstellen-Dokumentationen zur Steigerung der Entwickler-Effizienz.
-   - Spielmechanik: 
-     - Interaktion mit einer simulierten Swagger-UI.
-     - Der Spieler muss Endpunkte explorieren, "Try it out" Funktionen nutzen und Parameter korrekt befüllen.
-     - Verknüpfung von OpenAPI-Definitionen (YAML) mit der resultierenden grafischen Dokumentation.
-     - Messbarkeit: Erfolgreiches Ausführen von Test-Requests über die UI.
-   - Lernziel: Beherrschung von Dokumentations-Standards und explorativem API-Testing.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Praktische Nutzung und Verständnis von interaktiver API-Dokumentation (Swagger/OpenAPI) zum Testen und Entdecken von Endpunkten.
+- Game-Mechanic: "The Map Reader". Du bist ein Entdecker in einem verschollenen Tempel (Der API). Der Tempel ist riesig, aber du hast einen magischen Atlas (Swagger UI). Er zeigt dir alle Wege (Endpunkte), was du als Opfergabe (Parameter) mitbringen musst und welche Schätze (Response) dich erwarten. Du kannst jeden Weg direkt aus dem Atlas heraus ausprobieren ("Try it out!").
+- Challenge: 
+  - Level 1 (The Entry Gate): Finde den Endpunkt zum Abrufen der Tempel-Karte und führe ihn im Atlas aus.
+  - Level 2 (The Hidden Combo): Ein Endpunkt braucht drei verschiedene Opfergaben (Query, Header, Body). Finde die richtige Kombination!
+  - Level 3 (The Feedback-Loop): Nutze die Antwort eines Endpunkts (z. B. ein Token), um einen tieferen, geschützten Bereich des Tempels freizuschalten.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_openapi_swagger.json')
-   - OpenAPI Specs und UI-Zustände.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Nachbau der Swagger-UI Komponenten).
-- [ ] Game-Engine Logic ('game_logic_validator.js')
-   - (Tracking der UI-Interaktionen).
-- [ ] Integration
-   - Tutorial: Von der YAML-Datei zum fertigen API-Client (Codegen).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Exploration-Progress (%)", "Discovery-Log", "Active-Endpoint-Radar", "Testing-Energy".
+- [ ] Scoring: "Efficiency-Explorer" Bonus für das Finden aller Endpunkte ohne Fehlversuche. Abzug für "Blind-Calls" (Requests ohne Docs zu lesen).
+
+2. Screen-Layout (The Explorer's Map)
+- [ ] `temple-blueprint (Interactive Swagger UI) -> method-shrine (Endpoint detail) -> sacrifice-altar (Try it out form) -> treasure-chest (Response)`.
+- [ ] Temple-Blueprint: Eine stilisierte, hierarchische Sicht aller API-Tags.
+- [ ] Sacrifice-Altar: Ein Formularbereich zum Eingeben der Testdaten.
+
+3. Kernvisuals und Effekte
+- [ ] Adventure-Noir Ästhetik: Dunkle Stein-Hintergründe, Fackel-Lichtwellen, mystische Symbole kombiniert mit modernem UI-Design, ferne Tempel-Ambient-Sounds (Shared Theme kompatibel).
+- [ ] "Light-up Channel": Wenn ein Request erfolgreich (200 OK) ist, leuchtet der Pfad auf der Karte hell auf.
+- [ ] "Discovery-Sound": Ein befriedigender "Fund"-Ton bei jedem neu entdeckten Endpunkt.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Box-Shadow` und `Filter` für die Fackel-Licht-Effekte.
+- [ ] Mobile: "Swipe-to-Explore" die Endpunkt-Gruppen.
+
+5. Content-Strategie (The Temples)
+- [ ] 12 Komplexe API-Dokumentationen (OpenAPI Spec): Von "Social-Media-API" bis "Warehouse-Tracking".
+
+6. QA-Paket
+- [ ] Test: Fühlt sich das "Try it out" im Spiel genauso mächtig an wie in der echten Swagger UI?
+- [ ] Test: Ist die JSON-Response in der "Treasure-Chest" gut lesbar aufbereitet?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Gute Dokumentation ist interaktiv und ausführbar".
+- [ ] Das Interface wirkt abenteuerlich, einladend und technisch fundiert.
+- [ ] Fokus auf "Self-Documenting APIs".

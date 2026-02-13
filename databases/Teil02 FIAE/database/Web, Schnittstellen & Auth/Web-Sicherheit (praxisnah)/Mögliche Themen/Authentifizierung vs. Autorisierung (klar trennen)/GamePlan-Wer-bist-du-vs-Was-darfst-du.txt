@@ -1,19 +1,41 @@
-Anforderungen
-1. "Wer bist du? vs Was darfst du?"
-   - Ziel: Präzise begriffliche und technische Abgrenzung zwischen Identitätsprüfung (Athentifizierung) und Berechtigungsprüfung (Autorisierung).
-   - Spielmechanik: 
-     - Klassifizierung von Sicherheitsereignissen (z.B. "Passwort-Check", "Rollen-Prüfung", "Zwei-Faktor-Login").
-     - Der Spieler ordnet die Ereignisse den Kategorien "Authentifizierung" oder "Autorisierung" zu.
-     - Simulation von Zugriffskontrollen (RBAC) in einem Unternehmenskontext.
-     - Messbarkeit: Korrekte Zuordnung der Sicherheitskonzepte.
-   - Lernziel: Verständnis der Security-Grundlagen und fehlerfreie Implementierung von Schutzmechanismen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Saubere begriffliche und funktionale Trennung zwischen Authentifizierung (Wer bist du?) und Autorisierung (Was darfst du?).
+- Game-Mechanic: "The Identity Check". Du bist der Sicherheitschef eines Forschungszentrums.
+  - Phase 1 (Authentifizierung): Prüfe den Ausweis, den Fingerabdruck oder das Gesicht (MFA). "Ist das wirklich Dr. No?".
+  - Phase 2 (Autorisierung): Dr. No ist drin. Darf er auch in den Giftmüll-Keller? Prüfe seine Berechtigungsstufe (Rollen: Admin, Gast, User).
+  - Wenn du jemanden reinlässt, der keine Rechte hat (Broken Access Control), gibt es Ärger!
+- Challenge: 
+  - Level 1 (The Front Door): Implementiere einen 2-Faktor-Login (Authentifizierung).
+  - Level 2 (The Secret Lab): Erstelle ein Rollen-System (RBAC). Ein User darf nur "Lesen", ein Admin darf "Löschen".
+  - Level 3 (The Privilege Escalation): Ein Hacker versucht, seine Rechte zu erweitern. Finde die Lücke im Autorisierungs-System und schließe sie.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_auth_concepts.json')
-   - Begriffspaare und Anwendungsfälle.
-- [ ] Shared CSS Check ('business_mathematics.css')
-   - (Anpassung des Klassifizierungs-Interfaces).
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Wiederverwendung der Matching-Logik).
-- [ ] Integration
-   - Info: Warum ein gültiger Login (AuthN) noch keinen Zugriff auf alles (AuthZ) bedeutet.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Identity-Confidence (%)", "Permission-Matrix (Grid)", "Access-Log (Audit Trail)", "Alarm-Level".
+- [ ] Scoring: "Chief-Security-Officer" Bonus für 100% korrekte Trennung. Abzug bei "Identity-Confusion" (wenn man AuthN und AuthZ vermischt).
+
+2. Screen-Layout (The Security Desk)
+- [ ] `gate-monitor -> biometrics-scanner (AuthN) -> keycard-reader (AuthZ) -> result-gate`.
+- [ ] Biometrics-Scanner: Ein interaktiver Bereich zum Bestätigen der Identität.
+- [ ] Keycard-Reader: Hier werden die Berechtigungen der Person angezeigt.
+
+3. Kernvisuals und Effekte
+- [ ] Tactical-Security Ästhetik: Dunkler Hintergrund, Radar-Linien, Scan-Geräusche, biometrische Overlays, professionelles Blau-Orange Farbschema (Shared Theme kompatibel).
+- [ ] "Scan-Successful": Ein grüner Rahmen erscheint um das Gesicht des Users und ein kurzer Bestätigungs-Ton erklingt.
+- [ ] "Access-Denied": Ein tiefer Buzzer-Sound und rotes Blinklicht am Tor.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Grid` für die Darstellung der Berechtigungs-Matrix.
+- [ ] Mobile: "Long-Press to Scan Fingerprint".
+
+5. Content-Strategie (The Records)
+- [ ] 15 Sicherheits-Szenarien: Von "Online-Banking" bis "Firmen-Cloud".
+
+6. QA-Paket
+- [ ] Test: Wird das Nacheinander (Erst Identität, dann Rechte) im Gameplay-Flow zwingend eingehalten?
+- [ ] Test: Hilft die Permission-Matrix dabei, komplexe Rollensysteme zu verstehen?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "AuthN = Identität, AuthZ = Rechte".
+- [ ] Das Interface wirkt machtvoll, sicher und hochgradig immersiv.
+- [ ] Fokus auf die OWASP Top 10 (Broken Access Control).

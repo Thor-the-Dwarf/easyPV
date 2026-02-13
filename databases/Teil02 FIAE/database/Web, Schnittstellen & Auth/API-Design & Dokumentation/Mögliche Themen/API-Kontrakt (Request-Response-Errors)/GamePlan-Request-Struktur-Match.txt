@@ -1,19 +1,38 @@
-Anforderungen
-1. "Request-Struktur-Match"
-   - Ziel: Verständnis der Bedeutung von Schnittstellen-Kontrakten zur Vermeidung von Fehlern in der Client-Server-Kommunikation.
-   - Spielmechanik: 
-     - Der Spieler erhält eine Kontrakt-Definition (z.B. "Ein User-Objekt muss `name` und `email` enthalten").
-     - Aufgabe: Aufbau oder Validierung von JSON-Payloads gegen diesen Kontrakt.
-     - Reaktion auf Verstöße (z.B. falsche Datentypen, fehlende Pflichtfelder) im Front- und Backend.
-     - Messbarkeit: Korrektheit der Datenstrukturen gemäß Kontrakt.
-   - Lernziel: Disziplin im API-Design und Stärkung der Zusammenarbeit zwischen Teams.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Definition und Einhaltung einer verbindlichen Schnittstellenbeschreibung (Request/Response-Struktur) zwischen Frontend und Backend.
+- Game-Mechanic: "The Digital Treaty". Du bist ein Diplomat zwischen zwei verfeindeten Königreichen: "King Backend" und "Queen Frontend". Sie sprechen unterschiedliche Sprachen. Du musst einen Friedensvertrag (Den Kontrakt) aufsetzen: "Wenn Frontend ein Paket von Typ `UserRequest` schickt, muss Backend mit `UserResponse` antworten. Weicht ein Feld um einen Buchstaben ab, bricht der Krieg (Typ-Error/Crash) aus!"
+- Challenge: 
+  - Level 1 (The Simple Agreement): Definiere die Felder für einen `Login-Request`. (Username, Password).
+  - Level 2 (The Optional Clause): Füge optionale Felder hinzu, die nicht fehlen dürfen, wenn eine bestimmte Bedingung erfüllt ist.
+  - Level 3 (The Error Protocol): Was passiert im Krisenfall? Definiere eine einheitliche Fehler-Antwort für 4xx und 5xx Fälle.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_api_contract.json')
-   - Kontrakt-Definitionen und Test-Daten.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung des Payload-Editors).
-- [ ] Game-Engine Logic ('game_syntax_builder.js')
-   - (Schema-Validierung).
-- [ ] Integration
-   - Info: Warum "Breaking Changes" den Kontrakt verletzen und wie man sie vermeidet.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Treaty-Binding-Force (%)", "Field-Stability-Gauge", "Language-Translator (JSON-Schema)", "Conflict-Detector".
+- [ ] Scoring: "Diplomacy-Master" Bonus für lückenlose Fehler-Definitionen. Abzug für "Breaking-Changes" (Änderungen am bestehenden Vertrag).
+
+2. Screen-Layout (The Negotiating Table)
+- [ ] `contract-parchment -> field-builder -> flow-diagram (Request/Response) -> stability-test-chamber`.
+- [ ] Contract-Parchment: Ein edles Dokument in der Mitte, auf dem die Felder definiert werden.
+- [ ] Stability-Test-Chamber: Ein Bereich, in dem zufällige Daten gegen den Vertrag getestet werden.
+
+3. Kernvisuals und Effekte
+- [ ] Elegant-Classic Ästhetik: Pergament-Texturen, Siegellack, kalligraphische Schrift-Elemente kombiniert mit modernem Code-Highlighting, das Kratzen einer Feder im Audio (Shared Theme kompatibel).
+- [ ] "Seal-Stamp": Ein wuchtiges Siegel wird auf den Vertrag gesetzt, wenn er "valid" ist.
+- [ ] "Crackle-Effect": Wenn der Vertrag verletzt wird, bekommt das Pergament virtuelle Risse.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Masks` für die Pergament-Ränder.
+- [ ] Mobile: "Double-Tap to Edit" Felder.
+
+5. Content-Strategie (The Treaties)
+- [ ] 15 API-Kontrakte (JSON-Schema Basis): Von "Bestell-System" bis "IoT-Status-Update".
+
+6. QA-Paket
+- [ ] Test: Ist der Nutzen eines Kontrakts (Vermeidung von Überraschungen beim Deployment) spielerisch spürbar?
+- [ ] Test: Fühlt sich die Definition von Fehler-Strukturen genauso wichtig an wie die Erfolgs-Struktur?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Ein Kontrakt ist die "Single Source of Truth" für die Schnittstelle.
+- [ ] Das Interface wirkt wertig, verbindlich und ästhetisch anspruchsvoll.
+- [ ] Fokus auf stabiles System-Design.

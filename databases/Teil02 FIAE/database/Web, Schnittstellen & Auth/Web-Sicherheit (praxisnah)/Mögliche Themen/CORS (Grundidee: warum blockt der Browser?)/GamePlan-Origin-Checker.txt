@@ -1,20 +1,38 @@
-Anforderungen
-1. "Origin-Checker"
-   - Ziel: Verständnis der Same-Origin-Policy (SOP) und der gezielten Lockerung durch Cross-Origin Resource Sharing (CORS) zur sicheren Kommunikation zwischen Domänen.
-   - Spielmechanik: 
-     - Der Spieler agiert als Browser, der Sicherheits-Checks durchführt.
-     - Vergleich von Protokoll, Host und Port der anfordernden Seite mit der Ziel-API.
-     - Konfiguration von Response-Headern (z.B. `Access-Control-Allow-Origin`) zur Freigabe legitimer Anfragen.
-     - Simulation von Preflight-Requests (OPTIONS).
-     - Messbarkeit: Korrekte Konfiguration und erfolgreiche Durchführung von Cross-Origin Requests.
-   - Lernziel: Beherrschung der Web-Sicherheitsarchitektur und Behebung typischer CORS-Fehler.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis und korrekte Konfiguration von Cross-Origin Resource Sharing (CORS) zur sicheren Kommunikation zwischen verschiedenen Domains.
+- Game-Mechanic: "The Gatekeeper". Du bist der Türsteher eines exklusiven Clubs (Dem Server). Gäste (Requests) aus der ganzen Stadt (Verschiedene Origins) wollen rein. Du hast eine Gästeliste (CORS Policy). Wenn ein Gast von "hacker.com" kommt, schlägst du die Tür zu. Wenn "trusted-app.io" kommt, darf er rein – aber vielleicht nur zum Gucken (`GET`), nicht zum Ändern (`POST`).
+- Challenge: 
+  - Level 1 (The Trusted Guest): Erlaube `GET` Requests von einer spezifischen Domain.
+  - Level 2 (The Preflight-Check): Ein Gast will etwas "Komplexes" machen (`PUT` mit Custom Header). Erledige den `OPTIONS` Preflight-Check, bevor du ihn reinlässt.
+  - Level 3 (The Wildcard Danger): Der Chef will `Allow-Origin: *`. Erkläre ihm die Gefahr und konfiguriere eine sicherere Alternative mit `Credentials`.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_cors_policy.json')
-   - Origin-Definitionen und Header-Sets.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Visuelle Darstellung der Sicherheits-Barrieren).
-- [ ] Game-Engine Logic ('game_logic_validator.js')
-   - (Validierung der Header-Kombinationen).
-- [ ] Integration
-   - Info: Warum `Access-Control-Allow-Origin: *` oft eine schlechte Idee ist.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Security-Shield-Integrity", "Origin-Scanner", "Header-White-List", "Policy-Effectiveness".
+- [ ] Scoring: "Secure-Config" Bonus für die engstmögliche Policy, die gerade noch funktioniert. Abzug für "Vulnerability-Points" durch zu weite Wildcards.
+
+2. Screen-Layout (The Club Entrance)
+- [ ] `red-carpet (Incoming Requests) -> bouncer-desk (Config) -> club-interior (The Data) -> rejection-bin`.
+- [ ] Bouncer-Desk: Ein Interface zum Einstellen von `Access-Control-Allow-Origin`, `-Methods` und `-Headers`.
+- [ ] Request-Cards: Zeigen `Origin`, `Method` und `Headers` des Anfragenden.
+
+3. Kernvisuals und Effekte
+- [ ] Nightclub-Noir Ästhetik: Dunkler Hintergrund, neonrote und neonblaue Lichter, schattige Silhouetten, elektronische Background-Musik, Spotlights auf die Request-Cards (Shared Theme kompatibel).
+- [ ] "Denial-Flash": Wenn ein Request geblockt wird, blitzt ein rotes Warnlicht auf und die Tür knallt zu.
+- [ ] "Access-Glow": Ein erlaubter Request fängt an, sanft blau zu leuchten und gleitet in den Club.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Grid` für die Anordnung der "Gäste" in der Warteschlange.
+- [ ] Mobile: "Swipe-to-Allow" oder "Swipe-to-Deny" Mechanik.
+
+5. Content-Strategie (The Guest List)
+- [ ] 15 CORS-Szenarien: Von "Frontend-Backend-Split" bis "Public API mit API-Key".
+
+6. QA-Paket
+- [ ] Test: Wird das Konzept des "Preflight-Requests" (OPTIONS) visuell als Vorab-Check deutlich?
+- [ ] Test: Sind die Auswirkungen der Header-Konfiguration sofort am Ergebnis des Requests ablesbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: CORS ist eine Browser-Sicherheits-Schranke, kein Server-Schutz.
+- [ ] Das Interface wirkt atmosphärisch, cool und technologisch modern.
+- [ ] Fokus auf präzise Sicherheitskonfigurationen.

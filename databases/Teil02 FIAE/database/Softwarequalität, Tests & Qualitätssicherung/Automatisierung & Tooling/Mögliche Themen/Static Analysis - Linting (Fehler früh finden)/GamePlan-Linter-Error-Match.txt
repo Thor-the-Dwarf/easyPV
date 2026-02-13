@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Frühzeitige Fehlererkennung und Durchsetzung von Coding-Standards durch statische Code-Analyse.
-- Kontext: Linting (ESLint, Pylint), Clean Code, Automated Testing.
-- UX-Prinzip:
-  - "The Grammatic Guard": Der Linter ist der strenge Lektor, der über die "Grammatik" des Codes wacht, noch bevor er "ausgesprochen" (ausgeführt) wird.
-  - "Squiggly-Hunt": Der Spieler jagt die berühmten roten/gelben Wellenlinien im Code.
-  - "Rule-Matching": Jede Warnung muss der richtigen Regel (z. B. `no-unused-vars`, `eqeqeq`) zugeordnet werden.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler erkennen den Nutzen von statischer Code-Analyse (Linting) zur Vermeidung von Fehlern und Einhaltung von Coding-Standards.
+- Game-Mechanic: "The Static Shield". Dein Code-Raumschiff fliegt durch ein Asteroidenfeld aus "Bad Practice" und "Syntax-Glitches". Dein Schutzschild (Der Linter) scannt den Weg. Du musst die Schilder so konfigurieren (Rules), dass sie die gefährlichen Brocken (Fehler) abwehren, ohne den Flugfluss unnötig zu stoppen.
+- Challenge: 
+  - Level 1 (The Strict Guard): Aktiviere Regeln wie `no-unused-vars` und `eqeqeq`. Bereinige den Code, bevor das Schiff beschädigt wird.
+  - Level 2 (The Style Wars): Setze konsistente Formatierungs-Regeln (Klammern, Semikolons) durch, um die "Crew-Harmonie" (Team-Collaboration) zu sichern.
+  - Level 3 (The Zero-Tolerance Zone): Fliege durch eine Zone, in der JEDER Linter-Warning den Flug abbricht. Finde den perfekten "Golden-Standard" Pfad.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Wellenlinie (Der Verstoß), 2 = Die Regel-Vorschläge, 3 = Der Auto-Fix Button.
-- [ ] Textbudget: Max. 8 Zeilen Code-Snippet pro Level.
-- [ ] "Rule-Library": Kurze 1-Satz-Erklärungen, warum eine Regel wichtig ist.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Shield-Stability-Index", "Violation-Detected List", "Code-Purity (Cleanliness)", "Autofix-Energy".
+- [ ] Scoring: "Clean-Code-Pilot" Bonus für das manuelle Beheben von Warnungen ohne Autofix. Abzug bei "Rule-Bypass" (Ignorieren durch Kommentare).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> ide-window -> lint-report-drawer -> fix-palette`.
-- [ ] IDE-Window: Dunkler Hintergrund mit Syntax-Highlighting (Desktop 70% Breite, Mobile Full-Width).
-- [ ] Palette: Auswahl der korrektiven Maßnahmen am unteren Rand (Buttons).
+2. Screen-Layout (The Cockpit)
+- [ ] `radar-view (Code-Stream) -> rule-dashboard -> diagnostic-console -> thruster-status`.
+- [ ] Radar-View: Ein vertikaler Strom aus Code-Zeilen. Fehler werden rot/gelb umrandet.
+- [ ] Dashboard: Hier schaltest du Regeln (`rules: { ... }`) ein und aus.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Tap-to-Fix" Geste direkt auf der Wellenlinie.
-- [ ] `font-family: 'JetBrains Mono' or similar` für authentisches IT-Feeling.
+3. Kernvisuals und Effekte
+- [ ] Spaceship-Terminal Ästhetik: Dunkler Hintergrund, grüne Schrift (Old-School Terminal), rote Warnlampen, Cockpit-Soundkulisse (Shared Theme kompatibel).
+- [ ] "Shield-Pulse": Wenn der Linter einen Fehler findet, prallt ein virtueller Laser auf den Schutzschild ab.
+- [ ] "Diagnostic-Beep": Ein prägnantes Tonsignal bei jeder gefundenen Verletzung.
 
-4. Kernvisuals
-- [ ] IDE-Ästhetik: Zeilennummern, Tabs, Dateibaum-Icons (shared_theme.css).
-- [ ] "The Squigglies": Animierte rote Wellen unter dem fehlerhaften Code.
-- [ ] Lint-Badge: Ein kleiner Counter oben rechts "Warnings: X / Errors: Y".
+4. Browser- und Device-Resilienz
+- [ ] `overflow-y: hidden` für den Code-Stream zur Erzeugung des Flug-Effekts.
+- [ ] Mobile: "Swipe-to-Fix" Mechanik für schnelle Korrekturen.
 
-5. Interaktion and Feedback
-- [ ] Fix-Feedback: "Klick! `==` wurde durch `===` ersetzt. Typ-Sicherheit wiederhergestellt!"
-- [ ] Erfolg: "Linting bestanden. Dein Code ist jetzt sauber, konsistent und sicher."
-- [ ] Rule-Info: Tooltip-Anzeige der offiziellen Linter-Dokumentation beim Hovern.
+5. Content-Strategie (The Asteroids)
+- [ ] 20 Linter-Szenarien (ESLint/Stylelint Stil): Von "Unreachable Code" bis "Prefer Const".
 
-6. KPI-Klarheit
-- [ ] Code-Cleanliness: "Qualitäts-Status: 100% Clean".
-- [ ] Rule-Knowledge: "X / Y Linter-Regeln gemeistert".
+6. QA-Paket
+- [ ] Test: Ist das Feedback ("Warum ist das ein Fehler?") im HUD informativ genug?
+- [ ] Test: Fühlt sich der "Flug durch den Code" flüssig und kontrolliert an?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Ungenutzte Imports", "Fehlende Semikolons", "Potenzielle Null-Pointer", "Naming-Convention Brüche".
-- [ ] Tonalität: Präzise, lehrreich, ordnungsliebend.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Wellenlinien auch auf einem kleinen Smartphone-Display gut sichtbar und tappbar?
-- [ ] Test: Stimmt das Syntax-Highlighting für verschiedene Programmiersprachen (JS/Python)?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler versteht Linting als hilfreichen Freund, nicht als lästiges Hindernis.
-- [ ] Das Interface wirkt wie eine professionelle Entwicklungsumgebung.
-- [ ] Höchste Klarheit über den Unterschied zwischen Warnung und Fehler.
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Automatisierte Prüfungen sparen Zeit und Nerven".
+- [ ] Das Interface wirkt immersiv, technisch anspruchsvoll und rasant.
+- [ ] Fokus auf präventive Qualitätssicherung.

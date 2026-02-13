@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Strategische Planung der Testabdeckung nach dem Modell der Testpyramide zur Optimierung von Kosten und Build-Zeiten.
-- Kontext: Teststrategie, CI/CD, ROI von Automatisierten Tests, Antipatterns.
-- UX-Prinzip:
-  - "The Pyramid Architect": Du bist der Baumeister. Eine stabile Pyramide braucht eine breite Basis aus Unit-Test-Ziegeln.
-  - "Construction-Check": Werden die Schichten falsch gestapelt (Ice-Cream-Cone), wird das Bauwerk instabil und teuer.
-  - "Gravity-Physics": Unit-Tests (Unten) sind leicht und schnell. E2E-Tests (Oben) sind schwer und langsam. Das Gewicht muss passen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler beherrschen die optimale Verteilung von Testarten (Unit, Integration, E2E) gemäß der Testpyramide zur Maximierung der Effizienz.
+- Game-Mechanic: "The Pyramid Stacker". Du bist ein Baumeister im alten digitalen Ägypten. Dein König (Der Projektsponsor) will ein Grabmal der Qualität. Je höher du baust, desto instabiler (teurer/langsamer) werden die Steine. Du musst eine solide Basis aus Unit-Tests (viele, kleine Steine) bauen, bevor du Integration- und E2E-Tests (wenige, große Steine) oben drauf setzt.
+- Challenge: 
+  - Level 1 (The Solid Foundation): Setze 20 Unit-Test-Steine in das Fundament. Pass auf, dass keine Lücken entstehen.
+  - Level 2 (The Middle Tier): Verbinde die Fundamente mit Integration-Test-Bögen. Wie viele brauchst du wirklich?
+  - Level 3 (The Golden Tip): Setze die E2E-Spitze. Wenn du zu viele große Steine oben hast, stürzt die Pyramide unter ihren eigenen Kosten (Zeitaufwand) ein!
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Schichten (Ebenen), 2 = Die Mengenverteilung (Menge pro Schicht), 3 = Die Build-Zeit Anzeige.
-- [ ] Textbudget: Max. 5 Wörter pro Schicht-Name (z.B. "Unit: Schnell & Isoliert").
-- [ ] "Stability-Indicator": Zeigt an, ob die Pyramide zu kippen droht.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Execution-Speed-Clock", "Maintenance-Cost-Gold", "Trust-In-Build Meter".
+- [ ] Scoring: "Balance-Master" Bonus für eine perfekte Pyramiden-Form. Abzug für "Ice-Cream-Cone" (umgekehrte Pyramide -> Teuer/Langsam).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> building-site -> pyramid-frame -> measurement-dashboard`.
-- [ ] Building-Site: Eine Baustelle in der Wüste (Desktop mittig-unten).
-- [ ] Frame: Ein leeres Dreiecks-Raster, das befüllt werden muss.
+2. Screen-Layout (The Construction Site)
+- [ ] `desert-horizon -> the-pyramid-grid -> stone-quarry (Test-Pool) -> gravity-monitor`.
+- [ ] Stone-Quarry: Hier wählst du zwischen Unit (Small), Integration (Medium) und E2E (Large) Steinen.
+- [ ] Grid: Ein Raster, auf dem die Pyramide Schicht für Schicht wächst.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Steine-Klopfen" Mechanik – Mehrmaliges Tippen erzeugt viele Unit-Ziegel; langes Halten erzeugt einen schweren E2E-Block.
-- [ ] `object-fit: contain` für die Pyramidengrafik.
+3. Kernvisuals und Effekte
+- [ ] Desert-Cyber Ästhetik: Sandfarben kombiniert mit Neon-Blau, imposante Architektur, majestätische Kamerafahrten, epischer Soundtrack.
+- [ ] "Stone-Crush": Beim Absetzen eines großen Steins (E2E) wackelt der ganze Screen und eine Staubwolke steigt auf.
+- [ ] "Golden-Glow": Wenn die Pyramide eine perfekte Balance hat, erstrahlt die Spitze in purem Gold.
 
-4. Kernvisuals
-- [ ] Antike-X-Sci-Fi Ästhetik: Sandfarben, glühende Energie-Ziegel, kranähnliche Drohnen (shared_theme.css).
-- [ ] "The Meltdown": Wenn die Pyramide zum Eisbecher wird, fängt sie an zu schmelzen (Visual: Tropfende Energie).
-- [ ] High-Contrast Metriken für Zeit (ms/min) und Kosten ($).
+4. Browser- und Device-Resilienz
+- [ ] `CSS perspective` und `3D-Transforms` für die räumliche Wirkung der Pyramide.
+- [ ] Mobile: "Swipe-to-Place" Steuerung.
 
-5. Interaktion und Feedback
-- [ ] Stack-Feedback: "Klick! Du hast 100 Unit-Tests als Fundament gelegt. Deine Pipeline bleibt rasant."
-- [ ] Warn-Signal: "Vorsicht! Mehr E2E-Tests als Unit-Tests machen den Build extrem träge. Deine Entwickler warten zu lange auf Feedback."
-- [ ] Erfolg: "Die große Pyramide von Gizeh (Qualität) steht! Perfekter ROI und maximale Sicherheit bei jedem Commit."
+5. Content-Strategie (The Projects)
+- [ ] 10 Architektur-Kampagnen: Von "Small Microservice" bis "Legacy Enterprise Monolith".
 
-6. KPI-Klarheit
-- [ ] Strategy-Index: "Pyramiden-Konformität: 100%".
-- [ ] Build-Velocity: "Feedback-Zyklus: X Sekunden".
+6. QA-Paket
+- [ ] Test: Wird die Relation (Geschwindigkeit vs. Kosten) beim Setzen der Steine sofort spürbar?
+- [ ] Test: Bleibt das Bauspiel auch bei 100+ Steinen flüssig?
 
-7. Content-/Copy-Feinschliff
-- [ ] Ebenen: Unit Tests (Isoliert), Integration Tests (Verbunden), System/E2E-Tests (Ganzheitlich), Manuelle Tests (Die Kirsche).
-- [ ] Tonalität: Monumental, weise, wegweisend.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist die Pyramidenform auf dem Handy auch bei vielen Ziegeln noch klar erkennbar?
-- [ ] Test: Sind die Auswirkungen des "Ice-Cream-Cone" (Schmelz-Effekt) visuell dramatisch genug?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift, warum 100% E2E-Tests eine schlechte Idee sind.
-- [ ] Das Interface wirkt wie ein episches Puzzle-Spiel.
-- [ ] Nachhaltige Verankerung des Testpyramiden-Konzepts als wirtschaftliche Notwendigkeit.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Viele kleine Tests schlagen wenige große Tests in Sachen Wartbarkeit.
+- [ ] Das Interface wirkt imposant, strategisch und atmosphärisch dicht.
+- [ ] Fokus auf Teststrategie und ökonomische Nachhaltigkeit.

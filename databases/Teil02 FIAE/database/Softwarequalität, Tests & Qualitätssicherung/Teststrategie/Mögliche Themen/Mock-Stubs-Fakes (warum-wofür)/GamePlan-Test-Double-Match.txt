@@ -1,54 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Beherrschung von Test-Platzhaltern (Doubles) zur Isolation der Testobjekte und Vermeidung von Abhängigkeiten zu externen Systemen.
-- Kontext: Unit-Testing, Mocking Frameworks, Kopplung, Testbarkeit.
-- UX-Prinzip:
-  - "The Stunt Double": Dein Star-Modul (z. B. eine echte Datenbank) ist zu teuer oder gefährlich für tausendfache Test-Takes. Wir engagieren Stunt-Doubles.
-  - "The Cast": Jeder Double hat eine Rolle:
-    - Dummy: Einfacher Statist (wird nur herumgereicht).
-    - Stub: Antwort-Geber (liefert feste Skripte).
-    - Fake: Minimal-Ersatz (arbeitet wie das Original, aber einfacher).
-    - Mock: Agent Provocateur (prüft, ob die richtigen Befehle gerufen wurden).
-    - Spy: Der Beobachter (zeichnet heimlich auf, was passiert).
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler beherrschen den Einsatz von Test-Doubles (Mocks, Stubs, Fakes) zur Isolation von Unit-Tests.
+- Game-Mechanic: "The Mocking Lab". Du bist ein Wissenschaftler in einem Hochsicherheits-Labor. Du willst eine neue Substanz (Deinen Code) testen, aber die echten Reagenzien (Datenbanken, APIs) sind zu teuer oder gefährlich. Du musst perfekte Attrappen (Mocks/Stubs) bauen, die sich exakt wie das Original verhalten, damit dein Experiment isoliert ablaufen kann.
+- Challenge: 
+  - Level 1 (The Empty Stub): Baue einen Stub, der einfach nur `true` zurückgibt, damit der Test nicht abstürzt.
+  - Level 2 (The Expected Call): Baue einen Mock, der prüft, ob die "Mail-Maschine" genau einmal aufgerufen wurde (`verify`).
+  - Level 3 (The Data Fake): Erstelle eine Fake-Datenbank im RAM, die echte Daten simuliert, ohne das reale Netzwerk zu belasten.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Test-Herausforderung (Das Drehbuch), 2 = Der passende Double (Der Stuntman), 3 = Die Konfiguration des Verhaltens.
-- [ ] Textbudget: Max. 8 Wörter pro Rollen-Beschreibung.
-- [ ] "Isolation-Shield": Visueller Schutzschild um das Test-Objekt.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Isolation-Integrity", "Simulation-Fidelity", "Setup-Speed", "Dependency-Ghost-Filter".
+- [ ] Scoring: "Lab-efficiency" Bonus für minimalistische Mocks. Abzug bei "Over-Mocking" (wenn man das zu testende Verhalten mit-mockt).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> film-set (Canvas) -> double-portfolio -> director-monitor`.
-- [ ] Film-Set: Zentrale Bühne, auf der das Modul getestet wird (Desktop mittig).
-- [ ] Portfolio: Karten-Karussell mit den verschiedenen Typen von Test-Doubles.
+2. Screen-Layout (The Digital Test-Bench)
+- [ ] `lab-monitor -> component-under-test -> shadow-clones (The Mocks) -> telemetry-readout`.
+- [ ] Component-Under-Test: Das reale Code-Fragment in der Mitte.
+- [ ] Shadow-Clones: Transparente, geisterhafte Kopien der Abhängigkeiten, die du konfigurieren kannst.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-to-Cast" Mechanik – Den Double auf die Bühne ziehen.
-- [ ] `safe-area-inset` für die Rollen-Details am unteren Rand.
+3. Kernvisuals und Effekte
+- [ ] Laboratory-Futurism Ästhetik: Blaues Hologramm-Licht, kühle Farbtöne, schwebende Daten-Fragmente, hitech Sound-Effekte (Shared Theme kompatibel).
+- [ ] "Hologram-Snap": Wenn ein Mock korrekt konfiguriert ist, verfestigt sich seine holographische Form kurzzeitig.
+- [ ] "Interference-Glitch": Wenn ein Mock falsch antwortet, flackert das Hologramm rot und zeigt "Type-Mismatch".
 
-4. Kernvisuals
-- [ ] Hollywood-Ästhetik: Klappenbretter, Scheinwerfer, rote Teppiche, Filmrollen (shared_theme.css).
-- [ ] "The Swap": Flüssige Animation, wenn das echte Modul gegen einen Double ausgetauscht wird.
-- [ ] High-Contrast Icons für Dummy, Stub, Fake, Mock, Spy.
+4. Browser- und Device-Resilienz
+- [ ] `opacity` und `filter: drop-shadow` für den Geister-Effekt der Mocks.
+- [ ] Mobile: "Tap-to-Configure" für die Mock-Antworten.
 
-5. Interaktion und Feedback
-- [ ] Casting-Feedback: "Klick! Stub engagiert. Er antwortet nun immer mit 'Login erfolgreich', ohne die echte Datenbank zu fragen."
-- [ ] Mock-Check: "Klick! Der Mock bestätigt: Die Methode `sendMail` wurde genau 1x aufgerufen. Test bestanden!"
-- [ ] Erfolg: "Drehbuch fehlerfrei verfilmt. Deine Tests sind schnell, isoliert und absolut verlässlich."
+5. Content-Strategie (The Experiments)
+- [ ] 15 Real-World Mocking-Szenarien: Von "SMS-Gateway" bis "Crypto-Hardware-Wallet".
 
-6. KPI-Klarheit
-- [ ] Cast-Precision: "Rollen-Verständnis: 100%".
-- [ ] Test-Speed: "Beschleunigung durch Doubles: Massive".
+6. QA-Paket
+- [ ] Test: Ist der Unterschied zwischen Stub (liefert nur Daten) und Mock (prüft Aufrufe) visuell unterscheidbar?
+- [ ] Test: Wirkt das "Bauen von Attrappen" motivierend für die Test-Isolation?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "API Down Simulation", "E-Mail Versand prüfen", "Datenbank-Zugriff umgehen", "Zeit-Simulation".
-- [ ] Tonalität: Kreativ, professionell, unterhaltsam.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Funktionieren die "Rollen-Karten" auf kleinen Displays ohne Textabschluss?
-- [ ] Test: Sind die feinen Unterschiede (z.B. Mock vs. Spy) pädagogisch klar herausgearbeitet?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler verankert Doubles als unverzichtbares Werkzeug für schnelle Unit-Tests.
-- [ ] Das Interface wirkt wie ein exklusives Regie-Pult.
-- [ ] Absolute Sicherheit bei der Benennung der Double-Typen.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Mocks machen Tests unabhängig, schnell und deterministisch.
+- [ ] Das Interface wirkt hochmodern, steril und mathematisch präzise.
+- [ ] Hoher Lerneffekt für Test-Driven Development (TDD).

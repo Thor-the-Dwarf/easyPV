@@ -1,51 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Differenziertes Verständnis der Qualitätssicherung durch Unterscheidung zwischen präventiven (konstruktiven) und detektiven (analytischen) Maßnahmen.
-- Kontext: QS-Strategie, Software-Lifecycle, Prozessoptimierung.
-- UX-Prinzip:
-  - "The Shield Wall": Die Software-Burg muss geschützt werden.
-  - "Constructive Armor" (Konstruktiv): Die dicken Mauern und die Ausbildung der Soldaten (Richtlinien, Schulungen, sauberes Design). Verhindert, dass Feinde (Bugs) überhaupt entstehen.
-  - "Analytical Radar" (Analytisch): Späher und Patrouillen (Tests, Reviews, Scans), die bereits eingedrungene Feinde aufspüren.
-  - "The Balance Scale": Eine goldene Waage zeigt, ob der Fokus zu stark auf dem "Finden" statt auf dem "Vermeiden" liegt.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler beherrschen die Auswahl und Kombination verschiedener Qualitätssicherungs-Maßnahmen (analytisch, konstruktiv, organisatorisch).
+- Game-Mechanic: "The Quality Shield". Du bist der Sicherheitschef eines digitalen Forts. Verschiedene Angreifer (Bugs, Zeitdruck, Anforderungs-Änderungen) stürmen auf dich zu. Du musst dein Budget klug einsetzen: Baust du einen "Automatisierungs-Graben" (CI/CD), stellst du "Review-Wachen" (Peer Review) auf oder nutzt du "Standard-Rüstungen" (Coding Guidelines)?
+- Challenge: 
+  - Level 1 (The Small Raid): Schütze ein 1-Mann-Projekt gegen simple Bugs. Nur 500 Gold Budget!
+  - Level 2 (The Enterprise Siege): Ein Team aus 50 Entwicklern. Wie koordinierst du die QA-Maßnahmen für maximale "Schild-Stärke"?
+  - Level 3 (The Critical-Failure): Ein Bug ist durchgeschlüpft! Welche Maßnahme hat versagt? Analysiere die Lücke im Schild und dichte sie ab.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die QS-Maßnahme (Agent), 2 = Die beiden Strategie-Zonen (Konstruktiv / Analytisch), 3 = Das Sicherheits-Level der Burg.
-- [ ] Textbudget: Max. 8 Wörter pro Maßnahmen-Kachel.
-- [ ] "Strategy-Map": Visuelle Einteilung des Sprints in Planungs- (Konstruktiv) und Prüf-Phasen (Analytisch).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Total-Fortress-Defense (%)", "Quality-Cost-Ratio", "Strategic-Balance-Chart (Analytisch vs. Konstruktiv)".
+- [ ] Scoring: "Shield-Legend" Bonus für das Erreichen von 100% Qualität bei minimalem Budget. Abzug für "Over-Procurement" (zu teure Maßnahmen für zu kleine Projekte).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> fortification-battlefield -> strategy-zones -> measure-inventory`.
-- [ ] Battlefield: Eine stilisierte Burg-Ansicht, die je nach QS-Mix stärker oder schwächer wirkt (Desktop mittig).
-- [ ] Zones: Zwei große Droptargets (Links: "Verhindern", Rechts: "Entdecken").
+2. Screen-Layout (The Command Post)
+- [ ] `fort-overview -> measure-market -> defense-strategy-overview -> threat-analysis`.
+- [ ] Fort-Overview: Eine isometrische Sicht auf dein Software-Projekt.
+- [ ] Measure-Market: Ein Shop für QA-Maßnahmen (Linting, Unit-Tests, Pair-Programming, Walkthroughs).
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-to-Categorize" Mechanik; Karten nach links (Bau) oder rechts (Prüf) wischen.
-- [ ] Responsive Design für die Burg-Illustration (Vektorgrafik).
+3. Kernvisuals und Effekte
+- [ ] Strategic-Blue Ästhetik: Dunkler Hintergrund, neonbaue Linien, Karten-Optik, technologische Icons, heroische Musik-Untermalung (Shared Theme kompatibel).
+- [ ] "Placement-Effect": Wenn eine Maßnahme auf das Fort angewendet wird, erscheint ein blau schimmerndes Schutzfeld.
+- [ ] "Siege-Simulation": Kurze Wellen von Bugs "prallen" gegen deine platzierten Maßnahmen.
 
-4. Kernvisuals
-- [ ] Strategie-Spiel Ästhetik: Klassische Blaupausen-Symbole vs. Lupe/Scan-Icons (shared_theme.css).
-- [ ] Sound-Effekte: Metallisches Schmiedegeräusch (Konstruktiv) vs. Radar-Ping (Analytisch).
-- [ ] High-Contrast Typografie für die Zonen-Titel.
+4. Browser- und Device-Resilienz
+- [ ] `CSS Transitions` für das flüssige Erscheinen der Schutzfelder.
+- [ ] Mobile: "Tap-to-Buy" und "Drag-to-Fort" Mechanik.
 
-5. Interaktion und Feedback
-- [ ] Zonen-Feedback: "Klick! Programmierrichtlinien verschalen die Burgmauern. Bugs haben es jetzt schwerer, überhaupt zu schlüpfen."
-- [ ] Strategie-Tipp: "Siehst du? Nur zu testen (analytisch) ist teuer. Investiere mehr in Ausbildung (konstruktiv), um die Kosten zu senken!"
-- [ ] Erfolg: "Perfekter QS-Mix. Deine Burg ist uneinnehmbar und der Entwicklungsprozess hocheffizient."
+5. Content-Strategie (The Threats)
+- [ ] 12 verschiedene Projekt-Szenarien: Von "Klinik-Software" bis "Marketing-Landing-Page".
 
-6. KPI-Klarheit
-- [ ] Balance-Score: "Präventions-Index: Hoch".
-- [ ] Security-Level: "Sicherheits-Status: Festung".
+6. QA-Paket
+- [ ] Test: Ist die Kategorisierung (Konstruktive vs. Analytische QS) im Markt-Menü klar ersichtlich?
+- [ ] Test: Reagiert der "Quality-Cost-Ratio" Graphen realistisch auf die gewählten Maßnahmen?
 
-7. Content-/Copy-Feinschliff
-- [ ] Maßnahmen: Code-Conventions, Unit-Tests, Pair Programming, Integrationstests, Automatisierte Linters, Review-Sitzungen.
-- [ ] Tonalität: Strategisch, schützend, weitsichtig.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist die Unterscheidung zwischen den Zonen auf einem Handy-Bildschirm durch Farbe und Symbolik eindeutig?
-- [ ] Test: Funktioniert die Waage-Animation ohne Ruckeln?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift QS als duales System aus Vorsorge und Nachsorge.
-- [ ] Das Interface wirkt wie ein exklusives Strategie-Board für Qualitätsmanager.
-- [ ] Nachhaltiges Verständnis für die Kostenkurve von Fehlern (frühe Vermeidung vs. spätes Finden).
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift QS als einen Mix aus Vorbeugung und Entdeckung.
+- [ ] Das Interface wirkt mächtig, strategisch und hochprofessionell.
+- [ ] Fokus auf ganzheitliches Qualitätsmanagement.

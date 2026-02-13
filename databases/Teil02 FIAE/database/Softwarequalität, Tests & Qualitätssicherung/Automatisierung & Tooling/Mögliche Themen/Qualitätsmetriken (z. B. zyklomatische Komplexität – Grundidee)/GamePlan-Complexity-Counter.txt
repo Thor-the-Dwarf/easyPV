@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Beherrschung der zyklomatischen Komplexität (McCabe) zur Vermeidung von "Spaghetti-Code" und Sicherstellung der Testbarkeit.
-- Kontext: Softwaremetriken, Code-Qualität, Risiko-Management.
-- UX-Prinzip:
-  - "The Maze Architect": Jede `if`-Abfrage, jede `for`-Schleife ist ein Abzweig im Labyrinth. Je mehr Abzweige, desto schwerer findet der Tester den Ausgang.
-  - "Complexity-Heat": Der Code glüht rot auf, wenn die Verschachtelung zu tief wird. 
-  - "Path-Counter": Eine Anzeige zählt die minimal notwendigen Testfälle, um alle Wege durch den Irrgarten zu begehen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Messung und Reduktion der zyklomatischen Komplexität (McCabe) zur Steigerung der Testbarkeit und Wartbarkeit.
+- Game-Mechanic: "The Complexity Clock". Du bist der Mechaniker in einer Dampfmaschinen-Halle. Jede Weiche (`IF`), jeder Kolben (`LOOP`) und jeder Ausgang (`RETURN`) erhöht den Druck (Die Komplexität). Wenn die Maschine zu viele Wege hat, explodiert die "Komplexitäts-Uhr". Du musst den Code so umbauen, dass der Druck (Die Zahl) im grünen Bereich bleibt.
+- Challenge: 
+  - Level 1 (The Simple Pressure): Zähle die Pfade durch eine kleine Funktion. Liegt sie unter 10?
+  - Level 2 (The Nested Hub): Hilfe! Eine Funktion hat 15 verschachtelte `IF`s. Zerschneide sie in mehrere, einfache Maschinen (Methodenextraktion).
+  - Level 3 (The Logic-Labyrinth): Ein Pfad mit 25 Verzweigungen. Finde die logischen Abkürzungen (Early Returns), um die Uhr wieder auf "Safe" zu stellen.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die Verzweigungspunkte (Entscheidungen), 2 = Die aktuelle v(G)-Zahl, 3 = Der Schwellenwert (Max. 10).
-- [ ] Textbudget: Kurze, verschachtelte Funktionen (max. 15 Zeilen).
-- [ ] "Logic-Graph": Ein kleines, abstraktes Knotendiagramm neben dem Code, das mitwächst.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "McCabe-Gauge (Pressure)", "Path-Complexity-Display", "Maintenance-Risk Warnleuchte".
+- [ ] Scoring: "Simplifier-Bonus" für Funktionen mit Komplexität < 5. Abzug bei "Spaghetti-Score" (zu hohe Verschachtelung).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> code-blueprint -> maze-preview -> complexity-o-meter`.
-- [ ] Blueprint: Interaktiver Code-Bereich (Desktop links, Mobile oben).
-- [ ] Preview: Eine Labyrinth-Visualisierung, die die logischen Pfade darstellt.
+2. Screen-Layout (The Engine Room)
+- [ ] `steam-pipes (Control Flow Graph) -> logic-gauges -> code-editor -> pressure-release-valve`.
+- [ ] Steam-Pipes: Eine Visualisierung des Kontrollflusses als Rohrsystem.
+- [ ] Logic-Gauges: Analoge Anzeigen, die beim Tippen zittern und steigen/fallen.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Tap-on-Keyword" (if, else, switch) zum Markieren der Entscheidungspunkte.
-- [ ] `safe-area-inset` für das HUD mit der Metrik-Anzeige.
+3. Kernvisuals und Effekte
+- [ ] Steampunk-Industrial Ästhetik: Messing, Dampf, zitternde Nadeln auf Anzeigen, mechanisches Klappern, zischende Geräusche.
+- [ ] "Pressure-Spike": Wenn du eine `ELSE`-Abzweigung hinzufügst, schlägt die Nadel hart nach rechts aus und Dampf entweicht.
+- [ ] "Safe-Vibration": Ein sanftes Brummen, wenn der Code im optimalen Komplexitätsbereich liegt.
 
-4. Kernvisuals
-- [ ] Architektur-Ästhetik: Isometrische Ansichten von Wänden und Gängen, technische Raster (shared_theme.css).
-- [ ] Warn-Glow: Bei v(G) > 10 fängt der Bildschirmrand an zu pulsieren (Kritischer Bereich).
-- [ ] High-Contrast IDs für die Zählung der Kanten und Knoten.
+4. Browser- und Device-Resilienz
+- [ ] `CSS Shaders` (falls möglich) oder Grainy-Filter für den Vintage-Look (Shared Theme kompatibel).
+- [ ] Mobile: "Swipe-to-Refactor" Geste.
 
-5. Interaktion und Feedback
-- [ ] Zähl-Feedback: "Klick! Eine `switch`-Anweisung mit 4 Cases fügt 3 Entscheidungspunkte hinzu. v(G) steigt auf 5."
-- [ ] Aha-Moment: "Siehst du? Dieses Labyrinth hat jetzt 20 Sackgassen. Ein Unit-Test kann das niemals allein abdecken."
-- [ ] Erfolg: "Code unter Kontrolle! Du hast die Komplexität gebändigt und die Wartbarkeit gesichert."
+5. Content-Strategie (The Steam-Logs)
+- [ ] 15 reale Komplexitätsfälle: Von "Finanz-Berechnung" bis "Game-Enemy-KI".
 
-6. KPI-Klarheit
-- [ ] Metric-Precision: "v(G) Berechnung: 100% korrekt".
-- [ ] Reliability-Score: "Testaufwand-Prognose: X Testfälle nötig".
+6. QA-Paket
+- [ ] Test: Ist die visuelle Verbindung zwischen "Code-Änderung" und "Nadel-Ausschlag" verzögerungsfrei?
+- [ ] Test: Hilft der Kontrollfluss-Graph (Rohre) beim Verständnis der McCabe-Zahl?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Login-Validierung", "Rabatt-System mit 10 Bedingungen", "Verschachtelte Datenverarbeitung".
-- [ ] Tonalität: Analytisch, warnend, strukturierend.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist das mitwachsende Knotendiagramm auf dem Handy noch erkennbar?
-- [ ] Test: Sind die Zählregeln für `AND/OR` Verknüpfungen in `if`-Statements korrekt hinterlegt?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift hohe Komplexität als direkten Feind der Softwarequalität.
-- [ ] Das Interface wirkt wie ein hochmodernes Analyse-Dashboard für Code-Forensik.
-- [ ] Intuitive Bedienung der mathematischen Metrik.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Einfacher Code ist besserer Code.
+- [ ] Das Interface wirkt atmosphärisch, wuchtig und technisch faszinierend.
+- [ ] Fokus auf saubere Code-Strukturierung.

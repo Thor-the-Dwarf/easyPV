@@ -374,7 +374,7 @@
 
             const icon = document.createElement('span');
             icon.className = 'tree-icon';
-            icon.textContent = isCollapsed ? '📁' : '📂';
+            icon.textContent = folderEmoji(hasChildren, isCollapsed);
             iconButton.appendChild(icon);
             row.appendChild(iconButton);
 
@@ -414,10 +414,15 @@
 
           const icon = iconButton && iconButton.querySelector('.tree-icon');
           if (icon) {
-            icon.textContent = openedFolderIds.includes(id) ? '📂' : '📁';
+            icon.textContent = folderEmoji(true, !openedFolderIds.includes(id));
           }
 
           saveState();
+        }
+
+        function folderEmoji(hasChildren, isCollapsed) {
+          if (!hasChildren) return '🎮';
+          return isCollapsed ? '📁' : '📂';
         }
 
         function escapeHtml(value) {

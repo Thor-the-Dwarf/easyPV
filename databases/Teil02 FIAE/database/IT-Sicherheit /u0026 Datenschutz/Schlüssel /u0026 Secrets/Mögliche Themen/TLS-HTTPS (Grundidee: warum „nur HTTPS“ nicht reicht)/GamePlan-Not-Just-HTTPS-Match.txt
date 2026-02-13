@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis des TLS-Handshakes und der Verschlüsselung von Datenströmen (HTTPS) zum Schutz vor Man-in-the-Middle Angriffen.
+- Game-Mechanic: "The Secure Tunnel". Du bist ein Tunnelbauer unter einem gefährlichen Ozean (Dem Internet). Du musst eine Glasfaser-Leitung von Kontinent A nach Kontinent B legen. Bevor Daten fließen, müssen sich beide Seiten auf einen geheimen Code (Session Key) einigen. Dazu schicken sie sich Identitätskarten (Zertifikate) und würfeln (Key Exchange) – alles während Haie (Hacker) versuchen, das Kabel anzuzapfen. Wenn der Tunnel blau leuchtet, fließen die Daten sicher.
+- Challenge: 
+  - Level 1 (The Handshake): Führe den 3-Wege-Handshake durch: Hello -> Certificate -> Key-Exchange.
+  - Level 2 (The Fake Badge): Ein Angreifer schickt ein ungültiges oder abgelaufenes Zertifikat. Blockiere den Tunnelbau!
+  - Level 3 (The Cipher-Match): Die Gegenstelle bietet nur alte, unsichere Verschlüsselungen (z.B. SSL 3.0) an. Bestehe auf TLS 1.3 oder brich die Verbindung ab.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Handshake-Step-Indicator", "Certificate-Validity-Meter", "Cipher-Suite (AES-GCM/RSA)", "Encryption-Strength-Gauge".
+- [ ] Scoring: "Security-Architect" Bonus für die schnellstmögliche, sicherste Verbindung. Abzug für das Benutzen von "Weak Ciphers".
+
+2. Screen-Layout (The Undersea View)
+- [ ] `client-station -> connection-tunnel -> server-station -> deep-sea-monitoring`.
+- [ ] Connection-Tunnel: Ein durchsichtiges Rohr, das erst bei erfolgreichem TLS-Handshake blickdicht (verschlüsselt) wird.
+- [ ] Deep-Sea-Monitoring: Zeigt die Sniffing-Versuche der "Haie" an.
+
+3. Kernvisuals und Effekte
+- [ ] Deep-Ocean-Cyber Ästhetik: Dunkles Blau, leuchtende Glasfasern, Luftblasen, biolumineszente Effekte, Unterwasser-Ambient-Sound (Shared Theme kompatibel).
+- [ ] "Handshake-Pulse": Lichtimpulse wandern beim Handshake zwischen den Stationen hin und her.
+- [ ] "Tunnel-Solidify": Bei Verschlüsselung verwandelt sich das Rohr in einen massiven, leuchtenden Schutzwall.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Mix-Blend-Mode` für die Lichteffekte im Wasser.
+- [ ] Mobile: "Tap-to-Accept" Zertifikate.
+
+5. Content-Strategie (The Link-Requests)
+- [ ] 15 TLS-Verbindungs-Szenarien: Von "Online-Banking" bis "Public-WiFi-Browsing".
+
+6. QA-Paket
+- [ ] Test: Wird der Prozess des Vertrauens (Zertifikatsprüfung) vor dem Datenaustausch deutlich?
+- [ ] Test: Ist die Gefahr von "unverschlüsselten" Abschnitten spielerisch erlebbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: TLS schützt die Vertraulichkeit und Integrität der Übertragung.
+- [ ] Das Interface wirkt immersiv, modern und hochgradig technologisch.
+- [ ] Fokus auf Websicherheit und HTTPS-Standards.

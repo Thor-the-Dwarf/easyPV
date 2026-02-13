@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sicheres Management von API-Keys, Passwörtern und Secrets durch Trennung von Code und Konfiguration (Vaults, Umgebungsvariablen).
+- Game-Mechanic: "The Secret Quest". Du bist ein Meisterdieb (oder der Sicherheitschef), der ein wertvolles Artefakt (dein Secret) verstecken muss. Dein Code-Repository ist wie ein Marktplatz – jeder kann dort zuschauen. Wenn du dein Secret dort liegenreichlässt (Hardcoded), wird es sofort gestohlen. Du musst es in einen Tresor (Vault) legen und im Code nur einen Hinweis (Umgebungsvariable) hinterlassen, der erst beim Ausführen der App den Tresor öffnet.
+- Challenge: 
+  - Level 1 (The Hardcoded Trap): Finde einen API-Key, der mitten im Java/JS-Code steht, und extrahiere ihn in eine `.env` Datei.
+  - Level 2 (The Git-Ignore Shield): Du hast dein Secret extrahiert, aber huch! Du willst die `.env` Datei mit hochladen. Erstelle eine `.gitignore` Regel, um das Leck zu stoppen.
+  - Level 3 (The Cloud-Vault): Nutze einen professionellen Secret-Manager. Konfiguriere den Zugriff so, dass nur die "PROD"-Umgebung den Schlüssel für die Echtgeld-Schnittstelle bekommt.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Secret-Exposure-Radar", "Vault-Connection-Status", "Leaky-Code-Detector", "Git-Status Overlay".
+- [ ] Scoring: "Ghost-Developer" Bonus für Repositories ohne jegliche hardcodierte Secrets. Abzug für "Secret-Leaks" auf GitHub.
+
+2. Screen-Layout (The Workspace)
+- [ ] `code-editor -> files-and-folders -> the-vault (Locked Area) -> git-commit-preview`.
+- [ ] Code-Editor: Ein interaktives Fenster, in dem man "Variables" statt "Strings" einsetzt.
+- [ ] The-Vault: Ein imposantes Schließfach-System am Bildschirmrand.
+
+3. Kernvisuals und Effekte
+- [ ] Secret-Agent Ästhetik: Schwarz-Grau-Töne, "Top-Secret" Stempel, Scan-Linien, leise Spionage-Musik (Shared Theme kompatibel).
+- [ ] "Key-Move": Wenn man ein Secret in den Vault verschiebt, leuchtet der Platzhalter im Code lila auf.
+- [ ] "Leaked-Red": Wenn man versucht, ein Secret zu committen, färbt sich der ganze Bildschirmrand warnend Rot.
+
+4. Browser- und Device-Resilienz
+- [ ] `Code-Highlighter-Integration` für das echte Developer-Gefühl.
+- [ ] Mobile: "Swipe-to-Vault" Geste.
+
+5. Content-Strategie (The Bounty-Files)
+- [ ] 12 Real-Life Leak-Szenarien (z.B. AWS Keys auf GitHub).
+
+6. QA-Paket
+- [ ] Test: Wird die Gefahr von "Commit-History Leaks" (auch gelöschte Keys bleiben in alten Commits) thematisiert?
+- [ ] Test: Fühlt sich das Arbeiten mit Umgebungsvariablen spielerisch logisch an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Secrets haben im Code nichts verloren. Niemals.
+- [ ] Das Interface wirkt cool, sicher und hochprofessionell.
+- [ ] Fokus auf "Environment Independent Configuration".

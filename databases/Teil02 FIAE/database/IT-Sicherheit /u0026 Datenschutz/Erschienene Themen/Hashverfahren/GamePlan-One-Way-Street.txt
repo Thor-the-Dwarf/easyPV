@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis von kryptographischen Hash-Funktionen (SHA-256) für die Integritätsprüfung und sichere Passwort-Speicherung.
+- Game-Mechanic: "The One-Way Street". Du stehst am Eingang einer magischen Einbahnstraße. Du wirfst einen riesigen Gegenstand (eine Datei oder ein Passwort) hinein. Die Straße schüttelt, presst und transformiert ihn. Am Ende kommt ein kleiner, eindeutiger Stein (der Hashwert) heraus. Deine Aufgabe: Beweise, dass der Stein exakt zu dem Gegenstand gehört, ohne den Gegenstand jemals wieder aus der Straße herausholen zu können (Einweg-Prinzip).
+- Challenge: 
+  - Level 1 (The Fingerprint): Erzeuge den Hash eines Passworts. Ändere nur einen Buchstaben im Passwort und beobachte, wie sich der komplette Hashwert verändert (Lawinen-Effekt).
+  - Level 2 (The Integrity Check): Ein Paket wurde geliefert. Vergleiche den mitgelieferten Hash mit dem selbst berechneten Hash. Wenn sie nicht übereinstimmen, wurde das Paket manipuliert!
+  - Level 3 (The Rainbow Danger): Ein Hacker nutzt "Rainbow Tables" (vorberechnete Hashes). Schütze deine Hashes durch das Hinzufügen einer Prise "Salz" (Salting), um die Vorberechnung wertlos zu machen.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Hash-Output (Hexadecimal Display)", "Avalanche-Effect Gauge", "Salt-Dispenser (Button)", "Collision-Detector".
+- [ ] Scoring: "Integrity-Master" Bonus für das korrekte Identifizieren von manipulierten Daten. Abzug für das Speichern von Passwörtern im Klartext.
+
+2. Screen-Layout (The Hash-Machine)
+- [ ] `input-hopper -> transformation-chamber -> hex-output -> validation-zone`.
+- [ ] Transformation-Chamber: Eine mechanische Rüttelmaschine, die den Input sichtlich "zerkleinert".
+- [ ] Validation-Zone: Ein Bereich zum Vergleichen zweier Hashes mit einem großen "MATCH" oder "ERROR" Signal.
+
+3. Kernvisuals und Effekte
+- [ ] Kinetic-Steampunk Ästhetik: Rostiger Stahl, viele kleine Zahnräder, die wahnsinnig schnell drehen, Funkenflug beim "Zerquetschen" der Daten, tiefes Brummen der Maschine (Shared Theme kompatibel).
+- [ ] "Avalanche-Spark": Bei jeder kleinen Änderung am Input schießen Lichtblitze durch die Maschine und ändern den gesamten Output.
+- [ ] "Salt-Animation": Ein kleiner Streuer schüttet glitzernde Partikel in den Hopper.
+
+4. Browser- und Device-Resilienz
+- [ ] `Monospace-Fonts` für die exakte Darstellung der Hex-Werte.
+- [ ] Mobile: "Tap-to-Hash" Geste.
+
+5. Content-Strategie (The Data-Hopper)
+- [ ] 15 verschiedene Hashing-Szenarien: Von "User-Login" bis "Software-Update-Verifizierung".
+
+6. QA-Paket
+- [ ] Test: Wird das Einweg-Prinzip (Kein Zurückrechnen möglich) spielerisch deutlich vermittelt?
+- [ ] Test: Ist der "Avalanche-Effekt" visuell beeindruckend und leicht zu beobachten?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Hashes sind Fingerabdrücke, keine Verschlüsselung.
+- [ ] Das Interface wirkt wuchtig, rasant und kryptographisch fundiert.
+- [ ] Fokus auf Datenintegrität und Passwort-Sicherheit.

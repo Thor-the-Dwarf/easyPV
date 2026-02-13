@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der asymmetrischen Kryptographie (Private/Public Key) zur Sicherstellung von Authentizität und Unverfälschbarkeit (Nicht-Abstreitbarkeit).
+- Game-Mechanic: "The Authenticity Check". Du bist der kaiserliche Notar. Dokumente (Nachrichten) werden mit einem geheimen Siegel (Private Key) versiegelt. Jeder im Reich hat eine Kopie des öffentlichen Siegels (Public Key), um die Echtheit zu prüfen. Wenn das Dokument auf dem Weg auch nur einen Kratzer bekommt oder das Siegel gefälscht wurde, schlägt dein Authentizitäts-Radar Alarm!
+- Challenge: 
+  - Level 1 (The Royal Order): Signiere eine Nachricht mit deinem Private Key. Schicke sie an den Empfänger und prüfe die Signatur mit dem Public Key.
+  - Level 2 (The Forged Script): Ein Spion hat eine Nachricht abgefangen und den Text geändert. Nutze den Public Key, um zu beweisen, dass die Signatur nicht mehr zum Text passt.
+  - Level 3 (The Trust Chain): Wer hat das Siegel beglaubigt? Verifiziere nicht nur das Dokument, sondern auch das Siegel selbst über eine übergeordnete Instanz (Zertifizierungsstelle/CA).
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Key-Pair-Status (Private/Public)", "Signature-Integrity (%)", "Authorship-Identity", "Trust-Level-Meter".
+- [ ] Scoring: "Notary-Pro" Bonus für fehlerfreie Verifizierungen. Abzug für das Akzeptieren von manipulierten oder anonymen Dokumenten.
+
+2. Screen-Layout (The Notary's Desk)
+- [ ] `document-scroll -> private-seal (Input) -> signed-output -> public-lens (Verification)`.
+- [ ] Public-Lens: Eine Lupe, die man über die Signatur führt, um die mathematische Korrektheit zu prüfen.
+- [ ] Key-Drawer: Ein interaktiver Bereich zum Verwalten der Schlüsselpaare.
+
+3. Kernvisuals und Effekte
+- [ ] Noble-Bureaucracy Ästhetik: Elegantes Pergament, Siegellack-Effekte, feine Linien, das Rascheln von Papier, goldene Lichtstrahlen bei der Verifizierung (Shared Theme kompatibel).
+- [ ] "Seal-Press": Beim Signieren drückt sich sichtlich ein Siegel in das Pergament inkl. Rauch und Zischen.
+- [ ] "Integrity-Check": Ein blauer Scan-Strahl prüft das Dokument. Bei Erfolg leuchtet es grün, bei Fail zerfällt die Signatur in roten Staub.
+
+4. Browser- und Device-Resilienz
+- [ ] `SVG Path Morphing` für die "Lupe" und die Siegel-Animationen.
+- [ ] Mobile: "Fingerprint-to-Sign" Mechanik.
+
+5. Content-Strategie (The Records)
+- [ ] 12 Authentifizierungs-Fälle: Von "Software-Source-Code" bis "Regierungs-Dekret".
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen Verschlüsselung (Inhalt geheim) und Signatur (Absender echt) visuell klar getrennt?
+- [ ] Test: Ist die Rolle des Public Keys beim Empfänger verständlich?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Signaturen garantieren, dass eine Nachricht vom angegebenen Absender stammt und unverändert ist.
+- [ ] Das Interface wirkt wertig, offiziell und technologisch spirituell.
+- [ ] Fokus auf Vertrauensinfrastrukturen (PKI).

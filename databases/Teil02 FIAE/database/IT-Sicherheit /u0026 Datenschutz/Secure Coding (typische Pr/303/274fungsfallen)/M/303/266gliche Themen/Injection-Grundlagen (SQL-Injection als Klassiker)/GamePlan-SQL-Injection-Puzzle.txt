@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Erkennung und Abwehr von SQL-Injection Angriffen durch den Einsatz von Prepared Statements (Parametrisierung) und Input-Validierung.
+- Game-Mechanic: "The Injection Puzzle". Du stehst vor einer verschlossenen Tür (Der Datenbank-Abfrage), die nur mit dem richtigen Namen (`'Hugo'`) öffnet. Ein Hacker (Der Injektor) schiebt aber einen Dietrich (`' OR 1=1 --`) in das Schlüsselloch. Plötzlich geht die Tür für JEDEN auf! Deine Aufgabe: Baue ein modernes Schloss (Prepared Statements), das nur den Namen als stumpfen Datenbrocken akzeptiert und niemals als aktiven Befehl ausführt.
+- Challenge: 
+  - Level 1 (The Vulnerable Gate): Identifiziere in einem Code-Schnipsel die gefährliche String-Konkatenation (`"SELECT * FROM users WHERE name = '" + input + "'"`).
+  - Level 2 (The Payload Attack): Baue selbst einen `' OR 1=1` Payload zusammen, um zu verstehen, wie das SQL am Server "verbogen" wird.
+  - Level 3 (The Shielded Query): Refactore den Code: Ersetze das Pluszeichen durch ein `?` (Place-Holder) und binde den Parameter sicher an die Query.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Query-Construction-View (Live)", "Injection-Alert-Meter", "Database-Integrity-Level", "Payload-Scanner".
+- [ ] Scoring: "Secure-Coder" Bonus für die schnelle Umstellung auf Prepared Statements. Abzug für "Successful-Breaches".
+
+2. Screen-Layout (The Lab Desk)
+- [ ] `code-bench -> input-field (The Injection Point) -> query-generator -> data-vault-lock`.
+- [ ] Query-Generator: Zeigt in Echtzeit, wie das finale SQL-Statement am Server aussieht.
+- [ ] Data-Vault-Lock: Ein mechanisches Schloss, das bei Injektion "aufbricht".
+
+3. Kernvisuals und Effekte
+- [ ] Cyber-Infiltration Ästhetik: Matrix-Grün-auf-Schwarz, leuchtende Code-Zeilen, Hacker-Typing Geräusche, bei Injektion ein digitales Zerbersten des UIs (Shared Theme kompatibel).
+- [ ] "Logic-Bend": Wenn der Payload das SQL verändert, verbiegen sich die Buchstaben visuell und nehmen eine andere Farbe an.
+- [ ] "Parameterized-Barrier": Die Parameter werden als kleine Boxen dargestellt, die nicht aus ihrem Rahmen im SQL-Statement ausbrechen können.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Variable Animations` für das "Matrix-Flimmern".
+- [ ] Mobile: "Tap-to-Patch" Mechanik.
+
+5. Content-Strategie (The Bounty-Code)
+- [ ] 15 Verschiedene Injection-Vektoren (Login, Suche, Filter, DELETE-Prävention).
+
+6. QA-Paket
+- [ ] Test: Wird das Kernprinzip "Code von Daten trennen" visuell unmissverständlich deutlich?
+- [ ] Test: Macht die Simulation des Angriffs den defensiven Part (Fix) motivierender?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Vertraue niemals User-Input. Nutze immer Prepared Statements.
+- [ ] Das Interface wirkt spannend, technologisch gefährlich und lehrreich.
+- [ ] Fokus auf OWASP Top 10 (Injection).

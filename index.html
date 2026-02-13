@@ -446,7 +446,7 @@
           const folderLabel = node && node.name ? node.name : 'Spielordner';
           const jsonUrl = new URL(String(node.jsonRelPath || ''), window.location.href).href;
           const src =
-            './generic_pages/generic_c_suite/generic_c_suite.html?folder=' +
+            './generic_pages/generic_page.html?folder=' +
             encodeURIComponent(folderLabel) +
             '&json=' +
             encodeURIComponent(jsonUrl);

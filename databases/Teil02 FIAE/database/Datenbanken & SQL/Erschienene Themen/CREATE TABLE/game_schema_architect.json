@@ -1,0 +1,131 @@
+{
+    "meta": {
+        "topic": "CREATE TABLE",
+        "mechanic": "builder",
+        "version": "1.0"
+    },
+    "toolbox": {
+        "types": [
+            "INT",
+            "VARCHAR(50)",
+            "VARCHAR(255)",
+            "TEXT",
+            "BOOLEAN",
+            "DATE",
+            "DECIMAL(10,2)"
+        ],
+        "constraints": [
+            "PRIMARY KEY",
+            "NOT NULL",
+            "UNIQUE",
+            "AUTO_INCREMENT"
+        ]
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Basic User Table",
+            "description": "Build a 'Users' table.",
+            "requirements": [
+                {
+                    "name": "user_id",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY",
+                        "AUTO_INCREMENT"
+                    ],
+                    "desc": "Unique Identifier"
+                },
+                {
+                    "name": "username",
+                    "type": "VARCHAR(50)",
+                    "constraints": [
+                        "NOT NULL",
+                        "UNIQUE"
+                    ],
+                    "desc": "Login Name"
+                },
+                {
+                    "name": "email",
+                    "type": "VARCHAR(255)",
+                    "constraints": [
+                        "NOT NULL"
+                    ],
+                    "desc": "Contact Email"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Product Inventory",
+            "description": "Build a 'Products' table with precise data types.",
+            "requirements": [
+                {
+                    "name": "product_id",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ],
+                    "desc": "SKU Number"
+                },
+                {
+                    "name": "name",
+                    "type": "VARCHAR(255)",
+                    "constraints": [
+                        "NOT NULL"
+                    ],
+                    "desc": "Product Name"
+                },
+                {
+                    "name": "price",
+                    "type": "DECIMAL(10,2)",
+                    "constraints": [
+                        "NOT NULL"
+                    ],
+                    "desc": "Price in EUR"
+                },
+                {
+                    "name": "is_active",
+                    "type": "BOOLEAN",
+                    "constraints": [],
+                    "desc": "Sales Status"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Blog Post",
+            "description": "Build a 'Posts' table for a blog.",
+            "requirements": [
+                {
+                    "name": "id",
+                    "type": "INT",
+                    "constraints": [
+                        "PRIMARY KEY"
+                    ],
+                    "desc": "Post ID"
+                },
+                {
+                    "name": "title",
+                    "type": "VARCHAR(255)",
+                    "constraints": [
+                        "NOT NULL"
+                    ],
+                    "desc": "Headline"
+                },
+                {
+                    "name": "content",
+                    "type": "TEXT",
+                    "constraints": [],
+                    "desc": "Full Article"
+                },
+                {
+                    "name": "published_at",
+                    "type": "DATE",
+                    "constraints": [],
+                    "desc": "Publication Date"
+                }
+            ]
+        }
+    ]
+}

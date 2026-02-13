@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Architect - CREATE TABLE</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="schema_architect.css">
+    <link href="https://fonts.googleapis.com/css2?family=Consolas&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- Header -->
+        <header class="header">
+            <div id="project-title" class="project-title">Loading...</div>
+            <button id="btn-validate" class="btn-large" style="margin:0; font-size:1rem;">BUILD & VALIDATE</button>
+        </header>
+
+        <!-- Workspace -->
+        <main class="workspace">
+
+            <!-- Requirements Panel -->
+            <aside id="req-list" class="requirements-panel">
+                <!-- Requirements injected here -->
+            </aside>
+
+            <!-- Constructor -->
+            <section class="constructor-area">
+                <div id="sql-editor" class="sql-editor">
+                    <!-- SQL Rendering -->
+                </div>
+
+                <!-- Toolbox -->
+                <div id="toolbox" class="toolbox">
+                    <!-- Tool Buttons -->
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Result Overlay -->
+        <div id="result-overlay" class="result-overlay hidden">
+            <div class="card"
+                style="background: var(--panel-bg); border: 2px solid var(--accent-cyan); padding: 3rem; text-align:center;">
+                <h2 style="color:var(--accent-cyan); margin-bottom:1rem;">CONSTRUCTION COMPLETE</h2>
+                <div class="hud-value" style="font-size: 1.5rem; margin: 2rem 0; color:#fff" id="final-result">...</div>
+                <button id="btn-next" class="btn-large">NEXT BLUEPRINT</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_schema_architect.js"></script>
+</body>
+
+</html>

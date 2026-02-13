@@ -1,19 +1,38 @@
-Anforderungen
-1. "Hypervisor-Match"
-   - Ziel: Verständnis der verschiedenen Virtualisierungsschichten und deren Auswirkung auf die System-Performance und -Architektur.
-   - Spielmechanik: 
-     - Der Spieler muss Virtualisierungs-Szenarien den korrekten Hypervisor-Typen (Typ-1: Bare-Metal, Typ-2: Hosted) zuordnen.
-     - Analyse des Overheads: Vergleich der Ressourcen-Nutzung bei verschiedenen Schicht-Modellen.
-     - Auswahl passender Software-Lösungen (ESXi, Xen vs. VirtualBox, VMware Player) für spezifische Anwendungsfälle (Rechenzentrum vs. Entwicklung).
-     - Messbarkeit: Optimale Ausnutzung der Host-Hardware bei maximaler Stabilität.
-   - Lernziel: Befähigung zur Planung von Cloud-fähigen Infrastrukturen und Beherrschung von Virtualisierungs-Technologien.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der Virtualisierungstechnologie und der Rolle des Hypervisors (Typ 1 vs. Typ 2) bei der Ressourcenverwaltung.
+- Game-Mechanic: "The Hypervisor Match". Du bist der Dirigent eines digitalen Orchesters. Die Musiker (die Gast-Betriebssysteme) wollen alle gleichzeitig spielen, aber es gibt nur begrenzte Instrumente (Hardware: CPU, RAM, Disk). Du (der Hypervisor) musst jedem Musiker exakt die Ressourcen zuteilen, die er braucht, ohne das andere gestört werden. Isoliere sie perfekt, sonst gibt es eine Kakophonie (Systemabsturz)!
+- Challenge: 
+  - Level 1 (The Bare-Metal Concert): Konfiguriere einen Typ-1 Hypervisor (direkt auf der Hardware). Maximiere die Performance für drei Windows-Server.
+  - Level 2 (The Hosted Jam-Session): Nutze einen Typ-2 Hypervisor auf deinem Laptop. Jongliere mit Linux-VMs, während im Hintergrund noch andere Apps laufen.
+  - Level 3 (The Resource-War): Ein Gast-OS bekommt eine "Virus-Melodie". Isoliere es sofort (Snapshot/Kill), damit der Host und die anderen Gäste nicht infiziert werden.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_hypervisors.json')
-   - Hypervisor-Eigenschaften und Architektur-Boards.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Visuelle Darstellung der Hardware-Schichten).
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Wiederverwendung der Matching-Logik).
-- [ ] Integration
-   - Tutorial: Warum Typ-1 Hypervisoren für Hochleistungs-Server unverzichtbar sind.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Host-Resource-Gauge (CPU/RAM)", "Guest-Heartbeat-Monitor", "Isolation-Integrity-Level", "Context-Switching-Latency".
+- [ ] Scoring: "Efficiency-Conductor" Bonus für hohe Hardware-Auslastung bei gleichzeitig stabiler Isolation. Abzug für "Overselling" (wenn der Host überlastet wird).
+
+2. Screen-Layout (The Server Rack)
+- [ ] `hardware-chassis (The Stage) -> hypervisor-layer -> guest-vms (The Musicians) -> telemetry-board`.
+- [ ] Guest-VMs: Virtuelle Bildschirme, die den Status der einzelnen Systeme anzeigen.
+- [ ] Telemetry-Board: Ein Oszilloskop, das die Ressourcenverteilung in Echtzeit visualisiert.
+
+3. Kernvisuals und Effekte
+- [ ] Tech-Orchestra Ästhetik: Dunkler Hintergrund, goldene Datenströme, Laser-Verbindungen, Orchester-Samples gemischt mit digitalen Pieptönen (Shared Theme kompatibel).
+- [ ] "Resource-Flow": Sichtbare Energieströme fließen vom Host zu den Gästen. Sie werden dünner, wenn die Ressource knapp wird.
+- [ ] "Isolation-Bubble": Wenn eine VM sicher konfiguriert ist, erscheint eine transparente Schutzblase um sie herum.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS 3D-Transforms` für die Darstellung der VM-Schichten über der Hardware.
+- [ ] Mobile: "Pinch-and-Zoom" zur Detail-Analyse der Gäste.
+
+5. Content-Strategie (The Scores)
+- [ ] 12 Virtualisierungs-Szenarien: Von "Legacy App Hosting" bis "Dev-Environment Provisioning".
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen Typ-1 (Direkt) und Typ-2 (Auf OS) grafisch sofort deutlich?
+- [ ] Test: Fühlt sich das "Snapshot-Feature" als mächtiges Werkzeug der Zeitreise an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Virtualisierung trennt Software von Hardware für mehr Flexibilität.
+- [ ] Das Interface wirkt majestätisch, technisch präzise und klangvoll.
+- [ ] Fokus auf effiziente IT-Infrastruktur-Nutzung.

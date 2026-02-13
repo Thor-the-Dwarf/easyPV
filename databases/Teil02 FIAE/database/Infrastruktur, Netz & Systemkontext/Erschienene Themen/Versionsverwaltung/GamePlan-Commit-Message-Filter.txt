@@ -1,19 +1,38 @@
-Anforderungen
-1. "Commit-Message-Filter"
-   - Ziel: Sensibilisierung für eine saubere Projekthistorie und Beherrschung der Kern-Workflows der verteilten Versionsverwaltung (Git).
-   - Spielmechanik: 
-     - Der Spieler bewertet und filtert Commit-Messages nach Qualität und Aussagekraft (Conventional Commits).
-     - Durchführung von Git-Operationen (Branch, Commit, Merge, Rebase) in einem simulierten Team-Projekt.
-     - Auflösung von Merge-Konflikten durch manuelle Code-Selektion.
-     - Messbarkeit: Sauberkeit des Git-Graphs und Fehlerfreiheit der Merges.
-   - Lernziel: Befähigung zur effizienten Zusammenarbeit in Softwareprojekten und Nutzung der Historie zur Fehlerbehebung.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Erstellung aussagekräftiger, normgerechter Commit-Messages (Conventional Commits) zur Verbesserung der Nachvollziehbarkeit im Team.
+- Game-Mechanic: "The Message Guardian". Du bist der Torwächter der "Heiligen Git-Historie". Entwickler schicken ihre Code-Änderungen durch das Portal. Aber Achtung! Du lässt nur Commits durch, die eine klare Botschaft tragen. Botschaften wie "updated stuff" oder "bug fix" werden im Fegefeuer der schlechten Dokumentation vernichtet. Du verlangst Struktur und Klarheit!
+- Challenge: 
+  - Level 1 (The Basic Label): Korrigiere eine Nachricht wie "Fixing login" zu "fix: resolve incorrect error handling on login page".
+  - Level 2 (The Type-Selector): Wähle den richtigen Präfix: `feat`, `fix`, `docs`, `style`, `refactor`, `test` oder `chore`.
+  - Level 3 (The Breaking Change): Ein Commit enthält eine inkompatible Änderung. Markiere sie korrekt gemäß der "Breaking Change" Spezifikation, damit die automatisierte Versionsnummerierung (SemVer) funktioniert.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_vcs_git.json')
-   - Commit-Stories und Konflikt-Beispiele.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Visuelle Darstellung des Git-Trees).
-- [ ] Game-Engine Logic ('game_syntax_builder.js')
-   - (Validierung der Commit-Syntax).
-- [ ] Integration
-   - Info: Warum man niemals Passwörter in Git committet (und wie man sie löscht).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Commit-Quality-Index", "History-Readability-Rating", "SemVer-Pulse (Major/Minor/Patch)", "Guardian-Approval-Stamp".
+- [ ] Scoring: "History-Legend" Bonus für perfekte Einhaltung der "Conventional Commits" Regeln. Abzug für vage Beschreibungen.
+
+2. Screen-Layout (The Temple of History)
+- [ ] `commit-portal -> message-editor -> history-timeline -> guardian-judgment-hall`.
+- [ ] Message-Editor: Ein Eingabefeld mit Syntax-Vorschlägen (Autofill für Typen).
+- [ ] History-Timeline: Eine vertikale Liste, in der man sieht, wie sauber (oder dreckig) die Historie durch deine Arbeit wird.
+
+3. Kernvisuals und Effekte
+- [ ] Ancient-Digital Ästhetik: Dunkle Steinplatten, schwebende Neon-Runen, tiefe sakrale Klänge, Lichtblitze beim "Commit" (Shared Theme kompatibel).
+- [ ] "Stamp-of-Approval": Ein wuchtiges, leuchtendes Siegel knallt auf die Nachricht, wenn sie perfekt ist.
+- [ ] "History-Glow": Eine saubere Timeline fängt an, in einem harmonischen Blau zu leuchten.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Typing Effect` für die Darstellung der historischen Nachrichten.
+- [ ] Mobile: "Swipe-to-Approve" für schnelle Durchsicht.
+
+5. Content-Strategie (The Scribes)
+- [ ] 20 Reale Entwickler-Anekdoten als Commit-Rohmaterial zum Veredeln.
+
+6. QA-Paket
+- [ ] Test: Wird der Zusammenhang zwischen Commit-Message und automatischer Versionsnummer (SemVer) klar?
+- [ ] Test: Hilft der Message-Editor dem Spieler, die Regeln von "Conventional Commits" auswendig zu lernen?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: "Die Commit-Message ist ein Brief an dein zukünftiges Ich (und dein Team)".
+- [ ] Das Interface wirkt ehrwürdig, verbindlich und ästhetisch einzigartig.
+- [ ] Fokus auf professionelle Team-Zusammenarbeit.

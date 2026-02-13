@@ -1,19 +1,38 @@
-Anforderungen
-1. "Pipeline-Racer"
-   - Ziel: Verständnis des linear automatisierten Ablaufs von der Code-Änderung bis zur Bereitstellung (CI/CD Pipeline).
-   - Spielmechanik: 
-     - Der Spieler erhält Bausteine eines Release-Prozesses (Compile, Lint, Unit-Test, Integration-Test, Deploy).
-     - Aufgabe: Anordnung in der logisch korrekten Reihenfolge ("Fail Fast" Prinzip).
-     - Reaktion auf fehlschlagende Stages: Analyse der Logfiles und Korrektur des Fehlers.
-     - Messbarkeit: Zeit bis zum erfolgreichen Deployment ("Time to Market").
-   - Lernziel: Beherrschung moderner DevOps-Workflows und Steigerung der Softwarequalität durch Automatisierung.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der automatisierten Release-Pipeline (CI/CD) und die Bedeutung von Build- und Test-Stufen.
+- Game-Mechanic: "The Pipeline Racer". Du bist ein Pilot in einer futuristischen Test-Rennstrecke. Dein Auto (der Code) muss durch verschiedene Tore (Stages: Linting, Unit-Tests, Integration-Tests, Security-Scan). Wenn ein Tor rot leuchtet (Test failed), kracht dein Auto gegen die Schranke. Du musst den Fehler beheben, um das Rennen fortzusetzen und die Ziellinie (Prod-Deployment) als Erster zu erreichen.
+- Challenge: 
+  - Level 1 (The Basic Lap): Durchlaufe erfolgreich die Build- und Unit-Test Stage.
+  - Level 2 (The Security Trap): Ein "Vulnerability-Scan" Tor blockiert den Weg. Finde die unsichere Library im Code, tausche sie aus und rase weiter.
+  - Level 3 (The Multi-Stage Sprint): Die Pipeline hat 10 Stufen. Optimiere die Reihenfolge (Parallelisierung), um die "Time-to-Market" Rekordzeit zu knacken.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_cicd_pipeline.json')
-   - Pipeline-Stages und Fehlerszenarien.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Visuelle Darstellung der Pipeline-Nodes).
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Validierung der Prozess-Reihenfolge).
-- [ ] Integration
-   - Tutorial: Warum Tests VOR dem Deployment laufen müssen.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Cycle-Time-Clock", "Pipeline-Integrity (%)", "Build-Status (Green/Red)", "Resource-Consumption".
+- [ ] Scoring: "Automation-Ace" Bonus für fehlerfreie Läufe ("Green Builds") in Folge. Abzug für "Manual-Intervention" (wenn man eingreifen muss).
+
+2. Screen-Layout (The Command Cockpit)
+- [ ] `track-overview (The Pipeline) -> cockpit-display -> build-logs (Telemetry) -> deploy-button`.
+- [ ] Track-Overview: Eine horizontale Strecke mit leuchtenden Toren.
+- [ ] Cockpit-Display: Zeigt den aktuellen Code-Snapshot und die Test-Ergebnisse an.
+
+3. Kernvisuals und Effekte
+- [ ] Cyber-Racer Ästhetik: Neon-Grün, Neon-Rot, Chrom-Oberflächen, schnelle Kamerafahrten, energischer Synthwave-Soundtrack (Shared Theme kompatibel).
+- [ ] "Gate-Bypass": Wenn eine Stage erfolgreich ist, schießen Partikel-Effekte am Auto vorbei.
+- [ ] "Critical-Collision": Wenn ein Build fehlschlägt, gibt es einen lauten Knall und das Bild flackert kurz rot.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Animations` für die flüssige Vorwärtsbewegung des "Code-Autos".
+- [ ] Mobile: "Tap-to-Fix" Mechanik während des Laufs.
+
+5. Content-Strategie (The Race Circuits)
+- [ ] 12 verschiedene CI/CD Konfigurationen (GitHub Actions, GitLab CI, Jenkins Stil).
+
+6. QA-Paket
+- [ ] Test: Wird die zeitkritische Komponente von Continuous Deployment ("Speed matters") spürbar?
+- [ ] Test: Sind die Build-Logs im HUD auch bei hoher Geschwindigkeit lesbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Jede Stufe der Pipeline ist ein Qualitätsfilter.
+- [ ] Das Interface wirkt rasant, motivierend und hochgradig technologisch.
+- [ ] Fokus auf "Shift-Left" Testing und Automatisierung.

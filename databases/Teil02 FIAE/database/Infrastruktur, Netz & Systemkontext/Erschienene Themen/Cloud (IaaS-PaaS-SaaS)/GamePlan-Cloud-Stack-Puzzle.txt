@@ -1,19 +1,38 @@
-Anforderungen
-1. "Cloud-Stack-Puzzle"
-   - Ziel: Verständnis der verschiedenen Cloud-Service-Modelle (IaaS, PaaS, SaaS) und deren Abgrenzung zur on-premise Infrastruktur.
-   - Spielmechanik: 
-     - Der Spieler muss IT-Infrastruktur-Komponenten (Networking, Storage, Server, OS, Middleware, Data, App) den Verantwortungsbereichen (Provider vs. Kunde) zuordnen.
-     - Klassifizierung realer Dienste (z.B. AWS EC2, Google App Engine, Office 365) in die entsprechenden Modelle.
-     - Simulation von Migrations-Szenarien (z.B. "Vom eigenen Server zur Cloud-Datenbank").
-     - Messbarkeit: Korrekte Zuordnung der Verantwortlichkeiten und Dienstmodelle.
-   - Lernziel: Befähigung zur Auswahl geeigneter Cloud-Strategien und Verständnis des Shared Responsibility Modells.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sichere Unterscheidung und Anwendung von Cloud-Service-Modellen (IaaS, PaaS, SaaS) und deren Verantwortlichkeiten (Shared Responsibility Model).
+- Game-Mechanic: "The Cloud Stack Puzzle". Du bist der Architekt eines Wolken-Wolkenkratzers. Du hast verschiedene Bausteine: Infrastruktur (Hardware/Netz), Plattform (OS/Laufzeit) und Software (Apps). Der Kunde bestellt eine Etage. Du musst entscheiden: Gibst du ihm nur den nackten Stahlbeton (IaaS), die fertigen Wände und Leitungen (PaaS) oder das komplett möblierte Luxus-Appartement (SaaS)?
+- Challenge: 
+  - Level 1 (The Infrastructure Foundation): Ein Kunde will volle Kontrolle über das OS. Wähle die richtigen IaaS-Blöcke und konfiguriere das Netzwerk.
+  - Level 2 (The Developer's Suite): Ein Startup will nur App-Code hochladen. Baue eine PaaS-Lösung, die sich automatisch skaliert.
+  - Level 3 (The Software-as-a-Service Express): Ein Unternehmen braucht sofort eine E-Mail-Lösung. Wähle den SaaS-Block und integriere ihn ins System.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_cloud_models.json')
-   - Service-Layer und Provider-Profile.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung des Stapel-Interfaces).
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Validierung der Ebenen-Modelle).
-- [ ] Integration
-   - Tutorial: Warum SaaS die geringste, aber IaaS die höchste Kontrolle bietet.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Management-Overhead (Lower is better)", "Responsibility-Matrix (Who does what?)", "Cost-Efficiency Meter", "Cloud-Uptime (%)".
+- [ ] Scoring: "Smart-Architect" Bonus für die Wahl des Modells mit dem geringsten Wartungsaufwand für den Kunden. Abzug für "Incompatible-Stacks".
+
+2. Screen-Layout (The Building Table)
+- [ ] `skyscraper-silhouette -> component-blocks -> responsibility-layers -> deployment-crane`.
+- [ ] Component-Blocks: Farblich markiert nach IaaS (Blau), PaaS (Grün), SaaS (Gold).
+- [ ] Responsibility-Layers: Ein Overlay, das zeigt, welche Schichten der Provider (Cloud) und welche der Kunde verwaltet.
+
+3. Kernvisuals und Effekte
+- [ ] Airy-Corporate Ästhetik: Helles Blau, weiße Wolken-Verläufe, Glas-Reflektionen, sanfte Ambient-Musik, schwebende Bauelemente (Shared Theme kompatibel).
+- [ ] "Steam-Lock": Wenn ein Block korrekt auf den anderen passt, rastet er mit einem befriedigenden mechanischen Klicken ein.
+- [ ] " Responsibility-Shift": Schichten, die der Provider übernimmt, werden "durchsichtig" oder "unantastbar".
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Transitions` für das Stapeln der Blöcke.
+- [ ] Mobile: "Swipe-to-Stack" Mechanik.
+
+5. Content-Strategie (The Orders)
+- [ ] 15 Real-Life Szenarien: Von "Datenbank-Hosting" bis "CRM-Einführung".
+
+6. QA-Paket
+- [ ] Test: Wird die Grenze der Verantwortlichkeit (Shared Responsibility) visuell klar?
+- [ ] Test: Fühlt sich der Unterschied in der "Wartungs-Last" zwischen IaaS und SaaS spielerisch real an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Je höher im Cloud-Stack, desto weniger Kontrolle, aber desto mehr Fokus auf das Business.
+- [ ] Das Interface wirkt luftig, strukturiert und hochgradig logisch.
+- [ ] Fokus auf Cloud-nativen Denkweisen.

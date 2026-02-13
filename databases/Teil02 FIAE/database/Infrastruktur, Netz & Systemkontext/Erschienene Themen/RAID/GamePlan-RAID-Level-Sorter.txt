@@ -1,19 +1,38 @@
-Anforderungen
-1. "RAID-Level-Sorter"
-   - Ziel: Beherrschung der verschiedenen RAID-Konzepte zur Optimierung von Datensicherheit, Kapazität und Schreib/Lese-Performance.
-   - Spielmechanik: 
-     - Der Spieler konfiguriert virtuelle Disk-Arrays durch Auswahl der RAID-Level (0, 1, 5, 6, 10).
-     - Simulation von Festplattenausfällen und Durchführung von Rebuild-Prozessen.
-     - Berechnung der Netto-Kapazität und der Ausfallwahrscheinlichkeit basierend auf der Anzahl der Disks.
-     - Messbarkeit: Optimale Balance zwischen Kosten, Performance und Sicherheit für ein gegebenes Lastprofil.
-   - Lernziel: Befähigung zur Planung und Administration von hochverfügbaren Storage-Systemen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Beherrschung der verschiedenen RAID-Level (0, 1, 5, 6, 10) und deren Kompromisse zwischen Geschwindigkeit, Kapazität und Sicherheit.
+- Game-Mechanic: "The Data Shield Sorter". Du bist der Rüstmeister einer digitalen Burg. Die Datenpakete sind wertvolle Schätze. Du musst die Festplatten-Wagen so zusammenstellen (RAID-Array), dass sie entweder besonders schnell fahren (Striping) oder die Ladung kopieren (Mirroring), falls ein Wagen im Graben landet. Wenn dir eine Platte ausfällt, darf der Schatz nicht verloren gehen!
+- Challenge: 
+  - Level 1 (The Speed Daemon): Wähle RAID 0 für maximale Geschwindigkeit. Aber Vorsicht – ein Defekt und ALLES ist weg!
+  - Level 2 (The Safety First): Konfiguriere RAID 1. Kopiere die Daten auf zwei Platten. Halbiere die Kapazität, aber schlafe ruhig.
+  - Level 3 (The Balanced Bastion): Baue ein RAID 5 oder 10. Berechne die Parität oder kombiniere Mirroring und Striping für das "Enterprise-Gefühl".
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_raid_levels.json')
-   - RAID-Eigenschaften und Disk-Szenarien.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Visuelle Darstellung des Disk-Arrays).
-- [ ] Game-Engine Logic ('game_logic_validator.js')
-   - (Berechnungs- und Simulationslogik).
-- [ ] Integration
-   - Info: Warum RAID 5 bei sehr großen Platten wegen langer Rebuild-Zeiten riskant ist.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Total-Storage-Capacity", "Write-Speed-Meter", "Fault-Tolerance (Plates to fail)", "Data-Loss-Risk (%)".
+- [ ] Scoring: "Storage-King" Bonus für die kosteneffizienteste Lösung bei gegebener Sicherheits-Anforderung. Abzug für "Total-Data-Loss".
+
+2. Screen-Layout (The Storage Armory)
+- [ ] `array-slots -> disk-shelf -> configuration-anvil (Settings) -> destruction-test-chamber`.
+- [ ] Array-Slots: Platz für 2, 3, 4 oder mehr Festplatten.
+- [ ] Destruction-Test-Chamber: Hier kannst du (simuliert) eine Platte mit einem Hammer zerschlagen, um zu sehen, ob das System weiterläuft (Rebuild!).
+
+3. Kernvisuals und Effekte
+- [ ] Heavy-Metal Industrial Ästhetik: Stahl, Funkenschlag beim Konfigurieren, schwere Zahnräder, mechanische Festplatten-Geräusche (Shared Theme kompatibel).
+- [ ] "Disk-Spin": Ein visualisierter RPM-Wirbel, der anzeigt, wie schnell die Daten fließen.
+- [ ] "Red-Alert-Rebuild": Wenn eine Platte ausfällt, blinkt der Status-Balken hektisch und zeigt den Fortschritt des Rebuild-Prozesses.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Filter (Grayscale/Sepia)` für den rostigen Burg-Look.
+- [ ] Mobile: "Tap-to-Eject" zum Testen der Fehlertoleranz.
+
+5. Content-Strategie (The Armory-Orders)
+- [ ] 10 Backup-Szenarien: Von "Home-NAS" bis "High-Performance Database Server".
+
+6. QA-Paket
+- [ ] Test: Wird das Verhältnis zwischen Brutto- und Netto-Kapazität bei den verschiedenen Leveln sofort klar?
+- [ ] Test: Ist der Nervenkitzel beim Rebuild (RAID 5 Risiko) spürbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "RAID ist kein Backup, sondern Hochverfügbarkeit".
+- [ ] Das Interface wirkt wuchtig, sicherheitshungrig und hochgradig mechanisch.
+- [ ] Fokus auf Datensicherheit und Hardware-Verständnis.

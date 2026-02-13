@@ -1,251 +1,328 @@
 /* 
- * UNION-Check - Styles
- * Aesthetic: Magnetic Merger / Nuclear Physics Lab / Holographic Sync
+ * UNION Compatibility - Upgraded Styles
+ * Aesthetic: Magnetic Fusion Reactor / Plasma Physics Lab
  */
 
 :root {
-    --bg-lab: #0a0c10;
-    --bg-rail: #1a1e26;
-    --text-main: #e0e6ed;
-    --mag-red: #ff3131;
-    --mag-blue: #00d4ff;
-    --sync-gold: #ffcc00;
-    --type-int: #4285f4;
-    --type-str: #34a853;
-    --type-dec: #f4b400;
-    --type-date: #ea4335;
+    --reactor-bg: #0a0b10;
+    --magnetic-blue: #00d4ff;
+    --magnetic-red: #ff3e3e;
+    --plasma-purple: #bd00ff;
+    --type-int: #00f2ff;
+    --type-str: #ffcc00;
+    --type-date: #00ff9d;
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --metal-surface: #1a1c23;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background: var(--bg-lab);
-    color: var(--text-main);
-    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    background: var(--reactor-bg);
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(189, 0, 255, 0.05) 0%, transparent 80%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 60px 60px, 60px 60px;
+    color: #ffffff;
+    font-family: 'Share Tech Mono', monospace;
     height: 100vh;
-    overflow: hidden;
-    user-select: none;
-}
-
-.game-app {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    overflow: hidden;
 }
 
-/* --- HUD --- */
-.hud {
-    padding: 1rem 2rem;
-    background: rgba(0, 0, 0, 0.8);
-    border-bottom: 2px solid #333;
+/* --- Reactor HUD --- */
+.reactor-hud {
+    padding: 1.2rem 2.5rem;
+    background: rgba(10, 11, 16, 0.95);
+    border-bottom: 2px solid var(--plasma-purple);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 10px 40px rgba(189, 0, 255, 0.1);
     z-index: 100;
 }
 
-.hud-title {
-    color: var(--mag-blue);
+.hud-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-label {
+    font-size: 0.6rem;
+    color: var(--plasma-purple);
+    letter-spacing: 4px;
+    margin-bottom: 4px;
     font-weight: bold;
-    letter-spacing: 2px;
 }
 
-.level-desc {
-    font-size: 0.8rem;
-    color: #8892b0;
-    max-width: 50%;
+.hud-val {
+    font-size: 1.4rem;
+    font-weight: 900;
 }
 
-/* --- Magnet Rails --- */
-.merger-area {
+/* --- Fusion Chamber --- */
+.fusion-chamber {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    padding: 2rem;
+    position: relative;
+}
+
+/* Magnetic Poles (Headers) */
+.magnetic-pole {
+    width: 100%;
+    max-width: 800px;
+    background: var(--metal-surface);
+    border: 2px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    gap: 10px;
+    transition: transform 0.1s;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.pole-n {
+    border-top: 4px solid var(--magnetic-blue);
+    margin-bottom: 4rem;
+}
+
+.pole-s {
+    border-bottom: 4px solid var(--magnetic-red);
+    margin-top: 4rem;
+    cursor: grab;
+}
+
+.pole-s:active {
+    cursor: grabbing;
+}
+
+.column-node {
+    flex: 1;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
     position: relative;
     overflow: hidden;
 }
 
-.query-rail {
-    width: 90%;
-    max-width: 800px;
-    background: var(--bg-rail);
-    border: 2px solid #444;
-    border-radius: 8px;
-    padding: 10px;
-    position: relative;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.query-rail.query-a {
-    border-bottom: 4px solid var(--mag-red);
-}
-
-.query-rail.query-b {
-    border-top: 4px solid var(--mag-blue);
-    cursor: grab;
-    touch-action: none;
-}
-
-.query-rail:active {
-    cursor: grabbing;
-}
-
-.query-label {
-    font-size: 0.8rem;
+.node-label {
+    font-size: 0.6rem;
     color: #555;
-    margin-bottom: 5px;
-    text-transform: uppercase;
 }
 
-.column-set {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.type-badge {
-    padding: 5px 12px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    min-width: 60px;
-    text-align: center;
-}
-
-.type-badge[data-type="INT"] {
-    background: var(--type-int);
-}
-
-.type-badge[data-type="STR"] {
-    background: var(--type-str);
-}
-
-.type-badge[data-type="DEC"] {
-    background: var(--type-dec);
-}
-
-.type-badge[data-type="DATE"] {
-    background: var(--type-date);
-}
-
-/* --- Magnetic Effects --- */
-.gap-visual {
-    height: 20px;
-    width: 100%;
-    position: relative;
-}
-
-.field-line {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom, var(--mag-red), var(--mag-blue));
-    opacity: 0.3;
-}
-
-/* --- Action Footer --- */
-.controls {
-    padding: 1.5rem;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    border-top: 1px solid #222;
-}
-
-.btn-union {
-    background: #111;
-    border: 1px solid #444;
-    color: #fff;
-    padding: 10px 30px;
-    cursor: pointer;
-    border-radius: 20px;
+.node-type {
     font-size: 0.9rem;
-    transition: all 0.2s;
+    font-weight: bold;
 }
 
-.btn-union.active {
-    background: var(--sync-gold);
-    color: #000;
-    border-color: var(--sync-gold);
+/* Type Colors */
+.type-int {
+    color: var(--type-int);
+    border-bottom: 2px solid var(--type-int);
 }
 
-/* --- Feedback States --- */
-.query-rail.synced {
-    border-color: var(--sync-gold);
-    box-shadow: 0 0 30px rgba(255, 204, 0, 0.4);
+.type-str {
+    color: var(--type-str);
+    border-bottom: 2px solid var(--type-str);
 }
 
-.shake {
-    animation: shake 0.4s cubic-bezier(.36, .07, .19, .97) both;
+.type-date {
+    color: var(--type-date);
+    border-bottom: 2px solid var(--type-date);
 }
 
-@keyframes shake {
-
-    10%,
-    90% {
-        transform: translate3d(-2px, 0, 0);
-    }
-
-    20%,
-    80% {
-        transform: translate3d(4px, 0, 0);
-    }
-
-    30%,
-    50%,
-    70% {
-        transform: translate3d(-8px, 0, 0);
-    }
-
-    40%,
-    60% {
-        transform: translate3d(8px, 0, 0);
-    }
-}
-
-/* --- Overlay --- */
-.overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.95);
+/* --- Magnetic Gap (The Middle) --- */
+.magnetic-gap {
+    height: 120px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    position: relative;
 }
 
-.result-card {
-    background: var(--bg-rail);
-    border: 2px solid var(--sync-gold);
-    padding: 3rem;
-    text-align: center;
-}
-
-.btn-next {
-    margin-top: 2rem;
-    background: var(--sync-gold);
-    color: #000;
-    border: none;
-    padding: 10px 40px;
-    font-weight: bold;
+.set-operator {
+    background: var(--plasma-purple);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    box-shadow: 0 0 30px var(--plasma-purple);
     cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.set-operator:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px var(--plasma-purple);
+}
+
+/* --- Result Manifest --- */
+.result-manifest {
+    position: absolute;
+    bottom: 2rem;
+    width: 90%;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--plasma-purple);
+    padding: 1rem;
+    display: none;
+    animation: slide-in 0.5s forwards;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* --- FX & States --- */
+.electric-spark {
+    position: absolute;
+    pointer-events: none;
+    background: #fff;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px var(--magnetic-blue);
+    animation: spark-jump 0.4s linear forwards;
+}
+
+@keyframes spark-jump {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.shake {
+    animation: magnetic-repel 0.4s;
+}
+
+@keyframes magnetic-repel {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    20% {
+        transform: translate(-10px, 10px);
+    }
+
+    40% {
+        transform: translate(10px, -10px);
+    }
+
+    60% {
+        transform: translate(-10px, -10px);
+    }
+
+    80% {
+        transform: translate(10px, 10px);
+    }
+}
+
+.fuse-glow {
+    animation: fusion-flash 0.6s forwards;
+}
+
+@keyframes fusion-flash {
+    0% {
+        box-shadow: 0 0 0 transparent;
+    }
+
+    50% {
+        box-shadow: 0 0 100px var(--magnetic-blue);
+    }
+
+    100% {
+        box-shadow: 0 0 20px var(--magnetic-blue);
+    }
+}
+
+/* --- Overlays --- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 11, 16, 0.98);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(20px);
+}
+
+.fusion-card {
+    padding: 4rem;
+    background: var(--metal-surface);
+    border: 4px solid var(--plasma-purple);
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 0 50px rgba(189, 0, 255, 0.3);
+}
+
+#btn-next {
+    width: 100%;
+    padding: 15px;
+    background: var(--plasma-purple);
+    color: #fff;
+    border: none;
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
 }
 
 .hidden {
     display: none !important;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-    .query-rail {
-        width: 95%;
+@media (max-width: 900px) {
+    .reactor-hud {
+        padding: 1rem;
+    }
+
+    .hud-val {
+        font-size: 1.1rem;
+    }
+
+    .magnetic-pole {
+        padding: 0.5rem;
+    }
+
+    .column-node {
+        height: 50px;
+    }
+
+    .node-type {
+        font-size: 0.7rem;
     }
 }

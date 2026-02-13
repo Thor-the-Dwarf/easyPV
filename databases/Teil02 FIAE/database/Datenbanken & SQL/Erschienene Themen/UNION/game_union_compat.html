@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNION Check - Magnetic Merger</title>
+    <title>UNION Compatibility // Fusion Reactor</title>
     <!-- Adjust path -->
     <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
     <link rel="stylesheet" href="union_compat.css">
@@ -13,65 +13,56 @@
 
 <body>
     <div class="game-app">
-        <!-- HUD -->
-        <header class="hud">
-            <div style="flex:1;">
-                <h1 id="level-title" class="hud-title">MAGNETIC_LAB // LOADING...</h1>
+        <!-- Reactor HUD -->
+        <header class="reactor-hud">
+            <div class="hud-section">
+                <div class="hud-label">FUSION_REVENUE</div>
+                <div id="score-val" class="hud-val">0</div>
             </div>
-            <div id="level-desc" class="level-desc">
-                Analyze Query Schema Compatibility.
+            <div style="text-align:center;">
+                <div id="level-title" style="letter-spacing:5px; font-weight:bold; color:var(--plasma-purple);">
+                    REACTOR_OFFLINE</div>
+                <div style="font-size:0.6rem; color:#555; margin-top:5px;">OBJECTIVE: ALIGN_SCHEMA_POLARITY</div>
             </div>
-            <div style="flex:1; text-align:right; font-size:0.7rem; color:#555;">
-                SET_OPERATIONS_MODE: ACTIVE
+            <div class="hud-section">
+                <div class="hud-label">CORE_INTEGRITY</div>
+                <div id="integrity-val" class="hud-val">100%</div>
             </div>
         </header>
 
-        <!-- Main Workspace -->
-        <main class="merger-area">
-            <!-- Stationary Rail A -->
-            <div id="rail-a" class="query-rail query-a">
-                <div class="query-label">SELECT ... FROM Table_A</div>
-                <div class="column-set">
-                    <!-- Column badges injected -->
-                </div>
+        <!-- Fusion Chamber -->
+        <main class="fusion-chamber">
+            <!-- Magnetic Pole N (Static) -->
+            <div class="hud-label" style="margin-bottom:1rem;">POLE_NORTH // QUERY_A_SCHEMA</div>
+            <div id="pole-n" class="magnetic-pole pole-n">
+                <!-- Columns injected here -->
             </div>
 
-            <!-- Gap -->
-            <div class="gap-visual">
-                <div class="field-line"></div>
-                <div
-                    style="position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); font-size:1.5rem; color:#222;">
-                    🧲</div>
+            <!-- Magnetic Gap & Operator -->
+            <div class="magnetic-gap">
+                <div id="op-toggle" class="set-operator">UNION</div>
             </div>
 
-            <!-- Movable Rail B -->
-            <div id="rail-b" class="query-rail query-b">
-                <div class="query-label">SELECT ... FROM Table_B</div>
-                <div class="column-set">
-                    <!-- Column badges injected -->
-                </div>
+            <!-- Magnetic Pole S (Draggable) -->
+            <div id="pole-s" class="magnetic-pole pole-s">
+                <!-- Columns injected here -->
             </div>
+            <div class="hud-label" style="margin-top:1rem;">POLE_SOUTH // QUERY_B_SCHEMA (DRAG_UP_TO_FUSE)</div>
         </main>
 
-        <!-- Controls -->
-        <footer class="controls">
-            <button id="btn-union" class="btn-union active">UNION (Distinct)</button>
-            <button id="btn-union-all" class="btn-union">UNION ALL (Waterfall)</button>
-        </footer>
-
-        <!-- Result Overlay -->
+        <!-- Finish/Meltdown Overlay -->
         <div id="overlay" class="overlay hidden">
-            <div class="result-card">
-                <h2 style="color:var(--sync-gold); margin-bottom:1rem;">SCHEMA FUSION COMPLETE</h2>
-                <div id="result-reason" style="margin: 1.5rem 0; font-size: 0.9rem; color: #aaa;">...</div>
+            <div class="fusion-card">
+                <div class="hud-label" style="text-align: center; margin-bottom: 2rem;">FUSION_STABILITY_REPORT</div>
+                <h1 id="res-final" style="color:var(--magnetic-blue); margin:0; letter-spacing:8px;">STABLE_OR_MELTDOWN
+                </h1>
 
-                <div
-                    style="background:rgba(255,255,255,0.05); padding:1rem; font-family:monospace; font-size:0.8rem; margin-bottom:2rem;">
-                    SUCCESS: All set operation constraints satisfied.<br>
-                    MAGNETIC FIELD STABLE.
-                </div>
+                <p style="margin: 2rem 0; font-size: 0.9rem; line-height: 1.8; color: #888;">
+                    Result sets have been merged following the laws of SQL set theory.<br>
+                    Column parity and type matching have been verified.
+                </p>
 
-                <button id="btn-next" class="btn-next">START NEXT SYNC</button>
+                <button id="btn-next">ACKNOWLEDGE_STATE</button>
             </div>
         </div>
     </div>

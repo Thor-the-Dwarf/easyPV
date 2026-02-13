@@ -5,47 +5,40 @@
         config: null,
         levelIdx: 0,
         isUnionAll: false,
+        isFused: false,
         dragY: 0,
-        startRailY: 0,
-        isSynced: false
+        originY: 0,
+        score: 0,
+        integrity: 100
     };
 
     const el = {
-        levelTitle: document.getElementById('level-title'),
-        levelDesc: document.getElementById('level-desc'),
-        railA: document.getElementById('rail-a'),
-        railB: document.getElementById('rail-b'),
-        btnUnion: document.getElementById('btn-union'),
-        btnUnionAll: document.getElementById('btn-union-all'),
+        title: document.getElementById('level-title'),
+        poleN: document.getElementById('pole-n'),
+        poleS: document.getElementById('pole-s'),
+        operator: document.getElementById('op-toggle'),
+        score: document.getElementById('score-val'),
+        integrity: document.getElementById('integrity-val'),
         overlay: document.getElementById('overlay'),
-        resultReason: document.getElementById('result-reason'),
-        btnNext: document.getElementById('btn-next')
+        resFinal: document.getElementById('res-final'),
+        btnNext: document.getElementById('btn-next'),
+        chamber: document.querySelector('.fusion-chamber')
     };
 
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-    function playSound(type) {
+    function playSound(freq, type = 'sine', duration = 0.2) {
         if (audioCtx.state === 'suspended') audioCtx.resume();
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
         osc.connect(gain);
         gain.connect(audioCtx.destination);
-
-        if (type === 'snap') {
-            osc.frequency.setValueAtTime(600, audioCtx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.1);
-            gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.1);
-            osc.start();
-            osc.stop(audioCtx.currentTime + 0.1);
-        } else if (type === 'bounce') {
-            osc.type = 'square';
-            osc.frequency.setValueAtTime(200, audioCtx.currentTime);
-            gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.2);
-            osc.start();
-            osc.stop(audioCtx.currentTime + 0.2);
-        }
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
     }
 
     async function init() {
@@ -53,151 +46,180 @@
             const resp = await fetch('game_union_compat.json');
             state.config = await resp.json();
 
-            setupInteractions();
-            startLevel(0);
-        } catch (e) {
-            console.error(e);
-        }
-    }
-
-    function setupInteractions() {
-        el.railB.addEventListener('mousedown', startDrag);
-        el.railB.addEventListener('touchstart', startDrag);
-
-        window.addEventListener('mousemove', drag);
-        window.addEventListener('touchmove', drag);
-
-        window.addEventListener('mouseup', stopDrag);
-        window.addEventListener('touchend', stopDrag);
-
-        el.btnUnion.addEventListener('click', () => setMode(false));
-        el.btnUnionAll.addEventListener('click', () => setMode(true));
-
-        el.btnNext.addEventListener('click', () => {
-            if (state.levelIdx < state.config.levels.length - 1) {
+            el.operator.onclick = toggleOperator;
+            el.btnNext.onclick = () => {
+                el.overlay.classList.add('hidden');
                 startLevel(state.levelIdx + 1);
-            } else {
-                location.reload();
-            }
-        });
+            };
+
+            initDraggable();
+            startLevel(0);
+        } catch (e) { console.error(e); }
     }
 
-    function setMode(isAll) {
-        state.isUnionAll = isAll;
-        el.btnUnion.classList.toggle('active', !isAll);
-        el.btnUnionAll.classList.toggle('active', isAll);
-        playSound('snap');
+    function toggleOperator() {
+        state.isUnionAll = !state.isUnionAll;
+        el.operator.textContent = state.isUnionAll ? 'UNION ALL' : 'UNION';
+        playSound(600, 'square', 0.1);
     }
 
     function startLevel(idx) {
+        if (idx >= state.config.levels.length) {
+            location.reload();
+            return;
+        }
         state.levelIdx = idx;
-        state.isSynced = false;
-        const level = state.config.levels[idx];
+        state.isFused = false;
+        state.integrity = 100;
 
-        el.levelTitle.textContent = level.title;
-        el.levelDesc.textContent = level.description;
-        el.overlay.classList.add('hidden');
+        // Reset positions
+        el.poleS.style.transform = `translateY(0)`;
+        el.poleS.classList.remove('fuse-glow');
+        el.poleN.classList.remove('fuse-glow');
 
-        renderRail(el.railA, level.queryA);
-        renderRail(el.railB, level.queryB);
+        const lv = state.config.levels[idx];
+        el.title.textContent = `REACTOR_CORE_//_SEQ_${lv.id || 'X'}`;
 
-        el.railB.style.transform = 'translateY(0)';
-        el.railA.classList.remove('synced');
-        el.railB.classList.remove('synced');
+        renderPoles(lv);
+        updateHUD();
     }
 
-    function renderRail(rail, query) {
-        rail.querySelector('.query-label').textContent = query.label;
-        const set = rail.querySelector('.column-set');
-        set.innerHTML = '';
-        query.columns.forEach(col => {
-            const b = document.createElement('div');
-            b.className = 'type-badge';
-            b.dataset.type = col.type;
-            b.textContent = col.type;
-            set.appendChild(b);
-        });
+    function renderPoles(lv) {
+        el.poleN.innerHTML = '';
+        el.poleS.innerHTML = '';
+
+        lv.queryA.columns.forEach(col => el.poleN.appendChild(createNode(col)));
+        lv.queryB.columns.forEach(col => el.poleS.appendChild(createNode(col)));
     }
 
-    let isDragging = false;
-    function startDrag(e) {
-        if (state.isSynced) return;
-        isDragging = true;
-        const clientY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
-        state.dragY = clientY;
+    function createNode(col) {
+        const div = document.createElement('div');
+        div.className = `column-node type-${col.type.toLowerCase()}`;
+        div.innerHTML = `
+        <div class="node-label">${col.name}</div>
+        <div class="node-type">${col.type.toUpperCase()}</div>
+      `;
+        return div;
     }
 
-    function drag(e) {
-        if (!isDragging) return;
-        const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
-        const delta = clientY - state.dragY;
+    function initDraggable() {
+        let isDragging = false;
+        let startY = 0;
 
-        // Only allow upward drag towards rail A
-        const move = Math.min(0, delta);
-        if (move < -200) return; // Limit
+        const onStart = (e) => {
+            if (state.isFused) return;
+            isDragging = true;
+            startY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+            el.poleS.style.transition = 'none';
+        };
 
-        el.railB.style.transform = `translateY(${move}px)`;
+        const onMove = (e) => {
+            if (!isDragging) return;
+            const currentY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+            const deltaY = currentY - startY;
 
-        // Check for proximity
-        if (move < -80) {
-            checkProximity();
+            // Clamp to move upwards
+            const moveY = Math.min(0, deltaY);
+            el.poleS.style.transform = `translateY(${moveY}px)`;
+
+            checkFusion(moveY);
+        };
+
+        const onEnd = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            if (!state.isFused) {
+                el.poleS.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                el.poleS.style.transform = `translateY(0)`;
+            }
+        };
+
+        el.poleS.addEventListener('mousedown', onStart);
+        el.poleS.addEventListener('touchstart', onStart);
+        window.addEventListener('mousemove', onMove);
+        window.addEventListener('touchmove', onMove);
+        window.addEventListener('mouseup', onEnd);
+        window.addEventListener('touchend', onEnd);
+    }
+
+    function checkFusion(y) {
+        // Logic: if dist < 50px, try to fuse
+        const threshold = -160;
+        if (y < threshold && !state.isFused) {
+            validateFusion();
         }
     }
 
-    function checkProximity() {
-        const level = state.config.levels[state.levelIdx];
-        if (level.compatible) {
-            syncSuccess();
+    function validateFusion() {
+        const lv = state.config.levels[state.levelIdx];
+        const colsA = lv.queryA.columns;
+        const colsB = lv.queryB.columns;
+
+        let compatible = true;
+        if (colsA.length !== colsB.length) compatible = false;
+        else {
+            for (let i = 0; i < colsA.length; i++) {
+                if (colsA[i].type !== colsB[i].type) compatible = false;
+            }
+        }
+
+        if (compatible) {
+            executeFusion();
         } else {
-            syncFail();
+            abortFusion();
         }
     }
 
-    function syncSuccess() {
-        isDragging = false;
-        state.isSynced = true;
-        el.railB.style.transform = 'translateY(-100px)'; // Snap point
-        el.railA.classList.add('synced');
-        el.railB.classList.add('synced');
-        playSound('snap');
+    function executeFusion() {
+        state.isFused = true;
+        playSound(880, 'square', 0.4);
+        el.poleS.style.transform = `translateY(-200px)`;
+        el.poleS.classList.add('fuse-glow');
+        el.poleN.classList.add('fuse-glow');
 
-        showOverlay(true);
+        state.score += 100;
+        updateHUD();
+
+        createSparks();
+        setTimeout(() => endGame("FUSION_STABLE"), 1000);
     }
 
-    function syncFail() {
-        isDragging = false;
-        el.railB.classList.add('shake');
-        playSound('bounce');
+    function abortFusion() {
+        state.isFused = true; // Temporary lock
+        playSound(110, 'sawtooth', 0.5);
+        el.poleS.classList.add('shake');
+        state.integrity -= 25;
+        updateHUD();
 
-        // Bounce back
         setTimeout(() => {
-            el.railB.style.transform = 'translateY(0)';
-            el.railB.classList.remove('shake');
-            showOverlay(false);
-        }, 400);
+            el.poleS.classList.remove('shake');
+            el.poleS.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            el.poleS.style.transform = `translateY(0)`;
+            state.isFused = false;
+            if (state.integrity <= 0) endGame("REACTOR_MELTDOWN");
+        }, 500);
     }
 
-    function showOverlay(success) {
-        const level = state.config.levels[state.levelIdx];
-        el.resultReason.textContent = level.reason;
-
-        if (success) {
-            setTimeout(() => {
-                el.overlay.classList.remove('hidden');
-            }, 800);
-        } else {
-            // Just show reason de-brief even if it failed?
-            // Let's only show overlay on success, or after few attempts
-            // Requirement: "Bounce back" already gives feedback.
+    function createSparks() {
+        for (let i = 0; i < 20; i++) {
+            const spark = document.createElement('div');
+            spark.className = 'electric-spark';
+            spark.style.left = `${50 + (Math.random() - 0.5) * 80}%`;
+            spark.style.top = `40%`;
+            el.chamber.appendChild(spark);
+            setTimeout(() => spark.remove(), 400);
         }
     }
 
-    function stopDrag() {
-        if (!isDragging) return;
-        isDragging = false;
-        if (!state.isSynced) {
-            el.railB.style.transform = 'translateY(0)';
-        }
+    function updateHUD() {
+        el.score.textContent = state.score;
+        el.integrity.textContent = `${state.integrity}%`;
+        el.integrity.style.color = state.integrity < 40 ? 'var(--magnetic-red)' : 'var(--magnetic-blue)';
+    }
+
+    function endGame(msg) {
+        el.resFinal.textContent = msg;
+        el.overlay.classList.remove('hidden');
     }
 
     init();

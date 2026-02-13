@@ -4,51 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SQL INSERT - Value Match</title>
-    <!-- Adjust path to shared_theme.css if necessary, usually it's in a parent directory -->
+    <title>Value Match - Industrial Loading Dock</title>
+    <!-- Adjust path -->
     <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
     <link rel="stylesheet" href="value_match.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="game-app">
-        <!-- Navigation -->
-        <nav class="nav-bar">
-            <div id="level-title" class="level-info">Loading...</div>
-            <div class="status-badge">GATE: LOADING DOCK</div>
-        </nav>
+        <!-- HUD -->
+        <header class="header-bar">
+            <div id="level-title" class="level-title">LOADING_UNIT // BOOTING...</div>
+            <div style="font-family:monospace; font-size:0.75rem; color:var(--warning-yellow);">
+                HUB_STATUS: <span style="color:var(--success-green);">ACTIVE</span><br>
+                DRIVE_INTEGRITY: 100%
+            </div>
+        </header>
 
-        <!-- Main Workspace -->
+        <!-- Workspace -->
         <main class="workspace">
-            <!-- Loading Dock -->
-            <div id="loading-dock" class="loading-dock">
-                <!-- Columns injected here -->
-            </div>
+            <!-- Loading Ramp (Table) -->
+            <section id="loading-ramp" class="loading-ramp">
+                <!-- Bays injected here -->
+            </section>
 
-            <!-- Syntax Preview -->
-            <div id="syntax-preview" class="syntax-bar">
-                <!-- Syntax injected here -->
-            </div>
-
-            <!-- Package Yard -->
-            <div id="package-yard" class="package-yard">
-                <!-- Packages injected here -->
-            </div>
+            <!-- Package Yard (Values) -->
+            <section id="package-yard" class="package-yard">
+                <!-- Crates injected here -->
+            </section>
         </main>
 
-        <!-- Result Screen -->
-        <div id="result-overlay" class="result-overlay hidden">
-            <div class="result-card">
-                <div class="truck-animation">🚛💨</div>
-                <h2 style="color:var(--success-green); margin-bottom:1rem;">CARGO SECURED!</h2>
-                <div class="hud-value" style="font-size: 1.5rem; margin: 2rem 0; color:#fff" id="final-result">Row
-                    inserted successfully.</div>
-                <button id="btn-next" class="btn-primary">NEXT SHIPMENT</button>
+        <!-- Syntax Bar -->
+        <footer class="syntax-bar">
+            <div style="color:var(--warning-yellow); font-size:0.8rem; letter-spacing:2px; margin-right:1rem;">
+                SQL_PREVIEW:</div>
+            <div id="syntax-line" class="syntax-content">
+                <!-- Syntax preview injected here -->
+            </div>
+        </footer>
+
+        <!-- Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="status-card">
+                <h1 style="color:var(--warning-yellow); margin-top:0; letter-spacing:5px;">LADUNG_GESICHERT</h1>
+                <div
+                    style="margin: 2.5rem 0; font-size: 1rem; color: #fff; line-height: 1.8; text-align: left; font-family: monospace;">
+                    > RECORD_INSERT: SUCCESSFUL<br>
+                    > SCHEMA_MATCH: 100%<br>
+                    > TRUCK_DISPATCHED: YES
+                </div>
+
+                <button id="btn-next" class="btn-proceed">NÄCHSTE LIEFERUNG</button>
             </div>
         </div>
     </div>
 
-    <!-- Game Logic -->
+    <!-- Script -->
     <script src="game_value_match.js"></script>
 </body>
 

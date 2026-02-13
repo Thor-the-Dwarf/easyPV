@@ -1,0 +1,97 @@
+{
+    "meta": {
+        "topic": "UML Class Diagram Attributes",
+        "mechanic": "blueprint_auditor",
+        "version": "1.0"
+    },
+    "scenarios": [
+        {
+            "id": 1,
+            "title": "Basic Identity",
+            "code": [
+                "public class User {",
+                "  private int id;",
+                "  public String username;",
+                "  protected boolean isActive;",
+                "}"
+            ],
+            "targets": [
+                {
+                    "line": 1,
+                    "visibility": "-",
+                    "name": "id",
+                    "type": "int",
+                    "uml": "- id : int"
+                },
+                {
+                    "line": 2,
+                    "visibility": "+",
+                    "name": "username",
+                    "type": "String",
+                    "uml": "+ username : String"
+                },
+                {
+                    "line": 3,
+                    "visibility": "#",
+                    "name": "isActive",
+                    "type": "boolean",
+                    "uml": "# isActive : boolean"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "List & Multiplicity",
+            "code": [
+                "public class Order {",
+                "  private List<Item> items;",
+                "  public double totalPrice;",
+                "}"
+            ],
+            "targets": [
+                {
+                    "line": 1,
+                    "visibility": "-",
+                    "name": "items",
+                    "type": "Item",
+                    "multiplicity": "0..*",
+                    "uml": "- items : Item [0..*]"
+                },
+                {
+                    "line": 2,
+                    "visibility": "+",
+                    "name": "totalPrice",
+                    "type": "double",
+                    "uml": "+ totalPrice : double"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Extended Types",
+            "code": [
+                "public class Profile {",
+                "  protected Set<Role> roles;",
+                "  ~ Date createdAt;",
+                "}"
+            ],
+            "targets": [
+                {
+                    "line": 1,
+                    "visibility": "#",
+                    "name": "roles",
+                    "type": "Role",
+                    "multiplicity": "0..*",
+                    "uml": "# roles : Role [0..*]"
+                },
+                {
+                    "line": 2,
+                    "visibility": "~",
+                    "name": "createdAt",
+                    "type": "Date",
+                    "uml": "~ createdAt : Date"
+                }
+            ]
+        }
+    ]
+}

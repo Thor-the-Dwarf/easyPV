@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueprint Auditor - Attribute Scanner</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="attribute_scanner.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-title">BLUEPRINT_AUDIT // UML_SCANNER_v1.0</div>
+
+            <div style="display: flex; gap: 2rem; font-size: 0.8rem; font-family: monospace;">
+                CONFORMITY: <span id="score-val" style="color:var(--accent-gold);">PENDING</span>
+                || SYSTEM: ACTIVE
+            </div>
+        </header>
+
+        <!-- Workbench -->
+        <main class="workbench">
+            <!-- Source Terminal -->
+            <section class="terminal" id="terminal">
+                <div id="scan-beam" class="scan-beam"></div>
+                <!-- Code lines injected here -->
+            </section>
+
+            <!-- UML Class Card -->
+            <section class="class-card">
+                <div class="card-header" id="card-header">CLASS_UNIT</div>
+                <div class="card-content" id="card-content">
+                    <!-- UML attributes injected here -->
+                </div>
+                <div
+                    style="padding: 1rem; font-size: 0.7rem; color: var(--text-dim); border-top: 1px solid var(--border-ink);">
+                    STAMP_STATUS: READY
+                </div>
+            </section>
+        </main>
+
+        <!-- Action Symbols -->
+        <footer class="action-bar">
+            <button class="stamp-btn" data-val="+" title="public">+</button>
+            <button class="stamp-btn" data-val="-" title="private">-</button>
+            <button class="stamp-btn" data-val="#" title="protected">#</button>
+            <button class="stamp-btn" data-val="~" title="package">~</button>
+        </footer>
+
+        <!-- Finish Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="result-box">
+                <h2 style="margin-top:0;">AUDIT_SUCCESS</h2>
+                <div style="margin: 2rem 0; font-size: 1rem; color: var(--text-dim);">
+                    Die Software-Blaupause wurde erfolgreich verifiziert. Alle Sichtbarkeiten wurden korrekt gemappt.
+                </div>
+
+                <div
+                    style="background:rgba(255,255,255,0.05); padding:1rem; margin-bottom:1.5rem; font-family:monospace; font-size:0.8rem; text-align: left;">
+                    > VISIBILITY_CHECK: PASSED<br>
+                    > SYNTAX_INTEGRITY: 100%<br>
+                    > UML_COMPLIANCE: FULL
+                </div>
+
+                <button id="btn-next"
+                    style="padding:10px 30px; background:var(--text-ink); color:var(--bg-blueprint); border:none; border-radius:4px; font-weight:bold; cursor:pointer;">
+                    NÄCHSTES SNIPPET
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_attribute_scanner.js"></script>
+</body>
+
+</html>

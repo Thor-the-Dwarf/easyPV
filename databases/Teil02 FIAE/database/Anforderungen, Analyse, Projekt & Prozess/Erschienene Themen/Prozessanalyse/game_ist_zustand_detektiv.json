@@ -1,0 +1,120 @@
+{
+    "meta": {
+        "topic": "Prozessanalyse",
+        "mechanic": "flaw_finder",
+        "version": "1.0"
+    },
+    "flaw_types": [
+        {
+            "id": "blocker",
+            "label": "Blocker",
+            "icon": "🛑",
+            "color": "#f44336",
+            "desc": "Prozess steht still."
+        },
+        {
+            "id": "delay",
+            "label": "Verzögerung",
+            "icon": "⏳",
+            "color": "#ff9800",
+            "desc": "Wartezeiten."
+        },
+        {
+            "id": "media_break",
+            "label": "Medienbruch",
+            "icon": "💾",
+            "color": "#9c27b0",
+            "desc": "Analog zu Digital (oder umgekehrt)."
+        },
+        {
+            "id": "redundancy",
+            "label": "Redundanz",
+            "icon": "🔄",
+            "color": "#2196f3",
+            "desc": "Doppelte Arbeit."
+        }
+    ],
+    "levels": [
+        {
+            "id": 1,
+            "title": "Level 1: Das Papier-Büro",
+            "description": "Ein klassisches Büro mit viel Papierkram. Finde die offensichtlichen Ineffizienzen.",
+            "time_budget": 60,
+            "blueprint_bg": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiB2aWV3Qm94PSIwIDAgODAwIDYwMCI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNTBINTBNNTAgMFY1MCIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6cmdiYSgyNTUsMjU1LDI1NSwwLjEpO3N0cm9rZS13aWR0aDoxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PHJlY3QgeD0iMTAwIiB5PSIxMDAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTAwIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTp3aGl0ZTtzdHJva2Utd2lkdGg6MiIvPjx0ZXh0IHg9IjE3NSIgeT0iMTU1IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UG9zdGVpbmVnYW5nPC90ZXh0PjxyZWN0IHg9IjM1MCIgeT0iMTAwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjEwMCIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6d2hpdGU7c3Ryb2tlLXdpZHRoOjIiLz48dGV4dCB4PSI0MjUiIHk9IjE1NSIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlNjYW4tU3RhdGlvbjwvdGV4dD48cmVjdCB4PSI2MDAiIHk9IjEwMCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxMDAiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOndoaXRlO3N0cm9rZS13aWR0aDoyIi8+PHRleHQgeD0iNjc1IiB5PSIxNTUiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BcmNoaXY8L3RleHQ+PHJlY3QgeD0iMTAwIiB5PSIzMDAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTAwIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTp3aGl0ZTtzdHJva2Utd2lkdGg6MiIvPjx0ZXh0IHg9IjE3NSIgeT0iMzU1IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U2FjaGJlYXJiZWl0dW5nPC90ZXh0PjxyZWN0IHg9IjM1MCIgeT0iMzAwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjEwMCIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6d2hpdGU7c3Ryb2tlLXdpZHRoOjIiLz48dGV4dCB4PSI0MjUiIHk9IjM1NSIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRydWNrZXI8L3RleHQ+PHJlY3QgeD0iNjAwIiB5PSIzMDAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTAwIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTp3aGl0ZTtzdHJva2Utd2lkdGg6MiIvPjx0ZXh0IHg9IjY3NSIgeT0iMzU1IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VmVyc2FuZDwvdGV4dD48bGluZSB4MT0iMTc1IiB5MT0iMjAwIiB4Mj0iMTc1IiB5Mj0iMzAwIiBzdHlsZT0ic3Ryb2tlOndoaXRlO3N0cm9rZS13aWR0aDoyO21hcmtlci1lbmQ6dXJsKCNhcnJvdykiLz48bGluZSB4MT0iMjUwIiB5MT0iMTUwIiB4Mj0iMzUwIiB5Mj0iMTUwIiBzdHlsZT0ic3Ryb2tlOndoaXRlO3N0cm9rZS13aWR0aDoyO21hcmtlci1lbmQ6dXJsKCNhcnJvdykiLz48bGluZSB4MT0iNTAwIiB5MT0iMTUwIiB4Mj0iNjAwIiB5Mj0iMTUwIiBzdHlsZT0ic3Ryb2tlOndoaXRlO3N0cm9rZS13aWR0aDoyO21hcmtlci1lbmQ6dXJsKCNhcnJvdykiLz48bGluZSB4MT0iMjUwIiB5MT0iMzUwIiB4Mj0iMzUwIiB5Mj0iMzUwIiBzdHlsZT0ic3Ryb2tlOndoaXRlO3N0cm9rZS13aWR0aDoyO21hcmtlci1lbmQ6dXJsKCNhcnJvdykiLz48bGluZSB4MT0iNTAwIiB5MT0iMzUwIiB4Mj0iNjAwIiB5Mj0iMzUwIiBzdHlsZT0ic3Ryb2tlOndoaXRlO3N0cm9rZS13aWR0aDoyO21hcmtlci1lbmQ6dXJsKCNhcnJvdykiLz48L3N2Zz4=",
+            "flaws": [
+                {
+                    "id": "f1",
+                    "x": 280,
+                    "y": 150,
+                    "radius": 40,
+                    "type": "media_break",
+                    "hint": "Der Postbote tippt Adressen vom Briefumschlag manuell in Excel ab.",
+                    "description": "Manuelle Datenerfassung von Papier zu Digital ist fehleranfällig."
+                },
+                {
+                    "id": "f2",
+                    "x": 425,
+                    "y": 320,
+                    "radius": 50,
+                    "type": "redundancy",
+                    "hint": "Das Dokument wird ausgedruckt, unterschrieben und wieder eingescannt.",
+                    "description": "Klassischer Medienbruch-Ping-Pong. Digitale Signatur nutzen!"
+                },
+                {
+                    "id": "f3",
+                    "x": 550,
+                    "y": 150,
+                    "radius": 30,
+                    "type": "delay",
+                    "hint": "Akten liegen hier 3 Tage, weil der Scanner oft klemmt.",
+                    "description": "Technischer Engpass verzögert den gesamten Prozess."
+                },
+                {
+                    "id": "f4",
+                    "x": 675,
+                    "y": 250,
+                    "radius": 40,
+                    "type": "blocker",
+                    "hint": "Das Archiv ist voll. Niemand weiß wohin mit neuen Ordnern.",
+                    "description": "Prozess-Stau durch Ressourcenmangel."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Level 2: Das Daten-Labyrinth",
+            "description": "Ein digitaler Workflow, aber irgendwas stimmt hier nicht mit den Daten.",
+            "time_budget": 50,
+            "blueprint_bg": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiB2aWV3Qm94PSIwIDAgODAwIDYwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTAuIDUwKSI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI4MCIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwZmZmZjtzdHJva2Utd2lkdGg6MiIvPjx0ZXh0IHg9IjUwIiB5PSI0NSIgZmlsbD0iIzAwZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q1JNPC90ZXh0PjxyZWN0IHg9IjI1MCIgeT0iMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI4MCIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwZmZmZjtzdHJva2Utd2lkdGg6MiIvPjx0ZXh0IHg9IjMwMCIgeT0iNDUiIGZpbGw9IiMwMGZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkVSUDwvdGV4dD48cmVjdCB4PSI1MDAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iODAiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMGZmZmY7c3Ryb2tlLXdpZHRoOjIiLz48dGV4dCB4PSI1NTAiIHk9IjQ1IiBmaWxsPSIjMDBmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5QSU08L3RleHQ+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwLCAzMDApIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjgwIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDBmZmZmO3N0cm9rZS13aWR0aDoyIi8+PHRleHQgeD0iNTAiIHk9IjQ1IiBmaWxsPSIjMDBmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5XZWJzaG9wPC90ZXh0PjxyZWN0IHg9IjI1MCIgeT0iMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI4MCIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwZmZmZjtzdHJva2Utd2lkdGg6MiIvPjx0ZXh0IHg9IjMwMCIgeT0iNDUiIGZpbGw9IiMwMGZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk1hcmtldGluZzwvdGV4dD48cmVjdCB4PSI1MDAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iODAiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMGZmZmY7c3Ryb2tlLXdpZHRoOjIiLz48dGV4dCB4PSI1NTAiIHk9IjQ1IiBmaWxsPSIjMDBmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Mb2dpc3RpazwvdGV4dD48L2c+PC9zdmc+",
+            "flaws": [
+                {
+                    "id": "f1",
+                    "x": 225,
+                    "y": 90,
+                    "radius": 30,
+                    "type": "redundancy",
+                    "hint": "Kundendaten werden vom CRM manuell ins ERP kopiert.",
+                    "description": "Keine Schnittstelle? Manuelle Synchronisation ist teuer."
+                },
+                {
+                    "id": "f2",
+                    "x": 350,
+                    "y": 250,
+                    "radius": 40,
+                    "type": "delay",
+                    "hint": "ERP-Server macht jede Nacht ein Update von 4 Stunden. System in der Zeit down.",
+                    "description": "Wartungsfenster blockiert globalen Vertrieb."
+                },
+                {
+                    "id": "f3",
+                    "x": 600,
+                    "y": 340,
+                    "radius": 35,
+                    "type": "blocker",
+                    "hint": "Logistik hat keinen Zugriff auf Bestandsdaten im PIM.",
+                    "description": "Silo-Datenhaltung verhindert Versand."
+                }
+            ]
+        }
+    ]
+}

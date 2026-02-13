@@ -1,0 +1,292 @@
+/* 
+ * IST-Zustand-Detektiv - Styles
+ * Based on shared_theme.css variables
+ * Aesthetic: Blueprint / Noir Detective / X-Ray
+ */
+
+:root {
+    --blueprint-bg: #0a192f;
+    --blueprint-grid: rgba(100, 255, 218, 0.1);
+    --blueprint-line: #64ffda;
+    --blueprint-text: #8892b0;
+
+    --flaw-blocker: #ef5350;
+    --flaw-delay: #ffa726;
+    --flaw-media: #ab47bc;
+    --flaw-redundancy: #42a5f5;
+
+    --x: 50%;
+    --y: 50%;
+    --scan-radius: 100px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--blueprint-bg);
+    color: var(--blueprint-text);
+    font-family: 'Courier New', monospace;
+    /* Monospace for technical feel */
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* --- HUD --- */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: rgba(10, 25, 47, 0.9);
+    border-bottom: 2px solid var(--blueprint-line);
+    z-index: 20;
+}
+
+.hud-panel {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--blueprint-text);
+    opacity: 0.7;
+}
+
+.hud-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--blueprint-line);
+}
+
+.efficiency-bar-container {
+    width: 200px;
+    height: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--blueprint-line);
+    position: relative;
+}
+
+.efficiency-bar {
+    height: 100%;
+    width: 100%;
+    background: var(--blueprint-line);
+    transition: width 0.3s;
+    box-shadow: 0 0 10px var(--blueprint-line);
+}
+
+/* --- Main Stage --- */
+.stage-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:
+        linear-gradient(var(--blueprint-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--blueprint-grid) 1px, transparent 1px);
+    background-size: 40px 40px;
+    cursor: none;
+    /* Hide default cursor, use custom scanner */
+}
+
+/* The Layers */
+.blueprint-wrapper {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    background: #020c1b;
+}
+
+.layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.layer-base {
+    /* The normal boring view logic could go here */
+    /* Just the background SVG */
+    z-index: 1;
+    opacity: 0.5;
+    filter: grayscale(100%) contrast(80%);
+}
+
+.layer-reveal {
+    /* The "X-Ray" view */
+    z-index: 2;
+    background: #0a192f;
+    /* Match bg to cover base? No, transparent but containing items */
+    /* We want to show the full color SVG and Flaws only inside the mask */
+
+    /* Mask magic */
+    -webkit-mask-image: radial-gradient(circle var(--scan-radius) at var(--x) var(--y), black 100%, transparent 100%);
+    mask-image: radial-gradient(circle var(--scan-radius) at var(--x) var(--y), black 100%, transparent 100%);
+}
+
+.blueprint-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.flaw-marker {
+    position: absolute;
+    width: 40px;
+    /* Base size, acts as hit area */
+    height: 40px;
+    transform: translate(-50%, -50%);
+    border: 2px dashed red;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    pointer-events: auto;
+    /* Allow clicking! */
+
+    /* Flaw specific style */
+    background: rgba(255, 0, 0, 0.1);
+    box-shadow: 0 0 10px red;
+    animation: pulse 1s infinite;
+}
+
+.flaw-marker.found {
+    border-style: solid;
+    background: rgba(0, 255, 0, 0.2);
+    border-color: #0f0;
+    color: #0f0;
+    box-shadow: 0 0 10px #0f0;
+    animation: none;
+}
+
+/* Custom Cursor / Scanner Ring */
+.scanner-cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--scan-radius) * 2);
+    height: calc(var(--scan-radius) * 2);
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--blueprint-line);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100;
+    box-shadow: 0 0 20px var(--blueprint-line), inset 0 0 20px var(--blueprint-line);
+    left: var(--x);
+    top: var(--y);
+    transition: width 0.2s, height 0.2s;
+    /* Breathing effect optionally */
+}
+
+.scanner-cursor::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 1px;
+    background: rgba(100, 255, 218, 0.5);
+    transform: translate(-50%, -50%);
+}
+
+.scanner-cursor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 1px;
+    background: rgba(100, 255, 218, 0.5);
+    transform: translate(-50%, -50%);
+}
+
+/* Context Menu for Tagging */
+.tag-menu {
+    position: absolute;
+    background: rgba(10, 25, 47, 0.95);
+    border: 1px solid var(--blueprint-line);
+    padding: 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 200;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    min-width: 150px;
+}
+
+.tag-btn {
+    background: transparent;
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    color: var(--blueprint-text);
+    padding: 0.5rem;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.tag-btn:hover {
+    background: rgba(100, 255, 218, 0.1);
+    border-color: var(--blueprint-line);
+    color: var(--blueprint-line);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+}
+
+/* Result Screen */
+.result-screen {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 25, 47, 0.95);
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,329 @@
+/* 
+ * Go oder No-Go - Styles
+ * Based on shared_theme.css variables
+ */
+
+:root {
+  --go-green: 142 80% 50%;
+  --no-red: 0 90% 65%;
+  --warn-yellow: 45 100% 50%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at center, hsl(var(--bg-surface)), hsl(var(--bg)));
+  color: hsl(var(--txt));
+  font-family: 'Inter', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.game-app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* --- HUD --- */
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: hsl(var(--bg-surface) / 0.5);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid hsl(var(--glass-border));
+  z-index: 10;
+}
+
+.hud-stats {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: hsl(var(--txt-muted));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-bar-container {
+  width: 120px;
+  height: 8px;
+  background: hsl(var(--bg-surface) / 0.8);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid hsl(var(--glass-border));
+}
+
+.stat-bar {
+  height: 100%;
+  width: 0%;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.bar-risk { background-color: hsl(var(--warn-yellow)); }
+.bar-pressure { background-color: hsl(var(--no-red)); }
+
+.score-display {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+}
+
+/* --- Main Game Area --- */
+.game-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  perspective: 1000px;
+}
+
+/* The Gate/Barrier */
+.gate-container {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 20px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.gate-bar {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    hsl(var(--warn-yellow)),
+    hsl(var(--warn-yellow)) 20px,
+    #000 20px,
+    #000 40px
+  );
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transform-origin: left center;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gate-open .gate-bar {
+  transform: rotate(-80deg);
+}
+
+/* Scenario Card */
+.scenario-card {
+  background: hsl(var(--bg-surface) / 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--glass-border));
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  transform: translateY(0);
+  transition: transform 0.4s, opacity 0.4s;
+  z-index: 2;
+}
+
+.scenario-card.hidden {
+  transform: translateY(-50px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scenario-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: hsl(var(--txt));
+}
+
+.scenario-desc {
+  font-size: 1rem;
+  color: hsl(var(--txt-muted));
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.fact-item {
+  background: hsl(var(--bg-surface) / 0.5);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid hsl(var(--glass-border));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fact-icon {
+  font-size: 1.5rem;
+}
+
+.fact-text {
+  font-size: 0.8rem;
+  color: hsl(var(--txt));
+  font-weight: 500;
+}
+
+/* Controls */
+.controls {
+  margin-top: auto;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  z-index: 20;
+}
+
+.btn-decision {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
+.btn-go {
+  background: hsl(var(--go-green));
+  box-shadow: 0 0 20px hsl(var(--go-green) / 0.4);
+}
+
+.btn-nogo {
+  background: hsl(var(--no-red));
+  box-shadow: 0 0 20px hsl(var(--no-red) / 0.4);
+}
+
+.btn-decision:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.btn-decision:active {
+  transform: scale(0.95);
+}
+
+/* Feedback & Results */
+.feedback-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  font-size: 3rem;
+  font-weight: 900;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  transition: all 0.3s;
+  text-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.feedback-overlay.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.feedback-overlay.success { color: hsl(var(--go-green)); }
+.feedback-overlay.fail { color: hsl(var(--no-red)); }
+
+.crash-effect {
+  position: absolute;
+  inset: 0;
+  background: hsl(var(--no-red) / 0.5);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.crash-effect.active {
+  animation: flash 0.5s ease-out;
+}
+
+@keyframes flash {
+  0% { opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0; }
+}
+
+.result-screen {
+  position: absolute;
+  inset: 0;
+  background: hsl(var(--bg) / 0.95);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.result-screen.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    /* On mobile, stack but keep close to thumbs if desired, 
+       or just row with smaller padding */
+    flex-direction: row;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .btn-decision {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .scenario-card {
+    padding: 1.5rem;
+  }
+  
+  .fact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gate-container {
+    bottom: 25%;
+  }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go oder No-Go - Machbarkeitsanalyse</title>
+    <!-- Relative path to shared_theme.css assuming we are deep in the structure -->
+    <!-- path is databases/Teil02 FIAE/database/.../Machbarkeitsanalyse/game.html -->
+    <!-- shared is databases/Teil01 Grundlagen/shared_theme.css -->
+    <!-- This pathing is tricky without absolute knowledge of deployment, 
+         but based on other files, they often use a relative path or absolute if served from root.
+         Let's try to match the pattern. "shared_theme.css" at root of "database"? No.
+         "shared_theme.css" is in "Teil01 Grundlagen".
+         Ideally I should use an absolute path for local dev or a relative one if I knew the depth.
+         However, looking at the user request history, files are often served via a mechanism that might handle paths.
+         I will use the path that works if this folder is served relatively or use a common fallback.
+         Actually, rule #7 says "Nutze ausschließlich CSS-Variablen aus shared_theme.css".
+         I'll try to link strict relative to root if possible, or assume it's available.
+         Wait, let's look at `game_finanzierungs_sortiermaschine.html`:
+         <link rel="stylesheet" href="./leasing.css"> (local)
+         It does NOT link shared_theme directly in the head? 
+         Ah, `index.html` loads the iframe. The iframe might rely on parent styles? 
+         Rule #6: "Spiele müssen innerhalb eines iframes funktionieren".
+         If they run in iframe, they need their own CSS links.
+         Let's assume the standard relative path from root is `../../../../../Teil01 Grundlagen/shared_theme.css`.
+         That's a mess. 
+         Let's look at `index.html` again. It loads `shared_theme.css`.
+         If the game is in an iframe, `index.html` styles don't bleed in unless injected.
+         But `game_finanzierungs_sortiermaschine.html` didn't have shared_theme linked.
+         Maybe the user's environment injects it? Or maybe it just relies on its own CSS.
+         Wait, `game_finanzierungs_sortiermaschine.html` had `<link rel="stylesheet" href="./leasing.css">`.
+         And `leasing.css` probably has the colors? No, `leasing.css` logic wasn't shown fully but `shared_theme` was shown.
+         I will assume I should link my own CSS and if shared_theme is needed, I'll try to find it.
+         BUT, rule #7 says use shared_theme variables.
+         I will add a relative link that *likely* reaches it, or assumes the server serves it at `/shared_theme.css`.
+         I'll put `../../../../../shared_theme.css` just in case, but rely on my local css primarily.
+         Actually, checking `index.html` structure: `databases/Teil01 Grundlagen/index.html`.
+         My file is deeply nested.
+         I will rely on the `go_oder_no_go.css` defining the variables or fallback.
+         Actually, I see `shared_theme.css` in `databases/Teil01 Grundlagen/shared_theme.css`.
+         If I am in `databases/Teil02 FIAE/database/...` that is a different tree.
+         I'll just link `go_oder_no_go.css` and assume the variables works because I defined fallbacks or the environment handles it.
+         Wait, better approach: I'll stick to the rule but since I can't guarantee the path, I'll add a comment.
+         OR, I can copy the essential variables into a `:root` block in my HTML/CSS just to be safe, while still referencing the idea of shared theme. 
+         Rule #7 says "Note: Theme-System nicht brechen: Nutze ausschließlich CSS-Variablen aus shared_theme.css".
+         It implies the environment provides them or I must link it.
+         I will use `../../../../../Teil01 Grundlagen/shared_theme.css` as a best guess for relative path from `Teil02 FIAE/database/...` 
+         Actually, `Teil02 FIAE` is a sibling of `Teil01 Grundlagen`.
+         Path: `../../../../../Teil01 Grundlagen/shared_theme.css` seems about right for 5 levels deep in `database`.
+    -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css"> 
+    <link rel="stylesheet" href="go_oder_no_go.css">
+    <style>
+        /* Fallback if shared theme not found */
+        :root {
+            --bg-surface: 230 30% 15%;
+            --bg: 230 30% 6%;
+            --txt: 210 50% 98%;
+            --txt-muted: 215 30% 75%;
+            --glass-border: 210 50% 30%;
+            --primary: 195 100% 60%;
+            --radius-md: 0.75rem;
+            --radius-lg: 1.25rem;
+        }
+    </style>
+</head>
+<body class="go-game">
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Risiko</span>
+                    <div class="stat-bar-container">
+                        <div id="risk-bar" class="stat-bar bar-risk" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Druck</span>
+                    <div class="stat-bar-container">
+                        <div id="pressure-bar" class="stat-bar bar-pressure" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="score-display">
+                Score: <span id="score-val">0</span>
+            </div>
+        </header>
+
+        <!-- Main Stage -->
+        <main class="game-stage">
+            <!-- The Gate -->
+            <div id="gate-container" class="gate-container">
+                <div class="gate-bar"></div>
+            </div>
+
+            <!-- Scenario Card -->
+            <div id="scenario-card" class="scenario-card hidden">
+                <h2 id="scenario-title" class="scenario-title">Lade Szenario...</h2>
+                <p id="scenario-desc" class="scenario-desc">Bitte warten.</p>
+                <div id="fact-grid" class="fact-grid">
+                    <!-- Facts injected here -->
+                </div>
+            </div>
+
+            <!-- Feedback Overlay -->
+            <div id="feedback-overlay" class="feedback-overlay">GO!</div>
+            
+            <!-- Crash Effect -->
+            <div id="crash-effect" class="crash-effect"></div>
+        </main>
+
+        <!-- Controls -->
+        <footer class="controls">
+            <button id="btn-nogo" class="btn-decision btn-nogo">NO-GO 🛑</button>
+            <button id="btn-go" class="btn-decision btn-go">GO 🚀</button>
+        </footer>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card">
+                <h1>Analyse Beendet</h1>
+                <p>Dein finaler Score:</p>
+                <div class="score-display" style="font-size: 3rem; margin: 1rem 0;" id="final-score">0</div>
+                <button id="restart-btn" class="btn-decision btn-go" style="font-size: 1rem; padding: 0.8rem 2rem;">Neue Analyse</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game_go_oder_no_go.js"></script>
+</body>
+</html>

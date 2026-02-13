@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "topic": "Machbarkeitsanalyse",
+    "mechanic": "go_no_go",
+    "version": "1.0"
+  },
+  "scenarios": [
+    {
+      "id": "s1",
+      "level": 1,
+      "title": "Klares Budget",
+      "description": "Das Projektbudget ist vollständig bewilligt und auf dem Konto. Alle Stakeholder sind informiert.",
+      "facts": [
+        {"icon": "💰", "text": "Budget: 100% gesichert"},
+        {"icon": "✅", "text": "Stakeholder: Zustimmung"},
+        {"icon": "📅", "text": "Zeitplan: Realistisch"}
+      ],
+      "risk_level": 10,
+      "pressure": 20,
+      "correct_decision": "GO",
+      "explanation": "Alle Ampeln stehen auf Grün. Ein klassischer Startschuss."
+    },
+    {
+      "id": "s2",
+      "level": 1,
+      "title": "Fehlende Expertise",
+      "description": "Das Team soll eine KI entwickeln, aber niemand hat Erfahrung mit Python oder Machine Learning.",
+      "facts": [
+        {"icon": "🧠", "text": "Know-how: Nicht vorhanden"},
+        {"icon": "👥", "text": "Team: Überfordert"},
+        {"icon": "⚠️", "text": "Risiko: Kritisch"}
+      ],
+      "risk_level": 90,
+      "pressure": 30,
+      "correct_decision": "NO-GO",
+      "explanation": "Ohne Kompetenz ist das Scheitern garantiert. Schulung oder Externe nötig."
+    },
+    {
+      "id": "s3",
+      "level": 1,
+      "title": "Rechtliche Grauzone",
+      "description": "Wir wollen Nutzerdaten verkaufen, haben aber keine Einwilligung der Nutzer eingeholt.",
+      "facts": [
+        {"icon": "⚖️", "text": "Recht: Verstoß gegen DSGVO"},
+        {"icon": "💰", "text": "Profit: Hoch"},
+        {"icon": "🚫", "text": "Compliance: Veto"}
+      ],
+      "risk_level": 100,
+      "pressure": 10,
+      "correct_decision": "NO-GO",
+      "explanation": "Ein Rechtsverstoß ist ein absoluter Showstopper. DSGVO-Strafen sind existenzbedrohend."
+    },
+    {
+      "id": "s4",
+      "level": 1,
+      "title": "Technisch machbar",
+      "description": "Die Technologie ist Standard (LAMP-Stack), das Team kennt sich aus, Hardware ist da.",
+      "facts": [
+        {"icon": "💻", "text": "Tech: Standard"},
+        {"icon": "🛠️", "text": "Skills: Vorhanden"},
+        {"icon": "Infrastructure", "text": "Bereit"}
+      ],
+      "risk_level": 5,
+      "pressure": 15,
+      "correct_decision": "GO",
+      "explanation": "Solide technische Basis, kein Grund zu warten."
+    },
+    {
+      "id": "s5",
+      "level": 1,
+      "title": "Zeitplan Utopie",
+      "description": "Der Kunde will ein ERP-System in 2 Wochen. Normaldauer: 6 Monate.",
+      "facts": [
+        {"icon": "📅", "text": "Zeit: Unmöglich"},
+        {"icon": "😫", "text": "Team: Burnout-Gefahr"},
+        {"icon": "📉", "text": "Qualität: Wird leiden"}
+      ],
+      "risk_level": 95,
+      "pressure": 80,
+      "correct_decision": "NO-GO",
+      "explanation": "Der Zeitplan ist physikalisch unmöglich. Das Projekt würde gegen die Wand fahren."
+    },
+    {
+      "id": "s6",
+      "level": 2,
+      "title": "Der Legacy-Schatten",
+      "description": "Das neue Frontend sieht gut aus, aber das Backend basiert auf COBOL-Code von 1980, den keiner wartet.",
+      "facts": [
+        {"icon": "✨", "text": "Frontend: Modern"},
+        {"icon": "🕸️", "text": "Backend: Legacy (Risiko!)"},
+        {"icon": "❓", "text": "Wartbarkeit: Unklar"}
+      ],
+      "risk_level": 75,
+      "pressure": 40,
+      "correct_decision": "NO-GO",
+      "explanation": "Ohne Strategie für das Legacy-System wird das neue Frontend nicht funktionieren oder scheitern."
+    },
+    {
+      "id": "s7",
+      "level": 2,
+      "title": "Abhängigkeit vom Einzelkämpfer",
+      "description": "Nur Heinz (64) versteht die Datenbank. Er geht in 2 Monaten in Rente. Doku gibt es nicht.",
+      "facts": [
+        {"icon": "👤", "text": "Bus-Faktor: 1"},
+        {"icon": "📝", "text": "Doku: Fehlt"},
+        {"icon": "⏳", "text": "Zeit: T-2 Monate"}
+      ],
+      "risk_level": 85,
+      "pressure": 30,
+      "correct_decision": "NO-GO",
+      "explanation": "Das Wissensmonopol ist ein kritisches Risiko. Erst Knowledge-Transfer, dann Projektstart."
+    },
+    {
+      "id": "s8",
+      "level": 2,
+      "title": "Lizenz-Falle",
+      "description": "Wir nutzen eine tolle Library, aber sie steht unter GPL v3 und wir wollen Closed Source verkaufen.",
+      "facts": [
+        {"icon": "📜", "text": "Lizenz: GPL v3"},
+        {"icon": "🔒", "text": "Produkt: Proprietär"},
+        {"icon": "⚠️", "text": "Legal: Lizenzverstoß"}
+      ],
+      "risk_level": 90,
+      "pressure": 20,
+      "correct_decision": "NO-GO",
+      "explanation": "Lizenzinkompatibilität zwingt uns, den Code offenzulegen oder die Library nicht zu nutzen."
+    },
+    {
+      "id": "s9",
+      "level": 2,
+      "title": "API Limitierungen",
+      "description": "Die externe Wetter-API erlaubt nur 100 Calls/Tag. Wir erwarten 10.000 User.",
+      "facts": [
+        {"icon": "cloud", "text": "API: Limitiert"},
+        {"icon": "👥", "text": "User: 10k+"},
+        {"icon": "🛑", "text": "Skalierung: Blockiert"}
+      ],
+      "risk_level": 80,
+      "pressure": 35,
+      "correct_decision": "NO-GO",
+      "explanation": "Die technische Limitierung verhindert den geplanten Betrieb. Ein Upgrade oder Wechsel ist zwingend."
+    },
+    {
+      "id": "s10",
+      "level": 2,
+      "title": "Data Privacy Shield",
+      "description": "Server stehen in den USA, Kundendaten kommen aus der EU. Das Abkommen ist gerade gekippt.",
+      "facts": [
+        {"icon": "🌍", "text": "Server: USA"},
+        {"icon": "🇪🇺", "text": "Daten: EU-Bürger"},
+        {"icon": "⚖️", "text": "Legal: Unsicher"}
+      ],
+      "risk_level": 70,
+      "pressure": 25,
+      "correct_decision": "NO-GO",
+      "explanation": "Rechtsunsicherheit beim Datentransfer ist ein Blocker für den Produktivbetrieb."
+    },
+    {
+      "id": "s11",
+      "level": 3,
+      "title": "Der CEO-Wunsch",
+      "description": "Der CEO will das Feature 'Blockchain' unbedingt, obwohl es keinen Usecase gibt und es das Budget sprengt.",
+      "facts": [
+        {"icon": "👔", "text": "CEO: 'Macht es!'"},
+        {"icon": "💸", "text": "ROI: Negativ"},
+        {"icon": "🔗", "text": "Tech: Unnötig"}
+      ],
+      "risk_level": 60,
+      "pressure": 95,
+      "correct_decision": "NO-GO",
+      "explanation": "Ein 'Vanity Project' ohne Nutzen verbrennt Ressourcen. Hier muss man diplomatisch 'Nein' sagen."
+    },
+    {
+      "id": "s12",
+      "level": 3,
+      "title": "Die 'Kleine' Änderung",
+      "description": "Kunde will kurz vor Release 'nur schnell' das Datenmodell ändern. Auswirkungen unbekannt.",
+      "facts": [
+        {"icon": "🔄", "text": "Change: Last Minute"},
+        {"icon": "❓", "text": "Impact: Unbekannt"},
+        {"icon": "⏳", "text": "Deadline: Morgen"}
+      ],
+      "risk_level": 90,
+      "pressure": 85,
+      "correct_decision": "NO-GO",
+      "explanation": "Last-Minute Changes am Datenmodell ohne Test sind pures Gift. Verschiebung nötig."
+    },
+    {
+      "id": "s13",
+      "level": 3,
+      "title": "Weihnachtsgeschäft",
+      "description": "Der Shop muss zum Black Friday live gehen. Tests sind erst zu 50% durch. Marketing läuft schon.",
+      "facts": [
+        {"icon": "🛍️", "text": "Event: Black Friday"},
+        {"icon": "🧪", "text": "Tests: 50%"},
+        {"icon": "📢", "text": "Marketing: Läuft"}
+      ],
+      "risk_level": 85,
+      "pressure": 100,
+      "correct_decision": "NO-GO",
+      "explanation": "Ein ungetesteter Shop am umsatzstärksten Tag ist Selbstmord. Das Risiko eines Crashs ist zu hoch."
+    },
+    {
+      "id": "s14",
+      "level": 3,
+      "title": "Der billige Anbieter",
+      "description": "Ein Outsourcing-Partner bietet es für 10% des Preises an. Referenzen sind gefälscht.",
+      "facts": [
+        {"icon": "nav_price", "text": "Preis: Unschlagbar"},
+        {"icon": "🤥", "text": "Refs: Fake"},
+        {"icon": "🚩", "text": "Red Flags: Viele"}
+      ],
+      "risk_level": 80,
+      "pressure": 60,
+      "correct_decision": "NO-GO",
+      "explanation": "Wenn es zu gut klingt, um wahr zu sein, ist es das meistens auch. Qualitätsrisiko extrem hoch."
+    },
+    {
+      "id": "s15",
+      "level": 3,
+      "title": "Start ohne Backup",
+      "description": "Alles ist bereit, aber das Backup-System streikt. 'Wir fixen das nach dem Launch', sagt der Admin.",
+      "facts": [
+        {"icon": "🚀", "text": "App: Ready"},
+        {"icon": "💾", "text": "Backup: Defekt"},
+        {"icon": "🤞", "text": "Plan: 'Wird schon'"}
+      ],
+      "risk_level": 95,
+      "pressure": 70,
+      "correct_decision": "NO-GO",
+      "explanation": "Kein Go-Live ohne funktionierendes Backup. Murphys Gesetz wird zuschlagen."
+    }
+  ]
+}

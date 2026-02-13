@@ -1,0 +1,136 @@
+{
+    "meta": {
+        "topic": "Decorator Pattern",
+        "mechanic": "stack_builder",
+        "version": "1.0"
+    },
+    "ingredients": [
+        {
+            "id": "base_coffee",
+            "label": "Espresso",
+            "type": "base",
+            "price": 2.00,
+            "color": "#3e2723"
+        },
+        {
+            "id": "base_tea",
+            "label": "Tea",
+            "type": "base",
+            "price": 1.50,
+            "color": "#e65100"
+        },
+        {
+            "id": "dec_milk",
+            "label": "Milk",
+            "type": "decorator",
+            "price": 0.50,
+            "color": "#fff",
+            "prefix": "Milk(",
+            "suffix": ")"
+        },
+        {
+            "id": "dec_sugar",
+            "label": "Sugar",
+            "type": "decorator",
+            "price": 0.20,
+            "color": "#fafafa",
+            "prefix": "Sugar(",
+            "suffix": ")"
+        },
+        {
+            "id": "dec_whip",
+            "label": "Whip",
+            "type": "decorator",
+            "price": 0.80,
+            "color": "#ffecb3",
+            "prefix": "Whip(",
+            "suffix": ")"
+        },
+        {
+            "id": "dec_syrup",
+            "label": "Syrup",
+            "type": "decorator",
+            "price": 0.60,
+            "color": "#795548",
+            "prefix": "Syrup(",
+            "suffix": ")"
+        },
+        {
+            "id": "base_stream",
+            "label": "FileStream",
+            "type": "base",
+            "price": 10.00,
+            "color": "#607d8b"
+        },
+        {
+            "id": "dec_buffer",
+            "label": "Buffered",
+            "type": "decorator",
+            "price": 5.00,
+            "color": "#4caf50",
+            "prefix": "Buffered(",
+            "suffix": ")"
+        },
+        {
+            "id": "dec_encrypt",
+            "label": "Encrypted",
+            "type": "decorator",
+            "price": 20.00,
+            "color": "#f44336",
+            "prefix": "Encrypted(",
+            "suffix": ")"
+        }
+    ],
+    "levels": [
+        {
+            "id": 1,
+            "title": "Morning Routine",
+            "orders": [
+                {
+                    "name": "Cappuccino",
+                    "req": [
+                        "base_coffee",
+                        "dec_milk",
+                        "dec_whip"
+                    ]
+                },
+                {
+                    "name": "Sweet Tea",
+                    "req": [
+                        "base_tea",
+                        "dec_sugar"
+                    ]
+                },
+                {
+                    "name": "Caramel Macchiato",
+                    "req": [
+                        "base_coffee",
+                        "dec_milk",
+                        "dec_syrup"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Secure Stream",
+            "orders": [
+                {
+                    "name": "Secure File",
+                    "req": [
+                        "base_stream",
+                        "dec_buffer",
+                        "dec_encrypt"
+                    ]
+                },
+                {
+                    "name": "Fast Reader",
+                    "req": [
+                        "base_stream",
+                        "dec_buffer"
+                    ]
+                }
+            ]
+        }
+    ]
+}

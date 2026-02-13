@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decorator Pattern - Coffee Shop</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="coffee_builder.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="hud-label">REVENUE</span>
+                <span class="hud-value">$<span id="money-val">0.00</span></span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">LEVEL</span>
+                <span class="hud-value" id="level-val">1</span>
+            </div>
+        </header>
+
+        <!-- Order Display -->
+        <div class="order-board">
+            <div class="hud-label" style="text-transform:uppercase; letter-spacing:2px;">Current Order</div>
+            <div id="order-text" class="current-order-text">Latte Macchiato</div>
+        </div>
+
+        <!-- Main Counter -->
+        <main class="bar-counter">
+
+            <!-- Product -->
+            <div class="product-area">
+                <!-- Cup -->
+                <div class="cup-container" id="cup-container">
+                    <div class="price-tag" id="current-price">$0.00</div>
+                    <div class="cup-handle"></div>
+                    <div class="cup-base">
+                        <!-- Layers go here -->
+                    </div>
+                </div>
+                <div id="composition-text" class="composition-text">Empty</div>
+
+                <!-- Actions -->
+                <div class="actions">
+                    <button id="reset-btn" class="action-btn reset-btn">Trash</button>
+                    <button id="submit-btn" class="action-btn">Serve</button>
+                </div>
+            </div>
+
+            <!-- Ingredients -->
+            <aside class="ingredients-rack">
+                <div class="hud-label">BASES</div>
+                <div id="base-rack" class="rack-section"></div>
+
+                <div class="hud-label" style="margin-top:1rem">DECORATORS</div>
+                <div id="decorator-rack" class="rack-section"></div>
+            </aside>
+
+        </main>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card" style="background: #4e342e; border: 4px solid #fff; padding: 2rem;">
+                <h2 style="font-family:'Brush Script MT', cursive; font-size:3rem">Shift Over</h2>
+                <div class="hud-value" style="font-size: 3rem; margin: 1rem 0; color:#fff" id="final-score">$0.00</div>
+                <button id="restart-btn" class="action-btn">Next Shift</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_coffee_builder.js"></script>
+</body>
+
+</html>

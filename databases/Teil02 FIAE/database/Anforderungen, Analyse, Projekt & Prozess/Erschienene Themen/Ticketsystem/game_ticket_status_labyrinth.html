@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket-Status-Labyrinth - Workflow Master</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="ticket_status_labyrinth.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-group">
+                <div class="hud-item">
+                    <span class="hud-label">FLOW VELOCITY</span>
+                    <span class="hud-value" id="score-val">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">CURRENT ROLE</span>
+                    <div id="role-display" class="role-display">
+                        <span id="role-val">Loading...</span>
+                        <span style="float:right; font-size: 0.8em">▼</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">LEVEL</span>
+                <span class="hud-value" id="level-val">1</span>
+            </div>
+        </header>
+
+        <!-- Role Menu (Absolute) -->
+        <div id="role-menu" class="role-menu hidden">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- SVG Map Container -->
+        <main class="map-container">
+            <svg id="circuit-svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
+                <!-- Layers -->
+                <g id="paths-layer"></g>
+                <g id="nodes-layer"></g>
+
+                <!-- Avatar -->
+                <g id="avatar-group" transform="translate(0,0)">
+                    <circle r="15" fill="#fff" stroke="var(--node-process)" stroke-width="2"></circle>
+                    <text class="avatar-icon" y="1">🎫</text>
+                </g>
+            </svg>
+
+            <div id="feedback-msg" class="feedback-msg"
+                style="position: absolute; top: 20px; color: yellow; opacity: 0; transition: opacity 0.5s; font-weight: bold; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 4px;">
+            </div>
+        </main>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card">
+                <h2>AUDIT COMPLETE</h2>
+                <div class="hud-value" style="font-size: 3rem; margin: 1rem 0;" id="final-score">0</div>
+                <button id="restart-btn" class="btn primary">NEXT BATCH</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game_ticket_status_labyrinth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+/* 
+ * Ticket-Status-Labyrinth - Styles
+ * Aesthetic: Circuit Board / Neon / Data Flow
+ */
+
+:root {
+    --circuit-bg: #050a10;
+    --circuit-line: #1a2f40;
+    --node-glow: 0 0 15px rgba(33, 150, 243, 0.6);
+    --node-process: #2196f3;
+    --node-start: #4caf50;
+    --node-end: #ab47bc;
+    --transition-ok: #00e676;
+    --transition-fail: #ff1744;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--circuit-bg);
+    color: #fff;
+    font-family: 'Consolas', 'Monaco', monospace;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* --- HUD --- */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(5, 10, 16, 0.95);
+    border-bottom: 2px solid var(--node-process);
+    box-shadow: 0 0 20px rgba(33, 150, 243, 0.2);
+    z-index: 20;
+}
+
+.hud-group {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-label {
+    font-size: 0.7rem;
+    color: #8892b0;
+    letter-spacing: 0.1em;
+}
+
+.hud-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--node-process);
+    text-shadow: 0 0 5px var(--node-process);
+}
+
+.role-display {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--node-process);
+    border-radius: 4px;
+    background: rgba(33, 150, 243, 0.1);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.role-display:hover {
+    background: rgba(33, 150, 243, 0.2);
+}
+
+/* --- Map Area --- */
+.map-container {
+    flex: 1;
+    position: relative;
+    background-image:
+        linear-gradient(var(--circuit-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--circuit-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#circuit-svg {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    max-height: 800px;
+}
+
+/* SVG Elements */
+.connection-line {
+    stroke: var(--circuit-line);
+    stroke-width: 4;
+    fill: none;
+    stroke-linecap: round;
+}
+
+.connection-line.active {
+    stroke: var(--node-process);
+    filter: drop-shadow(0 0 5px var(--node-process));
+    animation: dash 1s linear infinite;
+    stroke-dasharray: 10;
+}
+
+.node-group {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.node-group:hover {
+    transform: scale(1.1);
+}
+
+.node-circle {
+    fill: #0d1b2a;
+    stroke: var(--node-process);
+    stroke-width: 3;
+}
+
+.node-group[data-type="start"] .node-circle {
+    stroke: var(--node-start);
+}
+
+.node-group[data-type="end"] .node-circle {
+    stroke: var(--node-end);
+}
+
+.node-label {
+    fill: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    pointer-events: none;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+.avatar-group {
+    transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.avatar-icon {
+    font-size: 24px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+/* Role Selection Menu */
+.role-menu {
+    position: absolute;
+    top: 70px;
+    /* Below HUD */
+    right: 20px;
+    background: rgba(5, 10, 16, 0.95);
+    border: 1px solid var(--node-process);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 100;
+}
+
+.role-btn {
+    background: transparent;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 0.5rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+.role-btn:hover {
+    border-color: var(--node-process);
+    background: rgba(33, 150, 243, 0.1);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Feedback Animations */
+@keyframes dash {
+    to {
+        stroke-dashoffset: -20;
+    }
+}
+
+.pulse-red {
+    animation: pulseRed 0.5s;
+}
+
+@keyframes pulseRed {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 10px red);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Result Screen */
+.result-screen {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 10, 16, 0.98);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 300;
+}

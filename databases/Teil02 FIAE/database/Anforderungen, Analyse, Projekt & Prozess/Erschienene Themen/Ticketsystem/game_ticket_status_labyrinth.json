@@ -1,0 +1,262 @@
+{
+    "meta": {
+        "topic": "Ticketsystem / Workflow",
+        "mechanic": "status_labyrinth",
+        "version": "1.0"
+    },
+    "roles": {
+        "dev": {
+            "label": "Developer",
+            "icon": "👨‍💻",
+            "color": "#2196f3"
+        },
+        "qa": {
+            "label": "QA Tester",
+            "icon": "🕵️‍♀️",
+            "color": "#ff9800"
+        },
+        "po": {
+            "label": "Product Owner",
+            "icon": "👔",
+            "color": "#9c27b0"
+        }
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Level 1: The Happy Path",
+            "description": "Bringe das Ticket von NEW zu DONE. Einfacher Workflow.",
+            "start_node": "new",
+            "nodes": [
+                {
+                    "id": "new",
+                    "label": "NEW",
+                    "x": 100,
+                    "y": 300,
+                    "type": "start"
+                },
+                {
+                    "id": "doing",
+                    "label": "IN PROGRESS",
+                    "x": 400,
+                    "y": 300,
+                    "type": "process"
+                },
+                {
+                    "id": "review",
+                    "label": "CODE REVIEW",
+                    "x": 700,
+                    "y": 300,
+                    "type": "process"
+                },
+                {
+                    "id": "done",
+                    "label": "DONE",
+                    "x": 1000,
+                    "y": 300,
+                    "type": "end"
+                }
+            ],
+            "transitions": [
+                {
+                    "from": "new",
+                    "to": "doing",
+                    "role": "dev"
+                },
+                {
+                    "from": "doing",
+                    "to": "review",
+                    "role": "dev"
+                },
+                {
+                    "from": "review",
+                    "to": "done",
+                    "role": "dev"
+                }
+            ],
+            "roles_allowed": [
+                "dev"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Level 2: The Loop",
+            "description": "Achtung! Das Ticket könnte im Review abgelehnt werden.",
+            "start_node": "new",
+            "nodes": [
+                {
+                    "id": "new",
+                    "label": "NEW",
+                    "x": 100,
+                    "y": 300,
+                    "type": "start"
+                },
+                {
+                    "id": "doing",
+                    "label": "IN PROGRESS",
+                    "x": 350,
+                    "y": 150,
+                    "type": "process"
+                },
+                {
+                    "id": "review",
+                    "label": "REVIEW",
+                    "x": 600,
+                    "y": 150,
+                    "type": "process"
+                },
+                {
+                    "id": "testing",
+                    "label": "TESTING",
+                    "x": 850,
+                    "y": 300,
+                    "type": "process"
+                },
+                {
+                    "id": "done",
+                    "label": "DONE",
+                    "x": 1100,
+                    "y": 300,
+                    "type": "end"
+                }
+            ],
+            "transitions": [
+                {
+                    "from": "new",
+                    "to": "doing",
+                    "role": "dev"
+                },
+                {
+                    "from": "doing",
+                    "to": "review",
+                    "role": "dev"
+                },
+                {
+                    "from": "review",
+                    "to": "testing",
+                    "role": "dev"
+                },
+                {
+                    "from": "review",
+                    "to": "doing",
+                    "role": "dev",
+                    "label": "REJECT"
+                },
+                {
+                    "from": "testing",
+                    "to": "done",
+                    "role": "dev"
+                },
+                {
+                    "from": "testing",
+                    "to": "doing",
+                    "role": "dev",
+                    "label": "BUG FOUND"
+                }
+            ],
+            "roles_allowed": [
+                "dev"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Level 3: Compliance Hell",
+            "description": "Du musst die Rollen wechseln, um bestimmte Tore zu öffnen.",
+            "start_node": "backlog",
+            "nodes": [
+                {
+                    "id": "backlog",
+                    "label": "BACKLOG",
+                    "x": 50,
+                    "y": 300,
+                    "type": "start"
+                },
+                {
+                    "id": "analysis",
+                    "label": "ANALYSIS",
+                    "x": 250,
+                    "y": 300,
+                    "type": "process"
+                },
+                {
+                    "id": "dev",
+                    "label": "DEV",
+                    "x": 450,
+                    "y": 150,
+                    "type": "process"
+                },
+                {
+                    "id": "review",
+                    "label": "PEER REVIEW",
+                    "x": 650,
+                    "y": 150,
+                    "type": "process"
+                },
+                {
+                    "id": "qa",
+                    "label": "QA TEST",
+                    "x": 650,
+                    "y": 450,
+                    "type": "process"
+                },
+                {
+                    "id": "uat",
+                    "label": "UAT",
+                    "x": 850,
+                    "y": 300,
+                    "type": "process"
+                },
+                {
+                    "id": "deploy",
+                    "label": "DEPLOY",
+                    "x": 1050,
+                    "y": 300,
+                    "type": "end"
+                }
+            ],
+            "transitions": [
+                {
+                    "from": "backlog",
+                    "to": "analysis",
+                    "role": "po"
+                },
+                {
+                    "from": "analysis",
+                    "to": "dev",
+                    "role": "dev"
+                },
+                {
+                    "from": "dev",
+                    "to": "review",
+                    "role": "dev"
+                },
+                {
+                    "from": "review",
+                    "to": "qa",
+                    "role": "dev"
+                },
+                {
+                    "from": "qa",
+                    "to": "dev",
+                    "role": "qa",
+                    "label": "BUG"
+                },
+                {
+                    "from": "qa",
+                    "to": "uat",
+                    "role": "qa"
+                },
+                {
+                    "from": "uat",
+                    "to": "deploy",
+                    "role": "po"
+                }
+            ],
+            "roles_allowed": [
+                "dev",
+                "qa",
+                "po"
+            ]
+        }
+    ]
+}

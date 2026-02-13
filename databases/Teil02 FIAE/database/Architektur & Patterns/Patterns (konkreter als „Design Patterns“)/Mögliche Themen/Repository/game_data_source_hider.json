@@ -1,0 +1,85 @@
+{
+    "meta": {
+        "topic": "Repository Pattern",
+        "mechanic": "hidden_object_fetch",
+        "version": "1.0"
+    },
+    "backends": [
+        {
+            "id": "db_sql",
+            "label": "SQL Database",
+            "color": "#0277bd",
+            "icon": "🗄️"
+        },
+        {
+            "id": "db_mongo",
+            "label": "NoSQL Cluster",
+            "color": "#2e7d32",
+            "icon": "🍃"
+        },
+        {
+            "id": "cache",
+            "label": "Redis Cache",
+            "color": "#d84315",
+            "icon": "⚡"
+        }
+    ],
+    "data": [
+        {
+            "id": "user_42",
+            "domain": "User(42)",
+            "sources": {
+                "db_sql": "SELECT * FROM users WHERE id=42",
+                "cache": "user_42_json"
+            }
+        },
+        {
+            "id": "prod_99",
+            "domain": "Product(99)",
+            "sources": {
+                "db_mongo": "{ _id: 99, type: 'product' }",
+                "cache": null
+            }
+        },
+        {
+            "id": "inv_2023",
+            "domain": "Invoice(2023-01)",
+            "sources": {
+                "db_sql": "SELECT * FROM invoices WHERE year=2023",
+                "cache": null
+            }
+        }
+    ],
+    "levels": [
+        {
+            "id": 1,
+            "title": "The Apprentice",
+            "requests": [
+                {
+                    "query": "Find User 42",
+                    "targetId": "user_42"
+                },
+                {
+                    "query": "Get Product 99",
+                    "targetId": "prod_99"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Cache First",
+            "requests": [
+                {
+                    "query": "Find User 42 (Fast)",
+                    "targetId": "user_42",
+                    "preferred": "cache"
+                },
+                {
+                    "query": "Invoice 2023",
+                    "targetId": "inv_2023",
+                    "preferred": "db_sql"
+                }
+            ]
+        }
+    ]
+}

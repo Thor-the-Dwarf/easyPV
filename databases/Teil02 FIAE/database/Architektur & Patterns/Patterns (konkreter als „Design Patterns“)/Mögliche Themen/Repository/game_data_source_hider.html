@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Pattern - The Library</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="data_source_hider.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="hud-label">INTEGRITY SCORE</span>
+                <span class="hud-value" id="score-val">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">GHOST HAPPINESS</span>
+                <span class="hud-value" id="happy-val">100%</span>
+            </div>
+        </header>
+
+        <!-- Library Hall -->
+        <main class="library-hall">
+
+            <!-- Client Layer -->
+            <div id="client-area" class="client-area">
+                <!-- Ghost spawns here -->
+            </div>
+
+            <!-- Repository Layer (The Shield) -->
+            <div class="repository-counter">
+                <div id="counter-slot" class="counter-slot"></div>
+                <!-- Data Packet appears here -->
+            </div>
+
+            <div id="action-area" class="action-bar">
+                <button id="convert-btn" class="action-btn" disabled>MAP TO DOMAIN (Clean)</button>
+                <button id="deliver-btn" class="action-btn" disabled>HAND OVER (Return)</button>
+            </div>
+
+            <!-- Data Layer (Hidden) -->
+            <div id="the-cellar" class="the-cellar">
+                <!-- Backends spawn here -->
+            </div>
+
+        </main>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card"
+                style="background: #261611; border: 4px solid var(--magic-gold); padding: 2rem; color: var(--parchment);">
+                <h2 style="font-family:'Times New Roman', serif; font-size:3rem">The End</h2>
+                <div class="hud-value" style="font-size: 3rem; margin: 1rem 0;" id="final-score">0</div>
+                <button id="restart-btn" class="action-btn">Re-Open Library</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_data_source_hider.js"></script>
+</body>
+
+</html>

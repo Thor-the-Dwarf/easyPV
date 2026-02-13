@@ -1,0 +1,41 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Abwägung zwischen der Eigenentwicklung einer Komponente (Make) und der Nutzung einer bestehenden Bibliothek oder eines Frameworks (Use) anhand technischer und wirtschaftlicher Kriterien.
+- Game-Mechanic: "The Builder's Decision". Du bist der Architekt eines neuen Software-Tempels. Vor dir liegen zwei Pfade für das Fundament (z.B. ein Logging-System).
+  - Pfad 1 (Make): Du schmiedest es selbst. Es passt exakt, aber du verbrauchst Wochen an Zeit (Development Cost) und musst dich ewig um die Wartung kümmern.
+  - Pfad 2 (Use): Du kaufst es oder nimmst ein Open-Source Modul. Es ist sofort da, aber du musst lernen, wie es funktioniert und riskierst Abhängigkeiten (Vendor Lock-in).
+  Triff für jede Anforderung die klügste Entscheidung auf deiner Waage der Vernunft!
+- Challenge: 
+  - Level 1 (The Utility Case): Brauchst du ein eigenes System zum Text-Sortieren oder nimmst du `java.util.Collections`? (Klare Entscheidung: Use).
+  - Level 2 (The Core Logic): Dein Projekt hat einen hochspezialisierten, geheimen Algorithmus als USP. Entwickelst du ihn selbst? (Klare Entscheidung: Make).
+  - Level 3 (The Security Dilemma): Ein fertiges Modul für Passwörter hat bekannte Bugs. Baust du es nun doch lieber selbst oder wartest du auf ein Update?
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Comparison-Balance (Scale)", "TCO-Calculator (Total Cost of Ownership)", "Time-to-Market Gauge", "Risk-Radar".
+- [ ] Scoring: "Strategic-Genius" Bonus für Entscheidungen, die Kosten und Nutzen perfekt balancieren. Abzug für "Not-Invented-Here Syndrome".
+
+2. Screen-Layout (The War Room)
+- [ ] `requirement-file -> comparison-scale -> analyst-notes -> tactical-decision`.
+- [ ] Comparison-Scale: Eine physische Waage, auf die man Gewichte für "Entwicklungszeit", "Lizenzgebühren", "Wartungsaufwand" und "Feature-Fit" legt.
+- [ ] Analyst-Notes: Liefert Hintergrund-Infos zu den Vor- und Nachteilen beider Optionen.
+
+3. Kernvisuals und Effekte
+- [ ] Industrial-Planning Ästhetik: Blaupausen, Lineale, Schiebelehren, das Geräusch von Bleistift auf Papier und taktischem Radar-Piepen (Shared Theme kompatibel).
+- [ ] "Weight-Drop": Wenn man ein Argument auf die Waage legt, schlägt sie mit einem Wuchtigen Sound aus.
+- [ ] "Vision-Flash": Bei einer exzellenten Entscheidung leuchtet der Tempel-Plan golden auf.
+
+4. Browser- und Device-Resilienz
+- [ ] `HTML Table` für den detaillierten Kosten-Nutzen-Vergleich.
+- [ ] Mobile: "Swipe-to-Decision" (Links für Make, Rechts für Use).
+
+5. Content-Strategie (The Strategic-Files)
+- [ ] 12 verschiedene Entscheidungsszenarien aus der IT-Praxis.
+
+6. QA-Paket
+- [ ] Test: Werden die versteckten Kosten von "Eigenbau" (Wartung, Dokumentation) deutlich?
+- [ ] Test: Hilft die Waage beim objektiven Abwägen technischer vs. wirtschaftlicher Argumente?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Beides hat seinen Preis. Die Kunst ist es, den Fokus auf den Core-Business-Value zu legen.
+- [ ] Das Interface wirkt seriös, strategisch und fundiert.
+- [ ] Fokus auf IT-Projektmanagement und Make-or-Buy Analysen.

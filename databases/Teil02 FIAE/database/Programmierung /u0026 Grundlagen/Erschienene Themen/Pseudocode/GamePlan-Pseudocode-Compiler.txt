@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Übersetzung von komplexen Logik-Aufgaben in strukturierten Pseudocode zur Vorbereitung der eigentlichen Implementierung.
+- Game-Mechanic: "The Logic-Sim". Du bist der Chef-Entwickler bei der NASA. Bevor die Milliarden-Dollar-Sonde startet, musst du den Algorithmus für die Landung in "Menschlich-verständlich" (Pseudocode) aufschreiben. Keine Programmiersprache, nur reine Logik! Nutze Bausteine wie `WENN`, `SOLANGE`, `TUE` und `DANN`. Wenn deine Logik-Kette im Trockentest (Simulation) die Sonde sicher landen lässt, darfst du an die echten Keys.
+- Challenge: 
+  - Level 1 (The Coffee Machine): Schreibe den Pseudocode für eine Kaffeemaschine: Wasser prüfen, Mahlen, Brühen. Nutze einfache IF-Entscheidungen.
+  - Level 2 (The Search Loop): Suche in einer Liste von Namen nach "Alice". Nutze eine FOR-EACH Schleife und brich ab, wenn du sie gefunden hast.
+  - Level 3 (The Sorting Logic): Beschreibe in Pseudocode, wie man zwei Zahlen tauscht, wenn die linke größer ist als die rechte. Die Grundlage für den Bubble-Sort!
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Logic-Block-Library", "Dry-Run Terminal", "Simulation-Sanity-Check", "Algorithm-Visualizer".
+- [ ] Scoring: "Brain-Power" Bonus für Logik-Ketten mit minimalen Schritten. Abzug für unklare Formulierungen oder Logik-Lücken.
+
+2. Screen-Layout (The Design-Desk)
+- [ ] `task-description -> logic-editor (Draft) -> simulation-engine -> success-report`.
+- [ ] Logic-Editor: Ein textbasiertes Interface, das Keywords wie `WENN`, `SOLANGE` farblich hervorhebt (Shared Theme kompatibel).
+- [ ] Simulation-Engine: Ein kleiner Avatar, der die Schritte des Pseudocodes physisch durchläuft.
+
+3. Kernvisuals und Effekte
+- [ ] NASA-Retro-Future Ästhetik: Dunkelgraue Konsolen, leuchtende Vektorgrafiken, das mechanische Ticken von Punktmatrix-Druckern, Pieptöne aus den 70ern (Shared Theme kompatibel).
+- [ ] "Logic-Trace": Ein kleiner Lichtball hüpft von Zeile zu Zeile, während die Simulation läuft.
+- [ ] "Crash-Sign": Wenn der Pseudocode in eine Endlosschleife gerät, fängt die Konsole an zu rauchen.
+
+4. Browser- und Device-Resilienz
+- [ ] `Syntax Highlighting` für Pseudocode-Schlüsselwörter.
+- [ ] Mobile: "Tap-to-Insert" für die Logik-Bausteine.
+
+5. Content-Strategie (The Mission-Briefings)
+- [ ] 12 verschiedene Missionen: Von "Haushaltsroboter programmieren" bis "Verschlüsselungs-Logik".
+
+6. QA-Paket
+- [ ] Test: Wird klar, dass Pseudocode unabhängig von Programmiersprachen funktioniert?
+- [ ] Test: Hilft der "Dry-Run" beim Erkennen von "Off-by-one" Fehlern?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Erst denken, dann coden. Pseudocode ist die Blaupause für Erfolg.
+- [ ] Das Interface wirkt professionell, fokussiert und intellektuell ansprechend.
+- [ ] Fokus auf algorithmische Grundstrukturen.

@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verbesserung der Code-Qualität durch aussagekräftige Benennung, kleine Funktionen und das Vermeiden von "Code Smells".
+- Game-Mechanic: "The Refactor-Racer". Du bist ein Restaurator für antike Code-Gemälde. Jemand hat `var x = 0;` und `function a(b, c) { ... }` hinterlassen. Ein Graus! Dein Auftrag: Reinige den Code. Benenne Variablen um (`totalPrice` statt `x`), zerlege 100-Zeilen-Monster in mundgerechte Funktionen und entferne die "fauligen Gerüche" (Magic Numbers, Redundanz). Je sauberer dein Code am Ende glänzt, desto schneller läuft die spätere Wartungs-Rennmaschine!
+- Challenge: 
+  - Level 1 (The Naming Quest): Ersetze nichtssagende Namen (`temp`, `data`, `process`) durch sprechende Bezeichner.
+  - Level 2 (The Function Slicer): Eine Funktion berechnet Steuern, formatiert den Output und speichert in die DB. Zerlege sie in drei spezialisierte Helfer.
+  - Level 3 (The Smell Detector): Finde die "Magic Numbers" (z.B. `* 1.19` ohne Konstante) und ersetze sie durch klare Definitionen.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Readability-Scanner (0-100%)", "Smell-Alert-Icons", "Code-Length-Meter", "Refactoring-Toolbox".
+- [ ] Scoring: "Clean-Code-Master" Bonus für maximale Verständlichkeit bei minimaler Komplexität. Abzug für "Obfuscation" oder unnötige Kommentare.
+
+2. Screen-Layout (The restoration Lab)
+- [ ] `messy-code-canvas -> comparison-view -> refactoring-tools -> polished-source`.
+- [ ] Comparison-View: Zeigt "Vorher" und "Nachher" nebeneinander mit dynamischen Highlights.
+- [ ] Refactoring-Tools: Werkzeuge wie "Extract Method", "Rename Symbol" und "Move Literal".
+
+3. Kernvisuals und Effekte
+- [ ] Modern-Sleek Ästhetik: Pastell-Farben, weiche Schatten, minimalistisches Design, das Geräusch von frischem Wind und sanftem Klicken (Shared Theme kompatibel).
+- [ ] "Polish-Shine": Wenn ein Smell entfernt wird, wischt ein virtueller Schwamm über den Code und lässt ihn glänzen.
+- [ ] "Smell-Fog": Unsauberer Code wird von einem leichten grauen Nebel umgeben, der sich beim Refactoring auflöst.
+
+4. Browser- und Device-Resilienz
+- [ ] `Diff-Engine` zur Visualisierung der Änderungen im Handumdrehen.
+- [ ] Mobile: "Swipe-to-Refactor" Geste.
+
+5. Content-Strategie (The Legacy-Files)
+- [ ] 12 verschiedene "Hässliche-Code"-Beispiele zum Aufhübschen.
+
+6. QA-Paket
+- [ ] Test: Wird der Vorteil von sprechenden Namen für die Wartbarkeit intuitiv klar?
+- [ ] Test: Erhöht das Zerlegen von Funktionen die Übersichtlichkeit spürbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Code wird öfter gelesen als geschrieben. Schreibe ihn für Menschen, nicht nur für CPUs.
+- [ ] Das Interface wirkt professionell, sauber und ästhetisch wertvoll.
+- [ ] Fokus auf nachhaltige Softwarearchitektur und Wartbarkeit.

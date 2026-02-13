@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis und Anwendung des Single Responsibility Prinzips (SRP) als ersten Schritt der SOLID-Prinzipien.
+- Game-Mechanic: "The Brick-Builder". Du baust ein Haus aus LEGO-Steinen. Jemand hat dir einen "Super-Block" gegeben: Er ist ein Stein, ein Fenster, eine Tür und eine Dachrinne gleichzeitig. Er ist schwer, unhandlich und wenn das Fenster bricht, musst du das ganze Dach wegwerfen. Deine Aufgabe: Zerlege den Super-Block in spezialisierte Einzelsteine (Klassen). Ein Stein = Eine Aufgabe. Setze sie dann wieder modular zusammen. So bleibt dein Bauwerk flexibel und stabil!
+- Challenge: 
+  - Level 1 (The User Split): Eine Klasse `User` speichert Daten UND schickt E-Mails UND berechnet Steuern. Trenne die E-Mail-Logik in eine eigene Klasse.
+  - Level 2 (The Report Separator): Eine Klasse generiert einen Report UND druckt ihn aus UND speichert ihn als PDF. Schaffe drei kleine Spezialisten.
+  - Level 3 (The Dependency Chain): Sorge dafür, dass die Klassen nur über Schnittstellen miteinander reden, damit du den "Drucker" jederzeit gegen einen "Cloud-Upload" tauschen kannst.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Responsibility-Heatmap", "Class-Size-Gauge", "Modular-Coupling-Chart", "Solid-Achievement-Badge".
+- [ ] Scoring: "Architecture-Pro" Bonus für Klassen mit genau einer klaren Verantwortlichkeit. Abzug für "God-Objects" (Klassen, die alles wissen).
+
+2. Screen-Layout (The Construction Site)
+- [ ] `monolithic-block -> incision-tool -> modular-bricks -> final-architecture`.
+- [ ] Incision-Tool: Ein Laser, mit dem man Trennlinien durch den Code zieht, um Verantwortlichkeiten zu isolieren.
+- [ ] Final-Architecture: Eine 3D-Ansicht, wie die neuen Klassen stabil zusammenarbeiten.
+
+3. Kernvisuals und Effekte
+- [ ] Construction-Grid Ästhetik: Blueprint-Blau, Gelbe Warnstreifen, Kran-Animationen, das Geräusch von einrastenden Bausteinen und hydraulischen Pressen (Shared Theme kompatibel).
+- [ ] "Separation-Light": Beim erfolgreichen Split leuchten die beiden neuen Klassen in zwei unterschiedlichen, harmonischen Farben auf.
+- [ ] "Integrity-Check": Ein grüner Scan-Strahl prüft, ob das Modul-Set nun "SOLIDer" ist als vorher.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Grid` zur Anordnung der modularen Bausteine.
+- [ ] Mobile: "Swipe-to-Split" Fingergeste im Code.
+
+5. Content-Strategie (The Blueprint-Orders)
+- [ ] 12 verschiedene Architektur-Herausforderungen aus echten Web-Projekten.
+
+6. QA-Paket
+- [ ] Test: Wird die Erleichterung beim Testen kleinerer Klassen visuell deutlich?
+- [ ] Test: Fühlt sich das "Auseinanderbauen" wie ein strategischer Gewinn an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Eine Klasse sollte nur einen Grund haben, sich zu ändern. Das ist die Basis für langlebige Software.
+- [ ] Das Interface wirkt konstruktiv, stabil und präzise.
+- [ ] Fokus auf Core-OOP-Prinzipien.

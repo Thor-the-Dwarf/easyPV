@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Logische Organisation von Klassen in Paketen und Namespaces zur Vermeidung von Namenskollisionen und zur Strukturierung großer Projekte.
+- Game-Mechanic: "The Package-Puzzle". Du bist der Logistik-Manager in einem riesigen Paketzentrum. Tausende von Paketen (Klassen) kommen an. Du kannst sie nicht alle auf einen Haufen werfen! Nutze deine "Struktur-Regale" (Packages). Sortiere nach Themen: Alles was mit der UI zu tun hat, kommt in `com.company.ui`, alle Datenmodelle nach `com.company.model`. Achte darauf, dass Pakete keine kreisförmigen Abhängigkeiten bilden und dass das "Inhaltsverzeichnis" (Namespace) logisch und sauber bleibt!
+- Challenge: 
+  - Level 1 (The Basic Sort): Sortiere 10 Klassen in die Ordner `ui`, `data` und `logic`.
+  - Level 2 (The Name Conflict): Du hast zwei Klassen namens `User`. Eine gehört zur DB-Verwaltung, eine zur UI. Platziere sie in unterschiedlichen Namespaces, damit der Compiler nicht verwirrt wird.
+  - Level 3 (The Deep Hierarchy): Baue eine saubere Struktur über 4 Ebenen (`org.project.core.auth.impl`) und erkenne, wann eine Verschachtelung zu tief (Deep-Nesting-Smell) wird.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Namespace-Tree-View", "Package-Collision Radar", "Dependency-Heatmap", "Structure-Tidiness Gauge".
+- [ ] Scoring: "Organization-Ace" Bonus für flache, logische Hierarchien. Abzug für "Namespace-Clutter" (zu viele Klassen in einem Paket).
+
+2. Screen-Layout (The Sorting Center)
+- [ ] `incoming-classes -> sorting-conveyor -> package-shelves -> final-project-map`.
+- [ ] Package-Shelves: Klarsicht-Boxen, in die man die Klassen-Icons per Drag-and-Drop fallen lässt.
+- [ ] Dependency-Heatmap: Zeigt an, welche Pakete am stärksten miteinander verknüpft sind.
+
+3. Kernvisuals und Effekte
+- [ ] Logistik-Cyberpunk Ästhetik: Roboter-Greifarme, Scan-Tunnel, digitale Liefer-Etiketten, mechanisches Surren, Piep-Töne beim Einscannen (Shared Theme kompatibel).
+- [ ] "Etiketten-Druck": Wenn eine Klasse in ein Paket kommt, bekommt sie ein leuchtendes Namespace-Etikett aufgeklebt.
+- [ ] "Namespace-Zapping": Bei einer Kollision fangen die beiden betroffenen Pakete an instabil zu flackern.
+
+4. Browser- und Device-Resilienz
+- [ ] `SVG Tree` Komponente für die hierarchische Ansicht.
+- [ ] Mobile: "Swipe-to-Categorize" für die schnellen Sortier-Runden.
+
+5. Content-Strategie (The Project-Blueprints)
+- [ ] 12 verschiedene Projekt-Szenarien: Von "Kleine Web-App" bis "Großes Enterprise-System".
+
+6. QA-Paket
+- [ ] Test: Wird das Problem von Namenskollisionen visuell greifbar?
+- [ ] Test: Erleichtert die Paket-Struktur das Auffinden von Komponenten spürbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Packages sind die Landkarte deines Codes. Eine gute Struktur spart Suchzeit.
+- [ ] Das Interface wirkt ordentlich, produktiv und strukturiert.
+- [ ] Fokus auf Projekt-Organisation und Modularität.

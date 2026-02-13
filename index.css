@@ -1,0 +1,259 @@
+:root {
+  --bg: 228 55% 7%;
+  --bg-surface: 225 42% 12%;
+  --bg-surface-alpha: 0.68;
+  --bg-surface-2-alpha: 0.9;
+  --txt: 210 50% 96%;
+  --txt-muted: 219 20% 67%;
+  --primary: 201 100% 65%;
+  --glass-bg: 227 39% 10%;
+  --glass-opacity: 0.9;
+  --glass-border: 205 95% 42% / 0.36;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+}
+
+:root.theme-light {
+  --bg: 212 26% 93%;
+  --bg-surface: 214 33% 98%;
+  --bg-surface-alpha: 0.95;
+  --bg-surface-2-alpha: 1;
+  --txt: 220 32% 17%;
+  --txt-muted: 219 13% 45%;
+  --primary: 205 83% 41%;
+  --glass-bg: 212 38% 98%;
+  --glass-opacity: 0.92;
+  --glass-border: 206 80% 38% / 0.2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+  color: hsl(var(--txt));
+}
+
+body {
+  background: radial-gradient(circle at top, hsl(var(--bg-surface)), hsl(var(--bg)) 55%);
+}
+
+#app-view {
+  min-height: 100vh;
+}
+
+.top-bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: hsl(var(--glass-bg) / var(--glass-opacity));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid hsl(var(--glass-border));
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 60;
+}
+
+.menu-icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  background: transparent;
+  color: hsl(var(--txt-muted));
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  justify-self: start;
+}
+
+.menu-icon-btn:hover {
+  background: hsl(var(--bg-surface) / var(--bg-surface-2-alpha));
+  color: hsl(var(--txt));
+}
+
+.menu-icon-btn.active {
+  background: hsl(var(--primary) / 0.15);
+  color: hsl(var(--primary));
+  border-color: hsl(var(--primary) / 0.3);
+}
+
+.top-bar-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: hsl(var(--txt));
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.3);
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: hsl(var(--txt));
+  justify-self: end;
+}
+
+.theme-toggle-btn:hover {
+  background: hsl(var(--bg-surface) / var(--bg-surface-2-alpha));
+}
+
+.drawer {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  height: calc(100vh - 64px);
+  width: min(360px, 88vw);
+  background: hsl(var(--bg-surface) / 0.32);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-right: 1px solid hsl(var(--glass-border));
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1rem;
+  gap: 1rem;
+  transform: translateX(-100%);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 30;
+}
+
+#app-view.tree-open .drawer {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid hsl(var(--glass-border));
+}
+
+.drawer-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: hsl(var(--txt-muted));
+}
+
+.tree-scroll {
+  flex: 1;
+  overflow: auto;
+  padding-right: 0.25rem;
+}
+
+.tree-node {
+  position: relative;
+}
+
+.tree-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem;
+  padding-left: calc(0.5rem + (var(--level, 0) * 1.1rem));
+  border-radius: var(--radius-sm);
+  color: hsl(var(--txt-muted));
+}
+
+.tree-row:hover {
+  background: hsl(var(--bg-surface) / var(--bg-surface-2-alpha));
+  color: hsl(var(--txt));
+}
+
+.tree-node--collapsed > .tree-children {
+  display: none;
+}
+
+.tree-toggle {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.75rem;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  padding: 0;
+}
+
+.tree-toggle:hover {
+  opacity: 1;
+}
+
+.tree-icon {
+  font-size: 0.95rem;
+  width: 1.2rem;
+  text-align: center;
+}
+
+.tree-label {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: default;
+  text-align: left;
+  flex: 1;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.tree-label:focus {
+  outline: none;
+}
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 29;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.drawer-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.main-surface {
+  min-height: 100vh;
+  padding-top: 64px;
+}
+
+@media (max-width: 720px) {
+  .top-bar {
+    padding: 0.5rem 0.85rem;
+  }
+
+  .top-bar-title {
+    font-size: 0.84rem;
+  }
+
+  .drawer {
+    width: 100vw;
+  }
+}

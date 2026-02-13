@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pauker - SPA Start</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div id="app-view">
+      <div id="drawer-backdrop" class="drawer-backdrop"></div>
+
+      <aside class="drawer" id="tree-drawer">
+        <header class="drawer-header">
+          <div class="drawer-title" id="drawer-title">DATABASE</div>
+        </header>
+        <div class="tree-scroll">
+          <nav class="tree" id="tree-root" aria-label="Ordnerstruktur">
+            <div style="padding: 1rem; color: hsl(var(--txt-muted));">Lade Ordnerstruktur...</div>
+          </nav>
+        </div>
+      </aside>
+
+      <main class="main-surface">
+        <header class="top-bar">
+          <button
+            id="menu-tree-btn"
+            class="menu-icon-btn"
+            type="button"
+            title="Ordnerstruktur ein-/ausblenden"
+            aria-label="Ordnerstruktur ein-/ausblenden"
+          >
+            📁
+          </button>
+          <div class="top-bar-title">Die Wiederholung ist die Mutter des Lernens</div>
+          <button id="theme-toggle-app" class="theme-toggle-btn" type="button" aria-label="Theme wechseln">🌙</button>
+        </header>
+      </main>
+    </div>
+
+    <script>
+      (function () {
+        'use strict';
+
+        const THEME_KEY = 'globalTheme_v1';
+        const DRAWER_KEY = 'spaDrawerOpen_v1';
+        const OPENED_KEY = 'spaOpenedFolders_v1';
+
+        const appView = document.getElementById('app-view');
+        const menuBtn = document.getElementById('menu-tree-btn');
+        const themeToggleBtn = document.getElementById('theme-toggle-app');
+        const drawerBackdrop = document.getElementById('drawer-backdrop');
+        const drawerTitleEl = document.getElementById('drawer-title');
+        const treeRootEl = document.getElementById('tree-root');
+
+        let drawerOpen = false;
+        let openedFolderIds = [];
+        let rootTree = [];
+
+        init();
+
+        function init() {
+          loadState();
+          initTheme();
+          applyDrawerState();
+
+          menuBtn.addEventListener('click', toggleDrawer);
+          drawerBackdrop.addEventListener('click', () => setDrawer(false));
+          themeToggleBtn.addEventListener('click', toggleTheme);
+
+          initIndex();
+        }
+
+        function loadState() {
+          drawerOpen = localStorage.getItem(DRAWER_KEY) === '1';
+
+          try {
+            const raw = localStorage.getItem(OPENED_KEY);
+            openedFolderIds = raw ? JSON.parse(raw) : [];
+            if (!Array.isArray(openedFolderIds)) openedFolderIds = [];
+          } catch (_) {
+            openedFolderIds = [];
+          }
+        }
+
+        function saveState() {
+          localStorage.setItem(DRAWER_KEY, drawerOpen ? '1' : '0');
+          localStorage.setItem(OPENED_KEY, JSON.stringify(openedFolderIds));
+        }
+
+        function toggleDrawer() {
+          setDrawer(!drawerOpen);
+        }
+
+        function setDrawer(nextOpen) {
+          drawerOpen = !!nextOpen;
+          saveState();
+          applyDrawerState();
+        }
+
+        function applyDrawerState() {
+          appView.classList.toggle('tree-open', drawerOpen);
+          menuBtn.classList.toggle('active', drawerOpen);
+          drawerBackdrop.classList.toggle('active', drawerOpen);
+        }
+
+        function initTheme() {
+          const stored = localStorage.getItem(THEME_KEY);
+          const theme = stored === 'light' ? 'light' : 'dark';
+          applyTheme(theme);
+        }
+
+        function toggleTheme() {
+          const isLight = document.documentElement.classList.contains('theme-light');
+          const next = isLight ? 'dark' : 'light';
+          applyTheme(next);
+          localStorage.setItem(THEME_KEY, next);
+        }
+
+        function applyTheme(theme) {
+          if (theme === 'light') {
+            document.documentElement.classList.add('theme-light');
+            themeToggleBtn.textContent = '☀️';
+            return;
+          }
+
+          document.documentElement.classList.remove('theme-light');
+          themeToggleBtn.textContent = '🌙';
+        }
+
+        async function initIndex() {
+          try {
+            const response = await fetch('./index.json?ts=' + Date.now());
+            if (!response.ok) throw new Error('index.json konnte nicht geladen werden');
+
+            const payload = await response.json();
+            rootTree = Array.isArray(payload.tree) ? payload.tree : [];
+            drawerTitleEl.textContent = String(payload.rootName || 'DATABASE').toUpperCase();
+
+            treeRootEl.innerHTML = '';
+            buildTree(treeRootEl, rootTree, 0);
+          } catch (error) {
+            treeRootEl.innerHTML =
+              '<div style="padding: 1rem; color: hsl(var(--txt-muted));">' +
+              escapeHtml(error.message) +
+              '</div>';
+          }
+        }
+
+        function buildTree(container, nodes, level) {
+          nodes.forEach((node) => {
+            if (!node || !node.isFolder) return;
+
+            const rowNode = document.createElement('div');
+            rowNode.className = 'tree-node';
+            rowNode.dataset.id = node.id;
+
+            const isCollapsed = !openedFolderIds.includes(node.id);
+            rowNode.classList.toggle('tree-node--collapsed', isCollapsed);
+
+            const row = document.createElement('div');
+            row.className = 'tree-row';
+            row.style.setProperty('--level', level);
+
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className = 'tree-toggle';
+            toggleBtn.type = 'button';
+            toggleBtn.textContent = isCollapsed ? '▸' : '▾';
+            toggleBtn.setAttribute('aria-label', 'Ordner auf- oder zuklappen');
+            toggleBtn.addEventListener('click', (event) => {
+              event.stopPropagation();
+              toggleNode(rowNode, node.id, toggleBtn);
+            });
+            row.appendChild(toggleBtn);
+
+            const icon = document.createElement('span');
+            icon.className = 'tree-icon';
+            icon.textContent = isCollapsed ? '📁' : '📂';
+            row.appendChild(icon);
+
+            const label = document.createElement('button');
+            label.className = 'tree-label';
+            label.type = 'button';
+            label.textContent = node.name;
+            label.title = node.name;
+            label.addEventListener('click', (event) => {
+              event.preventDefault();
+              event.stopPropagation();
+            });
+            row.appendChild(label);
+
+            rowNode.appendChild(row);
+
+            const childContainer = document.createElement('div');
+            childContainer.className = 'tree-children';
+            if (Array.isArray(node.children) && node.children.length > 0) {
+              buildTree(childContainer, node.children, level + 1);
+            }
+            rowNode.appendChild(childContainer);
+
+            container.appendChild(rowNode);
+          });
+        }
+
+        function toggleNode(rowNode, id, toggleBtn) {
+          const idx = openedFolderIds.indexOf(id);
+          if (idx >= 0) {
+            openedFolderIds.splice(idx, 1);
+            rowNode.classList.add('tree-node--collapsed');
+            toggleBtn.textContent = '▸';
+          } else {
+            openedFolderIds.push(id);
+            rowNode.classList.remove('tree-node--collapsed');
+            toggleBtn.textContent = '▾';
+          }
+
+          const icon = rowNode.querySelector('.tree-icon');
+          if (icon) {
+            icon.textContent = openedFolderIds.includes(id) ? '📂' : '📁';
+          }
+
+          saveState();
+        }
+
+        function escapeHtml(value) {
+          return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+        }
+      })();
+    </script>
+  </body>
+</html>

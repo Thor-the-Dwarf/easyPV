@@ -28,3 +28,10 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Verified active runtime state after start: started=true, level 1 loaded, timer running, snippet payload exported via render_game_to_text.
 - Visual check completed on generated screenshot (desktop layout, bins, HUD, confusion meter and feed visible).
 - Added high-confusion warning state (>=70%): confusion meter and feedback area now switch to stronger warning styling.
+- Original prompt (current turn): GamePlan-Make-or-Buy-Waage.txt
+- Implemented new game in Teil02/Fremdvergabe: game_make_or_buy_waage.html/.js/.json and make_or_buy_waage.css.
+- Added 20 decision factors across 3 levels (incl. Budget-Squeeze and Strategic Shift event), weighted make/buy scale, KPI HUD (Decision-Stability, Remaining Budget, Time-to-Market), and scoring rules with core-competence bonus + vendor-lock-in penalty without exit strategy.
+- Added draggable factor card, clickable pans, result ticker, render_game_to_text and advanceTime hooks.
+- Playwright smoke test executed; UI and active state (started=true, factor loaded) validated via screenshot and state JSON.
+- Applied targeted improvements on existing Make-or-Buy-Waage implementation: keyboard controls (A/Left=Make, D/Right=Buy, Space/Enter=Next) and explicit level labels (Klar/Budget/Shift).
+- Added explicit pointer-events:auto on scale pans and factor card for better mobile precision.

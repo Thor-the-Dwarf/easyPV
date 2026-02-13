@@ -82,6 +82,13 @@
     el.factorCard.addEventListener('pointermove', onPointerMove);
     el.factorCard.addEventListener('pointerup', onPointerUp);
     el.factorCard.addEventListener('pointercancel', onPointerUp);
+
+    window.addEventListener('keydown', (event) => {
+      if (!state.started || state.done || state.gameOver) return;
+      if (event.key === 'ArrowLeft' || event.key.toLowerCase() === 'a') placeFactor('make');
+      if (event.key === 'ArrowRight' || event.key.toLowerCase() === 'd') placeFactor('buy');
+      if (event.key === ' ' || event.key === 'Enter') nextFactor();
+    });
   }
 
   function resetState() {
@@ -243,7 +250,7 @@
     el.kpiTtm.textContent = `${Math.round(state.ttmDays)} Tage`;
     el.kpiScore.textContent = String(state.score);
     el.kpiProgress.textContent = `${Math.min(total, state.idx + (state.done ? 0 : 1))}/${total}`;
-    el.kpiLevel.textContent = String(level);
+    el.kpiLevel.textContent = levelLabel(level);
 
     el.makeLoad.textContent = `${state.makeLoad} kg`;
     el.buyLoad.textContent = `${state.buyLoad} kg`;
@@ -291,6 +298,12 @@
 
   function euro(v) {
     return `${Math.round(v).toLocaleString('de-DE')} EUR`;
+  }
+
+  function levelLabel(level) {
+    if (level === 1) return '1 (Klar)';
+    if (level === 2) return '2 (Budget)';
+    return '3 (Shift)';
   }
 
   function clamp(v, min, max) {

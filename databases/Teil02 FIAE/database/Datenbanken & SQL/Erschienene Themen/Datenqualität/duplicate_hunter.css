@@ -1,223 +1,307 @@
 /* 
- * Duplicate Hunter - Styles
- * Aesthetic: Medical Lab / DNA / Clean White & Blue
+ * Duplicate Hunter - Upgraded Styles
+ * Aesthetic: MDM Master Lab / Clinical Precision / DNA Diagnostics
  */
 
 :root {
-    --lab-white: #f5f7fa;
-    --lab-blue: #2196f3;
-    --lab-dark-blue: #0d47a1;
-    --dna-green: #00e676;
-    --diff-orange: #ff9800;
-    --panel-bg: #ffffff;
+    --bg-lab: #f0f4f8;
+    --glass-tint: rgba(255, 255, 255, 0.85);
+    --medical-blue: #0984e3;
+    --medical-dark: #2d3436;
+    --dna-green: #00b894;
+    --conflict-red: #d63031;
+    --fuzzy-yellow: #f1c40f;
+    --text-main: #2d3436;
+    --text-dim: #636e72;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background: var(--lab-white);
-    color: #333;
+    background: var(--bg-lab);
+    background-image:
+        radial-gradient(circle at 100% 0%, rgba(9, 132, 227, 0.05) 0%, transparent 40%),
+        linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 50px 50px, 50px 50px;
+    color: var(--text-main);
     font-family: 'Roboto', sans-serif;
     height: 100vh;
-    overflow: hidden;
-    user-select: none;
-}
-
-.game-app {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    position: relative;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-    background: #fff;
+    overflow: hidden;
 }
 
 /* --- HUD --- */
-.hud {
+.lab-header {
+    padding: 1.2rem 2.5rem;
+    background: #fff;
+    border-bottom: 2px solid var(--medical-blue);
     display: flex;
     justify-content: space-between;
-    padding: 1rem 2rem;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    z-index: 100;
 }
 
 .hud-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 
 .hud-label {
-    font-size: 0.8rem;
-    color: #888;
+    font-size: 0.65rem;
+    color: var(--medical-blue);
     text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    font-weight: 700;
 }
 
-.hud-value {
-    font-size: 1.5rem;
+.hud-val {
+    font-size: 1.8rem;
     font-weight: 300;
-    color: var(--lab-blue);
+    color: var(--medical-dark);
 }
 
-/* --- Lab Workbench --- */
-.workbench {
+/* --- Laboratory Workflow --- */
+.lab-workspace {
     flex: 1;
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    background:
-        linear-gradient(90deg, transparent 49%, rgba(0, 0, 0, 0.02) 50%, transparent 51%),
-        linear-gradient(0deg, transparent 49%, rgba(0, 0, 0, 0.02) 50%, transparent 51%);
-    background-size: 50px 50px;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Comparison View */
-.comparison-container {
-    display: flex;
     gap: 2rem;
-    width: 100%;
-    max-width: 900px;
-    justify-content: center;
-    align-items: stretch;
+    align-items: center;
+    position: relative;
 }
 
-.record-card {
+/* Strand Comparison */
+.triage-unit {
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1100px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     flex: 1;
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.data-strand {
+    flex: 1;
+    background: var(--glass-tint);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    position: relative;
+    overflow: hidden;
     transition: transform 0.3s;
 }
 
-.record-card.record-a {
-    border-top: 5px solid var(--lab-blue);
-}
-
-.record-card.record-b {
-    border-top: 5px solid var(--diff-orange);
-}
-
-.card-header {
+.strand-header {
+    background: var(--medical-dark);
+    color: #fff;
     padding: 1rem;
-    font-weight: bold;
-    border-bottom: 1px solid #eee;
     text-align: center;
-    background: #fafafa;
-    color: #555;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
 }
 
-.field-row {
+.field-cell {
     display: flex;
     flex-direction: column;
-    padding: 0.8rem 1rem;
-    border-bottom: 1px solid #f0f0f0;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s;
+    position: relative;
 }
 
-.field-row:hover {
-    background: #f5faff;
+.field-cell:hover {
+    background: rgba(9, 132, 227, 0.05);
 }
 
-.field-row.selected {
-    background: #e3f2fd;
-    border-left: 4px solid var(--lab-blue);
+.field-cell.selected {
+    background: rgba(9, 132, 227, 0.1);
+    border-left: 5px solid var(--medical-blue);
 }
 
-.field-label {
-    font-size: 0.7rem;
-    color: #aaa;
+.f-key {
+    font-size: 0.65rem;
+    color: var(--text-dim);
     text-transform: uppercase;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
 
-.field-value {
-    font-size: 1rem;
+.f-val {
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
-.field-value.diff {
-    color: var(--diff-orange);
+/* Status Colors */
+.conflict {
+    color: var(--conflict-red) !important;
     font-weight: bold;
 }
 
-.field-value.match {
-    color: var(--dna-green);
+.fuzzy {
+    color: var(--fuzzy-yellow) !important;
 }
 
-/* Match Score Badge */
-.match-badge {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
+.match {
+    color: var(--dna-green) !important;
+}
+
+/* Match Linker */
+.dna-linker {
+    width: 120px;
+    height: 120px;
     background: #fff;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    border: 4px solid var(--lab-white);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 8px solid var(--bg-lab);
+    z-index: 20;
 }
 
-.match-percent {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: var(--lab-blue);
+.score-pct {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--medical-blue);
 }
 
-/* Action Bar */
-.action-bar {
-    margin-top: 2rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.btn-lab {
-    padding: 1rem 3rem;
-    border: none;
-    background: var(--lab-blue);
+/* --- Master Record Preview --- */
+.master-preview {
+    width: 100%;
+    max-width: 1100px;
+    background: var(--medical-dark);
     color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
-    transition: transform 0.1s;
-}
-
-.btn-lab:hover {
-    transform: translateY(-2px);
-}
-
-.btn-lab:active {
-    transform: translateY(0);
-}
-
-/* Result */
-.result-screen {
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 8px;
     display: flex;
-    flex-direction: column;
+    gap: 1.5rem;
+    overflow-x: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.prev-pill {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+}
+
+.pill-label {
+    font-size: 0.6rem;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.pill-val {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--medical-blue);
+}
+
+/* --- Controls --- */
+.action-hud {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.btn-action {
+    padding: 1rem 4rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-merge {
+    background: var(--medical-blue);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(9, 132, 227, 0.3);
+}
+
+.btn-keep {
+    background: transparent;
+    border: 2px solid var(--text-dim);
+    color: var(--text-dim);
+}
+
+/* --- Overlays & Transitions --- */
+.record-merge-anim {
+    animation: strand-collapse 0.5s ease-in forwards;
+}
+
+@keyframes strand-collapse {
+    to {
+        transform: scale(0.5);
+        opacity: 0;
+        filter: blur(10px);
+    }
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(45, 52, 54, 0.98);
+    display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 100;
+    z-index: 2000;
+    backdrop-filter: blur(20px);
+}
+
+.archive-card {
+    padding: 4rem;
+    background: #fff;
+    border-top: 10px solid var(--medical-blue);
     text-align: center;
+    max-width: 600px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+#btn-next {
+    width: 100%;
+    padding: 15px;
+    background: var(--medical-blue);
+    color: #fff;
+    border: none;
+    font-weight: 900;
+    margin-top: 2rem;
+    cursor: pointer;
+    font-size: 1.2rem;
 }
 
 .hidden {
     display: none !important;
+}
+
+@media (max-width: 900px) {
+    .triage-unit {
+        flex-direction: column;
+        gap: 1rem;
+        overflow-y: auto;
+    }
+
+    .dna-linker {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        transform: scale(0.6);
+    }
+
+    .action-hud {
+        flex-direction: column;
+        width: 100%;
+    }
 }

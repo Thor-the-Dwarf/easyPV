@@ -4,60 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Quality - Duplicate Hunter</title>
+    <title>MDM Master Lab // Duplicate Hunter</title>
     <!-- Adjust path -->
     <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
     <link rel="stylesheet" href="duplicate_hunter.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="game-app">
         <!-- HUD -->
-        <header class="hud">
-            <div id="level-title" style="font-weight:bold; font-size:1.2rem; color:var(--lab-dark-blue);">Loading...
+        <header class="lab-header">
+            <div class="hud-item">
+                <div class="hud-label">INTEGRITY_INDEX</div>
+                <div id="points-val" class="hud-val">0</div>
             </div>
-            <div class="progress-status">MDM LAB v2.0</div>
+            <div style="text-align:center;">
+                <div id="level-title" style="letter-spacing:3px; font-weight:bold; color:var(--medical-blue);">
+                    LAB_INITIALIZING...</div>
+                <div style="font-size:0.6rem; color:var(--text-dim); margin-top:5px;">OBJECTIVE: MASTER_DATA_CLEANSING
+                </div>
+            </div>
+            <div class="hud-item">
+                <div class="hud-label">PROCESS_ROI_SAVED</div>
+                <div id="roi-val" class="hud-val">€0.00</div>
+            </div>
         </header>
 
-        <!-- Workbench -->
-        <main class="workbench">
+        <!-- Main Workspace -->
+        <main class="lab-workspace">
 
-            <div class="comparison-container">
-                <!-- Record A -->
-                <div id="record-a" class="record-card record-a">
-                    <!-- Fields -->
+            <div class="triage-unit">
+                <!-- Data Strand A -->
+                <div id="record-a" class="data-strand">
+                    <!-- Fields injected here -->
                 </div>
 
-                <!-- Match Score Badge -->
-                <div class="match-badge">
-                    <div id="match-score" class="match-percent">--%</div>
-                    <div style="font-size:0.6rem; color:#aaa;">MATCH</div>
+                <!-- Match Score Linker -->
+                <div class="dna-linker">
+                    <div class="hud-label" style="font-size:0.5rem">MATCH</div>
+                    <div id="match-pct-val" class="score-pct">--%</div>
+                    <div class="hud-label" style="font-size:0.5rem">CONFIRM</div>
                 </div>
 
-                <!-- Record B -->
-                <div id="record-b" class="record-card record-b">
-                    <!-- Fields -->
+                <!-- Data Strand B -->
+                <div id="record-b" class="data-strand">
+                    <!-- Fields injected here -->
                 </div>
             </div>
 
-            <div class="action-bar">
-                <button id="skip-btn" class="btn-lab" style="background:#ccc; color:#333;">SKIP / KEEP</button>
-                <button id="merge-btn" class="btn-lab">MERGE RECORDS</button>
+            <!-- Master Record Triage -->
+            <div class="hud-label" style="margin-top:1rem;">MASTER_RECORD_PREVIEW</div>
+            <div id="master-preview-row" class="master-preview">
+                <!-- Master record result preview -->
             </div>
 
+            <!-- Controls -->
+            <div class="action-hud">
+                <button id="skip-btn" class="btn-action btn-keep">KEEP_SEPARATE</button>
+                <button id="merge-btn" class="btn-action btn-merge">FUSE_INTO_MASTER</button>
+            </div>
         </main>
 
-        <!-- Result Screen -->
-        <div id="result-screen" class="result-screen hidden">
-            <div class="card"
-                style="background: #fff; border: 2px solid var(--lab-blue); padding: 3rem; text-align:center; box-shadow:0 10px 50px rgba(0,0,0,0.2);">
-                <h2 style="color:var(--lab-dark-blue); margin-bottom:1rem;">QUALITY REPORT</h2>
-                <div class="hud-value" style="font-size: 1.5rem; margin: 2rem 0; color:#333" id="final-result">...</div>
-                <button id="next-btn" class="btn-lab">NEXT</button>
+        <!-- Result Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="archive-card">
+                <div class="hud-label" style="text-align: center; margin-bottom: 2rem;">LAB_BATCH_REPORT</div>
+                <h1 id="res-final" style="color:var(--medical-blue); margin:0; letter-spacing:8px;">ANALYSIS_STABLE</h1>
+
+                <p style="margin: 2rem 0; font-size: 0.9rem; line-height: 1.8; color: var(--text-dim);">
+                    Duplicates have been successfully triaged and merged into authoritative master records.<br>
+                    Data quality has been restored to corporate standards.
+                </p>
+
+                <button id="btn-next">ACKNOWLEDGE_REPORT</button>
             </div>
         </div>
     </div>
+
+    <!-- Script -->
     <script src="game_duplicate_hunter.js"></script>
 </body>
 

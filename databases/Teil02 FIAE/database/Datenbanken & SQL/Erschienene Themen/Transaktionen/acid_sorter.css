@@ -1,0 +1,246 @@
+/* 
+ * ACID-Sortierer - Styles
+ * Aesthetic: Ancient Temple / Vault of Transactions / Holographic Gold
+ */
+
+:root {
+    --bg-temple: #0f1115;
+    --bg-pillar: #1e2227;
+    --text-main: #c0c5ce;
+    --gold-glow: #ffcc00;
+    --laser-cyan: #00d4ff;
+    --accent-red: #ff3131;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-temple);
+    color: var(--text-main);
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* --- HUD --- */
+.hud {
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hud-title {
+    color: var(--laser-cyan);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.integrity-meter {
+    font-size: 0.9rem;
+}
+
+/* --- Main Area: Temple Structure --- */
+.temple-structure {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+.pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    height: 60%;
+}
+
+.pillar {
+    background: var(--bg-pillar);
+    border: 2px solid #333;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.pillar.highlight {
+    border-color: var(--laser-cyan);
+    box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.pillar.completed {
+    border-color: var(--gold-glow);
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+}
+
+.pillar-header {
+    padding: 10px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid #333;
+}
+
+.pillar-id {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--gold-glow);
+    display: block;
+}
+
+.pillar-name {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.pillar-slots {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+}
+
+/* --- Quarry: Definitions --- */
+.quarry {
+    height: 150px;
+    background: #000;
+    border-top: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
+    overflow-x: auto;
+}
+
+.definition-stone {
+    background: #333;
+    border: 1px solid #444;
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    cursor: grab;
+    width: 180px;
+    min-width: 180px;
+    text-align: center;
+    border-radius: 4px;
+    transition: transform 0.1s, background-color 0.2s;
+    color: #eee;
+    box-shadow: 0 4px 0 #111;
+}
+
+.definition-stone:active {
+    cursor: grabbing;
+}
+
+.definition-stone.sorted {
+    width: 100%;
+    min-width: 0;
+    box-shadow: none;
+    font-size: 0.75rem;
+    background: rgba(255, 204, 0, 0.1);
+    border-color: var(--gold-glow);
+    cursor: default;
+}
+
+/* --- Overlays & Effects --- */
+.result-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.result-card {
+    text-align: center;
+    padding: 3rem;
+    border: 2px solid var(--gold-glow);
+    background: #111;
+}
+
+.btn-terminal {
+    background: transparent;
+    border: 1px solid var(--gold-glow);
+    color: var(--gold-glow);
+    padding: 1rem 2rem;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
+
+.btn-terminal:hover {
+    background: rgba(255, 204, 0, 0.1);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.shake {
+    animation: shake 0.4s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+/* Crash Animation */
+.crash-flash {
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    opacity: 0;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.crash-anim {
+    animation: flash 0.5s ease-out;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

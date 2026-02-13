@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACID-Sortierer - Temple of Transactions</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="acid_sorter.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <div id="flash-effect" class="crash-flash"></div>
+
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-title">VAULT_INTEGRITY // CHECK</div>
+            <div class="integrity-meter">
+                STABILITY_SCORE: <span id="integrity-score" style="color:var(--gold-glow); font-weight:bold;">0%</span>
+            </div>
+        </header>
+
+        <!-- Temple Workspace -->
+        <main class="temple-structure">
+            <div style="font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 2px;">Foundation
+                Pillars</div>
+            <div id="pillar-grid" class="pillar-grid">
+                <!-- Pillars injected here -->
+            </div>
+        </main>
+
+        <!-- Quarry -->
+        <footer id="quarry" class="quarry">
+            <!-- Definitions injected here -->
+        </footer>
+
+        <!-- Result Overlay -->
+        <div id="result-overlay" class="result-overlay hidden">
+            <div class="result-card">
+                <h2 style="color:var(--gold-glow); margin-bottom:1rem;">STRESS TEST COMPLETE</h2>
+                <p>The transition building is rock solid.</p>
+                <div style="font-size: 0.8rem; color: #888; margin-top: 1rem;">
+                    ACID protocols verified. Database integrity secured.
+                </div>
+                <button id="btn-restart" class="btn-terminal">RE-INITIATE FOUNDATION</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_acid_sorter.js"></script>
+</body>
+
+</html>

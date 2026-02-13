@@ -1,0 +1,71 @@
+{
+    "meta": {
+        "topic": "ACID Principles",
+        "mechanic": "category_sorting",
+        "version": "1.0"
+    },
+    "pillars": [
+        {
+            "id": "A",
+            "name": "Atomarität",
+            "slogan": "Alles oder Nichts",
+            "icon": "⚡",
+            "description": "Eine Transaktion wird entweder ganz oder gar nicht ausgeführt."
+        },
+        {
+            "id": "C",
+            "name": "Konsistenz",
+            "slogan": "Regeln einhalten",
+            "icon": "⚖️",
+            "description": "Die DB ist vor und nach der Transaktion in einem gültigen Zustand."
+        },
+        {
+            "id": "I",
+            "name": "Isolation",
+            "slogan": "Allein auf der Welt",
+            "icon": "🛡️",
+            "description": "Gleichzeitige Transaktionen beeinflussen sich nicht gegenseitig."
+        },
+        {
+            "id": "D",
+            "name": "Dauerhaftigkeit",
+            "slogan": "Für die Ewigkeit",
+            "icon": "🏛️",
+            "description": "Nach Abschluss bleiben Daten auch bei Systemausfällen erhalten."
+        }
+    ],
+    "definitions": [
+        {
+            "text": "Transaktion scheitert bei Stromausfall komplett.",
+            "pillar": "A"
+        },
+        {
+            "text": "Keine halben Buchungen in der Datenbank.",
+            "pillar": "A"
+        },
+        {
+            "text": "Fremdschlüssel-Beziehungen bleiben immer intakt.",
+            "pillar": "C"
+        },
+        {
+            "text": "Kontostand darf niemals negativ werden (Regel).",
+            "pillar": "C"
+        },
+        {
+            "text": "Nutzer B sieht keine Zwischenstände von Nutzer A.",
+            "pillar": "I"
+        },
+        {
+            "text": "Parallelzugriffe werden logisch getrennt.",
+            "pillar": "I"
+        },
+        {
+            "text": "Daten sind nach COMMIT sicher auf der Festplatte.",
+            "pillar": "D"
+        },
+        {
+            "text": "Wiederherstellung nach Crash ist garantiert.",
+            "pillar": "D"
+        }
+    ]
+}

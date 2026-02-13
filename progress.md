@@ -35,3 +35,6 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Playwright smoke test executed; UI and active state (started=true, factor loaded) validated via screenshot and state JSON.
 - Applied targeted improvements on existing Make-or-Buy-Waage implementation: keyboard controls (A/Left=Make, D/Right=Buy, Space/Enter=Next) and explicit level labels (Klar/Budget/Shift).
 - Added explicit pointer-events:auto on scale pans and factor card for better mobile precision.
+- Simplified Make-or-Buy-Waage UI drastically: removed overloaded panels/ticker, kept only core KPIs, scale, factor card, and minimal actions.
+- Removed Next button flow; after each decision feedback is shown for 5 seconds, then the next factor is loaded automatically.
+- Added explicit on-screen usage explanation and preserved drag + click + keyboard controls.

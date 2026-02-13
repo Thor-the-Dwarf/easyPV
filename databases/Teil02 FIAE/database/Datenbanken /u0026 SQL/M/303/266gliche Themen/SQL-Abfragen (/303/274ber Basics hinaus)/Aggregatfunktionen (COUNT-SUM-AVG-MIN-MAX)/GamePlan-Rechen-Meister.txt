@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Beherrschung von Aggregatfunktionen (COUNT, SUM, AVG, MIN, MAX) zur Verdichtung von Datenmengen.
+- Game-Mechanic: "The Math Master". Du bist der Buchhalter in einem riesigen Kontor. Tausende Ledger liegen vor dir. Statt alles einzeln zu lesen, hast du magische Formeln: "Zähle die Münzen" (COUNT), "Wie viel Gold insgesamt?" (SUM), "Was kostet ein Sack Pfeffer im Schnitt?" (AVG). Deine Aufgabe: Liefere dem Gildenmeister blitzschnell die Summenberichte, bevor die Karawanen weiterziehen.
+- Challenge: 
+  - Level 1 (The Quick Count): Wie viele Kunden haben wir insgesamt? Nutze `COUNT(*)`.
+  - Level 2 (The Price Audit): Was ist das teuerste Produkt (`MAX`) und was ist der Gesamtwert (`SUM`) des Lagers?
+  - Level 3 (The Quality Average): Wie hoch ist die durchschnittliche Bewertung der Produkte? Ignoriere dabei die `NULL` Werte (Daten-Qualität).
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Formula-Selector (COUNT, SUM, AVG, MIN, MAX)", "Aggregated-Counter (Odometer style)", "Data-Sample-Window", "Calculation-Progress".
+- [ ] Scoring: "Insight-Bonus" für das Lösen von komplexen Business-Fragen mit nur einer Query. Abzug für falsche Funktionen (z.B. SUM auf ein Textfeld).
+
+2. Screen-Layout (The Ledger Office)
+- [ ] `stack-of-ledgers -> magic-abacus (The Calculator) -> summary-scroll -> master-audit-log`.
+- [ ] Magic-Abacus: Ein interaktives Rechentool, das Datenkristalle einsaugt und eine einzelne Zahl ausgibt.
+- [ ] Summary-Scroll: Hier erscheint das Ergebnis der Aggregation in eleganter Schrift.
+
+3. Kernvisuals und Effekte
+- [ ] Renaissance-Tech Ästhetik: Dunkles Holz, Messing, Pergament, digitale Ziffern, die wie ein alter Kilometerzähler umspringen (Shared Theme kompatibel).
+- [ ] "Data-Condensate": Hunderte kleine Icons fließen in den Abakus und verschmelzen zu einer einzigen, großen Zahl.
+- [ ] "Flash-Result": Wenn die Rechnung fertig ist, leuchtet das Ergebnis golden auf.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Numbers Animation` für das Hochzählen der Ergebnisse.
+- [ ] Mobile: "Tap-to-Calculate" Geste.
+
+5. Content-Strategie (The Business-Requests)
+- [ ] 15 verschiedene Analyse-Aufträge: Von "Einfache Statistik" bis "Komplexer Financial-Report".
+
+6. QA-Paket
+- [ ] Test: Wird die Behandlung von `NULL` Werten in Aggregatfunktionen (werden oft ignoriert) thematisiert?
+- [ ] Test: Fühlt sich das Verdichten großer Datenmengen befriedigend an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Aggregation macht aus Daten Informationen.
+- [ ] Das Interface wirkt edel, präzise und geschäftsmännisch.
+- [ ] Fokus auf Daten-Analyse und Business-Intelligence.

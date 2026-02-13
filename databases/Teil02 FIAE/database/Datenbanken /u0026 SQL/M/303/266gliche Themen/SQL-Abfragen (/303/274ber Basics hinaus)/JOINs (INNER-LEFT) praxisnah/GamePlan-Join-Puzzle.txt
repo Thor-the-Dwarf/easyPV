@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verknüpfung mehrerer Tabellen über Fremdschlüssel (Joins) zur Abfrage zusammenhängender Datenbestände.
+- Game-Mechanic: "The Table Joiner". Du bist ein Brückenbauer in einem Archipel aus Daten-Inseln. Jede Insel (Tabelle) hat ihre eigenen Schätze. Um eine vollständige Karte zu erhalten, musst du Brücken (Joins) schlagen. Nutzt du einen "Inner Join", treffen sich nur die Inseln, die zueinander passende Anlegestellen (Keys) haben. Ein "Left Join" lässt die linke Insel stehen, auch wenn die rechte keine Antwort gibt. Wer falsch baut, stürzt ins Daten-Meer!
+- Challenge: 
+  - Level 1 (The Inner Match): Verknüpfe `Kunden` und `Bestellungen`. Zeige nur Kunden an, die auch wirklich etwas bestellt haben.
+  - Level 2 (The Left Anchor): Zeige ALLE Kunden an, auch die, die noch nie bestellt haben. Verstehe das `NULL` im Ergebnis der rechten Seite.
+  - Level 3 (The Triple Bridge): Verknüpfe `Kunden`, `Bestellungen` und `Produkte`. Finde heraus, wer welches spezifische Produkt gekauft hat.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Join-Type-Selector (INNER, LEFT, RIGHT, FULL)", "Key-Connector-View", "Result-Set-Size (Gauge)", "Ambiguity-Warning System".
+- [ ] Scoring: "Connection-Master" Bonus für effiziente Abfragen über 3 oder mehr Tabellen. Abzug für "Cross-Joins" (Kartesisches Produkt), die das System crashen.
+
+2. Screen-Layout (The Archipelago)
+- [ ] `island-A -> bridge-builder -> island-B -> combined-treasure-chest`.
+- [ ] Bridge-Builder: Ein Werkzeug, mit dem man Linien zwischen Spaltennamen (z.B. `Kunden.ID` zu `Bestellungen.Kunden_ID`) zieht.
+- [ ] Treasure-Chest: Zeigt die kombinierten Spalten beider Tabellen als Belohnung an.
+
+3. Kernvisuals und Effekte
+- [ ] Nautical-Blueprint Ästhetik: Tiefblaues Wasser, neon-leuchtende Brückenverbindungen, Geräusche von Wellen und einrastenden Zahnrädern (Shared Theme kompatibel).
+- [ ] "Link-Snap": Wenn man die richtigen Keys verbindet, rastet die Brücke mit einem befriedigenden metallischen Sound ein.
+- [ ] "NULL-Mist": Bei einem Left-Join werden fehlende Daten auf der rechten Seite als kleiner, grauer Nebelschleier dargestellt.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Grid` für die Darstellung der separaten Tabellen-Inseln.
+- [ ] Mobile: "Drag-and-Drop" zum Verbinden der Keys.
+
+5. Content-Strategie (The Nautical-Logs)
+- [ ] 12 verschiedene Join-Szenarien: Von "Kunde-Bestellung" bis "Mitarbeiter-Vorgesetzter" (Self-Join).
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen INNER und LEFT Join visuell unmissverständlich deutlich?
+- [ ] Test: Sind die Auswirkungen eines fehlenden Join-Constraints (Kartesisches Produkt) spürbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Relationale Datenbanken leben von den Beziehungen. Joins sind das Werkzeug dazu.
+- [ ] Das Interface wirkt weiträumig, logisch und abenteuerlustig.
+- [ ] Fokus auf Relationale Algebra und Daten-Zusammenführung.

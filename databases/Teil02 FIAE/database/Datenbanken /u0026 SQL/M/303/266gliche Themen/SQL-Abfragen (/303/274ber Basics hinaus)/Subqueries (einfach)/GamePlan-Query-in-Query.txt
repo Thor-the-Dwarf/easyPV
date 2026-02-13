@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verwendung von Unterabfragen (Subqueries) in SELECT, FROM oder WHERE zur Lösung komplexer Abhängigkeiten.
+- Game-Mechanic: "The Nested Search". Du bist ein Spion in einem geheimen Archiv. Um die Information X zu finden, musst du erst herausfinden, in welchem Raum Person Y ist. Du führst also eine Suche aus (Subquery), nimmst das Ergebnis als Schlüssel und startest damit deine Hauptsuche (Outer Query). Es ist wie ein Spiel im Spiel – finde den inneren Kern, um das äußere Rätsel zu lösen.
+- Challenge: 
+  - Level 1 (The Inner Lock): Finde alle Produkte, deren Preis höher ist als der Durchschnittspris ALLER Produkte (Subquery in WHERE).
+  - Level 2 (The Temporary View): Nutze eine Subquery im FROM-Teil, um eine virtuelle Zwischentabelle zu erstellen und darauf weiterzuarbeiten.
+  - Level 3 (The Correlated Ninja): Eine korrelierte Subquery! Suche nach Kunden, die mehr bestellt haben als der Durchschnitt in IHRER jeweiligen Stadt. Die innere Suche muss für jeden Kunden neu "atmen".
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Query-Layers-View (Nested Display)", "Intermediate-Result Indicator", "Logic-Depth-Meter", "Execution-Tree visualizer".
+- [ ] Scoring: "Sherlock-SQL" Bonus für das fehlerfreie Verschachteln von Logik. Abzug für "Infinite-Loops" oder extrem langsame Subqueries.
+
+2. Screen-Layout (The Secret Archive)
+- [ ] `outer-lens -> inner-lens (The Subquery) -> data-safe -> final-clue`.
+- [ ] Lenses: Man kann durch eine Linse (Outer) schauen und darin eine zweite Linse (Main) fokussieren, um das Ergebnis zu sehen.
+- [ ] Data-Safe: Das Archiv-Schließfach, das sich erst öffnet, wenn der innere Schlüssel passt.
+
+3. Kernvisuals und Effekte
+- [ ] Noir-Spy Ästhetik: Dunkle Schatten, Lichtkegel von Taschenlampen, Lupen-Effekte, das Ticken einer Uhr, mechanische Tresor-Kombinationen (Shared Theme kompatibel).
+- [ ] "Focus-Shift": Wenn man die Subquery schreibt, zoomt das UI visuell tiefer in den Code hinein.
+- [ ] "Chain-Reaction": Das Ergebnis der Subquery schießt als blauer Lichtstoß zurück in die Hauptquery.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Clip-Path` für die Linsen-Effekte und den Fokus-Zoom.
+- [ ] Mobile: "Tap-to-Zoom" in die Subquery-Ebenen.
+
+5. Content-Strategie (The Case-Folders)
+- [ ] 12 verschachtelte Suchaufgaben: Von "Top-Performer finden" bis "Datensätze ohne Zuordnung".
+
+6. QA-Paket
+- [ ] Test: Wird die Reihenfolge der Ausführung (Innen vor Außen) klar?
+- [ ] Test: Ist der Performance-Unterschied zu Joins (wo sinnvoll) ein Thema im HUD?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Subqueries erlauben mächtige, mehrstufige Logik innerhalb einer einzigen Abfrage.
+- [ ] Das Interface wirkt mysteriös, fokussiert und intellektuell anregend.
+- [ ] Fokus auf logische Schachtelung und Datenextraktion.

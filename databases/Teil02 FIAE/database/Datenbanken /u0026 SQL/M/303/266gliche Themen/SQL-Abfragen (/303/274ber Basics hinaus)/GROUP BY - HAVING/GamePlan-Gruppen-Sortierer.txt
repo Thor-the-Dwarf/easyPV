@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Strukturierung von Daten in Gruppen (GROUP BY) und Filterung dieser Gruppen anhand von Bedingungen (HAVING).
+- Game-Mechanic: "The Bucket Sorter". Du bist der Sortier-Chef einer riesigen Poststation. Tausende Briefe (Datensätze) liegen auf dem Boden. Deine Aufgabe: Bilde Haufen (Gruppen) nach dem Bestimmungsort (z.B. Stadt). Wenn du die Haufen hast, darfst du sie zählen (COUNT) oder wiegen (SUM). Aber Achtung: Der Postmeister will nur die Städte sehen, die mehr als 10 Briefe haben. Nutze dein "HAVING-Sieb", um die kleinen Haufen auszublenden!
+- Challenge: 
+  - Level 1 (The City Groups): Gruppiere alle Bestellungen nach `Kunde_ID` und zähle sie.
+  - Level 2 (The Revenue Buckets): Finde den Gesamtumsatz (`SUM`) pro `Kategorie`.
+  - Level 3 (The Filtered View): Zeige nur die Kategorien an, deren Gesamtertrag (`SUM`) oberhalb von 10.000 liegt. Nutze `HAVING` statt `WHERE`.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Group-By Modifier", "Having-Filter-Slider", "Bucket-Visualizer", "Aggregation-Display".
+- [ ] Scoring: "Clarity-Master" Bonus für das korrekte Filtern von aggregierten Daten. Abzug für den Versuch, Gruppenspalten im SELECT zu vergessen.
+
+2. Screen-Layout (The Post Station)
+- [ ] `letter-stream -> bucket-area -> filtration-screen (HAVING) -> summary-report`.
+- [ ] Bucket-Area: Stilisierte Eimer, in die die Briefe automatisch nach ihren Attributen hineinhüpfen.
+- [ ] Filtration-Screen: Ein großer, leuchtender Rahmen, den nur die "großen" Eimer passieren dürfen.
+
+3. Kernvisuals und Effekte
+- [ ] Whimsical-Precision Ästhetik: Bunte Briefe, mechanische Sortiergeräusche, sanftes Plumpsen in die Eimer, bei HAVING ein magischer Scan-Strahl (Shared Theme kompatibel).
+- [ ] "Bucket-Scale": Die Eimer vergrößern sich sichtlich, je mehr Daten sie enthalten.
+- [ ] "Having-Vaporize": Eimer, die die Bedingung nicht erfüllen, lösen sich in kleine Daten-Pixel auf.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Scale Transforms` für die wachsende Eimer-Größe.
+- [ ] Mobile: "Drag-to-Group" Geste.
+
+5. Content-Strategie (The Sorting-Logs)
+- [ ] 15 verschiedene Gruppierungs-Aufgaben: Von "Verkaufsstatistik" bis "User-Activity Peaks".
+
+6. QA-Paket
+- [ ] Test: Wird der entscheidende Unterschied zwischen `WHERE` (vor dem Gruppieren) und `HAVING` (nach dem Gruppieren) klar?
+- [ ] Test: Fühlt sich das Strukturieren der Datenmengen wie das Schaffen von Ordnung an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Gruppieren ist der Schlüssel zu aussagekräftigen Statistiken.
+- [ ] Das Interface wirkt ordentlich, interaktiv und analytisch.
+- [ ] Fokus auf Daten-Zusammenfassung und Berichterstellung.

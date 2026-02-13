@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis des ACID-Prinzips (Atomicity, Consistency, Isolation, Durability) und der Steuerung mehrstufiger Datenbankoperationen (Commit/Rollback).
+- Game-Mechanic: "The ACID Alchemist". Du braust einen mächtigen Zaubertrank (Deine Transaktion). Der Trank besteht aus mehreren Zutaten (SQL-Statements): Geld vom Konto abziehen, Geld auf ein anderes Konto einzahlen, Log-Eintrag schreiben. Wenn auch nur EINE Zutat misslingt, explodiert der Kessel! Deine Aufgabe: Nutze den "Schmiede-Zauber" (BEGIN TRANSACTION), prüfe alle Schritte, und entscheide am Ende: Alles gut (COMMIT) oder alles zurück auf Anfang (ROLLBACK)?
+- Challenge: 
+  - Level 1 (The Basic Transfer): Überweise 100 Goldstücke von A nach B. Sorge dafür, dass das Gold nicht "verschwindet", wenn der zweite Schritt fehlschlägt.
+  - Level 2 (The Isolation Wall): Ein zweiter Alchemist versucht gleichzeitig auf den Kessel zuzugreifen. Nutze die "Isolation", um zu verhindern, dass er deine unfertigen Zutaten sieht (Dirty Read).
+  - Level 3 (The Durability Test): Ein Blitz schlägt ein (System-Absturz). Beweise, dass die bereits fertigen Tränke im Tresor (Disk) sicher sind und nicht verloren gingen.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Transaction-State (NONE, PENDING, COMMITTED)", "ACID-Status-Lights", "Undo-Lever (Rollback)", "Safety-Glass-Gauge".
+- [ ] Scoring: "Integrity-Alchemist" Bonus für 100% konsistente Datenbankstände. Abzug für "Partial-Writes" (Inkonsistente Daten).
+
+2. Screen-Layout (The Alchemist's Lab)
+- [ ] `ingredient-shelf (SQLs) -> brewing-cauldron (Transaction) -> result-vials -> storage-safe (The Disk)`.
+- [ ] Brewing-Cauldron: Ein brodelnder Kessel, der die Statements sammelt, aber noch nicht final speichert.
+- [ ] Undo-Lever: Ein massiver Hebel zum Abbruch der Transaktion.
+
+3. Kernvisuals und Effekte
+- [ ] Mystic-Tech Ästhetik: Dunkles Violett, brodelnde Flüssigkeiten, leuchtende Glyphen für A-C-I-D, der Klang von zischendem Dampf und schweren Tresortüren (Shared Theme kompatibel).
+- [ ] "Rollback-Splash": Bei Fehlern entweicht der gesamte Dampf aus dem Kessel und alles kehrt in den alten Zustand zurück.
+- [ ] "Commit-Crystallize": Bei Erfolg erstarren die flüssigen Daten zu festen Kristallen im Tresor.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Filter-Blur` Effekte für den brodelnden Kessel.
+- [ ] Mobile: "Tap-to-Commit" mit Sicherheitsabfrage.
+
+5. Content-Strategie (The Banking-Grimoires)
+- [ ] 12 klassische Transaktions-Szenarien: Von "Banküberweisung" bis "Ticket-Reservierung (Race Condition)".
+
+6. QA-Paket
+- [ ] Test: Wird das "Alles-oder-Nichts" Prinzip (Atomicity) visuell unmissverständlich?
+- [ ] Test: Fühlt sich das Durchführen der Transaktion wie ein verantwortungsvoller Akt an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Transaktionen schützen die Konsistenz der Daten in kritischen Momenten.
+- [ ] Das Interface wirkt geheimnisvoll, mächtig und sicherheitsorientiert.
+- [ ] Fokus auf Daten-Konsistenz und Fehlertoleranz.

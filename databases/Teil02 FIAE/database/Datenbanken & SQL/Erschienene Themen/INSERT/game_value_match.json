@@ -1,0 +1,129 @@
+{
+    "meta": {
+        "topic": "INSERT Statement",
+        "mechanic": "loading_dock_drag_drop",
+        "version": "1.0"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Basic User Profile",
+            "description": "Load the data for User 101: 'Alice', Age 25.",
+            "tableName": "Users",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INT",
+                    "icon": "🆔"
+                },
+                {
+                    "name": "username",
+                    "type": "VARCHAR",
+                    "icon": "👤"
+                },
+                {
+                    "name": "age",
+                    "type": "INT",
+                    "icon": "🎂"
+                }
+            ],
+            "packages": [
+                {
+                    "value": 25,
+                    "type": "INT",
+                    "label": "25"
+                },
+                {
+                    "value": 101,
+                    "type": "INT",
+                    "label": "101"
+                },
+                {
+                    "value": "Alice",
+                    "type": "VARCHAR",
+                    "label": "'Alice'"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Product Entry",
+            "description": "Enter the new Coffee Machine: Price 89.99, In Stock: true.",
+            "tableName": "Products",
+            "columns": [
+                {
+                    "name": "name",
+                    "type": "VARCHAR",
+                    "icon": "📦"
+                },
+                {
+                    "name": "price",
+                    "type": "DECIMAL",
+                    "icon": "💶"
+                },
+                {
+                    "name": "is_active",
+                    "type": "BOOLEAN",
+                    "icon": "✅"
+                }
+            ],
+            "packages": [
+                {
+                    "value": true,
+                    "type": "BOOLEAN",
+                    "label": "TRUE"
+                },
+                {
+                    "value": "Espresso-Master",
+                    "type": "VARCHAR",
+                    "label": "'Espresso-Master'"
+                },
+                {
+                    "value": 89.99,
+                    "type": "DECIMAL",
+                    "label": "89.99"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Event Logging",
+            "description": "Log the Login event for today.",
+            "tableName": "Logs",
+            "columns": [
+                {
+                    "name": "event_type",
+                    "type": "VARCHAR",
+                    "icon": "🔔"
+                },
+                {
+                    "name": "log_date",
+                    "type": "DATE",
+                    "icon": "📅"
+                },
+                {
+                    "name": "severity",
+                    "type": "INT",
+                    "icon": "⚠️"
+                }
+            ],
+            "packages": [
+                {
+                    "value": "2026-02-13",
+                    "type": "DATE",
+                    "label": "'2026-02-13'"
+                },
+                {
+                    "value": 1,
+                    "type": "INT",
+                    "label": "1"
+                },
+                {
+                    "value": "LOGIN",
+                    "type": "VARCHAR",
+                    "label": "'LOGIN'"
+                }
+            ]
+        }
+    ]
+}

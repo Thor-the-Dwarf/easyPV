@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL INSERT - Value Match</title>
+    <!-- Adjust path to shared_theme.css if necessary, usually it's in a parent directory -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="value_match.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <div id="level-title" class="level-info">Loading...</div>
+            <div class="status-badge">GATE: LOADING DOCK</div>
+        </nav>
+
+        <!-- Main Workspace -->
+        <main class="workspace">
+            <!-- Loading Dock -->
+            <div id="loading-dock" class="loading-dock">
+                <!-- Columns injected here -->
+            </div>
+
+            <!-- Syntax Preview -->
+            <div id="syntax-preview" class="syntax-bar">
+                <!-- Syntax injected here -->
+            </div>
+
+            <!-- Package Yard -->
+            <div id="package-yard" class="package-yard">
+                <!-- Packages injected here -->
+            </div>
+        </main>
+
+        <!-- Result Screen -->
+        <div id="result-overlay" class="result-overlay hidden">
+            <div class="result-card">
+                <div class="truck-animation">🚛💨</div>
+                <h2 style="color:var(--success-green); margin-bottom:1rem;">CARGO SECURED!</h2>
+                <div class="hud-value" style="font-size: 1.5rem; margin: 2rem 0; color:#fff" id="final-result">Row
+                    inserted successfully.</div>
+                <button id="btn-next" class="btn-primary">NEXT SHIPMENT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Logic -->
+    <script src="game_value_match.js"></script>
+</body>
+
+</html>

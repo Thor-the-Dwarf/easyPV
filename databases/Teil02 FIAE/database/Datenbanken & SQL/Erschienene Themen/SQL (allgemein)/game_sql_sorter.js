@@ -18,29 +18,18 @@
 
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-    function playSound(type) {
+    function playSound(freq, type = 'sine', duration = 0.2) {
         if (audioCtx.state === 'suspended') audioCtx.resume();
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
         osc.connect(gain);
         gain.connect(audioCtx.destination);
-        const now = audioCtx.currentTime;
-
-        if (type === 'success') {
-            osc.frequency.setValueAtTime(440, now);
-            osc.frequency.exponentialRampToValueAtTime(880, now + 0.1);
-            gain.gain.setValueAtTime(0.1, now);
-            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
-            osc.start();
-            osc.stop(now + 0.2);
-        } else if (type === 'error') {
-            osc.type = 'sawtooth';
-            osc.frequency.setValueAtTime(150, now);
-            gain.gain.setValueAtTime(0.2, now);
-            gain.gain.linearRampToValueAtTime(0, now + 0.3);
-            osc.start();
-            osc.stop(now + 0.3);
-        }
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
     }
 
     async function init() {
@@ -51,34 +40,30 @@
             initArchive();
             initWorkbench();
 
-            el.btnRestart.addEventListener('click', () => location.reload());
-        } catch (e) {
-            console.error("Failed to load game config:", e);
-        }
+            el.btnRestart.onclick = () => location.reload();
+        } catch (e) { console.error(e); }
     }
 
     function initArchive() {
         el.archiveWalls.innerHTML = '';
         state.config.categories.forEach(cat => {
-            const div = document.createElement('div');
-            div.className = 'shelf-category';
-            div.dataset.cat = cat.id;
-            div.innerHTML = `
-        <div class="shelf-header">
-          <span class="shelf-title">${cat.name}</span>
-          <span class="shelf-id">${cat.id}</span>
-        </div>
-        <div class="shelf-slots" id="slots-${cat.id}"></div>
-      `;
-
-            setupDropTarget(div);
-            el.archiveWalls.appendChild(div);
+            const shelf = document.createElement('div');
+            shelf.className = `archive-shelf`;
+            shelf.dataset.cat = cat.id;
+            shelf.innerHTML = `
+                <div class="shelf-header cat-${cat.id.toLowerCase()}">
+                    <span class="shelf-title">${cat.name}</span>
+                    <span class="shelf-id">${cat.id}</span>
+                </div>
+                <div class="shelf-slots" id="slots-${cat.id}"></div>
+            `;
+            setupDropTarget(shelf);
+            el.archiveWalls.appendChild(shelf);
         });
     }
 
     function initWorkbench() {
         el.workbench.innerHTML = '';
-        // Shuffle commands
         const shuffled = [...state.config.commands].sort(() => Math.random() - 0.5);
 
         shuffled.forEach(cmd => {
@@ -95,15 +80,18 @@
                     name: cmd.name,
                     category: cmd.category
                 }));
-                el.infoBar.textContent = cmd.info;
+                el.infoBar.textContent = `[ARCHIVE_LORE]: ${cmd.info}`;
+                el.infoBar.style.color = 'var(--gold-accent)';
+                stone.style.opacity = '0.5';
             });
 
             stone.addEventListener('dragend', () => {
-                el.infoBar.textContent = "Select a command to categorize.";
+                stone.style.opacity = '1';
+                el.infoBar.textContent = "SELECT_A_COMMAND_TO_CATEGORIZE...";
+                el.infoBar.style.color = '';
             });
 
-            // Mobile Touch Support would need more logic, but for now focus on desktop drag
-
+            // Touch support placeholder logic if needed
             el.workbench.appendChild(stone);
         });
     }
@@ -122,42 +110,47 @@
             e.preventDefault();
             target.classList.remove('highlight');
 
-            const data = JSON.parse(e.dataTransfer.getData('text/plain'));
-            const targetCat = target.dataset.cat;
+            try {
+                const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+                const targetCat = target.dataset.cat;
 
-            if (data.category === targetCat) {
-                handleCorrect(target, data.name);
-            } else {
-                handleError(target);
-            }
+                if (data.category === targetCat) {
+                    handleCorrect(target, data.name);
+                } else {
+                    handleError(target);
+                }
+            } catch (err) { console.error("Drop Data Error"); }
         });
     }
 
     function handleCorrect(target, name) {
-        playSound('success');
+        playSound(440, 'sine', 0.2); // Success thud
         const slotArea = target.querySelector('.shelf-slots');
+        const stoneInWorkbench = Array.from(el.workbench.children).find(s => s.dataset.name === name);
 
-        // Find matching stone in workbench
-        const stone = Array.from(el.workbench.children).find(s => s.dataset.name === name);
-        if (stone) {
-            stone.classList.add('sorted', stone.dataset.cat.toLowerCase());
-            stone.draggable = false;
-            slotArea.appendChild(stone);
+        if (stoneInWorkbench) {
+            stoneInWorkbench.classList.add('sorted');
+            stoneInWorkbench.draggable = false;
+            slotArea.appendChild(stoneInWorkbench);
 
             state.sortedCount++;
             el.progress.textContent = `${state.sortedCount} / ${state.config.commands.length}`;
 
             if (state.sortedCount === state.config.commands.length) {
+                playSound(880, 'square', 0.5);
                 setTimeout(() => el.successOverlay.classList.remove('hidden'), 500);
             }
         }
     }
 
     function handleError(target) {
-        playSound('error');
-        target.classList.add('error-shake'); // Would need CSS
-        // Using alert as per plan for simple feedback
-        alert("Incorrect Category. Re-examine the command function.");
+        playSound(110, 'sawtooth', 0.4);
+        target.classList.add('error-shake');
+        setTimeout(() => target.classList.remove('error-shake'), 400);
+
+        // As per rule 9: visual UI message instead of just console
+        el.infoBar.textContent = "!!!_CATEGORIZATION_ERROR:_MISALIGNED_SCHEMA_KIND_!!!";
+        el.infoBar.style.color = 'var(--neon-tcl)';
     }
 
     init();

@@ -4,50 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SQL Sortierer - Archive of Commands</title>
+    <title>SQL Sorter // The Grand Archive</title>
     <!-- Adjust path -->
     <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
     <link rel="stylesheet" href="sql_sorter.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="game-app">
-        <!-- Header -->
-        <header class="header">
-            <div style="font-weight: bold; font-size: 1.2rem; color: #fff;">SQL_ARCHIVE // TAXONOMY</div>
-            <div class="progress-hud">
-                COMPLETED: <span id="progress-count">0 / 13</span>
+        <!-- Archive HUD -->
+        <header class="archive-hud">
+            <div class="hud-group">
+                <div class="hud-label">LIBRARY_DOMAIN</div>
+                <div style="font-size: 1.2rem; font-weight: 900;">SQL_TAXONOMY</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="letter-spacing: 3px; font-weight: 900; color: var(--gold-accent);">ARCHIVE_VALUATION_UNIT
+                </div>
+                <div id="info-bar" style="font-size: 0.7rem; color: #555; margin-top: 5px;">
+                    SELECT_A_COMMAND_TO_CATEGORIZE...</div>
+            </div>
+            <div class="hud-group">
+                <div class="hud-label">REGISTRY_COMPLETE</div>
+                <div id="progress-count" class="hud-count">0 / 12</div>
             </div>
         </header>
 
-        <!-- Main Archive Walls -->
-        <main id="archive-walls" class="archive-walls">
-            <!-- Categories injected here -->
+        <!-- Archive Hall -->
+        <main class="archive-hall">
+            <div id="archive-walls" class="shelf-grid">
+                <!-- 4 Shelves (DDL, DML, DCL, TCL) injected via JS -->
+            </div>
         </main>
-
-        <!-- Info Bar -->
-        <div id="info-bar" class="info-bar">
-            Select a command to categorize.
-        </div>
 
         <!-- Workbench -->
         <footer id="workbench" class="workbench">
-            <!-- Commands injected here -->
+            <!-- Command stone tablets injected via JS -->
         </footer>
 
         <!-- Success Overlay -->
-        <div id="success-overlay" class="success-overlay hidden">
-            <div class="success-card">
-                <h2 style="color:#fff; margin-bottom:1rem;">LIBRARY ANALYSIS COMPLETE</h2>
-                <p>All SQL commands have been correctly classified into DDL, DML, DCL, and TCL.</p>
-                <div style="font-size: 0.8rem; color: #888; margin: 2rem 0;">System fully indexed. Knowledge Secured.
-                </div>
-                <button id="btn-restart" class="btn-primary">RESET ARCHIVE</button>
+        <div id="success-overlay" class="overlay hidden">
+            <div class="registry-card">
+                <div class="hud-label" style="text-align: center; margin-bottom: 2rem;">REGISTRY_STATUS_REPORT</div>
+                <h1 style="color:var(--gold-accent); margin:0; letter-spacing:8px;">MASTER_ARCHIVIST_CERTIFIED</h1>
+
+                <p style="margin: 2rem 0; font-size: 0.9rem; line-height: 1.8; color: #666;">
+                    The SQL command taxonomy has been fully restored.<br>
+                    Ancient definitions (DDL), manipulations (DML), control protocols (DCL), and transaction logs (TCL)
+                    are now properly archived.
+                </p>
+
+                <button id="btn-restart">RE-INDEX_ARCHIVE</button>
             </div>
         </div>
     </div>
 
-    <!-- Logic -->
+    <!-- Script -->
     <script src="game_sql_sorter.js"></script>
 </body>
 

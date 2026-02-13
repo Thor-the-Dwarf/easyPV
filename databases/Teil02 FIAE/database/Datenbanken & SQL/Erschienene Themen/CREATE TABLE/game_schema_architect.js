@@ -6,44 +6,45 @@
         levelIdx: 0,
         columns: [],
         activeColIdx: -1,
-        gameOver: false
+        isComplete: false
     };
 
     const el = {
-        projectTitle: document.getElementById('project-title'),
+        title: document.getElementById('project-title'),
         reqList: document.getElementById('req-list'),
-        sqlEditor: document.getElementById('sql-editor'),
+        sqlBody: document.getElementById('sql-body'),
         toolbox: document.getElementById('toolbox'),
+        previewTable: document.getElementById('preview-table'),
         btnValidate: document.getElementById('btn-validate'),
-        resultOverlay: document.getElementById('result-overlay'),
-        finalResult: document.getElementById('final-result'),
+        overlay: document.getElementById('result-overlay'),
+        resFinal: document.getElementById('final-result'),
         btnNext: document.getElementById('btn-next')
     };
 
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-    function playTone(type) {
+    function playSound(type) {
         if (audioCtx.state === 'suspended') audioCtx.resume();
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
         osc.connect(gain);
         gain.connect(audioCtx.destination);
-        const now = audioCtx.currentTime;
 
         if (type === 'click') {
-            osc.frequency.setValueAtTime(800, now);
-            gain.gain.setValueAtTime(0.05, now);
-            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+            gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
             osc.start();
-            osc.stop(now + 0.05);
+            osc.stop(audioCtx.currentTime + 0.1);
         } else if (type === 'success') {
             osc.type = 'triangle';
-            osc.frequency.setValueAtTime(300, now);
-            osc.frequency.linearRampToValueAtTime(600, now + 0.2);
-            gain.gain.setValueAtTime(0.2, now);
-            gain.gain.linearRampToValueAtTime(0, now + 0.2);
+            osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+            osc.frequency.linearRampToValueAtTime(880, audioCtx.currentTime + 0.3);
+            gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.3);
             osc.start();
-            osc.stop(now + 0.2);
+            osc.stop(audioCtx.currentTime + 0.3);
         }
     }
 
@@ -52,212 +53,191 @@
             const resp = await fetch('game_schema_architect.json');
             state.config = await resp.json();
 
-            renderToolbox();
-
-            el.btnValidate.addEventListener('click', validateSchema);
-            el.btnNext.addEventListener('click', () => {
-                el.resultOverlay.classList.add('hidden');
-                if (state.levelIdx < state.config.levels.length - 1) {
-                    startLevel(state.levelIdx + 1);
-                } else {
-                    location.reload();
-                }
-            });
+            initToolbox();
+            el.btnValidate.onclick = validateSchema;
+            el.btnNext.onclick = () => {
+                el.overlay.classList.add('hidden');
+                startLevel(state.levelIdx + 1);
+            };
 
             startLevel(0);
-        } catch (e) {
-            console.error(e);
-        }
+        } catch (e) { console.error(e); }
     }
 
-    function renderToolbox() {
-        // Types
-        const groupTypes = document.createElement('div');
-        groupTypes.className = 'tool-group';
-        state.config.toolbox.types.forEach(t => {
+    function initToolbox() {
+        el.toolbox.innerHTML = '';
+
+        const typeCluster = createCluster("DATATYPES", state.config.toolbox.types, applyType);
+        const constCluster = createCluster("CONSTRAINTS", state.config.toolbox.constraints, toggleConstraint);
+
+        el.toolbox.appendChild(typeCluster);
+        el.toolbox.appendChild(constCluster);
+    }
+
+    function createCluster(label, items, callback) {
+        const container = document.createElement('div');
+        container.className = 'tool-cluster';
+        container.innerHTML = `<div class="cluster-label">${label}</div>`;
+
+        const grid = document.createElement('div');
+        grid.className = 'btn-grid';
+
+        items.forEach(it => {
             const btn = document.createElement('button');
             btn.className = 'tool-btn';
-            btn.textContent = t;
-            btn.addEventListener('click', () => applyType(t));
-            groupTypes.appendChild(btn);
+            btn.textContent = it;
+            btn.onclick = () => callback(it);
+            grid.appendChild(btn);
         });
-        el.toolbox.appendChild(groupTypes);
 
-        // Constraints
-        const groupConst = document.createElement('div');
-        groupConst.className = 'tool-group';
-        state.config.toolbox.constraints.forEach(c => {
-            const btn = document.createElement('button');
-            btn.className = 'tool-btn constraint';
-            btn.textContent = c;
-            btn.addEventListener('click', () => toggleConstraint(c));
-            groupConst.appendChild(btn);
-        });
-        el.toolbox.appendChild(groupConst);
+        container.appendChild(grid);
+        return container;
     }
 
     function startLevel(idx) {
+        if (idx >= state.config.levels.length) {
+            location.reload();
+            return;
+        }
         state.levelIdx = idx;
         state.columns = [];
         state.activeColIdx = -1;
 
-        const level = state.config.levels[idx];
-        el.projectTitle.textContent = `Blueprint: ${level.title}`;
+        const lv = state.config.levels[idx];
+        el.title.textContent = `SYSTEM_BLUEPRINT // ${lv.title}`;
 
         renderRequirements();
         renderSQL();
+        renderPreview();
     }
 
     function renderRequirements() {
-        el.reqList.innerHTML = `<div class="section-title">Specs</div>`;
-        const level = state.config.levels[state.levelIdx];
-
-        level.requirements.forEach(req => {
+        el.reqList.innerHTML = '';
+        const lv = state.config.levels[state.levelIdx];
+        lv.requirements.forEach(req => {
             const div = document.createElement('div');
             div.className = 'req-item';
-            div.textContent = `${req.name}: ${req.desc} (${req.type})`;
-            // Simple heuristic to check if done
+            div.innerHTML = `<b>${req.name}</b><br><span style="font-size:0.7rem; color:var(--text-dim)">${req.desc} [${req.type}]</span>`;
+
             const col = state.columns.find(c => c.name === req.name);
             if (col && col.type === req.type) {
-                // specific check for constraints?
-                // simplified logic: roughly matching
-                div.classList.add('done');
+                const allConstraintsMet = req.constraints.every(rc => col.constraints.includes(rc));
+                if (allConstraintsMet) div.classList.add('done');
             }
+
             el.reqList.appendChild(div);
         });
     }
 
     function renderSQL() {
-        el.sqlEditor.innerHTML = '';
+        el.sqlBody.innerHTML = '';
 
-        const lineStart = document.createElement('div');
-        lineStart.className = 'sql-line';
-        lineStart.innerHTML = `<span class="sql-keyword">CREATE TABLE</span> <span class="sql-identifier">Results</span> (`;
-        el.sqlEditor.appendChild(lineStart);
+        const header = document.createElement('div');
+        header.className = 'sql-row';
+        header.innerHTML = `<span class="kw">CREATE TABLE</span> <span class="id">${state.config.levels[state.levelIdx].title.split(' ')[0]}</span> (`;
+        el.sqlBody.appendChild(header);
 
-        // Render columns
-        state.columns.forEach((col, idx) => {
+        state.columns.forEach((col, i) => {
             const row = document.createElement('div');
-            row.className = 'column-row';
-            if (state.activeColIdx === idx) row.classList.add('active');
-
+            row.className = `sql-row ${state.activeColIdx === i ? 'active' : ''}`;
             row.innerHTML = `
-            <span class="sql-identifier">${col.name}</span>
-            <span class="sql-type">${col.type || 'TYPE?'}</span>
-            ${col.constraints.map(c => `<span class="sql-constraint">${c}</span>`).join(' ')}
+            <span style="width:20px; color:#555">${i + 1}</span>
+            <span class="id">${col.name}</span>
+            <span class="ty">${col.type || '??'}</span>
+            ${col.constraints.map(c => `<span class="cn">${c}</span>`).join(' ')}
             <span style="color:#555">,</span>
           `;
-
-            row.addEventListener('click', (e) => {
-                e.stopPropagation();
-                activateColumn(idx);
-            });
-
-            // Delete btn
-            const delBtn = document.createElement('span');
-            delBtn.textContent = ' ✖';
-            delBtn.style.color = 'red';
-            delBtn.style.cursor = 'pointer';
-            delBtn.onclick = (e) => {
-                e.stopPropagation();
-                state.columns.splice(idx, 1);
-                state.activeColIdx = -1;
-                renderSQL();
-                renderRequirements();
-            };
-            row.appendChild(delBtn);
-
-            el.sqlEditor.appendChild(row);
+            row.onclick = () => { activateRow(i); };
+            el.sqlBody.appendChild(row);
         });
 
-        // Add Column Button
         const addRow = document.createElement('div');
-        addRow.className = 'sql-line';
-        addRow.style.cursor = 'pointer';
-        addRow.style.color = '#555';
-        addRow.textContent = '+ Add Column';
-        addRow.onclick = addColumn;
-        el.sqlEditor.appendChild(addRow);
+        addRow.className = 'btn-add-col';
+        addRow.textContent = '+ ADD_FIELD_DEFINITION';
+        addRow.onclick = showColPrompt;
+        el.sqlBody.appendChild(addRow);
 
-        const lineEnd = document.createElement('div');
-        lineEnd.className = 'sql-line';
-        lineEnd.textContent = ');';
-        el.sqlEditor.appendChild(lineEnd);
+        const footer = document.createElement('div');
+        footer.className = 'sql-row';
+        footer.innerHTML = `);`;
+        el.sqlBody.appendChild(footer);
     }
 
-    function addColumn() {
-        const name = prompt("Column Name (e.g. user_id):");
+    function renderPreview() {
+        const thead = el.previewTable.querySelector('thead tr');
+        const tbody = el.previewTable.querySelector('tbody tr');
+        thead.innerHTML = '';
+        tbody.innerHTML = '';
+
+        state.columns.forEach(col => {
+            const th = document.createElement('th');
+            th.textContent = col.name;
+            thead.appendChild(th);
+
+            const td = document.createElement('td');
+            td.textContent = col.type || 'NULL';
+            tbody.appendChild(td);
+        });
+    }
+
+    function showColPrompt() {
+        const name = prompt("FIELD_NAME:");
         if (name) {
-            state.columns.push({
-                name: name.toLowerCase(),
-                type: null,
-                constraints: []
-            });
+            state.columns.push({ name: name.toLowerCase(), type: null, constraints: [] });
             state.activeColIdx = state.columns.length - 1;
-            renderSQL();
-            renderRequirements();
+            syncUI();
         }
     }
 
-    function activateColumn(idx) {
-        state.activeColIdx = idx;
-        renderSQL();
-        playTone('click');
+    function activateRow(i) {
+        state.activeColIdx = i;
+        playSound('click');
+        syncUI();
     }
 
     function applyType(t) {
         if (state.activeColIdx === -1) return;
         state.columns[state.activeColIdx].type = t;
-        renderSQL();
-        renderRequirements();
-        playTone('click');
+        playSound('click');
+        syncUI();
     }
 
     function toggleConstraint(c) {
         if (state.activeColIdx === -1) return;
         const col = state.columns[state.activeColIdx];
-        const idx = col.constraints.indexOf(c);
-        if (idx > -1) col.constraints.splice(idx, 1);
+        const pos = col.constraints.indexOf(c);
+        if (pos > -1) col.constraints.splice(pos, 1);
         else col.constraints.push(c);
+        playSound('click');
+        syncUI();
+    }
 
+    function syncUI() {
         renderSQL();
         renderRequirements();
-        playTone('click');
+        renderPreview();
     }
 
     function validateSchema() {
-        const level = state.config.levels[state.levelIdx];
-        let correct = true;
-        let missing = [];
+        const reqs = state.config.levels[state.levelIdx].requirements;
+        let valid = true;
+        let errs = [];
 
-        level.requirements.forEach(req => {
-            const col = state.columns.find(c => c.name === req.name);
-            if (!col) {
-                correct = false;
-                missing.push(`Missing column: ${req.name}`);
-                return;
-            }
-            if (col.type !== req.type) {
-                correct = false;
-                missing.push(`${req.name}: Wrong type (Expected ${req.type}, got ${col.type})`);
-            }
-
-            // Check constraints
-            // Ensure all req constraints are present
-            req.constraints.forEach(rc => {
-                if (!col.constraints.includes(rc)) {
-                    correct = false;
-                    missing.push(`${req.name}: Missing ${rc}`);
-                }
+        reqs.forEach(r => {
+            const col = state.columns.find(c => c.name === r.name);
+            if (!col) { valid = false; errs.push(`MISSING_FIELD: ${r.name}`); return; }
+            if (col.type !== r.type) { valid = false; errs.push(`TYPE_MISMATCH: ${r.name} EXPECTED ${r.type}`); }
+            r.constraints.forEach(rc => {
+                if (!col.constraints.includes(rc)) { valid = false; errs.push(`MISSING_CONSTRAINT: ${rc} ON ${r.name}`); }
             });
         });
 
-        if (correct) {
-            playTone('success');
-            el.finalResult.textContent = "Blueprint Approved! Building Table...";
-            el.resultOverlay.classList.remove('hidden');
+        if (valid) {
+            playSound('success');
+            el.resFinal.textContent = "VALIDATION_PASSED_//_SCHEMA_SOLID";
+            el.overlay.classList.remove('hidden');
         } else {
-            alert("Validation Failed:\n" + missing.join("\n"));
+            alert(`VALIDATION_FAILED:\n${errs.join('\n')}`);
         }
     }
 

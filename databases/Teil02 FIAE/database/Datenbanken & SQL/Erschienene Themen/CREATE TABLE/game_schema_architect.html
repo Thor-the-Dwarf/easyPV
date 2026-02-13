@@ -4,53 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SQL Architect - CREATE TABLE</title>
+    <title>Schema Architect // Create Table</title>
     <!-- Adjust path -->
     <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
     <link rel="stylesheet" href="schema_architect.css">
-    <link href="https://fonts.googleapis.com/css2?family=Consolas&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="game-app">
-        <!-- Header -->
-        <header class="header">
-            <div id="project-title" class="project-title">Loading...</div>
-            <button id="btn-validate" class="btn-large" style="margin:0; font-size:1rem;">BUILD & VALIDATE</button>
+        <!-- HUD -->
+        <header class="header-bar">
+            <div id="project-title" class="title-tag">ARCHITECT_INIT...</div>
+            <div class="stability-meter">
+                STRUCTURAL_DRAFT // v1.0
+            </div>
         </header>
 
-        <!-- Workspace -->
+        <!-- Main Workspace -->
         <main class="workspace">
 
-            <!-- Requirements Panel -->
-            <aside id="req-list" class="requirements-panel">
-                <!-- Requirements injected here -->
+            <!-- Blueprint (Requirements) -->
+            <aside class="pane blueprint-panel">
+                <div class="pane-header">SPECIFICATIONS <span>REQUIREMENTS_LIST</span></div>
+                <div id="req-list" style="overflow-y:auto; flex:1;">
+                    <!-- Req items injected here -->
+                </div>
             </aside>
 
-            <!-- Constructor -->
-            <section class="constructor-area">
-                <div id="sql-editor" class="sql-editor">
-                    <!-- SQL Rendering -->
-                </div>
-
-                <!-- Toolbox -->
-                <div id="toolbox" class="toolbox">
-                    <!-- Tool Buttons -->
+            <!-- Constructor (SQL Editor) -->
+            <section class="pane constructor-pane">
+                <div class="pane-header">SQL_CONSTRUCTOR <span>DDL_GENERATOR</span></div>
+                <div id="sql-body" class="sql-body">
+                    <!-- SQL Rows injected here -->
                 </div>
             </section>
 
+            <!-- Preview (Final Building) -->
+            <aside class="pane preview-pane">
+                <div class="pane-header">LIVE_TABLE_PROJECTION <span>SCHEMA_MANIFEST</span></div>
+                <div class="preview-body">
+                    <table id="preview-table" class="preview-table">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </aside>
+
         </main>
 
-        <!-- Result Overlay -->
-        <div id="result-overlay" class="result-overlay hidden">
-            <div class="card"
-                style="background: var(--panel-bg); border: 2px solid var(--accent-cyan); padding: 3rem; text-align:center;">
-                <h2 style="color:var(--accent-cyan); margin-bottom:1rem;">CONSTRUCTION COMPLETE</h2>
-                <div class="hud-value" style="font-size: 1.5rem; margin: 2rem 0; color:#fff" id="final-result">...</div>
-                <button id="btn-next" class="btn-large">NEXT BLUEPRINT</button>
+        <!-- Control HUD -->
+        <footer class="controls-bottom">
+            <div id="toolbox" class="toolbox">
+                <!-- Tool Clusters injected here -->
+            </div>
+
+            <button id="btn-validate" class="btn-validate">BUILD & VALIDATE</button>
+        </footer>
+
+        <!-- Finish Overlay -->
+        <div id="result-overlay" class="overlay hidden">
+            <div class="result-card">
+                <div class="cluster-label" style="text-align: center; margin-bottom: 2rem;">CONSTRUCTION_REPORT</div>
+                <h1 id="res-final" style="color:var(--cyan-primary); margin:0; letter-spacing:8px;">BLUEPRINT_APPROVED
+                </h1>
+
+                <p style="margin: 2rem 0; font-size: 0.9rem; line-height: 1.8; color: var(--text-dim);">
+                    The architectural formula for the new database structure is technically sound.<br>
+                    Structural integrity has been confirmed.
+                </p>
+
+                <button id="btn-next">ACKNOWLEDGE_COMPLETION</button>
             </div>
         </div>
     </div>
+
+    <!-- Script -->
     <script src="game_schema_architect.js"></script>
 </body>
 

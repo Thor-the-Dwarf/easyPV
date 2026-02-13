@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNION Check - Magnetic Merger</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="union_compat.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div style="flex:1;">
+                <h1 id="level-title" class="hud-title">MAGNETIC_LAB // LOADING...</h1>
+            </div>
+            <div id="level-desc" class="level-desc">
+                Analyze Query Schema Compatibility.
+            </div>
+            <div style="flex:1; text-align:right; font-size:0.7rem; color:#555;">
+                SET_OPERATIONS_MODE: ACTIVE
+            </div>
+        </header>
+
+        <!-- Main Workspace -->
+        <main class="merger-area">
+            <!-- Stationary Rail A -->
+            <div id="rail-a" class="query-rail query-a">
+                <div class="query-label">SELECT ... FROM Table_A</div>
+                <div class="column-set">
+                    <!-- Column badges injected -->
+                </div>
+            </div>
+
+            <!-- Gap -->
+            <div class="gap-visual">
+                <div class="field-line"></div>
+                <div
+                    style="position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); font-size:1.5rem; color:#222;">
+                    🧲</div>
+            </div>
+
+            <!-- Movable Rail B -->
+            <div id="rail-b" class="query-rail query-b">
+                <div class="query-label">SELECT ... FROM Table_B</div>
+                <div class="column-set">
+                    <!-- Column badges injected -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Controls -->
+        <footer class="controls">
+            <button id="btn-union" class="btn-union active">UNION (Distinct)</button>
+            <button id="btn-union-all" class="btn-union">UNION ALL (Waterfall)</button>
+        </footer>
+
+        <!-- Result Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="result-card">
+                <h2 style="color:var(--sync-gold); margin-bottom:1rem;">SCHEMA FUSION COMPLETE</h2>
+                <div id="result-reason" style="margin: 1.5rem 0; font-size: 0.9rem; color: #aaa;">...</div>
+
+                <div
+                    style="background:rgba(255,255,255,0.05); padding:1rem; font-family:monospace; font-size:0.8rem; margin-bottom:2rem;">
+                    SUCCESS: All set operation constraints satisfied.<br>
+                    MAGNETIC FIELD STABLE.
+                </div>
+
+                <button id="btn-next" class="btn-next">START NEXT SYNC</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_union_compat.js"></script>
+</body>
+
+</html>

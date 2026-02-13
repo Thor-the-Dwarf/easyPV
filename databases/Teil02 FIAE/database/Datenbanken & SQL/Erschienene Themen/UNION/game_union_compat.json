@@ -1,0 +1,129 @@
+{
+    "meta": {
+        "topic": "SQL UNION Compatibility",
+        "mechanic": "magnetic_merger",
+        "version": "1.0"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Basic ID Sync",
+            "description": "Merge IDs from 'Active_Users' and 'Archived_Users'. Both have exactly one INT column.",
+            "queryA": {
+                "label": "SELECT user_id FROM Active_Users",
+                "columns": [
+                    {
+                        "name": "user_id",
+                        "type": "INT"
+                    }
+                ]
+            },
+            "queryB": {
+                "label": "SELECT old_id FROM Archived_Users",
+                "columns": [
+                    {
+                        "name": "old_id",
+                        "type": "INT"
+                    }
+                ]
+            },
+            "compatible": true,
+            "reason": "Both queries have 1 column of type INT."
+        },
+        {
+            "id": 2,
+            "title": "Contact Fusion",
+            "description": "Merge phone numbers. Wait, Query B has a Name as well!",
+            "queryA": {
+                "label": "SELECT phone FROM Customers",
+                "columns": [
+                    {
+                        "name": "phone",
+                        "type": "STR"
+                    }
+                ]
+            },
+            "queryB": {
+                "label": "SELECT name, phone FROM Suppliers",
+                "columns": [
+                    {
+                        "name": "name",
+                        "type": "STR"
+                    },
+                    {
+                        "name": "phone",
+                        "type": "STR"
+                    }
+                ]
+            },
+            "compatible": false,
+            "reason": "Column count mismatch (1 vs 2)."
+        },
+        {
+            "id": 3,
+            "title": "Type Mismatch Repel",
+            "description": "Try to merge IDs with Emails. The types won't snap!",
+            "queryA": {
+                "label": "SELECT emp_id FROM Employees",
+                "columns": [
+                    {
+                        "name": "emp_id",
+                        "type": "INT"
+                    }
+                ]
+            },
+            "queryB": {
+                "label": "SELECT email FROM Leads",
+                "columns": [
+                    {
+                        "name": "email",
+                        "type": "STR"
+                    }
+                ]
+            },
+            "compatible": false,
+            "reason": "Type mismatch at Position 1 (INT vs STR)."
+        },
+        {
+            "id": 4,
+            "title": "The Perfect Match",
+            "description": "Check if Product and Service catalogs are compatible.",
+            "queryA": {
+                "label": "SELECT id, name, price FROM Products",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "INT"
+                    },
+                    {
+                        "name": "name",
+                        "type": "STR"
+                    },
+                    {
+                        "name": "price",
+                        "type": "DEC"
+                    }
+                ]
+            },
+            "queryB": {
+                "label": "SELECT s_id, s_name, fee FROM Services",
+                "columns": [
+                    {
+                        "name": "s_id",
+                        "type": "INT"
+                    },
+                    {
+                        "name": "s_name",
+                        "type": "STR"
+                    },
+                    {
+                        "name": "fee",
+                        "type": "DEC"
+                    }
+                ]
+            },
+            "compatible": true,
+            "reason": "Perfect match: 3 columns, INT-STR-DEC sequence."
+        }
+    ]
+}

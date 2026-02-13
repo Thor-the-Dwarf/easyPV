@@ -80,7 +80,7 @@
 
     const selfText = String(data.self_message || '').trim();
     if (selfText) {
-      messages.push({
+      messages.unshift({
         short: String(data.self_titel || 'CPU').trim(),
         long: String(data.self_subtitel || 'Central Processing Unit').trim(),
         text: selfText

@@ -1,0 +1,237 @@
+/* 
+ * SQL Sortierer - Styles
+ * Aesthetic: Command Library / Archive / Expert Knowledge Hub
+ */
+
+:root {
+    --bg-archive: #121418;
+    --bg-panel: #1e2227;
+    --text-main: #c0c5ce;
+    --cat-ddl: #4285f4;
+    /* Blue - Definition */
+    --cat-dml: #0f9d58;
+    /* Green - Manipulation */
+    --cat-dcl: #f4b400;
+    /* Yellow - Control */
+    --cat-tcl: #ab47bc;
+    /* Purple - Transaction */
+    --hazard-glow: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-archive);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* --- HEADER --- */
+.header {
+    padding: 1rem 2rem;
+    background: var(--bg-panel);
+    border-bottom: 2px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-hud {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* --- MAIN ARCHIVE AREA --- */
+.archive-walls {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.shelf-category {
+    background: var(--bg-panel);
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.shelf-category.highlight {
+    box-shadow: inset 0 0 20px var(--hazard-glow);
+    border-color: #fff;
+}
+
+.shelf-header {
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shelf-title {
+    letter-spacing: 1px;
+}
+
+.shelf-id {
+    font-family: monospace;
+    opacity: 0.5;
+}
+
+.shelf-slots {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 8px;
+    overflow-y: auto;
+}
+
+/* --- COMMAND WORKBENCH --- */
+.workbench {
+    height: 120px;
+    background: #000;
+    border-top: 5px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 20px;
+    overflow-x: auto;
+}
+
+.sql-stone {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: grab;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 0 #111;
+    transition: transform 0.1s, box-shadow 0.1s;
+    white-space: nowrap;
+}
+
+.sql-stone:active {
+    cursor: grabbing;
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #111;
+}
+
+.sql-stone.sorted {
+    cursor: default;
+    box-shadow: none;
+    transform: none;
+    font-size: 0.9rem;
+    padding: 5px 12px;
+}
+
+/* Category Specific Colors */
+.shelf-category[data-cat="DDL"] {
+    border-left: 5px solid var(--cat-ddl);
+}
+
+.shelf-category[data-cat="DML"] {
+    border-left: 5px solid var(--cat-dml);
+}
+
+.shelf-category[data-cat="DCL"] {
+    border-left: 5px solid var(--cat-dcl);
+}
+
+.shelf-category[data-cat="TCL"] {
+    border-left: 5px solid var(--cat-tcl);
+}
+
+.sql-stone.ddl {
+    background: var(--cat-ddl);
+}
+
+.sql-stone.dml {
+    background: var(--cat-dml);
+}
+
+.sql-stone.dcl {
+    background: var(--cat-dcl);
+    color: #000;
+}
+
+.sql-stone.tcl {
+    background: var(--cat-tcl);
+}
+
+/* --- TOOLTIP / INFO --- */
+.info-bar {
+    background: #111;
+    padding: 8px 20px;
+    font-size: 0.8rem;
+    color: #888;
+    border-top: 1px solid #222;
+    height: 20px;
+}
+
+/* --- OVERLAYS --- */
+.success-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.success-card {
+    text-align: center;
+    padding: 3rem;
+    border: 1px solid #fff;
+    background: var(--bg-panel);
+}
+
+.btn-primary {
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    background: #fff;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #ccc;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Mobile Adaptations */
+@media (max-width: 600px) {
+    .archive-walls {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}

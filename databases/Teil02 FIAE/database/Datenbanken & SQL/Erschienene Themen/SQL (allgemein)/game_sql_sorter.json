@@ -1,0 +1,100 @@
+{
+    "meta": {
+        "topic": "SQL Taxonomy",
+        "mechanic": "category_sorting",
+        "version": "1.0"
+    },
+    "categories": [
+        {
+            "id": "DDL",
+            "name": "Data Definition Language",
+            "description": "Defines the structure of the database.",
+            "color": "var(--cat-ddl)"
+        },
+        {
+            "id": "DML",
+            "name": "Data Manipulation Language",
+            "description": "Used for managing data within objects.",
+            "color": "var(--cat-dml)"
+        },
+        {
+            "id": "DCL",
+            "name": "Data Control Language",
+            "description": "Controls access to data.",
+            "color": "var(--cat-dcl)"
+        },
+        {
+            "id": "TCL",
+            "name": "Transaction Control Language",
+            "description": "Manages changes made by DML statements.",
+            "color": "var(--cat-tcl)"
+        }
+    ],
+    "commands": [
+        {
+            "name": "CREATE",
+            "category": "DDL",
+            "info": "Creates new database objects."
+        },
+        {
+            "name": "DROP",
+            "category": "DDL",
+            "info": "Deletes database objects."
+        },
+        {
+            "name": "ALTER",
+            "category": "DDL",
+            "info": "Modifies database structures."
+        },
+        {
+            "name": "TRUNCATE",
+            "category": "DDL",
+            "info": "Removes all records from a table."
+        },
+        {
+            "name": "SELECT",
+            "category": "DML",
+            "info": "Retrieves data from the database."
+        },
+        {
+            "name": "INSERT",
+            "category": "DML",
+            "info": "Adds new data to the database."
+        },
+        {
+            "name": "UPDATE",
+            "category": "DML",
+            "info": "Modifies existing data."
+        },
+        {
+            "name": "DELETE",
+            "category": "DML",
+            "info": "Removes data from the database."
+        },
+        {
+            "name": "GRANT",
+            "category": "DCL",
+            "info": "Gives user access privileges."
+        },
+        {
+            "name": "REVOKE",
+            "category": "DCL",
+            "info": "Withdraws access privileges."
+        },
+        {
+            "name": "COMMIT",
+            "category": "TCL",
+            "info": "Saves transaction changes."
+        },
+        {
+            "name": "ROLLBACK",
+            "category": "TCL",
+            "info": "Undoes transaction changes."
+        },
+        {
+            "name": "SAVEPOINT",
+            "category": "TCL",
+            "info": "Sets a point to rollback to."
+        }
+    ]
+}

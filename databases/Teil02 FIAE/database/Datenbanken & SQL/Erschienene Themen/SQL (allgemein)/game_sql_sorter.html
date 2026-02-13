@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Sortierer - Archive of Commands</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="sql_sorter.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- Header -->
+        <header class="header">
+            <div style="font-weight: bold; font-size: 1.2rem; color: #fff;">SQL_ARCHIVE // TAXONOMY</div>
+            <div class="progress-hud">
+                COMPLETED: <span id="progress-count">0 / 13</span>
+            </div>
+        </header>
+
+        <!-- Main Archive Walls -->
+        <main id="archive-walls" class="archive-walls">
+            <!-- Categories injected here -->
+        </main>
+
+        <!-- Info Bar -->
+        <div id="info-bar" class="info-bar">
+            Select a command to categorize.
+        </div>
+
+        <!-- Workbench -->
+        <footer id="workbench" class="workbench">
+            <!-- Commands injected here -->
+        </footer>
+
+        <!-- Success Overlay -->
+        <div id="success-overlay" class="success-overlay hidden">
+            <div class="success-card">
+                <h2 style="color:#fff; margin-bottom:1rem;">LIBRARY ANALYSIS COMPLETE</h2>
+                <p>All SQL commands have been correctly classified into DDL, DML, DCL, and TCL.</p>
+                <div style="font-size: 0.8rem; color: #888; margin: 2rem 0;">System fully indexed. Knowledge Secured.
+                </div>
+                <button id="btn-restart" class="btn-primary">RESET ARCHIVE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logic -->
+    <script src="game_sql_sorter.js"></script>
+</body>
+
+</html>

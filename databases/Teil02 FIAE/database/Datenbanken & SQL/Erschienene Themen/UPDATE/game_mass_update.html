@@ -4,72 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SQL UPDATE - Mass Update Gefahr</title>
+    <title>Mass-Update-Gefahr - Cyber Security Terminal</title>
     <!-- Adjust path -->
     <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
     <link rel="stylesheet" href="mass_update.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="game-app">
-        <!-- Safety Monitor -->
-        <header class="monitor">
-            <div class="stat-box">
-                <div class="stat-label">Affected Rows</div>
-                <div id="affected-count" class="stat-value">0</div>
+        <!-- HUD -->
+        <header class="header-bar">
+            <div class="monitor-brand">
+                <h1 style="margin:0; font-size:1rem; letter-spacing:5px; color:var(--accent-cyan);">SECURE_CORE // V2.0
+                </h1>
+                <div style="font-size:0.6rem; opacity:0.6;">EMERGENCY_DATA_MAINTENANCE_OFFICER</div>
             </div>
-            <div class="stat-box">
-                <div class="stat-label">System Integrity</div>
-                <div id="hazard-level" class="hazard-level">SECURE</div>
-            </div>
-            <div style="font-family: monospace; color: #444; font-size: 0.7rem;">
-                TERMINAL_ACCESS: GRANTED<br>
-                SAFETY_LOCK: AUTO
+
+            <div class="status-module">
+                CONNECTION: <span style="color:var(--accent-cyan);">STABLE</span><br>
+                AUTH_LEVEL: ADMIN
             </div>
         </header>
 
-        <!-- Editor Area -->
-        <main class="editor-area">
-            <div class="query-editor">
-                <span class="keyword">UPDATE</span> employees<br>
-                <span class="keyword">SET</span> salary = <span class="number">250000</span><br>
-                <span class="keyword">WHERE</span> <span id="where-clause" class="where-clause" contenteditable="true"
-                    spellcheck="false"></span>
-            </div>
+        <!-- Workspace -->
+        <main class="workspace">
+            <!-- Safety Monitor -->
+            <section id="safety-monitor" class="safety-monitor critical">
+                <div class="monitor-val">
+                    <div class="monitor-label">AFFECTED_ROWS</div>
+                    <div id="affected-count" class="monitor-num">1.000.000</div>
+                </div>
 
-            <div style="font-size: 0.8rem; color: #555;">
-                MISSION: <span id="mission-text" style="color: #888;">Update ONLY the CEO (ID: 1) salary.</span>
-            </div>
+                <div class="monitor-val">
+                    <div class="monitor-label">HAZARD_LEVEL</div>
+                    <div id="hazard-level" class="hazard-level extreme">EXTREME</div>
+                </div>
+            </section>
+
+            <!-- SQL Sandbox -->
+            <section class="input-area">
+                <div style="font-size:0.75rem; color:var(--accent-cyan); letter-spacing:2px;">SQL_COMMAND_INPUT</div>
+                <div class="sql-sandbox">
+                    <span class="sql-kw">UPDATE</span> users <span class="sql-kw">SET</span> salary = salary * 1.5<br>
+                    <span class="sql-kw">WHERE</span> <span id="where-slot" class="sql-where" contenteditable="true"
+                        spellcheck="false"></span>
+                </div>
+            </section>
+
+            <!-- Table Preview -->
+            <section class="table-preview">
+                <div class="table-label">LIVE_IMPACT_PREVIEW</div>
+                <table id="preview-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th>POSITION</th>
+                            <th>SALARY</th>
+                        </tr>
+                    </thead>
+                    <tbody id="preview-body">
+                        <!-- Rows injected here -->
+                    </tbody>
+                </table>
+            </section>
         </main>
 
-        <!-- Table Preview -->
-        <section class="preview-area">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Role</th>
-                        <th>Salary</th>
-                    </tr>
-                </thead>
-                <tbody id="preview-body">
-                    <!-- Data injected here -->
-                </tbody>
-            </table>
-        </section>
-
-        <!-- Footer Controls -->
-        <footer class="controls">
-            <button id="btn-execute" class="btn-execute">EXECUTE QUERY</button>
+        <!-- Control Bar -->
+        <footer class="control-bar">
+            <button id="btn-execute" class="btn-execute" disabled>EXECUTE_UPDATE</button>
         </footer>
 
         <!-- Result Overlay -->
-        <div id="result-overlay" class="overlay hidden">
+        <div id="overlay" class="overlay hidden">
             <div class="result-card">
-                <h2 id="outcome-title" class="outcome-title">...</h2>
-                <p id="outcome-text">...</p>
-                <button id="btn-next" class="btn-next">ACKNOWLEDGE & PROCEED</button>
+                <div id="outcome-msg" class="status-msg">
+                    <h2 id="outcome-title">SURGICAL_SUCCESS</h2>
+                    <p id="outcome-text">System-Integrität gewahrt.</p>
+                </div>
+
+                <button id="btn-next">NEXT_SCENARIO</button>
             </div>
         </div>
     </div>

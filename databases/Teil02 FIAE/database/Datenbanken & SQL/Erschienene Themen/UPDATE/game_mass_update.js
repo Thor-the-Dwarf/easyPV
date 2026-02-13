@@ -5,16 +5,17 @@
         config: null,
         scenarioIdx: 0,
         affectedRows: 0,
-        isExecuting: false
+        isComplete: false
     };
 
     const el = {
-        affectedCount: document.getElementById('affected-count'),
-        hazardLevel: document.getElementById('hazard-level'),
-        whereClause: document.getElementById('where-clause'),
-        tableBody: document.getElementById('preview-body'),
+        monitor: document.getElementById('safety-monitor'),
+        count: document.getElementById('affected-count'),
+        hazard: document.getElementById('hazard-level'),
+        whereSlot: document.getElementById('where-slot'),
+        previewBody: document.getElementById('preview-body'),
         btnExecute: document.getElementById('btn-execute'),
-        overlay: document.getElementById('result-overlay'),
+        overlay: document.getElementById('overlay'),
         outcomeTitle: document.getElementById('outcome-title'),
         outcomeText: document.getElementById('outcome-text'),
         btnNext: document.getElementById('btn-next')
@@ -29,27 +30,34 @@
         osc.connect(gain);
         gain.connect(audioCtx.destination);
 
-        if (type === 'warn') {
-            osc.type = 'sawtooth';
-            osc.frequency.setValueAtTime(200, audioCtx.currentTime);
+        if (type === 'click') {
+            osc.frequency.setValueAtTime(440, audioCtx.currentTime);
             gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
-            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.1);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
             osc.start();
             osc.stop(audioCtx.currentTime + 0.1);
-        } else if (type === 'success') {
-            osc.frequency.setValueAtTime(400, audioCtx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.3);
+        } else if (type === 'warn') {
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(150, audioCtx.currentTime);
             gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.3);
+            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.4);
             osc.start();
-            osc.stop(audioCtx.currentTime + 0.3);
-        } else if (type === 'boom') {
+            osc.stop(audioCtx.currentTime + 0.4);
+        } else if (type === 'success') {
+            osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.5);
+            gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.5);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.5);
+        } else if (type === 'critical') {
             osc.type = 'square';
             osc.frequency.setValueAtTime(60, audioCtx.currentTime);
-            gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 1.5);
+            osc.frequency.exponentialRampToValueAtTime(20, audioCtx.currentTime + 1);
+            gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 1.2);
             osc.start();
-            osc.stop(audioCtx.currentTime + 1.5);
+            osc.stop(audioCtx.currentTime + 1.2);
         }
     }
 
@@ -58,141 +66,136 @@
             const resp = await fetch('game_mass_update.json');
             state.config = await resp.json();
 
-            el.whereClause.addEventListener('input', handleUpdateInput);
-            el.btnExecute.addEventListener('click', executeUpdate);
-            el.btnNext.addEventListener('click', nextScenario);
+            el.whereSlot.oninput = handleInput;
+            el.btnExecute.onclick = executeUpdate;
+            el.btnNext.onclick = () => {
+                el.overlay.classList.add('hidden');
+                startScenario(state.scenarioIdx + 1);
+            };
 
             startScenario(0);
-        } catch (e) {
-            console.error(e);
-        }
+        } catch (e) { console.error(e); }
     }
 
     function startScenario(idx) {
+        if (idx >= state.config.scenarios.length) {
+            location.reload();
+            return;
+        }
         state.scenarioIdx = idx;
-        state.isExecuting = false;
-        const s = state.config.scenarios[idx];
+        state.isComplete = false;
 
-        el.whereClause.textContent = "";
+        const sc = state.config.scenarios[idx];
+        el.whereSlot.textContent = '';
         el.overlay.classList.add('hidden');
-        el.btnExecute.classList.remove('ready');
         el.btnExecute.disabled = true;
 
-        renderTable(s);
-        calculateAffected();
+        renderTable(sc);
+        calculateImpact();
     }
 
-    function renderTable(scenario) {
-        el.tableBody.innerHTML = '';
-        scenario.data.forEach(row => {
+    function renderTable(sc) {
+        el.previewBody.innerHTML = '';
+        sc.data.forEach(row => {
             const tr = document.createElement('tr');
             tr.id = `row-${row.id}`;
-            // Basic columns based on row keys
-            Object.keys(row).forEach(key => {
+            // Use keys from data
+            Object.keys(row).forEach(k => {
                 const td = document.createElement('td');
-                td.textContent = row[key];
+                td.textContent = row[k];
                 tr.appendChild(td);
             });
-            el.tableBody.appendChild(tr);
+            el.previewBody.appendChild(tr);
         });
     }
 
-    function handleUpdateInput() {
-        if (state.isExecuting) return;
-        calculateAffected();
+    function handleInput() {
+        if (state.isComplete) return;
+        calculateImpact();
     }
 
-    function calculateAffected() {
-        const s = state.config.scenarios[state.scenarioIdx];
-        const input = el.whereClause.textContent.trim().toLowerCase();
+    function calculateImpact() {
+        const sc = state.config.scenarios[state.scenarioIdx];
+        const val = el.whereSlot.textContent.trim().toLowerCase();
 
-        let count = s.initialRows;
-        let hazard = "CRITICAL";
+        let count = sc.initialRows;
+        let hazard = 'EXTREME';
 
-        // Simple simulation logic
-        if (input === "") {
-            count = s.initialRows;
-            hazard = "EXTREME";
-        } else if (input.includes("id =") || input.includes("id=")) {
-            count = 1;
-            hazard = "LOW";
-        } else if (input.includes("id in")) {
-            count = 2; // Simulated
-            hazard = "MEDIUM";
+        if (val.length === 0) {
+            count = sc.initialRows;
+            hazard = 'EXTREME';
+        } else if (val.includes('id =') || val.includes('id=')) {
+            const parts = val.split('=');
+            const id = parseInt(parts[1]);
+            if (!isNaN(id)) {
+                count = sc.data.some(r => r.id === id) ? 1 : 0;
+                hazard = count === 1 ? 'LOW' : 'SAFE';
+            }
+        } else if (val.includes('id >') || val.includes('id <')) {
+            count = Math.floor(sc.initialRows / 2); // Simulated impact
+            hazard = 'MEDIUM';
         }
 
         state.affectedRows = count;
-        el.affectedCount.textContent = count.toLocaleString();
-        el.hazardLevel.textContent = hazard;
-        el.hazardLevel.className = "hazard-level " + (count > 1 ? "danger" : "");
+        el.count.textContent = count.toLocaleString();
+        el.hazard.textContent = hazard;
 
-        if (count > 100) {
-            playSound('warn');
-            document.body.classList.add('shake');
-            setTimeout(() => document.body.classList.remove('shake'), 200);
+        // UI Feedback
+        if (count > 1) {
+            el.monitor.classList.add('critical');
+            el.hazard.className = 'hazard-level extreme';
+            if (val.length > 5) playSound('warn');
+        } else {
+            el.monitor.classList.remove('critical');
+            el.hazard.className = 'hazard-level low';
         }
 
-        el.btnExecute.disabled = (input === "");
-        el.btnExecute.classList.toggle('ready', input !== "");
+        el.btnExecute.disabled = val.length === 0;
 
-        // Update highlights in the UI table for the first few rows
-        updatePreviewHighlights(input);
+        updateTableHighlights(val, sc);
     }
 
-    function updatePreviewHighlights(input) {
-        const s = state.config.scenarios[state.scenarioIdx];
-        const rows = el.tableBody.querySelectorAll('tr');
-
+    function updateTableHighlights(val, sc) {
+        const rows = el.previewBody.querySelectorAll('tr');
         rows.forEach(tr => {
             tr.className = '';
-            if (input === "") {
-                tr.classList.add('affected'); // All flash
-            } else if (input.includes("id = 1") && tr.id === "row-1") {
-                tr.classList.add('surgical');
-            } else if (input.includes("id") && !input.includes("id =")) {
+            if (val.length === 0) {
+                tr.classList.add('affected');
+            } else if (val.includes('id =')) {
+                const id = parseInt(val.split('=')[1]);
+                if (tr.id === `row-${id}`) tr.classList.add('surgical');
+            } else if (val.includes('id')) {
                 tr.classList.add('affected');
             }
         });
     }
 
     function executeUpdate() {
-        if (state.isExecuting) return;
-        state.isExecuting = true;
+        if (state.isComplete) return;
+        const sc = state.config.scenarios[state.scenarioIdx];
+
+        state.isComplete = true;
         el.btnExecute.disabled = true;
 
-        const s = state.config.scenarios[state.scenarioIdx];
-        const success = (state.affectedRows === s.targetRows);
-
-        if (success) {
+        if (state.affectedRows === sc.targetRows) {
             playSound('success');
-            showResult(true);
+            showOutcome(true, sc);
         } else {
-            playSound('boom');
+            playSound('critical');
             document.body.classList.add('shake');
-            showResult(false);
             setTimeout(() => document.body.classList.remove('shake'), 1000);
+            showOutcome(false, sc);
         }
     }
 
-    function showResult(success) {
-        const s = state.config.scenarios[state.scenarioIdx];
-        const card = el.overlay.querySelector('.result-card');
-
-        card.className = "result-card " + (success ? "success" : "fail");
-        el.outcomeTitle.textContent = success ? "Surgical Success" : "Data Catastrophe";
-        el.outcomeText.textContent = success ? s.successMessage : s.failMessage;
+    function showOutcome(success, sc) {
+        el.outcomeTitle.textContent = success ? 'SURGICAL_SUCCESS' : 'DATA_CATASTROPHE';
+        el.outcomeText.textContent = success ? sc.successMessage : sc.failMessage;
+        el.overlay.querySelector('.result-card').className = success ? 'result-card' : 'result-card fail';
 
         setTimeout(() => {
             el.overlay.classList.remove('hidden');
         }, 1500);
-    }
-
-    function nextScenario() {
-        if (state.scenarioIdx < state.config.scenarios.length - 1) {
-            startScenario(state.scenarioIdx + 1);
-        } else {
-            location.reload();
-        }
     }
 
     init();

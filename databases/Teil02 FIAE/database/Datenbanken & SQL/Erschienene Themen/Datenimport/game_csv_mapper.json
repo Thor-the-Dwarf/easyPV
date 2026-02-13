@@ -1,0 +1,142 @@
+{
+    "meta": {
+        "topic": "Data Import",
+        "mechanic": "mapping_cables",
+        "version": "1.0"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Simple Contact Import",
+            "description": "Map the CSV columns to the Customer table.",
+            "source": {
+                "format": "CSV",
+                "headers": [
+                    "First Name",
+                    "Last Name",
+                    "Email Address",
+                    "Phone Number"
+                ],
+                "sample": [
+                    "John,Doe,john@doe.com,555-1234"
+                ]
+            },
+            "target": {
+                "table": "customers",
+                "fields": [
+                    {
+                        "name": "first_name",
+                        "type": "VARCHAR"
+                    },
+                    {
+                        "name": "last_name",
+                        "type": "VARCHAR"
+                    },
+                    {
+                        "name": "email",
+                        "type": "VARCHAR",
+                        "unique": true
+                    },
+                    {
+                        "name": "phone",
+                        "type": "VARCHAR"
+                    }
+                ]
+            },
+            "mapping": {
+                "First Name": "first_name",
+                "Last Name": "last_name",
+                "Email Address": "email",
+                "Phone Number": "phone"
+            }
+        },
+        {
+            "id": 2,
+            "title": "Legacy System Migration",
+            "description": "Import old German customer data into the new international schema.",
+            "source": {
+                "format": "CSV",
+                "headers": [
+                    "Vorname",
+                    "Nachname",
+                    "Geburtsdatum",
+                    "PLZ"
+                ],
+                "sample": [
+                    "Hans,Müller,01.05.1980,10115"
+                ]
+            },
+            "target": {
+                "table": "users",
+                "fields": [
+                    {
+                        "name": "first_name",
+                        "type": "VARCHAR"
+                    },
+                    {
+                        "name": "last_name",
+                        "type": "VARCHAR"
+                    },
+                    {
+                        "name": "dob",
+                        "type": "DATE"
+                    },
+                    {
+                        "name": "zip_code",
+                        "type": "VARCHAR"
+                    }
+                ]
+            },
+            "mapping": {
+                "Vorname": "first_name",
+                "Nachname": "last_name",
+                "Geburtsdatum": "dob",
+                "PLZ": "zip_code"
+            }
+        },
+        {
+            "id": 3,
+            "title": "E-Commerce Product Feed",
+            "description": "Map product data. Be careful with types!",
+            "source": {
+                "format": "CSV",
+                "headers": [
+                    "Prod_ID",
+                    "Name",
+                    "Price_Net",
+                    "In_Stock"
+                ],
+                "sample": [
+                    "P-992,Gaming Mouse,49.99,yes"
+                ]
+            },
+            "target": {
+                "table": "products",
+                "fields": [
+                    {
+                        "name": "sku",
+                        "type": "VARCHAR"
+                    },
+                    {
+                        "name": "title",
+                        "type": "VARCHAR"
+                    },
+                    {
+                        "name": "price",
+                        "type": "DECIMAL"
+                    },
+                    {
+                        "name": "stock_qty",
+                        "type": "INT"
+                    }
+                ]
+            },
+            "mapping": {
+                "Prod_ID": "sku",
+                "Name": "title",
+                "Price_Net": "price",
+                "In_Stock": "stock_qty"
+            }
+        }
+    ]
+}

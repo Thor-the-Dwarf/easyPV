@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Import - CSV Mapper</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="csv_mapper.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- Header -->
+        <header class="header-bar">
+            <div id="level-title" class="level-title">Loading...</div>
+            <div class="progress-status">MAPPING MODE</div>
+        </header>
+
+        <!-- Main Workspace -->
+        <main class="workspace">
+
+            <!-- Source Panel -->
+            <div class="panel left">
+                <div class="panel-header source-header">SOURCE (CSV)</div>
+                <div id="source-list" class="field-list">
+                    <!-- Fields generated -->
+                </div>
+            </div>
+
+            <!-- Cable Canvas -->
+            <div id="cable-canvas" class="cable-canvas">
+                <svg id="cable-svg">
+                    <path id="drag-line" class="drag-line" d="M0,0 L0,0" style="display:none"></path>
+                </svg>
+            </div>
+
+            <!-- Target Panel -->
+            <div class="panel right">
+                <div class="panel-header target-header">TARGET (DATABASE)</div>
+                <div id="target-list" class="field-list">
+                    <!-- Fields generated -->
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Log Console -->
+        <div id="log-console" class="log-console">
+            <div class="log-entry info">> CA.B.L.E System v1.0 initialized...</div>
+            <div class="log-entry info">> Waiting for data stream...</div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card"
+                style="background: #222; border: 2px solid var(--target-color); padding: 3rem; text-align:center;">
+                <h2 style="color:var(--target-color); margin-bottom:1rem;">IMPORT STATUS</h2>
+                <div class="hud-value" style="font-size: 1.5rem; margin: 2rem 0; color:#fff" id="final-result">...</div>
+                <button id="next-btn" class="btn">NEXT LEVEL</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_csv_mapper.js"></script>
+</body>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACID-Sortierer - Temple of Transactions</title>
+    <title>ACID-Sortierer // Vault Foundation</title>
     <!-- Adjust path -->
     <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
     <link rel="stylesheet" href="acid_sorter.css">
@@ -12,40 +12,44 @@
 </head>
 
 <body>
-    <div class="game-app">
-        <div id="flash-effect" class="crash-flash"></div>
+    <!-- Full-screen FX Layers -->
+    <div id="flash-effect" class="flash-surge"></div>
 
+    <div class="game-app">
         <!-- HUD -->
-        <header class="hud">
-            <div class="hud-title">VAULT_INTEGRITY // CHECK</div>
-            <div class="integrity-meter">
-                STABILITY_SCORE: <span id="integrity-score" style="color:var(--gold-glow); font-weight:bold;">0%</span>
+        <header class="header-bar">
+            <div class="hud-title">INTEGRITY_PROTOCOL // ACID</div>
+            <div class="stability-meter">
+                FOUNDATION_STABILITY <span id="integrity-score">0%</span>
             </div>
         </header>
 
-        <!-- Temple Workspace -->
-        <main class="temple-structure">
-            <div style="font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 2px;">Foundation
-                Pillars</div>
+        <!-- Main Workspace -->
+        <main class="temple-main">
+            <div class="foundation-label">CONSTRUCTION_GRID // ACTIVE_PILLARS</div>
+
             <div id="pillar-grid" class="pillar-grid">
                 <!-- Pillars injected here -->
             </div>
         </main>
 
-        <!-- Quarry -->
-        <footer id="quarry" class="quarry">
-            <!-- Definitions injected here -->
+        <!-- Knowledge Quarry -->
+        <footer class="quarry" id="quarry">
+            <!-- Definition stones injected here -->
         </footer>
 
-        <!-- Result Overlay -->
-        <div id="result-overlay" class="result-overlay hidden">
+        <!-- Result/Success Overlay -->
+        <div id="result-overlay" class="overlay hidden">
             <div class="result-card">
-                <h2 style="color:var(--gold-glow); margin-bottom:1rem;">STRESS TEST COMPLETE</h2>
-                <p>The transition building is rock solid.</p>
-                <div style="font-size: 0.8rem; color: #888; margin-top: 1rem;">
-                    ACID protocols verified. Database integrity secured.
-                </div>
-                <button id="btn-restart" class="btn-terminal">RE-INITIATE FOUNDATION</button>
+                <div class="foundation-label" style="text-align: center; margin-bottom: 2rem;">STABILITY_REPORT</div>
+                <h1 style="color:var(--gold-primary); margin:0; letter-spacing:8px;">VAULT_SECURED</h1>
+
+                <p style="margin: 2rem 0; font-size: 0.9rem; line-height: 1.8; color: var(--text-dim);">
+                    The foundation of the database transition system is unshakeable.<br>
+                    All ACID protocols have been successfully validated.
+                </p>
+
+                <button id="btn-restart">RE_INIT_FOUNDATION</button>
             </div>
         </div>
     </div>

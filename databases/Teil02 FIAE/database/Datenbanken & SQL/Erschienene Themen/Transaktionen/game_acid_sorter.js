@@ -5,7 +5,8 @@
         config: null,
         points: 0,
         totalToSort: 0,
-        sortedCount: 0
+        sortedCount: 0,
+        selectedStone: null
     };
 
     const el = {
@@ -13,7 +14,8 @@
         pillarGrid: document.getElementById('pillar-grid'),
         quarry: document.getElementById('quarry'),
         overlay: document.getElementById('result-overlay'),
-        flash: document.getElementById('flash-effect')
+        flash: document.getElementById('flash-effect'),
+        btnRestart: document.getElementById('btn-restart')
     };
 
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -25,28 +27,29 @@
         osc.connect(gain);
         gain.connect(audioCtx.destination);
 
-        if (type === 'sort') {
-            osc.frequency.setValueAtTime(500, audioCtx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.1);
-            gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.1);
-            osc.start();
-            osc.stop(audioCtx.currentTime + 0.1);
-        } else if (type === 'error') {
+        if (type === 'slam') {
             osc.type = 'sawtooth';
-            osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+            osc.frequency.setValueAtTime(100, audioCtx.currentTime);
+            osc.frequency.linearRampToValueAtTime(40, audioCtx.currentTime + 0.2);
+            gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.2);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.2);
+        } else if (type === 'error') {
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(220, audioCtx.currentTime);
             gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
             gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.3);
             osc.start();
             osc.stop(audioCtx.currentTime + 0.3);
-        } else if (type === 'crash') {
-            osc.type = 'brown';
-            // Simplified noise
-            osc.frequency.setValueAtTime(60, audioCtx.currentTime);
+        } else if (type === 'surge') {
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(880, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(110, audioCtx.currentTime + 0.8);
             gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 1);
+            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.8);
             osc.start();
-            osc.stop(audioCtx.currentTime + 1);
+            osc.stop(audioCtx.currentTime + 0.8);
         }
     }
 
@@ -57,12 +60,13 @@
             state.totalToSort = state.config.definitions.length;
 
             initPillars();
-            initDefinitions();
+            initQuarry();
 
-            document.getElementById('btn-restart').addEventListener('click', () => location.reload());
-        } catch (e) {
-            console.error(e);
-        }
+            el.btnRestart.onclick = () => location.reload();
+
+            // Tap-to-map fallback
+            document.body.onclick = () => { if (state.selectedStone) deselectStone(); };
+        } catch (e) { console.error(e); }
     }
 
     function initPillars() {
@@ -72,102 +76,110 @@
             div.className = 'pillar';
             div.dataset.id = p.id;
             div.innerHTML = `
-        <div class="pillar-header">
-          <span class="pillar-id">${p.id}</span>
-          <span class="pillar-name">${p.name}</span>
-          <div style="font-size:0.6rem; color:var(--gold-glow); margin-top:5px;">${p.slogan}</div>
-        </div>
-        <div class="pillar-slots" id="slots-${p.id}"></div>
-      `;
-            setupDropTarget(div);
+            <div class="pillar-header">
+                <div class="pillar-icon">${p.icon}</div>
+                <div class="pillar-name">${p.name}</div>
+                <div style="font-size:0.55rem; color:var(--gold-primary); margin-top:5px;">"${p.slogan}"</div>
+            </div>
+            <div class="pillar-slots" id="slots-${p.id}"></div>
+        `;
+
+            div.onclick = (e) => {
+                e.stopPropagation();
+                if (state.selectedStone) handleDrop(div, state.selectedStone);
+            };
+
+            // Drag events
+            div.ondragover = e => { e.preventDefault(); div.classList.add('highlight'); };
+            div.ondragleave = () => div.classList.remove('highlight');
+            div.ondrop = e => {
+                e.preventDefault();
+                div.classList.remove('highlight');
+                const stoneId = e.dataTransfer.getData('text/plain');
+                const stone = document.getElementById(stoneId);
+                handleDrop(div, stone);
+            };
+
             el.pillarGrid.appendChild(div);
         });
     }
 
-    function initDefinitions() {
+    function initQuarry() {
         el.quarry.innerHTML = '';
         const shuffled = [...state.config.definitions].sort(() => Math.random() - 0.5);
-        shuffled.forEach((def, idx) => {
-            const stone = document.createElement('div');
-            stone.className = 'definition-stone';
-            stone.textContent = def.text;
-            stone.draggable = true;
-            stone.id = `def-${idx}`;
-            stone.dataset.pillar = def.pillar;
+        shuffled.forEach((def, i) => {
+            const s = document.createElement('div');
+            s.className = 'stone';
+            s.id = `stone-${i}`;
+            s.textContent = def.text;
+            s.dataset.pillar = def.pillar;
+            s.draggable = true;
 
-            stone.addEventListener('dragstart', (e) => {
-                e.dataTransfer.setData('text/plain', stone.id);
-            });
-            el.quarry.appendChild(stone);
+            s.onclick = (e) => {
+                e.stopPropagation();
+                selectStone(s);
+            };
+
+            s.ondragstart = e => {
+                e.dataTransfer.setData('text/plain', s.id);
+                s.style.opacity = '0.5';
+            };
+            s.ondragend = () => s.style.opacity = '1';
+
+            el.quarry.appendChild(s);
         });
     }
 
-    function setupDropTarget(target) {
-        target.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            target.classList.add('highlight');
-        });
-
-        target.addEventListener('dragleave', () => target.classList.remove('highlight'));
-
-        target.addEventListener('drop', (e) => {
-            e.preventDefault();
-            target.classList.remove('highlight');
-
-            const id = e.dataTransfer.getData('text/plain');
-            const stone = document.getElementById(id);
-            const targetPillar = target.dataset.id;
-
-            if (stone.dataset.pillar === targetPillar) {
-                handleSuccess(target, stone);
-            } else {
-                handleError(target);
-            }
-        });
+    function selectStone(s) {
+        if (state.selectedStone) state.selectedStone.classList.remove('selected');
+        state.selectedStone = s;
+        s.classList.add('selected');
+        s.style.borderColor = 'var(--gold-primary)';
     }
 
-    function handleSuccess(pillar, stone) {
-        playSound('sort');
-        stone.classList.add('sorted');
-        stone.draggable = false;
-        pillar.querySelector('.pillar-slots').appendChild(stone);
-
-        state.sortedCount++;
-        updateIntegrity();
-
-        // Check pillar completion
-        const slots = pillar.querySelector('.pillar-slots');
-        const reqPerPillar = state.totalToSort / 4;
-        if (slots.children.length >= reqPerPillar) {
-            pillar.classList.add('completed');
+    function deselectStone() {
+        if (state.selectedStone) {
+            state.selectedStone.classList.remove('selected');
+            state.selectedStone.style.borderColor = '';
         }
-
-        if (state.sortedCount === state.totalToSort) {
-            triggerEndSequence();
-        }
+        state.selectedStone = null;
     }
 
-    function handleError(pillar) {
-        playSound('error');
-        pillar.classList.add('shake');
-        setTimeout(() => pillar.classList.remove('shake'), 400);
+    function handleDrop(pillar, stone) {
+        if (stone.dataset.pillar === pillar.dataset.id) {
+            playSound('slam');
+            stone.classList.add('sorted');
+            stone.draggable = false;
+            stone.onclick = null;
+            pillar.querySelector('.pillar-slots').appendChild(stone);
+
+            state.sortedCount++;
+            updateIntegrity();
+            deselectStone();
+
+            // Final completion check
+            if (state.sortedCount === state.totalToSort) triggerStressTest();
+        } else {
+            playSound('error');
+            pillar.classList.add('shake');
+            setTimeout(() => pillar.classList.remove('shake'), 400);
+        }
     }
 
     function updateIntegrity() {
-        const percent = Math.floor((state.sortedCount / state.totalToSort) * 100);
-        el.integrityScore.textContent = `${percent}%`;
+        const p = Math.floor((state.sortedCount / state.totalToSort) * 100);
+        el.integrityScore.textContent = `${p}%`;
     }
 
-    function triggerEndSequence() {
-        setTimeout(async () => {
-            // Simulate Stresstest
-            el.flash.classList.add('crash-anim');
-            playSound('crash');
+    function triggerStressTest() {
+        setTimeout(() => {
+            el.flash.classList.add('surge-anim');
+            playSound('surge');
 
             setTimeout(() => {
                 el.overlay.classList.remove('hidden');
             }, 1000);
-        }, 800);
+        }, 500);
     }
 
     init();

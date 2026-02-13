@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layer Sorter - The Skyscraper</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="layer_sorter.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="hud-label">HEIGHT</span>
+                <span class="hud-value" id="score-val">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">STABILITY</span>
+                <span class="hud-value" id="stability-val">100%</span>
+            </div>
+        </header>
+
+        <!-- Construction Site -->
+        <main class="construction-site">
+            <!-- Crane -->
+            <div id="crane-area" class="crane-area">
+                <div class="crane-hook"></div>
+                <!-- Component spawns here -->
+            </div>
+
+            <!-- Skyscraper -->
+            <div class="skyscraper">
+                <div class="layer-floor" style="border-bottom: 4px solid var(--neon-white);" data-id="presentation">
+                    <div class="layer-label">Presentation</div>
+                    <div class="blocks-container"></div>
+                </div>
+                <div class="layer-floor" data-id="business">
+                    <div class="layer-label">Business</div>
+                    <div class="blocks-container"></div>
+                </div>
+                <div class="layer-floor" data-id="data">
+                    <div class="layer-label">Data Access</div>
+                    <div class="blocks-container"></div>
+                </div>
+                <div class="layer-floor" style="background: rgba(255, 255, 255, 0.1);" data-id="infrastructure">
+                    <div class="layer-label">Infrastructure</div>
+                    <div class="blocks-container"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card" style="background: #001f3f; border: 2px solid var(--neon-blue);">
+                <h2>Construction Report</h2>
+                <div class="hud-value" style="font-size: 3rem; margin: 1rem 0; color:var(--neon-blue)" id="final-score">
+                    0</div>
+                <button id="restart-btn" class="btn-primary">New Project</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_layer_sorter.js"></script>
+</body>
+
+</html>

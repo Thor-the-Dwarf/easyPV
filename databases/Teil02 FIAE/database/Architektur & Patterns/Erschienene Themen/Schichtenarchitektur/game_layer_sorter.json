@@ -1,0 +1,115 @@
+{
+    "meta": {
+        "topic": "Layered Architecture",
+        "mechanic": "tower_builder",
+        "version": "1.0"
+    },
+    "layers": [
+        {
+            "id": "presentation",
+            "label": "PRESENTATION",
+            "color": "#03a9f4",
+            "desc": "UI & User Interaction"
+        },
+        {
+            "id": "business",
+            "label": "BUSINESS",
+            "color": "#ffeb3b",
+            "desc": "Logic & Rules"
+        },
+        {
+            "id": "data",
+            "label": "DATA ACCESS",
+            "color": "#4caf50",
+            "desc": "Persistence & Queries"
+        },
+        {
+            "id": "infrastructure",
+            "label": "INFRASTRUCTURE",
+            "color": "#f44336",
+            "desc": "Hardware & External Systems"
+        }
+    ],
+    "components": [
+        {
+            "id": "c1",
+            "label": "React Component",
+            "type": "presentation"
+        },
+        {
+            "id": "c2",
+            "label": "REST Controller",
+            "type": "presentation"
+        },
+        {
+            "id": "c3",
+            "label": "HTML Templates",
+            "type": "presentation"
+        },
+        {
+            "id": "c4",
+            "label": "ViewModel",
+            "type": "presentation"
+        },
+        {
+            "id": "c5",
+            "label": "UserService",
+            "type": "business"
+        },
+        {
+            "id": "c6",
+            "label": "TaxCalculator",
+            "type": "business"
+        },
+        {
+            "id": "c7",
+            "label": "PriceEngine",
+            "type": "business"
+        },
+        {
+            "id": "c8",
+            "label": "ValidationRule",
+            "type": "business"
+        },
+        {
+            "id": "c9",
+            "label": "UserRepository",
+            "type": "data"
+        },
+        {
+            "id": "c10",
+            "label": "SQL Query",
+            "type": "data"
+        },
+        {
+            "id": "c11",
+            "label": "Hibernate DAO",
+            "type": "data"
+        },
+        {
+            "id": "c12",
+            "label": "Entity Model",
+            "type": "data"
+        },
+        {
+            "id": "c13",
+            "label": "Postgres Driver",
+            "type": "infrastructure"
+        },
+        {
+            "id": "c14",
+            "label": "File System",
+            "type": "infrastructure"
+        },
+        {
+            "id": "c15",
+            "label": "Email Server",
+            "type": "infrastructure"
+        },
+        {
+            "id": "c16",
+            "label": "Cloud Storage",
+            "type": "infrastructure"
+        }
+    ]
+}

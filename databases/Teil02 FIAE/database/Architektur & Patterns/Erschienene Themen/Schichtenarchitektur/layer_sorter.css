@@ -1,0 +1,280 @@
+/* 
+ * Layer-Sorter - Styles
+ * Aesthetic: Blueprint / Construction / Neon
+ */
+
+:root {
+    --blueprint-bg: #001f3f;
+    --blueprint-grid: rgba(255, 255, 255, 0.1);
+    --neon-blue: #00f3ff;
+    --neon-white: #fff;
+    --layer-glass: rgba(0, 243, 255, 0.05);
+    --error-red: #ff3d00;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--blueprint-bg);
+    background-image:
+        linear-gradient(var(--blueprint-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--blueprint-grid) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #fff;
+    font-family: 'Consolas', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* --- HUD --- */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid var(--neon-blue);
+    z-index: 20;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hud-label {
+    font-size: 0.8rem;
+    color: var(--neon-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hud-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* --- Construction Site --- */
+.construction-site {
+    display: flex;
+    flex: 1;
+    padding: 2rem;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+/* Crane Area (Source) */
+.crane-area {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px dashed var(--neon-blue);
+    padding-right: 2rem;
+    position: relative;
+}
+
+.crane-hook {
+    width: 4px;
+    height: 100px;
+    background: var(--neon-white);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: sway 3s ease-in-out infinite alternate;
+}
+
+.crane-hook::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--neon-white);
+    border-radius: 50%;
+}
+
+@keyframes sway {
+    from {
+        transform: translateX(-50%) rotate(-5deg);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(5deg);
+    }
+}
+
+.component-box {
+    background: #333;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+    cursor: grab;
+    margin-top: 120px;
+    /* Below hook */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transition: transform 0.1s;
+}
+
+.component-box:active {
+    cursor: grabbing;
+}
+
+.component-box.dragging {
+    opacity: 0.5;
+}
+
+/* Skyscraper (Target) */
+.skyscraper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.skyscraper::before {
+    /* Ground */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: var(--neon-white);
+}
+
+.layer-floor {
+    height: 20%;
+    border: 2px solid var(--neon-blue);
+    background: var(--layer-glass);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.layer-floor.drag-over {
+    background: rgba(0, 243, 255, 0.2);
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.layer-label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    font-size: 0.8rem;
+    color: var(--neon-blue);
+    opacity: 0.7;
+    text-transform: uppercase;
+}
+
+.blocks-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.installed-block {
+    background: var(--neon-white);
+    color: #000;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 0 10px var(--neon-white);
+    animation: snapIn 0.3s ease-out;
+}
+
+@keyframes snapIn {
+    from {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Feedback */
+.layer-floor.error {
+    border-color: var(--error-red);
+    box-shadow: 0 0 20px var(--error-red);
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.result-screen {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 31, 63, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    text-align: center;
+}
+
+.btn-primary {
+    background: transparent;
+    color: var(--neon-blue);
+    border: 2px solid var(--neon-blue);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.hidden {
+    display: none !important;
+}

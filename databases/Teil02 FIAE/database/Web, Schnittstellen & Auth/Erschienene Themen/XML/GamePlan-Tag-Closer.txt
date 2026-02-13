@@ -1,19 +1,38 @@
-Anforderungen
-1. "Tag-Closer"
-   - Ziel: Sicherstellung der Wohlgeformtheit von XML-Dokumenten zur fehlerfreien Datenübertragung zwischen heterogenen Systemen.
-   - Spielmechanik: 
-     - Präsentation eines fehlerhaften XML-Dokuments (z.B. falsche Schachtelung, fehlende End-Tags, ungültige Zeichen).
-     - Der Spieler muss die Syntaxfehler korrigieren, um das Dokument wieder "wohlgeformt" zu machen.
-     - Validierung gegen eine DTD oder XSD zur Prüfung der inhaltlichen Korrektheit.
-     - Messbarkeit: Syntaktische Korrektheit des XML-Inhalts.
-   - Lernziel: Verständnis der XML-Regeln und Vorbereitung auf die Arbeit mit Konfigurations- und Datenaustauschformaten.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Beherrschung der XML-Syntax, Wohlgeformtheit (Well-formedness) und korrekte Verschachtelung von Elementen.
+- Game-Mechanic: "The Tag Weaver". Du bist der Hüter des Weltenspeicher-Baums. Die Informationen des Baums sind in magischen Fasern (Tags) gespeichert. Jede Faser, die du öffnest (`<tag>`), musst du auch wieder verweben (`</tag>`). Wenn du die Fasern überkreuzt (falsche Schachtelung), bricht der Zweig ab!
+- Challenge: 
+  - Level 1 (The Single Branch): Schließe einfache Tags und füge Attribute korrekt hinzu.
+  - Level 2 (The Deep Forest): Verschachtelte Baustrukturen (Parent-Child). Behalte den Überblick über die Ebenen.
+  - Level 3 (The Elder Root): Repariere ein "korrumpiertes" XML-Dokument. Finde fehlende Schlusstags und falsche Sonderzeichen (Entitäten wie `&amp;`).
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_xml_syntax.json')
-   - Fehlerhafte XML-Inhalte und Korrektur-Vorlagen.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung des Syntax-Highlighting Editors).
-- [ ] Game-Engine Logic ('game_syntax_builder.js')
-   - (Validierung der XML-Wohlgeformtheit).
-- [ ] Integration
-   - Info: Warum XML im Vergleich zu JSON oft als "geschwätzig" gilt.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Tree-Stability (%)", "Nesting-Level Display", "Syntax-Glow", "Mana (Correction-Points)".
+- [ ] Scoring: "Master-Weaver" Bonus für tiefe Verschachtelungen ohne Fehler. Abzug bei "Orphan-Tags" (Tags ohne Partner).
+
+2. Screen-Layout (The Great Tree)
+- [ ] `tree-skeleton -> code-leaves -> weaving-loom (Editor) -> validation-light`.
+- [ ] Tree-Skeleton: Eine organische Visualisierung der XML-Hierarchie, die wächst, wenn du Tags schließt.
+- [ ] Weaving-Loom: Ein Editor-Bereich, in dem die Tags farblich leuchten.
+
+3. Kernvisuals und Effekte
+- [ ] Mystic-Tech Ästhetik: Dunkler Wald, leuchtende Runen-Schrift, Naturgeräusche gemischt mit digitalen Klängen, sanfte Lichtwellen (Shared Theme kompatibel).
+- [ ] "Growth-Effect": Wenn ein Tag-Paar korrekt geschlossen wird, wächst ein kleiner Zweig am virtuellen Baum.
+- [ ] "Branch-Snap": Bei einem Verschachtelungsfehler bricht ein Zweig mit einem Knistern ab.
+
+4. Browser- und Device-Resilienz
+- [ ] `contenteditable` mit Custom-Highlighting für das Weave-Gefühl.
+- [ ] Mobile: "Swipe-to-Close" Geste.
+
+5. Content-Strategie (The Ancient Scrolls)
+- [ ] 15 XML-Dokumente: Von "RSS-Feed" bis "Technisches Konfigurations-File".
+
+6. QA-Paket
+- [ ] Test: Helfen die Einrückungen (Identation) dem Spieler, die Struktur besser zu verstehen?
+- [ ] Test: Sind die Fehlermeldungen (z.B. "Ungültiges Zeichen in Attribut") im Fantasy-Kontext trotzdem präzise?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: XML braucht absolute Präzision und Hierarchie.
+- [ ] Das Interface wirkt magisch, einladend und technisch faszinierend.
+- [ ] Fokus auf strukturierte Datenformate.

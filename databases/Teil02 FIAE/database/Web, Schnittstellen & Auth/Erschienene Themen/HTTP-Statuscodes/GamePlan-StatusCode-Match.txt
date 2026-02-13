@@ -1,19 +1,38 @@
-Anforderungen
-1. "StatusCode-Match"
-   - Ziel: Schnelle Identifikation und Interpretation von HTTP-Statuscodes zur effizienten Fehlerdiagnose und API-Nutzung.
-   - Spielmechanik: 
-     - Präsentation von Server-Antworten oder Fehlerszenarien (z.B. "Seite wurde dauerhaft verschoben", "Zugriff verweigert").
-     - Der Spieler ordnet den passenden 3-stelligen Code (z.B. 200, 301, 401, 404, 500) zu.
-     - Klassifizierung der Codes in ihre Gruppen (1xx bis 5xx).
-     - Messbarkeit: Geschwindigkeit und Korrektheit der Code-Zuordnung.
-   - Lernziel: Verständnis der Web-Semantik und fehlerfreies Handling von Server-Statusmeldungen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Korrekte Verwendung und Bedeutung der HTTP-Statuscodes (2xx, 3xx, 4xx, 5xx) in einer Client-Server-Kommunikation.
+- Game-Mechanic: "The Railway Dispatcher". Du sitzt im Stellwerk des Internet-Zentralbahnhofs. Requests kommen im Sekundentakt rein. Deine Aufgabe: Schicke sie mit dem richtigen Signal (Statuscode) wieder raus! Alles okay? -> Code 200. Ressource nicht gefunden? -> Code 404. Server explodiert? -> Code 500. Wenn du die falschen Signale gibst, stauen sich die Züge!
+- Challenge: 
+  - Level 1 (The Routine Shift): Bearbeite einfache Erfolgsmeldungen (200, 201) und Umleitungen (301).
+  - Level 2 (The Chaos Hours): Viele ungültige Anfragen (400) und fehlende Berechtigungen (401/403). Reagiere schnell!
+  - Level 3 (The System Crash): Der Backend-Server raucht ab. Nutze 5xx Codes korrekt und informiere die Züge über die Ausfallzeit (`Retry-After`).
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_http_status.json')
-   - Statuscodes, Beschreibungen und Szenarien.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung des Card-Matching Layouts).
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Wiederverwendung der Matching-Logik).
-- [ ] Integration
-   - Tutorial: Unterschied zwischen 401 (Unauthenticated) und 403 (Unauthorized).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Train-Throughput (Requests/min)", "Traffic-Light-Status", "Dispatcher-Reliability (%)".
+- [ ] Scoring: "Signal-Guru" Bonus für lange Serien korrekter Codes. Abzug bei "Confusion-Points" (z.B. 404 statt 500).
+
+2. Screen-Layout (The Signal Box)
+- [ ] `control-panel -> incoming-tracks (Requests) -> status-code-levers (Buttons) -> outgoing-horizon`.
+- [ ] Status-Code-Levers: Große, farblich gruppierte Hebel (2xx=Grün, 4xx=Gelb, 5xx=Rot).
+- [ ] Request-Bubbles: Text-Tags, die anzeigen, was der User wollte (z.B. "GET /admin").
+
+3. Kernvisuals und Effekte
+- [ ] Neo-Retro Stellwerk Ästhetik: Poliertes Messing, leuchtende Glühbirnen, Klick-Klack Geräusche, sanftes Rattern der Züge (Shared Theme kompatibel).
+- [ ] "Bulb-Glow": Wenn ein Code gewählt wird, leuchtet die entsprechende Lampe warm auf.
+- [ ] "Emergency-Siren": Bei einer 500er Welle färbt sich der Screen rot und ein Alarm ertönt.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Flexbox` für das Layout der Hebelgruppe.
+- [ ] Mobile: "Tap-the-Light" Steuerung für schnelle Reaktionen.
+
+5. Content-Strategie (The Timetable)
+- [ ] 25 verschiedene HTTP-Szenarien: Von "Zahlung erforderlich" (402) bis "I'm a teapot" (418).
+
+6. QA-Paket
+- [ ] Test: Ist die Bedeutung der Status-Klassen (Farben) auch ohne Text-Erklärung klar?
+- [ ] Test: Bleibt der Schwierigkeitsgrad durch steigende Geschwindigkeit fair?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Statuscodes sind die Kurzantworten des Webs".
+- [ ] Das Interface wirkt charmant, rasant und hochgradig interaktiv.
+- [ ] Hoher Lerneffekt für Web-Debugging.

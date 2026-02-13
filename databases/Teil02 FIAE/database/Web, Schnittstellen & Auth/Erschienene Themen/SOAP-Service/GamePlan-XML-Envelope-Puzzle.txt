@@ -1,19 +1,38 @@
-Anforderungen
-1. "XML-Envelope-Puzzle"
-   - Ziel: Verständnis der Protokoll-Struktur von SOAP-Nachrichten zur Integration in Enterprise-Umgebungen.
-   - Spielmechanik: 
-     - Der Spieler baut eine SOAP-Nachricht aus hierarchischen XML-Komponenten zusammen.
-     - Korrekte Verschachtelung von `Envelope`, `Header` und `Body`.
-     - Einbau von Namespace-Definitionen zur eindeutigen Identifikation der Dienste.
-     - Messbarkeit: XML-Wohlgeformtheit und Validität gegen die SOAP-Spezifikation.
-   - Lernziel: Beherrschung komplexer Schnittstellen-Protokolle und Fehlerbehandlung in SOAP-Faults.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der Struktur und des Protokoll-Overheads von SOAP-Webservices (Envelope, Header, Body).
+- Game-Mechanic: "The XML Express". Du bist der Lademeister an einem Güterbahnhof für Schwerlast-Daten. SOAP-Anfragen sind wie massive Stahlcontainer. Du musst die Fracht (Daten) exakt in den `Body` packen, die Sicherheitszertifikate in den `Header` legen und alles mit dem `Envelope` versiegeln. Wenn die Struktur nicht exakt dem Manifest (WSDL) entspricht, entgleist der Zug!
+- Challenge: 
+  - Level 1 (The Basic Freight): Packe eine einfache "GetInventory" Anfrage in den SOAP-Body.
+  - Level 2 (The Secure Shipment): Füge einen `Authentication-Token` in den SOAP-Header ein, um die Schranke zu öffnen.
+  - Level 3 (The Faulty Return): Das System meldet einen Fehler. Konstruiere eine `SOAP-Fault` Nachricht, damit der Absender weiß, was schiefgelaufen ist.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_soap_xml.json')
-   - XML-Fragmente und Namespace-Vorgaben.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung des hierarchischen Baukastens).
-- [ ] Game-Engine Logic ('game_syntax_builder.js')
-   - (Validierung der XML-Baumstruktur).
-- [ ] Integration
-   - Tutorial: Warum SOAP in Finanz- und Altsystemen immer noch Standard ist.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Train-Weight (XML-Size)", "Envelope-Integrity (%)", "Standard-Compliance Meter".
+- [ ] Scoring: "Protocol-Master" Bonus für fehlerfreie Verschachtelung. Abzug für "Parsing-Errors" durch falsche Namespaces.
+
+2. Screen-Layout (The Goods Depot)
+- [ ] `train-loading-dock -> xml-crane -> container-sections (Envelope/Header/Body) -> inspection-screen`.
+- [ ] Container-Sections: Drei farblich abgesetzte Bereiche, in die XML-Fragmente gezogen werden.
+- [ ] Inspection-Screen: Ein Hologramm, das die aktuelle XML-Struktur live validiert.
+
+3. Kernvisuals und Effekte
+- [ ] Industrial-Steam Ästhetik: Rostiger Stahl, Dampf-Effekte, schwere Ketten, mechanische Geräusche beim Einrasten, gelbe Warnlichter (Shared Theme kompatibel).
+- [ ] "Steam-Burst": Wenn ein XML-Tag korrekt geschlossen wird, entweicht zischend weißer Dampf.
+- [ ] "Derail-Effect": Bei einem schweren Syntaxfehler wackelt der Bildschirm und man hört Metall auf Metall quietschen.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Grid` für das Layout der Container-Sektionen.
+- [ ] Mobile: "Swipe-to-Load" Mechanik für die XML-Blöcke.
+
+5. Content-Strategie (The Manifests)
+- [ ] 12 SOAP-Szenarien: Von "Bank-Überweisung" bis "E-Government Meldedaten".
+
+6. QA-Paket
+- [ ] Test: Sind die Namespaces (`xmlns:soap="..."`) visuell als "Versiegelung" erkennbar?
+- [ ] Test: Bleibt das Gefühl der "Schwere" von SOAP im Vergleich zu REST erhalten?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: SOAP ist formelhaft, sicher und strukturell starr.
+- [ ] Das Interface wirkt wuchtig, atmosphärisch und technisch korrekt.
+- [ ] Fokus auf Enterprise-Webservices.

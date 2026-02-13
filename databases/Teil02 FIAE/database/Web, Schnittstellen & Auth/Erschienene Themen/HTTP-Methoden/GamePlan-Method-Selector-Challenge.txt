@@ -1,19 +1,38 @@
-Anforderungen
-1. "Method-Selector-Challenge"
-   - Ziel: Korrekte Auswahl und Anwendung von HTTP-Verben basierend auf der beabsichtigten Aktion an einer Ressource.
-   - Spielmechanik: 
-     - Vorgabe von CRUD-Operationen (Create, Read, Update, Delete) auf Web-Ressourcen (z.B. "Neuen Blogpost erstellen").
-     - Der Spieler wählt die passende HTTP-Methode (GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS).
-     - Bewertung der Idempotenz und Sicherheit der gewählten Methode.
-     - Messbarkeit: Korrekte Wahl der Verben für standardkonforme Web-APIs.
-   - Lernziel: Verständnis der HTTP-Semantik und Vermeidung von Fehlern im API-Design.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Beherrschung der semantisch korrekten Verwendung von HTTP-Verben (GET, POST, PUT, PATCH, DELETE, HEAD) in REST-APIs.
+- Game-Mechanic: "The Action Selector". Du bist der Kurier-Koordinator in einer riesigen Lagerhalle. Jede Aufgabe kommt mit einem Paket. Du musst entscheiden: Will der Kunde nur gucken (`GET`)? Will er etwas Neues einlagern (`POST`)? Will er ein Regal komplett ersetzen (`PUT`) oder nur eine Schraube festziehen (`PATCH`)? Wählst du das falsche Werkzeug, herrscht Chaos in der Inventur!
+- Challenge: 
+  - Level 1 (The Basic Task): Nutze `GET` zum Abrufen und `DELETE` zum Löschen von Paketen.
+  - Level 2 (The Update-Delicate): Entscheide zwischen `PUT` (Vollständiger Ersatz) und `PATCH` (Teilweises Update).
+  - Level 3 (The Safe-Guard): Nutze `HEAD`, um Informationen zu prüfen, ohne das ganze Paket auszupacken. Achte auf Idempotenz!
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_http_methods.json')
-   - Szenarien und Verhaltensregeln der Methoden.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung des Wahl-Interfaces).
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Validierung der Methoden-Eigenschaften).
-- [ ] Integration
-   - Tutorial: Warum GET niemals Daten auf dem Server ändern sollte.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "REST-Purity Score", "Idempotency-Tracker", "Warehouse-Load (Traffic)", "Semantics-Validator".
+- [ ] Scoring: "Restful-Architect" Bonus für die konsequente Vermeidung von `POST` für einfache Lese-Vorgänge. Abzug für "Semantic-Violations".
+
+2. Screen-Layout (The Logistics Center)
+- [ ] `conveyor-belt -> request-packages -> verb-stamps (GET/POST/...) -> server-storage`.
+- [ ] Verb-Stamps: Ein Set aus physisch wirkenden Stempeln, die man auf die Pakete drückt.
+- [ ] Request-Packages: Zeigen das Ziel (URL) und die Absicht (Payload) an.
+
+3. Kernvisuals und Effekte
+- [ ] Industrial-Yellow Ästhetik: Warnfarben, schwarze Streifen, schwere Stempelmaschinen, Hall-Effekte im Audio, helle Arbeitsplatzbeleuchtung (Shared Theme kompatibel).
+- [ ] "Stamp-Slam": Ein wuchtiger Sound und Screen-Shake, wenn ein Stempel gesetzt wird.
+- [ ] "Incinerator": Wenn `DELETE` gewählt wird, fällt das Paket in einen virtuellen Schredder.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Mix-Blend-Mode` für den Tinten-Effekt der Stempel.
+- [ ] Mobile: "Tap-and-Slam" Mechanik.
+
+5. Content-Strategie (The Operations)
+- [ ] 18 API-Szenarien: Von "User-Profil anpassen" bis "Dateien-Metadaten prüfen".
+
+6. QA-Paket
+- [ ] Test: Wird das Konzept der Idempotenz (Mehrmals drücken = gleiches Ergebnis) spielerisch klar?
+- [ ] Test: Sind die Unterschiede zwischen `PUT` und `PATCH` in der Praxis-Demo erkennbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Das Verb beschreibt die Tat".
+- [ ] Das Interface wirkt strukturiert, robust und pragmatisch.
+- [ ] Fokus auf sauberes API-Design.

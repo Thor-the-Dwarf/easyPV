@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Chaos Engineer - Failover Simulator</title>
+  <link rel="stylesheet" href="./failover_simulator.css">
+</head>
+<body class="failover-page">
+<main class="control-room" id="control-room">
+  <header class="hud-panel">
+    <div class="hud-title-wrap">
+      <p class="overline">Mission Control</p>
+      <h1>The Chaos Engineer</h1>
+      <p class="subtitle">Stoppe Ausfaelle, halte den SLA von 99.99% und entscheide richtig beim Failover.</p>
+    </div>
+    <div class="hud-grid">
+      <div class="kpi"><span>Szenario</span><strong id="kpi-round">0/10</strong></div>
+      <div class="kpi"><span>Score</span><strong id="kpi-score">0</strong></div>
+      <div class="kpi"><span>Uptime</span><strong id="kpi-uptime">0.0s</strong></div>
+      <div class="kpi"><span>SLA</span><strong id="kpi-sla">100.00%</strong></div>
+      <div class="kpi"><span>RTO</span><strong id="kpi-rto">0.0s</strong></div>
+      <div class="kpi"><span>Treffer</span><strong id="kpi-hits">0</strong></div>
+    </div>
+  </header>
+
+  <section class="system-map-panel" aria-label="System map">
+    <div class="panel-head">
+      <h2>System Map</h2>
+      <p id="scenario-meta">Bereit fuer den Einsatz.</p>
+    </div>
+    <div id="system-map" class="system-map"></div>
+    <div class="health-row">
+      <div class="health-label">System-Health</div>
+      <div class="health-track"><div id="health-fill" class="health-fill"></div></div>
+      <strong id="health-value">100%</strong>
+    </div>
+    <canvas id="health-graph" width="520" height="110" aria-label="Health-Verlauf"></canvas>
+  </section>
+
+  <section class="emergency-console" aria-label="Emergency console">
+    <div class="panel-head">
+      <h2>Emergency Console</h2>
+      <p>Links: manuelle Gegenmassnahmen. Rechts: automatische Failover-Logik.</p>
+    </div>
+
+    <div class="console-grid">
+      <div class="hand-panel left" id="manual-actions"></div>
+      <div class="dial-wrap">
+        <label for="automation-dial">Auto-Level <span id="dial-value">50%</span></label>
+        <input type="range" id="automation-dial" min="0" max="100" step="5" value="50">
+        <button id="start-btn" class="primary" type="button">Mission starten</button>
+        <button id="next-btn" class="primary hidden" type="button">Naechstes Szenario</button>
+        <button id="restart-btn" class="ghost hidden" type="button">Neu starten</button>
+      </div>
+      <div class="hand-panel right" id="auto-actions"></div>
+    </div>
+  </section>
+
+  <section class="diagnostic-feed" aria-label="Diagnostic feed">
+    <div class="panel-head">
+      <h2>Diagnostic Feed</h2>
+      <p id="result-banner">Warte auf Startsignal.</p>
+    </div>
+    <ul id="feed-list"></ul>
+  </section>
+</main>
+
+<script src="./game_failover_simulator.js" defer></script>
+</body>
+</html>

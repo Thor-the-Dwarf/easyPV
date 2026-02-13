@@ -1,19 +1,38 @@
-Anforderungen
-1. "OAuth-Flow-Sequence"
-   - Ziel: Verständnis des komplexen Ablaufs einer delegierten Autorisierung zur sicheren Integration von Drittanbieter-Identitäten.
-   - Spielmechanik: 
-     - Der Spieler muss die Phasen des OAuth 2.0 Flows (z.B. Authorization Code Flow) in die richtige zeitliche Reihenfolge bringen.
-     - Zuordnung von Begriffen wie "Access Token", "Refresh Token", "Scope" und "Callback-URL" zu den passenden Schritten.
-     - Simulation des Token-Austauschs zwischen Client, Authorization Server und Resource Server.
-     - Messbarkeit: Korrektheit der Prozesskette.
-   - Lernziel: Sichere Implementierung von "Login with..." Funktionalitäten.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis des OAuth 2.0 Flows zur sicheren Autorisierung von Drittanbieter-Anwendungen.
+- Game-Mechanic: "The Digital Passport". Du bist der Grenzbeamter in der Republik "Webia". Eine App will auf die VIP-Lounge (User Daten) zugreifen. Du musst den Prozess überwachen: App fragt User -> User gibt Erlaubnis -> Du stellst einen Passierschein (Auth Code) aus -> App tauscht Passierschein gegen ein Visum (Access Token). Wenn der Flow unterbrochen wird, bleibt die Tür zu!
+- Challenge: 
+  - Level 1 (The Standard Entry): Begleite den Authorization-Code-Flow Schritt für Schritt.
+  - Level 2 (The Expired Visa): Das Visum (Token) ist abgelaufen. Nutze das "Refresh-Token", um ein neues zu besorgen, ohne den User erneut zu fragen.
+  - Level 3 (The Imposter): Ein Hacker versucht, mit einem gefälschten Passierschein (`State` Parameter fehlt) einzudringen. Blocke den Zugriff!
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_oauth_steps.json')
-   - Protokoll-Phasen und Token-Definitionen.
-- [ ] Shared CSS Check ('web_apis.css')
-   - Sequenzdiagramm-Visualisierung.
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Reihenfolge-Validierung).
-- [ ] Integration
-   - Tutorial: Warum man niemals Access Tokens in der URL übertragen sollte.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Security-Level", "Token-Expiration-Timer", "Flow-Progress-Bar", "Identity-Validated Checkbox".
+- [ ] Scoring: "Safety-First" Bonus für die korrekte Nutzung des `State`-Parameters. Abzug für "Token-Leaks" in der URL.
+
+2. Screen-Layout (The Border Post)
+- [ ] `check-point -> the-app (Client) -> the-user (Resource Owner) -> the-server (Auth Server) -> data-vault`.
+- [ ] Check-Point: Hier ziehst du die Token und Codes zwischen den Beteiligten hin und her.
+- [ ] The-Server: Ein imposanter Tower, der die Token generiert.
+
+3. Kernvisuals und Effekte
+- [ ] Cyber-Diplomacy Ästhetik: Dunkelblau, Glas-Optik, digitale Stempel, Laser-Scanner, elektronische Pass-Sounds (Shared Theme kompatibel).
+- [ ] "Stamp-Effect": Wenn ein Code/Token akzeptiert wird, erscheint ein grüner "APPROVED" Stempel auf dem Screen.
+- [ ] "Scanner-Beam": Ein Laser scannt das Token auf seine Gültigkeit.
+
+4. Browser- und Device-Resilienz
+- [ ] `Canvas API` für die Linienverläufe des Flows zwischen den Akteuren.
+- [ ] Mobile: "Drag-and-Drop" der Dokumente (Codes/Tokens).
+
+5. Content-Strategie (The Visas)
+- [ ] 10 OAuth-Szenarien: Von "Login with GitHub" bis "Smart Home Access".
+
+6. QA-Paket
+- [ ] Test: Ist die Rollenverteilung (Client vs. Server vs. User) zu jedem Zeitpunkt klar?
+- [ ] Test: Wird die Bedeutung des Scopes ("Was darf die App?") visuell deutlich?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: OAuth ist kein Login, sondern eine Berechtigung.
+- [ ] Das Interface wirkt sicher, modern und hochgradig professionell.
+- [ ] Fokus auf moderne Web-Sicherheit.

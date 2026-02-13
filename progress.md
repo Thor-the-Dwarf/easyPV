@@ -38,3 +38,9 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Simplified Make-or-Buy-Waage UI drastically: removed overloaded panels/ticker, kept only core KPIs, scale, factor card, and minimal actions.
 - Removed Next button flow; after each decision feedback is shown for 5 seconds, then the next factor is loaded automatically.
 - Added explicit on-screen usage explanation and preserved drag + click + keyboard controls.
+- Original prompt (current turn): Stil aus Machbarkeitsanalyse/Projektmanagement uebernehmen und GamePlan-Moderations-Master umsetzen.
+- Implemented Workshop game in intentionally simple/intuitive style: game_moderations_master.html/.js/.json and moderations_master.css.
+- Added 15 moderation techniques and 15 rounds across 3 challenge phases (Morning Session, Post-Lunch Dip, Executive Heat).
+- Kept UI minimal and friendly: single scenario card, few method buttons, concise KPIs, direct feedback, auto-next after decision.
+- Added scoring with Flow-State bonus and Method-Boredom penalty, plus render_game_to_text and advanceTime hooks.
+- Smoke tested via Playwright: active round + visual layout validated.

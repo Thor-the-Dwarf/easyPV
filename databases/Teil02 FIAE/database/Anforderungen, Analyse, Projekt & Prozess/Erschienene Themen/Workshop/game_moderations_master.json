@@ -1,0 +1,39 @@
+{
+  "title": "Moderations Master",
+  "methods": [
+    {"id":"icebreaker","label":"Icebreaker","desc":"Locker ins Thema starten"},
+    {"id":"checkin","label":"Check-in Runde","desc":"Alle kurz abholen"},
+    {"id":"brainstorming","label":"Brainstorming","desc":"Ideen breit sammeln"},
+    {"id":"worldcafe","label":"World Cafe","desc":"In Kleingruppen rotieren"},
+    {"id":"mindmap","label":"Mindmap","desc":"Gedanken strukturieren"},
+    {"id":"dotvoting","label":"Dot-Voting","desc":"Prioritaeten sichtbar machen"},
+    {"id":"impacteffort","label":"Impact/Effort","desc":"Schnell priorisieren"},
+    {"id":"fishbowl","label":"Fishbowl","desc":"Konflikte moderiert diskutieren"},
+    {"id":"fivewhy","label":"5-Why","desc":"Ursachen tief verstehen"},
+    {"id":"energizer","label":"Energizer","desc":"Energie im Raum heben"},
+    {"id":"silentwriting","label":"Silent Writing","desc":"Leise fokussieren"},
+    {"id":"retromad","label":"Mad-Sad-Glad","desc":"Stimmungen reflektieren"},
+    {"id":"parkinglot","label":"Parking Lot","desc":"Nebenthemen sauber parken"},
+    {"id":"fisttofive","label":"Fist-to-Five","desc":"Schnellen Konsens messen"},
+    {"id":"roundrobin","label":"Round Robin","desc":"Jede Stimme gleich gewichten"}
+  ],
+  "rounds": [
+    {"id":"r1","level":1,"vibe":"Morning Session","title":"Start in den Tag","desc":"Die Gruppe kennt sich kaum und ist noch reserviert.","energy":58,"quality":52,"time_cost":6,"best":"icebreaker","good":["checkin","roundrobin"],"options":["icebreaker","brainstorming","dotvoting","checkin"]},
+    {"id":"r2","level":1,"vibe":"Morning Session","title":"Thema oeffnen","desc":"Erste Ideen sollen ohne Bewertung gesammelt werden.","energy":63,"quality":55,"time_cost":7,"best":"brainstorming","good":["mindmap","worldcafe"],"options":["brainstorming","dotvoting","mindmap","fisttofive"]},
+    {"id":"r3","level":1,"vibe":"Morning Session","title":"Gleiche Redeanteile","desc":"Zwei dominante Stimmen uebernehmen den Raum.","energy":60,"quality":57,"time_cost":6,"best":"roundrobin","good":["checkin","silentwriting"],"options":["roundrobin","fishbowl","dotvoting","checkin"]},
+    {"id":"r4","level":1,"vibe":"Morning Session","title":"Viele lose Themen","desc":"Die Wand ist voll mit Ideen, aber ohne Struktur.","energy":62,"quality":54,"time_cost":8,"best":"mindmap","good":["impacteffort","parkinglot"],"options":["mindmap","dotvoting","parkinglot","fivewhy"]},
+    {"id":"r5","level":1,"vibe":"Morning Session","title":"Erste Priorisierung","desc":"Das Team moechte schnell Top-3 Themen sehen.","energy":64,"quality":60,"time_cost":7,"best":"dotvoting","good":["impacteffort","fisttofive"],"options":["dotvoting","worldcafe","impacteffort","icebreaker"]},
+
+    {"id":"r6","level":2,"vibe":"Post-Lunch Dip","title":"Energie-Knick","desc":"Nach dem Essen sind alle deutlich ruhiger.","energy":42,"quality":61,"time_cost":6,"best":"energizer","good":["checkin","silentwriting"],"options":["energizer","dotvoting","fivewhy","impacteffort"]},
+    {"id":"r7","level":2,"vibe":"Post-Lunch Dip","title":"Zu viele offene Enden","desc":"Diskussion springt dauernd zu Nebenthemen.","energy":48,"quality":58,"time_cost":7,"best":"parkinglot","good":["fisttofive","impacteffort"],"options":["parkinglot","brainstorming","fishbowl","dotvoting"]},
+    {"id":"r8","level":2,"vibe":"Post-Lunch Dip","title":"Root Cause gesucht","desc":"Ein Problem taucht zum dritten Mal auf.","energy":50,"quality":56,"time_cost":8,"best":"fivewhy","good":["mindmap","retromad"],"options":["fivewhy","energizer","dotvoting","mindmap"]},
+    {"id":"r9","level":2,"vibe":"Post-Lunch Dip","title":"Ideen stagnieren","desc":"Niemand sagt mehr etwas Neues.","energy":44,"quality":57,"time_cost":7,"best":"worldcafe","good":["brainstorming","energizer"],"options":["worldcafe","dotvoting","fisttofive","retromad"]},
+    {"id":"r10","level":2,"vibe":"Post-Lunch Dip","title":"Schneller Konsens-Check","desc":"Du brauchst ein belastbares Stimmungsbild in 2 Minuten.","energy":46,"quality":63,"time_cost":5,"best":"fisttofive","good":["dotvoting","checkin"],"options":["fisttofive","fivewhy","brainstorming","fishbowl"]},
+
+    {"id":"r11","level":3,"vibe":"Executive Heat","title":"Konflikt im Raum","desc":"Zwei Stakeholder blockieren sich offen.","energy":55,"quality":48,"time_cost":8,"best":"fishbowl","good":["roundrobin","retromad"],"options":["fishbowl","dotvoting","mindmap","icebreaker"]},
+    {"id":"r12","level":3,"vibe":"Executive Heat","title":"Emotionen steigen","desc":"Frust ueber alte Entscheidungen kippt die Stimmung.","energy":49,"quality":46,"time_cost":7,"best":"retromad","good":["checkin","fishbowl"],"options":["retromad","impacteffort","fisttofive","brainstorming"]},
+    {"id":"r13","level":3,"vibe":"Executive Heat","title":"Entscheidung unter Zeitdruck","desc":"Management braucht sofort eine klare Reihenfolge.","energy":52,"quality":51,"time_cost":6,"best":"impacteffort","good":["dotvoting","fisttofive"],"options":["impacteffort","worldcafe","icebreaker","fivewhy"]},
+    {"id":"r14","level":3,"vibe":"Executive Heat","title":"Stille im Konflikt","desc":"Niemand will als erstes Position beziehen.","energy":47,"quality":49,"time_cost":7,"best":"silentwriting","good":["roundrobin","checkin"],"options":["silentwriting","fishbowl","dotvoting","energizer"]},
+    {"id":"r15","level":3,"vibe":"Executive Heat","title":"Abschluss sichern","desc":"Zum Ende braucht es tragfaehige Commitments.","energy":58,"quality":62,"time_cost":6,"best":"fisttofive","good":["dotvoting","roundrobin"],"options":["fisttofive","brainstorming","parkinglot","icebreaker"]}
+  ]
+}

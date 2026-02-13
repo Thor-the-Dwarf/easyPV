@@ -1,0 +1,141 @@
+:root {
+  --bg: #f4f7fb;
+  --panel: #ffffff;
+  --line: #d9e4f2;
+  --text: #152338;
+  --muted: #4f647f;
+  --ok: #1d9f53;
+  --bad: #c73545;
+}
+
+* { box-sizing: border-box; }
+
+body.mm-page {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+}
+
+.mm-app {
+  width: min(920px, calc(100% - 20px));
+  margin: 12px auto 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.mm-head,
+.room,
+.result {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.mm-head h1 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.8vw, 1.9rem);
+}
+
+.mm-head p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.mm-kpis {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+}
+
+.kpi {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 7px 8px;
+}
+
+.kpi span {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.scenario {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+  background: #fbfdff;
+}
+
+.vibe {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #2f5d9a;
+  font-weight: 700;
+}
+
+.scenario h2 {
+  margin: 4px 0 6px;
+  font-size: 1.18rem;
+}
+
+.scenario p {
+  margin: 0;
+  line-height: 1.35;
+}
+
+.method-grid {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
+}
+
+.method-btn {
+  min-height: 58px;
+  border: 1px solid #cddcf0;
+  border-radius: 10px;
+  background: #f8fbff;
+  color: #10243b;
+  cursor: pointer;
+  text-align: left;
+  padding: 8px 10px;
+  font-weight: 700;
+}
+
+.method-btn small {
+  display: block;
+  margin-top: 3px;
+  color: #4b6482;
+  font-weight: 500;
+}
+
+.feedback {
+  margin: 10px 0 0;
+  min-height: 1.5em;
+  font-weight: 600;
+}
+
+.feedback.ok { color: var(--ok); }
+.feedback.bad { color: var(--bad); }
+
+.hidden { display: none; }
+
+.restart {
+  min-height: 42px;
+  border: 0;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #dbe8f7;
+  color: #1a2c45;
+}
+
+@media (max-width: 760px) {
+  .mm-kpis { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+  .method-grid { grid-template-columns: 1fr; }
+}

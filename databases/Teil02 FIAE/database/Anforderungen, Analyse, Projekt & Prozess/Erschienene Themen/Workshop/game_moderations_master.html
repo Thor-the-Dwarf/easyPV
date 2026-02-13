@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moderations Master</title>
+  <link rel="stylesheet" href="./moderations_master.css">
+</head>
+<body class="mm-page">
+<main class="mm-app">
+  <header class="mm-head">
+    <h1>Moderations Master</h1>
+    <p>Waehle pro Situation die passende Methode. Das Team reagiert sofort.</p>
+    <div class="mm-kpis">
+      <div class="kpi"><span>Level</span><strong id="kpi-level">1</strong></div>
+      <div class="kpi"><span>Group-Energy</span><strong id="kpi-energy">70%</strong></div>
+      <div class="kpi"><span>Result-Quality</span><strong id="kpi-quality">★★★☆☆</strong></div>
+      <div class="kpi"><span>Agenda-Time</span><strong id="kpi-time">90 min</strong></div>
+      <div class="kpi"><span>Score</span><strong id="kpi-score">0</strong></div>
+      <div class="kpi"><span>Runde</span><strong id="kpi-round">1/15</strong></div>
+    </div>
+  </header>
+
+  <section class="room">
+    <article class="scenario">
+      <p id="vibe" class="vibe">Morning Session</p>
+      <h2 id="title">Workshop startet</h2>
+      <p id="desc">Die Gruppe wartet auf deinen ersten Moderationsimpuls.</p>
+    </article>
+
+    <section id="method-grid" class="method-grid" aria-label="Methoden"></section>
+
+    <p id="feedback" class="feedback">Waehle eine Methode, um den Raum zu steuern.</p>
+  </section>
+
+  <section id="result" class="result hidden">
+    <h2>Workshop beendet</h2>
+    <p id="result-text"></p>
+    <button id="restart-btn" class="restart" type="button">Neustart</button>
+  </section>
+</main>
+
+<script src="./game_moderations_master.js" defer></script>
+</body>
+</html>

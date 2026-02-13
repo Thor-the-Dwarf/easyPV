@@ -11,6 +11,7 @@
       <div id="drawer-backdrop" class="drawer-backdrop"></div>
 
       <aside class="drawer" id="tree-drawer">
+        <div id="drawer-resizer" class="drawer-resizer" aria-hidden="true"></div>
         <header class="drawer-header">
           <div class="drawer-title" id="drawer-title">DATABASE</div>
         </header>
@@ -45,16 +46,20 @@
         const THEME_KEY = 'globalTheme_v1';
         const DRAWER_KEY = 'spaDrawerOpen_v1';
         const OPENED_KEY = 'spaOpenedFolders_v1';
+        const DRAWER_WIDTH_KEY = 'spaDrawerWidth_v1';
 
         const appView = document.getElementById('app-view');
         const menuBtn = document.getElementById('menu-tree-btn');
         const themeToggleBtn = document.getElementById('theme-toggle-app');
         const drawerBackdrop = document.getElementById('drawer-backdrop');
+        const treeDrawer = document.getElementById('tree-drawer');
+        const drawerResizer = document.getElementById('drawer-resizer');
         const drawerTitleEl = document.getElementById('drawer-title');
         const treeRootEl = document.getElementById('tree-root');
 
         let drawerOpen = false;
         let openedFolderIds = [];
+        let drawerWidth = 360;
         let rootTree = [];
 
         init();
@@ -67,6 +72,8 @@
           menuBtn.addEventListener('click', toggleDrawer);
           drawerBackdrop.addEventListener('click', () => setDrawer(false));
           themeToggleBtn.addEventListener('click', toggleTheme);
+          initResizer();
+          applyDrawerWidth();
 
           initIndex();
         }
@@ -81,11 +88,17 @@
           } catch (_) {
             openedFolderIds = [];
           }
+
+          const rawWidth = Number(localStorage.getItem(DRAWER_WIDTH_KEY));
+          if (!Number.isNaN(rawWidth) && rawWidth > 0) {
+            drawerWidth = rawWidth;
+          }
         }
 
         function saveState() {
           localStorage.setItem(DRAWER_KEY, drawerOpen ? '1' : '0');
           localStorage.setItem(OPENED_KEY, JSON.stringify(openedFolderIds));
+          localStorage.setItem(DRAWER_WIDTH_KEY, String(drawerWidth));
         }
 
         function toggleDrawer() {
@@ -102,6 +115,47 @@
           appView.classList.toggle('tree-open', drawerOpen);
           menuBtn.classList.toggle('active', drawerOpen);
           drawerBackdrop.classList.toggle('active', drawerOpen);
+        }
+
+        function clampDrawerWidth(width) {
+          const min = 240;
+          const max = Math.min(window.innerWidth * 0.88, 720);
+          return Math.max(min, Math.min(max, width));
+        }
+
+        function applyDrawerWidth() {
+          drawerWidth = clampDrawerWidth(drawerWidth);
+          treeDrawer.style.setProperty('--drawer-width', drawerWidth + 'px');
+        }
+
+        function initResizer() {
+          if (!drawerResizer) return;
+
+          let isResizing = false;
+
+          drawerResizer.addEventListener('mousedown', () => {
+            isResizing = true;
+            drawerResizer.classList.add('resizing');
+            document.body.style.userSelect = 'none';
+            document.body.style.cursor = 'col-resize';
+          });
+
+          window.addEventListener('mousemove', (event) => {
+            if (!isResizing) return;
+            drawerWidth = clampDrawerWidth(event.clientX);
+            applyDrawerWidth();
+          });
+
+          window.addEventListener('mouseup', () => {
+            if (!isResizing) return;
+            isResizing = false;
+            drawerResizer.classList.remove('resizing');
+            document.body.style.userSelect = '';
+            document.body.style.cursor = '';
+            saveState();
+          });
+
+          window.addEventListener('resize', applyDrawerWidth);
         }
 
         function initTheme() {
@@ -134,7 +188,7 @@
             if (!response.ok) throw new Error('index.json konnte nicht geladen werden');
 
             const payload = await response.json();
-            rootTree = Array.isArray(payload.tree) ? payload.tree : [];
+            rootTree = normalizeTree(Array.isArray(payload.tree) ? payload.tree : []);
             drawerTitleEl.textContent = String(payload.rootName || 'DATABASE').toUpperCase();
 
             treeRootEl.innerHTML = '';
@@ -145,6 +199,31 @@
               escapeHtml(error.message) +
               '</div>';
           }
+        }
+
+        function normalizeTree(nodes) {
+          const normalized = [];
+
+          (Array.isArray(nodes) ? nodes : []).forEach((node) => {
+            if (!node || !node.isFolder) return;
+
+            const children = normalizeTree(Array.isArray(node.children) ? node.children : []);
+            const clone = {
+              id: node.id,
+              name: node.name,
+              isFolder: true,
+              children: children
+            };
+
+            if (String(clone.name).toLowerCase() === 'database') {
+              normalized.push.apply(normalized, clone.children);
+              return;
+            }
+
+            normalized.push(clone);
+          });
+
+          return normalized;
         }
 
         function buildTree(container, nodes, level) {
@@ -162,21 +241,27 @@
             row.className = 'tree-row';
             row.style.setProperty('--level', level);
 
-            const toggleBtn = document.createElement('button');
-            toggleBtn.className = 'tree-toggle';
-            toggleBtn.type = 'button';
-            toggleBtn.textContent = isCollapsed ? '▸' : '▾';
-            toggleBtn.setAttribute('aria-label', 'Ordner auf- oder zuklappen');
-            toggleBtn.addEventListener('click', (event) => {
-              event.stopPropagation();
-              toggleNode(rowNode, node.id, toggleBtn);
-            });
-            row.appendChild(toggleBtn);
+            const iconButton = document.createElement('button');
+            iconButton.className = 'tree-icon-button';
+            iconButton.type = 'button';
+            const hasChildren = Array.isArray(node.children) && node.children.length > 0;
+            if (hasChildren) {
+              iconButton.classList.add('is-toggleable');
+              iconButton.setAttribute('aria-label', 'Ordner auf- oder zuklappen');
+              iconButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                toggleNode(rowNode, node.id, iconButton);
+              });
+            } else {
+              iconButton.setAttribute('aria-hidden', 'true');
+              iconButton.tabIndex = -1;
+            }
 
             const icon = document.createElement('span');
             icon.className = 'tree-icon';
             icon.textContent = isCollapsed ? '📁' : '📂';
-            row.appendChild(icon);
+            iconButton.appendChild(icon);
+            row.appendChild(iconButton);
 
             const label = document.createElement('button');
             label.className = 'tree-label';
@@ -202,19 +287,17 @@
           });
         }
 
-        function toggleNode(rowNode, id, toggleBtn) {
+        function toggleNode(rowNode, id, iconButton) {
           const idx = openedFolderIds.indexOf(id);
           if (idx >= 0) {
             openedFolderIds.splice(idx, 1);
             rowNode.classList.add('tree-node--collapsed');
-            toggleBtn.textContent = '▸';
           } else {
             openedFolderIds.push(id);
             rowNode.classList.remove('tree-node--collapsed');
-            toggleBtn.textContent = '▾';
           }
 
-          const icon = rowNode.querySelector('.tree-icon');
+          const icon = iconButton && iconButton.querySelector('.tree-icon');
           if (icon) {
             icon.textContent = openedFolderIds.includes(id) ? '📂' : '📁';
           }

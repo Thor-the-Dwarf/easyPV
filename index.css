@@ -369,6 +369,37 @@ body::after {
 .main-surface {
   min-height: 100vh;
   padding-top: 64px;
+  padding-inline: 1rem;
+  padding-bottom: 1rem;
+}
+
+.content-host {
+  margin: 0.9rem auto 0;
+  max-width: 1200px;
+  min-height: calc(100vh - 90px);
+  border-radius: 18px;
+  border: 1px solid hsl(var(--primary) / 0.35);
+  background: hsl(var(--bg-surface) / 0.34);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.38), 0 0 22px hsl(var(--primary) / 0.16);
+  overflow: hidden;
+}
+
+.content-placeholder {
+  min-height: calc(100vh - 90px);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  text-align: center;
+  color: hsl(var(--txt-muted));
+  font-size: 1rem;
+}
+
+.content-frame {
+  width: 100%;
+  height: calc(100vh - 90px);
+  border: none;
 }
 
 @keyframes topbar-sheen {
@@ -397,6 +428,18 @@ body::after {
   .drawer {
     width: min(100vw, var(--drawer-width, 100vw));
     min-width: 100vw;
+  }
+
+  .main-surface {
+    padding-inline: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .content-host,
+  .content-placeholder,
+  .content-frame {
+    min-height: calc(100vh - 76px);
+    height: calc(100vh - 76px);
   }
 
   .drawer-resizer {

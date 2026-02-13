@@ -36,6 +36,9 @@
           <div class="top-bar-title">Die Wiederholung ist die Mutter des Lernens</div>
           <button id="theme-toggle-app" class="theme-toggle-btn" type="button" aria-label="Theme wechseln">🌙</button>
         </header>
+        <section id="content-host" class="content-host" aria-live="polite">
+          <div class="content-placeholder">Wähle eine Datei im FolderTree, um den C-Suite-Prototyp zu laden.</div>
+        </section>
       </main>
     </div>
 
@@ -56,6 +59,7 @@
         const drawerResizer = document.getElementById('drawer-resizer');
         const drawerTitleEl = document.getElementById('drawer-title');
         const treeRootEl = document.getElementById('tree-root');
+        const contentHost = document.getElementById('content-host');
 
         let drawerOpen = false;
         let openedFolderIds = [];
@@ -202,27 +206,35 @@
         }
 
         function normalizeTree(nodes) {
-          const normalized = [];
+          const folders = [];
+          const files = [];
           const dedupeMap = new Map();
 
           (Array.isArray(nodes) ? nodes : []).forEach((node) => {
-            if (!node || !node.isFolder) return;
+            if (!node) return;
 
-            const entries = normalizeNode(node);
-            entries.forEach((entry) => {
-              const key = canonicalName(entry.name);
-              if (!dedupeMap.has(key)) {
-                dedupeMap.set(key, entry);
-                normalized.push(entry);
-                return;
-              }
+            if (node.isFolder) {
+              const entries = normalizeNode(node);
+              entries.forEach((entry) => {
+                const key = canonicalName(entry.name);
+                if (!dedupeMap.has(key)) {
+                  dedupeMap.set(key, entry);
+                  folders.push(entry);
+                  return;
+                }
 
-              const existing = dedupeMap.get(key);
-              existing.children = mergeChildren(existing.children, entry.children);
-            });
+                const existing = dedupeMap.get(key);
+                existing.children = mergeChildren(existing.children, entry.children);
+              });
+              return;
+            }
+
+            const fileNode = normalizeFileNode(node);
+            if (fileNode) files.push(fileNode);
           });
 
-          return normalized;
+          files.sort((a, b) => a.name.localeCompare(b.name, 'de', { sensitivity: 'base' }));
+          return folders.concat(files);
         }
 
         function normalizeNode(node) {
@@ -257,6 +269,21 @@
           // "Code-Qualit" -> "u00e4t " -> "u0026 Wartbarkeit".
           collapseNameFragments(normalizedNode);
           return [normalizedNode];
+        }
+
+        function normalizeFileNode(node) {
+          const rawName = String(node.name || '');
+          const cleanedName = decodeLegacyName(rawName);
+          if (!cleanedName) return null;
+          if (isLegacyArtifact(rawName, cleanedName)) return null;
+
+          return {
+            id: node.id || ('file_' + cleanedName.toLowerCase().replace(/[^a-z0-9_-]+/g, '_')),
+            name: cleanedName,
+            isFolder: false,
+            kind: node.kind || '',
+            relPath: node.relPath || ''
+          };
         }
 
         function collapseNameFragments(node) {
@@ -343,14 +370,17 @@
 
         function buildTree(container, nodes, level) {
           nodes.forEach((node) => {
-            if (!node || !node.isFolder) return;
+            if (!node) return;
 
             const rowNode = document.createElement('div');
             rowNode.className = 'tree-node';
             rowNode.dataset.id = node.id;
+            rowNode.dataset.folder = node.isFolder ? '1' : '0';
 
-            const isCollapsed = !openedFolderIds.includes(node.id);
+            const hasChildren = node.isFolder && Array.isArray(node.children) && node.children.length > 0;
+            const isCollapsed = node.isFolder ? !openedFolderIds.includes(node.id) : false;
             rowNode.classList.toggle('tree-node--collapsed', isCollapsed);
+            rowNode.classList.toggle('tree-node--file', !node.isFolder);
 
             const row = document.createElement('div');
             row.className = 'tree-row';
@@ -359,8 +389,7 @@
             const iconButton = document.createElement('button');
             iconButton.className = 'tree-icon-button';
             iconButton.type = 'button';
-            const hasChildren = Array.isArray(node.children) && node.children.length > 0;
-            if (hasChildren) {
+            if (node.isFolder && hasChildren) {
               iconButton.classList.add('is-toggleable');
               iconButton.setAttribute('aria-label', 'Ordner auf- oder zuklappen');
               iconButton.addEventListener('click', (event) => {
@@ -374,7 +403,7 @@
 
             const icon = document.createElement('span');
             icon.className = 'tree-icon';
-            icon.textContent = folderEmoji(hasChildren, isCollapsed);
+            icon.textContent = node.isFolder ? folderEmoji(node, isCollapsed) : fileEmoji(node);
             iconButton.appendChild(icon);
             row.appendChild(iconButton);
 
@@ -386,17 +415,22 @@
             label.addEventListener('click', (event) => {
               event.preventDefault();
               event.stopPropagation();
+              if (!node.isFolder) {
+                openFileNode(node);
+              }
             });
             row.appendChild(label);
 
             rowNode.appendChild(row);
 
-            const childContainer = document.createElement('div');
-            childContainer.className = 'tree-children';
-            if (Array.isArray(node.children) && node.children.length > 0) {
-              buildTree(childContainer, node.children, level + 1);
+            if (node.isFolder) {
+              const childContainer = document.createElement('div');
+              childContainer.className = 'tree-children';
+              if (Array.isArray(node.children) && node.children.length > 0) {
+                buildTree(childContainer, node.children, level + 1);
+              }
+              rowNode.appendChild(childContainer);
             }
-            rowNode.appendChild(childContainer);
 
             container.appendChild(rowNode);
           });
@@ -414,15 +448,47 @@
 
           const icon = iconButton && iconButton.querySelector('.tree-icon');
           if (icon) {
-            icon.textContent = folderEmoji(true, !openedFolderIds.includes(id));
+            const node = findNodeById(rootTree, id);
+            icon.textContent = folderEmoji(node || { isFolder: true, children: [] }, !openedFolderIds.includes(id));
           }
 
           saveState();
         }
 
-        function folderEmoji(hasChildren, isCollapsed) {
-          if (!hasChildren) return '🎮';
+        function folderEmoji(node, isCollapsed) {
+          const children = Array.isArray(node.children) ? node.children : [];
+          const hasFolderChild = children.some((child) => child && child.isFolder);
+          if (!hasFolderChild) return '🎮';
           return isCollapsed ? '📁' : '📂';
+        }
+
+        function fileEmoji(node) {
+          const name = String(node.name || '').toLowerCase();
+          if (name.endsWith('.json')) return '🧾';
+          if (name.endsWith('.html')) return '🌐';
+          if (name.endsWith('.js')) return '🧠';
+          if (name.endsWith('.css')) return '🎨';
+          return '📄';
+        }
+
+        function findNodeById(nodes, id) {
+          for (let i = 0; i < nodes.length; i += 1) {
+            const node = nodes[i];
+            if (node.id === id) return node;
+            if (node.isFolder && Array.isArray(node.children)) {
+              const found = findNodeById(node.children, id);
+              if (found) return found;
+            }
+          }
+          return null;
+        }
+
+        function openFileNode(node) {
+          if (!contentHost) return;
+          const fileLabel = node && node.name ? node.name : 'Datei';
+          const src = './generic_pages/generic_c_suite/generic_c_suite.html?file=' + encodeURIComponent(fileLabel);
+          contentHost.innerHTML =
+            '<iframe class=\"content-frame\" src=\"' + src + '\" title=\"C-Suite Prototyp\" loading=\"eager\"></iframe>';
         }
 
         function escapeHtml(value) {

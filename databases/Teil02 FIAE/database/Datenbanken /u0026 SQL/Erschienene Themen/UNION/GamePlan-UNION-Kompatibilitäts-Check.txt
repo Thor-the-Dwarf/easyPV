@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Kombination von Ergebnismengen aus verschiedenen Abfragen mittels UNION und UNION ALL, unter Berücksichtigung der Kompatibilität von Spaltenanzahl und Datentypen.
+- Game-Mechanic: "The Set-Merger". Du bist der Schmelzmeister in einem Daten-Gusswerk. Du hast zwei Tiegel mit flüssigen Daten (Result Sets). Du willst sie in eine einzige Form gießen (Das Gesamtergebnis). Aber Vorsicht: Die Tiegel müssen exakt die gleiche Anzahl an Spalten haben und die Metalle (Datentypen) müssen zusammenpassen (z.B. Text zu Text). Nutzt du `UNION`, filterst du Schlacken (Duplikate) automatisch aus. Nutzt du `UNION ALL`, gießt du einfach alles zusammen – das geht schneller, ist aber weniger sauber!
+- Challenge: 
+  - Level 1 (The Perfect Fit): Vereine die Liste der "Kunden aus Berlin" mit der Liste der "Kunden aus Hamburg". Achte darauf, dass sie die gleichen Spalten haben.
+  - Level 2 (The Duplicate Filter): Nutze `UNION`, um eine Liste aller Städte zu erhalten, in denen wir Kunden ODER Lieferanten haben, ohne eine Stadt zweimal anzuzeigen.
+  - Level 3 (The Hard Pour): Versuche, eine Tabelle mit 3 Spalten und eine mit 2 Spalten zu vereinen. Die Maschine streikt! Finde den Fehler und korrigiere die Spaltenliste so, dass sie kompatibel wird.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Result-Set-Preview (Left/Right)", "Merge-Mode Switch (UNION / UNION ALL)", "Format-Alignment-Check", "Duplicate-Scanner".
+- [ ] Scoring: "Merge-Master" Bonus für das effiziente Zusammenführen von ungleichen Tabellenstrukturen. Abzug für Datentyp-Fehler beim Mischen.
+
+2. Screen-Layout (The Foundry)
+- [ ] `input-crucible-1 -> merger-funnel -> input-crucible-2 -> final-mold`.
+- [ ] Merger-Funnel: Ein Engpass, der nur passiert werden kann, wenn die "Struktur-DNA" beider Ströme identisch ist.
+- [ ] Final-Mold: Das fertige, kombinierte Resultat als Tabelle.
+
+3. Kernvisuals und Effekte
+- [ ] Industrial-Foundry Ästhetik: Glühendes Orange, Funkenflug, dunkles Eisen, das Grollen eines Schmelzofens (Shared Theme kompatibel).
+- [ ] "Fusion-Glow": Wenn `UNION` aktiviert ist, leuchtet der Mitteltopf hell auf und zerstrahlt Duplikate mit einem Blitz.
+- [ ] "Mismatch-Clash": Bei inkompatiblen Spalten prallen die Datenströme wie ungleiches Material gegeneinander und erzeugen dunklen Rauch.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Flexbox` für das Layout der schwebenden Daten-Tiegel.
+- [ ] Mobile: "Swipe-to-Merge" Geste.
+
+5. Content-Strategie (The Smelting-Orders)
+- [ ] 12 verschiedene Merge-Aufgaben: Von "Kunden & Kontakte" bis "Verschiedene Umsatz-Quellen".
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen UNION (teurerer Duplicate Check) und UNION ALL (schnelleres Zusammenfügen) klar?
+- [ ] Test: Ist die Bedeutung identischer Spaltenanzahlen visuell greifbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Mengen-Operationen brauchen strikte Kompatibilität.
+- [ ] Das Interface wirkt kraftvoll, technisch und faszinierend.
+- [ ] Fokus auf Set-Operations in SQL.

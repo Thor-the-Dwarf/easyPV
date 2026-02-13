@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Entzug von zuvor vergebenen Zugriffsrechten und Verständnis der Auswirkungen von kaskadierendem Rechteentzug.
+- Game-Mechanic: "The Key-Retriever". Alarm! Ein Mitarbeiter hat das Unternehmen verlassen oder ein Sicherheitsleck wurde entdeckt. Du musst so schnell wie möglich alle Schlüssel (Rechte) wieder einsammeln. Nutze deinen magischen Magneten (REVOKE), um dem User die Berechtigung für `DELETE` oder `UPDATE` sofort zu entziehen. Aber Vorsicht: Wenn dieser User Rechte an andere weitergegeben hat (Grant Option), könnten auch diese Schlüssel jetzt ungültig werden – oder sie bleiben als "Geister-Rechte" bestehen. Säubere das System!
+- Challenge: 
+  - Level 1 (The Direct Cut): Entziehe User `Lisa` das Recht, die `Gehalts`-Tabelle zu sehen.
+  - Level 2 (The Clean Sweep): Ein Projekt ist beendet. Entziehe der gesamten Rolle `Extern_Devs` alle Rechte auf das Test-Schema.
+  - Level 3 (The Cascade Challenge): User `A` gab Rechte an `B`, und `B` an `C`. Nutze `CASCADE`, um in einer Kettenreaktion alle unrechtmäßigen Schlüssel gleichzeitig zu vernichten.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Access-Revocation-Lever", "Macht-Graph (Visualisierung der Verknüpfungen)", "Security-Alert-Counter", "Cleanup-Timer".
+- [ ] Scoring: "Security-Officer" Bonus für den schnellsten und saubersten Rechteentzug. Abzug für verbleibende "Leaky Permissions".
+
+2. Screen-Layout (The Security Bureau)
+- [ ] `user-list -> privilege-X-ray -> revocation-magnets -> system-lockdown-status`.
+- [ ] Revocation-Magnets: Werkzeuge, die Rechte-Icons von den User-Karten physisch "wegreißen".
+- [ ] Macht-Graph: Ein Netz aus Linien, das zeigt, wer wem welche Rechte gegeben hat.
+
+3. Kernvisuals und Effekte
+- [ ] Emergency-Ops Ästhetik: Alarm-Rot, dunkles Anthrazit, digitale Sperr-Geräusche, das Zersplittern von Schlüsseln (Shared Theme kompatibel).
+- [ ] "Breach-Effect": Wenn ein User noch zu viele Rechte hat, pulsiert sein Icon bedrohlich rot.
+- [ ] "Shatter-Animation": Beim REVOKE zerspringen die Privileg-Icons in tausend digitale Scherben.
+
+4. Browser- und Device-Resilienz
+- [ ] `D3.js` oder ähnlicher Graph-Ansatz für die Rechte-Kette.
+- [ ] Mobile: "Swipe-to-Revoke" (Wegwischen der Rechte).
+
+5. Content-Strategie (The Incident-Files)
+- [ ] 12 Szenarien: Vom "Ausscheiden eines Mitarbeiters" bis zum "System-Audit".
+
+6. QA-Paket
+- [ ] Test: Wird die Bedeutung von `CASCADE` beim Rechteentzug spielerisch deutlich?
+- [ ] Test: Erzeugt der Cleanup-Timer den richtigen "Notfall"-Druck?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Was gegeben wurde, muss auch sicher wieder genommen werden können.
+- [ ] Das Interface wirkt dringlich, entschlossen und hochgradig sicherheitsrelevant.
+- [ ] Fokus auf administrativen Datenschutz.

@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Erstellung und Nutzung von Stored Procedures zur Kapselung komplexer Geschäftslogik direkt auf dem Datenbankserver.
+- Game-Mechanic: "The Macro-Builder". Du bist der Programmierer eines automatisierten Fertigungsroboters. Statt ihm jedes Mal 20 Einzelbefehle (SQLs) zu schicken ("Arm heben", "Klaue öffnen", "Schweißen"), schreibst du ein Programm (Die Procedure). Ein Knopfdruck ("Call Program_X"), und der Roboter erledigt die ganze Sequenz autonom auf dem Server. Das spart Zeit (Netzwerklast) und sorgt für Sicherheit, da niemand mehr direkt an die Einzelteile ran muss.
+- Challenge: 
+  - Level 1 (The Simple Script): Baue eine Prozedur `Get_Inventory`, die ohne Parameter alle Produkte auflistet.
+  - Level 2 (The Parameter Input): Deine Prozedur braucht Futter! Übergib eine `Kategorie_ID` und lass dir nur die passenden Produkte zeigen (IN-Parameter).
+  - Level 3 (The Logic Master): Schreibe eine Prozedur, die erst prüft, ob genug Lagerbestand da ist, und dann die Buchung durchführt. Nutze Variablen und IF-Logik im SQL-Block.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Procedure-Code-Editor", "Parameter-Panel", "Server-Execution-Log", "Network-Traffic-Savings (Gauge)".
+- [ ] Scoring: "Automation-Ace" Bonus für das Vermeiden von "Round-Trips" zwischen Client und Server. Abzug für unnötig komplexe Logik-Monster.
+
+2. Screen-Layout (The Control-Room)
+- [ ] `code-input -> compiler-console -> execution-button -> result-terminal`.
+- [ ] Execution-Button: Ein massiver, industrieller Taster, der die Prozedur auf dem Remote-Server "zündet".
+- [ ] Network-Traffic-Gauge: Zeigt, wie viel schlanker die Kommunikation geworden ist.
+
+3. Kernvisuals und Effekte
+- [ ] Industrial-Mainframe Ästhetik: Dunkle Grüns, blinkende Terminals, das Rauschen von Server-Lüftern, beim Kompilieren kleine "Code-Blitze" (Shared Theme kompatibel).
+- [ ] "Compilation-Spark": Bei fehlerfreiem Code leuchtet die Prozedur-Datei grün auf und wird in den "Server-Speicher" hochgeladen.
+- [ ] "Data-Stream": Ein schlanker, konzentrierter Datenstrahl fließt beim CALL zum Server – viel effizienter als viele kleine Einzelstrahlen.
+
+4. Browser- und Device-Resilienz
+- [ ] `Syntax Highlighting` für PL/SQL oder T-SQL Dialekte.
+- [ ] Mobile: "Template-Picker" für gängige Prozedur-Strukturen.
+
+5. Content-Strategie (The Automation-Workshops)
+- [ ] 12 verschiedene Prozedur-Aufträge: Von "Monatsabschluss" bis "Automatisierte Bestandsprüfung".
+
+6. QA-Paket
+- [ ] Test: Wird der Vorteil der Performance (Vorkompiliert) und Sicherheit (Kapselung) deutlich?
+- [ ] Test: Fühlt sich das "Programmieren in der DB" wie ein Upgrade an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Stored Procedures sind die Power-User-Tools für Business-Logik und Performance.
+- [ ] Das Interface wirkt professionell, mächtig und hochgradig effizient.
+- [ ] Fokus auf Server-seitige Automatisierung.

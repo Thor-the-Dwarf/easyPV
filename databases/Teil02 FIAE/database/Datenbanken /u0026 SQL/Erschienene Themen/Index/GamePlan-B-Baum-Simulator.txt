@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der Funktionsweise von Datenbankindizes (B-Baum), deren Vorteil bei Lesezugriffen und Nachteil bei Schreiboperationen.
+- Game-Mechanic: "The Turbo-Library". Du bist ein Bibliothekar in einer unendlichen Halle voller Bücher (Datensätze). Ein Leser fragt nach Buch #987. Ohne Index musst du jedes Regal einzeln ablaufen (Full Table Scan) – das dauert ewig! Deine Rettung: Baue ein Inhaltsverzeichnis (Index). Es ist wie ein Wegweiser-Baum (B-Tree). Du musst nur 3 Schilder lesen und stehst vor dem richtigen Buch. Aber Vorsicht: Jedes neue Buch, das dazukommt, zwingt dich, alle Wegweiser neu zu pinseln (Write Overhead).
+- Challenge: 
+  - Level 1 (The Slow Walk): Suche einen Namen ohne Index in einer Liste von 10.000 Einträgen. Schau zu, wie die Zeit verrinnt.
+  - Level 2 (The Tree Builder): Erstelle einen Index auf die Spalte `Nachname`. Beobachte, wie der Such-Strahl nun in Lichtgeschwindigkeit zum Ziel rast.
+  - Level 3 (The Write Trap): Du hast 5 Indizes angelegt. Jetzt füge 100 neue Datensätze ein. Die Maschine raucht, weil sie alle 5 Wegweiser-Bäume gleichzeitig aktualisieren muss. Finde die perfekte Balance!
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Execution-Time-Timer (ms)", "Blocks-Read Counter", "Index-Overhead Gauge", "Search-Strategy Indicator (SCAN vs. SEEK)".
+- [ ] Scoring: "Speed-Demon" Bonus für Suchanfragen unter 1ms. Abzug für "Index-Bloat" (zu viele unnötige Indizes).
+
+2. Screen-Layout (The Archive Halls)
+- [ ] `search-request -> index-tree-visualizer -> library-shelves -> performance-report`.
+- [ ] Index-Tree: Eine hierarchische Struktur, die man "durchklicken" kann, um zum Blatt-Knoten zu gelangen.
+- [ ] Library-Shelves: Tausende kleine Buchrücken, die bei einem Scan alle einzeln "aufleuchten".
+
+3. Kernvisuals und Effekte
+- [ ] Steampunk-High-Tech Ästhetik: Messing-Zahnräder, laser-gesteuerte Wegweiser, das Ticken von mechanischen Stoppuhren, glühende Daten-Pfade (Shared Theme kompatibel).
+- [ ] "Turbo-Boost": Wenn ein Index gezogen wird, verdoppelt sich die Frame-Rate der Suche sichtlich.
+- [ ] "Ink-Smudge": Beim Einfügen in eine indizierte Tabelle verschmiert die Tinte auf den Wegweisern und muss mühsam neu geschrieben werden.
+
+4. Browser- und Device-Resilienz
+- [ ] `SVG B-Tree` Generator für die dynamische Baumstruktur.
+- [ ] Mobile: "Tap-to-Zoom" in die Baum-Ebenen.
+
+5. Content-Strategie (The Search-Orders)
+- [ ] 12 Szenarien: Von "Einfache ID-Suche" bis "Komplexe Range-Abfrage auf ein Datum".
+
+6. QA-Paket
+- [ ] Test: Wird das Prinzip "Index = Schneller Lesen, Langsamer Schreiben" intuitiv erfahrbar?
+- [ ] Test: Fühlt sich der B-Baum wie ein mächtiges Werkzeug an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Indizes sind unverzichtbar für Performance, aber kein Gratis-Geschenk.
+- [ ] Das Interface wirkt technisch raffiniert, wertig und performant.
+- [ ] Fokus auf SQL Tuning und Speicher-Interna.

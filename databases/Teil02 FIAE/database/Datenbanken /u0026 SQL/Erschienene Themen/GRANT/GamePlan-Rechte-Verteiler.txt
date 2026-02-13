@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Gezielte Vergabe von Zugriffsrechten (SELECT, INSERT, UPDATE, DELETE) an Datenbankbenutzer und Rollen zur Erhöhung der Sicherheit.
+- Game-Mechanic: "The Key-Distributor". Du bist der Zeremonienmeister im Schloss der Daten. Verschiedene Gäste (User) kommen zur Party: Der "Praktikant" darf nur gucken (SELECT), der "Buchhalter" darf Rechnungen schreiben (INSERT), aber nur der "Admin" darf den Müll rausbringen (DELETE). Deine Aufgabe: Schmiede die passenden Schlüssel-Sets (Privilegien) und überreiche sie den richtigen Personen. Gibst du dem Praktikanten den Master-Key für alles, droht ein Daten-Gau!
+- Challenge: 
+  - Level 1 (The Observer): Gib dem User `Max` nur das Leserecht (`SELECT`) auf die Tabelle `Produkte`.
+  - Level 2 (The Editor): Sorge dafür, dass die Rolle `Marketing` neue Produkte anlegen (`INSERT`) und bestehende ändern (`UPDATE`), aber niemals löschen kann.
+  - Level 3 (The Recursive Grant): Erlaube einem User, seine Rechte an andere weiterzugeben (`WITH GRANT OPTION`). Beobachte, wie sich das Macht-Netzwerk ausbreitet.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "User-Permission-Matrix", "Key-Forge (GRANT Tool)", "Security-Risk-Meter", "Access-Denial-Log".
+- [ ] Scoring: "Safety-King" Bonus für die strikte Einhaltung des "Least Privilege" Prinzips. Abzug für "Over-Privileged" Accounts.
+
+2. Screen-Layout (The Forge)
+- [ ] `user-reception -> permission-selector -> key-forge -> delivery-gate`.
+- [ ] Key-Forge: Eine Werkstatt, in der man Rechte-Module (S, I, U, D) zu einem Schlüsselbund kombiniert.
+- [ ] Delivery-Gate: Zeigt, ob der User nun Zutritt zu den entsprechenden Daten-Kammern hat.
+
+3. Kernvisuals und Effekte
+- [ ] Palace-Tech Ästhetik: Goldene Ornamente auf dunklem Stahl, holographische Siegel, das metallische Klirren von Schlüsseln, prunkvolle Fanfaren bei erfolgreicher Vergabe (Shared Theme kompatibel).
+- [ ] "Key-Glow": Je mehr Rechte ein Schlüssel hat, desto heller und intensiver glüht er.
+- [ ] "Seal-Effect": Ein wächsernes Siegel wird digital auf die User-Akte gepresst.
+
+4. Browser- und Device-Resilienz
+- [ ] `Canvas API` für die Visualisierung des Rechte-Graph (Wer hat was?).
+- [ ] Mobile: "Drag-and-Drop" der Rechte auf die User-Icons.
+
+5. Content-Strategie (The Protocol-Books)
+- [ ] 12 Rechte-Szenarien: Von "Temporärem Gastzugang" bis "Komplexes Rollenmodell".
+
+6. QA-Paket
+- [ ] Test: Wird klar, warum man nicht jedem `GRANT ALL` geben sollte?
+- [ ] Test: Fühlt sich die Rechtevergabe wie ein mächtiger, sicherheitskritischer Akt an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Rechte sind Privilegien, die mit Bedacht vergeben werden müssen.
+- [ ] Das Interface wirkt autoritär, präzise und prachtvoll.
+- [ ] Fokus auf IT-Compliance und Datensicherheit.

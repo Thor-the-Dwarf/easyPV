@@ -1,0 +1,41 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis von Datenbank-Triggern (Event-driven Actions) zur Durchsetzung komplexer Integritätsregeln und zur Protokollierung von Änderungen.
+- Game-Mechanic: "The Event-Guard". Du platzierst unsichtbare Sensoren (Trigger) an den Toren deiner Tabellen. Jedes Mal, wenn jemand etwas einwerfen (INSERT), ändern (UPDATE) oder klauen (DELETE) will, löst er den Sensor aus. Dein Guard wacht auf und kann:
+  - Den Vorgang protokollieren (Audit Log).
+  - Den Wert heimlich korrigieren (z.B. Negativen Kontostand auf 0 setzen).
+  - Den Vorgang mit lautem Alarm abbrechen, wenn er gegen die Regeln verstößt.
+- Challenge: 
+  - Level 1 (The Auditor): Schreibe einen Trigger, der jede Löschung in der `Kunden`-Tabelle in einer `Archiv`-Tabelle mit Zeitstempel mitschreibt.
+  - Level 2 (The Rule Enforcer): Verhindere per Trigger, dass ein Produktpreis um mehr als 50% auf einmal gesenkt wird.
+  - Level 3 (The Recursive Trap): Vorsicht! Dein Trigger ändert einen Wert, der wiederum einen anderen Trigger auslöst. Verhindere die Endlosschleife, bevor das System überhitztt!
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Event-Radar (INSERT/UPDATE/DELETE)", "Trigger-Logic-Editor", "Alert-Log-History", "System-Consistency Rating".
+- [ ] Scoring: "Vigilance-Award" für lückenlose Audit-Trails. Abzug für "Performance-Lag" durch zu schwerfällige Trigger-Logik.
+
+2. Screen-Layout (The Security Perimeter)
+- [ ] `table-gate -> laser-sensor -> guard-action -> log-entry`.
+- [ ] Laser-Sensor: Ein visueller Effekt über dem SQL-Statement, der nur bei bestimmten Events (BEFORE/AFTER) anschlägt.
+- [ ] Guard-Action: Eine Mini-Simulation, die zeigt, wie der Trigger in den Prozess eingreift.
+
+3. Kernvisuals und Effekte
+- [ ] Surveillance Ästhetik: Kamera-Feeds, Radar-Pings, rot-blinkende Warnlichter, das Geräusch von scharfen Alarmen und mechanischen Kamera-Zooms (Shared Theme kompatibel).
+- [ ] "Reactive-Flash": Wenn ein Trigger feuert, wird der Screen kurzzeitig durch einen hellen Scan-Strahl erhellt.
+- [ ] "Chain-Link Animation": Zeigt an, wie ein Event ein anderes (den Trigger) nach sich zieht.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Animations` für die Radar-Wellen und Laser-Sensoren.
+- [ ] Mobile: "Tap-to-Toggle" für aktive/inaktive Trigger.
+
+5. Content-Strategie (The Security-Files)
+- [ ] 12 verschiedene Trigger-Szenarien: Von "Lagerbestand-Auto-Update" bis "Sicherheits-Audit".
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen BEFORE und AFTER Triggern spielerisch spürbar?
+- [ ] Test: Ist die Gefahr von "Kaskadierenden Triggern" ein Lerneffekt?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Trigger sind die stillen Wächter der Datenintegrität.
+- [ ] Das Interface wirkt wachsam, sicher und technologisch hochgerüstet.
+- [ ] Fokus auf Event-basierte Programmierung.

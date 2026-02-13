@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Anomalies - The Hunt</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="anomaly_hunt.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div id="level-title" class="level-title">Loading Scenario...</div>
+            <div class="status-badge">DB STATUS: VULNERABLE</div>
+        </header>
+
+        <!-- Workspace -->
+        <main class="workspace">
+
+            <!-- Table View -->
+            <div class="table-container">
+                <table>
+                    <thead id="table-head"></thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+
+            <!-- Action Area -->
+            <div class="action-area">
+                <div id="action-card" class="action-card">
+                    <div id="card-title" class="card-title">ACTION</div>
+                    <div id="card-desc" class="card-desc">...</div>
+                </div>
+
+                <div style="display:flex; flex-direction:column; gap:10px; justify-content:center;">
+                    <button id="btn-execute" class="btn-primary" style="background:#4caf50; color:#fff;">EXECUTE
+                        QUERY</button>
+                    <button id="btn-reject" class="btn-primary" style="background:#f44336; color:#fff;">BLOCK
+                        (RISK!)</button>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Anomaly Alert Overlay -->
+        <div id="anomaly-alert" class="anomaly-alert">
+            <div class="alert-icon">⚠️</div>
+            <div id="alert-title" class="alert-title">ANOMALY DETECTED</div>
+            <div id="alert-desc" class="alert-desc">...</div>
+            <button id="btn-next" class="btn-primary">NEXT SCENARIO</button>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card"
+                style="background: #2d2d2d; border: 2px solid var(--accent-warn); padding: 3rem; text-align:center;">
+                <h2 style="color:var(--accent-warn); margin-bottom:1rem; font-family:'Roboto Mono', monospace;">TRAINING
+                    COMPLETE</h2>
+                <div class="hud-value" style="font-size: 1.5rem; margin: 2rem 0; color:#fff" id="final-result">...</div>
+                <button id="btn-finale" class="btn-primary">RESTART TRAINING</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_anomaly_hunt.js"></script>
+</body>
+
+</html>

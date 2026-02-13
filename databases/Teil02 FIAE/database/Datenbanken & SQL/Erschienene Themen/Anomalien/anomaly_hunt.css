@@ -1,0 +1,264 @@
+/* 
+ * Anomaly Hunt - Styles
+ * Aesthetic: Unstable Structure / Warning / Blueprint
+ */
+
+:root {
+    --bg-dark: #1e1e1e;
+    --bg-panel: #2d2d2d;
+    --text-main: #e0e0e0;
+    --accent-warn: #ff9800;
+    /* Orange */
+    --accent-danger: #f44336;
+    /* Red */
+    --accent-safe: #4caf50;
+    /* Green */
+    --blueprint-blue: #2196f3;
+    --grid-line: #444;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Roboto Mono', monospace;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+/* --- HUD --- */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #222;
+    border-bottom: 2px solid var(--accent-warn);
+}
+
+.level-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-warn);
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border: 1px solid var(--grid-line);
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+/* --- Main Workspace --- */
+.workspace {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    align-items: center;
+    background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    position: relative;
+}
+
+/* Table Container */
+.table-container {
+    background: var(--bg-panel);
+    border: 2px solid #555;
+    border-radius: 4px;
+    padding: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s, border-color 0.3s;
+    max-width: 100%;
+}
+
+.table-container.shake {
+    animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+    border-color: var(--accent-danger);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+th,
+td {
+    border: 1px solid #555;
+    padding: 10px 15px;
+    text-align: left;
+}
+
+th {
+    background: #333;
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+tr:hover td {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+td.highlight-danger {
+    background: rgba(244, 67, 54, 0.2);
+    color: var(--accent-danger);
+    font-weight: bold;
+}
+
+/* Action Area */
+.action-area {
+    display: flex;
+    gap: 2rem;
+    margin-top: auto;
+    width: 100%;
+    justify-content: center;
+}
+
+.action-card {
+    background: #fff;
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 250px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-left: 5px solid #ccc;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+}
+
+.action-card.intent-insert {
+    border-color: var(--blueprint-blue);
+}
+
+.action-card.intent-update {
+    border-color: var(--accent-warn);
+}
+
+.action-card.intent-delete {
+    border-color: var(--accent-danger);
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Anomaly Alert Overlay */
+.anomaly-alert {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--accent-danger);
+    padding: 2rem;
+    text-align: center;
+    max-width: 500px;
+    z-index: 50;
+    box-shadow: 0 0 50px var(--accent-danger);
+    display: none;
+}
+
+.alert-icon {
+    font-size: 3rem;
+    color: var(--accent-danger);
+    margin-bottom: 1rem;
+}
+
+.alert-title {
+    font-size: 1.5rem;
+    color: var(--accent-danger);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.alert-desc {
+    color: #fff;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+/* Result Screen */
+.result-screen {
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 30, 30, 0.98);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--accent-warn);
+    color: #000;
+    border: none;
+    padding: 1rem 3rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background: #ffb74d;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}

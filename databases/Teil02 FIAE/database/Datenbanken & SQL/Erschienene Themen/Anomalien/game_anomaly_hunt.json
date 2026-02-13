@@ -1,0 +1,132 @@
+{
+    "meta": {
+        "topic": "Database Anomalies",
+        "mechanic": "blockage_simulation",
+        "version": "1.0"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Insertion Anomaly",
+            "description": "Try to add a new Project. Why is it blocked?",
+            "table": {
+                "headers": [
+                    "Project_ID",
+                    "Project_Name",
+                    "Employee_ID",
+                    "Employee_Name"
+                ],
+                "data": [
+                    [
+                        101,
+                        "Alpha",
+                        1,
+                        "Müller"
+                    ],
+                    [
+                        101,
+                        "Alpha",
+                        2,
+                        "Schmidt"
+                    ],
+                    [
+                        102,
+                        "Beta",
+                        1,
+                        "Müller"
+                    ]
+                ]
+            },
+            "action": {
+                "type": "INSERT",
+                "data": {
+                    "Project_ID": 103,
+                    "Project_Name": "Gamma",
+                    "Employee_ID": null,
+                    "Employee_Name": null
+                },
+                "error": "Primary Key Violation: Employee_ID cannot be NULL in this composite key structure.",
+                "explanation": "You can't create a project without assigning an employee solely because the table structure forces it. This is an Insertion Anomaly."
+            }
+        },
+        {
+            "id": 2,
+            "title": "Update Anomaly",
+            "description": "Update Müller's name to 'Meyer'.",
+            "table": {
+                "headers": [
+                    "Project_ID",
+                    "Project_Name",
+                    "Employee_ID",
+                    "Employee_Name"
+                ],
+                "data": [
+                    [
+                        101,
+                        "Alpha",
+                        1,
+                        "Müller"
+                    ],
+                    [
+                        102,
+                        "Beta",
+                        1,
+                        "Müller"
+                    ],
+                    [
+                        103,
+                        "Gamma",
+                        3,
+                        "Schulze"
+                    ]
+                ]
+            },
+            "action": {
+                "type": "UPDATE",
+                "target_id": 1,
+                "new_value": "Meyer",
+                "error": "Inconsistency Risk! You only updated one row.",
+                "explanation": "If you update 'Müller' in row 1 but forget row 2, your data is corrupt. This is an Update Anomaly."
+            }
+        },
+        {
+            "id": 3,
+            "title": "Deletion Anomaly",
+            "description": "Delete Project 'Gamma'.",
+            "table": {
+                "headers": [
+                    "Project_ID",
+                    "Project_Name",
+                    "Employee_ID",
+                    "Employee_Name"
+                ],
+                "data": [
+                    [
+                        101,
+                        "Alpha",
+                        1,
+                        "Müller"
+                    ],
+                    [
+                        102,
+                        "Beta",
+                        2,
+                        "Schmidt"
+                    ],
+                    [
+                        103,
+                        "Gamma",
+                        3,
+                        "Schulze"
+                    ]
+                ]
+            },
+            "action": {
+                "type": "DELETE",
+                "target_row": 2,
+                "error": "Data Loss! Employee 'Schulze' is gone.",
+                "explanation": "By deleting the project, you also deleted the only record of Employee 'Schulze'. This is a Deletion Anomaly."
+            }
+        }
+    ]
+}

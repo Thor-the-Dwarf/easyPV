@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVC Pattern - The Conductor</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="mvc_role_match.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;1,400&family=Open+Sans:wght@600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="hud-label">TEMPO</span>
+                <span class="hud-value" id="bpm-val">0 BPM</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">HARMONY</span>
+                <span class="hud-value" id="harmony-val">100%</span>
+            </div>
+        </header>
+
+        <!-- Stage Area -->
+        <main class="stage">
+            <!-- Conductor Stand (Incoming Tasks) -->
+            <div class="conductor-stand">
+                <div id="notes-stream" class="notes-stream">
+                    <!-- Notes appear here -->
+                </div>
+            </div>
+
+            <!-- Orchestra Pit (Roles) -->
+            <div id="orchestra-pit" class="orchestra-pit">
+                <!-- Zones generated via JS -->
+            </div>
+        </main>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card"
+                style="background: rgba(20, 5, 5, 0.95); border: 4px solid var(--theater-gold); padding: 3rem; text-align:center;">
+                <h2
+                    style="color:var(--theater-gold); margin-bottom:1rem; font-family:'Cinzel', serif; font-size: 3rem;">
+                    FINALE</h2>
+                <div class="hud-value" style="font-size: 2rem; margin: 2rem 0; color:#fff" id="final-result">...</div>
+                <button id="restart-btn" class="btn-gold">ENCORE</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_mvc_role_match.js"></script>
+</body>
+
+</html>

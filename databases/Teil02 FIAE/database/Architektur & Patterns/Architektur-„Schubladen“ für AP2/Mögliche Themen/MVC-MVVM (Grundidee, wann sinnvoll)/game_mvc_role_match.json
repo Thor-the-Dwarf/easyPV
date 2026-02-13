@@ -1,0 +1,118 @@
+{
+    "meta": {
+        "topic": "MVC Pattern",
+        "mechanic": "role_sorting",
+        "version": "1.0"
+    },
+    "roles": [
+        {
+            "id": "model",
+            "label": "MODEL",
+            "color": "#00e676",
+            "description": "Data, Logic, Rules"
+        },
+        {
+            "id": "view",
+            "label": "VIEW",
+            "color": "#2979ff",
+            "description": "UI, Presentation, Events"
+        },
+        {
+            "id": "controller",
+            "label": "CONTROLLER",
+            "color": "#ff00e5",
+            "description": "Mediation, Input Handler"
+        }
+    ],
+    "levels": [
+        {
+            "id": 1,
+            "title": "Solo Concert",
+            "speed": 1500,
+            "tasks": [
+                {
+                    "text": "Render HTML Button",
+                    "role": "view"
+                },
+                {
+                    "text": "Save User to DB",
+                    "role": "model"
+                },
+                {
+                    "text": "Handle Button Click",
+                    "role": "controller"
+                },
+                {
+                    "text": "Validate Email Format",
+                    "role": "model"
+                },
+                {
+                    "text": "Show Success Message",
+                    "role": "view"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Chamber Ensemble",
+            "speed": 1200,
+            "tasks": [
+                {
+                    "text": "Parse JSON Response",
+                    "role": "model"
+                },
+                {
+                    "text": "Update DOM Element",
+                    "role": "view"
+                },
+                {
+                    "text": "Route URL to Action",
+                    "role": "controller"
+                },
+                {
+                    "text": "Calculate Tax",
+                    "role": "model"
+                },
+                {
+                    "text": "Add Event Listener",
+                    "role": "view"
+                },
+                {
+                    "text": "Fetch Data from API",
+                    "role": "model"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Symphony Orchestra",
+            "speed": 900,
+            "tasks": [
+                {
+                    "text": "Bind ViewModel to View",
+                    "role": "controller"
+                },
+                {
+                    "text": "CSS Animation",
+                    "role": "view"
+                },
+                {
+                    "text": "Serialize Object",
+                    "role": "model"
+                },
+                {
+                    "text": "Dispatch Redux Action",
+                    "role": "controller"
+                },
+                {
+                    "text": "Update Progress Bar",
+                    "role": "view"
+                },
+                {
+                    "text": "Enforce Business Rule",
+                    "role": "model"
+                }
+            ]
+        }
+    ]
+}

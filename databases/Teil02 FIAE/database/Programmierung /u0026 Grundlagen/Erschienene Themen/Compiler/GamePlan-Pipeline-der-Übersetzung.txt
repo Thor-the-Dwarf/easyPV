@@ -1,0 +1,43 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der Phasen eines Compilers (Lexikalische, Syntaktische, Semantische Analyse und Code-Generierung) beim Übersetzen von Quellcode in Maschinencode.
+- Game-Mechanic: "The Translator". Du arbeitst in der Botschaft zwischen der Welt der Menschen (High-Level Code wie Java/Python) und der Welt der Maschinen (Bytecode/Nullen und Einsen). Deine Aufgabe ist die "Übersetzungs-Pipeline". Schicke den Code durch 4 Stationen:
+  1. Lexer: Zerhacke den Text in sinnvolle Token (Wörter).
+  2. Parser: Baue daraus einen logischen Baum (AST).
+  3. Optimizer: Streiche unnötige Schritte (z.B. Rechnen mit Konstanten).
+  4. Generator: Erzeuge das fertige Bytecode-Paket.
+  Wer schlampig übersetzt, erzeugt "Syntax Errors" am Zoll!
+- Challenge: 
+  - Level 1 (Token-Triage): Trenne Keywords von Variablenamen und Operatoren. Fülle die Token-Eimer.
+  - Level 2 (The Tree Puzzle): Ordne Token so an, dass ein gültiger Abstract Syntax Tree (AST) entsteht.
+  - Level 3 (The Magic Optimizer): Erkenne, dass `x = 5 + 2` direkt zu `x = 7` übersetzt werden kann. Spare Rechenzeit!
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Symbol-Table Monitor", "AST-Visualizer", "Optimization-Efficiency (%)", "Bytecode-Target-View".
+- [ ] Scoring: "Linguistic-Architect" Bonus für hocheffizienten Zielcode. Abzug für "Semantic-Mismatches".
+
+2. Screen-Layout (The Translation-Pipeline)
+- [ ] `code-input-buffer -> analysis-stations -> optimization-chamber -> binary-output`.
+- [ ] Analysis-Stations: Animierte Förderbänder, die den Code schrittweise transformieren.
+- [ ] Binary-Output: Ein Strom aus grün leuchtenden 0en und 1en.
+
+3. Kernvisuals und Effekte
+- [ ] Cyber-Factory Ästhetik: Dunkler Stahl, blaues Plasma, fließende Datenströme, Laser-Scans, das rhythmische Stampfen von Pressen (Shared Theme kompatibel).
+- [ ] "Transform-Animation": Ein `if`-Keyword verwandelt sich in einem Laser-Lichtstrahl in ein Verzweigungs-Icon.
+- [ ] "Static-Check-Light": Ein grüner Scanner fährt über den Code und bestätigt die Gültigkeit.
+
+4. Browser- und Device-Resilienz
+- [ ] `SVG Path` für die dynamische Darstellung des Syntax-Baums.
+- [ ] Mobile: "Swipe-to-Next-Phase" Geste.
+
+5. Content-Strategie (The Translation-Files)
+- [ ] 12 verschiedene Code-Fragmente: Von "Einfache Zuweisung" bis "Komplexe Schleifen".
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen "Schreiben" und "Ausführen" durch die Übersetzungshürde klar?
+- [ ] Test: Fühlt sich die Code-Optimierung wie ein intelligenter Bonus an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Ein Compiler ist eine hochkomplexe Filter- und Transformations-Maschine.
+- [ ] Das Interface wirkt technisch faszinierend, tiefgründig und strukturiert.
+- [ ] Fokus auf Informatik-Grundlagen und Sprachverarbeitung.

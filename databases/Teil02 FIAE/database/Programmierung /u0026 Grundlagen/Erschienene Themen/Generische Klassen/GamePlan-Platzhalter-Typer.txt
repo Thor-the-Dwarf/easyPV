@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Beherrschung von generischen Klassen und Methoden (Platzhalter `<T>`) für typsicheren und wiederverwendbaren Code.
+- Game-Mechanic: "The Blueprint". Du bist der Leiter einer Fabrik, die Kisten für alles herstellt: Kisten für Socken, Kisten für Goldbarren, Kisten für sensible Medikamente. Statt für jedes Objekt eine eigene Maschine zu bauen, hast du die "Einheits-Gießform" (Das Generic `<T>`) erfunden! Du legst fest: "Diese Box arbeitet mit dem Typ X". Sobald der Besteller sagt "Ich will Gold", verwandelt sich die Box in einen Tresor. Sagt er "Socken", wird sie zu einer Stoffkiste. Sicher, flexibel und ohne Code-Duplikate.
+- Challenge: 
+  - Level 1 (The Magic Placeholder): Ersetze fest codierte Typen durch den Platzhalter `T` in einer einfachen `Box`-Klasse.
+  - Level 2 (The Multi-Type Forge): Erstelle ein `Paar<T, U>`, das zwei verschiedene Dinge (z.B. einen Namen und einen Punktestand) sicher zusammenhält.
+  - Level 3 (The Wildcard Shield): Nutze `extends Number`, um sicherzustellen, dass nur mathematische Dinge in deine Rechen-Box dürfen. Blockiere den Versuch, einen "Text" in die Rechenmaschine zu werfen.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Generic-Template Editor", "Type-Casting Guard", "Flexibility-Rating", "Reusability-Counter".
+- [ ] Scoring: "Architect-Elite" Bonus für das Vermeiden von redundantem Code. Abzug für unsichere Casts (Typ-Fehler zur Laufzeit verhindern).
+
+2. Screen-Layout (The Design Office)
+- [ ] `template-blueprint -> type-injector -> final-component-preview -> code-reduction-stats`.
+- [ ] Type-Injector: Ein Slot, in den man verschiedene "Typ-Steine" (Integer, String, User) stecken kann, um zu sehen, wie sich das Blueprint anpasst.
+- [ ] Final-Component-Preview: Zeigt das fertig instanziierte Objekt in der jeweiligen Optik.
+
+3. Kernvisuals und Effekte
+- [ ] Blueprint-Blue Ästhetik: Weißlinien auf Blau, technische Diagramme, das Geräusch von ziehenden Stiften und einrastenden Modulen (Shared Theme kompatibel).
+- [ ] "Morph-Effect": Die Box verändert ihre Textur und Form, je nachdem, welcher Typ `<T>` injiziert wird.
+- [ ] "Type-Safety-Sync": Ein grüner Datenfaden verbindet Input und Output und zeigt: "Alles sicher verwahrt".
+
+4. Browser- und Device-Resilienz
+- [ ] `Dynamic SVG Graphics` für die sich anpassende Box-Optik.
+- [ ] Mobile: "Tap-to-Inject" Gesten für die Datentypen.
+
+5. Content-Strategie (The Order-Manifests)
+- [ ] 12 verschiedene Use-Cases für Generics: Von "Simple Wrapper" bis "Komplexe Datenstrukturen (List/Map)".
+
+6. QA-Paket
+- [ ] Test: Wird das Prinzip der Typsicherheit (kein manuall Casting nötig) erlebbar?
+- [ ] Test: Ist der Unterschied zwischen einem festen Typ und einem Platzhalter visuell greifbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Generics machen Code sauberer, sicherer und vielseitiger.
+- [ ] Das Interface wirkt strukturiert, architektonisch wertvoll und intelligent.
+- [ ] Fokus auf Software-Design-Patterns.

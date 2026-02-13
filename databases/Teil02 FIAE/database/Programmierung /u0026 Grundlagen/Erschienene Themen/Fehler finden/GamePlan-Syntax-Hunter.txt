@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Identifikation und Korrektur typischer Syntax-Fehler (fehlende Semikolons, Klammern, falsche Keywords) in gängigen Programmiersprachen.
+- Game-Mechanic: "The Syntax-Hunter". Du bist ein digitaler Kammerjäger in einem alten Code-Dungeon. Überall krabbeln "Syntax-Bugs" herum: Da fehlt ein `;`, dort ist eine `{` nicht geschlossen, und jemand hat `functon` statt `function` geschrieben. Dein "Scanner-Licht" deckt die Fehler auf. Klicke auf den Bug und ersetze ihn durch das richtige Zeichen, bevor der Compiler die Nerven verliert und das System einfriert!
+- Challenge: 
+  - Level 1 (The Missing Semicolon): Finde 5 Stellen in einem Java-Snippet, an denen das `;` am Zeilenende fehlt.
+  - Level 2 (The Bracket Maze): Verschachtelte IF-Statements! Eine `}` fehlt am Ende. Finde die Lücke im Code-Skelett.
+  - Level 3 (The Keyword-Glitch): Der Code ist voller Tippfehler in Keywords (`retun`, `whyle`, `strenge`). Korrigiere sie unter Zeitdruck.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Bug-Scanner Lens", "Syntax-Health-Bar", "Compiler-Log (Warnings vs. Errors)", "Time-to-Freeze Timer".
+- [ ] Scoring: "Bug-Sniper" Bonus für schnelle Korrekturen ohne Fehlklicks. Abzug für "Syntax-Panic" (wilde Klicks im Code).
+
+2. Screen-Layout (The Code-Dungeon)
+- [ ] `source-code-panel -> bug-overlay -> repair-toolbox -> execution-preview`.
+- [ ] Source-Code-Panel: Großer Textbereich mit Syntax-Highlighting, wobei die Fehler dezent "wackeln".
+- [ ] Repair-Toolbox: Ein Auswahlmenü mit den richtigen Symbolen (`;`, `{`, `)`, `String`).
+
+3. Kernvisuals und Effekte
+- [ ] Matrix-Dungeon Ästhetik: Dunkler Hintergrund, leuchtendes Code-Grün, digitale Käfer-Animationen, Sound von statischem Rauschen und hellen "Ping"-Tönen bei Fixes (Shared Theme kompatibel).
+- [ ] "Fix-Flash": Bei erfolgreicher Korrektur leuchtet die Zeile kurz golden auf und der Bug verpufft.
+- [ ] "Compiler-Crash": Wenn die Zeit abläuft, färbt sich der Screen rot und eine "Segmentation Fault" Meldung erscheint.
+
+4. Browser- und Device-Resilienz
+- [ ] `Prism.js` oder ähnliches für authentisches Code-Highlighting.
+- [ ] Mobile: "Tap-to-Fix" direkt auf die markierte Zeile.
+
+5. Content-Strategie (The Bug-Manifests)
+- [ ] 15 verschiedene Code-Snippets in Java, C# und Python.
+
+6. QA-Paket
+- [ ] Test: Werden die Fehlermeldungen des virtuellen Compilers als hilfreiche Hinweise wahrgenommen?
+- [ ] Test: Ist der Schwierigkeitsgrad zwischen "Offensichtlich" und "Subtil" gut ausbalanciert?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Ein einziges Zeichen kann den ganzen Prozess stoppen. Präzision ist alles.
+- [ ] Das Interface wirkt fokussiert, herausfordernd und technisch versiert.
+- [ ] Fokus auf Syntax-Verständnis und Code-Lesen.

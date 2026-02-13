@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis des Bubble-Sort Algorithmus durch manuelles Vergleichen und Vertauschen von Elementen (Swapping).
+- Game-Mechanic: "The Sorting Racer". Du bist der Boxen-Chef bei einem Seifenkisten-Rennen. Deine Seifenkisten (Array-Elemente) stehen wild durcheinander in der Startaufstellung. Die schweren müssen nach hinten, die leichten nach vorne. Du gehst von links nach rechts durch: Vergleiche zwei Nachbarn. Wenn die linke Kiste schwerer ist als die rechte – SWAP! Solange, bis keine Kiste mehr getauscht werden muss. Werde zum "Bubble"-Meister und lass die leichten Kisten wie Seifenblasen nach vorne steigen.
+- Challenge: 
+  - Level 1 (The Small Grid): Sortiere 5 Kisten. Jedes Mal, wenn du ein Paar richtig vergleichst, lädt sich dein "Sort-Turbo" auf.
+  - Level 2 (The Optimized Run): Nutze die Erkenntnis, dass nach jedem Durchlauf das schwerste Element sicher hinten steht. Sortiere im nächsten Durchgang ein Element weniger (Efficiency-Bonus).
+  - Level 3 (The Big Array): 20 Kisten! Nutze den "Early-Exit", wenn in einem kompletten Durchlauf kein Swap mehr nötig war.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Comparison-Counter", "Swap-Odometer", "Array-State Visualizer", "Optimization-Level (Standard vs. Early-Exit)".
+- [ ] Scoring: "Efficiency-Profi" Bonus für die geringste Anzahl an Vergleichen. Abzug für unnötiges Swapping.
+
+2. Screen-Layout (The Starting Grid)
+- [ ] `soapbox-lineup (The Array) -> active-comparison-focus -> pit-stop-stats -> finish-line`.
+- [ ] Active-Comparison: Zwei Kisten werden durch einen hellen Lichtstrahl hervorgehoben.
+- [ ] Pit-Stop-Stats: Zeigt die aktuelle Zeit und die Anzahl der Durchläufe an.
+
+3. Kernvisuals und Effekte
+- [ ] Soapbox-Racing Ästhetik: Holz-Texturen, bunte Farben, digitale Tankanzeigen, Sound von rollenden Rädern und mechanischem Klacken beim Swap (Shared Theme kompatibel).
+- [ ] "Bubble-Rise": Leichte Elemente, die getauscht werden, steigen mit einem Blubberblasen-Effekt nach links auf.
+- [ ] "Heavy-Sink": Schwere Elemente sinken mit einem tiefen Bass-Ton nach rechts unten.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Flexbox-Gap` für die dynamischen Abstände zwischen den Kisten.
+- [ ] Mobile: "Tap-to-Swap" Geste auf den aktiven Fokus.
+
+5. Content-Strategie (The Race-Tracks)
+- [ ] 12 verschiedene Startaufstellungen: Von "Fast sortiert" bis "Reverse-Sorted Disaster".
+
+6. QA-Paket
+- [ ] Test: Wird das Prinzip der Nachbarschafts-Vergleiche visuell unmissverständlich?
+- [ ] Test: Fühlt sich das Swapping flüssig und befriedigend an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Bubble-Sort ist einfach, aber bei vielen Elementen sehr ineffizient.
+- [ ] Das Interface wirkt lebendig, sportlich und motivierend.
+- [ ] Fokus auf algorithmisches Denken und Komplexität.

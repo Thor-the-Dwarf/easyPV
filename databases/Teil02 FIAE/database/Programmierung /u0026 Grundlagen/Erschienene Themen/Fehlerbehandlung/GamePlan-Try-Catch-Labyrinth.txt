@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Praktische Anwendung von Exceptions (try-catch-finally) zur Stabilisierung von Programmen gegen unvorhersehbare Laufzeitfehler.
+- Game-Mechanic: "The Try-Catch Shield". Du bist der Pilot eines Raumschiffs im "Error-Asteroidengürtel". Dein Kurs ist die Programmlogik. Plötzlich tauchen Trümmerteile auf: "Division durch Null", "File not found", "Null Pointer". Aktiviere deinen "Try-Käfig" um den gefährlichen Code. Wenn ein Asteroid einschlägt, muss dein "Catch-Schild" ihn auffangen und eine sanfte Lösung (Alternative Route) finden, statt das Schiff explodieren zu lassen. Mit "Finally" fährst du am Ende immer die Landeklappen ein, egal ob es gekracht hat oder nicht.
+- Challenge: 
+  - Level 1 (The Safety Net): Umschließe eine Division durch eine Variable mit einem Catch-Block für `ArithmeticException`.
+  - Level 2 (The Specific Defense): Ein Date Zugriff kann schiefgehen. Nutze spezifische Catch-Blöcke (FileNotFound vs. IOException) für präzise Reparaturen.
+  - Level 3 (The Logic Recovery): Fange eine Exception ab und gib dem User im UI eine freundliche Meldung, statt den Stacktrace anzuzeigen. Setze im Finally-Block die Datenbankverbindung zurück.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Logic-Path-Radar", "Shield-Integrity (Health)", "Error-Logbook", "Cleanup-Progress (Finally-Status)".
+- [ ] Scoring: "Resilience-Expert" Bonus für das Abfangen exakt zum Fehler passender Exceptions. Abzug für "Generic-Catch" (Catching everything without handling it).
+
+2. Screen-Layout (The Cockpit)
+- [ ] `code-flow-display -> exception-sensor -> shield-activation-buttons -> recovery-terminal`.
+- [ ] Shield-Activation: Buttons zum Platzieren von `try`, `catch` und `finally` Markern im fließenden Code.
+- [ ] Recovery-Terminal: Zeigt an, wie das Programm nach dem Fehler "weiteratmet".
+
+3. Kernvisuals und Effekte
+- [ ] Sci-Fi-Commander Ästhetik: Blaues Holo-Interface, orangefarbene Warnblitze bei Exceptions, metallisches Surren der Schilde, ruhige grüne Bestätigung im "Finally"-Fall (Shared Theme kompatibel).
+- [ ] "Shield-Impact": Ein helles Aufleuchten am Catch-Block, wenn der Error-Asteroid aufgehalten wird.
+- [ ] "Crash-Sequence": Wenn kein Catch vorhanden ist, zerfällt der Screen in Pixel-Rauschen und statisches Knistern.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Mix-Blend-Mode` für die leuchtenden Schildeffekte.
+- [ ] Mobile: "Tap-to-Protect" direkt auf die unsicheren Zeilen.
+
+5. Content-Strategie (The Flight-Logs)
+- [ ] 12 verschiedene Fehlerszenarien: Von "Internet-Timeout" bis "Invalid-User-Input".
+
+6. QA-Paket
+- [ ] Test: Wird die Rolle des `finally` Blocks (Aufräumen!) als unverzichtbar wahrgenommen?
+- [ ] Test: Ist der Unterschied zwischen "Programm-Absturz" und "Fehlerbehandlung" deutlich spürbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Exceptions sind keine Fehler, sondern Chancen zur Rettung.
+- [ ] Das Interface wirkt schützend, technisch und verlässlich.
+- [ ] Fokus auf Software-Robustheit.

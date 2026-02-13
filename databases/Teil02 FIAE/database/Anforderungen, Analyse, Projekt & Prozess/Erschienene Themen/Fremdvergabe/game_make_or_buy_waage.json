@@ -1,0 +1,29 @@
+{
+  "title": "The Strategic Scale",
+  "start_budget": 160000,
+  "start_ttm_days": 140,
+  "factors": [
+    {"id":"f01","level":1,"category":"Technisch","title":"Kein internes Know-how","text":"Team kennt die Zieltechnologie nicht.","weight":8,"recommended":"buy","budget_make":18000,"budget_buy":9000,"time_make":20,"time_buy":9,"core_comp":false,"vendor_lock_in":false},
+    {"id":"f02","level":1,"category":"Strategisch","title":"Kern-IP im Produkt","text":"Das Feature ist Teil des strategischen Kernwissens.","weight":9,"recommended":"make","budget_make":12000,"budget_buy":8500,"time_make":14,"time_buy":8,"core_comp":true,"vendor_lock_in":true},
+    {"id":"f03","level":1,"category":"Oekonomisch","title":"Einmalige Kleinserie","text":"Menge ist niedrig und nicht wiederkehrend.","weight":6,"recommended":"buy","budget_make":11000,"budget_buy":5000,"time_make":11,"time_buy":6,"core_comp":false,"vendor_lock_in":false},
+    {"id":"f04","level":1,"category":"Technisch","title":"Hoher Customizing-Bedarf","text":"Standardprodukte muessen stark angepasst werden.","weight":7,"recommended":"make","budget_make":9000,"budget_buy":10500,"time_make":10,"time_buy":12,"core_comp":true,"vendor_lock_in":true},
+    {"id":"f05","level":1,"category":"Strategisch","title":"Langfristige Roadmap-Kontrolle","text":"Zukuenftige Features sollen intern gesteuert werden.","weight":8,"recommended":"make","budget_make":10000,"budget_buy":9200,"time_make":12,"time_buy":10,"core_comp":true,"vendor_lock_in":true},
+    {"id":"f06","level":1,"category":"Oekonomisch","title":"Sofortiger Markteintritt","text":"Time-to-market ist kritischer als Differenzkosten.","weight":6,"recommended":"buy","budget_make":8000,"budget_buy":6300,"time_make":13,"time_buy":5,"core_comp":false,"vendor_lock_in":false},
+    {"id":"f07","level":1,"category":"Technisch","title":"Interne Plattform bereits vorhanden","text":"Infrastruktur kann direkt genutzt werden.","weight":7,"recommended":"make","budget_make":7000,"budget_buy":8100,"time_make":8,"time_buy":9,"core_comp":true,"vendor_lock_in":false},
+
+    {"id":"f08","level":2,"category":"Oekonomisch","title":"Budget-Squeeze: beide teuer","text":"Cashflow ist eng; jede Fehlentscheidung kostet doppelt.","weight":9,"recommended":"buy","budget_make":22000,"budget_buy":16000,"time_make":16,"time_buy":10,"core_comp":false,"vendor_lock_in":true},
+    {"id":"f09","level":2,"category":"Technisch","title":"Wartungsaufwand hoch","text":"Buy verursacht hohe laufende Servicegebuehren.","weight":8,"recommended":"make","budget_make":12500,"budget_buy":17800,"time_make":12,"time_buy":11,"core_comp":true,"vendor_lock_in":true},
+    {"id":"f10","level":2,"category":"Strategisch","title":"Abhaengigkeit von Einzelvendor","text":"Nur ein Anbieter hat kompatibles Modul.","weight":9,"recommended":"make","budget_make":14000,"budget_buy":15000,"time_make":13,"time_buy":9,"core_comp":false,"vendor_lock_in":true},
+    {"id":"f11","level":2,"category":"Oekonomisch","title":"Fixkostenblock intern steigt","text":"Parallelprojekte machen Eigenentwicklung teuer.","weight":8,"recommended":"buy","budget_make":19000,"budget_buy":13000,"time_make":14,"time_buy":8,"core_comp":false,"vendor_lock_in":false},
+    {"id":"f12","level":2,"category":"Technisch","title":"Sicherheitsanforderung branchenspezifisch","text":"Externe Loesung braucht aufwaendige Zertifizierungen.","weight":7,"recommended":"make","budget_make":9000,"budget_buy":12000,"time_make":10,"time_buy":13,"core_comp":true,"vendor_lock_in":true},
+    {"id":"f13","level":2,"category":"Strategisch","title":"Partner bietet Exit-Klausel","text":"Sauberer Ausstieg aus Buy-Vertrag ist moeglich.","weight":6,"recommended":"buy","budget_make":10000,"budget_buy":7600,"time_make":11,"time_buy":6,"core_comp":false,"vendor_lock_in":false},
+    {"id":"f14","level":2,"category":"Oekonomisch","title":"Betriebsteam ausgelastet","text":"Interne Uebernahme erzeugt Zusatzkosten im Betrieb.","weight":7,"recommended":"buy","budget_make":15500,"budget_buy":9800,"time_make":12,"time_buy":7,"core_comp":false,"vendor_lock_in":false},
+
+    {"id":"f15","level":3,"category":"Strategisch","title":"Strategic Shift: Konkurrent liefert Feature X","text":"Marktdruck steigt ploetzlich waehrend der Entscheidung.","weight":10,"recommended":"buy","budget_make":21000,"budget_buy":12000,"time_make":20,"time_buy":8,"core_comp":false,"vendor_lock_in":false},
+    {"id":"f16","level":3,"category":"Technisch","title":"Interne Architektur muss refaktoriert werden","text":"Make ist ohne Umbau nur schwer skalierbar.","weight":9,"recommended":"buy","budget_make":24000,"budget_buy":14000,"time_make":19,"time_buy":9,"core_comp":false,"vendor_lock_in":true},
+    {"id":"f17","level":3,"category":"Strategisch","title":"Differenzierungsmerkmal droht zu verschwinden","text":"Zukauf macht Produkt austauschbar.","weight":9,"recommended":"make","budget_make":14500,"budget_buy":13200,"time_make":12,"time_buy":10,"core_comp":true,"vendor_lock_in":true},
+    {"id":"f18","level":3,"category":"Technisch","title":"API-Standards offen","text":"Buy kann schnell integriert werden ohne Lock-in.","weight":7,"recommended":"buy","budget_make":13000,"budget_buy":8400,"time_make":14,"time_buy":7,"core_comp":false,"vendor_lock_in":false},
+    {"id":"f19","level":3,"category":"Oekonomisch","title":"Folgekosten ueber 3 Jahre","text":"Interne Wiederverwendung drueckt langfristig Kosten.","weight":8,"recommended":"make","budget_make":9800,"budget_buy":12800,"time_make":11,"time_buy":10,"core_comp":true,"vendor_lock_in":true},
+    {"id":"f20","level":3,"category":"Strategisch","title":"M&A-Szenario geplant","text":"Flexibilitaet fuer Integration neuer Teams ist entscheidend.","weight":8,"recommended":"make","budget_make":11200,"budget_buy":10500,"time_make":10,"time_buy":11,"core_comp":true,"vendor_lock_in":false}
+  ]
+}

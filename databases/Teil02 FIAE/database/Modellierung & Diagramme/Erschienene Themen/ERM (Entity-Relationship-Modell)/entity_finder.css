@@ -1,0 +1,212 @@
+/* 
+ * Entity-Finder - Styles
+ * Aesthetic: Nature-Survivor / Tech-Scout / Tactical Highlight
+ */
+
+:root {
+    --bg-wild: #1a1c12;
+    /* Dark swamp/wilderness green */
+    --bg-paper: #dcd0ba;
+    /* Old parchment */
+    --text-wild: #e0e4cc;
+    --hunter-green: #2ecc71;
+    --night-vision: #00ff41;
+    --entity-blue: #3498db;
+    --attr-gold: #f1c40f;
+    --error-red: #e74c3c;
+    --border-wild: #3d412d;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-wild);
+    color: var(--text-wild);
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* --- HUD --- */
+.hud {
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid var(--border-wild);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.radar-stats {
+    font-size: 0.8rem;
+    color: var(--night-vision);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Content Areas --- */
+.main-area {
+    flex: 1;
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.scouting-ground {
+    flex: 1;
+    background: var(--bg-paper);
+    color: #2c3e50;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    overflow-y: auto;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.scouting-ground span {
+    cursor: crosshair;
+    padding: 2px 4px;
+    border-radius: 2px;
+    transition: background 0.2s;
+}
+
+.scouting-ground span:hover {
+    background: rgba(0, 255, 65, 0.2);
+}
+
+.highlight-entity {
+    background: var(--entity-blue) !important;
+    color: white !important;
+}
+
+.highlight-attr {
+    background: var(--attr-gold) !important;
+    color: black !important;
+}
+
+.highlight-noise {
+    background: #95a5a6 !important;
+    color: white !important;
+}
+
+/* --- Canvas --- */
+.erm-canvas {
+    flex: 1;
+    background: #000;
+    border: 1px solid var(--border-wild);
+    position: relative;
+    border-radius: 4px;
+    background-image: radial-gradient(var(--border-wild) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.entity-card {
+    position: absolute;
+    background: #222;
+    border: 2px solid var(--entity-blue);
+    color: var(--entity-blue);
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.attr-dot {
+    font-size: 0.75rem;
+    color: var(--attr-gold);
+    margin-top: 5px;
+    list-style: none;
+    padding: 0;
+}
+
+.attr-dot li::before {
+    content: "○ ";
+}
+
+/* --- Capture UI --- */
+.capture-bubble {
+    position: absolute;
+    background: var(--night-vision);
+    color: black;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    pointer-events: none;
+    z-index: 1000;
+    animation: capture-fly 0.6s forwards;
+}
+
+@keyframes capture-fly {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(0.2);
+        opacity: 0;
+    }
+}
+
+/* --- Controls --- */
+.action-footer {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.btn-hunt {
+    background: transparent;
+    border: 2px solid var(--night-vision);
+    color: var(--night-vision);
+    padding: 10px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-hunt:hover {
+    background: var(--night-vision);
+    color: black;
+}
+
+/* --- Overlay --- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.mission-card {
+    background: var(--bg-paper);
+    color: #2c3e50;
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 500px;
+}
+
+.hidden {
+    display: none !important;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERM Entity Hunter - Scouting Ground</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="entity_finder.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div style="flex:1;">
+                <h1
+                    style="font-size: 1.2rem; margin:0; color:var(--night-vision); text-shadow: 0 0 10px var(--night-vision);">
+                    ENTITY_HUNTER // MK_I</h1>
+            </div>
+
+            <div class="radar-stats">
+                RADAR: <span id="radar-val">0%</span> |
+                INSTINCT: <span id="integrity-val">0</span>
+            </div>
+
+            <div style="flex:1; text-align:right; font-size:0.75rem; color:#444;">
+                SCAN_MODE: ACTIVE_ANALYSIS
+            </div>
+        </header>
+
+        <!-- Main Workspace -->
+        <main class="main-area">
+            <!-- Scouting Ground (Text) -->
+            <section id="story-area" class="scouting-ground">
+                <!-- Text segments with words as spans injected here -->
+                LOADING_STORY_DATA...
+            </section>
+
+            <!-- ERM Canvas -->
+            <section id="canvas" class="erm-canvas">
+                <!-- Discovered Entity Cards injected here -->
+            </section>
+        </main>
+
+        <!-- Action Footer -->
+        <footer class="action-footer">
+            <div style="color: #666; font-size: 0.8rem; font-style: italic;">
+                TIP: Klicke auf ein Substantiv im Text, um es als Entität zu identifizieren.
+            </div>
+        </footer>
+
+        <!-- Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="mission-card">
+                <h2 id="mission-title" style="margin-top:0;">MISSION COMPLETE</h2>
+                <div id="mission-text" style="margin: 1.5rem 0; font-style: italic; color: #555;">...</div>
+
+                <div style="background:rgba(0,0,0,0.05); padding:1rem; margin-bottom:2rem; font-size:0.8rem;">
+                    ENTITY_CAPTURE_SUCCESS: 100%<br>
+                    MODEL_INTEGRITY: STABLE
+                </div>
+
+                <button id="btn-next" class="btn-hunt">NÄCHSTE MISSION</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_entity_finder.js"></script>
+</body>
+
+</html>

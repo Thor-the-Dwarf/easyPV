@@ -1,0 +1,129 @@
+{
+    "meta": {
+        "topic": "ERM Entity Identification",
+        "mechanic": "entity_hunter",
+        "version": "1.0"
+    },
+    "scenarios": [
+        {
+            "id": 1,
+            "title": "Tierheim-Verwaltung",
+            "story": "In unserem Tierheim leben verschiedene Hunde. Jeder Hund hat einen Namen, eine Rasse und ein Geburtsdatum. Die Pfleger kümmern sich um die Tiere. Jeder Pfleger hat eine Personalnummer.",
+            "targets": [
+                {
+                    "text": "Hund",
+                    "type": "entity",
+                    "hint": "Ein konkretes Ding/Sammelbegriff."
+                },
+                {
+                    "text": "Hunde",
+                    "type": "entity",
+                    "hint": "Pluralform der Entität."
+                },
+                {
+                    "text": "Namen",
+                    "type": "attribute",
+                    "parent": "Hund"
+                },
+                {
+                    "text": "Pflege",
+                    "type": "attribute",
+                    "parent": "Hund",
+                    "ignore": true
+                },
+                {
+                    "text": "Rasse",
+                    "type": "attribute",
+                    "parent": "Hund"
+                },
+                {
+                    "text": "Geburtsdatum",
+                    "type": "attribute",
+                    "parent": "Hund"
+                },
+                {
+                    "text": "Pfleger",
+                    "type": "entity"
+                },
+                {
+                    "text": "Personalnummer",
+                    "type": "attribute",
+                    "parent": "Pfleger"
+                },
+                {
+                    "text": "Tiere",
+                    "type": "entity",
+                    "alias": "Hund"
+                }
+            ],
+            "noise": [
+                "unserem",
+                "verschiedene",
+                "hat",
+                "einen",
+                "und",
+                "ein",
+                "Die",
+                "um",
+                "die",
+                "Jeder"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Raumschiff-Logistik",
+            "story": "Ein Raumschiff benötigt Treibstoff. Für jeden Flug wird eine Flugnummer vergeben. Die Besatzung besteht aus mehreren Mitgliedern. Ein Mitglied hat einen Dienstgrad.",
+            "targets": [
+                {
+                    "text": "Raumschiff",
+                    "type": "entity"
+                },
+                {
+                    "text": "Treibstoff",
+                    "type": "attribute",
+                    "parent": "Raumschiff"
+                },
+                {
+                    "text": "Flug",
+                    "type": "entity"
+                },
+                {
+                    "text": "Flugnummer",
+                    "type": "attribute",
+                    "parent": "Flug"
+                },
+                {
+                    "text": "Besatzung",
+                    "type": "entity"
+                },
+                {
+                    "text": "Mitgliedern",
+                    "type": "entity",
+                    "alias": "Mitglied"
+                },
+                {
+                    "text": "Mitglied",
+                    "type": "entity"
+                },
+                {
+                    "text": "Dienstgrad",
+                    "type": "attribute",
+                    "parent": "Mitglied"
+                }
+            ],
+            "noise": [
+                "Ein",
+                "benötigt",
+                "Für",
+                "jeden",
+                "wird",
+                "eine",
+                "vergeben",
+                "Die",
+                "besteht",
+                "aus",
+                "mehreren"
+            ]
+        }
+    ]
+}

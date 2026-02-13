@@ -1,0 +1,121 @@
+{
+    "meta": {
+        "topic": "Factory Pattern",
+        "mechanic": "production_line",
+        "version": "1.0"
+    },
+    "factories": [
+        {
+            "id": "win_factory",
+            "label": "Windows Factory",
+            "color": "#0078d7",
+            "supported_families": [
+                "windows"
+            ]
+        },
+        {
+            "id": "mac_factory",
+            "label": "MacOS Factory",
+            "color": "#999999",
+            "supported_families": [
+                "macos"
+            ]
+        },
+        {
+            "id": "web_factory",
+            "label": "Web Factory",
+            "color": "#e34f26",
+            "supported_families": [
+                "web"
+            ]
+        }
+    ],
+    "products": [
+        {
+            "id": "btn_win",
+            "label": "WinButton",
+            "family": "windows",
+            "type": "button",
+            "icon": "🔲"
+        },
+        {
+            "id": "btn_mac",
+            "label": "MacButton",
+            "family": "macos",
+            "type": "button",
+            "icon": "⚪"
+        },
+        {
+            "id": "btn_web",
+            "label": "HTML Button",
+            "family": "web",
+            "type": "button",
+            "icon": "🖱️"
+        },
+        {
+            "id": "chk_win",
+            "label": "WinCheckbox",
+            "family": "windows",
+            "type": "checkbox",
+            "icon": "☑️"
+        },
+        {
+            "id": "chk_mac",
+            "label": "MacToggle",
+            "family": "macos",
+            "type": "checkbox",
+            "icon": "💊"
+        },
+        {
+            "id": "chk_web",
+            "label": "Input[checkbox]",
+            "family": "web",
+            "type": "checkbox",
+            "icon": "✅"
+        }
+    ],
+    "levels": [
+        {
+            "id": 1,
+            "title": "Button Production",
+            "orders": [
+                {
+                    "os": "windows",
+                    "product": "button",
+                    "targetId": "btn_win"
+                },
+                {
+                    "os": "macos",
+                    "product": "button",
+                    "targetId": "btn_mac"
+                },
+                {
+                    "os": "web",
+                    "product": "button",
+                    "targetId": "btn_web"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Full UI Suite",
+            "orders": [
+                {
+                    "os": "windows",
+                    "product": "checkbox",
+                    "targetId": "chk_win"
+                },
+                {
+                    "os": "macos",
+                    "product": "checkbox",
+                    "targetId": "chk_mac"
+                },
+                {
+                    "os": "web",
+                    "product": "checkbox",
+                    "targetId": "chk_web"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+{
+    "meta": {
+        "topic": "Singleton Pattern",
+        "mechanic": "security_defense",
+        "version": "1.0"
+    },
+    "scenarios": [
+        {
+            "id": "s1",
+            "label": "Global Logger",
+            "instanceId": "LOGGER_01"
+        },
+        {
+            "id": "s2",
+            "label": "DB Connection Pool",
+            "instanceId": "DB_POOL_MAIN"
+        },
+        {
+            "id": "s3",
+            "label": "Game Configuration",
+            "instanceId": "CONFIG_ROOT"
+        }
+    ],
+    "levels": [
+        {
+            "id": 1,
+            "title": "Script Kiddies",
+            "speed": 2000,
+            "waves": 10,
+            "threads": [
+                {
+                    "type": "new",
+                    "label": "new Logger()",
+                    "valid": false
+                },
+                {
+                    "type": "get",
+                    "label": "Logger.getInstance()",
+                    "valid": true
+                },
+                {
+                    "type": "new",
+                    "label": "new Logger()",
+                    "valid": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Race Condition",
+            "speed": 1000,
+            "waves": 20,
+            "threads": [
+                {
+                    "type": "reflect",
+                    "label": "Reflection.new",
+                    "valid": false
+                },
+                {
+                    "type": "get",
+                    "label": "Logger.getInstance()",
+                    "valid": true
+                },
+                {
+                    "type": "clone",
+                    "label": "logger.clone()",
+                    "valid": false
+                },
+                {
+                    "type": "serialize",
+                    "label": "deserialize(file)",
+                    "valid": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singleton Pattern - The Vault</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="singleton_challenge.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <div class="scan-line"></div>
+
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="hud-label">SECURITY SCORE</span>
+                <span class="hud-value" id="score-val">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">VAULT INTEGRITY</span>
+                <span class="hud-value" id="integrity-val">100%</span>
+            </div>
+        </header>
+
+        <!-- Vault Area -->
+        <main class="vault-area" id="vault-area">
+
+            <div class="perimeter"></div>
+
+            <div class="central-vault">
+                <div id="core-pulse" class="core-pulse"></div>
+                <div style="font-size:3rem; z-index:20">🔒</div>
+                <div id="instance-label" class="instance-label">INSTANCE: NULL</div>
+            </div>
+
+            <!-- Hackers spawn absolutely here -->
+
+        </main>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card"
+                style="background: rgba(0,0,0,0.9); border: 2px solid var(--neon-blue); padding: 3rem; text-align:center;">
+                <h2 style="color:var(--neon-blue); margin-bottom:1rem; font-size:2rem">ACCESS REPORT</h2>
+                <div class="hud-value" style="font-size: 4rem; margin: 2rem 0; color:#fff" id="final-score">0</div>
+                <button id="restart-btn" class="btn-neon">REBOOT SYSTEM</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_singleton_challenge.js"></script>
+</body>
+
+</html>

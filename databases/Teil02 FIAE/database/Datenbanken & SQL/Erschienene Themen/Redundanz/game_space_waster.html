@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platz Verschwender - The Data Diet</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="space_waster.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div style="flex:1;">
+                <h1 style="font-size: 1.2rem; margin:0; color:var(--accent-blue);">STORAGE_ANALYZER // DATA_DIET</h1>
+            </div>
+
+            <div class="meter-container">
+                <div class="size-o-meter">
+                    <div id="meter-fill" class="meter-fill"></div>
+                </div>
+                <div id="size-value" class="size-label">TABLE_WEIGHT: 100%</div>
+            </div>
+
+            <div style="flex:1; text-align:right; font-size:0.75rem; color:#555;">
+                STATUS: REDUNDANCY_DETECTED
+            </div>
+        </header>
+
+        <!-- Workspace -->
+        <main class="content-area">
+            <div id="table-panel" class="table-panel">
+                <table>
+                    <thead>
+                        <tr id="table-header">
+                            <!-- Headers injected here -->
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Data rows injected here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align: center; color: #555; font-size: 0.85rem;">
+                TIP: Click on a column with many repeating text values to mark it for normalization.
+            </div>
+        </main>
+
+        <!-- Controls -->
+        <footer class="action-bar">
+            <button id="btn-cut" class="btn-main btn-cut">✂️ NORMALISIEREN (CUT)</button>
+        </footer>
+
+        <!-- Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="feedback-card">
+                <h2 style="color:var(--accent-green); margin-bottom:1rem;">OPTIMIERUNG ABGESCHLOSSEN</h2>
+                <p id="result-text" style="font-size: 0.95rem; line-height: 1.6; color: #aaa;">...</p>
+
+                <div
+                    style="background:rgba(255,255,255,0.05); padding:1rem; margin:1.5rem 0; font-family:monospace; font-size:0.8rem;">
+                    ANOMALY_RISK: REDUCED<br>
+                    MAINTENANCE_EFFORT: LOW
+                </div>
+
+                <button id="btn-next" class="btn-main btn-next">NÄCHSTES SZENARIO</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_space_waster.js"></script>
+</body>
+
+</html>

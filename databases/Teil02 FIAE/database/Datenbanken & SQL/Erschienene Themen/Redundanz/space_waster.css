@@ -1,0 +1,205 @@
+/* 
+ * Platz-Verschwender - Styles
+ * Aesthetic: Data Diet / Industrial Scale / Space Optimization
+ */
+
+:root {
+    --bg-dark: #0f1218;
+    --bg-panel: #1a1e26;
+    --text-main: #d1d9e6;
+    --accent-blue: #4a90e2;
+    --accent-green: #2ecc71;
+    --accent-red: #e74c3c;
+    --border-color: #31394a;
+    --redundant-hl: rgba(231, 76, 60, 0.15);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* --- HUD: Size-O-Meter --- */
+.hud {
+    padding: 1.5rem 2rem;
+    background: var(--bg-panel);
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.meter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.size-o-meter {
+    width: 200px;
+    height: 20px;
+    background: #111;
+    border: 2px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.meter-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, var(--accent-green), var(--accent-red));
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.size-label {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--accent-red);
+}
+
+/* --- Main Content --- */
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    overflow-y: auto;
+}
+
+.table-panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.table-panel.slimmed {
+    transform: scaleX(0.7);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #232a35;
+    padding: 15px;
+    text-align: left;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #8892b0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.column-highlight {
+    background: var(--redundant-hl);
+    transition: background-color 0.3s;
+}
+
+.column-highlight.selected {
+    background: rgba(74, 144, 226, 0.3);
+}
+
+/* --- Action Bar --- */
+.action-bar {
+    padding: 1.5rem;
+    background: #0a0c10;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-main {
+    padding: 0.8rem 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    text-transform: uppercase;
+}
+
+.btn-cut {
+    background: var(--accent-red);
+    color: #fff;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-cut.active {
+    opacity: 1;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.4);
+}
+
+/* --- Feedback Overlay --- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.feedback-card {
+    background: var(--bg-panel);
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid var(--accent-green);
+    max-width: 500px;
+}
+
+.btn-next {
+    margin-top: 2rem;
+    background: #fff;
+    color: #000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Animations */
+.shrink-anim {
+    animation: table-shrink 1s forwards;
+}
+
+@keyframes table-shrink {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 70%;
+    }
+}

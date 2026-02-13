@@ -1,0 +1,103 @@
+{
+    "meta": {
+        "topic": "SQL Redundancy & Normalization",
+        "mechanic": "data_diet_cutting",
+        "version": "1.0"
+    },
+    "scenarios": [
+        {
+            "id": 1,
+            "title": "Customer List Bloat",
+            "description": "Notice how the City and ZIP are repeated for every customer? That's a lot of wasted bytes!",
+            "headers": [
+                "ID",
+                "Name",
+                "City",
+                "ZIP"
+            ],
+            "redundantColumn": "City",
+            "data": [
+                {
+                    "ID": 1,
+                    "Name": "Müller",
+                    "City": "Berlin",
+                    "ZIP": "10115"
+                },
+                {
+                    "ID": 2,
+                    "Name": "Schmidt",
+                    "City": "Hamburg",
+                    "ZIP": "20095"
+                },
+                {
+                    "ID": 3,
+                    "Name": "Fischer",
+                    "City": "Berlin",
+                    "ZIP": "10115"
+                },
+                {
+                    "ID": 4,
+                    "Name": "Weber",
+                    "City": "Munich",
+                    "ZIP": "80331"
+                },
+                {
+                    "ID": 5,
+                    "Name": "Meyer",
+                    "City": "Hamburg",
+                    "ZIP": "20095"
+                },
+                {
+                    "ID": 6,
+                    "Name": "Wagner",
+                    "City": "Berlin",
+                    "ZIP": "10115"
+                }
+            ],
+            "bytePerChar": 1,
+            "idByteSize": 4,
+            "successMessage": "Diet successful! By moving Cities to a master table, you've reduced the main table size and eliminated update anomalies."
+        },
+        {
+            "id": 2,
+            "title": "Industrial Catalog",
+            "description": "Category names are wide and heavy. Let's slim down the product table.",
+            "headers": [
+                "ProdID",
+                "Label",
+                "Category"
+            ],
+            "redundantColumn": "Category",
+            "data": [
+                {
+                    "ProdID": "P01",
+                    "Label": "Drill X1",
+                    "Category": "Power Tools"
+                },
+                {
+                    "ProdID": "P02",
+                    "Label": "Saw Y2",
+                    "Category": "Power Tools"
+                },
+                {
+                    "ProdID": "P03",
+                    "Label": "Gloves",
+                    "Category": "Safety Gear"
+                },
+                {
+                    "ProdID": "P04",
+                    "Label": "Drill Z5",
+                    "Category": "Power Tools"
+                },
+                {
+                    "ProdID": "P05",
+                    "Label": "Helmet",
+                    "Category": "Safety Gear"
+                }
+            ],
+            "bytePerChar": 1,
+            "idByteSize": 4,
+            "successMessage": "Metallic precision! The product catalog is now optimized for performance."
+        }
+    ]
+}

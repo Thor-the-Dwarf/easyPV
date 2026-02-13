@@ -71,7 +71,7 @@ body {
   color: hsl(210 50% 96%);
 }
 
-.drawer-close {
+.drawer-toggle {
   width: 34px;
   height: 34px;
   border: 1px solid hsl(195 100% 62% / 0.38);
@@ -79,9 +79,11 @@ body {
   background: hsl(230 30% 18% / 0.9);
   color: hsl(210 50% 96%);
   cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
 }
 
-.drawer-close:hover {
+.drawer-toggle:hover {
   border-color: hsl(195 100% 62% / 0.8);
 }
 

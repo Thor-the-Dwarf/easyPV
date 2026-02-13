@@ -3,10 +3,10 @@
 
   const frame = document.getElementById('content-frame');
   const drawer = document.getElementById('c-suite-drawer');
-  const drawerClose = document.getElementById('drawer-close');
+  const drawerToggle = document.getElementById('drawer-toggle');
   const fabPractice = document.getElementById('fab-practice');
   const fabFeedback = document.getElementById('fab-feedback');
-  if (!frame || !drawer || !fabPractice) return;
+  if (!frame || !drawer || !fabPractice || !drawerToggle) return;
 
   const params = new URLSearchParams(window.location.search);
   const json = params.get('json');
@@ -18,16 +18,26 @@
 
   frame.src = './generic_c_suite/generic_c_suite.html' + (targetParams.toString() ? '?' + targetParams.toString() : '');
 
+  function updateDrawerToggleUi() {
+    const isOpen = drawer.classList.contains('is-open');
+    drawerToggle.textContent = isOpen ? '▾' : '▴';
+    const label = isOpen ? 'C-Suite einklappen' : 'C-Suite aufklappen';
+    drawerToggle.setAttribute('aria-label', label);
+    drawerToggle.title = label;
+  }
+
   function setDrawerOpen(isOpen) {
     drawer.classList.toggle('is-open', !!isOpen);
+    updateDrawerToggleUi();
   }
 
   function toggleDrawer() {
     setDrawerOpen(!drawer.classList.contains('is-open'));
   }
 
+  updateDrawerToggleUi();
   fabPractice.addEventListener('click', toggleDrawer);
-  if (drawerClose) drawerClose.addEventListener('click', function () { setDrawerOpen(false); });
+  drawerToggle.addEventListener('click', toggleDrawer);
 
   if (fabFeedback) {
     fabFeedback.addEventListener('click', function () {

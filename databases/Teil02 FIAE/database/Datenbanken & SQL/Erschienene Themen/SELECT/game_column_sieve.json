@@ -1,0 +1,161 @@
+{
+    "meta": {
+        "topic": "SQL SELECT (Projection)",
+        "mechanic": "column_filter_optimization",
+        "version": "1.0"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Contact List Lite",
+            "mission": "We need to send a newsletter. Retrieve only 'username' and 'email' from the User table.",
+            "tableName": "Users",
+            "requiredColumns": [
+                "username",
+                "email"
+            ],
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INT",
+                    "weight": 4,
+                    "desc": "Primary Key"
+                },
+                {
+                    "name": "username",
+                    "type": "VARCHAR(50)",
+                    "weight": 50,
+                    "desc": "Login Name"
+                },
+                {
+                    "name": "email",
+                    "type": "VARCHAR(255)",
+                    "weight": 255,
+                    "desc": "User Email"
+                },
+                {
+                    "name": "password_hash",
+                    "type": "CHAR(60)",
+                    "weight": 60,
+                    "desc": "Sensitive Hash"
+                },
+                {
+                    "name": "bio",
+                    "type": "TEXT",
+                    "weight": 500,
+                    "desc": "User Biography"
+                },
+                {
+                    "name": "created_at",
+                    "type": "DATETIME",
+                    "weight": 8,
+                    "desc": "Sign-up Date"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Product Catalog Speedup",
+            "mission": "Display the product catalog. We need 'prod_name', 'price', and 'stock'. Avoid the heavy description and image data!",
+            "tableName": "Products",
+            "requiredColumns": [
+                "prod_name",
+                "price",
+                "stock"
+            ],
+            "columns": [
+                {
+                    "name": "prod_id",
+                    "type": "INT",
+                    "weight": 4,
+                    "desc": "Unique ID"
+                },
+                {
+                    "name": "prod_name",
+                    "type": "VARCHAR(100)",
+                    "weight": 100,
+                    "desc": "Display Name"
+                },
+                {
+                    "name": "price",
+                    "type": "DECIMAL(10,2)",
+                    "weight": 8,
+                    "desc": "Unit Price"
+                },
+                {
+                    "name": "stock",
+                    "type": "INT",
+                    "weight": 4,
+                    "desc": "Inventory Count"
+                },
+                {
+                    "name": "description",
+                    "type": "LONGTEXT",
+                    "weight": 2048,
+                    "desc": "Product Details"
+                },
+                {
+                    "name": "prod_image",
+                    "type": "MEDIUMBLOB",
+                    "weight": 15360,
+                    "desc": "HD Image Data"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Clean Log Review",
+            "mission": "Review system errors. We only need the 'error_code', 'message', and 'timestamp'. Filter out the heavy 'stack_trace' and 'environment_dump'.",
+            "tableName": "System_Logs",
+            "requiredColumns": [
+                "error_code",
+                "message",
+                "timestamp"
+            ],
+            "columns": [
+                {
+                    "name": "log_id",
+                    "type": "BIGINT",
+                    "weight": 8,
+                    "desc": "Unique Log ID"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "DATETIME",
+                    "weight": 8,
+                    "desc": "Occurence Time"
+                },
+                {
+                    "name": "severity",
+                    "type": "VARCHAR(10)",
+                    "weight": 10,
+                    "desc": "Error Level"
+                },
+                {
+                    "name": "error_code",
+                    "type": "INT",
+                    "weight": 4,
+                    "desc": "Internal Code"
+                },
+                {
+                    "name": "message",
+                    "type": "VARCHAR(255)",
+                    "weight": 255,
+                    "desc": "Short Summary"
+                },
+                {
+                    "name": "stack_trace",
+                    "type": "TEXT",
+                    "weight": 5120,
+                    "desc": "Full Stack Trace"
+                },
+                {
+                    "name": "env_dump",
+                    "type": "JSON",
+                    "weight": 8192,
+                    "desc": "System State Snapshot"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL SELECT - Spalten-Sieb</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="column_sieve.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- Navigation / HUD -->
+        <nav class="nav-bar">
+            <div class="mission-brief">
+                <div id="mission-title" class="mission-title">Loading mission...</div>
+                <div id="mission-text" class="mission-text">...</div>
+            </div>
+            <div style="font-family: monospace; font-size: 0.8rem; color: #555;">SYSTEM: PROJECTION_TUNER v1.0</div>
+        </nav>
+
+        <!-- Main Workspace -->
+        <main class="workspace">
+            <div style="font-size: 0.7rem; color: #444; text-transform: uppercase; letter-spacing: 2px;">Table Blueprint
+            </div>
+            <div id="blueprint" class="blueprint-grid">
+                <!-- Columns injected here -->
+            </div>
+        </main>
+
+        <!-- Performance Footer -->
+        <footer class="performance-footer">
+            <div class="gauge-container">
+                <div class="stat-box">
+                    <div class="efficiency-rank">Current Data Weight</div>
+                    <div class="counter-display">
+                        <span id="kb-counter" class="kb-value">0</span> <span style="font-size: 0.8rem">KB</span>
+                    </div>
+                </div>
+                <div class="weight-gauge">
+                    <div id="gauge-fill" class="gauge-fill"></div>
+                </div>
+            </div>
+
+            <div class="controls-area">
+                <button id="btn-asterisk" class="btn-terminal warning">SELECT *</button>
+                <button id="btn-run" class="btn-terminal primary">RUN OPTIMIZED QUERY</button>
+            </div>
+        </footer>
+
+        <!-- Result Overlay -->
+        <div id="result-overlay" class="result-overlay hidden">
+            <div class="result-card">
+                <h2 style="color:#fff; margin-bottom:0.5rem;">QUERY ANALYTICS</h2>
+                <div id="result-text" style="color: #8892b0; font-size: 0.9rem; margin-bottom: 2rem;">...</div>
+                <div class="rank-display" id="rank-display">S</div>
+                <div style="font-size: 0.7rem; color: #555; text-transform: uppercase;">Optimization Rank</div>
+                <button id="btn-next" class="btn-terminal primary btn-next">SCAN NEXT ENDPOINT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_column_sieve.js"></script>
+</body>
+
+</html>

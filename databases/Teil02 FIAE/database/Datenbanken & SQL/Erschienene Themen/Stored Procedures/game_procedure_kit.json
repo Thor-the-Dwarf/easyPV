@@ -1,0 +1,107 @@
+{
+    "meta": {
+        "topic": "Stored Procedures",
+        "mechanic": "logic_factory",
+        "version": "1.0"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Smart Discount Factory",
+            "description": "Calculate a 10% discount if the order amount is over 100 EUR.",
+            "inputs": [
+                {
+                    "name": "p_amount",
+                    "type": "DECIMAL",
+                    "min": 0,
+                    "max": 500,
+                    "default": 50
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "p_discount",
+                    "type": "DECIMAL"
+                }
+            ],
+            "logic": [
+                {
+                    "type": "if",
+                    "condition": "p_amount > 100",
+                    "then": "p_discount = p_amount * 0.10",
+                    "else": "p_discount = 0"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Inventory Control Center",
+            "description": "Check if enough stock is available. Set 'p_status' to 1 (Ready) if 'p_order_qty' <= 'p_stock_qty', else 0 (Backlog).",
+            "inputs": [
+                {
+                    "name": "p_order_qty",
+                    "type": "INT",
+                    "min": 1,
+                    "max": 100,
+                    "default": 10
+                },
+                {
+                    "name": "p_stock_qty",
+                    "type": "INT",
+                    "min": 1,
+                    "max": 100,
+                    "default": 50
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "p_status",
+                    "type": "INT"
+                }
+            ],
+            "logic": [
+                {
+                    "type": "if",
+                    "condition": "p_order_qty <= p_stock_qty",
+                    "then": "p_status = 1",
+                    "else": "p_status = 0"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Customer Loyalty Upgrade",
+            "description": "Upgrade customers to 'Gold' if their total spending is > 1000 and they have > 5 orders.",
+            "inputs": [
+                {
+                    "name": "p_total_spend",
+                    "type": "DECIMAL",
+                    "min": 0,
+                    "max": 5000,
+                    "default": 800
+                },
+                {
+                    "name": "p_order_count",
+                    "type": "INT",
+                    "min": 0,
+                    "max": 50,
+                    "default": 3
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "p_is_gold",
+                    "type": "INT"
+                }
+            ],
+            "logic": [
+                {
+                    "type": "if",
+                    "condition": "p_total_spend > 1000 AND p_order_count > 5",
+                    "then": "p_is_gold = 1",
+                    "else": "p_is_gold = 0"
+                }
+            ]
+        }
+    ]
+}

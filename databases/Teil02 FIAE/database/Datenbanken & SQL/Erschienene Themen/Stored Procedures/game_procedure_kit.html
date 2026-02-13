@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored Procedures - Logic Factory</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="procedure_kit.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="level-info">
+                <h2 id="level-title">Loading...</h2>
+                <p id="level-desc">...</p>
+            </div>
+            <div style="font-family: 'Courier New', Courier, monospace; color: var(--accent-gold);">
+                PROC_TERMINAL // IO_READY
+            </div>
+        </header>
+
+        <!-- Main Factory -->
+        <main class="factory-area">
+            <!-- Inlet -->
+            <div id="factory-inlet" class="factory-section inlet">
+                <!-- Inputs injected here -->
+            </div>
+
+            <!-- Shop Floor (Logic Engine) -->
+            <div class="logic-engine">
+                <div id="code-block" class="code-block">
+                    <!-- SQL Logic injected here -->
+                </div>
+                <!-- Animation Track -->
+                <div class="particle-track">
+                    <div id="data-pulse" class="data-pulse"></div>
+                </div>
+            </div>
+
+            <!-- Outlet -->
+            <div id="factory-outlet" class="factory-section outlet">
+                <!-- Outputs injected here -->
+            </div>
+        </main>
+
+        <!-- Controls -->
+        <footer class="factory-footer">
+            <button id="btn-call" class="btn-call">CALL PROCEDURE</button>
+        </footer>
+
+        <!-- Result Overlay -->
+        <div id="result-overlay" class="result-overlay hidden">
+            <div class="result-card">
+                <h2 style="color:var(--accent-gold); margin-bottom:1rem;">EXECUTION SUCCESSFUL</h2>
+                <p>The stored procedure has processed the data server-side.</p>
+
+                <div class="efficiency-stat">
+                    PERFORMANCE GAIN: NETWORK LOAD REDUCED<br>
+                    (1 Procedure Call replacing multiple queries)
+                </div>
+
+                <div style="margin-top:2rem;">
+                    <button id="btn-next" class="btn-next">PROCESS NEXT ORDER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_procedure_kit.js"></script>
+</body>
+
+</html>

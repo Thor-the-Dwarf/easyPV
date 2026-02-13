@@ -1,0 +1,264 @@
+/* 
+ * Procedure Baukasten - Styles
+ * Aesthetic: Logic Factory / Industrial / Steampunk / Tech
+ */
+
+:root {
+    --bg-factory: #1a1a1a;
+    --bg-engine: #242424;
+    --text-main: #d4d4d4;
+    --accent-gold: #ffcc00;
+    --accent-blue: #007acc;
+    --accent-green: #4caf50;
+    --panel-border: #333;
+    --logic-path: rgba(255, 204, 0, 0.2);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-factory);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* --- HUD --- */
+.hud {
+    padding: 1rem 2rem;
+    background: #111;
+    border-bottom: 2px solid var(--accent-gold);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.level-info h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+}
+
+.level-info p {
+    margin: 5px 0 0;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* --- Factory Area --- */
+.factory-area {
+    flex: 1;
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+    background-image:
+        linear-gradient(45deg, #1d1d1d 25%, transparent 25%),
+        linear-gradient(-45deg, #1d1d1d 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #1d1d1d 75%),
+        linear-gradient(-45deg, transparent 75%, #1d1d1d 75%);
+    background-size: 40px 40px;
+}
+
+/* Inlet / Outlet Sections */
+.factory-section {
+    width: 250px;
+    background: var(--bg-engine);
+    border: 4px solid var(--panel-border);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.section-label {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: var(--accent-blue);
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+/* Parameter Elements */
+.param-card {
+    background: #2a2a2a;
+    border-left: 4px solid var(--accent-blue);
+    padding: 10px;
+    margin-bottom: 1rem;
+}
+
+.param-name {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.param-type {
+    font-size: 0.7rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.param-input {
+    width: 100%;
+    background: #111;
+    border: 1px solid #444;
+    color: var(--accent-gold);
+    padding: 5px;
+    font-family: monospace;
+}
+
+/* OUT specific */
+.outlet .param-card {
+    border-left-color: var(--accent-green);
+}
+
+.out-value {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: right;
+    color: #fff;
+}
+
+/* --- Logic Engine (Center) --- */
+.logic-engine {
+    flex: 1;
+    background: #1a1e26;
+    border: 4px solid #444;
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.code-block {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #9cdcfe;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    z-index: 5;
+}
+
+.keyword {
+    color: #569cd6;
+    font-weight: bold;
+}
+
+.condition {
+    color: #ce9178;
+}
+
+.assignment {
+    color: #dcdcaa;
+}
+
+/* Animation Overlay */
+.particle-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.data-pulse {
+    width: 10px;
+    height: 10px;
+    background: var(--accent-gold);
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 15px var(--accent-gold);
+    display: none;
+}
+
+/* --- Control Footer --- */
+.factory-footer {
+    padding: 1.5rem;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid #333;
+}
+
+.btn-call {
+    background: var(--accent-gold);
+    color: #000;
+    border: none;
+    padding: 1rem 4rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-call:active {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+.btn-call:hover {
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
+}
+
+/* --- Result Overlay --- */
+.result-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.result-card {
+    background: var(--bg-engine);
+    border: 2px solid var(--accent-gold);
+    padding: 3rem;
+    text-align: center;
+}
+
+.efficiency-stat {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid var(--accent-blue);
+    color: var(--accent-blue);
+    font-family: monospace;
+}
+
+.btn-next {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}

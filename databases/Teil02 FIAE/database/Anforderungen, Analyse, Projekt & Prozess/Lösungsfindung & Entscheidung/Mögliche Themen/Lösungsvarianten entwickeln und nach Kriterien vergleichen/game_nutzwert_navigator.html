@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutzwert Navigator</title>
+  <link rel="stylesheet" href="./nutzwert_navigator.css">
+</head>
+<body class="nwa-page">
+<main class="nwa-app">
+  <header class="nwa-head">
+    <h1>Nutzwert Navigator</h1>
+    <p>Gewichte Kriterien, beobachte den Score live und finde eine robuste Entscheidung.</p>
+    <div class="kpis">
+      <div class="kpi"><span>Total-Score</span><strong id="kpi-total">0</strong></div>
+      <div class="kpi"><span>Objectivity-Rating</span><strong id="kpi-objectivity">100%</strong></div>
+      <div class="kpi"><span>Decision-Confidence</span><strong id="kpi-confidence">0%</strong></div>
+      <div class="kpi"><span>Fall</span><strong id="kpi-progress">1/10</strong></div>
+      <div class="kpi"><span>Level</span><strong id="kpi-level">1</strong></div>
+    </div>
+  </header>
+
+  <section class="panel">
+    <article class="scenario-card">
+      <p id="scenario-tag" class="scenario-tag">Level 1: Simple Choice</p>
+      <h2 id="scenario-title">Case</h2>
+      <p id="scenario-desc">Beschreibung</p>
+    </article>
+
+    <section id="slider-grid" class="slider-grid"></section>
+
+    <section class="results">
+      <h3>Ranking</h3>
+      <div id="result-bars" class="result-bars"></div>
+      <div class="actions">
+        <button id="check-btn" class="btn" type="button">Entscheidung pruefen</button>
+        <button id="restart-btn" class="btn secondary" type="button">Neu starten</button>
+      </div>
+      <p id="feedback" class="feedback">Stelle die Gewichtung ein und pruefe dann.</p>
+    </section>
+  </section>
+</main>
+
+<script src="./game_nutzwert_navigator.js" defer></script>
+</body>
+</html>

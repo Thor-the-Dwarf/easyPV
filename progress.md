@@ -44,3 +44,8 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Kept UI minimal and friendly: single scenario card, few method buttons, concise KPIs, direct feedback, auto-next after decision.
 - Added scoring with Flow-State bonus and Method-Boredom penalty, plus render_game_to_text and advanceTime hooks.
 - Smoke tested via Playwright: active round + visual layout validated.
+- Original prompt (current turn): weiter mit GamePlan-Nutzwert-Navigator.txt
+- Implemented Nutzwert Navigator in simple/intuitive style: game_nutzwert_navigator.html/.js/.json and nutzwert_navigator.css.
+- Added 10 weighted decision cases across 3 levels (Simple Choice, Stakeholder Clash, Stress Test), live ranking bars, objectivity rating, and decision confidence via ±5% sensitivity runs.
+- Added robust-decision bonus and biased-scoring penalty, with auto-next flow after evaluation and render_game_to_text/advanceTime hooks.
+- Smoke tested via Playwright: first case loaded, live scoring/ranking visible, state output valid.

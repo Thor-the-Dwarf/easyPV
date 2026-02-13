@@ -1,0 +1,141 @@
+{
+  "criteria": ["Kosten", "Zeit", "Qualitaet", "Risiko"],
+  "cases": [
+    {
+      "id": "c1",
+      "level": 1,
+      "tag": "Level 1: Simple Choice",
+      "title": "Cloud vs. On-Prem (Basis)",
+      "description": "Finde eine klare Startentscheidung fuer den ersten Rollout.",
+      "target_winner": "Cloud",
+      "options": {
+        "Cloud": {"Kosten": 7, "Zeit": 9, "Qualitaet": 7, "Risiko": 6},
+        "On-Prem": {"Kosten": 6, "Zeit": 5, "Qualitaet": 8, "Risiko": 7},
+        "Hybrid": {"Kosten": 5, "Zeit": 6, "Qualitaet": 8, "Risiko": 8}
+      }
+    },
+    {
+      "id": "c2",
+      "level": 1,
+      "tag": "Level 1: Simple Choice",
+      "title": "Programmiersprache API-Team",
+      "description": "Bewerte die beste Sprache fuer schnelle Lieferfaehigkeit.",
+      "target_winner": "Java",
+      "options": {
+        "Java": {"Kosten": 7, "Zeit": 8, "Qualitaet": 8, "Risiko": 8},
+        "Python": {"Kosten": 8, "Zeit": 9, "Qualitaet": 6, "Risiko": 6},
+        "Go": {"Kosten": 6, "Zeit": 7, "Qualitaet": 8, "Risiko": 7}
+      }
+    },
+    {
+      "id": "c3",
+      "level": 1,
+      "tag": "Level 1: Simple Choice",
+      "title": "Ticket-Tool Auswahl",
+      "description": "Das Team will schnell starten, aber auch sauber dokumentieren.",
+      "target_winner": "Tool B",
+      "options": {
+        "Tool A": {"Kosten": 9, "Zeit": 7, "Qualitaet": 6, "Risiko": 5},
+        "Tool B": {"Kosten": 7, "Zeit": 8, "Qualitaet": 8, "Risiko": 8},
+        "Tool C": {"Kosten": 6, "Zeit": 5, "Qualitaet": 9, "Risiko": 7}
+      }
+    },
+
+    {
+      "id": "c4",
+      "level": 2,
+      "tag": "Level 2: Stakeholder Clash",
+      "title": "ERP-Einfuehrung",
+      "description": "CFO fordert Kostenfokus, IT fordert Risikoabsicherung.",
+      "target_winner": "Variante Blau",
+      "options": {
+        "Variante Blau": {"Kosten": 7, "Zeit": 7, "Qualitaet": 8, "Risiko": 8},
+        "Variante Rot": {"Kosten": 9, "Zeit": 8, "Qualitaet": 5, "Risiko": 4},
+        "Variante Gruen": {"Kosten": 5, "Zeit": 6, "Qualitaet": 9, "Risiko": 9}
+      }
+    },
+    {
+      "id": "c5",
+      "level": 2,
+      "tag": "Level 2: Stakeholder Clash",
+      "title": "CRM-Migration",
+      "description": "Sales will Tempo, Betrieb will Stabilitaet.",
+      "target_winner": "Variante 2",
+      "options": {
+        "Variante 1": {"Kosten": 8, "Zeit": 9, "Qualitaet": 6, "Risiko": 5},
+        "Variante 2": {"Kosten": 7, "Zeit": 7, "Qualitaet": 8, "Risiko": 8},
+        "Variante 3": {"Kosten": 6, "Zeit": 5, "Qualitaet": 9, "Risiko": 8}
+      }
+    },
+    {
+      "id": "c6",
+      "level": 2,
+      "tag": "Level 2: Stakeholder Clash",
+      "title": "Client-Hardware Beschaffung",
+      "description": "Einkauf priorisiert Preis, Support priorisiert Servicefaehigkeit.",
+      "target_winner": "Paket M",
+      "options": {
+        "Paket S": {"Kosten": 9, "Zeit": 7, "Qualitaet": 5, "Risiko": 5},
+        "Paket M": {"Kosten": 7, "Zeit": 8, "Qualitaet": 8, "Risiko": 8},
+        "Paket L": {"Kosten": 5, "Zeit": 6, "Qualitaet": 9, "Risiko": 9}
+      }
+    },
+
+    {
+      "id": "c7",
+      "level": 3,
+      "tag": "Level 3: Stress Test",
+      "title": "Preissteigerung SaaS",
+      "description": "Nach dem Start steigen die SaaS-Kosten ploetzlich um 15%.",
+      "target_winner": "Fallback B",
+      "stress": {"option": "SaaS A", "criterion": "Kosten", "delta": -2},
+      "options": {
+        "SaaS A": {"Kosten": 8, "Zeit": 9, "Qualitaet": 7, "Risiko": 6},
+        "Fallback B": {"Kosten": 7, "Zeit": 7, "Qualitaet": 8, "Risiko": 8},
+        "Fallback C": {"Kosten": 6, "Zeit": 6, "Qualitaet": 9, "Risiko": 8}
+      }
+    },
+    {
+      "id": "c8",
+      "level": 3,
+      "tag": "Level 3: Stress Test",
+      "title": "Lieferengpass Hardware",
+      "description": "Top-Anbieter bekommt Lieferprobleme, Zeitwert sinkt.",
+      "target_winner": "Vendor Y",
+      "stress": {"option": "Vendor X", "criterion": "Zeit", "delta": -3},
+      "options": {
+        "Vendor X": {"Kosten": 8, "Zeit": 9, "Qualitaet": 7, "Risiko": 7},
+        "Vendor Y": {"Kosten": 7, "Zeit": 7, "Qualitaet": 8, "Risiko": 8},
+        "Vendor Z": {"Kosten": 6, "Zeit": 6, "Qualitaet": 9, "Risiko": 8}
+      }
+    },
+    {
+      "id": "c9",
+      "level": 3,
+      "tag": "Level 3: Stress Test",
+      "title": "Compliance-Schaerfung",
+      "description": "Neue Regeln erhoehen das Betriebsrisiko einzelner Loesungen.",
+      "target_winner": "Option Beta",
+      "stress": {"option": "Option Alpha", "criterion": "Risiko", "delta": -3},
+      "options": {
+        "Option Alpha": {"Kosten": 8, "Zeit": 8, "Qualitaet": 8, "Risiko": 5},
+        "Option Beta": {"Kosten": 7, "Zeit": 7, "Qualitaet": 8, "Risiko": 8},
+        "Option Gamma": {"Kosten": 6, "Zeit": 6, "Qualitaet": 9, "Risiko": 7}
+      }
+    },
+    {
+      "id": "c10",
+      "level": 3,
+      "tag": "Level 3: Stress Test",
+      "title": "Fachbereich aendert Prioritaeten",
+      "description": "Qualitaet wird ploetzlich wichtiger als Time-to-Market.",
+      "target_winner": "Konzept 2",
+      "stress": {"option": "Konzept 1", "criterion": "Qualitaet", "delta": -2},
+      "options": {
+        "Konzept 1": {"Kosten": 8, "Zeit": 8, "Qualitaet": 6, "Risiko": 7},
+        "Konzept 2": {"Kosten": 7, "Zeit": 7, "Qualitaet": 8, "Risiko": 8},
+        "Konzept 3": {"Kosten": 6, "Zeit": 6, "Qualitaet": 9, "Risiko": 7}
+      }
+    }
+  ]
+}

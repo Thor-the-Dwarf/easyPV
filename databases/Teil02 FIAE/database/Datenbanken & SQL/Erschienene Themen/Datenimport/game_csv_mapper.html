@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Import - CSV Mapper</title>
+    <title>Universal Adapter - CSV Mapper</title>
     <!-- Adjust path -->
     <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
     <link rel="stylesheet" href="csv_mapper.css">
@@ -13,56 +13,70 @@
 
 <body>
     <div class="game-app">
-        <!-- Header -->
+        <!-- HUD -->
         <header class="header-bar">
-            <div id="level-title" class="level-title">Loading...</div>
-            <div class="progress-status">MAPPING MODE</div>
+            <div id="level-title" class="level-title">ADAPTER_UNIT // SECURE_BOOT</div>
+            <div style="font-size:0.8rem; color:var(--csv-accent); font-family:monospace;">
+                ETL_PIPELINE: <span style="color:var(--db-accent);">ENCRYPTED</span>
+            </div>
         </header>
 
         <!-- Main Workspace -->
         <main class="workspace">
-
-            <!-- Source Panel -->
-            <div class="panel left">
-                <div class="panel-header source-header">SOURCE (CSV)</div>
+            <!-- Source Section (Top) -->
+            <section class="source-section">
+                <div class="section-label">SOURCE_CSV_RAW</div>
                 <div id="source-list" class="field-list">
                     <!-- Fields generated -->
                 </div>
-            </div>
+            </section>
 
-            <!-- Cable Canvas -->
-            <div id="cable-canvas" class="cable-canvas">
+            <!-- Cable Canvas (Center) -->
+            <div class="canvas-area">
                 <svg id="cable-svg">
-                    <path id="drag-line" class="drag-line" d="M0,0 L0,0" style="display:none"></path>
+                    <path id="drag-line" class="cable dragging" d="M0,0 L0,0" style="display:none"></path>
                 </svg>
             </div>
 
-            <!-- Target Panel -->
-            <div class="panel right">
-                <div class="panel-header target-header">TARGET (DATABASE)</div>
+            <!-- Target Section (Bottom) -->
+            <section class="target-section">
+                <div class="section-label">TARGET_SQL_SCHEMA</div>
                 <div id="target-list" class="field-list">
                     <!-- Fields generated -->
                 </div>
-            </div>
-
+            </section>
         </main>
 
         <!-- Log Console -->
-        <div id="log-console" class="log-console">
-            <div class="log-entry info">> CA.B.L.E System v1.0 initialized...</div>
+        <div id="log-console" class="log-area">
+            <div class="log-entry info">> CA.B.L.E System v2.0 initialized...</div>
             <div class="log-entry info">> Waiting for data stream...</div>
         </div>
 
         <!-- Result Screen -->
-        <div id="result-screen" class="result-screen hidden">
-            <div class="card"
-                style="background: #222; border: 2px solid var(--target-color); padding: 3rem; text-align:center;">
-                <h2 style="color:var(--target-color); margin-bottom:1rem;">IMPORT STATUS</h2>
-                <div class="hud-value" style="font-size: 1.5rem; margin: 2rem 0; color:#fff" id="final-result">...</div>
-                <button id="next-btn" class="btn">NEXT LEVEL</button>
+        <div id="overlay" class="overlay hidden">
+            <div class="result-box">
+                <h2 style="color:var(--db-accent); margin-top:0;">MIGRATION_SUCCESS</h2>
+                <div id="final-result" style="margin: 2rem 0; font-size: 1rem; color: #fff; font-family:monospace;">
+                    DATA_STREAMS_SYNCHRONIZED_100%
+                </div>
+
+                <div
+                    style="background:rgba(255,255,255,0.03); padding:1rem; margin-bottom:1.5rem; font-family:monospace; font-size:0.75rem; text-align: left; color:var(--text-dim);">
+                    > CHECKSUM: VERIFIED<br>
+                    > RECORD_COUNT: 10k+<br>
+                    > SCHEMA_INTEGRITY: OPTIMAL
+                </div>
+
+                <button id="next-btn" class="btn"
+                    style="padding:10px 40px; background:var(--db-accent); color:#000; border:none; font-weight:bold; cursor:pointer;">
+                    NEXT IMPORT
+                </button>
             </div>
         </div>
     </div>
+
+    <!-- Script -->
     <script src="game_csv_mapper.js"></script>
 </body>
 

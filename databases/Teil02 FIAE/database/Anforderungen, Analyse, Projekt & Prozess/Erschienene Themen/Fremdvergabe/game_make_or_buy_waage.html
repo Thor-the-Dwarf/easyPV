@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Strategic Scale</title>
+  <link rel="stylesheet" href="./make_or_buy_waage.css">
+</head>
+<body class="mob-page">
+<main class="lab-bench">
+  <header class="lab-head">
+    <h1>The Strategic Scale</h1>
+    <p>Platziere Faktoren auf Make oder Buy und halte Stabilitaet, Budget und Time-to-Market im Ziel.</p>
+    <div class="kpi-grid">
+      <article class="kpi"><span>Decision-Stability</span><strong id="kpi-stability">100%</strong></article>
+      <article class="kpi"><span>Remaining Budget</span><strong id="kpi-budget">0 EUR</strong></article>
+      <article class="kpi"><span>Time-to-Market</span><strong id="kpi-ttm">0 Tage</strong></article>
+      <article class="kpi"><span>Score</span><strong id="kpi-score">0</strong></article>
+      <article class="kpi"><span>Fortschritt</span><strong id="kpi-progress">0/20</strong></article>
+      <article class="kpi"><span>Level</span><strong id="kpi-level">1</strong></article>
+    </div>
+  </header>
+
+  <section class="the-great-scale" aria-label="Waage">
+    <div class="scale-wrap">
+      <div class="pivot"></div>
+      <div id="scale-beam" class="beam"></div>
+      <button id="pan-make" class="pan make" type="button">
+        <span class="pan-title">MAKE</span>
+        <strong id="make-load">0 kg</strong>
+      </button>
+      <button id="pan-buy" class="pan buy" type="button">
+        <span class="pan-title">BUY</span>
+        <strong id="buy-load">0 kg</strong>
+      </button>
+    </div>
+    <p id="scale-hint" class="scale-hint">Waege stabil. Platziere den naechsten Faktor.</p>
+  </section>
+
+  <section class="weight-rack" aria-label="Faktoren">
+    <article id="factor-card" class="factor-card">
+      <p id="factor-category" class="factor-category">KATEGORIE</p>
+      <h2 id="factor-title">Mission starten</h2>
+      <p id="factor-text">Der naechste Faktor erscheint hier als Granitgewicht.</p>
+      <p id="factor-weight" class="factor-weight">Gewicht: 0 kg</p>
+    </article>
+
+    <div class="controls">
+      <label class="exit-toggle">
+        <input id="exit-strategy" type="checkbox">
+        Exit-Strategie vorhanden (senkt Vendor-Lock-in-Risiko)
+      </label>
+      <div class="control-row">
+        <button id="start-btn" class="btn primary" type="button">Simulation starten</button>
+        <button id="next-btn" class="btn secondary hidden" type="button">Naechster Faktor</button>
+        <button id="restart-btn" class="btn ghost hidden" type="button">Neu starten</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="result-ticker" aria-label="Result ticker">
+    <p id="feedback" class="feedback">Bereit fuer die erste Entscheidung.</p>
+    <ul id="ticker-list"></ul>
+  </section>
+</main>
+
+<script src="./game_make_or_buy_waage.js" defer></script>
+</body>
+</html>

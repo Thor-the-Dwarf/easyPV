@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der logischen Ausführungsreihenfolge eines SQL-Statements (SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY) und korrekte Syntax-Platzierung.
+- Game-Mechanic: "The Statement-Sorter". Du bist der Komponist eines digitalen Orchesters. Die Musiker (SQL-Keywords) stehen wild durcheinander auf der Bühne. Wenn der Vorhang aufgeht, müssen sie in der exakt richtigen Reihenfolge spielen, damit die Melodie (Das Abfrageergebnis) harmonisch klingt. `SELECT` darf nicht vor dem `FROM` anfangen zu singen! Sortiere die Musiker auf ihre Plätze und verstehe, wie die Daten im Background von Station zu Station fließen.
+- Challenge: 
+  - Level 1 (The Basic Melody): Bringe `SELECT`, `FROM` und `WHERE` in die richtige Syntax-Reihenfolge.
+  - Level 2 (The Logical Path): Wo findet das Filtern statt? Was kommt zuerst: `GROUP BY` oder `HAVING`? Sortiere nach der logischen Ausführung des Datenbank-Engines.
+  - Level 3 (The Final Polish): Füge `ORDER BY` und `LIMIT` am Ende hinzu, um das Ergebnis zu perfektionieren. Wer zu spät kommt, den bestraft der Parser!
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elements: "Syntax-Slot-Board", "Logical-Data-Flow Diagram", "Execution-Order Watch", "Syntax-Validity LED".
+- [ ] Scoring: "Mozart-of-SQL" Bonus für das schnellste fehlerfreie Sortieren. Abzug für "Syntax-Discord" (Fehleinschätzung der Reihenfolge).
+
+2. Screen-Layout (The Concert Hall)
+- [ ] `keyword-backstage -> conductor-podium (The Slots) -> data-stream-visualizer -> final-applause`.
+- [ ] Conductor-Podium: Hier werden die Keywords per Drag-and-Drop in die richtige Reihe gestellt.
+- [ ] Data-Stream: Zeigt, wie die Daten von der Tabelle (FROM) durch den Filter (WHERE) zum Verdichter (GROUP BY) fließen.
+
+3. Kernvisuals und Effekte
+- [ ] Orchestral-Matrix Ästhetik: Klassische Musikinstrumente aus digitalen Schaltkreisen, leuchtende Notenblätter, Taktstock-Tikk-Geräusche, harmonische Akkorde bei richtiger Platzierung (Shared Theme kompatibel).
+- [ ] "Spotlight-Effect": Jedes Keyword leuchtet auf, wenn es in der logischen Kette gerade "dran" ist.
+- [ ] "Crescendo": Das Ergebnis (die Daten) baut sich wie ein krönendes Finale auf dem Screen auf.
+
+4. Browser- und Device-Resilienz
+- [ ] `Animate.js` oder ähnliches für fließende Bewegungen der Keywords.
+- [ ] Mobile: "Swipe-to-Place" für die Keyword-Bausteine.
+
+5. Content-Strategie (The Score-Sheets)
+- [ ] 12 verschiedene Syntax-Puzzles: Von "Einfache Abfrage" bis "Komplexes Reporting-Monster".
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen Syntax-Reihenfolge (was wir schreiben) und Logik-Reihenfolge (was die DB tut) klar?
+- [ ] Test: Fühlt sich das "Komponieren" der Abfrage wertig und belohnend an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: SQL folgt einer strengen Logik. Wer sie beherrscht, beherrscht die Daten.
+- [ ] Das Interface wirkt elegant, klangvoll und strukturiert.
+- [ ] Fokus auf SQL-Syntax und Parser-Logik.

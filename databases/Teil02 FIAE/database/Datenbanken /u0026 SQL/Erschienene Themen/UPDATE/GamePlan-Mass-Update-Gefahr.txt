@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sicherer Umgang mit dem UPDATE-Statement, insbesondere die korrekte Verwendung von WHERE-Klauseln zur Vermeidung ungewollter Massenänderungen.
+- Game-Mechanic: "The Precision-Edit". Du bist ein Techniker an einem riesigen Schaltschrank. Jedes Lämpchen steht für ein Gehalt oder eine Adresse. Du hast einen "Änderungs-Stift" (Das UPDATE-Statement). Wenn du den Stift ansetzt, ohne vorher das Ziel exakt mit dem Laser (Die WHERE-Klausel) zu markieren, malst du über das GANZE Board und änderst alle Werte gleichzeitig! Ein Albtraum für jeden Admin. Ziele genau, bevor du den Stift aufsetzt.
+- Challenge: 
+  - Level 1 (The Targeted Fix): Ändere den Nachnamen von Kunde #42. Nutze die ID als Laser.
+  - Level 2 (The Multi-Target): Erhöhe die Preise aller Produkte in der Kategorie `Süßwaren` um 10%. Markiere die ganze Gruppe mit dem Laser.
+  - Level 3 (The Mass-Update Disaster): Ein Error! Du hast das `WHERE` vergessen. Schau zu, wie sich 1.000.000 Datensätze verändern. Nutze schnell den "Abbruch-Button" (ROLLBACK), bevor die Tinte trocknet!
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elements: "SQL-Targeting-Light (WHERE Status)", "Affected-Rows Gauge", "Safety-Lock Switch", "Before/After Preview".
+- [ ] Scoring: "Precision-Sniper" Bonus für Änderungen, die exakt nur die beabsichtigten Zeilen treffen. Maximaler Abzug für "Unfiltered Updates".
+
+2. Screen-Layout (The Command Center)
+- [ ] `query-editor -> laser-pointer (WHERE) -> table-grid (Visual) -> execute-lever`.
+- [ ] Table-Grid: Zeigt die Datensätze als kleine Kacheln. Die Kacheln, die vom Laser getroffen werden, fangen an zu pulsieren.
+- [ ] Execute-Lever: Muss erst entsperrt werden, wenn das Ziel zu groß ist (> 100 Zeilen).
+
+3. Kernvisuals und Effekte
+- [ ] Tactical-Ops Ästhetik: Nachtsicht-Grün, Fadenkreuz-Animationen, das Piepen von Zielerfassungssystemen, dramatisches "Wusch" beim Ausführen (Shared Theme kompatibel).
+- [ ] "Targeting-Beam": Ein grüner Strahl scannt die Tabelle und beleuchtet die getroffenen Zeilen.
+- [ ] "Red-Alert": Wenn kein `WHERE` vorhanden ist, blinkt das gesamte HUD rot und eine Sirene heult leise.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Transform-Origin` für die Laser-Animation.
+- [ ] Mobile: "Tap-to-Target" direkte Auswahl in der Tabelle.
+
+5. Content-Strategie (The Edit-Missions)
+- [ ] 12 verschiedene Korrektur-Missionen: Von "Adressänderung" bis "Saisonale Preispolitik".
+
+6. QA-Paket
+- [ ] Test: Wird das enorme Risiko eines vergessenen `WHERE`-Teils emotional spürbar?
+- [ ] Test: Hilft die "Affected Rows" Vorschau beim Verhindern von Fehlern?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Erst zielen (WHERE), dann schießen (UPDATE).
+- [ ] Das Interface wirkt angespannt, hochkonzentriert und sicherheitsbewusst.
+- [ ] Fokus auf vorsichtige Datenmanipulation.

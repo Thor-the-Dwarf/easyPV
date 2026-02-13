@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sicherer Import von flachen CSV-Dateien in eine relationale Datenbankstruktur unter Berücksichtigung von Trennzeichen, Header-Mapping und Datentransformierung.
+- Game-Mechanic: "The Import-Conveyor". Du stehst am Wareneingang eines digitalen Hafens. Dicke Container (CSV-Dateien) kommen an. Du musst sie öffnen und die darin enthaltenen Rohdaten (Strings) auf deine Förderbänder (Spalten) verteilen. Aber Achtung: Das CSV nutzt Semikolons (`;`) und deine Maschine erwartet Kommas (`,`). Manche Datumsformate sind "Tag-Monat-Jahr", deine DB will "Jahr-Monat-Tag". Passe die Transformatoren an, bevor die Daten im Schredder landen!
+- Challenge: 
+  - Level 1 (The Basic Load): Importiere eine einfache Kundenliste. Ordne die Spalten `Name` und `Mail` den richtigen Tabellenfeldern zu.
+  - Level 2 (The Delimiter Puzzle): Die Datei ist "Tab-Separated". Stelle deinen Konfigurations-Schalter auf das richtige Trennzeichen um, damit die Spalten nicht verschmelzen.
+  - Level 3 (The Data Cleaner): Das CSV enthält ungültige Datumsformate ("31.02.2024"). Nutze den Filter-Modus, um die korrupten Zeilen auszusortieren und nur saubere Daten zu importieren.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elements: "Source-Preview (Raw CSV)", "Mapping-Workbench", "Import-Traffic-Gauge", "Success-Rate (%)".
+- [ ] Scoring: "Migration-Master" Bonus für 100% fehlerfreie Zeilen-Übernahme. Abzug für "Garbage-In" (falsch gemappte Daten).
+
+2. Screen-Layout (The Port of Data)
+- [ ] `csv-container -> mapping-bridge -> transformation-valves -> db-silo`.
+- [ ] Mapping-Bridge: Ziehe Kabel von der Rohdatei zu den Zielspalten der Datenbank.
+- [ ] Transformation-Valves: Schalte Konverter dazwischen (z.B. Date-Reformat, Trim-Whitespace).
+
+3. Kernvisuals und Effekte
+- [ ] Industrial-Cyberpunk Ästhetik: Rostiger Stahl trifft auf leuchtende Neon-Kabel, Dampf-Zischen beim Einrasten der Spalten, mechanische Sortiergeräusche (Shared Theme kompatibel).
+- [ ] "Flow-Effect": Die Rohdaten fließen als digitale Funken durch die Kabel.
+- [ ] "Clog-Alert": Wenn Datenformate nicht passen, verstopft das Kabel sichtlich und fängt an zu vibrieren.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Flexbox` für das nebeneinander liegende Mapping von Source und Target.
+- [ ] Mobile: "Swipe-to-Map" Geste.
+
+5. Content-Strategie (The Manifest-Files)
+- [ ] 12 verschiedene Import-Cases: Von "Klassische Kontakte" bis "Komplexe Buchungssätze".
+
+6. QA-Paket
+- [ ] Test: Wird die Bedeutung des richtigen Trennzeichens (Delimiter) visuell klar?
+- [ ] Test: Fühlt sich das Mapping wie ein befriedigender "Signalfluss" an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Datenimport ist Schwerarbeit. Sauberkeit am Eingang rettet das System.
+- [ ] Das Interface wirkt robust, technisch-industriell und präzise.
+- [ ] Fokus auf ETL-Grundlagen (Extract, Transform, Load).

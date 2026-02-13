@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Erkennung und Eliminierung von Dubletten im Datenbestand zur Sicherstellung der Datenqualität und Eindeutigkeit.
+- Game-Mechanic: "The Duplicate Hunter". Du bist der Hausmeister in der Halle der Ewigkeit. Leider haben sich Schwindler eingeschlichen: `Max Müller` steht dreimal mit fast der gleichen Adresse in deiner Akte. Das verfälscht Statistiken und kostet Porto! Deine Aufgabe: Nutze dein "Identitäts-Radar". Finde die Klone, vergleiche ihre Merkmale (Mail, Telefon) und verschmelze sie (Merge) oder lösche die Überflüssigen. Behalte nur das Original!
+- Challenge: 
+  - Level 1 (The Exact Match): Finde zwei identische Zeilen in einer kleinen Tabelle und lösche eine davon.
+  - Level 2 (The Fuzzy Logic): `M. Mueller` und `Max Müller` – ist es die gleiche Person? Nutze deine Detektiv-Werkzeuge, um die Wahrscheinlichkeit zu prüfen.
+  - Level 3 (The Mass Cleanup): Nutze `GROUP BY` und `HAVING COUNT(*) > 1`, um alle Dubletten-IDs in einer Datenbank mit 50.000 Einträgen aufzuspüren und auszumerzen.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elements: "Identity-Radar (Scanning...)", "Match-Probability Gauge", "Data-Cleanliness-Meter (%)", "Merge-History".
+- [ ] Scoring: "Purity-Officer" Bonus für das perfekte Konsolidieren von Teildaten. Abzug für "False-Deletions" (Löschen von unterschiedlichen Personen mit gleichem Namen).
+
+2. Screen-Layout (The Identification Lab)
+- [ ] `data-rows -> comparator-bench -> merge-station -> clean-db-silo`.
+- [ ] Comparator-Bench: Zwei Zeilen werden nebeneinander gelegt und Unterschiede werden rot markiert.
+- [ ] Merge-Station: Ein Tool, mit dem man entscheidet, welches Attribut (z.B. die aktuellere Mailadresse) im finalen Datensatz erhalten bleibt.
+
+3. Kernvisuals und Effekte
+- [ ] Sterile-Audit Ästhetik: Lab-Weiß, klares Blau, Scan-Linien, chirurgische Präzision, das Geräusch von Laserscannern und digitalem "Zappen" (Shared Theme kompatibel).
+- [ ] "Scan-Effect": Ein vertikaler Lichtbalken fährt über die Datenzeilen.
+- [ ] "Fusion-Flash": Bei einem Merge verschmelzen zwei Zeilen in einer Animation zu einer einzelnen, golden leuchtenden Zeile.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Opacity/Blur` für das "Ausfaden" von Dubletten.
+- [ ] Mobile: "Swipe-to-Dismiss" für überflüssige Datensätze.
+
+5. Content-Strategie (The Audit-Reports)
+- [ ] 12 Szenarien mit steigender Komplexität (Schreibfehler, verschiedene Formate).
+
+6. QA-Paket
+- [ ] Test: Wird die Gefahr von Dubletten (z.B. Doppelte Rechnungen) im Intro deutlich?
+- [ ] Test: Hilft der visuelle Vergleich beim Treffen der "Merge oder Delete" Entscheidung?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Datenqualität ist ein permanenter Prozess. Eindeutigkeit ist heilig.
+- [ ] Das Interface wirkt sauber, gewissenhaft und analytisch.
+- [ ] Fokus auf Data-Cleaning und Master Data Management.

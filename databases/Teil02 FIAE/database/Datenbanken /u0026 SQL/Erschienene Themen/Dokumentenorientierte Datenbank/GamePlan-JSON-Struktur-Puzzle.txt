@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der hierarchischen Struktur von JSON-Dokumenten und der Unterschiede zwischen relationalen Tabellen und dokumentenorientierten NoSQL-Datenbanken.
+- Game-Mechanic: "The NoSQL Architect". Du bist ein Paket-Designer für einen intergalaktischen Express-Dienst. Statt starrer Metallboxen (Tabellen) nutzt du flexible "Wunder-Beutel" (JSON-Dokumente). In einen Beutel passt alles: Namen, ganze Listen von Hobbys, sogar andere kleine Beutel! Deine Aufgabe: Packe die Informationen so in das JSON-Nest ein, dass ein Empfänger (`The Client`) sie mit einem Handgriff (Key-Access) findet. Verliere dich nicht in der Verschachtelung!
+- Challenge: 
+  - Level 1 (The Key Finder): Erstelle ein einfaches Objekt mit `name`, `alter` und `city`. Greife direkt auf den Key zu.
+  - Level 2 (The Nested Array): Ein User hat mehrere Telefonnummern. Packe sie in eine Liste (Array) innerhalb seines Dokuments.
+  - Level 3 (The Deep Structure): Ein Produkt hat verschiedene `Spezifikationen` (als Objekt) und `Tags` (als Liste). Baue das verschachtelte Meisterwerk, ohne die geschweiften Klammern zu verwechseln.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elements: "JSON-Live-Editor", "Structure-Tree-Visualizer", "Nesting-Depth Indicator", "Validation-Light (Valid/Invalid)".
+- [ ] Scoring: "Code-Artist" Bonus für flache, effiziente Strukturen. Abzug für "Syntax-Errors" (Fehlende Kommas/Klammern).
+
+2. Screen-Layout (The Packing Station)
+- [ ] `raw-info-tags -> nesting-slots -> document-preview -> schema-flex-meter`.
+- [ ] Nesting-Slots: Boxes-in-Boxes Visualisierung, die man auf- und zuklappen kann.
+- [ ] Schema-Flex-Meter: Zeigt an, wie viel freier man ist im Vergleich zu einer starren SQL-Tabelle.
+
+3. Kernvisuals und Effekte
+- [ ] Origami-Cyber-Punk Ästhetik: Falten, Kanten, geometrische Transparenz, Papier-Akkordeon-Sounds, fließende Übergänge (Shared Theme kompatibel).
+- [ ] "Nest-Expansion": Wenn man eine Tiefe hinzufügt, öffnet sich der Bereich wie eine Matroschka-Puppe.
+- [ ] "Brace-Highlight": Zusammengehörige `{ }` und `[ ]` leuchten in der gleichen Farbe auf, um die Orientierung zu erleichtern.
+
+4. Browser- und Device-Resilienz
+- [ ] `JSON.stringify` Demo live im Interface.
+- [ ] Mobile: "Pinch-to-Zoom" in die Hierarchie-Ebenen.
+
+5. Content-Strategie (The Data-Templates)
+- [ ] 15 verschiedene JSON-Entwürfe: Von "UserProfile" bis "IoT-Sensor-Data".
+
+6. QA-Paket
+- [ ] Test: Wird der Vorteil von JSON (Schema-Flexibilität) gegenüber SQL (Starrheit) deutlich?
+- [ ] Test: Hilft der Tree-Visualizer beim Verständnis von Root, Keys und Values?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: NoSQL ist keine Hexerei, sondern flexible Daten-Faltung.
+- [ ] Das Interface wirkt modern, agil und visuell ansprechend.
+- [ ] Fokus auf JSON-Syntax und Hierarchie-Logik.

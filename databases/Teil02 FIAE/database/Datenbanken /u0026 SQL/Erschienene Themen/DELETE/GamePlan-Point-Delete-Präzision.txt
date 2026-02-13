@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Präzise Löschung von Datensätzen mittels DELETE unter Beachtung von Fremdschlüsselbeziehungen und zur Vermeidung von Datenverlust.
+- Game-Mechanic: "The Surgeon's Knife". Du bist ein Chirurg in der digitalen Notaufnahme. Ein schädlicher Datensatz (z.B. ein stornierter Account oder Fake-Daten) muss raus. Aber Vorsicht: Die Daten sind wie mit Nervensträngen (Foreign Keys) verbunden. Schneidest du zu tief, verletzt du die Integrität (Referential Integrity) und andere Tabellen fangen an zu bluten. Nutze dein Skalpell mit Bedacht.
+- Challenge: 
+  - Level 1 (The Clean Cut): Lösche einen inaktiven Nutzer, der keinerlei Bestellungen hat. Ein einfacher Schnitt.
+  - Level 2 (The Dependent Chain): Du willst einen Kunden löschen, der noch Bestellungen hat. Das System blockt dich. Lerne: Erst die Bestellungen entfernen, dann den Kunden – oder nutze "ON DELETE CASCADE" (Was hier aber gefährlich sein kann!).
+  - Level 3 (The Mass Removal): Lösche alle Testdaten, die älter als ein Jahr sind. Markiere das Zielgebiet genau, sonst löschst du die echten Kunden gleich mit.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elements: "Incision-Focus-Scope", "Integrity-Heart-Rate Monitor", "Linked-Records Warning", "Trash-Compactor Status".
+- [ ] Scoring: "Surgical-Expert" Bonus für rückstandsfreies Löschen ohne Integritätsbrüche. Abzug für "Constraint-Violations" (Schnittversuche gegen aktive Sperren).
+
+2. Screen-Layout (The Operating Theater)
+- [ ] `database-body -> surgery-lamp (WHERE) -> scalpel-tool -> incinerator`.
+- [ ] Database-Body: Eine abstrakte Ansicht der Tabellen-Zellen, wobei die "Bindungen" zwischen Zeilen als leuchtende Fäden sichtbar sind.
+- [ ] Incinerator: Der digitale Mülleimer, der gelöschte Zeilen mit einem zischenden Feuer-Effekt vernichtet.
+
+3. Kernvisuals und Effekte
+- [ ] Medical-Tech Ästhetik: Steriles Weiß/Silber, pulsierende blaue Daten-Nerven, das Geräusch von scharfen Klingen und medizinischen Signaltönen (Shared Theme kompatibel).
+- [ ] "Nerve-Highlight": Wenn man eine Zeile zum Löschen auswählt, fangen die damit verknüpften Zeilen in anderen Tabellen an, nervös zu flackern.
+- [ ] "Constraint-Shock": Bei einem ungültigen Löschversuch färbt sich der Screen kurz rot und man hört ein digitales Schmerzgeräusch.
+
+4. Browser- und Device-Resilienz
+- [ ] `SVG Path` für die pulsierenden Verknüpfungs-Fäden.
+- [ ] Mobile: "Swipe-to-Cut" Geste zum Trennen der Verbindungen.
+
+5. Content-Strategie (The Patient-Files)
+- [ ] 12 verschiedene Lösch-Aufträge: Von "Abgelaufene Sessions" bis "Löschung nach DSGVO".
+
+6. QA-Paket
+- [ ] Test: Wird die Bedeutung von Fremdschlüssel-Sperren (RESTRICT) spielerisch deutlich?
+- [ ] Test: Fühlt sich das Löschen wie eine notwendige, aber riskante Reinigung an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Löschen ist endgültig und riskant. Integrität geht vor Schnelligkeit.
+- [ ] Das Interface wirkt hochseriös, klinisch rein und konzentriert.
+- [ ] Fokus auf Daten-Hygiene und referenzielle Integrität.

@@ -1,0 +1,196 @@
+/* 
+ * Nachrichten-Reihenfolge - Styles
+ * Aesthetic: Matrix-Grid / Connection Monitor
+ */
+
+:root {
+    --bg-matrix: #010a01;
+    --matrix-grid: rgba(0, 255, 0, 0.05);
+    --neon-green: #00ff41;
+    --neon-dim: #003b00;
+    --pylon-color: #008f11;
+    --activation-bg: rgba(0, 143, 17, 0.3);
+    --text-matrix: #d2ffd2;
+    --arrow-width: 2px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-matrix);
+    background-image:
+        linear-gradient(var(--matrix-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--matrix-grid) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: var(--text-matrix);
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* --- HUD --- */
+.hud {
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid var(--pylon-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.latency-monitor {
+    font-size: 0.9rem;
+    color: var(--neon-green);
+    text-transform: uppercase;
+}
+
+/* --- Matrix Workbench --- */
+.matrix-bench {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 50px;
+    overflow: hidden;
+}
+
+/* --- Lifelines (Pylons) --- */
+.pylon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    height: 100%;
+}
+
+.pylon-head {
+    padding: 10px 20px;
+    border: 2px solid var(--pylon-color);
+    background: rgba(0, 0, 0, 0.8);
+    margin-top: 20px;
+    margin-bottom: 0;
+    z-index: 10;
+    font-weight: bold;
+}
+
+.lifeline {
+    flex: 1;
+    width: 2px;
+    background: dashed var(--pylon-color);
+    background: repeating-linear-gradient(to bottom,
+            var(--pylon-color),
+            var(--pylon-color) 10px,
+            transparent 10px,
+            transparent 20px);
+    position: relative;
+}
+
+.activation-bar {
+    position: absolute;
+    width: 10px;
+    left: -4px;
+    background: var(--pylon-color);
+    box-shadow: 0 0 10px var(--pylon-color);
+    display: none;
+    /* Controlled by JS */
+}
+
+/* --- Messages Layer --- */
+#svg-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.msg-arrow {
+    stroke: var(--neon-green);
+    stroke-width: var(--arrow-width);
+    fill: none;
+    marker-end: url(#arrow-head);
+}
+
+.msg-async {
+    marker-end: url(#arrow-head-async);
+}
+
+.msg-return {
+    stroke-dasharray: 4;
+}
+
+/* --- Palette --- */
+.drag-palette {
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 2px solid var(--pylon-color);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 100;
+}
+
+.palette-item {
+    padding: 10px 20px;
+    background: var(--neon-dim);
+    border: 1px solid var(--pylon-color);
+    cursor: grab;
+    font-size: 0.8rem;
+    user-select: none;
+}
+
+.palette-item:hover {
+    background: var(--pylon-color);
+    color: #000;
+}
+
+/* --- Time Ruler --- */
+.time-ruler {
+    position: absolute;
+    left: 10px;
+    top: 80px;
+    bottom: 20px;
+    width: 20px;
+    border-right: 1px solid var(--pylon-color);
+    font-size: 0.7rem;
+    color: var(--pylon-color);
+}
+
+/* --- Overlay --- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.matrix-card {
+    padding: 3rem;
+    border: 2px solid var(--neon-green);
+    background: var(--bg-matrix);
+    text-align: center;
+    max-width: 500px;
+}
+
+.btn-matrix {
+    margin-top: 2rem;
+    padding: 10px 40px;
+    background: var(--neon-green);
+    color: #000;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.hidden {
+    display: none !important;
+}

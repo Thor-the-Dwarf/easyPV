@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Relay - Sequence Order</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="sequence_order.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div style="flex:1;">
+                <h1 style="font-size: 1.1rem; margin:0; color:var(--neon-green);">NETWORK_MONITOR // SEQ_v4.2</h1>
+            </div>
+
+            <div class="latency-monitor">
+                CONNECTION_LATENCY: <span id="latency-val" style="font-weight:bold;">SCANNING...</span>
+            </div>
+
+            <div style="flex:1; text-align:right; font-size:0.75rem; color:#003300;">
+                PROTOCOL: UML_SEQUENCE
+            </div>
+        </header>
+
+        <!-- Workbench -->
+        <main class="matrix-bench" id="matrix-bench">
+            <!-- Lifelines injected here -->
+            <svg id="svg-layer">
+                <defs>
+                    <marker id="arrow-head" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="var(--neon-green)" />
+                    </marker>
+                    <marker id="arrow-head-async" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polyline points="0 0, 10 3.5, 0 7" fill="none" stroke="var(--neon-green)" stroke-width="2" />
+                    </marker>
+                </defs>
+                <!-- Messages injected here -->
+            </svg>
+
+            <!-- Instructions Overlay -->
+            <div id="instruction"
+                style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); padding: 10px 30px; border: 1px solid var(--pylon-color); font-size: 0.9rem; color: var(--neon-green);">
+                Lade Nachrichten-Sequenz...
+            </div>
+        </main>
+
+        <!-- Palette -->
+        <footer class="drag-palette" id="drag-palette">
+            <!-- Available messages injected here -->
+        </footer>
+
+        <!-- Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="matrix-card">
+                <h2 style="color:var(--neon-green); margin-top:0;">SEQUENCE_VALIDATED</h2>
+                <div style="margin: 2rem 0; font-size: 1rem; color: var(--text-matrix); line-height: 1.6;">
+                    Der Nachrichten-Relais-Plan ist konsistent. Die zeitliche Abfolge entspricht dem UML-Standard.
+                </div>
+
+                <div
+                    style="background:rgba(0, 255, 0, 0.05); padding:1rem; margin-bottom:1.5rem; font-family:monospace; font-size:0.8rem; text-align: left;">
+                    > CHRONOLOGY: OK<br>
+                    > HANDSHAKE_INTEGRITY: 100%<br>
+                    > ASYNC_OVERLAP: PERMITTED
+                </div>
+
+                <button id="btn-next" class="btn-matrix">NÄCHSTER RELAIS-PLAN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_sequence_order.js"></script>
+</body>
+
+</html>

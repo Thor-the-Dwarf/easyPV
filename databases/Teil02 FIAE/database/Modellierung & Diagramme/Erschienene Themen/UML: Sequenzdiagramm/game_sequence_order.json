@@ -1,0 +1,134 @@
+{
+    "meta": {
+        "topic": "UML Sequence Diagrams",
+        "mechanic": "message_relay",
+        "version": "1.0"
+    },
+    "scenarios": [
+        {
+            "id": 1,
+            "title": "Simple Echo",
+            "instruction": "Chronology flows from top to bottom. Arrange the Request and its Response.",
+            "lifelines": [
+                {
+                    "id": "client",
+                    "label": "Client"
+                },
+                {
+                    "id": "server",
+                    "label": "Server"
+                }
+            ],
+            "availableMessages": [
+                {
+                    "id": "m1",
+                    "label": "GET /index",
+                    "type": "sync",
+                    "from": "client",
+                    "to": "server"
+                },
+                {
+                    "id": "m2",
+                    "label": "200 OK",
+                    "type": "return",
+                    "from": "server",
+                    "to": "client"
+                }
+            ],
+            "correctSequence": [
+                "m1",
+                "m2"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Auth Handshake",
+            "instruction": "The Server must verify the token with the DB before answering the Client.",
+            "lifelines": [
+                {
+                    "id": "client",
+                    "label": "Client"
+                },
+                {
+                    "id": "server",
+                    "label": "Server"
+                },
+                {
+                    "id": "db",
+                    "label": "Database"
+                }
+            ],
+            "availableMessages": [
+                {
+                    "id": "m1",
+                    "label": "Login(user)",
+                    "type": "sync",
+                    "from": "client",
+                    "to": "server"
+                },
+                {
+                    "id": "m2",
+                    "label": "Verify(u)",
+                    "type": "sync",
+                    "from": "server",
+                    "to": "db"
+                },
+                {
+                    "id": "m3",
+                    "label": "Valid",
+                    "type": "return",
+                    "from": "db",
+                    "to": "server"
+                },
+                {
+                    "id": "m4",
+                    "label": "Success",
+                    "type": "return",
+                    "from": "server",
+                    "to": "client"
+                }
+            ],
+            "correctSequence": [
+                "m1",
+                "m2",
+                "m3",
+                "m4"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Async Log",
+            "instruction": "Asynchronous messages don't block. The Client sends a log and continues immediately.",
+            "lifelines": [
+                {
+                    "id": "client",
+                    "label": "Client"
+                },
+                {
+                    "id": "logger",
+                    "label": "Logger"
+                }
+            ],
+            "availableMessages": [
+                {
+                    "id": "m1",
+                    "label": "Log(event)",
+                    "type": "async",
+                    "from": "client",
+                    "to": "logger"
+                },
+                {
+                    "id": "m2",
+                    "label": "DoNext()",
+                    "type": "sync",
+                    "from": "client",
+                    "to": "client"
+                }
+            ],
+            "correctSequence": [
+                "m1",
+                "m2"
+            ]
+        }
+    ]
+}

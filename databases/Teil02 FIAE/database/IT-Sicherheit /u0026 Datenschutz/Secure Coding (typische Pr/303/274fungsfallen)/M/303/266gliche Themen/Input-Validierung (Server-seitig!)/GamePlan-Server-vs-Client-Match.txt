@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Konsequente Umsetzung der serverseitigen Eingabeprüfung (Whitelisting, Datentypen, Längen) zur Vermeidung von Fehlfunktionen und Angriffen.
+- Game-Mechanic: "The Server Gatekeeper". Du stehst an der letzten Tür vor dem Allerheiligsten (Der Datenbank/Logik). Viele schicken Pakete: "Alter: 25" (Ok), "Alter: -5" (Stop!), "Alter: 'Hacker'" (Alarm!). Du hast einen Scan-Modus: Prüfe Datentyp, Erlaubte Zeichen, Reichweite und Länge. Nur was deinen "Whitelist-Tunnel" passiert, wird verarbeitet.
+- Challenge: 
+  - Level 1 (The Basic Type): Erlaube nur Ganzzahlen zwischen 1 und 120 für ein Altersfeld.
+  - Level 2 (The Pattern Match): Validiere eine Postleitzahl. Sie muss exakt aus 5 Ziffern bestehen.
+  - Level 3 (The Client-Side-Lie): Ein Angreifer hat das Frontend umgangen und schickt 10 MB Text in ein Feld, das nur 100 Zeichen haben darf. Blocke den Überlauf (Buffer-Overflow-Prävention)!
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Validation-Rules-Board", "Input-Spectrometer", "Gate-Stability (%)", "Malicious-Payload-Counter".
+- [ ] Scoring: "Reliability-Guard" Bonus für das Abfangen von Randfällen (Edge Cases). Abzug für das Durchlassen von "Invalid Data".
+
+2. Screen-Layout (The Checkpoint)
+- [ ] `input-conveyor-belt -> scanner-unit -> redirection-lanes -> logs-and-alerts`.
+- [ ] Scanner-Unit: Ein futuristisches Röntgengerät, das die Struktur des Inputs (z.B. JSON/String) zerlegt.
+- [ ] Redirection-Lanes: "Grün" für Process, "Rot" für Reject.
+
+3. Kernvisuals und Effekte
+- [ ] Cyber-Border-Control Ästhetik: Laser-Schranken, mechanische Sortierarme, Scann-Geräusche (Biep-Biep), metallisches Zuschlagen der Tore (Shared Theme kompatibel).
+- [ ] "X-Ray-View": Wenn der Scanner läuft, sieht man das "Skelett" des Objekts (Datentypen).
+- [ ] "Rejection-Stamp": Ein wuchtiger roter Stempel knallt digital auf ungültige Pakete.
+
+4. Browser- und Device-Resilienz
+- [ ] `RegEx-Visualizer` zum besseren Verständnis der Validierungs-Muster.
+- [ ] Mobile: "Swipe-to-Sort" (Annehmen/Ablehnen).
+
+5. Content-Strategie (The Inspection-Logs)
+- [ ] 15 Verschiedene Input-Cases: Von "Email-Validierung" bis "Date-Format-Check".
+
+6. QA-Paket
+- [ ] Test: Wird klar, warum clientseitige Validierung (JS im Browser) allein niemals ausreicht?
+- [ ] Test: Fühlt sich das Regel-Setzen (Whitelisting) mächtig und präzise an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Validierung ist der erste und wichtigste Verteidigungswall.
+- [ ] Das Interface wirkt hochpräzise, technisch und kompromisslos.
+- [ ] Fokus auf Robustheit und Fehlerresistenz.

@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Erkennung und Abwehr von Cross-Site Scripting (XSS) und Cross-Site Request Forgery (CSRF).
+- Game-Mechanic: "The XSS Reflector". Du bist der Schildwache einer interaktiven Web-Oberfläche. User schicken Texte (Kommentare, Namen). Manche Texte enthalten jedoch versteckte "Spiegel-Scherben" (Schädliche Skripte wie `<script>alert('Pawned')</script>`). Wenn du den Text ungeprüft "zurückspiegelst" (auf der Seite anzeigst), schneidet sich das System. Nutze deinen "Sanitizer-Schild", um alle scharfen Kanten abzustumpfen (Escaping/Encoding).
+- Challenge: 
+  - Level 1 (The Reflected Attack): Ein Angreifer schickt einen Namen mit einem Script-Tag. Neutralisiere es, indem du `<` in `&lt;` umwandelst.
+  - Level 2 (The Persistent Threat): Das Script wurde in der Datenbank gespeichert. Säubere die Datenbank-Ausgabe, bevor der nächste User die Seite lädt.
+  - Level 3 (The CSRF Trap): Ein User klickt auf einen präparierten Link einer fremden Seite. Verhindere, dass sein Browser ungefragt eine Aktion (z.B. Geld überweisen) in deinem System ausführt, indem du "Anti-CSRF-Token" einsetzt.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Sanitization-Force-Field", "Script-Injection-Radar", "CSRF-Token-Status", "User-Cookie-Health".
+- [ ] Scoring: "Shield-Bearer" Bonus für 100% gefilterte Payloads. Abzug für "Successful-Redirects" auf schädliche Seiten.
+
+2. Screen-Layout (The Web-Front)
+- [ ] `message-input -> sanitizer-processor -> preview-screen -> security-headers-panel`.
+- [ ] Preview-Screen: Zeigt, ob der Code als "Text" sicher angezeigt wird oder als "Script" das UI zerstört.
+- [ ] Security-Headers: Interaktive Schalter für CSP (Content Security Policy).
+
+3. Kernvisuals und Effekte
+- [ ] Neon-Reflective Ästhetik: Glasartige Oberflächen, Licht-Reflektionen, scharfe geometrische Formen, digitale Klirr-Geräusche (Shared Theme kompatibel).
+- [ ] "Glass-Shatter": Wenn ein XSS-Angriff durchgeht, bekommt der Screen einen Riss-Effekt (Overlay).
+- [ ] "Polish-Effect": Das Sanitizing wirkt wie das Polieren einer Oberfläche, bis sie sicher glänzt.
+
+4. Browser- und Device-Resilienz
+- [ ] `HTML Entity Encoding` Demo direkt im UI.
+- [ ] Mobile: "Swipe-to-Clean" Geste für infizierte Eingabefelder.
+
+5. Content-Strategie (The Injection-Files)
+- [ ] 12 XSS-Vektoren (Inline, Event-Handler, Data-URIs).
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen "Client-Side" und "Server-Side" Protection deutlich?
+- [ ] Test: Macht die CSRF-Token-Prüfung den abstrakten Angriff begreifbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Vertraue niemals dem Browser-DOM ohne Sanitizing.
+- [ ] Das Interface wirkt modern, spritzig und hochgradig interaktiv.
+- [ ] Fokus auf Frontend-Sicherheit und moderne Browser-Protections.

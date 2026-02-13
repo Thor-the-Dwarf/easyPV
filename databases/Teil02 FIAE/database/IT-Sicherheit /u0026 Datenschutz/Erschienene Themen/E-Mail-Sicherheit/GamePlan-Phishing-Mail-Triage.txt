@@ -1,0 +1,41 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Erkennung von Phishing-Angriffen und Verständnis der technischen Schutzmaßnahmen (SPF, DKIM, DMARC).
+- Game-Mechanic: "The Phishing Triage". Du bist der Postmeister des Unternehmens. Tausende Mails prallen gegen dein Tor. Du hast ein Sortier-System mit drei Filtern:
+  1. SPF-Check: Kommt die Mail wirklich von dem Server, der für diese Domain senden darf?
+  2. DKIM-Check: Ist die digitale Unterschrift der Mail unverletzt?
+  3. DMARC-Check: Was soll ich tun, wenn die anderen Checks fehlschlagen (Quarantäne oder Löschen)?
+  Sortiere die echte Post von den gefährlichen Angeln (Phishing) aus!
+- Challenge: 
+  - Level 1 (The Suspicious Sender): Eine Mail von "Amaz0n.com" (mit Null statt 'o'). Markiere sie als Phishing allein durch visuelle Analyse.
+  - Level 2 (The SPF-Fail): Die Mail sieht echt aus, stammt aber von einer IP, die nicht im SPF-Record steht. Schick sie in die Quarantäne.
+  - Level 3 (The Policy-Master): Konfiguriere deinen DMARC-Eintrag so, dass alle unautorisierten Mails hart abgelehnt (Reject) werden.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Mail-Header-Analyzer", "SPF/DKIM/DMARC Dashboard", "Threat-Indicator", "Inbox-Satisfaction-Meter".
+- [ ] Scoring: "Clean-Inbox" Bonus für 0 gemeldete Vorfälle durch Endnutzer. Abzug für "False-Positives" (Echte Mails im Spam).
+
+2. Screen-Layout (The Mailroom)
+- [ ] `mail-stack -> inspection-table -> filter-settings -> trash/inbox-conveyor`.
+- [ ] Inspection-Table: Ein Zoom auf den Header der Email, wo technische Details (Return-Path, Authentication-Results) sichtbar werden.
+
+3. Kernvisuals und Effekte
+- [ ] Modern-Industrial Ästhetik: Blaugraue Töne, fließende digitale Briefumschläge, Alarm-Popups, das Geräusch von Papier-Schreddern (Shared Theme kompatibel).
+- [ ] "Header-Reveal": Wenn man tiefer klickt, "klappt" die Email auf und zeigt ihren technischen Code als Matrix-Overlay.
+- [ ] "Hook-Alert": Phishing-Mails haben bei Entlarvung sichtlich einen "Angelhaken" im Hintergrund.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Flexbox` für das Layout der Mail-Vorschau.
+- [ ] Mobile: "Swipe-Left (Spam) / Swipe-Right (Inbox)".
+
+5. Content-Strategie (The Mail-Feed)
+- [ ] 15 Email-Szenarien: Von "Rechnung von PayPal" (Fake) bis "Interne Mitteilung" (Echt).
+
+6. QA-Paket
+- [ ] Test: Werden die drei Protokolle (SPF, DKIM, DMARC) in ihrer Synergie verständlich?
+- [ ] Test: Fühlt sich die Header-Analyse wie "Forensik" an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Email-Sicherheit ist eine Kombination aus Technik und Wachsamkeit des Nutzers.
+- [ ] Das Interface wirkt strukturiert, professionell und sicherheitsbewusst.
+- [ ] Fokus auf IT-Compliance und Social Engineering Abwehr.

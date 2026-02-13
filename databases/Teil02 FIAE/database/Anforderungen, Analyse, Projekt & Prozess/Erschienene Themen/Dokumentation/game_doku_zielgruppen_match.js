@@ -21,17 +21,7 @@
   };
 
   const el = {
-    level: document.getElementById('hud-level'),
-    score: document.getElementById('hud-score'),
-    target: document.getElementById('hud-target'),
-    card: document.getElementById('hud-card'),
-    time: document.getElementById('hud-time'),
-    streak: document.getElementById('hud-streak'),
-    confusion: document.getElementById('hud-confusion'),
-    meterFill: document.getElementById('meter-fill'),
     readFill: document.getElementById('read-fill'),
-    badge: document.getElementById('snippet-badge'),
-    hint: document.getElementById('snippet-hint'),
     text: document.getElementById('snippet-text'),
     feedback: document.getElementById('feedback'),
     feed: document.getElementById('feed'),
@@ -113,10 +103,10 @@
     state.cardStart = Date.now();
     state.lock = false;
 
-    el.badge.textContent = snippet.badge;
     el.text.textContent = snippet.text;
-    el.hint.textContent = level.name;
     el.cardNode.style.transform = 'translateX(0px)';
+    setFeedback('Ordne das aktuelle Fragment zu: links Admin, rechts User.', true);
+    updateDragState();
 
     updateHud();
   }
@@ -198,6 +188,7 @@
     }
 
     setFeedback(msg, points >= 0);
+    updateDragState();
     updateHud();
     el.nextBtn.classList.remove('hidden');
   }
@@ -246,6 +237,7 @@
     }
 
     setFeedback('Zu langsam: Support-Rueckfragen steigen.', false);
+    updateDragState();
     updateHud();
     el.nextBtn.classList.remove('hidden');
   }
@@ -262,6 +254,7 @@
     setFeedback(perfect ? 'Zero Confusion erreicht. Bonus +300.' : 'Mission abgeschlossen.', true);
     pushLog(`Abschluss: ${state.score} Punkte, Confusion ${state.confusion}%.`, 'ok');
     renderFeed();
+    updateDragState();
     updateHud();
   }
 
@@ -273,6 +266,7 @@
     el.restartBtn.classList.remove('hidden');
     pushLog('Support-Crisis eskaliert. Mission abgebrochen.', 'bad');
     renderFeed();
+    updateDragState();
     updateHud();
   }
 
@@ -295,13 +289,12 @@
     el.nextBtn.classList.add('hidden');
     el.restartBtn.classList.add('hidden');
 
-    el.badge.textContent = 'USAGE';
     el.text.textContent = 'Druecke Mission starten.';
-    el.hint.textContent = 'Fokus: User-Verstaendnis';
 
     setFeedback('Neuer Run bereit.', true);
     pushLog('System reset.', 'ok');
     renderFeed();
+    updateDragState();
     updateHud();
   }
 
@@ -332,20 +325,15 @@
   }
 
   function updateHud() {
-    const total = state.cfg ? state.cfg.snippets.length : 0;
-    const level = currentLevel();
-
-    el.level.textContent = String(level ? levelIndexBySnippet(state.idx) + 1 : 1);
-    el.score.textContent = String(state.score);
-    el.target.textContent = level ? level.target_doc : '-';
-    el.card.textContent = `${Math.min(total, state.idx + 1)}/${total}`;
-    el.time.textContent = `${(state.cardTimer / 1000).toFixed(1)}s`;
-    el.streak.textContent = String(state.streak);
-    el.confusion.textContent = `${Math.round(state.confusion)}%`;
-    el.meterFill.style.transform = `scaleX(${state.confusion / 100})`;
     document.body.classList.toggle('high-confusion', state.confusion >= 70);
 
+    updateDragState();
     updateReadability();
+  }
+
+  function updateDragState() {
+    const canDrag = state.started && !state.lock && !state.done && !state.gameOver;
+    el.cardNode.classList.toggle('draggable', canDrag);
   }
 
   function updateReadability() {

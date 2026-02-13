@@ -1,0 +1,37 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der Certificate Authority (CA) Struktur, des Chain-of-Trust Modells und der Bestandteile eines SSL-Zertifikats.
+- Game-Mechanic: "The Trust Chain". Du bist ein Detektiv in einer Welt voller Urkundenfälscher. Jedes Mal, wenn du eine Website besuchst, wird dir eine Urkunde (Das Zertifikat) gezeigt. Du musst prüfen: Wer hat sie unterschrieben? Kennst du den Aussteller? Hat der Aussteller selbst eine gültige Urkunde von einer Root-Instanz? Verfolge die Kette zurück bis zum Ursprung des Vertrauens.
+- Challenge: 
+  - Level 1 (The Identity Check): Prüfe, ob der Name auf dem Zertifikat exakt mit der URL im Browser übereinstimmt (Common Name Match).
+  - Level 2 (The Expiry Date): Die Uhr tickt! Das Zertifikat wurde gestern ungültig. Verweigere den Zugriff und erkläre dem User das Risiko.
+  - Level 3 (The Intermediate Puzzle): Die Kette ist unterbrochen! Finde das fehlende "Intermediate Certificate", um die Verbindung zur Root-CA wiederherzustellen.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Trust-Chain-Map", "Certificate-Details-View (Subject, Issuer, Validity)", "Root-Store-Monitor", "Revocation-Check (CRL/OCSP)".
+- [ ] Scoring: "Trust-Auditor" Bonus für das Entlarven von "Self-Signed" Zertifikaten in öffentlichen Netzen. Abzug für das Ignorieren von Warnmeldungen.
+
+2. Screen-Layout (The Archive)
+- [ ] `certificate-stack -> magnifying-glass -> trust-tree-visualizer -> approval-button`.
+- [ ] Trust-Tree: Eine Baumstruktur, die sichtlich wächst, wenn man Zertifikate erfolgreich verknüpft.
+
+3. Kernvisuals und Effekte
+- [ ] Classic-Archive-Modernized Ästhetik: Dunkles Blau, Goldene Akzente, holographische Siegel, das Geräusch von einrastenden Schlössern (Shared Theme kompatibel).
+- [ ] "Chain-Link-Effect": Wenn zwei Zertifikate zusammenpassen, erscheint eine goldene Kette zwischen ihnen.
+- [ ] "Trust-Flash": Bei erfolgreicher Verifizierung bis zur Root-CA leuchtet die gesamte Kette in einem beruhigenden, sicheren Blau auf.
+
+4. Browser- und Device-Resilienz
+- [ ] `SVG Path` für die dynamische Baumstruktur der Chain.
+- [ ] Mobile: "Drag-and-Drop" zum Verbinden der Ketten-Glieder.
+
+5. Content-Strategie (The Case-Files)
+- [ ] 12 Zertifikats-Szenarien: Von "Abgelaufenes Zertifikat" bis "Wildcard-Zulässigkeit".
+
+6. QA-Paket
+- [ ] Test: Wird die Rolle von "Root-Certificates" im Browser-Betriebssystem deutlich?
+- [ ] Test: Ist die Bedeutung der Aussteller-Signatur (Issuer) spielerisch erkennbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Vertrauen im Internet basiert auf einer hierarchischen Kette von Beglaubigungen.
+- [ ] Das Interface wirkt seriös, analytisch und logisch aufgebaut.
+- [ ] Fokus auf PKI und Web-Sicherheit.

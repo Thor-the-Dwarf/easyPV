@@ -25,7 +25,6 @@ body.cf-page {
 }
 
 .topbar,
-.confusion-meter,
 .diagnostic {
   border: 1px solid #d0d0d0;
   border-radius: 14px;
@@ -51,28 +50,6 @@ h1 {
   color: var(--muted);
   font-size: 1.05rem;
 }
-
-.hud {
-  margin-top: 8px;
-  display: grid;
-  grid-template-columns: repeat(6, minmax(88px, 1fr));
-  gap: 7px;
-}
-
-.chip {
-  border: 1px solid #c6d3df;
-  border-radius: 10px;
-  padding: 6px 8px;
-  background: #f4f5f7;
-}
-
-.chip span {
-  display: block;
-  font-size: 0.72rem;
-  color: #5f6a75;
-}
-
-.chip strong { font-size: 1.06rem; }
 
 .target-bins {
   min-height: 560px;
@@ -136,33 +113,11 @@ h1 {
   background: rgba(255, 255, 255, 0.18);
   padding: 20px 22px;
   touch-action: none;
-}
-
-.card-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-
-.badge {
-  display: inline-block;
-  border: 1px solid #8d8d8d;
-  border-radius: 999px;
-  padding: 3px 9px;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  background: rgba(255, 255, 255, 0.52);
-}
-
-.hint {
-  color: #4f4f4f;
-  font-size: 0.92rem;
-  text-align: right;
+  cursor: default;
 }
 
 #snippet-text {
-  margin: 16px 0 0;
+  margin: 8px 0 0;
   font-size: clamp(1.18rem, 1.62vw, 2rem);
   line-height: 1.28;
 }
@@ -186,6 +141,7 @@ h1 {
 .action-row {
   display: grid;
   justify-items: center;
+  gap: 10px;
 }
 
 .start {
@@ -201,32 +157,12 @@ h1 {
 
 .hidden { display: none; }
 
-.confusion-meter .meter-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.meter-track {
-  margin-top: 7px;
-  height: 12px;
-  border: 1px solid #bdc4cc;
-  border-radius: 999px;
-  background: #f0f1f3;
-  overflow: hidden;
-}
-
-.meter-fill {
-  height: 100%;
-  width: 0;
-  transform-origin: left center;
-  background: linear-gradient(90deg, #44d17a, #f3ca54, #ff5a67);
-}
-
 .feedback {
-  margin: 8px 0 0;
+  margin: 0;
   color: #4f5f72;
-  font-size: 1.02rem;
+  font-size: 1.08rem;
+  min-height: 1.4em;
+  text-align: center;
 }
 
 .feedback.ok { color: #0f7742; }
@@ -259,13 +195,20 @@ body.cf-page.confusion-wave {
   animation: confusionWave 300ms linear 3;
 }
 
-body.cf-page.high-confusion .meter-track {
-  border-color: rgba(255, 90, 103, 0.55);
-  box-shadow: 0 0 0 2px rgba(255, 90, 103, 0.12);
-}
-
 body.cf-page.high-confusion .feedback {
   color: #b53a45;
+}
+
+.snippet-card.draggable {
+  border-style: dashed;
+  border-color: #3f86ff;
+  background: rgba(235, 244, 255, 0.45);
+  cursor: grab;
+  box-shadow: 0 0 0 3px rgba(63, 134, 255, 0.16);
+}
+
+.snippet-card.draggable:active {
+  cursor: grabbing;
 }
 
 @keyframes confusionWave {
@@ -301,10 +244,6 @@ body.cf-page.high-confusion .feedback {
   .snippet-card {
     min-height: 200px;
     border-radius: 26px;
-  }
-
-  .hud {
-    grid-template-columns: repeat(3, minmax(86px, 1fr));
   }
 
   .start {

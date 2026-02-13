@@ -4,53 +4,47 @@
     const state = {
         config: null,
         levelIdx: 0,
-        gameOver: false
+        isComplete: false
     };
 
     const el = {
         levelTitle: document.getElementById('level-title'),
+        tableContainer: document.querySelector('.table-container'),
         tableHead: document.getElementById('table-head'),
         tableBody: document.getElementById('table-body'),
-        actionCard: document.getElementById('action-card'),
-        cardTitle: document.getElementById('card-title'),
         cardDesc: document.getElementById('card-desc'),
         btnExecute: document.getElementById('btn-execute'),
         btnReject: document.getElementById('btn-reject'),
-        alertOverlay: document.getElementById('anomaly-alert'),
+        overlay: document.getElementById('overlay'),
         alertTitle: document.getElementById('alert-title'),
         alertDesc: document.getElementById('alert-desc'),
         btnNext: document.getElementById('btn-next'),
-        resultScreen: document.getElementById('result-screen'),
-        finalResult: document.getElementById('final-result'),
-        btnFinale: document.getElementById('btn-finale')
+        statusVal: document.getElementById('status-val')
     };
 
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-    function playTone(type) {
+    function playSound(type) {
         if (audioCtx.state === 'suspended') audioCtx.resume();
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
         osc.connect(gain);
         gain.connect(audioCtx.destination);
-        const now = audioCtx.currentTime;
 
-        if (type === 'shake') {
+        if (type === 'error') {
             osc.type = 'sawtooth';
-            osc.frequency.setValueAtTime(100, now);
-            osc.frequency.linearRampToValueAtTime(50, now + 0.5);
-            gain.gain.setValueAtTime(0.5, now);
-            gain.gain.linearRampToValueAtTime(0, now + 0.5);
+            osc.frequency.setValueAtTime(120, audioCtx.currentTime);
+            gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.4);
             osc.start();
-            osc.stop(now + 0.5);
+            osc.stop(audioCtx.currentTime + 0.4);
         } else if (type === 'success') {
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(400, now);
-            osc.frequency.linearRampToValueAtTime(800, now + 0.2);
-            gain.gain.setValueAtTime(0.2, now);
-            gain.gain.linearRampToValueAtTime(0, now + 0.2);
+            osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.3);
+            gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.3);
             osc.start();
-            osc.stop(now + 0.2);
+            osc.stop(audioCtx.currentTime + 0.3);
         }
     }
 
@@ -59,112 +53,111 @@
             const resp = await fetch('game_anomaly_hunt.json');
             state.config = await resp.json();
 
-            el.btnExecute.addEventListener('click', () => handleDecision(true));
-            el.btnReject.addEventListener('click', () => handleDecision(false));
-
-            el.btnNext.addEventListener('click', () => {
-                el.alertOverlay.style.display = 'none';
-                document.querySelector('.table-container').classList.remove('shake');
-
-                if (state.levelIdx < state.config.levels.length - 1) {
-                    startLevel(state.levelIdx + 1);
-                } else {
-                    showFinalResult();
-                }
-            });
-
-            el.btnFinale.addEventListener('click', () => location.reload()); // Or next game
+            el.btnExecute.onclick = () => handleChoice(true);
+            el.btnReject.onclick = () => handleChoice(false);
+            el.btnNext.onclick = () => {
+                el.overlay.classList.add('hidden');
+                el.tableContainer.classList.remove('shake');
+                startLevel(state.levelIdx + 1);
+            };
 
             startLevel(0);
-        } catch (e) {
-            console.error(e);
-        }
+        } catch (e) { console.error(e); }
     }
 
     function startLevel(idx) {
-        state.levelIdx = idx;
-        const level = state.config.levels[idx];
-
-        el.levelTitle.textContent = `Scenario ${idx + 1}: ${level.title}`;
-
-        // Render Table
-        renderTable(level.table);
-
-        // Render Action
-        const action = level.action;
-        el.cardTitle.textContent = action.type + " REQUEST";
-
-        if (action.type === 'INSERT') {
-            el.cardDesc.innerHTML = `Attempting to insert:<br>Project: <b>${action.data.Project_Name}</b><br>Employee: <b>NULL</b>`;
-            el.actionCard.className = 'action-card intent-insert';
-        } else if (action.type === 'UPDATE') {
-            el.cardDesc.innerHTML = `Attempting to update:<br>Row ID: <b>${action.target_id}</b><br>Value: <b>${action.new_value}</b>`;
-            el.actionCard.className = 'action-card intent-update';
-        } else if (action.type === 'DELETE') {
-            el.cardDesc.innerHTML = `Attempting to delete:<br>Project Row: <b>${action.target_row + 1}</b>`;
-            el.actionCard.className = 'action-card intent-delete';
+        if (idx >= state.config.levels.length) {
+            location.reload();
+            return;
         }
+        state.levelIdx = idx;
+        state.isComplete = false;
+
+        const lv = state.config.levels[idx];
+        el.levelTitle.textContent = `DIAGNOSTIC_MODE // ${lv.title}`;
+        el.statusVal.textContent = 'SYSTEM_VULNERABLE';
+        el.statusVal.style.color = 'var(--anomaly-orange)';
+
+        renderTable(lv.table);
+
+        const action = lv.action;
+        let desc = '';
+        if (action.type === 'INSERT') {
+            desc = `REQUEST: <span style="color:var(--safe-cyan);">INSERT</span><br>Project: <b>${action.data.Project_Name}</b><br>Employee: <b style="color:var(--anomaly-orange)">NULL</b>`;
+        } else if (action.type === 'UPDATE') {
+            desc = `REQUEST: <span style="color:var(--safe-cyan);">UPDATE</span><br>TargetID: <b>${action.target_id}</b><br>NewValue: <b>${action.new_value}</b>`;
+        } else if (action.type === 'DELETE') {
+            desc = `REQUEST: <span style="color:var(--safe-cyan);">DELETE</span><br>ProjectRow: <b>${action.target_row + 1}</b>`;
+        }
+        el.cardDesc.innerHTML = desc;
     }
 
     function renderTable(tableData) {
-        el.tableBody.innerHTML = '';
         el.tableHead.innerHTML = '';
+        el.tableBody.innerHTML = '';
 
-        // Headers
-        const tr = document.createElement('tr');
+        const hTr = document.createElement('tr');
         tableData.headers.forEach(h => {
             const th = document.createElement('th');
             th.textContent = h;
-            tr.appendChild(th);
+            hTr.appendChild(th);
         });
-        el.tableHead.appendChild(tr);
+        el.tableHead.appendChild(hTr);
 
-        // Rows
-        tableData.data.forEach((row, i) => {
+        tableData.data.forEach(row => {
             const tr = document.createElement('tr');
             row.forEach(cell => {
                 const td = document.createElement('td');
-                td.textContent = cell;
+                td.textContent = cell === null ? 'NULL' : cell;
                 tr.appendChild(td);
             });
             el.tableBody.appendChild(tr);
         });
     }
 
-    function handleDecision(execute) {
-        const level = state.config.levels[state.levelIdx];
-        // In this game, ALL levels are anomalies (it's an Anomaly Hunt).
-        // So the correct decision is always REJECT.
-        // If execute -> show why it failed (The Lesson).
-        // If reject -> "Correct! This is an anomaly."
+    function handleChoice(isExecute) {
+        if (state.isComplete) return;
+        const lv = state.config.levels[state.levelIdx];
 
-        if (execute) {
-            // Player chose to Execute -> Causality -> Anomaly triggers
-            playTone('shake');
-            document.querySelector('.table-container').classList.add('shake');
-            showAlert(level.action.error, level.action.explanation, true);
+        if (isExecute) {
+            // This game implies all scenarios are anomalies
+            playSound('error');
+            el.tableContainer.classList.add('shake');
+
+            // Final "Heatmap" highlight for problematic columns
+            highlightAnomalies(lv);
+
+            showOverlay(lv.action.error, lv.action.explanation, true);
         } else {
-            // Player chose to Reject -> Safe
-            playTone('success');
-            showAlert("ANOMALY AVERTED!", `Good eye! You prevented a ${level.title}. <br><br>Reasoning: ${level.action.explanation}`, false);
+            playSound('success');
+            showOverlay("ANOMALY_AVERTED", `Structural flaw detected: ${lv.title}. Integrity preserved.`, false);
         }
+        state.isComplete = true;
     }
 
-    function showAlert(title, desc, isBad) {
+    function highlightAnomalies(lv) {
+        const cells = el.tableBody.querySelectorAll('td');
+        cells.forEach(td => {
+            if (lv.title.includes('Insertion') && td.textContent === 'NULL') {
+                td.classList.add('anomaly-glow');
+            }
+            if (lv.title.includes('Update') && td.textContent === 'Müller') {
+                td.classList.add('anomaly-glow');
+            }
+            if (lv.title.includes('Deletion') && td.textContent === 'Schulze') {
+                td.classList.add('anomaly-glow');
+            }
+        });
+    }
+
+    function showOverlay(title, desc, isAnomaly) {
         el.alertTitle.textContent = title;
         el.alertDesc.innerHTML = desc;
-        el.alertOverlay.querySelector('.alert-icon').textContent = isBad ? '⚠️' : '🛡️';
-        el.alertTitle.style.color = isBad ? 'var(--accent-danger)' : 'var(--accent-safe)';
-        el.alertOverlay.style.boxShadow = isBad ? '0 0 50px var(--accent-danger)' : '0 0 50px var(--accent-safe)';
+        el.overlay.querySelector('.alert-card').className = isAnomaly ? 'alert-card anomaly' : 'alert-card';
 
         setTimeout(() => {
-            el.alertOverlay.style.display = 'block';
-        }, 500); // Wait for shake
-    }
-
-    function showFinalResult() {
-        el.finalResult.textContent = "Database Integrity Preserved.";
-        el.resultScreen.classList.remove('hidden');
+            el.overlay.classList.remove('hidden');
+        }, 600);
     }
 
     init();

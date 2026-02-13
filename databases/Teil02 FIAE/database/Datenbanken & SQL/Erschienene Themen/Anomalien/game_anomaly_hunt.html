@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Database Anomalies - The Hunt</title>
+    <title>Anomalien-Jagd - Blueprint Diagnostic</title>
     <!-- Adjust path -->
     <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
     <link rel="stylesheet" href="anomaly_hunt.css">
@@ -14,58 +14,53 @@
 <body>
     <div class="game-app">
         <!-- HUD -->
-        <header class="hud">
-            <div id="level-title" class="level-title">Loading Scenario...</div>
-            <div class="status-badge">DB STATUS: VULNERABLE</div>
+        <header class="header-bar">
+            <div id="level-title">ARCHITECT_INIT...</div>
+            <div class="diag-status">
+                INTEGRITY_INDEX: <span id="status-val">STABLE</span>
+            </div>
         </header>
 
-        <!-- Workspace -->
+        <!-- Main Workspace -->
         <main class="workspace">
+            <div class="diag-label">DATABASE_STRUCT // ACTIVE_TABLE_BUFFER</div>
 
-            <!-- Table View -->
             <div class="table-container">
+                <!-- Scissors tool handle (UX element) -->
+                <div class="tool-scissors">✂️</div>
                 <table>
                     <thead id="table-head"></thead>
                     <tbody id="table-body"></tbody>
                 </table>
             </div>
 
-            <!-- Action Area -->
-            <div class="action-area">
+            <!-- Action Zone -->
+            <div class="action-zone">
                 <div id="action-card" class="action-card">
-                    <div id="card-title" class="card-title">ACTION</div>
-                    <div id="card-desc" class="card-desc">...</div>
+                    <div class="intent-label">PROPOSED_DB_TX</div>
+                    <div id="card-desc" class="intent-desc">AWAITING_REQUEST...</div>
                 </div>
 
-                <div style="display:flex; flex-direction:column; gap:10px; justify-content:center;">
-                    <button id="btn-execute" class="btn-primary" style="background:#4caf50; color:#fff;">EXECUTE
-                        QUERY</button>
-                    <button id="btn-reject" class="btn-primary" style="background:#f44336; color:#fff;">BLOCK
-                        (RISK!)</button>
+                <div class="btn-group">
+                    <button id="btn-execute" class="btn-primary execute">EXECUTE_REQUEST</button>
+                    <button id="btn-reject" class="btn-primary reject">BLOCK_ANOMALY</button>
                 </div>
             </div>
-
         </main>
 
-        <!-- Anomaly Alert Overlay -->
-        <div id="anomaly-alert" class="anomaly-alert">
-            <div class="alert-icon">⚠️</div>
-            <div id="alert-title" class="alert-title">ANOMALY DETECTED</div>
-            <div id="alert-desc" class="alert-desc">...</div>
-            <button id="btn-next" class="btn-primary">NEXT SCENARIO</button>
-        </div>
+        <!-- Result/Alert Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="alert-card">
+                <div class="diag-label" style="text-align: center; margin-bottom: 2rem;">DIAGNOSTIC_REPORT</div>
+                <h2 id="alert-title" style="letter-spacing: 5px; margin: 1rem 0;">ANOMALY_DETECTED</h2>
+                <p id="alert-desc" style="font-size: 0.9rem; line-height: 1.8; color: var(--text-dim);">...</p>
 
-        <!-- Result Screen -->
-        <div id="result-screen" class="result-screen hidden">
-            <div class="card"
-                style="background: #2d2d2d; border: 2px solid var(--accent-warn); padding: 3rem; text-align:center;">
-                <h2 style="color:var(--accent-warn); margin-bottom:1rem; font-family:'Roboto Mono', monospace;">TRAINING
-                    COMPLETE</h2>
-                <div class="hud-value" style="font-size: 1.5rem; margin: 2rem 0; color:#fff" id="final-result">...</div>
-                <button id="btn-finale" class="btn-primary">RESTART TRAINING</button>
+                <button id="btn-next">ACKNOWLEDGE_REPORT</button>
             </div>
         </div>
     </div>
+
+    <!-- Script -->
     <script src="game_anomaly_hunt.js"></script>
 </body>
 

@@ -1,19 +1,38 @@
-Anforderungen
-1. "Request-Constructor"
-   - Ziel: Verständnis des syntaktischen Aufbaus eines rohen HTTP-Requests zur Fehlersuche in Netzwerk-Kommunikationen.
-   - Spielmechanik: 
-     - Der Spieler muss einen validen HTTP-Request aus Bausteinen (Methode, Pfad, Protokoll, Header-Zeilen, Body) zusammenbauen.
-     - Korrekte Platzierung von Newlines (\n) und Leerstellen zur Trennung der Header vom Body.
-     - Auswahl passender Content-Types und Authorization-Header für gegebene Payloads.
-     - Messbarkeit: Wohlgeformtheit und Validität des resultierenden Request-Strings.
-   - Lernziel: Beherrschung der HTTP-Syntax und Vorbereitung auf Low-Level API-Testing.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sicherer Zusammenbau eines HTTP-Requests (URL, Methode, Header, Body) für spezifische API-Anforderungen.
+- Game-Mechanic: "The Package Crafter". Du bist der Paket-Architekt in einem intergalaktischen Versandsystem. Eine API-Order ist reingekommen: "Schicke 10 Tonnen Eisen an den Mars". Du musst das Paket schnüren: Schreibe die Adresse (URL), wähle das Versandlabel (Methode), klebe die Frachtpapiere (Header) auf und fülle das Paket mit der Fracht (Body). Nur korrekt gepackte Requests kommen durch den Hyperraum!
+- Challenge: 
+  - Level 1 (The Basic Delivery): Baue einen einfachen `GET` Request ohne Body, aber mit korrektem `Host` Header.
+  - Level 2 (The Secure Box): Ein `POST` Request mit JSON-Fracht. Füge den `Content-Type: application/json` Header hinzu.
+  - Level 3 (The Complex Cargo): Ein Multipart-Upload. Kombiniere Text-Daten und File-Parameter in einem einzigen Paket.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_http_request_blocks.json')
-   - Request-Fragmente und Ziel-Vorgaben.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung des Drag & Drop Editors).
-- [ ] Game-Engine Logic ('game_syntax_builder.js')
-   - (Validierung der Request-Struktur).
-- [ ] Integration
-   - Tutorial: Warum ein vergessenes CRLF den gesamten Request unbrauchbar macht.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Package-Weight (Bytes)", "Configuration-Quality (%)", "Transmission-Stability", "Metadata-Depth".
+- [ ] Scoring: "Precision-Packer" Bonus für exakt notwendige Header ohne Redundanz. Abzug für "Config-Gaps".
+
+2. Screen-Layout (The Loading Hangar)
+- [ ] `request-chassis -> header-stencils -> payload-bay -> launch-pad`.
+- [ ] Request-Chassis: Der Grundrahmen des Pakets (Method + URL).
+- [ ] Payload-Bay: Ein Laderaum, der sich öffnet, wenn `POST`/`PUT` gewählt wird.
+
+3. Kernvisuals und Effekte
+- [ ] Sci-Fi Industrial Ästhetik: Mechanische Arme, Schweißfunken, helle Xenon-Lichter, tiefe Maschinen-Brummen, holographische Labels (Shared Theme kompatibel).
+- [ ] "Component-Snap": Jedes Teil des Requests rastet mit einem wuchtigen Geräusch ein.
+- [ ] "Heat-Blur": Vor dem Launch fängt das Paket an zu vibrieren und die Luft flimmert.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Grid` für die modulare Ansicht des Paket-Konstruktors.
+- [ ] Mobile: "Swipe-to-Configure" die verschiedenen Ebenen.
+
+5. Content-Strategie (The Blueprints)
+- [ ] 15 Reale API-Spezifikationen (von Stripe bis Twilio) als Pack-Auftrag.
+
+6. QA-Paket
+- [ ] Test: Ist die Reihenfolge (Methode -> URL -> Header -> Body) im UI logisch aufgebaut?
+- [ ] Test: Fühlt sich das "Zusammenbauen" wertiger an als einfaches Ausfüllen eines Formulars?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Ein Request ist ein präzise konfiguriertes Paket.
+- [ ] Das Interface wirkt mächtig, technologisch und hochgradig befriedigend.
+- [ ] Fokus auf technisches API-Verständnis.

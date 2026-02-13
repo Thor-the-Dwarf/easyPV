@@ -1,19 +1,38 @@
-Anforderungen
-1. "Request-Response-Matching"
-   - Ziel: Grundlegendes Verständnis des zustandslosen Request-Response-Zyklus des HTTP-Protokolls.
-   - Spielmechanik: 
-     - Simulation einer Client-Server Interaktion.
-     - Der Spieler erhält verschiedene HTTP-Requests (z.B. "Lade Bild", "Sende Formular") und muss die logisch korrekte Response (Statuscode + Content-Type) zuordnen.
-     - Identifikation von Header-Feldern, die für die Kommunikation entscheidend sind.
-     - Messbarkeit: Korrekte Zuordnung der Kommunikationspaare.
-   - Lernziel: Beherrschung der Web-Grundlagen und Fehlersuche im Netzwerk-Stack.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der dualen Struktur der Web-Kommunikation (Anfrage vom Client, Antwort vom Server).
+- Game-Mechanic: "The Signal Pair". Du spielst ein futuristisches "Memory" mit den Web-Protokollen. Auf der einen Seite kommen "Gesuch-Blitze" (Requests: "Will ein Bild", "Schickt Passwort") aus dem All. Du musst auf der Erde den exakt passenden "Antwort-Schild" (Response: "Hier ist das Bild", "Willkommen") hochfahren. Wenn die Paare nicht passen, bricht die Kommunikation ab!
+- Challenge: 
+  - Level 1 (The Simple Echo): Ordne einfache `GET`-Anfragen den passenden `200 OK` Antworten zu.
+  - Level 2 (The Mismatch): Schütze dich vor "Request-Bomben" (Hacker), indem du die passenden `4xx` Schilde aktivierst.
+  - Level 3 (The Full Frame): Ein kompletter Header-Match. Prüfe `Content-Type`, `Date` und `Host`, um das perfekte Paar zu bilden.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_http_basics.json')
-   - Request-Response Paare und Header-Definitionen.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Visuelle Darstellung von Client- und Server-Boxen).
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Wiederverwendung der Matching-Logik).
-- [ ] Integration
-   - Tutorial: Warum HTTP ein "zustandsloses" Protokoll ist.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Connection-Sync (%)", "Protocol-Stability", "Response-Buffer-Gage", "Active-Match-Counter".
+- [ ] Scoring: "Sync-Specialist" Bonus für schnelle Paarbildung. Abzug für "Protocol-Collisions".
+
+2. Screen-Layout (The Deep Space Ground Station)
+- [ ] `star-field (Incoming Requests) -> terminal-console -> defense-shields (Response Options) -> sync-beam`.
+- [ ] Star-Field: Requests fliegen als Icons von oben nach unten.
+- [ ] Terminal-Console: Zeigt die Detail-Parameter des fokussierten Requests an.
+
+3. Kernvisuals und Effekte
+- [ ] Space-Command Ästhetik: Dunkles Blau, glühendes Orange, Scantech-Linien, statisches Rauschen im Audio, pulsierende Lichteffekte (Shared Theme kompatibel).
+- [ ] "Sync-Lock": Wenn ein Paar gefunden wird, verbinden sie sich mit einem kräftigen Energiestrahl.
+- [ ] "Static-Interference": Bei falschem Pairing verzerrt sich das Bild kurzzeitig.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Mix-Blend-Mode` für die glühenden Überlagerungen.
+- [ ] Mobile: "Tap-and-Match" Mechanik.
+
+5. Content-Strategie (The Records)
+- [ ] 18 Request-Response Paare aus echtem HTTP/1.1 und HTTP/2 Traffic.
+
+6. QA-Paket
+- [ ] Test: Ist die zeitliche Abfolge (Erst Request, dann Response) im UI-Fluss spürbar?
+- [ ] Test: Werden die Header-Details (z.B. User-Agent) spielerisch sinnvoll genutzt?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Das Web ist ein Dialog, kein Monolog.
+- [ ] Das Interface wirkt atmosphärisch, technisch und hochmodern.
+- [ ] Hoher Lerneffekt für Client/Server-Architektur.

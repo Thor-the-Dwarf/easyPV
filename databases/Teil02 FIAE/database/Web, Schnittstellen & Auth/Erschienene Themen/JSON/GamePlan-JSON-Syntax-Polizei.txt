@@ -1,19 +1,38 @@
-Anforderungen
-1. "JSON-Syntax-Polizei"
-   - Ziel: Vermeidung und Behebung häufiger Syntaxfehler beim Datenaustausch im Web mittels JSON.
-   - Spielmechanik: 
-     - Analyse von JSON-Strings auf syntaktische Fehler (z.B. fehlende Anführungszeichen bei Keys, falsche Datentypen, Kommafehler).
-     - Der Spieler korrigiert den JSON-String so, dass `JSON.parse()` ihn fehlerfrei verarbeiten kann.
-     - Zuordnung von JSON-Werten zu ihren korrekten Datentypen (String, Number, Object, Array, Boolean, Null).
-     - Messbarkeit: Korrektheit der JSON-Syntax und Datentypen.
-   - Lernziel: Beherrschung des Standard-Datenformats für moderne Web-APIs und Single Page Applications.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Fehlerfreie Erstellung und Validierung von JSON-Datenstrukturen (Syntax, Datentypen, Verschachtelung).
+- Game-Mechanic: "The Data Inspector". Du stehst am Fließband einer Daten-Fabrik. Millionen von JSON-Paketen rauschen an dir vorbei. Deine Aufgabe: Scanne sie auf Syntax-Sünden! Fehlt ein Komma? Ist die Klammer falsch herum? Nutzt jemand einfache Anführungszeichen statt doppelter? Nur perfekte Pakete dürfen in die Cloud!
+- Challenge: 
+  - Level 1 (The Comma-Calamity): Finde das vergessene oder das überflüssige (Trailing) Komma.
+  - Level 2 (The Quote-Quest): Korrigiere ungültige Anführungszeichen und falsche Datentypen (z.B. `"123"` statt `123`).
+  - Level 3 (The Nesting-Nightmare): Ein tief verschachteltes Objekt mit Arrays. Jede Klammer muss ihren Partner finden.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_json_policeman.json')
-   - Fehlerhafte JSON-Fragmente und Datentyp-Sets.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung des Syntax-Validators).
-- [ ] Game-Engine Logic ('game_syntax_builder.js')
-   - (Prüfung der JSON-Validität).
-- [ ] Integration
-   - Tutorial: JSON vs. JS-Objekte – worauf man achten muss.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Syntax-Scanner (Radar)", "Error-Log-Display", "Data-Load (%)", "Purity-Index".
+- [ ] Scoring: "Precision-Officer" Bonus für das Finden von Fehlern in Rekordzeit. Abzug für das Durchlassen von "Broken-JSON".
+
+2. Screen-Layout (The Inspection Belt)
+- [ ] `conveyor-belt -> json-packages -> virtual-magnifier -> bin-sorter (Valid/Broken)`.
+- [ ] Virtual-Magnifier: Eine Lupe, die beim Drüberfahren die Zeilennummern und Syntax-Highlighter einblendet.
+- [ ] Bin-Sorter: Zwei große Röhren, in die man die Pakete schiebt.
+
+3. Kernvisuals und Effekte
+- [ ] Neon-Cyber Ästhetik: Dunkler Hintergrund, leuchtendes Cyan und Magenta, digitale Glitch-Effekte bei Fehlern, schneller Techno-Puls im Audio (Shared Theme kompatibel).
+- [ ] "Scan-Line": Ein horizontaler Laserstrahl, der die Pakete grün oder rot einfärbt.
+- [ ] "Code-Crunch": Ein kurzes digitales Geräusch, wenn ein Paket korrekt einsortiert wird.
+
+4. Browser- und Device-Resilienz
+- [ ] `monaco-editor` (light-weight Version) oder `prism.js` für das Highlighting.
+- [ ] Mobile: "Swipe-to-Sort" Mechanik.
+
+5. Content-Strategie (The Data-Stream)
+- [ ] 20 JSON-Fallbeispiele: Von "Simple Config" bis "Complex API Response".
+
+6. QA-Paket
+- [ ] Test: Sind die Error-Markierungen (rotes Unterkringeln) auch auf kleinen Bildschirmen präzise?
+- [ ] Test: Fühlt sich die Fließband-Geschwindigkeit fordernd, aber fair an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: JSON verzeiht keine Schlamperei bei der Syntax.
+- [ ] Das Interface wirkt modern, rasant und hochgradig technologisch.
+- [ ] Fokus auf präzise Datenformate.

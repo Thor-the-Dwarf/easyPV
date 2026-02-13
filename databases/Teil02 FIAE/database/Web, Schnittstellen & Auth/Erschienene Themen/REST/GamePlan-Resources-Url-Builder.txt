@@ -1,19 +1,38 @@
-Anforderungen
-1. "Resources-Url-Builder"
-   - Ziel: Entwurf standardkonformer und intuitiver REST-Schnittstellen durch ressourcenorientiertes URL-Design.
-   - Spielmechanik: 
-     - Vorgabe von Datenabfragen (z.B. "Alle Kommentare zu einem bestimmten Blogartikel").
-     - Der Spieler konstruiert die passende RESTful URL (z.B. `/posts/{id}/comments` statt `/getComments?post=id`).
-     - Verwendung korrekter Pluralformen und hierarchischer Pfade.
-     - Messbarkeit: Einhaltung der REST-Konventionen und Pfad-Logik.
-   - Lernziel: Design von sauber strukturierten und langlebigen Web-APIs.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Gestaltung sauberer, ressourcenorientierter URL-Strukturen und Endpunkte gemäß dem REST-Paradigma.
+- Game-Mechanic: "The Resource Architect". Du bist der Stadtplaner für eine neue Digital-Metropole. Die Gebäude (Ressourcen wie User, Books, Orders) müssen über ein klares Straßensystem (URLs) erreichbar sein. Nutze Substantive, keine Verben! Baue Pfade wie `/users/123/orders` statt `/getOrderById?id=123`. Wenn deine Straßenführung unlogisch ist, verfahren sich die Clients!
+- Challenge: 
+  - Level 1 (The Single Street): Erstelle eine URL zum Abrufen ALLER Bücher einer Bibliothek.
+  - Level 2 (The Intersection): Baue eine hierarchische URL für "Die Kommentare des Beitrags Nr. 42".
+  - Level 3 (The Clean City): Filtere eine Liste. Nutze Query-Parameter (`?sort=desc`) korrekt, ohne die Basis-URL zu zerstören.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_rest_urls.json')
-   - Datenmodelle und Abfrage-Anforderungen.
-- [ ] Shared CSS Check ('web_apis.css')
-   - URL-Baukasten-UI.
-- [ ] Game-Engine Logic ('game_syntax_builder.js')
-   - (Validierung der URL-Struktur).
-- [ ] Integration
-   - Info: Warum Query-Parameter für Filterung ok sind, aber nicht für Ressourcen-Identifikation.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "REST-Semantics-Rating", "Urban-Clarity (Hierarchy)", "Endpoint-Simplicity", "Path-Efficiency".
+- [ ] Scoring: "Visionary-Architect" Bonus für die konsequente Nutzung von Plural-Substantiven. Abzug bei "Verb-Street" (URLs mit Verben).
+
+2. Screen-Layout (The Blueprint Table)
+- [ ] `city-grid (Resource Map) -> street-builder (URL input) -> signage-system (Method display) -> client-car (Simulation)`.
+- [ ] City-Grid: Zeigt die Ressourcen als Gebäude an.
+- [ ] Street-Builder: Ein smarter Text-Editor, der URLs automatisch in Segmente zerlegt.
+
+3. Kernvisuals und Effekte
+- [ ] Architectural-Minimalism Ästhetik: Blueprint-Blau, weiße feine Linien, technische Skizzen, das Geräusch von Bleistift auf Papier, saubere Typografie (Shared Theme kompatibel).
+- [ ] "Segment-Drop": Jedes `/Segment/` der URL erscheint als physikalisches Straßenschild auf dem Blueprint.
+- [ ] "Clarity-Pulse": Eine logisch aufgebaute URL fängt an, sanft weiß zu pulsieren.
+
+4. Browser- und Device-Resilienz
+- [ ] `flex-wrap` für die Straßenschilder-Ansicht der URL auf Mobile.
+- [ ] Mobile: "Drag-and-Nest" Mechanik für die Ressourcen-Hierarchie.
+
+5. Content-Strategie (The City Masterplans)
+- [ ] 12 Architektur-Aufgaben: Von "E-Commerce-Backend" bis "IoT-Sensor-Plattform".
+
+6. QA-Paket
+- [ ] Test: Wird das "Nesting" (Verschachtelung) von Ressourcen visuell sofort verständlich?
+- [ ] Test: Vermittelt das Spiel das Gefühl von "Ordnung vs. Chaos"?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Ressourcen sind Dinge, URLs sind Wege".
+- [ ] Das Interface wirkt ästhetisch, strukturiert und hochprofessionell.
+- [ ] Fokus auf modernes API-Design nach Industriestandard.

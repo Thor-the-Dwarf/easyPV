@@ -1,19 +1,38 @@
-Anforderungen
-1. "SSO-Hub-Simulation"
-   - Ziel: Verständnis des Single-Sign-On Prinzips zur Reduzierung der Passwort-Müdigkeit und zentralen Verwaltung von Benutzeridentitäten.
-   - Spielmechanik: 
-     - Interaktion zwischen einem Identity Provider (IdP) und mehreren Service Providern (SP).
-     - Der Spieler loggt sich einmal zentral ein und muss dann Navigationsentscheidungen treffen, um ohne erneute Passworteingabe auf andere Applikationen zuzugreifen.
-     - Fehlerbehandlung: Was passiert, wenn die Vertrauensstellung (Trust) zwischen IdP und SP abläuft?
-     - Messbarkeit: Erfolgreicher Zugriff auf alle Applikationen mit einer einzigen Authentifizierung.
-   - Lernziel: Beherrschung von SSO-Architekturen und deren Vorteile für Sicherheit und UX.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der Funktionsweise und Vorteile von Single-Sign-On (SSO) Systemen (Zentraler Identity Provider).
+- Game-Mechanic: "The Keymaster". Du bist der Wächter des "Zentralen Schlosses" in einer digitalen Stadt. Die Bürger (User) wollen in verschiedene Gebäude (Apps: Mail, CRM, HR). Statt für jedes Haus einen eigenen Schlüssel zu schleppen, kommen sie zu dir. Du gibst ihnen ein magisches Siegel (Token). Mit diesem einen Siegel öffnen sich alle Türen in der Stadt!
+- Challenge: 
+  - Level 1 (The First Entry): Authentifiziere einen User einmalig und lass ihn in zwei verschiedene Gebäude.
+  - Level 2 (The Trust-Relation): Ein neues Gebäude wird gebaut. Registriere es im "Zentralen Schloss" (Trust-Establishment), damit die Siegel dort auch funktionieren.
+  - Level 3 (The Global Logout): Ein Siegel geht verloren. Melde den User zentral ab, sodass er in KEINEM Gebäude mehr Zugriff hat.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_web_sso_landscape.json')
-   - Definition von IdP, SPs und Vertrauensbeziehungen.
-- [ ] Shared CSS Check ('business_mathematics.css')
-   - (Anpassung der Dashboard-Ansicht).
-- [ ] Game-Engine Logic ('game_logic_validator.js')
-   - (Tracking des Auth-Status über App-Grenzen hinweg).
-- [ ] Integration
-   - Tutorial: Unterschied zwischen SAML und OpenID Connect (OIDC).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Trust-Network-Map", "Active-Session-Monitor", "User-Comfort-Level", "Security-Seal-Status".
+- [ ] Scoring: "Efficiency-Master" Bonus für minimale Login-Interaktionen. Abzug für "Trust-Breaks" (wenn ein Gebäude das Siegel ablehnt).
+
+2. Screen-Layout (The City Center)
+- [ ] `central-hub (IdP) -> city-map (The Apps) -> user-avatar -> seal-transfer-animation`.
+- [ ] Central-Hub: Ein imposantes Gebäude in der Mitte mit einem Auge-Icon.
+- [ ] City-Map: Isometrische Sicht auf die verschiedenen App-Gebäude.
+
+3. Kernvisuals und Effekte
+- [ ] Royal-Tech Ästhetik: Goldene Linien auf dunkelblauem Grund, schwebende Siegel-Icons, majestätische Fanfaren-Sounds, flüssige Transitions (Shared Theme kompatibel).
+- [ ] "Seal-Ignite": Wenn sich der User einloggt, fängt der Avatar an, in einer spezifischen Farbe zu leuchten.
+- [ ] "Door-Auto-Open": Gebäude-Türen schwingen magisch auf, wenn der Avatar sich nähert.
+
+4. Browser- und Device-Resilienz
+- [ ] `SVG Animations` für die Verbindungsstrahlen zwischen Hub und Gebäuden.
+- [ ] Mobile: "Drag-to-Enter" Mechanik für den Avatar.
+
+5. Content-Strategie (The City Plans)
+- [ ] 10 SSO-Szenarien: Von "Firmen-Intranet" bis "Google-Account-Ecosystem".
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen "Login" (am Hub) und "Access" (an der App) grafisch deutlich?
+- [ ] Test: Ist das Konzept der "Zentralen Abmeldung" spielerisch frustfrei gelöst?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Einmal einloggen, überall drin".
+- [ ] Das Interface wirkt edel, sicher und architektonisch beeindruckend.
+- [ ] Fokus auf modernes Identitätsmanagement.

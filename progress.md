@@ -24,3 +24,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Added 25 snippets across 3 levels (Klare Sprache, Target-Bleeding, Support-Crisis), HUD for User-Confusion, Knowledge-Points, Target-Doc, and timed readability bar.
 - Added scoring rules incl. Silent Knowledge bonus (+150) and technical-noise penalty when admin content is routed to user docs.
 - Added mobile swipe-to-bin gestures (left=admin, right=user), diagnostic feed, confusion-wave visual, render_game_to_text and advanceTime hooks.
+- Playwright smoke test executed for game_doku_zielgruppen_match (local http.server + web_game_playwright_client).
+- Verified active runtime state after start: started=true, level 1 loaded, timer running, snippet payload exported via render_game_to_text.
+- Visual check completed on generated screenshot (desktop layout, bins, HUD, confusion meter and feed visible).
+- Added high-confusion warning state (>=70%): confusion meter and feedback area now switch to stronger warning styling.

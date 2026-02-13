@@ -252,6 +252,15 @@ body.cf-page.confusion-wave {
   animation: confusionWave 300ms linear 3;
 }
 
+body.cf-page.high-confusion .meter-track {
+  border-color: rgba(255, 90, 103, 0.55);
+  box-shadow: 0 0 0 2px rgba(255, 90, 103, 0.12);
+}
+
+body.cf-page.high-confusion .feedback {
+  color: #b53a45;
+}
+
 @keyframes confusionWave {
   0% { filter: none; }
   40% { filter: saturate(1.2) hue-rotate(-6deg); }

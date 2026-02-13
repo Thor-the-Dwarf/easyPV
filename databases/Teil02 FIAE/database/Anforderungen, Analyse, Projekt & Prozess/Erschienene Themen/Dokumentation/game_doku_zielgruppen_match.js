@@ -343,6 +343,7 @@
     el.streak.textContent = String(state.streak);
     el.confusion.textContent = `${Math.round(state.confusion)}%`;
     el.meterFill.style.transform = `scaleX(${state.confusion / 100})`;
+    document.body.classList.toggle('high-confusion', state.confusion >= 70);
 
     updateReadability();
   }

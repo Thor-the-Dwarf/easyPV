@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adapter Pattern - Bridge Builder</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="compatibility_connector.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="hud-label">SIGNAL SCORE</span>
+                <span class="hud-value" id="score-val">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">SYSTEM LEVEL</span>
+                <span class="hud-value" id="level-val">1</span>
+            </div>
+        </header>
+
+        <!-- Workbench -->
+        <main class="workbench">
+            <div class="cable"></div>
+
+            <div id="spark" class="spark"></div>
+
+            <div id="source-node" class="system-node">
+                <div class="node-label">Source</div>
+                <div class="payload-display">...</div>
+            </div>
+
+            <div id="adapter-socket" class="adapter-socket">
+                <div class="socket-label">DROP MODULE</div>
+            </div>
+
+            <div id="target-node" class="system-node">
+                <div class="node-label">Target</div>
+                <div class="payload-display">...</div>
+            </div>
+        </main>
+
+        <!-- Modules Tray -->
+        <footer id="modules-tray" class="modules-tray">
+            <!-- Modules Injected Here -->
+        </footer>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card"
+                style="background: #222; border: 2px solid var(--neon-blue); padding: 2rem; border-radius: 8px;">
+                <h2>System Report</h2>
+                <div class="hud-value" style="font-size: 3rem; margin: 1rem 0;" id="final-score">0</div>
+                <button id="restart-btn" class="btn">New Assignment</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_compatibility_connector.js"></script>
+</body>
+
+</html>

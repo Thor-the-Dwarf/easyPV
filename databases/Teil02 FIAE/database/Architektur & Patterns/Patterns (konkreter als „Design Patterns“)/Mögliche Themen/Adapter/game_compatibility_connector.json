@@ -1,0 +1,151 @@
+{
+    "meta": {
+        "topic": "Adapter Pattern",
+        "mechanic": "pipe_connector",
+        "version": "1.0"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "The Power Plug",
+            "source": {
+                "label": "US Plug (Type A)",
+                "type": "us_plug",
+                "color": "#f44336"
+            },
+            "target": {
+                "label": "EU Socket (Type F)",
+                "type": "eu_socket",
+                "color": "#2196f3"
+            },
+            "modules": [
+                {
+                    "id": "m1",
+                    "label": "US-to-EU Adapter",
+                    "effect": "transform",
+                    "correct": true
+                },
+                {
+                    "id": "m2",
+                    "label": "Extension Cord",
+                    "effect": "passthrough",
+                    "correct": false
+                },
+                {
+                    "id": "m3",
+                    "label": "UK Adapter",
+                    "effect": "wrong_type",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Data Format",
+            "source": {
+                "label": "XML Data",
+                "type": "xml",
+                "color": "#ff9800",
+                "payload": "<data>42</data>"
+            },
+            "target": {
+                "label": "JSON API",
+                "type": "json",
+                "color": "#4caf50",
+                "payload": "{ \"data\": 42 }"
+            },
+            "modules": [
+                {
+                    "id": "m4",
+                    "label": "CSV Parser",
+                    "effect": "wrong_format",
+                    "correct": false
+                },
+                {
+                    "id": "m5",
+                    "label": "XML-to-JSON",
+                    "effect": "transform_xml_json",
+                    "correct": true
+                },
+                {
+                    "id": "m6",
+                    "label": "Base64 Encoder",
+                    "effect": "encode",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Temperature Service",
+            "source": {
+                "label": "Celsius Sensor",
+                "type": "celsius",
+                "color": "#03a9f4",
+                "payload": "25.0"
+            },
+            "target": {
+                "label": "Fahrenheit Display",
+                "type": "fahrenheit",
+                "color": "#e91e63",
+                "payload": "77.0"
+            },
+            "modules": [
+                {
+                    "id": "m7",
+                    "label": "Math: x * 1.8 + 32",
+                    "effect": "calc_f",
+                    "correct": true
+                },
+                {
+                    "id": "m8",
+                    "label": "Math: x + 273.15",
+                    "effect": "calc_k",
+                    "correct": false
+                },
+                {
+                    "id": "m9",
+                    "label": "Math: x",
+                    "effect": "passthrough",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Legacy Payment",
+            "source": {
+                "label": "OldBankSystem",
+                "type": "soap",
+                "color": "#9c27b0",
+                "payload": "pay()"
+            },
+            "target": {
+                "label": "ModernGateway",
+                "type": "rest",
+                "color": "#00bcd4",
+                "payload": "processPayment()"
+            },
+            "modules": [
+                {
+                    "id": "m10",
+                    "label": "Wrapper: pay() -> process()",
+                    "effect": "wrap",
+                    "correct": true
+                },
+                {
+                    "id": "m11",
+                    "label": "Direct Call",
+                    "effect": "crash",
+                    "correct": false
+                },
+                {
+                    "id": "m12",
+                    "label": "Retry Loop",
+                    "effect": "loop",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}

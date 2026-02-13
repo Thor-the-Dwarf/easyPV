@@ -4,60 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SQL SELECT - Spalten-Sieb</title>
+    <title>Spalten-Sieb - Performance Monitor</title>
     <!-- Adjust path -->
     <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
     <link rel="stylesheet" href="column_sieve.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="game-app">
-        <!-- Navigation / HUD -->
-        <nav class="nav-bar">
+        <!-- HUD -->
+        <header class="header-bar">
             <div class="mission-brief">
-                <div id="mission-title" class="mission-title">Loading mission...</div>
-                <div id="mission-text" class="mission-text">...</div>
+                <h1 id="mission-title">PROJECTION_MONITOR // BOOTING...</h1>
+                <div id="mission-text">Analisiere Tabellen-Struktur...</div>
             </div>
-            <div style="font-family: monospace; font-size: 0.8rem; color: #555;">SYSTEM: PROJECTION_TUNER v1.0</div>
-        </nav>
 
-        <!-- Main Workspace -->
-        <main class="workspace">
-            <div style="font-size: 0.7rem; color: #444; text-transform: uppercase; letter-spacing: 2px;">Table Blueprint
+            <div style="text-align:right; font-family:monospace; font-size:0.7rem; color:var(--accent-blue);">
+                OP_CENTER: <span style="color:var(--accent-green);">ONLINE</span><br>
+                LATENCY: <span id="latency-val">0.02ms</span>
             </div>
+        </header>
+
+        <!-- Workspace -->
+        <main class="workspace">
+            <div class="section-label">TABLE_BLUEPRINT // AVAILABLE_COLUMNS</div>
             <div id="blueprint" class="blueprint-grid">
-                <!-- Columns injected here -->
+                <!-- Column cards injected here -->
             </div>
         </main>
 
-        <!-- Performance Footer -->
-        <footer class="performance-footer">
-            <div class="gauge-container">
-                <div class="stat-box">
-                    <div class="efficiency-rank">Current Data Weight</div>
-                    <div class="counter-display">
-                        <span id="kb-counter" class="kb-value">0</span> <span style="font-size: 0.8rem">KB</span>
-                    </div>
+        <!-- Controls -->
+        <footer class="control-footer">
+            <div class="gauge-system">
+                <div class="weight-display">
+                    <div class="kb-label">TOTAL_DATA_WEIGHT</div>
+                    <div class="kb-box"><span id="kb-counter">0</span> <span style="font-size:0.8rem;">KB</span></div>
                 </div>
-                <div class="weight-gauge">
+
+                <div class="progress-track">
                     <div id="gauge-fill" class="gauge-fill"></div>
                 </div>
             </div>
 
-            <div class="controls-area">
-                <button id="btn-asterisk" class="btn-terminal warning">SELECT *</button>
-                <button id="btn-run" class="btn-terminal primary">RUN OPTIMIZED QUERY</button>
+            <div class="btn-group">
+                <button id="btn-asterisk" class="btn-ops btn-asterisk">SELECT *</button>
+                <button id="btn-run" class="btn-ops btn-run">RUN QUERY</button>
             </div>
         </footer>
 
         <!-- Result Overlay -->
-        <div id="result-overlay" class="result-overlay hidden">
-            <div class="result-card">
-                <h2 style="color:#fff; margin-bottom:0.5rem;">QUERY ANALYTICS</h2>
-                <div id="result-text" style="color: #8892b0; font-size: 0.9rem; margin-bottom: 2rem;">...</div>
-                <div class="rank-display" id="rank-display">S</div>
-                <div style="font-size: 0.7rem; color: #555; text-transform: uppercase;">Optimization Rank</div>
-                <button id="btn-next" class="btn-terminal primary btn-next">SCAN NEXT ENDPOINT</button>
+        <div id="result-overlay" class="overlay hidden">
+            <div class="scifi-box">
+                <div style="font-size: 0.75rem; color:var(--accent-blue); letter-spacing:3px;">PERFORMANCE_RATING</div>
+                <div id="rank-display" class="rank-text">S</div>
+                <div id="rank-message"
+                    style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem; color: var(--text-scifi);">
+                    Klasse! Du hast die Abfrage perfekt optimiert.
+                </div>
+
+                <button id="btn-next" class="btn-ops btn-run" style="width:100%;">NÄCHSTE MISSION</button>
             </div>
         </div>
     </div>

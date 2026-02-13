@@ -21,11 +21,46 @@
     cso: { short: 'CSO', long: 'Chief Security Officer' }
   };
   const roleOrder = ['ceo', 'coo', 'cfo', 'cto', 'cio', 'ciso', 'cso'];
+  const THEME_KEY = 'globalTheme_v1';
 
   const thread = document.getElementById('chat-thread');
   if (!thread) return;
 
+  initThemeSync();
   init();
+
+  function initThemeSync() {
+    applyThemeFromParentOrStorage();
+
+    try {
+      if (!window.parent || window.parent === window) return;
+      const parentRoot = window.parent.document.documentElement;
+      if (!parentRoot) return;
+
+      const observer = new MutationObserver(function () {
+        applyThemeFromParentOrStorage();
+      });
+      observer.observe(parentRoot, { attributes: true, attributeFilter: ['class'] });
+    } catch (_) {
+      // ignore cross-window access issues
+    }
+  }
+
+  function applyThemeFromParentOrStorage() {
+    let isLight = false;
+
+    try {
+      if (window.parent && window.parent !== window) {
+        isLight = window.parent.document.documentElement.classList.contains('theme-light');
+      } else {
+        isLight = localStorage.getItem(THEME_KEY) === 'light';
+      }
+    } catch (_) {
+      isLight = localStorage.getItem(THEME_KEY) === 'light';
+    }
+
+    document.documentElement.classList.toggle('theme-light', isLight);
+  }
 
   async function init() {
     try {

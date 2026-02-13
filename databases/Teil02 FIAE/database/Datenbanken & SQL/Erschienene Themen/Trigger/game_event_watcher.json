@@ -1,0 +1,88 @@
+{
+    "meta": {
+        "topic": "SQL Triggers",
+        "mechanic": "domino_chain_timing",
+        "version": "1.0"
+    },
+    "scenarios": [
+        {
+            "id": 1,
+            "title": "Security Bastion",
+            "description": "Ensure passwords are hashed BEFORE they ever reach the user table.",
+            "event": "INSERT",
+            "timing": "BEFORE",
+            "triggerName": "trg_hash_password",
+            "logic": "SET NEW.password = SHA2(NEW.password, 256)",
+            "successMessage": "Shields active! The password was hashed before storage. No plain text in the DB.",
+            "failMessage": "SECURITY BREACH! The plain text password reached the table. Wrong timing!",
+            "dominoes": [
+                {
+                    "label": "API Call",
+                    "type": "source"
+                },
+                {
+                    "label": "BEFORE Trigger",
+                    "type": "trigger"
+                },
+                {
+                    "label": "User Table",
+                    "type": "table"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Inventory Audit",
+            "description": "Log stock changes AFTER a successful sale to maintain a history.",
+            "event": "UPDATE",
+            "timing": "AFTER",
+            "triggerName": "trg_log_inventory",
+            "logic": "INSERT INTO audit_log VALUES (OLD.id, NEW.stock)",
+            "successMessage": "Audit complete. The sale was recorded, and then the log entry was dropped.",
+            "failMessage": "LOG DESYNC! You tried to log before the sale was final. Illegal sequence.",
+            "dominoes": [
+                {
+                    "label": "Checkout",
+                    "type": "source"
+                },
+                {
+                    "label": "Stocks Table",
+                    "type": "table"
+                },
+                {
+                    "label": "AFTER Trigger",
+                    "type": "trigger"
+                },
+                {
+                    "label": "Audit Log",
+                    "type": "audit"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Guardian of Age",
+            "description": "Reject users under 18 BEFORE they are created.",
+            "event": "INSERT",
+            "timing": "BEFORE",
+            "triggerName": "trg_check_age",
+            "logic": "IF NEW.age < 18 THEN SIGNAL SQLSTATE '45000'",
+            "successMessage": "Guardian holding the line. Underage user blocked from entry.",
+            "failMessage": "PROTECTION FAILURE! An underage record was inserted into the main table.",
+            "dominoes": [
+                {
+                    "label": "Sign-up",
+                    "type": "source"
+                },
+                {
+                    "label": "Age Validator",
+                    "type": "trigger"
+                },
+                {
+                    "label": "Member Table",
+                    "type": "table"
+                }
+            ]
+        }
+    ]
+}

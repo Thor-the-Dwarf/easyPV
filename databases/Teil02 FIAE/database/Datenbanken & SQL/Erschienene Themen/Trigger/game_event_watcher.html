@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Trigger - Event Wächter</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="event_watcher.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="scenario-info">
+                <h2 id="scenario-title">Loading mission...</h2>
+                <p id="scenario-desc">...</p>
+            </div>
+            <div style="font-family: monospace; font-size: 0.8rem; color: #555;">TRIGGER_WATCH // v1.0</div>
+        </header>
+
+        <!-- Main Chain -->
+        <main class="chain-area">
+            <div id="chain-container" class="domino-chain">
+                <!-- Dominoes injected here -->
+            </div>
+        </main>
+
+        <!-- Controls -->
+        <footer class="controls-area">
+            <div class="timing-selector">
+                <div id="glidder" class="selector-glidder" data-pos="BEFORE"></div>
+                <div class="timing-option active" data-val="BEFORE">BEFORE</div>
+                <div class="timing-option" data-val="AFTER">AFTER</div>
+            </div>
+
+            <button id="btn-main-trigger" class="btn-trigger">START EVENT CHAIN</button>
+        </footer>
+
+        <!-- Result Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="result-card">
+                <h2 style="color:#fff; margin-bottom:1rem;">CHAIN ANALYSIS</h2>
+                <p id="result-text">...</p>
+                <button id="btn-next" class="btn-trigger btn-next">SCAN NEXT PROTOCOL</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_event_watcher.js"></script>
+</body>
+
+</html>

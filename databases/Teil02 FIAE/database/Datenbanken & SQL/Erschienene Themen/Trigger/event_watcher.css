@@ -1,0 +1,232 @@
+/* 
+ * Event-Wächter - Styles
+ * Aesthetic: Mechanical Domino / Industrial Watchtower / Signal Paths
+ */
+
+:root {
+    --bg-watch: #14161a;
+    --bg-panel: #1c1f24;
+    --text-main: #d1d5db;
+    --timing-before: #f97316;
+    /* Pulsing Orange */
+    --timing-after: #3b82f6;
+    /* Stable Blue */
+    --domino-stone: #2d3139;
+    --domino-accent: #4b5563;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-watch);
+    color: var(--text-main);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* --- Navigation / HUD --- */
+.hud {
+    padding: 1rem 2rem;
+    background: #0f1115;
+    border-bottom: 2px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scenario-info h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.scenario-info p {
+    margin: 5px 0 0;
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+/* --- Chain Area --- */
+.chain-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    background: radial-gradient(circle at center, #1e2229 0%, #14161a 100%);
+}
+
+.domino-chain {
+    display: flex;
+    gap: 30px;
+    perspective: 1000px;
+}
+
+.domino {
+    width: 100px;
+    height: 160px;
+    background: var(--domino-stone);
+    border: 4px solid var(--domino-accent);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-origin: bottom center;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.domino-label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+}
+
+.domino-icon {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+/* Domino Types */
+.domino[data-type="trigger"] {
+    border-color: var(--timing-before);
+}
+
+.domino[data-type="table"] {
+    border-color: #10b981;
+}
+
+.domino[data-type="audit"] {
+    border-color: var(--timing-after);
+}
+
+/* Animation States */
+.domino.fallen {
+    transform: rotateX(-80deg);
+}
+
+.domino.blocked {
+    transform: rotateX(-15deg);
+    border-color: #ef4444;
+}
+
+/* --- Timing Switch --- */
+.controls-area {
+    background: #0f1115;
+    padding: 1.5rem 2rem;
+    border-top: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.timing-selector {
+    display: flex;
+    background: #23272e;
+    border-radius: 30px;
+    padding: 5px;
+    position: relative;
+    width: 300px;
+}
+
+.timing-option {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 10;
+    transition: color 0.3s;
+}
+
+.timing-option.active {
+    color: #fff;
+}
+
+.selector-glidder {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: calc(50% - 5px);
+    height: calc(100% - 10px);
+    border-radius: 25px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s;
+}
+
+.selector-glidder[data-pos="BEFORE"] {
+    transform: translateX(0);
+    background: var(--timing-before);
+}
+
+.selector-glidder[data-pos="AFTER"] {
+    transform: translateX(100%);
+    background: var(--timing-after);
+}
+
+.btn-trigger {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 1rem 4rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.btn-trigger:hover {
+    background: #e5e7eb;
+}
+
+/* --- Feedback Overlay --- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.result-card {
+    background: var(--bg-panel);
+    padding: 3rem;
+    border-top: 4px solid #fff;
+    text-align: center;
+    max-width: 500px;
+}
+
+.btn-next {
+    margin-top: 2rem;
+    background: var(--timing-after);
+    color: #fff;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .domino-chain {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

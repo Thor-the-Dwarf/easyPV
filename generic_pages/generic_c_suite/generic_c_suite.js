@@ -11,6 +11,16 @@
     COO: { avatar: '142 76% 54%', bubble: '142 62% 48%' },
     CPU: { avatar: '206 95% 64%', bubble: '206 82% 56%' }
   };
+  const roleMeta = {
+    ceo: { short: 'CEO', long: 'Chief Executive Officer' },
+    coo: { short: 'COO', long: 'Chief Operating Officer' },
+    cfo: { short: 'CFO', long: 'Chief Financial Officer' },
+    cto: { short: 'CTO', long: 'Chief Technology Officer' },
+    cio: { short: 'CIO', long: 'Chief Information Officer' },
+    ciso: { short: 'CISO', long: 'Chief Information Security Officer' },
+    cso: { short: 'CSO', long: 'Chief Security Officer' }
+  };
+  const roleOrder = ['ceo', 'coo', 'cfo', 'cto', 'cio', 'ciso', 'cso'];
 
   const thread = document.getElementById('chat-thread');
   if (!thread) return;
@@ -34,54 +44,70 @@
 
   function buildMessagesFromPayload(payload) {
     const data = payload && payload.c_suite_explanations ? payload.c_suite_explanations : {};
-    const messages = [];
-
-    messages.push({
-      short: 'CEO',
-      long: 'Chief Executive Officer',
-      time: '08:45',
-      text: data.ceo_message || ''
-    });
-    messages.push({
-      short: 'COO',
-      long: 'Chief Operating Officer',
-      time: '08:46',
-      text: data.coo_message || ''
-    });
-    messages.push({
-      short: 'CFO',
-      long: 'Chief Financial Officer',
-      time: '08:47',
-      text: data.cfo_message || ''
-    });
-    messages.push({
-      short: 'CTO',
-      long: 'Chief Technology Officer',
-      time: '08:48',
-      text: data.cto_message || ''
-    });
-    messages.push({
-      short: 'CIO',
-      long: 'Chief Information Officer',
-      time: '08:49',
-      text: data.cio_message || ''
-    });
-    messages.push({
-      short: 'CISO',
-      long: 'Chief Information Security Officer',
-      time: '08:50',
-      text: data.ciso_message || ''
-    });
-    messages.push({
-      short: data.self_titel || 'CPU',
-      long: data.self_subtitel || 'Central Processing Unit',
-      time: '08:51',
-      text: data.self_message || ''
+    const keys = Object.keys(data).filter(function (key) {
+      return /_message$/i.test(key);
     });
 
-    return messages.filter(function (item) {
-      return String(item.text || '').trim().length > 0;
+    const roleKeys = keys
+      .map(function (key) {
+        return key.replace(/_message$/i, '').toLowerCase();
+      })
+      .filter(function (roleKey) {
+        return roleKey !== 'self';
+      });
+
+    roleKeys.sort(function (a, b) {
+      const ia = roleOrder.indexOf(a);
+      const ib = roleOrder.indexOf(b);
+      if (ia !== -1 && ib !== -1) return ia - ib;
+      if (ia !== -1) return -1;
+      if (ib !== -1) return 1;
+      return a.localeCompare(b, 'de', { sensitivity: 'base' });
     });
+
+    const messages = roleKeys
+      .map(function (roleKey) {
+        const text = String(data[roleKey + '_message'] || '').trim();
+        if (!text) return null;
+        const meta = roleMeta[roleKey] || buildFallbackRoleMeta(roleKey, data);
+        return {
+          short: meta.short,
+          long: meta.long,
+          text: text
+        };
+      })
+      .filter(Boolean);
+
+    const selfText = String(data.self_message || '').trim();
+    if (selfText) {
+      messages.push({
+        short: String(data.self_titel || 'CPU').trim(),
+        long: String(data.self_subtitel || 'Central Processing Unit').trim(),
+        text: selfText
+      });
+    }
+
+    return messages.map(function (message, index) {
+      return {
+        short: message.short,
+        long: message.long,
+        text: message.text,
+        time: makeTime(index)
+      };
+    });
+  }
+
+  function buildFallbackRoleMeta(roleKey, data) {
+    const short = String(roleKey || 'role').toUpperCase();
+    const long = String(data[roleKey + '_subtitel'] || data[roleKey + '_subtitle'] || short).trim();
+    return { short: short, long: long };
+  }
+
+  function makeTime(index) {
+    const baseMinutes = 8 * 60 + 45 + index;
+    const h = String(Math.floor(baseMinutes / 60)).padStart(2, '0');
+    const m = String(baseMinutes % 60).padStart(2, '0');
+    return h + ':' + m;
   }
 
   function renderMessage(item, index) {

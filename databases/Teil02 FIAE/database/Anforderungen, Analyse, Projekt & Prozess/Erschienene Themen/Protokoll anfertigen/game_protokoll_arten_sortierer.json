@@ -1,0 +1,184 @@
+{
+    "meta": {
+        "topic": "Protokollführung",
+        "mechanic": "sorting_rain",
+        "version": "1.0"
+    },
+    "bins": [
+        {
+            "id": "ergebnis",
+            "label": "Ergebnisprotokoll",
+            "description": "Kurz & Knapp. Beschlüsse, To-Dos. Minimaler Aufwand.",
+            "color": "var(--bin-bronze)",
+            "icon": "🥉"
+        },
+        {
+            "id": "verlauf",
+            "label": "Verlaufsprotokoll",
+            "description": "Diskussionsweg wichtig. Wer hat was gesagt? Argumente.",
+            "color": "var(--bin-silver)",
+            "icon": "🥈"
+        },
+        {
+            "id": "wort",
+            "label": "Wortprotokoll",
+            "description": "Jedes Wort zählt. Gerichtsfest. Maximaler Aufwand.",
+            "color": "var(--bin-gold)",
+            "icon": "🥇"
+        }
+    ],
+    "levels": [
+        {
+            "id": 1,
+            "name": "Level 1: Daily Business",
+            "speed_modifier": 1.0,
+            "spawn_rate": 2000,
+            "scenarios": [
+                {
+                    "id": "l1_s1",
+                    "title": "Daily Standup",
+                    "context": "15 Min Meeting. Wer macht was heute?",
+                    "correct_bin": "ergebnis",
+                    "explanation": "Nur To-Dos und Blocker zählen. Alles andere ist Zeitverschwendung."
+                },
+                {
+                    "id": "l1_s2",
+                    "title": "Vorstandssitzung",
+                    "context": "Strategische Beschlüsse für das nächste Jahr.",
+                    "correct_bin": "ergebnis",
+                    "explanation": "Management braucht nur die Fakten/Beschlüsse. Keine Details."
+                },
+                {
+                    "id": "l1_s3",
+                    "title": "Brainstorming",
+                    "context": "Ideenfindung für Weihnachtsfeier. Keine Beschlüsse.",
+                    "correct_bin": "verlauf",
+                    "explanation": "Der Weg zur Idee ist wichtig. Gute Ideen dürfen nicht verloren gehen.",
+                    "alt_bin": "ergebnis"
+                },
+                {
+                    "id": "l1_s4",
+                    "title": "Projekt-Kickoff",
+                    "context": "Ziele, Rollen, Meilensteine festlegen.",
+                    "correct_bin": "ergebnis",
+                    "explanation": "Wichtig sind die Fakten für den Projektstart."
+                },
+                {
+                    "id": "l1_s5",
+                    "title": "Code Review",
+                    "context": "Feedback zu Pull Request #42.",
+                    "correct_bin": "ergebnis",
+                    "explanation": "Änderungswünsche (To-Dos) sind das einzige was zählt."
+                },
+                {
+                    "id": "l1_s6",
+                    "title": "Disziplinargespräch",
+                    "context": "Abmahnung wegen Arbeitszeitbetrug.",
+                    "correct_bin": "wort",
+                    "explanation": "Arbeitsrechtlich relevant. Jedes Wort kann vor Gericht zählen."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Level 2: Legal Pressure",
+            "speed_modifier": 1.4,
+            "spawn_rate": 1800,
+            "scenarios": [
+                {
+                    "id": "l2_s1",
+                    "title": "Gerichtsverhandlung",
+                    "context": "Streitfall Patentverletzung.",
+                    "correct_bin": "wort",
+                    "explanation": "Gesetzliche Vorschrift für Beweiskraft."
+                },
+                {
+                    "id": "l2_s2",
+                    "title": "Anforderungs-Workshop",
+                    "context": "Kunde erklärt komplexe Business-Logik. Missverständnisse teuer.",
+                    "correct_bin": "verlauf",
+                    "explanation": "Diskussion hilft später zu verstehen, WARUM etwas so definiert wurde."
+                },
+                {
+                    "id": "l2_s3",
+                    "title": "Unfall-Zeugenbefragung",
+                    "context": "Arbeitsunfall im Lager.",
+                    "correct_bin": "wort",
+                    "explanation": "Aussagen müssen exakt sein für Versicherung/Bg."
+                },
+                {
+                    "id": "l2_s4",
+                    "title": "Retrospektive",
+                    "context": "Team diskutiert Verbesserungen.",
+                    "correct_bin": "verlauf",
+                    "explanation": "Stimmung und Argumente für Änderungen sind wichtig für das Team."
+                },
+                {
+                    "id": "l2_s5",
+                    "title": "Kaffeeklatsch",
+                    "context": "Kollegen reden über Fußball.",
+                    "correct_bin": "ergebnis",
+                    "correct_override": "kein_protokoll",
+                    "explanation": "Trick! Eigentlich keines, aber im Zweifel Ergebnis: 'Nix passiert'."
+                },
+                {
+                    "id": "l2_s6",
+                    "title": "Vertragsverhandlung",
+                    "context": "Preisverhandlung mit Lieferant.",
+                    "correct_bin": "verlauf",
+                    "explanation": "Angebote, Gegenangebote und Einigungen müssen nachvollziehbar sein."
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Level 3: Bureaucracy Rain",
+            "speed_modifier": 2.0,
+            "spawn_rate": 1200,
+            "scenarios": [
+                {
+                    "id": "l3_s1",
+                    "title": "Polizei-Vernehmung",
+                    "context": "Zeuge sagt zu Einbruch aus.",
+                    "correct_bin": "wort",
+                    "explanation": "Absolut exakte Wiedergabe nötig."
+                },
+                {
+                    "id": "l3_s2",
+                    "title": "Bug-Triage",
+                    "context": "100 Tickets in 30 Min sortieren.",
+                    "correct_bin": "ergebnis",
+                    "explanation": "Speed! Status Update (Fix/WontFix) ist alles."
+                },
+                {
+                    "id": "l3_s3",
+                    "title": "Mitarbeiterversammlung",
+                    "context": "CEO hält Rede zur Lage der Nation.",
+                    "correct_bin": "verlauf",
+                    "explanation": "Reaktionen und Themenverlauf sind für Abwesende interessant."
+                },
+                {
+                    "id": "l3_s4",
+                    "title": "Krisensitzung Server-Down",
+                    "context": "Alle Services offline. Panik.",
+                    "correct_bin": "ergebnis",
+                    "explanation": "Nur Maßnahmen zählen! Wer wann was schrie ist egal. Action Items!"
+                },
+                {
+                    "id": "l3_s5",
+                    "title": "Politische Debatte",
+                    "context": "Parlamentssitzung.",
+                    "correct_bin": "wort",
+                    "explanation": "Öffentliches Interesse am genauen Wortlaut (Stenografie)."
+                },
+                {
+                    "id": "l3_s6",
+                    "title": "Sprint Planning",
+                    "context": "Welche Stories schaffen wir?",
+                    "correct_bin": "ergebnis",
+                    "explanation": "Output: Das Sprint Backlog. Diskussion ist sekundär, Commitment zählt."
+                }
+            ]
+        }
+    ]
+}

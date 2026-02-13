@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protokoll-Sortierer - The Efficiency Master</title>
+    <!-- Relative path to shared_theme (5 levels up) -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="protokoll_arten_sortierer.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-panel">
+                <div class="hud-item">
+                    <span class="hud-label">Efficiency Score</span>
+                    <span class="hud-value" id="score-val">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Team Productivity</span>
+                    <div class="health-bar-container">
+                        <div class="health-bar" id="health-bar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">LEVEL</span>
+                <span class="hud-value">OFFICE MODE</span>
+            </div>
+        </header>
+
+        <!-- Main Stage -->
+        <main class="office-stage">
+            <div id="memo-container" class="memo-rain-container">
+                <!-- Memos spawn here via JS -->
+            </div>
+
+            <div id="feedback-msg" class="feedback-msg">SORTED!</div>
+        </main>
+
+        <!-- Sort Bins -->
+        <footer class="bins-container">
+            <!-- Data-IDs match JSON bin IDs -->
+            <div class="bin" data-id="ergebnis" style="--bin-color: var(--bin-bronze)">
+                <div class="bin-icon">🥉</div>
+                <div class="bin-label">Ergebnis-<br>Protokoll</div>
+            </div>
+            <div class="bin" data-id="verlauf" style="--bin-color: var(--bin-silver)">
+                <div class="bin-icon">🥈</div>
+                <div class="bin-label">Verlaufs-<br>Protokoll</div>
+            </div>
+            <div class="bin" data-id="wort" style="--bin-color: var(--bin-gold)">
+                <div class="bin-icon">🥇</div>
+                <div class="bin-label">Wort-<br>Protokoll</div>
+            </div>
+        </footer>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card">
+                <h2>Feierabend!</h2>
+                <p>Team Productivity Critical.</p>
+                <div class="hud-value" style="font-size: 3rem; margin: 1rem 0;" id="final-score">0</div>
+                <button id="restart-btn" class="btn primary">Nächster Arbeitstag</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game_protokoll_arten_sortierer.js"></script>
+</body>
+
+</html>

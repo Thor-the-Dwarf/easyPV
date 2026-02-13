@@ -1,0 +1,312 @@
+/* 
+ * Protokoll-Arten-Sortierer - Styles
+ * Based on shared_theme.css variables
+ * Aesthetic: Modern Office / Clean / Isometric
+ */
+
+:root {
+    --bin-bronze: 30 60% 50%;
+    --bin-silver: 210 20% 70%;
+    --bin-gold: 45 100% 50%;
+
+    --paper-bg: 40 20% 95%;
+    --paper-txt: 210 20% 20%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top, hsl(var(--bg-surface)), hsl(var(--bg)));
+    color: hsl(var(--txt));
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* --- HUD --- */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: hsl(var(--bg-surface) / 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid hsl(var(--glass-border));
+    z-index: 20;
+}
+
+.hud-panel {
+    display: flex;
+    gap: 2rem;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: hsl(var(--txt-muted));
+    letter-spacing: 0.05em;
+}
+
+.hud-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: hsl(var(--primary));
+}
+
+.health-bar-container {
+    width: 150px;
+    height: 10px;
+    background: hsl(var(--bg-surface));
+    border: 1px solid hsl(var(--glass-border));
+    border-radius: 99px;
+    overflow: hidden;
+    margin-top: 0.2rem;
+}
+
+.health-bar {
+    height: 100%;
+    width: 100%;
+    background: hsl(var(--success));
+    transition: width 0.3s, background-color 0.3s;
+}
+
+/* --- Gameplay Area --- */
+.office-stage {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    /* subtle pattern */
+    background-image: radial-gradient(hsl(var(--glass-border) / 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.memo-rain-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* Memos are interactive, container not */
+    z-index: 10;
+}
+
+.memo {
+    position: absolute;
+    width: 200px;
+    min-height: 120px;
+    background: hsl(var(--paper-bg));
+    color: hsl(var(--paper-txt));
+    border-radius: 2px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    top: -150px;
+    /* Start above screen */
+    left: 50%;
+    transform: translateX(-50%) rotate(var(--angle, 0deg));
+    pointer-events: auto;
+    cursor: grab;
+    transition: transform 0.1s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    border-left: 4px solid hsl(var(--primary) / 0.5);
+}
+
+.memo:active {
+    cursor: grabbing;
+    transform: scale(1.05) rotate(0deg) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+.memo.dragging {
+    /* Overrides for script-based drag */
+    transition: none;
+}
+
+.memo-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 0.2rem;
+}
+
+.memo-text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    flex: 1;
+}
+
+.memo-stamp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    font-size: 2rem;
+    font-weight: 900;
+    border: 4px solid currentColor;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+}
+
+.memo.stamped .memo-stamp {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-15deg) scale(1.2);
+}
+
+.stamp-ok {
+    color: hsl(var(--success));
+    border-color: hsl(var(--success));
+}
+
+.stamp-fail {
+    color: hsl(var(--error));
+    border-color: hsl(var(--error));
+}
+
+/* --- Bins --- */
+.bins-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 1rem;
+    z-index: 5;
+    background: linear-gradient(to top, hsl(var(--bg-surface) / 0.8), transparent);
+}
+
+.bin {
+    flex: 1;
+    max-width: 250px;
+    height: 120px;
+    background: hsl(var(--bg-surface));
+    border: 2px dashed hsl(var(--glass-border));
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    cursor: pointer;
+    /* For tap interaction fallback */
+}
+
+.bin::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: hsl(var(--bin-color) / 0.1);
+    border-radius: inherit;
+    z-index: 0;
+}
+
+.bin:hover {
+    transform: translateY(-5px);
+    border-color: hsl(var(--bin-color));
+    background: hsl(var(--bin-color) / 0.05);
+}
+
+.bin.drop-target {
+    transform: scale(1.05);
+    border-color: hsl(var(--bin-color));
+    box-shadow: 0 0 20px hsl(var(--bin-color) / 0.3);
+    background: hsl(var(--bin-color) / 0.2);
+}
+
+.bin-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    z-index: 1;
+}
+
+.bin-label {
+    font-weight: 700;
+    color: hsl(var(--txt));
+    font-size: 0.9rem;
+    z-index: 1;
+    text-align: center;
+}
+
+/* Feedback Overlay */
+.feedback-msg {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: 800;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 200;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+}
+
+.feedback-msg.show {
+    opacity: 1;
+    animation: floatUp 1s forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Result Screen */
+.result-screen {
+    position: absolute;
+    inset: 0;
+    background: hsl(var(--bg) / 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 300;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .bin {
+        height: 90px;
+    }
+
+    .bin-icon {
+        font-size: 1.5rem;
+    }
+
+    .bin-label {
+        font-size: 0.75rem;
+    }
+}

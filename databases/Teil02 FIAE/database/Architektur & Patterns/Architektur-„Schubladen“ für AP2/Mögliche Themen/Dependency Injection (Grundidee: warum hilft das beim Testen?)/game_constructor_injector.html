@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dependency Injection - The Surgery</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="constructor_injector.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="hud-label">INCISION TIME</span>
+                <span class="hud-value" id="timer-val">0.0s</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">PATIENT STABILITY</span>
+                <span class="hud-value" id="stability-val">100%</span>
+            </div>
+        </header>
+
+        <!-- Operating Room -->
+        <main class="operating-room">
+            <div id="patient-schema" class="patient-schema">
+                <div id="class-name" class="class-header">class Patient</div>
+
+                <div style="margin-bottom:10px; font-family:monospace; color:#888;">// Constructor Injection Point</div>
+
+                <div id="injection-slots" class="injection-slots">
+                    <!-- Slots generated here -->
+                </div>
+            </div>
+
+            <div id="message-overlay" class="message-overlay">Ready for surgery...</div>
+        </main>
+
+        <!-- Instrument Tray -->
+        <div id="instrument-tray" class="instrument-tray">
+            <!-- Instruments generated here -->
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card"
+                style="background: rgba(10,20,30,0.95); border: 2px solid var(--med-cyan); padding: 3rem; text-align:center;">
+                <h2 style="color:var(--med-cyan); margin-bottom:1rem;">SURGERY REPORT</h2>
+                <div class="hud-value" style="font-size: 2rem; margin: 2rem 0;" id="final-result">...</div>
+                <button id="restart-btn" class="btn-med">NEXT PATIENT</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_constructor_injector.js"></script>
+</body>
+
+</html>

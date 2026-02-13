@@ -1,0 +1,122 @@
+{
+    "meta": {
+        "topic": "Dependency Injection",
+        "mechanic": "slot_injection",
+        "version": "1.0"
+    },
+    "interfaces": [
+        {
+            "id": "ILogger",
+            "label": "ILogger",
+            "color": "#ffeb3b"
+        },
+        {
+            "id": "IDatabase",
+            "label": "IDatabase",
+            "color": "#00e676"
+        },
+        {
+            "id": "IMailer",
+            "label": "IMailer",
+            "color": "#2979ff"
+        }
+    ],
+    "dependencies": [
+        {
+            "id": "console_log",
+            "label": "ConsoleLogger",
+            "interface": "ILogger",
+            "type": "real",
+            "icon": "📟"
+        },
+        {
+            "id": "file_log",
+            "label": "FileLogger",
+            "interface": "ILogger",
+            "type": "real",
+            "icon": "📁"
+        },
+        {
+            "id": "mock_log",
+            "label": "MockLogger",
+            "interface": "ILogger",
+            "type": "mock",
+            "icon": "👻"
+        },
+        {
+            "id": "pg_db",
+            "label": "PostgresDB",
+            "interface": "IDatabase",
+            "type": "real",
+            "icon": "🐘"
+        },
+        {
+            "id": "mongo_db",
+            "label": "MongoDB",
+            "interface": "IDatabase",
+            "type": "real",
+            "icon": "🍃"
+        },
+        {
+            "id": "mock_db",
+            "label": "MockDatabase",
+            "interface": "IDatabase",
+            "type": "mock",
+            "icon": "🧪"
+        },
+        {
+            "id": "smtp_mail",
+            "label": "SmtpMailer",
+            "interface": "IMailer",
+            "type": "real",
+            "icon": "📧"
+        },
+        {
+            "id": "mock_mail",
+            "label": "MockMailer",
+            "interface": "IMailer",
+            "type": "mock",
+            "icon": "📪"
+        }
+    ],
+    "levels": [
+        {
+            "id": 1,
+            "title": "Routine Operation",
+            "description": "Assemble a production-ready OrderService.",
+            "patient": "OrderService",
+            "slots": [
+                {
+                    "name": "logger",
+                    "type": "ILogger"
+                },
+                {
+                    "name": "database",
+                    "type": "IDatabase"
+                }
+            ],
+            "requirements": {
+                "mode": "production"
+            }
+        },
+        {
+            "id": 2,
+            "title": "Emergency Surgery",
+            "description": "Pre-flight check! Unit Test the PaymentService. MOCKS ONLY!",
+            "patient": "PaymentService",
+            "slots": [
+                {
+                    "name": "db",
+                    "type": "IDatabase"
+                },
+                {
+                    "name": "mailer",
+                    "type": "IMailer"
+                }
+            ],
+            "requirements": {
+                "mode": "test"
+            }
+        }
+    ]
+}

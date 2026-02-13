@@ -1,29 +1,37 @@
 :root {
-  --bg: 228 55% 7%;
-  --bg-surface: 225 42% 12%;
-  --bg-surface-alpha: 0.68;
-  --bg-surface-2-alpha: 0.9;
-  --txt: 210 50% 96%;
-  --txt-muted: 219 20% 67%;
-  --primary: 201 100% 65%;
-  --glass-bg: 227 39% 10%;
-  --glass-opacity: 0.9;
-  --glass-border: 205 95% 42% / 0.36;
+  --bg: 230 30% 6%;
+  --bg-surface: 230 30% 15%;
+  --bg-surface-alpha: 0.74;
+  --bg-surface-2-alpha: 0.35;
+  --txt: 210 50% 98%;
+  --txt-muted: 215 30% 75%;
+  --primary: 195 100% 60%;
+  --glass-bg: 230 30% 10%;
+  --glass-opacity: 0.85;
+  --glass-border: 210 50% 30%;
+  --glass-blur: 20px;
+  --glow-primary: 0 0 15px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--primary) / 0.3);
+  --glow-soft: 0 0 10px hsl(var(--primary) / 0.4);
+  --glow-text: 0 0 10px hsl(var(--primary) / 0.75);
   --radius-sm: 10px;
   --radius-md: 16px;
 }
 
 :root.theme-light {
   --bg: 212 26% 93%;
-  --bg-surface: 214 33% 98%;
-  --bg-surface-alpha: 0.95;
-  --bg-surface-2-alpha: 1;
+  --bg-surface: 0 0% 100%;
+  --bg-surface-alpha: 0.4;
+  --bg-surface-2-alpha: 0.5;
   --txt: 220 32% 17%;
   --txt-muted: 219 13% 45%;
   --primary: 205 83% 41%;
-  --glass-bg: 212 38% 98%;
-  --glass-opacity: 0.92;
-  --glass-border: 206 80% 38% / 0.2;
+  --glass-bg: 0 0% 100%;
+  --glass-opacity: 0.3;
+  --glass-border: 214 32% 80%;
+  --glass-blur: 14px;
+  --glow-primary: 0 4px 20px hsl(var(--primary) / 0.35);
+  --glow-soft: 0 2px 10px hsl(var(--primary) / 0.2);
+  --glow-text: none;
 }
 
 * {
@@ -34,12 +42,42 @@ html,
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+  font-family: "Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
   color: hsl(var(--txt));
 }
 
 body {
-  background: radial-gradient(circle at top, hsl(var(--bg-surface)), hsl(var(--bg)) 55%);
+  background:
+    radial-gradient(circle at 12% -12%, hsl(var(--primary) / 0.17), transparent 42%),
+    radial-gradient(circle at 82% -20%, hsl(261 100% 65% / 0.12), transparent 38%),
+    radial-gradient(circle at 40% 120%, hsl(192 100% 60% / 0.07), transparent 42%),
+    hsl(var(--bg));
+  overflow: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(54px);
+}
+
+body::before {
+  width: 30vw;
+  height: 30vw;
+  left: -8vw;
+  top: 18vh;
+  background: hsl(var(--primary) / 0.18);
+}
+
+body::after {
+  width: 24vw;
+  height: 24vw;
+  right: 2vw;
+  top: 10vh;
+  background: hsl(269 100% 70% / 0.15);
 }
 
 #app-view {
@@ -52,10 +90,12 @@ body {
   align-items: center;
   padding: 0.75rem 1.5rem;
   background: hsl(var(--glass-bg) / var(--glass-opacity));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid hsl(var(--glass-border));
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-bottom: 1px solid hsl(var(--glass-border) / 0.55);
+  box-shadow:
+    0 10px 36px rgba(0, 0, 0, 0.5),
+    inset 0 -1px 0 hsl(var(--primary) / 0.28);
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 60;
@@ -78,14 +118,16 @@ body {
 }
 
 .menu-icon-btn:hover {
-  background: hsl(var(--bg-surface) / var(--bg-surface-2-alpha));
-  color: hsl(var(--txt));
+  background: hsl(var(--bg-surface) / 0.48);
+  color: hsl(var(--primary));
+  box-shadow: var(--glow-soft);
 }
 
 .menu-icon-btn.active {
   background: hsl(var(--primary) / 0.15);
   color: hsl(var(--primary));
   border-color: hsl(var(--primary) / 0.3);
+  box-shadow: var(--glow-primary);
 }
 
 .top-bar-title {
@@ -96,7 +138,8 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-shadow: 0 0 10px hsl(var(--primary) / 0.3);
+  text-shadow: var(--glow-text);
+  letter-spacing: 0.01em;
 }
 
 .theme-toggle-btn {
@@ -111,7 +154,8 @@ body {
 }
 
 .theme-toggle-btn:hover {
-  background: hsl(var(--bg-surface) / var(--bg-surface-2-alpha));
+  background: hsl(var(--bg-surface) / 0.48);
+  box-shadow: var(--glow-soft);
 }
 
 .drawer {
@@ -121,11 +165,15 @@ body {
   height: calc(100vh - 64px);
   width: min(var(--drawer-width, 360px), 88vw);
   min-width: 240px;
-  background: hsl(var(--bg-surface) / 0.32);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-right: 1px solid hsl(var(--glass-border));
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  background:
+    linear-gradient(180deg, hsl(var(--bg-surface) / 0.5), hsl(var(--bg-surface) / 0.24)),
+    hsl(var(--glass-bg) / var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-right: 1px solid hsl(var(--glass-border) / 0.62);
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.58),
+    inset -1px 0 0 hsl(var(--primary) / 0.2);
   display: flex;
   flex-direction: column;
   padding: 1.25rem 1rem;
@@ -134,6 +182,15 @@ body {
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 30;
   overflow: visible;
+}
+
+.drawer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-right: 1px solid hsl(var(--primary) / 0.23);
+  opacity: 0.75;
 }
 
 #app-view.tree-open .drawer {
@@ -154,6 +211,7 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: hsl(var(--txt-muted));
+  text-shadow: var(--glow-text);
 }
 
 .drawer-resizer {
@@ -173,8 +231,8 @@ body {
   right: 7px;
   width: 2px;
   height: 100%;
-  background: hsl(var(--glass-border));
-  opacity: 0.2;
+  background: hsl(var(--primary) / 0.65);
+  opacity: 0.28;
   transition: opacity 0.2s ease;
 }
 
@@ -201,11 +259,15 @@ body {
   padding-left: calc(0.5rem + (var(--level, 0) * 1.1rem));
   border-radius: var(--radius-sm);
   color: hsl(var(--txt-muted));
+  border: 1px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tree-row:hover {
-  background: hsl(var(--bg-surface) / var(--bg-surface-2-alpha));
-  color: hsl(var(--txt));
+  background: hsl(var(--bg-surface) / 0.6);
+  color: hsl(var(--primary));
+  border-color: hsl(var(--primary) / 0.25);
+  box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.22), 0 0 14px hsl(var(--primary) / 0.14);
 }
 
 .tree-node--collapsed > .tree-children {
@@ -234,6 +296,7 @@ body {
 
 .tree-icon-button.is-toggleable:hover {
   background: hsl(var(--primary) / 0.12);
+  box-shadow: var(--glow-soft);
 }
 
 .tree-icon {
@@ -248,6 +311,7 @@ body {
   text-align: left;
   flex: 1;
   font-size: 1rem;
+  font-weight: 500;
   padding: 0;
 }
 
@@ -258,8 +322,8 @@ body {
 .drawer-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
   z-index: 29;
   opacity: 0;
   pointer-events: none;

@@ -1,0 +1,102 @@
+{
+    "meta": {
+        "topic": "UML Use-Case Boundaries",
+        "mechanic": "theater_stage_casting",
+        "version": "1.0"
+    },
+    "scenarios": [
+        {
+            "id": 1,
+            "title": "Public Roles",
+            "instruction": "Identify the external actors. Primary users belong outside the system boundary.",
+            "items": [
+                {
+                    "id": "i1",
+                    "label": "Customer",
+                    "isExternal": true,
+                    "type": "actor"
+                },
+                {
+                    "id": "i2",
+                    "label": "Admin",
+                    "isExternal": true,
+                    "type": "actor"
+                },
+                {
+                    "id": "i3",
+                    "label": "Register User",
+                    "isExternal": false,
+                    "type": "usecase"
+                },
+                {
+                    "id": "i4",
+                    "label": "Manage Account",
+                    "isExternal": false,
+                    "type": "usecase"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Partner Systems",
+            "instruction": "External systems interacting with ours are also actors. Keep them off-stage.",
+            "items": [
+                {
+                    "id": "i1",
+                    "label": "Payment Provider",
+                    "isExternal": true,
+                    "type": "system"
+                },
+                {
+                    "id": "i2",
+                    "label": "Internal DB",
+                    "isExternal": false,
+                    "type": "logic"
+                },
+                {
+                    "id": "i3",
+                    "label": "Process Payment",
+                    "isExternal": false,
+                    "type": "usecase"
+                },
+                {
+                    "id": "i4",
+                    "label": "Logistics API",
+                    "isExternal": true,
+                    "type": "system"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Boundary Leaks",
+            "instruction": "Complex roles. Decide if they trigger the system or are a part of its internal logic.",
+            "items": [
+                {
+                    "id": "i1",
+                    "label": "Nightly Cronjob",
+                    "isExternal": true,
+                    "type": "actor"
+                },
+                {
+                    "id": "i2",
+                    "label": "Backup Service",
+                    "isExternal": true,
+                    "type": "actor"
+                },
+                {
+                    "id": "i3",
+                    "label": "Compress Data",
+                    "isExternal": false,
+                    "type": "usecase"
+                },
+                {
+                    "id": "i4",
+                    "label": "Mail Server",
+                    "isExternal": true,
+                    "type": "system"
+                }
+            ]
+        }
+    ]
+}

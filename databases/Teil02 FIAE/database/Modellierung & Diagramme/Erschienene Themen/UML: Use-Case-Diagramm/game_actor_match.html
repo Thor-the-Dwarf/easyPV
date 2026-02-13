@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Theater Stage - Actor Match</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="actor_match.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div style="flex:1;">
+                <h1 style="font-size: 1.1rem; margin:0; color:var(--text-gold); font-family:serif;">GRAND_DIRECTOR //
+                    USE_CASE_v1.0</h1>
+            </div>
+
+            <div class="hud-score">
+                BOUNDARY_SAFETY: <span id="safety-val">100%</span>
+            </div>
+
+            <div style="flex:1; text-align:right; font-size:0.75rem; color:#444;">
+                SPOTLIGHT_ENGINE: ACTIVE
+            </div>
+        </header>
+
+        <!-- The Stage -->
+        <main class="stage" id="stage">
+            <div class="curtain left"></div>
+            <div class="curtain right"></div>
+
+            <!-- Spotlight effect -->
+            <div id="spotlight" class="spotlight"></div>
+
+            <!-- System Boundary -->
+            <section id="boundary-box" class="boundary-box">
+                <div class="boundary-label">SYSTEM_BOUNDARY</div>
+                <!-- Settled functions go here -->
+            </section>
+
+            <!-- Instructions -->
+            <div id="instruction"
+                style="position: absolute; bottom: 20px; left: 120px; background: rgba(0,0,0,0.8); padding: 10px 20px; border-radius: 4px; font-size: 0.9rem; color: var(--text-gold); border-left: 3px solid var(--text-gold); z-index: 70;">
+                Casting wird vorbereitet...
+            </div>
+        </main>
+
+        <!-- Casting Deck -->
+        <footer class="deck-area" id="casting-deck">
+            <!-- Cards injected here -->
+        </footer>
+
+        <!-- Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="theater-card">
+                <h2 style="color:var(--text-gold); margin-top:0; font-family:serif; letter-spacing:2px;">
+                    CASTING_SUCCESSFUL</h2>
+                <div style="margin: 2rem 0; font-size: 1.1rem; color: #ddd; line-height: 1.6;">
+                    Vorhang auf! Die Systemgrenze ist messerscharf gezogen. Alle Akteure stehen vor der Bühne.
+                </div>
+
+                <div
+                    style="background:rgba(255, 215, 0, 0.05); padding:1rem; margin-bottom:2.5rem; font-family:monospace; font-size:0.8rem; text-align: left; border: 1px solid rgba(255, 215, 0, 0.2);">
+                    > ACTOR_IS_EXTERNAL: VERIFIED<br>
+                    > PRIMARY_SECOND_SPLIT: OK<br>
+                    > BOUNDARY_LEAKS: 0
+                </div>
+
+                <button id="btn-next" class="btn-theater">NÄCHSTE SZENE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_actor_match.js"></script>
+</body>
+
+</html>

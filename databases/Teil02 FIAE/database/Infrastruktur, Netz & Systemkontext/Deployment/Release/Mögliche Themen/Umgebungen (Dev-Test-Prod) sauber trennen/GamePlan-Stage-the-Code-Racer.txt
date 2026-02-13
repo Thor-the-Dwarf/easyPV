@@ -1,19 +1,43 @@
-Anforderungen
-1. "Stage-the-Code Racer"
-   - Ziel: Verständnis des Software-Lifecycle-Managements und der Bedeutung von isolierten Umgebungen zur Qualitätssicherung.
-   - Spielmechanik: 
-     - Der Spieler steuert den Release-Fluss eines Code-Pakets durch die Instanzen Dev, Test/QA und Produktion (Prod).
-     - Identifikation von fehlenden Konfigurations-Overrides (z.B. falsche DB-Zugänge pro Stage).
-     - Validierung der Datenparität und Einhaltung von Datenschutzvorgaben (keine Realdaten im Test).
-     - Messbarkeit: Fehlerfreier Durchlauf des Codes bis zum produktiven Rollout.
-   - Lernziel: Beherrschung von Environment-Management und Vermeidung von "Works on my machine" Fehlern.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Saubere Trennung von Entwicklungsumgebungen (Dev, Test, Stage, Prod) und korrektes Konfigurations-Management.
+- Game-Mechanic: "The Stage Racer". Du bist ein Paket-Kurier in einer streng bewachten Anlage. Dein Paket (der Code) muss durch vier Sicherheitszonen:
+  1. DEV-Spielwiese: Hier darfst du alles kaputt machen.
+  2. TEST-Labor: Hier testen Roboter deine Fracht.
+  3. STAGE-Vip-Lounge: Fast wie die Realität.
+  4. PROD-Tresor: Das Ziel.
+  Du musst darauf achten, dass du die richtigen Zugangsdaten (Config) für jede Zone dabeihast. Nutzt du die TEST-Datenbank in der PROD-Zone, fliegst du raus!
+- Challenge: 
+  - Level 1 (The Basic Flow): Bringe das Paket fehlerfrei von DEV bis PROD.
+  - Level 2 (The Secret-Check): Deine Umgebungsvariablen (`.env`) enthalten echte Passwörter. Entferne sie, bevor du das Paket in die STAGE-Zone bringst (Security-Audit).
+  - Level 3 (The Parity-Match): Die STAGE-Umgebung weicht von PROD ab (z.B. andere Datenbank-Version). Gleiche die Umgebungen an (Environment Parity), damit es beim finalen Schritt keine bösen Überraschungen gibt.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_stages.json')
-   - Environment-Zustände und Config-Varianten.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Visuelle Darstellung der Server-Landschaft).
-- [ ] Game-Engine Logic ('game_logic_validator.js')
-   - (Tracking des Paket-Status über Stages hinweg).
-- [ ] Integration
-   - Info: Warum produktive Umgebungen niemals für Tests missbraucht werden dürfen.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Current-Stage Indicator", "Config-Health-Monitor", "Stage-Parity (%)", "Deployment-Speed".
+- [ ] Scoring: "Flow-Master" Bonus für konsistente Konfiguration über alle Stages hinweg. Abzug für "Config-Leak" (z.B. Testdaten in Prod).
+
+2. Screen-Layout (The Facility Map)
+- [ ] `four-quadrants-view -> deployment-train -> config-trunk -> security-checkpoints`.
+- [ ] Quadrants: Jede Stage hat ein eigenes Farbschema (Dev=Gelb, Test=Blau, Stage=Violett, Prod=Grün).
+- [ ] Config-Trunk: Ein Inventar deiner Umgebungsvariablen (`API_KEY`, `DB_URL` etc.).
+
+3. Kernvisuals und Effekte
+- [ ] Industrial-Futurism Ästhetik: Klare Trennwände, Laser-Scanner an den Durchgängen, metallische Sounds beim Einrasten der Stages (Shared Theme kompatibel).
+- [ ] "Stage-Shift": Wenn du in die nächste Zone wechselst, ändert sich die gesamte Hintergrundfarbe des HUDs sichtlich.
+- [ ] "Alarm-Flash": Wenn eine Fehlkonfiguration erkannt wird, blinkt die Zone hektisch Rot.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Grid` für die 4-Quadranten-Aufteilung.
+- [ ] Mobile: "Swipe-to-Move" zwischen den Zonen.
+
+5. Content-Strategie (The Deployment-Riddles)
+- [ ] 12 Konfigurations-Puzzles nach dem "Twelve-Factor App" Prinzip.
+
+6. QA-Paket
+- [ ] Test: Wird das Konzept der "Environment Parity" (Gleichheit der Stages) spielerisch klar?
+- [ ] Test: Sind die Auswirkungen falscher Zugangsdaten im Spiel unmittelbar spürbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Code muss von Konfiguration getrennt sein.
+- [ ] Das Interface wirkt strukturiert, professionell und architektonisch stimmig.
+- [ ] Fokus auf Cloud-Sicherheit und DevOps-Best-Practices.

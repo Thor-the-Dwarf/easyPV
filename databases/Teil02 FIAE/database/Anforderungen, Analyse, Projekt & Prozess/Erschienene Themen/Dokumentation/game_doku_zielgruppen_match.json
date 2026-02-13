@@ -1,0 +1,38 @@
+{
+  "title": "The Content Filter",
+  "subtitle": "Ordne Dokumentations-Snippets der passenden Zielgruppe zu.",
+  "levels": [
+    { "name": "Level 1 - Klare Sprache", "start": 0, "end": 8, "time_limit_sec": 12, "target_doc": "USER" },
+    { "name": "Level 2 - Target-Bleeding", "start": 8, "end": 17, "time_limit_sec": 9, "target_doc": "MIX" },
+    { "name": "Level 3 - Support-Crisis", "start": 17, "end": 25, "time_limit_sec": 7, "target_doc": "CRITICAL" }
+  ],
+  "snippets": [
+    { "id": "s01", "badge": "USAGE", "text": "Hier klicken, um das Passwort in 2 Schritten zurueckzusetzen.", "primary": "user" },
+    { "id": "s02", "badge": "CONFIG", "text": "Setze in app.yaml den Key db.pool.max_connections auf 24.", "primary": "admin" },
+    { "id": "s03", "badge": "USAGE", "text": "FAQ: So exportierst du deinen Monatsbericht als PDF.", "primary": "user" },
+    { "id": "s04", "badge": "INSTALL", "text": "Fuehre sudo systemctl restart api-gateway nach dem Patch aus.", "primary": "admin" },
+    { "id": "s05", "badge": "USAGE", "text": "Wenn dein Konto gesperrt ist, nutze den Link im Login-Dialog.", "primary": "user" },
+    { "id": "s06", "badge": "CONFIG", "text": "SQL UPDATE users SET status='active' WHERE id=?;", "primary": "admin" },
+    { "id": "s07", "badge": "USAGE", "text": "Shortcut: Mit Strg+K findest du jede Funktion schneller.", "primary": "user" },
+    { "id": "s08", "badge": "INSTALL", "text": "Pruefe nach dem Deployment den Healthcheck /internal/live.", "primary": "admin" },
+
+    { "id": "s09", "badge": "USAGE", "text": "Troubleshooting: Browser-Cache loeschen, dann erneut anmelden.", "primary": "user", "secondary": "admin" },
+    { "id": "s10", "badge": "CONFIG", "text": "Rollback-Runbook fuer Incident P2, Schritt 1 bis 6.", "primary": "admin", "secondary": "user" },
+    { "id": "s11", "badge": "USAGE", "text": "Hinweis: Notfallmodus zeigt nur Kernfunktionen fuer alle Rollen.", "primary": "user", "secondary": "admin" },
+    { "id": "s12", "badge": "CONFIG", "text": "API-Limit pro Tenant auf 120 req/min setzen.", "primary": "admin", "secondary": "user" },
+    { "id": "s13", "badge": "USAGE", "text": "Schrittfolge zur Freigabe einer Bestellung im Team-Workflow.", "primary": "user", "secondary": "admin" },
+    { "id": "s14", "badge": "INSTALL", "text": "Vor Update: Datenbank-Backup erzeugen und Checksumme pruefen.", "primary": "admin", "secondary": "user" },
+    { "id": "s15", "badge": "USAGE", "text": "Was bedeuten die Statusfarben in der Ticketliste?", "primary": "user", "secondary": "admin" },
+    { "id": "s16", "badge": "CONFIG", "text": "Berechtigungen fuer Role support_agent im IAM-Panel.", "primary": "admin", "secondary": "user" },
+    { "id": "s17", "badge": "USAGE", "text": "Kontaktpfad fuer Support mit erwarteter Antwortzeit.", "primary": "user", "secondary": "admin" },
+
+    { "id": "s18", "badge": "CONFIG", "text": "Trace-ID aus nginx-error.log extrahieren und in Kibana suchen.", "primary": "admin" },
+    { "id": "s19", "badge": "USAGE", "text": "Wenn der Upload haengt: Datei teilen und erneut senden.", "primary": "user" },
+    { "id": "s20", "badge": "INSTALL", "text": "Hotfix per kubectl rollout restart deployment/web-ui.", "primary": "admin" },
+    { "id": "s21", "badge": "USAGE", "text": "So beantragst du eine neue Projektrolle in 60 Sekunden.", "primary": "user" },
+    { "id": "s22", "badge": "CONFIG", "text": "Service-Account Token rotieren, Ablauf 90 Tage.", "primary": "admin" },
+    { "id": "s23", "badge": "USAGE", "text": "Checkliste fuer neue Teammitglieder im Portal.", "primary": "user" },
+    { "id": "s24", "badge": "CONFIG", "text": "Queue-Lag > 500? Worker-Skalierung auf 8 Instanzen setzen.", "primary": "admin" },
+    { "id": "s25", "badge": "USAGE", "text": "FAQ: Warum sehe ich den Menuepunkt Abrechnung nicht?", "primary": "user" }
+  ]
+}

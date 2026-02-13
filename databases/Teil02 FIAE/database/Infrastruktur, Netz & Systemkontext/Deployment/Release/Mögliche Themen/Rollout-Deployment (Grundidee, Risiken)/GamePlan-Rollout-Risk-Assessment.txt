@@ -1,19 +1,38 @@
-Anforderungen
-1. "Rollout-Risk-Assessment"
-   - Ziel: Befähigung zur Einschätzung und Minimierung von Risiken bei Software-Veröffentlichungen durch Wahl geeigneter Deployment-Strategien.
-   - Spielmechanik: 
-     - Analyse von Deployment-Szenarien und Auswahl der optimalen Methode (Blue-Green, Canary, Rolling Update).
-     - Durchführung von Rollback-Prozeduren bei kritischen Fehlern in der Live-Umgebung.
-     - Steuerung von Feature-Flags zur Entkopplung von technischem Deployment und geschäftlichem Release.
-     - Messbarkeit: Minimierung der Downtime und maximale Erfolgsquote der Rollouts.
-   - Lernziel: Beherrschung moderner Deployment-Strategien und Steigerung der System-Resilienz.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Planung und Durchführung kritischer Software-Rollouts unter Berücksichtigung von Risiken und Fallback-Strategien.
+- Game-Mechanic: "The Rollout Master". Du stehst am Kontrollpult eines globalen Netzwerks. Die neue Version (1.2.0) ist bereit. Aber Achtung: Wenn du sie auf alle Server gleichzeitig feuerst (Big Bang) und sie einen Bug hat, bricht alles zusammen! Wähle deine Strategie: "Canary" (erst ein kleiner Teil), "Blue-Green" (Umschalten auf das neue System) oder "Rolling" (Schritt für Schritt).
+- Challenge: 
+  - Level 1 (The Test-Balloon): Führe einen Canary-Rollout auf 5% der User durch. Überwache die Fehlerrate.
+  - Level 2 (The Critical-Bug): Das Monitoring zeigt 500er Fehler nach dem Rollout. Führe sofort ein "Rollback" auf die stabile Version durch, bevor der Shitstorm losbricht.
+  - Level 3 (The High-Traffic-Switch): Schalte von Blue auf Green um. Sorge dafür, dass keine aktiven Sessions verloren gehen (Connection Draining).
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_deployment_risks.json')
-   - Rollout-Typen und Fehlermeldungen.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Interaktive Status-Konsole für Rollouts).
-- [ ] Game-Engine Logic ('game_logic_validator.js')
-   - (Simulation der Nutzer-Impacts).
-- [ ] Integration
-   - Tutorial: Warum ein Freitag-Nachmittag der schlechteste Zeitpunkt für ein Major-Update ist.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "User-Satisfaction-Meter", "Error-Rate (%)", "Rollout-Progress-Bar", "Budget-Burn-Rate".
+- [ ] Scoring: "Uptime-Hero" Bonus für Rollouts ohne jeglichen Service-Ausfall. Abzug für "Total-Blackouts".
+
+2. Screen-Layout (The Mission Control)
+- [ ] `world-map -> server-clusters -> deployment-levers -> live-traffic-monitor`.
+- [ ] World-Map: Zeigt die Ausbreitung der neuen Version über Kontinente an.
+- [ ] Deployment-Levers: Schaltflächen für Canary, Blue-Green und Rollback.
+
+3. Kernvisuals und Effekte
+- [ ] Command-Center Ästhetik: Dunkler Hintergrund, viele kleine blinkende Lichter, Monitor-Scanlines, tiefe elektronische Warnsignale (Shared Theme kompatibel).
+- [ ] "Deployment-Wave": Eine grüne Lichtwelle breitet sich über die Server-Cluster aus.
+- [ ] "Screen-Glitch": Wenn die Fehlerrate steigt, fängt das Bild an zu flackern und rote Alarm-Popups erscheinen.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Keyframe Animations` für das Wellen-Gefühl beim Deployment.
+- [ ] Mobile: "Emergency-Button" (Groß/Rot) für den sofortigen Rollback.
+
+5. Content-Strategie (The Launch-Logs)
+- [ ] 10 Einsatz-Szenarien: Von "Social Media App Update" bis "Banken-Backend Migration".
+
+6. QA-Paket
+- [ ] Test: Wird der Vorteil von Canary-Releases (Risikominimierung) spielerisch deutlich?
+- [ ] Test: Fühlt sich der Zeitdruck beim Rollback-Szenario stressig, aber beherrschbar an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert: "Ein guter Rollout braucht immer einen Plan B (Rollback)".
+- [ ] Das Interface wirkt hochmodern, dramatisch und verantwortungsvoll.
+- [ ] Fokus auf Continuous Deployment und Betriebssicherheit.

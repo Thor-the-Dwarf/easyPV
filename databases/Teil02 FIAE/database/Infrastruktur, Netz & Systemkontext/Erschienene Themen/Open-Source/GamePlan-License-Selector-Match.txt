@@ -1,19 +1,38 @@
-Anforderungen
-1. "License-Selector-Match"
-   - Ziel: Verständnis der verschiedenen Open-Source-Lizenzmodelle und deren rechtliche Auswirkungen auf die Softwareverteilung und Kommerzialisierung.
-   - Spielmechanik: 
-     - Der Spieler muss verschiedenen Projektszenarien (z.B. "Firmeninterne Nutzung", "Veröffentlichung mit Copyleft-Zwang") die passende Lizenz (MIT, GPL, Apache, BSD) zuordnen.
-     - Analyse von Lizenztexten auf Erlaubnisse, Bedingungen und Einschränkungen.
-     - Simulation einer Compliance-Prüfung bei der Integration von Drittanbieter-Bibliotheken.
-     - Messbarkeit: Korrekte Auswahl der Lizenzen zur Erfüllung der Projektziele.
-   - Lernziel: Beherrschung der FOSS-Rechtsgrundlagen und Vermeidung von Lizenzverletzungen (License Compliance).
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der gängigen Open-Source-Lizenzen (MIT, GPL, Apache, BSD) und deren Auswirkungen auf die Weitergabe von Software.
+- Game-Mechanic: "The License Guard". Du bist der Rechtsbeistand einer Software-Schmiede. Programmierer wollen fremde Libraries in das neue Firmen-Produkt einbauen. Du musst die Lizenzen prüfen: Darf man den Code kommerziell nutzen? Muss man den eigenen Quellcode offenlegen (Copyleft)? Nur wer die juristischen Fallstricke (Compliance) umschifft, bekommt dein Siegel.
+- Challenge: 
+  - Level 1 (The Open-Permissive): Baue eine MIT-lizenzierte Library ein. Was musst du beachten? (Spoiler: Fast nichts, außer Copyright-Hinweis).
+  - Level 2 (The Copyleft-Trap): Ein Entwickler will eine GPL-Library in ein proprietäres Produkt mischen. Warnung! Erkläre ihm, warum das "ansteckend" ist und finde eine Alternative (z.B. LGPL oder Apache).
+  - Level 3 (The License-Audit): Dein Projekt hat 50 Abhängigkeiten. Erstelle einen "Compliance-Report" und markiere riskante Lizenzen für die Geschäftsführung.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_oss_licenses.json')
-   - Lizenz-Typen und Szenario-Beschreibungen.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung des Klassifizierungs-Interfaces).
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Wiederverwendung der Matching-Logik).
-- [ ] Integration
-   - Tutorial: Unterschied zwischen permissiven Lizenzen (MIT) und "Viralen" Lizenzen (GPL).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Legal-Risk-Meter (High/Low)", "Compliance-Score (%)", "License-Compatibility-Matrix", "Usage-Rights Display".
+- [ ] Scoring: "Law-and-Order" Bonus für 100% rechtssichere Projekte. Abzug für "Legal-Lawsuit" Risiko.
+
+2. Screen-Layout (The Legal Desk)
+- [ ] `document-scanner -> license-database -> dependency-tree -> approval-seal`.
+- [ ] License-Database: Eine interaktive Bibliothek, die die Kernfeatures der Lizenzen erklärt (MIT=Free, GPL=Copyleft, etc.).
+- [ ] Dependency-Tree: Ein Baumdiagramm, das zeigt, welche Library welche Lizenz "erbt".
+
+3. Kernvisuals und Effekte
+- [ ] Elegant-Law Ästhetik: Dunkles Holz, poliertes Gold, Pergament-Texturen kombiniert mit modernen digitalen Siegeln, das Klicken einer Schreibmaschine (Shared Theme kompatibel).
+- [ ] "Stamp-Approval": Ein schweres, goldenes Siegel "MIT-APPROVED" knallt auf das Dokument.
+- [ ] "Red-Line-Audit": Riskante Textstellen in den Lizenzen werden rot markiert, wenn man sie mit dem Cursor überfährt.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Columns` für die Gegenüberstellung der Lizenz-Texte.
+- [ ] Mobile: "Swipe-to-Approve" Geste.
+
+5. Content-Strategie (The Case Files)
+- [ ] 12 Lizenz-Szenarien: Von "Startup-MVP" bis "Enterprise-Core-Engine".
+
+6. QA-Paket
+- [ ] Test: Wird das Konzept des "Copyleft" (Viraler Effekt) spielerisch verständlich gemacht?
+- [ ] Test: Sind die Unterschiede zwischen Apache 2.0 (Patente inklusive) und MIT klar herausgearbeitet?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Lizenzen schützen Urheber und Nutzer gleichermaßen.
+- [ ] Das Interface wirkt seriös, hochwertig und juristisch präzise.
+- [ ] Fokus auf Compliance und Risiko-Management.

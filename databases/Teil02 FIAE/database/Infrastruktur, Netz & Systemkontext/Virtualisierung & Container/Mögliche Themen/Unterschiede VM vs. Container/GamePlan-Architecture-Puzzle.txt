@@ -1,19 +1,38 @@
-Anforderungen
-1. "Architecture-Puzzle (VM vs. Docker)"
-   - Ziel: Tiefes Verständnis der Unterschiede zwischen hardwarenaher Virtualisierung (VM) und Betriebssystem-Virtualisierung (Container) zur Optimierung von Workloads.
-   - Spielmechanik: 
-     - Aufbau der Software-Stacks für beide Technologien durch Anordnung der Schichten (Hardware, Host-OS, Hypervisor/Engine, Guest-OS, Libs, App).
-     - Vergleich der Ressourceneffizienz und Startzeiten in simulierten Lasttests.
-     - Auswahl der passenden Technologie für spezifische Szenarien (z.B. Microservices vs. Legacy Windows-Apps).
-     - Messbarkeit: Korrektheit der Architekturen und Effizienz der gewählten Lösung.
-   - Lernziel: Beherrschung moderner Abstraktionstechnologien und Begründung technologischer Design-Entscheidungen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Objektiver Vergleich von Virtualisierung (VM) und Containerisierung (Docker) hinsichtlich Performance, Isolation und Ressourcenverbrauch.
+- Game-Mechanic: "The Architecture Sorter". Du bist der Logistik-Manager eines riesigen Frachthafens. Es kommen verschiedene Anfragen rein: "Ein komplettes, isoliertes OS für eine Bank" vs. "1000 kleine Microservices für einen Chat-Bot". Wähle das richtige Mittel: Packst du es in eine schwere, gepanzerte Kiste (VM mit eigenem Kernel) oder in einen leichten, stapelbaren Container (Docker, nutzt Host-Kernel)? Wer falsch wählt, verschwendet teuren Platz oder riskiert die Sicherheit.
+- Challenge: 
+  - Level 1 (The Speed Race): Starte 50 Instanzen einer App. Wer ist schneller? Vergleiche die Boot-Zeit von VM und Container.
+  - Level 2 (The Isolation-War): Eine App ist instabil und versucht, den Kernel zu korrumpieren. Nutze die VM für maximale Isolation ("Hard-Isolation").
+  - Level 3 (The Resource-Squeeze): Du hast nur noch 2 GB RAM frei. Packe so viele Instanzen wie möglich darauf. Optimiere den Pack-Faktor mit Containern ("Shared-Kernel-Bonus").
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_vm_vs_container.json')
-   - Schichten-Modelle und Performance-Metriken.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung des vertikalen Stapel-Interfaces).
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Validierung der Stack-Reihenfolge).
-- [ ] Integration
-   - Info: Warum Container den Kernel des Hosts teilen, VMs aber ein eigenes OS mitbringen.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Spin-up-Timer", "RAM-Load (%)", "Security-Barrier-Strength", "Portability-Index".
+- [ ] Scoring: "Efficiency-Expert" Bonus für die perfekte Wahl bei knappen Ressourcen. Abzug für "Over-Provisioning" (zu große VMs für kleine Tasks).
+
+2. Screen-Layout (The Cargo Dock)
+- [ ] `dock-crane -> container-stack -> vm-hangar -> resource-gauge`.
+- [ ] Container-Stack: Bunte kleine Boxen, die sich hunderte Male stapeln lassen.
+- [ ] VM-Hangar: Große, imposante Gebäude für die virtuellen Maschinen.
+
+3. Kernvisuals und Effekte
+- [ ] Industrial-Modern Ästhetik: Stahlträger, Container-Texturen, neon-blaue Scanlines, maritime Hafen-Sounds gemischt mit digitalen Klängen (Shared Theme kompatibel).
+- [ ] "Pop-Spin-up": Container ploppen fast augenblicklich auf. VMs bauen sich langsam mit einem mechanischen Summen auf.
+- [ ] "Boundary-Shield": VMs haben eine dicke, sichtbare Energieschutzwand. Container teilen sich ein gemeinsames Gitter (den Kernel-Boden).
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Flexbox` für das dynamische Stapeln der Container-Elemente.
+- [ ] Mobile: "Drag-and-Drop" in den Hangar oder das Dock.
+
+5. Content-Strategie (The Cargo-Manifests)
+- [ ] 15 Architektur-Szenarien: Von "Legacy Windows App" bis "Cloud Native Microservice".
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen "Shared Kernel" und "Hardware-Abstraction" visuell greifbar?
+- [ ] Test: Fühlt sich die Schnelligkeit der Container im Vergleich zu VMs "echt" an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Container sind für Geschwindigkeit & Dichte, VMs für Isolation & Kompatibilität.
+- [ ] Das Interface wirkt wuchtig, rasant und technologiefokussiert.
+- [ ] Fokus auf moderne Cloud-Infrastrukturen.

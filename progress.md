@@ -19,3 +19,8 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Playwright smoke test executed against game_failover_simulator.html (local http.server + web_game_playwright_client).
 - Verified render_game_to_text transitions from idle to active mission state (round 1 loaded, failed DB node, RTO running).
 - Note: screenshot artifact captures only the health graph canvas in this runner; state JSON was used as primary validation of runtime behavior.
+- Original prompt (current turn): ok, nun implementiere und commite GamePlan-Doku-Zielgruppen-Match.txt
+- Implemented new Dokumentation game: game_doku_zielgruppen_match.html/.js/.json and doku_zielgruppen_match.css.
+- Added 25 snippets across 3 levels (Klare Sprache, Target-Bleeding, Support-Crisis), HUD for User-Confusion, Knowledge-Points, Target-Doc, and timed readability bar.
+- Added scoring rules incl. Silent Knowledge bonus (+150) and technical-noise penalty when admin content is routed to user docs.
+- Added mobile swipe-to-bin gestures (left=admin, right=user), diagnostic feed, confusion-wave visual, render_game_to_text and advanceTime hooks.

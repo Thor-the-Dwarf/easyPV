@@ -1,19 +1,38 @@
-Anforderungen
-1. "VM-Provisioning Speedrun"
-   - Ziel: Verständnis des administrativen Prozesses zur Bereitstellung und Verwaltung virtueller Infrastrukturen (Compute Resources).
-   - Spielmechanik: 
-     - Konfiguration von virtuellen Hardware-Eigenschaften (vCPUs, vRAM, vDisk, vNIC).
-     - Durchführung von Lifecycle-Aktionen: Snapshot erstellen, Klonen, Live-Migration (vMotion) zwischen physischen Hosts.
-     - Optimierung der Hardware-Konsolidierung (Density) auf einem Cluster.
-     - Messbarkeit: Geschwindigkeit der Bereitstellung und Einhaltung der Service-Level-Agreements (SLA).
-   - Lernziel: Beherrschung der virtuellen Administration und Verständnis für die Skalierbarkeit von IT-Ressourcen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Beherrschung des automatisierten Provisioning-Prozesses (Infrastructure as Code - IaC) zur schnellen Bereitstellung virtueller Maschinen.
+- Game-Mechanic: "The Machine Crafter". Du leitest die automatisierte Schmiede für digitale Maschinenwesen. Kunden bestellen VMs wie Autos am Fließband: "Brauche 2 CPUs, 4GB RAM, Linux OS und Apache vorinstalliert". Statt alles händisch zu bauen, schreibst du ein Rezept (Script/Terraform/Ansible Stil). Deine Roboterarme (Provisioner) bauen die Maschinen nach diesem Rezept in Rekordzeit zusammen.
+- Challenge: 
+  - Level 1 (The Single Construct): Erstelle eine einfache VM aus einem existierenden Template (Gold-Master).
+  - Level 2 (The Bulk-Order): Der Kunde braucht 10 identische Webserver. Automatisiere das Provisioning, damit alle exakt gleich konfiguriert sind (Consistency-Check).
+  - Level 3 (The Cloud-Formation): Baue ein komplexes System mit Datenbank-Server, App-Server und Frontend. Sorge dafür, dass die Abhängigkeiten (z.B. Netzwerke) zuerst erstellt werden (Dependency-Logic).
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_vm_lifecycle.json')
-   - VM-Profile und Administrations-Tasks.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung der Dashboard-Ansicht).
-- [ ] Game-Engine Logic ('game_logic_validator.js')
-   - (Tracking der Ressourcen-Verfügbarkeit).
-- [ ] Integration
-   - Info: Was "Thin Provisioning" bedeutet und wie es Speicherplatz spart.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Blueprint-Accuracy (%)", "Provisioning-Clock", "Configuration-Drift Warning", "Resource-Pool Status".
+- [ ] Scoring: "Script-Magician" Bonus für kurze, fehlerfreie IaC-Rezepte. Abzug für "Manual-Tweaks" nach der Erstellung.
+
+2. Screen-Layout (The Robotic Forge)
+- [ ] `blueprint-table (Code-Editor) -> assembly-line (Server Racks) -> logic-core (The Script) -> quality-inspection`.
+- [ ] Blueprints: Grafische Darstellung der VM-Spezifikation (CPU/RAM/Disk).
+- [ ] Assembly-Line: Virtuelle Serverracks, die sich füllen, während das Script abläuft.
+
+3. Kernvisuals und Effekte
+- [ ] High-Tech Manufactory Ästhetik: Kalte Neonlichter, glühendes Metall beim "Gießen" der VMs, elektronische Pulse entlang der Leitungen, Präzisions-Sounds (Shared Theme kompatibel).
+- [ ] "Script-Run": Während das Script läuft, wandern Codezeilen als Energie-Bits vom Logic-Core zu den Racks.
+- [ ] "Configuration-Snap": Jedes installierte Software-Paket rastet mit einem soliden "Klack" ein.
+
+4. Browser- und Device-Resilienz
+- [ ] `monaco-editor` für das IaC-Schreibgefühl (Syntax-Highlighter).
+- [ ] Mobile: "Tap-to-Trigger" der Automation.
+
+5. Content-Strategie (The Blueprints)
+- [ ] 12 Provisioning-Aufgaben: Von "Einfacher Fileserver" bis "Vollständiger Kubernetes-Node".
+
+6. QA-Paket
+- [ ] Test: Wird der Vorteil von "Code statt Klicks" (Infrastructure as Code) spielerisch deutlich?
+- [ ] Test: Fühlt sich der automatisierte Aufbau der Rack-Strukturen befriedigend an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Automatisierung ist der Schlüssel zu skalierbarer Infrastruktur.
+- [ ] Das Interface wirkt mächtig, präzise und industriell-kühl.
+- [ ] Fokus auf modernes IT-Ops und Cloud-Automatisierung.

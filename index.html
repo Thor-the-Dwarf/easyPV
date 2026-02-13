@@ -37,7 +37,7 @@
           <button id="theme-toggle-app" class="theme-toggle-btn" type="button" aria-label="Theme wechseln">🌙</button>
         </header>
         <section id="content-host" class="content-host" aria-live="polite">
-          <div class="content-placeholder">Wähle eine Datei im FolderTree, um den C-Suite-Prototyp zu laden.</div>
+          <div class="content-placeholder">Klicke einen Endordner (🎮), um den C-Suite-Prototyp zu laden.</div>
         </section>
       </main>
     </div>
@@ -94,9 +94,7 @@
           }
 
           const rawWidth = Number(localStorage.getItem(DRAWER_WIDTH_KEY));
-          if (!Number.isNaN(rawWidth) && rawWidth > 0) {
-            drawerWidth = rawWidth;
-          }
+          if (!Number.isNaN(rawWidth) && rawWidth > 0) drawerWidth = rawWidth;
         }
 
         function saveState() {
@@ -164,8 +162,7 @@
 
         function initTheme() {
           const stored = localStorage.getItem(THEME_KEY);
-          const theme = stored === 'light' ? 'light' : 'dark';
-          applyTheme(theme);
+          applyTheme(stored === 'light' ? 'light' : 'dark');
         }
 
         function toggleTheme() {
@@ -207,83 +204,51 @@
 
         function normalizeTree(nodes) {
           const folders = [];
-          const files = [];
           const dedupeMap = new Map();
 
           (Array.isArray(nodes) ? nodes : []).forEach((node) => {
-            if (!node) return;
+            if (!node || !node.isFolder) return;
 
-            if (node.isFolder) {
-              const entries = normalizeNode(node);
-              entries.forEach((entry) => {
-                const key = canonicalName(entry.name);
-                if (!dedupeMap.has(key)) {
-                  dedupeMap.set(key, entry);
-                  folders.push(entry);
-                  return;
-                }
+            const entries = normalizeNode(node);
+            entries.forEach((entry) => {
+              const key = canonicalName(entry.name);
+              if (!dedupeMap.has(key)) {
+                dedupeMap.set(key, entry);
+                folders.push(entry);
+                return;
+              }
 
-                const existing = dedupeMap.get(key);
-                existing.children = mergeChildren(existing.children, entry.children);
-              });
-              return;
-            }
-
-            const fileNode = normalizeFileNode(node);
-            if (fileNode) files.push(fileNode);
+              const existing = dedupeMap.get(key);
+              existing.children = mergeChildren(existing.children, entry.children);
+              existing.hasFiles = existing.hasFiles || entry.hasFiles;
+            });
           });
 
-          files.sort((a, b) => a.name.localeCompare(b.name, 'de', { sensitivity: 'base' }));
-          return folders.concat(files);
+          return folders;
         }
 
         function normalizeNode(node) {
           const rawName = String(node.name || '');
           const cleanedName = decodeLegacyName(rawName);
-          const normalizedChildren = normalizeTree(Array.isArray(node.children) ? node.children : []);
+          const rawChildren = Array.isArray(node.children) ? node.children : [];
+          const normalizedChildren = normalizeTree(rawChildren);
+          const hasFiles = rawChildren.some((child) => child && !child.isFolder);
 
-          if (cleanedName.toLowerCase() === 'database') {
-            return normalizedChildren;
-          }
-
-          if (cleanedName === 'M') {
-            return normalizedChildren;
-          }
-
-          if (/\bPr$/.test(cleanedName) && normalizedChildren.length > 0) {
-            return normalizedChildren;
-          }
-
-          if (isLegacyArtifact(rawName, cleanedName)) {
-            return normalizedChildren;
-          }
+          if (cleanedName.toLowerCase() === 'database') return normalizedChildren;
+          if (cleanedName === 'M') return normalizedChildren;
+          if (/\bPr$/.test(cleanedName) && normalizedChildren.length > 0) return normalizedChildren;
+          if (isLegacyArtifact(rawName, cleanedName)) return normalizedChildren;
 
           const normalizedNode = {
             id: node.id,
             name: cleanedName,
             isFolder: true,
+            hasFiles: hasFiles,
             children: normalizedChildren
           };
 
-          // Repariert alte, falsch gesplittete Namensketten wie:
-          // "Code-Qualit" -> "u00e4t " -> "u0026 Wartbarkeit".
           collapseNameFragments(normalizedNode);
           return [normalizedNode];
-        }
-
-        function normalizeFileNode(node) {
-          const rawName = String(node.name || '');
-          const cleanedName = decodeLegacyName(rawName);
-          if (!cleanedName) return null;
-          if (isLegacyArtifact(rawName, cleanedName)) return null;
-
-          return {
-            id: node.id || ('file_' + cleanedName.toLowerCase().replace(/[^a-z0-9_-]+/g, '_')),
-            name: cleanedName,
-            isFolder: false,
-            kind: node.kind || '',
-            relPath: node.relPath || ''
-          };
         }
 
         function collapseNameFragments(node) {
@@ -294,6 +259,7 @@
 
             node.name = joinNameParts(node.name, child.name);
             node.children = child.children;
+            node.hasFiles = node.hasFiles || child.hasFiles;
           }
         }
 
@@ -311,7 +277,6 @@
 
           if (!a) return b;
           if (!b) return a;
-
           if (b.startsWith('&') || b.startsWith('/')) return a + ' ' + b;
           if (/[A-Za-zÄÖÜäöüß]$/.test(a) && /^[a-zäöüß]/i.test(b)) return a + b;
           return a + ' ' + b;
@@ -329,9 +294,7 @@
         function isLegacyArtifact(rawName, cleanedName) {
           const raw = String(rawName || '').trim();
           const clean = String(cleanedName || '').trim();
-
           if (!raw && !clean) return true;
-          // Byte-Split-Artefakte wie "303", "274fungsfallen" aus alten Pfaden ausblenden.
           if (/^[0-9]{3}([A-Za-z].*)?$/.test(raw)) return true;
           return false;
         }
@@ -363,6 +326,7 @@
 
             const existing = index.get(key);
             existing.children = mergeChildren(existing.children, item.children);
+            existing.hasFiles = existing.hasFiles || item.hasFiles;
           });
 
           return merged;
@@ -370,17 +334,15 @@
 
         function buildTree(container, nodes, level) {
           nodes.forEach((node) => {
-            if (!node) return;
+            if (!node || !node.isFolder) return;
 
             const rowNode = document.createElement('div');
             rowNode.className = 'tree-node';
             rowNode.dataset.id = node.id;
-            rowNode.dataset.folder = node.isFolder ? '1' : '0';
 
-            const hasChildren = node.isFolder && Array.isArray(node.children) && node.children.length > 0;
-            const isCollapsed = node.isFolder ? !openedFolderIds.includes(node.id) : false;
+            const hasChildren = Array.isArray(node.children) && node.children.length > 0;
+            const isCollapsed = !openedFolderIds.includes(node.id);
             rowNode.classList.toggle('tree-node--collapsed', isCollapsed);
-            rowNode.classList.toggle('tree-node--file', !node.isFolder);
 
             const row = document.createElement('div');
             row.className = 'tree-row';
@@ -389,7 +351,7 @@
             const iconButton = document.createElement('button');
             iconButton.className = 'tree-icon-button';
             iconButton.type = 'button';
-            if (node.isFolder && hasChildren) {
+            if (hasChildren) {
               iconButton.classList.add('is-toggleable');
               iconButton.setAttribute('aria-label', 'Ordner auf- oder zuklappen');
               iconButton.addEventListener('click', (event) => {
@@ -403,7 +365,7 @@
 
             const icon = document.createElement('span');
             icon.className = 'tree-icon';
-            icon.textContent = node.isFolder ? folderEmoji(node, isCollapsed) : fileEmoji(node);
+            icon.textContent = folderEmoji(node, isCollapsed);
             iconButton.appendChild(icon);
             row.appendChild(iconButton);
 
@@ -415,22 +377,18 @@
             label.addEventListener('click', (event) => {
               event.preventDefault();
               event.stopPropagation();
-              if (!node.isFolder) {
-                openFileNode(node);
-              }
+              if (isPlayableFolder(node)) openPlayableFolder(node);
             });
             row.appendChild(label);
 
             rowNode.appendChild(row);
 
-            if (node.isFolder) {
-              const childContainer = document.createElement('div');
-              childContainer.className = 'tree-children';
-              if (Array.isArray(node.children) && node.children.length > 0) {
-                buildTree(childContainer, node.children, level + 1);
-              }
-              rowNode.appendChild(childContainer);
+            const childContainer = document.createElement('div');
+            childContainer.className = 'tree-children';
+            if (Array.isArray(node.children) && node.children.length > 0) {
+              buildTree(childContainer, node.children, level + 1);
             }
+            rowNode.appendChild(childContainer);
 
             container.appendChild(rowNode);
           });
@@ -449,7 +407,7 @@
           const icon = iconButton && iconButton.querySelector('.tree-icon');
           if (icon) {
             const node = findNodeById(rootTree, id);
-            icon.textContent = folderEmoji(node || { isFolder: true, children: [] }, !openedFolderIds.includes(id));
+            icon.textContent = folderEmoji(node || { isFolder: true, hasFiles: false, children: [] }, !openedFolderIds.includes(id));
           }
 
           saveState();
@@ -458,17 +416,8 @@
         function folderEmoji(node, isCollapsed) {
           const children = Array.isArray(node.children) ? node.children : [];
           const hasFolderChild = children.some((child) => child && child.isFolder);
-          if (!hasFolderChild) return '🎮';
+          if (!hasFolderChild && node.hasFiles) return '🎮';
           return isCollapsed ? '📁' : '📂';
-        }
-
-        function fileEmoji(node) {
-          const name = String(node.name || '').toLowerCase();
-          if (name.endsWith('.json')) return '🧾';
-          if (name.endsWith('.html')) return '🌐';
-          if (name.endsWith('.js')) return '🧠';
-          if (name.endsWith('.css')) return '🎨';
-          return '📄';
         }
 
         function findNodeById(nodes, id) {
@@ -483,12 +432,16 @@
           return null;
         }
 
-        function openFileNode(node) {
+        function isPlayableFolder(node) {
+          return !!node && node.isFolder && !!node.hasFiles;
+        }
+
+        function openPlayableFolder(node) {
           if (!contentHost) return;
-          const fileLabel = node && node.name ? node.name : 'Datei';
-          const src = './generic_pages/generic_c_suite/generic_c_suite.html?file=' + encodeURIComponent(fileLabel);
+          const folderLabel = node && node.name ? node.name : 'Spielordner';
+          const src = './generic_pages/generic_c_suite/generic_c_suite.html?folder=' + encodeURIComponent(folderLabel);
           contentHost.innerHTML =
-            '<iframe class=\"content-frame\" src=\"' + src + '\" title=\"C-Suite Prototyp\" loading=\"eager\"></iframe>';
+            '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
         }
 
         function escapeHtml(value) {

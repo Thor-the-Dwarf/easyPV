@@ -1,0 +1,242 @@
+/* 
+ * Pattern-Kategorisierer - Styles
+ * Aesthetic: Dark Academia / Old Library
+ */
+
+:root {
+    --paper-bg: #d7ccc8;
+    --ink-color: #3e2723;
+    --wood-color: #5d4037;
+    --gold-accent: #ffd700;
+    --dust-color: rgba(255, 255, 255, 0.2);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #2b1b17;
+    /* Dark wood */
+    color: var(--paper-bg);
+    font-family: 'Georgia', serif;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 90%);
+}
+
+/* --- HUD --- */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid var(--wood-color);
+    z-index: 20;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hud-label {
+    font-size: 0.8rem;
+    font-style: italic;
+    opacity: 0.8;
+    color: var(--gold-accent);
+}
+
+.hud-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* --- Library Pillars --- */
+.pillars-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    flex: 1;
+}
+
+.pillar {
+    width: 30%;
+    height: 60%;
+    border: 4px solid var(--wood-color);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    position: relative;
+    transition: all 0.3s;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.pillar.drag-over {
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 20px var(--gold-accent);
+    border-color: var(--gold-accent);
+}
+
+.pillar-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 0 5px #000);
+}
+
+.pillar-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--paper-bg);
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* --- Card Deck --- */
+.deck-area {
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(to top, #1a100d, transparent);
+}
+
+.pattern-card {
+    width: 220px;
+    height: 140px;
+    background: var(--paper-bg);
+    color: var(--ink-color);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    cursor: grab;
+    position: absolute;
+    /* Centered initially */
+    transition: transform 0.2s;
+    text-align: center;
+    border: 1px solid #a1887f;
+}
+
+.pattern-card:active {
+    cursor: grabbing;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--ink-color);
+    width: 100%;
+}
+
+.card-summary {
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+/* Animation Classes */
+.card-vanishing {
+    transition: all 0.5s ease-out;
+    transform: scale(0) rotate(360deg) !important;
+    opacity: 0;
+}
+
+.card-error {
+    animation: shake 0.5s;
+    background: #ffcdd2;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Particles */
+.particle {
+    position: absolute;
+    pointer-events: none;
+    background: var(--gold-accent);
+    border-radius: 50%;
+    animation: floatUp 1s ease-out forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-50px) scale(0);
+        opacity: 0;
+    }
+}
+
+.result-screen {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    text-align: center;
+}
+
+.btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: var(--wood-color);
+    color: var(--paper-bg);
+    border: 1px solid var(--gold-accent);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 15px var(--gold-accent);
+    background: #3e2723;
+}
+
+.hidden {
+    display: none !important;
+}

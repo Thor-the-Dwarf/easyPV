@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Archives - Categorizer</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="pattern_categorizer.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="hud-label">REPUTATION</span>
+                <span class="hud-value" id="score-val">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">TIME</span>
+                <span class="hud-value" id="time-val">60</span>
+            </div>
+        </header>
+
+        <!-- Main Library Hall -->
+        <main class="pillars-container">
+            <div class="pillar" data-id="creational">
+                <div class="pillar-icon">🏗️</div>
+                <div class="pillar-label">Creational</div>
+            </div>
+            <div class="pillar" data-id="structural">
+                <div class="pillar-icon">🧱</div>
+                <div class="pillar-label">Structural</div>
+            </div>
+            <div class="pillar" data-id="behavioral">
+                <div class="pillar-icon">🧠</div>
+                <div class="pillar-label">Behavioral</div>
+            </div>
+        </main>
+
+        <!-- Card Deck -->
+        <div id="deck-area" class="deck-area">
+            <!-- Cards spawned here -->
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card"
+                style="background: var(--paper-bg); color: var(--ink-color); border: 4px solid var(--wood-color);">
+                <h2>Library Update</h2>
+                <div class="hud-value" style="font-size: 3rem; margin: 1rem 0; color: var(--wood-color);"
+                    id="final-score">0</div>
+                <button id="restart-btn" class="btn">Reorganize</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_pattern_categorizer.js"></script>
+</body>
+
+</html>

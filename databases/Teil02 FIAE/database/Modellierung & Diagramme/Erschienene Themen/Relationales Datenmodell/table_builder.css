@@ -1,0 +1,209 @@
+/* 
+ * Table-Builder - Styles
+ * Aesthetic: Data Architect / Blueprint / DBeaver-Style
+ */
+
+:root {
+    --bg-grid: #0e1117;
+    --grid-line: #1c2128;
+    --table-bg: #161b22;
+    --table-border: #30363d;
+    --text-main: #c9d1d9;
+    --accent-sql: #58a6ff;
+    --pk-gold: #d29922;
+    --fk-blue: #1f6feb;
+    --line-glow: rgba(88, 166, 255, 0.4);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-grid);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* --- HUD --- */
+.hud {
+    padding: 1rem 2rem;
+    background: #010409;
+    border-bottom: 1px solid var(--table-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.score-panel {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.85rem;
+    color: #8b949e;
+}
+
+.score-val {
+    color: var(--accent-sql);
+    font-weight: bold;
+}
+
+/* --- Canvas Area --- */
+.canvas-area {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+#blueprint-canvas {
+    width: 2000px;
+    height: 2000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* --- Table Boxes --- */
+.table-box {
+    position: absolute;
+    min-width: 180px;
+    background: var(--table-bg);
+    border: 1px solid var(--table-border);
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    cursor: grab;
+    z-index: 10;
+}
+
+.table-box:active {
+    cursor: grabbing;
+}
+
+.table-header {
+    background: #21262d;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--table-border);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--accent-sql);
+}
+
+.column-list {
+    padding: 4px 0;
+}
+
+.column-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-bottom: 1px solid rgba(48, 54, 61, 0.4);
+    position: relative;
+}
+
+.column-item:last-child {
+    border-bottom: none;
+}
+
+.col-pin {
+    width: 10px;
+    height: 10px;
+    background: var(--table-border);
+    border-radius: 50%;
+    position: absolute;
+    right: -5px;
+    cursor: crosshair;
+    transition: all 0.2s;
+}
+
+.col-pin:hover {
+    background: var(--accent-sql);
+    transform: scale(1.4);
+}
+
+.pk-icon {
+    color: var(--pk-gold);
+    font-size: 0.7rem;
+    margin-right: 5px;
+    display: none;
+}
+
+.column-item.is-pk .pk-icon {
+    display: inline;
+}
+
+.column-item.is-pk {
+    background: rgba(210, 153, 34, 0.05);
+}
+
+/* --- Connections SVG --- */
+#svg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.conn-line {
+    stroke: var(--accent-sql);
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 4;
+    animation: line-flow 2s linear infinite;
+}
+
+@keyframes line-flow {
+    to {
+        stroke-dashoffset: -20;
+    }
+}
+
+/* --- Feedback Overlay --- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.result-card {
+    background: var(--table-bg);
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--accent-sql);
+    max-width: 500px;
+}
+
+.btn-main {
+    margin-top: 2rem;
+    padding: 10px 40px;
+    background: var(--accent-sql);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}

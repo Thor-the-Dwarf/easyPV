@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Data Architect - Table Builder</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="table_builder.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div style="flex:1;">
+                <h1 style="font-size: 1.1rem; margin:0; color:var(--accent-sql);">SCHEMATIC_EDITOR // v1.0.4</h1>
+            </div>
+
+            <div class="score-panel">
+                DIAGRAM_INTEGRITY: <span id="integrity-val" class="score-val">SCANNING...</span>
+            </div>
+
+            <div style="flex:1; text-align:right; font-size:0.75rem; color:#444;">
+                BLUEPRINT_GRID: ACTIVE
+            </div>
+        </header>
+
+        <!-- Workbench -->
+        <main class="canvas-area">
+            <div id="blueprint-canvas">
+                <!-- Table boxes injected here -->
+            </div>
+            <svg id="svg-layer">
+                <!-- Connection lines injected here -->
+            </svg>
+
+            <!-- Instructions -->
+            <div id="instruction"
+                style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); padding: 10px 20px; border-radius: 4px; font-size: 0.9rem; color: #888; border-left: 3px solid var(--accent-sql);">
+                Lade Daten-Skelett...
+            </div>
+        </main>
+
+        <!-- Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="result-card">
+                <h2 style="color:var(--accent-sql); margin-top:0;">SCHEMATIC VALIDATED</h2>
+                <div style="margin: 1.5rem 0; font-size: 0.95rem; color: #8b949e; line-height: 1.6;">
+                    Exzellent, Architekt! Das Beziehungsgeflecht ist stabil und normalisiert.
+                </div>
+
+                <div
+                    style="background:rgba(88, 166, 255, 0.05); padding:1rem; margin-bottom:1.5rem; font-family:monospace; font-size:0.8rem; text-align: left;">
+                    > PK_CONSTRAINTS: OK<br>
+                    > REFERENTIAL_INTEGRITY: STABLE<br>
+                    > NORMAL_FORM: 3NF REACHED
+                </div>
+
+                <button id="btn-next" class="btn-main">NÄCHSTER ENTWURF</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_table_builder.js"></script>
+</body>
+
+</html>

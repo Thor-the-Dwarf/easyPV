@@ -1,0 +1,97 @@
+{
+    "meta": {
+        "topic": "Relational Schema Modeling",
+        "mechanic": "table_builder",
+        "version": "1.0"
+    },
+    "scenarios": [
+        {
+            "id": 1,
+            "title": "Base Schema: User Management",
+            "instruction": "Every table needs a 'Heart'—the Primary Key. Mark the 'ID' column as the PK.",
+            "tables": [
+                {
+                    "id": "t1",
+                    "name": "User",
+                    "x": 100,
+                    "y": 100,
+                    "columns": [
+                        {
+                            "name": "ID",
+                            "type": "INT",
+                            "isPK": false
+                        },
+                        {
+                            "name": "Username",
+                            "type": "VARCHAR(50)",
+                            "isPK": false
+                        },
+                        {
+                            "name": "Email",
+                            "type": "VARCHAR(100)",
+                            "isPK": false
+                        }
+                    ]
+                }
+            ],
+            "winCondition": {
+                "type": "pk_set",
+                "tableId": "t1",
+                "column": "ID"
+            }
+        },
+        {
+            "id": 2,
+            "title": "The Connector: Orders",
+            "instruction": "Orders must belong to a User. Link the 'UserID' (FK) to the 'ID' (PK) of the User table.",
+            "tables": [
+                {
+                    "id": "t1",
+                    "name": "User",
+                    "x": 50,
+                    "y": 100,
+                    "columns": [
+                        {
+                            "name": "ID",
+                            "type": "INT",
+                            "isPK": true
+                        },
+                        {
+                            "name": "Username",
+                            "type": "VARCHAR(50)",
+                            "isPK": false
+                        }
+                    ]
+                },
+                {
+                    "id": "t2",
+                    "name": "Order",
+                    "x": 400,
+                    "y": 150,
+                    "columns": [
+                        {
+                            "name": "OrderID",
+                            "type": "INT",
+                            "isPK": true
+                        },
+                        {
+                            "name": "UserID",
+                            "type": "INT",
+                            "isPK": false
+                        },
+                        {
+                            "name": "Total",
+                            "type": "DECIMAL",
+                            "isPK": false
+                        }
+                    ]
+                }
+            ],
+            "winCondition": {
+                "type": "fk_link",
+                "from": "t2.UserID",
+                "to": "t1.ID"
+            }
+        }
+    ]
+}

@@ -1,0 +1,281 @@
+/* 
+ * Observer-Simulation - Styles
+ * Aesthetic: Broadcast / Tech / Cyan & Magenta
+ */
+
+:root {
+    --tech-bg: #0d1117;
+    --console-panel: #161b22;
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00ff;
+    --neon-green: #00ff00;
+    --text-muted: #8b949e;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--tech-bg);
+    color: #fff;
+    font-family: 'Consolas', monospace;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* --- HUD --- */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid var(--neon-blue);
+    z-index: 20;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hud-label {
+    font-size: 0.8rem;
+    color: var(--neon-blue);
+    text-transform: uppercase;
+}
+
+.hud-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* --- Broadcaster Console --- */
+.broadcaster-console {
+    background: var(--console-panel);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    border-bottom: 1px solid #333;
+    align-items: center;
+}
+
+.channel-ctrl {
+    background: #21262d;
+    border: 2px solid #30363d;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.channel-ctrl:hover {
+    background: #30363d;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.channel-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.broadcast-btn {
+    margin-top: 0.5rem;
+    background: transparent;
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.broadcast-btn:hover {
+    background: var(--neon-blue);
+    color: #000;
+}
+
+/* --- Subscribers Grid --- */
+.subscribers-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        repeating-linear-gradient(0deg, transparent, transparent 19px, #222 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, #222 20px);
+    overflow-y: auto;
+}
+
+.device-node {
+    background: #1c2128;
+    border: 2px solid #30363d;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.device-node.selected {
+    border-color: #fff;
+    box-shadow: 0 0 0 2px var(--neon-blue);
+}
+
+.device-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.5;
+}
+
+.device-node.active-sub .device-icon {
+    opacity: 1;
+    text-shadow: 0 0 10px #fff;
+}
+
+.sub-badges {
+    display: flex;
+    gap: 2px;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sub-badge {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #333;
+}
+
+.device-node.pulse-good {
+    animation: pulseGood 0.5s;
+    background: rgba(0, 255, 0, 0.2);
+}
+
+.device-node.pulse-bad {
+    animation: pulseBad 0.5s;
+    background: rgba(255, 0, 0, 0.2);
+}
+
+@keyframes pulseGood {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+    }
+}
+
+@keyframes pulseBad {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Device Config Panel */
+.config-panel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #161b22;
+    padding: 1rem;
+    border-top: 2px solid var(--neon-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+    z-index: 30;
+}
+
+.config-panel.open {
+    transform: translateY(0);
+}
+
+.subs-toggles {
+    display: flex;
+    gap: 1rem;
+}
+
+.toggle-btn {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    color: #8b949e;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.toggle-btn.active {
+    background: var(--neon-blue);
+    color: #000;
+    border-color: var(--neon-blue);
+}
+
+.result-screen {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 17, 23, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--neon-blue);
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}

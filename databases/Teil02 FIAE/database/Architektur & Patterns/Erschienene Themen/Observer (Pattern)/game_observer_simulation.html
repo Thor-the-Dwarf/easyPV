@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observer Pattern - Broadcast Sim</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="observer_simulation.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="hud-label">EFFICIENCY SCORE</span>
+                <span class="hud-value" id="score-val">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">NETWORK LEVEL</span>
+                <span class="hud-value" id="level-val">1</span>
+            </div>
+        </header>
+
+        <!-- Broadcaster Area -->
+        <section id="broadcaster-console" class="broadcaster-console">
+            <!-- Injected by JS -->
+        </section>
+
+        <!-- Subscribers Grid -->
+        <main id="sub-grid" class="subscribers-grid">
+            <!-- Devices Injected Here -->
+        </main>
+
+        <!-- Config Panel (Slide Up) -->
+        <div id="config-panel" class="config-panel">
+            <div class="panel-info">
+                <div id="device-name" style="font-weight:bold; color:#00f3ff">Device X</div>
+                <div style="font-size:0.8rem; color:#8b949e">Manage Subscriptions</div>
+            </div>
+            <div id="subs-toggles" class="subs-toggles">
+                <!-- Toggles -->
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card" style="background: #161b22; border: 2px solid var(--neon-blue);">
+                <h2>Simulation End</h2>
+                <div class="hud-value" style="font-size: 3rem; margin: 1rem 0; color:var(--neon-blue)" id="final-score">
+                    0</div>
+                <button id="restart-btn" class="btn-primary">Reboot Network</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_observer_simulation.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+{
+    "meta": {
+        "topic": "Observer Pattern",
+        "mechanic": "publisher_subscriber",
+        "version": "1.0"
+    },
+    "channels": [
+        {
+            "id": "c1",
+            "label": "SPORT",
+            "color": "#e91e63",
+            "icon": "⚽"
+        },
+        {
+            "id": "c2",
+            "label": "TECH",
+            "color": "#2196f3",
+            "icon": "💻"
+        },
+        {
+            "id": "c3",
+            "label": "NEWS",
+            "color": "#ffc107",
+            "icon": "📰"
+        }
+    ],
+    "levels": [
+        {
+            "id": 1,
+            "devices": 3,
+            "required_subs": [
+                {
+                    "deviceId": 0,
+                    "channelId": "c1"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "devices": 8,
+            "required_subs": [
+                {
+                    "deviceId": 0,
+                    "channelId": "c2"
+                },
+                {
+                    "deviceId": 3,
+                    "channelId": "c1"
+                },
+                {
+                    "deviceId": 5,
+                    "channelId": "c3"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "devices": 12,
+            "required_subs": []
+        }
+    ],
+    "events": [
+        {
+            "id": "e1",
+            "channelId": "c1",
+            "label": "GOAL! 1-0",
+            "power": 100
+        },
+        {
+            "id": "e2",
+            "channelId": "c2",
+            "label": "New AI Model",
+            "power": 80
+        },
+        {
+            "id": "e3",
+            "channelId": "c3",
+            "label": "Market Crash",
+            "power": 90
+        },
+        {
+            "id": "e4",
+            "channelId": "c1",
+            "label": "Red Card!",
+            "power": 100
+        },
+        {
+            "id": "e5",
+            "channelId": "c2",
+            "label": "OS Update",
+            "power": 50
+        }
+    ]
+}

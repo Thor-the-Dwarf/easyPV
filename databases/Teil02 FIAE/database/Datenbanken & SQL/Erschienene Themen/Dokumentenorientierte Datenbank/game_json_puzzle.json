@@ -1,0 +1,89 @@
+{
+    "meta": {
+        "topic": "JSON Structure",
+        "mechanic": "nesting_drag_drop",
+        "version": "1.0"
+    },
+    "toolbox": [
+        {
+            "type": "object",
+            "label": "{ }",
+            "info": "Object Container"
+        },
+        {
+            "type": "array",
+            "label": "[ ]",
+            "info": "List Container"
+        },
+        {
+            "type": "key",
+            "label": "Key",
+            "info": "Property Name"
+        },
+        {
+            "type": "string",
+            "label": "\"abc\"",
+            "info": "String Value"
+        },
+        {
+            "type": "number",
+            "label": "123",
+            "info": "Number Value"
+        },
+        {
+            "type": "boolean",
+            "label": "true",
+            "info": "Boolean Value"
+        }
+    ],
+    "levels": [
+        {
+            "id": 1,
+            "title": "Profile Basics",
+            "description": "Create a User Object with name and age.",
+            "target": {
+                "name": "Alice",
+                "age": 25
+            },
+            "hints": [
+                "Start with an Object {}",
+                "Add keys 'name' and 'age'",
+                "Drag values into keys"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Nested Address",
+            "description": "Add an address object inside the user.",
+            "target": {
+                "name": "Bob",
+                "address": {
+                    "city": "Berlin",
+                    "zip": 10115
+                }
+            },
+            "hints": [
+                "'address' key needs an Object {} value",
+                "Inside address, add 'city' and 'zip'"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Hobbies List",
+            "description": "Create a list of hobbies using an Array.",
+            "target": {
+                "username": "Charlie",
+                "hobbies": [
+                    "Coding",
+                    "Gaming",
+                    "Reading"
+                ]
+            },
+            "hints": [
+                "'hobbies' key needs an Array [] value",
+                "Arrays don't need keys for their items",
+                "Just drag strings into the Array"
+            ]
+        }
+    ]
+}

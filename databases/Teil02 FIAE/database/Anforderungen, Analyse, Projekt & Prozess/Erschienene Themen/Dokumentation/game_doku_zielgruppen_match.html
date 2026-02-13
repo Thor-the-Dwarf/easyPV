@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Content Filter</title>
+  <link rel="stylesheet" href="./doku_zielgruppen_match.css">
+</head>
+<body class="cf-page">
+<main class="editor-dashboard">
+  <header class="topbar">
+    <div>
+      <p class="overline">Editorial Desk</p>
+      <h1>The Content Filter</h1>
+      <p class="subtitle">Sortiere Content-Fragmente fuer Admin-Doku oder User-FAQ ohne Overload.</p>
+    </div>
+    <div class="hud">
+      <article class="chip"><span>Level</span><strong id="hud-level">1</strong></article>
+      <article class="chip"><span>Knowledge</span><strong id="hud-score">0</strong></article>
+      <article class="chip"><span>Target-Doc</span><strong id="hud-target">ADMIN</strong></article>
+      <article class="chip"><span>Karte</span><strong id="hud-card">1/25</strong></article>
+      <article class="chip"><span>Zeit</span><strong id="hud-time">0.0s</strong></article>
+      <article class="chip"><span>Streak</span><strong id="hud-streak">0</strong></article>
+    </div>
+  </header>
+
+  <section class="conveyor-wrap" aria-label="Conveyor belt">
+    <div class="belt-track"></div>
+    <article id="snippet-card" class="snippet-card">
+      <div class="card-head">
+        <span id="snippet-badge" class="badge">USAGE</span>
+        <span id="snippet-hint" class="hint">Fokus: User-Verstaendnis</span>
+      </div>
+      <p id="snippet-text">Druecke Mission starten.</p>
+    </article>
+    <div class="readability"><div id="read-fill" class="read-fill"></div></div>
+  </section>
+
+  <section class="target-bins" aria-label="Target bins">
+    <button id="bin-admin" class="bin admin" type="button">Blau-Container<br><strong>Tech/Admin</strong></button>
+    <button id="start-btn" class="start" type="button">Mission starten</button>
+    <button id="next-btn" class="start hidden" type="button">Naechstes Fragment</button>
+    <button id="restart-btn" class="start hidden" type="button">Neu starten</button>
+    <button id="bin-user" class="bin user" type="button">Gruen-Container<br><strong>User/FAQ</strong></button>
+  </section>
+
+  <section class="confusion-meter" aria-label="Confusion meter">
+    <div class="meter-head">
+      <span>User-Confusion</span>
+      <strong id="hud-confusion">0%</strong>
+    </div>
+    <div class="meter-track"><div id="meter-fill" class="meter-fill"></div></div>
+    <p id="feedback" class="feedback">Zuordnung links/rechts oder Swipe auf Mobile.</p>
+  </section>
+
+  <section class="diagnostic">
+    <h2>Target Feed</h2>
+    <ul id="feed"></ul>
+  </section>
+</main>
+
+<script src="./game_doku_zielgruppen_match.js" defer></script>
+</body>
+</html>

@@ -1,19 +1,38 @@
-Anforderungen
-1. "Smart-Home-Connector"
-   - Ziel: Verständnis der Architektur und der Kommunikationsprotokolle im Internet der Dinge (IoT).
-   - Spielmechanik: 
-     - Aufbau einer vernetzten Umgebung durch Verbindung von Sensoren, Aktoren und einem zentralen Hub/Gateway.
-     - Auswahl passender Protokolle (MQTT, ZigBee, HTTP) für spezifische Anforderungen (Bandbreite vs. Stromsparen).
-     - Simulation des Datenflusses von der "Edge" bis zur Cloud-Analyse.
-     - Messbarkeit: Erfolgreiche Übertragung und Visualisierung der Sensordaten.
-   - Lernziel: Beherrschung von IoT-Systemlandschaften und Sensibilisierung für deren Sicherheitsaspekte.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Grundverständnis von Internet of Things (IoT) Architekturen, Sensoren, Aktoren und Edge-Computing.
+- Game-Mechanic: "The Smart Connector". Du bist der Architekt eines intelligenten Hauses (oder einer Fabrik). Überall sind kleine Geister (Sensoren: Temperatur, Licht, Bewegung) verteilt. Sie flüstern dir Daten zu. Du musst sie mit dem Herz des Hauses (Gateway) verbinden. Wenn der Licht-Geist "Dunkelheit" flüstert, musst du den Aktor (das Licht) anweisen, zu leuchten. Aber Achtung: Wenn die WLAN-Verbindung schwach ist oder die Batterie leer wird, bleibt es dunkel!
+- Challenge: 
+  - Level 1 (The Simple Lamp): Verbinde einen Bewegungsmelder mit einer smarten Lampe über das Gateway.
+  - Level 2 (The Energy Saver): Das Haus soll Energie sparen. Schalte die Heizung nur ein, wenn ein Fenster-Sensor "zu" meldet und der Temperatur-Sensor unter 19 Grad zeigt.
+  - Level 3 (The Edge-Decision): Deine Cloud-Verbindung fällt aus! Konfiguriere "Edge-Logic", damit das Haus auch ohne Internet funktioniert (Lokale Automation).
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_iot_topology.json')
-   - IoT-Komponenten und Protokoll-Eigenschaften.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Visuelle Darstellung der vernetzten Nodes).
-- [ ] Game-Engine Logic ('game_logic_validator.js')
-   - (Validierung der Signalwege).
-- [ ] Integration
-   - Info: Warum man für IoT-Geräte oft ein isoliertes Gast-WLAN nutzt.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Signal-Strength (dbm)", "Battery-Levels (%)", "Automation-Success-Rate", "Cloud-vs-Local Status".
+- [ ] Scoring: "Smart-Living-Expert" Bonus für komplexe, funktionierende Automations-Ketten. Abzug für "Failed Events" (wenn der Sensor meldet, aber nichts passiert).
+
+2. Screen-Layout (The Smart Home Map)
+- [ ] `house-grid -> sensor-icons -> communication-lines -> brain-unit (Gateway)`.
+- [ ] House-Grid: Eine top-down Sicht auf die Räume.
+- [ ] Sensor-Icons: Kleine, sprechende Avatare (Temperatur, Feuchtigkeit, Rauch).
+
+3. Kernvisuals und Effekte
+- [ ] Cozy-Tech Ästhetik: Warme Wohnzimmer-Farben kombiniert mit klaren digitalen Overlays, sanftes Ein/Aus-Faden von Lichteffekten, Naturgeräusche gemischt mit technischem Feedback (Shared Theme kompatibel).
+- [ ] "Ping-Pulse": Sendet ein Sensor Daten, breitet sich eine kleine Funkwelle von ihm aus.
+- [ ] "Trigger-Spark": Wenn eine Automation ausgelöst wird, blitzt ein kleiner Funke am Gateway auf.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Grid` für die intuitive Raumaufteilung.
+- [ ] Mobile: "Tap-to-Configure" der Automations-Regeln (If This Then That).
+
+5. Content-Strategie (The Smarthome Recipes)
+- [ ] 15 IoT-Szenarien: Von "Automatischer Gartenbewässerung" bis "Smart Factory Fließband".
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen "Sensor" (Eingabe) und "Aktor" (Ausgabe) visuell sofort klar?
+- [ ] Test: Macht das Konzept der "Lokalen Logik" (Edge) im Spiel Sinn?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: IoT verbindet die physische Welt mit digitaler Logik.
+- [ ] Das Interface wirkt einladend, modern und hochfunktional.
+- [ ] Fokus auf vernetzte Systeme und Automation.

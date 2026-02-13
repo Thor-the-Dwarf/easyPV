@@ -1,19 +1,38 @@
-Anforderungen
-1. "MAC-Address-Constructor"
-   - Ziel: Verständnis des Aufbaus und der Eindeutigkeit physischer Hardware-Adressen (Media Access Control).
-   - Spielmechanik: 
-     - Konstruktion von validen MAC-Adressen aus Hexadezimal-Blöcken.
-     - Identifikation des Herstellers mittels OUI (Organizationally Unique Identifier).
-     - Abgrenzung zwischen lokal administrierten und weltweit eindeutigen Adressen.
-     - Messbarkeit: Korrektheit der 48-Bit Struktur und Hersteller-Zuordnung.
-   - Lernziel: Mathematisches Verständnis von Adressräumen und deren Bedeutung für die Netzwerk-Hardware.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Aufbau und Bedeutung von MAC-Adressen (OUI, NIC-spezifisch) und deren Rolle in der Hardware-Identifikation.
+- Game-Mechanic: "The Hardware Identity". Du bist der Registrations-Beamte in der "Zitadelle der Hardware". Jedes neue Gerät (Netzwerkkarte, Smartphone, IoT-Toaster), das das Tor passieren will, muss seine eindeutige ID (MAC-Adresse) vorzeigen. Du musst prüfen: Ist der Hersteller (OUI) zertifiziert? Ist die Nummer echt oder gefälscht (Spoofing)? Nur wer eine gültige Weltmarkt-ID hat, bekommt Einlass in das lokale Netz.
+- Challenge: 
+  - Level 1 (The Scanner): Zerlege eine MAC-Adresse in Hersteller-Teil (erste 3 Bytes) und Seriennummer (letzte 3 Bytes).
+  - Level 2 (The Vendor Hunt): Finde heraus, welches Gerät von "Cisco" (OUI: 00:00:0C) und welches von "Apple" (OUI: 00:05:02) stammt.
+  - Level 3 (The Spoofing Detective): Jemand versucht mit einer gefälschten Adresse einzudringen. Vergleiche die MAC mit der physischen Signatur des Geräts und entlarve den Eindringling.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_mac_struct.json')
-   - Hex-Blöcke und Hersteller-Listen.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung des Byte-Baukastens).
-- [ ] Game-Engine Logic ('game_syntax_builder.js')
-   - (Validierung des Hex-Formats).
-- [ ] Integration
-   - Tutorial: Was "MAC-Spoofing" bedeutet und warum es für Angreifer nützlich ist.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Identity-Verification-Progress", "OUI-Database-Access", "Hardware-Type Recognition", "Security-Alert-Level".
+- [ ] Scoring: "Eagle-Eye" Bonus für das korrekte Identifizieren von Hersteller-Marken. Abzug für das Durchlassen von gefälschten IDs.
+
+2. Screen-Layout (The Inspection Gate)
+- [ ] `security-gate -> hardware-scanner -> mac-blueprint -> vendor-log`.
+- [ ] Hardware-Scanner: Ein Lichtbogen, der über das virtuelle Gerät fährt.
+- [ ] MAC-Blueprint: Eine vergrößerte, hexadezimale Ansicht der Adresse, die man manuell bearbeiten/prüfen kann.
+
+3. Kernvisuals und Effekte
+- [ ] Industrial-Cyber Ästhetik: Gebürstetes Metall, orangefarbene Warnleuchten, holographische Displays, mechanischer Scanner-Sound, tiefe Bass-Töne (Shared Theme kompatibel).
+- [ ] "Hex-Glow": Die hexadezimalen Ziffern (0-F) leuchten beim Scannen einzeln auf.
+- [ ] "Vendor-Match": Wenn der Hersteller erkannt wird, erscheint sein Logo als Hologramm über dem Gerät.
+
+4. Browser- und Device-Resilienz
+- [ ] `Monospace-Fonts` für die hexadezimale Darstellung zur besseren Lesbarkeit.
+- [ ] Mobile: "Tap-to-Scan" Mechanik.
+
+5. Content-Strategie (The Device Registry)
+- [ ] 20 Reale MAC-Adressen bekannter Hersteller zum Analysieren.
+
+6. QA-Paket
+- [ ] Test: Wird die hexadezimale Struktur (6 Oktette) im Spiel spielerisch gelernt?
+- [ ] Test: Wirkt das "Entlarven" von Spoofing-Aktionen spannend und belohnend?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Die MAC-Adresse ist die weltweite, physische ID einer Hardware.
+- [ ] Das Interface wirkt robust, technisch und hochgradig behördlich-präzise.
+- [ ] Fokus auf Layer-2 Adressierung.

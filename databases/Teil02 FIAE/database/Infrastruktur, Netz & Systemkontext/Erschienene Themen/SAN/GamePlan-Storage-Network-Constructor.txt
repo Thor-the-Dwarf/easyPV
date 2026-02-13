@@ -1,19 +1,38 @@
-Anforderungen
-1. "Storage-Network-Constructor"
-   - Ziel: Verständnis der Architektur und Verwaltung von Storage Area Networks (SAN) zur Bereitstellung von Block-Speicher in Enterprise-Umgebungen.
-   - Spielmechanik: 
-     - Aufbau einer Fibre-Channel (FC) oder iSCSI Infrastruktur durch Verkabelung von Initiatoren (Server) und Targets (Storage).
-     - Konfiguration von Zoning am Switch und LUN-Masking am Storage-Array zur Segmentierung des Speichers.
-     - Implementierung von Multipathing zur Erhöhung der Verfügbarkeit.
-     - Messbarkeit: Erfolgreiches Mounten der LUNs auf den Ziel-Servern.
-   - Lernziel: Beherrschung komplexer Storage-Architekturen und deren Abgrenzung zum File-basierten NAS.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis von Storage Area Networks (SAN), Fibre Channel (FC) und die Trennung von Daten- und Speichernetz.
+- Game-Mechanic: "The Storage Networker". Du bist der Chef-Ingenieur eines gigantischen Cloud-Rechenzentrums. Die Server-Farm oben braucht Unmengen an Daten, aber die Festplatten liegen im Keller. Du musst ein SAN (Storage Area Network) bauen – eine dedizierte High-Speed Autobahn für Daten. Nutze Fibre Channel Switches, konfiguriere "Zoning" (wer darf wen sehen?) und sorge für redundante Pfade (Multipath), damit der Datenstrom niemals abreißt.
+- Challenge: 
+  - Level 1 (The First Link): Verbinde einen Datenbankserver mit einem Storage-Array über einen FC-Switch.
+  - Level 2 (The Zoning Master): Isoliere verschiedene Kundendaten im SAN mittels "Zoning", damit Kunde A nicht die Platten von Kunde B sieht.
+  - Level 3 (The Failure-Drill): Ein Kabel brennt durch! Aktiviere Multipathing, damit die Daten ohne Unterbrechung auf dem Ersatzpfad weiterfließen.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_san_config.json')
-   - Hardware-Komponenten und WWN/IQN Adressierung.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung des Netzwerk-Topologie-Editors).
-- [ ] Game-Engine Logic ('game_logic_validator.js')
-   - (Validierung der Pfad-Redundanz).
-- [ ] Integration
-   - Tutorial: Unterschied zwischen Block-IO (SAN) und File-IO (NAS).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Data-Throughput (GB/s)", "Link-Latency (Low is key)", "Path-Redundancy-Counter", "Active-Zones-Map".
+- [ ] Scoring: "Storage-Tycoon" Bonus für maximale Datendichte und Ausfallsicherheit. Abzug für "Bottlenecks" (Staus im SAN).
+
+2. Screen-Layout (The Data Center Floor)
+- [ ] `server-floor -> switch-rack (FC-Switches) -> storage-floor (LUNs) -> pathing-diagram`.
+- [ ] Pathing-Diagramm: Eine Karte der Verbindungen, die bei Belastung intensiver leuchtet.
+- [ ] Storage-Floor: Zeigt die physischen RAID-Arrays und logischen Laufwerke (LUNs).
+
+3. Kernvisuals und Effekte
+- [ ] High-Tech rechenzentrum Ästhetik: Kühles Weiß, blinkende blaue Server-LEDs, Glättungseffekte, leises Lüfterrauschen, pulsierende Datenströme (Shared Theme kompatibel).
+- [ ] "Fibre-Flash": Wenn ein Glasfaserkabel verbunden wird, schießt ein heller Lichtimpuls hindurch.
+- [ ] "Path-Switch": Bei einem simulierten Fehler springt die Verbindungslinie sichtlich auf das Backup-Kabel um.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Gradients` und `Animations` für die fließenden Datenpfade.
+- [ ] Mobile: "Swipe-to-Connect" Mechanik zwischen Server und Speicher.
+
+5. Content-Strategie (The Data Clusters)
+- [ ] 10 SAN-Konfigurationen: Von "Small Business iSCSI" bis "Enterprise Fiber Channel Fabric".
+
+6. QA-Paket
+- [ ] Test: Wird das Konzept der "Trennung von LAN und SAN" visuell deutlich?
+- [ ] Test: Fühlt sich das Konfigurieren von "Zoning" wie ein mächtiges Sicherheits-Feature an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: SAN ist ein spezialisiertes Netz nur für schnelle Speicher-Zugriffe.
+- [ ] Das Interface wirkt steril, mächtig und technologisch am Limit.
+- [ ] Fokus auf High-Performance Storage-Architekturen.

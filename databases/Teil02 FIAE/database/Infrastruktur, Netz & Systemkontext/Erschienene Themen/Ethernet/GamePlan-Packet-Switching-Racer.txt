@@ -1,20 +1,38 @@
-Anforderungen
-1. "Packet-Switching Racer"
-   - Ziel: Verständnis der Funktionsweise von Ethernet auf Layer 2 und des Adressierungsmechanismus mittels MAC-Adressen.
-   - Spielmechanik: 
-     - Logische Steuerung eines Datenpakets durch ein lokales Netzwerk.
-     - Der Spieler agiert als Switch und muss eingehende Pakete basierend auf der Ziel-MAC an den korrekten Port weiterleiten.
-     - Aufbau und Verwaltung der MAC-Address-Table (SAT).
-     - Unterscheidung zwischen Unicast, Multicast und Broadcast.
-     - Messbarkeit: Fehlerfreie Zustellung der Pakete innerhalb des Zeitlimits.
-   - Lernziel: Beherrschung der Netzwerk-Grundlagen und Fehlersuche in lokalen Infrastrukturen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der Funktionsweise von Ethernet-Netzwerken (Switching, Frames, Kollisionsdomänen - historisch).
+- Game-Mechanic: "The Packet Racer". Du bist ein Datenpaket in einem Hochgeschwindigkeits-Glasfaser-Labyrinth. Dein Ziel ist die Ziel-MAC-Adresse. Ein Switch (der Game-Hub) liest dein Label und schickt dich auf das richtige Gleis. Pass auf, dass du nicht im falschen Segment landest oder in einer "Broadcast-Storm" Endlosschleife gefangen wirst!
+- Challenge: 
+  - Level 1 (The Single Switch): Identifiziere den richtigen Port am Switch für eine bekannte Ziel-MAC.
+  - Level 2 (The Learning Phase): Der Switch hat eine leere MAC-Tabelle. Schicke "ARP-Anfragen" raus, um die Adressen der anderen Teilnehmer zu lernen.
+  - Level 3 (The Storm Shield): Ein defektes Gerät flutet das Netz mit Broadcasts. Konfiguriere "Loop-Protection" oder VLANs, um den Zusammenbruch zu verhindern.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_ethernet_switching.json')
-   - Netzwerk-Topologien und Paket-Streams.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Visuelle Darstellung von Switch-Ports und Paketen).
-- [ ] Game-Engine Logic ('game_logic_validator.js')
-   - (Tracking der Port-Zuweisungen).
-- [ ] Integration
-   - Info: Warum ein Switch effizienter ist als ein Hub (Kollisionsdomänen).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Network-Latency (ms)", "Switching-Accuracy (%)", "Packet-Loss-Counter", "VLAN-Identifier".
+- [ ] Scoring: "Fast-Forward" Bonus für Pakete, die den kürzesten Weg ohne Umwege durch den Switch nehmen. Abzug für "Flooding".
+
+2. Screen-Layout (The Data-Grid)
+- [ ] `network-topology-map -> the-switch -> cable-paths -> end-devices`.
+- [ ] The-Switch: Ein zentraler Hub mit aufblinkenden LEDs für jeden Port.
+- [ ] Cable-Paths: Leuchtende Linien, auf denen die Pakete als Lichtpulse wandern.
+
+3. Kernvisuals und Effekte
+- [ ] Fiber-Optic Ästhetik: Tiefes Blau, leuchtendes Cyan-Licht, gläserne Texturen, High-Speed Partikel-Effekte, elektronisches "Zirpen" bei Datenübertragungen (Shared Theme kompatibel).
+- [ ] "Switch-Zap": Wenn ein Switch ein Paket korrekt weiterleitet, gibt es einen kurzen elektrischen Entladungs-Effekt am Port.
+- [ ] "Broadcast-Spread": Ein Broadcast-Paket teilt sich in viele kleine Pulse auf, die alle Kabel gleichzeitig fluten.
+
+4. Browser- und Device-Resilienz
+- [ ] `SVG Lines` für die dynamische Darstellung der Netztopologie.
+- [ ] Mobile: "Tap-to-Route" Steuerung für die Pakete.
+
+5. Content-Strategie (The Topologies)
+- [ ] 12 Netzwerk-Szenarien: Von "Home-Router" bis "Data-Center Core Switch".
+
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen "Switching" (gezielt) und "Hubbing" (alle Ports) visuell deutlich?
+- [ ] Test: Vermittelt das Spiel das Gefühl von "Lichtgeschwindigkeit" bei der Datenübertragung?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Ethernet verbindet Geräte lokal über MAC-Adressen.
+- [ ] Das Interface wirkt modern, elektrisierend und technisch präzise.
+- [ ] Fokus auf Layer-2 Networking.

@@ -1,19 +1,38 @@
-Anforderungen
-1. "Energy-Efficiency-Sort"
-   - Ziel: Sensibilisierung für den Ressourcenverbrauch in der IT und Beherrschung von Strategien zur Steigerung der Energieeffizienz (PUE).
-   - Spielmechanik: 
-     - Vergleich und Sortierung von Hardware und Software-Komponenten nach deren ökologischem Fußabdruck.
-     - Szenario-basierte Entscheidungen (z.B. "Ersatz eines alten Servers durch Virtualisierung", "Optimierung der Rechenzentrums-Kühlung").
-     - Kalkulation von Einsparpotenzialen (Strom, CO2, Kosten).
-     - Messbarkeit: Erreichen von Nachhaltigkeitszielen bei minimalem Performance-Verlust.
-   - Lernziel: Ganzheitliches Verständnis der Green-IT und deren Bedeutung für Wirtschaftlichkeit und Umwelt.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sensibilisierung für nachhaltige IT (Hardware-Effizienz, Cloud-Energie, Software-Optimierung).
+- Game-Mechanic: "The Energy Saver". Du bist der Energiemanager einer großen Firma. Dein Ziel: Die CO2-Bilanz massiv senken, ohne dass die IT zusammenbricht. Du hast begrenzte "Grüne Energie". Du musst entscheiden: Tauschst du alte, stromfressende Server gegen effiziente ARM-Nodes aus? Optimierst du den Code, damit die CPU weniger "rechnen" muss (und so weniger Strom verbraucht)? Schaltest du ungenutzte Ressourcen in der Cloud ab?
+- Challenge: 
+  - Level 1 (The Office cleanup): Ersetze alte Desktop-Rechner durch effiziente Thin Clients. Wie viele Watt sparst du ein?
+  - Level 2 (The Data Center cooling): Optimiere die Klimatisierung des Serverraums durch Kaltgang-Einfassung. Senke den PUE-Wert (Power Usage Effectiveness).
+  - Level 3 (The Green-Code Challenge): Ein ineffizienter Algorithmus hält die CPU auf 100%. Refactore ihn (weniger Schleifen!), um den Energieverbrauch pro Request zu senken.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_infra_green_it_metrics.json')
-   - Verbrauchsdaten und Effizienz-Szenarien.
-- [ ] Shared CSS Check ('business_mathematics.css')
-   - (Anpassung der Energie-Barometer Visualisierung).
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Validierung der Effizienz-Rankings).
-- [ ] Integration
-   - Tutorial: Was der PUE-Wert (Power Usage Effectiveness) über ein Rechenzentrum aussagt.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Total-Consumption (kW/h)", "CO2-Footprint Counter", "PUE-Radar", "Energy-Cost-Savings ($)".
+- [ ] Scoring: "Eco-Warrior" Bonus für das Erreichen eines Net-Zero Status. Abzug für "Energy-Waste" (ungenutzte Hardware, die "idled").
+
+2. Screen-Layout (The Energy Dashboard)
+- [ ] `office-overview -> server-rack-status -> energy-meter -> green-action-menu`.
+- [ ] Energy-Meter: Eine große, analoge Anzeige, die sich von Rot (Dreckig) nach Grün (Effizient) bewegt.
+- [ ] Green-Action-Menu: Auswahl an Maßnahmen (Hardware-Update, Cloud-Autoscaling, Code-Optimierung).
+
+3. Kernvisuals und Effekte
+- [ ] Eco-Digital Ästhetik: Frisches Blattgrün, Erd-Töne, Blatt-Muster kombiniert mit klarem Daten-Design, Naturgeräusche (Vögel, Wind) im Hintergrund (Shared Theme kompatibel).
+- [ ] "Growth-Effect": Je grüner die IT wird, desto mehr virtuelle Pflanzen wachsen am Rand des Bildschirms.
+- [ ] "Heat-Distortion": Wenn die IT ineffizient läuft, flimmert der Screen wie erhitzte Luft.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Filter (Grün-Vignette)` zur Visualisierung des Status.
+- [ ] Mobile: "Swipe-to-Optimize" Geste.
+
+5. Content-Strategie (The Sustainability Reports)
+- [ ] 12 Green-IT Maßnahmen basierend auf realen Fallstudien (z.B. Google Data Centers, ARM Servers).
+
+6. QA-Paket
+- [ ] Test: Wird die Verbindung zwischen "Code-Effizienz" und "Energieverbrauch" spielerisch erlebbar?
+- [ ] Test: Sind die Einspar-Potenziale der verschiedenen Maßnahmen (Hardware vs. Software) realistisch gewichtet?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Nachhaltige IT ist gut für die Umwelt UND das Budget.
+- [ ] Das Interface wirkt frisch, optimistisch und professionell.
+- [ ] Fokus auf ökologische Verantwortung im IT-Bereich.

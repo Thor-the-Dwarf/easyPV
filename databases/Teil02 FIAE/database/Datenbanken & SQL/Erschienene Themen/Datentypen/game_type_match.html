@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Datatypes - Type Match</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="type_match.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="hud-label">SCORE</span>
+                <span class="hud-value" id="score-val">0</span>
+            </div>
+            <div class="hud-item" style="flex:2; padding:0 2rem;">
+                <div id="level-title" style="color:#aaa; font-size:1rem; margin-top:10px;">Loading...</div>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">EFFICIENCY</span>
+                <span class="hud-value" id="efficiency-val">100%</span>
+            </div>
+        </header>
+
+        <!-- Game Area -->
+        <main class="game-area">
+
+            <!-- Spawner -->
+            <div id="item-spawner" class="item-spawner">
+                <!-- Data Items appear here -->
+            </div>
+
+            <!-- Slots -->
+            <div id="slots-container" class="slots-container">
+                <!-- Slots generated here -->
+            </div>
+
+            <!-- Feedback Overlay -->
+            <div id="feedback-overlay" class="feedback-overlay">PERFECT FIT!</div>
+
+        </main>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card"
+                style="background: var(--stone-dark); border: 4px solid var(--gold); padding: 3rem; text-align:center;">
+                <h2 style="color:var(--gold); margin-bottom:1rem; font-family:'Cinzel', serif;">ARCHIVE STATUS</h2>
+                <div class="hud-value" style="font-size: 1.5rem; margin: 2rem 0; color:#fff" id="final-result">...</div>
+                <button id="next-btn" class="btn-stone">CONTINUE</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_type_match.js"></script>
+</body>
+
+</html>

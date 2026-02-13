@@ -1,0 +1,150 @@
+{
+    "meta": {
+        "topic": "SQL Data Types",
+        "mechanic": "sorting",
+        "version": "1.0"
+    },
+    "slots": [
+        {
+            "id": "bool",
+            "label": "BOOLEAN",
+            "capacity": 1,
+            "description": "True / False"
+        },
+        {
+            "id": "tinyint",
+            "label": "TINYINT",
+            "capacity": 1,
+            "description": "-128 to 127"
+        },
+        {
+            "id": "int",
+            "label": "INT",
+            "capacity": 4,
+            "description": "-2B to 2B"
+        },
+        {
+            "id": "decimal",
+            "label": "DECIMAL",
+            "capacity": 8,
+            "description": "Exact Precision"
+        },
+        {
+            "id": "char",
+            "label": "CHAR(3)",
+            "capacity": 3,
+            "description": "Fixed Length"
+        },
+        {
+            "id": "varchar",
+            "label": "VARCHAR(255)",
+            "capacity": 255,
+            "description": "Variable Length"
+        },
+        {
+            "id": "date",
+            "label": "DATE",
+            "capacity": 3,
+            "description": "YYYY-MM-DD"
+        },
+        {
+            "id": "text",
+            "label": "TEXT",
+            "capacity": 65535,
+            "description": "Long Text"
+        }
+    ],
+    "levels": [
+        {
+            "id": 1,
+            "title": "Numeric Efficiency",
+            "items": [
+                {
+                    "value": "1",
+                    "best": "tinyint",
+                    "ok": [
+                        "int",
+                        "decimal"
+                    ],
+                    "type": "number",
+                    "info": "Just a small number"
+                },
+                {
+                    "value": "150000",
+                    "best": "int",
+                    "ok": [
+                        "decimal"
+                    ],
+                    "type": "number",
+                    "info": "Standard integer"
+                },
+                {
+                    "value": "99.99",
+                    "best": "decimal",
+                    "ok": [],
+                    "type": "number",
+                    "info": "Price requires precision"
+                },
+                {
+                    "value": "0",
+                    "best": "tinyint",
+                    "ok": [
+                        "int"
+                    ],
+                    "type": "number",
+                    "info": "Binary flag?"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Text & Logic",
+            "items": [
+                {
+                    "value": "USA",
+                    "best": "char",
+                    "ok": [
+                        "varchar",
+                        "text"
+                    ],
+                    "type": "text",
+                    "info": "Fixed ISO code"
+                },
+                {
+                    "value": "John Doe",
+                    "best": "varchar",
+                    "ok": [
+                        "text"
+                    ],
+                    "type": "text",
+                    "info": "Variable name length"
+                },
+                {
+                    "value": "TRUE",
+                    "best": "bool",
+                    "ok": [
+                        "tinyint"
+                    ],
+                    "type": "bool",
+                    "info": "Boolean flag"
+                },
+                {
+                    "value": "2024-12-31",
+                    "best": "date",
+                    "ok": [
+                        "varchar"
+                    ],
+                    "type": "date",
+                    "info": "Standard Date"
+                },
+                {
+                    "value": "Lorem ipsum dolor sit amet...",
+                    "best": "text",
+                    "ok": [],
+                    "type": "text",
+                    "info": "Long description"
+                }
+            ]
+        }
+    ]
+}

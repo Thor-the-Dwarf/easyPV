@@ -1,0 +1,223 @@
+/* 
+ * Type Match - Styles
+ * Aesthetic: Stone Tablet / Engraved / Material
+ */
+
+:root {
+    --stone-bg: #2d3436;
+    --stone-light: #636e72;
+    --stone-dark: #1e272e;
+    --neon-blue: #0984e3;
+    --neon-red: #d63031;
+    --neon-green: #00b894;
+    --gold: #fdcb6e;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--stone-bg);
+    color: #dfe6e9;
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%23333"><rect width="10" height="10" x="0" y="0"/></g></svg>');
+}
+
+/* --- HUD --- */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: var(--stone-dark);
+    border-bottom: 4px solid var(--stone-light);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hud-label {
+    font-size: 0.8rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hud-value {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Cinzel', serif;
+}
+
+/* --- Game Area --- */
+.game-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    position: relative;
+}
+
+/* Item Spawner (Top) */
+.item-spawner {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.data-item {
+    background: #fff;
+    color: #2d3436;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: grab;
+    transition: transform 0.1s;
+    border: 2px solid var(--stone-light);
+    max-width: 300px;
+    text-align: center;
+    z-index: 10;
+}
+
+.data-item:active {
+    cursor: grabbing;
+    transform: scale(1.05);
+}
+
+.data-item.success {
+    background: var(--neon-green);
+    color: #fff;
+}
+
+.data-item.warn {
+    background: var(--gold);
+    color: #000;
+}
+
+.data-item.error {
+    background: var(--neon-red);
+    color: #fff;
+}
+
+/* Slot Grid (Bottom) */
+.slots-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.type-slot {
+    background: var(--stone-dark);
+    border: 4px inset var(--stone-light);
+    border-radius: 8px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.type-slot.hover {
+    background: #3c4a52;
+    border-color: #fff;
+}
+
+.slot-label {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: #dfe6e9;
+    text-align: center;
+    pointer-events: none;
+}
+
+.slot-capacity {
+    font-size: 0.7rem;
+    color: #b2bec3;
+    margin-top: 5px;
+    pointer-events: none;
+}
+
+/* Feedback Overlay */
+.feedback-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--gold);
+    text-align: center;
+    display: none;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 20;
+}
+
+/* Result */
+.result-screen {
+    position: absolute;
+    inset: 0;
+    background: rgba(45, 52, 54, 0.98);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    text-align: center;
+}
+
+.btn-stone {
+    background: var(--stone-light);
+    color: #fff;
+    border: none;
+    padding: 1rem 3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-bottom: 4px solid #2d3436;
+    margin-top: 2rem;
+}
+
+.btn-stone:active {
+    transform: translateY(4px);
+    border-bottom: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes popIn {
+    from {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}

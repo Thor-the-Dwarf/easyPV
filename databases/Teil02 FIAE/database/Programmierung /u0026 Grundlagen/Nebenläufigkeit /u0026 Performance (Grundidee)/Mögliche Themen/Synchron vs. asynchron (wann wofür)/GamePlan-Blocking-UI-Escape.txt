@@ -1,0 +1,40 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis des Unterschieds zwischen synchronen (blockierenden) und asynchronen (nicht-blockierenden) Abläufen, insbesondere zur Aufrechterhaltung der UI-Reaktionsfähigkeit.
+- Game-Mechanic: "The Async-Runner". Du bist der Oberkellner in einem digitalen Bistro. Ein Gast bestellt ein 5-Gänge-Menü, das lange dauert. 
+  - Synchroner Modus: Du bleibst am Tisch stehen und starrst den Gast an, bis das Essen fertig ist. Alle anderen Gäste müssen warten, das Restaurant steht still (UI Frozen).
+  - Asynchroner Modus: Du gibst die Bestellung an die Küche (Background Task), bekommst ein Pager-Signal (Callback/Promise) und bedienst in der Zwischenzeit alle anderen Tische (UI Responsive). Wenn der Pager vibriert, servierst du das Essen.
+- Challenge: 
+  - Level 1 (The Frozen Screen): Starte einen langen Download synchron. Versuche verzweifelt, den "Abbrechen"-Button zu drücken, während der Cursor sich dreht (Beachball of Death).
+  - Level 2 (The Promise Escape): Nutze `async/await`, um den Download im Hintergrund zu starten. Bediene gleichzeitig 5 kleine Anfragen, während der Balken im Hintergrund füllt.
+  - Level 3 (The Parallel Chef): Starte 3 asynchrone Tasks gleichzeitig und warte mit `Promise.all` auf das Gesamtergebnis. Sei der effizienteste Kellner der Stadt!
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "UI-Response-Meter (FPS)", "Active-Task-Counter", "Pager-Notification-Center", "Blocking-Time Gauge".
+- [ ] Scoring: "Service-Star" Bonus für 100% Reaktionsfähigkeit während schwerer Tasks. Abzug für jeden "Frame-Drop" oder eingefrorenen Button.
+
+2. Screen-Layout (The Digital Bistro)
+- [ ] `order-desk -> kitchen-pass (Async Queue) -> guest-tables (The UI) -> waiter-sprite`.
+- [ ] Kitchen-Pass: Ein Bereich, in dem "Bestellungen" (Tasks) als kleine Sanduhren vor sich hin arbeiten, ohne den Kellner aufzuhalten.
+- [ ] Waiter-Sprite: Muss sich ständig bewegen können, um Punkte zu sammeln.
+
+3. Kernvisuals und Effekte
+- [ ] Modern-Lounge Ästhetik: Sleekes Design, sanfte Pastelltöne, vibrierende Pager-Effekte, das Geräusch von geschäftigem Treiben und hellen Glocken (Shared Theme kompatibel).
+- [ ] "Freeze-Overlay": Wenn ein synchroner Task läuft, legt sich ein Eis-Filter über den Screen und alle Interaktionen werden grau.
+- [ ] "Background-Glow": Asynchrone Tasks leuchten dezent am Rand des Bildschirms weiter, während die Mitte frei bleibt.
+
+4. Browser- und Device-Resilienz
+- [ ] `setTimeout` und `fetch` API Demos im Hintergrund.
+- [ ] Mobile: "Haptic Feedback" beim Vibrieren des virtuellen Pagers.
+
+5. Content-Strategie (The Service-Scenarios)
+- [ ] 12 verschiedene Bistro-Schichten: Vom "Datenbank-Query-Salat" bis zum "Großen Image-Rendering-Hauptgang".
+
+6. QA-Paket
+- [ ] Test: Wird das Frust-Gefühl einer blockierten UI (Synchron) als Lerneffekt genutzt?
+- [ ] Test: Macht das gleichzeitige Abarbeiten von Tasks (Asynchron) den Produktivitätsgewinn deutlich?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Niemals den Main-Thread blockieren! Asynchronität ist der Schlüssel zur User-Experience.
+- [ ] Das Interface wirkt elegant, agil und kundenorientiert.
+- [ ] Fokus auf Callbacks, Promises und Async/Await.

@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis der Arbeitsweise eines Interpreters, der Code direkt Zeile für Zeile ausführt, ohne ihn vorher komplett in Maschinencode zu übersetzen.
+- Game-Mechanic: "The Line-Reader". Du bist der Vorleser in einem antiken Theater. Statt das ganze Skript auswendig zu lernen und dann perfekt aufzuführen (Kompilieren), liest du jede Zeile erst in dem Moment laut vor, in dem der Schauspieler sie braucht. Du bist flexibel – wenn sich das Skript während der Aufführung ändert, liest du einfach die neue Zeile. Aber du bist langsamer, weil du bei jedem Satz erst nachdenken und interpretieren musst.
+- Challenge: 
+  - Level 1 (The Direct Command): Führe einen `PRINT`-Befehl direkt aus. Sieh zu, wie der Interpreter die Tinte aufs Papier bringt.
+  - Level 2 (The Variable Loop): Eine Schleife! Der Interpreter muss die gleichen Zeilen immer wieder lesen. Beobachte den Zeitverlust im Vergleich zum fertigen Maschinenprogramm.
+  - Level 3 (The Hot-Fix): Ändere einen Wert mitten in der Ausführung. Der Interpreter nimmt die Änderung sofort an, ohne dass du das Programm neu starten musst.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Current-Line-Indicator", "Interpreter-Speed-Gauge", "Memory-Map (Live)", "Flexibility-Status (%)".
+- [ ] Scoring: "Agility-Profi" Bonus für das Nutzen der dynamischen Änderungen. Abzug für "Speed-Lag" bei großen Schleifen.
+
+2. Screen-Layout (The Theater of Code)
+- [ ] `code-scroll -> highlighter -> execution-stage -> output-screen`.
+- [ ] Highlighter: Ein physischer "Lesekopf", der langsam über den Text fährt.
+- [ ] Execution-Stage: Hier werden die Befehle in Echtzeit in kleine Animationen verwandelt.
+
+3. Kernvisuals und Effekte
+- [ ] Old-School-Library Ästhetik: Pergament, Federkiele, sanftes Gelblicht, das Rascheln von Papier, das Ticken einer Wanduhr (Shared Theme kompatibel).
+- [ ] "Ink-Flow": Wenn eine Zeile interpretiert wird, fließt Farbe in die entsprechenden System-Komponenten.
+- [ ] "Dynamic-Spark": Wenn der Code während der Laufzeit geändert wird, sprühen kleine blaue Funken an der Stelle der Änderung.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Scroll-Snap` für das präzise Einrasten des Highlighters auf den Codezeilen.
+- [ ] Mobile: "Swipe-to-Read" Geste zum manuellen Steuern der Interpretations-Geschwindigkeit.
+
+5. Content-Strategie (The Script-Rolls)
+- [ ] 12 verschiedene Skripte in Sprachen wie Python oder JavaScript.
+
+6. QA-Paket
+- [ ] Test: Wird der Vorteil der Flexibilität (REPL-Gefühl) gegenüber der 컴파일-성능 (Performance) klar?
+- [ ] Test: Fühlt sich das "Zeile-für-Zeile"-Prinzip entschleunigt und nachvollziehbar an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Interpreter sind die Meister der Agilität, aber nicht der puren Geschwindigkeit.
+- [ ] Das Interface wirkt klassisch, wertig und ruhig.
+- [ ] Fokus auf Laufzeitverhalten und Skriptsprachen.

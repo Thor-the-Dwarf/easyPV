@@ -1,0 +1,42 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Praktische Anwendung funktionaler Paradigmen (Map, Filter, Reduce) zur deklarativen Verarbeitung von Datenmengen.
+- Game-Mechanic: "The Stream-Collector". Du bist der Chef einer High-Tech Wasseraufbereitungsanlage. Ein Strom aus Daten-Molekülen (Arrays) fließt auf dich zu. Du hast drei mächtige Maschinen:
+  1. Filter: Lässt nur Moleküle mit bestimmten Eigenschaften durch (z.B. nur gerade Zahlen).
+  2. Map: Verwandelt jedes Molekül (z.B. verdoppelt den Wert) im Flug.
+  3. Reduce: Schmilzt den ganzen Strom zu einem einzigen, wertvollen Klumpen zusammen (z.B. die Summe).
+  Deine Hände bleiben sauber – du änderst nie die Quelle, du erzeugst nur reine neue Ströme!
+- Challenge: 
+  - Level 1 (The Clean Wash): Filter alle User aus einer Liste heraus, die unter 18 Jahre alt sind.
+  - Level 2 (The Multi-Transformer): Verdopple das Gehalt aller Manager (Map) und berechne dann die Gesamtsumme (Reduce).
+  - Level 3 (The Logic-Chain): Kombiniere alle drei Maschinen, um aus einer Liste von Transaktionen nur die "Erfolgreichen" über 100€ zu nehmen, sie in Dollar umzurechnen und den Durchschnitt zu bilden.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Stream-Flow Visualizer", "Transformation-Logic Board", "Logic-Purity Rating (Immutability Check)", "Result-Snapshot".
+- [ ] Scoring: "Functional-Guru" Bonus für kurze, elegante Pipelines ohne "Side-Effects". Abzug für das Benutzen von imperialen Schleifen (for/while).
+
+2. Screen-Layout (The Water-Works)
+- [ ] `raw-data-stream -> filter-gate -> map-chamber -> reduce-compactor -> pure-output`.
+- [ ] Transform-Chambers: Transparente Röhren, in denen man sieht, wie sich die Daten-Icons verändern.
+- [ ] Logic-Board: Ziehe Funktions-Blöcke per Drag-and-Drop in die Pipeline.
+
+3. Kernvisuals und Effekte
+- [ ] Bio-Luminiszenz Ästhetik: Fließendes Wasser-Blau, leuchtende Partikel, sanfte Glucks-Geräusche, harmonische Synthesizer-Sounds bei erfolgreicher Kette (Shared Theme kompatibel).
+- [ ] "Particle-Morph": Beim Map-Durchlauf verändern die Partikel im Stream ihre Form oder Farbe.
+- [ ] "Reduction-Blast": Wenn der Reduce-Block zuschlägt, implodiert der Stream zu einem hellen Lichtpunkt.
+
+4. Browser- und Device-Resilienz
+- [ ] `Canvas API` für die fließenden Partikel-Ströme im Hintergrund.
+- [ ] Mobile: "Swipe-to-Connect" der Pipeline-Module.
+
+5. Content-Strategie (The Data-Streams)
+- [ ] 15 verschiedene Stream-Aufträge: Von "E-Mail-Listen Säuberung" bis "Statistische Auswertung".
+
+6. QA-Paket
+- [ ] Test: Wird die Unveränderlichkeit (Originaldaten bleiben erhalten) visuell deutlich?
+- [ ] Test: Hilft die Pipeline-Ansicht beim Verständnis der deklarativen Programmierung?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: FP ist wie Alchemie – verwandle Datenströme in reine Ergebnisse.
+- [ ] Das Interface wirkt modern, flüssig und ästhetisch ansprechend.
+- [ ] Fokus auf moderne JavaScript/Java 8+ Stream-Methoden.

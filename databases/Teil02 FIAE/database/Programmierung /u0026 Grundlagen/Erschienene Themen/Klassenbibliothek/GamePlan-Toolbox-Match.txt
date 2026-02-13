@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Orientierung in Standard-Klassenbibliotheken (JDK, Standard Libs) und Auswahl der richtigen vorgefertigten Methoden für gängige Aufgaben.
+- Game-Mechanic: "The Library-Lab". Du bist ein Erfinder in einem riesigen Labor. Statt jedes Zahnrad und jede Schraube (Datum-Formatierung, String-Split, Liste-Sortieren) selbst zu schmieden, hast du Zugriff auf die "Große Toolbox der Ahnen" (Die Standard Library). Deine Aufgabe: Lies die Beschreibungen der Werkzeuge genau. Wenn du das richtige Tool aus dem Regal ziehst, spart dir das Stunden an Arbeit! Wer das Rad neu erfindet, verschwendet wertvolle Energie.
+- Challenge: 
+  - Level 1 (The Basic Nut): Suche die Methode, mit der man Leerzeichen am Anfang und Ende eines Textes entfernt (`trim()`).
+  - Level 2 (The Time-Turner): Nutze die `Date`-Library, um auszurechnen, wie viele Tage zwischen heute und Weihnachten liegen. Finde das richtige Modul!
+  - Level 3 (The Sorting Expert): Sortiere eine Liste von Objekten nicht selbst, sondern nutze die eingebaute `sort()` Methode mit einem `Comparator`.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Library-Catalogue (Search)", "Tool-Spec-Viewer", "Inventory-Energy (Budget)", "Code-Reduction-Gauge".
+- [ ] Scoring: "Smart-Architect" Bonus für die Nutzung von Standard-Methoden statt Eigenbau. Abzug für "Reinventing-the-Wheel".
+
+2. Screen-Layout (The Grand Archive)
+- [ ] `task-description -> library-shelves -> selected-tool -> result-bench`.
+- [ ] Library-Shelves: Ein vertikales Scroll-Regal mit Icons für verschiedene Kategorien (IO, Math, Util, Time).
+- [ ] Result-Bench: Hier wird das Tool auf ein Daten-Objekt angewendet und das Ergebnis sofort sichtbar.
+
+3. Kernvisuals und Effekte
+- [ ] Steampunk-Bibliotheks Ästhetik: Altes Messing, fliegende Bücher, magische Lichterketten zwischen den Regalen, das Geräusch von einrastenden Zahnrädern (Shared Theme kompatibel).
+- [ ] "Discovery-Shine": Wenn man das exakt passende Tool findet, leuchtet es hell auf und schwebt zum Arbeitstisch.
+- [ ] "Knowledge-Spark": Kleine Wissens-Funken fliegen vom Handbuch in den Kopf des Erfinders.
+
+4. Browser- und Device-Resilienz
+- [ ] `Search-Autocomplete` für schnelles Finden der Library-Namen.
+- [ ] Mobile: "Swipe-the-Shelves" Navigation.
+
+5. Content-Strategie (The Lab-Orders)
+- [ ] 15 verschiedene Aufgaben aus den Bereichen String-Manipulation, Mathematik, Datumsberechnung und Collection-Handhabung.
+
+6. QA-Paket
+- [ ] Test: Wird der Zeitgewinn durch die Nutzung fertiger Libraries spürbar?
+- [ ] Test: Hilft der Spec-Viewer beim Verständnis von Parametern und Rückgabewerten?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Ein guter Programmierer kennt sein Werkzeugkasten-Inventar.
+- [ ] Das Interface wirkt ehrwürdig, weise und inspirierend.
+- [ ] Fokus auf API-Dokumentation und Wiederverwendbarkeit.

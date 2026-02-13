@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis rekursiver Funktionsaufrufe, der Abbruchbedingung (Base Case) und der Gefahr eines Stack Overflows.
+- Game-Mechanic: "The Recursion-Hall". Du stehst in einem prunkvollen Spiegelsaal. Du rufst eine Funktion auf, und im Spiegel erscheint dein Ebenbild und ruft die gleiche Funktion auf. Und dahinter noch eines. Jedes Ebenbild belegt einen Platz im Saal (Stack Frame). Wenn der Saal voll ist, stürzt das Schloss ein (Stack Overflow!). Du musst eine goldene Regel aufstellen (Base Case): "Wenn die Zahl 0 erreicht ist, hör auf zu rufen und gib das Ergebnis zurück!". Nur so lösen sich die Spiegelbilder nacheinander wieder auf.
+- Challenge: 
+  - Level 1 (The Factorial Ascent): Berechne die Fakultät von 5. Setze den Base Case richtig, damit die Spiegelbilder nicht unendlich weiterrufen.
+  - Level 2 (The Fibonacci Spiral): Berechne die 10. Stelle der Fibonacci-Folge. Beobachte, wie sich der Stack-Baum verzweigt.
+  - Level 3 (The Deep Search): Durchsuche ein verschachteltes Labyrinth (Dateisystem). Jedes Mal, wenn du einen Ordner findest, gehst du eine Ebene tiefer rekursiv hinein.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Stack-Depth-Meter", "Current-Call-Value", "Base-Case-Light", "Memory-Pressure Gauge".
+- [ ] Scoring: "Infinity-Avoider" Bonus für saubere Abbruchbedingungen. Abzug für "Infinite-Loops" (Absturz-Gefahr).
+
+2. Screen-Layout (The Mirror Hall)
+- [ ] `main-call -> nested-frame-1 -> nested-frame-2 -> ... -> base-case -> result-return`.
+- [ ] Nested-Frames: Halbdurchsichtige Fenster, die sich in die Tiefe des Bildschirms stapeln.
+- [ ] Return-Path: Wenn der Base Case erreicht ist, schießt ein Lichtstrahl von hinten durch alle Fenster zurück nach vorne.
+
+3. Kernvisuals und Effekte
+- [ ] Mystik-Renaissance Ästhetik: Goldene Spiegelrahmen, Kerzenlicht, dunkler Samt, das Echo von Stimmen, kristallines Klirren (Shared Theme kompatibel).
+- [ ] "Echo-Effect": Jeder neue Aufruf wird von einem leisen, zeitversetzten Echo begleitet.
+- [ ] "Stack-Shatter": Wenn der Stack voll ist, zerspringt der Screen visuell in tausend Glasscherben.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Perspective` für den Tiefeneffekt der gestapelten Fenster.
+- [ ] Mobile: "Pinch-to-Dive" in die Rekursionstiefe.
+
+5. Content-Strategie (The Recursive-Tasks)
+- [ ] 12 verschiedene Szenarien: Von "Summe der Zahlen" bis "Baum-Traversierung".
+
+6. QA-Paket
+- [ ] Test: Wird die Gefahr des Stack Overflows ohne Abbruchbedingung visuell erfahrbar?
+- [ ] Test: Hilft die Fenster-Stapelung beim Verständnis der Last-In-First-Out (LIFO) Logik?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Rekursion ist mächtig, braucht aber immer einen Notausgang.
+- [ ] Das Interface wirkt edel, tiefgründig und faszinierend.
+- [ ] Fokus auf Stack-Management und Speicherlogik.

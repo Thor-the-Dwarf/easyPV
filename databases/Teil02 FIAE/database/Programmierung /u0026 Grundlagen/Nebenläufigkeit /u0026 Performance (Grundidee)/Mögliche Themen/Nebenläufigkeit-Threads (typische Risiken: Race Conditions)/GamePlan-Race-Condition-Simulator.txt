@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Erkennung und Vermeidung von Race Conditions beim gleichzeitigen Zugriff mehrerer Threads auf eine gemeinsame Ressource.
+- Game-Mechanic: "The Race-Rodeo". Du bist der Schiedsrichter bei einem digitalen Rodeo. Zwei wilde Reiter (Threads) stürzen sich gleichzeitig auf das gleiche Pferd (Die Variable `Kontostand`). Reiter A will 50€ einzahlen (Liest: 100, Rechnet: 150), Reiter B will 30€ abheben (Liest: 100, Rechnet: 70). Wer zuerst zurückschreibt, gewinnt – und der andere Wert geht verloren! Das ist das Chaos einer Race Condition. Nutze das Lassoo (Das `synchronized`-Keyword), um sicherzustellen, dass immer nur ein Reiter gleichzeitig aufs Pferd darf.
+- Challenge: 
+  - Level 1 (The Invisible Collision): Starte zwei Threads, die eine Zahl hochzählen. Beobachte erstaunt, warum am Ende 147 statt 200 herauskommt.
+  - Level 2 (The Lock Master): Setze ein Schloss (Mutex) vor die kritische Sektion. Sieh zu, wie die Threads nun brav nacheinander warten und das Ergebnis stimmt.
+  - Level 3 (The Deadlock Trap): Vorsicht! Zwei Threads warten gegenseitig auf die Schlösser des anderen. Befreie sie aus der Starre, bevor das System einfriert!
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Thread-Activity-Radar", "Shared-Resource Monitor", "Collision-Alert-Light", "Lock-Status-Icon".
+- [ ] Scoring: "Sync-Master" Bonus für das Verhindern aller Race Conditions. Abzug für "Performance-Loss" durch zu viele/zu lange Sperren.
+
+2. Screen-Layout (The Rodeo Arena)
+- [ ] `thread-pen -> resource-circle -> lock-gate -> result-board`.
+- [ ] Resource-Circle: Ein pulsierendes Zentrum, auf das die Threads (als schnelle Lichtpunkte) zustürmen.
+- [ ] Lock-Gate: Eine sichtbare Barriere, die nur einen Thread durchlässt und die anderen in einer Warteschlange parkt.
+
+3. Kernvisuals und Effekte
+- [ ] Neon-Wild-West Ästhetik: Elektrische Lassos, glühende Hufeisen, pulsierendes Magenta/Cyan, das Geräusch von knisternder Energie und schweren Schlössern (Shared Theme kompatibel).
+- [ ] "Collision-Shatter": Wenn eine Race Condition auftritt, blitzt die Variable kurz rot auf und "verliert" Datenpartikel.
+- [ ] "Lock-Snap": Ein kräftiges, metallisches Geräusch beim Schließen eines `synchronized`-Blocks.
+
+4. Browser- und Device-Resilienz
+- [ ] `requestAnimationFrame` für die flüssige Darstellung der konkurrierenden Thread-Lichter.
+- [ ] Mobile: "Tap-to-Lock" Interaktion direkt auf dem Resource-Circle.
+
+5. Content-Strategie (The Rodeo-Logs)
+- [ ] 12 verschiedene Szenarien: Von "Banküberweisung" bis "Ticket-Verkauf".
+
+6. QA-Paket
+- [ ] Test: Wird die Unvorhersehbarkeit von Race Conditions (mal geht's gut, mal nicht) deutlich?
+- [ ] Test: Erzeugt das "Warten" der Threads ein Gefühl für den Performance-Tradeoff bei Synchronization?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Threads sind schnell, aber ohne Ordnung gefährlich.
+- [ ] Das Interface wirkt energiegeladen, gefährlich und technisch anspruchsvoll.
+- [ ] Fokus auf Multi-Threading und Konkurrenz.

@@ -1,0 +1,142 @@
+{
+    "meta": {
+        "topic": "Change Management",
+        "mechanic": "curve_surfer",
+        "version": "1.0"
+    },
+    "phases": [
+        {
+            "id": "p1",
+            "label": "1. Schock",
+            "description": "Große Überraschung, Blockade.",
+            "icon": "⚡"
+        },
+        {
+            "id": "p2",
+            "label": "2. Verneinung",
+            "description": "Abwehr, 'Das kann nicht sein'.",
+            "icon": "🙅‍♂️"
+        },
+        {
+            "id": "p3",
+            "label": "3. Rationale Einsicht",
+            "description": "Kopf sagt Ja, Bauch sagt Nein.",
+            "icon": "🧠"
+        },
+        {
+            "id": "p4",
+            "label": "4. Emotionale Akzeptanz",
+            "description": "Tal der Tränen, Loslassen.",
+            "icon": "😢"
+        },
+        {
+            "id": "p5",
+            "label": "5. Ausprobieren",
+            "description": "Neugier, erste Schritte.",
+            "icon": "🧪"
+        },
+        {
+            "id": "p6",
+            "label": "6. Erkenntnis",
+            "description": "Es funktioniert! Erfolgserlebnisse.",
+            "icon": "💡"
+        },
+        {
+            "id": "p7",
+            "label": "7. Integration",
+            "description": "Der neue Standard.",
+            "icon": "🏆"
+        }
+    ],
+    "tools": [
+        {
+            "id": "info",
+            "label": "Information & Fakten",
+            "icon": "ℹ️",
+            "desc": "Klarheit schaffen."
+        },
+        {
+            "id": "dialog",
+            "label": "Dialog & Zuhören",
+            "icon": "👂",
+            "desc": "Ängste ernst nehmen."
+        },
+        {
+            "id": "vision",
+            "label": "Vision & Motivation",
+            "icon": "🔭",
+            "desc": "Zukunftsbild malen."
+        },
+        {
+            "id": "support",
+            "label": "Training & Support",
+            "icon": "🛠️",
+            "desc": "Fähigkeiten aufbauen."
+        }
+    ],
+    "scenarios": [
+        {
+            "id": "s1",
+            "text": "Das Team starrt schweigend auf die Ankündigung der Reorganisation. Niemand bewegt sich.",
+            "phase_id": "p1",
+            "correct_tool": "info",
+            "hint": "Im Schock hilft nur Klarheit und Orientierung. Fakten auf den Tisch.",
+            "feedback_ok": "Gut! Die Fakten geben Halt. Das Eis ist gebrochen.",
+            "feedback_fail": "Zu früh für Emotionen! Das Team ist wie gelähmt."
+        },
+        {
+            "id": "s2",
+            "text": "Müller ruft: 'Das haben wir schon 3x versucht! Das geht eh wieder schief!'",
+            "phase_id": "p2",
+            "correct_tool": "dialog",
+            "hint": "Widerstand und Verneinung brauchen Ventil. Zuhören, nicht wegdskutieren.",
+            "feedback_ok": "Wichtig. Müller fühlt sich gehört und fährt etwas runter.",
+            "feedback_fail": "Gegenargumente (Fakten) verhärten hier nur die Fronten."
+        },
+        {
+            "id": "s3",
+            "text": "Das Team diskutiert Prozesse. 'Ja, wir müssen wohl... aber eigentlich läuft das Alte doch gut.'",
+            "phase_id": "p3",
+            "correct_tool": "dialog",
+            "hint": "Der Kopf hat es verstanden, aber der Abschied fällt schwer. Begleiten.",
+            "feedback_ok": "Guter Austausch. Die Notwendigkeit wird klarer.",
+            "feedback_fail": "Noch nicht zu sehr pushen, die Emotion hinkt hinterher."
+        },
+        {
+            "id": "s4",
+            "text": "Stimmung am Tiefpunkt. 'Ich schaff das nicht mit der neuen Software. Alles ist so kompliziert.'",
+            "phase_id": "p4",
+            "correct_tool": "support",
+            "hint": "Tal der Tränen. Jetzt braucht es konkrete Hilfe und Verständnis.",
+            "feedback_ok": "Training hilft gegen die Ohnmacht. Erste Zuversicht keimt auf.",
+            "feedback_fail": "Visionen wirken hier zynisch. Die Leute brauchen Handwerkszeug."
+        },
+        {
+            "id": "s5",
+            "text": "Schmidt probiert das neue Tool. 'Hey, der Shortcut hier ist ja doch ganz praktisch.'",
+            "phase_id": "p5",
+            "correct_tool": "support",
+            "hint": "Neugier unterstützen! Fehler zulassen und fördern.",
+            "feedback_ok": "Super! Das Ausprobieren wird zur Routine.",
+            "feedback_fail": "Nicht mit zu viel Theorie (Info) erschlagen. Machen lassen!"
+        },
+        {
+            "id": "s6",
+            "text": "Das erste Projekt wurde mit der neuen Methode abgeschlossen. Schnell und fehlerfrei.",
+            "phase_id": "p6",
+            "correct_tool": "vision",
+            "hint": "Erfolge feiern! Den Nutzen sichtbar machen.",
+            "feedback_ok": "Die Erkenntnis 'Es lohnt sich' setzt sich fest.",
+            "feedback_fail": "Nicht nur hinnehmen. Das ist ein Meilenstein!"
+        },
+        {
+            "id": "s7",
+            "text": "Niemand redet mehr über 'die neue Methode'. Es ist einfach 'unsere Arbeitsweise'.",
+            "phase_id": "p7",
+            "correct_tool": "vision",
+            "hint": "Integration abgeschlossen. Blick nach vorne richten.",
+            "feedback_ok": "Perfekt. Der Change ist Kultur geworden.",
+            "feedback_fail": "Keine Intervention nötig, aber Vision hält den Kurs."
+        }
+    ]
+}

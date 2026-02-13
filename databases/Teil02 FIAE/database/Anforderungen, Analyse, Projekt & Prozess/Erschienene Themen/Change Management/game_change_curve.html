@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Curve - The Surfer</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="change_curve.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-group">
+                <div class="hud-item">
+                    <span class="hud-label">Transformation Score</span>
+                    <span class="hud-value" id="score-val">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Team Morale</span>
+                    <div class="health-bar">
+                        <div class="health-fill" id="health-fill"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Current Phase</span>
+                <span class="hud-value" id="phase-val">1. Shock</span>
+            </div>
+        </header>
+
+        <!-- Ocean Viewport -->
+        <main class="ocean-viewport">
+            <div id="ocean-track" class="ocean-track">
+                <!-- Phases injected by JS -->
+            </div>
+
+            <!-- Boat Avatar -->
+            <div class="boat-container">
+                <div id="boat" class="boat">⛵</div>
+            </div>
+
+            <!-- Quote Layout -->
+            <div id="quote-card" class="quote-card hidden">
+                <div id="quote-text" class="quote-text">...</div>
+                <div id="quote-source" class="quote-source">...</div>
+            </div>
+
+            <!-- Tools -->
+            <div id="tool-deck" class="tool-deck hidden">
+                <!-- JS populated -->
+            </div>
+
+            <!-- FX Layer -->
+            <div id="fx-layer" class="fx-layer"></div>
+        </main>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card">
+                <h2>Journey End</h2>
+                <div class="hud-value" style="font-size: 3rem; margin: 1rem 0;" id="final-score">0</div>
+                <button id="restart-btn" class="btn primary">Replay Journey</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_change_curve.js"></script>
+</body>
+
+</html>

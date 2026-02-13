@@ -1,0 +1,298 @@
+/* 
+ * Kurve-der-Veränderung - Styles
+ * Aesthetic: Nautical / Ocean / Phases
+ */
+
+:root {
+    --ocean-deep: #020c1b;
+    --ocean-mid: #0a192f;
+    --ocean-surface: #112240;
+    --wave-foam: rgba(255, 255, 255, 0.1);
+
+    --phase-shock: #ef5350;
+    --phase-denial: #ffa726;
+    --phase-insight: #ffca28;
+    --phase-acceptance: #7e57c2;
+    --phase-trial: #29b6f6;
+    --phase-knowledge: #66bb6a;
+    --phase-integration: #00e676;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--ocean-deep);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    background: linear-gradient(to bottom, #1a2f40 0%, var(--ocean-deep) 100%);
+}
+
+/* --- HUD --- */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.hud-group {
+    display: flex;
+    gap: 2rem;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.1em;
+}
+
+.hud-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.health-bar {
+    width: 150px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.health-fill {
+    height: 100%;
+    width: 100%;
+    background: var(--phase-integration);
+    transition: width 0.3s, background-color 0.3s;
+}
+
+/* --- Ocean Scroll Area --- */
+.ocean-viewport {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.ocean-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 700%;
+    /* 7 Phases across */
+    height: 100%;
+    display: flex;
+    transition: transform 1s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.phase-island {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+/* Dynamic background per phase */
+.phase-island::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center bottom, var(--phase-color, #fff) 0%, transparent 60%);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.island-marker {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+    animation: float 3s ease-in-out infinite;
+}
+
+.island-label {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--phase-color);
+    text-shadow: 0 0 10px var(--phase-color);
+}
+
+/* Boat */
+.boat-container {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    pointer-events: none;
+    transition: transform 0.5s;
+}
+
+.boat {
+    font-size: 5rem;
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.5));
+    animation: rock 2s ease-in-out infinite;
+}
+
+/* Game Card (Quote) */
+.quote-card {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 50;
+    transition: all 0.5s;
+}
+
+.quote-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.quote-source {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: bold;
+}
+
+/* Tool Deck (Answers) */
+.tool-deck {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 60;
+}
+
+.tool-card {
+    background: rgba(10, 25, 47, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 120px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tool-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: #fff;
+}
+
+.tool-icon {
+    font-size: 2rem;
+}
+
+.tool-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Feedback / FX */
+.fx-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.fx-layer.storm {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
+    opacity: 1;
+}
+
+.fx-layer.sun {
+    background: radial-gradient(circle at top right, rgba(255, 255, 0, 0.2), transparent);
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px) translateX(-50%);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes rock {
+
+    0%,
+    100% {
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+/* Result Screen */
+.result-screen {
+    position: absolute;
+    inset: 0;
+    background: var(--ocean-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    flex-direction: column;
+}

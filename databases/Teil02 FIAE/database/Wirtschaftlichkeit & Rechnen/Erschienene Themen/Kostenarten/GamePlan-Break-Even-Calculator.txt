@@ -1,19 +1,41 @@
-Anforderungen
-1. "Break-Even-Calculator"
-   - Ziel: Befähigung zur Durchführung von Gewinnschwellenanalysen zur Beurteilung der Wirtschaftlichkeit von Software- oder Infrastrukturprojekten.
-   - Spielmechanik: 
-     - Der Spieler kalkuliert die fixen und variablen Kosten eines fiktiven Web-Dienstes.
-     - Bestimmung des Break-Even-Points: Ab welcher Nutzeranzahl oder welchem Verkaufsvolumen wird die Gewinnzone erreicht?
-     - Simulation von Preisänderungen und deren Auswirkung auf die Marktfähigkeit.
-     - Messbarkeit: Korrektheit der mathematischen Gewinnschwellen-Berechnung.
-   - Lernziel: Grundlegendes Verständnis der kaufmännischen Steuerung und Entscheidungsfindung in IT-Unternehmen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Durchführung von Gewinnschwellen-Analysen zur Beurteilung der Wirtschaftlichkeit von IT-Projekten.
+- Game-Mechanic: "The Profit-Scale". Du bist der Finanzchef eines Startups. Dein Unternehmen steht auf einer riesigen, schwebenden Waage über einem Abgrund. 
+  - Auf der einen Seite: Die Fixkosten (Server, Miete, Gehälter) – sie drücken die Waage nach unten.
+  - Auf der anderen Seite: Der Deckungsbeitrag pro verkauftem Software-Abo.
+  Du musst genau berechnen, wie viele Abos du verkaufen musst (Break-Even-Point), damit die Waage ins Gleichgewicht kommt und dein Startup nicht abstürzt!
+- Challenge: 
+  - Level 1 (The Basic SaaS): Berechne den BEP für eine einfache App mit festen Serverkosten und monatlichem Abo-Preis.
+  - Level 2 (The Price-War): Dein Konkurrent senkt die Preise. Kalkuliere neu: Wie viele Nutzer brauchst du jetzt, um profitabel zu bleiben?
+  - Level 3 (The Variable Cost Trap): Deine Traffic-Kosten steigen variabel an. Finde den Punkt, an dem die Kosten die Erlöse wieder einholen.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_econ_break_even.json')
-   - Kostenparameter und Erlös-Modelle.
-- [ ] Shared CSS Check ('business_mathematics.css')
-   - (Interaktives Diagramm-Visual für Kosten/Erlös).
-- [ ] Game-Engine Logic ('game_logic_validator.js')
-   - (Validierung der Kalkulations-Ergebnisse).
-- [ ] Integration
-   - Info: Warum Skaleneffekte (Economy of Scale) die variablen Stückkosten senken können.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Profit-Meter", "Fixed-Cost Weight", "Unit-Contribution", "Balance-Indication".
+- [ ] Scoring: "Finance-Guru" Bonus für präzise Berechnungen bis auf die zweite Nachkommastelle. Abzug für "Bankruptcy" (falsche Kalkulation).
+
+2. Screen-Layout (The Finance-Pit)
+- [ ] `cost-ledger -> interactive-scale -> break-even-chart -> decision-panel`.
+- [ ] Interactive-Scale: Eine physische Waage, auf die man Kostengewichte legt.
+- [ ] Break-Even-Chart: Ein dynamisches Liniendiagramm, das sich bei jeder Änderung der Parameter (Preis, Menge) in Echtzeit anpasst.
+
+3. Kernvisuals und Effekte
+- [ ] Executive-Gold Ästhetik: Dunkles Mahagoni, goldene Akzente, Börsen-Ticker im Hintergrund, das Geräusch von schweren Münzen und klappernden Rechenmaschinen (Shared Theme kompatibel).
+- [ ] "Balance-Glow": Wenn der Break-Even Point erreicht ist, leuchtet die Waage golden auf.
+- [ ] "Coin-Rain": Bei jedem Gewinn-Szenario regnet es virtuelle Münzen.
+
+4. Browser- und Device-Resilienz
+- [ ] Nutzung von `SVG-Paths` für die dynamische Chart-Visualisierung.
+- [ ] Mobile: "Calculator-Pad" für schnelle Dateneingabe.
+
+5. Content-Strategie (The Business-Cases)
+- [ ] 10 verschiedene Rechen-Szenarien: Von "Cloud-Migration" bis "Custom Software Development".
+
+6. QA-Paket
+- [ ] Test: Sind die Formeln im Hintergrund absolut präzise und kaufmännisch korrekt?
+- [ ] Test: Hilft das Diagramm dabei, die "Gewinnzone" visuell schnell zu erfassen?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler versteht die mathematische Basis für unternehmerische Entscheidungen.
+- [ ] Das Interface wirkt wertig, seriös und motivierend.
+- [ ] Fokus auf kaufmännische Steuerung und Wirtschaftlichkeitsrechnung.

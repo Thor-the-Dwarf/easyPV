@@ -1,19 +1,41 @@
-Anforderungen
-1. "Component-Library-Match"
-   - Ziel: Verständnis für die Bedeutung von Konsistenz und Wiederverwendbarkeit in großen Softwareprojekten durch den Einsatz von Designsystemen.
-   - Spielmechanik: 
-     - Analyse einer "unaufgeräumten" Benutzeroberfläche mit vielen verschiedenen Button-Styles, Schriftarten und Farben.
-     - Der Spieler muss Elemente durch vordefinierte Komponenten aus einem Styleguide ersetzen (z.B. "Primary Button", "Secondary Link").
-     - Harmonisierung der Abstände durch ein Spalten-Raster (Grid).
-     - Messbarkeit: Grad der Konsistenz und Einhaltung der Systemvorgaben.
-   - Lernziel: Effizienzsteigerung in der Entwicklung und Stärkung der Markenidentität durch Design-Standards.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Verständnis und Anwendung von Designsystemen und Styleguides zur Sicherstellung von Konsistenz und Effizienz in großen Softwareprojekten.
+- Game-Mechanic: "The Style-Sync". Dein Software-Königreich wächst rasant. Überall entstehen neue Seiten, aber jede sieht anders aus! 
+  - Eine Seite nutzt blaue Buttons, die andere grüne.
+  - Schriften variieren wild.
+  Deine Aufgabe: Erstelle eine zentrale "Source of Truth" (Design System). Definiere Atome (Farben, Fonts), Moleküle (Buttons, Inputs) und Organismen (Karten, Header). "Verstrahle" das Reich mit deiner Konsistenz-Welle: Sobald du eine Variable im System änderst, müssen sich alle Instanzen in Echtzeit synchronisieren!
+- Challenge: 
+  - Level 1 (The Color-Cure): Ersetze 20 verschiedene Hex-Farben durch 5 zentrale CSS-Variablen.
+  - Level 2 (The Component-Factory): Baue einen Standard-Button, der in der ganzen App für "Suchen", "Speichern" und "Senden" genutzt wird. Ändere den Radius für alle gleichzeitig!
+  - Level 3 (The Documentation Challenge): Erstelle einen Styleguide, der Entwicklern erklärt, wann welcher Button-Typ zu nutzen ist (Primary vs. Secondary).
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_ui_design_system_sync.json')
-   - Inkonsistente UI-Entwürfe und korrekte Komponenten-Sets.
-- [ ] Shared CSS Check ('web_apis.css')
-   - Vorher/Nachher Vergleichs-Slider.
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Wiederverwendung der Matching-Logik).
-- [ ] Integration
-   - Tutorial: Atomic Design – Vom Atom über das Molekül zum Organismus.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "System-Consistency (%)", "Sync-Latencies", "Redundancy-Meter", "Dev-Speed Gauge".
+- [ ] Scoring: "Sync-Soul" Bonus für minimale Redundanz. Abzug für "Disconnected Instances" (Hardcoded Styles).
+
+2. Screen-Layout (The Command-Center)
+- [ ] `variable-vault -> component-workshop -> instance-map -> sync-trigger`.
+- [ ] Variable-Vault: Eine Liste von Design-Tokens (Shared Theme Variablen).
+- [ ] Instance-Map: Eine Mini-Map des gesamten Projekts, die anzeigt, wo Styles abweichen.
+
+3. Kernvisuals und Effekte
+- [ ] Digital-Architect Ästhetik: Holographische Menüs, fließende Datenströme, Matrix-Code im Hintergrund, kühles Blau und Weiß (Shared Theme kompatibel).
+- [ ] "Sync-Wave": Wenn eine Änderung im System gemacht wird, breitet sich eine optische Welle über alle Screens aus.
+- [ ] "Merge-Glow": Wenn eine Hardcoded-Farbe in eine System-Variable verwandelt wird, "rastet" sie visuell ein.
+
+4. Browser- und Device-Resilienz
+- [ ] Nutze CSS Variablen (`var(--...)`) für die Echtzeit-Synchronisation im Spiel.
+- [ ] Dokumentations-Ansicht: Automatisch generierter Styleguide (ähnlich wie Storybook).
+
+5. Content-Strategie (The System-Tokens)
+- [ ] 15 Aufgaben zur Konsolidierung und Dokumentation von Design-Entscheidungen.
+
+6. QA-Paket
+- [ ] Test: Werden Änderungen an den zentralen Tokens wirklich auf alle Test-Instanzen übertragen?
+- [ ] Test: Ist der Unterschied zwischen Atom, Molekül und Organismus (Atomic Design) im Spiel lernbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Wahre Skalierbarkeit entsteht durch zentrale Kontrolle und konsistente Regeln.
+- [ ] Das Interface wirkt hochtechnologisch, sauber und organisiert.
+- [ ] Fokus auf Wartbarkeit, Atomic Design und CSS-Architektur.

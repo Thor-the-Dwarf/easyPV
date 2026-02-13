@@ -1,19 +1,41 @@
-Anforderungen
-1. "Error-Message-Refactor"
-   - Ziel: Optimierung der Benutzerführung durch klare, verständliche und lösungsorientierte Fehlermeldungen in Formularen.
-   - Spielmechanik: 
-     - Präsentation von kryptischen oder unhöflichen Fehlermeldungen (z.B. "Invalid Input", "System Error 500", "Du hast das Passwort vergessen!").
-     - Der Spieler muss diese Meldungen in nutzerzentrierte Texte umformulieren, die das Problem erklären und eine Lösung anbieten.
-     - Zuordnung von Fehlermeldungen zu den betroffenen Formularfeldern (Inline-Feedback).
-     - Messbarkeit: Verständlichkeit und Hilfestellung der resultierenden Texte.
-   - Lernziel: Anwendung von UX-Writing Prinzipien und Verbesserung der Fehler-Resilienz aus Nutzersicht.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Erstellung hilfreicher, nutzerzentrierter Fehlermeldungen und Validierungs-Feedbacks, die den User unterstützen statt ihn zu frustrieren.
+- Game-Mechanic: "The Form-Friend". Du bist der Concierge eines digitalen Hotels. Ein Gast (der User) versucht einzuchecken, macht aber Fehler im Formular.
+  - Das System ("The Mean Robot") gibt nur kryptische Fehler aus: "Error 400", "Invalid Input".
+  - Deine Aufgabe: Verwandle diese Fehler in freundliche, hilfreiche Tipps ("Bitte gib deine E-Mail im Format name@beispiel.de an"). 
+  Wenn du es gut machst, bleibt der Gast entspannt. Wenn der Fehler verwirrt, checkt er wütend aus.
+- Challenge: 
+  - Level 1 (The Basic Form): Validiere ein Feld für "Passwort-Wiederholung". Gib genauen Grund an, warum es nicht passt.
+  - Level 2 (The Multi-Step Stress): Ein langes Formular hat Fehler auf Seite 1, während der User auf Seite 3 ist. Führe ihn sanft zurück.
+  - Level 3 (The Success-State): Gestalte nicht nur den Fehler, sondern auch das "Erfolgs-Gefühl" (Success Messaging), wenn alles passt.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_ui_error_refactoring.json')
-   - Technische Fehlertexte und deren nutzerzentrierte Pendants.
-- [ ] Shared CSS Check ('business_mathematics.css')
-   - (Anpassung des Text-Editors).
-- [ ] Game-Engine Logic ('game_syntax_builder.js')
-   - (Validierung der Text-Qualität).
-- [ ] Integration
-   - Tutorial: Warum "Error 404" für Endnutzer wenig hilfreich ist.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "User-Stress-Level (Gauge)", "Completion-Probability", "Validation-Clarity Score", "Empathy-Rating".
+- [ ] Scoring: "Helpfulness-Master" Bonus für Fehlermeldungen, die sofort zur Lösung führen. Abzug für "Shaming" (Schuldzuweisung an User).
+
+2. Screen-Layout (The Lobby)
+- [ ] `user-input-form -> robots-output -> friends-refactor-zone -> impact-preview`.
+- [ ] Friends-Refactor-Zone: Ein Text-Editor, in dem man die Standard-Fehlermeldungen umschreiben kann.
+- [ ] Impact-Preview: Ein animierter Charakter, der auf die geänderte Meldung reagiert (Erleichterung vs. Verwirrung).
+
+3. Kernvisuals und Effekte
+- [ ] Soft-Pastel Ästhetik: Sanfte Kurven, freundliche Farben (Mellow Yellow, Calm Green), dezente Schatten, beruhigende Hintergrundmusik (Shared Theme kompatibel).
+- [ ] "Clarify-Light": Wenn eine Meldung hilfreich ist, leuchtet das betroffene Feld sanft grün auf.
+- [ ] "Shake-Alert": Bei unklaren Fehlern zittert das Formular leicht, um die Unsicherheit des Users zu zeigen.
+
+4. Browser- und Device-Resilienz
+- [ ] Nutze `aria-describedby` zur Verknüpfung von Eingabefeldern und Fehlermeldungen (A11y Support).
+- [ ] Mobile: Inline-Validierung direkt während der Eingabe (Real-Time Feedback).
+
+5. Content-Strategie (The Empathy-Scripts)
+- [ ] 15 verschiedene Formular-Szenarien und deren klassische Fehler-Quellen.
+
+6. QA-Paket
+- [ ] Test: Sind die neuen Fehlermeldungen frei von technischem Jargon?
+- [ ] Test: Wird das Feedback visuell so nah wie möglich am Ort des Fehlers platziert?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler versteht: Eine gute Fehlermeldung ist ein Gesprächsangebot, kein Stoppschild.
+- [ ] Das Interface wirkt einladend, geduldig und unterstützend.
+- [ ] Fokus auf Microcopy und psychologische Benutzerführung.

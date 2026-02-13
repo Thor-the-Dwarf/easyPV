@@ -1,19 +1,43 @@
-Anforderungen
-1. "Bit-to-Byte-Converter"
-   - Ziel: Sicherer Umgang mit digitalen Maßeinheiten und deren Umrechnung zur präzisen Planung von Speicher- und Übertragungskapazitäten.
-   - Spielmechanik: 
-     - Der Spieler muss Dateigrößen zwischen verschiedenen Einheiten (Bit, Byte, KB, MB, GB, TB) umrechnen.
-     - Berücksichtigung des Unterschieds zwischen Dezimal-Präfixen (SI: 1000) und Binär-Präfixen (IEC: 1024 / KiB).
-     - Berechnung des Speicherbedarfs für Multimedia-Inhalte (Bilder, Audio) basierend auf Auflösung und Bitrate.
-     - Messbarkeit: Mathematische Präzision bei der Kapazitätsplanung.
-   - Lernziel: Beherrschung der technischen Mengeneinheiten und deren Anwendung bei Infrastruktur-Entscheidungen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sicherer Umgang mit IT-Maßeinheiten (Bit, Byte, KiB, MB, TiB) und die Fähigkeit, Speicherbedarfe und Übertragungszeiten zu berechnen.
+- Game-Mechanic: "The Data-Dungeon". Du bist der Wächter des digitalen Archivs. Eine Flut von Datenpaketen (Bit-Monster) versucht, deine Schatzkammern (Festplatten) zu füllen. 
+  - Eine Kammer fasst genau 1 TiB. 
+  - Wie viele 500 MiB Pakete passen hinein? 
+  - Wie lange dauert es, sie mit einer 100 Mbit Leitung reinzuschleusen?
+  Du musst die Monster sortieren, umrechnen und komprimieren, bevor sie deine Kammern sprengen. 
+  Achtung: Verwechsle niemals MB (1000) mit MiB (1024), sonst gibt es einen Überlauf!
+- Challenge: 
+  - Level 1 (The Bit-Basics): Konvertiere 8000 Bits in Kilobytes.
+  - Level 2 (The Download-Race): Berechne die Zeit für einen 4 GB Download bei 50 Mbit/s.
+  - Level 3 (The Storage-Puzzle): Du hast 3 Festplatten mit unterschiedlichen Kapazitäten (TB vs. TiB). Verteile ein Backup-Set so, dass der Platz optimal genutzt wird.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_econ_unit_conversion.json')
-   - Umrechnungsaufgaben und Formeln.
-- [ ] Shared CSS Check ('business_mathematics.css')
-   - (Anpassung des Rechen-Interfaces).
-- [ ] Game-Engine Logic ('game_logic_validator.js')
-   - (Validierung der numerischen Ergebnisse).
-- [ ] Integration
-   - Tutorial: Warum Festplattenhersteller mit 1000 rechnen, Betriebssysteme aber oft mit 1024.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Unit-Converter (Realtime)", "Capacity-Gauge", "Transfer-Clock", "Precision-Counter".
+- [ ] Scoring: "Binary-King" Bonus für Berechnungen mit Basis 1024. Abzug für "Overflow Errors".
+
+2. Screen-Layout (The Dungeon-Grid)
+- [ ] `incoming-data-stream -> unit-processor -> storage-slots -> time-oracle`.
+- [ ] Unit-Processor: Eine Maschine, in der man Pakete per Hebel von GB in MB "umformen" kann.
+- [ ] Storage-Slots: Visuelle Container, die sich füllen und bei Überfüllung glühen.
+
+3. Kernvisuals und Effekte
+- [ ] Cyber-Relic Ästhetik: Rostiges Metall trifft auf leuchtende Hologramme, grüne Matrix-Regen in den Tunneln, mechanische Klick-Sounds (Shared Theme kompatibel).
+- [ ] "Conversion-Flash": Beim Umrechnen von Einheiten gibt es einen Blitz-Effekt, der das Paket kurz in Binärcode auflöst.
+- [ ] "Overflow-Blast": Wenn eine Platte voll ist, zerspringt sie in digitale Fragmente.
+
+4. Browser- und Device-Resilienz
+- [ ] `Custom Logic` für die korrekte Unterscheidung zwischen 1000er und 1024er Basis (SI vs. Binär-Präfixe).
+- [ ] Mobile: "Unit-Slider" zum schnellen Hin- und Herschieben zwischen KB, MB, GB.
+
+5. Content-Strategie (The Calculus-Tomes)
+- [ ] 20 verschiedene Rechenaufgaben: Von "Bildauflösung berechnen" bis "Bandbreiten-Management".
+
+6. QA-Paket
+- [ ] Test: Ist der Unterschied zwischen Bit (Übertragungsrate) und Byte (Speichergröße) im Spiel klar ersichtlich?
+- [ ] Test: Werden die dualen Präfixe (KiB, MiB) korrekt als Standard vermittelt?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler beherrscht das Einmaleins der digitalen Speicherkalkulation.
+- [ ] Das Interface wirkt atmosphärisch, technisch akkurat und herausfordernd.
+- [ ] Fokus auf mathematische Exaktheit und technisches Verständnis.

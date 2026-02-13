@@ -1,19 +1,42 @@
-Anforderungen
-1. "Moderator-Simulator"
-   - Ziel: Vermittlung von Kompetenzen zur Durchführung von moderierten Usability-Tests und der Gewinnung objektiver Nutzerfeedbacks.
-   - Spielmechanik: 
-     - Simulation einer Test-Session mit einem virtuellen Probanden (AI-gesteuert oder Script).
-     - Der Proband macht einen Fehler oder zögert. Der Spieler muss als Moderator reagieren (z.B. "Nicht helfen", "Lautes Denken anregen").
-     - Identifikation von Suggestivfragen vs. neutrale Beobachtung.
-     - Messbarkeit: Objektivität und Erkenntnisgewinn aus der Session.
-   - Lernziel: Korrekte Durchführung von qualitativen Tests und Vermeidung von Beobachtungsfehlern.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Planung, Durchführung und Auswertung von Usability-Tests unter Berücksichtigung von Moderations-Regeln und Beobachtungsmethodik.
+- Game-Mechanic: "The Lab-Moderator". Du sitzt hinter einer Einwegscherbe in einem Testlabor. Ein Proband (die KI) versucht deine App zu bedienen. Er murmelt leise ("Think Aloud Method"). Du musst beobachten:
+  - Wo klickt er hin? (Heatmap)
+  - Wann stockt er? (Zögern)
+  - Was sagt er? (Sentiment)
+  Deine Aufgabe: Greife NICHT ein, außer es ist absolut nötig. Notiere die Probleme und bewerte deren Schweregrad. Sei der neutrale Beobachter!
+- Challenge: 
+  - Level 1 (The Silent Observer): Beobachte einen Testlauf und markiere 3 Momente der Verwirrung.
+  - Level 2 (The Bias-Trap): Wähle die richtigen Fragen aus, ohne den Probanden zu beeinflussen (keine Suggestivfragen!).
+  - Level 3 (The Insight-Report): Ersetze die Beobachtungen durch konkrete Verbesserungsvorschläge (Action Items).
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_ui_test_methods.json')
-   - Dialog-Optionen und Probandenverhalten.
-- [ ] Shared CSS Check ('business_mathematics.css')
-   - (Anpassung des Dialog-Systems).
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Validierung der gewählten Interaktionen).
-- [ ] Integration
-   - Tutorial: Die "Think Aloud" Methode in der Praxis.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Neutrality-Meter", "Observation-Log (Timeline)", "Proband-Confusion Index", "Insight-Collector".
+- [ ] Scoring: "Lab-Master" Bonus für objektive Protokollierung. Abzug für "Helping too early" (Beeinflussung).
+
+2. Screen-Layout (The Test-Lab)
+- [ ] `test-canvas -> observation-deck -> moderation-controls -> report-builder`.
+- [ ] Observation-Deck: Ein Split-Screen mit Videofeed (KI-Gesicht) und Screen-Capture (App-Bedienung).
+- [ ] Moderation-Controls: Buttons für "Think Aloud Reminder", "Neutral Question", "Note Timestamp".
+
+3. Kernvisuals und Effekte
+- [ ] Laboratory-Clean Ästhetik: Steriles Weiß, kühles Grau, klinische Präzision, das Ticken einer Uhr, Lichtreflexe auf Glas (Shared Theme kompatibel).
+- [ ] "Confusion-Wave": Wenn der Proband verwirrt ist, verzerrt sich der App-Screen visuell leicht.
+- [ ] "Insight-Flash": Bei einer wichtigen Erkenntnis leuchtet das Notizbuch im HUD golden auf.
+
+4. Browser- und Device-Resilienz
+- [ ] `Record-and-Playback` Logik für die Auswertung der Test-Session.
+- [ ] Mobile: "Observe-on-the-go" Modus für Guerilla-Usability Tests im Freien.
+
+5. Content-Strategie (The Test-Scenarios)
+- [ ] 8 verschiedene KI-Probanden mit unterschiedlichem Vorwissen und Verhaltensweisen.
+
+6. QA-Paket
+- [ ] Test: Reagiert die KI-Proband-Simulation auf "Suggestivfragen" mit verfälschten Ergebnissen?
+- [ ] Test: Ist die Zeitleiste (Timeline) zur einfachen Navigation durch den Testlauf funktional?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler beherrscht die Grundlagen der neutralen Testmoderation und Beobachtung.
+- [ ] Das Interface wirkt professionell, analytisch und objektiv.
+- [ ] Fokus auf empirische Daten und methodische Sauberkeit.

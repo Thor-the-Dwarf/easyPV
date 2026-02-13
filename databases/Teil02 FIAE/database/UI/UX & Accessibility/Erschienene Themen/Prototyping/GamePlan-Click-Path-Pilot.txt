@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Erstellung und Validierung interaktiver Prototypen durch Verknüpfung statischer Screens.
-- Kontext: Prototyping, User-Flows, Klick-Pfade, Usability-Testing, Interaction Design.
-- UX-Prinzip:
-  - "The Nervous System": Statische Mockups sind die Organe (Zustände) einer Anwendung.
-  - "Synapse-Linking": Der Spieler zieht "Nervenstränge" (Verbindungen) von einem Button an Screen A zu Screen B.
-  - "Interaction-Pulse": Ein Klick sendet einen Lichtimpuls durch den Nervenstrang und erweckt die Anwendung zum Leben.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Erstellung und Validierung von interaktiven Klick-Dummys zur Simulation von Benutzerabläufen (User Flows).
+- Game-Mechanic: "The User-Flow-Flight". Du navigierst einen kleinen Papierflieger (den User) durch ein Labyrinth aus App-Screens. Jeder Screen hat "Hotspots" (Klick-Bereiche). Triffst du den richtigen, fliegt der Flieger zum nächsten Ziel. Triffst du eine Sackgasse oder fehlt die Verbindung, stürzt der Flieger ab. Dein Ziel: Baue die Verbindungen so, dass der User mit minimalen Klicks am Ziel ankommt!
+- Challenge: 
+  - Level 1 (The Linear Path): Verbinde "Login" -> "Dashboard" -> "Logout".
+  - Level 2 (The Multi-Option): Erstelle Pfade für "Passwort vergessen" und "Registrieren". Sorg für einen "Zurück"-Button überall!
+  - Level 3 (The Feedback-Loop): Der User macht einen Fehler. Baue eine Error-Page, die ihn sanft zurück in den Flow leitet.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Der aktive Button (Trigger), 2 = Das Ziel (Screen), 3 = Der Gesamt-Flow (The Path).
-- [ ] Textbudget: Max. 10 Wörter pro Task (z.B. "Erstelle den Pfad für 'Passwort vergessen'").
-- [ ] "Connection-Board": Eine Übersicht aller bisherigen Screens und deren Verknüpfungen.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Flow-Connectivity (%)", "Click-Distance-Meter", "Dead-End-Alert", "Success-Rate".
+- [ ] Scoring: "Navigator-Bonus" für den kürzesten Klickpfad. Abzug für "Orphaned Screens" (Seiten ohne Link).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> workbench-canvas -> interaction-palette -> flow-preview`.
-- [ ] Canvas: Ein großer Bereich mit frei verschiebbaren Screens (Desktop mittig-links).
-- [ ] Palette: Auswahl der Interaktions-Typen (Tap, Hover, Swipe) am Rand.
+2. Screen-Layout (The Flow-Map)
+- [ ] `screen-overview -> hotspot-editor -> link-lines -> simulation-mode`.
+- [ ] Link-Lines: Gekrümmte Linien, die die Screens im Editor-Modus verbinden (Figma-Style).
+- [ ] Simulation-Mode: Der Fullscreen-Modus, in dem man den Prototyp wirklich "fliegen" kann.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Drag-to-Link" mit Finger – Ziehen einer Linie von A nach B.
-- [ ] `touch-action: pan-x pan-y` für freie Navigation über die Screens.
+3. Kernvisuals und Effekte
+- [ ] Blueprint-Paper Ästhetik: Kariertes Papier, blaue Tinte, kleine Animationen, die wie handgezeichnet wirken (Shared Theme kompatibel).
+- [ ] "Hotspot-Glow": Wenn man im Simulationsmodus zögert, leuchten die interaktiven Bereiche dezent auf.
+- [ ] "Page-Flip": Ein eleganter 3D-Umblätter-Effekt beim Wechsel zwischen Screens.
 
-4. Kernvisuals
-- [ ] Bio-Tech Ästhetik: Dunkler Hintergrund, leuchtende neuronale Pfade, semi-transparente Screens, Puls-Effekte (shared_theme.css).
-- [ ] "The Flow": Ein wandernder Lichtpunkt zeigt den aktiven Navigationspfad bei der Simulation.
-- [ ] High-Contrast Trigger-Flächen (Hotspots).
+4. Browser- und Device-Resilienz
+- [ ] `CSS Transitions` für flüssige Seitenübergänge.
+- [ ] Mobile: Unterstützung von Gesten (Swipe left/right) für die Navigation.
 
-5. Interaktion und Feedback
-- [ ] Linking-Feedback: "Klick! Synapse gebildet. Der 'Kaufen'-Button leitet jetzt erfolgreich zur Checkout-Seite."
-- [ ] Validierungs-Aha: "Stopp! Du hast den Rückweg vergessen (Dead End). Verbinde den 'Zurück'-Pfeil mit der Startseite."
-- [ ] Erfolg: "Nervensystem komplett! Dein Prototyp ist jetzt interaktiv und bereit für den ersten Nutzer-Test."
+5. Content-Strategie (The User-Journeys)
+- [ ] 12 verschiedene User-Journeys: Von "Produktsuche" bis "Support-Ticket".
 
-6. KPI-Klarheit
-- [ ] Path-Completeness: "Workflow-Abdeckung: 100%".
-- [ ] Flow-Logic: "Fehlerfreier Pfad: Zertifiziert".
+6. QA-Paket
+- [ ] Test: Ist die grafische Verbindung der Screens intuitiv bedienbar?
+- [ ] Test: Fühlt sich der Simulationsmodus wie eine echte Web-App an?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "User Onboarding", "In-App Kauf", "Profil-Einstellungen", "Fehler-Behandlung (Reset)".
-- [ ] Tonalität: Technisch, lebendig, logisch.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Verbindungslinien auch bei vielen Screens auf dem Handy noch übersichtlich?
-- [ ] Test: Funktioniert der Wechsel zwischen "Edit" und "Play" Mode reibungslos?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift Prototyping als das Definieren von Wegen, nicht von Bildern.
-- [ ] Das Interface wirkt wie ein Profi-Tool für Interaction Designer (Figma-Vibes).
-- [ ] Absolute Sicherheit im Entwurf von logischen Zustandsübergängen (State Management).
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Ein Prototyp muss atmen und reagieren, bevor die erste Zeile produktiver Code steht.
+- [ ] Das Interface wirkt dynamisch, verspielt und dennoch technologisch fundiert.
+- [ ] Fokus auf Interaktionsdesign und Benutzerführung.

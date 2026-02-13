@@ -1,19 +1,38 @@
-Anforderungen
-1. "Heuristik-Hunted"
-   - Ziel: Befähigung zur Durchführung von Experten-Reviews auf Basis etablierter Usability-Heuristiken (z.B. nach Nielsen).
-   - Spielmechanik: 
-     - Der Spieler untersucht eine Webseite auf klassische Gebrauchstauglichkeits-Fehler.
-     - Identifikation von Verstößen (z.B. "Fehlende Rückmeldung bei Klick", "Uneinheitliche Terminologie").
-     - Zuordnung der gefundenen Fehler zu den 10 Heuristiken von Jakob Nielsen.
-     - Messbarkeit: Anzahl und korrekte Klassifizierung der Usability-Leaks.
-   - Lernziel: Objektive Bewertung von Software-Gebrauchstauglichkeit und fachliche Argumentation.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Identifikation und Klassifizierung von Usability-Problemen anhand der 10 Heuristiken von Jakob Nielsen.
+- Game-Mechanic: "The UI-Detective". Ein verzweifelter App-Entwickler bittet dich um Hilfe. Seine App hat "Leaks" (Usability-Fehler), durch die Nutzer verloren gehen. Du bewaffnest dich mit deiner "Heuristik-Lupe". Wenn du über ein Element fährst, zeigt die Lupe mögliche Verstöße an (z.B. "Kein Exit-Button" -> Verstoß gegen 'User Control and Freedom'). Markiere alle Leaks und kategorisiere sie richtig, um die App abzudichten!
+- Challenge: 
+  - Level 1 (The Empty State): Finde Fehler in einem leeren Dashboard (z.B. fehlende Hilfe, kryptische Fehlermeldungen).
+  - Level 2 (The Navigation Labyrinth): Identifiziere Inkonsistenzen in der Menüführung (z.B. verschiedene Icons für die gleiche Aktion).
+  - Level 3 (The Expert Audit): Erstelle einen vollständigen Audit-Report für einen komplexen Checkout-Prozess.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_ui_usability_heuristics.json')
-   - Fehlerhafte UI-Screens und zugehörige Nielsen-Vorgaben.
-- [ ] Shared CSS Check ('web_apis.css')
-   - (Anpassung der Lupen-Funktion für Detail-Analyse).
-- [ ] Game-Engine Logic ('game_debug_engine.js')
-   - (Tracking der gefundenen Mängel).
-- [ ] Integration
-   - Tutorial: Die Top 5 Usability-Sünden in Business-Software.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Heuristic-Radar", "Leak-Counter", "Audit-Score", "Severity-Level (Minor/Major/Catastrophic)".
+- [ ] Scoring: "Clarity-Genius" Bonus für präzise Klassifizierung nach Nielsen. Abzug für "False Positives" (Meckern ohne Grund).
+
+2. Screen-Layout (The Crime Scene)
+- [ ] `app-mockup -> magnifying-glass -> heuristic-overlay -> audit-report`.
+- [ ] Magnifying-Glass: Ein interaktives Tool, das beim Hovern Details vergrößert und Heuristik-Tipps einblendet.
+- [ ] Heuristic-Overlay: Wenn ein Fehler gefunden wird, wird er mit einem digitalen Tatort-Band ("Caution: Usability Violation") markiert.
+
+3. Kernvisuals und Effekte
+- [ ] Noir-Design Ästhetik: Dunkle Töne, neon-gelbe Akzente (wie Absperrband), Regen-Effekt auf Glas, Jazz-Vibrationen (Shared Theme kompatibel).
+- [ ] "Scan-Effect": Ein Lichtstrahl, der horizontal über das Mockup fährt, wenn man die Lupe aktiviert.
+- [ ] "Case-Closed": Ein wuchtiger Stempelabdruck auf dem Report, wenn alle Fehler gefunden wurden.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Filter (Blur/Saturation)` für den Lupen-Effekt.
+- [ ] Mobile: "Tap-to-Inspect" (Vibrations-Feedback beim Finden eines Fehlers).
+
+5. Content-Strategie (The Case-Files)
+- [ ] 10 verschiedene App-Szenarien mit jeweils 5-7 versteckten Sünden.
+
+6. QA-Paket
+- [ ] Test: Sind die 10 Nielsen-Heuristiken im Spiel jederzeit als Referenz verfügbar?
+- [ ] Test: Funktioniert die Severity-Einstufung logisch nachvollziehbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verinnerlicht die 10 Heuristiken als scharfes Werkzeug zur Qualitätskontrolle.
+- [ ] Das Interface wirkt atmosphärisch, fokussiert und detektivisch.
+- [ ] Fokus auf analytisches Denken und nutzerzentrierte Bewertung.

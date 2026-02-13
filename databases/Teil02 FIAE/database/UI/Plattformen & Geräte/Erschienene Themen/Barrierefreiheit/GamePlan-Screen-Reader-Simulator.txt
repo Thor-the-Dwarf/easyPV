@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Sensibilisierung für Barrierefreiheit (Digital Accessibility) und die Funktionsweise von Screenreadern.
-- Kontext: WCAG, ARIA-Labels, Semantisches HTML, Inklusion.
-- UX-Prinzip:
-  - "The Echo Room": Der Spieler sieht nichts (schwarzer Screen). Alle Objekte im Raum werden durch ihr "Echo" (Sprachausgabe) hörbar gemacht.
-  - "The Focus Ring": Ein leuchtender Kreis (der einzige Lichtblick) zeigt an, welches Element gerade "spricht".
-  - "Semantics-Hunt": Nur wenn HTML-Elemente korrekt gelabelt sind (z.B. `<nav>`, `<button aria-label="...">`), findet der Echo-Ruf seinen Weg zum Nutzer.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sensibilisierung für Barrierefreiheit (Digital Accessibility) und Anwendung technischer Standards (WCAG, ARIA) zur inklusiven Gestaltung.
+- Game-Mechanic: "The Echo-Maze". Du befindest dich in einem dunklen Labyrinth (einem Web-Interface ohne visuelle Stile). Deine einzige Orientierung: Ein Screen-Reader, der dir vorliest, was auf dem Screen ist ("Button 1", "Link", "Bild ohne Beschreibung"). Du musst durch das Menu navigieren, nur indem du auf das "Echo" (die Audio-Ausgabe) hörst. Wenn Elemente nicht sauber gelabelt sind, verläufst du dich. Deine Aufgabe: Füge ARIA-Labels und Alt-Texte hinzu, damit jeder das Ziel findet!
+- Challenge: 
+  - Level 1 (The Invisible Image): Ein Formular hat nur Bilder als Buttons. Füge Alt-Texte hinzu, damit der Screen-Reader sie erkennt.
+  - Level 2 (The Keyboard Climb): Navigiere eine komplette Seite nur mit der Tab-Taste. Fixe die Tab-Reihenfolge (Tabindex).
+  - Level 3 (The Color Clash): Überprüfe Kontrastverhältnisse für farbenblinde Nutzer. Wähle Farben, die für alle unterscheidbar sind.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Der aktive Fokus (Echo), 2 = Die Tastatur-Navigation (Tab/Enter), 3 = Der Fortschritt im Workflow.
-- [ ] Textbudget: Kurze, prägnante Beschreibungen für die Sprachausgabe (max. 10 Worte pro Item).
-- [ ] "Accessibility-Log": Eine Textliste, die anzeigt, was der Screenreader gerade vorliest.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "A11y-Compliance (%)", "Screen-Reader-Log (Text-to-Speech Preview)", "Contrast-Ratio Meter", "Focus-Indicator".
+- [ ] Scoring: "Include-Hero" Bonus für perfekte ARIA-Struktur. Abzug für "Trap-States" (User bleibt in Navigation hängen).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> darkness-overlay -> focus-spotlight -> tts-panel`.
-- [ ] Darkness: Ein 100% schwarzes Overlay (shared_theme.css: --overlay-dark).
-- [ ] Spotlight: Ein einzelner, animierter Kreis um das fokussierte Element.
+2. Screen-Layout (The Audio-Grid)
+- [ ] `black-screen-overlay -> visual-editor-toggle -> accessibility-tree-view -> inclusion-report`.
+- [ ] Visual-Editor-Toggle: Ermöglicht es, zwischen der "blinden" Ansicht und dem Code-Editor hin und her zu schalten.
+- [ ] Screen-Reader-Log: Ein Ticker am unteren Rand, der genau anzeigt, was ein Screen-Reader in diesem Moment ausgeben würde.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-to-Navigate" Geste (simuliert Screenreader-Handhabung auf dem Handy).
-- [ ] `aria-live="polite"` für Status-Updates der Simulation.
+3. Kernvisuals und Effekte
+- [ ] Minimal-Sonic Ästhetik: Dunkle Oberflächen, oszillierende Wellenformen bei Sound-Ausgabe, Fokus-Ringe in Neon-Grün (Shared Theme kompatibel).
+- [ ] "Echo-Pulse": Ein visueller Ring geht von dem Element aus, das gerade fokussiert wird.
+- [ ] "Clarify-Bloom": Wenn ein Label hinzugefügt wird, wird das Element in der dunklen Ansicht visuell "sichtbar".
 
-4. Kernvisuals
-- [ ] Mystery-Ästhetik: Dunkler Hintergrund, schallwellen-ähnliche Animationen, minimale Fokus-Glints (shared_theme.css).
-- [ ] "Echo-Waves": Animierte Ringe beim Vorlesen eines Elements.
-- [ ] High-Contrast Badge: "BITTE SOUND EINSCHALTEN" (Initial-Screen).
+4. Browser- und Device-Resilienz
+- [ ] Nutze `aria-live` Regionen für dynamische Feedbacks im Spiel.
+- [ ] Mobile: Berücksichtigung von Screen-Reader Gesten (Swipe to next element).
 
-5. Interaktion und Feedback
-- [ ] Audio-Feedback: "Stimme sagt: 'Hauptmenü, Button, 3 von 5 Elementen'."
-- [ ] Aha-Moment: "Klick! Ohne den Alt-Text für das Bild hättest du gar nicht gewusst, dass hier der 'Bestätigen'-Button versteckt ist."
-- [ ] Erfolg: "Inklusions-Pionier! Du hast das Formular blind gemeistert und verstehst nun, warum Semantik Leben rettet."
+5. Content-Strategie (The Inclusive-Labs)
+- [ ] 10 Szenarien: Von "Online-Banking" bis "Public Transport Schedule".
 
-6. KPI-Klarheit
-- [ ] Accessibility-Score: "WCAG-Konformität: 100%".
-- [ ] Navigation-Efficiency: "Tastatur-Wege: Zeitersparnis durch gute Struktur".
+6. QA-Paket
+- [ ] Test: Ist das Spiel auch ohne Ton spielbar (durch das visuelle Log)?
+- [ ] Test: Fördert der Wechsel zwischen Modus "Blind" und "Sichtbar" das Verständnis für die Nutzerperspektive?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Bestellvorgang im Dunkeln", "Nachrichten-Portal navigieren", "Fehlermeldungen in Formularen finden".
-- [ ] Tonalität: Respektvoll, empathisch, technisch fundiert.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Funktioniert der "Blind-Mode" auch stabil, wenn CSS-Variablen überschrieben werden?
-- [ ] Test: Reagiert die TTS (Text-to-Speech) Simulation verzögerungsfrei auf Tastendruck?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler entwickelt tiefes Verständnis für die Notwendigkeit von ARIA und sauberem HTML.
-- [ ] Das Interface wirkt wie ein exklusives Empathie-Training für Web-Entwickler.
-- [ ] Absolute Sicherheit bei der Navigation ohne visuelle Hilfe.
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Barrierefreiheit ist kein Extra, sondern ein Grundrecht und technisches Qualitätsmerkmal.
+- [ ] Das Interface wirkt respektvoll, klar und technologisch fortschrittlich.
+- [ ] Fokus auf WCAG-Richtlinien und empathisches Design.

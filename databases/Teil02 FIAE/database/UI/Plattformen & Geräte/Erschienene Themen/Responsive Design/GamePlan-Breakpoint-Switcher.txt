@@ -1,50 +1,41 @@
-Anforderungen (reverse engineered)
-- Ziel: Praktische Anwendung von Responsive Design und Media Queries zur nahtlosen UI-Anpassung.
-- Kontext: Mobile First, Breakpoints, Viewports, Liquid Layouts, CSS-Flexbox/Grid.
-- UX-Prinzip:
-  - "The Origami UI": Die Weboberfläche ist ein Blatt Papier, das sich beim Verkleinern des Viewports exakt an den Knickstellen (Breakpoints) faltet oder entfaltet.
-  - "Fluid-Scale": Elemente fließen wie Wasser zwischen den Zuständen (Transitionen).
-  - "Container-IQ": Module entscheiden je nach Breite selbst, wie sie sich präsentieren (z.B. Navigation -> Hamburger-Menü).
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Beherrschung von responsivem Webdesign, Breakpoints und flexiblen Layout-Techniken (Flexbox, Grid) für verschiedene Endgeräte.
+- Game-Mechanic: "The Screen-Shifter". Du bist der Zeremonienmeister einer digitalen Modenschau. Die Bühne (der Browser) ändert ständig ihre Breite! Deine Models (die UI-Elemente wie Header, Karten, Footer) müssen sich blitzschnell anpassen. 
+  - Mal ist die Bühne schmal (Mobile): Models müssen sich stapeln.
+  - Mal ist sie breit (Desktop): Models dürfen nebeneinander flanieren.
+  Wenn ein Element aus der Bühne fällt oder sich unschön überlappt, gibt es Buh-Rufe. Setze die Breakpoints richtig!
+- Challenge: 
+  - Level 1 (The Stack-Up): Ordne 3 Karten so an, dass sie auf Mobilgeräten untereinander und auf Desktops nebeneinander stehen.
+  - Level 2 (The Menu-Morph): Verwandle eine horizontale Navigationsleiste bei 600px in ein Burger-Menü.
+  - Level 3 (The Multi-Device Challenge): Optimiere ein komplexes Dashboard für Smartphone, Tablet und 4K-Monitor gleichzeitig.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Die aktuelle Breite (px), 2 = Der Breakpoint-Indikator (Mobile/Tablet/Desktop), 3 = Die Layout-Umformung.
-- [ ] Textbudget: Kurze Tags pro Modul (z.B. "Spalten-Basis: 33%").
-- [ ] "Viewport-Ruler": Ein digitales Lineal am oberen Rand.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Current-Width (px)", "Active-Breakpoint Indicator", "Layout-Stability (%)", "Fluidity-Gauge".
+- [ ] Scoring: "Flex-Master" Bonus für Layouts ohne horizontalen Scrollbalken. Abzug für "Overlapping Elements".
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> resizer-environment -> device-frame -> layout-inspector`.
-- [ ] Environment: Eine minimalistische "Studio-Halterung" (shared_theme.css: --surface-bg).
-- [ ] Frame: Ein interaktives Fenster mit einem Dragg-Handle an der rechten Seite (Desktop mittig).
+2. Screen-Layout (The Resize-Stage)
+- [ ] `resize-handle -> layout-preview -> css-breakpoint-editor -> mobile-first-switch`.
+- [ ] Resize-Handle: Ein Griff am rechten Rand, mit dem man den Viewport stufenlos schrumpfen oder dehnen kann.
+- [ ] Mobile-First-Switch: Ein Modus, der den Spieler zwingt, erst das kleinste Layout zu definieren.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Dual-Thumb-Resizer" Geste zur Simulation der Breite.
-- [ ] `resize: horizontal` Simulation via JavaScript für exakte Kontrolle.
+3. Kernvisuals und Effekte
+- [ ] Futuristic-Elastic Ästhetik: Flexible Gitterlinien, fließende Animationen beim Resizen, Blueprint-Elemente in Electric Blue (Shared Theme kompatibel).
+- [ ] "Snap-Effect": Wenn ein Breakpoint erreicht wird, gibt es ein subtiles "Klick"-Geräusch und das Layout springt in die neue Form.
+- [ ] "Overflow-Warning": Wenn Text aus einer Box quillt, fängt die Box an, rot zu pulsieren.
 
-4. Kernvisuals
-- [ ] Design-Studio Ästhetik: Blueprint-Raster, Millimeter-Anzeigen, technische Kanten, dynamische Schatten (shared_theme.css).
-- [ ] "The Snap": Wenn ein Breakpoint erreicht wird, "rastet" das Layout hörbar/spürbar ein.
-- [ ] High-Contrast Linien für Media-Query Grenzen (768px, 1024px...).
+4. Browser- und Device-Resilienz
+- [ ] `CSS @media` Queries Simulation im Browser-Interface.
+- [ ] Einsatz von `vmin`, `vmax` und `%` statt fester Pixelwerte.
 
-5. Interaktion und Feedback
-- [ ] Switch-Feedback: "Klick! 768px unterschritten. Die Sidebar klappt ein – optimale Platznutzung für Tablets!"
-- [ ] Design-Check: "Achtung! Bei 350px Breite ragen die Bilder aus dem Container. Benutze `max-width: 100%`!"
-- [ ] Erfolg: "Responsive-Profi! Deine Seite faltet sich in jeder Breite zu einem perfekten Origami."
+5. Content-Strategie (The Viewport-Missions)
+- [ ] 12 verschiedene Layout-Aufgaben: Von "Foto-Galerie" bis "Daten-Tabelle".
 
-6. KPI-Klarheit
-- [ ] Breakpoint-Efficiency: "Fehlerfreie Übergänge: 100%".
-- [ ] Layout-Fluidity: "Glatter Fluss ohne Brüche: Bestanden".
+6. QA-Paket
+- [ ] Test: Verhält sich das Layout beim manuellen Resizen absolut flüssig?
+- [ ] Test: Wird der Vorteil von "Mobile First" durch die Level-Struktur klar?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "E-Commerce Startseite", "Dichtes Daten-Dashboard", "Blog mit Seitenleiste".
-- [ ] Tonalität: Präzise, gestalterisch, dynamisch.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Ist der Resizer-Handle auf Smartphones groß genug, um ihn flüssig zu ziehen?
-- [ ] Test: Bleiben die Proportionen der UI-Elemente während der Skalierung harmonisch?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler verankert Breakpoints als bewusste Design-Entscheidungen, nicht als Zufall.
-- [ ] Das Interface wirkt wie ein Profi-Tool für Frontend-Entwickler.
-- [ ] Absolute Sicherheit im Umgang mit Viewport-Einheiten (vw, vh) und Media Queries.
+7. Abnahme-Kriterien
+- [ ] Der Spieler beherrscht das Denken in relativen Einheiten und Umbruchpunkten.
+- [ ] Das Interface wirkt technisch brillant, reaktiv und dynamisch.
+- [ ] Fokus auf geräteübergreifende Konsistenz und technische Flexibilität.

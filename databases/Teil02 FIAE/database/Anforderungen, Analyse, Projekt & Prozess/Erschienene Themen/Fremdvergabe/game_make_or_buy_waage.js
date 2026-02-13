@@ -67,6 +67,14 @@
     el.restartBtn.addEventListener('click', restartGame);
     el.panMake.addEventListener('click', () => placeFactor('make'));
     el.panBuy.addEventListener('click', () => placeFactor('buy'));
+    el.panMake.addEventListener('pointerdown', () => showHoldFeedback('make'));
+    el.panBuy.addEventListener('pointerdown', () => showHoldFeedback('buy'));
+    el.panMake.addEventListener('pointerup', clearHoldFeedback);
+    el.panBuy.addEventListener('pointerup', clearHoldFeedback);
+    el.panMake.addEventListener('pointerleave', clearHoldFeedback);
+    el.panBuy.addEventListener('pointerleave', clearHoldFeedback);
+    el.panMake.addEventListener('pointercancel', clearHoldFeedback);
+    el.panBuy.addEventListener('pointercancel', clearHoldFeedback);
 
     el.exitStrategy.addEventListener('change', () => {
       state.exitStrategy = el.exitStrategy.checked;
@@ -255,6 +263,26 @@
     if (ok === false) tone = 'bad';
     el.feedback.className = `feedback ${tone}`;
     el.feedback.textContent = text;
+  }
+
+  function showHoldFeedback(side) {
+    if (!state.started || state.done || state.gameOver || state.lock) return;
+    const factor = currentFactor();
+    if (!factor) return;
+
+    const wouldBeCorrect = side === factor.recommended;
+    const label = side.toUpperCase();
+    setFeedback(
+      wouldBeCorrect
+        ? `Gedrueckt gehalten: ${label} wirkt passend. Beim Loslassen wird die Entscheidung uebernommen.`
+        : `Gedrueckt gehalten: ${label} wirkt riskant. Beim Loslassen wird trotzdem diese Entscheidung uebernommen.`,
+      wouldBeCorrect
+    );
+  }
+
+  function clearHoldFeedback() {
+    if (!state.started || state.done || state.gameOver || state.lock) return;
+    setFeedback('Lege den aktuellen Faktor auf MAKE oder BUY.', null);
   }
 
   function clearFeedbackTimer() {

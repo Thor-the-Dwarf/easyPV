@@ -1,19 +1,41 @@
-Anforderungen
-1. "Formula-Constructor"
-   - Ziel: Beherrschung komplexer Tabellenfunktionen zur automatisierten Datenanalyse und Entscheidungsfindung.
-   - Spielmechanik: 
-     - Der Spieler baut funktionale Formeln (WENN, SVERWEIS, SUMMEWENN) aus einzelnen Syntax-Blöcken zusammen.
-     - Anwendung der korrekten Referenzierung (absolut vs. relativ) zur fehlerfreien Duplikation von Berechnungen.
-     - Analyse und Korrektur von typischen Formelfehlern (#WERT!, #BEZUG!).
-     - Messbarkeit: Korrektheit der berechneten Ergebnisse in einer Test-Tabelle.
-   - Lernziel: Effiziente Nutzung von Tabellenkalkulations-Software im kaufmännischen und technischen Kontext.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Sicherer Umgang mit Tabellenkalkulationen (Excel/Sheets), Erstellung komplexer Formeln und logischer Verknüpfungen (WENN, SVERWEIS).
+- Game-Mechanic: "The Formula-Forge". Du bist der Alchemist der Daten. In deinem Labor blubbern Gefäße (Zellen). Du musst Verbindungen (Formeln) zwischen ihnen schmieden. 
+  - "Wenn Zelle A1 größer als 100 ist, dann leuchte Grün!"
+  - "Suche den Preis in der großen Datenbank-Tabelle und ziehe ihn hierher (SVERWEIS)."
+  Wenn deine Formel einen Fehler hat (#REF!, #NAME?), explodiert das Gefäß. Schmiede eine fehlerfreie Kette, um das Elixier der Wahrheit (den korrekten Bericht) zu erzeugen!
+- Challenge: 
+  - Level 1 (The Logic-Stone): Erstelle eine einfache `WENN`-Abfrage für einen Rabatt-Check.
+  - Level 2 (The Search-Spell): Nutze einen SVERWEIS (VLOOKUP), um Produktdaten aus einer zweiten Tabelle zu ziehen.
+  - Level 3 (The Master-Mix): Verschachtle Formeln: Berechne die Mehrwertsteuer nur, wenn das Land "DE" ist, und runde das Ergebnis auf 2 Stellen.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_econ_spreadsheet_formulas.json')
-   - Tabellen-Daten und Formel-Komponenten.
-- [ ] Shared CSS Check ('business_mathematics.css')
-   - (Nachbau der Tabellen-Zellen-Ansicht).
-- [ ] Game-Engine Logic ('game_syntax_builder.js')
-   - (Validierung der Formelsyntax).
-- [ ] Integration
-   - Tutorial: Warum absolute Zellbezüge ($A$1) beim Kopieren von Steuersätzen entscheidend sind.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Logic-Complexity Score", "Error-Free Streak", "Formula-Syntax Highlighter", "Result-Preview".
+- [ ] Scoring: "Efficiency-Alchemist" Bonus für die kürzeste funktionierende Formel. Abzug für "Circular References".
+
+2. Screen-Layout (The Lab-Grid)
+- [ ] `data-grid -> formula-bar -> dependency-map -> result-vial`.
+- [ ] Data-Grid: Eine interaktive Tabelle mit futuristischem Design.
+- [ ] Dependency-Map: Ein Modus, der mit leuchtenden Linien anzeigt, welche Zellen von welchen Formeln abhängen.
+
+3. Kernvisuals und Effekte
+- [ ] Alchemy-Tech Ästhetik: Glühende Reagenzgläser, flüssiges Neon in den Tabellengittern, Dampf-Effekte bei Fehlern, kristallines Funkeln bei Erfolg (Shared Theme kompatibel).
+- [ ] "Syntax-Spark": Während du tippst, sprühen kleine Funken in der Farbe der Klammern (Bracket-Pair-Colorization).
+- [ ] "Data-Flow": Wenn eine Formel berechnet wird, fließt Licht von den Quellzellen zur Zielzelle.
+
+4. Browser- und Device-Resilienz
+- [ ] `Custom-Parser` für Excel-ähnliche Syntax-Validierung.
+- [ ] mobile: "Formula-Shortcut Bar" für schnellen Zugriff auf `SUM`, `IF`, `VLOOKUP`.
+
+5. Content-Strategie (The Formula-Grimoire)
+- [ ] 15 Übungen: Von "Notenschnitt berechnen" bis "Bestandsprüfung mit SVERWEIS".
+
+6. QA-Paket
+- [ ] Test: Erkennt der Parser alle gängigen Excel-Fehlertypen und gibt hilfreiches Feedback?
+- [ ] Test: Ist die grafische Darstellung der Zell-Abhängigkeiten hilfreich für die Fehlersuche?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verliert die Angst vor komplexen Tabellen-Logiken.
+- [ ] Das Interface wirkt magisch, präzise und mächtig.
+- [ ] Fokus auf logische Abfolgen und Daten-Manipulation.

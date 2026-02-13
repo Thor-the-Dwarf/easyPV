@@ -1,52 +1,37 @@
-Anforderungen (reverse engineered)
-- Ziel: Differenzierung der Projektphasen im UI-Design (Skizze -> Wireframe -> Mockup -> Prototyp).
-- Kontext: Design-Workflow, Low-Fidelity vs. High-Fidelity, Kundenkommunikation, Iteration.
-- UX-Prinzip:
-  - "The Blueprint Evolution": Ein Gebäude entsteht nicht sofort farbig.
-  - "Phase 1: Napkin Sketch" (Die Idee): Schnelle Striche, Fokus auf das grobe Konzept.
-  - "Phase 2: The Blueprint" (Wireframe): Fokus auf Struktur und Wege, keine Farben (Graustufen).
-  - "Phase 3: The Photo" (Mockup): Pixel-perfekt, Farben, Typografie, echtes Look-and-Feel.
-  - "Phase 4: The House-Tour" (Prototyp): Interaktiv, Klicks funktionieren.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Unterscheidung zwischen Wireframes (Struktur), Mockups (Design) und Prototypen (Interaktion) sowie deren korrekte Anwendung im Entwicklungsprozess.
+- Game-Mechanic: "The Pixel-Painter". In einem virtuellen Design-Studio erhältst du den Auftrag für eine neue App. Zuerst baust du das "Skelett" (Wireframe) aus grauen Boxen. Dann "malst" du es aus: Du wählst Farben, Schriftarten und Icons (Mockup). Als letztes fügst du die "Seele" hinzu: Die Klick-Pfade (Prototyp). Das System bewertet, ob deine Visualisierung zum Projektstadium passt (z.B.: "Keine Farben im Wireframe-Level!").
+- Challenge: 
+  - Level 1 (The Low-Fi Sketch): Erstelle einen Wireframe für einen Login-Screen. Nur Boxen und Text.
+  - Level 2 (The High-Fi Mockup): Verwandle den Wireframe in ein hochwertiges Design. Nutze das "Shared Theme" (CSS Variablen).
+  - Level 3 (The Designer-Audit): Du bekommst 5 Entwürfe und musst sie in die Kategorien Lo-Fi, Mid-Fi und Hi-Fi einsortieren.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Das Design-Artefakt (Das Bild), 2 = Der Fachbegriff (Die Phase), 3 = Der Zweck des Artefakts.
-- [ ] Textbudget: Max. 8 Wörter pro Phasenbeschreibung.
-- [ ] "Fidelity-Slider": Visualisierung der Detailtiefe von 0 bis 100%.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Fidelity-Level (Lo/Mid/Hi)", "Consistency-Check", "Asset-Gallery-Access", "Design-Timer".
+- [ ] Scoring: "Pixel-Perfect" Bonus für saubere Abstände. Abzug für "Mixing Styles" (z.B. bunte Buttons in Schwarz-Weiß-Skizzen).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> timelines-axis -> design-cards -> definition-bins`.
-- [ ] Axis: Eine horizontale Zeitlinie mit den Projektphasen (Desktop oben).
-- [ ] Cards: Hochwertige Bildbeispiele der Entwürfe in der Mitte.
+2. Screen-Layout (The Designer's Studio)
+- [ ] `sketch-pad -> drag-and-drop-assets -> style-picker -> fidelity-switch`.
+- [ ] Fidelity-Switch: Ein Schieberegler, der den aktuellen Entwurf zwischen "Skizze" und "fertigem Design" hin und her überblendet.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Swipe-to-Categorize" Mechanik; Karten auf die richtige Stelle der Zeitlinie schieben.
-- [ ] `aspect-ratio: 16/9` für die Design-Previews zur Vermeidung von Layout-Shifts.
+3. Kernvisuals und Effekte
+- [ ] Studio-Loft Ästhetik: Heller Holztisch, Zeichentablett-Optik, saubere Linien, dezente Schatten (Shared Theme kompatibel).
+- [ ] "Layer-Stacking": Beim Wechsel der Fidelity stapeln sich visuell Ebenen übereinander.
+- [ ] "Color-Splash": Wenn man vom Wireframe zum Mockup wechselt, fließt Farbe in die grauen Boxen wie bei einem Aquarell.
 
-4. Kernvisuals
-- [ ] Architektur-Ästhetik: Pergament, Blaupausen-Hintergrund, CAD-Raster, elegante Typografie (shared_theme.css).
-- [ ] "The Morph": Wenn eine Zuordnung stimmt, verwandelt sich der Wireframe kurzzeitig in das fertige Mockup (Animation).
-- [ ] High-Contrast Badges für "Low-Fi" und "High-Fi".
+4. Browser- und Device-Resilienz
+- [ ] `SVG Drag & Drop` für reaktive Design-Elemente.
+- [ ] Responsive Preview: Sieh dir deinen Entwurf sofort auf Desktop, Tablet und Handy an.
 
-5. Interaktion und Feedback
-- [ ] Match-Feedback: "Klick! Korrekt. Im Wireframe klären wir die Anordnung der Elemente, ohne uns in Farben zu verlieren."
-- [ ] Prozess-Tipp: "Achtung! Du willst eine detaillierte Grafik im ersten Meeting zeigen? Fang lieber mit einem Wireframe an, um die Struktur zu klären."
-- [ ] Erfolg: "Design-Stratege! Du kennst jetzt den Weg von der ersten Skizze zum perfekten Produkt."
+5. Content-Strategie (The Design-Specs)
+- [ ] 15 Aufgaben: Von "E-Commerce-Checkout" bis "Admin-Panel".
 
-6. KPI-Klarheit
-- [ ] Accuracy-Rate: "Phasen-Zuordnung: 100%".
-- [ ] Project-Speed: "Zeitgewinn durch klaren Design-Workflow: Maximal".
+6. QA-Paket
+- [ ] Test: Wird der Unterschied zwischen Struktur und Design visuell klar vermittelt?
+- [ ] Test: Funktionieren die CSS-Variablen aus dem Shared Theme im Mockup-Modus?
 
-7. Content-/Copy-Feinschliff
-- [ ] Szenarien: "Kritik an der Farbe im Wireframe (Antipattern)", "Struktur-Check vor dem Coding", "First Draft".
-- [ ] Tonalität: Kreativ, professionell, prozessorientiert.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Unterschiede zwischen Wireframe und Mockup auf kleinen Previews deutlich erkennbar?
-- [ ] Test: Ist die zeitliche Abfolge der Kategorien pädagogisch sinnvoll erklärt?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler begreift, warum man nicht sofort mit dem Pixel-Design beginnt.
-- [ ] Das Interface wirkt wie ein exklusives Portfolio einer Top-Agentur.
-- [ ] Absolute Sicherheit bei der Verwendung der Fachbegriffe (Lo-Fi, Hi-Fi, Wireframe, Mockup).
+7. Abnahme-Kriterien
+- [ ] Der Spieler weiß: Erst planen (Wireframe), dann malen (Mockup).
+- [ ] Das Interface wirkt ästhetisch ansprechend, kreativ und professionell.
+- [ ] Fokus auf Design-Phasen und visuelle Kommunikation.

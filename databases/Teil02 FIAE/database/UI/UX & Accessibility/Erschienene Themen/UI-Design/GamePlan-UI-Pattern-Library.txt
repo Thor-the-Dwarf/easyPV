@@ -1,50 +1,38 @@
-Anforderungen (reverse engineered)
-- Ziel: Korrekte Anwendung und Benennung von UI-Design-Patterns zur Erhöhung der Erwartungskonformität und Gebrauchstauglichkeit.
-- Kontext: Design-Spezifikation, Pattern-Libraries, UI-Komponenten, Standardisierung.
-- UX-Prinzip:
-  - "The Wordbook of Interaction": UI-Patterns sind die Wörter einer Sprache, die jeder Nutzer versteht. Ein "Modal" ist ein Wort, ein "Breadcrumb" ein anderes.
-  - "Pattern-Matching": Der Spieler sieht eine Nutzeraufgabe (z.B. "Führe den Nutzer Schritt für Schritt durch eine Anmeldung") und wählt das passende "Wort" (einen Wizard).
-  - "Consistency-Check": Auswahl der Komponenten, die denselben "Dialekt" (Designsystem) sprechen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Kenntnis gängiger UI-Pattern (Cards, Accordions, Modals, Breadcrumbs) und deren korrekte Anwendung zur Lösung von Standardproblemen im Interface-Design.
+- Game-Mechanic: "The Component-Sifter". Du bist der Architekt eines Interface-Baukastens. Ein Förderband liefert dir Anwendungsfälle (z.B. "Zeige 50 Produkte übersichtlich an", "Frage eine Bestätigung zum Löschen ab"). Du hast 4 Trichter, die für verschiedene Patterns stehen (Card-Layout, Modal, List-View, Accordion). Wirf den Anwendungsfall in den richtigen Trichter! Wenn du das Löschen in ein Accordion packst, gibt es Matsch!
+- Challenge: 
+  - Level 1 (The Basics): Klassische Zuordnung von Patterns zu Standard-Szenarien.
+  - Level 2 (The Mobile-Shift): Übertrage Desktop-Patterns auf Mobile. Aus einem Hover-Menu wird ein Burger-Menu oder eine Tab-Bar.
+  - Level 3 (The Pattern-Breaker): Erkenne "Dark Patterns" (Tricks, die den User täuschen) und sortiere sie in den Abfalleimer aus.
 
-Arbeitspakete (UX-Global-Optimiert)
-1. Informationsarchitektur und Fokus-Hierarchie
-- [ ] Sichtprioritaeten: 1 = Das UI-Pattern (Das Visuelle), 2 = Der Name (Der Begriff), 3 = Der Anwendungsfall (Wann nutzen?).
-- [ ] Textbudget: Max. 12 Wörter pro Pattern-Erklärung.
-- [ ] "Pattern-DNA": Ein kurzer Steckbrief pro Komponente (Vorteil, Nachteil, Beispiel).
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Pattern-Confidence Meter", "Logic-Stream Speed", "Component-Usage Stats", "Intuition-Score".
+- [ ] Scoring: "UI-Architect" Bonus für schnelle und logische Zuordnungen. Abzug für "Anti-Pattern Usage" (schlechte UX-Wahl).
 
-2. Screen-Layout (Container-Ebenen reduzieren)
-- [ ] Struktur: `page -> pattern-gallery -> use-case-prompt -> category-bins`.
-- [ ] Gallery: Ein Grid aus interaktiven Elementen (Desktop 70% Breite).
-- [ ] Prompt: Eine Aufgabenstellung am oberen Rand (Sticky Header).
+2. Screen-Layout (The Factory Floor)
+- [ ] `conveyor-belt -> task-cards -> pattern-funnels -> quality-control-log`.
+- [ ] Task-Cards: Karten mit kurzen Problembeschreibungen, die übers Band laufen.
+- [ ] Pattern-Funnels: Animierte Trichter mit großen Icons der UI-Elemente.
 
-3. Browser- und Device-Resilienz
-- [ ] `min-height: 100dvh` Standard.
-- [ ] Mobile: "Card-Flipping" - Bild vorne, Begriff hinten; Drag & Drop in die richtige Kategorie.
-- [ ] `grid-template-columns: repeat(auto-fit, ...)` für automatisches UI-Stacking.
+3. Kernvisuals und Effekte
+- [ ] Bauhaus-Industrie Ästhetik: Primärfarben, geometrische Formen, metallische Texturen, mechanische Sounds (Shared Theme kompatibel).
+- [ ] "Component-Build": Wenn ein Pattern korrekt gewählt wurde, baut sich das Element im Hintergrund kurz modular auf.
+- [ ] "Jam-Effect": Bei Fehlern stoppt das Band mit einem mechanischen Quietschen.
 
-4. Kernvisuals
-- [ ] Modern-Clean Ästhetik: Viel Weißraum (oder Dark-Gray), perfekte Abstände, klare Konturen, dezente Schatten (shared_theme.css).
-- [ ] "The Glow": Bei korrekter Wahl leuchtet das Element in einer harmonischen Brand-Farbe auf.
-- [ ] High-Contrast Icons für abstrakte Patterns (z.B. Hamburger-Menü).
+4. Browser- und Device-Resilienz
+- [ ] `CSS Flexbox` für das Layout des Förderbands.
+- [ ] Mobile: "Swipe left/right/up/down" um Elemente in die Trichter zu schieben.
 
-5. Interaktion und Feedback
-- [ ] Choice-Feedback: "Klick! Korrekt. Ein Accordion spart Platz bei vielen sekündären Informationen."
-- [ ] Anti-Pattern Warnung: "Halt! Ein Modal in einem Modal in einem Modal zu öffnen, verwirrt den Nutzer. Nutze lieber einen anderen Flow."
-- [ ] Erfolg: "UI-Sprachgenie! Dein Vokabular an Patterns ist jetzt so groß, dass dich jeder Nutzer blind versteht."
+5. Content-Strategie (The Pattern-Catalog)
+- [ ] 20 verschiedene Szenarien und 10 UI-Standard-Patterns.
 
-6. KPI-Klarheit
-- [ ] Vocabulary-Score: "Menge beherrschter Patterns: X".
-- [ ] UX-Consistency: "Erwartungskonformitäts-Level: Maximal".
+6. QA-Paket
+- [ ] Test: Sind die Erklärungen, *warum* ein Pattern passt, im Quality-Log einsehbar?
+- [ ] Test: Ist die Geschwindigkeit des Bands motivierend, aber nicht überfordernd?
 
-7. Content-/Copy-Feinschliff
-- [ ] Patterns: Tabs, Accordions, Modals, Breadcrumbs, Tooltips, Steppers, Carousel, Data Tables.
-- [ ] Tonalität: Strukturiert, erklärend, ästhetisch.
-
-8. QA-Paket
-- [ ] Screenshot-Check: Sind die Bild-Beispiele im Grid auf dem Smartphone noch detailreich genug?
-- [ ] Test: Sind die Anwendungsbeispiele eindeutig (keine zwei richtigen Lösungen)?
-
-9. Abnahme-Kriterien
-- [ ] Der Spieler verankert UI-Patterns als standardisierte Kommunikationsmittel.
-- [ ] Das Interface wirkt wie ein exklusiver Styleguide eines Big-Tech-Unternehmens.
-- [ ] Absolute Sicherheit bei der Benennung und dem Einsatz von Interface-Komponenten.
+7. Abnahme-Kriterien
+- [ ] Der Spieler beherrscht das Vokabular und die Logik moderner Benutzeroberflächen.
+- [ ] Das Interface wirkt strukturiert, effizient und industriell-schick.
+- [ ] Fokus auf Standardisierung und Wiederverwendbarkeit in der UI.

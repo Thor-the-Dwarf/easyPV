@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Optimierung von UI-Elementen für die Touch-Bedienung (Smartphones, Tablets) unter Beachtung von Mindestgrößen und Abständen.
+- Game-Mechanic: "The Precision-Touch". Du spielst auf einem virtuellen Smartphone. Deine Aufgabe: Bedienteile so platzieren, dass man sie auch mit "Wurstfingern" (simuliert durch einen großen, halbdurchsichtigen Daumen-Abdruck) sicher trifft. Wenn zwei Buttons zu nah beieinander liegen, drückst du beide gleichzeitig (Error!). Erhöhe die "Touch-Targets" und vergrößere die Abstände (Gutter), um das Spiel zu gewinnen.
+- Challenge: 
+  - Level 1 (The Micro-Button): Vergrößere einen 16px Button auf die empfohlene Mindestgröße von 44px (oder 48px).
+  - Level 2 (The List-Clash): Baue eine Liste von Einträgen, bei denen das "Löschen"-Icon weit genug vom "Editieren"-Icon entfernt ist.
+  - Level 3 (The Thumb-Arc): Platziere die wichtigsten Steuerelemente innerhalb des natürlichen Bogens, den ein Daumen bei Ein-Hand-Bedienung beschreibt.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Hit-Area Visualization", "Thumb-Zone Coverage", "Misclick-Risk (%)", "Standard-Compliance (Apple/Google)".
+- [ ] Scoring: "Comfort-Genius" Bonus für ergonomische Platzierung. Abzug für "Fat-Finger Errors" (Nachbarklicks).
+
+2. Screen-Layout (The Hand-Simulator)
+- [ ] `virtual-hand -> ui-canvas -> spacing-editor -> target-visualizer`.
+- [ ] Virtual-Hand: Eine Einblendung einer Hand, die das Gerät hält und zeigt, wo sie hinkommt.
+- [ ] Target-Visualizer: Ein Modus, der die physische Klickfläche (nicht nur die Grafik) als helles Rechteck zeigt.
+
+3. Kernvisuals und Effekte
+- [ ] Organic-Tactile Ästhetik: Abgerundete Formen, haptisches Feedback (Visueller Welleneffekt beim Klick), weiche Schatten (Shared Theme kompatibel).
+- [ ] "Heat-Map Touch": Bereiche, die schwer erreichbar sind, werden rot eingefärbt, leicht erreichbare grün.
+- [ ] "Precision-Snap": Buttons, die groß genug sind, "leuchten" einladend.
+
+4. Browser- und Device-Resilienz
+- [ ] `touch-action: manipulation` zur Optimierung der Reaktionszeit.
+- [ ] Mobile: Nutzung von CSS `padding` zur Vergrößerung der Klickfläche ohne das Design zu sprengen.
+
+5. Content-Strategie (The Mobile-Specs)
+- [ ] 10 Übungen zur Einhaltung der Human Interface Guidelines (Apple) und Material Design (Google).
+
+6. QA-Paket
+- [ ] Test: Fühlt sich die Daumen-Simulation realistisch an?
+- [ ] Test: Werden die Standard-Maße (z.B. 44x44pt) im Spiel explizit benannt?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler versteht: Design für Mobile ist mehr als nur "kleiner machen" – es ist Design für die Hand.
+- [ ] Das Interface wirkt griffig, freundlich und benutzerzentriert.
+- [ ] Fokus auf Ergonomie und physische Interaktionsgrenzen.

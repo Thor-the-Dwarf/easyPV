@@ -1,19 +1,42 @@
-Anforderungen
-1. "Persona-Puzzle"
-   - Ziel: Vertiefung des Verständnisses für unterschiedliche Nutzerbedarfe und deren Einfluss auf die Konzeption von User Experiences.
-   - Spielmechanik: 
-     - Präsentation von unterschiedlichen fiktiven Nutzerprofilen (Personas) (z.B. "IT-Administrator", "Gelegenheitsnutzer", "Barrierefrei-Angewiesener").
-     - Der Spieler ordnet spezifische Design-Anforderungen und Features den passenden Personas zu.
-     - Ziel: Erstellung eines User-Experience-Konzepts, das allen Stakeholdern gerecht wird.
-     - Messbarkeit: Passgenauigkeit der Features zu den Nutzerbedürfnissen.
-   - Lernziel: Nutzerzentriertes Denken und Vermeidung von "Universal-Lösungen" für heterogene Zielgruppen.
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Entwicklung von Empathie für verschiedene Nutzergruppen und Ableitung passgenauer Features basierend auf Personas.
+- Game-Mechanic: "The Persona-Puzzle". Vor dir sitzen drei virtuelle Nutzer (die Personas). 
+  - "Senior Stefan" (braucht große Schrift, klare Kontraste).
+  - "Power-User Paula" (will Shortcuts, komplexe Dashboards).
+  - "Mobile Mike" (ist immer unterwegs, braucht Ein-Hand-Bedienung).
+  Du hast einen Korb voller Features und Design-Elemente. Ziehe das Element auf die Persona, die am meisten davon profitiert. Wenn du Mike eine 2MB-Grafik gibst, wird er sauer (Ladezeit!). Wenn du Stefan eine 8pt Schrift gibst, verlässt er die App.
+- Challenge: 
+  - Level 1 (Basics): Ordne 5 Features den richtigen Personas zu.
+  - Level 2 (The Conflict): Zwei Personas wollen gegensätzliche Dinge. Finde den Kompromiss (Universal Design).
+  - Level 3 (The Journey Map): Erstelle für eine Persona den optimalen Weg durch die App vom Login bis zum Kauf.
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_ui_ux_personas.json')
-   - Detaillierte Persona-Beschreibungen und Feature-Karten.
-- [ ] Shared CSS Check ('business_mathematics.css')
-   - (Anpassung der Profil-Karten).
-- [ ] Game-Engine Logic ('game_category_match.js')
-   - (Wiederverwendung der Matching-Logik).
-- [ ] Integration
-   - Info: Warum Personas helfen, Grabenkämpfe im Team zu beenden.
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Empathy-Bar", "User-Satisfaction (%)", "Accessibility-Check", "Feature-Utility Meter".
+- [ ] Scoring: "User-Hero" Bonus für perfekte Feature-Matches. Abzug für "UX-Frustration" (völlig unpassende Elemente).
+
+2. Screen-Layout (The User-Lounge)
+- [ ] `persona-avatars -> needs-cloud -> feature-inventory -> satisfaction-feedback`.
+- [ ] Persona-Avatars: Charakterköpfe, die durch Mimik (Lächeln, Stirnrunzeln) direktes Feedback geben.
+- [ ] Needs-Cloud: Gedankenblasen über den Personas, die kryptische Hinweise auf ihre Bedürfnisse geben.
+
+3. Kernvisuals und Effekte
+- [ ] Human-Centric Ästhetik: Warme Farben, organische Formen, freundliche Illustrationen, sanfte Übergänge (Shared Theme kompatibel).
+- [ ] "Feature-Snap": Wenn ein Feature passt, leuchtet die Persona hell auf.
+- [ ] "Frustration-Vibe": Bei Missmatch wird das Design kurz grau und trist.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Grid` für das flexible Anordnen der Avatare und Feature-Karten.
+- [ ] Mobile: "Swipe Cards" (ähnlich wie Dating-Apps) für das Feature-Matching.
+
+5. Content-Strategie (The Persona-Profiles)
+- [ ] 8 detaillierte Personas aus verschiedenen Branchen (E-Commerce, B2B, Gaming).
+
+6. QA-Paket
+- [ ] Test: Reagieren die Avatare emotional nachvollziehbar auf die Entscheidungen?
+- [ ] Test: Sind die Bedürfnisse der Personas klar genug definiert, um logische Entscheidungen zu treffen?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler entwickelt ein Gespür für Zielgruppen und deren spezifische Anforderungen.
+- [ ] Das Interface wirkt lebendig, empathisch und motivierend.
+- [ ] Fokus auf User-Research und Anforderungsmanagement.

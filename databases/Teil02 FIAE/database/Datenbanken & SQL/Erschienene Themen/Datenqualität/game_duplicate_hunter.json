@@ -1,0 +1,111 @@
+{
+    "meta": {
+        "topic": "Data Quality",
+        "mechanic": "merge_diff",
+        "version": "1.0"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Typo Detection",
+            "description": "Identify the master record. Correct minor typos.",
+            "pairs": [
+                {
+                    "id": "pair_01",
+                    "recordA": {
+                        "id": "A101",
+                        "name": "Hans Müller",
+                        "city": "Berlin",
+                        "email": "hans.m@test.com"
+                    },
+                    "recordB": {
+                        "id": "A102",
+                        "name": "Hans Mueller",
+                        "city": "Berlin",
+                        "email": "hans.m@test.com"
+                    },
+                    "conflicts": [
+                        "name"
+                    ],
+                    "master": "A101"
+                },
+                {
+                    "id": "pair_02",
+                    "recordA": {
+                        "id": "B205",
+                        "name": "Apple Inc.",
+                        "city": "Cupertino",
+                        "status": "Active"
+                    },
+                    "recordB": {
+                        "id": "B299",
+                        "name": "Aple Inc",
+                        "city": "Cupertino",
+                        "status": "Active"
+                    },
+                    "conflicts": [
+                        "name"
+                    ],
+                    "master": "A"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Data Enrichment",
+            "description": "Merge incomplete records to create a full profile.",
+            "pairs": [
+                {
+                    "id": "pair_10",
+                    "recordA": {
+                        "id": "C500",
+                        "company": "TechCorp",
+                        "phone": null,
+                        "website": "www.techcorp.io"
+                    },
+                    "recordB": {
+                        "id": "C501",
+                        "company": "TechCorp GmbH",
+                        "phone": "+49 30 123456",
+                        "website": null
+                    },
+                    "conflicts": [
+                        "company",
+                        "phone",
+                        "website"
+                    ],
+                    "solution": {
+                        "company": "TechCorp GmbH",
+                        "phone": "+49 30 123456",
+                        "website": "www.techcorp.io"
+                    }
+                },
+                {
+                    "id": "pair_11",
+                    "recordA": {
+                        "id": "D100",
+                        "name": "Julia S.",
+                        "role": "Admin",
+                        "last_login": "2023-01-01"
+                    },
+                    "recordB": {
+                        "id": "D105",
+                        "name": "Julia Schmidt",
+                        "role": "User",
+                        "last_login": "2024-05-20"
+                    },
+                    "conflicts": [
+                        "name",
+                        "role",
+                        "last_login"
+                    ],
+                    "solution": {
+                        "name": "Julia Schmidt",
+                        "role": "Admin",
+                        "last_login": "2024-05-20"
+                    }
+                }
+            ]
+        }
+    ]
+}

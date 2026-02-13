@@ -1,0 +1,223 @@
+/* 
+ * Duplicate Hunter - Styles
+ * Aesthetic: Medical Lab / DNA / Clean White & Blue
+ */
+
+:root {
+    --lab-white: #f5f7fa;
+    --lab-blue: #2196f3;
+    --lab-dark-blue: #0d47a1;
+    --dna-green: #00e676;
+    --diff-orange: #ff9800;
+    --panel-bg: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--lab-white);
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+/* --- HUD --- */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hud-label {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.hud-value {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--lab-blue);
+}
+
+/* --- Lab Workbench --- */
+.workbench {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background:
+        linear-gradient(90deg, transparent 49%, rgba(0, 0, 0, 0.02) 50%, transparent 51%),
+        linear-gradient(0deg, transparent 49%, rgba(0, 0, 0, 0.02) 50%, transparent 51%);
+    background-size: 50px 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Comparison View */
+.comparison-container {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.record-card {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.record-card.record-a {
+    border-top: 5px solid var(--lab-blue);
+}
+
+.record-card.record-b {
+    border-top: 5px solid var(--diff-orange);
+}
+
+.card-header {
+    padding: 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    background: #fafafa;
+    color: #555;
+}
+
+.field-row {
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.field-row:hover {
+    background: #f5faff;
+}
+
+.field-row.selected {
+    background: #e3f2fd;
+    border-left: 4px solid var(--lab-blue);
+}
+
+.field-label {
+    font-size: 0.7rem;
+    color: #aaa;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.field-value {
+    font-size: 1rem;
+}
+
+.field-value.diff {
+    color: var(--diff-orange);
+    font-weight: bold;
+}
+
+.field-value.match {
+    color: var(--dna-green);
+}
+
+/* Match Score Badge */
+.match-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border: 4px solid var(--lab-white);
+}
+
+.match-percent {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--lab-blue);
+}
+
+/* Action Bar */
+.action-bar {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-lab {
+    padding: 1rem 3rem;
+    border: none;
+    background: var(--lab-blue);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+    transition: transform 0.1s;
+}
+
+.btn-lab:hover {
+    transform: translateY(-2px);
+}
+
+.btn-lab:active {
+    transform: translateY(0);
+}
+
+/* Result */
+.result-screen {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}

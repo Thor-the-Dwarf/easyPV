@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Gezielte Auswahl von Spalten (Projection) und Filtern von Zeilen (Selection) zur effizienten Datenabfrage.
+- Game-Mechanic: "The Column Sifter". Du stehst am Förderband eines riesigen Daten-Lagers. Tausende Container (Datensätze) rasen an dir vorbei. Jeder Container hat 50 verschiedene Etiketten (Spalten). Dein Auftrag: Snappe dir nur die 3 Etiketten, die der Kunde bestellt hat, und wirf alle Container vom Band, die nicht die richtige Farbe haben. Wer zu viele Daten sammelt (SELECT *), verstopft das System und verliert Punkte!
+- Challenge: 
+  - Level 1 (The Light Pack): Wähle aus der Tabelle `Mitarbeiter` nur `Vorname` und `Nachname` aus. Ignoriere den Rest (Data Economy).
+  - Level 2 (The Filter Guard): Nutze `WHERE`, um nur die Mitarbeiter zu finden, die im `Marketing` arbeiten.
+  - Level 3 (The Multi-Condition): Finde alle Mitarbeiter aus `Berlin`, die mehr als `50000` verdienen. Kombiniere Bedingungen präzise.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Query-Editor-Panel", "Result-Set-Preview (Table)", "Traffic-Load (Gauge)", "Precision-Score (%)".
+- [ ] Scoring: "Efficiency-Bonus" für Abfragen ohne `SELECT *`. Abzug für unnötiges Laden von ungenutzten Spalten.
+
+2. Screen-Layout (The Data Warehouse)
+- [ ] `conveyor-belt -> sifter-machine -> output-bin -> performance-monitor`.
+- [ ] Sifter-Machine: Ein Schacht mit verstellbaren Gittern, die nur bestimmte "Daten-Formen" (Spalten) durchlassen.
+- [ ] Performance-Monitor: Zeigt an, wie viel "Bandbreite" die aktuelle Abfrage verbraucht.
+
+3. Kernvisuals und Effekte
+- [ ] Industriekultur-Moderne Ästhetik: Gelbe Markierungen auf schwarzem Boden, metallische Container, Neon-Schriftzüge, das Quietschen von Förderbändern (Shared Theme kompatibel).
+- [ ] "Sift-Animation": Dokumente werden wie durch einen Kamm gezogen, wobei nur die gewählten Spalten hängen bleiben.
+- [ ] "Warning-Flash": Wenn `SELECT *` eingegeben wird, färbt sich der Traffic-Gauge sofort bedrohlich Rot.
+
+4. Browser- und Device-Resilienz
+- [ ] `SQL Syntax Highlighter` im Editor für gute Lesbarkeit.
+- [ ] Mobile: "Swipe-to-Column" Auswahl.
+
+5. Content-Strategie (The Order-Cards)
+- [ ] 15 verschiedene Abfrage-Aufträge: Von "Kleiner Kunden-Check" bis "Großer Gehalts-Audit".
+
+6. QA-Paket
+- [ ] Test: Wird der Nachteil von `SELECT *` (Performance-Impact) visuell spürbar?
+- [ ] Test: Fühlt sich das Filtern mit `WHERE` wie eine aktive Eliminierung von Rauschen an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Hole nur das, was du wirklich brauchst. Daten-Sparsamkeit beginnt beim SELECT.
+- [ ] Das Interface wirkt geschäftig, industriell und performant.
+- [ ] Fokus auf SQL-Best-Practices.

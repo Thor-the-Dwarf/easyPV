@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Korrektes Mapping von Werten auf Tabellenspalten und Einhaltung von Constraints beim Anlegen neuer Datensätze.
+- Game-Mechanic: "The Value Pusher". Du steuerst einen mechanischen Greifarm über einer Reihe von Löchern (Tabellenspalten). Du hast verschiedene Kugeln (Werte) in der Hand: Einen Namen (`'Max'`), ein Geburtsdatum (`'2024-05-12'`), eine ID (`42`). Du musst sie in der exakt richtigen Reihenfolge in die Löcher drücken. Wenn du ein Datum in ein Text-Loch wirfst, klemmt die Maschine!
+- Challenge: 
+  - Level 1 (The Basic Row): Befülle alle 3 Pflichtspalten einer einfachen Nutzertabelle in der richtigen Reihenfolge.
+  - Level 2 (The Multi-Row Burst): Erzeuge 5 Datensätze gleichzeitig mit einem einzigen Kommando (Bulk-Insert). Timing ist alles!
+  - Level 3 (The Constraint Wall): Eines der Löcher hat einen "UNIQUE" Wächter. Versuche nicht, die gleiche ID zweimal einzuwerfen. Finde den Fehler, bevor das System sperrt.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Column-Header-Display", "Value-Queue (Current Item)", "Integrity-Level (%)", "Constraint-Alert-Light".
+- [ ] Scoring: "Precision-Pillar" Bonus für fehlerfreie Sequenzen. Abzug für Datentyp-Fehler (Type-Mismatch).
+
+2. Screen-Layout (The Assembly Line)
+- [ ] `value-dispenser -> gripper-arm -> table-slots -> validation-stamp`.
+- [ ] Table-Slots: Jedes "Loch" zeigt seinen Datentyp und Namen an.
+- [ ] Validation-Stamp: Ein grünes Siegel "COMMITTED" erscheint bei erfolgreichem Insert.
+
+3. Kernvisuals und Effekte
+- [ ] Mechanical-Hifi Ästhetik: Poliertes Chrom, hydraulische Zischlaute, Klickgeräusche beim Einrasten, helle Punktmatrix-Displays (Shared Theme kompatibel).
+- [ ] "Slot-Glow": Das Ziel-Loch leuchtet in der Farbe des erwarteten Datentyps (Blau für Text, Gelb für Zahlen).
+- [ ] "Error-Sparks": Bei falschem Insert fliegen Funken und eine mechanische Stimme sagt "Constraint Violation!".
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Grid` für die präzise Anordnung der Tabellen-Slots.
+- [ ] Mobile: "Tap-to-Drop" Steuerung.
+
+5. Content-Strategie (The Inventory-Files)
+- [ ] 12 verschiedene Tabellen-Szenarien: Von "Kundenliste" bis "Lagerbestands-Buchung".
+
+6. QA-Paket
+- [ ] Test: Wird die Wichtigkeit der Spalten-Reihenfolge (bei impliziten Spaltenlisten) klar?
+- [ ] Test: Fühlt sich das Umgehen von Unique-Constraints wie eine echte Hürde an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: INSERT braucht Struktur und Disziplin. Jeder Wert braucht seinen Platz.
+- [ ] Das Interface wirkt taktisch, mechanisch und präzise.
+- [ ] Fokus auf Datenintegrität und SQL-Syntax.

@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Auswahl der optimalen SQL-Datentypen (INT, VARCHAR, DATE, DECIMAL) für verschiedene Real-World Daten zur Optimierung von Speicherplatz und Integrität.
+- Game-Mechanic: "The Type Matcher". Du bist der Sortier-Meister in einer intergalaktischen Daten-Staging-Area. Verschiedene Datenpakete kommen rein: "Ein Kontostand mit Cent-Beträgen", "Ein kurzer Tweet", "Ein langes PDF", "Das Gründungsdatum einer Firma". Du hast verschieden große Kästen (Datentypen). Deine Aufgabe: Schlage die Daten in den kleinstmöglichen Kasten ein, der gerade noch passt. Nutzt du einen riesigen Kasten für eine kleine Zahl (BIGINT für Alter), verschwendest du Treibstoff (Speicher)!
+- Challenge: 
+  - Level 1 (The Basic Sort): Ordne Begriffe wie `Namen`, `Alter` und `Preis` den Typen `VARCHAR`, `INT` und `DECIMAL` zu.
+  - Level 2 (The Size Optimizer): Ein Text ist immer genau 5 Zeichen lang. Wähle `CHAR(5)` statt `VARCHAR(255)`, um den "Efficiency-Bonus" zu erhalten.
+  - Level 3 (The Precision Trap): Ein wissenschaftliches Experiment braucht 10 Nachkommastellen. Wähle den richtigen Floating-Point- oder Fixed-Point-Typ, ohne Präzision zu verlieren.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Storage-Waste-Meter", "Data-Sample Display", "Type-Library", "Performance-Rank (D-S)".
+- [ ] Scoring: "Efficiency-Expert" Bonus für die exakte Wahl (z.B. `TINYINT` für Werte 0-255). Abzug für "Type-Overkill".
+
+2. Screen-Layout (The Sorting Dock)
+- [ ] `data-conveyor -> type-slots -> compression-chamber -> storage-stats`.
+- [ ] Type-Slots: Die Kästen haben unterschiedliche visuelle Kapazitäten und Farben.
+- [ ] Compression-Chamber: Zeigt an, wie viel Platz "gespart" wurde im Vergleich zum Standard-Typ.
+
+3. Kernvisuals und Effekte
+- [ ] Space-Cargo Ästhetik: Neon-Blau, dunkles Lila, holographische Anzeigen, Vakuum-Zischen, schwebende Daten-Icons (Shared Theme kompatibel).
+- [ ] "Snap-to-Fit": Wenn ein Datum in einen `DATE` Slot rutscht, hört man einen hellen, digitalen Akkord.
+- [ ] "Waste-Leak": Wenn man einen zu großen Typ wählt, entweicht grüner Dampf (Energieverschwendung).
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Perspective` für 3D-ähnliche Kästen (rein CSS).
+- [ ] Mobile: "Drag-and-Drop" in die Typ-Container.
+
+5. Content-Strategie (The Manifests)
+- [ ] 15 Daten-Szenarien: Von "Produkt-ID" bis "Sensor-Messwert".
+
+6. QA-Paket
+- [ ] Test: Wird der Vorteil von `DECIMAL` gegenüber `FLOAT` bei Geldbeträgen spielerisch klar?
+- [ ] Test: Fühlt sich der Kampf um jedes Byte (Efficiency) motivierend an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Der richtige Typ spart Platz und verhindert Fehler.
+- [ ] Das Interface wirkt futuristisch, sauber und logikorientiert.
+- [ ] Fokus auf Performance und Speicher-Design.

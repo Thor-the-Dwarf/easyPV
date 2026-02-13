@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Identifikation unnötiger Daten-Duplikate (Redundanz) und Verständnis der resultierenden Probleme (Speicherhunger, Inkonsistenz).
+- Game-Mechanic: "The Space Waster". Du bist der Lademeister auf einem überfüllten Lager-Schiff. Der Platz ist extrem knapp. Du siehst: 100 Pakete, und in JEDEM Paket liegt der exakt gleiche 50-seitige Katalog. Was für eine Verschwendung! Deine Aufgabe: Schmeiße die Kataloge raus, behalte nur einen und gib jedem Paket einen kleinen Verweis-Zettel (Fremdschlüssel), wo der eine Katalog liegt. Nur so sinkt das Schiff nicht!
+- Challenge: 
+  - Level 1 (Identify Duplicate): Scanne eine Tabelle und markiere alle Spalten, die in jedem Datensatz die gleiche redundante Information mitschleppen.
+  - Level 2 (The Cost of Storage): Berechne den Speicherverbrauch: 1 Million Zeilen * 100 Byte Redundanz. Schau zu, wie sich der "Storage-Waste-Gauge" füllt.
+  - Level 3 (The Update Chain-Reaction): Du musst die redundante Info ändern. Ändere sie an 10.000 Stellen gleichzeitig. Vergisst du eine, ist die Datenqualität ruiniert!
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Duplicate-Scanner-Beam", "Space-Occupancy (%)", "Consistency-Risk-Level", "Data-Deduplication Tool".
+- [ ] Scoring: "Ocean-Cleaner" Bonus für jeden MB, den du durch Redundanz-Vermeidung einsparst. Abzug für das Ignorieren von Duplikaten.
+
+2. Screen-Layout (The Cargo Hold)
+- [ ] `storage-grid -> redundancy-magnifier -> link-creator -> final-capacity-view`.
+- [ ] Storage-Grid: Zeigt die Datenblöcke als physische Kisten im Schiff an.
+- [ ] Link-Creator: Ein Tool, das redundante Kisten durch dünne, leichte "Referenz-Fäden" ersetzt.
+
+3. Kernvisuals und Effekte
+- [ ] Naval-Industrial Ästhetik: Blau-Grau Töne, rostige Metall-Texturen, Wasser-Effekte, das Ächzen von Stahl unter Last (Shared Theme kompatibel).
+- [ ] "Weight-Drop": Wenn Redundanz entfernt wird, hebt sich das Schiff sichtlich aus dem Wasser.
+- [ ] "Ink-Waste": Wenn man redundante Daten ändert, spritzt virtuell Tinte an alle Stellen, die aktualisiert werden müssen.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Variable Bar Charts` für den Speicher-Vergleich.
+- [ ] Mobile: "Pinch-to-Compress" Geste für redundante Datensätze.
+
+5. Content-Strategie (The Cargo-Manifests)
+- [ ] 12 Beispiele für klassische Redundanz (z.B. Kundenadresse in jeder Bestellung).
+
+6. QA-Paket
+- [ ] Test: Wird der Zusammenhang zwischen Redundanz und Speicherplatz-Kosten intuitiv klar?
+- [ ] Test: Erzeugt das "Sinken des Schiffs" genug zeitlichen Druck für das Refactoring?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Redundanz kostet Platz und führt zu Fehlern. "Don't Repeat Yourself" (DRY) gilt auch für Daten.
+- [ ] Das Interface wirkt wuchtig, atmosphärisch und logisch zwingend.
+- [ ] Fokus auf Daten-Ökonomie und Wartbarkeit.

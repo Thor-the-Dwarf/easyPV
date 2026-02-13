@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Erstellung robuster Tabellenstrukturen mittels DDL (Data Definition Language) inklusive Datentypen, Primärschlüsseln und Constraints.
+- Game-Mechanic: "The Table Builder". Du bist der Chef-Architekt eines neuen Daten-Palastes. Du zeichnest die Pläne (DDL Statements) für die Räume (Tabellen). Du musst festlegen: Wie heißt der Raum? Welche Schränke (Spalten) kommen rein? Welcher Schrank ist der Master-Schlüssel (Primary Key)? Wenn du vergisst, einen Schrank als `NOT NULL` zu markieren, könnten deine Arbeiter dort leere Boxen (NULLs) abstellen und alles bricht zusammen!
+- Challenge: 
+  - Level 1 (The Room Setup): Erstelle eine Tabelle `Produkte` mit `ID` (PK), `Name` und `Preis`.
+  - Level 2 (The Integrity Room): Füge dem `Preis` einen `CHECK` hinzu (muss größer 0 sein) und mache den `Namen` zum Pflichtfeld (`NOT NULL`).
+  - Level 3 (The Relational Wing): Baue eine zweite Tabelle und verknüpfe sie über einen `FOREIGN KEY`. Sorge dafür, dass nur gültige Referenzen erstellt werden können.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Blueprint-Editor (DDL)", "Structural-Health-Meter", "Constraint-Overview", "Database-Model-Preview".
+- [ ] Scoring: "Architect-Elite" Bonus für saubere, normalisierte Strukturen. Abzug für fehlende Primärschlüssel.
+
+2. Screen-Layout (The Design Studio)
+- [ ] `drafting-table (Code) -> structure-preview (Visual) -> constraint-checker -> deployment-lever`.
+- [ ] Structure-Preview: Ein 3D-Modell der Tabelle, das live mitwächst, während man den SQL-Code schreibt.
+- [ ] Constraint-Checker: Ein Set von kleinen LEDs, die grün leuchten, wenn PK, NN und UK gesetzt sind.
+
+3. Kernvisuals und Effekte
+- [ ] Architect-Modern Ästhetik: Blaupausen-Hintergrund, feine weiße Linien auf tiefblauem Grund, Bleistift-Skizzen-Sounds, beim "Go-Live" ein dramatisches Einrasten (Shared Theme kompatibel).
+- [ ] "Code-Build": Während man tippt, bauen sich virtuelle Wände der Tabelle im Preview-Fenster auf.
+- [ ] "Structural-Failure": Wenn der SQL-Code invalid ist, bekommt die Blaupause Risse und wackelt.
+
+4. Browser- und Device-Resilienz
+- [ ] `Ace/Monaco Editor` Light-Version für das IaC-Gefühl.
+- [ ] Mobile: "Code-Snippet-Selector" (Baukasten-Prinzip).
+
+5. Content-Strategie (The Work-Orders)
+- [ ] 12 Bau-Aufträge: Von "Einfache Kontaktliste" bis "Komplexes Order-Management-System".
+
+6. QA-Paket
+- [ ] Test: Wird die Bedeutung von `PRIMARY KEY` (Eindeutigkeit) architektonisch greifbar?
+- [ ] Test: Fühlt sich das Hinzufügen von Constraints wie das Stabilisieren eines Gebäudes an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Eine gute Datenbank steht und fällt mit ihrem Schema (DDL).
+- [ ] Das Interface wirkt strukturiert, professionell und gestalterisch wertvoll.
+- [ ] Fokus auf Datendesign und DDL-Präzision.

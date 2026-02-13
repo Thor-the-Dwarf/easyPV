@@ -159,12 +159,13 @@ h1 {
 
 .feedback {
   margin: 0;
-  color: #4f5f72;
+  color: #141414;
   font-size: 1.08rem;
   min-height: 1.4em;
   text-align: center;
 }
 
+.feedback.neutral { color: #111; }
 .feedback.ok { color: #0f7742; }
 .feedback.bad { color: #b73943; }
 
@@ -201,10 +202,10 @@ body.cf-page.high-confusion .feedback {
 
 .snippet-card.draggable {
   border-style: dashed;
-  border-color: #3f86ff;
-  background: rgba(235, 244, 255, 0.45);
+  border-color: #3c3c3c;
+  background: rgba(255, 255, 255, 0.22);
   cursor: grab;
-  box-shadow: 0 0 0 3px rgba(63, 134, 255, 0.16);
+  box-shadow: 0 0 0 3px rgba(20, 20, 20, 0.12);
 }
 
 .snippet-card.draggable:active {

@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Identifikation und Vermeidung der drei klassischen Datenbank-Anomalien (Einfüge-, Änderungs- und Lösch-Anomalie) durch korrekte Normalisierung.
+- Game-Mechanic: "The Data Glitch". Du bist der System-Administrator in einer instabilen Matrix. Deine Datenbank-Einträge verhalten sich seltsam: Wenn du einen Kurs löschst, verschwindet plötzlich auch der einzige Lehrer (Lösch-Anomalie). Wenn du eine Adresse änderst, bleibt sie an einer anderen Stelle alt (Änder-Anomalie). Überall tauchen "Glitches" auf. Du musst die Daten-Fragmente finden und sie so neu anordnen (Normalisierung), dass sie stabil und anomaliefrei werden.
+- Challenge: 
+  - Level 1 (The Update Maze): Ein Kunde hat zwei Adressen in deiner flachen Tabelle. Ändere beide, ohne eine zu vergessen. Spüre das Risiko!
+  - Level 2 (The Deletion Trap): Lösche das letzte Produkt einer Kategorie. Ups, die Kategorie-Beschreibung ist jetzt auch weg! Verstehe, warum das passiert ist.
+  - Level 3 (The Insertion Barrier): Versuche, einen neuen Dozenten anzulegen, aber du hast noch keinen Kurs für ihn. Die Maschine blockiert, weil der Kurs ein Pflichtfeld ist. Finde den Design-Fehler.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Glitch-Radar (Heatmap)", "Consistency-Health (%)", "Anomaly-Detector Status", "Normalization-Tools".
+- [ ] Scoring: "Stability-Master" Bonus für das Auflösen von Transitivitäten. Abzug für jeden unentdeckten Glitch.
+
+2. Screen-Layout (The Matrix-View)
+- [ ] `data-grid -> anomaly-magnifier -> split-table-tool -> stability-check`.
+- [ ] Data-Grid: Eine bewusst "falsch" designte Tabelle, die visuelle Artefakte (Flimmern) an den Stellen zeigt, wo Redundanz herrscht.
+- [ ] Split-Table-Tool: Ein Werkzeug, mit dem man eine große, kaputte Tabelle in zwei saubere, verknüpfte Tabellen zerschneiden kann.
+
+3. Kernvisuals und Effekte
+- [ ] Glitch-Cyberpunk Ästhetik: Dunkle Hintergründe, digitaler "Rain", flackernde Texte, Verzerrungs-Effekte bei Anomalien, statisches Rauschen im Audio (Shared Theme kompatibel).
+- [ ] "Glitch-Fix": Wenn man eine Tabelle normalisiert, beruhigt sich das Flimmern und die Struktur wird fest und klar.
+- [ ] "Warning-Noise": Ein schrilles Signal ertönt, wenn eine Inkonsistenz im Datensatz entsteht.
+
+4. Browser- und Device-Resilienz
+- [ ] `CSS Filter (Hue-Rotate/Pixelate)` für das Glitch-Fehling.
+- [ ] Mobile: "Swipe-to-Split" Tabellen-Geste.
+
+5. Content-Strategie (The Corrupted Files)
+- [ ] 12 Szenarien mit klassischen Design-Fehlern (Redundanz, nichthängende Attribute).
+
+6. QA-Paket
+- [ ] Test: Wird das Wesen der Anomalien (Nicht-Beabsichtigte Nebenwirkungen) spielerisch deutlich?
+- [ ] Test: Fühlt sich der "Aha-Moment" beim Aufteilen der Tabellen (1. auf 2. NF) gut an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler begreift: Anomalien sind die Folge schlechten Designs. Normalisierung ist die Kur.
+- [ ] Das Interface wirkt dramatisch, technologisch herausfordernd und augenöffnend.
+- [ ] Fokus auf Datenbank-Theorie und Daten-Qualität.

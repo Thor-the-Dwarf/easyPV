@@ -85,7 +85,7 @@
 
     showCard();
     startTimer();
-    setFeedback('Zuordnen: Links = Admin, Rechts = User.', true);
+    setFeedback('Ziehe das aktuelle Fragment nach links oder rechts', null);
     pushLog('Mission gestartet.', 'ok');
     renderFeed();
   }
@@ -105,7 +105,7 @@
 
     el.text.textContent = snippet.text;
     el.cardNode.style.transform = 'translateX(0px)';
-    setFeedback('Ordne das aktuelle Fragment zu: links Admin, rechts User.', true);
+    setFeedback('Ziehe das aktuelle Fragment nach links oder rechts', null);
     updateDragState();
 
     updateHud();
@@ -321,7 +321,10 @@
 
   function setFeedback(text, ok) {
     el.feedback.textContent = text;
-    el.feedback.className = `feedback ${ok ? 'ok' : 'bad'}`;
+    let tone = 'neutral';
+    if (ok === true) tone = 'ok';
+    if (ok === false) tone = 'bad';
+    el.feedback.className = `feedback ${tone}`;
   }
 
   function updateHud() {

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-Baum Simulator - Speed of Index</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="btree_simulator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="mission-panel">
+                <div id="mission-title" class="mission-title">Loading...</div>
+                <div id="mission-desc" class="mission-desc">...</div>
+            </div>
+            <div class="stats-panel">
+                <div class="stat-box">
+                    <div class="stat-label">Linear I/O</div>
+                    <div id="val-linear" class="stat-value">0</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Index I/O</div>
+                    <div id="val-index" class="stat-value">0</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Simulation -->
+        <main class="simulation-area">
+            <!-- Track 1 -->
+            <div class="track-linear">
+                <div class="track-label">TABLE SCAN (O(n))</div>
+                <div id="marker-linear" class="scan-marker"></div>
+            </div>
+
+            <!-- Track 2 -->
+            <div class="track-index">
+                <div class="track-label">INDEX SEEK (O(log n))</div>
+                <div id="tree-area" id="tree-area">
+                    <!-- Nodes injected here -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Controls -->
+        <footer class="controls">
+            <button id="btn-start" class="btn-start">START COMPARISON RACE</button>
+        </footer>
+
+        <!-- Result Overlay -->
+        <div id="result-overlay" class="result-overlay hidden">
+            <div class="result-card">
+                <h2 style="color:var(--accent-neon); margin-bottom:1rem;">RACE COMPLETED</h2>
+
+                <div class="comparison-grid">
+                    <div class="comp-box">
+                        <div class="comp-label">FULL TABLE SCAN</div>
+                        <div id="res-linear" class="comp-val-red">?</div>
+                        <div class="comp-label">Disk Operations</div>
+                    </div>
+                    <div class="comp-box">
+                        <div class="comp-label">INDEX SEEK</div>
+                        <div id="res-index" class="comp-val-cyan">?</div>
+                        <div class="comp-label">Disk Operations</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2rem; color:#888;">
+                    The index reduces disk access by navigating a structured path.
+                </div>
+
+                <button id="btn-next" class="btn-start">NEXT DATASET</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_btree_simulator.js"></script>
+</body>
+
+</html>

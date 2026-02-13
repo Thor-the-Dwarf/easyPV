@@ -1,0 +1,114 @@
+{
+    "meta": {
+        "topic": "Database Index (B-Tree)",
+        "mechanic": "performance_race_simulator",
+        "version": "1.0"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Small Dataset",
+            "description": "Find ID 7. The dataset is small, so the advantage of an index is limited.",
+            "targetId": 7,
+            "datasetSize": 10,
+            "tree": {
+                "value": 5,
+                "left": {
+                    "values": [
+                        1,
+                        2,
+                        3,
+                        4
+                    ]
+                },
+                "right": {
+                    "values": [
+                        6,
+                        7,
+                        8,
+                        9,
+                        10
+                    ]
+                }
+            }
+        },
+        {
+            "id": 2,
+            "title": "Corporate Database",
+            "description": "Find Employee ID 42. Compare the steps needed for a scan vs. a seek.",
+            "targetId": 42,
+            "datasetSize": 100,
+            "tree": {
+                "value": 50,
+                "left": {
+                    "value": 25,
+                    "left": {
+                        "values": [
+                            1,
+                            10,
+                            20
+                        ]
+                    },
+                    "right": {
+                        "values": [
+                            30,
+                            40,
+                            42,
+                            45
+                        ]
+                    }
+                },
+                "right": {
+                    "value": 75,
+                    "left": {
+                        "values": [
+                            60
+                        ]
+                    },
+                    "right": {
+                        "values": [
+                            90
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "id": 3,
+            "title": "Big Data Simulation",
+            "description": "Find Record ID 789 in a massive table. See the true power of O(log n)!",
+            "targetId": 789,
+            "datasetSize": 1000,
+            "tree": {
+                "value": 500,
+                "left": {
+                    "value": 250,
+                    "left": {
+                        "value": 125
+                    },
+                    "right": {
+                        "value": 375
+                    }
+                },
+                "right": {
+                    "value": 750,
+                    "left": {
+                        "value": 625
+                    },
+                    "right": {
+                        "value": 875,
+                        "left": {
+                            "value": 800,
+                            "left": {
+                                "value": 789
+                            }
+                        },
+                        "right": {
+                            "value": 950
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

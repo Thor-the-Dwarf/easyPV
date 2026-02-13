@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stakeholder Radar - Umfeldanalyse</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="stakeholder_radar.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="hud-label">SIGNAL SCORE</span>
+                <span class="hud-value" id="score-val">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">STATUS</span>
+                <span class="hud-value">SCANNING...</span>
+            </div>
+        </header>
+
+        <!-- Radar Screen -->
+        <main class="radar-container">
+            <div id="radar-scope" class="radar-scope">
+                <div id="radar-sweep" class="radar-sweep"></div>
+                <div class="sweep-trail"></div> <!-- Visual Trail -->
+                <!-- Blips injected here -->
+            </div>
+
+            <!-- CRT Overlay -->
+            <div class="crt-overlay"></div>
+
+            <!-- Info Panel (Pop-up) -->
+            <div id="info-panel" class="info-panel hidden">
+                <div class="panel-title">TARGET IDENTIFIED</div>
+                <div id="target-label" style="font-size: 1.5rem; margin: 1rem 0;">UNKNOWN</div>
+                <div class="btn-group">
+                    <button id="btn-internal" class="btn-classify">INTERNAL</button>
+                    <button id="btn-external" class="btn-classify">EXTERNAL</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card"
+                style="border: 2px solid var(--radar-green); background: #000; color: var(--radar-green);">
+                <h2>MISSION DEBRIEF</h2>
+                <div class="hud-value" style="font-size: 3rem; margin: 1rem 0;" id="final-score">0</div>
+                <button id="restart-btn" class="btn-classify">REBOOT SYSTEM</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_stakeholder_radar.js"></script>
+</body>
+
+</html>

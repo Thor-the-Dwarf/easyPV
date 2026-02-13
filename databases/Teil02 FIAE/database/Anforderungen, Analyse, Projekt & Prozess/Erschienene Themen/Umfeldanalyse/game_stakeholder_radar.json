@@ -1,0 +1,125 @@
+{
+    "meta": {
+        "topic": "Umfeldanalyse",
+        "mechanic": "radar_operator",
+        "version": "1.0"
+    },
+    "categories": {
+        "internal": {
+            "label": "INTERN",
+            "color": "#4caf50",
+            "desc": "Innerhalb der Organisation / des Projekts."
+        },
+        "external": {
+            "label": "EXTERN",
+            "color": "#f44336",
+            "desc": "Außerhalb der direkten Kontrolle."
+        }
+    },
+    "levels": [
+        {
+            "id": 1,
+            "scan_speed": 4,
+            "blip_duration": 5000,
+            "target_count": 5
+        },
+        {
+            "id": 2,
+            "scan_speed": 3,
+            "blip_duration": 4000,
+            "target_count": 8
+        },
+        {
+            "id": 3,
+            "scan_speed": 2,
+            "blip_duration": 3000,
+            "target_count": 12
+        }
+    ],
+    "targets": [
+        {
+            "id": "t1",
+            "label": "Team-Moral",
+            "category": "internal",
+            "icon": "😊"
+        },
+        {
+            "id": "t2",
+            "label": "Projekt-Budget",
+            "category": "internal",
+            "icon": "💰"
+        },
+        {
+            "id": "t3",
+            "label": "Betriebsrat",
+            "category": "internal",
+            "icon": "🤝"
+        },
+        {
+            "id": "t4",
+            "label": "Geschäftsführung",
+            "category": "internal",
+            "icon": "👔"
+        },
+        {
+            "id": "t5",
+            "label": "Ressourcen",
+            "category": "internal",
+            "icon": "💻"
+        },
+        {
+            "id": "t6",
+            "label": "Wettbewerber",
+            "category": "external",
+            "icon": "🤼"
+        },
+        {
+            "id": "t7",
+            "label": "Gesetzgeber",
+            "category": "external",
+            "icon": "⚖️"
+        },
+        {
+            "id": "t8",
+            "label": "Technologie-Trend",
+            "category": "external",
+            "icon": "🚀"
+        },
+        {
+            "id": "t9",
+            "label": "Kunden",
+            "category": "external",
+            "icon": "🛒"
+        },
+        {
+            "id": "t10",
+            "label": "Lieferanten",
+            "category": "external",
+            "icon": "🚚"
+        },
+        {
+            "id": "t11",
+            "label": "DSGVO Novelle",
+            "category": "external",
+            "icon": "📜"
+        },
+        {
+            "id": "t12",
+            "label": "Wirtschaftskrise",
+            "category": "external",
+            "icon": "📉"
+        },
+        {
+            "id": "t13",
+            "label": "Know-How Verlust",
+            "category": "internal",
+            "icon": "🧠"
+        },
+        {
+            "id": "t14",
+            "label": "Unternehmenskultur",
+            "category": "internal",
+            "icon": "🏛️"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL DELETE - Precision Tool</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="point_delete.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div id="mission-text" class="mission-text">Loading Mission...</div>
+            <div class="status-indicator">MODE: SURGICAL</div>
+        </header>
+
+        <!-- Operation Theater -->
+        <main class="theater">
+            <div id="record-list" class="record-list">
+                <!-- Records -->
+            </div>
+
+            <div class="shredder-area">
+                <button id="btn-delete" class="btn-delete" disabled>DELETE RECORD</button>
+            </div>
+        </main>
+
+        <!-- Result Overlay -->
+        <div id="result-overlay" class="result-overlay hidden">
+            <div class="result-card">
+                <h2 style="color:var(--accent-focus); margin-bottom:1rem;">OPERATION SUCCESSFUL</h2>
+                <div class="hud-value" style="font-size: 1.5rem; margin: 2rem 0; color:#333" id="final-result">...</div>
+                <button id="btn-next" class="btn-delete" style="background: var(--accent-focus); font-size:1rem;">NEXT
+                    MISSION</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_point_delete.js"></script>
+</body>
+
+</html>

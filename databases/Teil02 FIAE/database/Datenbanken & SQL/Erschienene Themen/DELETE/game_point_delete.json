@@ -1,0 +1,94 @@
+{
+    "meta": {
+        "topic": "DELETE Statement",
+        "mechanic": "precision_selection",
+        "version": "1.0"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Surgical Removal",
+            "description": "Delete the user 'SpamBot_99' (ID: 404). Do NOT touch the others.",
+            "target": {
+                "id": 404
+            },
+            "data": [
+                {
+                    "id": 101,
+                    "username": "Admin",
+                    "role": "admin",
+                    "locked": false
+                },
+                {
+                    "id": 102,
+                    "username": "User_A",
+                    "role": "user",
+                    "locked": false
+                },
+                {
+                    "id": 404,
+                    "username": "SpamBot_99",
+                    "role": "bot",
+                    "locked": false
+                },
+                {
+                    "id": 105,
+                    "username": "User_B",
+                    "role": "user",
+                    "locked": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Duplicate Danger",
+            "description": "Delete the INACTIVE 'Hans'. Watch out, there are two 'Hans' users!",
+            "target": {
+                "id": 77
+            },
+            "data": [
+                {
+                    "id": 55,
+                    "username": "Hans",
+                    "status": "active",
+                    "locked": false
+                },
+                {
+                    "id": 77,
+                    "username": "Hans",
+                    "status": "inactive",
+                    "locked": false
+                },
+                {
+                    "id": 88,
+                    "username": "Greta",
+                    "status": "active",
+                    "locked": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Constraint Lock",
+            "description": "Try to delete 'BigCustomer'. Why is it blocked?",
+            "target": {
+                "id": 900
+            },
+            "data": [
+                {
+                    "id": 900,
+                    "username": "BigCustomer",
+                    "orders": 5,
+                    "locked": true,
+                    "reason": "Foreign Key Constraint: 5 Orders exist."
+                },
+                {
+                    "id": 901,
+                    "username": "SmallFish",
+                    "orders": 0,
+                    "locked": false
+                }
+            ]
+        }
+    ]
+}

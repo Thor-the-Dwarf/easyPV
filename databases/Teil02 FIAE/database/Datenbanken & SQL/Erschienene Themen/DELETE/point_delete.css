@@ -1,0 +1,227 @@
+/* 
+ * Point Delete - Styles
+ * Aesthetic: Medical / Surgical Precision / Clean Room
+ */
+
+:root {
+    --bg-clinical: #f5f5f5;
+    --bg-surface: #ffffff;
+    --text-main: #333333;
+    --accent-danger: #d32f2f;
+    --accent-focus: #0288d1;
+    --accent-locked: #ffc107;
+    --grid-line: #e0e0e0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-clinical);
+    color: var(--text-main);
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+    cursor: crosshair;
+    /* Scalpel Feel */
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background: var(--bg-surface);
+}
+
+/* --- HUD --- */
+.hud {
+    background: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mission-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.status-indicator {
+    padding: 5px 10px;
+    background: #000;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #00e676;
+}
+
+/* --- Operation Theater --- */
+.theater {
+    flex: 1;
+    padding: 2rem;
+    background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 50px 50px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Records List */
+.record-list {
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.record-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    cursor: crosshair;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.record-row:last-child {
+    border-bottom: none;
+}
+
+.record-row:hover {
+    background: #e3f2fd;
+}
+
+.record-row.selected {
+    background: #ffcdd2;
+    /* Red tint for 'to be deleted' */
+    border-left: 5px solid var(--accent-danger);
+}
+
+.record-row.locked {
+    background: #fff8e1;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.col-id {
+    font-family: monospace;
+    font-weight: bold;
+    color: #555;
+    width: 50px;
+}
+
+.col-data {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* Constraints Warning */
+.constraint-badge {
+    background: var(--accent-locked);
+    color: #000;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Shredder (Button) */
+.shredder-area {
+    padding: 2rem;
+    background: #eee;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+.btn-delete {
+    background: var(--accent-danger);
+    color: #fff;
+    border: none;
+    padding: 1rem 4rem;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn-delete:hover {
+    background: #b71c1c;
+    transform: scale(1.05);
+}
+
+.btn-delete:active {
+    transform: scale(0.95);
+}
+
+.btn-delete:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Result Overlay */
+.result-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    text-align: center;
+}
+
+.result-card {
+    padding: 3rem;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border-top: 5px solid var(--accent-focus);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Scalpel Effect */
+.scalpel-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid red;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    display: none;
+    /* Just using CSS cursor crosshair for now, simpler */
+}

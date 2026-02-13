@@ -1,0 +1,96 @@
+{
+    "meta": {
+        "topic": "SQL UPDATE Precision",
+        "mechanic": "affected_rows_safety",
+        "version": "1.0"
+    },
+    "scenarios": [
+        {
+            "id": 1,
+            "title": "Operation: CEO Raise",
+            "mission": "Set the salary of the CEO (Müller) to 250000. Use his ID (1).",
+            "table": "employees",
+            "targetQuery": "UPDATE employees SET salary = 250000 WHERE id = 1",
+            "targetRows": 1,
+            "initialRows": 1500,
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Müller",
+                    "role": "CEO",
+                    "salary": 180000
+                },
+                {
+                    "id": 2,
+                    "name": "Schmidt",
+                    "role": "Dev",
+                    "salary": 80000
+                },
+                {
+                    "id": 3,
+                    "name": "Fischer",
+                    "role": "HR",
+                    "salary": 75000
+                }
+            ],
+            "successMessage": "Surgical precision! You updated exactly one record. The CEO is happy, and the company budget is safe.",
+            "failMessage": "DATABASE COLLAPSE! You just gave 1,500 people a CEO salary. The company is bankrupt."
+        },
+        {
+            "id": 2,
+            "title": "Branch Relocation",
+            "description": "Move the 'North' branch from 'Old Hamburg' to 'HafenCity'.",
+            "table": "branches",
+            "targetQuery": "UPDATE branches SET location = 'HafenCity' WHERE branch_name = 'North'",
+            "targetRows": 1,
+            "initialRows": 45,
+            "data": [
+                {
+                    "id": 10,
+                    "branch_name": "North",
+                    "location": "Old Hamburg"
+                },
+                {
+                    "id": 11,
+                    "branch_name": "South",
+                    "location": "Munich"
+                },
+                {
+                    "id": 12,
+                    "branch_name": "East",
+                    "location": "Berlin"
+                }
+            ],
+            "successMessage": "Coordinates updated. Only the North branch has moved.",
+            "failMessage": "LOCATION WIPE! Every single branch office is now suddenly in HafenCity."
+        },
+        {
+            "id": 3,
+            "title": "Emergency Password Reset",
+            "description": "Reset the password for 'admin' to 'emergency2024'.",
+            "table": "users",
+            "targetQuery": "UPDATE users SET pass = 'emergency2024' WHERE username = 'admin'",
+            "targetRows": 1,
+            "initialRows": 8000,
+            "data": [
+                {
+                    "id": 1,
+                    "username": "admin",
+                    "pass": "********"
+                },
+                {
+                    "id": 2,
+                    "username": "user1",
+                    "pass": "********"
+                },
+                {
+                    "id": 3,
+                    "username": "user2",
+                    "pass": "********"
+                }
+            ],
+            "successMessage": "Access restored for admin only.",
+            "failMessage": "SECURITY CATASTROPHE! Every user now has the admin password. Game over."
+        }
+    ]
+}

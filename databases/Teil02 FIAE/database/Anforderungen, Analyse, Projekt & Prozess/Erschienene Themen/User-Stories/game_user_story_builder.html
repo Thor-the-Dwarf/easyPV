@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Story Builder - The Storyteller</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="user_story_builder.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="hud-label">Story Score</span>
+                <span class="hud-value" id="score-val">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Stories Told</span>
+                <span class="hud-value" id="stories-val">0/5</span>
+            </div>
+        </header>
+
+        <!-- Slot Machine -->
+        <main class="slot-machine-frame">
+            <div class="slot-title">STORY-TELLER 3000</div>
+
+            <div class="reels-container">
+                <!-- Reel 1: Role -->
+                <div class="reel-column">
+                    <div class="reel-window">
+                        <div id="reel-strip-1" class="reel-strip"></div>
+                    </div>
+                    <button id="lock-btn-1" class="lock-btn">LOCK</button>
+                    <div class="hud-label">ROLE</div>
+                </div>
+
+                <!-- Reel 2: Goal -->
+                <div class="reel-column">
+                    <div class="reel-window">
+                        <div id="reel-strip-2" class="reel-strip"></div>
+                    </div>
+                    <button id="lock-btn-2" class="lock-btn">LOCK</button>
+                    <div class="hud-label">GOAL</div>
+                </div>
+
+                <!-- Reel 3: Benefit -->
+                <div class="reel-column">
+                    <div class="reel-window">
+                        <div id="reel-strip-3" class="reel-strip"></div>
+                    </div>
+                    <button id="lock-btn-3" class="lock-btn">LOCK</button>
+                    <div class="hud-label">BENEFIT</div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button id="spin-btn" class="big-btn">SPIN</button>
+                <button id="check-btn" class="big-btn">CHECK</button>
+            </div>
+
+            <!-- Feedback -->
+            <div class="feedback-display">
+                <div id="feedback-msg">Pull the lever!</div>
+                <div class="invest-badges">
+                    <span class="invest-badge">I</span>
+                    <span class="invest-badge">N</span>
+                    <span class="invest-badge">V</span>
+                    <span class="invest-badge">E</span>
+                    <span class="invest-badge">S</span>
+                    <span class="invest-badge">T</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card" style="background: #222; border: 2px solid var(--casino-gold);">
+                <h2 style="color: var(--casino-gold);">CASINO CLOSED</h2>
+                <div class="hud-value" style="font-size: 3rem; margin: 1rem 0;" id="final-score">0</div>
+                <button id="restart-btn" class="big-btn" style="background: var(--casino-gold); color: #000;">PLAY
+                    AGAIN</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_user_story_builder.js"></script>
+</body>
+
+</html>

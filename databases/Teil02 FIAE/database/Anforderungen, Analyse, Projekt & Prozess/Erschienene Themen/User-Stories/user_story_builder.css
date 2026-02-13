@@ -1,0 +1,259 @@
+/* 
+ * User-Story-Baukasten - Styles
+ * Aesthetic: Slot Machine / Casino / Gold & Neon
+ */
+
+:root {
+    --casino-red: #d32f2f;
+    --casino-gold: #ffc107;
+    --casino-dark: #212121;
+    --highlight-neon: #fff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at center, #4a148c, #000);
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- HUD --- */
+.hud {
+    position: absolute;
+    top: 10px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 2px solid var(--casino-gold);
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hud-label {
+    font-size: 0.8rem;
+    color: var(--casino-gold);
+    text-transform: uppercase;
+}
+
+.hud-value {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 10px var(--casino-gold);
+}
+
+/* --- Slot Machine --- */
+.slot-machine-frame {
+    background: #333;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow:
+        0 0 50px rgba(0, 0, 0, 0.8),
+        inset 0 0 20px rgba(0, 0, 0, 0.5),
+        0 0 20px var(--casino-gold);
+    border: 5px solid var(--casino-gold);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+}
+
+.slot-title {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 2rem;
+    color: var(--casino-gold);
+    text-shadow: 2px 2px 0 red, -1px -1px 0 yellow;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.reels-container {
+    display: flex;
+    gap: 10px;
+    background: #000;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 20px #000;
+}
+
+.reel-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.reel-window {
+    width: 220px;
+    height: 120px;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    border: 3px solid #555;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reel-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.1s linear;
+    /* JS will handle animation loop */
+}
+
+/* When spinning, we blur or move fast */
+.spinning .reel-strip {
+    /* controlled by JS */
+}
+
+.reel-item {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    background: linear-gradient(to bottom, #f9f9f9, #e0e0e0);
+}
+
+.lock-btn {
+    background: #555;
+    color: #aaa;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.lock-btn.locked {
+    background: var(--casino-red);
+    color: #fff;
+    box-shadow: 0 0 10px var(--casino-red);
+}
+
+.controls {
+    display: flex;
+    gap: 2rem;
+}
+
+.big-btn {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+#spin-btn {
+    background: linear-gradient(to bottom, #ffeb3b, #fbc02d);
+    color: #333;
+    box-shadow: 0 5px 0 #f57f17;
+}
+
+#spin-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #f57f17;
+}
+
+#spin-btn:disabled {
+    filter: grayscale(1);
+    cursor: not-allowed;
+}
+
+#check-btn {
+    background: linear-gradient(to bottom, #4caf50, #2e7d32);
+    color: #fff;
+    box-shadow: 0 5px 0 #1b5e20;
+}
+
+#check-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #1b5e20;
+}
+
+/* Feedback */
+.feedback-display {
+    min-height: 50px;
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    text-shadow: 0 0 5px #000;
+}
+
+.invest-badges {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.invest-badge {
+    background: #444;
+    color: #777;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.invest-badge.active {
+    background: var(--casino-gold);
+    color: #000;
+}
+
+.result-screen {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.hidden {
+    display: none !important;
+}

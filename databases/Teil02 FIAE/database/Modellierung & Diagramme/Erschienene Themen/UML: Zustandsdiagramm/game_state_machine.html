@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Gatekeeper - State Machine</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="state_machine.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- HUD -->
+        <header class="hud">
+            <div style="flex:1;">
+                <h1 style="font-size: 1rem; margin:0; color:var(--hologram-purple); letter-spacing:3px;">GATEKEEPER //
+                    CORE_FSM_v9</h1>
+            </div>
+
+            <div class="hud-stability">
+                CORE_STABILITY: <span id="stability-val">SYNCING...</span>
+            </div>
+
+            <div style="flex:1; text-align:right; font-size:0.75rem; color:var(--border-dim);">
+                DETERMINISTIC_MODE: ON
+            </div>
+        </header>
+
+        <!-- Core Chamber -->
+        <main class="core-chamber" id="chamber">
+            <div class="scanline-effect"></div>
+
+            <!-- State Prism -->
+            <div id="state-prism" class="state-prism">
+                <div style="font-size: 0.7rem; color: var(--hologram-purple); opacity:0.6;">CURRENT_STATE</div>
+                <div id="state-label" class="state-label">INITIALIZING</div>
+            </div>
+
+            <!-- Instructions -->
+            <div id="instruction"
+                style="margin-top: 3rem; background: rgba(0,0,0,0.8); padding: 15px 30px; border: 1px solid var(--border-dim); border-radius: 4px; font-size: 0.85rem; color: var(--text-scifi); max-width: 600px; text-align: center;">
+                Warte auf System-Start...
+            </div>
+        </main>
+
+        <!-- Trigger Board -->
+        <footer class="trigger-board" id="trigger-board">
+            <!-- Event buttons injected here -->
+        </footer>
+
+        <!-- Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="scifi-card">
+                <h2 style="color:var(--hologram-cyan); margin-top:0; letter-spacing:5px;">PROTOCOL_COMPLETE</h2>
+                <div
+                    style="margin: 2.5rem 0; font-size: 1rem; color: var(--text-scifi); line-height: 1.8; text-align: left; font-family: monospace;">
+                    > FINAL_STATE: REACHED<br>
+                    > TRANSITION_INTEGRITY: 100%<br>
+                    > GUARD_CONDITIONS: SATISFIED<br><br>
+                    Der Zustands-Automat wurde erfolgreich durchlaufen. Alle Transitionen erfolgten nach UML-Standard.
+                </div>
+
+                <button id="btn-next" class="btn-proceed">NÄCHSTER PROTOKOLL-KERN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_state_machine.js"></script>
+</body>
+
+</html>

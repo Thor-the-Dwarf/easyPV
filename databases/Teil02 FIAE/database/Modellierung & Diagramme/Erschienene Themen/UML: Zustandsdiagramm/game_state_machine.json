@@ -1,0 +1,179 @@
+{
+    "meta": {
+        "topic": "UML State Machines",
+        "mechanic": "logic_gatekeeper",
+        "version": "1.0"
+    },
+    "scenarios": [
+        {
+            "id": 1,
+            "title": "Device Lifecycle",
+            "instruction": "Bring the device from 'OFF' to 'ACTIVE'. Watch out for the 'BOOT_ERROR' event.",
+            "startState": "OFF",
+            "states": [
+                {
+                    "id": "OFF",
+                    "label": "POWER_OFF",
+                    "color": "#444"
+                },
+                {
+                    "id": "BOOT",
+                    "label": "BOOTING...",
+                    "color": "#0088ff"
+                },
+                {
+                    "id": "ACTIVE",
+                    "label": "SYSTEM_ACTIVE",
+                    "color": "#00ff88"
+                },
+                {
+                    "id": "ERROR",
+                    "label": "CRITICAL_FAILURE",
+                    "color": "#ff3333"
+                }
+            ],
+            "transitions": [
+                {
+                    "from": "OFF",
+                    "event": "POWER_ON",
+                    "to": "BOOT"
+                },
+                {
+                    "from": "BOOT",
+                    "event": "INIT_SUCCESS",
+                    "to": "ACTIVE"
+                },
+                {
+                    "from": "BOOT",
+                    "event": "BOOT_ERROR",
+                    "to": "ERROR"
+                },
+                {
+                    "from": "ERROR",
+                    "event": "RESET",
+                    "to": "OFF"
+                },
+                {
+                    "from": "ACTIVE",
+                    "event": "SHUTDOWN",
+                    "to": "OFF"
+                }
+            ],
+            "winState": "ACTIVE"
+        },
+        {
+            "id": 2,
+            "title": "Coffee Protocol",
+            "instruction": "Satisfy the machine logic. You need a coin before selection.",
+            "startState": "IDLE",
+            "states": [
+                {
+                    "id": "IDLE",
+                    "label": "IDLE",
+                    "color": "#aaa"
+                },
+                {
+                    "id": "CREDIT",
+                    "label": "CREDIT_INSERTED",
+                    "color": "#ffd700"
+                },
+                {
+                    "id": "BREWING",
+                    "label": "BREWING...",
+                    "color": "#8b4513"
+                },
+                {
+                    "id": "DONE",
+                    "label": "PICKUP_READY",
+                    "color": "#00ff00"
+                }
+            ],
+            "transitions": [
+                {
+                    "from": "IDLE",
+                    "event": "INSERT_COIN",
+                    "to": "CREDIT"
+                },
+                {
+                    "from": "CREDIT",
+                    "event": "SELECT_COFFEE",
+                    "to": "BREWING"
+                },
+                {
+                    "from": "BREWING",
+                    "event": "FINISH",
+                    "to": "DONE"
+                },
+                {
+                    "from": "DONE",
+                    "event": "TAKE_CUP",
+                    "to": "IDLE"
+                },
+                {
+                    "from": "CREDIT",
+                    "event": "CANCEL",
+                    "to": "IDLE"
+                }
+            ],
+            "winCondition": {
+                "type": "sequence",
+                "states": [
+                    "DONE"
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "title": "Security Guard",
+            "instruction": "Transitions with Guards. You can only retry if count < 3.",
+            "startState": "LOGIN",
+            "states": [
+                {
+                    "id": "LOGIN",
+                    "label": "Enter Password",
+                    "color": "#00ffff"
+                },
+                {
+                    "id": "FAIL",
+                    "label": "Login Failed",
+                    "color": "#ff8800"
+                },
+                {
+                    "id": "LOCKED",
+                    "label": "ACCOUNT_LOCKED",
+                    "color": "#ff0000"
+                },
+                {
+                    "id": "SECURE",
+                    "label": "DATA_ACCESS",
+                    "color": "#00ff00"
+                }
+            ],
+            "transitions": [
+                {
+                    "from": "LOGIN",
+                    "event": "SUBMIT_CORRECT",
+                    "to": "SECURE"
+                },
+                {
+                    "from": "LOGIN",
+                    "event": "SUBMIT_WRONG",
+                    "to": "FAIL"
+                },
+                {
+                    "from": "FAIL",
+                    "event": "RETRY",
+                    "to": "LOGIN",
+                    "guard": "retries < 3"
+                },
+                {
+                    "from": "FAIL",
+                    "event": "LIMIT_REACHED",
+                    "to": "LOCKED",
+                    "guard": "retries >= 3"
+                }
+            ],
+            "winState": "SECURE"
+        }
+    ]
+}

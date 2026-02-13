@@ -1,0 +1,244 @@
+/* 
+ * Zustands-Automat - Styles
+ * Aesthetic: Dark-SciFi / Holographic Gatekeeper
+ */
+
+:root {
+    --fsm-bg: #050010;
+    --hologram-cyan: #00ffff;
+    --hologram-purple: #bc13fe;
+    --text-scifi: #e0d0ff;
+    --border-dim: rgba(188, 19, 254, 0.3);
+    --error-red: #ff0044;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--fsm-bg);
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(188, 19, 254, 0.1) 0%, transparent 70%),
+        linear-gradient(rgba(0, 0, 0, 0) 95%, rgba(188, 19, 254, 0.05) 95%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0) 95%, rgba(188, 19, 254, 0.05) 95%);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    color: var(--text-scifi);
+    font-family: 'Orbitron', sans-serif, 'Segoe UI';
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* --- HUD --- */
+.hud {
+    padding: 1.5rem 3rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 2px solid var(--hologram-purple);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.2);
+}
+
+.hud-stability {
+    font-size: 0.9rem;
+    color: var(--hologram-cyan);
+    text-shadow: 0 0 10px var(--hologram-cyan);
+}
+
+/* --- State Core Area --- */
+.core-chamber {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.state-prism {
+    width: 250px;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 3px solid var(--hologram-purple);
+    box-shadow: 0 0 40px var(--hologram-purple);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.state-prism::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1px solid var(--hologram-cyan);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    opacity: 0.3;
+}
+
+.state-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    color: var(--hologram-cyan);
+    text-shadow: 0 0 15px var(--hologram-cyan);
+}
+
+.scanline-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 10px var(--hologram-cyan);
+    animation: scan 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+/* --- Trigger Panel --- */
+.trigger-board {
+    height: 200px;
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 2px solid var(--hologram-purple);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.event-btn {
+    padding: 12px 25px;
+    background: transparent;
+    border: 1px solid var(--hologram-cyan);
+    color: var(--hologram-cyan);
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-btn:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 15px var(--hologram-cyan);
+    transform: translateY(-2px);
+}
+
+.event-btn:active {
+    transform: translateY(1px);
+}
+
+/* Guard Info */
+.guard-tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--error-red);
+    color: white;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    border-radius: 4px;
+}
+
+/* --- Transition Warp --- */
+.warp-anim {
+    animation: warp 0.5s ease-out;
+}
+
+@keyframes warp {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+        filter: blur(0);
+    }
+
+    50% {
+        transform: scale(0.5) rotate(180deg);
+        opacity: 0.5;
+        filter: blur(5px);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* --- Buzz Flash --- */
+.buzz-flash {
+    animation: flash-red 0.3s;
+}
+
+@keyframes flash-red {
+
+    0%,
+    100% {
+        background: var(--fsm-bg);
+    }
+
+    50% {
+        background: rgba(255, 0, 68, 0.3);
+    }
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 0, 16, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.scifi-card {
+    padding: 4rem;
+    border: 2px solid var(--hologram-cyan);
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.2);
+    text-align: center;
+    max-width: 500px;
+}
+
+.btn-proceed {
+    margin-top: 2rem;
+    padding: 12px 40px;
+    background: var(--hologram-cyan);
+    color: #000;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}

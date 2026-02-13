@@ -14,71 +14,76 @@
 <body>
     <div class="game-app">
         <!-- HUD -->
-        <header class="hud">
+        <header class="header-bar">
             <div class="mission-panel">
-                <div id="mission-title" class="mission-title">Loading...</div>
-                <div id="mission-desc" class="mission-desc">...</div>
+                <h2 id="mission-title">INDEX_INITIALIZING...</h2>
+                <p id="mission-desc">AWAITING_DATA_PARAMETER</p>
             </div>
             <div class="stats-panel">
                 <div class="stat-box">
-                    <div class="stat-label">Linear I/O</div>
-                    <div id="val-linear" class="stat-value">0</div>
+                    <div class="stat-label">LINEAR_I_O</div>
+                    <div id="val-linear" class="stat-val">0</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-label">Index I/O</div>
-                    <div id="val-index" class="stat-value">0</div>
+                    <div class="stat-label">INDEX_I_O</div>
+                    <div id="val-index" class="stat-val">0</div>
                 </div>
             </div>
         </header>
 
         <!-- Simulation -->
-        <main class="simulation-area">
-            <!-- Track 1 -->
-            <div class="track-linear">
-                <div class="track-label">TABLE SCAN (O(n))</div>
+        <main class="simulation">
+            <!-- Track 1: Linear -->
+            <div class="track track-linear">
+                <div class="label-tab">THE_RUNNER // FULL_TABLE_SCAN</div>
                 <div id="marker-linear" class="scan-marker"></div>
+                <div style="font-size:0.6rem; color:var(--linear-red); opacity:0.3; margin-left:auto;">COMPLEXITY: O(n)
+                </div>
             </div>
 
-            <!-- Track 2 -->
-            <div class="track-index">
-                <div class="track-label">INDEX SEEK (O(log n))</div>
-                <div id="tree-area" id="tree-area">
+            <!-- Track 2: Index -->
+            <div class="track track-index">
+                <div class="label-tab">THE_FLYER // INDEX_SEEK</div>
+                <div id="tree-area">
                     <!-- Nodes injected here -->
                 </div>
+                <div
+                    style="position:absolute; bottom:10px; right:10px; font-size:0.6rem; color:var(--index-cyan); opacity:0.3;">
+                    COMPLEXITY: O(log n)</div>
             </div>
         </main>
 
         <!-- Controls -->
-        <footer class="controls">
-            <button id="btn-start" class="btn-start">START COMPARISON RACE</button>
+        <footer class="control-bar">
+            <button id="btn-start" class="btn-start">START_PERFORMANCE_RACE</button>
         </footer>
 
         <!-- Result Overlay -->
-        <div id="result-overlay" class="result-overlay hidden">
+        <div id="overlay" class="overlay hidden">
             <div class="result-card">
-                <h2 style="color:var(--accent-neon); margin-bottom:1rem;">RACE COMPLETED</h2>
+                <h1 style="color:var(--index-cyan); margin:0; letter-spacing:10px;">ANALYSIS_COMPLETE</h1>
 
                 <div class="comparison-grid">
-                    <div class="comp-box">
-                        <div class="comp-label">FULL TABLE SCAN</div>
-                        <div id="res-linear" class="comp-val-red">?</div>
-                        <div class="comp-label">Disk Operations</div>
+                    <div class="box">
+                        <div class="label">TABLE_SCAN_COST</div>
+                        <div id="res-linear" class="val">?</div>
+                        <div class="label">DISK_READS</div>
                     </div>
-                    <div class="comp-box">
-                        <div class="comp-label">INDEX SEEK</div>
-                        <div id="res-index" class="comp-val-cyan">?</div>
-                        <div class="comp-label">Disk Operations</div>
+                    <div class="box">
+                        <div class="label">INDEX_SEEK_COST</div>
+                        <div id="res-index" class="val">?</div>
+                        <div class="label">DISK_READS</div>
                     </div>
                 </div>
 
-                <div style="margin-bottom: 2rem; color:#888;">
-                    The index reduces disk access by navigating a structured path.
-                </div>
+                <div id="factor-badge" class="factor-badge">50x FASTER</div>
 
-                <button id="btn-next" class="btn-start">NEXT DATASET</button>
+                <button id="btn-next">CALIBRATE_NEXT_DATASET</button>
             </div>
         </div>
     </div>
+
+    <!-- Script -->
     <script src="game_btree_simulator.js"></script>
 </body>
 

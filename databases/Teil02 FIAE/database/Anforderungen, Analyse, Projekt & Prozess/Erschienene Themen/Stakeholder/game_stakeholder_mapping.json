@@ -1,0 +1,206 @@
+{
+    "meta": {
+        "topic": "Stakeholder Management",
+        "mechanic": "matrix_mapping",
+        "version": "1.0"
+    },
+    "strategies": {
+        "promotors": {
+            "id": "manage",
+            "label": "Verbinden (Manage Closely)",
+            "desc": "High Power / High Interest. Schlüsselfiguren.",
+            "color": "hsl(var(--success))"
+        },
+        "defenders": {
+            "id": "satisfy",
+            "label": "Zufriedenstellen (Keep Satisfied)",
+            "desc": "High Power / Low Interest. Machtfaktor, aber passiv.",
+            "color": "hsl(var(--warning))"
+        },
+        "latents": {
+            "id": "inform",
+            "label": "Informieren (Keep Informed)",
+            "desc": "Low Power / High Interest. Meinungsbildner.",
+            "color": "hsl(var(--info))"
+        },
+        "apathetics": {
+            "id": "monitor",
+            "label": "Beobachten (Monitor)",
+            "desc": "Low Power / Low Interest. Kaum Einfluss.",
+            "color": "hsl(var(--txt-muted))"
+        }
+    },
+    "levels": [
+        {
+            "id": 1,
+            "name": "Level 1: Das Projekt-Setup",
+            "description": "Ordne die typischen Rollen eines IT-Projekts ein.",
+            "stakeholders": [
+                {
+                    "id": "s1",
+                    "name": "Der Auftraggeber/CEO",
+                    "role": "Sponsor",
+                    "quote": "Ich zahle das Projekt und erwarte Ergebnisse bis Q3. Stören Sie mich nicht mit Details.",
+                    "power": 90,
+                    "interest": 20,
+                    "correct_quadrant": "defenders",
+                    "explanation": "Hat die Macht (Geld), aber wenig Interesse am Tagesgeschäft -> Keep Satisfied."
+                },
+                {
+                    "id": "s2",
+                    "name": "Der Key User",
+                    "role": "Power User",
+                    "quote": "Wenn das neue System meine Workflows verlangsamt, streikt die Abteilung!",
+                    "power": 30,
+                    "interest": 95,
+                    "correct_quadrant": "latents",
+                    "explanation": "Hohes Interesse, aber wenig hierarchische Macht -> Keep Informed / Einbinden."
+                },
+                {
+                    "id": "s3",
+                    "name": "Der Projektleiter",
+                    "role": "Manager",
+                    "quote": "Ich muss wissen, ob wir im Budget und Zeitplan sind. Täglich.",
+                    "power": 80,
+                    "interest": 90,
+                    "correct_quadrant": "promotors",
+                    "explanation": "Entscheidet und ist tief involviert -> Manage Closely."
+                },
+                {
+                    "id": "s4",
+                    "name": "Der Praktikant",
+                    "role": "Support",
+                    "quote": "Ich soll Kaffee kochen und mal über die Doku schauen.",
+                    "power": 5,
+                    "interest": 10,
+                    "correct_quadrant": "apathetics",
+                    "explanation": "Wenig Einfluss, wenig Interesse -> Monitor."
+                },
+                {
+                    "id": "s5",
+                    "name": "Der Datenschutzbeauftragte",
+                    "role": "Compliance",
+                    "quote": "Ein Verstoß gegen die DSGVO, und ich ziehe den Stecker.",
+                    "power": 95,
+                    "interest": 50,
+                    "correct_quadrant": "defenders",
+                    "explanation": "Enorme Veto-Macht, interessiert sich nur bei Problemen -> Keep Satisfied."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Level 2: Hidden Agenda",
+            "description": "Lies zwischen den Zeilen. Wer hat wirklich Macht?",
+            "stakeholders": [
+                {
+                    "id": "s6",
+                    "name": "Die 'Graue Eminenz'",
+                    "role": "Assistentin des CEO",
+                    "quote": "Ich entscheide, welche Memos auf dem Schreibtisch des Chefs landen.",
+                    "power": 85,
+                    "interest": 40,
+                    "correct_quadrant": "defenders",
+                    "explanation": "Gatekeeper-Macht wird oft unterschätzt. Muss zufrieden gehalten werden."
+                },
+                {
+                    "id": "s7",
+                    "name": "Der externe Berater",
+                    "role": "Consultant",
+                    "quote": "Ich habe dem Vorstand empfohlen, Ihre Abteilung umzustrukturieren.",
+                    "power": 70,
+                    "interest": 80,
+                    "correct_quadrant": "promotors",
+                    "explanation": "Einfluss auf den Vorstand und starkes Interesse am Change -> Manage Closely."
+                },
+                {
+                    "id": "s8",
+                    "name": "Der genervte Admin",
+                    "role": "IT Ops",
+                    "quote": "Macht was ihr wollt, solange ich keine neuen Ports öffnen muss.",
+                    "power": 60,
+                    "interest": 10,
+                    "correct_quadrant": "defenders",
+                    "explanation": "Kann technisch blockieren (Macht), will aber Ruhe (wenig Interesse) -> Keep Satisfied."
+                },
+                {
+                    "id": "s9",
+                    "name": "Die Presse",
+                    "role": "Media",
+                    "quote": "Gibt es schon Leaks zum neuen Produkt? Das wäre eine Story!",
+                    "power": 40,
+                    "interest": 90,
+                    "correct_quadrant": "latents",
+                    "explanation": "Hohes Interesse, Macht nur durch Öffentlichkeit -> Keep Informed."
+                },
+                {
+                    "id": "s10",
+                    "name": "Der Lieferant",
+                    "role": "Vendor",
+                    "quote": "Ich liefere die Hardware, wenn die Rechnung bezahlt ist.",
+                    "power": 20,
+                    "interest": 30,
+                    "correct_quadrant": "apathetics",
+                    "explanation": "Austauschbar, reiner Erfüllungsgehilfe -> Monitor (bzw. Contract Mgmt)."
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Level 3: Crisis Mode",
+            "description": "Das Projekt wackelt. Positionen verschieben sich.",
+            "stakeholders": [
+                {
+                    "id": "s11",
+                    "name": "Betriebsrat",
+                    "role": "Union",
+                    "quote": "Wir haben gehört, das neue System kostet Arbeitsplätze? Wir fordern Einsicht!",
+                    "power": 90,
+                    "interest": 100,
+                    "correct_quadrant": "promotors",
+                    "explanation": "Blockade-Macht aktiviert durch hohes Interesse -> Manage Closely (Verhandeln)."
+                },
+                {
+                    "id": "s12",
+                    "name": "Der enttäuschte Fan",
+                    "role": "Early Adopter",
+                    "quote": "Das Update hat mein Feature gelöscht! Ich starte einen Shitstorm!",
+                    "power": 50,
+                    "interest": 100,
+                    "correct_quadrant": "latents",
+                    "explanation": "Hohes Interesse, Macht wächst durch Viralität -> Keep Informed / Befrieden."
+                },
+                {
+                    "id": "s13",
+                    "name": "Der CFO (nach Budget-Überschreitung)",
+                    "role": "Sponsor",
+                    "quote": "Ich schaue mir jetzt JEDE Ausgabe persönlich an.",
+                    "power": 100,
+                    "interest": 100,
+                    "correct_quadrant": "promotors",
+                    "explanation": "Wandel von 'Satisfy' zu 'Manage Closely'. Jetzt volle Aufmerksamkeit nötig."
+                },
+                {
+                    "id": "s14",
+                    "name": "Die Konkurrenz",
+                    "role": "Market",
+                    "quote": "Wir schauen uns das genau an, um es zu kopieren.",
+                    "power": 10,
+                    "interest": 80,
+                    "correct_quadrant": "latents",
+                    "explanation": "Beobachten uns genau -> Wir müssen sie im Auge behalten (Informieren? Eher Monitor/Latent)."
+                },
+                {
+                    "id": "s15",
+                    "name": "Der Hausmeister",
+                    "role": "Facility",
+                    "quote": "Ich schließ dann mal ab.",
+                    "power": 80,
+                    "interest": 5,
+                    "correct_quadrant": "defenders",
+                    "explanation": "Hat den Schlüssel (Macht), aber das Projekt ist ihm egal -> Keep Satisfied (nett grüßen)."
+                }
+            ]
+        }
+    ]
+}

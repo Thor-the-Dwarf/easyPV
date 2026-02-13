@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stakeholder Mapping - The Diplomat</title>
+    <!-- Adjust path -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="stakeholder_mapping.css">
+</head>
+
+<body>
+    <div class="game-app">
+        <header class="hud">
+            <div class="hud-panel">
+                <div class="hud-item">
+                    <span class="hud-label">DIPLOMACY SCORE</span>
+                    <span class="hud-value" id="score-val">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">PROJECT HEAT</span>
+                    <div class="bar-container heat-bar">
+                        <div class="bar-fill" id="heat-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">LEVEL</span>
+                <span class="hud-value" id="level-val">1</span>
+            </div>
+        </header>
+
+        <main class="war-room">
+            <!-- Matrix Container -->
+            <div class="matrix-container">
+                <div class="matrix-grid">
+                    <!-- Labels -->
+                    <div class="axis-labels">
+                        <div class="axis-title-y">MACHT</div>
+                        <div class="label-y-top">HOCH</div>
+                        <div class="label-y-bottom">NIEDRIG</div>
+
+                        <div class="axis-title-x">INTERESSE</div>
+                        <div class="label-x-left">NIEDRIG</div>
+                        <div class="label-x-right">HOCH</div>
+                    </div>
+
+                    <!-- 
+                       GridLayout: 
+                       1 2
+                       3 4
+                       
+                       Top-Left (1): Power ^, Interest v -> Satisfy
+                       Top-Right (2): Power ^, Interest ^ -> Manage
+                       Bottom-Left (3): Power v, Interest v -> Monitor
+                       Bottom-Right (4): Power v, Interest ^ -> Inform
+                    -->
+
+                    <div class="quadrant" data-id="satisfy" data-strat="ZUFRIEDENSTELLEN"></div>
+                    <div class="quadrant" data-id="manage" data-strat="ENG MANAGEN"></div>
+                    <div class="quadrant" data-id="monitor" data-strat="BEOBACHTEN"></div>
+                    <div class="quadrant" data-id="inform" data-strat="INFORMIEREN"></div>
+                </div>
+
+                <div class="feedback-overlay">
+                    <div id="stamp-mark" class="stamp-mark"></div>
+                </div>
+            </div>
+
+            <aside class="deck-panel">
+                <div class="deck-title">STAKEHOLDER INTEL</div>
+                <div id="card-stack" class="card-stack"></div>
+            </aside>
+        </main>
+
+        <div id="result-screen" class="result-screen hidden">
+            <div class="card">
+                <h2>MISSION DEBRIEF</h2>
+                <div class="hud-value" style="font-size: 3rem; margin: 1rem 0;" id="final-score">0</div>
+                <button id="restart-btn" class="btn primary">NEXT MISSION</button>
+            </div>
+        </div>
+    </div>
+    <script src="game_stakeholder_mapping.js"></script>
+</body>
+
+</html>

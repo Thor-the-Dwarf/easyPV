@@ -1,0 +1,372 @@
+/* 
+ * Stakeholder-Mapping - Styles
+ * Based on shared_theme.css variables
+ * Aesthetic: War Room / Holographic / Strategy
+ */
+
+:root {
+    --matrix-grid: rgba(0, 188, 212, 0.2);
+    --matrix-axis: rgba(0, 188, 212, 0.8);
+    --hologram-blue: 180 100% 50%;
+    --card-bg: rgba(10, 25, 47, 0.8);
+    --heat-color: 0 100% 50%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at center, hsl(220, 40%, 10%), #000);
+    color: hsl(var(--hologram-blue));
+    font-family: 'Orbitron', 'Inter', sans-serif;
+    /* Tech feel */
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* --- HUD --- */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background: rgba(0, 20, 40, 0.9);
+    border-bottom: 1px solid hsl(var(--hologram-blue) / 0.3);
+    box-shadow: 0 0 20px hsl(var(--hologram-blue) / 0.1);
+    z-index: 20;
+}
+
+.hud-panel {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: hsl(var(--hologram-blue) / 0.6);
+    letter-spacing: 0.1em;
+}
+
+.hud-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: hsl(var(--hologram-blue));
+    text-shadow: 0 0 5px hsl(var(--hologram-blue));
+}
+
+.bar-container {
+    width: 200px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid hsl(var(--hologram-blue) / 0.3);
+}
+
+.bar-fill {
+    height: 100%;
+    width: 0%;
+    background: hsl(var(--hologram-blue));
+    box-shadow: 0 0 10px hsl(var(--hologram-blue));
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.heat-bar .bar-fill {
+    background: hsl(var(--heat-color));
+    box-shadow: 0 0 10px hsl(var(--heat-color));
+}
+
+/* --- War Room (Main Stage) --- */
+.war-room {
+    flex: 1;
+    display: flex;
+    position: relative;
+    padding: 1rem;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+/* Matrix */
+.matrix-container {
+    flex: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.matrix-grid {
+    width: 80vmin;
+    height: 80vmin;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+    border: 2px solid var(--matrix-axis);
+    background:
+        linear-gradient(var(--matrix-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--matrix-grid) 1px, transparent 1px);
+    background-size: 50px 50px;
+    box-shadow: 0 0 50px hsl(var(--hologram-blue) / 0.1);
+    /* Slight tilt for 3D effect? Maybe too hard to interact. Flat is safer for drop targets. */
+}
+
+/* Axis Labels */
+.axis-labels {
+    position: absolute;
+    inset: -30px;
+    pointer-events: none;
+}
+
+.label-y-top {
+    position: absolute;
+    top: 0;
+    left: -25px;
+    transform: rotate(-90deg) translateX(-50%);
+    transform-origin: top left;
+    font-size: 0.8rem;
+}
+
+.label-y-bottom {
+    position: absolute;
+    bottom: 0;
+    left: -25px;
+    transform: rotate(-90deg) translateX(50%);
+    transform-origin: bottom left;
+    font-size: 0.8rem;
+}
+
+.label-x-left {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    font-size: 0.8rem;
+}
+
+.label-x-right {
+    position: absolute;
+    bottom: -25px;
+    right: 0;
+    font-size: 0.8rem;
+}
+
+.axis-title-y {
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    transform: translateY(-50%) rotate(-90deg);
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+.axis-title-x {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+/* Quadrants */
+.quadrant {
+    position: relative;
+    border: 1px dashed var(--matrix-grid);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.quadrant::before {
+    content: attr(data-strat);
+    font-size: 1.5rem;
+    font-weight: 900;
+    opacity: 0.1;
+    text-transform: uppercase;
+    position: absolute;
+    pointer-events: none;
+}
+
+.quadrant.drag-over {
+    background: hsl(var(--hologram-blue) / 0.1);
+    box-shadow: inset 0 0 30px hsl(var(--hologram-blue) / 0.2);
+}
+
+/* Stakeholder Deck */
+.deck-panel {
+    flex: 1;
+    max-width: 350px;
+    background: rgba(0, 10, 20, 0.8);
+    border-left: 1px solid hsl(var(--hologram-blue) / 0.3);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.deck-title {
+    font-size: 1rem;
+    border-bottom: 1px solid hsl(var(--hologram-blue) / 0.3);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card-stack {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stakeholder-card {
+    width: 280px;
+    min-height: 180px;
+    background: rgba(10, 30, 50, 0.95);
+    border: 1px solid hsl(var(--hologram-blue));
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 0 15px hsl(var(--hologram-blue) / 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    cursor: grab;
+    position: absolute;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.stakeholder-card:active {
+    cursor: grabbing;
+}
+
+.card-role {
+    font-size: 0.75rem;
+    color: hsl(var(--hologram-blue) / 0.7);
+    text-transform: uppercase;
+}
+
+.card-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 5px hsl(var(--hologram-blue));
+}
+
+.card-quote {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+    border-left: 2px solid hsl(var(--hologram-blue));
+    padding-left: 0.5rem;
+}
+
+/* Strategy Selector (Popup or overlay) */
+.strategy-selector {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 20, 40, 0.95);
+    border: 2px solid hsl(var(--hologram-blue));
+    padding: 2rem;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    z-index: 100;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.strategy-btn {
+    background: transparent;
+    border: 1px solid hsl(var(--hologram-blue) / 0.5);
+    color: hsl(var(--hologram-blue));
+    padding: 1rem;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.strategy-btn:hover {
+    background: hsl(var(--hologram-blue) / 0.2);
+    box-shadow: 0 0 15px hsl(var(--hologram-blue) / 0.4);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Feedback */
+.feedback-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.stamp-mark {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: 5px solid currentColor;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    transform: rotate(-15deg) scale(0);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.stamp-mark.show {
+    transform: rotate(-15deg) scale(1);
+    opacity: 1;
+}
+
+/* Result Screen */
+.result-screen {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 10, 20, 0.98);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 300;
+}
+
+@media (max-width: 800px) {
+    .war-room {
+        flex-direction: column-reverse;
+    }
+
+    .deck-panel {
+        max-width: 100%;
+        flex: 0 0 200px;
+    }
+
+    .stakeholder-card {
+        width: 90%;
+    }
+}

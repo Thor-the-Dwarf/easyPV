@@ -63,10 +63,14 @@
   }
 
   async function init() {
+    const params = new URLSearchParams(window.location.search);
+    const jsonParam = params.get('json');
+    const jsonSources = [];
+    if (jsonParam) jsonSources.push(jsonParam);
+    jsonSources.push('./beispiel.json?ts=' + Date.now());
+
     try {
-      const response = await fetch('./beispiel.json?ts=' + Date.now());
-      if (!response.ok) throw new Error('beispiel.json konnte nicht geladen werden');
-      const payload = await response.json();
+      const payload = await loadFirstAvailableJson(jsonSources);
       const messages = buildMessagesFromPayload(payload);
       thread.innerHTML = messages.map(renderMessage).join('');
     } catch (_) {
@@ -75,6 +79,24 @@
         '<div class="message-bubble"><p>JSON konnte nicht geladen werden.</p></div>' +
         '</article>';
     }
+  }
+
+  async function loadFirstAvailableJson(sources) {
+    const list = Array.isArray(sources) ? sources.filter(Boolean) : [];
+    let lastError;
+
+    for (let i = 0; i < list.length; i += 1) {
+      const source = list[i];
+      try {
+        const response = await fetch(source);
+        if (!response.ok) throw new Error('JSON nicht verfügbar');
+        return await response.json();
+      } catch (error) {
+        lastError = error;
+      }
+    }
+
+    throw lastError || new Error('Keine JSON-Quelle verfügbar');
   }
 
   function buildMessagesFromPayload(payload) {

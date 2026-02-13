@@ -233,6 +233,7 @@
           const rawChildren = Array.isArray(node.children) ? node.children : [];
           const normalizedChildren = normalizeTree(rawChildren);
           const hasFiles = rawChildren.some((child) => child && !child.isFolder);
+          const jsonRelPath = findFirstJsonRelPath(rawChildren);
 
           if (cleanedName.toLowerCase() === 'database') return normalizedChildren;
           if (cleanedName === 'M') return normalizedChildren;
@@ -244,6 +245,7 @@
             name: cleanedName,
             isFolder: true,
             hasFiles: hasFiles,
+            jsonRelPath: jsonRelPath,
             children: normalizedChildren
           };
 
@@ -327,6 +329,9 @@
             const existing = index.get(key);
             existing.children = mergeChildren(existing.children, item.children);
             existing.hasFiles = existing.hasFiles || item.hasFiles;
+            if (!existing.jsonRelPath && item.jsonRelPath) {
+              existing.jsonRelPath = item.jsonRelPath;
+            }
           });
 
           return merged;
@@ -433,15 +438,31 @@
         }
 
         function isPlayableFolder(node) {
-          return !!node && node.isFolder && !!node.hasFiles;
+          return !!node && node.isFolder && !!node.hasFiles && !!node.jsonRelPath;
         }
 
         function openPlayableFolder(node) {
           if (!contentHost) return;
           const folderLabel = node && node.name ? node.name : 'Spielordner';
-          const src = './generic_pages/generic_c_suite/generic_c_suite.html?folder=' + encodeURIComponent(folderLabel);
+          const jsonUrl = new URL(String(node.jsonRelPath || ''), window.location.href).href;
+          const src =
+            './generic_pages/generic_c_suite/generic_c_suite.html?folder=' +
+            encodeURIComponent(folderLabel) +
+            '&json=' +
+            encodeURIComponent(jsonUrl);
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
+        }
+
+        function findFirstJsonRelPath(children) {
+          const files = Array.isArray(children) ? children : [];
+          const preferred = files.find(function (child) {
+            if (!child || child.isFolder) return false;
+            const kind = String(child.kind || '').toLowerCase();
+            const name = String(child.name || '').toLowerCase();
+            return kind === 'json' || name.endsWith('.json');
+          });
+          return preferred && preferred.relPath ? preferred.relPath : '';
         }
 
         function escapeHtml(value) {

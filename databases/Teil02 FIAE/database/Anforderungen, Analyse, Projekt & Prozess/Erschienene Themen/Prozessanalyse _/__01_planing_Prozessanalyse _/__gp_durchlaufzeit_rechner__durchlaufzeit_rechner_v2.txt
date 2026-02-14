@@ -1,0 +1,28 @@
+# __gp_durchlaufzeit_rechner__durchlaufzeit_rechner_v2
+
+## Spielidee
+Durchlaufzeit-Rechner: Berechne die gesamte Durchlaufzeit aus Bearbeitung, Transport und Wartezeit.
+
+## Lernziel
+- Unterschied zwischen Bearbeitungszeit und Liegezeit verstehen.
+- Gesamtdauer in Prozessen korrekt summieren.
+
+## Mechanik
+- 6 Szenarien mit mehreren Zeitanteilen.
+- Pro Runde eine Antwortoption zur Gesamtdauer waehlen.
+- Sofortfeedback je Entscheidung.
+
+## Bewertung
+- Richtige Summe: +20
+- Falsche Summe: -10
+- Bonus ab 2 richtigen in Serie: +5
+
+## Dateikonvention
+- `_g01_durchlaufzeit_rechner.json`
+- `_ghtml_durchlaufzeit_rechner.html`
+- `_gjs_durchlaufzeit_rechner.js`
+- `_gcss_durchlaufzeit_rechner.css`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

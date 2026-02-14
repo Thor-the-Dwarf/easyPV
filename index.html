@@ -100,7 +100,6 @@
         let openedFolderIds = [];
         let drawerWidth = 360;
         let rootTree = [];
-        let activeScopeName = '';
         let activeFeedbackContext = null;
 
         init();
@@ -466,11 +465,8 @@
             if (!response.ok) throw new Error('index.json konnte nicht geladen werden');
 
             const payload = await response.json();
-            const normalized = normalizeTree(Array.isArray(payload.tree) ? payload.tree : []);
-            const scoped = applyScopeToTree(normalized);
-            rootTree = scoped.nodes;
-            activeScopeName = scoped.scopeName;
-            drawerTitleEl.textContent = String(scoped.title || payload.rootName || 'DATABASE').toUpperCase();
+            rootTree = normalizeTree(Array.isArray(payload.tree) ? payload.tree : []);
+            drawerTitleEl.textContent = String(payload.rootName || 'DATABASE').toUpperCase();
 
             treeRootEl.innerHTML = '';
             buildTree(treeRootEl, rootTree, 0);
@@ -667,11 +663,6 @@
             label.addEventListener('click', (event) => {
               event.preventDefault();
               event.stopPropagation();
-              const isActivePartScope = isPartRootNode(node) && canonicalName(activeScopeName) === canonicalName(node.name);
-              if (isPartRootNode(node) && !isActivePartScope) {
-                openPartScope(node);
-                return;
-              }
               if (isPlayableFolder(node)) {
                 openPlayableFolder(node);
                 return;
@@ -719,30 +710,6 @@
           const hasFolderChild = children.some((child) => child && child.isFolder);
           if (!hasFolderChild && node && node.gameRelPath) return '🎮';
           return isCollapsed ? '📁' : '📂';
-        }
-
-        function isPartRootNode(node) {
-          if (!node) return false;
-          const compact = canonicalName(node.name).replace(/\s+/g, '');
-          return /^teil0\d/.test(compact);
-        }
-
-        function openPartScope(node) {
-          if (!node || !node.name) return;
-          window.location.href = buildScopedUrl(String(node.name));
-        }
-
-        function buildScopedUrl(scopeName) {
-          const url = new URL(window.location.href);
-          if (scopeName) {
-            url.searchParams.set('scope', scopeName);
-          } else {
-            url.searchParams.delete('scope');
-            url.searchParams.delete('teil');
-            url.searchParams.delete('part');
-          }
-          const query = url.searchParams.toString();
-          return url.pathname + (query ? '?' + query : '');
         }
 
         function findNodeById(nodes, id) {
@@ -900,69 +867,6 @@
           }) || htmlFiles[0];
 
           return preferred && preferred.relPath ? preferred.relPath : '';
-        }
-
-        function readScopeHintFromLocation() {
-          const params = new URLSearchParams(window.location.search);
-          const fromQuery = params.get('scope') || params.get('teil') || params.get('part') || '';
-          if (fromQuery) return decodeLegacyName(fromQuery);
-
-          const path = String(window.location.pathname || '');
-          const match = path.match(/(?:^|\/)(teil0?\d+)(?:\/|\.html?$)/i);
-          return match ? match[1] : '';
-        }
-
-        function resolveScopeNode(nodes) {
-          const hint = canonicalName(readScopeHintFromLocation());
-          if (!hint) return null;
-
-          const folders = Array.isArray(nodes) ? nodes : [];
-          const compactHint = hint.replace(/\s+/g, '');
-
-          let exact = folders.find(function (node) {
-            return canonicalName(node.name) === hint;
-          });
-          if (exact) return exact;
-
-          exact = folders.find(function (node) {
-            return canonicalName(node.name).replace(/\s+/g, '') === compactHint;
-          });
-          if (exact) return exact;
-
-          const teilMatch = compactHint.match(/^teil0?(\d+)/);
-          if (teilMatch) {
-            const prefix = 'teil' + String(teilMatch[1]).padStart(2, '0');
-            const byTeil = folders.find(function (node) {
-              return canonicalName(node.name).replace(/\s+/g, '').startsWith(prefix);
-            });
-            if (byTeil) return byTeil;
-          }
-
-          return folders.find(function (node) {
-            return canonicalName(node.name).includes(hint);
-          }) || null;
-        }
-
-        function applyScopeToTree(nodes) {
-          const source = Array.isArray(nodes) ? nodes : [];
-          const scopeNode = resolveScopeNode(source);
-          if (!scopeNode) {
-            return {
-              nodes: source,
-              title: '',
-              scopeName: ''
-            };
-          }
-
-          const scopedChildren = Array.isArray(scopeNode.children) && scopeNode.children.length > 0
-            ? scopeNode.children
-            : [scopeNode];
-
-          return {
-            nodes: scopedChildren,
-            title: scopeNode.name,
-            scopeName: scopeNode.name
-          };
         }
 
         function escapeHtml(value) {

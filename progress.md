@@ -325,3 +325,17 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `node --test` fuer lokale Prozessanalyse-Tests (reachability + config)
   - Playwright-Smoke erfolgreich fuer `_ghtml_aktivitaeten_sortierer.html`
   - Artefakte: `databases/Teil02 FIAE/output/web-game-aktivitaeten-sortierer/`
+- Original prompt (current turn): mach weiter
+- Naechstes fehlendes Spiel in `Prozessanalyse _` umgesetzt: `Durchlaufzeit-Rechner`.
+- Neue Dateien:
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__01_planing_Prozessanalyse _/__gp_durchlaufzeit_rechner__durchlaufzeit_rechner_v2.txt`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_g01_durchlaufzeit_rechner.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_ghtml_durchlaufzeit_rechner.html`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gjs_durchlaufzeit_rechner.js`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gcss_durchlaufzeit_rechner.css`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__03_testing_Prozessanalyse _/unit/durchlaufzeit_rechner.config.test.mjs`
+- Validierung:
+  - `node --check` fuer `_gjs_durchlaufzeit_rechner.js`
+  - `node --test` fuer lokale Prozessanalyse-Tests (reachability + aktivitaeten_sortierer + durchlaufzeit_rechner)
+  - Playwright-Smoke erfolgreich fuer `_ghtml_durchlaufzeit_rechner.html`
+  - Artefakte: `databases/Teil02 FIAE/output/web-game-durchlaufzeit-rechner/`

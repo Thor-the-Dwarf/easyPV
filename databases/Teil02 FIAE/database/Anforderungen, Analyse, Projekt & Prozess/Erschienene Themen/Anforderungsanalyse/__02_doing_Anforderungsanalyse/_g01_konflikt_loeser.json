@@ -1,0 +1,67 @@
+{
+  "id": "konflikt_loeser_v1",
+  "title": "Konflikt-Loeser",
+  "subtitle": "Erkenne Konfliktarten und waehle die passende Strategie.",
+  "rounds": [
+    {
+      "prompt": "Marketing will eine sehr visuelle Startseite, IT fordert maximale Performance.",
+      "conflict_type": "Zielkonflikt",
+      "options": [
+        { "id": "a", "text": "Gemeinsame Zielmatrix und Performance-Budget mit Designgrenzen", "correct": true },
+        { "id": "b", "text": "Nur Marketing entscheidet allein", "correct": false },
+        { "id": "c", "text": "Thema fuer spaeter ignorieren", "correct": false }
+      ],
+      "reason": "Zielkonflikte brauchen transparenten Trade-off und messbare Leitplanken."
+    },
+    {
+      "prompt": "Zwei Abteilungen verlangen unterschiedliche Pflichtfelder im selben Formular.",
+      "conflict_type": "Inhaltskonflikt",
+      "options": [
+        { "id": "a", "text": "Datenmodell abstimmen und Pflichtfelder je Prozessschritt differenzieren", "correct": true },
+        { "id": "b", "text": "Alle Felder fuer alle immer verpflichtend", "correct": false },
+        { "id": "c", "text": "Nur lautere Abteilung gewinnt", "correct": false }
+      ],
+      "reason": "Inhaltskonflikte loest man durch fachliche Strukturierung statt Machtentscheidungen."
+    },
+    {
+      "prompt": "Management will schnell live gehen, QA fordert umfangreiche Tests.",
+      "conflict_type": "Prioritaetskonflikt",
+      "options": [
+        { "id": "a", "text": "Risikobasierter Scope fuer Go-Live plus klares Test-Minimum", "correct": true },
+        { "id": "b", "text": "Tests komplett streichen", "correct": false },
+        { "id": "c", "text": "Go-Live unbegrenzt verschieben", "correct": false }
+      ],
+      "reason": "Prioritaetskonflikte brauchen risikoorientierte Abwaegung und klare Kriterien."
+    },
+    {
+      "prompt": "Support braucht einfache Bedienung, Fachbereich will viele Spezialfunktionen.",
+      "conflict_type": "Zielkonflikt",
+      "options": [
+        { "id": "a", "text": "MVP-Kernfluss mit optionalen Expertenerweiterungen", "correct": true },
+        { "id": "b", "text": "Alles in eine komplexe Standardmaske", "correct": false },
+        { "id": "c", "text": "Nur Support-Wunsch umsetzen", "correct": false }
+      ],
+      "reason": "Segmentierung erlaubt einfache Basisnutzung und tiefe Expertenoptionen."
+    },
+    {
+      "prompt": "Datenschutz will minimale Datenerhebung, Sales will moeglichst viele Kundendaten.",
+      "conflict_type": "Inhaltskonflikt",
+      "options": [
+        { "id": "a", "text": "Datensparsamkeit + klarer Zweck je Feld + optionale Einwilligung", "correct": true },
+        { "id": "b", "text": "Alle Daten ohne Zweckbegruendung sammeln", "correct": false },
+        { "id": "c", "text": "Keine Daten mehr erfassen", "correct": false }
+      ],
+      "reason": "Regulatorik und Nutzwert werden ueber Zweckbindung und Differenzierung ausbalanciert."
+    },
+    {
+      "prompt": "Produktteam fordert neue Features, Betriebsteam priorisiert Stabilitaet und Monitoring.",
+      "conflict_type": "Prioritaetskonflikt",
+      "options": [
+        { "id": "a", "text": "Roadmap mit festen Stabilitaetsanteilen und gemeinsamen KPI-Zielen", "correct": true },
+        { "id": "b", "text": "Nur Features zaehlen", "correct": false },
+        { "id": "c", "text": "Nur Betriebsaufgaben zulassen", "correct": false }
+      ],
+      "reason": "Gemeinsame KPI-Steuerung verhindert einseitige Priorisierung."
+    }
+  ]
+}

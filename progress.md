@@ -240,3 +240,15 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `/Users/thor/WebstormProjects/easyPV/generic_pages/generic_page.js`: consumes `global:theme`, requests theme from parent, accepts `?theme=...`, forwards theme to nested iframe.
   - `/Users/thor/WebstormProjects/easyPV/generic_pages/generic_c_suite/generic_c_suite.js`: consumes `global:theme`, requests theme from parent, accepts `?theme=...` fallback.
 - Playwright smoke check after bridge update succeeded (`/Users/thor/WebstormProjects/easyPV/output/web-game-theme-bridge-check/shot-0.png`), no `errors-0.json`.
+- Continued with final missing Anforderungsanalyse game from __gi: `Konflikt-Loeser`.
+- Added files:
+  - `__gp_konflikt_loeser__konflikt_loeser_v2.txt`
+  - `_g01_konflikt_loeser.json`
+  - `_ghtml_konflikt_loeser.html`
+  - `_gjs_konflikt_loeser.js`
+  - local test `konflikt_loeser.config.test.mjs`
+- Validation:
+  - `node --check` on `_gjs_konflikt_loeser.js`
+  - local tests pass (`reachability`, `stakeholder_interviewer`, `lastenheft_check`, `priorisierungs_pyramide`, `konflikt_loeser`)
+  - Playwright smoke with click interaction successful
+  - artifacts: `databases/Teil02 FIAE/output/web-game-konflikt-loeser/`

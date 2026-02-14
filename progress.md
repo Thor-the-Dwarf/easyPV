@@ -353,3 +353,17 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `node --test` fuer lokale Prozessanalyse-Tests (reachability + aktivitaeten_sortierer + durchlaufzeit_rechner + prozess_schnittstellen)
   - Playwright-Smoke erfolgreich fuer `_ghtml_prozess_schnittstellen.html`
   - Artefakte: `databases/Teil02 FIAE/output/web-game-prozess-schnittstellen/`
+- Original prompt (current turn): mach weiter
+- Letztes fehlendes Spiel in `Prozessanalyse _` umgesetzt: `Rollen-Zuweiser`.
+- Neue Dateien:
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__01_planing_Prozessanalyse _/__gp_rollen_zuweiser__rollen_zuweiser_v2.txt`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_g01_rollen_zuweiser.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_ghtml_rollen_zuweiser.html`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gjs_rollen_zuweiser.js`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gcss_rollen_zuweiser.css`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__03_testing_Prozessanalyse _/unit/rollen_zuweiser.config.test.mjs`
+- Validierung:
+  - `node --check` fuer `_gjs_rollen_zuweiser.js`
+  - `node --test` fuer lokale Prozessanalyse-Tests (reachability + 4 config-tests)
+  - Playwright-Smoke erfolgreich fuer `_ghtml_rollen_zuweiser.html`
+  - Artefakte: `databases/Teil02 FIAE/output/web-game-rollen-zuweiser/`

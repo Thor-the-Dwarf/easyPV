@@ -19,6 +19,11 @@ cd __admin_dont_push/fireBaseGetter
 cargo run --release
 ```
 
+## Start (Finder / Rechtsklick)
+
+- Datei: `run_fireBaseGetter.command`
+- Finder: Rechtsklick -> **Oeffnen** (oder Doppelklick)
+
 ## Hinweise
 
 - Erwartet lokal die Datei `firebase-service-account.local.json` im Repo-Root.

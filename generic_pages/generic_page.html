@@ -72,8 +72,34 @@
           <span aria-hidden="true">🧠</span>
         </button>
       </div>
+
+      <div class="feedback-modal-layer" id="feedback-modal-layer" hidden>
+        <div class="feedback-modal-backdrop" data-feedback-close></div>
+        <section class="feedback-modal" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
+          <header class="feedback-modal-head">
+            <h2 id="feedback-modal-title">Feedback zum Spiel</h2>
+            <button type="button" class="feedback-close-btn" id="feedback-close-btn" aria-label="Schliessen">
+              ✕
+            </button>
+          </header>
+          <p class="feedback-modal-context" id="feedback-modal-context"></p>
+          <label class="feedback-modal-label" for="feedback-comment-input">Kommentar</label>
+          <textarea
+            id="feedback-comment-input"
+            class="feedback-comment-input"
+            placeholder="Was war gut, was ist unklar oder sollte verbessert werden?"
+            maxlength="2000"
+          ></textarea>
+          <div class="feedback-modal-actions">
+            <button type="button" class="feedback-btn feedback-btn-muted" id="feedback-cancel-btn">Abbrechen</button>
+            <button type="button" class="feedback-btn feedback-btn-primary" id="feedback-send-btn">Senden</button>
+          </div>
+          <p class="feedback-modal-status" id="feedback-modal-status" aria-live="polite"></p>
+        </section>
+      </div>
     </main>
 
+    <script src="../shared/firebase-feedback-client.js"></script>
     <script src="./generic_page.js"></script>
   </body>
 </html>

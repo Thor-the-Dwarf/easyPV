@@ -9,6 +9,13 @@
   const fabFeedback = document.getElementById('fab-feedback');
   const imageGridList = document.getElementById('image-grid-listview');
   const imageDrawerTitle = document.getElementById('image-drawer-title');
+  const feedbackModalLayer = document.getElementById('feedback-modal-layer');
+  const feedbackCloseBtn = document.getElementById('feedback-close-btn');
+  const feedbackCancelBtn = document.getElementById('feedback-cancel-btn');
+  const feedbackSendBtn = document.getElementById('feedback-send-btn');
+  const feedbackCommentInput = document.getElementById('feedback-comment-input');
+  const feedbackModalStatus = document.getElementById('feedback-modal-status');
+  const feedbackModalContext = document.getElementById('feedback-modal-context');
   if (!frame || !drawers.length || !fabPractice || !drawerToggles.length) return;
 
   initThemeSync();
@@ -17,6 +24,9 @@
   const json = params.get('json');
   const folder = params.get('folder');
   const game = params.get('game');
+  const jsonRel = params.get('jsonRel');
+  const gameRel = params.get('gameRel');
+  const nodeId = params.get('nodeId');
   const urlTheme = normalizeTheme(params.get('theme'));
 
   const targetParams = new URLSearchParams();
@@ -118,6 +128,143 @@
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
+  }
+
+  function slugify(value) {
+    return String(value || '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '_')
+      .replace(/^_+|_+$/g, '');
+  }
+
+  function inferRepoPathFromUrl(urlValue) {
+    if (!urlValue) return '';
+    try {
+      const parsed = new URL(urlValue, window.location.href);
+      return decodeURIComponent(parsed.pathname).replace(/^\/+/, '');
+    } catch (_) {
+      return '';
+    }
+  }
+
+  function resolveRepoPath(preferredPath, fallbackUrl) {
+    const explicit = String(preferredPath || '').trim();
+    if (explicit) return explicit;
+    return inferRepoPathFromUrl(fallbackUrl);
+  }
+
+  function messageForFeedbackReason(reason) {
+    switch (String(reason || '')) {
+      case 'CONFIG_MISSING':
+        return 'Firebase ist noch nicht konfiguriert. Ich brauche gleich deine Project/API-Werte.';
+      case 'COMMENT_REQUIRED':
+        return 'Bitte zuerst einen Kommentar eingeben.';
+      case 'FIREBASE_APP_SDK_LOAD_FAILED':
+      case 'FIREBASE_PROVIDER_SDK_LOAD_FAILED':
+      case 'FIREBASE_GLOBAL_MISSING':
+      case 'RTDB_UNAVAILABLE':
+      case 'FIRESTORE_UNAVAILABLE':
+        return 'Firebase konnte im Browser nicht initialisiert werden.';
+      case 'FEEDBACK_DISABLED':
+        return 'Feedback ist aktuell deaktiviert.';
+      default:
+        return 'Feedback konnte nicht gesendet werden.';
+    }
+  }
+
+  function buildFeedbackContext() {
+    const resolvedJsonPath = resolveRepoPath(jsonRel, json);
+    const resolvedGamePath = resolveRepoPath(gameRel, game);
+    const idSeed = resolvedJsonPath || resolvedGamePath || folder || nodeId || 'game';
+
+    return {
+      gameId: slugify(idSeed.replace(/\.[^.]+$/, '')) || 'game',
+      folder: folder || null,
+      nodeId: nodeId || null,
+      jsonPath: resolvedJsonPath || null,
+      gamePath: resolvedGamePath || null,
+      jsonUrl: json || null,
+      gameUrl: game || null
+    };
+  }
+
+  function setFeedbackStatus(text) {
+    if (!feedbackModalStatus) return;
+    feedbackModalStatus.textContent = String(text || '');
+  }
+
+  function setFeedbackBusy(isBusy) {
+    const busy = !!isBusy;
+    if (feedbackSendBtn) feedbackSendBtn.disabled = busy;
+    if (feedbackCancelBtn) feedbackCancelBtn.disabled = busy;
+    if (feedbackCloseBtn) feedbackCloseBtn.disabled = busy;
+  }
+
+  function openFeedbackModal() {
+    if (!feedbackModalLayer) return;
+    feedbackModalLayer.hidden = false;
+    setFeedbackStatus('');
+
+    const context = buildFeedbackContext();
+    if (feedbackModalContext) {
+      const pathHint = context.jsonPath || context.gamePath || 'kein Repo-Pfad erkannt';
+      feedbackModalContext.textContent = `Kontext: ${context.folder || 'Spielordner'} | ${pathHint}`;
+    }
+
+    if (feedbackCommentInput) {
+      window.setTimeout(function () {
+        feedbackCommentInput.focus();
+      }, 0);
+    }
+  }
+
+  function closeFeedbackModal() {
+    if (!feedbackModalLayer) return;
+    feedbackModalLayer.hidden = true;
+    setFeedbackStatus('');
+  }
+
+  async function submitFeedbackFromModal() {
+    if (!feedbackCommentInput) return;
+    const comment = String(feedbackCommentInput.value || '').trim();
+    if (!comment) {
+      setFeedbackStatus(messageForFeedbackReason('COMMENT_REQUIRED'));
+      return;
+    }
+
+    if (!window.EasyPvFirebaseFeedback || typeof window.EasyPvFirebaseFeedback.submitFeedback !== 'function') {
+      setFeedbackStatus('Feedback-Client fehlt. Bitte Seite neu laden.');
+      return;
+    }
+
+    setFeedbackBusy(true);
+    setFeedbackStatus('Sende Feedback...');
+
+    const context = buildFeedbackContext();
+    const payload = {
+      comment: comment,
+      source: 'generic_page',
+      context: {
+        ...context,
+        locationPath: window.location.pathname,
+        locationHref: window.location.href
+      }
+    };
+
+    try {
+      const result = await window.EasyPvFirebaseFeedback.submitFeedback(payload);
+      if (!result || !result.ok) {
+        setFeedbackStatus(messageForFeedbackReason(result && result.reason));
+        return;
+      }
+      setFeedbackStatus('Danke, Feedback wurde gespeichert.');
+      feedbackCommentInput.value = '';
+      window.setTimeout(closeFeedbackModal, 400);
+    } catch (_) {
+      setFeedbackStatus('Feedback konnte nicht gesendet werden.');
+    } finally {
+      setFeedbackBusy(false);
+    }
   }
 
   function buildPlaceholderDataUri(title) {
@@ -669,6 +816,9 @@
     if (json) fallbackParams.set('json', json);
     if (folder) fallbackParams.set('folder', folder);
     if (game) fallbackParams.set('game', game);
+    if (jsonRel) fallbackParams.set('jsonRel', jsonRel);
+    if (gameRel) fallbackParams.set('gameRel', gameRel);
+    if (nodeId) fallbackParams.set('nodeId', nodeId);
     const fallbackTarget = './generic_c_suite/generic_c_suite.html' + (fallbackParams.toString() ? '?' + fallbackParams.toString() : '');
     const practiceTarget = game || fallbackTarget;
 
@@ -676,7 +826,10 @@
       type: 'generic:start-practice',
       folder: folder || '',
       json: json || '',
-      game: game || ''
+      game: game || '',
+      jsonRel: jsonRel || '',
+      gameRel: gameRel || '',
+      nodeId: nodeId || ''
     };
 
     try {
@@ -697,9 +850,24 @@
   });
 
   if (fabFeedback) {
-    fabFeedback.addEventListener('click', function () {
-      // Placeholder for future feedback flow
-      window.dispatchEvent(new CustomEvent('generic-feedback-click'));
+    fabFeedback.addEventListener('click', openFeedbackModal);
+  }
+
+  if (feedbackModalLayer) {
+    const closeTargets = feedbackModalLayer.querySelectorAll('[data-feedback-close]');
+    closeTargets.forEach(function (target) {
+      target.addEventListener('click', closeFeedbackModal);
+    });
+  }
+  if (feedbackCloseBtn) feedbackCloseBtn.addEventListener('click', closeFeedbackModal);
+  if (feedbackCancelBtn) feedbackCancelBtn.addEventListener('click', closeFeedbackModal);
+  if (feedbackSendBtn) feedbackSendBtn.addEventListener('click', submitFeedbackFromModal);
+  if (feedbackCommentInput) {
+    feedbackCommentInput.addEventListener('keydown', function (event) {
+      if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+        event.preventDefault();
+        submitFeedbackFromModal();
+      }
     });
   }
 })();

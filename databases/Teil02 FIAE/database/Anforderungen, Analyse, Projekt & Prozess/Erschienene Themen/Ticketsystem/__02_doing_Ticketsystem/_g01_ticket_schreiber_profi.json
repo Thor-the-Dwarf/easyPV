@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "id": "ticket_schreiber_profi",
+    "title": "Ticket-Schreiber-Profi",
+    "subtitle": "Erkenne den fehlenden Pflichtbaustein pro Ticket."
+  },
+  "required_fields": [
+    {
+      "id": "title",
+      "label": "Praeziser Titel"
+    },
+    {
+      "id": "steps",
+      "label": "Schritte zur Reproduktion"
+    },
+    {
+      "id": "expected_result",
+      "label": "Erwartetes Ergebnis"
+    },
+    {
+      "id": "actual_result",
+      "label": "Ist-Ergebnis"
+    },
+    {
+      "id": "environment",
+      "label": "Umgebung / Version"
+    }
+  ],
+  "rounds": [
+    {
+      "id": "r1",
+      "headline": "Ticket 01",
+      "snippet": "Titel: Login langsam | Text: \"Seit heute laeuft es nicht stabil.\"",
+      "missing_field": "steps",
+      "options": [
+        {
+          "id": "steps",
+          "text": "Schritte zur Reproduktion"
+        },
+        {
+          "id": "title",
+          "text": "Praeziser Titel"
+        },
+        {
+          "id": "actual_result",
+          "text": "Ist-Ergebnis"
+        }
+      ],
+      "reason": "Ohne reproduzierbare Schritte kann das Team den Fehler kaum gezielt nachstellen."
+    },
+    {
+      "id": "r2",
+      "headline": "Ticket 02",
+      "snippet": "Titel: Export erzeugt leere CSV | Text: \"Klick auf Export, Datei bleibt leer.\"",
+      "missing_field": "expected_result",
+      "options": [
+        {
+          "id": "expected_result",
+          "text": "Erwartetes Ergebnis"
+        },
+        {
+          "id": "environment",
+          "text": "Umgebung / Version"
+        },
+        {
+          "id": "steps",
+          "text": "Schritte zur Reproduktion"
+        }
+      ],
+      "reason": "Nur mit Soll-Zustand kann Entwicklung klaeren, ob wirklich ein Defekt vorliegt."
+    },
+    {
+      "id": "r3",
+      "headline": "Ticket 03",
+      "snippet": "Titel: Dashboard Fehler nach Update | Text: \"Erwartet war, dass alle Widgets laden.\"",
+      "missing_field": "actual_result",
+      "options": [
+        {
+          "id": "actual_result",
+          "text": "Ist-Ergebnis"
+        },
+        {
+          "id": "title",
+          "text": "Praeziser Titel"
+        },
+        {
+          "id": "steps",
+          "text": "Schritte zur Reproduktion"
+        }
+      ],
+      "reason": "Es fehlt die konkrete Beobachtung: Was passiert stattdessen tatsaechlich?"
+    },
+    {
+      "id": "r4",
+      "headline": "Ticket 04",
+      "snippet": "Titel: App startet nicht auf Tablets | Text: \"Schritte und Ist/Soll sind enthalten.\"",
+      "missing_field": "environment",
+      "options": [
+        {
+          "id": "environment",
+          "text": "Umgebung / Version"
+        },
+        {
+          "id": "expected_result",
+          "text": "Erwartetes Ergebnis"
+        },
+        {
+          "id": "actual_result",
+          "text": "Ist-Ergebnis"
+        }
+      ],
+      "reason": "Gerade bei Device-Bugs ist die genaue Umgebung (Modell, OS, App-Version) entscheidend."
+    },
+    {
+      "id": "r5",
+      "headline": "Ticket 05",
+      "snippet": "Titel: ??? | Text: \"Nach Klick auf Speichern kommt 403 in Browser-Console.\"",
+      "missing_field": "title",
+      "options": [
+        {
+          "id": "title",
+          "text": "Praeziser Titel"
+        },
+        {
+          "id": "steps",
+          "text": "Schritte zur Reproduktion"
+        },
+        {
+          "id": "environment",
+          "text": "Umgebung / Version"
+        }
+      ],
+      "reason": "Ein eindeutiger Titel hilft beim Triaging und beim schnellen Wiederfinden des Incidents."
+    },
+    {
+      "id": "r6",
+      "headline": "Ticket 06",
+      "snippet": "Titel: Passwort-Reset Link laeuft ins Leere | Text: \"User klickt auf Mail-Link, 404. Chrome 122 auf Win11.\"",
+      "missing_field": "expected_result",
+      "options": [
+        {
+          "id": "expected_result",
+          "text": "Erwartetes Ergebnis"
+        },
+        {
+          "id": "actual_result",
+          "text": "Ist-Ergebnis"
+        },
+        {
+          "id": "environment",
+          "text": "Umgebung / Version"
+        }
+      ],
+      "reason": "Auch bei klarer Fehlerlage braucht das Team die genaue Erwartung fuer Abnahmekriterien."
+    }
+  ],
+  "scoring": {
+    "correct": 20,
+    "wrong": -5,
+    "streak_bonus_threshold": 2,
+    "streak_bonus": 5
+  }
+}

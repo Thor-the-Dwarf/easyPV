@@ -3,11 +3,18 @@
   "private": true,
   "version": "1.0.0",
   "description": "Smoke-first test runner for game folders",
+  "dependencies": {
+    "firebase-admin": "^13.5.0"
+  },
   "scripts": {
     "play": "node databases/testing/scripts/run-smoke-tests.mjs",
     "test:smoke": "node databases/testing/scripts/run-smoke-tests.mjs",
     "test:advanced": "node databases/testing/scripts/run-advanced-web-tests.mjs",
     "test:relevant-g": "node databases/testing/scripts/run-relevant-tests-on-g-change.mjs",
-    "test:learner-ux": "node --test databases/testing/tests/learner-ux.finanzierungs-sortiermaschine.test.mjs"
+    "test:learner-ux": "node --test databases/testing/tests/learner-ux.finanzierungs-sortiermaschine.test.mjs",
+    "build:g0-catalog": "node scripts/g0/build-normalized-catalog.mjs",
+    "check:g0": "node scripts/g0/validate-source-g0.mjs",
+    "check:g0:strict": "node scripts/g0/validate-source-g0.mjs --strict-source",
+    "sync:g0:firebase": "node scripts/firebase/sync-g0-catalog-to-firestore.mjs"
   }
 }

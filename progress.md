@@ -260,3 +260,25 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - Validation screenshots:
     - Light fallback on hardcoded-dark page: `/Users/thor/WebstormProjects/easyPV/output/web-game-theme-bridge-promoter-light-v2/shot-0.png`
     - Dark default preserved: `/Users/thor/WebstormProjects/easyPV/output/web-game-theme-bridge-promoter-dark-v2/shot-0.png`
+- Original prompt (current turn): Teil03-WISO-Icon soll Folder statt Game sein; danach Regression gemeldet: "lässt sich nicht mehr öffnen".
+- Fix in `/Users/thor/WebstormProjects/easyPV/index.html`:
+  - `folderEmoji`: Game-Icon nur noch bei Leaf mit echter `gameRelPath` (nicht bei JSON-only Knoten).
+  - Label-Klick auf Ordner mit Kindern toggelt jetzt den Ordner (statt no-op).
+  - JSON/HTML-Erkennung für `jsonRelPath` und `gameRelPath` rekursiv über Unterordner.
+- Verifikation: DOM-Klicktest (Menü öffnen + Klick auf `Teil03 WISO`) lädt nun wieder ein `iframe.content-frame` mit `generic_page.html?...json=.../Teil03%20WISO/database/__gAttributes_database.json`.
+- Original prompt (current turn): weiter
+- Git-Abgleich: `Priorisierungs-Butler` war bereits vorhanden; daher mit naechstem fehlenden Ticketsystem-Spiel fortgesetzt.
+- Neues Spiel umgesetzt: `Ticket-Schreiber-Profi`.
+- Dateien hinzugefuegt:
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__01_planing_Ticketsystem/__gp_ticket_schreiber_profi__ticket_schreiber_profi_v2.txt`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_g01_ticket_schreiber_profi.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_ghtml_ticket_schreiber_profi.html`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_gjs_ticket_schreiber_profi.js`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_gcss_ticket_schreiber_profi.css`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__03_testing_Ticketsystem/unit/ticket_schreiber_profi.config.test.mjs`
+- Kleiner Fix am vorhandenen `Priorisierungs-Butler`: `/theme_bridge.js`-Referenz im lokalen HTML entfernt, damit beim direkten Teil02-Hosting kein neuer 404-Breaker entsteht.
+- Validierung:
+  - `node --check` fuer `_gjs_ticket_schreiber_profi.js`
+  - `node --test` fuer Ticketsystem-Tests (reachability + priorisierungs_butler + ticket_schreiber_profi)
+  - Playwright-Smoke erfolgreich fuer `_ghtml_ticket_schreiber_profi.html`
+  - Artefakte: `databases/Teil02 FIAE/output/web-game-ticket-schreiber-profi/`

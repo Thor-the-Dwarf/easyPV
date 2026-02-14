@@ -1,13 +1,27 @@
 /*
- * Firebase config (public for GitHub Pages).
+ * Legacy compatibility config for the old feedback widget.
+ * Preferred location for local secrets: /firebase.config.local.js
  */
-window.FEEDBACK_CONFIG = {
-  firebase: {
-    apiKey: "AIzaSyCb25vtIOkeNKHdCvJ4CekbELCT7BsDljw",
-    authDomain: "easy-ap-01.firebaseapp.com",
-    projectId: "easy-ap-01",
-    appId: "1:719676766632:web:7adedf930e29322cfb459d",
-    databaseURL: "https://easy-ap-01-default-rtdb.europe-west1.firebasedatabase.app"
-  },
-  collection: "feedback"
-};
+(function () {
+  'use strict';
+
+  if (window.EASYPV_FIREBASE_CONFIG && window.EASYPV_FIREBASE_CONFIG.firebase) {
+    window.FEEDBACK_CONFIG = window.EASYPV_FIREBASE_CONFIG;
+    return;
+  }
+
+  window.FEEDBACK_CONFIG = {
+    firebase: {
+      apiKey: '',
+      authDomain: '',
+      projectId: '',
+      appId: '',
+      databaseURL: ''
+    },
+    feedback: {
+      provider: 'firestore',
+      collection: 'game_feedback'
+    },
+    collection: 'game_feedback'
+  };
+})();

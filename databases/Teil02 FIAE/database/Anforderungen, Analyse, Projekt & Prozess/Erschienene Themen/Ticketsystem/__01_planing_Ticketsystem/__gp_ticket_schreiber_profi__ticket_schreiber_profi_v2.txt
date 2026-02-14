@@ -1,0 +1,28 @@
+# __gp_ticket_schreiber_profi__ticket_schreiber_profi_v2
+
+## Spielidee
+Ticket-Schreiber-Profi: Finde den fehlenden Informationsbaustein in unvollstaendigen Tickets.
+
+## Lernziel
+- Verstehen, welche Ticketangaben fuer Entwicklung und Support zwingend sind.
+- Rueckfragen reduzieren und Bearbeitungszeit verkuerzen.
+
+## Mechanik
+- 6 kurze Ticketbeispiele.
+- Pro Runde eine Auswahlfrage: Welcher Pflichtbaustein fehlt?
+- Direktes Feedback nach jeder Auswahl.
+
+## Bewertung
+- Richtige Auswahl: +20
+- Falsche Auswahl: -5
+- Serienbonus ab 2 richtigen in Folge: +5
+
+## Dateikonvention
+- `_g01_ticket_schreiber_profi.json`
+- `_ghtml_ticket_schreiber_profi.html`
+- `_gjs_ticket_schreiber_profi.js`
+- `_gcss_ticket_schreiber_profi.css`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

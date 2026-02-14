@@ -436,6 +436,10 @@
             label.addEventListener('click', (event) => {
               event.preventDefault();
               event.stopPropagation();
+              if (hasChildren) {
+                toggleNode(rowNode, node.id, iconButton);
+                return;
+              }
               if (isPlayableFolder(node)) openPlayableFolder(node);
             });
             row.appendChild(label);
@@ -475,7 +479,7 @@
         function folderEmoji(node, isCollapsed) {
           const children = Array.isArray(node.children) ? node.children : [];
           const hasFolderChild = children.some((child) => child && child.isFolder);
-          if (!hasFolderChild && isPlayableFolder(node)) return '🎮';
+          if (!hasFolderChild && node && node.gameRelPath) return '🎮';
           return isCollapsed ? '📁' : '📂';
         }
 
@@ -498,17 +502,19 @@
         function openPlayableFolder(node) {
           if (!contentHost) return;
           const folderLabel = node && node.name ? node.name : 'Spielordner';
-          const jsonUrl = new URL(String(node.jsonRelPath || ''), window.location.href).href;
+          const jsonRelPath = node && node.jsonRelPath ? String(node.jsonRelPath) : '';
+          const gameRelPath = node && node.gameRelPath ? String(node.gameRelPath) : '';
+          const jsonUrl = jsonRelPath ? new URL(jsonRelPath, window.location.href).href : '';
           const gameUrl = node && node.gameRelPath
-            ? new URL(String(node.gameRelPath || ''), window.location.href).href
+            ? new URL(gameRelPath, window.location.href).href
             : '';
-          const src = buildGenericPageSrc(folderLabel, jsonUrl, gameUrl);
+          const src = buildGenericPageSrc(folderLabel, jsonUrl, gameUrl, jsonRelPath, gameRelPath, node && node.id ? node.id : '');
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
           queueThemeSyncForNewFrame();
         }
 
-        function buildGenericPageSrc(folderLabel, jsonUrl, gameUrl) {
+        function buildGenericPageSrc(folderLabel, jsonUrl, gameUrl, jsonRelPath, gameRelPath, nodeId) {
           return (
             './generic_pages/generic_page.html?folder=' +
             encodeURIComponent(folderLabel) +
@@ -516,6 +522,12 @@
             encodeURIComponent(jsonUrl || '') +
             '&game=' +
             encodeURIComponent(gameUrl || '') +
+            '&jsonRel=' +
+            encodeURIComponent(jsonRelPath || '') +
+            '&gameRel=' +
+            encodeURIComponent(gameRelPath || '') +
+            '&nodeId=' +
+            encodeURIComponent(nodeId || '') +
             '&theme=' +
             encodeURIComponent(getCurrentTheme())
           );
@@ -551,28 +563,62 @@
         }
 
         function findFirstJsonRelPath(children) {
+          const g0Files = [];
+          const otherJsonFiles = [];
           const files = Array.isArray(children) ? children : [];
-          const preferred = files.find(function (child) {
-            if (!child || child.isFolder) return false;
-            const kind = String(child.kind || '').toLowerCase();
-            const name = String(child.name || '').toLowerCase();
-            return kind === 'json' || name.endsWith('.json');
-          });
-          return preferred && preferred.relPath ? preferred.relPath : '';
+
+          function collectJsonFiles(nodes) {
+            const list = Array.isArray(nodes) ? nodes : [];
+            for (let i = 0; i < list.length; i += 1) {
+              const child = list[i];
+              if (!child) continue;
+              if (child.isFolder) {
+                collectJsonFiles(child.children);
+                continue;
+              }
+              const kind = String(child.kind || '').toLowerCase();
+              const name = String(child.name || '').toLowerCase();
+              if ((kind === 'json' || name.endsWith('.json')) && child.relPath) {
+                if (/^_g0.+\.json$/i.test(name)) {
+                  g0Files.push(child.relPath);
+                } else {
+                  otherJsonFiles.push(child.relPath);
+                }
+              }
+            }
+          }
+
+          collectJsonFiles(files);
+          if (g0Files.length) return g0Files[0];
+          if (otherJsonFiles.length) return otherJsonFiles[0];
+          return '';
         }
 
         function findGameHtmlRelPath(children) {
           const files = Array.isArray(children) ? children : [];
-          const htmlFiles = files.filter(function (child) {
-            if (!child || child.isFolder) return false;
-            const kind = String(child.kind || '').toLowerCase();
-            const name = String(child.name || '').toLowerCase();
-            return kind === 'html' || name.endsWith('.html');
-          });
+          const htmlFiles = [];
+
+          function collectHtmlFiles(nodes) {
+            const list = Array.isArray(nodes) ? nodes : [];
+            list.forEach(function (child) {
+              if (!child) return;
+              if (child.isFolder) {
+                collectHtmlFiles(child.children);
+                return;
+              }
+              const kind = String(child.kind || '').toLowerCase();
+              const name = String(child.name || '').toLowerCase();
+              if (kind === 'html' || name.endsWith('.html')) {
+                htmlFiles.push(child);
+              }
+            });
+          }
+
+          collectHtmlFiles(files);
 
           const preferred = htmlFiles.find(function (child) {
             const name = String(child.name || '').toLowerCase();
-            return name.startsWith('game_');
+            return name.startsWith('_ghtml_') || name.startsWith('game_');
           }) || htmlFiles[0];
 
           return preferred && preferred.relPath ? preferred.relPath : '';

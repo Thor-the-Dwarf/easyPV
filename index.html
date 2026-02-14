@@ -90,7 +90,8 @@
 
             const jsonUrl = typeof data.json === 'string' ? data.json : '';
             const folderLabel = typeof data.folder === 'string' ? data.folder : 'Spielordner';
-            openPracticeView(jsonUrl, folderLabel);
+            const gameUrl = typeof data.game === 'string' ? data.game : '';
+            openPracticeView(gameUrl, jsonUrl, folderLabel);
           });
         }
 
@@ -246,6 +247,7 @@
           const normalizedChildren = normalizeTree(rawChildren);
           const hasFiles = rawChildren.some((child) => child && !child.isFolder);
           const jsonRelPath = findFirstJsonRelPath(rawChildren);
+          const gameRelPath = findGameHtmlRelPath(rawChildren);
 
           if (cleanedName.toLowerCase() === 'database') return normalizedChildren;
           if (cleanedName === 'M') return normalizedChildren;
@@ -258,6 +260,7 @@
             isFolder: true,
             hasFiles: hasFiles,
             jsonRelPath: jsonRelPath,
+            gameRelPath: gameRelPath,
             children: normalizedChildren
           };
 
@@ -343,6 +346,9 @@
             existing.hasFiles = existing.hasFiles || item.hasFiles;
             if (!existing.jsonRelPath && item.jsonRelPath) {
               existing.jsonRelPath = item.jsonRelPath;
+            }
+            if (!existing.gameRelPath && item.gameRelPath) {
+              existing.gameRelPath = item.gameRelPath;
             }
           });
 
@@ -450,24 +456,29 @@
         }
 
         function isPlayableFolder(node) {
-          return !!node && node.isFolder && !!node.hasFiles && !!node.jsonRelPath;
+          return !!node && node.isFolder && !!node.hasFiles && (!!node.jsonRelPath || !!node.gameRelPath);
         }
 
         function openPlayableFolder(node) {
           if (!contentHost) return;
           const folderLabel = node && node.name ? node.name : 'Spielordner';
           const jsonUrl = new URL(String(node.jsonRelPath || ''), window.location.href).href;
-          const src = buildGenericPageSrc(folderLabel, jsonUrl);
+          const gameUrl = node && node.gameRelPath
+            ? new URL(String(node.gameRelPath || ''), window.location.href).href
+            : '';
+          const src = buildGenericPageSrc(folderLabel, jsonUrl, gameUrl);
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
         }
 
-        function buildGenericPageSrc(folderLabel, jsonUrl) {
+        function buildGenericPageSrc(folderLabel, jsonUrl, gameUrl) {
           return (
             './generic_pages/generic_page.html?folder=' +
             encodeURIComponent(folderLabel) +
             '&json=' +
-            encodeURIComponent(jsonUrl)
+            encodeURIComponent(jsonUrl || '') +
+            '&game=' +
+            encodeURIComponent(gameUrl || '')
           );
         }
 
@@ -480,10 +491,10 @@
           );
         }
 
-        function openPracticeView(jsonUrl, folderLabel) {
+        function openPracticeView(gameUrl, jsonUrl, folderLabel) {
           if (!contentHost) return;
-          const src =
-            buildPracticeSrc(folderLabel || 'Spielordner', jsonUrl || '');
+          const safeGameUrl = String(gameUrl || '').trim();
+          const src = safeGameUrl || buildPracticeSrc(folderLabel || 'Spielordner', jsonUrl || '');
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
         }
@@ -496,6 +507,23 @@
             const name = String(child.name || '').toLowerCase();
             return kind === 'json' || name.endsWith('.json');
           });
+          return preferred && preferred.relPath ? preferred.relPath : '';
+        }
+
+        function findGameHtmlRelPath(children) {
+          const files = Array.isArray(children) ? children : [];
+          const htmlFiles = files.filter(function (child) {
+            if (!child || child.isFolder) return false;
+            const kind = String(child.kind || '').toLowerCase();
+            const name = String(child.name || '').toLowerCase();
+            return kind === 'html' || name.endsWith('.html');
+          });
+
+          const preferred = htmlFiles.find(function (child) {
+            const name = String(child.name || '').toLowerCase();
+            return name.startsWith('game_');
+          }) || htmlFiles[0];
+
           return preferred && preferred.relPath ? preferred.relPath : '';
         }
 

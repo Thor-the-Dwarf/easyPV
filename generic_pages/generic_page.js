@@ -11,6 +11,7 @@
   const params = new URLSearchParams(window.location.search);
   const json = params.get('json');
   const folder = params.get('folder');
+  const game = params.get('game');
 
   const targetParams = new URLSearchParams();
   if (json) targetParams.set('json', json);
@@ -40,12 +41,15 @@
     const fallbackParams = new URLSearchParams();
     if (json) fallbackParams.set('json', json);
     if (folder) fallbackParams.set('folder', folder);
+    if (game) fallbackParams.set('game', game);
     const fallbackTarget = './generic_c_suite/generic_c_suite.html' + (fallbackParams.toString() ? '?' + fallbackParams.toString() : '');
+    const practiceTarget = game || fallbackTarget;
 
     const payload = {
       type: 'generic:start-practice',
       folder: folder || '',
-      json: json || ''
+      json: json || '',
+      game: game || ''
     };
 
     try {
@@ -54,7 +58,7 @@
         // Fallback: falls Parent nicht reagiert, im aktuellen Frame starten.
         window.setTimeout(function () {
           if (window.location.href.indexOf('generic_page') !== -1) {
-            window.location.href = fallbackTarget;
+            window.location.href = practiceTarget;
           }
         }, 180);
         return;
@@ -62,7 +66,7 @@
     } catch (_) {
       // ignore cross-window errors
     }
-    window.location.href = fallbackTarget;
+    window.location.href = practiceTarget;
   });
   drawerToggle.addEventListener('click', toggleDrawer);
 

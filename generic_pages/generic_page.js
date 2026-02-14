@@ -37,7 +37,9 @@
   if (folder) targetParams.set('folder', folder);
   if (urlTheme) targetParams.set('theme', urlTheme);
 
-  frame.src = './generic_c_suite/generic_c_suite.html' + (targetParams.toString() ? '?' + targetParams.toString() : '');
+  const genericSuiteTarget = './generic_c_suite/generic_c_suite.html' + (targetParams.toString() ? '?' + targetParams.toString() : '');
+  let feedbackOrigin = 'generic';
+  frame.src = genericSuiteTarget;
 
   function initThemeSync() {
     applyThemeFromParentOrStorage();
@@ -184,11 +186,36 @@
       gameId: slugify(idSeed.replace(/\.[^.]+$/, '')) || 'game',
       folder: folder || null,
       nodeId: nodeId || null,
+      feedbackOrigin: feedbackOrigin,
       jsonPath: resolvedJsonPath || null,
       gamePath: resolvedGamePath || null,
       jsonUrl: json || null,
-      gameUrl: game || null
+      gameUrl: game || null,
+      frameUrl: frame ? String(frame.src || '') : null
     };
+  }
+
+  function updatePracticeButtonState() {
+    if (!fabPractice) return;
+    const isGameView = feedbackOrigin === 'game';
+    const label = isGameView ? 'Zurueck zum C-Suite Chat' : 'Ueben';
+    fabPractice.title = label;
+    fabPractice.setAttribute('aria-label', label);
+  }
+
+  function setFrameMode(mode) {
+    const next = mode === 'game' ? 'game' : 'generic';
+    feedbackOrigin = next;
+
+    if (next === 'game') {
+      const practiceTarget = game || genericSuiteTarget;
+      frame.src = practiceTarget;
+    } else {
+      frame.src = genericSuiteTarget;
+    }
+
+    updatePracticeButtonState();
+    syncThemeToContentFrame();
   }
 
   function setFeedbackStatus(text) {
@@ -211,7 +238,8 @@
     const context = buildFeedbackContext();
     if (feedbackModalContext) {
       const pathHint = context.jsonPath || context.gamePath || 'kein Repo-Pfad erkannt';
-      feedbackModalContext.textContent = `Kontext: ${context.folder || 'Spielordner'} | ${pathHint}`;
+      const sourceLabel = context.feedbackOrigin === 'game' ? 'Game' : 'Generic';
+      feedbackModalContext.textContent = `Quelle: ${sourceLabel} | Kontext: ${context.folder || 'Spielordner'} | ${pathHint}`;
     }
 
     if (feedbackCommentInput) {
@@ -244,9 +272,10 @@
     setFeedbackStatus('Sende Feedback...');
 
     const context = buildFeedbackContext();
+    const source = context.feedbackOrigin === 'game' ? 'game_page' : 'generic_page';
     const payload = {
       comment: comment,
-      source: 'generic_page',
+      source: source,
       context: {
         ...context,
         locationPath: window.location.pathname,
@@ -981,42 +1010,18 @@
   renderImageList();
 
   fabPractice.addEventListener('click', function () {
-    const fallbackParams = new URLSearchParams();
-    if (json) fallbackParams.set('json', json);
-    if (folder) fallbackParams.set('folder', folder);
-    if (game) fallbackParams.set('game', game);
-    if (jsonRel) fallbackParams.set('jsonRel', jsonRel);
-    if (gameRel) fallbackParams.set('gameRel', gameRel);
-    if (nodeId) fallbackParams.set('nodeId', nodeId);
-    const fallbackTarget = './generic_c_suite/generic_c_suite.html' + (fallbackParams.toString() ? '?' + fallbackParams.toString() : '');
-    const practiceTarget = game || fallbackTarget;
-
-    const payload = {
-      type: 'generic:start-practice',
-      folder: folder || '',
-      json: json || '',
-      game: game || '',
-      jsonRel: jsonRel || '',
-      gameRel: gameRel || '',
-      nodeId: nodeId || ''
-    };
-
-    try {
-      if (window.parent && window.parent !== window) {
-        window.parent.postMessage(payload, '*');
-        // Fallback: falls Parent nicht reagiert, im aktuellen Frame starten.
-        window.setTimeout(function () {
-          if (window.location.href.indexOf('generic_page') !== -1) {
-            window.location.href = practiceTarget;
-          }
-        }, 180);
-        return;
-      }
-    } catch (_) {
-      // ignore cross-window errors
+    if (feedbackOrigin === 'game') {
+      setFrameMode('generic');
+      return;
     }
-    window.location.href = practiceTarget;
+    if (!game) {
+      setFrameMode('generic');
+      return;
+    }
+    setFrameMode('game');
   });
+
+  updatePracticeButtonState();
 
   if (fabFeedback) {
     fabFeedback.addEventListener('click', openFeedbackModal);

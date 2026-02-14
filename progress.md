@@ -367,3 +367,18 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `node --test` fuer lokale Prozessanalyse-Tests (reachability + 4 config-tests)
   - Playwright-Smoke erfolgreich fuer `_ghtml_rollen_zuweiser.html`
   - Artefakte: `databases/Teil02 FIAE/output/web-game-rollen-zuweiser/`
+- Original prompt (current turn): weiter
+- Naechstes fehlendes Spiel in `Protokoll anfertigen _` umgesetzt: `Inhalts-Check`.
+- Neue Dateien:
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__01_planing_Protokoll anfertigen _/__gp_inhalts_check__inhalts_check_v2.txt`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_g01_inhalts_check.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_ghtml_inhalts_check.html`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gjs_inhalts_check.js`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gcss_inhalts_check.css`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__03_testing_Protokoll anfertigen _/unit/inhalts_check.config.test.mjs`
+- Reachability-Test in `Protokoll anfertigen _` auf `_g*`/`game_*` Namensmuster aktualisiert.
+- Validierung:
+  - `node --check` fuer `_gjs_inhalts_check.js`
+  - `node --test` fuer lokale Protokoll-Tests (reachability + inhalts_check)
+  - Playwright-Smoke erfolgreich fuer `_ghtml_inhalts_check.html`
+  - Artefakte: `databases/Teil02 FIAE/output/web-game-inhalts-check/`

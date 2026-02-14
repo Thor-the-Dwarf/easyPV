@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "id": "inhalts_check",
+    "title": "Inhalts-Check",
+    "subtitle": "Fehlende Pflichtangaben im Protokoll finden."
+  },
+  "required_fields": [
+    "Ort",
+    "Datum",
+    "Teilnehmende",
+    "TOPs",
+    "Aufgaben mit Termin",
+    "Verteiler"
+  ],
+  "rounds": [
+    {
+      "id": "r1",
+      "excerpt": "Projektmeeting CRM | Ort: Raum A | Teilnehmende: Lea, Can, Nina | TOPs: Rollout-Plan | Aufgaben: Can testet Migration bis 18.03.",
+      "options": ["Datum", "Verteiler", "TOPs"],
+      "missing_field": "Datum",
+      "reason": "Ohne Datum ist das Protokoll zeitlich nicht eindeutig zuordenbar."
+    },
+    {
+      "id": "r2",
+      "excerpt": "Jour fixe 12.04.2026 | Ort: Teams | TOPs: Budgetstatus | Aufgaben: Lea aktualisiert Forecast bis Freitag | Verteiler: PMO, Teamlead",
+      "options": ["Teilnehmende", "Ort", "Datum"],
+      "missing_field": "Teilnehmende",
+      "reason": "Teilnehmende sind Pflicht, um Entscheidungen und Rollen nachvollziehen zu koennen."
+    },
+    {
+      "id": "r3",
+      "excerpt": "Daily 09:00 | Datum: 14.02.2026 | Ort: Teams | Teilnehmende: Dev-Team | Aufgaben: Bug 4711 pruefen bis morgen",
+      "options": ["TOPs", "Verteiler", "Ort"],
+      "missing_field": "TOPs",
+      "reason": "Die behandelten Punkte muessen dokumentiert sein, sonst fehlt der Inhaltskontext."
+    },
+    {
+      "id": "r4",
+      "excerpt": "Abstimmung Lieferantenwechsel | Datum: 10.03.2026 | Ort: Raum B | Teilnehmende: Einkauf, IT, PM | TOPs: Vertragswechsel",
+      "options": ["Aufgaben mit Termin", "Datum", "Teilnehmende"],
+      "missing_field": "Aufgaben mit Termin",
+      "reason": "Beschluesse ohne konkrete Aufgaben und Frist sind nicht umsetzbar."
+    },
+    {
+      "id": "r5",
+      "excerpt": "Sprint-Review | Datum: 20.04.2026 | Ort: Teams | Teilnehmende: Team + Product Owner | TOPs: Inkrementabnahme | Aufgaben: QA liefert Testbericht bis Montag",
+      "options": ["Verteiler", "TOPs", "Ort"],
+      "missing_field": "Verteiler",
+      "reason": "Der Verteiler stellt sicher, dass alle relevanten Personen die Informationen erhalten."
+    },
+    {
+      "id": "r6",
+      "excerpt": "Kundenworkshop | Datum: 05.05.2026 | Teilnehmende: Kunde, Vertrieb, PM | TOPs: Scope und Milestones | Verteiler: Alle Teilnehmenden",
+      "options": ["Ort", "TOPs", "Datum"],
+      "missing_field": "Ort",
+      "reason": "Der Ort (oder Kanal) gehoert zu den formalen Basisangaben."
+    }
+  ],
+  "scoring": {
+    "correct": 20,
+    "wrong": -10,
+    "streak_bonus_threshold": 2,
+    "streak_bonus": 5
+  }
+}

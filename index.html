@@ -42,33 +42,6 @@
       </main>
     </div>
 
-    <button id="global-feedback-fab" class="global-feedback-fab" type="button" title="Feedback zum aktuellen Spiel">
-      💬
-    </button>
-
-    <div id="global-feedback-modal" class="global-feedback-modal-layer" hidden>
-      <div class="global-feedback-backdrop" data-global-feedback-close></div>
-      <section class="global-feedback-modal" role="dialog" aria-modal="true" aria-labelledby="global-feedback-title">
-        <header class="global-feedback-head">
-          <h2 id="global-feedback-title">Feedback zum Spiel</h2>
-          <button id="global-feedback-close" class="global-feedback-close" type="button" aria-label="Schliessen">✕</button>
-        </header>
-        <p id="global-feedback-context" class="global-feedback-context"></p>
-        <textarea
-          id="global-feedback-input"
-          class="global-feedback-input"
-          placeholder="Was hat funktioniert, was war unklar, was soll verbessert werden?"
-          maxlength="2000"
-        ></textarea>
-        <div class="global-feedback-actions">
-          <button id="global-feedback-cancel" class="global-feedback-btn" type="button">Abbrechen</button>
-          <button id="global-feedback-send" class="global-feedback-btn primary" type="button">Senden</button>
-        </div>
-        <p id="global-feedback-status" class="global-feedback-status" aria-live="polite"></p>
-      </section>
-    </div>
-
-    <script src="./shared/firebase-feedback-client.js"></script>
     <script>
       (function () {
         'use strict';
@@ -87,20 +60,11 @@
         const drawerTitleEl = document.getElementById('drawer-title');
         const treeRootEl = document.getElementById('tree-root');
         const contentHost = document.getElementById('content-host');
-        const globalFeedbackFab = document.getElementById('global-feedback-fab');
-        const globalFeedbackModal = document.getElementById('global-feedback-modal');
-        const globalFeedbackClose = document.getElementById('global-feedback-close');
-        const globalFeedbackCancel = document.getElementById('global-feedback-cancel');
-        const globalFeedbackSend = document.getElementById('global-feedback-send');
-        const globalFeedbackInput = document.getElementById('global-feedback-input');
-        const globalFeedbackStatus = document.getElementById('global-feedback-status');
-        const globalFeedbackContext = document.getElementById('global-feedback-context');
 
         let drawerOpen = false;
         let openedFolderIds = [];
         let drawerWidth = 360;
         let rootTree = [];
-        let activeFeedbackContext = null;
 
         init();
 
@@ -114,7 +78,6 @@
           themeToggleBtn.addEventListener('click', toggleTheme);
           initResizer();
           applyDrawerWidth();
-          initFeedbackUi();
           initGenericPageBridge();
 
           initIndex();
@@ -135,14 +98,7 @@
             const jsonUrl = typeof data.json === 'string' ? data.json : '';
             const folderLabel = typeof data.folder === 'string' ? data.folder : 'Spielordner';
             const gameUrl = typeof data.game === 'string' ? data.game : '';
-            const jsonRelPath = typeof data.jsonRel === 'string' ? data.jsonRel : '';
-            const gameRelPath = typeof data.gameRel === 'string' ? data.gameRel : '';
-            const nodeId = typeof data.nodeId === 'string' ? data.nodeId : '';
-            openPracticeView(gameUrl, jsonUrl, folderLabel, {
-              jsonRelPath: jsonRelPath,
-              gameRelPath: gameRelPath,
-              nodeId: nodeId
-            });
+            openPracticeView(gameUrl, jsonUrl, folderLabel);
           });
         }
 
@@ -154,189 +110,6 @@
           if (!event || !event.source || typeof event.source.postMessage !== 'function') return;
           const targetOrigin = event.origin && event.origin !== 'null' ? event.origin : '*';
           event.source.postMessage({ type: 'global:theme', theme: getCurrentTheme() }, targetOrigin);
-        }
-
-        function slugify(value) {
-          return String(value || '')
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '_')
-            .replace(/^_+|_+$/g, '');
-        }
-
-        function inferRelPathFromUrl(urlValue) {
-          if (!urlValue) return '';
-          try {
-            const parsed = new URL(urlValue, window.location.href);
-            return decodeURIComponent(parsed.pathname).replace(/^\/+/, '');
-          } catch (_) {
-            return '';
-          }
-        }
-
-        function buildFeedbackContext(payload) {
-          const nodeId = payload && payload.nodeId ? String(payload.nodeId) : '';
-          const folder = payload && payload.folder ? String(payload.folder) : 'Spielordner';
-          const jsonPath = payload && payload.jsonRelPath ? String(payload.jsonRelPath) : '';
-          const gamePath = payload && payload.gameRelPath ? String(payload.gameRelPath) : '';
-          const jsonUrl = payload && payload.jsonUrl ? String(payload.jsonUrl) : '';
-          const gameUrl = payload && payload.gameUrl ? String(payload.gameUrl) : '';
-
-          const resolvedJsonPath = jsonPath || inferRelPathFromUrl(jsonUrl);
-          const resolvedGamePath = gamePath || inferRelPathFromUrl(gameUrl);
-          const idSeed = resolvedJsonPath || resolvedGamePath || nodeId || folder;
-
-          return {
-            gameId: slugify(idSeed.replace(/\.[^.]+$/, '')) || 'game',
-            nodeId: nodeId || null,
-            folder: folder || null,
-            jsonPath: resolvedJsonPath || null,
-            gamePath: resolvedGamePath || null,
-            jsonUrl: jsonUrl || null,
-            gameUrl: gameUrl || null
-          };
-        }
-
-        function setFeedbackStatus(message) {
-          if (!globalFeedbackStatus) return;
-          globalFeedbackStatus.textContent = String(message || '');
-        }
-
-        function setFeedbackBusy(isBusy) {
-          const busy = !!isBusy;
-          if (globalFeedbackSend) globalFeedbackSend.disabled = busy;
-          if (globalFeedbackCancel) globalFeedbackCancel.disabled = busy;
-          if (globalFeedbackClose) globalFeedbackClose.disabled = busy;
-        }
-
-        function feedbackReasonMessage(reason) {
-          switch (String(reason || '')) {
-            case 'CONFIG_MISSING':
-              return 'Firebase ist noch nicht konfiguriert. Gleich brauche ich deine Project/API-Werte.';
-            case 'COMMENT_REQUIRED':
-              return 'Bitte zuerst einen Kommentar eingeben.';
-            case 'FEEDBACK_DISABLED':
-              return 'Feedback ist aktuell deaktiviert.';
-            default:
-              return 'Feedback konnte nicht gesendet werden.';
-          }
-        }
-
-        function persistLegacyFeedbackContext(context) {
-          if (!context) return;
-          const relPath = context.jsonPath || context.gamePath || null;
-          const payload = {
-            file_id: context.nodeId || context.gameId || null,
-            rel_path: relPath,
-            title: context.folder || null,
-            game_type: 'game'
-          };
-
-          try {
-            sessionStorage.setItem('feedback_context_v1', JSON.stringify(payload));
-            if (payload.file_id) {
-              sessionStorage.setItem('game_payload_id', payload.file_id);
-              sessionStorage.setItem('game_payload_' + payload.file_id, JSON.stringify(payload));
-            }
-          } catch (_) {
-            // ignore storage issues
-          }
-        }
-
-        function refreshFeedbackContextLabel() {
-          if (!globalFeedbackContext) return;
-          if (!activeFeedbackContext) {
-            globalFeedbackContext.textContent = 'Kontext: Noch kein Spiel aktiv.';
-            return;
-          }
-          const relPath = activeFeedbackContext.jsonPath || activeFeedbackContext.gamePath || 'kein Repo-Pfad erkannt';
-          globalFeedbackContext.textContent = `Kontext: ${activeFeedbackContext.folder || 'Spiel'} | ${relPath}`;
-        }
-
-        function setActiveFeedbackContext(context) {
-          activeFeedbackContext = context || null;
-          refreshFeedbackContextLabel();
-          persistLegacyFeedbackContext(activeFeedbackContext);
-        }
-
-        function openFeedbackModal() {
-          if (!globalFeedbackModal) return;
-          refreshFeedbackContextLabel();
-          setFeedbackStatus('');
-          globalFeedbackModal.hidden = false;
-          if (globalFeedbackInput) {
-            window.setTimeout(function () {
-              globalFeedbackInput.focus();
-            }, 0);
-          }
-        }
-
-        function closeFeedbackModal() {
-          if (!globalFeedbackModal) return;
-          globalFeedbackModal.hidden = true;
-          setFeedbackStatus('');
-        }
-
-        async function submitGlobalFeedback() {
-          const comment = globalFeedbackInput ? String(globalFeedbackInput.value || '').trim() : '';
-          if (!comment) {
-            setFeedbackStatus(feedbackReasonMessage('COMMENT_REQUIRED'));
-            return;
-          }
-          if (!window.EasyPvFirebaseFeedback || typeof window.EasyPvFirebaseFeedback.submitFeedback !== 'function') {
-            setFeedbackStatus('Feedback-Client fehlt. Bitte Seite neu laden.');
-            return;
-          }
-
-          const context = activeFeedbackContext || buildFeedbackContext({});
-          const payload = {
-            comment: comment,
-            source: 'root_host',
-            context: {
-              ...context,
-              locationPath: window.location.pathname,
-              locationHref: window.location.href
-            }
-          };
-
-          setFeedbackBusy(true);
-          setFeedbackStatus('Sende Feedback...');
-          try {
-            const result = await window.EasyPvFirebaseFeedback.submitFeedback(payload);
-            if (!result || !result.ok) {
-              setFeedbackStatus(feedbackReasonMessage(result && result.reason));
-              return;
-            }
-            setFeedbackStatus('Danke, Feedback wurde gespeichert.');
-            if (globalFeedbackInput) globalFeedbackInput.value = '';
-            window.setTimeout(closeFeedbackModal, 350);
-          } catch (_) {
-            setFeedbackStatus('Feedback konnte nicht gesendet werden.');
-          } finally {
-            setFeedbackBusy(false);
-          }
-        }
-
-        function initFeedbackUi() {
-          if (!globalFeedbackFab || !globalFeedbackModal) return;
-          globalFeedbackFab.addEventListener('click', openFeedbackModal);
-          if (globalFeedbackClose) globalFeedbackClose.addEventListener('click', closeFeedbackModal);
-          if (globalFeedbackCancel) globalFeedbackCancel.addEventListener('click', closeFeedbackModal);
-          if (globalFeedbackSend) globalFeedbackSend.addEventListener('click', submitGlobalFeedback);
-
-          const closeTargets = globalFeedbackModal.querySelectorAll('[data-global-feedback-close]');
-          closeTargets.forEach((node) => {
-            node.addEventListener('click', closeFeedbackModal);
-          });
-
-          if (globalFeedbackInput) {
-            globalFeedbackInput.addEventListener('keydown', function (event) {
-              if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
-                event.preventDefault();
-                submitGlobalFeedback();
-              }
-            });
-          }
-          refreshFeedbackContextLabel();
         }
 
         function loadState() {
@@ -740,14 +513,6 @@
           const src = buildGenericPageSrc(folderLabel, jsonUrl, gameUrl, jsonRelPath, gameRelPath, node && node.id ? node.id : '');
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
-          setActiveFeedbackContext(buildFeedbackContext({
-            folder: folderLabel,
-            nodeId: node && node.id ? node.id : '',
-            jsonRelPath: jsonRelPath,
-            gameRelPath: gameRelPath,
-            jsonUrl: jsonUrl,
-            gameUrl: gameUrl
-          }));
           queueThemeSyncForNewFrame();
         }
 
@@ -781,7 +546,7 @@
           );
         }
 
-        function openPracticeView(gameUrl, jsonUrl, folderLabel, contextPayload) {
+        function openPracticeView(gameUrl, jsonUrl, folderLabel) {
           if (!contentHost) return;
           const safeGameUrl = String(gameUrl || '').trim();
           let src = safeGameUrl || buildPracticeSrc(folderLabel || 'Spielordner', jsonUrl || '');
@@ -796,14 +561,6 @@
           }
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
-          setActiveFeedbackContext(buildFeedbackContext({
-            folder: folderLabel || 'Spielordner',
-            nodeId: contextPayload && contextPayload.nodeId ? contextPayload.nodeId : '',
-            jsonRelPath: contextPayload && contextPayload.jsonRelPath ? contextPayload.jsonRelPath : '',
-            gameRelPath: contextPayload && contextPayload.gameRelPath ? contextPayload.gameRelPath : '',
-            jsonUrl: jsonUrl || '',
-            gameUrl: gameUrl || ''
-          }));
           queueThemeSyncForNewFrame();
         }
 

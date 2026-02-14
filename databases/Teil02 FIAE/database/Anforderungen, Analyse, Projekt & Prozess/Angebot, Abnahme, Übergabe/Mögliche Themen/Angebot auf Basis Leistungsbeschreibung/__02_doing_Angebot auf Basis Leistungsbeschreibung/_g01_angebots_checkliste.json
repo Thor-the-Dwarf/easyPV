@@ -1,0 +1,44 @@
+{
+  "id": "angebots_checkliste_v1",
+  "title": "Angebots-Checkliste",
+  "subtitle": "Waehle die formalen Pflichtangaben fuer ein rechtssicheres Angebot.",
+  "rounds": [
+    {
+      "scenario": "IT-Serviceangebot fuer 12 Monate Support",
+      "required": ["angebotsdatum", "gueltigkeitsdauer", "leistungsbeschreibung", "preis", "zahlungsbedingungen"],
+      "feedback": "Ohne diese Angaben ist das Angebot inhaltlich oder rechtlich angreifbar."
+    },
+    {
+      "scenario": "Hardwareangebot fuer 40 Notebooks",
+      "required": ["angebotsdatum", "lieferbedingungen", "preis", "zahlungsbedingungen", "eigentumsvorbehalt"],
+      "feedback": "Liefer- und Zahlungslogik muss im Angebot eindeutig geregelt sein."
+    },
+    {
+      "scenario": "Cloud-Migration als Projektleistung",
+      "required": ["leistungsbeschreibung", "preis", "gueltigkeitsdauer", "zahlungsbedingungen", "haftung_hinweis"],
+      "feedback": "Bei Projekten sind Leistungsumfang und Haftungsrahmen besonders wichtig."
+    },
+    {
+      "scenario": "Wartungsvertrag fuer Netzwerkkomponenten",
+      "required": ["angebotsdatum", "leistungsbeschreibung", "preis", "service_level", "zahlungsbedingungen"],
+      "feedback": "Service-Level ohne klare Konditionen fuehren spaeter zu Streit."
+    },
+    {
+      "scenario": "Sicherheitsaudit fuer Produktionssystem",
+      "required": ["angebotsdatum", "leistungsbeschreibung", "preis", "gueltigkeitsdauer", "datenschutz_hinweis"],
+      "feedback": "Sicherheitsnahe Leistungen brauchen klare Datenschutz- und Laufzeitangaben."
+    }
+  ],
+  "fields": [
+    { "id": "angebotsdatum", "label": "Angebotsdatum" },
+    { "id": "gueltigkeitsdauer", "label": "Gueltigkeitsdauer" },
+    { "id": "leistungsbeschreibung", "label": "Leistungsbeschreibung" },
+    { "id": "preis", "label": "Preis" },
+    { "id": "zahlungsbedingungen", "label": "Zahlungsbedingungen" },
+    { "id": "lieferbedingungen", "label": "Lieferbedingungen" },
+    { "id": "eigentumsvorbehalt", "label": "Eigentumsvorbehalt" },
+    { "id": "haftung_hinweis", "label": "Haftungshinweis" },
+    { "id": "service_level", "label": "Service-Level" },
+    { "id": "datenschutz_hinweis", "label": "Datenschutzhinweis" }
+  ]
+}

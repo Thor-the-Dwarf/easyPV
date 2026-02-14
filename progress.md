@@ -444,3 +444,19 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - Logikcheck mit repräsentativen Beispielen: `__gAttributes`-only Ordner bleiben oeffenbar (via `attributesRelPath`), gemischte Ordner waehlen korrekt die Game-JSON.
 - Offene Einschraenkung:
   - Headless-UI-E2E in dieser Sandbox nicht ausfuehrbar (Chromium Launch Permission). Visuelle Endkontrolle bitte lokal im Browser gegen `index.html` pruefen.
+- Original prompt (current turn): Feedback-Roundtrip testen (generic_page + game), Ordnerpfad/Game-Titel mitsenden, Testdaten abfragen und in __04_lernings speichern.
+- `generic_pages/generic_page.js` erweitert:
+  - `context.folderPath` wird jetzt aus `jsonRel/gameRel` als Repo-Ordnerpfad ermittelt und bei jedem Feedback gesendet.
+  - `context.gameTitle` wird im Game-Modus aus dem aktiven iframe (`h1`/`document.title`, Fallback Dateiname) ermittelt und gesendet.
+  - Modal-Kontextanzeige zeigt Ordnerpfad + optionalen Spieltitel.
+- Neues E2E-Testskript hinzugefuegt: `scripts/firebase/test-feedback-roundtrip.cjs`.
+  - oeffnet `generic_pages/generic_page.html` fuer Protokoll-anfertigen,
+  - sendet je ein Generic- und Game-Feedback,
+  - fragt die erzeugten Firestore-Dokumente wieder ab,
+  - speichert Artefakte in `output/firebase-feedback-test/`.
+- Testlauf erfolgreich:
+  - JSON: `output/firebase-feedback-test/feedback-roundtrip-20260214181020013.json`
+  - Screenshot: `output/firebase-feedback-test/feedback-roundtrip-20260214181020013.png`
+  - Firestore Doc IDs: `RXsCC4WKwXyYHqbgbYiu` (generic), `Lys2wb3BiaKkJAGhsH0j` (game)
+- Learnings abgelegt in:
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__04_lernings_Protokoll anfertigen _/feedback_roundtrip_2026-02-14.md`

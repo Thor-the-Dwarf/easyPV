@@ -1,9 +1,10 @@
 (function () {
   'use strict';
 
-  const CONFIG_PATH = './config.local.js';
+  const CONFIG_PATHS = ['/firebase.config.local.js', './config.local.js'];
   const FIREBASE_APP_URL = 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js';
   const FIREBASE_DB_URL = 'https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js';
+  const FIREBASE_FS_URL = 'https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js';
 
   function loadOptionalScript(src) {
     return new Promise((resolve) => {
@@ -15,24 +16,53 @@
     });
   }
 
-  function getConfig() {
+  function getRawConfig() {
+    if (window.EASYPV_FIREBASE_CONFIG && window.EASYPV_FIREBASE_CONFIG.firebase) return window.EASYPV_FIREBASE_CONFIG;
     if (window.FEEDBACK_CONFIG && window.FEEDBACK_CONFIG.firebase) return window.FEEDBACK_CONFIG;
     return null;
   }
 
-  async function ensureFirebase() {
-    if (window.firebase && window.firebase.apps && window.firebase.apps.length) return true;
+  function normalizeConfig(rawConfig) {
+    if (!rawConfig || !rawConfig.firebase) return null;
+    const feedback = rawConfig.feedback && typeof rawConfig.feedback === 'object' ? rawConfig.feedback : {};
+    const provider = String(feedback.provider || (rawConfig.collection ? 'rtdb' : 'firestore')).toLowerCase().trim();
+    return {
+      firebase: rawConfig.firebase,
+      feedback: {
+        provider: provider === 'rtdb' ? 'rtdb' : 'firestore',
+        collection: String(feedback.collection || rawConfig.collection || 'game_feedback').trim() || 'game_feedback'
+      }
+    };
+  }
 
-    await loadOptionalScript(CONFIG_PATH);
-    const cfg = getConfig();
-    if (!cfg || !cfg.firebase || !cfg.firebase.apiKey) return false;
+  async function loadConfig() {
+    const existing = normalizeConfig(getRawConfig());
+    if (existing) return existing;
+
+    for (let i = 0; i < CONFIG_PATHS.length; i += 1) {
+      await loadOptionalScript(CONFIG_PATHS[i]);
+      const next = normalizeConfig(getRawConfig());
+      if (next) return next;
+    }
+
+    return null;
+  }
+
+  async function ensureFirebase() {
+    const cfg = await loadConfig();
+    if (!cfg || !cfg.firebase || !cfg.firebase.apiKey) return null;
+    if (window.firebase && window.firebase.apps && window.firebase.apps.length) return cfg;
 
     await loadOptionalScript(FIREBASE_APP_URL);
-    await loadOptionalScript(FIREBASE_DB_URL);
+    if (cfg.feedback.provider === 'rtdb') {
+      await loadOptionalScript(FIREBASE_DB_URL);
+    } else {
+      await loadOptionalScript(FIREBASE_FS_URL);
+    }
 
-    if (!window.firebase || !window.firebase.apps) return false;
+    if (!window.firebase || !window.firebase.apps) return null;
     if (!window.firebase.apps.length) window.firebase.initializeApp(cfg.firebase);
-    return true;
+    return cfg;
   }
 
   function buildDrawer() {
@@ -106,13 +136,12 @@
     const comment = commentEl.value.trim();
     if (!comment) return;
 
-    const ok = await ensureFirebase();
-    if (!ok) {
+    const cfg = await ensureFirebase();
+    if (!cfg) {
       showToast('Firebase nicht erreichbar');
       return;
     }
 
-    const cfg = getConfig();
     const context = getFeedbackContext();
 
     const doc = {
@@ -125,9 +154,17 @@
       title: context && context.title ? context.title : null
     };
 
-    const db = window.firebase.database();
-    const ref = db.ref(cfg.collection || 'feedback');
-    await ref.push(doc);
+    if (cfg.feedback.provider === 'rtdb') {
+      const db = window.firebase.database();
+      const ref = db.ref(cfg.feedback.collection);
+      await ref.push(doc);
+    } else {
+      const fs = window.firebase.firestore();
+      await fs.collection(cfg.feedback.collection).add({
+        ...doc,
+        created_at_server: window.firebase.firestore.FieldValue.serverTimestamp()
+      });
+    }
 
     showToast('Danke für dein Feedback');
     if (typeof closeDrawer === 'function') closeDrawer();

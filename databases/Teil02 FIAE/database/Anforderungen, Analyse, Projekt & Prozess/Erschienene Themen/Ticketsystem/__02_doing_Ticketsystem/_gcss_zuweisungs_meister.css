@@ -1,0 +1,198 @@
+:root {
+  color-scheme: dark;
+  --bg: #071327;
+  --panel: #102345;
+  --panel-soft: #0d1e3c;
+  --line: #32507f;
+  --text: #e7efff;
+  --muted: #a8bfdf;
+  --ok: #22c55e;
+  --bad: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(0, 179, 77, 0.18), transparent 34%),
+    radial-gradient(circle at 82% 8%, rgba(0, 179, 77, 0.1), transparent 32%),
+    var(--bg);
+}
+
+.app {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.head h1 {
+  margin: 0 0 0.3rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.head p {
+  margin: 0;
+  color: #9fcbf7;
+}
+
+.kpis {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.kpi {
+  min-width: 132px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(11, 26, 52, 0.92);
+  padding: 0.45rem 0.65rem;
+}
+
+.kpi span {
+  display: block;
+  font-size: 0.75rem;
+  color: #96c0f5;
+}
+
+.kpi strong {
+  font-size: 1.05rem;
+}
+
+.card {
+  margin-top: 0.9rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 1rem;
+}
+
+.ticket {
+  margin-top: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--panel-soft);
+  padding: 0.8rem;
+}
+
+.ticket h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.2rem;
+}
+
+.ticket p {
+  margin: 0;
+  color: #c9d8f2;
+}
+
+.roles {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.role {
+  text-align: left;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #12294f;
+  color: var(--text);
+  padding: 0.7rem;
+  cursor: pointer;
+}
+
+.role small {
+  display: block;
+  margin-top: 0.3rem;
+  color: #adc4ea;
+}
+
+.role:hover:enabled,
+.role:focus-visible:enabled {
+  border-color: rgba(var(--theme-rgb), 1);
+  outline: none;
+}
+
+.role.correct {
+  border-color: var(--ok);
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.role.wrong {
+  border-color: var(--bad);
+  background: rgba(239, 68, 68, 0.22);
+}
+
+.feedback {
+  margin-top: 0.85rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  padding: 0.7rem 0.8rem;
+}
+
+.feedback.ok {
+  border-color: var(--ok);
+  background: rgba(34, 197, 94, 0.22);
+}
+
+.feedback.bad {
+  border-color: var(--bad);
+  background: rgba(239, 68, 68, 0.22);
+}
+
+.actions {
+  margin-top: 0.85rem;
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: rgba(var(--theme-rgb), 0.42);
+  color: #ecf7ff;
+  padding: 0.62rem 0.95rem;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  border-color: rgba(var(--theme-rgb), 1);
+  outline: none;
+}
+
+.result-list {
+  margin: 0.75rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .roles {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* __THEME_RGB_START__ */
+:root {
+  --theme-label: "IT+PM";
+  --theme-rgb: 0, 179, 77;
+  --theme-color: rgb(var(--theme-rgb));
+  --theme-color-soft: rgba(var(--theme-rgb), 0.18);
+  --theme-color-strong: rgba(var(--theme-rgb), 0.85);
+  --accent: rgb(var(--theme-rgb));
+  --accent2: rgba(var(--theme-rgb), 0.75);
+  --accent-blue: rgb(var(--theme-rgb));
+  --accent-green: rgb(var(--theme-rgb));
+  --gold-accent: rgb(var(--theme-rgb));
+}
+/* __THEME_RGB_END__ */

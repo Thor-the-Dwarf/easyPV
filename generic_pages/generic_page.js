@@ -18,8 +18,6 @@
   const feedbackModalContext = document.getElementById('feedback-modal-context');
   if (!frame || !drawers.length || !fabPractice || !drawerToggles.length) return;
 
-  initThemeSync();
-
   const params = new URLSearchParams(window.location.search);
   const json = params.get('json');
   const folder = params.get('folder');
@@ -28,6 +26,8 @@
   const gameRel = params.get('gameRel');
   const nodeId = params.get('nodeId');
   const urlTheme = normalizeTheme(params.get('theme'));
+
+  initThemeSync();
 
   const targetParams = new URLSearchParams();
   if (json) targetParams.set('json', json);

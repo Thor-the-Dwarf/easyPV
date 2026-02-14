@@ -1,0 +1,28 @@
+# __gp_zuweisungs_meister__zuweisungs_meister_v2
+
+## Spielidee
+Zuweisungs-Meister: Weise Tickets der passenden Rolle im Team zu.
+
+## Lernziel
+- Verantwortlichkeiten zwischen Support, Frontend, Backend, DevOps und QA sicher unterscheiden.
+- Fehlzuweisungen vermeiden, damit Tickets schneller geloest werden.
+
+## Mechanik
+- 6 Ticketszenarien.
+- Pro Runde genau eine Rolle auswaehlen.
+- Sofortfeedback mit kurzer Begruendung.
+
+## Bewertung
+- Richtige Zuweisung: +20
+- Falsche Zuweisung: -10
+- Serienbonus ab 3 richtigen: +10
+
+## Dateikonvention
+- `_g01_zuweisungs_meister.json`
+- `_ghtml_zuweisungs_meister.html`
+- `_gjs_zuweisungs_meister.js`
+- `_gcss_zuweisungs_meister.css`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

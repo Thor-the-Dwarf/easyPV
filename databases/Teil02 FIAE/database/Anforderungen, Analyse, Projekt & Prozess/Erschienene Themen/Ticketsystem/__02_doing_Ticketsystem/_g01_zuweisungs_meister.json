@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "id": "zuweisungs_meister",
+    "title": "Zuweisungs-Meister",
+    "subtitle": "Ordne jedes Ticket der passenden Rolle zu."
+  },
+  "roles": [
+    {
+      "id": "support",
+      "label": "Support",
+      "focus": "Annahme, Erstdiagnose, Nutzerkommunikation"
+    },
+    {
+      "id": "frontend",
+      "label": "Frontend-Entwicklung",
+      "focus": "UI, Styles, Browser-Interaktion"
+    },
+    {
+      "id": "backend",
+      "label": "Backend-Entwicklung",
+      "focus": "API, Datenlogik, Serverfehler"
+    },
+    {
+      "id": "devops",
+      "label": "DevOps",
+      "focus": "Deployments, Infrastruktur, Monitoring"
+    },
+    {
+      "id": "qa",
+      "label": "QA/Test",
+      "focus": "Reproduktion, Testfaelle, Regression"
+    }
+  ],
+  "rounds": [
+    {
+      "id": "r1",
+      "ticket": "API liefert bei Checkout 500-Fehler",
+      "details": "Frontend sendet valide Daten, Fehler tritt im Service auf.",
+      "correct_role": "backend",
+      "reason": "Der technische Defekt liegt in der Server- bzw. API-Logik."
+    },
+    {
+      "id": "r2",
+      "ticket": "Button im Warenkorb ist auf Mobile nicht klickbar",
+      "details": "Desktop ist unauffaellig, Mobile Safari betroffen.",
+      "correct_role": "frontend",
+      "reason": "Layout-/Interaktionsproblem in der Oberflaeche."
+    },
+    {
+      "id": "r3",
+      "ticket": "Nach Deployment keine Pods mehr healthy",
+      "details": "Monitoring zeigt CrashLoopBackOff nach Release.",
+      "correct_role": "devops",
+      "reason": "Betrifft Runtime, Deployment und Infrastruktur."
+    },
+    {
+      "id": "r4",
+      "ticket": "Unklare Fehlermeldung durch User gemeldet",
+      "details": "Keine reproduzierbaren Schritte vorhanden.",
+      "correct_role": "support",
+      "reason": "Zuerst strukturierte Aufnahme und Nachfragen durch Support."
+    },
+    {
+      "id": "r5",
+      "ticket": "Neuer Hotfix verursacht Nebenfehler im Bestellprozess",
+      "details": "Regression nur in bestimmter Kombination sichtbar.",
+      "correct_role": "qa",
+      "reason": "QA sollte den Fehler systematisch nachstellen und absichern."
+    },
+    {
+      "id": "r6",
+      "ticket": "CSV-Export liefert korrekte Datei, aber Werte falsch summiert",
+      "details": "Anzeige korrekt, nur Export-Berechnung fehlerhaft.",
+      "correct_role": "backend",
+      "reason": "Fehler in Berechnungs-/Datenlogik des Services."
+    }
+  ],
+  "scoring": {
+    "correct": 20,
+    "wrong": -10,
+    "streak_bonus_threshold": 3,
+    "streak_bonus": 10
+  }
+}

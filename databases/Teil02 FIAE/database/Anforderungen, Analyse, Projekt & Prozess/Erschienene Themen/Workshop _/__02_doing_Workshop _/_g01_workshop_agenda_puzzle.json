@@ -1,0 +1,62 @@
+{
+    "id": "workshop_agenda_puzzle",
+    "title": "Workshop-Agenda-Puzzle",
+    "goal": "Plane einen sinnvollen Ablauf fuer einen Anforderungs-Workshop.",
+    "labels": {
+        "start": "Workshop planen",
+        "check": "Agenda prüfen",
+        "reset": "Neu starten",
+        "next": "Nächste Aufgabe"
+    },
+    "feedbackTemplates": {
+        "correct": "Perfekte Planung! Der Workshop-Ablauf ist logisch und zielführend.",
+        "wrong": "Das passt noch nicht ganz. Überlege, welche Schritte aufeinander aufbauen.",
+        "intro": "Ziehe die Agenda-Punkte in die logisch richtige Reihenfolge."
+    },
+    "items": [
+        {
+            "id": "begruessung",
+            "title": "Begrüßung & Intro",
+            "text": "Vorstellung, Zielsetzung, Regeln",
+            "duration": "15 min"
+        },
+        {
+            "id": "themensammlung",
+            "title": "Themensammlung",
+            "text": "Brainstorming, Kartenabfrage, Sammlung",
+            "duration": "30 min"
+        },
+        {
+            "id": "cluster",
+            "title": "Clustern & Ordnen",
+            "text": "Themen strukturieren, Duplikate entfernen",
+            "duration": "20 min"
+        },
+        {
+            "id": "pause",
+            "title": "Bio-Pause",
+            "text": "Kaffee, Lüften, Networking",
+            "duration": "15 min"
+        },
+        {
+            "id": "priorisierung",
+            "title": "Priorisierung",
+            "text": "Voting, Wichtigkeit festlegen (MoSCoW)",
+            "duration": "25 min"
+        },
+        {
+            "id": "zusammenfassung",
+            "title": "Zusammenfassung & Outlook",
+            "text": "Ergebnisse sichern, nächste Schritte",
+            "duration": "15 min"
+        }
+    ],
+    "solution": [
+        "begruessung",
+        "themensammlung",
+        "cluster",
+        "pause",
+        "priorisierung",
+        "zusammenfassung"
+    ]
+}

@@ -37,7 +37,7 @@
           <button id="theme-toggle-app" class="theme-toggle-btn" type="button" aria-label="Theme wechseln">🌙</button>
         </header>
         <section id="content-host" class="content-host" aria-live="polite">
-          <div class="content-placeholder">Klicke einen Endordner (🎮), um den C-Suite-Prototyp zu laden.</div>
+          <div class="content-placeholder">Klicke einen Endordner (🧠), um den C-Suite-Prototyp zu laden.</div>
         </section>
       </main>
     </div>
@@ -234,12 +234,22 @@
 
         async function initIndex() {
           try {
+            renderTreeLoadingState(0, 'Lade Ordnerstruktur...');
             const response = await fetch('./index.json?ts=' + Date.now());
             if (!response.ok) throw new Error('index.json konnte nicht geladen werden');
 
             const payload = await response.json();
             rootTree = normalizeTree(Array.isArray(payload.tree) ? payload.tree : []);
             drawerTitleEl.textContent = String(payload.rootName || 'DATABASE').toUpperCase();
+
+            const iconTargets = collectIconTargetNodes(rootTree);
+            if (iconTargets.length > 0) {
+              renderTreeLoadingState(0, 'Lade Icon-Metadaten...');
+              await hydrateTreeIcons(iconTargets, function (done, total) {
+                const ratio = total > 0 ? done / total : 1;
+                renderTreeLoadingState(ratio, 'Lade Icon-Metadaten...');
+              });
+            }
 
             treeRootEl.innerHTML = '';
             buildTree(treeRootEl, rootTree, 0);
@@ -249,6 +259,125 @@
               escapeHtml(error.message) +
               '</div>';
           }
+        }
+
+        function renderTreeLoadingState(progress, label) {
+          const ratio = Math.max(0, Math.min(1, Number(progress) || 0));
+          const percent = Math.round(ratio * 100);
+          treeRootEl.innerHTML =
+            '<div class="tree-loading">' +
+            '<div class="tree-loading-title">' +
+            escapeHtml(label || 'Ladevorgang...') +
+            '</div>' +
+            '<div class="tree-loading-track">' +
+            '<div class="tree-loading-fill" style="width:' +
+            percent +
+            '%"></div>' +
+            '</div>' +
+            '<div class="tree-loading-meta">' +
+            percent +
+            '%</div>' +
+            '</div>';
+        }
+
+        function collectIconTargetNodes(nodes, bucket) {
+          const out = Array.isArray(bucket) ? bucket : [];
+          (Array.isArray(nodes) ? nodes : []).forEach((node) => {
+            if (!node || !node.isFolder) return;
+            const children = Array.isArray(node.children) ? node.children : [];
+            const hasFolderChild = children.some((child) => child && child.isFolder);
+            if (!hasFolderChild && node.gameRelPath) {
+              out.push(node);
+            }
+            collectIconTargetNodes(children, out);
+          });
+          return out;
+        }
+
+        async function hydrateTreeIcons(iconNodes, onProgress) {
+          const nodes = Array.isArray(iconNodes) ? iconNodes : [];
+          const uniquePaths = [];
+          const seen = new Set();
+
+          nodes.forEach((node) => {
+            const relPath = String(node && node.attributesRelPath ? node.attributesRelPath : '').trim();
+            if (!relPath || seen.has(relPath)) return;
+            seen.add(relPath);
+            uniquePaths.push(relPath);
+          });
+
+          if (!uniquePaths.length) {
+            nodes.forEach((node) => {
+              node.icon = resolveFolderIcon(node.jsonRelPath, node.gameRelPath);
+            });
+            if (typeof onProgress === 'function') onProgress(1, 1);
+            return;
+          }
+
+          const iconByPath = new Map();
+          let done = 0;
+          await Promise.all(
+            uniquePaths.map(async (relPath) => {
+              const icon = await fetchIconFromAttributes(relPath);
+              iconByPath.set(relPath, icon);
+              done += 1;
+              if (typeof onProgress === 'function') onProgress(done, uniquePaths.length);
+            })
+          );
+
+          nodes.forEach((node) => {
+            const relPath = String(node && node.attributesRelPath ? node.attributesRelPath : '').trim();
+            const loadedIcon = normalizeIconValue(iconByPath.get(relPath));
+            node.icon = loadedIcon || resolveFolderIcon(node.jsonRelPath, node.gameRelPath);
+          });
+        }
+
+        async function fetchIconFromAttributes(relPath) {
+          const cleanPath = String(relPath || '').trim();
+          if (!cleanPath) return '';
+
+          try {
+            const baseUrl = buildRepoUrl(cleanPath);
+            if (!baseUrl) return '';
+            const url = new URL(baseUrl);
+            url.searchParams.set('ts', String(Date.now()));
+            const response = await fetch(url.href);
+            if (!response.ok) return '';
+            const payload = await response.json();
+            if (!payload || typeof payload !== 'object') return '';
+            if (typeof payload.Icon === 'string') return payload.Icon;
+            if (typeof payload.icon === 'string') return payload.icon;
+            return '';
+          } catch (_) {
+            return '';
+          }
+        }
+
+        function normalizeIconValue(rawIcon) {
+          const value = String(rawIcon || '').trim().toLowerCase();
+          if (!value) return '';
+          if (value === 'flame' || value === 'fire' || value === '🔥') return 'flame';
+          if (value === 'brain' || value === '🧠') return 'brain';
+          return '';
+        }
+
+        function safeDecodePathPart(value) {
+          const source = String(value || '');
+          try {
+            return decodeURIComponent(source);
+          } catch (_) {
+            return source;
+          }
+        }
+
+        function buildRepoUrl(relPath) {
+          const source = String(relPath || '').trim();
+          if (!source) return '';
+          const encodedPath = source
+            .split('/')
+            .map((segment) => encodeURIComponent(safeDecodePathPart(segment)))
+            .join('/');
+          return new URL(encodedPath, window.location.href).href;
         }
 
         function normalizeTree(nodes) {
@@ -284,6 +413,7 @@
           const hasFiles = rawChildren.some((child) => child && !child.isFolder);
           const jsonRelPath = findFirstJsonRelPath(rawChildren);
           const gameRelPath = findGameHtmlRelPath(rawChildren);
+          const attributesRelPath = findAttributesRelPath(rawChildren);
 
           if (cleanedName.toLowerCase() === 'database') return normalizedChildren;
           if (cleanedName === 'M') return normalizedChildren;
@@ -297,6 +427,8 @@
             hasFiles: hasFiles,
             jsonRelPath: jsonRelPath,
             gameRelPath: gameRelPath,
+            attributesRelPath: attributesRelPath,
+            icon: resolveFolderIcon(jsonRelPath, gameRelPath),
             children: normalizedChildren
           };
 
@@ -313,6 +445,10 @@
             node.name = joinNameParts(node.name, child.name);
             node.children = child.children;
             node.hasFiles = node.hasFiles || child.hasFiles;
+            if (!node.jsonRelPath && child.jsonRelPath) node.jsonRelPath = child.jsonRelPath;
+            if (!node.gameRelPath && child.gameRelPath) node.gameRelPath = child.gameRelPath;
+            if (!node.attributesRelPath && child.attributesRelPath) node.attributesRelPath = child.attributesRelPath;
+            if (!node.icon && child.icon) node.icon = child.icon;
           }
         }
 
@@ -385,6 +521,12 @@
             }
             if (!existing.gameRelPath && item.gameRelPath) {
               existing.gameRelPath = item.gameRelPath;
+            }
+            if (!existing.attributesRelPath && item.attributesRelPath) {
+              existing.attributesRelPath = item.attributesRelPath;
+            }
+            if (!existing.icon && item.icon) {
+              existing.icon = item.icon;
             }
           });
 
@@ -481,8 +623,21 @@
         function folderEmoji(node, isCollapsed) {
           const children = Array.isArray(node.children) ? node.children : [];
           const hasFolderChild = children.some((child) => child && child.isFolder);
-          if (!hasFolderChild && node && node.gameRelPath) return '🎮';
+          if (!hasFolderChild && node && node.gameRelPath) {
+            const icon = normalizeIconValue(node.icon);
+            if (icon === 'flame') return '🔥';
+            if (icon === 'brain') return '🧠';
+            if (resolveFolderIcon(node.jsonRelPath, node.gameRelPath) === 'flame') return '🔥';
+            return '🧠';
+          }
           return isCollapsed ? '📁' : '📂';
+        }
+
+        function resolveFolderIcon(jsonRelPath, gameRelPath) {
+          const source = String(gameRelPath || jsonRelPath || '');
+          if (!source) return '';
+          if (source.indexOf('/Erschienene Themen/') >= 0) return 'flame';
+          return 'brain';
         }
 
         function findNodeById(nodes, id) {
@@ -506,9 +661,9 @@
           const folderLabel = node && node.name ? node.name : 'Spielordner';
           const jsonRelPath = node && node.jsonRelPath ? String(node.jsonRelPath) : '';
           const gameRelPath = node && node.gameRelPath ? String(node.gameRelPath) : '';
-          const jsonUrl = jsonRelPath ? new URL(jsonRelPath, window.location.href).href : '';
+          const jsonUrl = jsonRelPath ? buildRepoUrl(jsonRelPath) : '';
           const gameUrl = node && node.gameRelPath
-            ? new URL(gameRelPath, window.location.href).href
+            ? buildRepoUrl(gameRelPath)
             : '';
           const src = buildGenericPageSrc(folderLabel, jsonUrl, gameUrl, jsonRelPath, gameRelPath, node && node.id ? node.id : '');
           contentHost.innerHTML =
@@ -562,6 +717,32 @@
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
           queueThemeSyncForNewFrame();
+        }
+
+        function findAttributesRelPath(children) {
+          const files = Array.isArray(children) ? children : [];
+          const matches = [];
+
+          function collectAttributeFiles(nodes) {
+            const list = Array.isArray(nodes) ? nodes : [];
+            for (let i = 0; i < list.length; i += 1) {
+              const child = list[i];
+              if (!child) continue;
+              if (child.isFolder) {
+                collectAttributeFiles(child.children);
+                continue;
+              }
+              const kind = String(child.kind || '').toLowerCase();
+              const name = String(child.name || '').toLowerCase();
+              if ((kind === 'json' || name.endsWith('.json')) && /^__gattributes_.+\.json$/i.test(name) && child.relPath) {
+                matches.push(child.relPath);
+              }
+            }
+          }
+
+          collectAttributeFiles(files);
+          const preferred = matches.find((relPath) => /\/__02_doing_/i.test(String(relPath)));
+          return preferred || matches[0] || '';
         }
 
         function findFirstJsonRelPath(children) {

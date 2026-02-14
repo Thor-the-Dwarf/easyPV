@@ -334,11 +334,14 @@
       '<div class="image-feedback-stage">' +
       '<img id="image-feedback-preview" class="image-feedback-preview" alt="Grossansicht Bild" />' +
       '<div class="image-feedback-overlay-controls">' +
-      '<input type="text" id="image-feedback-inline-comment" class="image-feedback-inline-comment" placeholder="Kurzer Kommentar zum Bild" />' +
       '<div id="image-feedback-stars" class="image-feedback-stars" aria-label="Wie hilfreich ist das Bild?">' +
       '<span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>' +
       '</div>' +
       '<div class="image-feedback-stars-caption">Wie hilfreich ist das Bild?</div>' +
+      '<input type="text" id="image-feedback-inline-comment" class="image-feedback-inline-comment" placeholder="Kurzer Kommentar zum Bild" />' +
+      '<div class="image-feedback-actions">' +
+      '<button type="button" class="image-feedback-inline-send">Senden</button>' +
+      '</div>' +
       '</div>' +
       '</div>' +
       '<div id="image-feedback-title" class="image-feedback-title"></div>' +

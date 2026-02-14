@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "id": "verteiler_puzzle",
+    "title": "Verteiler-Puzzle",
+    "subtitle": "Waehle den passenden Protokoll-Empfaengerkreis."
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "scenario": "Budgetabstimmung mit Finanzbezug und Terminrisiko",
+      "options": [
+        {
+          "id": "a",
+          "text": "Projektleitung, CFO/Controlling, betroffene Teamleads"
+        },
+        {
+          "id": "b",
+          "text": "Nur Praktikantenteam"
+        },
+        {
+          "id": "c",
+          "text": "Gesamtes Unternehmen ungefiltert"
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Nur entscheidungsrelevante Rollen sollten gezielt informiert werden."
+    },
+    {
+      "id": "r2",
+      "scenario": "Technischer Architekturentscheid fuer API-Sicherheit",
+      "options": [
+        {
+          "id": "a",
+          "text": "Backend-Team, Security, Architekt, Projektleitung"
+        },
+        {
+          "id": "b",
+          "text": "Nur Marketing"
+        },
+        {
+          "id": "c",
+          "text": "Ausschliesslich Externe ohne Projektbezug"
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Der Verteiler muss die fuer Umsetzung und Risiko verantwortlichen Rollen enthalten."
+    },
+    {
+      "id": "r3",
+      "scenario": "Review eines Onboarding-Workshops mit Aufgabenlisten",
+      "options": [
+        {
+          "id": "a",
+          "text": "HR, Teamleitung, Mentoren, neue Mitarbeitende"
+        },
+        {
+          "id": "b",
+          "text": "Nur externe Lieferanten"
+        },
+        {
+          "id": "c",
+          "text": "Ausschliesslich Rechtsabteilung"
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Alle direkt beteiligten Rollen muessen Zugriff auf Entscheidungen und Aufgaben haben."
+    },
+    {
+      "id": "r4",
+      "scenario": "Abnahmeprotokoll nach Kunden-Workshop",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kunde, Projektleitung, QA, verantwortliche Umsetzungsteams"
+        },
+        {
+          "id": "b",
+          "text": "Nur interne Social-Media-Gruppe"
+        },
+        {
+          "id": "c",
+          "text": "Nur zufaellige Mitarbeitende"
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Abnahme betrifft Auftraggeber und operative Umsetzer zugleich."
+    },
+    {
+      "id": "r5",
+      "scenario": "Aenderung der Meeting-Struktur in einem kleinen Scrum-Team",
+      "options": [
+        {
+          "id": "a",
+          "text": "Scrum-Team, Product Owner, Scrum Master"
+        },
+        {
+          "id": "b",
+          "text": "Nur Buchhaltung"
+        },
+        {
+          "id": "c",
+          "text": "Nur Mitarbeitende einer anderen Niederlassung"
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Der Verteiler richtet sich am betroffenen Arbeitskontext aus."
+    },
+    {
+      "id": "r6",
+      "scenario": "Eskalation wegen abgelehntem Change Request",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kunde, Projektleitung, Account Management, Entscheidungsgremium"
+        },
+        {
+          "id": "b",
+          "text": "Nur Azubi-Chatgruppe"
+        },
+        {
+          "id": "c",
+          "text": "Ausschliesslich nicht beteiligte Fachbereiche"
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Eskalationen brauchen die verantwortlichen und entscheidungsbefugten Empfaenger."
+    }
+  ],
+  "scoring": {
+    "correct": 20,
+    "wrong": -10,
+    "streak_bonus_threshold": 2,
+    "streak_bonus": 5
+  }
+}

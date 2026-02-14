@@ -396,3 +396,26 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `node --test` fuer lokale Protokoll-Tests (reachability + inhalts_check + vom_gespraech_zum_punkt)
   - Playwright-Smoke erfolgreich fuer `_ghtml_vom_gespraech_zum_punkt.html`
   - Artefakte: `databases/Teil02 FIAE/output/web-game-vom-gespraech-zum-punkt/`
+- Original prompt (current turn): Ändere die Icons im FolderTree; Game-Icon zu Brain, ancestor-basierte Flame-Markierung und Icon-Metadaten in __gAttributes.
+- Tree-UI in `/index.html` umgestellt: Endordner zeigen jetzt standardmäßig 🧠 statt 🎮; bei Pfad unter `Erschienene Themen` wird 🔥 angezeigt.
+- Datenbasis erweitert: 61 betroffene `__gAttributes_*.json` um Top-Level-Attribut `"Icon"` ergänzt (`"brain"` oder `"flame"`).
+- Konsistenzprüfung: alle 61 geänderten Attribute-Dateien erfolgreich als JSON validiert.
+- Original prompt (current turn): FolderTree-Algorithmus auf Icon-Lesen aus __gAttributes umstellen; Placeholder-Ladebalken waehrend Icon-Metadaten laden.
+- `index.html`: Tree-Init zweistufig gemacht (`index.json` laden -> Icon-Metadaten aus __gAttributes laden -> Tree rendern).
+- Neue Lade-UI fuer Tree (`renderTreeLoadingState`) mit Fortschritt (0-100%) waehrend Icon-Hydration.
+- Icon-Hydration: nur fuer spielbare Endordner, dedupliziert pro Attributes-Datei; `Icon` aus JSON wird gelesen und normalisiert (`brain`/`flame`).
+- Pfad-Encoding gehaertet (`buildRepoUrl`) fuer Sonderzeichen in Ordnernamen (insb. `?`), damit Icon-Fetches keine 404 mehr erzeugen.
+- Original prompt (current turn): weiter
+- Naechstes fehlendes Spiel in `Protokoll anfertigen _` umgesetzt: `Verteiler-Puzzle`.
+- Neue Dateien:
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__01_planing_Protokoll anfertigen _/__gp_verteiler_puzzle__verteiler_puzzle_v2.txt`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_g01_verteiler_puzzle.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_ghtml_verteiler_puzzle.html`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gjs_verteiler_puzzle.js`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gcss_verteiler_puzzle.css`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__03_testing_Protokoll anfertigen _/unit/verteiler_puzzle.config.test.mjs`
+- Validierung:
+  - `node --check` fuer `_gjs_verteiler_puzzle.js`
+  - `node --test` fuer lokale Protokoll-Tests (reachability + inhalts_check + vom_gespraech_zum_punkt + verteiler_puzzle)
+  - Playwright-Smoke erfolgreich fuer `_ghtml_verteiler_puzzle.html`
+  - Artefakte: `databases/Teil02 FIAE/output/web-game-verteiler-puzzle/`

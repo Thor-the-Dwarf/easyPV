@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sender-Empfaenger-Bruecke</title>
+  <link rel="stylesheet" href="./_gs_grey_kommunikation.css">
+</head>
+<body class="deesk-page">
+  <main class="deesk-app">
+    <header class="deesk-head">
+      <h1>Sender-Empfaenger-Bruecke</h1>
+      <p>Waehle die Formulierung, die als klarer Appell verstanden wird.</p>
+      <div class="deesk-stats">
+        <span class="deesk-pill" id="progress">Runde 1/5</span>
+        <span class="deesk-pill" id="score">Score: 0</span>
+      </div>
+    </header>
+
+    <section class="deesk-card" id="round-card">
+      <h2 id="goal">...</h2>
+      <p id="situation">...</p>
+      <div id="options" class="deesk-options"></div>
+      <p id="feedback" class="deesk-feedback" aria-live="polite"></p>
+    </section>
+
+    <section id="result" class="deesk-result hidden"></section>
+  </main>
+
+  <script src="./_gjs_sender_empfaenger_bruecke.js" defer></script>
+</body>
+</html>

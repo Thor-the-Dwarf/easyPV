@@ -30,57 +30,65 @@
       .replace(/'/g, '&#39;');
   }
 
-  function buildSourceImageItems() {
-    return [
-      {
-        href: 'https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia',
-        src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Network_switches.jpg',
-        alt: 'Netzwerk-Switches',
-        meta: 'Wikimedia Commons (freie Lizenzen)'
-      },
-      {
-        href: 'https://unsplash.com/license',
-        src: 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80',
-        alt: 'Elektronik und IT-Hardware',
-        meta: 'Unsplash (kommerzielle Nutzung erlaubt)'
-      },
-      {
-        href: 'https://www.pexels.com/license/',
-        src: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        alt: 'Laptop und Arbeitsplatz',
-        meta: 'Pexels (kostenlos, kommerziell nutzbar)'
-      },
-      {
-        href: 'https://pixabay.com/service/license-summary/',
-        src: 'https://cdn.pixabay.com/photo/2015/01/08/18/24/laptop-593673_1280.jpg',
-        alt: 'IT-Projektarbeit am Laptop',
-        meta: 'Pixabay (freie Nutzung laut Lizenz)'
-      },
-      {
-        href: 'https://www.nasa.gov/nasa-brand-center/images-and-media/',
-        src: 'https://images-assets.nasa.gov/image/PIA12235/PIA12235~large.jpg',
-        alt: 'NASA Bildarchiv Beispielbild',
-        meta: 'NASA Images (Nutzungsrichtlinien beachten)'
-      },
-      {
-        href: 'https://www.loc.gov/free-to-use/',
-        src: 'https://cdn.loc.gov/service/pnp/highsm/15400/15457v.jpg',
-        alt: 'Bibliothek der digitalen Sammlung',
-        meta: 'Library of Congress (free to use & reuse)'
-      }
-    ];
+  function buildPlaceholderDataUri(title) {
+    const safeTitle = String(title || 'Bild').replace(/"/g, "'");
+    const svg =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">' +
+      '<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#12345a"/><stop offset="100%" stop-color="#0b1e33"/></linearGradient></defs>' +
+      '<rect width="1200" height="900" fill="url(#g)"/>' +
+      '<text x="600" y="470" text-anchor="middle" fill="#93c5fd" font-size="40" font-family="Segoe UI, Arial">' +
+      safeTitle +
+      '</text>' +
+      '</svg>';
+    return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
   }
 
-  function renderImageList() {
+  async function loadImageItemsFromJson() {
+    const sources = [];
+    if (json) sources.push(json);
+    for (let i = 0; i < sources.length; i += 1) {
+      try {
+        const resp = await fetch(sources[i]);
+        if (!resp.ok) continue;
+        const payload = await resp.json();
+        const list = payload && Array.isArray(payload.bild_quellen) ? payload.bild_quellen : [];
+        if (!list.length) continue;
+        return list
+          .map(function (entry) {
+            const title = String(entry && entry.titel ? entry.titel : '').trim();
+            const topic = String(entry && entry.thema ? entry.thema : '').trim();
+            const imageUrl = String(entry && entry.bild_url ? entry.bild_url : '').trim();
+            const sourceUrl = String(entry && entry.quelle_url ? entry.quelle_url : '').trim();
+            const license = String(entry && entry.lizenz ? entry.lizenz : '').trim();
+            if (!imageUrl) return null;
+            const metaParts = [topic, license].filter(Boolean);
+            return {
+              href: sourceUrl || imageUrl,
+              src: imageUrl,
+              alt: title || topic || 'Externes Bild',
+              meta: metaParts.join(' | ') || 'Externe Quelle',
+              title: title || topic || 'Bild'
+            };
+          })
+          .filter(Boolean)
+          .slice(0, 6);
+      } catch (_) {
+        // keep trying additional sources
+      }
+    }
+    return [];
+  }
+
+  async function renderImageList() {
     if (!imageGridList) return;
-    const imageItems = buildSourceImageItems();
+    const imageItems = await loadImageItemsFromJson();
 
     if (imageDrawerTitle) {
-      imageDrawerTitle.textContent = 'Bildquellen: 6 externe Quellen (3x2 Grid)';
+      imageDrawerTitle.textContent = 'Bilder';
     }
 
     if (!imageItems.length) {
-      imageGridList.innerHTML = '<p class="drawer-note">Keine thematisch passenden Bilder gefunden.</p>';
+      imageGridList.innerHTML = '<p class="drawer-note">Keine Bildquellen in der __cSuite-Datei gefunden.</p>';
       return;
     }
 
@@ -94,6 +102,8 @@
           escapeHtml(item.src) +
           '" alt="' +
           escapeHtml(item.alt) +
+          '" data-placeholder-src="' +
+          escapeHtml(buildPlaceholderDataUri(item.title)) +
           '" loading="lazy" />' +
           '<span class="image-meta">' +
           escapeHtml(item.meta) +
@@ -102,6 +112,15 @@
         );
       })
       .join('');
+
+    const images = imageGridList.querySelectorAll('img[data-placeholder-src]');
+    images.forEach(function (img) {
+      img.addEventListener('error', function onError() {
+        const fallback = img.getAttribute('data-placeholder-src');
+        if (!fallback || img.getAttribute('src') === fallback) return;
+        img.setAttribute('src', fallback);
+      });
+    });
   }
 
   function getDrawerTitle(drawer) {

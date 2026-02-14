@@ -1,0 +1,57 @@
+{
+  "id": "sender_empfaenger_bruecke_v2",
+  "title": "Sender-Empfaenger-Bruecke",
+  "subtitle": "Waehle je Situation die Formulierung, die als klarer Appell verstanden wird.",
+  "rounds": [
+    {
+      "situation": "Im Meeting ist das Fenster offen und es zieht.",
+      "goal": "Bringe einen Kollegen dazu, das Fenster zu schliessen.",
+      "options": [
+        { "text": "Mir ist kalt.", "kind": "selbstoffenbarung" },
+        { "text": "Es zieht stark am Tisch.", "kind": "sache" },
+        { "text": "Schliess bitte jetzt das Fenster.", "kind": "appell", "correct": true }
+      ],
+      "explanation": "Ein Appell fordert klar eine Handlung ein."
+    },
+    {
+      "situation": "Das Ticket steht seit Stunden auf in Arbeit.",
+      "goal": "Bitte um sofortiges Status-Update.",
+      "options": [
+        { "text": "Ich bin gerade unsicher wegen des Zeitplans.", "kind": "selbstoffenbarung" },
+        { "text": "Gib mir bitte bis 14:00 ein kurzes Status-Update.", "kind": "appell", "correct": true },
+        { "text": "Das Ticket ist seit Stunden offen.", "kind": "sache" }
+      ],
+      "explanation": "Der Satz nennt konkrete Aktion und Zeitpunkt."
+    },
+    {
+      "situation": "Der Drucker ist leer.",
+      "goal": "Kollegin soll Papier nachlegen.",
+      "options": [
+        { "text": "Im Fach liegt kein Papier mehr.", "kind": "sache" },
+        { "text": "Leg bitte neues Papier in den Drucker nach.", "kind": "appell", "correct": true },
+        { "text": "Ich bin genervt vom Drucker.", "kind": "selbstoffenbarung" }
+      ],
+      "explanation": "Ein klarer Imperativ mit Bitte ist hier passend."
+    },
+    {
+      "situation": "Die Praesentation startet in 2 Minuten.",
+      "goal": "Beamer soll angeschlossen werden.",
+      "options": [
+        { "text": "Der Beamer ist noch nicht verbunden.", "kind": "sache" },
+        { "text": "Verbinde bitte jetzt den Beamer mit dem Laptop.", "kind": "appell", "correct": true },
+        { "text": "Ich fuerchte, wir sind nicht bereit.", "kind": "selbstoffenbarung" }
+      ],
+      "explanation": "Der Appell benennt direkt die noetige Handlung."
+    },
+    {
+      "situation": "Im Chat fehlen Rueckmeldungen auf ein wichtiges Thema.",
+      "goal": "Team soll aktiv antworten.",
+      "options": [
+        { "text": "Bitte gebt bis 16:00 euer kurzes Feedback im Thread.", "kind": "appell", "correct": true },
+        { "text": "Der Thread hat bisher keine Antworten.", "kind": "sache" },
+        { "text": "Ich mache mir Sorgen wegen der Entscheidung.", "kind": "selbstoffenbarung" }
+      ],
+      "explanation": "Appell + Zeitrahmen macht die Erwartung eindeutig."
+    }
+  ]
+}

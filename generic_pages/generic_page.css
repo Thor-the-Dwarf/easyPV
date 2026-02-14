@@ -1,5 +1,6 @@
 :root {
   --fab-size: 52px;
+  --fab-clearance: calc(var(--fab-size) + 1.2rem);
 }
 
 * {
@@ -32,6 +33,7 @@ body {
 .drawer-list {
   width: 100%;
   padding-bottom: calc(var(--fab-size) * 2 + 2.2rem);
+  padding-right: var(--fab-clearance);
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -185,6 +187,7 @@ body {
   .drawer-list {
     gap: 0.45rem;
     padding-bottom: calc(var(--fab-size) * 2 + 1.6rem);
+    padding-right: calc(var(--fab-size) + 0.9rem);
   }
 
   .fab-stack {

@@ -252,3 +252,11 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - local tests pass (`reachability`, `stakeholder_interviewer`, `lastenheft_check`, `priorisierungs_pyramide`, `konflikt_loeser`)
   - Playwright smoke with click interaction successful
   - artifacts: `databases/Teil02 FIAE/output/web-game-konflikt-loeser/`
+- Theme-toggle optimization push (global single responsibility):
+  - Added `/Users/thor/WebstormProjects/easyPV/theme_bridge.js` as a central cross-origin theme client (`postMessage` request/response + `?theme=` + `localStorage` fallback).
+  - Injected `<script src="/theme_bridge.js"></script>` into all detected game HTML entrypoints (`_ghtml_*.html` and `game_*.html`) under `/databases`.
+  - Added light-mode fallback styling in `theme_bridge.js` for pages without `shared_theme.css`, so hardcoded dark UIs still visibly react to theme changes.
+  - Full coverage check: 0 remaining game-entry HTML files without theme bridge script.
+  - Validation screenshots:
+    - Light fallback on hardcoded-dark page: `/Users/thor/WebstormProjects/easyPV/output/web-game-theme-bridge-promoter-light-v2/shot-0.png`
+    - Dark default preserved: `/Users/thor/WebstormProjects/easyPV/output/web-game-theme-bridge-promoter-dark-v2/shot-0.png`

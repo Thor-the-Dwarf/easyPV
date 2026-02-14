@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "id": "priorisierungs_butler",
+    "title": "Priorisierungs-Butler",
+    "subtitle": "Ordne Incidents nach Kritikalitaet und SLA."
+  },
+  "priorities": [
+    {
+      "id": "P1",
+      "label": "P1 Kritisch",
+      "sla": "Sofort, max. 4h",
+      "hint": "Geschaeft still oder Sicherheitsrisiko"
+    },
+    {
+      "id": "P2",
+      "label": "P2 Hoch",
+      "sla": "Heute, max. 8h",
+      "hint": "Wichtige Funktion stark eingeschraenkt"
+    },
+    {
+      "id": "P3",
+      "label": "P3 Mittel",
+      "sla": "Naechster Werktag",
+      "hint": "Workaround vorhanden"
+    },
+    {
+      "id": "P4",
+      "label": "P4 Niedrig",
+      "sla": "Backlog",
+      "hint": "Kosmetisch oder geringe Auswirkung"
+    }
+  ],
+  "rounds": [
+    {
+      "id": "r1",
+      "ticket": "Login-Seite zeigt nur noch 500-Fehler",
+      "details": "Alle Kundinnen und Kunden sind ausgesperrt.",
+      "correct_priority": "P1",
+      "reason": "Kernfunktion ausgefallen, direkter Umsatz- und SLA-Schaden."
+    },
+    {
+      "id": "r2",
+      "ticket": "Rechnungs-Export bricht bei grossen Datenmengen ab",
+      "details": "Controlling kann Monatsabschluss heute nicht finalisieren.",
+      "correct_priority": "P2",
+      "reason": "Business-kritisch, aber Plattform laeuft weiterhin."
+    },
+    {
+      "id": "r3",
+      "ticket": "Suchfilter reagiert in Einzelfaellen sehr langsam",
+      "details": "Mit manueller Eingrenzung ist Arbeiten moeglich.",
+      "correct_priority": "P3",
+      "reason": "Workaround vorhanden, kein kompletter Ausfall."
+    },
+    {
+      "id": "r4",
+      "ticket": "Tippfehler im Impressum",
+      "details": "Keine Funktion ist betroffen.",
+      "correct_priority": "P4",
+      "reason": "Rein kosmetisch, niedrige Dringlichkeit."
+    },
+    {
+      "id": "r5",
+      "ticket": "Passwort-Reset E-Mails kommen nicht an",
+      "details": "Neue und gesperrte User koennen sich nicht anmelden.",
+      "correct_priority": "P1",
+      "reason": "Security- und Zugriffsproblem mit direkter Nutzerblockade."
+    },
+    {
+      "id": "r6",
+      "ticket": "Dashboard-Farbkontrast im Dark Mode zu schwach",
+      "details": "Alle Daten sind korrekt, Lesbarkeit ist reduziert.",
+      "correct_priority": "P3",
+      "reason": "Relevantes UX-Thema, aber kein harter Betriebsstillstand."
+    }
+  ],
+  "scoring": {
+    "correct": 20,
+    "wrong": -10,
+    "streak_bonus_threshold": 3,
+    "streak_bonus": 10
+  }
+}

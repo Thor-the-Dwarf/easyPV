@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drei-Phasen-Modell (Lewin)</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: #0b1020; color: #e2e8f0; }
+    .app { max-width: 1020px; margin: 0 auto; padding: 1rem; }
+    .head h1 { margin: 0 0 .35rem; }
+    .head p { margin: 0; color: #93c5fd; }
+    .kpis { display:flex; gap:.7rem; flex-wrap:wrap; margin-top:.8rem; }
+    .kpi { background:#111a33; border:1px solid #334155; border-radius:12px; padding:.45rem .65rem; min-width:130px; }
+    .kpi span { display:block; font-size:.74rem; color:#93c5fd; }
+    .kpi strong { font-size:1rem; }
+    .card { margin-top:.9rem; background:#111a33; border:1px solid #334155; border-radius:14px; padding:1rem; }
+    .task h2 { margin:.2rem 0 .45rem; font-size:1.04rem; }
+    .task p { margin:0; color:#cbd5e1; }
+    .phase-grid { margin-top:1rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:.7rem; }
+    .phase-btn { border:1px solid #334155; border-radius:12px; padding:.75rem; background:#0f172a; color:#e2e8f0; text-align:center; cursor:pointer; }
+    .phase-btn.correct { border-color:#16a34a; }
+    .phase-btn.wrong { border-color:#ef4444; }
+    .feedback { margin-top:.85rem; border-radius:10px; padding:.6rem .75rem; border:1px solid #334155; }
+    .feedback.ok { background:rgba(22,101,52,.25); border-color:#16a34a; }
+    .feedback.bad { background:rgba(127,29,29,.25); border-color:#ef4444; }
+    .actions { margin-top:.85rem; }
+    .btn { border:1px solid #334155; border-radius:10px; padding:.6rem .9rem; color:#e2e8f0; background:#155e75; cursor:pointer; }
+    .hidden { display:none; }
+  </style>
+</head>
+<body>
+<main class="app">
+  <header class="head">
+    <h1>Drei-Phasen-Modell (Lewin)</h1>
+    <p>Ordne jede Massnahme in Unfreezing, Changing oder Refreezing ein.</p>
+    <div class="kpis">
+      <div class="kpi"><span>Fortschritt</span><strong id="kpi-progress">1/6</strong></div>
+      <div class="kpi"><span>Score</span><strong id="kpi-score">0</strong></div>
+      <div class="kpi"><span>Treffer</span><strong id="kpi-hits">0</strong></div>
+    </div>
+  </header>
+  <section id="root" class="card"></section>
+</main>
+<script src="./_gjs_drei_phasen_modell.js" defer></script>
+</body>
+</html>

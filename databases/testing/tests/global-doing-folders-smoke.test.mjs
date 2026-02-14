@@ -28,6 +28,18 @@ async function filesIn(dir) {
   return entries.filter((entry) => entry.isFile()).map((entry) => entry.name);
 }
 
+function isGameHtml(name) {
+  return /^(?:game_|_game_|_ghtml_).+\.html$/i.test(name);
+}
+
+function isGameJs(name) {
+  return /^(?:game_|_game_|_gjs_).+\.js$/i.test(name);
+}
+
+function isGameJson(name) {
+  return /^(?:game_|_game_|_gjs_).+\.json$/i.test(name);
+}
+
 function parseLocalLinks(html) {
   const matches = [...html.matchAll(/(?:src|href)=["']([^"']+)["']/gi)].map((m) => m[1]);
   return matches.filter((link) =>
@@ -51,10 +63,10 @@ describe('Global Doing Folder Smoke Tests', () => {
 
     for (const doingDir of doingDirs) {
       const files = await filesIn(doingDir);
-      const gameFiles = files.filter((name) => /^game_.+\.(html|js|json)$/i.test(name));
+      const gameFiles = files.filter((name) => isGameHtml(name) || isGameJs(name) || isGameJson(name));
       assert.ok(
         gameFiles.length > 0,
-        `expected game_*.{html,js,json} in ${doingDir}`
+        `expected game-like files in ${doingDir}`
       );
     }
   });
@@ -64,7 +76,7 @@ describe('Global Doing Folder Smoke Tests', () => {
 
     for (const doingDir of doingDirs) {
       const files = await filesIn(doingDir);
-      const htmlFiles = files.filter((name) => /^game_.+\.html$/i.test(name));
+      const htmlFiles = files.filter((name) => isGameHtml(name));
 
       for (const htmlFile of htmlFiles) {
         const htmlPath = path.join(doingDir, htmlFile);

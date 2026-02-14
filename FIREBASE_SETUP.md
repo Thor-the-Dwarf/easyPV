@@ -36,9 +36,11 @@ npm install
 ```
 
 Benötigte Env-Variablen:
-- `FIREBASE_PROJECT_ID`
-- `FIREBASE_CLIENT_EMAIL`
-- `FIREBASE_PRIVATE_KEY` (mit `\n` escaped)
+- Option A (empfohlen): `FIREBASE_SERVICE_ACCOUNT_FILE` (z. B. `firebase-service-account.local.json`)
+- Option B (alternativ):
+  - `FIREBASE_PROJECT_ID`
+  - `FIREBASE_CLIENT_EMAIL`
+  - `FIREBASE_PRIVATE_KEY` (mit `\n` escaped)
 - optional: `FIREBASE_GAMES_COLLECTION` (default `game_catalog`)
 - optional: `FIREBASE_SYNC_META_COLLECTION` (default `sync_meta`)
 - optional: `G0_CATALOG_PATH` (default `databases/metadata/g0-catalog.normalized.json`)
@@ -46,6 +48,11 @@ Benötigte Env-Variablen:
 ## 4) Sync ausführen
 ```bash
 npm run sync:g0:firebase
+```
+
+Beispiel mit Service-Account-Datei:
+```bash
+FIREBASE_SERVICE_ACCOUNT_FILE=firebase-service-account.local.json npm run sync:g0:firebase
 ```
 
 Jeder Datensatz wird unter `game_catalog/{gameId}` gespeichert und enthaelt:

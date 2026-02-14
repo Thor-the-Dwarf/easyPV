@@ -1,0 +1,28 @@
+# __gp_prozess_schnittstellen__prozess_schnittstellen_v2
+
+## Spielidee
+Prozess-Schnittstellen: Bestimme pro Prozessschritt die korrekte Input-Output-Kombination.
+
+## Lernziel
+- Datenfluss in Prozessen klar verstehen.
+- Schnittstellenfehler zwischen Schritten vermeiden.
+
+## Mechanik
+- 6 Prozessschritte.
+- Pro Runde eine passende Input-Output-Zuordnung waehlen.
+- Sofortfeedback mit kurzer Begruendung.
+
+## Bewertung
+- Richtige Zuordnung: +20
+- Falsche Zuordnung: -10
+- Bonus ab 3 richtigen in Folge: +10
+
+## Dateikonvention
+- `_g01_prozess_schnittstellen.json`
+- `_ghtml_prozess_schnittstellen.html`
+- `_gjs_prozess_schnittstellen.js`
+- `_gcss_prozess_schnittstellen.css`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

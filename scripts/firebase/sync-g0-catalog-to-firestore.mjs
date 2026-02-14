@@ -32,6 +32,39 @@ function parsePrivateKey(value) {
   return value.replace(/\\n/g, '\n');
 }
 
+async function readServiceAccountFromFile(filePath) {
+  const raw = await readFile(filePath, 'utf8');
+  const parsed = JSON.parse(raw);
+  if (!parsed || typeof parsed !== 'object') {
+    throw new Error(`Invalid service account JSON in ${filePath}`);
+  }
+  return parsed;
+}
+
+async function resolveServiceAccount() {
+  const fileRef = process.env.FIREBASE_SERVICE_ACCOUNT_FILE;
+  if (fileRef && fileRef.trim()) {
+    const resolvedPath = path.resolve(workspaceRoot, fileRef.trim());
+    const serviceAccount = await readServiceAccountFromFile(resolvedPath);
+    if (!serviceAccount.project_id || !serviceAccount.client_email || !serviceAccount.private_key) {
+      throw new Error(
+        `Service account file is missing required fields (project_id, client_email, private_key): ${resolvedPath}`
+      );
+    }
+    return {
+      projectId: String(serviceAccount.project_id).trim(),
+      clientEmail: String(serviceAccount.client_email).trim(),
+      privateKey: parsePrivateKey(String(serviceAccount.private_key))
+    };
+  }
+
+  return {
+    projectId: requiredEnv('FIREBASE_PROJECT_ID'),
+    clientEmail: requiredEnv('FIREBASE_CLIENT_EMAIL'),
+    privateKey: parsePrivateKey(requiredEnv('FIREBASE_PRIVATE_KEY'))
+  };
+}
+
 async function readCatalog(catalogPath) {
   const raw = await readFile(catalogPath, 'utf8');
   const parsed = JSON.parse(raw);
@@ -46,9 +79,7 @@ async function main() {
     ? path.resolve(workspaceRoot, process.env.G0_CATALOG_PATH)
     : defaultCatalogPath;
 
-  const projectId = requiredEnv('FIREBASE_PROJECT_ID');
-  const clientEmail = requiredEnv('FIREBASE_CLIENT_EMAIL');
-  const privateKey = parsePrivateKey(requiredEnv('FIREBASE_PRIVATE_KEY'));
+  const { projectId, clientEmail, privateKey } = await resolveServiceAccount();
 
   const gamesCollection = process.env.FIREBASE_GAMES_COLLECTION || 'game_catalog';
   const syncMetaCollection = process.env.FIREBASE_SYNC_META_COLLECTION || 'sync_meta';

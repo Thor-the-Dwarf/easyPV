@@ -663,12 +663,12 @@
             label.addEventListener('click', (event) => {
               event.preventDefault();
               event.stopPropagation();
-              if (isPlayableFolder(node)) {
-                openPlayableFolder(node);
-                return;
-              }
               if (hasChildren) {
                 toggleNode(rowNode, node.id, iconButton);
+                return;
+              }
+              if (isPlayableFolder(node)) {
+                openPlayableFolder(node);
               }
             });
             row.appendChild(label);

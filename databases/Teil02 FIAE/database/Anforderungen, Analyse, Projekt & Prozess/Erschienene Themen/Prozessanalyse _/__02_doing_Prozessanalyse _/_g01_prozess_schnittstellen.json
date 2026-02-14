@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "id": "prozess_schnittstellen",
+    "title": "Prozess-Schnittstellen",
+    "subtitle": "Input und Output von Prozessschritten korrekt zuordnen."
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "process_step": "Rechnung erstellen",
+      "options": [
+        {
+          "id": "a",
+          "text": "Input: Bestellungsdaten | Output: Rechnungsbeleg"
+        },
+        {
+          "id": "b",
+          "text": "Input: Zahlungsbestaetigung | Output: Angebot"
+        },
+        {
+          "id": "c",
+          "text": "Input: Retourenschein | Output: Lieferschein"
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Die Rechnung entsteht aus der Bestellung und liefert den Rechnungsbeleg als Ergebnis."
+    },
+    {
+      "id": "r2",
+      "process_step": "Wareneingang pruefen",
+      "options": [
+        {
+          "id": "a",
+          "text": "Input: Verpackungsliste | Output: Freigabeprotokoll"
+        },
+        {
+          "id": "b",
+          "text": "Input: Kundenanfrage | Output: Supportticket"
+        },
+        {
+          "id": "c",
+          "text": "Input: Rechnungsbeleg | Output: Mahnung"
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Wareneingang nutzt Liefer-/Packdaten und erzeugt eine dokumentierte Freigabe oder Sperre."
+    },
+    {
+      "id": "r3",
+      "process_step": "Supportticket priorisieren",
+      "options": [
+        {
+          "id": "a",
+          "text": "Input: Ticketdetails | Output: Prioritaetsstufe"
+        },
+        {
+          "id": "b",
+          "text": "Input: Testprotokoll | Output: Build-Artefakt"
+        },
+        {
+          "id": "c",
+          "text": "Input: Lieferschein | Output: Retourenschein"
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Priorisierung basiert auf Ticketinformationen und liefert eine Einstufung fuer die Bearbeitung."
+    },
+    {
+      "id": "r4",
+      "process_step": "Deploy in Produktion",
+      "options": [
+        {
+          "id": "a",
+          "text": "Input: Release-Paket | Output: Laufende Version"
+        },
+        {
+          "id": "b",
+          "text": "Input: Meeting-Notiz | Output: Gantt-Chart"
+        },
+        {
+          "id": "c",
+          "text": "Input: Bewerbungsmappe | Output: Arbeitsvertrag"
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Deployment nimmt das freigegebene Artefakt und liefert eine aktive Zielversion."
+    },
+    {
+      "id": "r5",
+      "process_step": "Abnahme dokumentieren",
+      "options": [
+        {
+          "id": "a",
+          "text": "Input: Testnachweise | Output: Abnahmeprotokoll"
+        },
+        {
+          "id": "b",
+          "text": "Input: Bugliste | Output: Sprintziel"
+        },
+        {
+          "id": "c",
+          "text": "Input: Lizenzschluessel | Output: Passwort-Reset"
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Abnahme braucht Nachweise und erzeugt eine formale Dokumentation des Ergebnisses."
+    },
+    {
+      "id": "r6",
+      "process_step": "Onboarding starten",
+      "options": [
+        {
+          "id": "a",
+          "text": "Input: Stammdaten neuer Mitarbeitender | Output: Benutzerkonto + Zugriffe"
+        },
+        {
+          "id": "b",
+          "text": "Input: Altdatenbank | Output: UML-Klassendiagramm"
+        },
+        {
+          "id": "c",
+          "text": "Input: Monitoringalarm | Output: Marketingkampagne"
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Onboarding transformiert Personaldaten in konkrete IT-Zugaenge und Berechtigungen."
+    }
+  ],
+  "scoring": {
+    "correct": 20,
+    "wrong": -10,
+    "streak_bonus_threshold": 3,
+    "streak_bonus": 10
+  }
+}

@@ -339,3 +339,17 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `node --test` fuer lokale Prozessanalyse-Tests (reachability + aktivitaeten_sortierer + durchlaufzeit_rechner)
   - Playwright-Smoke erfolgreich fuer `_ghtml_durchlaufzeit_rechner.html`
   - Artefakte: `databases/Teil02 FIAE/output/web-game-durchlaufzeit-rechner/`
+- Original prompt (current turn): mach weiter
+- Naechstes fehlendes Spiel in `Prozessanalyse _` umgesetzt: `Prozess-Schnittstellen`.
+- Neue Dateien:
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__01_planing_Prozessanalyse _/__gp_prozess_schnittstellen__prozess_schnittstellen_v2.txt`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_g01_prozess_schnittstellen.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_ghtml_prozess_schnittstellen.html`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gjs_prozess_schnittstellen.js`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gcss_prozess_schnittstellen.css`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__03_testing_Prozessanalyse _/unit/prozess_schnittstellen.config.test.mjs`
+- Validierung:
+  - `node --check` fuer `_gjs_prozess_schnittstellen.js`
+  - `node --test` fuer lokale Prozessanalyse-Tests (reachability + aktivitaeten_sortierer + durchlaufzeit_rechner + prozess_schnittstellen)
+  - Playwright-Smoke erfolgreich fuer `_ghtml_prozess_schnittstellen.html`
+  - Artefakte: `databases/Teil02 FIAE/output/web-game-prozess-schnittstellen/`

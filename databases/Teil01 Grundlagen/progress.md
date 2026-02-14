@@ -22,7 +22,7 @@ Original prompt: Teil01 Grundlagen ist ein Reroll der Backend_fiaeAP2. Neuerunge
   - `game_leasing_gutachter.html`
   - `game_leasing_gutachter.js`
   - `game_leasing_gutachter.json`
-  - `leasing.css` (shared fuer zusammenhaengende Leasing-Prototypen)
+  - `_gs_grey_leasing.css` (shared fuer zusammenhaengende Leasing-Prototypen)
 - Umgesetzt: Slideshow-Faelle, Entscheidung (Zahlen/Gratis), Score, Feedback je Fall, Endscreen mit "zu viel gezahlt".
 - Test-Hooks gesetzt: `window.render_game_to_text()` und `window.advanceTime(ms)`.
 - Playwright-Smoke-Test aktiviert und lauffaehig gemacht (Client + Browser installiert).
@@ -42,13 +42,13 @@ Original prompt: Teil01 Grundlagen ist ein Reroll der Backend_fiaeAP2. Neuerunge
   - `game_finanzierungs_sortiermaschine.html`
   - `game_finanzierungs_sortiermaschine.js`
   - `game_finanzierungs_sortiermaschine.json`
-- `leasing.css` um namespacete Styles fuer Sortiermaschine erweitert.
+- `_gs_grey_leasing.css` um namespacete Styles fuer Sortiermaschine erweitert.
 - Features: 3 Kategorien (Leasing/Kreditkauf/Eigenkapital), 10 Begriffe, Swipe/Touch + Klick-Fallback, Score (+10/-10), Streak, Feedback, Vibrations-/Audio-Feedback mit Mute.
 - Playwright-Smoke-Test erfolgreich, Artefakte in `output/web-game-sortier/`.
 
 ## 2026-02-12 - Leasing-Kalkulator-Challenge Feinschliff
 - Bugfix: `assets/leasing-kalkulator-asset.svg` repariert (ungueltiges `<` in SVG-Text auf `&lt;=` korrigiert), dadurch wird das Asset im Browser wieder korrekt gerendert.
-- Responsive-Optimierung fuer globale Browser-/Mobile-Ansicht in `leasing.css`:
+- Responsive-Optimierung fuer globale Browser-/Mobile-Ansicht in `_gs_grey_leasing.css`:
   - Assetbereich vergroessert (Desktop/Tablet) und besser gewichtet im Split-Layout.
   - Zusetzliche Breakpoints fuer <=760px und <=430px (kompakter Header, einspaltige Targets, optimierte Abstaende und Touch-Hoehen).
 - Playwright-Umgebung wieder lauffaehig gemacht (fehlende Browser installiert; Testlauf via eskalierter Ausfuehrung).
@@ -59,7 +59,7 @@ Original prompt: Teil01 Grundlagen ist ein Reroll der Backend_fiaeAP2. Neuerunge
   - `database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/game_der_matrix_architekt.html`
   - `database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/game_der_matrix_architekt.js`
   - `database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/game_der_matrix_architekt.json`
-  - `database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/nutzwertanalyse.css`
+  - `database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/_gs_grey_nutzwertanalyse.css`
 - Umgesetzt: Blueprint-UI, Bauteil-Bibliothek, Grid-Slots, Drag&Drop + Tap-Select-Placement (Touch-freundlich), Snap/Lock bei korrekter Platzierung, Fehler-Shake bei falscher Platzierung.
 - KPI-Logik: Bau-Fortschritt in %, Treffer-Anzahl, Stabilitaetsstatus; Finish-Button pulsiert bei vollstaendiger Struktur.
 - Test-Hooks bereitgestellt: `window.render_game_to_text()` und `window.advanceTime(ms)`.
@@ -105,7 +105,7 @@ Original prompt: Teil01 Grundlagen ist ein Reroll der Backend_fiaeAP2. Neuerunge
   - `database/BWL/Kommunikation & Schulung/Erschienene Themen/4-Ohren-Modell/game_4ohren_deeskalation.json`
   - `database/BWL/Kommunikation & Schulung/Erschienene Themen/4-Ohren-Modell/game_4ohren_deeskalation.html`
   - `database/BWL/Kommunikation & Schulung/Erschienene Themen/4-Ohren-Modell/game_4ohren_deeskalation.js`
-  - `database/BWL/Kommunikation & Schulung/Erschienene Themen/4-Ohren-Modell/kommunikation.css`
+  - `database/BWL/Kommunikation & Schulung/Erschienene Themen/4-Ohren-Modell/_gs_grey_kommunikation.css`
 - Features: 5 Konfliktszenarien, drei Antwortoptionen je Runde, nur sachliche Antwort = 100 Punkte, sonst 0.
 - KPI-Anzeige: Runde, Punkte, Quote; Feedback je Auswahl und Endauswertung mit Neustart.
 - Test-Hooks integriert: `window.render_game_to_text()` und `window.advanceTime(ms)`.

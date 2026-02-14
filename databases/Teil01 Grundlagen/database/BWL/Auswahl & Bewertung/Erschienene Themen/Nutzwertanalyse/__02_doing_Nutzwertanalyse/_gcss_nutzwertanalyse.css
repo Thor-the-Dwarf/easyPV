@@ -468,6 +468,183 @@ body.detektiv-page {
   }
 }
 
+/* ===== WG-Zimmer-Challenge ===== */
+body.wg-page {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #e9f1ff;
+  background:
+    radial-gradient(780px 340px at 82% -10%, rgba(var(--theme-rgb), 0.2), transparent),
+    linear-gradient(180deg, #1a1221, #0b1020);
+}
+
+.wg-app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.wg-head {
+  border: 1px solid #485e7d;
+  border-radius: 14px;
+  background: rgba(6, 16, 38, 0.86);
+  padding: 12px;
+}
+
+.wg-head h1 {
+  margin: 0;
+  font-size: clamp(1.2rem, 4.8vw, 2rem);
+}
+
+.wg-head p {
+  margin: 4px 0 0;
+  color: #c2d2e8;
+}
+
+.wg-kpis {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.wg-kpi {
+  border: 1px solid #556c8d;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 7px 9px;
+}
+
+.wg-kpi span {
+  display: block;
+  font-size: 0.75rem;
+  color: #9eb7d6;
+}
+
+.wg-kpi strong {
+  font-size: 1.08rem;
+}
+
+.wg-card {
+  margin-top: 10px;
+  border: 1px solid #485e7d;
+  border-radius: 14px;
+  background: rgba(6, 16, 38, 0.86);
+  padding: 12px;
+}
+
+.wg-weight-box {
+  border: 1px solid #556c8d;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 9px;
+}
+
+.wg-weight-box span {
+  color: #9eb7d6;
+}
+
+.wg-offers {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.wg-offer {
+  border: 1px solid #586f8f;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #e9f1ff;
+  text-align: left;
+  padding: 9px;
+  cursor: pointer;
+  display: grid;
+  gap: 3px;
+}
+
+.wg-offer strong {
+  font-size: 1rem;
+}
+
+.wg-offer span {
+  color: #c4d2e8;
+  font-size: 0.86rem;
+}
+
+.wg-offer:hover:enabled,
+.wg-offer:focus-visible:enabled {
+  border-color: rgba(var(--theme-rgb), 0.95);
+  outline: none;
+}
+
+.wg-offer.is-selected {
+  border-color: rgba(var(--theme-rgb), 0.95);
+  background: rgba(var(--theme-rgb), 0.2);
+}
+
+.wg-offer.is-correct {
+  border-color: rgba(34, 197, 94, 0.85);
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.wg-offer.is-wrong {
+  border-color: rgba(239, 68, 68, 0.86);
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.wg-feedback {
+  margin-top: 10px;
+  border: 1px solid #4f6484;
+  border-radius: 10px;
+  padding: 9px 10px;
+}
+
+.wg-feedback.ok {
+  border-color: rgba(34, 197, 94, 0.8);
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.wg-feedback.bad {
+  border-color: rgba(239, 68, 68, 0.85);
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.wg-feedback.neutral {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.wg-actions {
+  margin-top: 10px;
+}
+
+.wg-btn {
+  border: 1px solid #5c7395;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #e9f1ff;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 820px) {
+  .wg-offers {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .wg-app {
+    padding: 9px;
+  }
+
+  .wg-kpis {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* __THEME_RGB_START__ */
 :root {

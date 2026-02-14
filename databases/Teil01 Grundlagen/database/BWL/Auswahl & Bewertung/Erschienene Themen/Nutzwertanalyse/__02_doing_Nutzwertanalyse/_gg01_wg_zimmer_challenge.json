@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "id": "wg_zimmer_challenge",
+    "title": "WG-Zimmer-Challenge",
+    "subtitle": "Finde das einzige Angebot mit mehr als 450 Nutzwertpunkten."
+  },
+  "weights": {
+    "price": 60,
+    "size": 40
+  },
+  "target_threshold": 450,
+  "offers": [
+    { "id": "o1", "label": "Zimmer A", "rent_eur": 540, "size_qm": 16, "price_score": 4, "size_score": 5 },
+    { "id": "o2", "label": "Zimmer B", "rent_eur": 500, "size_qm": 15, "price_score": 4, "size_score": 4 },
+    { "id": "o3", "label": "Zimmer C", "rent_eur": 620, "size_qm": 24, "price_score": 2, "size_score": 8 },
+    { "id": "o4", "label": "Zimmer D", "rent_eur": 470, "size_qm": 14, "price_score": 5, "size_score": 3 },
+    { "id": "o5", "label": "Zimmer E", "rent_eur": 560, "size_qm": 22, "price_score": 3, "size_score": 6 },
+    { "id": "o6", "label": "Zimmer F", "rent_eur": 510, "size_qm": 20, "price_score": 4, "size_score": 5 },
+    { "id": "o7", "label": "Zimmer G", "rent_eur": 450, "size_qm": 23, "price_score": 7, "size_score": 8 },
+    { "id": "o8", "label": "Zimmer H", "rent_eur": 590, "size_qm": 19, "price_score": 3, "size_score": 5 },
+    { "id": "o9", "label": "Zimmer I", "rent_eur": 530, "size_qm": 21, "price_score": 4, "size_score": 4 },
+    { "id": "o10", "label": "Zimmer J", "rent_eur": 640, "size_qm": 25, "price_score": 2, "size_score": 8 }
+  ],
+  "correct_offer": "o7",
+  "scoring": {
+    "first_try": 100,
+    "second_try": 50,
+    "failed": 0
+  }
+}

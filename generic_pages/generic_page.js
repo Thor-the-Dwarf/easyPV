@@ -2,11 +2,11 @@
   'use strict';
 
   const frame = document.getElementById('content-frame');
-  const drawer = document.getElementById('c-suite-drawer');
-  const drawerToggle = document.getElementById('drawer-toggle');
+  const drawers = document.querySelectorAll('.generic-drawer');
+  const drawerToggles = document.querySelectorAll('[data-drawer-toggle]');
   const fabPractice = document.getElementById('fab-practice');
   const fabFeedback = document.getElementById('fab-feedback');
-  if (!frame || !drawer || !fabPractice || !drawerToggle) return;
+  if (!frame || !drawers.length || !fabPractice || !drawerToggles.length) return;
 
   const params = new URLSearchParams(window.location.search);
   const json = params.get('json');
@@ -19,24 +19,45 @@
 
   frame.src = './generic_c_suite/generic_c_suite.html' + (targetParams.toString() ? '?' + targetParams.toString() : '');
 
-  function updateDrawerToggleUi() {
+  function getDrawerTitle(drawer) {
+    const titleEl = drawer.querySelector('.drawer-title');
+    return titleEl ? titleEl.textContent.trim() : 'Drawer';
+  }
+
+  function updateDrawerToggleUi(drawer) {
+    const toggle = drawer.querySelector('[data-drawer-toggle]');
+    if (!toggle) return;
     const isOpen = drawer.classList.contains('is-open');
-    drawerToggle.textContent = isOpen ? '▾' : '▴';
-    const label = isOpen ? 'C-Suite einklappen' : 'C-Suite aufklappen';
-    drawerToggle.setAttribute('aria-label', label);
-    drawerToggle.title = label;
+    const drawerTitle = getDrawerTitle(drawer);
+    toggle.textContent = isOpen ? '▾' : '▴';
+    const label = isOpen ? drawerTitle + ' einklappen' : drawerTitle + ' aufklappen';
+    toggle.setAttribute('aria-label', label);
+    toggle.title = label;
   }
 
-  function setDrawerOpen(isOpen) {
+  function setDrawerOpen(drawer, isOpen) {
     drawer.classList.toggle('is-open', !!isOpen);
-    updateDrawerToggleUi();
+    updateDrawerToggleUi(drawer);
   }
 
-  function toggleDrawer() {
-    setDrawerOpen(!drawer.classList.contains('is-open'));
+  function toggleDrawer(drawer) {
+    setDrawerOpen(drawer, !drawer.classList.contains('is-open'));
   }
 
-  updateDrawerToggleUi();
+  drawers.forEach(function (drawer) {
+    updateDrawerToggleUi(drawer);
+  });
+
+  drawerToggles.forEach(function (toggle) {
+    toggle.addEventListener('click', function () {
+      const drawerId = toggle.getAttribute('data-drawer-toggle');
+      if (!drawerId) return;
+      const drawer = document.getElementById(drawerId);
+      if (!drawer) return;
+      toggleDrawer(drawer);
+    });
+  });
+
   fabPractice.addEventListener('click', function () {
     const fallbackParams = new URLSearchParams();
     if (json) fallbackParams.set('json', json);
@@ -68,7 +89,6 @@
     }
     window.location.href = practiceTarget;
   });
-  drawerToggle.addEventListener('click', toggleDrawer);
 
   if (fabFeedback) {
     fabFeedback.addEventListener('click', function () {

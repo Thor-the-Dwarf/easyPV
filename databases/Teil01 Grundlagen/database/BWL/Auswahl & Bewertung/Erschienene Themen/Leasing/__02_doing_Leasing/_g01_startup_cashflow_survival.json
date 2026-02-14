@@ -1,0 +1,24 @@
+{
+  "id": "startup_cashflow_survival_v2",
+  "title": "Startup-Cashflow-Survival",
+  "subtitle": "Treffe die Finanzierungsentscheidung und halte dein Startup 12 Monate liquide.",
+  "economy": {
+    "start_cash_eur": 20000,
+    "monthly_income_eur": 5000,
+    "term_months": 12
+  },
+  "decision": {
+    "need": "Transporter",
+    "buy": {
+      "label": "Kaufen",
+      "upfront_cost_eur": 30000
+    },
+    "lease": {
+      "label": "Leasen",
+      "monthly_cost_eur": 500
+    }
+  },
+  "win_condition": {
+    "min_cash_eur": 0
+  }
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Startup-Cashflow-Survival</title>
+  <link rel="stylesheet" href="./_gs_grey_leasing.css">
+</head>
+<body class="sortier-page">
+  <main class="sortier-app" id="app">
+    <header class="sortier-head">
+      <h1>Startup-Cashflow-Survival</h1>
+      <p>Entscheide: Kaufen oder Leasen. Ueberlebe 12 Monate ohne ins Minus zu rutschen.</p>
+      <div class="sortier-stats">
+        <span class="sortier-pill" id="stat-month">Monat: 0/12</span>
+        <span class="sortier-pill" id="stat-cash">Cash: 20.000 EUR</span>
+        <span class="sortier-pill" id="stat-mode">Modus: Entscheidung</span>
+      </div>
+    </header>
+
+    <section class="sortier-board" style="min-height: 300px; padding: 1rem;">
+      <div id="need-card" class="term-card" style="position: static; transform: none; margin: 0 auto 1rem; max-width: 620px;">
+        <div class="term-text" id="need-text">Transporter wird benoetigt. Welche Finanzierung waehlst du?</div>
+      </div>
+      <div id="decision-actions" class="sortier-actions" style="display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap;">
+        <button id="choose-buy" class="sortier-btn" type="button">Kaufen (-30.000 EUR sofort)</button>
+        <button id="choose-lease" class="sortier-btn" type="button">Leasen (-500 EUR / Monat)</button>
+      </div>
+      <div id="simulation-actions" class="sortier-actions hidden" style="display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;">
+        <button id="next-month" class="sortier-btn" type="button">+1 Monat</button>
+        <button id="run-to-end" class="sortier-btn" type="button">Bis Monat 12 simulieren</button>
+        <button id="restart" class="sortier-btn sortier-btn--restart" type="button">Neu starten</button>
+      </div>
+      <section id="feedback" class="sortier-feedback" aria-live="polite"></section>
+      <section id="result" class="sortier-result hidden"></section>
+    </section>
+  </main>
+
+  <script src="./_gjs_startup_cashflow_survival.js" defer></script>
+</body>
+</html>

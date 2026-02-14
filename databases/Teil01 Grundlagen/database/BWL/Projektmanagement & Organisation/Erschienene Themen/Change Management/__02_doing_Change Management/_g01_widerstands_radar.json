@@ -1,0 +1,62 @@
+{
+  "id": "widerstands_radar_v1",
+  "title": "Widerstands-Radar",
+  "subtitle": "Markiere pro Runde die drei Blockierer im Teammeeting.",
+  "rounds": [
+    {
+      "prompt": "Sprint-Review: Reaktionen auf neues Ticketsystem",
+      "cards": [
+        { "name": "Nora", "text": "Zu teuer und zu riskant, das klappt nie.", "blocker": true },
+        { "name": "Mika", "text": "Gute Chance, spart uns spaeter Arbeit.", "blocker": false },
+        { "name": "Lea", "text": "Ist mir egal, macht was ihr wollt.", "blocker": true },
+        { "name": "Ben", "text": "Ich teste es gern mit einem Pilot-Team.", "blocker": false },
+        { "name": "Kai", "text": "Wir sollten alles stoppen, bis es 100% perfekt ist.", "blocker": true },
+        { "name": "Ria", "text": "Wenn wir schulen, geht der Umstieg besser.", "blocker": false }
+      ]
+    },
+    {
+      "prompt": "Townhall: Neue Support-Prozesse",
+      "cards": [
+        { "name": "Oli", "text": "Das haben wir schon immer so gemacht.", "blocker": true },
+        { "name": "Ira", "text": "Ich kann die Doku mit aufsetzen.", "blocker": false },
+        { "name": "Tom", "text": "Bringt eh nichts, wird wieder verworfen.", "blocker": true },
+        { "name": "Sue", "text": "Wir brauchen nur klare Rollen.", "blocker": false },
+        { "name": "Jan", "text": "Kein Bedarf, wir ignorieren das einfach.", "blocker": true },
+        { "name": "Eda", "text": "Lass uns erste Ergebnisse messbar machen.", "blocker": false }
+      ]
+    },
+    {
+      "prompt": "Projektkickoff: Cloud-Migration",
+      "cards": [
+        { "name": "Pia", "text": "Machen wir nicht, ist politisch zu heikel.", "blocker": true },
+        { "name": "Noel", "text": "Wir koennen mit einer Testumgebung starten.", "blocker": false },
+        { "name": "Mara", "text": "Ich rede das intern sowieso schlecht.", "blocker": true },
+        { "name": "Lio", "text": "Wir brauchen einen realistischen Zeitplan.", "blocker": false },
+        { "name": "Tara", "text": "Wozu veraendern? Alles bleibt wie es ist.", "blocker": true },
+        { "name": "Gio", "text": "Ich uebernehme die Risiko-Liste.", "blocker": false }
+      ]
+    },
+    {
+      "prompt": "Retrospektive: Qualitaetssicherung",
+      "cards": [
+        { "name": "Nils", "text": "Tests sind Zeitverschwendung.", "blocker": true },
+        { "name": "Kira", "text": "Wir automatisieren die Top-3 Fehlerquellen.", "blocker": false },
+        { "name": "Moe", "text": "Ich blockiere jede Aenderung im Review.", "blocker": true },
+        { "name": "Lena", "text": "Gebt mir die Metriken, ich visualisiere sie.", "blocker": false },
+        { "name": "Bo", "text": "Keine Experimente, alles bleibt manuell.", "blocker": true },
+        { "name": "Rex", "text": "Pilotgruppe waere ein guter Start.", "blocker": false }
+      ]
+    },
+    {
+      "prompt": "Go-Live-Planung: Neues Monitoring",
+      "cards": [
+        { "name": "Ava", "text": "Wir ziehen den Stecker, sobald es Arbeit macht.", "blocker": true },
+        { "name": "Sami", "text": "Ich baue ein Dashboard fuer die KPIs.", "blocker": false },
+        { "name": "Nadja", "text": "Ich werde das Team gegen den Rollout aufbringen.", "blocker": true },
+        { "name": "Bela", "text": "Wir planen ein schrittweises Rollout-Fenster.", "blocker": false },
+        { "name": "Yuri", "text": "Lasst uns das einfach totlaufen.", "blocker": true },
+        { "name": "Dina", "text": "Mit FAQ und Schulung sinken Rueckfragen deutlich.", "blocker": false }
+      ]
+    }
+  ]
+}

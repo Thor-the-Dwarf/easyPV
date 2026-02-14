@@ -1,0 +1,33 @@
+# __gp_widerstands_radar__widerstands_radar_v2
+
+## Spielidee
+Widerstands-Radar: In Team-Statements die Blockierer identifizieren.
+
+## Lernziel
+- Widerstandssignale in Change-Situationen frueh erkennen.
+- Kritische Stakeholder gezielt ansprechen.
+
+## Mechanik
+- 5 Meeting-Runden.
+- Pro Runde 6 Statements/Personen.
+- Aufgabe: genau die 3 Blockierer markieren.
+
+## Bewertung
+- Richtiger Blockierer: +15
+- Falsch markiert: -10
+- Perfekte Runde (3/3): +10 Bonus
+
+## UX
+- Ziel direkt sichtbar.
+- Fortschritt + Score immer sichtbar.
+- Runde erst abschliessen, wenn 3 Auswahl getroffen.
+- Sofortiges Feedback pro Runde.
+
+## Dateikonvention
+- `_g01_widerstands_radar.json`
+- `_ghtml_widerstands_radar.html`
+- `_gjs_widerstands_radar.js`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

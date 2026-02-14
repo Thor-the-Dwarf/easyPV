@@ -156,6 +156,57 @@
     return inferRepoPathFromUrl(fallbackUrl);
   }
 
+  function normalizeRepoPath(repoPath) {
+    return String(repoPath || '')
+      .trim()
+      .replace(/\\/g, '/')
+      .replace(/^\/+/, '')
+      .replace(/\/+$/, '');
+  }
+
+  function repoDirname(repoPath) {
+    const normalized = normalizeRepoPath(repoPath);
+    if (!normalized) return '';
+    const slashIndex = normalized.lastIndexOf('/');
+    if (slashIndex <= 0) return '';
+    return normalized.slice(0, slashIndex);
+  }
+
+  function repoBasename(repoPath) {
+    const normalized = normalizeRepoPath(repoPath);
+    if (!normalized) return '';
+    const slashIndex = normalized.lastIndexOf('/');
+    return slashIndex >= 0 ? normalized.slice(slashIndex + 1) : normalized;
+  }
+
+  function inferGameTitleFromPath(repoPath) {
+    const fileName = repoBasename(repoPath).replace(/\.[^.]+$/, '');
+    if (!fileName) return '';
+    return fileName
+      .replace(/^_ghtml_/i, '')
+      .replace(/^game_/i, '')
+      .replace(/^_gjs_/i, '')
+      .replace(/^_gg?\d+_/i, '')
+      .replace(/[_-]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function inferGameTitleFromFrame() {
+    if (!frame || !frame.contentWindow) return '';
+    try {
+      const doc = frame.contentWindow.document;
+      if (!doc) return '';
+      const h1 = doc.querySelector('h1');
+      const fromHeading = h1 ? String(h1.textContent || '').trim() : '';
+      if (fromHeading) return fromHeading;
+      const fromTitle = String(doc.title || '').trim();
+      return fromTitle || '';
+    } catch (_) {
+      return '';
+    }
+  }
+
   function messageForFeedbackReason(reason) {
     switch (String(reason || '')) {
       case 'CONFIG_MISSING':
@@ -178,11 +229,18 @@
   function buildFeedbackContext() {
     const resolvedJsonPath = resolveRepoPath(jsonRel, json);
     const resolvedGamePath = resolveRepoPath(gameRel, game);
-    const idSeed = resolvedJsonPath || resolvedGamePath || folder || nodeId || 'game';
+    const folderPath = repoDirname(resolvedGamePath) || repoDirname(resolvedJsonPath) || null;
+    const gameTitle =
+      feedbackOrigin === 'game'
+        ? inferGameTitleFromFrame() || inferGameTitleFromPath(resolvedGamePath || resolvedJsonPath) || null
+        : null;
+    const idSeed = resolvedGamePath || resolvedJsonPath || folderPath || folder || nodeId || 'game';
 
     return {
       gameId: slugify(idSeed.replace(/\.[^.]+$/, '')) || 'game',
       folder: folder || null,
+      folderPath: folderPath,
+      gameTitle: gameTitle,
       nodeId: nodeId || null,
       feedbackOrigin: feedbackOrigin,
       jsonPath: resolvedJsonPath || null,
@@ -235,9 +293,11 @@
 
     const context = buildFeedbackContext();
     if (feedbackModalContext) {
-      const pathHint = context.jsonPath || context.gamePath || 'kein Repo-Pfad erkannt';
+      const pathHint = context.folderPath || context.jsonPath || context.gamePath || 'kein Repo-Pfad erkannt';
       const sourceLabel = context.feedbackOrigin === 'game' ? 'Game' : 'Generic';
-      feedbackModalContext.textContent = `Quelle: ${sourceLabel} | Kontext: ${context.folder || 'Spielordner'} | ${pathHint}`;
+      const gameHint = context.gameTitle ? ` | Spiel: ${context.gameTitle}` : '';
+      feedbackModalContext.textContent =
+        `Quelle: ${sourceLabel} | Ordner: ${context.folderPath || context.folder || 'Spielordner'}${gameHint} | ${pathHint}`;
     }
 
     if (feedbackCommentInput) {

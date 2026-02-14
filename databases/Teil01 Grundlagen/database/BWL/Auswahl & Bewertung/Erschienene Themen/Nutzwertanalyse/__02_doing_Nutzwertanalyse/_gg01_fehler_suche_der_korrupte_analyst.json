@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "id": "fehler_suche_der_korrupte_analyst",
+    "title": "Fehler-Suche: Der korrupte Analyst",
+    "subtitle": "Finde alle 5 falschen Rechnungen in 90 Sekunden."
+  },
+  "time_limit_sec": 90,
+  "rows": [
+    {
+      "id": "z1",
+      "criterion": "Performance",
+      "weight_percent": 30,
+      "score": 8,
+      "displayed_gp": 2.4,
+      "is_error": false
+    },
+    {
+      "id": "z2",
+      "criterion": "Wartbarkeit",
+      "weight_percent": 25,
+      "score": 7,
+      "displayed_gp": 17.5,
+      "is_error": true
+    },
+    {
+      "id": "z3",
+      "criterion": "Verfuegbarkeit",
+      "weight_percent": 20,
+      "score": 6,
+      "displayed_gp": 120,
+      "is_error": true
+    },
+    {
+      "id": "z4",
+      "criterion": "Usability",
+      "weight_percent": 15,
+      "score": 9,
+      "displayed_gp": 1.35,
+      "is_error": false
+    },
+    {
+      "id": "z5",
+      "criterion": "Preis",
+      "weight_percent": 10,
+      "score": 5,
+      "displayed_gp": 0.5,
+      "is_error": false
+    },
+    {
+      "id": "z6",
+      "criterion": "Datenschutz",
+      "weight_percent": 30,
+      "score": 4,
+      "displayed_gp": 12,
+      "is_error": true
+    },
+    {
+      "id": "z7",
+      "criterion": "Skalierbarkeit",
+      "weight_percent": 25,
+      "score": 9,
+      "displayed_gp": 2.25,
+      "is_error": false
+    },
+    {
+      "id": "z8",
+      "criterion": "Integrationsfaehigkeit",
+      "weight_percent": 20,
+      "score": 8,
+      "displayed_gp": 1.8,
+      "is_error": true
+    },
+    {
+      "id": "z9",
+      "criterion": "Support",
+      "weight_percent": 15,
+      "score": 7,
+      "displayed_gp": 1.05,
+      "is_error": false
+    },
+    {
+      "id": "z10",
+      "criterion": "Sicherheit",
+      "weight_percent": 10,
+      "score": 9,
+      "displayed_gp": 9,
+      "is_error": true
+    }
+  ],
+  "scoring": {
+    "found_error": 20,
+    "false_click": -10,
+    "max_score": 100
+  }
+}

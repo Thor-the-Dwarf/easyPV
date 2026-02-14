@@ -1,0 +1,28 @@
+# __gp_fehler_suche__fehler_suche_der_korrupte_analyst_v2
+
+## Spielidee
+Fehler-Suche: Der korrupte Analyst. Markiere die fehlerhaften Rechnungen in einer manipulierten Nutzwert-Tabelle.
+
+## Lernziel
+- Rechenfehler in Nutzwertanalysen sicher erkennen.
+- Ergebnisse kritisch pruefen statt blind uebernehmen.
+
+## Mechanik
+- Eine Liste mit 10 Rechenzeilen (Gewichtung * Note = gP).
+- Genau 5 Zeilen enthalten absichtliche Fehler.
+- Spieler markiert verdachtige Zeilen und prueft die Auswahl.
+
+## Bewertung
+- Gefundener Fehler: +20
+- Falsch markierte korrekte Zeile: -10
+- Maximal 100 Punkte
+
+## Dateikonvention
+- `_gg01_fehler_suche_der_korrupte_analyst.json`
+- `_ghtml_fehler_suche_der_korrupte_analyst.html`
+- `_gjs_fehler_suche_der_korrupte_analyst.js`
+- `_gcss_nutzwertanalyse.css` (bestehende gemeinsame Stylesheet-Datei)
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

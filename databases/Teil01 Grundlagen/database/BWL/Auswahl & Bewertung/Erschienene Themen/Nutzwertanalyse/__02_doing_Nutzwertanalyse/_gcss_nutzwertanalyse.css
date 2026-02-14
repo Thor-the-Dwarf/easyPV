@@ -645,6 +645,178 @@ body.wg-page {
   }
 }
 
+/* ===== Fehler-Suche: Der korrupte Analyst ===== */
+body.analyst-page {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #e9f1ff;
+  background:
+    radial-gradient(820px 360px at 82% -10%, rgba(var(--theme-rgb), 0.22), transparent),
+    linear-gradient(180deg, #141121, #0b0f1e);
+}
+
+.analyst-app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.analyst-head {
+  border: 1px solid #4a6181;
+  border-radius: 14px;
+  background: rgba(6, 16, 38, 0.86);
+  padding: 12px;
+}
+
+.analyst-head h1 {
+  margin: 0;
+  font-size: clamp(1.2rem, 4.8vw, 2rem);
+}
+
+.analyst-head p {
+  margin: 4px 0 0;
+  color: #c2d2e8;
+}
+
+.analyst-kpis {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.analyst-kpi {
+  border: 1px solid #5a7396;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 7px 9px;
+}
+
+.analyst-kpi span {
+  display: block;
+  font-size: 0.75rem;
+  color: #9eb7d6;
+}
+
+.analyst-kpi strong {
+  font-size: 1.08rem;
+}
+
+.analyst-card {
+  margin-top: 10px;
+  border: 1px solid #4a6181;
+  border-radius: 14px;
+  background: rgba(6, 16, 38, 0.86);
+  padding: 12px;
+}
+
+.analyst-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.analyst-row {
+  border: 1px solid #5a7396;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #e9f1ff;
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
+  display: grid;
+  gap: 3px;
+}
+
+.analyst-row strong {
+  font-size: 1rem;
+}
+
+.analyst-row span {
+  color: #c4d2e8;
+  font-size: 0.9rem;
+}
+
+.analyst-row:hover:enabled,
+.analyst-row:focus-visible:enabled {
+  border-color: rgba(var(--theme-rgb), 0.95);
+  outline: none;
+}
+
+.analyst-row.is-selected {
+  border-color: rgba(var(--theme-rgb), 0.95);
+  background: rgba(var(--theme-rgb), 0.2);
+}
+
+.analyst-row.is-correct {
+  border-color: rgba(34, 197, 94, 0.85);
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.analyst-row.is-false {
+  border-color: rgba(239, 68, 68, 0.86);
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.analyst-row.is-missed {
+  border-color: rgba(250, 204, 21, 0.9);
+  background: rgba(250, 204, 21, 0.16);
+}
+
+.analyst-feedback {
+  margin-top: 10px;
+  border: 1px solid #4f6788;
+  border-radius: 10px;
+  padding: 9px 10px;
+}
+
+.analyst-feedback.ok {
+  border-color: rgba(34, 197, 94, 0.8);
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.analyst-feedback.bad {
+  border-color: rgba(239, 68, 68, 0.85);
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.analyst-feedback.neutral {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.analyst-actions {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.analyst-btn {
+  border: 1px solid #5c7395;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #e9f1ff;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.analyst-btn--primary {
+  border-color: rgba(var(--theme-rgb), 0.8);
+  background: rgba(var(--theme-rgb), 0.34);
+}
+
+@media (max-width: 720px) {
+  .analyst-app {
+    padding: 9px;
+  }
+
+  .analyst-kpis {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* __THEME_RGB_START__ */
 :root {

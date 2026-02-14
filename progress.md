@@ -541,3 +541,10 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Output erweitert um `commentSecurity` pro Dokument plus globale `security`-Summary.
 - README angepasst: Sicherheitsablauf dokumentiert.
 - Hinweis: Rust-Toolchain in dieser Umgebung weiterhin nicht installiert, daher kein lokaler Compile/Run-Check moeglich.
+- Original prompt (current turn): fireBaseGetter soll Feedbacks in passende __04_lernings_* Ordner exportieren und Pfade in codex_protocoll_allFeedBack.txt schreiben.
+- fireBaseGetter erweitert:
+  - Exportiert alle nicht-gefilterten Feedback-Dokumente nach `__04_lernings_*/firebase_feedback_import/feedback_<doc_id>.json`.
+  - Schreibt alle geschriebenen Export-Dateipfade nach `__admin_dont_push/fireBaseGetter/codex_protocoll_allFeedBack.txt` (leer, wenn nichts exportiert wurde).
+  - Bereinigt vor jedem Lauf alte Exports: loescht `firebase_feedback_import/` unter allen `__04_lernings_*`.
+  - Output-JSON `feedback_all_games.json` enthaelt zusaetzlich `learningExport` Summary (Counts + writtenPaths).
+- Parallel-Commit hatte `__admin_dont_push/fireBaseGetter` geloescht und `__admin_dont_push/` in `.gitignore` ignoriert; Ignorierung entfernt, damit der Getter wieder versioniert werden kann.

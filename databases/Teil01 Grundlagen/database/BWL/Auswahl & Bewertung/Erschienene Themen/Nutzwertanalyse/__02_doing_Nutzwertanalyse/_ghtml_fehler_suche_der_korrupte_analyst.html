@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fehler-Suche: Der korrupte Analyst</title>
+  <link rel="stylesheet" href="./_gcss_nutzwertanalyse.css">
+</head>
+<body class="analyst-page">
+  <main class="analyst-app">
+    <header class="analyst-head">
+      <h1>Fehler-Suche: Der korrupte Analyst</h1>
+      <p>Markiere alle fehlerhaften Rechenzeilen, bevor die Zeit ablaeuft.</p>
+      <div class="analyst-kpis">
+        <div class="analyst-kpi"><span>Zeit</span><strong id="an-kpi-time">90s</strong></div>
+        <div class="analyst-kpi"><span>Markiert</span><strong id="an-kpi-selected">0</strong></div>
+        <div class="analyst-kpi"><span>Score</span><strong id="an-kpi-score">0</strong></div>
+      </div>
+    </header>
+
+    <section class="analyst-card">
+      <div id="an-list" class="analyst-list" aria-live="polite"></div>
+      <div id="an-feedback" class="analyst-feedback neutral">Markiere die verdaechtigen Zeilen und klicke auf Pruefen.</div>
+      <div class="analyst-actions">
+        <button type="button" id="an-check" class="analyst-btn analyst-btn--primary">Pruefen</button>
+        <button type="button" id="an-restart" class="analyst-btn">Neu starten</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="./_gjs_fehler_suche_der_korrupte_analyst.js" defer></script>
+  <script src="/theme_bridge.js"></script>
+</body>
+</html>

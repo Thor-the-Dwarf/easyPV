@@ -1,0 +1,48 @@
+{
+  "id": "priorisierungs_pyramide_v1",
+  "title": "Priorisierungs-Pyramide",
+  "subtitle": "Ordne Anforderungen nach der Kano-Methode ein.",
+  "categories": [
+    { "id": "basis", "label": "Basismerkmal" },
+    { "id": "leistung", "label": "Leistungsmerkmal" },
+    { "id": "begeisterung", "label": "Begeisterungsmerkmal" }
+  ],
+  "cards": [
+    {
+      "id": "c1",
+      "text": "System stuerzt im Normalbetrieb nicht ab.",
+      "category": "basis",
+      "reason": "Stabilitaet wird vorausgesetzt. Fehlt sie, entsteht starke Unzufriedenheit."
+    },
+    {
+      "id": "c2",
+      "text": "Benutzer kann Profil und Passwort selbst verwalten.",
+      "category": "leistung",
+      "reason": "Die Qualitaet der Funktion beeinflusst Zufriedenheit direkt."
+    },
+    {
+      "id": "c3",
+      "text": "Dark Mode per Klick aktivierbar.",
+      "category": "begeisterung",
+      "reason": "Nicht erwartet, aber bei Vorhandensein positiv ueberraschend."
+    },
+    {
+      "id": "c4",
+      "text": "Suchen liefert Ergebnisse in unter 2 Sekunden.",
+      "category": "leistung",
+      "reason": "Bessere Performance steigert Zufriedenheit kontinuierlich."
+    },
+    {
+      "id": "c5",
+      "text": "Sicherer Login mit Rollenberechtigungen.",
+      "category": "basis",
+      "reason": "Sicherheit ist Grundvoraussetzung im produktiven Einsatz."
+    },
+    {
+      "id": "c6",
+      "text": "Automatische Vorschlaege fuer naechste Arbeitsschritte.",
+      "category": "begeisterung",
+      "reason": "Erwartet niemand zwingend, schafft aber starken Mehrwert."
+    }
+  ]
+}

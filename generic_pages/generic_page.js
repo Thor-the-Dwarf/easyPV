@@ -17,15 +17,18 @@
   const json = params.get('json');
   const folder = params.get('folder');
   const game = params.get('game');
+  const urlTheme = normalizeTheme(params.get('theme'));
 
   const targetParams = new URLSearchParams();
   if (json) targetParams.set('json', json);
   if (folder) targetParams.set('folder', folder);
+  if (urlTheme) targetParams.set('theme', urlTheme);
 
   frame.src = './generic_c_suite/generic_c_suite.html' + (targetParams.toString() ? '?' + targetParams.toString() : '');
 
   function initThemeSync() {
     applyThemeFromParentOrStorage();
+    requestThemeFromParent();
 
     window.addEventListener('storage', function (event) {
       if (!event || event.key === THEME_KEY || event.key === null) {
@@ -36,6 +39,9 @@
       const data = event && event.data;
       if (!data || data.type !== 'global:theme') return;
       applyTheme(String(data.theme || '').toLowerCase() === 'light' ? 'light' : 'dark');
+    });
+    frame.addEventListener('load', function () {
+      syncThemeToContentFrame();
     });
 
     try {
@@ -53,6 +59,12 @@
   }
 
   function applyThemeFromParentOrStorage() {
+    const themeFromUrl = normalizeTheme(params.get('theme'));
+    if (themeFromUrl) {
+      applyTheme(themeFromUrl);
+      return;
+    }
+
     let isLight = false;
 
     try {
@@ -70,6 +82,33 @@
 
   function applyTheme(theme) {
     document.documentElement.classList.toggle('theme-light', theme === 'light');
+    syncThemeToContentFrame();
+  }
+
+  function normalizeTheme(raw) {
+    const value = String(raw || '').toLowerCase().trim();
+    if (value === 'light') return 'light';
+    if (value === 'dark') return 'dark';
+    return '';
+  }
+
+  function getCurrentTheme() {
+    return document.documentElement.classList.contains('theme-light') ? 'light' : 'dark';
+  }
+
+  function requestThemeFromParent() {
+    try {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: 'global:theme:request' }, '*');
+      }
+    } catch (_) {
+      // ignore cross-window access issues
+    }
+  }
+
+  function syncThemeToContentFrame() {
+    if (!frame || !frame.contentWindow) return;
+    frame.contentWindow.postMessage({ type: 'global:theme', theme: getCurrentTheme() }, '*');
   }
 
   function escapeHtml(value) {

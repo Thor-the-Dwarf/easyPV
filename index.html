@@ -86,13 +86,30 @@
         function initGenericPageBridge() {
           window.addEventListener('message', function (event) {
             const data = event && event.data;
-            if (!data || data.type !== 'generic:start-practice') return;
+            if (!data || typeof data !== 'object') return;
+
+            if (data.type === 'global:theme:request') {
+              replyThemeToMessageSource(event);
+              return;
+            }
+
+            if (data.type !== 'generic:start-practice') return;
 
             const jsonUrl = typeof data.json === 'string' ? data.json : '';
             const folderLabel = typeof data.folder === 'string' ? data.folder : 'Spielordner';
             const gameUrl = typeof data.game === 'string' ? data.game : '';
             openPracticeView(gameUrl, jsonUrl, folderLabel);
           });
+        }
+
+        function getCurrentTheme() {
+          return document.documentElement.classList.contains('theme-light') ? 'light' : 'dark';
+        }
+
+        function replyThemeToMessageSource(event) {
+          if (!event || !event.source || typeof event.source.postMessage !== 'function') return;
+          const targetOrigin = event.origin && event.origin !== 'null' ? event.origin : '*';
+          event.source.postMessage({ type: 'global:theme', theme: getCurrentTheme() }, targetOrigin);
         }
 
         function loadState() {
@@ -206,7 +223,7 @@
         }
 
         function queueThemeSyncForNewFrame() {
-          const theme = document.documentElement.classList.contains('theme-light') ? 'light' : 'dark';
+          const theme = getCurrentTheme();
           window.setTimeout(function () {
             syncEmbeddedThemeToActiveFrame(theme);
           }, 0);
@@ -498,7 +515,9 @@
             '&json=' +
             encodeURIComponent(jsonUrl || '') +
             '&game=' +
-            encodeURIComponent(gameUrl || '')
+            encodeURIComponent(gameUrl || '') +
+            '&theme=' +
+            encodeURIComponent(getCurrentTheme())
           );
         }
 
@@ -507,14 +526,25 @@
             './generic_pages/generic_c_suite/generic_c_suite.html?folder=' +
             encodeURIComponent(folderLabel) +
             '&json=' +
-            encodeURIComponent(jsonUrl)
+            encodeURIComponent(jsonUrl) +
+            '&theme=' +
+            encodeURIComponent(getCurrentTheme())
           );
         }
 
         function openPracticeView(gameUrl, jsonUrl, folderLabel) {
           if (!contentHost) return;
           const safeGameUrl = String(gameUrl || '').trim();
-          const src = safeGameUrl || buildPracticeSrc(folderLabel || 'Spielordner', jsonUrl || '');
+          let src = safeGameUrl || buildPracticeSrc(folderLabel || 'Spielordner', jsonUrl || '');
+          if (safeGameUrl) {
+            try {
+              const url = new URL(safeGameUrl, window.location.href);
+              url.searchParams.set('theme', getCurrentTheme());
+              src = url.href;
+            } catch (_) {
+              src = safeGameUrl;
+            }
+          }
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
           queueThemeSyncForNewFrame();

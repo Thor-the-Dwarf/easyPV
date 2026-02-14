@@ -1,0 +1,27 @@
+# __gp_priorisierungs_pyramide__priorisierungs_pyramide_v2
+
+## Spielidee
+Priorisierungs-Pyramide: Ordne Anforderungen in die Kano-Kategorien Basis, Leistung und Begeisterung ein.
+
+## Lernziel
+- Anforderungen nach Nutzerwirkung priorisieren.
+- Unterschied zwischen Muss-, Leistungs- und Begeisterungsmerkmalen sicher anwenden.
+
+## Mechanik
+- 6 Anforderungskarten.
+- Pro Karte eine Kategorie waehlen: Basis, Leistung, Begeisterung.
+- Direkte Rueckmeldung mit Begruendung.
+
+## Bewertung
+- Richtige Einordnung: +20
+- Falsche Einordnung: -10
+- Perfekter Lauf: +20 Bonus
+
+## Dateikonvention
+- `_g01_priorisierungs_pyramide.json`
+- `_ghtml_priorisierungs_pyramide.html`
+- `_gjs_priorisierungs_pyramide.js`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

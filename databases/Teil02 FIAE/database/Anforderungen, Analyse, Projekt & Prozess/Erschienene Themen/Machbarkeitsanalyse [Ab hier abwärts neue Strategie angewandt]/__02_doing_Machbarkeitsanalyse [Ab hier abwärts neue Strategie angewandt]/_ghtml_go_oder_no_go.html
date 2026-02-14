@@ -17,7 +17,7 @@
          Actually, rule #7 says "Nutze ausschließlich CSS-Variablen aus shared_theme.css".
          I'll try to link strict relative to root if possible, or assume it's available.
          Wait, let's look at `game_finanzierungs_sortiermaschine.html`:
-         <link rel="stylesheet" href="./leasing.css"> (local)
+         stylesheet target was `./leasing.css` (local)
          It does NOT link shared_theme directly in the head? 
          Ah, `index.html` loads the iframe. The iframe might rely on parent styles? 
          Rule #6: "Spiele müssen innerhalb eines iframes funktionieren".
@@ -28,7 +28,7 @@
          If the game is in an iframe, `index.html` styles don't bleed in unless injected.
          But `game_finanzierungs_sortiermaschine.html` didn't have shared_theme linked.
          Maybe the user's environment injects it? Or maybe it just relies on its own CSS.
-         Wait, `game_finanzierungs_sortiermaschine.html` had `<link rel="stylesheet" href="./leasing.css">`.
+         Wait, `game_finanzierungs_sortiermaschine.html` referenced `./leasing.css`.
          And `leasing.css` probably has the colors? No, `leasing.css` logic wasn't shown fully but `shared_theme` was shown.
          I will assume I should link my own CSS and if shared_theme is needed, I'll try to find it.
          BUT, rule #7 says use shared_theme variables.
@@ -48,8 +48,7 @@
          Actually, `Teil02 FIAE` is a sibling of `Teil01 Grundlagen`.
          Path: `../../../../../Teil01 Grundlagen/shared_theme.css` seems about right for 5 levels deep in `database`.
     -->
-    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css"> 
-    <link rel="stylesheet" href="go_oder_no_go.css">
+    <link rel="stylesheet" href="./_gcss_go_oder_no_go.css"> 
     <style>
         /* Fallback if shared theme not found */
         :root {

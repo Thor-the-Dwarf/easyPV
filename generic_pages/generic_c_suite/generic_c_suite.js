@@ -22,6 +22,7 @@
   };
   const roleOrder = ['ceo', 'coo', 'cfo', 'cto', 'cio', 'ciso', 'cso'];
   const THEME_KEY = 'globalTheme_v1';
+  const params = new URLSearchParams(window.location.search);
 
   const thread = document.getElementById('chat-thread');
   if (!thread) return;
@@ -31,6 +32,12 @@
 
   function initThemeSync() {
     applyThemeFromParentOrStorage();
+    requestThemeFromParent();
+    window.addEventListener('message', function (event) {
+      const data = event && event.data;
+      if (!data || data.type !== 'global:theme') return;
+      applyTheme(String(data.theme || '').toLowerCase() === 'light' ? 'light' : 'dark');
+    });
 
     try {
       if (!window.parent || window.parent === window) return;
@@ -47,6 +54,12 @@
   }
 
   function applyThemeFromParentOrStorage() {
+    const themeFromUrl = normalizeTheme(params.get('theme'));
+    if (themeFromUrl) {
+      applyTheme(themeFromUrl);
+      return;
+    }
+
     let isLight = false;
 
     try {
@@ -59,7 +72,28 @@
       isLight = localStorage.getItem(THEME_KEY) === 'light';
     }
 
-    document.documentElement.classList.toggle('theme-light', isLight);
+    applyTheme(isLight ? 'light' : 'dark');
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.classList.toggle('theme-light', theme === 'light');
+  }
+
+  function normalizeTheme(raw) {
+    const value = String(raw || '').toLowerCase().trim();
+    if (value === 'light') return 'light';
+    if (value === 'dark') return 'dark';
+    return '';
+  }
+
+  function requestThemeFromParent() {
+    try {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: 'global:theme:request' }, '*');
+      }
+    } catch (_) {
+      // ignore cross-window access issues
+    }
   }
 
   async function init() {

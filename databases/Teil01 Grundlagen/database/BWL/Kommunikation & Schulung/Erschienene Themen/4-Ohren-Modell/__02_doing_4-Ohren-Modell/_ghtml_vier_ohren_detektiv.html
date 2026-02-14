@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vier-Ohren-Detektiv</title>
+    <link rel="stylesheet" href="_gcss_kommunikation.css">
+</head>
+
+<body class="deesk-page">
+    <div class="deesk-app">
+        <!-- Header / KPIs -->
+        <header class="deesk-head">
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+                <div>
+                    <h1>Vier-Ohren-Detektiv</h1>
+                    <p id="game-desc">Analysiere die Nachrichten im Flug!</p>
+                </div>
+                <div id="icon-container">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2"></path>
+                        <path d="M7 13v-3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3"></path>
+                        <path d="M7 17v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="deesk-kpis">
+                <div class="kpi">
+                    <span>Zeit</span>
+                    <strong id="timer">--</strong>
+                </div>
+                <div class="kpi">
+                    <span>Punkte</span>
+                    <strong id="score">0</strong>
+                </div>
+                <div class="kpi">
+                    <span>Ziel</span>
+                    <strong id="kpi-target">--</strong>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Card -->
+        <main class="deesk-card" style="padding: 0;">
+            <div id="start-screen" class="target-ear-display" style="padding: 40px 20px;">
+                <h2 style="color: var(--ink); font-size: 1.2rem; margin-bottom: 20px;">Bereit für die Analyse?</h2>
+                <p style="margin-bottom: 25px;">Klicke nur Nachrichten an, die dem gesuchten "Ohr" entsprechen.</p>
+                <button id="start-btn" class="next-btn" style="max-width: 300px; cursor: pointer;">Mission
+                    starten</button>
+            </div>
+
+            <div id="game-container" style="display: none;">
+                <div class="target-ear-display">
+                    <h2>Gesuchtes Ohr</h2>
+                    <span id="current-target" class="current-target">--</span>
+                </div>
+                <div id="flying-area" class="flying-area">
+                    <!-- Messages will spawn here -->
+                </div>
+            </div>
+
+            <div id="result-screen" class="target-ear-display" style="display: none; padding: 40px 20px;">
+                <h2 style="color: var(--ink); font-size: 1.5rem; margin-bottom: 10px;">Einsatz beendet!</h2>
+                <div style="font-size: 3rem; font-weight: 900; margin: 20px 0;" id="final-score">0</div>
+                <p id="result-text" style="margin-bottom: 25px;">Gute Arbeit, Detektiv!</p>
+                <button id="restart-btn" class="restart-btn" style="max-width: 300px; cursor: pointer;">Nochmal
+                    versuchen</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="_gjs_vier_ohren_detektiv.js"></script>
+</body>
+
+</html>

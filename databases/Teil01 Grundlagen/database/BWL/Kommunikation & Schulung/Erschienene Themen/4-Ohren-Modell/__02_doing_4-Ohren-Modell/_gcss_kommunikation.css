@@ -9,7 +9,9 @@
   --bad: #ef4444;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body.deesk-page {
   margin: 0;
@@ -190,34 +192,146 @@ body.deesk-page {
   box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.18) inset;
 }
 
-.result h2 {
-  margin: 0 0 8px;
+/* Flying Area & Messages */
+.flying-area {
+  position: relative;
+  width: 100%;
+  height: 60dvh;
+  min-height: 400px;
+  overflow: hidden;
+  background: rgba(1, 8, 26, 0.4);
+  border-radius: 0 0 14px 14px;
 }
 
-.result p {
-  margin: 0 0 6px;
+.flying-message {
+  position: absolute;
+  background: white;
+  color: #0f172a;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s, opacity 0.2s;
+  top: var(--top);
+  left: -200px;
 }
 
-@media (max-width: 700px) {
-  .deesk-app {
-    padding: 8px;
+.flying-message:active {
+  transform: scale(0.95);
+}
+
+.flying-message.correct {
+  background: var(--good);
+  color: white;
+  pointer-events: none;
+}
+
+.flying-message.wrong {
+  background: var(--bad);
+  color: white;
+  pointer-events: none;
+}
+
+@keyframes fly-across {
+  from {
+    transform: translateX(0);
   }
 
-  .deesk-head,
-  .deesk-card {
-    border-radius: 12px;
-    padding: 9px;
-  }
-
-  .deesk-kpis {
-    gap: 6px;
-  }
-
-  .scanner-grid {
-    grid-template-columns: 1fr;
+  to {
+    transform: translateX(calc(100vw + 400px));
   }
 }
 
+.target-ear-display {
+  text-align: center;
+  padding: 15px;
+  border-bottom: 2px solid var(--line);
+  background: rgba(120, 150, 186, 0.1);
+}
+
+.target-ear-display h2 {
+  margin: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.target-ear-display .current-target {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-top: 5px;
+  display: block;
+}
+
+.target-ear-display .current-target.sache {
+  color: #38bdf8;
+}
+
+.target-ear-display .current-target.selbstoffenbarung {
+  color: #fbbf24;
+}
+
+.target-ear-display .current-target.beziehung {
+  color: #f472b6;
+}
+
+.target-ear-display .current-target.appell {
+  color: #a78bfa;
+}
+
+@keyframes particle-fade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particle-fade 0.5s ease-out forwards;
+}
+
+
+
+.hidden {
+  display: none !important;
+}
+
+.flying-message {
+  position: absolute;
+  background: white;
+  color: #0c1630;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.9rem;
+  border: 2px solid var(--theme-color);
+}
+
+#click-feedback.ok {
+  color: var(--good);
+}
+
+#click-feedback.bad {
+  color: var(--bad);
+}
 
 /* __THEME_RGB_START__ */
 :root {
@@ -232,4 +346,5 @@ body.deesk-page {
   --accent-green: rgb(var(--theme-rgb));
   --gold-accent: rgb(var(--theme-rgb));
 }
+
 /* __THEME_RGB_END__ */

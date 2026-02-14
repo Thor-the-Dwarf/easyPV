@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missverständnis-Match</title>
+    <link rel="stylesheet" href="./_gcss_kommunikation.css">
+    <style>
+        .match-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .match-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .match-item {
+            padding: 15px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: var(--surface);
+            cursor: pointer;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .match-item:hover {
+            border-color: var(--ink);
+            background: rgba(var(--theme-rgb), 0.1);
+        }
+
+        .match-item.selected {
+            border-color: var(--ink);
+            background: rgba(var(--theme-rgb), 0.3);
+            box-shadow: 0 0 10px var(--line);
+        }
+
+        .match-item.matched {
+            opacity: 0.5;
+            cursor: default;
+            pointer-events: none;
+            border-color: var(--good);
+            background: rgba(34, 197, 94, 0.1);
+        }
+
+        .match-item.incorrect {
+            border-color: var(--bad);
+            animation: shake 0.3s ease-in-out;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .match-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="deesk-page">
+    <main class="deesk-app">
+        <header class="deesk-head">
+            <h1 id="game-title">Missverständnis-Match</h1>
+            <p id="game-desc">Verbinde die Aussagen mit der Interpretation des "gereizten Beifahrers".</p>
+            <div class="deesk-kpis">
+                <div class="kpi"><span>Gefunden</span><strong id="kpi-matches">0/5</strong></div>
+                <div class="kpi"><span>Versuche</span><strong id="kpi-tries">0</strong></div>
+                <div class="kpi"><span>Zeit</span><strong id="kpi-timer">00:00</strong></div>
+            </div>
+        </header>
+
+        <section id="match-area" class="match-container">
+            <div id="statements-col" class="match-column"></div>
+            <div id="interpretations-col" class="match-column"></div>
+        </section>
+
+        <section id="feedback" class="feedback hidden"></section>
+
+        <section id="result-area" class="deesk-card hidden">
+            <div class="result">
+                <h2>Super!</h2>
+                <p>Du hast alle Missverständnisse aufgedeckt.</p>
+                <button class="restart-btn" onclick="location.reload()">Nochmal spielen</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="./_gjs_missverstaendnis_match.js" defer></script>
+    <script src="/theme_bridge.js"></script>
+</body>
+
+</html>

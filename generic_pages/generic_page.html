@@ -29,7 +29,7 @@
 
         <section class="generic-drawer" id="image_source_drawer" aria-label="Bildquellen Drawer">
           <header class="drawer-head">
-            <div class="drawer-title">Bildquellen (lizenzfrei & kommerziell nutzbar)</div>
+            <div class="drawer-title" id="image-drawer-title">Bildquellen (lizenzfrei & kommerziell nutzbar)</div>
             <button
               type="button"
               class="drawer-toggle"
@@ -41,32 +41,7 @@
             </button>
           </header>
           <div class="drawer-body">
-            <div class="image-grid-listview" aria-label="Bilder im 3er-Grid">
-              <a class="image-grid-item" href="https://commons.wikimedia.org/wiki/File:Ethernet_Switch_(Front_View).jpg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ethernet%20Switch%20%28Front%20View%29.jpg" alt="Ethernet-Switch Frontansicht" loading="lazy" />
-                <span class="image-meta">Wikimedia Commons: Netzwerktechnik</span>
-              </a>
-              <a class="image-grid-item" href="https://commons.wikimedia.org/wiki/File:Network_switches.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Network_switches.jpg" alt="Netzwerk-Switches mit CAT5-Kabeln" loading="lazy" />
-                <span class="image-meta">Wikimedia Commons: LAN-Infrastruktur</span>
-              </a>
-              <a class="image-grid-item" href="https://commons.wikimedia.org/wiki/File:BalticServers_data_center.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/BalticServers_data_center.jpg" alt="Serverraum in einem Rechenzentrum" loading="lazy" />
-                <span class="image-meta">Wikimedia Commons: Rechenzentrum</span>
-              </a>
-              <a class="image-grid-item" href="https://commons.wikimedia.org/wiki/File:UML_class_diagram_example.svg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/UML_class_diagram_example.svg" alt="UML Klassendiagramm Beispiel" loading="lazy" />
-                <span class="image-meta">Wikimedia Commons: Softwaredesign (UML)</span>
-              </a>
-              <a class="image-grid-item" href="https://commons.wikimedia.org/wiki/File:UML_class_diagram_invoice.svg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/UML_class_diagram_invoice.svg" alt="UML Klassendiagramm für Rechnungssystem" loading="lazy" />
-                <span class="image-meta">Wikimedia Commons: Fachmodellierung</span>
-              </a>
-              <a class="image-grid-item" href="https://commons.wikimedia.org/wiki/File:Gantt_or_Bar_Chart.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gantt_or_Bar_Chart.jpg" alt="Gantt-Diagramm für Projektplanung" loading="lazy" />
-                <span class="image-meta">Wikimedia Commons: Projektmanagement</span>
-              </a>
-            </div>
+            <div class="image-grid-listview" id="image-grid-listview" aria-label="Bilder im 3er-Grid"></div>
           </div>
         </section>
 

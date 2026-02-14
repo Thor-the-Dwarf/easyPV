@@ -6,6 +6,8 @@
   const drawerToggles = document.querySelectorAll('[data-drawer-toggle]');
   const fabPractice = document.getElementById('fab-practice');
   const fabFeedback = document.getElementById('fab-feedback');
+  const imageGridList = document.getElementById('image-grid-listview');
+  const imageDrawerTitle = document.getElementById('image-drawer-title');
   if (!frame || !drawers.length || !fabPractice || !drawerToggles.length) return;
 
   const params = new URLSearchParams(window.location.search);
@@ -18,6 +20,89 @@
   if (folder) targetParams.set('folder', folder);
 
   frame.src = './generic_c_suite/generic_c_suite.html' + (targetParams.toString() ? '?' + targetParams.toString() : '');
+
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function buildSourceImageItems() {
+    return [
+      {
+        href: 'https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia',
+        src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Network_switches.jpg',
+        alt: 'Netzwerk-Switches',
+        meta: 'Wikimedia Commons (freie Lizenzen)'
+      },
+      {
+        href: 'https://unsplash.com/license',
+        src: 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80',
+        alt: 'Elektronik und IT-Hardware',
+        meta: 'Unsplash (kommerzielle Nutzung erlaubt)'
+      },
+      {
+        href: 'https://www.pexels.com/license/',
+        src: 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        alt: 'Laptop und Arbeitsplatz',
+        meta: 'Pexels (kostenlos, kommerziell nutzbar)'
+      },
+      {
+        href: 'https://pixabay.com/service/license-summary/',
+        src: 'https://cdn.pixabay.com/photo/2015/01/08/18/24/laptop-593673_1280.jpg',
+        alt: 'IT-Projektarbeit am Laptop',
+        meta: 'Pixabay (freie Nutzung laut Lizenz)'
+      },
+      {
+        href: 'https://www.nasa.gov/nasa-brand-center/images-and-media/',
+        src: 'https://images-assets.nasa.gov/image/PIA12235/PIA12235~large.jpg',
+        alt: 'NASA Bildarchiv Beispielbild',
+        meta: 'NASA Images (Nutzungsrichtlinien beachten)'
+      },
+      {
+        href: 'https://www.loc.gov/free-to-use/',
+        src: 'https://cdn.loc.gov/service/pnp/highsm/15400/15457v.jpg',
+        alt: 'Bibliothek der digitalen Sammlung',
+        meta: 'Library of Congress (free to use & reuse)'
+      }
+    ];
+  }
+
+  function renderImageList() {
+    if (!imageGridList) return;
+    const imageItems = buildSourceImageItems();
+
+    if (imageDrawerTitle) {
+      imageDrawerTitle.textContent = 'Bildquellen: 6 externe Quellen (3x2 Grid)';
+    }
+
+    if (!imageItems.length) {
+      imageGridList.innerHTML = '<p class="drawer-note">Keine thematisch passenden Bilder gefunden.</p>';
+      return;
+    }
+
+    imageGridList.innerHTML = imageItems
+      .map(function (item) {
+        return (
+          '<a class="image-grid-item" href="' +
+          escapeHtml(item.href) +
+          '" target="_blank" rel="noopener noreferrer">' +
+          '<img src="' +
+          escapeHtml(item.src) +
+          '" alt="' +
+          escapeHtml(item.alt) +
+          '" loading="lazy" />' +
+          '<span class="image-meta">' +
+          escapeHtml(item.meta) +
+          '</span>' +
+          '</a>'
+        );
+      })
+      .join('');
+  }
 
   function getDrawerTitle(drawer) {
     const titleEl = drawer.querySelector('.drawer-title');
@@ -57,6 +142,7 @@
       toggleDrawer(drawer);
     });
   });
+  renderImageList();
 
   fabPractice.addEventListener('click', function () {
     const fallbackParams = new URLSearchParams();

@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "id": "vom_gespraech_zum_punkt",
+    "title": "Vom Gespraech zum Punkt",
+    "subtitle": "Aussage in klaren Aktionspunkt umwandeln."
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "statement": "Herr Schmidt meinte, dass er wohl bis Freitag die Datenbank-Bereinigung machen kann.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Schmidt: Datenbank bereinigen bis Freitag."
+        },
+        {
+          "id": "b",
+          "text": "Vielleicht Datenbank aufraeumen."
+        },
+        {
+          "id": "c",
+          "text": "Datenbank ist ein Thema."
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Ein Aktionspunkt braucht Verantwortliche und Termin."
+    },
+    {
+      "id": "r2",
+      "statement": "Lisa sagte, sie prueft den Testreport naechste Woche irgendwann.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lisa schaut bei Gelegenheit auf den Testreport."
+        },
+        {
+          "id": "b",
+          "text": "Lisa: Testreport pruefen bis Mittwoch (naechste Woche)."
+        },
+        {
+          "id": "c",
+          "text": "Testreport muss geprueft werden."
+        }
+      ],
+      "correct_option": "b",
+      "reason": "Praezise Frist + klare Zustaendigkeit macht den Punkt umsetzbar."
+    },
+    {
+      "id": "r3",
+      "statement": "Wir sollten den Kunden informieren, wenn die Aenderung durch ist.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kundeninformation ist wichtig."
+        },
+        {
+          "id": "b",
+          "text": "PM-Team: Kunde ueber Aenderung informieren bis Go-live+1 Tag."
+        },
+        {
+          "id": "c",
+          "text": "Jemand informiert spaeter den Kunden."
+        }
+      ],
+      "correct_option": "b",
+      "reason": "Aktionspunkte sind konkret, terminierbar und zugewiesen."
+    },
+    {
+      "id": "r4",
+      "statement": "Can kann wohl den API-Endpunkt dokumentieren, sobald Zeit frei ist.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Can: API-Endpunkt dokumentieren bis 22.04."
+        },
+        {
+          "id": "b",
+          "text": "API-Dokumentation ggf. erledigen."
+        },
+        {
+          "id": "c",
+          "text": "API wird irgendwann dokumentiert."
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Die beste Version ersetzt Unschaerfe durch klaren Termin."
+    },
+    {
+      "id": "r5",
+      "statement": "Vielleicht koennte das QA-Team die Regressionstests am Montag starten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "QA-Team: Regressionstests starten am Montag, 09:00."
+        },
+        {
+          "id": "b",
+          "text": "Regressionstests bald starten."
+        },
+        {
+          "id": "c",
+          "text": "Montag ist ein guter Tag fuer Tests."
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Konkreter Startzeitpunkt senkt Interpretationsspielraum."
+    },
+    {
+      "id": "r6",
+      "statement": "Es waere gut, wenn jemand die offene Budgetfrage mit Controlling klaert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Budgetfrage mit Controlling klaeren."
+        },
+        {
+          "id": "b",
+          "text": "Projektleitung: Budgetfrage mit Controlling klaeren bis Donnerstag 12:00."
+        },
+        {
+          "id": "c",
+          "text": "Controlling soll sich melden."
+        }
+      ],
+      "correct_option": "b",
+      "reason": "Nur mit Verantwortlicher und Deadline wird aus Absicht eine Aufgabe."
+    }
+  ],
+  "scoring": {
+    "correct": 20,
+    "wrong": -10,
+    "streak_bonus_threshold": 2,
+    "streak_bonus": 5
+  }
+}

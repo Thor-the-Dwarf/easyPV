@@ -382,3 +382,17 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `node --test` fuer lokale Protokoll-Tests (reachability + inhalts_check)
   - Playwright-Smoke erfolgreich fuer `_ghtml_inhalts_check.html`
   - Artefakte: `databases/Teil02 FIAE/output/web-game-inhalts-check/`
+- Original prompt (current turn): mach weiter
+- Naechstes fehlendes Spiel in `Protokoll anfertigen _` umgesetzt: `Vom Gespraech zum Punkt`.
+- Neue Dateien:
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__01_planing_Protokoll anfertigen _/__gp_vom_gespraech_zum_punkt__vom_gespraech_zum_punkt_v2.txt`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_g01_vom_gespraech_zum_punkt.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_ghtml_vom_gespraech_zum_punkt.html`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gjs_vom_gespraech_zum_punkt.js`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gcss_vom_gespraech_zum_punkt.css`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__03_testing_Protokoll anfertigen _/unit/vom_gespraech_zum_punkt.config.test.mjs`
+- Validierung:
+  - `node --check` fuer `_gjs_vom_gespraech_zum_punkt.js`
+  - `node --test` fuer lokale Protokoll-Tests (reachability + inhalts_check + vom_gespraech_zum_punkt)
+  - Playwright-Smoke erfolgreich fuer `_ghtml_vom_gespraech_zum_punkt.html`
+  - Artefakte: `databases/Teil02 FIAE/output/web-game-vom-gespraech-zum-punkt/`

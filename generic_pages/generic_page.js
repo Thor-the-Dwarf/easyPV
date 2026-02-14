@@ -9,8 +9,6 @@
   const fabFeedback = document.getElementById('fab-feedback');
   const imageGridList = document.getElementById('image-grid-listview');
   const imageDrawerTitle = document.getElementById('image-drawer-title');
-  const FEEDBACK_STORE_KEY = 'genericPageImageFeedback:v1';
-  let activeImageRating = 0;
   let modalRefs = null;
   const feedbackModalLayer = document.getElementById('feedback-modal-layer');
   const feedbackCloseBtn = document.getElementById('feedback-close-btn');
@@ -333,19 +331,18 @@
       '<div class="image-feedback-backdrop" data-feedback-close="1"></div>' +
       '<div class="image-feedback-card" role="dialog" aria-modal="true" aria-label="Bildfeedback">' +
       '<button type="button" class="image-feedback-close" data-feedback-close="1" aria-label="Schliessen">×</button>' +
+      '<div class="image-feedback-stage">' +
       '<img id="image-feedback-preview" class="image-feedback-preview" alt="Grossansicht Bild" />' +
+      '<div class="image-feedback-overlay-controls">' +
+      '<input type="text" id="image-feedback-inline-comment" class="image-feedback-inline-comment" placeholder="Kurzer Kommentar zum Bild" />' +
+      '<div id="image-feedback-stars" class="image-feedback-stars" aria-label="Wie hilfreich ist das Bild?">' +
+      '<span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>' +
+      '</div>' +
+      '<div class="image-feedback-stars-caption">Wie hilfreich ist das Bild?</div>' +
+      '</div>' +
+      '</div>' +
       '<div id="image-feedback-title" class="image-feedback-title"></div>' +
       '<div id="image-feedback-meta" class="image-feedback-meta"></div>' +
-      '<div id="image-feedback-stars" class="image-feedback-stars" aria-label="Wie hilfreich ist das Bild?">' +
-      '<button type="button" data-star="1" aria-label="1 Stern">★</button>' +
-      '<button type="button" data-star="2" aria-label="2 Sterne">★</button>' +
-      '<button type="button" data-star="3" aria-label="3 Sterne">★</button>' +
-      '<button type="button" data-star="4" aria-label="4 Sterne">★</button>' +
-      '<button type="button" data-star="5" aria-label="5 Sterne">★</button>' +
-      '</div>' +
-      '<textarea id="image-feedback-comment" class="image-feedback-comment" placeholder="Kommentar zum Bild"></textarea>' +
-      '<button type="button" id="image-feedback-send" class="image-feedback-send">Feedback senden</button>' +
-      '<div id="image-feedback-status" class="image-feedback-status" aria-live="polite"></div>' +
       '</div>';
 
     document.body.appendChild(modalRoot);
@@ -356,9 +353,7 @@
       title: modalRoot.querySelector('#image-feedback-title'),
       meta: modalRoot.querySelector('#image-feedback-meta'),
       stars: modalRoot.querySelector('#image-feedback-stars'),
-      comment: modalRoot.querySelector('#image-feedback-comment'),
-      send: modalRoot.querySelector('#image-feedback-send'),
-      status: modalRoot.querySelector('#image-feedback-status')
+      inlineComment: modalRoot.querySelector('#image-feedback-inline-comment')
     };
 
     modalRoot.addEventListener('click', function (event) {
@@ -368,24 +363,6 @@
       }
     });
 
-    if (refs.stars) {
-      refs.stars.addEventListener('click', function (event) {
-        const target = event.target;
-        if (!(target instanceof HTMLElement)) return;
-        const raw = target.getAttribute('data-star');
-        const next = Number(raw);
-        if (!next || next < 1 || next > 5) return;
-        activeImageRating = next;
-        updateStarsUi(refs.stars, activeImageRating);
-      });
-    }
-
-    if (refs.send) {
-      refs.send.addEventListener('click', function () {
-        saveImageFeedback();
-      });
-    }
-
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && modalRoot.classList.contains('is-open')) {
         closeImageFeedbackModal();
@@ -394,15 +371,6 @@
 
     modalRefs = refs;
     return refs;
-  }
-
-  function updateStarsUi(starsRoot, rating) {
-    if (!starsRoot) return;
-    const starButtons = starsRoot.querySelectorAll('[data-star]');
-    starButtons.forEach(function (btn) {
-      const val = Number(btn.getAttribute('data-star') || '0');
-      btn.classList.toggle('is-active', val <= rating);
-    });
   }
 
   function openImageFeedbackModal(payload) {
@@ -415,14 +383,11 @@
     refs.preview.setAttribute('data-placeholder-src', buildPlaceholderDataUri(payload.title || 'Bild'));
     refs.title.textContent = String(payload.title || 'Bild');
     refs.meta.textContent = String(payload.meta || '');
-    refs.status.textContent = '';
     refs.root.setAttribute('data-image-src', String(payload.src || ''));
     refs.root.setAttribute('data-image-title', String(payload.title || ''));
     refs.root.setAttribute('data-image-meta', String(payload.meta || ''));
     refs.root.setAttribute('data-image-href', String(payload.href || ''));
-    activeImageRating = 0;
-    refs.comment.value = '';
-    updateStarsUi(refs.stars, activeImageRating);
+    if (refs.inlineComment) refs.inlineComment.value = '';
     refs.preview.addEventListener('error', function onErr() {
       const fallback = refs.preview.getAttribute('data-placeholder-src');
       if (!fallback || refs.preview.getAttribute('src') === fallback) return;
@@ -434,36 +399,6 @@
     if (!modalRefs) return;
     modalRefs.root.classList.remove('is-open');
     modalRefs.root.setAttribute('aria-hidden', 'true');
-  }
-
-  function saveImageFeedback() {
-    if (!modalRefs) return;
-    const rating = activeImageRating;
-    if (rating < 1) {
-      modalRefs.status.textContent = 'Bitte mindestens 1 Stern waehlen.';
-      return;
-    }
-    const payload = {
-      created_at: new Date().toISOString(),
-      folder: String(folder || ''),
-      image_src: String(modalRefs.root.getAttribute('data-image-src') || ''),
-      image_href: String(modalRefs.root.getAttribute('data-image-href') || ''),
-      image_title: String(modalRefs.root.getAttribute('data-image-title') || ''),
-      image_meta: String(modalRefs.root.getAttribute('data-image-meta') || ''),
-      rating: rating,
-      comment: String(modalRefs.comment.value || '').trim()
-    };
-    try {
-      const raw = localStorage.getItem(FEEDBACK_STORE_KEY);
-      const list = raw ? JSON.parse(raw) : [];
-      const next = Array.isArray(list) ? list : [];
-      next.push(payload);
-      localStorage.setItem(FEEDBACK_STORE_KEY, JSON.stringify(next));
-      modalRefs.status.textContent = 'Feedback gespeichert.';
-      window.dispatchEvent(new CustomEvent('generic-image-feedback-submit', { detail: payload }));
-    } catch (_) {
-      modalRefs.status.textContent = 'Feedback konnte nicht gespeichert werden.';
-    }
   }
 
   function detectContextKey() {

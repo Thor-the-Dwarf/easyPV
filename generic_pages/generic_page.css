@@ -259,6 +259,33 @@ body {
   border: 1px solid hsl(var(--border) / 0.35);
 }
 
+.image-feedback-stage {
+  position: relative;
+}
+
+.image-feedback-overlay-controls {
+  position: absolute;
+  left: 0.6rem;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid hsl(var(--border) / 0.38);
+  background: hsl(var(--bg) / 0.68);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 0.45rem 0.55rem;
+}
+
+.image-feedback-inline-comment {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid hsl(var(--border) / 0.35);
+  background: hsl(var(--surface-strong) / 0.9);
+  color: hsl(var(--text));
+  padding: 0.4rem 0.5rem;
+  font: inherit;
+}
+
 .image-feedback-title {
   margin-top: 0.65rem;
   font-weight: 700;
@@ -273,52 +300,27 @@ body {
 }
 
 .image-feedback-stars {
-  margin-top: 0.7rem;
+  margin-top: 0.5rem;
   display: flex;
   gap: 0.3rem;
 }
 
-.image-feedback-stars button {
-  border: none;
-  background: transparent;
-  color: hsl(var(--text-muted) / 0.55);
-  font-size: 1.65rem;
-  cursor: pointer;
-  line-height: 1;
-}
-
-.image-feedback-stars button.is-active {
+.image-feedback-stars span {
   color: hsl(var(--accent-warm));
+  font-size: 1.35rem;
+  line-height: 1;
+  text-shadow: 0 0 8px hsl(var(--accent-warm) / 0.4);
 }
 
-.image-feedback-comment {
-  margin-top: 0.6rem;
-  width: 100%;
-  min-height: 5.3rem;
-  resize: vertical;
-  border-radius: 10px;
-  border: 1px solid hsl(var(--border) / 0.3);
-  background: hsl(var(--surface-strong));
-  color: hsl(var(--text));
-  padding: 0.55rem 0.62rem;
-  font: inherit;
-}
-
-.image-feedback-send {
-  margin-top: 0.6rem;
-  border: 1px solid hsl(var(--border) / 0.45);
-  border-radius: 10px;
-  background: hsl(var(--surface-strong) / 0.95);
-  color: hsl(var(--text));
-  padding: 0.5rem 0.8rem;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.image-feedback-status {
-  margin-top: 0.45rem;
-  font-size: 0.82rem;
+.image-feedback-stars-caption {
+  margin-top: 0.25rem;
   color: hsl(var(--text-muted));
+  font-size: 0.78rem;
+}
+
+.image-feedback-stars span:hover,
+.image-feedback-stars span:focus-visible {
+  color: hsl(var(--accent-warm));
 }
 
 .fab-stack {
@@ -420,10 +422,7 @@ body {
 }
 
 .feedback-modal-context {
-  margin: 0 0 0.65rem;
-  color: hsl(var(--text));
-  opacity: 0.82;
-  font-size: 0.85rem;
+  display: none;
 }
 
 .feedback-modal-label {

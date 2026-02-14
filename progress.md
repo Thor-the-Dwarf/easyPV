@@ -423,7 +423,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Letztes fehlendes Spiel in `Protokoll anfertigen _` umgesetzt: `Eskalations-Protokoll`.
 - Neue Dateien:
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__01_planing_Protokoll anfertigen _/__gp_eskalations_protokoll__eskalations_protokoll_v2.txt`
-  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_g01_eskalations_protokoll.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gg01_eskalations_protokoll.json`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_ghtml_eskalations_protokoll.html`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gjs_eskalations_protokoll.js`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gcss_eskalations_protokoll.css`

@@ -1,0 +1,32 @@
+# __gp_kommunikations_kaskade__kommunikations_kaskade_v2
+
+## Spielidee
+Kommunikations-Kaskade: Plane die Informationsverbreitung in der richtigen Reihenfolge und mit passendem Kanal.
+
+## Lernziel
+- Stakeholder-Kommunikation im Change strukturieren.
+- Reihenfolge und Kanalwahl zur Geruechte-Reduktion verstehen.
+
+## Mechanik
+- 6 Runden mit Kommunikationsszenarien.
+- Pro Runde Auswahl von Reihenfolge + Kanal.
+- Nur die passende Kombination ist korrekt.
+
+## Bewertung
+- Korrekte Kombination: +25
+- Falsche Kombination: -10
+- Flurfunk-Barometer sinkt bei Fehlern.
+
+## UX
+- Runde, Score und Flurfunk-Level stets sichtbar.
+- Sofortiges Feedback inkl. Begruendung.
+- Einfache Click-Interaktion, mobile-geeignet.
+
+## Dateikonvention
+- `_g01_kommunikations_kaskade.json`
+- `_ghtml_kommunikations_kaskade.html`
+- `_gjs_kommunikations_kaskade.js`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

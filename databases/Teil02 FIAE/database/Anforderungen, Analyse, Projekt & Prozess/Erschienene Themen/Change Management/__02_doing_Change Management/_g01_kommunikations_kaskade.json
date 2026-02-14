@@ -1,0 +1,200 @@
+{
+  "id": "kommunikations_kaskade_v1",
+  "title": "Kommunikations-Kaskade",
+  "subtitle": "Waehle Reihenfolge und Kanal, um Flurfunk zu minimieren.",
+  "start_rumor": 45,
+  "rounds": [
+    {
+      "prompt": "Neues Ticketsystem startet naechste Woche.",
+      "choices": [
+        {
+          "id": "a",
+          "sequence": "Management -> Teamleiter -> Mitarbeitende",
+          "channel": "Townhall + Intranet-FAQ",
+          "correct": true,
+          "rumor_delta": -8,
+          "score_delta": 25,
+          "reason": "Klare Kaskade plus Q&A senkt Unsicherheit schnell."
+        },
+        {
+          "id": "b",
+          "sequence": "Mitarbeitende -> Teamleiter -> Management",
+          "channel": "Geruechte im Chat",
+          "correct": false,
+          "rumor_delta": 12,
+          "score_delta": -10,
+          "reason": "Ungeordnete Reihenfolge verstaerkt Flurfunk."
+        },
+        {
+          "id": "c",
+          "sequence": "Nur Management",
+          "channel": "Einmalige E-Mail ohne Rueckfragen",
+          "correct": false,
+          "rumor_delta": 10,
+          "score_delta": -10,
+          "reason": "Ohne Multiplikatoren bleibt Information stecken."
+        }
+      ]
+    },
+    {
+      "prompt": "Cloud-Migration mit moeglichen Downtimes wird angekuendigt.",
+      "choices": [
+        {
+          "id": "a",
+          "sequence": "Management -> Teamleiter -> Schluesselanwender -> alle",
+          "channel": "Briefing + Service-Update + FAQ",
+          "correct": true,
+          "rumor_delta": -8,
+          "score_delta": 25,
+          "reason": "Betroffene Gruppen erhalten zuerst belastbare Fakten."
+        },
+        {
+          "id": "b",
+          "sequence": "Alle gleichzeitig",
+          "channel": "Kurznotiz ohne Kontext",
+          "correct": false,
+          "rumor_delta": 9,
+          "score_delta": -10,
+          "reason": "Ohne Einordnung entstehen Nachfragen und Spekulationen."
+        },
+        {
+          "id": "c",
+          "sequence": "Nur Teamleiter",
+          "channel": "Muendliche Weitergabe ohne Doku",
+          "correct": false,
+          "rumor_delta": 11,
+          "score_delta": -10,
+          "reason": "Inkonsistente Weitergabe erzeugt Versionschaos."
+        }
+      ]
+    },
+    {
+      "prompt": "Neue Rollen im Support-Prozess werden eingefuehrt.",
+      "choices": [
+        {
+          "id": "a",
+          "sequence": "Prozess-Owner -> Teamleiter -> Support-Teams",
+          "channel": "Workshop + Rollenkarten",
+          "correct": true,
+          "rumor_delta": -7,
+          "score_delta": 25,
+          "reason": "Rollenklarheit braucht Austausch und Praxisbezug."
+        },
+        {
+          "id": "b",
+          "sequence": "Support-Teams zuerst",
+          "channel": "Inoffizielle Folien",
+          "correct": false,
+          "rumor_delta": 10,
+          "score_delta": -10,
+          "reason": "Ohne Fuehrungsrahmen werden Rollen uneinheitlich interpretiert."
+        },
+        {
+          "id": "c",
+          "sequence": "Prozess-Owner -> HR",
+          "channel": "Interner Vermerk",
+          "correct": false,
+          "rumor_delta": 8,
+          "score_delta": -10,
+          "reason": "Relevante Zielgruppen werden nicht erreicht."
+        }
+      ]
+    },
+    {
+      "prompt": "Sicherheitsrichtlinie wird verschaerft.",
+      "choices": [
+        {
+          "id": "a",
+          "sequence": "CIO/ISB -> Fuehrungskraefte -> alle Mitarbeitenden",
+          "channel": "Policy-Update + Q&A-Session",
+          "correct": true,
+          "rumor_delta": -7,
+          "score_delta": 25,
+          "reason": "Autoritaet plus Erklaerung sorgt fuer Verbindlichkeit."
+        },
+        {
+          "id": "b",
+          "sequence": "Alle Mitarbeitenden",
+          "channel": "Nur pop-up beim Login",
+          "correct": false,
+          "rumor_delta": 9,
+          "score_delta": -10,
+          "reason": "Einweg-Hinweis ohne Kontext schafft Unsicherheit."
+        },
+        {
+          "id": "c",
+          "sequence": "IT-Team intern",
+          "channel": "Ticket-Kommentare",
+          "correct": false,
+          "rumor_delta": 10,
+          "score_delta": -10,
+          "reason": "Breite Kommunikation fehlt, Flurfunk steigt."
+        }
+      ]
+    },
+    {
+      "prompt": "Standortwechsel betrifft mehrere Teams.",
+      "choices": [
+        {
+          "id": "a",
+          "sequence": "Management -> Standortleitungen -> Teams",
+          "channel": "Info-Meeting + Ablaufplan",
+          "correct": true,
+          "rumor_delta": -8,
+          "score_delta": 25,
+          "reason": "Lokale Multiplikatoren sichern konsistente Botschaften."
+        },
+        {
+          "id": "b",
+          "sequence": "Teams zuerst",
+          "channel": "Social Feed ohne Fakten",
+          "correct": false,
+          "rumor_delta": 12,
+          "score_delta": -10,
+          "reason": "Unklares Framing fuehrt zu Spekulationen ueber Auswirkungen."
+        },
+        {
+          "id": "c",
+          "sequence": "Management zuletzt",
+          "channel": "Einzelgespraeche ohne Leitfaden",
+          "correct": false,
+          "rumor_delta": 9,
+          "score_delta": -10,
+          "reason": "Fehlende zentrale Linie erzeugt widerspruechliche Infos."
+        }
+      ]
+    },
+    {
+      "prompt": "Rollout-Erfolg soll kommuniziert und verstetigt werden.",
+      "choices": [
+        {
+          "id": "a",
+          "sequence": "Projektleitung -> Teamleiter -> gesamte Organisation",
+          "channel": "Ergebnisbericht + Best-Practice-Session",
+          "correct": true,
+          "rumor_delta": -7,
+          "score_delta": 25,
+          "reason": "Erfolgstransparenz stabilisiert Akzeptanz und Lernen."
+        },
+        {
+          "id": "b",
+          "sequence": "Nur Projektleitung",
+          "channel": "Ablage im Intranet ohne Hinweis",
+          "correct": false,
+          "rumor_delta": 8,
+          "score_delta": -10,
+          "reason": "Ohne aktive Verbreitung bleibt Wirkung aus."
+        },
+        {
+          "id": "c",
+          "sequence": "Beliebige Reihenfolge",
+          "channel": "Spontane Chat-Nachrichten",
+          "correct": false,
+          "rumor_delta": 10,
+          "score_delta": -10,
+          "reason": "Unkoordinierte Kommunikation schwacht Vertrauen."
+        }
+      ]
+    }
+  ]
+}

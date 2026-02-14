@@ -667,7 +667,8 @@
             label.addEventListener('click', (event) => {
               event.preventDefault();
               event.stopPropagation();
-              if (isPartRootNode(node)) {
+              const isActivePartScope = isPartRootNode(node) && canonicalName(activeScopeName) === canonicalName(node.name);
+              if (isPartRootNode(node) && !isActivePartScope) {
                 openPartScope(node);
                 return;
               }

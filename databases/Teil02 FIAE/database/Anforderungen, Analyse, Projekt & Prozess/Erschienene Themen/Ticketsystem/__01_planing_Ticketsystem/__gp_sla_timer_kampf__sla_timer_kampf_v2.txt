@@ -1,0 +1,28 @@
+# __gp_sla_timer_kampf__sla_timer_kampf_v2
+
+## Spielidee
+SLA-Timer-Kampf: Waehle pro Runde das Ticket, das als naechstes bearbeitet werden muss.
+
+## Lernziel
+- Prioritaet und verbleibende SLA-Zeit gemeinsam bewerten.
+- Kritische Eskalationen durch falsche Reihenfolge vermeiden.
+
+## Mechanik
+- 6 Runden mit jeweils 3 Tickets.
+- Pro Runde eine Auswahl (welches Ticket zuerst bearbeitet wird).
+- Sofortfeedback mit Begruendung.
+
+## Bewertung
+- Richtige Reihenfolgeentscheidung: +20
+- Falsche Entscheidung: -15
+- Serienbonus ab 2 richtigen: +5
+
+## Dateikonvention
+- `_g01_sla_timer_kampf.json`
+- `_ghtml_sla_timer_kampf.html`
+- `_gjs_sla_timer_kampf.js`
+- `_gcss_sla_timer_kampf.css`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

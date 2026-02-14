@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "id": "sla_timer_kampf",
+    "title": "SLA-Timer-Kampf",
+    "subtitle": "Bearbeite zuerst das Ticket mit hoechster Eskalationsgefahr."
+  },
+  "priority_targets_minutes": {
+    "P1": 240,
+    "P2": 480,
+    "P3": 1440,
+    "P4": 4320
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "tickets": [
+        {
+          "id": "t1",
+          "title": "Checkout komplett offline",
+          "priority": "P1",
+          "minutes_left": 18
+        },
+        {
+          "id": "t2",
+          "title": "Export langsam bei Reports",
+          "priority": "P2",
+          "minutes_left": 210
+        },
+        {
+          "id": "t3",
+          "title": "Icon in Sidebar unscharf",
+          "priority": "P4",
+          "minutes_left": 2500
+        }
+      ],
+      "best_choice": "t1",
+      "reason": "P1 mit nur noch 18 Minuten Restzeit hat klare Eskalationsprioritaet."
+    },
+    {
+      "id": "r2",
+      "tickets": [
+        {
+          "id": "t1",
+          "title": "Passwort-Reset Mails verzogert",
+          "priority": "P2",
+          "minutes_left": 25
+        },
+        {
+          "id": "t2",
+          "title": "Suchfilter braucht 4 Sekunden",
+          "priority": "P3",
+          "minutes_left": 610
+        },
+        {
+          "id": "t3",
+          "title": "Footer-Rechtschreibfehler",
+          "priority": "P4",
+          "minutes_left": 1900
+        }
+      ],
+      "best_choice": "t1",
+      "reason": "P2 ist kurz vor SLA-Verstoss und muss vor mittel/niedrig abgearbeitet werden."
+    },
+    {
+      "id": "r3",
+      "tickets": [
+        {
+          "id": "t1",
+          "title": "Monitoring meldet sporadische Timeouts",
+          "priority": "P2",
+          "minutes_left": 70
+        },
+        {
+          "id": "t2",
+          "title": "Bestellhistorie zeigt veraltete Daten",
+          "priority": "P2",
+          "minutes_left": 35
+        },
+        {
+          "id": "t3",
+          "title": "Dark-Mode Kontrast bei Charts",
+          "priority": "P3",
+          "minutes_left": 400
+        }
+      ],
+      "best_choice": "t2",
+      "reason": "Bei gleicher Prioritaet gewinnt die geringere Restzeit."
+    },
+    {
+      "id": "r4",
+      "tickets": [
+        {
+          "id": "t1",
+          "title": "Upload API wirft gelegentlich 502",
+          "priority": "P1",
+          "minutes_left": 120
+        },
+        {
+          "id": "t2",
+          "title": "Rechnungsvorschau ohne Steuerzeile",
+          "priority": "P2",
+          "minutes_left": 22
+        },
+        {
+          "id": "t3",
+          "title": "Dialog-Animation ruckelt",
+          "priority": "P3",
+          "minutes_left": 200
+        }
+      ],
+      "best_choice": "t1",
+      "reason": "P1 bleibt trotz mehr Restzeit kritischer als ein fast faelliges P2."
+    },
+    {
+      "id": "r5",
+      "tickets": [
+        {
+          "id": "t1",
+          "title": "Kundenportal langsam bei Peak-Last",
+          "priority": "P2",
+          "minutes_left": 50
+        },
+        {
+          "id": "t2",
+          "title": "Onboarding Tooltip falsch positioniert",
+          "priority": "P4",
+          "minutes_left": 3000
+        },
+        {
+          "id": "t3",
+          "title": "Single-Sign-On fuer Teilgruppe ausgefallen",
+          "priority": "P1",
+          "minutes_left": 85
+        }
+      ],
+      "best_choice": "t3",
+      "reason": "P1 mit absehbarem Verstoss schlaegt jedes P2/P4."
+    },
+    {
+      "id": "r6",
+      "tickets": [
+        {
+          "id": "t1",
+          "title": "CSV-Download enthaelt Sonderzeichenfehler",
+          "priority": "P3",
+          "minutes_left": 110
+        },
+        {
+          "id": "t2",
+          "title": "Avatar-Bild unscharf in Profilseite",
+          "priority": "P4",
+          "minutes_left": 800
+        },
+        {
+          "id": "t3",
+          "title": "Webhook-Queue staut sich auf",
+          "priority": "P2",
+          "minutes_left": 95
+        }
+      ],
+      "best_choice": "t3",
+      "reason": "P2 mit 95 Minuten Restzeit ist dringlicher als ein fast faelliges P3."
+    }
+  ],
+  "scoring": {
+    "correct": 20,
+    "wrong": -15,
+    "streak_bonus_threshold": 2,
+    "streak_bonus": 5
+  }
+}

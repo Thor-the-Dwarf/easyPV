@@ -9,6 +9,9 @@
   const fabFeedback = document.getElementById('fab-feedback');
   const imageGridList = document.getElementById('image-grid-listview');
   const imageDrawerTitle = document.getElementById('image-drawer-title');
+  const FEEDBACK_STORE_KEY = 'genericPageImageFeedback:v1';
+  let activeImageRating = 0;
+  let modalRefs = null;
   const feedbackModalLayer = document.getElementById('feedback-modal-layer');
   const feedbackCloseBtn = document.getElementById('feedback-close-btn');
   const feedbackCancelBtn = document.getElementById('feedback-cancel-btn');
@@ -288,6 +291,150 @@
       '<text x="600" y="500" text-anchor="middle" fill="#93c5fd" font-size="220" font-family="Segoe UI, Arial">+</text>' +
       '</svg>';
     return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+  }
+
+  function ensureImageFeedbackModal() {
+    if (modalRefs) return modalRefs;
+
+    const modalRoot = document.createElement('div');
+    modalRoot.className = 'image-feedback-modal';
+    modalRoot.id = 'image-feedback-modal';
+    modalRoot.setAttribute('aria-hidden', 'true');
+    modalRoot.innerHTML =
+      '<div class="image-feedback-backdrop" data-feedback-close="1"></div>' +
+      '<div class="image-feedback-card" role="dialog" aria-modal="true" aria-label="Bildfeedback">' +
+      '<button type="button" class="image-feedback-close" data-feedback-close="1" aria-label="Schliessen">×</button>' +
+      '<img id="image-feedback-preview" class="image-feedback-preview" alt="Grossansicht Bild" />' +
+      '<div id="image-feedback-title" class="image-feedback-title"></div>' +
+      '<div id="image-feedback-meta" class="image-feedback-meta"></div>' +
+      '<div id="image-feedback-stars" class="image-feedback-stars" aria-label="Wie hilfreich ist das Bild?">' +
+      '<button type="button" data-star="1" aria-label="1 Stern">★</button>' +
+      '<button type="button" data-star="2" aria-label="2 Sterne">★</button>' +
+      '<button type="button" data-star="3" aria-label="3 Sterne">★</button>' +
+      '<button type="button" data-star="4" aria-label="4 Sterne">★</button>' +
+      '<button type="button" data-star="5" aria-label="5 Sterne">★</button>' +
+      '</div>' +
+      '<textarea id="image-feedback-comment" class="image-feedback-comment" placeholder="Kommentar zum Bild"></textarea>' +
+      '<button type="button" id="image-feedback-send" class="image-feedback-send">Feedback senden</button>' +
+      '<div id="image-feedback-status" class="image-feedback-status" aria-live="polite"></div>' +
+      '</div>';
+
+    document.body.appendChild(modalRoot);
+
+    const refs = {
+      root: modalRoot,
+      preview: modalRoot.querySelector('#image-feedback-preview'),
+      title: modalRoot.querySelector('#image-feedback-title'),
+      meta: modalRoot.querySelector('#image-feedback-meta'),
+      stars: modalRoot.querySelector('#image-feedback-stars'),
+      comment: modalRoot.querySelector('#image-feedback-comment'),
+      send: modalRoot.querySelector('#image-feedback-send'),
+      status: modalRoot.querySelector('#image-feedback-status')
+    };
+
+    modalRoot.addEventListener('click', function (event) {
+      const target = event.target;
+      if (target && target.getAttribute('data-feedback-close') === '1') {
+        closeImageFeedbackModal();
+      }
+    });
+
+    if (refs.stars) {
+      refs.stars.addEventListener('click', function (event) {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) return;
+        const raw = target.getAttribute('data-star');
+        const next = Number(raw);
+        if (!next || next < 1 || next > 5) return;
+        activeImageRating = next;
+        updateStarsUi(refs.stars, activeImageRating);
+      });
+    }
+
+    if (refs.send) {
+      refs.send.addEventListener('click', function () {
+        saveImageFeedback();
+      });
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modalRoot.classList.contains('is-open')) {
+        closeImageFeedbackModal();
+      }
+    });
+
+    modalRefs = refs;
+    return refs;
+  }
+
+  function updateStarsUi(starsRoot, rating) {
+    if (!starsRoot) return;
+    const starButtons = starsRoot.querySelectorAll('[data-star]');
+    starButtons.forEach(function (btn) {
+      const val = Number(btn.getAttribute('data-star') || '0');
+      btn.classList.toggle('is-active', val <= rating);
+    });
+  }
+
+  function openImageFeedbackModal(payload) {
+    const refs = ensureImageFeedbackModal();
+    if (!refs) return;
+    refs.root.classList.add('is-open');
+    refs.root.setAttribute('aria-hidden', 'false');
+    refs.preview.setAttribute('src', String(payload.src || ''));
+    refs.preview.setAttribute('alt', String(payload.title || 'Bild'));
+    refs.preview.setAttribute('data-placeholder-src', buildPlaceholderDataUri(payload.title || 'Bild'));
+    refs.title.textContent = String(payload.title || 'Bild');
+    refs.meta.textContent = String(payload.meta || '');
+    refs.status.textContent = '';
+    refs.root.setAttribute('data-image-src', String(payload.src || ''));
+    refs.root.setAttribute('data-image-title', String(payload.title || ''));
+    refs.root.setAttribute('data-image-meta', String(payload.meta || ''));
+    refs.root.setAttribute('data-image-href', String(payload.href || ''));
+    activeImageRating = 0;
+    refs.comment.value = '';
+    updateStarsUi(refs.stars, activeImageRating);
+    refs.preview.addEventListener('error', function onErr() {
+      const fallback = refs.preview.getAttribute('data-placeholder-src');
+      if (!fallback || refs.preview.getAttribute('src') === fallback) return;
+      refs.preview.setAttribute('src', fallback);
+    });
+  }
+
+  function closeImageFeedbackModal() {
+    if (!modalRefs) return;
+    modalRefs.root.classList.remove('is-open');
+    modalRefs.root.setAttribute('aria-hidden', 'true');
+  }
+
+  function saveImageFeedback() {
+    if (!modalRefs) return;
+    const rating = activeImageRating;
+    if (rating < 1) {
+      modalRefs.status.textContent = 'Bitte mindestens 1 Stern waehlen.';
+      return;
+    }
+    const payload = {
+      created_at: new Date().toISOString(),
+      folder: String(folder || ''),
+      image_src: String(modalRefs.root.getAttribute('data-image-src') || ''),
+      image_href: String(modalRefs.root.getAttribute('data-image-href') || ''),
+      image_title: String(modalRefs.root.getAttribute('data-image-title') || ''),
+      image_meta: String(modalRefs.root.getAttribute('data-image-meta') || ''),
+      rating: rating,
+      comment: String(modalRefs.comment.value || '').trim()
+    };
+    try {
+      const raw = localStorage.getItem(FEEDBACK_STORE_KEY);
+      const list = raw ? JSON.parse(raw) : [];
+      const next = Array.isArray(list) ? list : [];
+      next.push(payload);
+      localStorage.setItem(FEEDBACK_STORE_KEY, JSON.stringify(next));
+      modalRefs.status.textContent = 'Feedback gespeichert.';
+      window.dispatchEvent(new CustomEvent('generic-image-feedback-submit', { detail: payload }));
+    } catch (_) {
+      modalRefs.status.textContent = 'Feedback konnte nicht gespeichert werden.';
+    }
   }
 
   function detectContextKey() {
@@ -703,7 +850,15 @@
         return (
           '<a class="image-grid-item" href="' +
           escapeHtml(item.href) +
-          '" target="_blank" rel="noopener noreferrer">' +
+          '" target="_blank" rel="noopener noreferrer" data-preview-src="' +
+          escapeHtml(item.src) +
+          '" data-preview-title="' +
+          escapeHtml(item.title) +
+          '" data-preview-meta="' +
+          escapeHtml(item.meta) +
+          '" data-preview-href="' +
+          escapeHtml(item.href) +
+          '">' +
           '<img src="' +
           escapeHtml(item.src) +
           '" alt="' +
@@ -769,6 +924,20 @@
         renderImageList();
       });
     }
+
+    const previewLinks = imageGridList.querySelectorAll('a.image-grid-item[data-preview-src]');
+    previewLinks.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const payload = {
+          src: String(link.getAttribute('data-preview-src') || ''),
+          title: String(link.getAttribute('data-preview-title') || 'Bild'),
+          meta: String(link.getAttribute('data-preview-meta') || ''),
+          href: String(link.getAttribute('data-preview-href') || '')
+        };
+        openImageFeedbackModal(payload);
+      });
+    });
   }
 
   function getDrawerTitle(drawer) {

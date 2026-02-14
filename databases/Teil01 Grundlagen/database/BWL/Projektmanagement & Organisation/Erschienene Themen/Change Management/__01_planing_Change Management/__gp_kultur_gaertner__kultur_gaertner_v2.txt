@@ -1,0 +1,32 @@
+# __gp_kultur_gaertner__kultur_gaertner_v2
+
+## Spielidee
+Kultur-Gaertner: Triff Kulturentscheidungen, damit der Team-Baum gesund waechst.
+
+## Lernziel
+- Positive und negative Kulturhebel im Change erkennen.
+- Verstehen, wie Entscheidungen die Teamgesundheit langfristig beeinflussen.
+
+## Mechanik
+- 6 Szenario-Runden.
+- Pro Runde 2 Entscheidungen: kulturfoerdernd vs. kulturbremsend.
+- Baum-Gesundheit steigt oder sinkt je nach Auswahl.
+
+## Bewertung
+- Gute Entscheidung: +15 Punkte, +12 Gesundheit
+- Schlechte Entscheidung: -10 Punkte, -15 Gesundheit
+- Endziel: Gesundheit > 80
+
+## UX
+- Ziel und aktuelle Gesundheit permanent sichtbar.
+- Visuelles Baum-Feedback nach jeder Entscheidung.
+- Kurze Lernbegruendung pro Entscheidung.
+
+## Dateikonvention
+- `_g01_kultur_gaertner.json`
+- `_ghtml_kultur_gaertner.html`
+- `_gjs_kultur_gaertner.js`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

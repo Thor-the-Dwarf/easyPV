@@ -1,0 +1,50 @@
+{
+  "id": "kultur_gaertner_v1",
+  "title": "Kultur-Gaertner",
+  "subtitle": "Staerke eine gesunde Lernkultur im Team.",
+  "start_health": 55,
+  "rounds": [
+    {
+      "prompt": "Ein Teammitglied macht einen Fehler im neuen Prozess.",
+      "choices": [
+        { "id": "grow", "text": "Fehler als Lernfall im Team teilen", "health_delta": 12, "score_delta": 15, "reason": "Lernkultur erhoeht Sicherheit und Verbesserung." },
+        { "id": "wilt", "text": "Fehler oeffentlich bestrafen", "health_delta": -15, "score_delta": -10, "reason": "Angstkultur reduziert Offenheit und Fortschritt." }
+      ]
+    },
+    {
+      "prompt": "Wichtige Informationen zum Wandel sollen verteilt werden.",
+      "choices": [
+        { "id": "grow", "text": "Offene Fragerunde fuer alle Bereiche", "health_delta": 12, "score_delta": 15, "reason": "Transparenz baut Vertrauen auf." },
+        { "id": "wilt", "text": "Nur Fuehrungskreis informieren", "health_delta": -15, "score_delta": -10, "reason": "Ausschluss erzeugt Unsicherheit und Distanz." }
+      ]
+    },
+    {
+      "prompt": "Das Team braucht schnellere Abstimmung.",
+      "choices": [
+        { "id": "grow", "text": "Open-Door-Policy und kurze Syncs einfuehren", "health_delta": 12, "score_delta": 15, "reason": "Zugaenglichkeit foerdert Zusammenarbeit." },
+        { "id": "wilt", "text": "Einzelbueros nur fuer Leitung und geschlossene Tueren", "health_delta": -15, "score_delta": -10, "reason": "Barrieren bremsen Austausch und Vertrauen." }
+      ]
+    },
+    {
+      "prompt": "Neue Mitarbeitende starten mitten in der Umstellung.",
+      "choices": [
+        { "id": "grow", "text": "Mentoring und klares Onboarding bereitstellen", "health_delta": 12, "score_delta": 15, "reason": "Unterstuetzung beschleunigt Integration." },
+        { "id": "wilt", "text": "Selbst herausfinden lassen", "health_delta": -15, "score_delta": -10, "reason": "Ohne Struktur steigen Frust und Fehler." }
+      ]
+    },
+    {
+      "prompt": "Die Motivation sinkt nach mehreren Anpassungen.",
+      "choices": [
+        { "id": "grow", "text": "Zwischenerfolge sichtbar machen und feiern", "health_delta": 12, "score_delta": 15, "reason": "Anerkennung stabilisiert Motivation." },
+        { "id": "wilt", "text": "Nur auf Defizite hinweisen", "health_delta": -15, "score_delta": -10, "reason": "Dauernde Kritik entzieht Energie." }
+      ]
+    },
+    {
+      "prompt": "Konflikte entstehen zwischen Alt- und Neuprozess.",
+      "choices": [
+        { "id": "grow", "text": "Moderierten Dialog mit klaren Spielregeln nutzen", "health_delta": 12, "score_delta": 15, "reason": "Konfliktbearbeitung schafft gemeinsame Basis." },
+        { "id": "wilt", "text": "Konflikte ignorieren", "health_delta": -15, "score_delta": -10, "reason": "Unausgesprochene Spannungen untergraben Kultur." }
+      ]
+    }
+  ]
+}

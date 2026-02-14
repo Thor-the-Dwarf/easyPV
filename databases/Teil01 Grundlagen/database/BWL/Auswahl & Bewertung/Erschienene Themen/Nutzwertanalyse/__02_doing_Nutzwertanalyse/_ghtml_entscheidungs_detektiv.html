@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Der Entscheidungs-Detektiv</title>
+  <link rel="stylesheet" href="./_gcss_nutzwertanalyse.css">
+</head>
+<body class="detektiv-page">
+  <main class="detektiv-app">
+    <header class="detektiv-head">
+      <h1>Der Entscheidungs-Detektiv</h1>
+      <p>Waehle je Fall die mathematisch beste Option auf Basis der Gewichtung.</p>
+      <div class="detektiv-kpis">
+        <div class="detektiv-kpi"><span>Runde</span><strong id="det-kpi-round">1/5</strong></div>
+        <div class="detektiv-kpi"><span>Score</span><strong id="det-kpi-score">0</strong></div>
+        <div class="detektiv-kpi"><span>Serie</span><strong id="det-kpi-streak">0</strong></div>
+      </div>
+    </header>
+
+    <section class="detektiv-card" id="det-root" aria-live="polite"></section>
+  </main>
+
+  <script src="./_gjs_entscheidungs_detektiv.js" defer></script>
+  <script src="/theme_bridge.js"></script>
+</body>
+</html>

@@ -255,6 +255,219 @@ body.nwa-page {
   }
 }
 
+/* ===== Der Entscheidungs-Detektiv ===== */
+body.detektiv-page {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #e7edf8;
+  background:
+    radial-gradient(850px 360px at 80% -10%, rgba(var(--theme-rgb), 0.22), transparent),
+    linear-gradient(180deg, #170f1b, #090d1a);
+}
+
+.detektiv-app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.detektiv-head {
+  border: 1px solid #42546f;
+  border-radius: 14px;
+  background: rgba(5, 14, 33, 0.82);
+  padding: 12px;
+}
+
+.detektiv-head h1 {
+  margin: 0;
+  font-size: clamp(1.2rem, 4.8vw, 2rem);
+}
+
+.detektiv-head p {
+  margin: 4px 0 0;
+  color: #c2d0e4;
+}
+
+.detektiv-kpis {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.detektiv-kpi {
+  border-radius: 10px;
+  border: 1px solid #4d617e;
+  background: rgba(2, 9, 25, 0.64);
+  padding: 7px 9px;
+}
+
+.detektiv-kpi span {
+  display: block;
+  font-size: 0.74rem;
+  color: #9cb2cf;
+}
+
+.detektiv-kpi strong {
+  font-size: 1.1rem;
+}
+
+.detektiv-card {
+  margin-top: 10px;
+  border-radius: 14px;
+  border: 1px solid #42546f;
+  background: rgba(5, 14, 33, 0.82);
+  padding: 12px;
+}
+
+.det-scenario {
+  margin-top: 8px;
+  color: #d2dded;
+}
+
+.det-weights {
+  margin-top: 9px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.det-weight {
+  border-radius: 10px;
+  border: 1px solid #4d617e;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 8px;
+}
+
+.det-weight span {
+  display: block;
+  font-size: 0.8rem;
+  color: #a8bdd8;
+}
+
+.det-weight strong {
+  font-size: 1rem;
+}
+
+.det-options {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7px;
+}
+
+.det-option {
+  border-radius: 10px;
+  border: 1px solid #4d617e;
+  background: rgba(255, 255, 255, 0.04);
+  color: #e7edf8;
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
+  display: grid;
+  gap: 4px;
+}
+
+.det-option strong {
+  font-size: 1rem;
+}
+
+.det-option span {
+  color: #c4d3e8;
+  font-size: 0.9rem;
+}
+
+.det-option:hover:enabled,
+.det-option:focus-visible:enabled {
+  border-color: rgba(var(--theme-rgb), 0.95);
+  outline: none;
+}
+
+.det-option.correct {
+  border-color: rgba(34, 197, 94, 0.85);
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.det-option.wrong {
+  border-color: rgba(239, 68, 68, 0.85);
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.det-feedback {
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #495f7e;
+  padding: 9px 10px;
+}
+
+.det-feedback.ok {
+  border-color: rgba(34, 197, 94, 0.8);
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.det-feedback.bad {
+  border-color: rgba(239, 68, 68, 0.82);
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.det-breakdown {
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #495f7e;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 9px 10px;
+}
+
+.det-breakdown h3 {
+  margin: 0 0 6px;
+}
+
+.det-breakdown ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.det-actions {
+  margin-top: 10px;
+}
+
+.det-btn {
+  border: 1px solid #51678a;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #e9f1ff;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.det-btn--primary {
+  border-color: rgba(var(--theme-rgb), 0.8);
+  background: rgba(var(--theme-rgb), 0.34);
+}
+
+.det-scoring {
+  margin-top: 9px;
+  color: #acc0db;
+}
+
+.det-result-list {
+  margin: 0.8rem 0;
+  padding-left: 18px;
+}
+
+@media (max-width: 720px) {
+  .detektiv-app {
+    padding: 9px;
+  }
+
+  .det-weights,
+  .detektiv-kpis {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* __THEME_RGB_START__ */
 :root {

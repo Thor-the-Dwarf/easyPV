@@ -477,3 +477,38 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - zieht immer Firestore-Collection `feedback_all_games` (inkl. Pagination),
   - schreibt immer nach `__admin_dont_push/fireBaseGetter/feedback_all_games.json`.
 - Hinweis: Rust-Toolchain (`cargo`, `rustc`) ist in dieser Umgebung nicht installiert, daher kein lokaler Compile/Run-Test moeglich.
+- Original prompt (current turn): Ab jetzt machen wir im Teil01_ordner weiter. Arbeite dich dort von oben nach unten durch.
+- Erstes offenes Spiel in `Teil01 Grundlagen` identifiziert und umgesetzt: `Risk-Finder: Das Kleingedruckte` in `Leasing`.
+- Neue Dateien:
+  - `databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Leasing/__01_planing_Leasing/__gp_risk_finder__risk_finder_das_kleingedruckte_v2.txt`
+  - `databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Leasing/__02_doing_Leasing/_gg01_risk_finder_das_kleingedruckte.json`
+  - `databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Leasing/__02_doing_Leasing/_ghtml_risk_finder_das_kleingedruckte.html`
+  - `databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Leasing/__02_doing_Leasing/_gjs_risk_finder_das_kleingedruckte.js`
+  - `databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Leasing/__03_testing_Leasing/unit/risk_finder_das_kleingedruckte.config.test.mjs`
+- Geaendert:
+  - `databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Leasing/__02_doing_Leasing/_gcss_leasing.css` (neuer Risk-Finder-UI-Block, BWL-Farbton beibehalten)
+- Validierung:
+  - `node --check` fuer `_gjs_risk_finder_das_kleingedruckte.js`
+  - `node --test` fuer Leasing-Tests (reachability + risk_finder config)
+  - Playwright-Smoke erfolgreich fuer `_ghtml_risk_finder_das_kleingedruckte.html` (Term-Klick) und separater Check-Button-Lauf
+  - Artefakte:
+    - `databases/Teil01 Grundlagen/output/web-game-risk-finder-das-kleingedruckte/`
+    - `databases/Teil01 Grundlagen/output/web-game-risk-finder-das-kleingedruckte-check/`
+- Original prompt (current turn): Ab jetzt machen wir im Teil01_ordner weiter. Arbeite dich dort von oben nach unten durch.
+- Top-down-Pruefung in `Teil01 Grundlagen`:
+  - `Leasing` war inhaltlich bereits komplett vorhanden (inkl. `Risk-Finder`-Dateien), daher naechster offener Block `Nutzwertanalyse`.
+- Neues Spiel umgesetzt in `Nutzwertanalyse`: `Der Entscheidungs-Detektiv`.
+- Neue Dateien:
+  - `databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/__01_planing_Nutzwertanalyse/__gp_entscheidungs_detektiv__entscheidungs_detektiv_v2.txt`
+  - `databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/__02_doing_Nutzwertanalyse/_gg01_entscheidungs_detektiv.json`
+  - `databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/__02_doing_Nutzwertanalyse/_ghtml_entscheidungs_detektiv.html`
+  - `databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/__02_doing_Nutzwertanalyse/_gjs_entscheidungs_detektiv.js`
+  - `databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/__03_testing_Nutzwertanalyse/unit/entscheidungs_detektiv.config.test.mjs`
+- Geaendert:
+  - `databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/__02_doing_Nutzwertanalyse/_gcss_nutzwertanalyse.css` (Detektiv-UI-Block)
+- Validierung:
+  - `node --check` fuer `_gjs_entscheidungs_detektiv.js`
+  - `node --test` fuer Nutzwertanalyse-Tests (reachability + entscheidungs_detektiv config)
+  - Playwright-Smoke erfolgreich fuer `_ghtml_entscheidungs_detektiv.html`
+  - Artefakte:
+    - `databases/Teil01 Grundlagen/output/web-game-entscheidungs-detektiv/`

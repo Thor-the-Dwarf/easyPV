@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "id": "entscheidungs_detektiv",
+    "title": "Der Entscheidungs-Detektiv",
+    "subtitle": "Waehle je Fall die rechnerisch beste Option."
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "scenario": "Aussendienst-Team benoetigt ein neues Fahrzeugmodell fuer die naechsten 3 Jahre.",
+      "criteria": [
+        { "id": "tempo", "label": "Tempo", "weight": 40 },
+        { "id": "sicherheit", "label": "Sicherheit", "weight": 35 },
+        { "id": "preis", "label": "Preisvorteil", "weight": 25 }
+      ],
+      "options": [
+        { "id": "a", "label": "Rapid X", "scores": { "tempo": 9, "sicherheit": 5, "preis": 4 } },
+        { "id": "b", "label": "SafeLine", "scores": { "tempo": 7, "sicherheit": 8, "preis": 6 } },
+        { "id": "c", "label": "BudgetGo", "scores": { "tempo": 6, "sicherheit": 6, "preis": 9 } }
+      ],
+      "correct_option": "b",
+      "reason": "SafeLine erreicht mit der gegebenen Gewichtung den hoechsten Gesamtnutzwert."
+    },
+    {
+      "id": "r2",
+      "scenario": "Fuer ein CAD-Team soll die passende Arbeitsplatz-Hardware ausgewaehlt werden.",
+      "criteria": [
+        { "id": "ergonomie", "label": "Ergonomie", "weight": 30 },
+        { "id": "leistung", "label": "Leistungsreserve", "weight": 45 },
+        { "id": "energie", "label": "Energieeffizienz", "weight": 25 }
+      ],
+      "options": [
+        { "id": "a", "label": "Notebook Pro", "scores": { "ergonomie": 7, "leistung": 8, "energie": 5 } },
+        { "id": "b", "label": "All-in-One Plus", "scores": { "ergonomie": 8, "leistung": 6, "energie": 8 } },
+        { "id": "c", "label": "MiniDesktop", "scores": { "ergonomie": 6, "leistung": 9, "energie": 4 } }
+      ],
+      "correct_option": "b",
+      "reason": "All-in-One Plus kombiniert bei den aktuellen Gewichten den besten Gesamtwert."
+    },
+    {
+      "id": "r3",
+      "scenario": "Ein Ticketportal soll schnell eingefuehrt werden, ohne die Qualitaet zu verlieren.",
+      "criteria": [
+        { "id": "zeit", "label": "Time-to-Market", "weight": 50 },
+        { "id": "risiko", "label": "Risikokontrolle", "weight": 30 },
+        { "id": "kosten", "label": "Kostenstabilitaet", "weight": 20 }
+      ],
+      "options": [
+        { "id": "a", "label": "Eigenentwicklung", "scores": { "zeit": 5, "risiko": 6, "kosten": 4 } },
+        { "id": "b", "label": "Standardprodukt", "scores": { "zeit": 9, "risiko": 7, "kosten": 8 } },
+        { "id": "c", "label": "Outsourcing", "scores": { "zeit": 7, "risiko": 5, "kosten": 6 } }
+      ],
+      "correct_option": "b",
+      "reason": "Standardprodukt gewinnt deutlich durch hohe Zeit- und Kostenwerte."
+    },
+    {
+      "id": "r4",
+      "scenario": "Drei Dashboard-Varianten stehen zur Auswahl fuer den Rollout bei Key-Usern.",
+      "criteria": [
+        { "id": "fit", "label": "Kundenfit", "weight": 45 },
+        { "id": "betrieb", "label": "Betriebsstabilitaet", "weight": 25 },
+        { "id": "preis", "label": "Preisvorteil", "weight": 30 }
+      ],
+      "options": [
+        { "id": "a", "label": "Variante Rot", "scores": { "fit": 8, "betrieb": 6, "preis": 5 } },
+        { "id": "b", "label": "Variante Blau", "scores": { "fit": 7, "betrieb": 9, "preis": 5 } },
+        { "id": "c", "label": "Variante Gruen", "scores": { "fit": 6, "betrieb": 7, "preis": 8 } }
+      ],
+      "correct_option": "b",
+      "reason": "Variante Blau erzielt den besten Nutzwert durch starke Betriebsstabilitaet bei solidem Fit."
+    },
+    {
+      "id": "r5",
+      "scenario": "Fuer das neue Security-Konzept sollen drei Paketvarianten verglichen werden.",
+      "criteria": [
+        { "id": "sicherheit", "label": "Sicherheitsniveau", "weight": 40 },
+        { "id": "wartung", "label": "Wartbarkeit", "weight": 35 },
+        { "id": "budget", "label": "Budgettreue", "weight": 25 }
+      ],
+      "options": [
+        { "id": "a", "label": "ZeroTrust Lite", "scores": { "sicherheit": 8, "wartung": 7, "budget": 6 } },
+        { "id": "b", "label": "Hybrid Shield", "scores": { "sicherheit": 7, "wartung": 9, "budget": 5 } },
+        { "id": "c", "label": "Cloud Basic", "scores": { "sicherheit": 6, "wartung": 6, "budget": 9 } }
+      ],
+      "correct_option": "b",
+      "reason": "Hybrid Shield liegt im gewichteten Gesamtergebnis vor den anderen Optionen."
+    }
+  ],
+  "scoring": {
+    "correct": 20,
+    "wrong": -10,
+    "streak_bonus_threshold": 2,
+    "streak_bonus": 5
+  }
+}

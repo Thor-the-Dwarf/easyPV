@@ -1,0 +1,61 @@
+{
+  "id": "stakeholder_interviewer_v1",
+  "title": "Stakeholder-Interviewer",
+  "subtitle": "Finde die passende Ermittlungstechnik fuer jede Situation.",
+  "rounds": [
+    {
+      "prompt": "Viele Endnutzer, wenig Zeit, standardisierte Fragen.",
+      "options": [
+        { "id": "a", "text": "Fragebogen", "correct": true },
+        { "id": "b", "text": "Tiefeninterview mit jeder Person", "correct": false },
+        { "id": "c", "text": "Ungesteuerte Diskussion", "correct": false }
+      ],
+      "reason": "Frageboegen skalieren gut bei grossen Gruppen und vergleichbaren Antworten."
+    },
+    {
+      "prompt": "Ein Einzelspezialist erklaert einen kritischen Sonderprozess.",
+      "options": [
+        { "id": "a", "text": "Interview", "correct": true },
+        { "id": "b", "text": "Massenumfrage", "correct": false },
+        { "id": "c", "text": "Nur alte Doku lesen", "correct": false }
+      ],
+      "reason": "Tiefe und Kontext erhaeltst du am besten im strukturierten Interview."
+    },
+    {
+      "prompt": "Mitarbeitende machen viele unbewusste Arbeitsschritte am Band.",
+      "options": [
+        { "id": "a", "text": "Beobachtung", "correct": true },
+        { "id": "b", "text": "Kurzer Multiple-Choice-Test", "correct": false },
+        { "id": "c", "text": "Nur Management fragen", "correct": false }
+      ],
+      "reason": "Beobachtung deckt implizites Wissen und reale Handgriffe auf."
+    },
+    {
+      "prompt": "Mehrere Bereiche haben widerspruechliche Ziele und sollen sich abstimmen.",
+      "options": [
+        { "id": "a", "text": "Moderierter Workshop", "correct": true },
+        { "id": "b", "text": "Einzelchat ohne Moderation", "correct": false },
+        { "id": "c", "text": "Nur E-Mail-Abfrage", "correct": false }
+      ],
+      "reason": "Workshops schaffen gemeinsame Sicht und priorisierte Entscheidungen."
+    },
+    {
+      "prompt": "Du brauchst schnell ein erstes Stimmungsbild zu einer Idee.",
+      "options": [
+        { "id": "a", "text": "Kurzer Fragebogen", "correct": true },
+        { "id": "b", "text": "Vollstaendige Prozessbeobachtung", "correct": false },
+        { "id": "c", "text": "Langes Experteninterview", "correct": false }
+      ],
+      "reason": "Fuer schnelles Feedback ist eine kurze Umfrage am effizientesten."
+    },
+    {
+      "prompt": "Komplexe Fehlerbilder treten nur in der Nachtschicht auf.",
+      "options": [
+        { "id": "a", "text": "Beobachtung plus Rueckfrage vor Ort", "correct": true },
+        { "id": "b", "text": "Nur allgemeine Fragebogenwerte", "correct": false },
+        { "id": "c", "text": "Ausschliesslich Management-Interview", "correct": false }
+      ],
+      "reason": "Kontextgebundene Probleme brauchen direkte Beobachtung im Einsatzumfeld."
+    }
+  ]
+}

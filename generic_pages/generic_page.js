@@ -1,6 +1,7 @@
 (function () {
   'use strict';
 
+  const THEME_KEY = 'globalTheme_v1';
   const frame = document.getElementById('content-frame');
   const drawers = document.querySelectorAll('.generic-drawer');
   const drawerToggles = document.querySelectorAll('[data-drawer-toggle]');
@@ -9,6 +10,8 @@
   const imageGridList = document.getElementById('image-grid-listview');
   const imageDrawerTitle = document.getElementById('image-drawer-title');
   if (!frame || !drawers.length || !fabPractice || !drawerToggles.length) return;
+
+  initThemeSync();
 
   const params = new URLSearchParams(window.location.search);
   const json = params.get('json');
@@ -20,6 +23,45 @@
   if (folder) targetParams.set('folder', folder);
 
   frame.src = './generic_c_suite/generic_c_suite.html' + (targetParams.toString() ? '?' + targetParams.toString() : '');
+
+  function initThemeSync() {
+    applyThemeFromParentOrStorage();
+
+    window.addEventListener('storage', function (event) {
+      if (!event || event.key === THEME_KEY || event.key === null) {
+        applyThemeFromParentOrStorage();
+      }
+    });
+
+    try {
+      if (!window.parent || window.parent === window) return;
+      const parentRoot = window.parent.document.documentElement;
+      if (!parentRoot) return;
+
+      const observer = new MutationObserver(function () {
+        applyThemeFromParentOrStorage();
+      });
+      observer.observe(parentRoot, { attributes: true, attributeFilter: ['class'] });
+    } catch (_) {
+      // ignore cross-window access issues
+    }
+  }
+
+  function applyThemeFromParentOrStorage() {
+    let isLight = false;
+
+    try {
+      if (window.parent && window.parent !== window) {
+        isLight = window.parent.document.documentElement.classList.contains('theme-light');
+      } else {
+        isLight = localStorage.getItem(THEME_KEY) === 'light';
+      }
+    } catch (_) {
+      isLight = localStorage.getItem(THEME_KEY) === 'light';
+    }
+
+    document.documentElement.classList.toggle('theme-light', isLight);
+  }
 
   function escapeHtml(value) {
     return String(value || '')

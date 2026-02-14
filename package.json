@@ -7,6 +7,7 @@
     "play": "node databases/testing/scripts/run-smoke-tests.mjs",
     "test:smoke": "node databases/testing/scripts/run-smoke-tests.mjs",
     "test:advanced": "node databases/testing/scripts/run-advanced-web-tests.mjs",
-    "test:relevant-g": "node databases/testing/scripts/run-relevant-tests-on-g-change.mjs"
+    "test:relevant-g": "node databases/testing/scripts/run-relevant-tests-on-g-change.mjs",
+    "test:learner-ux": "node --test databases/testing/tests/learner-ux.finanzierungs-sortiermaschine.test.mjs"
   }
 }

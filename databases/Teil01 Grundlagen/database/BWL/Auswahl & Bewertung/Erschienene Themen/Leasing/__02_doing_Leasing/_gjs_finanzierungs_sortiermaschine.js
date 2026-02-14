@@ -88,7 +88,8 @@
       animateCardToZone(selectedCat, true);
     }
 
-    const delay = isCorrect ? 1000 : 5000;
+    // Learner-friendly pacing: short reflection window, no long dead-time.
+    const delay = isCorrect ? 900 : 1800;
     setTimeout(() => {
       state.index += 1;
       state.lock = false;

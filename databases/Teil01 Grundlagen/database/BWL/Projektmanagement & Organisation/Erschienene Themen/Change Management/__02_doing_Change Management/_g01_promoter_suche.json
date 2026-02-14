@@ -1,0 +1,47 @@
+{
+  "id": "promoter_suche_v1",
+  "title": "Promoter-Suche",
+  "subtitle": "Finde Machtpromoter und Fachpromoter im Organigramm.",
+  "rounds": [
+    {
+      "prompt": "Kickoff eines CRM-Rollouts",
+      "profiles": [
+        { "id": "p1", "name": "Laura (CFO)", "hint": "Gibt Budget frei und entscheidet Prioritaeten.", "role": "macht" },
+        { "id": "p2", "name": "Can (Lead Developer)", "hint": "Kennt Altsystem und Migration im Detail.", "role": "fach" },
+        { "id": "p3", "name": "Nina (HR)", "hint": "Unterstuetzt Schulungen, aber entscheidet nicht ueber IT.", "role": "neutral" },
+        { "id": "p4", "name": "Timo (Azubi)", "hint": "Lernt mit, hat keine Steuerungsrolle.", "role": "neutral" },
+        { "id": "p5", "name": "Jule (Marketing)", "hint": "Wichtig fuer Kommunikation, nicht fuer Architektur.", "role": "neutral" }
+      ]
+    },
+    {
+      "prompt": "Einfuehrung eines neuen Ticketsystems",
+      "profiles": [
+        { "id": "p1", "name": "Mira (COO)", "hint": "Setzt Umsetzungspflichten in allen Teams.", "role": "macht" },
+        { "id": "p2", "name": "Noah (Service Owner)", "hint": "Kennt Prozesse, SLAs und Eskalationspfade.", "role": "fach" },
+        { "id": "p3", "name": "Pia (Office)", "hint": "Organisiert Termine, trifft keine Systementscheidungen.", "role": "neutral" },
+        { "id": "p4", "name": "Bela (Einkauf)", "hint": "Hilft bei Bestellungen, nicht bei Prozessdesign.", "role": "neutral" },
+        { "id": "p5", "name": "Rex (Werkstudent)", "hint": "Unterstuetzt operativ.", "role": "neutral" }
+      ]
+    },
+    {
+      "prompt": "Cloud-Migration im laufenden Betrieb",
+      "profiles": [
+        { "id": "p1", "name": "Ari (CEO)", "hint": "Kann Vorstandsentscheidungen verbindlich freigeben.", "role": "macht" },
+        { "id": "p2", "name": "Sven (Cloud Architect)", "hint": "Kennt Zielarchitektur, Risiken und Cutover-Plan.", "role": "fach" },
+        { "id": "p3", "name": "Lia (Sales)", "hint": "Braucht Ergebnisse, steuert Technik aber nicht.", "role": "neutral" },
+        { "id": "p4", "name": "Jon (Support)", "hint": "Meldet Incidents, hat keine Budgetmacht.", "role": "neutral" },
+        { "id": "p5", "name": "Eda (Recruiting)", "hint": "Unterstuetzt Hiring.", "role": "neutral" }
+      ]
+    },
+    {
+      "prompt": "Neues Monitoring fuer Produktionssysteme",
+      "profiles": [
+        { "id": "p1", "name": "Kai (Bereichsleiter IT)", "hint": "Traegt Budgetverantwortung und priorisiert Roadmap.", "role": "macht" },
+        { "id": "p2", "name": "Yara (SRE Lead)", "hint": "Kennt Alerting, Metriken und Betriebsgrenzen.", "role": "fach" },
+        { "id": "p3", "name": "Moe (Controlling)", "hint": "Prueft Zahlen, steuert Implementierung nicht.", "role": "neutral" },
+        { "id": "p4", "name": "Ria (Praktikum)", "hint": "Beobachtet Prozesse und lernt.", "role": "neutral" },
+        { "id": "p5", "name": "Nora (Assistenz)", "hint": "Koordiniert Termine.", "role": "neutral" }
+      ]
+    }
+  ]
+}

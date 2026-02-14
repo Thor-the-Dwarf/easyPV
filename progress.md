@@ -49,3 +49,23 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Added 10 weighted decision cases across 3 levels (Simple Choice, Stakeholder Clash, Stress Test), live ranking bars, objectivity rating, and decision confidence via ±5% sensitivity runs.
 - Added robust-decision bonus and biased-scoring penalty, with auto-next flow after evaluation and render_game_to_text/advanceTime hooks.
 - Smoke tested via Playwright: first case loaded, live scoring/ranking visible, state output valid.
+
+## 2026-02-14 - Arbeitspaket Leasing Bilder lokalisiert
+- 6 lizenzierte/kommerziell nutzbare Bilder fuer Leasing in der IT evaluiert und lokal in `__02_doing_Leasing/assets` gespeichert (`leasing_it_*.jpg`).
+- `__cSuite_Leasing.json` umgestellt: `bild_quellen[].bild_url` zeigt jetzt auf lokale Assets, `quelle_url` + `lizenz` bleiben als Nachweis enthalten.
+- `generic_page.js` verbessert: relative `bild_url`/`quelle_url` aus `bild_quellen` werden korrekt relativ zur geladenen JSON aufgeloest.
+- Offene TODOs fuer naechste Runde: gleiches Vorgehen fuer weitere Themenordner, jeweils 6 thematisch belastbare Bilder kuratieren und lokalisieren.
+- Original prompt (current turn): ja mach weiter
+- Implemented new Change-Management game `Promoter-Suche` (non-duplicate from __gi) with files:
+  - `__gp_promoter_suche__promoter_suche_v2.txt`
+  - `_g01_promoter_suche.json`
+  - `_ghtml_promoter_suche.html`
+  - `_gjs_promoter_suche.js`
+- Added local config quality test: `promoter_suche.config.test.mjs`.
+- Updated local reachability test to accept active `_g*` naming convention.
+- Validation done:
+  - `node --check` on `_gjs_promoter_suche.js`
+  - local unit tests (`reachability`, `promoter_suche.config`) passing
+  - Playwright smoke screenshot + state (idle and click-on-check feedback) captured in:
+    - `databases/Teil01 Grundlagen/output/web-game-promoter-suche/`
+    - `databases/Teil01 Grundlagen/output/web-game-promoter-suche-click/`

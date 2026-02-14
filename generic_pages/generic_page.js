@@ -47,12 +47,14 @@
     const sources = [];
     if (json) sources.push(json);
     for (let i = 0; i < sources.length; i += 1) {
+      const sourceRef = sources[i];
       try {
-        const resp = await fetch(sources[i]);
+        const resp = await fetch(sourceRef);
         if (!resp.ok) continue;
         const payload = await resp.json();
         const list = payload && Array.isArray(payload.bild_quellen) ? payload.bild_quellen : [];
         if (!list.length) continue;
+        const sourceBase = new URL(sourceRef, window.location.href).href;
         return list
           .map(function (entry) {
             const title = String(entry && entry.titel ? entry.titel : '').trim();
@@ -61,10 +63,18 @@
             const sourceUrl = String(entry && entry.quelle_url ? entry.quelle_url : '').trim();
             const license = String(entry && entry.lizenz ? entry.lizenz : '').trim();
             if (!imageUrl) return null;
+            let resolvedImageUrl = imageUrl;
+            let resolvedSourceUrl = sourceUrl || imageUrl;
+            try {
+              resolvedImageUrl = new URL(imageUrl, sourceBase).href;
+            } catch (_) {}
+            try {
+              resolvedSourceUrl = new URL(sourceUrl || imageUrl, sourceBase).href;
+            } catch (_) {}
             const metaParts = [topic, license].filter(Boolean);
             return {
-              href: sourceUrl || imageUrl,
-              src: imageUrl,
+              href: resolvedSourceUrl,
+              src: resolvedImageUrl,
               alt: title || topic || 'Externes Bild',
               meta: metaParts.join(' | ') || 'Externe Quelle',
               title: title || topic || 'Bild'

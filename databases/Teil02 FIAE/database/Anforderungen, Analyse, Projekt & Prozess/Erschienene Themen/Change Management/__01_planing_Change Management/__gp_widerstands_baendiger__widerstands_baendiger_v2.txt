@@ -1,0 +1,31 @@
+# __gp_widerstands_baendiger__widerstands_baendiger_v2
+
+## Spielidee
+Widerstands-Baendiger: Waehle die passende Reaktion auf unterschiedliche Widerstandsformen im Change.
+
+## Lernziel
+- Passiven und aktiven Widerstand unterscheiden.
+- Situativ passende Massnahmen (Kommunikation, Einbindung, Fuehrung, Eskalation) waehlen.
+
+## Mechanik
+- 6 Runden mit typischen Widerstandsfaellen.
+- Pro Runde 3 Reaktionsoptionen, genau 1 ist passend.
+- Feedback inklusive kurzer Begruendung.
+
+## Bewertung
+- Richtige Reaktion: +20
+- Falsche Reaktion: -10
+- Erfolgsbarometer steigt/sinkt pro Entscheidung.
+
+## UX
+- Ziel, Runde, Score und Stimmungsbarometer dauerhaft sichtbar.
+- Schnelles Feedback und klare Naechster-Schritt-Fuehrung.
+
+## Dateikonvention
+- `_g01_widerstands_baendiger.json`
+- `_ghtml_widerstands_baendiger.html`
+- `_gjs_widerstands_baendiger.js`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

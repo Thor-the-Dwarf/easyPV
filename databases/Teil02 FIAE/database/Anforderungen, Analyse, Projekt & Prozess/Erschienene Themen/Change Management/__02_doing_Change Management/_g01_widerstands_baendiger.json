@@ -1,0 +1,62 @@
+{
+  "id": "widerstands_baendiger_v1",
+  "title": "Widerstands-Baendiger",
+  "subtitle": "Reagiere passend auf Widerstand im Change-Prozess.",
+  "start_mood": 60,
+  "rounds": [
+    {
+      "type": "passiv",
+      "prompt": "Ein Team arbeitet nur noch strikt nach Vorschrift und meldet keine Ideen mehr.",
+      "options": [
+        { "id": "a", "text": "Dialogrunde + aktive Einbindung in Loesungsfindung", "correct": true, "mood_delta": 10, "score_delta": 20, "reason": "Passiver Widerstand braucht Beteiligung und Sicherheit." },
+        { "id": "b", "text": "Sofortige Eskalation an HR", "correct": false, "mood_delta": -12, "score_delta": -10, "reason": "Zu fruehe Eskalation verhaertet die Lage." },
+        { "id": "c", "text": "Widerstand ignorieren", "correct": false, "mood_delta": -15, "score_delta": -10, "reason": "Ignorieren verlaengert die Blockade." }
+      ]
+    },
+    {
+      "type": "aktiv",
+      "prompt": "Ein Mitarbeiter sabotiert aktiv die Einfuehrung, indem er falsche Infos streut.",
+      "options": [
+        { "id": "a", "text": "Klare Fuehrung, Faktencheck und verbindliche Konsequenzen", "correct": true, "mood_delta": 8, "score_delta": 20, "reason": "Aktiver Widerstand braucht klare Grenzen und Steuerung." },
+        { "id": "b", "text": "Nur auf freiwillige Einsicht hoffen", "correct": false, "mood_delta": -12, "score_delta": -10, "reason": "Ohne Fuehrung bleibt der Schaden hoch." },
+        { "id": "c", "text": "Alles im Team-Chat diskutieren", "correct": false, "mood_delta": -10, "score_delta": -10, "reason": "Oeffentliche Eskalation ohne Struktur kann Konflikte steigern." }
+      ]
+    },
+    {
+      "type": "passiv",
+      "prompt": "Mehrere Stakeholder erscheinen nicht zu Abstimmungsterminen.",
+      "options": [
+        { "id": "a", "text": "Zielgerichtete 1:1 Gespraeche ueber Bedenken und Nutzen", "correct": true, "mood_delta": 10, "score_delta": 20, "reason": "Persoenliche Klaerung loest versteckte Vorbehalte." },
+        { "id": "b", "text": "Meeting-Teilnahme optional lassen", "correct": false, "mood_delta": -10, "score_delta": -10, "reason": "Unverbindlichkeit verstaerkt passiven Widerstand." },
+        { "id": "c", "text": "Sanktionen ohne Gespraech", "correct": false, "mood_delta": -14, "score_delta": -10, "reason": "Druck ohne Ursachenklaerung reduziert Akzeptanz." }
+      ]
+    },
+    {
+      "type": "aktiv",
+      "prompt": "Ein Teamleiter torpediert die Umstellung offen im Jour Fixe.",
+      "options": [
+        { "id": "a", "text": "Rollenklarheit herstellen und Fuehrungsentscheidung treffen", "correct": true, "mood_delta": 8, "score_delta": 20, "reason": "Offener Machtwiderstand braucht klare Linie." },
+        { "id": "b", "text": "Kritik ungefiltert laufen lassen", "correct": false, "mood_delta": -12, "score_delta": -10, "reason": "Unmoderierter Widerstand verbreitet Unsicherheit." },
+        { "id": "c", "text": "Thema auf unbestimmt vertagen", "correct": false, "mood_delta": -10, "score_delta": -10, "reason": "Verzoegerung signalisiert Fuehrungsluecke." }
+      ]
+    },
+    {
+      "type": "passiv",
+      "prompt": "Das Team nutzt neue Prozesse nur halbherzig und faellt oft in alte Muster zurueck.",
+      "options": [
+        { "id": "a", "text": "Coaching + schnelle Erfolgserlebnisse sichtbar machen", "correct": true, "mood_delta": 10, "score_delta": 20, "reason": "Praxisunterstuetzung stabilisiert Verhaltensaenderung." },
+        { "id": "b", "text": "Nur Kennzahlen ohne Begleitung fordern", "correct": false, "mood_delta": -10, "score_delta": -10, "reason": "Nur Druck ohne Hilfe fuehrt zu Rueckzug." },
+        { "id": "c", "text": "Alten Prozess parallel unbefristet weiterfuehren", "correct": false, "mood_delta": -15, "score_delta": -10, "reason": "Doppelstrukturen verhindern den Wandel." }
+      ]
+    },
+    {
+      "type": "aktiv",
+      "prompt": "Eine Gruppe ruft offen dazu auf, den Rollout zu blockieren.",
+      "options": [
+        { "id": "a", "text": "Krisenkommunikation, klares Eskalationsprotokoll und Management-Support", "correct": true, "mood_delta": 8, "score_delta": 20, "reason": "Koordinierte Gegensteuerung minimiert Eskalationsschaden." },
+        { "id": "b", "text": "Reaktion verschieben bis zum naechsten Quartal", "correct": false, "mood_delta": -15, "score_delta": -10, "reason": "Zeitverlust verfestigt aktive Blockade." },
+        { "id": "c", "text": "Nur auf einzelne Geruechte reagieren", "correct": false, "mood_delta": -10, "score_delta": -10, "reason": "Punktuelle Reaktion reicht bei organisiertem Widerstand nicht." }
+      ]
+    }
+  ]
+}

@@ -1,25 +1,29 @@
-/**
- * Vier-Ohren-Detektiv - Core Game Logic
- * Zweck: Analyse von Nachrichten im Flug nach dem 4-Ohren-Modell.
- * Inputs: _gg01_vier_ohren_detektiv.json
- * Outputs: Punkte-Score, Lernstand-Feedback
- */
-
 (function () {
-    let config = null;
-    let score = 0;
-    let timeRemaining = 60;
-    let timerInterval = null;
-    let spawnInterval = null;
-    let currentTarget = "";
-    let isPlaying = false;
+    'use strict';
 
-    // DOM Elements
-    const elements = {
+    /**
+     * Vier-Ohren-Detektiv
+     * Zweck: Analyse-Spiel für Kommunikationsmodelle.
+     * Inputs: config.json (_gg01_vier_ohren_detektiv.json)
+     * Outputs: UI-Updates, Scoring, Test-Hooks.
+     */
+
+    const state = {
+        cfg: null,
+        targetType: '',
+        score: 0,
+        timeLeft: 60,
+        active: false,
+        spawnIntervalId: null,
+        timerIntervalId: null,
+        messagePool: []
+    };
+
+    const el = {
         timer: document.getElementById('timer'),
         score: document.getElementById('score'),
-        kpiTarget: document.getElementById('kpi-target'),
-        currentTarget: document.getElementById('current-target'),
+        targetKpi: document.getElementById('kpi-target'),
+        targetDisplay: document.getElementById('current-target'),
         flyingArea: document.getElementById('flying-area'),
         startScreen: document.getElementById('start-screen'),
         gameContainer: document.getElementById('game-container'),
@@ -30,119 +34,172 @@
         restartBtn: document.getElementById('restart-btn')
     };
 
-    // Load Config
+    init();
+
     async function init() {
         try {
-            const response = await fetch('_gg01_vier_ohren_detektiv.json');
-            config = await response.json();
-            elements.timer.textContent = config.duration + "s";
-            timeRemaining = config.duration;
+            const resp = await fetch('./_gg01_vier_ohren_detektiv.json');
+            if (!resp.ok) throw new Error('Konfiguration konnte nicht geladen werden.');
+            state.cfg = await resp.json();
 
-            elements.startBtn.addEventListener('click', startGame);
-            elements.restartBtn.addEventListener('click', () => location.reload());
+            state.messagePool = state.cfg.messages || [];
+            state.timeLeft = state.cfg.duration || 60;
+
+            bindEvents();
         } catch (err) {
-            console.error("Config Load Error:", err);
-            alert("Konnte Spieldaten nicht laden.");
+            console.error('Initialisierungsfehler:', err);
+            if (el.resultText) el.resultText.textContent = 'Fehler beim Laden: ' + err.message;
         }
+    }
+
+    function bindEvents() {
+        el.startBtn.addEventListener('click', startGame);
+        el.restartBtn.addEventListener('click', startGame);
     }
 
     function startGame() {
-        isPlaying = true;
-        score = 0;
-        timeRemaining = config.duration;
-        elements.score.textContent = "0";
-        elements.startScreen.style.display = "none";
-        elements.gameContainer.style.display = "block";
+        state.score = 0;
+        state.timeLeft = state.cfg.duration || 60;
+        state.active = true;
+        state.targetType = state.cfg.targetTypes[Math.floor(Math.random() * state.cfg.targetTypes.length)];
 
-        pickNewTarget();
+        el.startScreen.style.display = 'none';
+        el.resultScreen.style.display = 'none';
+        el.gameContainer.style.display = 'block';
+        el.flyingArea.innerHTML = '';
 
-        timerInterval = setInterval(() => {
-            timeRemaining--;
-            elements.timer.textContent = timeRemaining + "s";
-            if (timeRemaining <= 0) endGame();
-            if (timeRemaining % 15 === 0) pickNewTarget(); // Change target every 15s
-        }, 1000);
-
-        spawnInterval = setInterval(spawnMessage, 1200);
-        spawnMessage(); // Immediate first spawn
+        updateUI();
+        startLoops();
     }
 
-    function pickNewTarget() {
-        const types = config.targetTypes;
-        currentTarget = types[Math.floor(Math.random() * types.length)];
-        elements.kpiTarget.textContent = currentTarget.toUpperCase();
-        elements.currentTarget.textContent = currentTarget.toUpperCase();
-        elements.currentTarget.className = "current-target " + currentTarget;
+    function startLoops() {
+        clearInterval(state.spawnIntervalId);
+        clearInterval(state.timerIntervalId);
+
+        state.spawnIntervalId = setInterval(spawnRandomMessage, 1200);
+        state.timerIntervalId = setInterval(tick, 1000);
     }
 
-    function spawnMessage() {
-        if (!isPlaying) return;
-
-        const msgData = config.messages[Math.floor(Math.random() * config.messages.length)];
-        const el = document.createElement('div');
-        el.className = 'flying-message';
-        el.textContent = msgData.text;
-        el.style.setProperty('--top', Math.random() * 80 + 10 + "%");
-        el.style.animation = `fly-across ${4 + Math.random() * 3}s linear forwards`;
-
-        el.addEventListener('click', (e) => handleHit(e, msgData, el));
-
-        elements.flyingArea.appendChild(el);
-
-        // Remove after animation
-        el.addEventListener('animationend', () => el.remove());
-    }
-
-    function handleHit(e, data, el) {
-        if (el.classList.contains('correct') || el.classList.contains('wrong')) return;
-
-        if (data.type === currentTarget) {
-            score += config.pointsPerHit;
-            el.classList.add('correct');
-            createParticles(e.clientX, e.clientY, 'var(--good)');
-        } else {
-            score = Math.max(0, score + config.pointsPerMiss);
-            el.classList.add('wrong');
-            createParticles(e.clientX, e.clientY, 'var(--bad)');
+    function tick() {
+        state.timeLeft--;
+        if (state.timeLeft <= 0) {
+            endGame();
         }
-        elements.score.textContent = score;
+        updateUI();
     }
 
-    function createParticles(x, y, color) {
-        for (let i = 0; i < 5; i++) {
+    function endGame() {
+        state.active = false;
+        clearInterval(state.spawnIntervalId);
+        clearInterval(state.timerIntervalId);
+
+        el.gameContainer.style.display = 'none';
+        el.resultScreen.style.display = 'block';
+        el.finalScore.textContent = state.score;
+
+        const messages = [
+            "Gute Arbeit, Detektiv!",
+            "Ein scharfes Gehör!",
+            "Das war erstklassig.",
+            "Detektivarbeit vom Feinsten."
+        ];
+        el.resultText.textContent = messages[Math.floor(Math.random() * messages.length)];
+    }
+
+    function spawnRandomMessage() {
+        if (!state.active) return;
+        const msg = state.messagePool[Math.floor(Math.random() * state.messagePool.length)];
+        spawnMessage(msg.text, msg.type);
+    }
+
+    function spawnMessage(text, type) {
+        const msgEl = document.createElement('div');
+        msgEl.className = 'flying-message';
+        msgEl.textContent = text;
+        msgEl.dataset.type = type;
+
+        const top = Math.random() * (el.flyingArea.offsetHeight - 50);
+        msgEl.style.setProperty('--top', `${top}px`);
+
+        // Zufällige Geschwindigkeit
+        const duration = 4 + Math.random() * 4;
+        msgEl.style.animation = `fly-across ${duration}s linear forwards`;
+
+        msgEl.addEventListener('click', () => handleCapture(msgEl, type));
+
+        el.flyingArea.appendChild(msgEl);
+
+        // Aufräumen nach Animation
+        msgEl.addEventListener('animationend', () => {
+            msgEl.remove();
+        });
+    }
+
+    function handleCapture(msgEl, type) {
+        if (!state.active || msgEl.classList.contains('correct') || msgEl.classList.contains('wrong')) return;
+
+        if (type === state.targetType) {
+            state.score += (state.cfg.pointsPerHit || 10);
+            msgEl.classList.add('correct');
+            spawnParticles(msgEl, '#22c55e');
+        } else {
+            state.score += (state.cfg.pointsPerMiss || -5);
+            msgEl.classList.add('wrong');
+            spawnParticles(msgEl, '#ef4444');
+        }
+
+        updateUI();
+        setTimeout(() => msgEl.remove(), 300);
+    }
+
+    function spawnParticles(originEl, color) {
+        const rect = originEl.getBoundingClientRect();
+        const areaRect = el.flyingArea.getBoundingClientRect();
+
+        for (let i = 0; i < 8; i++) {
             const p = document.createElement('div');
             p.className = 'particle';
-            p.style.left = (x - 5) + "px";
-            p.style.top = (y - 5) + "px";
             p.style.backgroundColor = color;
-            document.body.appendChild(p);
+            p.style.left = (rect.left - areaRect.left + rect.width / 2) + 'px';
+            p.style.top = (rect.top - areaRect.top + rect.height / 2) + 'px';
+
+            const destX = (Math.random() - 0.5) * 100;
+            const destY = (Math.random() - 0.5) * 100;
+            p.style.setProperty('--x', `${destX}px`);
+            p.style.setProperty('--y', `${destY}px`);
+
+            el.flyingArea.appendChild(p);
             setTimeout(() => p.remove(), 500);
         }
     }
 
-    function endGame() {
-        isPlaying = false;
-        clearInterval(timerInterval);
-        clearInterval(spawnInterval);
-
-        elements.gameContainer.style.display = "none";
-        elements.resultScreen.style.display = "block";
-        elements.finalScore.textContent = score;
-
-        if (score > 100) elements.resultText.textContent = "Meister-Detektiv! Exzellente Analyse.";
-        else if (score > 50) elements.resultText.textContent = "Gute Arbeit, Detektiv. Weiter so!";
-        else elements.resultText.textContent = "Das geht noch besser. Bleib dran!";
+    function updateUI() {
+        el.timer.textContent = state.timeLeft + 's';
+        el.score.textContent = state.score;
+        el.targetKpi.textContent = capitalize(state.targetType);
+        el.targetKpi.className = state.targetType;
+        el.targetDisplay.textContent = capitalize(state.targetType);
+        el.targetDisplay.className = 'current-target ' + state.targetType;
     }
 
-    // Expose Hooks for Tests
-    window.render_game_to_text = () => ({
-        target: currentTarget,
-        score: score,
-        timeLeft: timeRemaining,
-        status: isPlaying ? "playing" : "finished"
-    });
+    function capitalize(s) {
+        if (!s) return '--';
+        return s.charAt(0).toUpperCase() + s.slice(1);
+    }
 
-    window.spawnMessage = spawnMessage;
+    // Test Hooks
+    window.render_game_to_text = function () {
+        return JSON.stringify({
+            targetType: state.targetType,
+            currentScore: state.score,
+            timeRemaining: state.timeLeft,
+            active: state.active
+        });
+    };
 
-    init();
+    window.spawnMessage = function (text, type) {
+        if (state.active) {
+            spawnMessage(text, type);
+        }
+    };
 })();

@@ -285,12 +285,12 @@ body.deesk-page {
 
 @keyframes particle-fade {
   0% {
-    transform: scale(1);
+    transform: translate(0, 0) scale(1);
     opacity: 1;
   }
 
   100% {
-    transform: scale(3);
+    transform: translate(var(--x), var(--y)) scale(3);
     opacity: 0;
   }
 }

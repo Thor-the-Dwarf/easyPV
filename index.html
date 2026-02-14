@@ -475,7 +475,7 @@
         function folderEmoji(node, isCollapsed) {
           const children = Array.isArray(node.children) ? node.children : [];
           const hasFolderChild = children.some((child) => child && child.isFolder);
-          if (!hasFolderChild && node.hasFiles) return '🎮';
+          if (!hasFolderChild && isPlayableFolder(node)) return '🎮';
           return isCollapsed ? '📁' : '📂';
         }
 

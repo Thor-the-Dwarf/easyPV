@@ -52,7 +52,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 
 ## 2026-02-14 - Arbeitspaket Leasing Bilder lokalisiert
 - 6 lizenzierte/kommerziell nutzbare Bilder fuer Leasing in der IT evaluiert und lokal in `__02_doing_Leasing/assets` gespeichert (`leasing_it_*.jpg`).
-- `__cSuite_Leasing.json` umgestellt: `bild_quellen[].bild_url` zeigt jetzt auf lokale Assets, `quelle_url` + `lizenz` bleiben als Nachweis enthalten.
+- `__gAttributes_Leasing.json` umgestellt: `bild_quellen[].bild_url` zeigt jetzt auf lokale Assets, `quelle_url` + `lizenz` bleiben als Nachweis enthalten.
 - `generic_page.js` verbessert: relative `bild_url`/`quelle_url` aus `bild_quellen` werden korrekt relativ zur geladenen JSON aufgeloest.
 - Offene TODOs fuer naechste Runde: gleiches Vorgehen fuer weitere Themenordner, jeweils 6 thematisch belastbare Bilder kuratieren und lokalisieren.
 - Original prompt (current turn): ja mach weiter

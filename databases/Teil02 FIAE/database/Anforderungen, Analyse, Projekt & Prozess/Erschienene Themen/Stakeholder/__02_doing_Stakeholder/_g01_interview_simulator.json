@@ -1,0 +1,52 @@
+{
+  "id": "interview_simulator_v1",
+  "title": "Interview-Simulator",
+  "subtitle": "Waehle die Frage mit dem hoechsten Informationswert.",
+  "rounds": [
+    {
+      "context": "Fachbereich klagt ueber langsame Freigaben.",
+      "options": [
+        { "id": "a", "text": "Welcher konkrete Schritt dauert wie lange und warum?", "correct": true },
+        { "id": "b", "text": "Ist das generell schlimm?", "correct": false },
+        { "id": "c", "text": "Gefallen Ihnen unsere Tools?", "correct": false }
+      ],
+      "reason": "Konkrete Prozessfragen liefern messbare Ansatzpunkte."
+    },
+    {
+      "context": "Support meldet hohe Ticket-Ruecklaeufer.",
+      "options": [
+        { "id": "a", "text": "Bei welchen Tickettypen fehlen welche Informationen?", "correct": true },
+        { "id": "b", "text": "Sind die Nutzer halt unzufrieden?", "correct": false },
+        { "id": "c", "text": "Wollen Sie mehr Meetings?", "correct": false }
+      ],
+      "reason": "Die Frage isoliert Ursache, Umfang und Datenqualitaet."
+    },
+    {
+      "context": "Teamleiter warnt vor Widerstand im Rollout.",
+      "options": [
+        { "id": "a", "text": "Welche Gruppen lehnen was konkret ab und mit welcher Begruendung?", "correct": true },
+        { "id": "b", "text": "Das wird schon irgendwie gehen, oder?", "correct": false },
+        { "id": "c", "text": "Moechten Sie das Projekt stoppen?", "correct": false }
+      ],
+      "reason": "Praezise Stakeholder-Segmentierung ermoeglicht gezielte Massnahmen."
+    },
+    {
+      "context": "Controlling fordert Transparenz zum Nutzen.",
+      "options": [
+        { "id": "a", "text": "Welche Kennzahl zeigt fuer Sie den Nutzen eindeutig?", "correct": true },
+        { "id": "b", "text": "Ist das Budget nicht sowieso zu hoch?", "correct": false },
+        { "id": "c", "text": "Sind Sie grundsaetzlich skeptisch?", "correct": false }
+      ],
+      "reason": "Nutzenkriterien muessen frueh operationalisiert werden."
+    },
+    {
+      "context": "Mitarbeitende berichten, dass neue Maske verwirrend ist.",
+      "options": [
+        { "id": "a", "text": "An welcher Stelle entsteht Verwirrung und welche Info fehlt dort?", "correct": true },
+        { "id": "b", "text": "Ist die Farbe der Maske vielleicht das Problem?", "correct": false },
+        { "id": "c", "text": "Wollen Sie lieber das alte System?", "correct": false }
+      ],
+      "reason": "Nutzungsprobleme werden durch konkrete Situationsfragen sichtbar."
+    }
+  ]
+}

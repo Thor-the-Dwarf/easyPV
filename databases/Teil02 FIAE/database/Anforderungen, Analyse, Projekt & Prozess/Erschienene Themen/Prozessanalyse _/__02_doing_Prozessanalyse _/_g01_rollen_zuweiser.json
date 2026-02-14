@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "id": "rollen_zuweiser",
+    "title": "Rollen-Zuweiser",
+    "subtitle": "RACI-Rollen in Projektsituationen zuordnen."
+  },
+  "raci_roles": [
+    {
+      "id": "R",
+      "label": "Responsible",
+      "hint": "Fuehrt die Aufgabe operativ aus"
+    },
+    {
+      "id": "A",
+      "label": "Accountable",
+      "hint": "Traegt die finale Verantwortung"
+    },
+    {
+      "id": "C",
+      "label": "Consulted",
+      "hint": "Wird vor Entscheidungen einbezogen"
+    },
+    {
+      "id": "I",
+      "label": "Informed",
+      "hint": "Wird ueber Ergebnisse informiert"
+    }
+  ],
+  "rounds": [
+    {
+      "id": "r1",
+      "scenario": "Wer programmiert die neue API-Schnittstelle?",
+      "expected_role": "R",
+      "reason": "Die umsetzende Entwicklerrolle ist Responsible."
+    },
+    {
+      "id": "r2",
+      "scenario": "Wer entscheidet final, ob das Release live geht?",
+      "expected_role": "A",
+      "reason": "Die letzte Entscheidung liegt bei Accountable."
+    },
+    {
+      "id": "r3",
+      "scenario": "Wer gibt fachliche Inputs zu Datenschutzanforderungen?",
+      "expected_role": "C",
+      "reason": "Fachliche Beratung vor Umsetzung entspricht Consulted."
+    },
+    {
+      "id": "r4",
+      "scenario": "Wer bekommt den Statusbericht nach Sprint-Abschluss?",
+      "expected_role": "I",
+      "reason": "Diese Rolle wird informiert, arbeitet aber nicht aktiv mit."
+    },
+    {
+      "id": "r5",
+      "scenario": "Wer beantwortet Rueckfragen aus dem Team zur Architekturentscheidung?",
+      "expected_role": "C",
+      "reason": "Expertinnen und Experten werden beratend einbezogen (Consulted)."
+    },
+    {
+      "id": "r6",
+      "scenario": "Wer traegt Gesamtverantwortung fuer Budget und Zielerreichung?",
+      "expected_role": "A",
+      "reason": "Gesamtverantwortung und Rechenschaftspflicht bedeuten Accountable."
+    }
+  ],
+  "scoring": {
+    "correct": 20,
+    "wrong": -10,
+    "streak_bonus_threshold": 2,
+    "streak_bonus": 5
+  }
+}

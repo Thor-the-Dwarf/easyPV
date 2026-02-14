@@ -310,3 +310,18 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `node --test` fuer alle lokalen Ticketsystem-Tests (5 gruen)
   - Playwright-Smoke erfolgreich fuer `_ghtml_sla_timer_kampf.html`
   - Artefakte: `databases/Teil02 FIAE/output/web-game-sla-timer-kampf/`
+- Original prompt (current turn): weiter
+- Naechstes fehlendes Spiel in `Prozessanalyse _` umgesetzt: `Aktivitaeten-Sortierer`.
+- Neue Dateien:
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__01_planing_Prozessanalyse _/__gp_aktivitaeten_sortierer__aktivitaeten_sortierer_v2.txt`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_g01_aktivitaeten_sortierer.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_ghtml_aktivitaeten_sortierer.html`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gjs_aktivitaeten_sortierer.js`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gcss_aktivitaeten_sortierer.css`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__03_testing_Prozessanalyse _/unit/aktivitaeten_sortierer.config.test.mjs`
+- Reachability-Test in Prozessanalyse auf `_g*`/`game_*` Namensmuster aktualisiert.
+- Validierung:
+  - `node --check` fuer `_gjs_aktivitaeten_sortierer.js`
+  - `node --test` fuer lokale Prozessanalyse-Tests (reachability + config)
+  - Playwright-Smoke erfolgreich fuer `_ghtml_aktivitaeten_sortierer.html`
+  - Artefakte: `databases/Teil02 FIAE/output/web-game-aktivitaeten-sortierer/`

@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "id": "aktivitaeten_sortierer",
+    "title": "Aktivitaeten-Sortierer",
+    "subtitle": "Wertschoepfung vs. Nacharbeit vs. Verschwendung"
+  },
+  "categories": [
+    {
+      "id": "value_add",
+      "label": "Wertschoepfend",
+      "hint": "Direkter Kundennutzen entsteht"
+    },
+    {
+      "id": "rework",
+      "label": "Nacharbeit",
+      "hint": "Fehlerbehebung statt Neuwert"
+    },
+    {
+      "id": "waste",
+      "label": "Verschwendung",
+      "hint": "Warten, Suchen, unnoetiger Transport"
+    }
+  ],
+  "rounds": [
+    {
+      "id": "r1",
+      "activity": "Neue API-Funktion gemaess Fachanforderung implementieren",
+      "correct_category": "value_add",
+      "reason": "Es entsteht direkt nutzbarer Funktionswert fuer den Kunden."
+    },
+    {
+      "id": "r2",
+      "activity": "Hotfix fuer Bug aus letztem Release einspielen",
+      "correct_category": "rework",
+      "reason": "Bugfixing ist notwendige Nacharbeit, aber keine neue Wertschoepfung."
+    },
+    {
+      "id": "r3",
+      "activity": "30 Minuten auf Freigabe des Build-Servers warten",
+      "correct_category": "waste",
+      "reason": "Reine Wartezeit ohne direkten Ergebnisbeitrag."
+    },
+    {
+      "id": "r4",
+      "activity": "Kundensichtbares Formular fuer Antragstellung entwickeln",
+      "correct_category": "value_add",
+      "reason": "Direkte Nutzung im Zielprozess bringt klaren Mehrwert."
+    },
+    {
+      "id": "r5",
+      "activity": "Fehlende Feldvalidierung nachtraeglich korrigieren",
+      "correct_category": "rework",
+      "reason": "Korrektur eines Defizits aus vorheriger Umsetzung."
+    },
+    {
+      "id": "r6",
+      "activity": "Ticket dreimal zwischen Teams hin- und herschieben",
+      "correct_category": "waste",
+      "reason": "Unnoetige Uebergaben erzeugen nur Verzogerung."
+    }
+  ],
+  "scoring": {
+    "correct": 20,
+    "wrong": -10,
+    "streak_bonus_threshold": 3,
+    "streak_bonus": 10
+  }
+}

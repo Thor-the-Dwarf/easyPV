@@ -1,7 +1,7 @@
 Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine Branch pushst. Du implementierst nun: GamePlan-Kurve-der-Veränderung.txt
 
 - Created missing game prototype scaffold for Change Management topic "Kurve der Veraenderung".
-- Target files: game_kurve_der_veraenderung.html/.js/.json in the same folder as the GamePlan.
+- Target files: _ghtml_kurve_der_veraenderung.html/.js/.json in the same folder as the GamePlan.
 - TODO: run Playwright scenario and inspect screenshot + render_game_to_text output.
 - Implemented HTML/JS/JSON for game_kurve_der_veraenderung with 7-phase matching interaction.
 - Added click + drag assignment, scoring, and phase explanations.
@@ -13,14 +13,14 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Started implementation for GamePlan-Make-or-Buy-Calculator: added new game HTML/JS/JSON in Fremdvergabe folder.
 - Implemented 5-case cost comparison flow with slider, bars, scoring, and break-even helper.
 - Original prompt (current turn): implementiere GamePlan-Failover-Simulator.txt dann commite
-- Implemented new game in Verlaesslichkeit-Robustheit bewerten: game_failover_simulator.html/.js/.json and _gs_grey_failover_simulator.css.
+- Implemented new game in Verlaesslichkeit-Robustheit bewerten: _ghtml_failover_simulator.html/.js/.json and _gs_grey_failover_simulator.css.
 - Added 10 disaster scenarios, Level 1-3 special flow (DB-Ausfall, Split-Brain, Cascading Failure), HUD (System-Health, Uptime/SLA, RTO), scoring incl. +5000 for Zero Data Loss and downtime penalty.
 - Added visual diagnostics: glitch effect, heat-based node coloring, mission-control layout, action console, diagnostic feed, render_game_to_text and advanceTime hooks.
-- Playwright smoke test executed against game_failover_simulator.html (local http.server + web_game_playwright_client).
+- Playwright smoke test executed against _ghtml_failover_simulator.html (local http.server + web_game_playwright_client).
 - Verified render_game_to_text transitions from idle to active mission state (round 1 loaded, failed DB node, RTO running).
 - Note: screenshot artifact captures only the health graph canvas in this runner; state JSON was used as primary validation of runtime behavior.
 - Original prompt (current turn): ok, nun implementiere und commite GamePlan-Doku-Zielgruppen-Match.txt
-- Implemented new Dokumentation game: game_doku_zielgruppen_match.html/.js/.json and _gs_grey_doku_zielgruppen_match.css.
+- Implemented new Dokumentation game: _ghtml_doku_zielgruppen_match.html/.js/.json and _gs_grey_doku_zielgruppen_match.css.
 - Added 25 snippets across 3 levels (Klare Sprache, Target-Bleeding, Support-Crisis), HUD for User-Confusion, Knowledge-Points, Target-Doc, and timed readability bar.
 - Added scoring rules incl. Silent Knowledge bonus (+150) and technical-noise penalty when admin content is routed to user docs.
 - Added mobile swipe-to-bin gestures (left=admin, right=user), diagnostic feed, confusion-wave visual, render_game_to_text and advanceTime hooks.
@@ -29,7 +29,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Visual check completed on generated screenshot (desktop layout, bins, HUD, confusion meter and feed visible).
 - Added high-confusion warning state (>=70%): confusion meter and feedback area now switch to stronger warning styling.
 - Original prompt (current turn): GamePlan-Make-or-Buy-Waage.txt
-- Implemented new game in Teil02/Fremdvergabe: game_make_or_buy_waage.html/.js/.json and _gs_grey_make_or_buy_waage.css.
+- Implemented new game in Teil02/Fremdvergabe: _ghtml_make_or_buy_waage.html/.js/.json and _gs_grey_make_or_buy_waage.css.
 - Added 20 decision factors across 3 levels (incl. Budget-Squeeze and Strategic Shift event), weighted make/buy scale, KPI HUD (Decision-Stability, Remaining Budget, Time-to-Market), and scoring rules with core-competence bonus + vendor-lock-in penalty without exit strategy.
 - Added draggable factor card, clickable pans, result ticker, render_game_to_text and advanceTime hooks.
 - Playwright smoke test executed; UI and active state (started=true, factor loaded) validated via screenshot and state JSON.
@@ -39,13 +39,13 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Removed Next button flow; after each decision feedback is shown for 5 seconds, then the next factor is loaded automatically.
 - Added explicit on-screen usage explanation and preserved drag + click + keyboard controls.
 - Original prompt (current turn): Stil aus Machbarkeitsanalyse/Projektmanagement uebernehmen und GamePlan-Moderations-Master umsetzen.
-- Implemented Workshop game in intentionally simple/intuitive style: game_moderations_master.html/.js/.json and _gs_grey_moderations_master.css.
+- Implemented Workshop game in intentionally simple/intuitive style: _ghtml_moderations_master.html/.js/.json and _gs_grey_moderations_master.css.
 - Added 15 moderation techniques and 15 rounds across 3 challenge phases (Morning Session, Post-Lunch Dip, Executive Heat).
 - Kept UI minimal and friendly: single scenario card, few method buttons, concise KPIs, direct feedback, auto-next after decision.
 - Added scoring with Flow-State bonus and Method-Boredom penalty, plus render_game_to_text and advanceTime hooks.
 - Smoke tested via Playwright: active round + visual layout validated.
 - Original prompt (current turn): weiter mit GamePlan-Nutzwert-Navigator.txt
-- Implemented Nutzwert Navigator in simple/intuitive style: game_nutzwert_navigator.html/.js/.json and _gs_grey_nutzwert_navigator.css.
+- Implemented Nutzwert Navigator in simple/intuitive style: _ghtml_nutzwert_navigator.html/.js/.json and _gs_grey_nutzwert_navigator.css.
 - Added 10 weighted decision cases across 3 levels (Simple Choice, Stakeholder Clash, Stress Test), live ranking bars, objectivity rating, and decision confidence via ±5% sensitivity runs.
 - Added robust-decision bonus and biased-scoring penalty, with auto-next flow after evaluation and render_game_to_text/advanceTime hooks.
 - Smoke tested via Playwright: first case loaded, live scoring/ranking visible, state output valid.

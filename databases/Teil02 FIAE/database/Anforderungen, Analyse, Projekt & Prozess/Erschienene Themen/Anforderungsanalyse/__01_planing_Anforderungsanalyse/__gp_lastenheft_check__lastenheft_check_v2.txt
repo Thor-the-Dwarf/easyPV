@@ -1,0 +1,27 @@
+# __gp_lastenheft_check__lastenheft_check_v2
+
+## Spielidee
+Lastenheft-Check: Bewerte Anforderungen als klar/messbar oder unklar/nicht messbar.
+
+## Lernziel
+- SMART-Qualitaet von Anforderungen erkennen.
+- Unklare Formulierungen identifizieren und verbessern.
+
+## Mechanik
+- 6 Anforderungen in Folge.
+- Pro Anforderung Entscheidung: `Klar` oder `Unklar`.
+- Sofortfeedback mit kurzer Begruendung.
+
+## Bewertung
+- Richtige Bewertung: +15
+- Falsche Bewertung: -10
+- Perfekter Lauf: +20 Bonus
+
+## Dateikonvention
+- `_g01_lastenheft_check.json`
+- `_ghtml_lastenheft_check.html`
+- `_gjs_lastenheft_check.js`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

@@ -189,11 +189,30 @@
           if (theme === 'light') {
             document.documentElement.classList.add('theme-light');
             themeToggleBtn.textContent = '☀️';
+            syncEmbeddedThemeToActiveFrame('light');
             return;
           }
 
           document.documentElement.classList.remove('theme-light');
           themeToggleBtn.textContent = '🌙';
+          syncEmbeddedThemeToActiveFrame('dark');
+        }
+
+        function syncEmbeddedThemeToActiveFrame(theme) {
+          if (!contentHost) return;
+          const frame = contentHost.querySelector('iframe.content-frame');
+          if (!frame || !frame.contentWindow) return;
+          frame.contentWindow.postMessage({ type: 'global:theme', theme: theme }, '*');
+        }
+
+        function queueThemeSyncForNewFrame() {
+          const theme = document.documentElement.classList.contains('theme-light') ? 'light' : 'dark';
+          window.setTimeout(function () {
+            syncEmbeddedThemeToActiveFrame(theme);
+          }, 0);
+          window.setTimeout(function () {
+            syncEmbeddedThemeToActiveFrame(theme);
+          }, 120);
         }
 
         async function initIndex() {
@@ -469,6 +488,7 @@
           const src = buildGenericPageSrc(folderLabel, jsonUrl, gameUrl);
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
+          queueThemeSyncForNewFrame();
         }
 
         function buildGenericPageSrc(folderLabel, jsonUrl, gameUrl) {
@@ -497,6 +517,7 @@
           const src = safeGameUrl || buildPracticeSrc(folderLabel || 'Spielordner', jsonUrl || '');
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
+          queueThemeSyncForNewFrame();
         }
 
         function findFirstJsonRelPath(children) {

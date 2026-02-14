@@ -199,3 +199,10 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - local tests pass (`reachability`, `stakeholder_interviewer.config`)
   - Playwright smoke with click interaction successful
   - artifacts: `databases/Teil02 FIAE/output/web-game-stakeholder-interviewer/`
+- Original prompt (current turn): Theme-Mode-Toggle global perfektionieren; generic_page Fix.
+- Fixed global Theme sync for generic_page: added parent-class + localStorage based `theme-light` synchronization in `/Users/thor/WebstormProjects/easyPV/generic_pages/generic_page.js`.
+- Refactored `/Users/thor/WebstormProjects/easyPV/generic_pages/generic_page.css` to token-based light/dark variables and wired all key UI colors to these variables.
+- Playwright smoke run executed against `generic_pages/generic_page.html` (artifact: `/Users/thor/WebstormProjects/easyPV/output/web-game-generic-theme-check/shot-0.png`), no `errors-0.json` produced.
+- Hardened iframe theme propagation from parent shell: `/Users/thor/WebstormProjects/easyPV/index.html` now posts explicit `global:theme` messages to the active content iframe on toggle and immediately after loading a new iframe.
+- `generic_page.js` now consumes `global:theme` postMessage events and applies light/dark instantly.
+- Additional Playwright checks run on `/Users/thor/WebstormProjects/easyPV/index.html` including direct click on `#theme-toggle-app`; screenshots confirm dark->light switch and no errors artifact.

@@ -1,0 +1,43 @@
+{
+  "id": "lastenheft_check_v1",
+  "title": "Lastenheft-Check",
+  "subtitle": "Pruefe, ob Anforderungen klar und messbar formuliert sind.",
+  "items": [
+    {
+      "id": "r1",
+      "text": "Die Software soll schnell sein.",
+      "quality": "unclear",
+      "reason": "Nicht messbar. Es fehlt ein konkreter Zielwert, z. B. Antwortzeit <= 2s."
+    },
+    {
+      "id": "r2",
+      "text": "Login mit E-Mail und Passwort muss moeglich sein.",
+      "quality": "clear",
+      "reason": "Funktion klar beschrieben und eindeutig pruefbar."
+    },
+    {
+      "id": "r3",
+      "text": "Systemantwort bei Suche maximal 2 Sekunden bei 95% der Anfragen.",
+      "quality": "clear",
+      "reason": "Messbar, spezifisch und testbar formuliert."
+    },
+    {
+      "id": "r4",
+      "text": "Die Benutzeroberflaeche soll modern wirken.",
+      "quality": "unclear",
+      "reason": "Subjektiv und ohne Abnahmekriterium."
+    },
+    {
+      "id": "r5",
+      "text": "Jede Bestellung muss eine eindeutige Bestellnummer erhalten.",
+      "quality": "clear",
+      "reason": "Klare Regel mit eindeutiger Pruefbarkeit."
+    },
+    {
+      "id": "r6",
+      "text": "Der Export soll moeglichst oft funktionieren.",
+      "quality": "unclear",
+      "reason": "Unpraezise Formulierung ohne messbare Zielgroesse."
+    }
+  ]
+}

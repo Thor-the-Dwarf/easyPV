@@ -1,0 +1,53 @@
+{
+  "id": "konflikt_navi_v1",
+  "title": "Konflikt-Navi",
+  "subtitle": "Finde im Stakeholder-Konflikt die beste Entscheidung fuer das Projekt.",
+  "start_satisfaction": 60,
+  "rounds": [
+    {
+      "prompt": "Abteilung A will Feature X sofort, Abteilung B priorisiert Stabilitaet.",
+      "options": [
+        { "id": "a", "text": "Pilot mit klaren Erfolgsmetriken und Go/No-Go nach 2 Wochen", "correct": true, "satisfaction_delta": 8, "score_delta": 20 },
+        { "id": "b", "text": "Feature X sofort fuer alle ausrollen", "correct": false, "satisfaction_delta": -10, "score_delta": -10 },
+        { "id": "c", "text": "Thema vertagen ohne Termin", "correct": false, "satisfaction_delta": -8, "score_delta": -10 }
+      ],
+      "reason": "Ein kontrollierter Pilot balanciert Innovationsdruck und Betriebsrisiko."
+    },
+    {
+      "prompt": "Sales fordert Individualloesung, IT fordert Standardisierung.",
+      "options": [
+        { "id": "a", "text": "Standardprozess mit begrenzter, begruendeter Ausnahme definieren", "correct": true, "satisfaction_delta": 7, "score_delta": 20 },
+        { "id": "b", "text": "Jede Sales-Anfrage als Sonderfall zulassen", "correct": false, "satisfaction_delta": -9, "score_delta": -10 },
+        { "id": "c", "text": "Sales komplett ignorieren", "correct": false, "satisfaction_delta": -10, "score_delta": -10 }
+      ],
+      "reason": "Governance plus begrenzte Flexibilitaet sichert Skalierbarkeit."
+    },
+    {
+      "prompt": "Fachbereich will schnellen Rollout, Support warnt vor Schulungsdefizit.",
+      "options": [
+        { "id": "a", "text": "Stufenrollout mit verbindlichem Schulungspaket", "correct": true, "satisfaction_delta": 8, "score_delta": 20 },
+        { "id": "b", "text": "Rollout sofort ohne Training", "correct": false, "satisfaction_delta": -12, "score_delta": -10 },
+        { "id": "c", "text": "Rollout komplett stoppen", "correct": false, "satisfaction_delta": -8, "score_delta": -10 }
+      ],
+      "reason": "Adoption und Servicequalitaet brauchen Befaehigung im Betrieb."
+    },
+    {
+      "prompt": "Controlling fordert harte KPI-Ziele, Team beklagt zu hohen Druck.",
+      "options": [
+        { "id": "a", "text": "KPI-Ziele mit realistischen Zwischenetappen und Review-Slots", "correct": true, "satisfaction_delta": 7, "score_delta": 20 },
+        { "id": "b", "text": "Sofort maximale Ziele ohne Abstimmung", "correct": false, "satisfaction_delta": -10, "score_delta": -10 },
+        { "id": "c", "text": "KPI komplett abschaffen", "correct": false, "satisfaction_delta": -7, "score_delta": -10 }
+      ],
+      "reason": "Steuerbarkeit bleibt erhalten, ohne das Team zu ueberlasten."
+    },
+    {
+      "prompt": "Security verlangt strenge Freigaben, Produktteam will schnell liefern.",
+      "options": [
+        { "id": "a", "text": "Risk-based Freigabe mit Fast-Track fuer Low-Risk Changes", "correct": true, "satisfaction_delta": 8, "score_delta": 20 },
+        { "id": "b", "text": "Alle Security-Checks entfernen", "correct": false, "satisfaction_delta": -12, "score_delta": -10 },
+        { "id": "c", "text": "Jede kleine Aenderung durch Vollgremium", "correct": false, "satisfaction_delta": -9, "score_delta": -10 }
+      ],
+      "reason": "Risikobasiertes Vorgehen verbindet Geschwindigkeit und Compliance."
+    }
+  ]
+}

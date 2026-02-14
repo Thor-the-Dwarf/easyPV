@@ -174,3 +174,15 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - local tests pass (`reachability`, `interessen_profiler`, `interview_simulator`, `promotoren_opponenten_netz`)
   - Playwright smoke successful
   - artifacts: `databases/Teil02 FIAE/output/web-game-promotoren-opponenten-netz/`
+- Continued with next missing Stakeholder game: `Konflikt-Navi`.
+- Added files:
+  - `__gp_konflikt_navi__konflikt_navi_v2.txt`
+  - `_g01_konflikt_navi.json`
+  - `_ghtml_konflikt_navi.html`
+  - `_gjs_konflikt_navi.js`
+  - local test `konflikt_navi.config.test.mjs`
+- Validation:
+  - `node --check` on `_gjs_konflikt_navi.js`
+  - local tests pass (`reachability`, `interessen_profiler`, `interview_simulator`, `promotoren_opponenten_netz`, `konflikt_navi`)
+  - Playwright smoke with click interaction successful
+  - artifacts: `databases/Teil02 FIAE/output/web-game-konflikt-navi/`

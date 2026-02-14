@@ -43,6 +43,16 @@
     return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
   }
 
+  function buildAddTileDataUri() {
+    const svg =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">' +
+      '<defs><linearGradient id="g2" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#0f2e52"/><stop offset="100%" stop-color="#0a1d34"/></linearGradient></defs>' +
+      '<rect width="1200" height="900" fill="url(#g2)"/>' +
+      '<text x="600" y="500" text-anchor="middle" fill="#93c5fd" font-size="220" font-family="Segoe UI, Arial">+</text>' +
+      '</svg>';
+    return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+  }
+
   function detectContextKey() {
     const raw = String(folder || '').toLowerCase();
     if (raw.indexOf('leasing') !== -1) return 'leasing';
@@ -335,6 +345,63 @@
     return out;
   }
 
+  function customImageStorageKey(contextKey) {
+    return 'genericPageCustomImage:' + contextKey;
+  }
+
+  function loadCustomImageItem(contextKey) {
+    try {
+      const raw = localStorage.getItem(customImageStorageKey(contextKey));
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      const src = String(parsed && parsed.src ? parsed.src : '').trim();
+      if (!src) return null;
+      return {
+        src: src,
+        href: String(parsed.href || src).trim() || src,
+        title: String(parsed.title || 'Eigenes Bild').trim() || 'Eigenes Bild',
+        meta: String(parsed.meta || 'Eigene Bild-URL').trim() || 'Eigene Bild-URL',
+        alt: String(parsed.alt || 'Benutzerdefiniertes Bild').trim() || 'Benutzerdefiniertes Bild'
+      };
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function isLikelyImageUrl(url) {
+    try {
+      const parsed = new URL(String(url || '').trim());
+      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return false;
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function setCustomImageItem(contextKey, url) {
+    const nextUrl = String(url || '').trim();
+    try {
+      if (!nextUrl) {
+        localStorage.removeItem(customImageStorageKey(contextKey));
+        return { ok: true, cleared: true };
+      }
+      if (!isLikelyImageUrl(nextUrl)) {
+        return { ok: false };
+      }
+      const payload = {
+        src: nextUrl,
+        href: nextUrl,
+        title: 'Eigenes Bild',
+        meta: 'Eigene Bild-URL',
+        alt: 'Benutzerdefiniertes Bild'
+      };
+      localStorage.setItem(customImageStorageKey(contextKey), JSON.stringify(payload));
+      return { ok: true, cleared: false };
+    } catch (_) {
+      return { ok: false };
+    }
+  }
+
   async function loadImageItemsFromJson() {
     const contextKey = detectContextKey();
     const sources = [];
@@ -385,13 +452,16 @@
 
   async function renderImageList() {
     if (!imageGridList) return;
+    const contextKey = detectContextKey();
     const imageItems = await loadImageItemsFromJson();
+    const baseItems = imageItems.slice(0, 5);
+    const customItem = loadCustomImageItem(contextKey);
 
     if (imageDrawerTitle) {
       imageDrawerTitle.textContent = 'Bilder';
     }
 
-    imageGridList.innerHTML = imageItems
+    const baseHtml = baseItems
       .map(function (item) {
         return (
           '<a class="image-grid-item" href="' +
@@ -412,6 +482,29 @@
       })
       .join('');
 
+    const customHtml = customItem
+      ? '<button type="button" class="image-grid-item image-grid-item--add has-custom" id="custom-image-slot" aria-label="Eigenes Bild aendern">' +
+        '<img src="' +
+        escapeHtml(customItem.src) +
+        '" alt="' +
+        escapeHtml(customItem.alt) +
+        '" data-placeholder-src="' +
+        escapeHtml(buildPlaceholderDataUri(customItem.title)) +
+        '" loading="lazy" />' +
+        '<span class="add-plus-badge">+</span>' +
+        '<span class="image-meta">' +
+        escapeHtml(customItem.meta) +
+        '</span>' +
+        '</button>'
+      : '<button type="button" class="image-grid-item image-grid-item--add" id="custom-image-slot" aria-label="Bild-URL hinzufuegen">' +
+        '<img src="' +
+        escapeHtml(buildAddTileDataUri()) +
+        '" alt="Bild hinzufuegen" loading="lazy" />' +
+        '<span class="image-meta">Bild per URL hinzufuegen</span>' +
+        '</button>';
+
+    imageGridList.innerHTML = baseHtml + customHtml;
+
     const images = imageGridList.querySelectorAll('img[data-placeholder-src]');
     images.forEach(function (img) {
       img.addEventListener('error', function onError() {
@@ -420,6 +513,25 @@
         img.setAttribute('src', fallback);
       });
     });
+
+    const customSlot = document.getElementById('custom-image-slot');
+    if (customSlot) {
+      customSlot.addEventListener('click', function () {
+        const existing = loadCustomImageItem(contextKey);
+        const current = existing ? existing.src : '';
+        const entered = window.prompt(
+          'Bild-URL einfügen (https://...). Leer lassen und bestätigen, um eigenes Bild zu entfernen.',
+          current
+        );
+        if (entered === null) return;
+        const result = setCustomImageItem(contextKey, entered);
+        if (!result.ok) {
+          window.alert('Bitte eine gueltige http(s)-Bild-URL eingeben.');
+          return;
+        }
+        renderImageList();
+      });
+    }
   }
 
   function getDrawerTitle(drawer) {

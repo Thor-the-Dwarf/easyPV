@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promotoren-Opponenten-Netz</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root { color-scheme: dark; }
+    body { margin:0; font-family:"Segoe UI", system-ui, sans-serif; background:#0b1020; color:#e2e8f0; }
+    .app { max-width:1040px; margin:0 auto; padding:1rem; }
+    .head h1 { margin:0 0 .35rem; }
+    .head p { margin:0; color:#93c5fd; }
+    .kpis { display:flex; gap:.7rem; flex-wrap:wrap; margin-top:.8rem; }
+    .kpi { background:#111a33; border:1px solid #334155; border-radius:12px; padding:.45rem .65rem; min-width:120px; }
+    .kpi span { display:block; font-size:.74rem; color:#93c5fd; }
+    .kpi strong { font-size:1rem; }
+    .card { margin-top:.9rem; background:#111a33; border:1px solid #334155; border-radius:14px; padding:1rem; }
+    .people { margin-top:.8rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:.6rem; }
+    .person { border:1px solid #334155; border-radius:10px; padding:.6rem; background:#0f172a; text-align:left; color:#e2e8f0; cursor:pointer; }
+    .person.active { border-color:#38bdf8; box-shadow:0 0 0 1px rgba(56,189,248,.35) inset; }
+    .assign { margin-top:.8rem; display:flex; gap:.6rem; flex-wrap:wrap; }
+    .btn { border:1px solid #334155; border-radius:10px; padding:.55rem .8rem; color:#e2e8f0; background:#1e293b; cursor:pointer; }
+    .btn.primary { background:#155e75; border-color:#0e7490; }
+    .feedback { margin-top:.8rem; border-radius:10px; padding:.6rem .75rem; border:1px solid #334155; }
+    .feedback.ok { background:rgba(22,101,52,.25); border-color:#16a34a; }
+    .feedback.bad { background:rgba(127,29,29,.25); border-color:#ef4444; }
+    .hidden { display:none; }
+  </style>
+</head>
+<body>
+<main class="app">
+  <header class="head">
+    <h1>Promotoren-Opponenten-Netz</h1>
+    <p>Waehle Machtpromotor, Fachpromotor und zwei Opponenten pro Runde.</p>
+    <div class="kpis">
+      <div class="kpi"><span>Runde</span><strong id="kpi-round">1/5</strong></div>
+      <div class="kpi"><span>Score</span><strong id="kpi-score">0</strong></div>
+      <div class="kpi"><span>Treffer</span><strong id="kpi-hits">0</strong></div>
+    </div>
+  </header>
+  <section id="root" class="card"></section>
+</main>
+<script src="./_gjs_promotoren_opponenten_netz.js" defer></script>
+</body>
+</html>

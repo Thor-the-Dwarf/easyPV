@@ -1,0 +1,62 @@
+{
+  "id": "promotoren_opponenten_netz_v1",
+  "title": "Promotoren-Opponenten-Netz",
+  "subtitle": "Finde Machtpromotor, Fachpromotor und Opponenten.",
+  "rounds": [
+    {
+      "prompt": "CRM-Rollout in Vertrieb und Support",
+      "people": [
+        { "id": "p1", "name": "COO", "hint": "Entscheidet Prioritaeten und Ressourcen.", "role": "macht" },
+        { "id": "p2", "name": "Solution Architect", "hint": "Kennt Integrationen im Detail.", "role": "fach" },
+        { "id": "p3", "name": "Senior Sales", "hint": "Sagt: Das kostet nur Zeit.", "role": "opponent" },
+        { "id": "p4", "name": "Support Lead", "hint": "Sagt: Altprozess reicht.", "role": "opponent" },
+        { "id": "p5", "name": "HR", "hint": "Unterstuetzt Change-Kommunikation.", "role": "neutral" },
+        { "id": "p6", "name": "Controlling", "hint": "Achtet auf KPI-Nachweise.", "role": "neutral" }
+      ]
+    },
+    {
+      "prompt": "Einfuehrung eines neuen Ticketsystems",
+      "people": [
+        { "id": "p1", "name": "CIO", "hint": "Kann den Rollout verbindlich freigeben.", "role": "macht" },
+        { "id": "p2", "name": "Service Owner", "hint": "Kennt Prozesse und SLAs.", "role": "fach" },
+        { "id": "p3", "name": "Teamleiter A", "hint": "Blockt neue Workflows offen.", "role": "opponent" },
+        { "id": "p4", "name": "Teamleiter B", "hint": "Verweigert Schulungszeit.", "role": "opponent" },
+        { "id": "p5", "name": "Einkauf", "hint": "Unterstuetzt Vertragskette.", "role": "neutral" },
+        { "id": "p6", "name": "Office", "hint": "Koordiniert Termine.", "role": "neutral" }
+      ]
+    },
+    {
+      "prompt": "Migration auf neue Cloud-Plattform",
+      "people": [
+        { "id": "p1", "name": "CEO", "hint": "Setzt strategische Richtung und Budgetrahmen.", "role": "macht" },
+        { "id": "p2", "name": "Cloud Lead", "hint": "Kennt Architektur und Cutover-Risiken.", "role": "fach" },
+        { "id": "p3", "name": "Ops Engineer", "hint": "Sagt: Wir koennen nichts aendern.", "role": "opponent" },
+        { "id": "p4", "name": "Legacy Admin", "hint": "Streut Zweifel ohne Loesung.", "role": "opponent" },
+        { "id": "p5", "name": "Data Analyst", "hint": "Liefert Monitoring-KPIs.", "role": "neutral" },
+        { "id": "p6", "name": "Recruiting", "hint": "Hilft beim Skill-Aufbau.", "role": "neutral" }
+      ]
+    },
+    {
+      "prompt": "Neuer Freigabeprozess fuer Releases",
+      "people": [
+        { "id": "p1", "name": "Bereichsleitung IT", "hint": "Traegt Budget- und Prioritaetsverantwortung.", "role": "macht" },
+        { "id": "p2", "name": "QA Lead", "hint": "Definiert praktikable Qualitaetskriterien.", "role": "fach" },
+        { "id": "p3", "name": "Dev Lead", "hint": "Sagt: Wir ignorieren die neuen Gates.", "role": "opponent" },
+        { "id": "p4", "name": "Release Manager alt", "hint": "Blockt jede Aenderung im Board.", "role": "opponent" },
+        { "id": "p5", "name": "PMO", "hint": "Unterstuetzt Governance.", "role": "neutral" },
+        { "id": "p6", "name": "Security", "hint": "Liefert Risiko-Input.", "role": "neutral" }
+      ]
+    },
+    {
+      "prompt": "Unternehmensweite Einfuehrung eines Monitorings",
+      "people": [
+        { "id": "p1", "name": "CFO", "hint": "Kann Finanzierung fuer Rollout absichern.", "role": "macht" },
+        { "id": "p2", "name": "SRE Lead", "hint": "Kennt Alerting und Betriebsgrenzen.", "role": "fach" },
+        { "id": "p3", "name": "Abteilungsleiter X", "hint": "Sagt: Brauchen wir nicht.", "role": "opponent" },
+        { "id": "p4", "name": "Abteilungsleiter Y", "hint": "Verweigert Datentransparenz.", "role": "opponent" },
+        { "id": "p5", "name": "Kommunikation", "hint": "Hilft bei Einfuehrungsbotschaften.", "role": "neutral" },
+        { "id": "p6", "name": "Compliance", "hint": "Prueft Nachweisfaehigkeit.", "role": "neutral" }
+      ]
+    }
+  ]
+}

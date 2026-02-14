@@ -1,0 +1,74 @@
+{
+    "gameTitle": "Risiko-Waage",
+    "gameSubtitle": "Make or Buy? Bewerte das Risiko und entscheide strategisch!",
+    "categories": [
+        {
+            "id": "make",
+            "label": "Selber machen (Make)",
+            "subLabel": "Hohes Risiko / Kernkompetenz",
+            "color": "var(--primary)",
+            "icon": "🛡️"
+        },
+        {
+            "id": "buy",
+            "label": "Kaufen (Buy)",
+            "subLabel": "Niedriges Risiko / Standardgut",
+            "color": "var(--success)",
+            "icon": "🛒"
+        }
+    ],
+    "items": [
+        {
+            "id": "item1",
+            "text": "Geheimrezept der Sauce",
+            "category": "make",
+            "explanation": "Kritisches Kern-Know-how! Darf nicht nach außen gelangen."
+        },
+        {
+            "id": "item2",
+            "text": "Büromaterial (Papier, Stifte)",
+            "category": "buy",
+            "explanation": "Standardware ohne strategischen Wert. Günstiger am Markt verfügbar."
+        },
+        {
+            "id": "item3",
+            "text": "Patentiertes Fertigungsverfahren",
+            "category": "make",
+            "explanation": "Wettbewerbsvorteil! Muss im Haus bleiben, um Kopien zu verhindern."
+        },
+        {
+            "id": "item4",
+            "text": "Reinigung der Büroräume",
+            "category": "buy",
+            "explanation": "Keine Kernkompetenz. Externe Dienstleister sind effizienter."
+        },
+        {
+            "id": "item5",
+            "text": "Software-Algorithmus (Kernprodukt)",
+            "category": "make",
+            "explanation": "Das Herzstück des Produkts. Hohe Abhängigkeit vermeiden!"
+        },
+        {
+            "id": "item6",
+            "text": "Schrauben (DIN-Norm)",
+            "category": "buy",
+            "explanation": "C-Teile. Normiert und überall austauschbar."
+        },
+        {
+            "id": "item7",
+            "text": "Kunden-Datenbank Wartung",
+            "category": "make",
+            "explanation": "Datenschutz und direkter Kundenkontakt sind sensibel. Besser intern steuern."
+        },
+        {
+            "id": "item8",
+            "text": "Fuhrpark-Management",
+            "category": "buy",
+            "explanation": "Leasing und Service oft günstiger über Spezialisten (Fremdbezug)."
+        }
+    ],
+    "feedbackTemplates": {
+        "correct": "Genau richtig entschieden! Du hast Risiken und Chancen sauber abgewogen.",
+        "wrong": "Vorsicht! Hier hast du strategische Risiken übersehen oder Ressourcen verschwendet."
+    }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "kommunikations_koffer_v1",
+  "title": "Kommunikations-Koffer",
+  "subtitle": "Waehle pro Phase die passende Kommunikationsmassnahme.",
+  "rounds": [
+    {
+      "phase": "Unsicherheit",
+      "situation": "In der Geruechtekueche kursieren widerspruechliche Infos zum Projektstart.",
+      "options": [
+        { "id": "a", "text": "Townhall mit offener Fragerunde und klaren Fakten", "correct": true, "reason": "Transparenz senkt Unsicherheit und stoppt Spekulationen." },
+        { "id": "b", "text": "Vorerst keine Kommunikation, bis alles final ist", "correct": false, "reason": "Informationsvakuum verstaerkt Geruechte und Widerstand." },
+        { "id": "c", "text": "Nur den Fuehrungskreis informieren", "correct": false, "reason": "Die breite Zielgruppe bleibt ohne Orientierung." }
+      ]
+    },
+    {
+      "phase": "Widerstand",
+      "situation": "Mehrere Teams sagen: 'Das haben wir schon immer so gemacht'.",
+      "options": [
+        { "id": "a", "text": "Workshop mit Stakeholdern und konkreten Sorgen", "correct": true, "reason": "Partizipation reduziert Abwehr und macht Probleme besprechbar." },
+        { "id": "b", "text": "Nur per E-Mail auf neue Regeln hinweisen", "correct": false, "reason": "Einwegkommunikation reicht in Konfliktphasen selten aus." },
+        { "id": "c", "text": "Kritik oeffentlich abwerten", "correct": false, "reason": "Abwertung verschaerft Fronten und Vertrauensverlust." }
+      ]
+    },
+    {
+      "phase": "Einsicht",
+      "situation": "Das Team akzeptiert den Grund fuer die Aenderung, ist aber noch unsicher in der Anwendung.",
+      "options": [
+        { "id": "a", "text": "Praxisnahe Schulung mit Q&A und Checklisten", "correct": true, "reason": "Einsicht braucht Enablement, damit Verhalten wirklich umgestellt wird." },
+        { "id": "b", "text": "Sofortige Leistungskontrolle ohne Erklaerung", "correct": false, "reason": "Druck ohne Anleitung erzeugt Rueckfall in alte Muster." },
+        { "id": "c", "text": "Kommunikation komplett pausieren", "correct": false, "reason": "Gerade jetzt braucht es Orientierung im Alltag." }
+      ]
+    },
+    {
+      "phase": "Ausprobieren",
+      "situation": "Pilotgruppen testen den neuen Prozess und sammeln erste Erfahrungen.",
+      "options": [
+        { "id": "a", "text": "Regelmaessige Retros mit Lessons Learned", "correct": true, "reason": "Schnelles Feedback stabilisiert den Lernzyklus." },
+        { "id": "b", "text": "Pilotteam ohne Austausch alleine lassen", "correct": false, "reason": "Ohne Austausch gehen wichtige Erkenntnisse verloren." },
+        { "id": "c", "text": "Sofortiger Voll-Rollout ohne Review", "correct": false, "reason": "Ohne Iteration steigt das Risiko fuer Fehlentscheidungen." }
+      ]
+    },
+    {
+      "phase": "Erste Erfolge",
+      "situation": "Die ersten Kennzahlen verbessern sich sichtbar.",
+      "options": [
+        { "id": "a", "text": "Erfolge sichtbar machen und Teamleistung anerkennen", "correct": true, "reason": "Positive Verstaerkung foerdert Akzeptanz und Momentum." },
+        { "id": "b", "text": "Erfolge intern kleinhalten", "correct": false, "reason": "Unsichtbare Fortschritte verlieren Motivationswirkung." },
+        { "id": "c", "text": "Sofort das naechste Grossprojekt starten", "correct": false, "reason": "Zu frueher Fokuswechsel untergraebt den Transfer." }
+      ]
+    },
+    {
+      "phase": "Integration",
+      "situation": "Der neue Prozess soll langfristig Standard werden.",
+      "options": [
+        { "id": "a", "text": "Standards dokumentieren und in Onboarding verankern", "correct": true, "reason": "Verankerung in Routinen sichert Nachhaltigkeit." },
+        { "id": "b", "text": "Alles nur informell laufen lassen", "correct": false, "reason": "Ohne Verankerung ist Rueckfallwahrscheinlichkeit hoch." },
+        { "id": "c", "text": "Verantwortung unklar lassen", "correct": false, "reason": "Unklare Ownership schwaecht dauerhafte Umsetzung." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+    "metadata": {
+        "title": "SQL Rechen-Meister // Data Refinery Analyst",
+        "version": "1.0",
+        "theme": "Analytical Dashboard"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Lagerbestand-Analyse",
+            "subtitle": "SUM-Operation",
+            "targetGoal": "Wie viele Artikel befinden sich insgesamt im Lager?",
+            "description": "Addiere alle Bestandswerte der Tabelle 'artikel'.",
+            "table": {
+                "name": "artikel",
+                "columns": [
+                    "id",
+                    "name",
+                    "bestand"
+                ],
+                "data": [
+                    {
+                        "id": 1,
+                        "name": "CPU i9",
+                        "bestand": 15
+                    },
+                    {
+                        "id": 2,
+                        "name": "GPU RTX 4080",
+                        "bestand": 8
+                    },
+                    {
+                        "id": 3,
+                        "name": "DDR5 RAM 32GB",
+                        "bestand": 42
+                    },
+                    {
+                        "id": 4,
+                        "name": "NVMe SSD 2TB",
+                        "bestand": 25
+                    }
+                ]
+            },
+            "correctFunc": "SUM",
+            "correctVal": 90,
+            "colToProcess": "bestand"
+        },
+        {
+            "id": 2,
+            "title": "Rechenzentrums-Effizienz",
+            "subtitle": "AVG-Operation",
+            "targetGoal": "Was ist die durchschnittliche Last (in %) aller Server?",
+            "description": "Berechne den Mittelwert der Auslastung.",
+            "table": {
+                "name": "server_stats",
+                "columns": [
+                    "id",
+                    "server_id",
+                    "last_prozent"
+                ],
+                "data": [
+                    {
+                        "id": 1,
+                        "server_id": "S1",
+                        "last_prozent": 45
+                    },
+                    {
+                        "id": 2,
+                        "server_id": "S2",
+                        "last_prozent": 90
+                    },
+                    {
+                        "id": 3,
+                        "server_id": "S3",
+                        "last_prozent": 60
+                    },
+                    {
+                        "id": 4,
+                        "server_id": "S4",
+                        "last_prozent": 25
+                    }
+                ]
+            },
+            "correctFunc": "AVG",
+            "correctVal": 55,
+            "colToProcess": "last_prozent"
+        },
+        {
+            "id": 3,
+            "title": "Verkaufs-Reporting",
+            "subtitle": "COUNT-Verständnis",
+            "targetGoal": "Wie viele Verkäufe wurden erfasst?",
+            "description": "Zähle die Anzahl der Datensätze in der Tabelle 'sales'.",
+            "table": {
+                "name": "sales",
+                "columns": [
+                    "id",
+                    "betrag",
+                    "kunde_id"
+                ],
+                "data": [
+                    {
+                        "id": 101,
+                        "betrag": 50,
+                        "kunde_id": 1
+                    },
+                    {
+                        "id": 102,
+                        "betrag": 200,
+                        "kunde_id": 2
+                    },
+                    {
+                        "id": 103,
+                        "betrag": null,
+                        "kunde_id": 3
+                    },
+                    {
+                        "id": 104,
+                        "betrag": 80,
+                        "kunde_id": 4
+                    },
+                    {
+                        "id": 105,
+                        "betrag": 15,
+                        "kunde_id": 1
+                    }
+                ]
+            },
+            "correctFunc": "COUNT",
+            "correctVal": 5,
+            "colToProcess": "*"
+        }
+    ],
+    "functions": [
+        {
+            "id": "SUM",
+            "name": "SUM()",
+            "info": "Summiert alle Werte einer Spalte."
+        },
+        {
+            "id": "AVG",
+            "name": "AVG()",
+            "info": "Berechnet den Durchschnittswert."
+        },
+        {
+            "id": "COUNT",
+            "name": "COUNT()",
+            "info": "Zählt die Anzahl der Werte (oder Datensätze)."
+        },
+        {
+            "id": "MIN",
+            "name": "MIN()",
+            "info": "Findet den kleinsten Wert."
+        },
+        {
+            "id": "MAX",
+            "name": "MAX()",
+            "info": "Findet den größten Wert."
+        }
+    ]
+}

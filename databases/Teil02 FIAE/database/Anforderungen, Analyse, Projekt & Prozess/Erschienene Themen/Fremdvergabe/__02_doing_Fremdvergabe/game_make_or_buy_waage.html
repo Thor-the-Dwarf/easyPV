@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Strategic Scale</title>
+  <link rel="stylesheet" href="./make_or_buy_waage.css">
+</head>
+<body class="mob-page">
+<main class="app">
+  <header class="head">
+    <h1>The Strategic Scale</h1>
+    <p class="intro">Ziehe das Fragment nach links (MAKE) oder rechts (BUY). Nach jeder Entscheidung kommt automatisch in 5 Sekunden der nächste Faktor.</p>
+    <div class="kpis">
+      <div><span>Stability</span><strong id="kpi-stability">100%</strong></div>
+      <div><span>Budget</span><strong id="kpi-budget">0 EUR</strong></div>
+      <div><span>Time</span><strong id="kpi-ttm">0 Tage</strong></div>
+      <div><span>Score</span><strong id="kpi-score">0</strong></div>
+      <div><span>Fortschritt</span><strong id="kpi-progress">0/20</strong></div>
+    </div>
+  </header>
+
+  <section class="playfield">
+    <div class="scale-wrap">
+      <div id="scale-beam" class="beam"></div>
+      <button id="pan-make" class="pan make" data-tooltip="Hold for Feedback" type="button">MAKE<br><strong id="make-load">0</strong></button>
+      <button id="pan-buy" class="pan buy" data-tooltip="Hold for Feedback" type="button">BUY<br><strong id="buy-load">0</strong></button>
+    </div>
+
+    <article id="factor-card" class="factor-card">
+      <p id="factor-category" class="factor-category">KATEGORIE</p>
+      <h2 id="factor-title">Simulation starten</h2>
+      <p id="factor-text">Ein Faktor erscheint hier.</p>
+      <p id="factor-weight" class="factor-weight">Gewicht: 0</p>
+    </article>
+
+    <div class="actions">
+      <button id="restart-btn" class="btn hidden" type="button">Neu starten</button>
+    </div>
+
+    <p id="feedback" class="feedback"></p>
+  </section>
+</main>
+
+<script src="./game_make_or_buy_waage.js" defer></script>
+</body>
+</html>

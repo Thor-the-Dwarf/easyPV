@@ -1,0 +1,57 @@
+{
+  "id": "interessen_profiler_v1",
+  "title": "Interessen-Profiler",
+  "subtitle": "Finde das tatsaechliche Interesse hinter der Aussage.",
+  "rounds": [
+    {
+      "person": "CISO",
+      "statement": "Wir brauchen mehr Sicherheit im Prozess.",
+      "options": [
+        { "id": "a", "text": "Weniger Audit-Risiko und klare Nachvollziehbarkeit", "correct": true },
+        { "id": "b", "text": "Mehr bunte Dashboard-Farben", "correct": false },
+        { "id": "c", "text": "Mehr Team-Events", "correct": false }
+      ],
+      "reason": "Hinter Sicherheitsaussagen steckt oft Risiko- und Compliance-Reduktion."
+    },
+    {
+      "person": "Fachbereichsleitung",
+      "statement": "Das darf im Alltag nicht komplizierter werden.",
+      "options": [
+        { "id": "a", "text": "Schnellerer Ablauf bei geringerer Bedienkomplexitaet", "correct": true },
+        { "id": "b", "text": "Mehr Meetings pro Woche", "correct": false },
+        { "id": "c", "text": "Mehr E-Mail-Verteiler", "correct": false }
+      ],
+      "reason": "Der Kern ist Effizienz und einfache Nutzbarkeit im Tagesgeschaeft."
+    },
+    {
+      "person": "Controlling",
+      "statement": "Wir brauchen belastbare Zahlen zum Projektfortschritt.",
+      "options": [
+        { "id": "a", "text": "Plan-Ist-Vergleich fuer Kosten, Zeit und Nutzen", "correct": true },
+        { "id": "b", "text": "Mehr Storytelling im Teamchat", "correct": false },
+        { "id": "c", "text": "Weniger Dokumentation", "correct": false }
+      ],
+      "reason": "Controlling sucht Steuerbarkeit und Nachweis der Wirtschaftlichkeit."
+    },
+    {
+      "person": "Support Team",
+      "statement": "Wir wollen nicht wieder bei jedem Incident raten muessen.",
+      "options": [
+        { "id": "a", "text": "Standardisierte Runbooks und klare Eskalationspfade", "correct": true },
+        { "id": "b", "text": "Mehr Sticker auf Tickets", "correct": false },
+        { "id": "c", "text": "Weniger Kommunikation", "correct": false }
+      ],
+      "reason": "Gewuenscht sind Handlungsfaehigkeit und klare Betriebsablaeufe."
+    },
+    {
+      "person": "HR",
+      "statement": "Die Mitarbeitenden sollen bei der Umstellung mitziehen.",
+      "options": [
+        { "id": "a", "text": "Akzeptanz durch Beteiligung, Schulung und klare Perspektive", "correct": true },
+        { "id": "b", "text": "Sofortige Sanktionen ohne Dialog", "correct": false },
+        { "id": "c", "text": "Nur Top-Down-Anweisungen", "correct": false }
+      ],
+      "reason": "Hinter der Aussage steht Change-Akzeptanz statt rein formaler Einfuehrung."
+    }
+  ]
+}

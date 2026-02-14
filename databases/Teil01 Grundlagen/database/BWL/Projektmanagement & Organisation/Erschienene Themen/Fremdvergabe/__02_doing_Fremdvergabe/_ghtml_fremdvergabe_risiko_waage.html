@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risiko-Waage</title>
+    <link rel="stylesheet" href="../../../../../../../shared_theme.css">
+    <link rel="stylesheet" href="_gcss_fremdvergabe_risiko_waage.css">
+    <script src="../../../../../../../theme_bridge.js"></script>
+</head>
+
+<body>
+
+    <div class="game-container">
+        <!-- Header / Stats -->
+        <header class="section-card" style="text-align: center; margin-bottom: 1rem;">
+            <h1 class="section-title" id="game-title">Risiko-Waage</h1>
+            <p class="section-sub" id="game-subtitle">Lade Spiel...</p>
+
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;">
+                <div class="section-status">
+                    Items: <span id="items-count">0/0</span>
+                </div>
+                <div class="section-status">
+                    Score: <span id="score-display">0%</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Area -->
+        <main>
+            <!-- Drop Zones (Waagschalen) -->
+            <div class="zones-container" id="zones-area">
+                <!-- Zones will be injected by JS based on JSON -->
+            </div>
+
+            <!-- Item Pool -->
+            <div class="section-card" style="margin-top: 2rem;">
+                <h3 class="section-title">Güter-Pool</h3>
+                <p class="section-sub">Ziehe diese Elemente in die passende Kategorie.</p>
+                <div class="pool-container" id="item-pool">
+                    <!-- Draggable Items will be injected here -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Feedback & Controls -->
+        <footer class="section-card">
+            <div id="feedback-area" class="feedback-area"></div>
+
+            <div class="controls">
+                <button id="reset-btn" class="btn">Zurücksetzen</button>
+                <button id="check-btn" class="btn primary">Prüfen</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="_gjs_fremdvergabe_risiko_waage.js"></script>
+</body>
+
+</html>

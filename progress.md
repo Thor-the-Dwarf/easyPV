@@ -512,3 +512,16 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - Playwright-Smoke erfolgreich fuer `_ghtml_entscheidungs_detektiv.html`
   - Artefakte:
     - `databases/Teil01 Grundlagen/output/web-game-entscheidungs-detektiv/`
+- Original prompt (current turn): fireBaseGetter soll nach Download hartcoded Prompt-Injection-Schutz fuer User-Kommentare durchsetzen.
+- Rust-Getter erweitert um mehrstufige, fest codierte Sanitizing-Pipeline (Defense-in-Depth):
+  - Unicode-NFKC-Normalisierung
+  - Entfernen von Control- und Zero-Width-Zeichen
+  - Whitespace- und Trim-Normalisierung
+  - hartes Laengenlimit
+  - Mustererkennung fuer Prompt-Injection/Jailbreak/Role-Override/Tool-Injection/XML-Tags/Code-Fences/dangerous URI schemes
+  - Redaction-Phase
+  - harte Blockierung ueber Score-Schwelle
+- Kommentare werden rekursiv in `data` anhand Kommentar-Feldnamen erkannt und gesaeubert; geblockte Inhalte werden auf `[blocked-by-fireBaseGetter-security]` gesetzt.
+- Output erweitert um `commentSecurity` pro Dokument plus globale `security`-Summary.
+- README angepasst: Sicherheitsablauf dokumentiert.
+- Hinweis: Rust-Toolchain in dieser Umgebung weiterhin nicht installiert, daher kein lokaler Compile/Run-Check moeglich.

@@ -1,13 +1,17 @@
+use std::collections::BTreeSet;
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use anyhow::{bail, Context, Result};
 use jsonwebtoken::{encode, Algorithm, EncodingKey, Header};
+use once_cell::sync::Lazy;
+use regex::Regex;
 use reqwest::blocking::Client;
 use reqwest::Url;
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Map, Number, Value};
+use unicode_normalization::UnicodeNormalization;
 
 const COLLECTION_NAME: &str = "feedback_all_games";
 const SERVICE_ACCOUNT_FILE: &str = "firebase-service-account.local.json";
@@ -15,6 +19,115 @@ const OUTPUT_RELATIVE_PATH: &str = "__admin_dont_push/fireBaseGetter/feedback_al
 const TOKEN_SCOPE: &str = "https://www.googleapis.com/auth/datastore";
 const TOKEN_GRANT_TYPE: &str = "urn:ietf:params:oauth:grant-type:jwt-bearer";
 const FIRESTORE_PAGE_SIZE: u32 = 1000;
+
+const SANITIZER_VERSION: &str = "hardcoded_prompt_injection_filter_v1";
+const COMMENT_MAX_CHARS: usize = 4000;
+const BLOCK_SCORE_THRESHOLD: u32 = 14;
+const BLOCKED_COMMENT_TOKEN: &str = "[blocked-by-fireBaseGetter-security]";
+const EMPTY_COMMENT_TOKEN: &str = "[empty-after-sanitization]";
+const REDACTION_TOKEN: &str = "[redacted]";
+
+static CONTROL_CHAR_RE: Lazy<Regex> =
+    Lazy::new(|| Regex::new(r"[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]").expect("valid regex"));
+static ZERO_WIDTH_RE: Lazy<Regex> = Lazy::new(|| {
+    Regex::new(r"[\u{200B}-\u{200F}\u{202A}-\u{202E}\u{2060}-\u{2064}\u{FEFF}]")
+        .expect("valid regex")
+});
+static MULTI_SPACE_RE: Lazy<Regex> = Lazy::new(|| Regex::new(r"\s+").expect("valid regex"));
+
+#[derive(Debug)]
+struct DetectionRule {
+    id: &'static str,
+    weight: u32,
+    regex: Regex,
+}
+
+#[derive(Debug)]
+struct RewriteRule {
+    regex: Regex,
+    replacement: &'static str,
+}
+
+static DETECTION_RULES: Lazy<Vec<DetectionRule>> = Lazy::new(|| {
+    vec![
+        rule(
+            "ignore_previous_instructions",
+            5,
+            r"(?is)\b(ignore|disregard|forget)\b.{0,60}\b(previous|prior|above|all)\b.{0,60}\b(instruction|rules?|prompt|message)\b",
+        ),
+        rule(
+            "prompt_exfiltration",
+            6,
+            r"(?is)\b(reveal|show|print|dump|expose|leak)\b.{0,80}\b(system|developer|hidden|internal)\b.{0,40}\b(prompt|instruction|message)\b",
+        ),
+        rule(
+            "role_override",
+            4,
+            r"(?is)\b(you are|act as|pretend to be|simulate|impersonate)\b.{0,80}\b(system|developer|assistant|admin|root)\b",
+        ),
+        rule(
+            "jailbreak_keyword",
+            5,
+            r"(?i)\b(jailbreak|dan mode|do anything now|bypass safety|override safety|ignore safeguards)\b",
+        ),
+        rule(
+            "role_prefix",
+            4,
+            r"(?im)(^|\s)(system|assistant|developer|user)\s*:",
+        ),
+        rule(
+            "xml_prompt_tag",
+            4,
+            r"(?is)<\s*/?\s*(system|assistant|developer|instructions?|prompt)\b[^>]*>",
+        ),
+        rule("code_fence", 3, r"(?s)```.*?```"),
+        rule(
+            "instruction_header",
+            3,
+            r"(?im)^#{1,6}\s*(system|developer|assistant|prompt|instruction)\b",
+        ),
+        rule(
+            "tool_injection",
+            4,
+            r"(?i)\b(function\s*call|tool\s*call|execute_command|shell\s*command|browser\.search|browser\.open)\b",
+        ),
+        rule(
+            "encoded_payload",
+            3,
+            r"(?is)\b(base64|rot13|hex)\b.{0,40}\b(decode|payload|instruction|prompt|command)\b",
+        ),
+        rule(
+            "dangerous_uri_scheme",
+            4,
+            r"(?i)\b(javascript|data|file|vbscript)\s*:",
+        ),
+        rule(
+            "command_payload",
+            4,
+            r"(?i)\b(rm\s+-rf|curl\s+https?://|wget\s+https?://|powershell\s+-|bash\s+-c)\b",
+        ),
+    ]
+});
+
+static REWRITE_RULES: Lazy<Vec<RewriteRule>> = Lazy::new(|| {
+    vec![
+        rewrite(r"(?s)```.*?```", REDACTION_TOKEN),
+        rewrite(r"(?im)(^|\s)(system|assistant|developer|user)\s*:", " $1[role-redacted]:"),
+        rewrite(
+            r"(?is)<\s*/?\s*(system|assistant|developer|instructions?|prompt)\b[^>]*>",
+            REDACTION_TOKEN,
+        ),
+        rewrite(r"(?i)\b(javascript|data|file|vbscript)\s*:", "[scheme-redacted]"),
+        rewrite(
+            r"(?is)\b(ignore|disregard|forget)\b.{0,60}\b(instruction|rules?|prompt|message)\b",
+            REDACTION_TOKEN,
+        ),
+        rewrite(
+            r"(?is)\b(reveal|show|print|dump|expose|leak)\b.{0,80}\b(system|developer|hidden|internal)\b.{0,40}\b(prompt|instruction|message)\b",
+            REDACTION_TOKEN,
+        ),
+    ]
+});
 
 #[derive(Debug, Deserialize)]
 struct ServiceAccount {
@@ -36,6 +149,28 @@ struct JwtClaims {
     aud: String,
     iat: i64,
     exp: i64,
+}
+
+#[derive(Debug, Serialize)]
+struct CommentSanitizationReport {
+    field_path: String,
+    blocked: bool,
+    changed: bool,
+    score: u32,
+    reasons: Vec<String>,
+    original_length: usize,
+    sanitized_length: usize,
+}
+
+#[derive(Debug)]
+struct SanitizationOutcome {
+    sanitized: String,
+    blocked: bool,
+    changed: bool,
+    score: u32,
+    reasons: Vec<String>,
+    original_length: usize,
+    sanitized_length: usize,
 }
 
 fn main() -> Result<()> {
@@ -188,6 +323,11 @@ fn build_output_payload(project_id: &str, documents: &[Value]) -> Value {
         .map(|d| d.as_secs())
         .unwrap_or(0);
 
+    let mut total_comment_fields = 0usize;
+    let mut total_changed_fields = 0usize;
+    let mut total_blocked_fields = 0usize;
+    let mut docs_with_blocked_comments = 0usize;
+
     let mapped_docs: Vec<Value> = documents
         .iter()
         .map(|raw_doc| {
@@ -210,7 +350,20 @@ fn build_output_payload(project_id: &str, documents: &[Value]) -> Value {
                 .get("fields")
                 .cloned()
                 .unwrap_or_else(|| Value::Object(Map::new()));
-            let data = decode_firestore_fields(&fields);
+
+            let mut data = decode_firestore_fields(&fields);
+            let reports = sanitize_comment_fields(&mut data);
+
+            let comment_field_count = reports.len();
+            let changed_count = reports.iter().filter(|r| r.changed).count();
+            let blocked_count = reports.iter().filter(|r| r.blocked).count();
+
+            total_comment_fields += comment_field_count;
+            total_changed_fields += changed_count;
+            total_blocked_fields += blocked_count;
+            if blocked_count > 0 {
+                docs_with_blocked_comments += 1;
+            }
 
             json!({
                 "id": extract_document_id(&name),
@@ -218,7 +371,13 @@ fn build_output_payload(project_id: &str, documents: &[Value]) -> Value {
                 "createTime": create_time,
                 "updateTime": update_time,
                 "data": data,
-                "raw": raw_doc
+                "commentSecurity": {
+                    "sanitizerVersion": SANITIZER_VERSION,
+                    "commentFieldsChecked": comment_field_count,
+                    "changedFields": changed_count,
+                    "blockedFields": blocked_count,
+                    "reports": reports
+                }
             })
         })
         .collect();
@@ -228,6 +387,15 @@ fn build_output_payload(project_id: &str, documents: &[Value]) -> Value {
         "collection": COLLECTION_NAME,
         "downloadedAtUnix": now_unix,
         "documentCount": mapped_docs.len(),
+        "security": {
+            "sanitizerVersion": SANITIZER_VERSION,
+            "commentFieldsChecked": total_comment_fields,
+            "changedFields": total_changed_fields,
+            "blockedFields": total_blocked_fields,
+            "documentsWithBlockedComments": docs_with_blocked_comments,
+            "blockScoreThreshold": BLOCK_SCORE_THRESHOLD,
+            "commentMaxChars": COMMENT_MAX_CHARS
+        },
         "documents": mapped_docs
     })
 }
@@ -337,4 +505,192 @@ fn parse_firestore_number(value: &Value) -> Option<f64> {
         return v.parse::<f64>().ok();
     }
     None
+}
+
+fn sanitize_comment_fields(value: &mut Value) -> Vec<CommentSanitizationReport> {
+    let mut reports = Vec::new();
+    walk_and_sanitize_comments(value, "data", false, &mut reports);
+    reports
+}
+
+fn walk_and_sanitize_comments(
+    value: &mut Value,
+    path: &str,
+    in_comment_context: bool,
+    reports: &mut Vec<CommentSanitizationReport>,
+) {
+    match value {
+        Value::Object(map) => {
+            for (key, child) in map.iter_mut() {
+                let child_path = join_path(path, key);
+                let comment_context = in_comment_context || is_comment_field(key);
+                walk_and_sanitize_comments(child, &child_path, comment_context, reports);
+            }
+        }
+        Value::Array(items) => {
+            for (index, child) in items.iter_mut().enumerate() {
+                let child_path = format!("{}[{}]", path, index);
+                walk_and_sanitize_comments(child, &child_path, in_comment_context, reports);
+            }
+        }
+        Value::String(text) => {
+            if !in_comment_context {
+                return;
+            }
+
+            let outcome = sanitize_comment_text(text);
+            *text = outcome.sanitized.clone();
+            reports.push(CommentSanitizationReport {
+                field_path: path.to_string(),
+                blocked: outcome.blocked,
+                changed: outcome.changed,
+                score: outcome.score,
+                reasons: outcome.reasons,
+                original_length: outcome.original_length,
+                sanitized_length: outcome.sanitized_length,
+            });
+        }
+        _ => {}
+    }
+}
+
+fn join_path(path: &str, key: &str) -> String {
+    if path.is_empty() {
+        key.to_string()
+    } else {
+        format!("{}.{}", path, key)
+    }
+}
+
+fn is_comment_field(key: &str) -> bool {
+    let folded = key
+        .to_ascii_lowercase()
+        .replace('-', "")
+        .replace('_', "")
+        .replace(' ', "");
+
+    folded.contains("comment")
+        || folded.contains("kommentar")
+        || folded.contains("feedbacktext")
+        || folded == "feedback"
+        || folded == "message"
+        || folded == "nachricht"
+}
+
+fn sanitize_comment_text(input: &str) -> SanitizationOutcome {
+    let mut reasons = BTreeSet::<String>::new();
+    let mut score = 0u32;
+    let mut changed = false;
+    let mut matched_injection_rule = false;
+
+    let original_length = input.chars().count();
+    let mut sanitized = input.nfkc().collect::<String>();
+
+    if sanitized != input {
+        changed = true;
+        score += 1;
+        reasons.insert("unicode_normalized_nfkc".to_string());
+    }
+
+    let without_control = CONTROL_CHAR_RE.replace_all(&sanitized, "").to_string();
+    if without_control != sanitized {
+        changed = true;
+        score += 1;
+        reasons.insert("control_chars_removed".to_string());
+        sanitized = without_control;
+    }
+
+    let without_zero_width = ZERO_WIDTH_RE.replace_all(&sanitized, "").to_string();
+    if without_zero_width != sanitized {
+        changed = true;
+        score += 1;
+        reasons.insert("zero_width_removed".to_string());
+        sanitized = without_zero_width;
+    }
+
+    let compact_whitespace = MULTI_SPACE_RE.replace_all(&sanitized, " ").to_string();
+    if compact_whitespace != sanitized {
+        changed = true;
+        reasons.insert("whitespace_compacted".to_string());
+        sanitized = compact_whitespace;
+    }
+
+    let trimmed = sanitized.trim().to_string();
+    if trimmed != sanitized {
+        changed = true;
+        reasons.insert("trimmed".to_string());
+        sanitized = trimmed;
+    }
+
+    let char_count = sanitized.chars().count();
+    if char_count > COMMENT_MAX_CHARS {
+        changed = true;
+        score += 2;
+        reasons.insert("max_length_truncated".to_string());
+        sanitized = sanitized.chars().take(COMMENT_MAX_CHARS).collect::<String>();
+    }
+
+    for rule in DETECTION_RULES.iter() {
+        if rule.regex.is_match(&sanitized) {
+            matched_injection_rule = true;
+            score += rule.weight;
+            reasons.insert(format!("detected:{}", rule.id));
+        }
+    }
+
+    for rewrite in REWRITE_RULES.iter() {
+        let updated = rewrite
+            .regex
+            .replace_all(&sanitized, rewrite.replacement)
+            .to_string();
+        if updated != sanitized {
+            changed = true;
+            sanitized = updated;
+        }
+    }
+
+    if sanitized.is_empty() {
+        changed = true;
+        score += 1;
+        reasons.insert("empty_after_scrub".to_string());
+        sanitized = EMPTY_COMMENT_TOKEN.to_string();
+    }
+
+    let blocked = matched_injection_rule || score >= BLOCK_SCORE_THRESHOLD;
+    if blocked {
+        changed = true;
+        if matched_injection_rule {
+            reasons.insert("blocked_by_detected_injection_rule".to_string());
+        } else {
+            reasons.insert("blocked_by_score_threshold".to_string());
+        }
+        sanitized = BLOCKED_COMMENT_TOKEN.to_string();
+    }
+
+    let sanitized_length = sanitized.chars().count();
+
+    SanitizationOutcome {
+        sanitized,
+        blocked,
+        changed,
+        score,
+        reasons: reasons.into_iter().collect(),
+        original_length,
+        sanitized_length,
+    }
+}
+
+fn rule(id: &'static str, weight: u32, pattern: &'static str) -> DetectionRule {
+    DetectionRule {
+        id,
+        weight,
+        regex: Regex::new(pattern).expect("valid detection regex"),
+    }
+}
+
+fn rewrite(pattern: &'static str, replacement: &'static str) -> RewriteRule {
+    RewriteRule {
+        regex: Regex::new(pattern).expect("valid rewrite regex"),
+        replacement,
+    }
 }

@@ -5,19 +5,16 @@
         Am Ende Jedes Arbeitspakets wenn du Commitest schreibst du codex>runs_protocoll>feedback_all_games
     3. 
         Du Arbeitest die Arbeitspakete von oben nach unten nacheinander ab
+    4. 
+        und das ist sehr wichtig. Es gibt mehrere Agenten die das Selbe Skript erhalten haben und im Selben Repo arbeiten
+        solltet ihr euch in die quere kommen und am Selben Spiel arbeiten ist die gitHistory zu betrachten und 
+        wenn ein anderer bereits etwas an dem Spiel zuerst commitet hat hat er vorrang und der andere muss sich ein neues Spiel suchen
 
 # Ablauf:
-## 1
-    Hol dir aus dem Ordner FireBaseGetter die codex_protocoll_allFeedBack.txt und führe auf allen darauf befindlichen 
-    Pfaden die nachfolgenden Schritte aus und committe danach
-## 2
-    im Ordner __04_lernings sind Userfeedbacks. Beurteile ob man diese feedbacks nutzen kann oder lieber nicht umsetzt, 
-    jenachdem ob aus den Kommentaren nützliche Informationen gezogen werden können um unsere Qualität zu verbessern.
-    WENN das der Fall ist fare fort mit schritt 2
 ## 3
-    aktualisiere die __gi*.txt mit den Erkenntnissen Aus schritt 1
+    suche dir ein Spiel aus einer random __gi*.txt das noch nicht im ordern __02_doing_* umgesetzt wurde
 ## 2
-    aktualisiere die zugehörigen __gp_*.txt Dateien
+    erstelle Arbeitspakete in der zugehörigen __gp_*.txt Datei
 ## 4
     setze die __gp_* im __02_doing_* um ohne bestehenden funktionierenden Code zu Löschen
 ## 5

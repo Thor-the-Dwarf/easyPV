@@ -1,0 +1,55 @@
+
+{
+  "meta": {
+    "title": "README-Builder: The Documentation Lab",
+    "description": "Baue eine professionelle README.md zusammen."
+  },
+  "levels": [
+    {
+      "id": "lvl1",
+      "name": "Level 1: Basics",
+      "description": "Die absolute Basis für jedes Projekt.",
+      "time_limit_sec": 60,
+      "required_slots": ["title", "description", "installation", "usage"],
+      "available_blocks": [
+        { "id": "b_title", "label": "# Project Title", "type": "title" },
+        { "id": "b_desc", "label": "Description / About", "type": "description" },
+        { "id": "b_install", "label": "## Installation", "type": "installation" },
+        { "id": "b_usage", "label": "## Usage", "type": "usage" },
+        { "id": "b_weather", "label": "Todays Weather", "type": "distractor" },
+        { "id": "b_grocery", "label": "Grocery List", "type": "distractor" }
+      ],
+      "correct_order": ["b_title", "b_desc", "b_install", "b_usage"]
+    },
+    {
+      "id": "lvl2",
+      "name": "Level 2: Dependencies",
+      "description": "Ordnung muss sein: Erst die Bedingungen, dann die Installation.",
+      "time_limit_sec": 90,
+      "required_slots": ["prerequisites", "installation", "configuration", "testing"],
+      "available_blocks": [
+        { "id": "b_prereq", "label": "## Prerequisites", "type": "prerequisites" },
+        { "id": "b_install", "label": "## Installation", "type": "installation" },
+        { "id": "b_config", "label": "## Configuration", "type": "configuration" },
+        { "id": "b_test", "label": "## Running Tests", "type": "testing" },
+        { "id": "b_cat", "label": "My Cat's Name", "type": "distractor" }
+      ],
+      "correct_order": ["b_prereq", "b_install", "b_config", "b_test"]
+    },
+    {
+      "id": "lvl3",
+      "name": "Level 3: Compliance",
+      "description": "Rechtliches und Community-Standards.",
+      "time_limit_sec": 120,
+      "required_slots": ["contributing", "license", "authors", "support"],
+      "available_blocks": [
+        { "id": "b_contrib", "label": "## Contributing", "type": "contributing" },
+        { "id": "b_license", "label": "## License", "type": "license" },
+        { "id": "b_authors", "label": "## Authors", "type": "authors" },
+        { "id": "b_support", "label": "## Support / Contact", "type": "support" },
+        { "id": "b_rant", "label": "Rant about Java", "type": "distractor" }
+      ],
+      "correct_order": ["b_contrib", "b_license", "b_authors", "b_support"]
+    }
+  ]
+}

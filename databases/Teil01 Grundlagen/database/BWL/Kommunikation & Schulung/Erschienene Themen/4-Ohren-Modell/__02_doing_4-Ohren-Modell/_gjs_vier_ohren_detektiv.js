@@ -1,83 +1,80 @@
+/**
+ * Vier-Ohren-Detektiv - Game Logic
+ * Zweck: Analyse von Nachrichten nach dem 4-Ohren-Modell in einem temporeichen Setting.
+ * Inputs: _gg01_vier_ohren_detektiv.json
+ * Outputs: Score, Feedback, Game State via Hooks
+ */
+
 (function () {
-    'use strict';
+    "use strict";
 
-    /**
-     * Vier-Ohren-Detektiv
-     * Zweck: Analyse-Spiel für Kommunikationsmodelle.
-     * Inputs: config.json (_gg01_vier_ohren_detektiv.json)
-     * Outputs: UI-Updates, Scoring, Test-Hooks.
-     */
-
+    // Game State
     const state = {
-        cfg: null,
-        targetType: '',
+        config: null,
         score: 0,
-        timeLeft: 60,
-        active: false,
-        spawnIntervalId: null,
-        timerIntervalId: null,
-        messagePool: []
+        timeLeft: 0,
+        currentTarget: null,
+        gameInterval: null,
+        spawnInterval: null,
+        isGameOver: false,
+        spawnRate: 1500, // ms between spawns
     };
 
-    const el = {
+    // DOM Elements
+    const els = {
         timer: document.getElementById('timer'),
         score: document.getElementById('score'),
-        targetKpi: document.getElementById('kpi-target'),
-        targetDisplay: document.getElementById('current-target'),
+        kpiTarget: document.getElementById('kpi-target'),
+        currentTargetDisplay: document.getElementById('current-target'),
         flyingArea: document.getElementById('flying-area'),
-        startScreen: document.getElementById('start-screen'),
         gameContainer: document.getElementById('game-container'),
+        startScreen: document.getElementById('start-screen'),
         resultScreen: document.getElementById('result-screen'),
         finalScore: document.getElementById('final-score'),
-        resultText: document.getElementById('result-text'),
         startBtn: document.getElementById('start-btn'),
-        restartBtn: document.getElementById('restart-btn')
+        restartBtn: document.getElementById('restart-btn'),
     };
 
-    init();
-
+    // Initialization
     async function init() {
         try {
-            const resp = await fetch('./_gg01_vier_ohren_detektiv.json');
-            if (!resp.ok) throw new Error('Konfiguration konnte nicht geladen werden.');
-            state.cfg = await resp.json();
+            const response = await fetch('./_gg01_vier_ohren_detektiv.json');
+            if (!response.ok) throw new Error("Konfiguration konnte nicht geladen werden.");
+            state.config = await response.json();
 
-            state.messagePool = state.cfg.messages || [];
-            state.timeLeft = state.cfg.duration || 60;
+            els.startBtn.addEventListener('click', startGame);
+            els.restartBtn.addEventListener('click', () => {
+                els.resultScreen.style.display = 'none';
+                els.startScreen.style.display = 'block';
+            });
 
-            bindEvents();
-        } catch (err) {
-            console.error('Initialisierungsfehler:', err);
-            if (el.resultText) el.resultText.textContent = 'Fehler beim Laden: ' + err.message;
+            console.log("Vier-Ohren-Detektiv initialisiert.");
+        } catch (error) {
+            console.error(error);
+            document.getElementById('game-desc').textContent = "Fehler beim Laden: " + error.message;
         }
     }
 
-    function bindEvents() {
-        el.startBtn.addEventListener('click', startGame);
-        el.restartBtn.addEventListener('click', startGame);
-    }
-
     function startGame() {
+        // Reset State
         state.score = 0;
-        state.timeLeft = state.cfg.duration || 60;
-        state.active = true;
-        state.targetType = state.cfg.targetTypes[Math.floor(Math.random() * state.cfg.targetTypes.length)];
+        state.timeLeft = state.config.duration || 60;
+        state.isGameOver = false;
+        state.currentTarget = getRandomTarget();
 
-        el.startScreen.style.display = 'none';
-        el.resultScreen.style.display = 'none';
-        el.gameContainer.style.display = 'block';
-        el.flyingArea.innerHTML = '';
+        // UI transitions
+        els.startScreen.style.display = 'none';
+        els.resultScreen.style.display = 'none';
+        els.gameContainer.style.display = 'block';
 
         updateUI();
-        startLoops();
-    }
 
-    function startLoops() {
-        clearInterval(state.spawnIntervalId);
-        clearInterval(state.timerIntervalId);
+        // Intervals
+        state.gameInterval = setInterval(tick, 1000);
+        state.spawnInterval = setInterval(spawnMessageAuto, state.spawnRate);
 
-        state.spawnIntervalId = setInterval(spawnRandomMessage, 1200);
-        state.timerIntervalId = setInterval(tick, 1000);
+        // Spawn first message immediately
+        spawnMessageAuto();
     }
 
     function tick() {
@@ -88,118 +85,128 @@
         updateUI();
     }
 
-    function endGame() {
-        state.active = false;
-        clearInterval(state.spawnIntervalId);
-        clearInterval(state.timerIntervalId);
+    function updateUI() {
+        els.timer.textContent = state.timeLeft + "s";
+        els.score.textContent = state.score;
 
-        el.gameContainer.style.display = 'none';
-        el.resultScreen.style.display = 'block';
-        el.finalScore.textContent = state.score;
+        const targetLabel = capitalize(state.currentTarget);
+        els.kpiTarget.textContent = targetLabel;
+        els.currentTargetDisplay.textContent = targetLabel;
 
-        const messages = [
-            "Gute Arbeit, Detektiv!",
-            "Ein scharfes Gehör!",
-            "Das war erstklassig.",
-            "Detektivarbeit vom Feinsten."
-        ];
-        el.resultText.textContent = messages[Math.floor(Math.random() * messages.length)];
+        // Update class for color coding
+        els.currentTargetDisplay.className = 'current-target ' + state.currentTarget;
     }
 
-    function spawnRandomMessage() {
-        if (!state.active) return;
-        const msg = state.messagePool[Math.floor(Math.random() * state.messagePool.length)];
-        spawnMessage(msg.text, msg.type);
+    function getRandomTarget() {
+        const types = state.config.targetTypes;
+        return types[Math.floor(Math.random() * types.length)];
     }
 
-    function spawnMessage(text, type) {
+    function spawnMessageAuto() {
+        if (state.isGameOver) return;
+        const msg = state.config.messages[Math.floor(Math.random() * state.config.messages.length)];
+        createFlyingMessage(msg.text, msg.type);
+    }
+
+    function createFlyingMessage(text, type) {
         const msgEl = document.createElement('div');
         msgEl.className = 'flying-message';
         msgEl.textContent = text;
-        msgEl.dataset.type = type;
 
-        const top = Math.random() * (el.flyingArea.offsetHeight - 50);
-        msgEl.style.setProperty('--top', `${top}px`);
+        // Random vertical position (avoid header overlapping if needed, but area is restricted)
+        const areaHeight = els.flyingArea.offsetHeight;
+        const randomTop = Math.floor(Math.random() * (areaHeight - 60)) + 20;
+        msgEl.style.setProperty('--top', randomTop + 'px');
 
-        // Zufällige Geschwindigkeit
-        const duration = 4 + Math.random() * 4;
+        // Animation duration based on screen width (roughly)
+        const duration = Math.max(4, 10 - (window.innerWidth / 400));
         msgEl.style.animation = `fly-across ${duration}s linear forwards`;
 
-        msgEl.addEventListener('click', () => handleCapture(msgEl, type));
+        msgEl.addEventListener('click', (e) => handleHit(msgEl, type, e));
 
-        el.flyingArea.appendChild(msgEl);
-
-        // Aufräumen nach Animation
+        // Clean up when animation ends
         msgEl.addEventListener('animationend', () => {
-            msgEl.remove();
+            if (msgEl.parentElement) msgEl.remove();
         });
+
+        els.flyingArea.appendChild(msgEl);
     }
 
-    function handleCapture(msgEl, type) {
-        if (!state.active || msgEl.classList.contains('correct') || msgEl.classList.contains('wrong')) return;
+    function handleHit(el, type, event) {
+        if (state.isGameOver) return;
+        if (el.classList.contains('correct') || el.classList.contains('wrong')) return;
 
-        if (type === state.targetType) {
-            state.score += (state.cfg.pointsPerHit || 10);
-            msgEl.classList.add('correct');
-            spawnParticles(msgEl, '#22c55e');
+        const isCorrect = type === state.currentTarget;
+        if (isCorrect) {
+            state.score += (state.config.pointsPerHit || 10);
+            el.classList.add('correct');
+            showParticle(event.clientX, event.clientY, 'var(--good)');
         } else {
-            state.score += (state.cfg.pointsPerMiss || -5);
-            msgEl.classList.add('wrong');
-            spawnParticles(msgEl, '#ef4444');
+            state.score += (state.config.pointsPerMiss || -5);
+            el.classList.add('wrong');
+            showParticle(event.clientX, event.clientY, 'var(--bad)');
         }
+
+        // Remove after short delay to show color
+        setTimeout(() => {
+            if (el.parentElement) el.remove();
+        }, 300);
 
         updateUI();
-        setTimeout(() => msgEl.remove(), 300);
     }
 
-    function spawnParticles(originEl, color) {
-        const rect = originEl.getBoundingClientRect();
-        const areaRect = el.flyingArea.getBoundingClientRect();
+    function showParticle(x, y, color) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+        particle.style.background = color;
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 500);
+    }
 
-        for (let i = 0; i < 8; i++) {
-            const p = document.createElement('div');
-            p.className = 'particle';
-            p.style.backgroundColor = color;
-            p.style.left = (rect.left - areaRect.left + rect.width / 2) + 'px';
-            p.style.top = (rect.top - areaRect.top + rect.height / 2) + 'px';
+    function endGame() {
+        state.isGameOver = true;
+        clearInterval(state.gameInterval);
+        clearInterval(state.spawnInterval);
 
-            const destX = (Math.random() - 0.5) * 100;
-            const destY = (Math.random() - 0.5) * 100;
-            p.style.setProperty('--x', `${destX}px`);
-            p.style.setProperty('--y', `${destY}px`);
+        // Clear remaining messages
+        els.flyingArea.innerHTML = '';
 
-            el.flyingArea.appendChild(p);
-            setTimeout(() => p.remove(), 500);
+        // Show result screen
+        els.gameContainer.style.display = 'none';
+        els.resultScreen.style.display = 'block';
+        els.finalScore.textContent = state.score;
+
+        if (state.score > 200) {
+            document.getElementById('result-text').textContent = "Exzellente Analyse, Meister-Detektiv!";
+        } else if (state.score > 100) {
+            document.getElementById('result-text').textContent = "Gute Arbeit, Detektiv!";
+        } else {
+            document.getElementById('result-text').textContent = "Das geht noch besser. Übung macht den Meister.";
         }
-    }
-
-    function updateUI() {
-        el.timer.textContent = state.timeLeft + 's';
-        el.score.textContent = state.score;
-        el.targetKpi.textContent = capitalize(state.targetType);
-        el.targetKpi.className = state.targetType;
-        el.targetDisplay.textContent = capitalize(state.targetType);
-        el.targetDisplay.className = 'current-target ' + state.targetType;
     }
 
     function capitalize(s) {
-        if (!s) return '--';
+        if (typeof s !== 'string') return '';
         return s.charAt(0).toUpperCase() + s.slice(1);
     }
 
-    // Test Hooks
+    // Public Hooks
     window.render_game_to_text = function () {
         return JSON.stringify({
-            targetType: state.targetType,
+            mode: state.isGameOver ? 'result' : (state.gameInterval ? 'running' : 'start'),
+            targetType: state.currentTarget,
             currentScore: state.score,
-            timeRemaining: state.timeLeft,
-            active: state.active
+            timeRemaining: state.timeLeft
         });
     };
 
     window.spawnMessage = function (text, type) {
-        if (state.active) {
-            spawnMessage(text, type);
-        }
+        createFlyingMessage(text, type);
     };
+
+    // Run
+    init();
+
 })();

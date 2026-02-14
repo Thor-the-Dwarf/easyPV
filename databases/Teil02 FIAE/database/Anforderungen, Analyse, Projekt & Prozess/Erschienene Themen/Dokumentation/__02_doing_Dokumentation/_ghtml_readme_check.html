@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>README Builder</title>
+  <link rel="stylesheet" href="./_gcss_readme_check.css">
+  <style>
+      .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+<div class="app-container">
+  <!-- Topbar -->
+  <header class="topbar">
+      <div class="file-tab">
+          <span>📄</span>
+          <strong>README.md</strong>
+      </div>
+      <div style="flex-grow: 1;"></div>
+      <div id="level-display" style="margin-right: 1rem;">Level 1</div>
+      <div id="timer-display" style="margin-right: 1rem; color: #ce9178;">00:00</div>
+  </header>
+
+  <!-- Sidebar (Draggables) -->
+  <aside class="sidebar" id="sidebar">
+      <h3>Available Blocks</h3>
+      <div id="block-list">
+          <!-- Populated by JS -->
+      </div>
+  </aside>
+
+  <!-- Editor Area (Droppables) -->
+  <main class="editor-area">
+      <div class="line-numbers" id="line-numbers">
+          <!-- 1...N -->
+      </div>
+      <div class="drop-zone" id="editor-slots">
+          <!-- Slots go here -->
+      </div>
+  </main>
+
+  <!-- Status Bar -->
+  <footer class="statusbar">
+      <div id="status-msg">Ready to build.</div>
+      <button id="action-btn" class="btn-action">Check Build</button>
+  </footer>
+
+</div>
+
+<!-- Overlays -->
+<div id="start-screen" class="modal">
+    <div class="modal-content">
+        <h2>The Documentation Lab</h2>
+        <p>Baue die perfekte README.md zusammen.</p>
+        <p>Beachte die logische Reihenfolge!</p>
+        <br>
+        <button id="start-game-btn" class="btn-action">Start Project</button>
+    </div>
+</div>
+
+<div id="game-over-screen" class="modal hidden">
+    <div class="modal-content">
+        <h2 id="game-over-title">Build Failed</h2>
+        <p id="game-over-msg">...</p>
+        <br>
+        <button id="restart-btn" class="btn-action">Retry</button>
+    </div>
+</div>
+
+<script src="./_gjs_readme_check.js"></script>
+<script src="/theme_bridge.js"></script>
+</body>
+</html>

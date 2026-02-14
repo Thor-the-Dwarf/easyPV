@@ -1,0 +1,230 @@
+
+:root {
+  --bg-editor: #1e1e1e;
+  --bg-sidebar: #252526;
+  --bg-activity: #333333;
+  --text-main: #d4d4d4;
+  --accent-blue: #007acc;
+  --accent-green: #6a9955;
+  --accent-orange: #ce9178;
+  --accent-purple: #c586c0;
+  --border-color: #3e3e42;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-editor);
+  color: var(--text-main);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 40px 1fr 30px;
+  height: 100vh;
+}
+
+/* Header */
+.topbar {
+  grid-column: 1 / -1;
+  background-color: var(--bg-activity);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.file-tab {
+  background-color: var(--bg-editor);
+  padding: 0.5rem 1rem;
+  border-top: 2px solid var(--accent-blue);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-row: 2;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.sidebar h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.block-source {
+  background-color: var(--bg-activity);
+  border: 1px solid var(--border-color);
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  cursor: grab;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent-orange);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.block-source:active {
+  cursor: grabbing;
+}
+
+.block-source.dragging {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+/* Editor Area */
+.editor-area {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 2rem;
+  overflow-y: auto;
+  counter-reset: line;
+  position: relative;
+}
+
+.line-numbers {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  background-color: var(--bg-editor);
+  border-right: 1px solid var(--bg-activity);
+  color: #666;
+  text-align: right;
+  padding-right: 10px;
+  padding-top: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 2rem;
+}
+
+.drop-zone {
+  margin-left: 60px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.slot {
+  height: 3rem;
+  border: 1px dashed #444;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  font-family: var(--font-mono);
+  color: #666;
+  transition: background-color 0.2s;
+}
+
+.slot.drag-over {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-blue);
+}
+
+.slot.filled {
+  border: 1px solid var(--border-color);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--accent-green);
+}
+
+.slot.correct {
+  border-left: 3px solid var(--accent-green);
+}
+
+.slot.wrong {
+  border-left: 3px solid #f44336;
+}
+
+/* Status Bar */
+.statusbar {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  background-color: var(--accent-blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 0.8rem;
+  justify-content: space-between;
+}
+
+.btn-action {
+  background-color: var(--accent-green);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.btn-action:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: var(--bg-sidebar);
+  padding: 2rem;
+  border: 1px solid var(--accent-blue);
+  width: 400px;
+  text-align: center;
+}
+
+.modal h2 {
+  color: var(--accent-blue);
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 1fr 150px 30px; /* Sidebar at bottom */
+  }
+
+  .sidebar {
+    grid-column: 1;
+    grid-row: 3;
+    border-top: 1px solid var(--border-color);
+    border-right: none;
+  }
+  
+  .editor-area {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}

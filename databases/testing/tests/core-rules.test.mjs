@@ -27,6 +27,18 @@ async function listFiles(dir) {
   return entries.filter((e) => e.isFile()).map((e) => e.name);
 }
 
+function isGameHtml(name) {
+  return /^(?:_?game_|_ghtml_).+\.html$/i.test(name);
+}
+
+function isGameJs(name) {
+  return /^(?:_?game_|_gjs_).+\.js$/i.test(name);
+}
+
+function isGameJson(name) {
+  return /^(?:_?game_|_gjs_).+\.json$/i.test(name);
+}
+
 function extractLocalScriptSrcs(html) {
   return [...html.matchAll(/<script[^>]*src=["']([^"']+)["'][^>]*>/gi)]
     .map((m) => m[1])
@@ -46,9 +58,9 @@ describe('Core Rules for __02_doing_* Games', () => {
 
     for (const dir of doingDirs) {
       const files = await listFiles(dir);
-      const html = files.filter((f) => /^_?game_.+\.html$/i.test(f));
-      const js = files.filter((f) => /^_?game_.+\.js$/i.test(f));
-      const json = files.filter((f) => /^_?game_.+\.json$/i.test(f));
+      const html = files.filter(isGameHtml);
+      const js = files.filter(isGameJs);
+      const json = files.filter(isGameJson);
 
       const isPlayable = html.length > 0;
       const isDataOnly = html.length === 0 && js.length === 0 && json.length > 0;
@@ -67,7 +79,7 @@ describe('Core Rules for __02_doing_* Games', () => {
 
     for (const dir of doingDirs) {
       const files = await listFiles(dir);
-      const htmlFiles = files.filter((f) => /^_?game_.+\.html$/i.test(f));
+      const htmlFiles = files.filter(isGameHtml);
 
       for (const htmlFile of htmlFiles) {
         const content = await readFile(path.join(dir, htmlFile), 'utf8');
@@ -82,7 +94,7 @@ describe('Core Rules for __02_doing_* Games', () => {
 
     for (const dir of doingDirs) {
       const files = await listFiles(dir);
-      const jsonFiles = files.filter((f) => /^_?game_.+\.json$/i.test(f));
+      const jsonFiles = files.filter(isGameJson);
 
       for (const jsonFile of jsonFiles) {
         const full = path.join(dir, jsonFile);
@@ -105,12 +117,16 @@ describe('Core Rules for __02_doing_* Games', () => {
 
     for (const dir of doingDirs) {
       const files = await listFiles(dir);
-      const jsSet = new Set(files.filter((f) => /^_?game_.+\.js$/i.test(f)));
-      const htmlFiles = files.filter((f) => /^_?game_.+\.html$/i.test(f));
+      const jsSet = new Set(files.filter(isGameJs));
+      const htmlFiles = files.filter(isGameHtml);
 
       for (const html of htmlFiles) {
-        const jsCandidate = html.replace(/\.html$/i, '.js');
-        const altJsCandidate = jsCandidate.startsWith('_game_') ? jsCandidate.slice(1) : `_${jsCandidate}`;
+        const jsCandidate = html.startsWith('_ghtml_')
+          ? html.replace(/^_ghtml_/i, '_gjs_').replace(/\.html$/i, '.js')
+          : html.replace(/\.html$/i, '.js');
+        const altJsCandidate = jsCandidate.startsWith('_game_')
+          ? jsCandidate.slice(1)
+          : `_${jsCandidate}`;
         assert.ok(
           jsSet.has(jsCandidate) || jsSet.has(altJsCandidate),
           `missing sibling JS for ${path.join(dir, html)}`

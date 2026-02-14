@@ -23,7 +23,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('./_g01_kommunikations_kaskade.json');
+      const resp = await fetch('./_gg01_kommunikations_kaskade.json');
       if (!resp.ok) throw new Error('config unavailable');
       state.cfg = await resp.json();
       state.rumor = Number(state.cfg.start_rumor || 45);

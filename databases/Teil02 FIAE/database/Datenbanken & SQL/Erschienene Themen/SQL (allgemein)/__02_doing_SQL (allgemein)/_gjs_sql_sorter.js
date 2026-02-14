@@ -34,7 +34,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_sql_sorter.json');
+            const resp = await fetch('_gg01_sql_sorter.json');
             state.config = await resp.json();
 
             initArchive();

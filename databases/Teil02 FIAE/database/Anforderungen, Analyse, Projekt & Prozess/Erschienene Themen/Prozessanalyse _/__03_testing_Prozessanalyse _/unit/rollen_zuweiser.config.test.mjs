@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Prozessanalyse _');
-const configPath = path.join(doingDir, '_g01_rollen_zuweiser.json');
+const configPath = path.join(doingDir, '_gg01_rollen_zuweiser.json');
 
 describe('Rollen-Zuweiser Config', () => {
   it('contains RACI roles and valid round assignments', async () => {

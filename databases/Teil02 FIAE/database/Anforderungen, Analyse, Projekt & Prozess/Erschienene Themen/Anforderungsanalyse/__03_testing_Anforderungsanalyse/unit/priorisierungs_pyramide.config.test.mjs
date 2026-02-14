@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Anforderungsanalyse');
-const configPath = path.join(doingDir, '_g01_priorisierungs_pyramide.json');
+const configPath = path.join(doingDir, '_gg01_priorisierungs_pyramide.json');
 
 describe('Priorisierungs-Pyramide Config', () => {
   it('contains cards mapped to valid kano categories', async () => {

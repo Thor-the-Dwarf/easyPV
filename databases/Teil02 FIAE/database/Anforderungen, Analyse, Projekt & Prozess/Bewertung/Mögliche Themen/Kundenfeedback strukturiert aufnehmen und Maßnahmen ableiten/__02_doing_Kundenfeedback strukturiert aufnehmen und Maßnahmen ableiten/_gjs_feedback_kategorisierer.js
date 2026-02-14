@@ -31,7 +31,7 @@
   init();
 
   async function init() {
-    const resp = await fetch('./_g01_feedback_kategorisierer.json');
+    const resp = await fetch('./_gg01_feedback_kategorisierer.json');
     if (!resp.ok) {
       el.feedbackRoot.textContent = 'Konfiguration konnte nicht geladen werden.';
       return;

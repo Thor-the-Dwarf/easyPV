@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "id": "eskalations_protokoll",
+    "title": "Eskalations-Protokoll",
+    "subtitle": "Waehle den belastbaren Eintrag fuer kritische Entscheidungen."
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "scenario": "Kunde lehnt Change Request CR-17 ab, Go-live ist betroffen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "18.03: Kunde lehnt CR-17 ab, Auswirkung +5 Tage, Entscheidungsgremium informiert, Angebot bis 20.03 durch Account."
+        },
+        {
+          "id": "b",
+          "text": "Kunde war irgendwie unzufrieden, wir schauen spaeter."
+        },
+        {
+          "id": "c",
+          "text": "Teamchat: Bitte alle cool bleiben."
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Eskalationen brauchen Datum, Entscheidung, Auswirkung und konkrete Folgeaktion."
+    },
+    {
+      "id": "r2",
+      "scenario": "Sicherheitsluecke im Login-Modul wurde als kritisch eingestuft.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Schwerer Bug im Login, alle wissen Bescheid."
+        },
+        {
+          "id": "b",
+          "text": "19.03: CVSS 9.1 im Login, Risiko Datenabfluss, Hotfix bis 17:00 durch Backend, Freigabe durch Security Lead."
+        },
+        {
+          "id": "c",
+          "text": "Bug wurde weitergeleitet, kein Termin."
+        }
+      ],
+      "correct_option": "b",
+      "reason": "Kritische Defekte muessen mit Risiko, Verantwortlichen und Frist dokumentiert werden."
+    },
+    {
+      "id": "r3",
+      "scenario": "Abnahme blockiert wegen fehlender Testnachweise.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Abnahme faellt aus."
+        },
+        {
+          "id": "b",
+          "text": "20.03: Abnahme gestoppt, Nachweis fuer Regression fehlt, QA liefert Report bis 14:00, neuer Abnahmetermin 21.03 10:00."
+        },
+        {
+          "id": "c",
+          "text": "Vermutlich klappt es morgen."
+        }
+      ],
+      "correct_option": "b",
+      "reason": "Ein belastbares Protokoll beschreibt Blocker, Verantwortung und neuen Entscheidungszeitpunkt."
+    },
+    {
+      "id": "r4",
+      "scenario": "Budget fuer Zusatzlizenz wurde nicht freigegeben.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Budgetproblem ohne weitere Details."
+        },
+        {
+          "id": "b",
+          "text": "21.03: CFO lehnt Zusatzlizenz ab, Risiko Verzug in Migration, Alternative Open-Source-Paket bis 22.03 pruefen, Entscheidung im Steering Board."
+        },
+        {
+          "id": "c",
+          "text": "Lizenz erstmal ignorieren."
+        }
+      ],
+      "correct_option": "b",
+      "reason": "Bei Budgeteskalationen sind Entscheidungstraeger, Risiko und naechster Schritt Pflicht."
+    },
+    {
+      "id": "r5",
+      "scenario": "Lieferant verpasst den vereinbarten Integrationsslot.",
+      "options": [
+        {
+          "id": "a",
+          "text": "22.03: Lieferant ohne Lieferung, Integrationsslot verpasst, Vertragspartner schriftlich gemahnt, neuer Slot 24.03 09:00 bestaetigt."
+        },
+        {
+          "id": "b",
+          "text": "Lieferant war wieder spaet."
+        },
+        {
+          "id": "c",
+          "text": "Vielleicht kommt die Datei irgendwann."
+        }
+      ],
+      "correct_option": "a",
+      "reason": "Verbindliche Eskalationsprotokolle sichern externe Abweichungen mit Fakten und Termin nach."
+    },
+    {
+      "id": "r6",
+      "scenario": "Go-live wird wegen Datenqualitaet verschoben.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Go-live doch nicht heute."
+        },
+        {
+          "id": "b",
+          "text": "23.03: 12% Datensaetze fehlerhaft, Go-live auf 26.03 verschoben, Data-Cleansing durch BI-Team bis 25.03, Freigabe durch Projektleitung und Kunde."
+        },
+        {
+          "id": "c",
+          "text": "Mehr Qualitaet waere schoen."
+        }
+      ],
+      "correct_option": "b",
+      "reason": "Rechtssichere Eintraege halten Ursache, neue Entscheidung und Freigabeinstanz fest."
+    }
+  ],
+  "scoring": {
+    "correct": 20,
+    "wrong": -10,
+    "streak_bonus_threshold": 2,
+    "streak_bonus": 5
+  }
+}

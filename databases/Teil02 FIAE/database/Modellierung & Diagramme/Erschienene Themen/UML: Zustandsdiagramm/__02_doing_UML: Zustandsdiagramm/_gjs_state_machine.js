@@ -49,7 +49,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_state_machine.json');
+            const resp = await fetch('_gg01_state_machine.json');
             state.config = await resp.json();
 
             el.btnNext.addEventListener('click', nextScenario);

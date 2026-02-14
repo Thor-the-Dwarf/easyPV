@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Prozessanalyse _');
-const configPath = path.join(doingDir, '_g01_aktivitaeten_sortierer.json');
+const configPath = path.join(doingDir, '_gg01_aktivitaeten_sortierer.json');
 
 describe('Aktivitaeten-Sortierer Config', () => {
   it('contains categories and rounds with valid mappings', async () => {

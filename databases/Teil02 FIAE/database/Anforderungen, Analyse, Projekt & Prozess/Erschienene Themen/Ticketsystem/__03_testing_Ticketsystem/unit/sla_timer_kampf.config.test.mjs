@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Ticketsystem');
-const configPath = path.join(doingDir, '_g01_sla_timer_kampf.json');
+const configPath = path.join(doingDir, '_gg01_sla_timer_kampf.json');
 
 describe('SLA-Timer-Kampf Config', () => {
   it('contains rounds with valid ticket choices and priority values', async () => {

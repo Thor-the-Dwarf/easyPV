@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Ticketsystem');
-const configPath = path.join(doingDir, '_g01_ticket_schreiber_profi.json');
+const configPath = path.join(doingDir, '_gg01_ticket_schreiber_profi.json');
 
 describe('Ticket-Schreiber-Profi Config', () => {
   it('contains required fields and rounds with valid options', async () => {

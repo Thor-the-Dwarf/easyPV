@@ -65,7 +65,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_ticket_status_labyrinth.json');
+            const resp = await fetch('_gg01_ticket_status_labyrinth.json');
             state.config = await resp.json();
 
             el.restartBtn.addEventListener('click', restartGame);

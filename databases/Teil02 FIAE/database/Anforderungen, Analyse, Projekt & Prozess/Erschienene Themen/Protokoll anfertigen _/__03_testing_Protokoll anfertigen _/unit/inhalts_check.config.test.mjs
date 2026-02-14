@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Protokoll anfertigen _');
-const configPath = path.join(doingDir, '_g01_inhalts_check.json');
+const configPath = path.join(doingDir, '_gg01_inhalts_check.json');
 
 describe('Inhalts-Check Config', () => {
   it('contains required fields and rounds with valid answers', async () => {

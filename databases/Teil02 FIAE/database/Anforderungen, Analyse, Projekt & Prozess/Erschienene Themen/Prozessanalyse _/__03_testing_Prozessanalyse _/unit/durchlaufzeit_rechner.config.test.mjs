@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Prozessanalyse _');
-const configPath = path.join(doingDir, '_g01_durchlaufzeit_rechner.json');
+const configPath = path.join(doingDir, '_gg01_durchlaufzeit_rechner.json');
 
 describe('Durchlaufzeit-Rechner Config', () => {
   it('contains rounds with valid options and totals', async () => {

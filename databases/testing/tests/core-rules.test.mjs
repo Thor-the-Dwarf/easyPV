@@ -36,7 +36,7 @@ function isGameJs(name) {
 }
 
 function isGameJson(name) {
-  return /^(?:_?game_|_gjs_).+\.json$/i.test(name);
+  return /^(?:_?game_|_gjs_|_g(?:g)?\d+_).+\.json$/i.test(name);
 }
 
 function extractLocalScriptSrcs(html) {
@@ -66,8 +66,8 @@ describe('Core Rules for __02_doing_* Games', () => {
       const isDataOnly = html.length === 0 && js.length === 0 && json.length > 0;
 
       if (isPlayable) {
-        assert.ok(js.length > 0, `playable folder missing game_*.js in ${dir}`);
-        assert.ok(json.length > 0, `playable folder missing game_*.json in ${dir}`);
+        assert.ok(js.length > 0, `playable folder missing game/_g*.js in ${dir}`);
+        assert.ok(json.length > 0, `playable folder missing game/_g*.json in ${dir}`);
       } else {
         assert.ok(isDataOnly, `folder is neither playable nor data-only: ${dir}`);
       }

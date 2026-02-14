@@ -23,7 +23,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('./_g01_sender_empfaenger_bruecke.json');
+      const resp = await fetch('./_gg01_sender_empfaenger_bruecke.json');
       if (!resp.ok) throw new Error('Konfiguration nicht ladbar');
       state.cfg = await resp.json();
       render();

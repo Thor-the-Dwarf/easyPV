@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Stakeholder');
-const configPath = path.join(doingDir, '_g01_konflikt_navi.json');
+const configPath = path.join(doingDir, '_gg01_konflikt_navi.json');
 
 describe('Konflikt-Navi Config', () => {
   it('contains rounds with exactly one best conflict option', async () => {

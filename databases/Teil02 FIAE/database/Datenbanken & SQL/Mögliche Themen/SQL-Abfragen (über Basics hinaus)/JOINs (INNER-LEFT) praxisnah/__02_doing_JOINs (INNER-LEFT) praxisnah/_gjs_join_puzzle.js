@@ -39,7 +39,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_join_puzzle.json');
+            const resp = await fetch('_gg01_join_puzzle.json');
             state.config = await resp.json();
 
             el.btnNext.onclick = () => {

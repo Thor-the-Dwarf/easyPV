@@ -45,7 +45,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_duplicate_hunter.json');
+            const resp = await fetch('_gg01_duplicate_hunter.json');
             state.config = await resp.json();
 
             el.btnMerge.onclick = attemptFusion;

@@ -51,7 +51,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_entity_finder.json');
+            const resp = await fetch('_gg01_entity_finder.json');
             state.config = await resp.json();
 
             el.btnNext.addEventListener('click', nextScenario);

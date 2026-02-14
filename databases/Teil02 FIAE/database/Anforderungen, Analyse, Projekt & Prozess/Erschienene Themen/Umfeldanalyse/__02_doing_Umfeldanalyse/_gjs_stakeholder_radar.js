@@ -61,7 +61,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_stakeholder_radar.json');
+            const resp = await fetch('_gg01_stakeholder_radar.json');
             state.config = await resp.json();
 
             el.restartBtn.addEventListener('click', restartGame);

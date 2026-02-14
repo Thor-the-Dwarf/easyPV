@@ -23,7 +23,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('./_g01_kommunikations_koffer.json');
+      const resp = await fetch('./_gg01_kommunikations_koffer.json');
       if (!resp.ok) throw new Error('config not reachable');
       state.cfg = await resp.json();
       render();

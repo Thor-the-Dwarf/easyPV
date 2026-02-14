@@ -22,7 +22,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('./_g01_workshop_agenda_puzzle.json');
+            const resp = await fetch('./_gg01_workshop_agenda_puzzle.json');
             if (!resp.ok) throw new Error('Konfiguration konnte nicht geladen werden.');
             STATE.config = await resp.json();
             STATE.items = [...STATE.config.items];

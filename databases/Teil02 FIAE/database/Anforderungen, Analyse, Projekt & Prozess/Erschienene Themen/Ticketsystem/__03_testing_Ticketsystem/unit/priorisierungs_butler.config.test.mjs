@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Ticketsystem');
-const configPath = path.join(doingDir, '_g01_priorisierungs_butler.json');
+const configPath = path.join(doingDir, '_gg01_priorisierungs_butler.json');
 
 describe('Priorisierungs-Butler Config', () => {
   it('defines P1-P4 priorities and valid rounds', async () => {

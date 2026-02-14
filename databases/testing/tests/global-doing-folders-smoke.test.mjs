@@ -37,7 +37,7 @@ function isGameJs(name) {
 }
 
 function isGameJson(name) {
-  return /^(?:game_|_game_|_gjs_).+\.json$/i.test(name);
+  return /^(?:game_|_game_|_gjs_|_g(?:g)?\d+_).+\.json$/i.test(name);
 }
 
 function parseLocalLinks(html) {

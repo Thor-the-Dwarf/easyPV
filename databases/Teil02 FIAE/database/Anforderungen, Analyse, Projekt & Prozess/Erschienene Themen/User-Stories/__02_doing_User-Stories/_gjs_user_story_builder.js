@@ -74,7 +74,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_user_story_builder.json');
+            const resp = await fetch('_gg01_user_story_builder.json');
             state.config = await resp.json();
 
             // Load Data into Reels

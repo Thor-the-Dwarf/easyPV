@@ -49,7 +49,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_actor_match.json');
+            const resp = await fetch('_gg01_actor_match.json');
             state.config = await resp.json();
 
             document.addEventListener('mousemove', onMouseMove);

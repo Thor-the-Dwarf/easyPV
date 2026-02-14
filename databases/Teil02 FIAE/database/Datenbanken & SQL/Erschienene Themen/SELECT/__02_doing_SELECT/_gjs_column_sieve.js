@@ -61,7 +61,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_column_sieve.json');
+            const resp = await fetch('_gg01_column_sieve.json');
             state.config = await resp.json();
 
             el.btnRun.onclick = runQuery;

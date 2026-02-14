@@ -23,7 +23,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('./_g01_ticket_schreiber_profi.json');
+      const resp = await fetch('./_gg01_ticket_schreiber_profi.json');
       if (!resp.ok) throw new Error('config unavailable');
       state.cfg = await resp.json();
       render();

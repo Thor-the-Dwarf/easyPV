@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Change Management');
-const configPath = path.join(doingDir, '_g01_promoter_suche.json');
+const configPath = path.join(doingDir, '_gg01_promoter_suche.json');
 
 describe('Promoter-Suche Config', () => {
   it('contains valid rounds with exactly one Machtpromoter and one Fachpromoter', async () => {

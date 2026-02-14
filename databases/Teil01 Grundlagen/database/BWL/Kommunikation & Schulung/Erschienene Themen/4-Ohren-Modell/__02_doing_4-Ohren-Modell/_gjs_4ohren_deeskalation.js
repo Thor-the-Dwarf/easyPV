@@ -20,7 +20,7 @@
   init();
 
   async function init() {
-    const resp = await fetch('./_g01_4ohren_deeskalation.json');
+    const resp = await fetch('./_gg01_4ohren_deeskalation.json');
     if (!resp.ok) {
       el.card.textContent = 'Konfiguration konnte nicht geladen werden.';
       return;

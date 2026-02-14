@@ -33,7 +33,7 @@
   init();
 
   async function init() {
-    const resp = await fetch('./_g01_anforderungs_sortierer.json');
+    const resp = await fetch('./_gg01_anforderungs_sortierer.json');
     if (!resp.ok) {
       el.feedback.textContent = 'Konfiguration konnte nicht geladen werden.';
       return;

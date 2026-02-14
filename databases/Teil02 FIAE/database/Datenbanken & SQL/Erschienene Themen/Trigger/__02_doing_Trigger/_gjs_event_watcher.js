@@ -47,7 +47,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_event_watcher.json');
+            const resp = await fetch('_gg01_event_watcher.json');
             state.config = await resp.json();
 
             el.timingOptions.forEach(opt => {

@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Stakeholder');
-const configPath = path.join(doingDir, '_g01_interview_simulator.json');
+const configPath = path.join(doingDir, '_gg01_interview_simulator.json');
 
 describe('Interview-Simulator Config', () => {
   it('contains rounds with exactly one best question', async () => {

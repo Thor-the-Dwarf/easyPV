@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Change Management');
-const configPath = path.join(doingDir, '_g01_kommunikations_koffer.json');
+const configPath = path.join(doingDir, '_gg01_kommunikations_koffer.json');
 
 describe('Kommunikations-Koffer Config', () => {
   it('contains rounds with exactly one correct option each', async () => {

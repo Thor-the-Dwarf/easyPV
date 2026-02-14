@@ -37,7 +37,7 @@
   init();
 
   async function init() {
-    const resp = await fetch('./_g01_moderations_master.json');
+    const resp = await fetch('./_gg01_moderations_master.json');
     if (!resp.ok) {
       el.feedback.textContent = 'Konfiguration konnte nicht geladen werden.';
       return;

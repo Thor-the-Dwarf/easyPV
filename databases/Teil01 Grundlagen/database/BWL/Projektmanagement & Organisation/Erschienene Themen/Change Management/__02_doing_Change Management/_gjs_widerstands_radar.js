@@ -21,7 +21,7 @@
   init();
 
   async function init() {
-    const resp = await fetch('./_g01_widerstands_radar.json');
+    const resp = await fetch('./_gg01_widerstands_radar.json');
     if (!resp.ok) {
       el.root.textContent = 'Konfiguration konnte nicht geladen werden.';
       return;

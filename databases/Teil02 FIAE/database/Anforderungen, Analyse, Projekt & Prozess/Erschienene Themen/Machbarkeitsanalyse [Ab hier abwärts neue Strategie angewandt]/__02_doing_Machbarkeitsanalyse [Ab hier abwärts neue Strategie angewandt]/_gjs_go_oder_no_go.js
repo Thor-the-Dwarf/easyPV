@@ -68,7 +68,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('_g01_go_oder_no_go.json');
+      const resp = await fetch('_gg01_go_oder_no_go.json');
       if (!resp.ok) throw new Error('Konfiguration konnte nicht geladen werden.');
       state.config = await resp.json();
       startGame();

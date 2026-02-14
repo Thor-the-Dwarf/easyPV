@@ -50,7 +50,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_anomaly_hunt.json');
+            const resp = await fetch('_gg01_anomaly_hunt.json');
             state.config = await resp.json();
 
             el.btnExecute.onclick = () => handleChoice(true);

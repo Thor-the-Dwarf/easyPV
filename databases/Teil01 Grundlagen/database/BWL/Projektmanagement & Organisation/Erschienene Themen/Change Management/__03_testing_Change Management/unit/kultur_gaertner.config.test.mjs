@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Change Management');
-const configPath = path.join(doingDir, '_g01_kultur_gaertner.json');
+const configPath = path.join(doingDir, '_gg01_kultur_gaertner.json');
 
 describe('Kultur-Gaertner Config', () => {
   it('contains valid rounds with one positive and one negative decision', async () => {

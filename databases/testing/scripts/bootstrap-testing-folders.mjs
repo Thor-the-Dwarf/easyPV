@@ -33,8 +33,8 @@ describe('Local Reachability Smoke Test', () => {
     assert.equal(doingDirs.length, 1, 'expected exactly one sibling __02_doing_* folder');
 
     const files = await listFiles(doingDirs[0]);
-    const gameFiles = files.filter((name) => /^game_.+\\.(html|js|json)$/i.test(name));
-    assert.ok(gameFiles.length > 0, 'expected at least one game_*.{html,js,json} file');
+    const gameFiles = files.filter((name) => /^(?:game_|_game_|_ghtml_|_gjs_|_g(?:g)?\\d+_).+\\.(html|js|json)$/i.test(name));
+    assert.ok(gameFiles.length > 0, 'expected at least one game/_g*.{html,js,json} file');
   });
 });
 `;

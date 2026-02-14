@@ -58,7 +58,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Original prompt (current turn): ja mach weiter
 - Implemented new Change-Management game `Promoter-Suche` (non-duplicate from __gi) with files:
   - `__gp_promoter_suche__promoter_suche_v2.txt`
-  - `_g01_promoter_suche.json`
+  - `_gg01_promoter_suche.json`
   - `_ghtml_promoter_suche.html`
   - `_gjs_promoter_suche.js`
 - Added local config quality test: `promoter_suche.config.test.mjs`.
@@ -76,7 +76,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Implemented next missing Change-Management game `Kommunikations-Koffer` (non-duplicate from __gi).
 - Added planning + doing files:
   - `__gp_kommunikations_koffer__kommunikations_koffer_v2.txt`
-  - `_g01_kommunikations_koffer.json`
+  - `_gg01_kommunikations_koffer.json`
   - `_ghtml_kommunikations_koffer.html`
   - `_gjs_kommunikations_koffer.js`
 - Added local config test:
@@ -90,7 +90,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Implemented next missing Change-Management game `Kultur-Gaertner`.
 - Added planning + doing files:
   - `__gp_kultur_gaertner__kultur_gaertner_v2.txt`
-  - `_g01_kultur_gaertner.json`
+  - `_gg01_kultur_gaertner.json`
   - `_ghtml_kultur_gaertner.html`
   - `_gjs_kultur_gaertner.js`
 - Added local config test:
@@ -104,7 +104,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Continued with next non-duplicate game in Teil02 FIAE Change Management: `Widerstands-Baendiger`.
 - Added files:
   - `__gp_widerstands_baendiger__widerstands_baendiger_v2.txt`
-  - `_g01_widerstands_baendiger.json`
+  - `_gg01_widerstands_baendiger.json`
   - `_ghtml_widerstands_baendiger.html`
   - `_gjs_widerstands_baendiger.js`
   - local test `widerstands_baendiger.config.test.mjs`
@@ -118,7 +118,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Implemented next non-duplicate game in Teil02 Change Management: `Drei-Phasen-Modell (Lewin)`.
 - Added files:
   - `__gp_drei_phasen_modell__lewin_drei_phasen_v2.txt`
-  - `_g01_drei_phasen_modell.json`
+  - `_gg01_drei_phasen_modell.json`
   - `_ghtml_drei_phasen_modell.html`
   - `_gjs_drei_phasen_modell.js`
   - local test `drei_phasen_modell.config.test.mjs`
@@ -131,7 +131,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Implemented next non-duplicate game in Teil02 Change Management: `Kommunikations-Kaskade`.
 - Added files:
   - `__gp_kommunikations_kaskade__kommunikations_kaskade_v2.txt`
-  - `_g01_kommunikations_kaskade.json`
+  - `_gg01_kommunikations_kaskade.json`
   - `_ghtml_kommunikations_kaskade.html`
   - `_gjs_kommunikations_kaskade.js`
   - local test `kommunikations_kaskade.config.test.mjs`
@@ -145,7 +145,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Implemented next non-duplicate game in Teil02 Stakeholder: `Interessen-Profiler`.
 - Added files:
   - `__gp_interessen_profiler__interessen_profiler_v2.txt`
-  - `_g01_interessen_profiler.json`
+  - `_gg01_interessen_profiler.json`
   - `_ghtml_interessen_profiler.html`
   - `_gjs_interessen_profiler.js`
   - local test `interessen_profiler.config.test.mjs`
@@ -158,7 +158,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Continued after parallel takeover: implemented next missing Stakeholder game `Interview-Simulator`.
 - Added files:
   - `__gp_interview_simulator__interview_simulator_v2.txt`
-  - `_g01_interview_simulator.json`
+  - `_gg01_interview_simulator.json`
   - `_ghtml_interview_simulator.html`
   - `_gjs_interview_simulator.js`
   - local test `interview_simulator.config.test.mjs`
@@ -177,7 +177,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Continued with next missing Stakeholder game: `Konflikt-Navi`.
 - Added files:
   - `__gp_konflikt_navi__konflikt_navi_v2.txt`
-  - `_g01_konflikt_navi.json`
+  - `_gg01_konflikt_navi.json`
   - `_ghtml_konflikt_navi.html`
   - `_gjs_konflikt_navi.js`
   - local test `konflikt_navi.config.test.mjs`
@@ -189,7 +189,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Continued with next missing game in Anforderungsanalyse: `Stakeholder-Interviewer`.
 - Added files:
   - `__gp_stakeholder_interviewer__stakeholder_interviewer_v2.txt`
-  - `_g01_stakeholder_interviewer.json`
+  - `_gg01_stakeholder_interviewer.json`
   - `_ghtml_stakeholder_interviewer.html`
   - `_gjs_stakeholder_interviewer.js`
   - local test `stakeholder_interviewer.config.test.mjs`
@@ -224,7 +224,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Continued with next missing Anforderungsanalyse game: `Priorisierungs-Pyramide`.
 - Added files:
   - `__gp_priorisierungs_pyramide__priorisierungs_pyramide_v2.txt`
-  - `_g01_priorisierungs_pyramide.json`
+  - `_gg01_priorisierungs_pyramide.json`
   - `_ghtml_priorisierungs_pyramide.html`
   - `_gjs_priorisierungs_pyramide.js`
   - local test `priorisierungs_pyramide.config.test.mjs`
@@ -243,7 +243,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Continued with final missing Anforderungsanalyse game from __gi: `Konflikt-Loeser`.
 - Added files:
   - `__gp_konflikt_loeser__konflikt_loeser_v2.txt`
-  - `_g01_konflikt_loeser.json`
+  - `_gg01_konflikt_loeser.json`
   - `_ghtml_konflikt_loeser.html`
   - `_gjs_konflikt_loeser.js`
   - local test `konflikt_loeser.config.test.mjs`
@@ -271,7 +271,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Neues Spiel umgesetzt: `Ticket-Schreiber-Profi`.
 - Dateien hinzugefuegt:
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__01_planing_Ticketsystem/__gp_ticket_schreiber_profi__ticket_schreiber_profi_v2.txt`
-  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_g01_ticket_schreiber_profi.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_gg01_ticket_schreiber_profi.json`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_ghtml_ticket_schreiber_profi.html`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_gjs_ticket_schreiber_profi.js`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_gcss_ticket_schreiber_profi.css`
@@ -286,7 +286,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Naechstes fehlendes Ticketsystem-Spiel umgesetzt: `Zuweisungs-Meister`.
 - Neue Dateien:
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__01_planing_Ticketsystem/__gp_zuweisungs_meister__zuweisungs_meister_v2.txt`
-  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_g01_zuweisungs_meister.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_gg01_zuweisungs_meister.json`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_ghtml_zuweisungs_meister.html`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_gjs_zuweisungs_meister.js`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_gcss_zuweisungs_meister.css`
@@ -300,7 +300,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Letztes offenes Ticketsystem-Spiel umgesetzt: `SLA-Timer-Kampf`.
 - Neue Dateien:
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__01_planing_Ticketsystem/__gp_sla_timer_kampf__sla_timer_kampf_v2.txt`
-  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_g01_sla_timer_kampf.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_gg01_sla_timer_kampf.json`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_ghtml_sla_timer_kampf.html`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_gjs_sla_timer_kampf.js`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_gcss_sla_timer_kampf.css`
@@ -314,7 +314,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Naechstes fehlendes Spiel in `Prozessanalyse _` umgesetzt: `Aktivitaeten-Sortierer`.
 - Neue Dateien:
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__01_planing_Prozessanalyse _/__gp_aktivitaeten_sortierer__aktivitaeten_sortierer_v2.txt`
-  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_g01_aktivitaeten_sortierer.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gg01_aktivitaeten_sortierer.json`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_ghtml_aktivitaeten_sortierer.html`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gjs_aktivitaeten_sortierer.js`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gcss_aktivitaeten_sortierer.css`
@@ -329,7 +329,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Naechstes fehlendes Spiel in `Prozessanalyse _` umgesetzt: `Durchlaufzeit-Rechner`.
 - Neue Dateien:
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__01_planing_Prozessanalyse _/__gp_durchlaufzeit_rechner__durchlaufzeit_rechner_v2.txt`
-  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_g01_durchlaufzeit_rechner.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gg01_durchlaufzeit_rechner.json`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_ghtml_durchlaufzeit_rechner.html`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gjs_durchlaufzeit_rechner.js`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gcss_durchlaufzeit_rechner.css`
@@ -343,7 +343,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Naechstes fehlendes Spiel in `Prozessanalyse _` umgesetzt: `Prozess-Schnittstellen`.
 - Neue Dateien:
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__01_planing_Prozessanalyse _/__gp_prozess_schnittstellen__prozess_schnittstellen_v2.txt`
-  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_g01_prozess_schnittstellen.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gg01_prozess_schnittstellen.json`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_ghtml_prozess_schnittstellen.html`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gjs_prozess_schnittstellen.js`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gcss_prozess_schnittstellen.css`
@@ -357,7 +357,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Letztes fehlendes Spiel in `Prozessanalyse _` umgesetzt: `Rollen-Zuweiser`.
 - Neue Dateien:
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__01_planing_Prozessanalyse _/__gp_rollen_zuweiser__rollen_zuweiser_v2.txt`
-  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_g01_rollen_zuweiser.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gg01_rollen_zuweiser.json`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_ghtml_rollen_zuweiser.html`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gjs_rollen_zuweiser.js`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Prozessanalyse _/__02_doing_Prozessanalyse _/_gcss_rollen_zuweiser.css`
@@ -371,7 +371,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Naechstes fehlendes Spiel in `Protokoll anfertigen _` umgesetzt: `Inhalts-Check`.
 - Neue Dateien:
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__01_planing_Protokoll anfertigen _/__gp_inhalts_check__inhalts_check_v2.txt`
-  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_g01_inhalts_check.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gg01_inhalts_check.json`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_ghtml_inhalts_check.html`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gjs_inhalts_check.js`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gcss_inhalts_check.css`
@@ -386,7 +386,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Naechstes fehlendes Spiel in `Protokoll anfertigen _` umgesetzt: `Vom Gespraech zum Punkt`.
 - Neue Dateien:
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__01_planing_Protokoll anfertigen _/__gp_vom_gespraech_zum_punkt__vom_gespraech_zum_punkt_v2.txt`
-  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_g01_vom_gespraech_zum_punkt.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gg01_vom_gespraech_zum_punkt.json`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_ghtml_vom_gespraech_zum_punkt.html`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gjs_vom_gespraech_zum_punkt.js`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gcss_vom_gespraech_zum_punkt.css`
@@ -409,7 +409,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Naechstes fehlendes Spiel in `Protokoll anfertigen _` umgesetzt: `Verteiler-Puzzle`.
 - Neue Dateien:
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__01_planing_Protokoll anfertigen _/__gp_verteiler_puzzle__verteiler_puzzle_v2.txt`
-  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_g01_verteiler_puzzle.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gg01_verteiler_puzzle.json`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_ghtml_verteiler_puzzle.html`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gjs_verteiler_puzzle.js`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gcss_verteiler_puzzle.css`
@@ -419,3 +419,28 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `node --test` fuer lokale Protokoll-Tests (reachability + inhalts_check + vom_gespraech_zum_punkt + verteiler_puzzle)
   - Playwright-Smoke erfolgreich fuer `_ghtml_verteiler_puzzle.html`
   - Artefakte: `databases/Teil02 FIAE/output/web-game-verteiler-puzzle/`
+- Original prompt (current turn): mach weiter
+- Letztes fehlendes Spiel in `Protokoll anfertigen _` umgesetzt: `Eskalations-Protokoll`.
+- Neue Dateien:
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__01_planing_Protokoll anfertigen _/__gp_eskalations_protokoll__eskalations_protokoll_v2.txt`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_g01_eskalations_protokoll.json`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_ghtml_eskalations_protokoll.html`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gjs_eskalations_protokoll.js`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__02_doing_Protokoll anfertigen _/_gcss_eskalations_protokoll.css`
+  - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__03_testing_Protokoll anfertigen _/unit/eskalations_protokoll.config.test.mjs`
+- Validierung:
+  - `node --check` fuer `_gjs_eskalations_protokoll.js`
+  - `node --test` fuer lokale Protokoll-Tests (reachability + 4 bestehende Config-Tests + eskalations_protokoll)
+  - Playwright-Smoke erfolgreich fuer `_ghtml_eskalations_protokoll.html`
+  - Artefakte: `databases/Teil02 FIAE/output/web-game-eskalations-protokoll/`
+- Original prompt (current turn): Mindestens diese Ordner lassen sich nicht mehr öffnen (`E-Mail formulieren`, `Englisch`, `Präsentation gestalten`, `Schulungen durchführen`).
+- Root-Fix in `/index.html` umgesetzt (keine Rueckkehr auf alte Loesung):
+  - Tree-Leaf-Icons sind jetzt klickbar, wenn der Knoten oeffenbar ist (`is-openable` + `openPlayableFolder`).
+  - `isPlayableFolder` beruecksichtigt jetzt auch `attributesRelPath` (Fallback fuer Themenordner ohne Game-JSON).
+  - `openPlayableFolder` nutzt `attributesRelPath`, falls kein `jsonRelPath` vorhanden ist.
+  - `findFirstJsonRelPath` priorisiert jetzt echte Game-JSON (`_g*<digits>...json`/`game_*.json`) und ignoriert `__gAttributes_*.json`, damit Spielordner nicht versehentlich auf Attribut-JSON zeigen.
+- Verifikation:
+  - JS-Syntaxcheck von `/index.html` erfolgreich (`new Function(...)` Compile-only).
+  - Logikcheck mit repräsentativen Beispielen: `__gAttributes`-only Ordner bleiben oeffenbar (via `attributesRelPath`), gemischte Ordner waehlen korrekt die Game-JSON.
+- Offene Einschraenkung:
+  - Headless-UI-E2E in dieser Sandbox nicht ausfuehrbar (Chromium Launch Permission). Visuelle Endkontrolle bitte lokal im Browser gegen `index.html` pruefen.

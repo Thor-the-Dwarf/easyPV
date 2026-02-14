@@ -23,7 +23,7 @@
 
   async function init() {
     try {
-      const response = await fetch('./_g01_inhalts_check.json');
+      const response = await fetch('./_gg01_inhalts_check.json');
       if (!response.ok) throw new Error('config unavailable');
       state.cfg = await response.json();
       render();

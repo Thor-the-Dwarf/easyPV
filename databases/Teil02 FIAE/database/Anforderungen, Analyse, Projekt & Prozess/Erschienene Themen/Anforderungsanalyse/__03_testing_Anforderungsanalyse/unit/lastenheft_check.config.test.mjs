@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Anforderungsanalyse');
-const configPath = path.join(doingDir, '_g01_lastenheft_check.json');
+const configPath = path.join(doingDir, '_gg01_lastenheft_check.json');
 
 describe('Lastenheft-Check Config', () => {
   it('contains items with valid quality tags', async () => {

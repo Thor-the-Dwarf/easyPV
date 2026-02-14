@@ -9,7 +9,7 @@ const unitDir = path.dirname(__filename);
 const testingDir = path.resolve(unitDir, '..');
 const topicDir = path.dirname(testingDir);
 const doingDir = path.join(topicDir, '__02_doing_Change Management');
-const configPath = path.join(doingDir, '_g01_drei_phasen_modell.json');
+const configPath = path.join(doingDir, '_gg01_drei_phasen_modell.json');
 
 describe('Drei-Phasen-Modell Config', () => {
   it('has valid phases and cards with exactly one mapped phase id', async () => {

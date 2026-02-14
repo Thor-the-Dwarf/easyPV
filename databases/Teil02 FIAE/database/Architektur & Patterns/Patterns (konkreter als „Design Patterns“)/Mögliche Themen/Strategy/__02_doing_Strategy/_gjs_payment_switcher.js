@@ -63,7 +63,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_payment_switcher.json');
+            const resp = await fetch('_gg01_payment_switcher.json');
             state.config = await resp.json();
 
             el.restartBtn.addEventListener('click', restartGame);

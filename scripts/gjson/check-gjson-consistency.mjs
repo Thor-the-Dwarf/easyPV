@@ -8,7 +8,7 @@ const workspaceRoot = path.resolve(__dirname, '../..');
 
 const DEFAULT_BASELINE_PATH = path.join(workspaceRoot, 'databases', 'metadata', 'gjson-index.baseline.json');
 const GJSON_FILE_RE = /^_gjson_.+\.json$/i;
-const G_FALLBACK_FILE_RE = /^_g\d+_.+\.json$/i;
+const G_FALLBACK_FILE_RE = /^_(?:g|gg)\d+_.+\.json$/i;
 const IGNORED_DIRS = new Set(['.git', '.idea', '.vscode', 'node_modules', 'output']);
 
 function printUsage() {
@@ -156,7 +156,7 @@ async function createSnapshot() {
   if (selectedFiles.length === 0) {
     selectedFiles = fallbackFiles;
     mode = 'g-fallback';
-    pattern = '_g*.json (fallback)';
+    pattern = '_g*.json / _gg*.json (fallback)';
   }
 
   const files = [];

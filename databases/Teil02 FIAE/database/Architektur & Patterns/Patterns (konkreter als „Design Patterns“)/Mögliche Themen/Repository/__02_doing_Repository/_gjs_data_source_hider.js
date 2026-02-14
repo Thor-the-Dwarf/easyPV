@@ -62,7 +62,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_data_source_hider.json');
+            const resp = await fetch('_gg01_data_source_hider.json');
             state.config = await resp.json();
 
             setupBackends();

@@ -22,7 +22,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('./_g01_change_erfolgs_check.json');
+      const resp = await fetch('./_gg01_change_erfolgs_check.json');
       if (!resp.ok) throw new Error('config unavailable');
       state.cfg = await resp.json();
       render();

@@ -23,7 +23,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('./_g01_konflikt_navi.json');
+      const resp = await fetch('./_gg01_konflikt_navi.json');
       if (!resp.ok) throw new Error('config unavailable');
       state.cfg = await resp.json();
       state.satisfaction = Number(state.cfg.start_satisfaction || 60);

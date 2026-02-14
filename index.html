@@ -286,7 +286,7 @@
             if (!node || !node.isFolder) return;
             const children = Array.isArray(node.children) ? node.children : [];
             const hasFolderChild = children.some((child) => child && child.isFolder);
-            if (!hasFolderChild && node.gameRelPath) {
+            if (!hasFolderChild && (node.gameRelPath || node.jsonRelPath)) {
               out.push(node);
             }
             collectIconTargetNodes(children, out);
@@ -542,6 +542,7 @@
             rowNode.dataset.id = node.id;
 
             const hasChildren = Array.isArray(node.children) && node.children.length > 0;
+            const canOpenPlayable = isPlayableFolder(node);
             const isCollapsed = !openedFolderIds.includes(node.id);
             rowNode.classList.toggle('tree-node--collapsed', isCollapsed);
 
@@ -558,6 +559,14 @@
               iconButton.addEventListener('click', (event) => {
                 event.stopPropagation();
                 toggleNode(rowNode, node.id, iconButton);
+              });
+            } else if (canOpenPlayable) {
+              iconButton.classList.add('is-openable');
+              iconButton.setAttribute('aria-label', 'Ordner oeffnen');
+              iconButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                openPlayableFolder(node);
               });
             } else {
               iconButton.setAttribute('aria-hidden', 'true');
@@ -578,12 +587,13 @@
             label.addEventListener('click', (event) => {
               event.preventDefault();
               event.stopPropagation();
+              if (canOpenPlayable) {
+                openPlayableFolder(node);
+                return;
+              }
               if (hasChildren) {
                 toggleNode(rowNode, node.id, iconButton);
                 return;
-              }
-              if (isPlayableFolder(node)) {
-                openPlayableFolder(node);
               }
             });
             row.appendChild(label);
@@ -623,7 +633,7 @@
         function folderEmoji(node, isCollapsed) {
           const children = Array.isArray(node.children) ? node.children : [];
           const hasFolderChild = children.some((child) => child && child.isFolder);
-          if (!hasFolderChild && node && node.gameRelPath) {
+          if (!hasFolderChild && node && (node.gameRelPath || node.jsonRelPath)) {
             const icon = normalizeIconValue(node.icon);
             if (icon === 'flame') return '🔥';
             if (icon === 'brain') return '🧠';
@@ -653,13 +663,20 @@
         }
 
         function isPlayableFolder(node) {
-          return !!node && node.isFolder && !!node.hasFiles && (!!node.jsonRelPath || !!node.gameRelPath);
+          return (
+            !!node &&
+            node.isFolder &&
+            !!node.hasFiles &&
+            (!!node.jsonRelPath || !!node.gameRelPath || !!node.attributesRelPath)
+          );
         }
 
         function openPlayableFolder(node) {
           if (!contentHost) return;
           const folderLabel = node && node.name ? node.name : 'Spielordner';
-          const jsonRelPath = node && node.jsonRelPath ? String(node.jsonRelPath) : '';
+          const jsonRelPath = node && node.jsonRelPath
+            ? String(node.jsonRelPath)
+            : (node && node.attributesRelPath ? String(node.attributesRelPath) : '');
           const gameRelPath = node && node.gameRelPath ? String(node.gameRelPath) : '';
           const jsonUrl = jsonRelPath ? buildRepoUrl(jsonRelPath) : '';
           const gameUrl = node && node.gameRelPath
@@ -746,7 +763,7 @@
         }
 
         function findFirstJsonRelPath(children) {
-          const g0Files = [];
+          const preferredGameFiles = [];
           const otherJsonFiles = [];
           const files = Array.isArray(children) ? children : [];
 
@@ -762,8 +779,11 @@
               const kind = String(child.kind || '').toLowerCase();
               const name = String(child.name || '').toLowerCase();
               if ((kind === 'json' || name.endsWith('.json')) && child.relPath) {
-                if (/^_g0.+\.json$/i.test(name)) {
-                  g0Files.push(child.relPath);
+                if (/^__gattributes_.+\.json$/i.test(name)) {
+                  continue;
+                }
+                if (/^_g+\d+.*\.json$/i.test(name) || /^game_.+\.json$/i.test(name)) {
+                  preferredGameFiles.push(child.relPath);
                 } else {
                   otherJsonFiles.push(child.relPath);
                 }
@@ -772,7 +792,7 @@
           }
 
           collectJsonFiles(files);
-          if (g0Files.length) return g0Files[0];
+          if (preferredGameFiles.length) return preferredGameFiles[0];
           if (otherJsonFiles.length) return otherJsonFiles[0];
           return '';
         }

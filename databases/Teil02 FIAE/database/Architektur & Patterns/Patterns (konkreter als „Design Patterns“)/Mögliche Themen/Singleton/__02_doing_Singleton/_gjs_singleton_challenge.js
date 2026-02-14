@@ -62,7 +62,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_singleton_challenge.json');
+            const resp = await fetch('_gg01_singleton_challenge.json');
             state.config = await resp.json();
 
             el.restartBtn.addEventListener('click', restartGame);

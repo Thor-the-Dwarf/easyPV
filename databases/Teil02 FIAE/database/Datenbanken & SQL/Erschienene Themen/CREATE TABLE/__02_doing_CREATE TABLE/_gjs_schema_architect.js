@@ -50,7 +50,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_schema_architect.json');
+            const resp = await fetch('_gg01_schema_architect.json');
             state.config = await resp.json();
 
             initToolbox();

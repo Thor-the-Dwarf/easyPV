@@ -52,7 +52,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('_g01_observer_simulation.json');
+            const resp = await fetch('_gg01_observer_simulation.json');
             state.config = await resp.json();
 
             setupConsole();

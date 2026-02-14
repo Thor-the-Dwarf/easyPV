@@ -23,7 +23,7 @@
 
   async function init() {
     try {
-      const response = await fetch('./_g01_verteiler_puzzle.json');
+      const response = await fetch('./_gg01_verteiler_puzzle.json');
       if (!response.ok) throw new Error('config unavailable');
       state.cfg = await response.json();
       render();

@@ -460,3 +460,20 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - Firestore Doc IDs: `RXsCC4WKwXyYHqbgbYiu` (generic), `Lys2wb3BiaKkJAGhsH0j` (game)
 - Learnings abgelegt in:
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Protokoll anfertigen _/__04_lernings_Protokoll anfertigen _/feedback_roundtrip_2026-02-14.md`
+- Original prompt (current turn): Folder-Icons im FolderTree muessen je nach Zustand zwischen offen/geschlossen wechseln.
+- Anpassung in `/index.html`:
+  - Toggle-Ordner setzen jetzt `aria-expanded` initial und bei jedem Toggle neu.
+  - Label-Klick auf Ordner mit Kindern toggelt immer den Ordnerzustand (statt Playable-Open zu priorisieren).
+  - Icon-Update im Toggle nutzt explizit den aktuellen Collapse-State fuer `📁`/`📂`.
+- Verifikation: Script-Syntaxcheck fuer `/index.html` erfolgreich.
+- Original prompt (current turn): Rust fireBaseGetter in `__admin_dont_push/fireBaseGetter` bauen (Collection `feedback_all_games` komplett laden und JSON ueberschreiben).
+- Neu angelegt: `__admin_dont_push/fireBaseGetter` als eigenstaendiges Rust-Tool.
+  - `Cargo.toml`
+  - `src/main.rs`
+  - `README.md`
+  - `feedback_all_games.json` (Zieldatei, wird beim Lauf ueberschrieben)
+- Getter-Algorithmus ist starr/fix:
+  - liest immer `firebase-service-account.local.json` im Repo-Root,
+  - zieht immer Firestore-Collection `feedback_all_games` (inkl. Pagination),
+  - schreibt immer nach `__admin_dont_push/fireBaseGetter/feedback_all_games.json`.
+- Hinweis: Rust-Toolchain (`cargo`, `rustc`) ist in dieser Umgebung nicht installiert, daher kein lokaler Compile/Run-Test moeglich.

@@ -23,7 +23,7 @@
 
   async function init() {
     try {
-      const response = await fetch('./_gg01_eskalations_protokoll.json');
+      const response = await fetch('./_gg01abc1_eskalations_protokoll.json');
       if (!response.ok) throw new Error('config unavailable');
       state.cfg = await response.json();
       render();

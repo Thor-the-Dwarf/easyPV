@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "id": "risk_finder_das_kleingedruckte",
+    "title": "Risk-Finder: Das Kleingedruckte",
+    "subtitle": "Markiere die 5 relevanten Kostenfallen im Vertrag."
+  },
+  "contract_excerpt": [
+    "Der Leasinggeber kann bei Vertragsende eine Andienungspflicht ausueben.",
+    "Bei Ueberschreitung der Laufleistung greift eine Mehrkilometerklausel.",
+    "Restwertrisiko und Vollamortisation koennen zu Zusatzkosten fuehren.",
+    "Rueckgabe nur mit Serviceintervall-Nachweis und festgelegtem Wartungspaket."
+  ],
+  "terms": [
+    {
+      "id": "andienungspflicht",
+      "label": "Andienungspflicht",
+      "is_target": true,
+      "explanation": "Kann zu einem verpflichtenden Kauf am Laufzeitende fuehren."
+    },
+    {
+      "id": "restwertrisiko",
+      "label": "Restwertrisiko",
+      "is_target": true,
+      "explanation": "Abweichungen beim Restwert koennen nachbelastet werden."
+    },
+    {
+      "id": "vollamortisation",
+      "label": "Vollamortisation",
+      "is_target": true,
+      "explanation": "Hohe Gesamtkosten ueber die Laufzeit sind moeglich."
+    },
+    {
+      "id": "mehrkilometerklausel",
+      "label": "Mehrkilometerklausel",
+      "is_target": true,
+      "explanation": "Mehrnutzung fuehrt oft zu direkter Nachzahlung."
+    },
+    {
+      "id": "wartungspaket",
+      "label": "Wartungspaket",
+      "is_target": true,
+      "explanation": "Pflichtpakete koennen versteckte Zusatzkosten enthalten."
+    },
+    {
+      "id": "serviceintervall",
+      "label": "Serviceintervall",
+      "is_target": false,
+      "explanation": "Organisatorischer Begriff, nicht automatisch Kostenfalle."
+    },
+    {
+      "id": "liefertermin",
+      "label": "Liefertermin",
+      "is_target": false,
+      "explanation": "Reiner Terminbezug."
+    },
+    {
+      "id": "vertragslaufzeit",
+      "label": "Vertragslaufzeit",
+      "is_target": false,
+      "explanation": "Basisangabe ohne direkte Risikowertung."
+    },
+    {
+      "id": "objektbezeichnung",
+      "label": "Objektbezeichnung",
+      "is_target": false,
+      "explanation": "Identifiziert den Gegenstand, ist aber keine Kostenfalle."
+    },
+    {
+      "id": "zahlungsintervall",
+      "label": "Zahlungsintervall",
+      "is_target": false,
+      "explanation": "Definiert nur den Rhythmus der Raten."
+    },
+    {
+      "id": "ansprechpartner",
+      "label": "Ansprechpartner",
+      "is_target": false,
+      "explanation": "Kontaktinformation ohne Risikoklausel."
+    }
+  ],
+  "scoring": {
+    "max_score": 100,
+    "miss_penalty": 20,
+    "false_penalty": 10
+  }
+}

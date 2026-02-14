@@ -556,6 +556,7 @@
             if (hasChildren) {
               iconButton.classList.add('is-toggleable');
               iconButton.setAttribute('aria-label', 'Ordner auf- oder zuklappen');
+              iconButton.setAttribute('aria-expanded', String(!isCollapsed));
               iconButton.addEventListener('click', (event) => {
                 event.stopPropagation();
                 toggleNode(rowNode, node.id, iconButton);
@@ -587,12 +588,12 @@
             label.addEventListener('click', (event) => {
               event.preventDefault();
               event.stopPropagation();
-              if (canOpenPlayable) {
-                openPlayableFolder(node);
-                return;
-              }
               if (hasChildren) {
                 toggleNode(rowNode, node.id, iconButton);
+                return;
+              }
+              if (canOpenPlayable) {
+                openPlayableFolder(node);
                 return;
               }
             });
@@ -624,7 +625,12 @@
           const icon = iconButton && iconButton.querySelector('.tree-icon');
           if (icon) {
             const node = findNodeById(rootTree, id);
-            icon.textContent = folderEmoji(node || { isFolder: true, hasFiles: false, children: [] }, !openedFolderIds.includes(id));
+            const collapsed = !openedFolderIds.includes(id);
+            icon.textContent = folderEmoji(node || { isFolder: true, hasFiles: false, children: [] }, collapsed);
+          }
+
+          if (iconButton && iconButton.classList.contains('is-toggleable')) {
+            iconButton.setAttribute('aria-expanded', String(openedFolderIds.includes(id)));
           }
 
           saveState();

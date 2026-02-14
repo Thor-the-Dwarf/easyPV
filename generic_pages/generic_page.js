@@ -43,6 +43,65 @@
     return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
   }
 
+  function buildDefaultImageItems() {
+    return [
+      {
+        href: 'https://commons.wikimedia.org/wiki/File:Network_switches.jpg',
+        src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Network_switches.jpg',
+        alt: 'Netzwerk-Switches',
+        meta: 'Wikimedia Commons',
+        title: 'Netzwerk-Switches'
+      },
+      {
+        href: 'https://commons.wikimedia.org/wiki/File:Ethernet_Switch_(Front_View).jpg',
+        src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Ethernet%20Switch%20%28Front%20View%29.jpg',
+        alt: 'Ethernet-Switch Frontansicht',
+        meta: 'Wikimedia Commons',
+        title: 'Ethernet-Switch'
+      },
+      {
+        href: 'https://commons.wikimedia.org/wiki/File:BalticServers_data_center.jpg',
+        src: 'https://commons.wikimedia.org/wiki/Special:FilePath/BalticServers_data_center.jpg',
+        alt: 'Serverraum',
+        meta: 'Wikimedia Commons',
+        title: 'Serverraum'
+      },
+      {
+        href: 'https://commons.wikimedia.org/wiki/File:ThinkPad_X200_and_T400.jpg',
+        src: 'https://commons.wikimedia.org/wiki/Special:FilePath/ThinkPad_X200_and_T400.jpg',
+        alt: 'Business-Laptops',
+        meta: 'Wikimedia Commons',
+        title: 'Business-Laptops'
+      },
+      {
+        href: 'https://commons.wikimedia.org/wiki/File:HP_LaserJet_laser_printer.jpg',
+        src: 'https://commons.wikimedia.org/wiki/Special:FilePath/HP_LaserJet_laser_printer.jpg',
+        alt: 'Laserdrucker',
+        meta: 'Wikimedia Commons',
+        title: 'Laserdrucker'
+      },
+      {
+        href: 'https://unsplash.com/license',
+        src: 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1600&q=80',
+        alt: 'IT-Arbeitsplatz',
+        meta: 'Unsplash',
+        title: 'IT-Arbeitsplatz'
+      }
+    ];
+  }
+
+  function ensureSixImageItems(items) {
+    const valid = Array.isArray(items) ? items.filter(Boolean) : [];
+    const defaults = buildDefaultImageItems();
+    const out = valid.slice(0, 6);
+    let fallbackIndex = 0;
+    while (out.length < 6) {
+      out.push(defaults[fallbackIndex % defaults.length]);
+      fallbackIndex += 1;
+    }
+    return out;
+  }
+
   async function loadImageItemsFromJson() {
     const sources = [];
     if (json) sources.push(json);
@@ -55,7 +114,7 @@
         const list = payload && Array.isArray(payload.bild_quellen) ? payload.bild_quellen : [];
         if (!list.length) continue;
         const sourceBase = new URL(sourceRef, window.location.href).href;
-        return list
+        const parsed = list
           .map(function (entry) {
             const title = String(entry && entry.titel ? entry.titel : '').trim();
             const topic = String(entry && entry.thema ? entry.thema : '').trim();
@@ -82,11 +141,12 @@
           })
           .filter(Boolean)
           .slice(0, 6);
+        return ensureSixImageItems(parsed);
       } catch (_) {
         // keep trying additional sources
       }
     }
-    return [];
+    return ensureSixImageItems([]);
   }
 
   async function renderImageList() {
@@ -95,11 +155,6 @@
 
     if (imageDrawerTitle) {
       imageDrawerTitle.textContent = 'Bilder';
-    }
-
-    if (!imageItems.length) {
-      imageGridList.innerHTML = '<p class="drawer-note">Keine Bildquellen in der __cSuite-Datei gefunden.</p>';
-      return;
     }
 
     imageGridList.innerHTML = imageItems

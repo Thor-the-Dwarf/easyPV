@@ -1,0 +1,57 @@
+{
+  "id": "change_erfolgs_check_v1",
+  "title": "Change-Erfolgs-Check",
+  "subtitle": "Waehle die KPIs, die den Wandel wirklich messbar machen.",
+  "rounds": [
+    {
+      "prompt": "Neues ERP-System wurde eingefuehrt.",
+      "kpis": [
+        { "id": "a", "text": "Fehlerrate bei Dateneingaben", "correct": true },
+        { "id": "b", "text": "Nutzerzufriedenheit im Fachbereich", "correct": true },
+        { "id": "c", "text": "Anzahl versendeter Projektmails", "correct": false },
+        { "id": "d", "text": "Anzahl Kickoff-Folien", "correct": false }
+      ],
+      "reason": "Qualitaet und Akzeptanz zeigen den realen Nutzen besser als reine Aktivitaetszahlen."
+    },
+    {
+      "prompt": "Ein neues Ticketsystem ist live.",
+      "kpis": [
+        { "id": "a", "text": "Durchschnittliche Loesungszeit", "correct": true },
+        { "id": "b", "text": "First-Contact-Resolution-Rate", "correct": true },
+        { "id": "c", "text": "Anzahl Team-Meetings", "correct": false },
+        { "id": "d", "text": "Anzahl Sticker am Kanban-Board", "correct": false }
+      ],
+      "reason": "Servicequalitaet und Effizienz sind entscheidende Erfolgssignale."
+    },
+    {
+      "prompt": "Cloud-Migration wurde abgeschlossen.",
+      "kpis": [
+        { "id": "a", "text": "Verfuegbarkeit der Kernservices", "correct": true },
+        { "id": "b", "text": "Anzahl kritischer Incidents", "correct": true },
+        { "id": "c", "text": "Anzahl geposteter News im Intranet", "correct": false },
+        { "id": "d", "text": "Anzahl Teilnehmender am Sommerfest", "correct": false }
+      ],
+      "reason": "Stabilitaet und Betriebsrisiko zeigen, ob der Wandel technisch gelingt."
+    },
+    {
+      "prompt": "Neuer Freigabeprozess wurde ausgerollt.",
+      "kpis": [
+        { "id": "a", "text": "Durchlaufzeit pro Freigabe", "correct": true },
+        { "id": "b", "text": "Anteil Rueckfragen wegen Unklarheiten", "correct": true },
+        { "id": "c", "text": "Anzahl ausgegebener Prozessposter", "correct": false },
+        { "id": "d", "text": "Anzahl verschickter Kalender-Einladungen", "correct": false }
+      ],
+      "reason": "Prozessleistung und Verstaendlichkeit sind zentrale Outcome-KPIs."
+    },
+    {
+      "prompt": "Schulungsoffensive fuer neue Arbeitsweise lief 8 Wochen.",
+      "kpis": [
+        { "id": "a", "text": "Transferquote in den Arbeitsalltag", "correct": true },
+        { "id": "b", "text": "Fehlerhaeufigkeit vor/nach Schulung", "correct": true },
+        { "id": "c", "text": "Anzahl verteilter Handouts", "correct": false },
+        { "id": "d", "text": "Dauer der Abschlussrede", "correct": false }
+      ],
+      "reason": "Verhaltensaenderung und Fehlerreduktion zeigen den echten Schulungserfolg."
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+    "gameTitle": "Outsourcing-Vertrags-Puzzle",
+    "gameSubtitle": "Baue einen sicheren Outsourcing-Vertrag!",
+    "instruction": "Wähle für jede Lücke die richtige Klausel, um einen rechtssicheren und wirtschaftlich sinnvollen Vertrag zu erstellen.",
+    "contractTemplate": "§1 Vertragsgegenstand\nDieser Vertrag regelt die Zusammenarbeit zwischen Auftraggeber und Dienstleister.\n\n§2 Leistungserbringung\nDie Leistung wird erbracht gemäß __gap1__.\n\n§3 Datenschutz\nBei Zugriff auf personenbezogene Daten gilt __gap2__.\n\n§4 Kündigungsfrist\nDie Kündigungsfrist beträgt __gap3__.\n\n§5 Preisgestaltung\nDie Vergütung erfolgt __gap4__.\n\n§6 Haftung\nBei Schäden haftet der Dienstleister __gap5__.",
+    "gaps": [
+        {
+            "id": "gap1",
+            "label": "Qualitätssicherung",
+            "options": [
+                {
+                    "id": "opt1a",
+                    "text": "SLA (Service Level Agreement)",
+                    "correct": true,
+                    "explanation": "✓ Perfekt! SLA definiert klare Qualitätsstandards und messbare Kriterien."
+                },
+                {
+                    "id": "opt1b",
+                    "text": "nach bestem Wissen und Gewissen",
+                    "correct": false,
+                    "explanation": "✗ Zu vage! Keine Kontrolle über Qualität. Risiko: Minderwertiger Service."
+                },
+                {
+                    "id": "opt1c",
+                    "text": "individueller Vereinbarung",
+                    "correct": false,
+                    "explanation": "⚠ Unklar! Besser wären feste, messbare Kriterien im SLA."
+                }
+            ]
+        },
+        {
+            "id": "gap2",
+            "label": "Datenschutzklausel",
+            "options": [
+                {
+                    "id": "opt2a",
+                    "text": "DSGVO-konforme Auftragsverarbeitung",
+                    "correct": true,
+                    "explanation": "✓ Exzellent! DSGVO-Compliance ist Pflicht bei Datenverarbeitung."
+                },
+                {
+                    "id": "opt2b",
+                    "text": "keine besondere Vereinbarung",
+                    "correct": false,
+                    "explanation": "✗ Illegal! DSGVO-Verstoß. Risiko: Bußgelder bis zu 20 Mio. €!"
+                },
+                {
+                    "id": "opt2c",
+                    "text": "mündliche Absprache",
+                    "correct": false,
+                    "explanation": "✗ Unzureichend! Datenschutz muss schriftlich vereinbart sein."
+                }
+            ]
+        },
+        {
+            "id": "gap3",
+            "label": "Kündigungsfrist",
+            "options": [
+                {
+                    "id": "opt3a",
+                    "text": "3 Monate zum Quartalsende",
+                    "correct": true,
+                    "explanation": "✓ Gut! Ausreichend Zeit für Transition, aber nicht zu lang gebunden."
+                },
+                {
+                    "id": "opt3b",
+                    "text": "keine Kündigungsfrist",
+                    "correct": false,
+                    "explanation": "✗ Gefährlich! Bei Problemen sofortiger Ausfall ohne Ersatzlösung."
+                },
+                {
+                    "id": "opt3c",
+                    "text": "5 Jahre Mindestlaufzeit",
+                    "correct": false,
+                    "explanation": "✗ Zu lang! Lock-In-Effekt. Risiko: Abhängigkeit vom Dienstleister."
+                }
+            ]
+        },
+        {
+            "id": "gap4",
+            "label": "Preismodell",
+            "options": [
+                {
+                    "id": "opt4a",
+                    "text": "nach Aufwand mit Kostenobergrenze",
+                    "correct": true,
+                    "explanation": "✓ Optimal! Flexibel, aber budgetsicher durch Obergrenze."
+                },
+                {
+                    "id": "opt4b",
+                    "text": "Pauschalpreis ohne Limit",
+                    "correct": false,
+                    "explanation": "✗ Falle! Unkontrollierbare Kosten. Gefahr: Budget-Explosion."
+                },
+                {
+                    "id": "opt4c",
+                    "text": "auf Zuruf",
+                    "correct": false,
+                    "explanation": "✗ Unprofessionell! Keine Planungssicherheit, keine Budgetkontrolle."
+                }
+            ]
+        },
+        {
+            "id": "gap5",
+            "label": "Haftungsklausel",
+            "options": [
+                {
+                    "id": "opt5a",
+                    "text": "bis zur doppelten Auftragssumme",
+                    "correct": true,
+                    "explanation": "✓ Ausgewogen! Realistischer Schutz ohne übertriebene Forderungen."
+                },
+                {
+                    "id": "opt5b",
+                    "text": "nicht",
+                    "correct": false,
+                    "explanation": "✗ Sehr riskant! Bei Schäden bleibt der Auftraggeber auf Kosten sitzen."
+                },
+                {
+                    "id": "opt5c",
+                    "text": "unbegrenzt",
+                    "correct": false,
+                    "explanation": "⚠ Unrealistisch! Kein Dienstleister wird das akzeptieren. Vertrag scheitert."
+                }
+            ]
+        }
+    ],
+    "scoring": {
+        "perfect": "Hervorragend! Du hast einen wasserdichten Vertrag erstellt. Alle Risiken sind abgedeckt.",
+        "good": "Solider Vertrag! Ein paar kleine Schwächen, aber insgesamt gut geschützt.",
+        "medium": "Vorsicht! Dein Vertrag hat einige Lücken. Nachbesserung empfohlen.",
+        "poor": "Gefährlich! Dieser Vertrag birgt erhebliche Risiken. Dringend überarbeiten!"
+    }
+}

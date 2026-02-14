@@ -1,0 +1,62 @@
+# Implementation Plan - Fremdvergabe: Outsourcing-Vertrags-Puzzle
+
+## Metadaten
+- **Spiel-Titel:** Outsourcing-Vertrags-Puzzle
+- **Thema:** Vertragsgestaltung bei Fremdvergabe
+- **Ziel:** Baue einen sicheren Outsourcing-Vertrag durch Auswahl der richtigen Klauseln.
+- **Prinzip:** Lückentext mit Dropdown/Button-Auswahl.
+
+## Spielmechanik (UX-Global-Optimized)
+- **Layout:**
+  - Ein **Vertragstext** mit Lücken (Platzhalter).
+  - Für jede Lücke: **Multiple-Choice Auswahl** oder Drag-Drop von Bausteinen.
+  - **Decision: Multiple-Choice Buttons** für einfachere Bedienung.
+- **Interaktion:**
+  - Spieler liest den Vertrag und wählt für jede Lücke die passende Klausel aus.
+  - **Fallen:** Einige Optionen sind schädlich (z.B. "Pauschalpreis ohne Limit").
+  - Nach allen Auswahlen: "Prüfen"-Button.
+- **Visuelles Feedback:**
+  - **Sicherheits-Score:** Anzeige wie sicher der Vertrag ist (0-100%).
+  - Richtige Klauseln: Grün.
+  - Falsche/Gefährliche Klauseln: Rot + Warnung.
+
+## Technische Architektur
+- **Dateinamen:**
+  - `_ghtml_fremdvergabe_outsourcing_vertrag.html`
+  - `_gjs_fremdvergabe_outsourcing_vertrag.js`
+  - `_gcss_fremdvergabe_outsourcing_vertrag.css`
+  - `_g01_fremdvergabe_outsourcing_vertrag.json`
+
+### JSON Struktur
+```json
+{
+  "gameTitle": "Outsourcing-Vertrags-Puzzle",
+  "contractTemplate": "Dieser Vertrag regelt die Zusammenarbeit. Die Leistung wird erbracht mit __gap1__. Bei Datenzugriff gilt __gap2__. Die Kündigungsfrist beträgt __gap3__.",
+  "gaps": [
+    {
+      "id": "gap1",
+      "options": [
+        { "text": "SLA (Service Level Agreement)", "correct": true, "explanation": "Klar definierte Qualitätsstandards!" },
+        { "text": "Ohne Vereinbarung", "correct": false, "explanation": "Gefährlich! Keine Kontrolle über Qualität." }
+      ]
+    },
+    ...
+  ]
+}
+```
+
+### HTML Struktur
+- Header mit Stats (Sicherheits-Score).
+- Main: Vertragstext mit interaktiven Lücken (Dropdowns oder Buttons).
+- Footer: Prüfen / Reset Buttons.
+
+### CSS (Theme-Compliant)
+- Contract-Container: Glassmorphism Card.
+- Gaps: Inline-Dropdowns oder Button-Groups.
+- Responsive: Text wrapping, readable auf Mobile.
+
+## Schritte
+1. JSON erstellen (Vertragstext + Klauseln).
+2. CSS erstellen (Contract Layout).
+3. HTML Grundgerüst.
+4. JS Logik (Gap-Filling, Validation, Score Calculation).

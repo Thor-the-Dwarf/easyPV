@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "id": "kunden_wunsch_rechner",
+    "title": "Kunden-Wunsch-Rechner",
+    "subtitle": "Stelle das Profil so ein, dass es zum Kunden passt."
+  },
+  "criteria": [
+    { "id": "price", "label": "Preis" },
+    { "id": "quality", "label": "Qualitaet" },
+    { "id": "brand", "label": "Marke" }
+  ],
+  "scoring": {
+    "good_threshold": 10,
+    "ok_threshold": 20,
+    "good_points": 100,
+    "ok_points": 80,
+    "bad_points": 0
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "quote": "Preis ist mir extrem wichtig, Marke ist mir egal. Qualitaet soll solide sein.",
+      "ideal": { "price": 85, "quality": 10, "brand": 5 }
+    },
+    {
+      "id": "r2",
+      "quote": "Ich will vor allem hohe Qualitaet. Preis ist zweitrangig, Marke egal.",
+      "ideal": { "price": 20, "quality": 75, "brand": 5 }
+    },
+    {
+      "id": "r3",
+      "quote": "Ich brauche eine starke Marke fuer den Auftritt. Preis ist nicht so wichtig.",
+      "ideal": { "price": 10, "quality": 30, "brand": 60 }
+    },
+    {
+      "id": "r4",
+      "quote": "Preis und Qualitaet sind beide wichtig. Marke ist eher unwichtig.",
+      "ideal": { "price": 45, "quality": 50, "brand": 5 }
+    },
+    {
+      "id": "r5",
+      "quote": "Mir ist ein ausgewogenes Profil wichtig. Nichts soll ueberdominieren.",
+      "ideal": { "price": 34, "quality": 33, "brand": 33 }
+    }
+  ]
+}

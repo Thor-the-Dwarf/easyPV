@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kunden-Wunsch-Rechner</title>
+  <link rel="stylesheet" href="./_gcss_nutzwertanalyse.css">
+</head>
+<body class="wunsch-page">
+  <main class="wunsch-app">
+    <header class="wunsch-head">
+      <h1>Kunden-Wunsch-Rechner</h1>
+      <p>Uebersetze den Kundenwunsch in Gewichte und triff das Idealprofil.</p>
+      <div class="wunsch-kpis">
+        <div class="wunsch-kpi"><span>Runde</span><strong id="kw-kpi-round">1/5</strong></div>
+        <div class="wunsch-kpi"><span>Score</span><strong id="kw-kpi-score">0</strong></div>
+        <div class="wunsch-kpi"><span>Abweichung</span><strong id="kw-kpi-dev">-</strong></div>
+      </div>
+    </header>
+
+    <section class="wunsch-card" id="kw-root" aria-live="polite"></section>
+  </main>
+
+  <script src="./_gjs_kunden_wunsch_rechner.js" defer></script>
+  <script src="/theme_bridge.js"></script>
+</body>
+</html>

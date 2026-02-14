@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outsourcing-Vertrags-Puzzle</title>
+    <link rel="stylesheet" href="../../../../../../../shared_theme.css">
+    <link rel="stylesheet" href="_gcss_fremdvergabe_outsourcing_vertrag.css">
+    <script src="../../../../../../../theme_bridge.js"></script>
+</head>
+
+<body>
+
+    <div class="game-container">
+        <!-- Header / Stats -->
+        <header class="section-card" style="text-align: center; margin-bottom: 1rem;">
+            <h1 class="section-title" id="game-title">Outsourcing-Vertrags-Puzzle</h1>
+            <p class="section-sub" id="game-subtitle">Lade Spiel...</p>
+
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;">
+                <div class="section-status">
+                    Lücken: <span id="gaps-filled">0/0</span>
+                </div>
+                <div class="section-status">
+                    Sicherheit: <span id="security-score">0%</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Area -->
+        <main>
+            <div class="section-card">
+                <h3 class="section-title">📄 Vertragsentwurf</h3>
+                <p class="section-sub" id="instruction">Wähle die richtigen Klauseln...</p>
+
+                <div class="contract-container" id="contract-display">
+                    <!-- Contract with gaps will be injected here -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Feedback & Controls -->
+        <footer class="section-card">
+            <div id="feedback-area" class="feedback-area"></div>
+
+            <div class="controls">
+                <button id="reset-btn" class="btn">Zurücksetzen</button>
+                <button id="check-btn" class="btn primary">Prüfen</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="_gjs_fremdvergabe_outsourcing_vertrag.js"></script>
+</body>
+
+</html>

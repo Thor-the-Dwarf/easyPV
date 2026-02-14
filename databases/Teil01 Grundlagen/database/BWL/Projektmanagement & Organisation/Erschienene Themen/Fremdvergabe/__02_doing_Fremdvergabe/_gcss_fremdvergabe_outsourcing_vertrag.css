@@ -1,0 +1,156 @@
+/* 
+   Outsourcing-Vertrags-Puzzle Game Styles 
+   Based on shared_theme.css
+*/
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contract-container {
+    background: hsl(var(--bg-surface) / 0.5);
+    border: 1px solid hsl(var(--glass-border));
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    font-family: 'Courier New', monospace;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+.gap-container {
+    display: inline-block;
+    position: relative;
+    margin: 0 0.25rem;
+    vertical-align: middle;
+}
+
+.gap-label {
+    display: block;
+    font-size: 0.7rem;
+    color: hsl(var(--txt-muted));
+    margin-bottom: 0.25rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.gap-options {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: hsl(var(--bg-surface) / 0.8);
+    border: 2px solid hsl(var(--glass-border));
+    border-radius: var(--radius-md);
+    padding: 0.75rem;
+    min-width: 280px;
+}
+
+.gap-option {
+    padding: 0.5rem 0.75rem;
+    background: hsl(var(--bg-surface) / 0.4);
+    border: 1px solid hsl(var(--glass-border));
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.gap-option:hover {
+    border-color: hsl(var(--primary));
+    background: hsl(var(--bg-surface) / 0.6);
+    transform: translateX(4px);
+}
+
+.gap-option.selected {
+    background: hsl(var(--primary) / 0.3);
+    border-color: hsl(var(--primary));
+    font-weight: 600;
+}
+
+.gap-option.correct {
+    background: hsl(var(--success) / 0.3);
+    border-color: hsl(var(--success));
+}
+
+.gap-option.wrong {
+    background: hsl(var(--error) / 0.3);
+    border-color: hsl(var(--error));
+}
+
+.explanation {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: hsl(var(--bg-surface) / 0.4);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.explanation.show {
+    opacity: 1;
+    max-height: 200px;
+}
+
+.feedback-area {
+    min-height: 80px;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.feedback-area.show {
+    opacity: 1;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.security-score {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.security-score.high {
+    color: hsl(var(--success));
+    text-shadow: 0 0 10px hsl(var(--success) / 0.5);
+}
+
+.security-score.medium {
+    color: hsl(195 100% 60%);
+}
+
+.security-score.low {
+    color: hsl(var(--error));
+    text-shadow: 0 0 10px hsl(var(--error) / 0.5);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contract-container {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .gap-options {
+        min-width: 200px;
+    }
+}

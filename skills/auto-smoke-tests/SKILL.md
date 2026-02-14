@@ -1,18 +1,18 @@
 ---
 name: auto-smoke-tests
-description: Use when the user wants fast, low-risk automated tests for web games in databases. Creates and runs global plus local smoke checks that focus on reachability and basic file health, without deep or brittle assertions.
+description: Use when the user wants automated web-game quality checks in databases, including smoke tests and on-demand advanced gameplay/UI/visual checks. Especially use this after edits in _g*/_gs_*/game_* files to run relevant tests quickly.
 ---
 
 # Auto Smoke Tests
 
-Use this skill for a lightweight "first play" quality gate.
+Use this skill for a lightweight "first play" gate plus optional advanced checks.
 
 ## Goal
 - Keep tests simple.
 - Verify that game folders are reachable and minimally healthy.
 - Avoid over-testing in early phases.
 
-## Workflow
+## Workflow (Stage 1: Smoke)
 1. Prepare folder structure and local tests:
 - `node databases/testing/scripts/bootstrap-testing-folders.mjs`
 
@@ -23,6 +23,15 @@ Use this skill for a lightweight "first play" quality gate.
 - Number of discovered `__02_doing_*` folders.
 - Number of discovered `__03_testing_*` folders.
 - Pass/fail with first blocking error.
+
+## Workflow (Stage 2: Advanced on demand)
+Use this after edits in `_g*`, `_gs_*`, or `game_*` files.
+
+1. Run advanced coverage (gameplay behavior, scoring-data presence, UI interaction errors, visual frame sanity):
+- `node databases/testing/scripts/run-advanced-web-tests.mjs`
+
+2. Run only relevant tests for current `_g*` changes:
+- `node databases/testing/scripts/run-relevant-tests-on-g-change.mjs`
 
 ## Test Scope
 - Global tests:
@@ -36,4 +45,4 @@ Use this skill for a lightweight "first play" quality gate.
 ## Guardrails
 - Do not add fragile UI pixel assertions in this mode.
 - Do not block delivery for non-critical style issues.
-- If asked for deeper checks, propose a second stage (integration or Playwright interactions).
+- For `_g*` file changes, run relevant smoke + advanced checks before finishing.

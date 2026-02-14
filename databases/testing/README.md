@@ -10,6 +10,10 @@ Diese erste Teststufe prueft nur Basisqualitaet:
   - `node databases/testing/scripts/bootstrap-testing-folders.mjs`
 - Alle Smoke-Tests starten:
   - `node databases/testing/scripts/run-smoke-tests.mjs`
+- Alle Advanced-Tests (Gameplay/UI/Visual + Scoringdaten):
+  - `node databases/testing/scripts/run-advanced-web-tests.mjs`
+- Nur relevante Tests bei `_g*`/`game_*`-Aenderungen:
+  - `node databases/testing/scripts/run-relevant-tests-on-g-change.mjs`
 
 ## Umfang
 - Global: Dateistruktur + game-Dateien + sichere lokale HTML-Links

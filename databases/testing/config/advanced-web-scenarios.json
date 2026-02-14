@@ -1,20 +1,47 @@
 [
   {
-    "id": "matrix_architekt",
+    "id": "leasing_gutachter",
     "server": "teil01",
-    "relPath": "database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/__02_doing_Nutzwertanalyse/game_der_matrix_architekt.html",
-    "scorePatterns": ["punkte", "weight_percent", "gp"]
+    "urlCandidates": [
+      "/database/BWL/Auswahl%20%26%20Bewertung/Erschienene%20Themen/Leasing/__02_doing_Leasing/game_leasing_gutachter.html",
+      "/database/BWL/Auswahl%20%26%20Bewertung/Erschienene%20Themen/Leasing/__02_doing_Leasing/_ghtml_leasing_gutachter.html",
+      "/database/BWL/Auswahl%20%26%20Bewertung/Erschienene%20Themen/Leasing/game_leasing_gutachter.html",
+      "/database/BWL/Auswahl%20%26%20Bewertung/Erschienene%20Themen/Leasing/_ghtml_leasing_gutachter.html"
+    ],
+    "scoreFileCandidates": [
+      "databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Leasing/__02_doing_Leasing/game_leasing_gutachter.json",
+      "databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Leasing/__02_doing_Leasing/_gjson_leasing_gutachter.json"
+    ],
+    "scorePatterns": ["defectType", "correct", "wrong"]
   },
   {
     "id": "leasing_kalkulator",
     "server": "teil01",
-    "relPath": "database/BWL/Auswahl & Bewertung/Erschienene Themen/Leasing/__02_doing_Leasing/game_leasing_kalkulator_challenge.html",
+    "urlCandidates": [
+      "/database/BWL/Auswahl%20%26%20Bewertung/Erschienene%20Themen/Leasing/__02_doing_Leasing/game_leasing_kalkulator_challenge.html",
+      "/database/BWL/Auswahl%20%26%20Bewertung/Erschienene%20Themen/Leasing/__02_doing_Leasing/_ghtml_leasing_kalkulator_challenge.html",
+      "/database/BWL/Auswahl%20%26%20Bewertung/Erschienene%20Themen/Leasing/game_leasing_kalkulator_challenge.html",
+      "/database/BWL/Auswahl%20%26%20Bewertung/Erschienene%20Themen/Leasing/_ghtml_leasing_kalkulator_challenge.html"
+    ],
+    "scoreFileCandidates": [
+      "databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Leasing/__02_doing_Leasing/game_leasing_kalkulator_challenge.json",
+      "databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Erschienene Themen/Leasing/__02_doing_Leasing/_gjson_leasing_kalkulator_challenge.json"
+    ],
     "scorePatterns": ["targetRateEur", "minRate", "baseRate"]
   },
   {
-    "id": "failover_simulator",
-    "server": "teil02",
-    "relPath": "database/Anforderungen, Analyse, Projekt & Prozess/Bewertung/Mögliche Themen/Verlässlichkeit-Robustheit bewerten/__02_doing_Verlässlichkeit-Robustheit bewerten/game_failover_simulator.html",
-    "scorePatterns": ["sla_target", "rto_target", "severity"]
+    "id": "change_kurve",
+    "server": "teil01",
+    "urlCandidates": [
+      "/database/BWL/Projektmanagement%20%26%20Organisation/Erschienene%20Themen/Change%20Management/__02_doing_Change%20Management/game_kurve_der_veraenderung.html",
+      "/database/BWL/Projektmanagement%20%26%20Organisation/Erschienene%20Themen/Change%20Management/__02_doing_Change%20Management/_ghtml_kurve_der_veraenderung.html",
+      "/database/BWL/Projektmanagement%20%26%20Organisation/Erschienene%20Themen/Change%20Management/game_kurve_der_veraenderung.html",
+      "/database/BWL/Projektmanagement%20%26%20Organisation/Erschienene%20Themen/Change%20Management/_ghtml_kurve_der_veraenderung.html"
+    ],
+    "scoreFileCandidates": [
+      "databases/Teil01 Grundlagen/database/BWL/Projektmanagement & Organisation/Erschienene Themen/Change Management/__02_doing_Change Management/game_kurve_der_veraenderung.json",
+      "databases/Teil01 Grundlagen/database/BWL/Projektmanagement & Organisation/Erschienene Themen/Change Management/__02_doing_Change Management/_gjson_kurve_der_veraenderung.json"
+    ],
+    "scorePatterns": ["phases", "progress", "target"]
   }
 ]

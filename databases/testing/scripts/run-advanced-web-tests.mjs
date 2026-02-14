@@ -1,5 +1,5 @@
 import { spawn } from 'node:child_process';
-import { access, mkdir, readFile, rm, stat, writeFile } from 'node:fs/promises';
+import { access, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import crypto from 'node:crypto';
@@ -27,10 +27,6 @@ const servers = {
     args: ['-m', 'http.server', '4174']
   }
 };
-
-function encodeUrlPath(relPath) {
-  return relPath.split('/').map((p) => encodeURIComponent(p)).join('/');
-}
 
 function pngSize(buffer) {
   if (buffer.length < 24) throw new Error('invalid PNG (too small)');
@@ -72,11 +68,32 @@ function touchesGFile(relRepoPath) {
 }
 
 function scenarioMatchesChangedFiles(scenario, changedFiles) {
-  const scenarioDir = path.posix.dirname(scenario.relPath.replace(/\\/g, '/'));
+  const candidateHints = (scenario.scoreFileCandidates || []).map((p) => p.replace(/\\/g, '/'));
   return changedFiles.some((f) => {
     const posix = f.replace(/\\/g, '/');
-    return touchesGFile(posix) && posix.includes(scenarioDir);
+    return touchesGFile(posix) && candidateHints.some((hint) => posix.includes(path.posix.dirname(hint)));
   });
+}
+
+async function pickReachableUrl(baseUrl, candidates) {
+  for (const candidate of candidates) {
+    const full = `${baseUrl}${candidate}`;
+    try {
+      const res = await fetch(full, { method: 'GET' });
+      if (res.ok) return full;
+    } catch {
+      // try next
+    }
+  }
+  return null;
+}
+
+async function pickExistingFile(candidates) {
+  for (const rel of candidates) {
+    const full = path.join(workspaceRoot, rel);
+    if (await exists(full)) return full;
+  }
+  return null;
 }
 
 async function startServers() {
@@ -118,7 +135,21 @@ async function runScenario(scenario) {
   await mkdir(idleDir, { recursive: true });
   await mkdir(activeDir, { recursive: true });
 
-  const url = `${server.baseUrl}/${encodeUrlPath(scenario.relPath)}`;
+  const url = await pickReachableUrl(server.baseUrl, scenario.urlCandidates || []);
+  if (!url) {
+    return {
+      id: scenario.id,
+      url: null,
+      uiOk: false,
+      visualOk: false,
+      gameplayChanged: false,
+      scoringOk: false,
+      dimensions: null,
+      screenshotBytes: 0,
+      idleShotExists: false,
+      activeShotExists: false
+    };
+  }
 
   const idleCode = await runCommand(process.execPath, [
     clientPath,
@@ -176,13 +207,10 @@ async function runScenario(scenario) {
 
   const uiOk = !(await exists(idleErr)) && !(await exists(activeErr)) && idleCode === 0 && activeCode === 0;
 
-  const serverRoot = scenario.server === 'teil01'
-    ? path.join(workspaceRoot, 'databases', 'Teil01 Grundlagen')
-    : path.join(workspaceRoot, 'databases', 'Teil02 FIAE');
-  const jsonPath = path.join(serverRoot, scenario.relPath.replace(/\.html$/i, '.json'));
+  const jsonPath = await pickExistingFile(scenario.scoreFileCandidates || []);
 
   let scoringOk = false;
-  if (await exists(jsonPath)) {
+  if (jsonPath) {
     const raw = await readFile(jsonPath, 'utf8');
     scoringOk = scenario.scorePatterns.some((pattern) => raw.includes(pattern));
   }

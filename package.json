@@ -5,6 +5,8 @@
   "description": "Smoke-first test runner for game folders",
   "scripts": {
     "play": "node databases/testing/scripts/run-smoke-tests.mjs",
-    "test:smoke": "node databases/testing/scripts/run-smoke-tests.mjs"
+    "test:smoke": "node databases/testing/scripts/run-smoke-tests.mjs",
+    "test:advanced": "node databases/testing/scripts/run-advanced-web-tests.mjs",
+    "test:relevant-g": "node databases/testing/scripts/run-relevant-tests-on-g-change.mjs"
   }
 }

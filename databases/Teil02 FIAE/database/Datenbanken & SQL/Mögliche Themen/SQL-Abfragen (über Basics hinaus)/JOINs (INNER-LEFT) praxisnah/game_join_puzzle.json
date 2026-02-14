@@ -1,0 +1,143 @@
+{
+    "metadata": {
+        "title": "SQL Join-Puzzle // Relational Bridge Architect",
+        "version": "1.0",
+        "theme": "Data Architect"
+    },
+    "levels": [
+        {
+            "id": 1,
+            "title": "Kunden & Bestellungen",
+            "subtitle": "Einfacher INNER JOIN",
+            "description": "Verknüpfe jeden Kunden mit seinen getätigten Bestellungen über die Kunden-ID.",
+            "joinType": "INNER",
+            "tableA": {
+                "name": "kunde",
+                "pk": "id",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "PK",
+                        "val": [
+                            1,
+                            2,
+                            3
+                        ]
+                    },
+                    {
+                        "name": "name",
+                        "type": "DATA",
+                        "val": [
+                            "Schmidt",
+                            "Meyer",
+                            "Braun"
+                        ]
+                    }
+                ]
+            },
+            "tableB": {
+                "name": "bestellung",
+                "fk": "kunde_id",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "PK",
+                        "val": [
+                            10,
+                            11,
+                            12
+                        ]
+                    },
+                    {
+                        "name": "kunde_id",
+                        "type": "FK",
+                        "val": [
+                            1,
+                            1,
+                            3
+                        ]
+                    },
+                    {
+                        "name": "summe",
+                        "type": "DATA",
+                        "val": [
+                            "50€",
+                            "120€",
+                            "35€"
+                        ]
+                    }
+                ]
+            },
+            "expected": {
+                "from": "kunde.id",
+                "to": "bestellung.kunde_id"
+            }
+        },
+        {
+            "id": 2,
+            "title": "Autoren & Bücher",
+            "subtitle": "Multi-Table Relation",
+            "description": "Ordne die Bücher den entsprechenden Autoren zu.",
+            "joinType": "INNER",
+            "tableA": {
+                "name": "autor",
+                "pk": "id",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "PK",
+                        "val": [
+                            101,
+                            102
+                        ]
+                    },
+                    {
+                        "name": "nachname",
+                        "type": "DATA",
+                        "val": [
+                            "Goethe",
+                            "Schiller"
+                        ]
+                    }
+                ]
+            },
+            "tableB": {
+                "name": "buch",
+                "fk": "autor_id",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "PK",
+                        "val": [
+                            1,
+                            2,
+                            3
+                        ]
+                    },
+                    {
+                        "name": "autor_id",
+                        "type": "FK",
+                        "val": [
+                            101,
+                            101,
+                            102
+                        ]
+                    },
+                    {
+                        "name": "titel",
+                        "type": "DATA",
+                        "val": [
+                            "Faust I",
+                            "Erlkönig",
+                            "Die Räuber"
+                        ]
+                    }
+                ]
+            },
+            "expected": {
+                "from": "autor.id",
+                "to": "buch.autor_id"
+            }
+        }
+    ]
+}

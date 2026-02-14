@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join-Puzzle // Relational Bridge Architect</title>
+    <!-- Path adjustment -->
+    <link rel="stylesheet" href="../../../../../Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="join_puzzle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-app">
+        <!-- Architect HUD -->
+        <header class="arch-hud">
+            <div class="hud-item">
+                <div class="hud-label">SYSTEM_INTEGRITY</div>
+                <div class="hud-val">STABLE</div>
+            </div>
+            <div style="text-align:center;">
+                <div id="level-title" style="letter-spacing:5px; font-weight:bold; color:var(--arch-blue);">
+                    RELIABILITY_BLUEPRINT</div>
+                <div style="font-size:0.6rem; color:#555; margin-top:5px;">OBJECTIVE: ALIGN_FOREIGN_KEY_RELATIONSHIPS
+                </div>
+            </div>
+            <div class="hud-item">
+                <div class="hud-label">JOIN_RECORDS_ACTIVE</div>
+                <div class="hud-val">100%</div>
+            </div>
+        </header>
+
+        <!-- Design Canvas -->
+        <main class="design-canvas">
+            <svg class="bridge-layer">
+                <path id="bridge-line" class="relational-bridge" d=""></path>
+            </svg>
+
+            <div class="table-world">
+                <!-- Table A (Left) -->
+                <div id="table-a" class="arch-table">
+                    <!-- Injected via JS -->
+                </div>
+
+                <!-- Table B (Right) -->
+                <div id="table-b" class="arch-table">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Live Results Preview -->
+        <footer class="live-preview">
+            <div class="hud-label" style="margin-bottom: 10px;">QUERY_RESULT_SET_PREVIEW</div>
+            <table class="preview-table">
+                <thead id="preview-head"></thead>
+                <tbody id="preview-body"></tbody>
+            </table>
+        </footer>
+
+        <!-- Success Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="architect-card">
+                <div class="hud-label" style="text-align: center; margin-bottom: 2rem;">RELATIONAL_BRIDGE_STABLE</div>
+                <h1 id="res-final" style="color:var(--arch-blue); margin:0; letter-spacing:8px;">FUSION_COMPLETE</h1>
+
+                <p style="margin: 2rem 0; font-size: 0.9rem; line-height: 1.8; color: #555;">
+                    The tables have been successfully correlated via primary and foreign keys.<br>
+                    Data normalization standards have been maintained.
+                </p>
+
+                <button id="btn-next">ACKNOWLEDGE_BLUEPRINT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="game_join_puzzle.js"></script>
+</body>
+
+</html>

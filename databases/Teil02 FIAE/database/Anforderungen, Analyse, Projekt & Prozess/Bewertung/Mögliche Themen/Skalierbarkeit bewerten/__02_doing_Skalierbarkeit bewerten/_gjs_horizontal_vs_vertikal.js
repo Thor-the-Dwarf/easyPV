@@ -26,7 +26,7 @@
   init();
 
   async function init() {
-    const resp = await fetch('./game_horizontal_vs_vertikal.json');
+    const resp = await fetch('./_g01_horizontal_vs_vertikal.json');
     if (!resp.ok) {
       el.feedback.textContent = 'Konfiguration konnte nicht geladen werden.';
       return;

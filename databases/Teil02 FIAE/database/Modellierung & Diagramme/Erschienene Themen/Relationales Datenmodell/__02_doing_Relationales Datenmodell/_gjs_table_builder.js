@@ -46,7 +46,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('game_table_builder.json');
+            const resp = await fetch('_g01_table_builder.json');
             state.config = await resp.json();
 
             el.btnNext.addEventListener('click', nextScenario);

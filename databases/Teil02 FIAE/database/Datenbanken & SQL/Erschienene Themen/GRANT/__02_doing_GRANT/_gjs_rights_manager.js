@@ -56,7 +56,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('game_rights_manager.json');
+            const resp = await fetch('_g01_rights_manager.json');
             state.config = await resp.json();
 
             initSwitches();

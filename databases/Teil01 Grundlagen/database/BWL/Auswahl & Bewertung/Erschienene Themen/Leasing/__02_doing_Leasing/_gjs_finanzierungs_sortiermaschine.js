@@ -32,7 +32,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('./game_finanzierungs_sortiermaschine.json');
+      const resp = await fetch('./_g01_finanzierungs_sortiermaschine.json');
       if (!resp.ok) throw new Error('Konfiguration konnte nicht geladen werden.');
       state.config = await resp.json();
       state.items = shuffle([...state.config.terms]);

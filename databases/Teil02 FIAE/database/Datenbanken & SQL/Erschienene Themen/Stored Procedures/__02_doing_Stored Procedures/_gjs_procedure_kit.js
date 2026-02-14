@@ -54,7 +54,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('game_procedure_kit.json');
+            const resp = await fetch('_g01_procedure_kit.json');
             state.config = await resp.json();
 
             el.btnCall.addEventListener('click', callProcedure);

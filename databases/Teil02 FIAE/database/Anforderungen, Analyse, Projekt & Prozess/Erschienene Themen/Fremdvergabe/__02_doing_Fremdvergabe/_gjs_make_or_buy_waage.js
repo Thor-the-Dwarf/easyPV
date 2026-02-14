@@ -45,7 +45,7 @@
   init();
 
   async function init() {
-    const res = await fetch('./game_make_or_buy_waage.json');
+    const res = await fetch('./_g01_make_or_buy_waage.json');
     if (!res.ok) {
       el.feedback.textContent = 'Konfiguration konnte nicht geladen werden.';
       return;

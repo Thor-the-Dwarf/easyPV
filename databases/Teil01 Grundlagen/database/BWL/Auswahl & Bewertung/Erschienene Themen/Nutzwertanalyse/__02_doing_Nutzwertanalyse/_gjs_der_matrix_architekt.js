@@ -24,7 +24,7 @@
   init();
 
   async function init() {
-    const resp = await fetch('./game_der_matrix_architekt.json');
+    const resp = await fetch('./_g01_der_matrix_architekt.json');
     if (!resp.ok) {
       el.feedback.textContent = 'Konfiguration konnte nicht geladen werden.';
       return;

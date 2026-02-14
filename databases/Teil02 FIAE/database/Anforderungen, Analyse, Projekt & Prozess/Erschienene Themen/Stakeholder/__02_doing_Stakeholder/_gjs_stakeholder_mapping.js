@@ -61,7 +61,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('game_stakeholder_mapping.json');
+            const resp = await fetch('_g01_stakeholder_mapping.json');
             state.config = await resp.json();
 
             el.restartBtn.addEventListener('click', restartGame);

@@ -35,7 +35,7 @@
   init();
 
   async function init() {
-    const resp = await fetch('./game_nutzwert_navigator.json');
+    const resp = await fetch('./_g01_nutzwert_navigator.json');
     if (!resp.ok) {
       el.feedback.textContent = 'Konfiguration konnte nicht geladen werden.';
       return;

@@ -51,7 +51,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('game_compatibility_connector.json');
+            const resp = await fetch('_g01_compatibility_connector.json');
             state.config = await resp.json();
 
             el.restartBtn.addEventListener('click', restartGame);

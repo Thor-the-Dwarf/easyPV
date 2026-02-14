@@ -28,7 +28,7 @@
   init();
 
   async function init() {
-    const resp = await fetch('./game_leasing_kalkulator_challenge.json');
+    const resp = await fetch('./_g01_leasing_kalkulator_challenge.json');
     if (!resp.ok) {
       el.status.textContent = 'Konfiguration konnte nicht geladen werden.';
       return;

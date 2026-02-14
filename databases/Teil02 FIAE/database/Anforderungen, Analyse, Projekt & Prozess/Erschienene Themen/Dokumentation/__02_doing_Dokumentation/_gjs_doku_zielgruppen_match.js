@@ -36,7 +36,7 @@
   init();
 
   async function init() {
-    const res = await fetch('./game_doku_zielgruppen_match.json');
+    const res = await fetch('./_g01_doku_zielgruppen_match.json');
     if (!res.ok) {
       el.feedback.textContent = 'Konfiguration konnte nicht geladen werden.';
       return;

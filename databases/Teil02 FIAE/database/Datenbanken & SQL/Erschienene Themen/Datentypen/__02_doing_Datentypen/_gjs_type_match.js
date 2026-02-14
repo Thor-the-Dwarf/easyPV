@@ -41,7 +41,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('game_type_match.json');
+            const resp = await fetch('_g01_type_match.json');
             state.config = await resp.json();
 
             el.btnNext.onclick = () => {

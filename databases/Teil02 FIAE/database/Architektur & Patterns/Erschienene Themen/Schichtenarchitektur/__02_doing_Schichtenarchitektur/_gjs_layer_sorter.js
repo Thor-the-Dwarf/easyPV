@@ -50,7 +50,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('game_layer_sorter.json');
+            const resp = await fetch('_g01_layer_sorter.json');
             state.config = await resp.json();
 
             el.restartBtn.addEventListener('click', restartGame);

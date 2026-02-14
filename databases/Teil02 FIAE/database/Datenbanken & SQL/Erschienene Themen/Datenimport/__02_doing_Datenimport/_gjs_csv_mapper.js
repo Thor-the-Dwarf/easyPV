@@ -50,7 +50,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('game_csv_mapper.json');
+            const resp = await fetch('_g01_csv_mapper.json');
             state.config = await resp.json();
 
             document.addEventListener('mousemove', onMove);

@@ -61,7 +61,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('game_mvc_role_match.json');
+            const resp = await fetch('_g01_mvc_role_match.json');
             state.config = await resp.json();
 
             el.restartBtn.addEventListener('click', restartGame);

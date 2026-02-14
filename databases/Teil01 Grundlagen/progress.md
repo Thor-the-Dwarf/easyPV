@@ -21,7 +21,7 @@ Original prompt: Teil01 Grundlagen ist ein Reroll der Backend_fiaeAP2. Neuerunge
 - Dateien erstellt im selben Themenordner:
   - `_ghtml_leasing_gutachter.html`
   - `_gjs_leasing_gutachter.js`
-  - `game_leasing_gutachter.json`
+  - `_g01_leasing_gutachter.json`
   - `_gs_grey_leasing.css` (shared fuer zusammenhaengende Leasing-Prototypen)
 - Umgesetzt: Slideshow-Faelle, Entscheidung (Zahlen/Gratis), Score, Feedback je Fall, Endscreen mit "zu viel gezahlt".
 - Test-Hooks gesetzt: `window.render_game_to_text()` und `window.advanceTime(ms)`.
@@ -41,7 +41,7 @@ Original prompt: Teil01 Grundlagen ist ein Reroll der Backend_fiaeAP2. Neuerunge
 - Neue Dateien:
   - `_ghtml_finanzierungs_sortiermaschine.html`
   - `_gjs_finanzierungs_sortiermaschine.js`
-  - `game_finanzierungs_sortiermaschine.json`
+  - `_g01_finanzierungs_sortiermaschine.json`
 - `_gs_grey_leasing.css` um namespacete Styles fuer Sortiermaschine erweitert.
 - Features: 3 Kategorien (Leasing/Kreditkauf/Eigenkapital), 10 Begriffe, Swipe/Touch + Klick-Fallback, Score (+10/-10), Streak, Feedback, Vibrations-/Audio-Feedback mit Mute.
 - Playwright-Smoke-Test erfolgreich, Artefakte in `output/web-game-sortier/`.
@@ -58,7 +58,7 @@ Original prompt: Teil01 Grundlagen ist ein Reroll der Backend_fiaeAP2. Neuerunge
 - Neuer Prototyp `GamePlan-Der-Matrix-Architekt.txt` implementiert in:
   - `database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/_ghtml_der_matrix_architekt.html`
   - `database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/_gjs_der_matrix_architekt.js`
-  - `database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/game_der_matrix_architekt.json`
+  - `database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/_g01_der_matrix_architekt.json`
   - `database/BWL/Auswahl & Bewertung/Erschienene Themen/Nutzwertanalyse/_gs_grey_nutzwertanalyse.css`
 - Umgesetzt: Blueprint-UI, Bauteil-Bibliothek, Grid-Slots, Drag&Drop + Tap-Select-Placement (Touch-freundlich), Snap/Lock bei korrekter Platzierung, Fehler-Shake bei falscher Platzierung.
 - KPI-Logik: Bau-Fortschritt in %, Treffer-Anzahl, Stabilitaetsstatus; Finish-Button pulsiert bei vollstaendiger Struktur.
@@ -102,7 +102,7 @@ Original prompt: Teil01 Grundlagen ist ein Reroll der Backend_fiaeAP2. Neuerunge
 
 ## 2026-02-12 - Prototyp umgesetzt: Der Deeskalations-Profi
 - `GamePlan-Der-Deeskalations-Profi.txt` umgesetzt in:
-  - `database/BWL/Kommunikation & Schulung/Erschienene Themen/4-Ohren-Modell/game_4ohren_deeskalation.json`
+  - `database/BWL/Kommunikation & Schulung/Erschienene Themen/4-Ohren-Modell/_g01_4ohren_deeskalation.json`
   - `database/BWL/Kommunikation & Schulung/Erschienene Themen/4-Ohren-Modell/_ghtml_4ohren_deeskalation.html`
   - `database/BWL/Kommunikation & Schulung/Erschienene Themen/4-Ohren-Modell/_gjs_4ohren_deeskalation.js`
   - `database/BWL/Kommunikation & Schulung/Erschienene Themen/4-Ohren-Modell/_gs_grey_kommunikation.css`

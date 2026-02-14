@@ -53,7 +53,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('game_point_delete.json');
+            const resp = await fetch('_g01_point_delete.json');
             state.config = await resp.json();
 
             el.btnDelete.onclick = executeDelete;

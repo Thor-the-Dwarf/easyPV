@@ -25,7 +25,7 @@
 
   async function init() {
     try {
-      const response = await fetch('./game_kurve_der_veraenderung.json');
+      const response = await fetch('./_g01_kurve_der_veraenderung.json');
       if (!response.ok) throw new Error('Konfiguration nicht gefunden.');
       state.cfg = await response.json();
       rebuildRound();

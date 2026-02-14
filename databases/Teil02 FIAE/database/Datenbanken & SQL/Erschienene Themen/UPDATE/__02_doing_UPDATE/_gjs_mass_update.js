@@ -63,7 +63,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('game_mass_update.json');
+            const resp = await fetch('_g01_mass_update.json');
             state.config = await resp.json();
 
             el.whereSlot.oninput = handleInput;

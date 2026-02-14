@@ -25,8 +25,9 @@ async function walk(dir, out = []) {
 
 async function run() {
   const globalTest = path.join(databasesRoot, 'testing', 'tests', 'global-doing-folders-smoke.test.mjs');
+  const coreRulesTest = path.join(databasesRoot, 'testing', 'tests', 'core-rules.test.mjs');
   const localTests = await walk(databasesRoot);
-  const testFiles = [globalTest, ...localTests];
+  const testFiles = [globalTest, coreRulesTest, ...localTests];
 
   const child = spawn(process.execPath, ['--test', ...testFiles], {
     cwd: workspaceRoot,

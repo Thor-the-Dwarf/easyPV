@@ -13,4 +13,5 @@ Diese erste Teststufe prueft nur Basisqualitaet:
 
 ## Umfang
 - Global: Dateistruktur + game-Dateien + sichere lokale HTML-Links
+- Core Rules: pro Spielordner 4 Basiskriterien (html/js/json vorhanden, lokale Script-Referenz, parsebare Game-JSON, 1:1 html->js)
 - Lokal: zugehoeriger `__02_doing_*` vorhanden + game-Dateien vorhanden

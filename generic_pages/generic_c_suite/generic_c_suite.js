@@ -70,8 +70,7 @@
     jsonSources.push('./beispiel.json?ts=' + Date.now());
 
     try {
-      const payload = await loadFirstAvailableJson(jsonSources);
-      const messages = buildMessagesFromPayload(payload);
+      const messages = await loadFirstUsableMessages(jsonSources);
       thread.innerHTML = messages.map(renderMessage).join('');
     } catch (_) {
       thread.innerHTML =
@@ -81,7 +80,7 @@
     }
   }
 
-  async function loadFirstAvailableJson(sources) {
+  async function loadFirstUsableMessages(sources) {
     const list = Array.isArray(sources) ? sources.filter(Boolean) : [];
     let lastError;
 
@@ -90,13 +89,18 @@
       try {
         const response = await fetch(source);
         if (!response.ok) throw new Error('JSON nicht verfügbar');
-        return await response.json();
+        const payload = await response.json();
+        const messages = buildMessagesFromPayload(payload);
+        if (Array.isArray(messages) && messages.length > 0) {
+          return messages;
+        }
+        throw new Error('JSON hat keine verwertbaren Nachrichten');
       } catch (error) {
         lastError = error;
       }
     }
 
-    throw lastError || new Error('Keine JSON-Quelle verfügbar');
+    throw lastError || new Error('Keine verwertbare JSON-Quelle verfügbar');
   }
 
   function buildMessagesFromPayload(payload) {

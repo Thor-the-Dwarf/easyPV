@@ -37,6 +37,11 @@
 
   updateDrawerToggleUi();
   fabPractice.addEventListener('click', function () {
+    const fallbackParams = new URLSearchParams();
+    if (json) fallbackParams.set('json', json);
+    if (folder) fallbackParams.set('folder', folder);
+    const fallbackTarget = './generic_c_suite/generic_c_suite.html' + (fallbackParams.toString() ? '?' + fallbackParams.toString() : '');
+
     const payload = {
       type: 'generic:start-practice',
       folder: folder || '',
@@ -46,16 +51,18 @@
     try {
       if (window.parent && window.parent !== window) {
         window.parent.postMessage(payload, '*');
+        // Fallback: falls Parent nicht reagiert, im aktuellen Frame starten.
+        window.setTimeout(function () {
+          if (window.location.href.indexOf('generic_page') !== -1) {
+            window.location.href = fallbackTarget;
+          }
+        }, 180);
         return;
       }
     } catch (_) {
       // ignore cross-window errors
     }
-
-    const fallbackParams = new URLSearchParams();
-    if (json) fallbackParams.set('json', json);
-    if (folder) fallbackParams.set('folder', folder);
-    window.location.href = './generic_c_suite/generic_c_suite.html' + (fallbackParams.toString() ? '?' + fallbackParams.toString() : '');
+    window.location.href = fallbackTarget;
   });
   drawerToggle.addEventListener('click', toggleDrawer);
 

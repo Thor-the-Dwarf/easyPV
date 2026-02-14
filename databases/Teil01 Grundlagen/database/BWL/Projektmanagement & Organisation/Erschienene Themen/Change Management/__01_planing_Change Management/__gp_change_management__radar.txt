@@ -1,0 +1,46 @@
+# Implementation Plan - Change Management: Widerstands-Radar
+
+## Metadaten
+- **Spiel-Titel:** Widerstands-Radar
+- **Thema:** Stakeholder-Analyse / Widerstandsformen (Promoter, Skeptiker, Gegner)
+- **Ziel:** Identifiziere Personen, die Widerstand leisten, um sie gezielt im Change-Prozess abzuholen.
+- **Prinzip:** Click-to-Identify / Case Study.
+
+## Spielmechanik (UX-Global-Optimized)
+- **Layout:**
+  - **Meeting-Szene:** Ein Tisch mit 6 Personen (Avataren).
+  - **Interaktion:** Über den Köpfen erscheinen Sprechblasen mit Statements.
+  - **Aufgabe:** Klicke auf die Personen, die Widerstand (aktiv oder passiv) zeigen.
+- **Rollen-Logik:**
+  - **Promoter:** Positive, vorwärtstreibende Statements.
+  - **Skeptiker/Bedenkenträger:** Kritische Fragen (Widerstand erkannt? Ja, oft wertvoll!).
+  - **Gegner / Blockierer:** Destruktive/Ablehnende Statements.
+  - **Mitläufer:** Teilnahmslose/Neutrale Statements.
+- **Feedback:**
+  - Sofort-Feedback nach Klick (Rolle wird enthüllt).
+  - Ziel: Alle relevanten Widerstände finden, ohne die Promoter fälschlicherweise zu beschuldigen.
+
+## Technische Architektur
+- **Dateinamen:**
+  - `_ghtml_widerstands_radar.html`
+  - `_gjs_widerstands_radar.js`
+  - `_gcss_widerstands_radar.css`
+  - `_g01_widerstands_radar.json`
+
+### JSON Struktur
+```json
+{
+  "gameTitle": "Widerstands-Radar",
+  "participants": [
+    { "id": "p1", "name": "Anna", "statement": "Super, endlich passiert was!", "role": "promoter", "isResistance": false },
+    { "id": "p2", "name": "Bernd", "statement": "Das haben wir schon 2015 versucht...", "role": "opponent", "isResistance": true }
+  ]
+}
+```
+
+## Schritte
+1. JSON erstellen (6 Profile mit Statements und Rollen).
+2. CSS erstellen (Meeting-Layout, Avatar-Styling, Sprechblasen-Animation).
+3. HTML Grundgerüst.
+4. JS Logik (Zufällige Anordnung der Statements, Klick-Auswertung, Score-Tracking).
+5. Verifizierung via Node-Skript.

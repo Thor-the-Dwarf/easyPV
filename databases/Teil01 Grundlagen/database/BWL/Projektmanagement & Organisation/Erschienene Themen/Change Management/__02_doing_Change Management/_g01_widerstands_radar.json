@@ -1,0 +1,60 @@
+{
+    "gameTitle": "Widerstands-Radar",
+    "gameSubtitle": "Wer blockiert, wer treibt an?",
+    "instruction": "Identifiziere die 3 Personen in diesem Meeting, die Widerstand gegen die Veränderung leisten (aktiv oder passiv).",
+    "participants": [
+        {
+            "id": "p1",
+            "name": "Christian",
+            "statement": "Hört sich super an! Wie kann ich mein Team am besten unterstützen?",
+            "role": "Machtpromoter",
+            "isResistance": false,
+            "explanation": "Ein klassischer Promoter – er will die Veränderung vorantreiben."
+        },
+        {
+            "id": "p2",
+            "name": "Bernd",
+            "statement": "Das haben wir schon vor Jahren versucht. Hat damals nicht geklappt und wird auch jetzt scheitern.",
+            "role": "Gegner / Blockierer",
+            "isResistance": true,
+            "explanation": "Aktiver Widerstand durch Verweis auf vergangene Fehlschläge."
+        },
+        {
+            "id": "p3",
+            "name": "Sarah",
+            "statement": "Können wir erst mal die Risiken für die Bestandskunden genau analysieren?",
+            "role": "Skeptikerin",
+            "isResistance": true,
+            "explanation": "Bedenkenträgerin. Ihr Widerstand ist wertvoll, da sie auf Risiken hinweist, aber sie bremst den Prozess erst mal."
+        },
+        {
+            "id": "p4",
+            "name": "Markus",
+            "statement": "Mir egal, solange mein Urlaub genehmigt wird. Ich mache einfach, was man mir sagt.",
+            "role": "Mitläufer",
+            "isResistance": false,
+            "explanation": "Neutraler Mitläufer, leistet keinen direkten Widerstand, treibt aber auch nicht an."
+        },
+        {
+            "id": "p5",
+            "name": "Helga",
+            "statement": "Ich sehe den Sinn nicht. Das ist nur wieder Mehrarbeit für uns in der Verwaltung.",
+            "role": "Verdeckter Widerstand",
+            "isResistance": true,
+            "explanation": "Passiver/Verdeckter Widerstand durch Fokus auf persönlichen Mehraufwand."
+        },
+        {
+            "id": "p6",
+            "name": "Julia",
+            "statement": "Ich habe schon einen Plan entwickelt, wie wir die Daten migrieren können.",
+            "role": "Fachpromoterin",
+            "isResistance": false,
+            "explanation": "Fachpromoterin – sie bringt Expertise ein, um die Lösung umzusetzen."
+        }
+    ],
+    "scoring": {
+        "perfect": "Sehr gut! Du hast alle Widerstände erkannt. Jetzt kannst du sie gezielt ansprechen.",
+        "partial": "Du hast einige Widerstände gefunden, aber manche agieren subtiler.",
+        "fail": "Vorsicht! Du hast Promoter mit Widerständlern verwechselt oder die leisere Kritik überhört."
+    }
+}

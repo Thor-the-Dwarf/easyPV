@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lieferanten-Abhängigkeits-Check</title>
+    <link rel="stylesheet" href="../../../../../../../shared_theme.css">
+    <link rel="stylesheet" href="_gcss_fremdvergabe_lieferanten_check.css">
+    <script src="../../../../../../../theme_bridge.js"></script>
+</head>
+
+<body>
+
+    <div class="game-container">
+        <!-- Header -->
+        <header class="section-card" style="text-align: center;">
+            <h1 class="section-title" id="game-title">Lieferanten-Abhängigkeits-Check</h1>
+            <p class="section-sub" id="game-subtitle">Diversifiziere deine Beschaffung</p>
+        </header>
+
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <div class="stat-card">
+                <span class="section-sub">Verteilung</span>
+                <div id="total-percent" class="stat-value">0%</div>
+                <div class="progress-bar-bg">
+                    <div id="total-bar" class="progress-bar-fill" style="background: hsl(var(--primary))"></div>
+                </div>
+                <span id="allocation-status" style="font-size: 0.75rem; color: hsl(var(--error))">Unvollständig (Ziel:
+                    100%)</span>
+            </div>
+            <div class="stat-card">
+                <span class="section-sub">Produktionsstabilität</span>
+                <div id="stability-value" class="stat-value">100%</div>
+                <div class="progress-bar-bg">
+                    <div id="stability-bar" class="progress-bar-fill"
+                        style="background: hsl(var(--success)); width: 100%"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <span class="section-sub">Kostenindex</span>
+                <div id="budget-value" class="stat-value">--</div>
+                <div class="progress-bar-bg">
+                    <div id="budget-bar" class="progress-bar-fill"
+                        style="background: hsl(var(--primary)); width: 0%"></div>
+                </div>
+                <span id="budget-hint" style="font-size: 0.75rem; color: hsl(var(--txt-muted))">Je kleiner, desto
+                    günstiger.</span>
+            </div>
+        </div>
+
+        <!-- Main Game -->
+        <main>
+            <div class="section-card">
+                <h3 class="section-title">Beschaffungs-Strategie</h3>
+                <p class="section-sub" id="instruction">Ziehe die Slider, um das Volumen zu verteilen.</p>
+
+                <div id="supplier-list" class="supplier-grid">
+                    <!-- Supplier Cards will be injected here -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Controls -->
+        <footer class="section-card">
+            <div id="feedback-area" style="text-align: center; margin-bottom: 1rem; font-weight: 500;"></div>
+            <div class="controls" style="display: flex; justify-content: center; gap: 1rem;">
+                <button id="reset-btn" class="btn">Reset</button>
+                <button id="simulate-btn" class="btn primary" disabled>Ereignis-Simulation starten</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scenario Overlay -->
+    <div id="scenario-overlay" class="scenario-overlay">
+        <div class="scenario-card">
+            <h2 id="scenario-title" style="color: hsl(var(--error))">💥 EREIGNIS!</h2>
+            <p id="scenario-desc" style="margin: 1.5rem 0; font-size: 1.1rem;"></p>
+            <div style="font-size: 0.9rem; color: hsl(var(--txt-muted)); margin-bottom: 1.5rem;" id="scenario-hint">
+            </div>
+            <button id="close-overlay" class="btn primary">Ergebnis auswerten</button>
+        </div>
+    </div>
+
+    <script src="_gjs_fremdvergabe_lieferanten_check.js"></script>
+</body>
+
+</html>

@@ -1,52 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Widerstands-Radar</title>
-  <link rel="icon" href="data:,">
-  <style>
-    :root { color-scheme: dark; }
-    body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: #020617; color: #e2e8f0; }
-    .angebot-app { max-width: 1060px; margin: 0 auto; padding: 1rem; }
-    .angebot-head h1 { margin: 0 0 .35rem; }
-    .angebot-head p { margin: 0; color: #93c5fd; }
-    .angebot-kpis { display:flex; gap:.7rem; flex-wrap:wrap; margin-top:.8rem; }
-    .kpi { background:#0f172a; border:1px solid #334155; border-radius:12px; padding:.45rem .65rem; min-width:130px; }
-    .kpi span { display:block; font-size:.74rem; color:#93c5fd; }
-    .kpi strong { font-size:1rem; }
-    .angebot-card { margin-top:.9rem; background:#0f172a; border:1px solid #334155; border-radius:14px; padding:1rem; }
-    .task h2 { margin:.2rem 0 .5rem; font-size:1.05rem; }
-    .task p { margin:0; color:#cbd5e1; }
-    .check-btn,.next-btn { border:1px solid #334155; border-radius:10px; padding:.6rem .9rem; color:#e2e8f0; background:#1e293b; cursor:pointer; }
-    .next-btn { background:#155e75; border-color:#0e7490; }
-    .feedback { margin-top:.8rem; border-radius:10px; padding:.55rem .7rem; border:1px solid #334155; }
-    .feedback.ok { background: rgba(22,101,52,.25); border-color:#16a34a; }
-    .feedback.bad { background: rgba(127,29,29,.25); border-color:#ef4444; }
-    .hidden { display:none; }
-    .radar-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:.7rem; margin-top:1rem; }
-    .radar-card { background:#0f172a; color:#e2e8f0; border:1px solid #334155; border-radius:12px; padding:.75rem; text-align:left; cursor:pointer; }
-    .radar-card.active { border-color:#38bdf8; box-shadow:0 0 0 2px rgba(56,189,248,.25) inset; }
-    .radar-card h3 { margin:0 0 .35rem; font-size:1rem; }
-    .radar-card p { margin:0; font-size:.9rem; line-height:1.35; }
-    .radar-actions { margin-top:1rem; display:flex; gap:.6rem; flex-wrap:wrap; }
-  </style>
+  <link rel="stylesheet" href="../../../../../../../shared_theme.css">
+  <link rel="stylesheet" href="_gcss_widerstands_radar.css">
+  <script src="../../../../../../../theme_bridge.js"></script>
 </head>
-<body class="angebot-page">
-<main class="angebot-app">
-  <header class="angebot-head">
-    <h1>Widerstands-Radar</h1>
-    <p>Finde pro Runde die drei Blockierer im Meeting.</p>
-    <div class="angebot-kpis">
-      <div class="kpi"><span>Runde</span><strong id="kpi-round">1/5</strong></div>
-      <div class="kpi"><span>Score</span><strong id="kpi-score">0</strong></div>
-      <div class="kpi"><span>Treffer</span><strong id="kpi-hits">0</strong></div>
-    </div>
-  </header>
 
-  <section id="root" class="angebot-card"></section>
-</main>
-<script src="./_gjs_widerstands_radar.js" defer></script>
-<script src="/theme_bridge.js"></script>
+<body>
+
+  <div class="game-container">
+    <!-- Header -->
+    <header class="section-card" style="text-align: center;">
+      <h1 class="section-title" id="game-title">Widerstands-Radar</h1>
+      <p class="section-sub" id="game-subtitle">Stakeholder-Analyse im Change Management</p>
+    </header>
+
+    <!-- Meeting Scene -->
+    <main class="meeting-scene">
+      <div id="participants-grid" class="participants-container">
+        <!-- Avatars injected here -->
+      </div>
+      <div class="meeting-table"></div>
+    </main>
+
+    <!-- UI / Stats -->
+    <footer class="section-card">
+      <p id="instruction" style="text-align: center; margin-bottom: 1.5rem;"></p>
+
+      <div class="stats-row">
+        <div class="stat">Widerstände gefunden: <span id="radar-count" style="color: hsl(var(--success))">0/3</span>
+        </div>
+      </div>
+
+      <div id="feedback-area" style="text-align: center; margin-bottom: 1rem; padding: 1rem; border-radius: 8px;"></div>
+
+      <div class="controls" style="display: flex; justify-content: center; gap: 1rem;">
+        <button id="reset-btn" class="btn">Neustart</button>
+        <button id="finish-btn" class="btn primary" disabled>Meeting beenden</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="_gjs_widerstands_radar.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,112 @@
+{
+    "gameTitle": "Die Kurve der Veränderung",
+    "gameSubtitle": "Die 7 psychologischen Phasen einer Veränderung",
+    "instruction": "Ordne die Äußerungen der Mitarbeiter den korrekten Phasen auf der Veränderungskurve zu.",
+    "phases": [
+        {
+            "id": "p1",
+            "name": "Schock",
+            "order": 1,
+            "description": "Die erste Reaktion auf die Veränderung: Starre und Unverständnis.",
+            "x": 10,
+            "y": 20
+        },
+        {
+            "id": "p2",
+            "name": "Verneinung",
+            "order": 2,
+            "description": "Abwehrhaltung. Man glaubt, die Veränderung aussitzen zu können.",
+            "x": 25,
+            "y": 15
+        },
+        {
+            "id": "p3",
+            "name": "Einsicht",
+            "order": 3,
+            "description": "Rationale Einsicht, dass die Veränderung unvermeidbar ist (noch keine Akzeptanz).",
+            "x": 40,
+            "y": 50
+        },
+        {
+            "id": "p4",
+            "name": "Akzeptanz",
+            "order": 4,
+            "description": "Das 'Tal der Tränen'. Loslassen des Alten, emotionale Akzeptanz.",
+            "x": 50,
+            "y": 85
+        },
+        {
+            "id": "p5",
+            "name": "Ausprobieren",
+            "order": 5,
+            "description": "Erste Experimente mit dem neuen System. Neugier erwacht.",
+            "x": 65,
+            "y": 60
+        },
+        {
+            "id": "p6",
+            "name": "Erkenntnis",
+            "order": 6,
+            "description": "Man erkennt den Nutzen und wird im Umgang mit dem Neuen kompetenter.",
+            "x": 80,
+            "y": 30
+        },
+        {
+            "id": "p7",
+            "name": "Integration",
+            "order": 7,
+            "description": "Das Neue ist zur Normalität geworden. Volle Leistungsfähigkeit.",
+            "x": 95,
+            "y": 15
+        }
+    ],
+    "statements": [
+        {
+            "id": "s1",
+            "text": "Das kann nicht wahr sein! Die haben das bestimmt verwechselt.",
+            "targetPhase": "p1",
+            "explanation": "Schock & Überraschung direkt nach der Verkündigung."
+        },
+        {
+            "id": "s2",
+            "text": "Das wird sich eh nicht durchsetzen, wir machen einfach so weiter wie bisher.",
+            "targetPhase": "p2",
+            "explanation": "Typische Abwehrhaltung (Verneinung)."
+        },
+        {
+            "id": "s3",
+            "text": "Theoretisch macht das Sinn, aber ich sehe nicht, wie das klappen soll.",
+            "targetPhase": "p3",
+            "explanation": "Rationale Einsicht ohne emotionale Beteiligung."
+        },
+        {
+            "id": "s4",
+            "text": "Es gibt kein Zurück mehr. Ich muss mich wohl oder übel damit abfinden.",
+            "targetPhase": "p4",
+            "explanation": "Emotionale Akzeptanz am tiefsten Punkt der Kurve."
+        },
+        {
+            "id": "s5",
+            "text": "Schauen wir mal, wie das Tool funktioniert. Ich klicke mich mal durch.",
+            "targetPhase": "p5",
+            "explanation": "Erste zaghafte Versuche und Neugier."
+        },
+        {
+            "id": "s6",
+            "text": "Wahnsinn! Die Automatisierung spart mir tatsächlich eine Stunde pro Tag!",
+            "targetPhase": "p6",
+            "explanation": "Erkenntnis des echten Mehrwerts."
+        },
+        {
+            "id": "s7",
+            "text": "Ehrlich gesagt kann ich mir gar nicht mehr vorstellen, wie wir das früher gemacht haben.",
+            "targetPhase": "p7",
+            "explanation": "Vollständige Integration in den Alltag."
+        }
+    ],
+    "scoring": {
+        "perfect": "Change-Experte! Du verstehst die menschlichen Reaktionen perfekt.",
+        "good": "Gute Einschätzung. Du hast die meisten emotionalen Zustände richtig erkannt.",
+        "fail": "Schau dir die Change-Kurve noch einmal an, um Widerstände besser zu navigieren."
+    }
+}

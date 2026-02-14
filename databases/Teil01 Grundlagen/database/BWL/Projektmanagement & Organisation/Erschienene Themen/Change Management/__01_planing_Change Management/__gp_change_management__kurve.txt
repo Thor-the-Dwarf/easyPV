@@ -1,0 +1,48 @@
+# Implementation Plan - Change Management: Die Kurve der Veränderung
+
+## Metadaten
+- **Spiel-Titel:** Die Kurve der Veränderung
+- **Thema:** Phasen des Change Managements (Change Curve / House of Change)
+- **Ziel:** Ordne emotionale Aussagen den korrekten psychologischen Phasen einer Veränderung zu.
+- **Prinzip:** Timeline Sorting / Drag & Drop.
+
+## Spielmechanik (UX-Global-Optimized)
+- **Layout:**
+  - **Kurven-Grafik:** Eine stilisierte Kurve (U-Form/S-Form) im Hintergrund mit markierten Zonen (1-7).
+  - **Phasen-Labels:** Schock, Verneinung, Rationale Einsicht, Emotionale Akzeptanz, Ausprobieren, Erkenntnis, Integration.
+  - **Statement-Pool:** 7 Sprechblasen mit Zitaten von Mitarbeitern.
+- **Interaktion:**
+  - Spieler zieht die Sprechblasen auf die entsprechenden Punkte der Kurve.
+  - Alternativ: Click-to-Assign Mechanik (Sprechblase anklicken, dann Phase wählen).
+- **Feedback:**
+  - Visuelle Zuordnung (Grün/Rot) nach dem Platzieren.
+  - Erklärungstext pro Phase beim Hovern oder nach Klick auf "Prüfen".
+
+## Technische Architektur
+- **Dateinamen:**
+  - `_ghtml_change_kurve.html`
+  - `_gjs_change_kurve.js`
+  - `_gcss_change_kurve.css`
+  - `_g01_change_kurve.json`
+
+### JSON Struktur
+```json
+{
+  "gameTitle": "Die Kurve der Veränderung",
+  "phases": [
+    { "id": "p1", "name": "Schock", "order": 1, "description": "Überraschung und Starre." },
+    ...
+  ],
+  "statements": [
+    { "id": "s1", "text": "Ich verstehe kein Wort, was hat das mit meiner Arbeit zu tun?", "targetPhase": "p1" },
+    ...
+  ]
+}
+```
+
+## Schritte
+1. JSON definieren (Phasen + Statements).
+2. CSS erstellen (Kurven-Styling mit SVG oder Gradient, Karten-Design).
+3. HTML Struktur (Container für die Kurve und den Pool).
+4. JS Logik (Drag-Logic, Validation, Feedback-Overlay).
+5. Verifizierung via Node-Skript.

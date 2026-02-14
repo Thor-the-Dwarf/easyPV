@@ -1,0 +1,127 @@
+/* 
+   Die verlängerte Werkbank Game Styles 
+   Based on shared_theme.css
+*/
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Dashboard */
+.kpi-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.kpi-card {
+    background: hsl(var(--bg-card) / 0.5);
+    border: 1px solid hsl(var(--glass-border));
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    min-width: 150px;
+}
+
+.kpi-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Conveyor Belt Area */
+.factory-area {
+    position: relative;
+    height: 300px;
+    background: hsl(var(--bg-surface) / 0.3);
+    border: 2px solid hsl(var(--glass-border));
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.conveyor-belt {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(90deg, #333 0%, #444 50%, #333 100%);
+    background-size: 50px 100%;
+    animation: belt-scroll 2s linear infinite;
+    border-top: 2px solid #222;
+}
+
+@keyframes belt-scroll {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 50px 0;
+    }
+}
+
+/* Product Styling */
+.product {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: hsl(var(--bg-card));
+    border: 2px solid hsl(var(--glass-border));
+    border-radius: var(--radius-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.1s, border-color 0.2s;
+    user-select: none;
+    z-index: 10;
+}
+
+.product:hover {
+    transform: scale(1.1);
+    border-color: hsl(var(--primary));
+}
+
+.product.inspected {
+    border-color: hsl(var(--success));
+    filter: grayscale(0.5);
+    pointer-events: none;
+}
+
+.product.rejected {
+    transform: translateY(-50px) rotate(20deg);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Defect Visuals */
+.defect-marker {
+    pointer-events: none;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.danger-zone {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: linear-gradient(90deg, transparent, rgba(var(--error-rgb), 0.2));
+    border-left: 1px dashed hsl(var(--error));
+}

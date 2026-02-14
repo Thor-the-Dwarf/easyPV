@@ -1,182 +1,130 @@
-(function () {
-  'use strict';
+/**
+ * Widerstands-Radar - Game Logic
+ * Identifying stakeholders who resist change.
+ */
 
-  const state = {
-    cfg: null,
-    idx: 0,
-    score: 0,
-    hits: 0,
-    selected: new Set(),
-    answered: false,
-    done: false
+document.addEventListener('DOMContentLoaded', () => {
+  // Elements
+  const grid = document.getElementById('participants-grid');
+  const radarCount = document.getElementById('radar-count');
+  const instructionEl = document.getElementById('instruction');
+  const feedbackArea = document.getElementById('feedback-area');
+  const finishBtn = document.getElementById('finish-btn');
+  const resetBtn = document.getElementById('reset-btn');
+
+  // State
+  let gameState = {
+    data: null,
+    foundCount: 0,
+    wrongCount: 0,
+    maxResistance: 3,
+    clickedIds: new Set(),
+    solved: false
   };
 
-  const el = {
-    round: document.getElementById('kpi-round'),
-    score: document.getElementById('kpi-score'),
-    hits: document.getElementById('kpi-hits'),
-    root: document.getElementById('root')
-  };
+  // Load Data
+  fetch('_g01_widerstands_radar.json')
+    .then(r => r.json())
+    .then(data => initGame(data))
+    .catch(err => console.error("Load failed:", err));
 
-  init();
+  function initGame(data) {
+    gameState.data = data;
+    document.getElementById('game-title').innerText = data.gameTitle;
+    document.getElementById('game-subtitle').innerText = data.gameSubtitle;
+    instructionEl.innerText = data.instruction;
 
-  async function init() {
-    const resp = await fetch('./_gg01_widerstands_radar.json');
-    if (!resp.ok) {
-      el.root.textContent = 'Konfiguration konnte nicht geladen werden.';
-      return;
-    }
-    state.cfg = await resp.json();
-    render();
+    renderParticipants();
+
+    resetBtn.addEventListener('click', resetGame);
+    finishBtn.addEventListener('click', finishMeeting);
   }
 
-  function currentRound() {
-    return state.cfg.rounds[state.idx] || null;
-  }
+  function renderParticipants() {
+    grid.innerHTML = '';
+    // Randomize list position to avoid patterns
+    const participants = [...gameState.data.participants].sort(() => Math.random() - 0.5);
 
-  function render() {
-    updateKpis();
+    participants.forEach(p => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'avatar-wrapper';
+      wrapper.id = `part-${p.id}`;
 
-    if (state.done) {
-      const total = state.cfg.rounds.length;
-      const rate = Math.round((state.hits / (total * 3)) * 100);
-      el.root.innerHTML = `
-        <h2>Auswertung</h2>
-        <p>Score: <strong>${state.score}</strong></p>
-        <p>Richtig erkannte Blockierer: <strong>${state.hits}</strong> / ${total * 3} (${rate}%)</p>
-        <button id="restart" class="check-btn" type="button">Nochmal spielen</button>
-      `;
-      document.getElementById('restart').addEventListener('click', () => {
-        state.idx = 0;
-        state.score = 0;
-        state.hits = 0;
-        state.selected.clear();
-        state.answered = false;
-        state.done = false;
-        render();
-      });
-      return;
-    }
+      const icons = ["👤", "👥", "🤵", "👩‍💼", "👨‍💻", "👩‍🔬"];
+      const icon = icons[Math.floor(Math.random() * icons.length)];
 
-    const round = currentRound();
+      wrapper.innerHTML = `
+                <div class="role-label">${p.role}</div>
+                <div class="speech-bubble">"${p.statement}"</div>
+                <div class="avatar-circle">${icon}</div>
+                <div class="avatar-name">${p.name}</div>
+            `;
 
-    el.root.innerHTML = `
-      <section class="task">
-        <h2>${escapeHtml(round.prompt)}</h2>
-        <p>Markiere genau 3 Personen, die aktiv blockieren.</p>
-      </section>
-
-      <div id="grid" class="radar-grid">
-        ${round.cards.map((c, i) => {
-          const active = state.selected.has(i) ? 'active' : '';
-          return `<button type="button" class="radar-card ${active}" data-idx="${i}"><h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.text)}</p></button>`;
-        }).join('')}
-      </div>
-
-      <div class="radar-actions">
-        <button id="evaluate" class="check-btn" type="button" ${state.answered ? 'disabled' : ''}>Pruefen</button>
-        <button id="next" class="next-btn hidden" type="button">${state.idx === state.cfg.rounds.length - 1 ? 'Auswertung' : 'Naechste Runde'}</button>
-      </div>
-
-      <div id="feedback" class="feedback hidden"></div>
-    `;
-
-    el.root.querySelectorAll('.radar-card').forEach((card) => {
-      card.addEventListener('click', () => {
-        if (state.answered) return;
-        const i = Number(card.dataset.idx);
-        if (state.selected.has(i)) state.selected.delete(i);
-        else {
-          if (state.selected.size >= 3) return;
-          state.selected.add(i);
-        }
-        render();
-      });
+      wrapper.addEventListener('click', () => handleParticipantClick(p));
+      grid.appendChild(wrapper);
     });
-
-    document.getElementById('evaluate').addEventListener('click', evaluate);
-    document.getElementById('next').addEventListener('click', nextRound);
   }
 
-  function evaluate() {
-    if (state.answered) return;
-    if (state.selected.size !== 3) {
-      const fb = document.getElementById('feedback');
-      fb.className = 'feedback bad';
-      fb.textContent = 'Bitte genau 3 Personen markieren.';
-      fb.classList.remove('hidden');
-      return;
-    }
+  function handleParticipantClick(p) {
+    if (gameState.solved || gameState.clickedIds.has(p.id)) return;
 
-    const round = currentRound();
-    let correct = 0;
-    for (const i of state.selected) {
-      if (round.cards[i].blocker) correct += 1;
-    }
+    gameState.clickedIds.add(p.id);
+    const el = document.getElementById(`part-${p.id}`);
 
-    const wrong = 3 - correct;
-    state.hits += correct;
-    state.score += correct * 15 - wrong * 10;
-    if (correct === 3) state.score += 10;
-
-    state.answered = true;
-
-    const fb = document.getElementById('feedback');
-    if (correct === 3) {
-      fb.className = 'feedback ok';
-      fb.textContent = 'Perfekt. Alle 3 Blockierer korrekt erkannt (+10 Bonus).';
+    if (p.isResistance) {
+      gameState.foundCount++;
+      el.classList.add('found');
     } else {
-      fb.className = 'feedback bad';
-      fb.textContent = `Teilweise korrekt: ${correct}/3 Blockierer erkannt.`;
+      gameState.wrongCount++;
+      el.classList.add('wrong');
     }
-    fb.classList.remove('hidden');
 
-    document.getElementById('next').classList.remove('hidden');
-    updateKpis();
+    updateUI();
   }
 
-  function nextRound() {
-    if (!state.answered) return;
-    if (state.idx === state.cfg.rounds.length - 1) {
-      state.done = true;
-      render();
-      return;
+  function updateUI() {
+    radarCount.innerText = `${gameState.foundCount}/${gameState.maxResistance}`;
+
+    if (gameState.foundCount === gameState.maxResistance) {
+      finishBtn.disabled = false;
     }
-    state.idx += 1;
-    state.selected.clear();
-    state.answered = false;
-    render();
   }
 
-  function updateKpis() {
-    const total = state.cfg ? state.cfg.rounds.length : 0;
-    el.round.textContent = `${state.done ? total : state.idx + 1}/${total}`;
-    el.score.textContent = String(state.score);
-    el.hits.textContent = String(state.hits);
+  function finishMeeting() {
+    gameState.solved = true;
+    finishBtn.disabled = true;
+
+    let score = Math.max(0, (gameState.foundCount - gameState.wrongCount / 2) / gameState.maxResistance * 100);
+    let msg;
+
+    if (gameState.wrongCount === 0 && gameState.foundCount === gameState.maxResistance) {
+      msg = gameState.data.scoring.perfect;
+      feedbackArea.style.background = 'hsl(var(--success) / 0.1)';
+      feedbackArea.style.color = 'green';
+    } else if (gameState.foundCount === gameState.maxResistance) {
+      msg = gameState.data.scoring.partial;
+      feedbackArea.style.background = 'hsl(var(--warning) / 0.1)';
+      feedbackArea.style.color = 'orange';
+    } else {
+      msg = gameState.data.scoring.fail;
+      feedbackArea.style.background = 'hsl(var(--error) / 0.1)';
+      feedbackArea.style.color = 'red';
+    }
+
+    feedbackArea.innerText = msg;
   }
 
-  function escapeHtml(v) {
-    return String(v)
-      .replaceAll('&', '&amp;')
-      .replaceAll('<', '&lt;')
-      .replaceAll('>', '&gt;')
-      .replaceAll('"', '&quot;')
-      .replaceAll("'", '&#39;');
+  function resetGame() {
+    gameState.foundCount = 0;
+    gameState.wrongCount = 0;
+    gameState.clickedIds.clear();
+    gameState.solved = false;
+
+    radarCount.innerText = `0/${gameState.maxResistance}`;
+    feedbackArea.innerText = "";
+    feedbackArea.style.background = 'transparent';
+    finishBtn.disabled = true;
+
+    renderParticipants();
   }
-
-  window.render_game_to_text = function renderGameToText() {
-    const round = !state.done && state.cfg ? currentRound() : null;
-    return JSON.stringify({
-      mode: state.done ? 'result' : 'radar',
-      coordinate_system: 'origin top-left, x right, y down',
-      round_index: state.idx,
-      total_rounds: state.cfg ? state.cfg.rounds.length : 0,
-      score: state.score,
-      hits: state.hits,
-      selected_count: state.selected.size,
-      prompt: round ? round.prompt : null
-    });
-  };
-
-  window.advanceTime = function advanceTime() { return true; };
-})();
+});

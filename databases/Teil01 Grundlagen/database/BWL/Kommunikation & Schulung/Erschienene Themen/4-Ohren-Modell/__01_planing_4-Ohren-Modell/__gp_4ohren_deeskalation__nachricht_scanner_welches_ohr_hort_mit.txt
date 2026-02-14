@@ -1,21 +1,32 @@
-Anforderungen
-1. "Nachricht-Scanner: Welches Ohr hört mit?"
-   - Ziel: Ordne 10 Aussagen korrekt den 4 Ohren zu (Sachinhalt, Selbstoffenbarung, Beziehung, Appell).
-   - Spielmechanik: 
-     - Aussage: "Es ist kalt hier."
-     - 4 Buttons: "Sache", "Ich", "Du", "Tu was".
-     - Spieler muss schnell entscheiden.
-     - Messbarkeit: 10 Aussagen x 10 Punkte. Highscore möglich. 100% = alles richtig zugeordnet.
-   - Lernziel: Schnelles Erkennen der Kommunikationsebenen.
+# __gp_nachricht_scanner_welches_ohr_hort_mit
 
-Implementierungsplan
-- [ ] JSON Konfiguration erstellen ('game_4ohren_scanner.json')
-  - `statements`: [ { "text": "...", "correctEar": "sache" } ].
-- [ ] Shared CSS Check ('kommunikation.css')
-  - 4 Große Buzzer/Buttons für die Ohren.
-  - Schnelles Feedback (Grün/Rot Flash).
-- [ ] Game-Engine Logic ('game_4ohren_scanner.js')
-  - Rapid-Fire Modus: Nächste Frage sofort nach Klick.
-  - Score-Chain bei Serien-Richtigen.
-- [ ] Integration
-  - Startbar über JSON.
+## Spielidee
+Nachricht-Scanner: Welches Ohr hoert mit?
+
+Du siehst kurze Aussagen und ordnest sie einem der 4 Ohren zu:
+- Sache
+- Ich (Selbstoffenbarung)
+- Du (Beziehung)
+- Tu was (Appell)
+
+## Lernziel
+- Kommunikationsebenen schnell erkennen (Training fuer Alltagssituationen).
+
+## Mechanik
+- 10 Aussagen, pro Aussage genau eine richtige Zuordnung.
+- Sofortfeedback (richtig/falsch) und naechste Aussage.
+- Punkte: +10 pro Treffer, keine Wartezeit-Orgie.
+
+## Dateikonvention (Teil01)
+- `_gg01_nachricht_scanner_welches_ohr_hort_mit.json`
+- `_ghtml_nachricht_scanner_welches_ohr_hort_mit.html`
+- `_gjs_nachricht_scanner_welches_ohr_hort_mit.js`
+- `_gcss_kommunikation.css` (shared)
+
+## Arbeitspakete
+- [x] Config (10 Statements + correct_ear + kurze Erklaerung) erstellen.
+- [ ] HTML erstellen (KPIs + Statement + 4 Buttons + Feedback + Next).
+- [ ] JS implementieren (load config, scoring, feedback, next, restart).
+- [ ] CSS erweitern (Button-Layout 2x2 + klare Feedbackfarben) ohne bestehende Styles zu brechen.
+- [ ] Lokalen Config-Test in `__03_testing_4-Ohren-Modell/unit` hinzufuegen.
+- [ ] Smoke: `node --check`, `node --test`, Playwright-Screenshot+State.

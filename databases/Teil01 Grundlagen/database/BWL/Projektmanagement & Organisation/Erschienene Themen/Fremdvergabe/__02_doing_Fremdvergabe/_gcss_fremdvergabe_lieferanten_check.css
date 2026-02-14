@@ -1,0 +1,156 @@
+/* 
+   Lieferanten-Abhängigkeits-Check Styles 
+   Based on shared_theme.css
+*/
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Dashboard Styles */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.stat-card {
+    background: hsl(var(--bg-card) / 0.5);
+    border: 1px solid hsl(var(--glass-border));
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0.5rem 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.progress-bar-bg {
+    background: hsl(var(--bg-surface));
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease, background-color 0.3s;
+}
+
+/* Supplier List */
+.supplier-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.supplier-card {
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    transition: transform 0.2s;
+}
+
+.supplier-info h3 {
+    margin: 0;
+    color: hsl(var(--primary));
+}
+
+.supplier-info p {
+    font-size: 0.85rem;
+    color: hsl(var(--txt-muted));
+    margin: 0.25rem 0;
+}
+
+.risk-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.risk-high {
+    background: hsl(var(--error) / 0.2);
+    color: hsl(var(--error));
+}
+
+.risk-medium {
+    background: hsl(45 100% 50% / 0.2);
+    color: hsl(45 100% 50%);
+}
+
+.risk-low {
+    background: hsl(var(--success) / 0.2);
+    color: hsl(var(--success));
+}
+
+/* Slider Styling */
+.allocation-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+input[type="range"] {
+    flex: 1;
+    cursor: pointer;
+}
+
+.percent-display {
+    min-width: 3.5rem;
+    text-align: right;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Scenario Overlay */
+.scenario-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+.scenario-card {
+    background: hsl(var(--bg-surface));
+    border: 2px solid hsl(var(--primary));
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    max-width: 500px;
+    text-align: center;
+    box-shadow: var(--shadow-xl);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .supplier-card {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}

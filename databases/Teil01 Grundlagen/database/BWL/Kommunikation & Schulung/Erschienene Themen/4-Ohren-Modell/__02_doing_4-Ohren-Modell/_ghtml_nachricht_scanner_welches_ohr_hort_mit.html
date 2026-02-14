@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nachricht-Scanner</title>
+  <link rel="stylesheet" href="./_gcss_kommunikation.css">
+</head>
+<body class="deesk-page scanner-page">
+<main class="deesk-app">
+  <header class="deesk-head">
+    <h1>Nachricht-Scanner</h1>
+    <p>Welches Ohr hoert mit? Ordne 10 Aussagen zu.</p>
+    <div class="deesk-kpis">
+      <div class="kpi"><span>Aussage</span><strong id="kpi-round">1/10</strong></div>
+      <div class="kpi"><span>Score</span><strong id="kpi-score">0</strong></div>
+      <div class="kpi"><span>Treffer</span><strong id="kpi-hits">0</strong></div>
+    </div>
+  </header>
+
+  <section id="card" class="deesk-card" aria-live="polite"></section>
+</main>
+
+<script src="./_gjs_nachricht_scanner_welches_ohr_hort_mit.js" defer></script>
+<script src="/theme_bridge.js"></script>
+</body>
+</html>

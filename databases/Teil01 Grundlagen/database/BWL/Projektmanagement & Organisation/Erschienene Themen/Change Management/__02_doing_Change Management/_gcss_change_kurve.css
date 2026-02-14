@@ -1,0 +1,160 @@
+/* 
+   Change Curve Game Styles 
+   Based on shared_theme.css
+*/
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Curve Visualization */
+.curve-canvas {
+    position: relative;
+    height: 400px;
+    background: hsl(var(--bg-surface) / 0.5);
+    border: 1px solid hsl(var(--glass-border));
+    border-radius: var(--radius-lg);
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+.curve-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.curve-path {
+    fill: none;
+    stroke: hsl(var(--primary));
+    stroke-width: 4;
+    stroke-dasharray: 10 5;
+    opacity: 0.6;
+}
+
+.drop-point {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: var(--glass-bg);
+    border: 2px solid hsl(var(--glass-border));
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 5;
+    transition: background 0.3s, border-color 0.3s, transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.drop-point:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+    border-color: hsl(var(--primary));
+}
+
+.drop-point.active {
+    background: hsl(var(--primary) / 0.8);
+    border-color: #fff;
+    color: #fff;
+    box-shadow: 0 0 15px hsl(var(--primary));
+}
+
+.drop-point.correct {
+    background: hsl(var(--success));
+    border-color: #fff;
+}
+
+/* Phase Label Tooltip */
+.phase-label {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 0.7rem;
+    color: hsl(var(--txt-muted));
+    font-weight: 500;
+}
+
+/* Statement Pool */
+.statement-pool {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.statement-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    cursor: grab;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    transition: transform 0.2s, background 0.2s;
+    user-select: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.statement-card:hover {
+    transform: translateY(-3px);
+    background: hsl(var(--bg-card) / 0.5);
+}
+
+.statement-card.selected {
+    border-color: hsl(var(--primary));
+    background: hsl(var(--primary) / 0.1);
+}
+
+.statement-card.hidden {
+    opacity: 0.2;
+    pointer-events: none;
+    transform: scale(0.95);
+}
+
+/* Legend/Axes */
+.axis-label {
+    position: absolute;
+    font-size: 0.8rem;
+    color: hsl(var(--txt-muted));
+    font-weight: bold;
+}
+
+.axis-time {
+    bottom: 10px;
+    right: 20px;
+}
+
+.axis-performance {
+    top: 20px;
+    left: 10px;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+}
+
+/* Feedback Overlay */
+.feedback-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: hsl(var(--bg-surface));
+    border: 2px solid hsl(var(--primary));
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    display: none;
+    z-index: 100;
+    box-shadow: var(--shadow-xl);
+}

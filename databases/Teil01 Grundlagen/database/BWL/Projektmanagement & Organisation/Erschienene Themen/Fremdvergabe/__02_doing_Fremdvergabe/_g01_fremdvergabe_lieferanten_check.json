@@ -1,0 +1,59 @@
+{
+    "gameTitle": "Lieferanten-Abhängigkeits-Check",
+    "gameSubtitle": "Risikomanagement in der Beschaffung",
+    "instruction": "Verteile deinen Bedarf (100%) auf verschiedene Lieferanten, um das Risiko eines Produktionsausfalls zu minimieren.",
+    "dashboardLabels": {
+        "totalAllocation": "Gesamtverteilung",
+        "stability": "Produktionsstabilität",
+        "budget": "Kosten-Effizienz"
+    },
+    "suppliers": [
+        {
+            "id": "A",
+            "name": "Global Corp (Asien)",
+            "description": "Marktführer, extrem günstig, aber hohes Lieferrisiko (Logistik, Streiks).",
+            "riskLevel": "high",
+            "costFactor": 0.8,
+            "capacity": 100
+        },
+        {
+            "id": "B",
+            "name": "EuroParts (EU)",
+            "description": "Zuverlässig, mittlere Preise, moderate Kapazität.",
+            "riskLevel": "medium",
+            "costFactor": 1.1,
+            "capacity": 60
+        },
+        {
+            "id": "C",
+            "name": "RegioSupply (Lokal)",
+            "description": "Höchste Zuverlässigkeit, teuer, begrenzte Kapazität.",
+            "riskLevel": "low",
+            "costFactor": 1.4,
+            "capacity": 30
+        }
+    ],
+    "scenarios": [
+        {
+            "id": "strike_a",
+            "title": "Hafenstreik in Asien!",
+            "description": "Lieferant A kann für diesen Monat absolut nichts liefern.",
+            "affectedSupplier": "A",
+            "impactFactor": 1.0,
+            "hint": "Dual Sourcing hätte den Ausfall gedämpft."
+        },
+        {
+            "id": "quality_b",
+            "title": "Qualitätsprobleme bei B",
+            "description": "Lieferant B liefert 50% Ausschuss. Die nutzbare Menge halbiert sich.",
+            "affectedSupplier": "B",
+            "impactFactor": 0.5,
+            "hint": "Verlasse dich nie auf nur einen zuverlässigen Partner."
+        }
+    ],
+    "feedback": {
+        "stable": "Hervorragend! Deine Multiple-Sourcing-Strategie hat die Produktion gerettet.",
+        "warning": "Knapp! Die Produktion lief weiter, aber mit Engpässen. Diversifiziere mehr.",
+        "critical": "Produktionsstopp! Du warst zu abhängig von einem Lieferanten. Hoher finanzieller Schaden."
+    }
+}

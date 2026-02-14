@@ -1,0 +1,57 @@
+# Implementation Plan - Fremdvergabe: Die verlängerte Werkbank
+
+## Metadaten
+- **Spiel-Titel:** Die verlängerte Werkbank
+- **Thema:** Qualitätssicherung bei Fremdbezug
+- **Ziel:** Erkenne Qualitätsmängel in der externen Fertigung und steuere diese durch Reklamation.
+- **Prinzip:** Inspection / Sorting Game.
+
+## Spielmechanik (UX-Global-Optimized)
+- **Layout:**
+  - **Förderband:** Produkte (z.B. Platinen, Gehäuse) bewegen sich von links nach rechts.
+  - **Status-Anzeige:** Gelieferte Teile, Gefundene Fehler, Kundenzufriedenheit (KPI).
+  - **Interaktion:** Spieler klickt auf defekte Teile, um sie zu reklamieren (auszusortieren).
+- **Logik:**
+  - Verschiedene "Fehlerbilder" (z.B. Kratzer, fehlende Schraube, falsche Farbe).
+  - Wenn ein defektes Teil das Ende des Bandes erreicht -> Kundenzufriedenheit sinkt.
+  - Wenn ein intaktes Teil reklamiert wird -> Kosten steigen / Score sinkt.
+  - Ziel: Maximale Fehlererkennung bei minimaler Retourenquote von Gutteilen.
+
+## Technische Architektur
+- **Dateinamen:**
+  - `_ghtml_fremdvergabe_werkbank.html`
+  - `_gjs_fremdvergabe_werkbank.js`
+  - `_gcss_fremdvergabe_werkbank.css`
+  - `_g01_fremdvergabe_werkbank.json`
+
+### JSON Struktur
+```json
+{
+  "gameTitle": "Die verlängerte Werkbank",
+  "productTypes": [
+    { "id": "p1", "type": "Platine", "img": "circuit-board" },
+    { "id": "p2", "type": "Gehäuse", "img": "case" }
+  ],
+  "defects": [
+    { "id": "scratch", "label": "Kratzer", "probability": 0.2 },
+    { "id": "missing", "label": "Fehlteil", "probability": 0.1 }
+  ]
+}
+```
+
+### HTML Struktur
+- Dashboard oben (KPIs).
+- Förderband (Moving Container).
+- Steuerung: "Prüfmodus aktiv" / "Stopp-Taste" (optional).
+
+### CSS (Theme-Compliant)
+- CSS-Animation für das Förderband (@keyframes scroll).
+- High-Contrast Highlights für selektierte Teile.
+- Glassmorphism für das Kontroll-Panel.
+
+## Schritte
+1. JSON erstellen (Produkte + Fehler).
+2. CSS erstellen (Förderband Animation).
+3. HTML Grundgerüst.
+4. JS Logik (Spawner für Teile, Kollisionsprüfung/Klick-Handling, Score-Berechnung).
+5. Verifizierung via Node-Skript.

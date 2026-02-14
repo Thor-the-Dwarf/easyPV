@@ -1,0 +1,56 @@
+{
+    "gameTitle": "Die verlängerte Werkbank",
+    "gameSubtitle": "Qualitätssicherung bei externer Fertigung",
+    "instruction": "Klicke auf fehlerhafte Teile, um sie zu reklamieren. Lass einwandfreie Teile passieren.",
+    "kpiLabels": {
+        "totalInspected": "Geprüft",
+        "defectsFound": "Fehler erkannt",
+        "customerSatisfaction": "Zufriedenheit",
+        "costImpact": "Kosten"
+    },
+    "productTypes": [
+        {
+            "id": "board",
+            "name": "Hauptplatine",
+            "icon": "📟",
+            "baseColor": "var(--success)"
+        },
+        {
+            "id": "housing",
+            "name": "Gehäuse",
+            "icon": "📦",
+            "baseColor": "var(--primary)"
+        }
+    ],
+    "defects": [
+        {
+            "id": "crack",
+            "label": "Riss im Gehäuse",
+            "severity": 0.2,
+            "visual": "border: 2px solid var(--error); border-radius: 50%; width: 10px; height: 10px; position: absolute; top: 10px; left: 10px;"
+        },
+        {
+            "id": "missing_component",
+            "label": "Fehlendes Bauteil",
+            "severity": 0.3,
+            "visual": "background: rgba(var(--error-rgb), 0.3); width: 15px; height: 15px; position: absolute; bottom: 5px; right: 5px;"
+        },
+        {
+            "id": "solder_defect",
+            "label": "Lötfehler",
+            "severity": 0.15,
+            "visual": "box-shadow: 0 0 5px var(--error); border-radius: 50%; width: 6px; height: 6px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"
+        }
+    ],
+    "scoring": {
+        "perfect": "Erstklassige Qualitätskontrolle! Der Kunde ist hochzufrieden.",
+        "good": "Gute Arbeit. Ein paar Fehler sind durchgerutscht, aber die Qualität stimmt.",
+        "poor": "Mangelhaft! Zu viele defekte Teile beim Kunden. Die Kosten explodieren.",
+        "fail": "Katastrophe! Der Kunde hat den Vertrag wegen Qualitätsmängeln gekündigt."
+    },
+    "settings": {
+        "speed": 2,
+        "spawnRate": 1500,
+        "defectProbability": 0.3
+    }
+}

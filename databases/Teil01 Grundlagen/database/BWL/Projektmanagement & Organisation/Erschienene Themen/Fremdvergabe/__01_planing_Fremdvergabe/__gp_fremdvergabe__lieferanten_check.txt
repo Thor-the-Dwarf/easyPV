@@ -1,0 +1,57 @@
+# Implementation Plan - Fremdvergabe: Lieferanten-Abhängigkeits-Check
+
+## Metadaten
+- **Spiel-Titel:** Lieferanten-Abhängigkeits-Check
+- **Thema:** Single Sourcing vs. Multiple Sourcing
+- **Ziel:** Erkenne die Risiken von Single Sourcing und baue ein stabiles Lieferantennetzwerk auf.
+- **Prinzip:** Resource Allocation / Slider-Spiel.
+
+## Spielmechanik (UX-Global-Optimized)
+- **Layout:**
+  - **Status-Anzeige:** Monatliches Budget / Produktionsbedarf.
+  - **Lieferanten-Karten:** 3 Lieferanten (A, B, C) mit unterschiedlichen Kapazitäten und Kosten.
+  - **Interaktion:** Spieler verteilt die Prozentanteile (0-100%) des Bedarfs auf die Lieferanten.
+  - **Ereignis-Button:** "Monat simulieren" / "Stresstest".
+- **Szenario-Logik:**
+  - Standardmäßig ist alles bei Lieferant A (Single Sourcing).
+  - Beim Test passiert ein Zufallsereignis (z.B. "Streik bei A").
+  - Wenn Spieler > 80% bei A hat -> Produktion bricht ein.
+  - Ziel: Max. 50% pro Lieferant für Stabilität (Dual/Multiple Sourcing).
+
+## Technische Architektur
+- **Dateinamen:**
+  - `_ghtml_fremdvergabe_lieferanten_check.html`
+  - `_gjs_fremdvergabe_lieferanten_check.js`
+  - `_gcss_fremdvergabe_lieferanten_check.css`
+  - `_g01_fremdvergabe_lieferanten_check.json`
+
+### JSON Struktur
+```json
+{
+  "gameTitle": "Lieferanten-Abhängigkeits-Check",
+  "suppliers": [
+    { "id": "A", "name": "Global Corp (A)", "risk": "Hoch (Streikgefahr)", "capacity": 100 },
+    { "id": "B", "name": "Local Partner (B)", "risk": "Niedrig", "capacity": 60 },
+    { "id": "C", "name": "Euro Parts (C)", "risk": "Mittel", "capacity": 40 }
+  ],
+  "events": [
+    { "id": "STRIKE_A", "target": "A", "impact": 1.0, "message": "Streik bei Global Corp! Lieferungen fallen komplett aus." }
+  ]
+}
+```
+
+### HTML Struktur
+- Dashboard mit Progress Bars (Production Stability).
+- Lieferanten-Sektion mit Slidern/Input pro Lieferant.
+- Button: "Stresstest starten".
+
+### CSS (Theme-Compliant)
+- Dashboard-Look (Cyber-Dashboard).
+- Animierte Progress Bars.
+- Glassmorphism Cards für Lieferanten.
+
+## Schritte
+1. JSON erstellen (Lieferanten-Daten).
+2. CSS erstellen (Dashboard/Slider Layout).
+3. HTML Grundgerüst.
+4. JS Logik (Slider-Synchronisierung auf 100%, Ereignis-Simulation, Punkteberechnung).

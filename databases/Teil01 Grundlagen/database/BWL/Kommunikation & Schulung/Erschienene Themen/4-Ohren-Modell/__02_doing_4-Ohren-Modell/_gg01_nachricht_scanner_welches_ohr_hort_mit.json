@@ -1,0 +1,74 @@
+{
+  "id": "nachricht_scanner_welches_ohr_hort_mit_v1",
+  "title": "Nachricht-Scanner",
+  "subtitle": "Welches Ohr hoert mit? Ordne Aussagen der Ebene zu, die am staerksten mitschwingt.",
+  "scoring": { "correct": 10, "wrong": 0 },
+  "ears": [
+    { "id": "sache", "label": "Sache", "hint": "Sachinhalt" },
+    { "id": "ich", "label": "Ich", "hint": "Selbstoffenbarung" },
+    { "id": "du", "label": "Du", "hint": "Beziehung" },
+    { "id": "appell", "label": "Tu was", "hint": "Appell" }
+  ],
+  "statements": [
+    {
+      "id": "st1",
+      "text": "Der Termin beginnt um 14:00 Uhr.",
+      "correct_ear": "sache",
+      "explanation": "Sachinhalt: neutrale Information ueber Zeit."
+    },
+    {
+      "id": "st2",
+      "text": "Ich bin gerade nervoes vor der Praesentation.",
+      "correct_ear": "ich",
+      "explanation": "Selbstoffenbarung: Gefuehl/Zustand des Senders."
+    },
+    {
+      "id": "st3",
+      "text": "Du hoerst mir nie richtig zu.",
+      "correct_ear": "du",
+      "explanation": "Beziehung: Bewertung/Vorwurf an den Empfaenger."
+    },
+    {
+      "id": "st4",
+      "text": "Schick mir bitte das Protokoll bis 16:00 Uhr.",
+      "correct_ear": "appell",
+      "explanation": "Appell: klare Handlungsaufforderung mit Zeitrahmen."
+    },
+    {
+      "id": "st5",
+      "text": "Die Datei ist 12 MB gross.",
+      "correct_ear": "sache",
+      "explanation": "Sachinhalt: messbare Eigenschaft ohne Aufforderung."
+    },
+    {
+      "id": "st6",
+      "text": "Ich bin froh, dass wir das geklaert haben.",
+      "correct_ear": "ich",
+      "explanation": "Selbstoffenbarung: positive Emotion/Erleichterung."
+    },
+    {
+      "id": "st7",
+      "text": "Mit dir ist alles immer so kompliziert.",
+      "correct_ear": "du",
+      "explanation": "Beziehung: Abwertung/Etikettierung des Gegenuebers."
+    },
+    {
+      "id": "st8",
+      "text": "Bitte mach die Tuer zu.",
+      "correct_ear": "appell",
+      "explanation": "Appell: Bitte um konkrete Handlung."
+    },
+    {
+      "id": "st9",
+      "text": "Im Druckerfach ist kein Papier mehr.",
+      "correct_ear": "sache",
+      "explanation": "Sachinhalt: Beschreibung eines Zustands."
+    },
+    {
+      "id": "st10",
+      "text": "Koenntest du bitte leiser sprechen?",
+      "correct_ear": "appell",
+      "explanation": "Appell: Hoefliche, aber klare Aufforderung."
+    }
+  ]
+}

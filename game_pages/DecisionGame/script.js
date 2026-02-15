@@ -19,6 +19,8 @@ class DecisionGame {
             startScreen: document.getElementById('start-screen'),
             endScreen: document.getElementById('end-screen'),
             card: document.getElementById('scenario-card'),
+            imageContainer: document.getElementById('image-container'),
+            image: document.getElementById('scenario-image'),
             phase: document.getElementById('scenario-phase'),
             text: document.getElementById('scenario-text'),
             options: document.getElementById('options-container'),
@@ -53,6 +55,28 @@ class DecisionGame {
     }
 
     normalizeConfig(raw) {
+        // Special Handling for "Defect Types / Cases" Format (e.g. Leasing Gutachter)
+        if (raw.defectTypes && raw.cases && (!raw.rounds || raw.rounds.length === 0)) {
+            console.log("Converting DefectTypes/Cases format to Rounds...");
+            raw.rounds = raw.cases.map(c => {
+                // Each case becomes a round
+                // Options are ALL defect types
+                const options = raw.defectTypes.map(dt => ({
+                    id: dt.key || dt.id,
+                    text: dt.label || dt.name,
+                    correct: (dt.key === c.defectType || dt.id === c.defectType),
+                    reason: (dt.key === c.defectType || dt.id === c.defectType) ? c.explanation : (dt.examHint || "")
+                }));
+
+                return {
+                    phase: `Fall ${c.id}`,
+                    situation: c.description,
+                    imageUrl: c.imageUrl,
+                    options: options
+                };
+            });
+        }
+
         // Ensure "rounds" array exists
         if (!raw.rounds || !Array.isArray(raw.rounds)) {
             raw.rounds = [];
@@ -117,10 +141,17 @@ class DecisionGame {
         this.gameUI.options.innerHTML = '';
         this.gameUI.feedbackArea.classList.add('hidden');
         this.gameUI.nextBtn.classList.add('hidden'); // Only show Next button after answer? Or auto-advance? Let's use manual advance.
+        this.gameUI.imageContainer.classList.add('hidden'); // Hide image by default
 
         // Update Content
         this.gameUI.phase.innerText = this.currentScenario.phase || `Szenario ${this.currentRound + 1}`;
         this.gameUI.text.innerText = this.currentScenario.situation;
+
+        // Image Handling
+        if (this.currentScenario.imageUrl) {
+            this.gameUI.image.src = this.currentScenario.imageUrl;
+            this.gameUI.imageContainer.classList.remove('hidden');
+        }
 
         // Render Options
         const options = this.currentScenario.options;

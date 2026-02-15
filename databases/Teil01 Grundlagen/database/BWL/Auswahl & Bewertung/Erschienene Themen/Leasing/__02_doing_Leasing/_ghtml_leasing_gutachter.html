@@ -1,29 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gutachter AP1</title>
-  <link rel="stylesheet" href="./_gcss_leasing.css">
+  <title>Lade Spiel...</title>
+  <script>
+    // Redirect to DecisionGame Engine with Leasing Gutachter Config
+    const enginePath = "../../../../../../../../game_pages/DecisionGame/index.html";
+
+    // Path to config
+    // "AP1 IT Mangelarten" -> _gg01_leasing_gutachter.json
+    const configPath = "../../databases/Teil01%20Grundlagen/database/BWL/Auswahl%20%26%20Bewertung/Erschienene%20Themen/Leasing/__02_doing_Leasing/_gg01_leasing_gutachter.json";
+
+    window.location.replace(`${enginePath}?config=${configPath}`);
+  </script>
 </head>
-<body class="leasing-page">
-  <main class="app" id="app">
-    <header class="top">
-      <h1>Gutachter AP1</h1>
-      <p class="subtitle">Der gnadenlose Gutachter</p>
-      <p class="subtitle">Entscheide, um welche Mangelart es sich handelt.</p>
-      <div class="stats">
-        <div class="chip"><span class="chip-label">Fortschritt</span><strong id="progress">1/5</strong></div>
-        <div class="chip"><span class="chip-label">Treffer</span><strong id="score">0</strong></div>
-        <div class="chip"><span class="chip-label">Quote</span><strong id="accuracy">0%</strong></div>
-      </div>
-      <div class="bar"><div id="progress-fill" class="bar-fill"></div></div>
-    </header>
 
-    <section id="game-root"></section>
-  </main>
-
-  <script src="./_gjs_leasing_gutachter.js" defer></script>
-<script src="/theme_bridge.js"></script>
+<body>
+  <p>Lade Der gnadenlose Gutachter...</p>
 </body>
+
 </html>

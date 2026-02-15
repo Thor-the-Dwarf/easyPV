@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Game Engine</title>
+    <link rel="stylesheet" href="../../../databases/Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container" class="game-container">
+        <header class="game-header">
+            <h1 id="game-title">Simulations-Spiel</h1>
+            <div id="status-display">
+                <span id="target-display">Ziel: --</span>
+                <span id="current-display">Aktuell: --</span>
+            </div>
+        </header>
+
+        <main id="play-area" class="play-area">
+            <div id="start-screen" class="overlay active">
+                <h2 id="instruction-title">Anleitung</h2>
+                <div id="instruction-text">Stelle die Parameter so ein, dass das Ziel erreicht wird!</div>
+                <button id="start-btn" class="primary-btn">Starten</button>
+            </div>
+
+            <div class="simulation-dashboard">
+                <div id="visualization-area">
+                    <!-- Gauge or Graph visualization -->
+                    <div class="gauge-container">
+                        <div id="gauge-fill" class="gauge-fill"></div>
+                        <div id="gauge-target-marker" class="gauge-marker"></div>
+                        <span id="gauge-value">0</span>
+                    </div>
+                    <div id="feedback-message" class="feedback"></div>
+                </div>
+
+                <div id="controls-area" class="controls-grid">
+                    <!-- Sliders injected here -->
+                </div>
+
+                <button id="submit-btn" class="primary-btn hidden">Überprüfen</button>
+            </div>
+
+            <div id="end-screen" class="overlay hidden">
+                <h2>Ergebnis</h2>
+                <p id="final-message">Geschafft!</p>
+                <button id="restart-btn" class="secondary-btn">Nochmal versuchen</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

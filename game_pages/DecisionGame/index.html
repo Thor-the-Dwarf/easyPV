@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Game Engine</title>
+    <link rel="stylesheet" href="../../../databases/Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container" class="game-container">
+        <header class="game-header">
+            <h1 id="game-title">Entscheidungs-Spiel</h1>
+            <div id="status-bar">
+                <span id="round-display">Runde 1/1</span>
+                <span id="score-display">Punkte: 0</span>
+            </div>
+            <div id="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+        </header>
+
+        <main id="play-area" class="play-area">
+            <div id="start-screen" class="overlay active">
+                <h2 id="instruction-title">Anleitung</h2>
+                <p id="instruction-text">Wähle die passende Option für jede Situation.</p>
+                <button id="start-btn" class="primary-btn">Starten</button>
+            </div>
+
+            <div id="scenario-card" class="card">
+                <div id="scenario-header">
+                    <span id="scenario-phase" class="badge">Phase</span>
+                </div>
+                <p id="scenario-text">Hier steht die Situation...</p>
+
+                <div id="options-container" class="options-grid">
+                    <!-- Options injected here -->
+                </div>
+
+                <div id="feedback-area" class="hidden">
+                    <p id="feedback-message"></p>
+                    <p id="feedback-reason"></p>
+                    <button id="next-btn" class="primary-btn">Weiter</button>
+                </div>
+            </div>
+
+            <div id="end-screen" class="overlay hidden">
+                <h2>Ergebnis</h2>
+                <p id="final-score">Dein Score: 0 / 100</p>
+                <div id="final-feedback"></div>
+                <button id="restart-btn" class="secondary-btn">Nochmal spielen</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

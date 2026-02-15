@@ -4,79 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join-Puzzle // Relational Bridge Architect</title>
-    <!-- Path adjustment -->
-    <link rel="stylesheet" href="./_gcss_join_puzzle.css">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>Lade Spiel...</title>
+    <script>
+        // Redirect to ConstructionGame Engine
+        // Path adjusted: 8 levels up to root
+        const enginePath = "../../../../../../../../game_pages/ConstructionGame/index.html";
+
+        // Path to config
+        // "JOIN Puzzle" -> _gg01_join_puzzle.json
+        // Path relative to engine (at root/game_pages/ConstructionGame) would be ../../databases/...
+        // But here we pass the path relative to THIS html file?
+        // No, usually we pass the path relative to the engine OR absolute.
+        // Wait, in previous steps I passed relative path from THIS file to config?
+        // No, I passed `?config=../../databases/...`
+        // The Engine (index.html) is running. JavaScript in Engine runs relative to Engine location.
+        // So `configPath` MUST be relative to `game_pages/ConstructionGame/index.html`.
+
+        // Let's check previous example:
+        // Workshop Puzzle (7 levels deep): `../../databases/...`
+        // Engine is at `easyPV/game_pages/ConstructionGame`.
+        // `../../databases` takes us to `easyPV/databases`. Correct.
+        // So for the Join Puzzle, the config path passed in URL should ALSO start with `../../databases` because the Engine location hasn't changed.
+        // The Engine is always at `game_pages/ConstructionGame`.
+        // So `../../databases/...` is always the correct prefix to get from Engine to `databases` folder.
+
+        const configPath = "../../databases/Teil02%20FIAE/database/Datenbanken%20%26%20SQL/M%C3%B6gliche%20Themen/SQL-Abfragen%20(%C3%BCber%20Basics%20hinaus)/JOINs%20(INNER-LEFT)%20praxisnah/__02_doing_JOINs%20(INNER-LEFT)%20praxisnah/_gg01_join_puzzle.json";
+
+        window.location.replace(`${enginePath}?config=${configPath}`);
+    </script>
 </head>
 
 <body>
-    <div class="game-app">
-        <!-- Architect HUD -->
-        <header class="arch-hud">
-            <div class="hud-item">
-                <div class="hud-label">SYSTEM_INTEGRITY</div>
-                <div class="hud-val">STABLE</div>
-            </div>
-            <div style="text-align:center;">
-                <div id="level-title" style="letter-spacing:5px; font-weight:bold; color:var(--arch-blue);">
-                    RELIABILITY_BLUEPRINT</div>
-                <div style="font-size:0.6rem; color:#555; margin-top:5px;">OBJECTIVE: ALIGN_FOREIGN_KEY_RELATIONSHIPS
-                </div>
-            </div>
-            <div class="hud-item">
-                <div class="hud-label">JOIN_RECORDS_ACTIVE</div>
-                <div class="hud-val">100%</div>
-            </div>
-        </header>
-
-        <!-- Design Canvas -->
-        <main class="design-canvas">
-            <svg class="bridge-layer">
-                <path id="bridge-line" class="relational-bridge" d=""></path>
-            </svg>
-
-            <div class="table-world">
-                <!-- Table A (Left) -->
-                <div id="table-a" class="arch-table">
-                    <!-- Injected via JS -->
-                </div>
-
-                <!-- Table B (Right) -->
-                <div id="table-b" class="arch-table">
-                    <!-- Injected via JS -->
-                </div>
-            </div>
-        </main>
-
-        <!-- Live Results Preview -->
-        <footer class="live-preview">
-            <div class="hud-label" style="margin-bottom: 10px;">QUERY_RESULT_SET_PREVIEW</div>
-            <table class="preview-table">
-                <thead id="preview-head"></thead>
-                <tbody id="preview-body"></tbody>
-            </table>
-        </footer>
-
-        <!-- Success Overlay -->
-        <div id="overlay" class="overlay hidden">
-            <div class="architect-card">
-                <div class="hud-label" style="text-align: center; margin-bottom: 2rem;">RELATIONAL_BRIDGE_STABLE</div>
-                <h1 id="res-final" style="color:var(--arch-blue); margin:0; letter-spacing:8px;">FUSION_COMPLETE</h1>
-
-                <p style="margin: 2rem 0; font-size: 0.9rem; line-height: 1.8; color: #555;">
-                    The tables have been successfully correlated via primary and foreign keys.<br>
-                    Data normalization standards have been maintained.
-                </p>
-
-                <button id="btn-next">ACKNOWLEDGE_BLUEPRINT</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Script -->
-    <script src="_gjs_join_puzzle.js"></script>
-<script src="/theme_bridge.js"></script>
+    <p>Lade JOIN-Puzzle...</p>
 </body>
 
 </html>

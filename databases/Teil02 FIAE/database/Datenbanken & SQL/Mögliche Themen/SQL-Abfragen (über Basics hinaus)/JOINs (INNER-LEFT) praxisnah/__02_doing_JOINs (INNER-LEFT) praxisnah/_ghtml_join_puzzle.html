@@ -6,29 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lade Spiel...</title>
     <script>
-        // Redirect to ConstructionGame Engine
+        // Redirect to MatchingGame Engine
         // Path adjusted: 8 levels up to root
-        const enginePath = "../../../../../../../../game_pages/ConstructionGame/index.html";
+        const enginePath = "../../../../../../../../game_pages/MatchingGame/index.html";
 
         // Path to config
         // "JOIN Puzzle" -> _gg01_join_puzzle.json
-        // Path relative to engine (at root/game_pages/ConstructionGame) would be ../../databases/...
-        // But here we pass the path relative to THIS html file?
-        // No, usually we pass the path relative to the engine OR absolute.
-        // Wait, in previous steps I passed relative path from THIS file to config?
-        // No, I passed `?config=../../databases/...`
-        // The Engine (index.html) is running. JavaScript in Engine runs relative to Engine location.
-        // So `configPath` MUST be relative to `game_pages/ConstructionGame/index.html`.
-
-        // Let's check previous example:
-        // Workshop Puzzle (7 levels deep): `../../databases/...`
-        // Engine is at `easyPV/game_pages/ConstructionGame`.
-        // `../../databases` takes us to `easyPV/databases`. Correct.
-        // So for the Join Puzzle, the config path passed in URL should ALSO start with `../../databases` because the Engine location hasn't changed.
-        // The Engine is always at `game_pages/ConstructionGame`.
-        // So `../../databases/...` is always the correct prefix to get from Engine to `databases` folder.
-
-        const configPath = "../../databases/Teil02%20FIAE/database/Datenbanken%20%26%20SQL/M%C3%B6gliche%20Themen/SQL-Abfragen%20(%C3%BCber%20Basics%20hinaus)/JOINs%20(INNER-LEFT)%20praxisnah/__02_doing_JOINs%20(INNER-LEFT)%20praxisnah/_gg01_join_puzzle.json";
+        const configPath = "../../databases/Teil02%20FIAE/database/Datenbanken%20%26%20SQL/M%C3%B6gliche%20Themen/SQL-Abfragen%20(%C3%BCber%20Basics%20hinaus)/JOINs%20(INNER-LEFT) praxisnah/__02_doing_JOINs (INNER-LEFT) praxisnah/_gg01_join_puzzle.json";
 
         window.location.replace(`${enginePath}?config=${configPath}`);
     </script>

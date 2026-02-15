@@ -4,18 +4,17 @@ const path = require('path');
 const gameName = "join_puzzle";
 const htmlFile = `_ghtml_${gameName}.html`;
 const jsonFile = `_gg01_${gameName}.json`;
-// 8 levels up to get from game path to easyPV root, then game_pages/ConstructionGame/index.html
-const enginePath = "../../../../../../../../game_pages/ConstructionGame/index.html";
+const enginePath = "../../../../../../../../game_pages/MatchingGame/index.html";
 
 console.log(`Verifying ${gameName}...`);
 
 // 1. Check HTML Redirect
 if (fs.existsSync(htmlFile)) {
     const content = fs.readFileSync(htmlFile, 'utf8');
-    if (content.includes("window.location.replace") && content.includes("ConstructionGame")) {
-        console.log("✅ HTML Redirect wrapper exists and points to Engine.");
+    if (content.includes("window.location.replace") && content.includes("MatchingGame")) {
+        console.log("✅ HTML Redirect wrapper exists and points to MATCHING Engine.");
     } else {
-        console.error("❌ HTML file exists but does not seem to act as a redirect to ConstructionGame.");
+        console.error("❌ HTML file exists but does not seem to act as a redirect to MatchingGame.");
         process.exit(1);
     }
 } else {
@@ -40,9 +39,9 @@ if (fs.existsSync(jsonFile)) {
 // 3. Check Engine Existence
 const resolvedEnginePath = path.resolve(__dirname, enginePath);
 if (fs.existsSync(resolvedEnginePath)) {
-    console.log("✅ ConstructionGame Engine found.");
+    console.log("✅ MatchingGame Engine found.");
 } else {
-    console.error(`❌ ConstructionGame Engine NOT found at ${resolvedEnginePath}`);
+    console.error(`❌ MatchingGame Engine NOT found at ${resolvedEnginePath}`);
     process.exit(1);
 }
 

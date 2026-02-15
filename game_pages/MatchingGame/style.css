@@ -1,0 +1,190 @@
+/* MatchingGame Styles */
+
+.game-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--color-background-secondary);
+    display: flex;
+    flex-direction: column;
+}
+
+.game-header {
+    background: var(--color-background-primary);
+    border-bottom: 2px solid var(--color-border);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.play-area {
+    flex-grow: 1;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.matching-workspace {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    width: 300px;
+    z-index: 2;
+    /* Content above lines */
+}
+
+/* Connection Layer */
+#connection-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#lines-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.connector-line {
+    fill: none;
+    stroke: #6c757d;
+    stroke-width: 4;
+    transition: stroke 0.3s;
+}
+
+.connector-line.active {
+    stroke: var(--color-primary);
+}
+
+.connector-line.correct {
+    stroke: #28a745;
+}
+
+.connector-line.wrong {
+    stroke: #dc3545;
+}
+
+/* Items */
+.match-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    user-select: none;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    border: 2px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    position: relative;
+}
+
+.match-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+}
+
+.match-item.selected {
+    border-color: var(--color-primary);
+    background: #eef5ff;
+}
+
+.match-item.connected {
+    border-color: #6c757d;
+    background: #f8f9fa;
+    cursor: default;
+}
+
+.match-item.correct {
+    border-color: #28a745;
+    background: #d4edda;
+}
+
+.match-item.wrong {
+    border-color: #dc3545;
+    background: #f8d7da;
+}
+
+/* Ports - visual anchor point for lines */
+.match-port {
+    width: 12px;
+    height: 12px;
+    background: #adb5bd;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#left-column .match-port {
+    right: -6px;
+}
+
+#right-column .match-port {
+    left: -6px;
+}
+
+#controls-bar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+    margin-top: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Responsive: Stack columns on mobile?
+   Wait, matching across stacked columns is hard with lines. 
+   Usually matching works best side-by-side or drag-droppable.
+   For simplicity, we keep side-by-side but reduce width or use landscape message.
+*/
+@media (max-width: 768px) {
+    .match-item {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .column {
+        width: 45%;
+        padding: 10px;
+    }
+}

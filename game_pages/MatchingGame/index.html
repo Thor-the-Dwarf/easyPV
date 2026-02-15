@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Game Engine</title>
+    <link rel="stylesheet" href="../../../databases/Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container" class="game-container">
+        <header class="game-header">
+            <h1 id="game-title">Zuordnungs-Spiel</h1>
+            <div id="status-display">Finde die Paare!</div>
+        </header>
+
+        <div id="level-indicator" class="hidden">Level 1/1</div>
+
+        <main id="play-area" class="play-area">
+            <div id="start-screen" class="overlay active">
+                <h2 id="instruction-title">Anleitung</h2>
+                <p id="instruction-text">Verbinde die passenden Elemente.</p>
+                <button id="start-btn" class="primary-btn">Starten</button>
+            </div>
+
+            <div class="matching-workspace">
+                <div id="left-column" class="column">
+                    <!-- Left Items -->
+                </div>
+                <div id="connection-layer">
+                    <svg id="lines-svg"></svg>
+                </div>
+                <div id="right-column" class="column">
+                    <!-- Right Items -->
+                </div>
+            </div>
+
+            <div id="controls-bar">
+                <button id="reset-btn" class="secondary-btn">Zurücksetzen</button>
+                <button id="check-btn" class="primary-btn">Prüfen</button>
+            </div>
+
+            <div id="feedback-area" class="feedback-toast hidden"></div>
+
+            <div id="end-screen" class="overlay hidden">
+                <h2>Ergebnis</h2>
+                <p id="final-message">Alle Zuordnungen korrekt!</p>
+                <button id="next-level-btn" class="primary-btn hidden">Nächstes Level</button>
+                <button id="restart-btn" class="secondary-btn">Nochmal spielen</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

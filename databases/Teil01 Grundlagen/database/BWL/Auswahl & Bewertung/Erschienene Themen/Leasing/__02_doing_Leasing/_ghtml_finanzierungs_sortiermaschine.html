@@ -1,46 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Finanzierungs-Sortiermaschine</title>
-  <link rel="stylesheet" href="./_gcss_leasing.css">
+  <title>Lade Spiel...</title>
+  <script>
+    // Redirect to the Game Engine
+    // This file acts as a trampoline to launch the standardized SortingGame engine
+    // with the specific content configuration.
+
+    // Relative path to engine from here: 8 levels up -> game_pages -> SortingGame
+    const enginePath = "../../../../../../../../game_pages/SortingGame/index.html";
+
+    // Relative path to config from engine (2 levels up to root -> databases -> ...)
+    // Note: Spaces and special chars must be encoded for URL
+    const configPath = "../../databases/Teil01%20Grundlagen/database/BWL/Auswahl%20%26%20Bewertung/Erschienene%20Themen/Leasing/__02_doing_Leasing/_gg01_finanzierungs_sortiermaschine.json";
+
+    window.location.replace(`${enginePath}?config=${configPath}`);
+  </script>
 </head>
-<body class="sortier-page">
-  <main class="sortier-app">
-    <header class="sortier-head">
-      <h1>Finanzierungs-Sortiermaschine</h1>
-      <p>Wische oder tippe schnell die richtige Kategorie.</p>
-      <div class="sortier-stats">
-        <span class="sortier-pill" id="sortier-progress">Begriff 1/10</span>
-        <span class="sortier-pill" id="sortier-score">Score: 0</span>
-        <span class="sortier-pill" id="sortier-streak">Streak: 0</span>
-        <button id="sortier-mute" class="sortier-mute" type="button" aria-pressed="false">Ton: An</button>
-      </div>
-    </header>
 
-    <section class="sortier-board" id="sortier-board">
-      <div class="drop-zone" data-cat="leasing">
-        <strong>Leasing</strong>
-      </div>
-      <div class="drop-zone" data-cat="kredit">
-        <strong>Kreditkauf</strong>
-      </div>
-      <div class="drop-zone" data-cat="eigenkapital">
-        <strong>Eigenkapital</strong>
-      </div>
-
-      <div id="term-card" class="term-card" aria-label="Aktueller Begriff">
-        <div id="term-text" class="term-text">...</div>
-      </div>
-    </section>
-
-    <section class="sortier-actions" id="sortier-actions"></section>
-    <section class="sortier-feedback" id="sortier-feedback" aria-live="polite"></section>
-    <section class="sortier-result hidden" id="sortier-result"></section>
-  </main>
-
-  <script src="./_gjs_finanzierungs_sortiermaschine.js" defer></script>
-<script src="/theme_bridge.js"></script>
+<body>
+  <p>Lade Finanzierungs-Sortiermaschine...</p>
 </body>
+
 </html>

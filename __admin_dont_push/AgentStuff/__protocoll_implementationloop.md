@@ -4,9 +4,11 @@
     2.
         Am Ende Jedes Arbeitspakets wenn du Commitest schreibst du codex>runs>GameDevelop-> planing done <SpielTitel>
 
+# Ziel du erstellst implementierungspläne in __gp_*.txts
+
 # Ablauf:
 ## 1
-    suche dir ein Spiel aus einer random __gi*.txt das noch nicht im ordern __02_doing_* umgesetzt wurde
+    suche dir das nächste Spiel aus einer __gi*.txt das noch nicht im ordern __02_doing_* umgesetzt wurde
 ## 2
     erstelle Arbeitspakete in der zugehörigen __gp_*.txt Datei
 ## 3

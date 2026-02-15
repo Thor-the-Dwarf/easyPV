@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Game Engine</title>
+    <link rel="stylesheet" href="../../../databases/Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container" class="game-container">
+        <header class="game-header">
+            <h1 id="game-title">Bau-Spiel</h1>
+            <div id="instruction-panel">
+                <p id="instruction-text"></p>
+            </div>
+        </header>
+
+        <main id="play-area" class="play-area">
+            <div id="start-screen" class="overlay active">
+                <h2 id="start-title">Bist du bereit?</h2>
+                <button id="start-btn" class="primary-btn">Starten</button>
+            </div>
+
+            <div class="construction-workspace">
+                <div id="source-container" class="item-list">
+                    <!-- Items to drag from -->
+                </div>
+
+                <div id="target-container" class="build-area">
+                    <div class="placeholder-text">Ziehe die Elemente hierher...</div>
+                    <!-- Items dropped here -->
+                </div>
+            </div>
+
+            <div id="controls-bar">
+                <button id="reset-btn" class="secondary-btn">Zurücksetzen</button>
+                <button id="check-btn" class="primary-btn">Prüfen</button>
+            </div>
+
+            <div id="feedback-area" class="feedback-toast hidden"></div>
+
+            <div id="end-screen" class="overlay hidden">
+                <h2>Ergebnis</h2>
+                <p id="final-message">Geschafft!</p>
+                <button id="restart-btn" class="secondary-btn">Nochmal spielen</button>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

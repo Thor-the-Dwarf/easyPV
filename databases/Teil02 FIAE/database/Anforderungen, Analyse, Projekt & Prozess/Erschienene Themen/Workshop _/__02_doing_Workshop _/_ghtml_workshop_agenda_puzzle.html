@@ -1,47 +1,25 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshop Agenda Puzzle</title>
-    <link rel="stylesheet" href="./_gcss_workshop_agenda_puzzle.css">
+    <title>Lade Spiel...</title>
+    <script>
+        // Redirect to ConstructionGame Engine
+        // Path adjusted: 7 levels up to root
+        const enginePath = "../../../../../../../game_pages/ConstructionGame/index.html";
+
+        // Path to config
+        // "Workshop Agenda Puzzle" -> _gg01_workshop_agenda_puzzle.json
+        const configPath = "../../databases/Teil02%20FIAE/database/Anforderungen%2C%20Analyse%2C%20Projekt%20%26%20Prozess/Erschienene%20Themen/Workshop%20_/__02_doing_Workshop%20_/_gg01_workshop_agenda_puzzle.json";
+
+        window.location.replace(`${enginePath}?config=${configPath}`);
+    </script>
 </head>
-<body class="agenda-page">
-    <div class="app-container" id="app">
-        <header class="game-header">
-            <h1>Workshop Agenda Puzzle</h1>
-            <p>Ordne die Phasen des Workshops in die logisch korrekte Reihenfolge.</p>
-            <div class="stats-bar">
-                <span class="stat-chip" id="score-display">Score: 0%</span>
-                <span class="stat-chip" id="progress-display">Items: 0/0</span>
-            </div>
-        </header>
 
-        <div id="feedback-area" class="feedback-msg"></div>
-
-        <main class="game-area">
-            <section class="pool-section">
-                <h2 class="section-title">📥 Verfügbare Phasen</h2>
-                <div class="pool-list" id="pool-list">
-                    <!-- Draggable items will be injected here -->
-                </div>
-            </section>
-
-            <section class="agenda-section">
-                <h2 class="section-title">📅 Deine Agenda</h2>
-                <div class="agenda-list" id="agenda-list">
-                    <!-- Drop slots will be injected here -->
-                </div>
-            </section>
-
-            <section class="controls">
-                <button class="btn btn-secondary" id="reset-btn">Zurücksetzen</button>
-                <button class="btn btn-primary" id="check-btn">Prüfen</button>
-            </section>
-        </main>
-    </div>
-
-    <script src="./_gjs_workshop_agenda_puzzle.js"></script>
-    <script src="/theme_bridge.js"></script>
+<body>
+    <p>Lade Workshop-Agenda-Puzzle...</p>
 </body>
+
 </html>

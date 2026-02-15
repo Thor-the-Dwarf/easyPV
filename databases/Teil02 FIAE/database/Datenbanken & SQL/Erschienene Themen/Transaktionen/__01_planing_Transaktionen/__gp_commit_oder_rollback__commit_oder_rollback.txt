@@ -1,0 +1,50 @@
+Anforderungen (reverse engineered)
+- Ziel: Praktische Anwendung von COMMIT und ROLLBACK in kritischen Transaktionsszenarien (z.B. Banküberweisung).
+- Kontext: Datenkonsistenz, Fehlerbehandlung, Atomarität.
+- UX-Prinzip:
+  - "The Timeline": Eine visuelle Zeitleiste der Transaktionsschritte.
+  - "The Emergency Brake": Der ROLLBACK-Button als Notbremse bei Fehlern.
+  - "Safe State": Visuelles Feedback, ob das Geld sicher ist oder im "Nirgendwo" verschwunden ist.
+
+Arbeitspakete (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten: 1 = Der aktuelle Transaktionsschritt, 2 = Die Entscheidungs-Buttons (COMMIT/ROLLBACK), 3 = Der Kontostand-Check.
+- [ ] Textbudget: Kurze Szenarienbeschreibungen.
+- [ ] "Scenario-Based Learning": Realistische Fehler wie Stromausfall oder Datenbank-Fehler.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Struktur: `page -> transaction-timeline -> action-area -> status-display`.
+- [ ] Timeline: Schrittweise Darstellung (Geld abgebucht -> Übertragen -> Gutgeschrieben).
+- [ ] Action-Area: Große, deutliche Buttons für COMMIT (Grün) und ROLLBACK (Rot).
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` Standard.
+- [ ] Mobile: Buttons leicht erreichbar im Daumenbereich.
+- [ ] Responsive Timeline: Vertikal auf Mobile, Horizontal auf Desktop.
+
+4. Kernvisuals
+- [ ] Material: Cleanes "Banking-Look" Design (shared_theme.css).
+- [ ] "Disaster-Animation": Bildschirm flackert kurz bei Stromausfall.
+- [ ] Icons: Geldstapel, Blitz (Fehler), Haken (Erfolg), Rückspul-Pfeil (Rollback).
+
+5. Interaktion und Feedback
+- [ ] Decision-Feedback: Sofortige Reaktion auf Button-Klick.
+- [ ] Error-Mode: Roter Alarm bei falscher Entscheidung (z.B. Commit trotz Fehler).
+- [ ] Erfolg: "Transaktion sicher" oder "Rollback erfolgreich - Geld gerettet".
+
+6. KPI-Klarheit
+- [ ] Safety-Score: "Geldverlust: 0€".
+- [ ] Decision-Speed: "Reaktionszeit".
+
+7. Content-/Copy-Feinschliff
+- [ ] Szenarien: "Überweisung gestartet...", "Verbindung unterbrochen!", "Datenbankfehler!".
+- [ ] Tonalität: Dringlich aber kontrolliert.
+
+8. QA-Paket
+- [ ] Screenshot-Check: Sind die Buttons auch auf kleinen Screens gut treffbar?
+- [ ] Test: Funktioniert die Animation des Stromausfalls performant?
+
+9. Abnahmekriterien
+- [ ] Der Spieler verinnerlicht, wann ein ROLLBACK zwingend notwendig ist.
+- [ ] Das Verständnis für den "Alles-oder-Nichts"-Charakter von Transaktionen wird gefestigt.
+- [ ] Keine "Lost Update" oder inkonsistenten Zustände.

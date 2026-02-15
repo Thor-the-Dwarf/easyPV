@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Game Engine</title>
+    <link rel="stylesheet" href="../../../databases/Teil01 Grundlagen/shared_theme.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container" class="game-container">
+        <header class="game-header">
+            <div class="header-content">
+                <h1 id="game-title">Such-Spiel</h1>
+                <p id="game-subtitle">Finde die Begriffe</p>
+            </div>
+
+            <div id="status-panel">
+                <div id="score-display">Punkte: 100</div>
+                <div id="timer-display">Zeit: --</div>
+                <div id="found-count">Gefunden: 0/0</div>
+            </div>
+
+            <div id="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+        </header>
+
+        <main id="play-area" class="play-area">
+            <div id="start-screen" class="overlay active">
+                <h2 id="instruction-title">Anleitung</h2>
+                <div id="instruction-text">Finde alle gesuchten Begriffe im Text!</div>
+                <button id="start-btn" class="primary-btn">Starten</button>
+            </div>
+
+            <!-- Content Area: Can be Text or Image -->
+            <div id="content-viewer" class="content-viewer">
+                <div id="text-canvas" class="text-canvas">
+                    <!-- Text content injected here -->
+                </div>
+            </div>
+
+            <div id="feedback-toast" class="toast hidden"></div>
+
+            <div id="end-screen" class="overlay hidden">
+                <h2>Ergebnis</h2>
+                <p id="final-score">Dein Score: 0</p>
+                <div id="results-details"></div>
+                <button id="restart-btn" class="secondary-btn">Nochmal versuchen</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

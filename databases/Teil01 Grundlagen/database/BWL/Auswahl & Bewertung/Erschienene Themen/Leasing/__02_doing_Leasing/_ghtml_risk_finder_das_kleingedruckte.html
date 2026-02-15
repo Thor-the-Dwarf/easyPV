@@ -1,37 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Risk-Finder: Das Kleingedruckte</title>
-  <link rel="stylesheet" href="./_gcss_leasing.css">
+  <title>Lade Spiel...</title>
+  <script>
+    // Redirect to FindingGame Engine
+    const enginePath = "../../../../../../../../game_pages/FindingGame/index.html";
+
+    // Path to config
+    const configPath = "../../databases/Teil01%20Grundlagen/database/BWL/Auswahl%20%26%20Bewertung/Erschienene%20Themen/Leasing/__02_doing_Leasing/_gg01_risk_finder_das_kleingedruckte.json";
+
+    window.location.replace(`${enginePath}?config=${configPath}`);
+  </script>
 </head>
-<body class="riskfinder-page">
-  <main class="riskfinder-app">
-    <header class="riskfinder-head">
-      <h1>Risk-Finder: Das Kleingedruckte</h1>
-      <p>Finde die 5 kritischen Klauseln im Vertragskontext.</p>
-      <div class="riskfinder-stats">
-        <span class="riskfinder-pill" id="risk-targets">Gefunden: 0/5</span>
-        <span class="riskfinder-pill" id="risk-false">Fehlklicks: 0</span>
-        <span class="riskfinder-pill" id="risk-score">Score: 0</span>
-      </div>
-    </header>
 
-    <section class="riskfinder-card">
-      <h2>Vertragsauszug</h2>
-      <div id="risk-contract" class="riskfinder-contract"></div>
-      <h3>Markierbare Begriffe</h3>
-      <div id="risk-terms" class="riskfinder-terms"></div>
-      <div class="riskfinder-actions">
-        <button id="risk-check" class="riskfinder-btn riskfinder-btn--primary" type="button">Pruefen</button>
-        <button id="risk-reset" class="riskfinder-btn" type="button">Zuruecksetzen</button>
-      </div>
-      <div id="risk-feedback" class="riskfinder-feedback" aria-live="polite"></div>
-    </section>
-  </main>
-
-  <script src="./_gjs_risk_finder_das_kleingedruckte.js" defer></script>
-  <script src="/theme_bridge.js"></script>
+<body>
+  <p>Lade Risk-Finder...</p>
 </body>
+
 </html>

@@ -1,20 +1,20 @@
 const fs = require('fs');
 const path = require('path');
 
-const gameName = "finanzierungs_sortiermaschine";
+const gameName = "risk_finder_das_kleingedruckte";
 const htmlFile = `_ghtml_${gameName}.html`;
 const jsonFile = `_gg01_${gameName}.json`;
-const enginePath = "../../../../../../../../game_pages/SortingGame/index.html";
+const enginePath = "../../../../../../../../game_pages/FindingGame/index.html";
 
 console.log(`Verifying ${gameName}...`);
 
 // 1. Check HTML Redirect
 if (fs.existsSync(htmlFile)) {
     const content = fs.readFileSync(htmlFile, 'utf8');
-    if (content.includes("window.location.replace") && content.includes("SortingGame")) {
+    if (content.includes("window.location.replace") && content.includes("FindingGame")) {
         console.log("✅ HTML Redirect wrapper exists and points to Engine.");
     } else {
-        console.error("❌ HTML file exists but does not seem to act as a redirect to SortingGame.");
+        console.error("❌ HTML file exists but does not seem to act as a redirect to FindingGame.");
         process.exit(1);
     }
 } else {
@@ -37,12 +37,11 @@ if (fs.existsSync(jsonFile)) {
 }
 
 // 3. Check Engine Existence
-// Resolve engine path relative to current script
 const resolvedEnginePath = path.resolve(__dirname, enginePath);
 if (fs.existsSync(resolvedEnginePath)) {
-    console.log("✅ SortingGame Engine found.");
+    console.log("✅ FindingGame Engine found.");
 } else {
-    console.error(`❌ SortingGame Engine NOT found at ${resolvedEnginePath}`);
+    console.error(`❌ FindingGame Engine NOT found at ${resolvedEnginePath}`);
     process.exit(1);
 }
 

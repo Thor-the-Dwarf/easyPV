@@ -24,6 +24,7 @@
 - Jede Phase dokumentiert ihr Ergebnis im passenden Phasenordner.
 - Informationen aus Vorgänger-Artefakten werden aktiv berücksichtigt.
 - Learnings zur Komponente landen in `__04_lernings/TeamChef01.txt`.
+- Keine globalen Massen-Umbenennungen von Ordnern ohne vorherige manuelle Einzelprüfung je Themenpfad.
 
 ## Git-Konvention
 - Commit-Message-Format: `TeamChef01: <kurze Beschreibung>`

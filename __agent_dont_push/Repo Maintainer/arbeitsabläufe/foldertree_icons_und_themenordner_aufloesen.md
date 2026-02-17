@@ -12,4 +12,6 @@
 6. GUI-Logik prüfen (`index.html`):
    - `normalizeIconValue` muss `books/book/📚` erkennen
    - `folderEmoji` muss `📚` rendern
-7. Abschließende Prüfung per `find`/`rg` und danach vollständigen Commit ausführen.
+7. Root-Tree neu generieren (`index.json`), damit die GUI keine alten Themenpfade mehr zeigt:
+   - Hilfsskript: `__agent_dont_push/Repo Maintainer/hilfsmittel/rebuild_root_index.mjs`
+8. Abschließende Prüfung per `find`/`rg` und danach vollständigen Commit ausführen.

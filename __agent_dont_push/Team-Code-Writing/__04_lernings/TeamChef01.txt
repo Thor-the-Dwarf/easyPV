@@ -1,0 +1,7 @@
+2026-02-17
+- Tree-Probleme kamen aus zwei kombinierten Ursachen:
+  1) sichtbare Technik-Unterordner (`assets`, `data`, `__dokumentation`) verhinderten Leaf-Icon-Rendering,
+  2) `brain`-Fallback überlagerte die gewuenschte Bücher-Logik.
+- Stabiler Ansatz: Hidden-Folder in der Normalisierung filtern statt erst beim Rendern.
+- Für Migrationen sinnvoll: Legacy-Sonderregel (`assets/data`) zeitweise behalten, bis alle Ordner auf `_assets/_data` umbenannt sind.
+- Wenn ein Knoten per `is-openable` markiert wird, muss `folderEmoji` auch `attributesRelPath` berücksichtigen, sonst entstehen inkonsistente 📁-Icons.

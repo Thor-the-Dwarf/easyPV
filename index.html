@@ -358,7 +358,7 @@
           if (!value) return '';
           if (value === 'flame' || value === 'fire' || value === '🔥') return 'flame';
           if (value === 'books' || value === 'book' || value === '📚') return 'books';
-          if (value === 'brain' || value === '🧠') return 'brain';
+          if (value === 'brain' || value === '🧠') return 'books';
           return '';
         }
 
@@ -379,6 +379,23 @@
             .map((segment) => encodeURIComponent(safeDecodePathPart(segment)))
             .join('/');
           return new URL(encodedPath, window.location.href).href;
+        }
+
+        function normalizeFolderNameKey(value) {
+          return String(value || '')
+            .trim()
+            .toLowerCase();
+        }
+
+        function isHiddenFolderName(rawName, cleanedName) {
+          const raw = String(rawName || '').trim();
+          const clean = String(cleanedName || '').trim();
+          const key = normalizeFolderNameKey(clean || raw);
+          if (!key) return false;
+          if (raw.startsWith('_') || clean.startsWith('_')) return true;
+          // Backward compatibility for existing non-prefixed technical folders.
+          if (key === 'assets' || key === 'data') return true;
+          return false;
         }
 
         function normalizeTree(nodes) {
@@ -409,6 +426,8 @@
         function normalizeNode(node) {
           const rawName = String(node.name || '');
           const cleanedName = decodeLegacyName(rawName);
+          if (isHiddenFolderName(rawName, cleanedName)) return [];
+
           const rawChildren = Array.isArray(node.children) ? node.children : [];
           const normalizedChildren = normalizeTree(rawChildren);
           const hasFiles = rawChildren.some((child) => child && !child.isFolder);
@@ -640,15 +659,12 @@
         function folderEmoji(node, isCollapsed) {
           const children = Array.isArray(node.children) ? node.children : [];
           const hasFolderChild = children.some((child) => child && child.isFolder);
-          if (!hasFolderChild && node && (node.gameRelPath || node.jsonRelPath)) {
+          if (!hasFolderChild && node && (node.gameRelPath || node.jsonRelPath || node.attributesRelPath)) {
             const icon = normalizeIconValue(node.icon);
             if (icon === 'flame') return '🔥';
-            if (icon === 'books') return '📚';
-            if (icon === 'brain') return '🧠';
             const fallback = resolveFolderIcon(node.jsonRelPath, node.gameRelPath);
             if (fallback === 'flame') return '🔥';
-            if (fallback === 'books') return '📚';
-            return '🧠';
+            return '📚';
           }
           return isCollapsed ? '📁' : '📂';
         }
@@ -656,9 +672,13 @@
         function resolveFolderIcon(jsonRelPath, gameRelPath) {
           const source = String(gameRelPath || jsonRelPath || '');
           if (!source) return '';
-          if (source.indexOf('/Erschienene Themen/') >= 0) return 'flame';
-          if (source.indexOf('/Mögliche Themen/') >= 0) return 'books';
-          return 'brain';
+          const sourceLower = source.toLowerCase();
+          if (sourceLower.indexOf('/erschienene themen/') >= 0) return 'flame';
+          if (sourceLower.indexOf('/vergangene themen/') >= 0) return 'flame';
+          if (sourceLower.indexOf('/mögliche themen/') >= 0 || sourceLower.indexOf('/mogliche themen/') >= 0) {
+            return 'books';
+          }
+          return 'books';
         }
 
         function findNodeById(nodes, id) {

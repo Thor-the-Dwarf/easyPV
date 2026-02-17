@@ -18,7 +18,7 @@ import { mkdir, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises'
 import path from 'node:path';
 
 const COLLECTION_NAME = 'feedback_all_games';
-const SERVICE_ACCOUNT_FILE = 'firebase-service-account.local.json';
+const SERVICE_ACCOUNT_FILE = '__admin_dont_push/firebase-service-account.local.json';
 const OUTPUT_RELATIVE_PATH = '__admin_dont_push/fireBaseGetter/feedback_all_games.json';
 const PROTOCOL_RELATIVE_PATH = '__admin_dont_push/fireBaseGetter/codex_protocoll_allFeedBack.txt';
 const FIRESTORE_PAGE_SIZE = 1000;

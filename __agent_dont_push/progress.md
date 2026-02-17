@@ -253,8 +253,8 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - Playwright smoke with click interaction successful
   - artifacts: `databases/Teil02 FIAE/output/web-game-konflikt-loeser/`
 - Theme-toggle optimization push (global single responsibility):
-  - Added `/Users/thor/WebstormProjects/easyPV/theme_bridge.js` as a central cross-origin theme client (`postMessage` request/response + `?theme=` + `localStorage` fallback).
-  - Injected `<script src="/theme_bridge.js"></script>` into all detected game HTML entrypoints (`_ghtml_*.html` and `game_*.html`) under `/databases`.
+  - Added `/Users/thor/WebstormProjects/easyPV/__admin_dont_push/theme_bridge.js` as a central cross-origin theme client (`postMessage` request/response + `?theme=` + `localStorage` fallback).
+  - Injected `<script src="/__admin_dont_push/theme_bridge.js"></script>` into all detected game HTML entrypoints (`_ghtml_*.html` and `game_*.html`) under `/databases`.
   - Added light-mode fallback styling in `theme_bridge.js` for pages without `shared_theme.css`, so hardcoded dark UIs still visibly react to theme changes.
   - Full coverage check: 0 remaining game-entry HTML files without theme bridge script.
   - Validation screenshots:
@@ -276,7 +276,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_gjs_ticket_schreiber_profi.js`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__02_doing_Ticketsystem/_gcss_ticket_schreiber_profi.css`
   - `databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Erschienene Themen/Ticketsystem/__03_testing_Ticketsystem/unit/ticket_schreiber_profi.config.test.mjs`
-- Kleiner Fix am vorhandenen `Priorisierungs-Butler`: `/theme_bridge.js`-Referenz im lokalen HTML entfernt, damit beim direkten Teil02-Hosting kein neuer 404-Breaker entsteht.
+- Kleiner Fix am vorhandenen `Priorisierungs-Butler`: `/__admin_dont_push/theme_bridge.js`-Referenz im lokalen HTML entfernt, damit beim direkten Teil02-Hosting kein neuer 404-Breaker entsteht.
 - Validierung:
   - `node --check` fuer `_gjs_ticket_schreiber_profi.js`
   - `node --test` fuer Ticketsystem-Tests (reachability + priorisierungs_butler + ticket_schreiber_profi)
@@ -449,7 +449,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `context.folderPath` wird jetzt aus `jsonRel/gameRel` als Repo-Ordnerpfad ermittelt und bei jedem Feedback gesendet.
   - `context.gameTitle` wird im Game-Modus aus dem aktiven iframe (`h1`/`document.title`, Fallback Dateiname) ermittelt und gesendet.
   - Modal-Kontextanzeige zeigt Ordnerpfad + optionalen Spieltitel.
-- Neues E2E-Testskript hinzugefuegt: `scripts/firebase/test-feedback-roundtrip.cjs`.
+- Neues E2E-Testskript hinzugefuegt: `__admin_dont_push/scripts/firebase/test-feedback-roundtrip.cjs`.
   - oeffnet `generic_pages/generic_page.html` fuer Protokoll-anfertigen,
   - sendet je ein Generic- und Game-Feedback,
   - fragt die erzeugten Firestore-Dokumente wieder ab,
@@ -473,7 +473,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `README.md`
   - `feedback_all_games.json` (Zieldatei, wird beim Lauf ueberschrieben)
 - Getter-Algorithmus ist starr/fix:
-  - liest immer `firebase-service-account.local.json` im Repo-Root,
+  - liest immer `__admin_dont_push/firebase-service-account.local.json` im Repo,
   - zieht immer Firestore-Collection `feedback_all_games` (inkl. Pagination),
   - schreibt immer nach `__admin_dont_push/fireBaseGetter/feedback_all_games.json`.
 - Hinweis: Rust-Toolchain (`cargo`, `rustc`) ist in dieser Umgebung nicht installiert, daher kein lokaler Compile/Run-Test moeglich.

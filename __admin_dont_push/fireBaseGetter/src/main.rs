@@ -14,7 +14,7 @@ use serde_json::{json, Map, Number, Value};
 use unicode_normalization::UnicodeNormalization;
 
 const COLLECTION_NAME: &str = "feedback_all_games";
-const SERVICE_ACCOUNT_FILE: &str = "firebase-service-account.local.json";
+const SERVICE_ACCOUNT_FILE: &str = "__admin_dont_push/firebase-service-account.local.json";
 const OUTPUT_RELATIVE_PATH: &str = "__admin_dont_push/fireBaseGetter/feedback_all_games.json";
 const PROTOCOL_RELATIVE_PATH: &str = "__admin_dont_push/fireBaseGetter/codex_protocoll_allFeedBack.txt";
 const TOKEN_SCOPE: &str = "https://www.googleapis.com/auth/datastore";

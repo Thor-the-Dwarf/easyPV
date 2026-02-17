@@ -4,7 +4,7 @@ import { createG0Catalog } from './g0-catalog-lib.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const workspaceRoot = path.resolve(__dirname, '../..');
+const workspaceRoot = path.resolve(__dirname, '../../..');
 
 function hasNormalizedContractViolations(catalog) {
   const requiredTopLevel = ['schemaVersion', 'gameId', 'sourceGameId', 'source', 'repo', 'metadata'];

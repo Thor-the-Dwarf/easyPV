@@ -5,6 +5,7 @@
   const FIREBASE_RTDB_URL = 'https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js';
   const FIREBASE_FIRESTORE_URL = 'https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js';
   const CONFIG_SCRIPT_CANDIDATES = [
+    '/__admin_dont_push/firebase.config.local.js',
     '/firebase.config.local.js',
     '/databases/Teil01%20Grundlagen/config.local.js'
   ];

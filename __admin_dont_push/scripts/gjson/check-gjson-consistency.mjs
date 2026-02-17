@@ -4,7 +4,7 @@ import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const workspaceRoot = path.resolve(__dirname, '../..');
+const workspaceRoot = path.resolve(__dirname, '../../..');
 
 const DEFAULT_BASELINE_PATH = path.join(workspaceRoot, '__agent_dont_push', 'metadata', 'gjson-index.baseline.json');
 const GJSON_FILE_RE = /^_gjson_.+\.json$/i;
@@ -13,8 +13,8 @@ const IGNORED_DIRS = new Set(['.git', '.idea', '.vscode', 'node_modules', 'outpu
 
 function printUsage() {
   console.log('Usage:');
-  console.log('  node scripts/gjson/check-gjson-consistency.mjs [--baseline <path>] [--update-baseline]');
-  console.log('  node scripts/gjson/check-gjson-consistency.mjs [--baseline <path>] [--strict-uniform]');
+  console.log('  node __admin_dont_push/scripts/gjson/check-gjson-consistency.mjs [--baseline <path>] [--update-baseline]');
+  console.log('  node __admin_dont_push/scripts/gjson/check-gjson-consistency.mjs [--baseline <path>] [--strict-uniform]');
   console.log('');
   console.log('Flags:');
   console.log('  --baseline <path>      Baseline file path (default: __agent_dont_push/metadata/gjson-index.baseline.json)');

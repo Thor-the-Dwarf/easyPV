@@ -1,6 +1,6 @@
 /*
  * Legacy compatibility config for the old feedback widget.
- * Preferred location for local secrets: /firebase.config.local.js
+ * Preferred location for local secrets: /__admin_dont_push/firebase.config.local.js
  */
 (function () {
   'use strict';

@@ -5,21 +5,21 @@
 - Alle `_g0*.json` in eine einheitliche, normalisierte Struktur fuer Sync/Analyse ueberfuehren.
 
 ## Relevante Dateien
-- Browser Feedback Client: `/Users/thor/WebstormProjects/easyPV/shared/firebase-feedback-client.js`
+- Browser Feedback Client: `/Users/thor/WebstormProjects/easyPV/__admin_dont_push/shared/firebase-feedback-client.js`
 - Feedback UI (Root Flow): `/Users/thor/WebstormProjects/easyPV/generic_pages/generic_page.js`
-- Normalisierung: `/Users/thor/WebstormProjects/easyPV/scripts/g0/build-normalized-catalog.mjs`
-- Validator: `/Users/thor/WebstormProjects/easyPV/scripts/g0/validate-source-g0.mjs`
-- Firestore Sync: `/Users/thor/WebstormProjects/easyPV/scripts/firebase/sync-g0-catalog-to-firestore.mjs`
-- Config Template: `/Users/thor/WebstormProjects/easyPV/firebase.config.local.example.js`
+- Normalisierung: `/Users/thor/WebstormProjects/easyPV/__admin_dont_push/scripts/g0/build-normalized-catalog.mjs`
+- Validator: `/Users/thor/WebstormProjects/easyPV/__admin_dont_push/scripts/g0/validate-source-g0.mjs`
+- Firestore Sync: `/Users/thor/WebstormProjects/easyPV/__admin_dont_push/scripts/firebase/sync-g0-catalog-to-firestore.mjs`
+- Config Template: `/Users/thor/WebstormProjects/easyPV/__admin_dont_push/firebase.config.local.example.js`
 
 ## 1) Browser-Config anlegen
-1. `firebase.config.local.example.js` nach `firebase.config.local.js` kopieren.
+1. `__admin_dont_push/firebase.config.local.example.js` nach `__admin_dont_push/firebase.config.local.js` kopieren.
 2. Werte in `window.EASYPV_FIREBASE_CONFIG.firebase` setzen.
 3. Feedback-Ziel setzen:
    - `feedback.provider`: `firestore` oder `rtdb`
    - `feedback.collection`: z. B. `game_feedback`
 
-`firebase.config.local.js` ist in `.gitignore`, damit keine Keys committed werden.
+`__admin_dont_push/firebase.config.local.js` ist in `.gitignore`, damit keine Keys committed werden.
 
 ## 2) JSON-Normalisierung/Validierung
 ```bash
@@ -36,7 +36,7 @@ npm install
 ```
 
 Benötigte Env-Variablen:
-- Option A (empfohlen): `FIREBASE_SERVICE_ACCOUNT_FILE` (z. B. `firebase-service-account.local.json`)
+- Option A (empfohlen): `FIREBASE_SERVICE_ACCOUNT_FILE` (z. B. `__admin_dont_push/firebase-service-account.local.json`)
 - Option B (alternativ):
   - `FIREBASE_PROJECT_ID`
   - `FIREBASE_CLIENT_EMAIL`
@@ -52,7 +52,7 @@ npm run sync:g0:firebase
 
 Beispiel mit Service-Account-Datei:
 ```bash
-FIREBASE_SERVICE_ACCOUNT_FILE=firebase-service-account.local.json npm run sync:g0:firebase
+FIREBASE_SERVICE_ACCOUNT_FILE=__admin_dont_push/firebase-service-account.local.json npm run sync:g0:firebase
 ```
 
 Jeder Datensatz wird unter `game_catalog/{gameId}` gespeichert und enthaelt:

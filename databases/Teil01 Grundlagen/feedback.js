@@ -1,7 +1,7 @@
  (function () {
   'use strict';
 
-  const CONFIG_PATHS = ['/firebase.config.local.js', './config.local.js'];
+  const CONFIG_PATHS = ['/__admin_dont_push/firebase.config.local.js', '/firebase.config.local.js', './config.local.js'];
   const FIREBASE_APP_URL = 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js';
   const FIREBASE_DB_URL = 'https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js';
   const FIREBASE_FS_URL = 'https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js';

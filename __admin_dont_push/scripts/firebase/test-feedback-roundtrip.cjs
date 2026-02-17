@@ -8,7 +8,7 @@ const { spawn } = require('node:child_process');
 
 const { chromium } = require('playwright');
 
-const workspaceRoot = path.resolve(__dirname, '..', '..');
+const workspaceRoot = path.resolve(__dirname, '..', '..', '..');
 const testOutputDir = path.join(workspaceRoot, 'output', 'firebase-feedback-test');
 
 const testConfig = {

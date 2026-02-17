@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const workspaceRoot = path.resolve(__dirname, '../..');
 
-const DEFAULT_BASELINE_PATH = path.join(workspaceRoot, 'databases', 'metadata', 'gjson-index.baseline.json');
+const DEFAULT_BASELINE_PATH = path.join(workspaceRoot, '__agent_dont_push', 'metadata', 'gjson-index.baseline.json');
 const GJSON_FILE_RE = /^_gjson_.+\.json$/i;
 const G_FALLBACK_FILE_RE = /^_(?:g|gg)\d+_.+\.json$/i;
 const IGNORED_DIRS = new Set(['.git', '.idea', '.vscode', 'node_modules', 'output']);
@@ -17,7 +17,7 @@ function printUsage() {
   console.log('  node scripts/gjson/check-gjson-consistency.mjs [--baseline <path>] [--strict-uniform]');
   console.log('');
   console.log('Flags:');
-  console.log('  --baseline <path>      Baseline file path (default: databases/metadata/gjson-index.baseline.json)');
+  console.log('  --baseline <path>      Baseline file path (default: __agent_dont_push/metadata/gjson-index.baseline.json)');
   console.log('  --update-baseline      Write current index as baseline');
   console.log('  --strict-uniform       Enforce one global top-level attribute signature');
   console.log('  --no-strict-uniform    Disable uniform enforcement even for _gjson_*.json');

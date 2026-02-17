@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const workspaceRoot = path.resolve(__dirname, '../..');
-const defaultCatalogPath = path.join(workspaceRoot, 'databases', 'metadata', 'g0-catalog.normalized.json');
+const defaultCatalogPath = path.join(workspaceRoot, '__agent_dont_push', 'metadata', 'g0-catalog.normalized.json');
 
 function requiredEnv(name) {
   const value = process.env[name];

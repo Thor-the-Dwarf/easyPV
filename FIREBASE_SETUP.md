@@ -28,7 +28,7 @@ npm run build:g0-catalog
 ```
 
 Output:
-- `/Users/thor/WebstormProjects/easyPV/databases/metadata/g0-catalog.normalized.json`
+- `/Users/thor/WebstormProjects/easyPV/__agent_dont_push/metadata/g0-catalog.normalized.json`
 
 ## 3) Firestore-Sync vorbereiten
 ```bash
@@ -43,7 +43,7 @@ Benötigte Env-Variablen:
   - `FIREBASE_PRIVATE_KEY` (mit `\n` escaped)
 - optional: `FIREBASE_GAMES_COLLECTION` (default `game_catalog`)
 - optional: `FIREBASE_SYNC_META_COLLECTION` (default `sync_meta`)
-- optional: `G0_CATALOG_PATH` (default `databases/metadata/g0-catalog.normalized.json`)
+- optional: `G0_CATALOG_PATH` (default `__agent_dont_push/metadata/g0-catalog.normalized.json`)
 
 ## 4) Sync ausführen
 ```bash

@@ -23,8 +23,11 @@
   const roleOrder = ['ceo', 'coo', 'cfo', 'cto', 'cio', 'ciso', 'cso'];
   const THEME_KEY = 'globalTheme_v1';
   const params = new URLSearchParams(window.location.search);
+  const folderFromQuery = normalizeFolderLabel(params.get('folder'));
 
   const thread = document.getElementById('chat-thread');
+  const headerTitle = document.querySelector('.chat-header h1');
+  const headerSubtitle = document.querySelector('.chat-header p');
   if (!thread) return;
 
   initThemeSync();
@@ -97,7 +100,7 @@
   }
 
   async function init() {
-    const params = new URLSearchParams(window.location.search);
+    applyHeaderContext(folderFromQuery);
     const jsonParam = params.get('json');
     const jsonSources = [];
     if (jsonParam) jsonSources.push(jsonParam);
@@ -175,9 +178,11 @@
 
     const selfText = String(data.self_message || '').trim();
     if (selfText) {
+      const rawSelfShort = String(data.self_titel || '').trim();
+      const rawSelfLong = String(data.self_subtitel || '').trim();
       messages.unshift({
-        short: String(data.self_titel || 'CPU').trim(),
-        long: String(data.self_subtitel || 'Central Processing Unit').trim(),
+        short: pickSelfShort(rawSelfShort, folderFromQuery),
+        long: pickSelfLong(rawSelfLong, folderFromQuery),
         text: selfText
       });
     }
@@ -196,6 +201,41 @@
     const short = String(roleKey || 'role').toUpperCase();
     const long = String(data[roleKey + '_subtitel'] || data[roleKey + '_subtitle'] || short).trim();
     return { short: short, long: long };
+  }
+
+  function applyHeaderContext(folderLabel) {
+    const label = normalizeFolderLabel(folderLabel);
+    if (!label) return;
+    if (headerTitle) headerTitle.textContent = label;
+    if (headerSubtitle) headerSubtitle.textContent = 'Themenordner im C-Suite Dialog';
+    document.title = label + ' - C-Suite Chat';
+  }
+
+  function normalizeFolderLabel(rawLabel) {
+    return String(rawLabel || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function isCpuPlaceholder(value) {
+    const normalized = String(value || '').trim().toLowerCase();
+    return normalized === 'cpu' || normalized === 'central processing unit';
+  }
+
+  function pickSelfShort(rawShort, folderLabel) {
+    const short = String(rawShort || '').trim();
+    const folder = normalizeFolderLabel(folderLabel);
+    if (folder && (!short || isCpuPlaceholder(short))) return folder;
+    if (short) return short;
+    if (folder) return folder;
+    return 'Thema';
+  }
+
+  function pickSelfLong(rawLong, folderLabel) {
+    const long = String(rawLong || '').trim();
+    if (long && !isCpuPlaceholder(long)) return long;
+    const folder = normalizeFolderLabel(folderLabel);
+    if (folder) return 'Fachthema im C-Suite Dialog';
+    if (long) return long;
+    return 'Fachthema im C-Suite Dialog';
   }
 
   function makeTime(index) {

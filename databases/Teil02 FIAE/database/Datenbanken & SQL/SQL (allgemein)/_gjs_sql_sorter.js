@@ -87,7 +87,7 @@
 
             stone.addEventListener('dragend', () => {
                 stone.style.opacity = '1';
-                el.infoBar.textContent = "SELECT_A_COMMAND_TO_CATEGORIZE...";
+                el.infoBar.textContent = 'SELECT_A_COMMAND_TO_CATEGORIZE...';
                 el.infoBar.style.color = '';
             });
 
@@ -119,7 +119,7 @@
                 } else {
                     handleError(target);
                 }
-            } catch (err) { console.error("Drop Data Error"); }
+            } catch (err) { console.error('Drop Data Error'); }
         });
     }
 
@@ -149,9 +149,32 @@
         setTimeout(() => target.classList.remove('error-shake'), 400);
 
         // As per rule 9: visual UI message instead of just console
-        el.infoBar.textContent = "!!!_CATEGORIZATION_ERROR:_MISALIGNED_SCHEMA_KIND_!!!";
+        el.infoBar.textContent = '!!!_CATEGORIZATION_ERROR:_MISALIGNED_SCHEMA_KIND_!!!';
         el.infoBar.style.color = 'var(--neon-tcl)';
     }
+
+    function computeProgressPercent() {
+        const total = state.config && Array.isArray(state.config.commands) ? state.config.commands.length : 0;
+        if (total <= 0) return 0;
+        return Math.round(Math.max(0, Math.min(1, state.sortedCount / total)) * 100);
+    }
+
+    window.render_game_to_text = function renderGameToText() {
+        const total = state.config && Array.isArray(state.config.commands) ? state.config.commands.length : 0;
+        return JSON.stringify({
+            mode: state.sortedCount >= total && total > 0 ? 'result' : 'sorting',
+            measurable: true,
+            coordinate_system: 'origin top-left, x right, y down',
+            sorted_count: state.sortedCount,
+            total_commands: total,
+            progress_percent: computeProgressPercent(),
+            overlay_open: el.successOverlay ? !el.successOverlay.classList.contains('hidden') : false
+        });
+    };
+
+    window.advanceTime = function advanceTime() {
+        return true;
+    };
 
     init();
 })();

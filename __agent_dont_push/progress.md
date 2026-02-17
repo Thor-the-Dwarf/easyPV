@@ -609,3 +609,11 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Änderungen: `_gjs_point_delete.js` um Fortschrittslogik (`completed_levels`, `progress_percent`) sowie `render_game_to_text` + `advanceTime` erweitert.
 - Zusätzlich: Level mit gesperrtem Ziel-Datensatz wird nun als erfolgreiche Constraint-Erkenntnis abgeschlossen (`CONSTRAINT_CONFIRMED`), damit Aufgabenfortschritt vollstaendig erspielbar bleibt.
 - Validierung: `node --check` erfolgreich; Playwright-Smoke ohne Fehlerdatei, State liefert `measurable=true` und `progress_percent`.
+
+- Batch-Durchlauf (EntwicklerTeam02): drei weitere Spiele messbar gemacht.
+- Gefixt:
+  - `Datenbanken & SQL/SQL (allgemein)/sql_sorter`
+  - `Datenbanken & SQL/UNION/union_compat`
+  - `Datenbanken & SQL/UPDATE/mass_update`
+- Für alle drei Spiele ergänzt: `render_game_to_text`, `advanceTime`, `progress_percent` und eindeutige Fortschrittssignale.
+- Validierung: `node --check` für alle drei JS-Dateien erfolgreich; Playwright-Smoke mit State/Screenshot ohne `errors-0.json`.

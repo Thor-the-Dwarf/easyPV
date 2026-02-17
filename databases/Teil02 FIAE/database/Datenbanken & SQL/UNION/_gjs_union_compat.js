@@ -4,12 +4,14 @@
     const state = {
         config: null,
         levelIdx: 0,
+        completedLevels: 0,
         isUnionAll: false,
         isFused: false,
         dragY: 0,
         originY: 0,
         score: 0,
-        integrity: 100
+        integrity: 100,
+        lastResult: 'none'
     };
 
     const el = {
@@ -71,9 +73,10 @@
         state.levelIdx = idx;
         state.isFused = false;
         state.integrity = 100;
+        state.lastResult = 'in_progress';
 
         // Reset positions
-        el.poleS.style.transform = `translateY(0)`;
+        el.poleS.style.transform = 'translateY(0)';
         el.poleS.classList.remove('fuse-glow');
         el.poleN.classList.remove('fuse-glow');
 
@@ -130,7 +133,7 @@
             isDragging = false;
             if (!state.isFused) {
                 el.poleS.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                el.poleS.style.transform = `translateY(0)`;
+                el.poleS.style.transform = 'translateY(0)';
             }
         };
 
@@ -173,15 +176,17 @@
     function executeFusion() {
         state.isFused = true;
         playSound(880, 'square', 0.4);
-        el.poleS.style.transform = `translateY(-200px)`;
+        el.poleS.style.transform = 'translateY(-200px)';
         el.poleS.classList.add('fuse-glow');
         el.poleN.classList.add('fuse-glow');
 
         state.score += 100;
+        state.completedLevels = Math.max(state.completedLevels, state.levelIdx + 1);
+        state.lastResult = 'fusion_stable';
         updateHUD();
 
         createSparks();
-        setTimeout(() => endGame("FUSION_STABLE"), 1000);
+        setTimeout(() => endGame('FUSION_STABLE'), 1000);
     }
 
     function abortFusion() {
@@ -189,14 +194,18 @@
         playSound(110, 'sawtooth', 0.5);
         el.poleS.classList.add('shake');
         state.integrity -= 25;
+        state.lastResult = 'fusion_abort';
         updateHUD();
 
         setTimeout(() => {
             el.poleS.classList.remove('shake');
             el.poleS.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            el.poleS.style.transform = `translateY(0)`;
+            el.poleS.style.transform = 'translateY(0)';
             state.isFused = false;
-            if (state.integrity <= 0) endGame("REACTOR_MELTDOWN");
+            if (state.integrity <= 0) {
+                state.lastResult = 'reactor_meltdown';
+                endGame('REACTOR_MELTDOWN');
+            }
         }, 500);
     }
 
@@ -205,7 +214,7 @@
             const spark = document.createElement('div');
             spark.className = 'electric-spark';
             spark.style.left = `${50 + (Math.random() - 0.5) * 80}%`;
-            spark.style.top = `40%`;
+            spark.style.top = '40%';
             el.chamber.appendChild(spark);
             setTimeout(() => spark.remove(), 400);
         }
@@ -221,6 +230,36 @@
         el.resFinal.textContent = msg;
         el.overlay.classList.remove('hidden');
     }
+
+    function computeProgressPercent() {
+        const total = state.config && Array.isArray(state.config.levels) ? state.config.levels.length : 0;
+        if (total <= 0) return 0;
+        const maxScore = total * 100;
+        return Math.round(Math.max(0, Math.min(1, state.score / maxScore)) * 100);
+    }
+
+    window.render_game_to_text = function renderGameToText() {
+        const totalLevels = state.config && Array.isArray(state.config.levels) ? state.config.levels.length : 0;
+        return JSON.stringify({
+            mode: !el.overlay.classList.contains('hidden') ? 'result' : 'fusion',
+            measurable: true,
+            coordinate_system: 'origin top-left, x right, y down',
+            current_level: state.levelIdx + 1,
+            total_levels: totalLevels,
+            completed_levels: state.completedLevels,
+            score: state.score,
+            max_score: totalLevels * 100,
+            integrity_percent: state.integrity,
+            is_union_all: state.isUnionAll,
+            is_fused: state.isFused,
+            last_result: state.lastResult,
+            progress_percent: computeProgressPercent()
+        });
+    };
+
+    window.advanceTime = function advanceTime() {
+        return true;
+    };
 
     init();
 })();

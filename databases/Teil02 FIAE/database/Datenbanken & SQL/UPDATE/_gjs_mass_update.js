@@ -4,8 +4,10 @@
     const state = {
         config: null,
         scenarioIdx: 0,
+        successfulScenarios: 0,
         affectedRows: 0,
-        isComplete: false
+        isComplete: false,
+        lastResult: 'none'
     };
 
     const el = {
@@ -84,6 +86,7 @@
         }
         state.scenarioIdx = idx;
         state.isComplete = false;
+        state.lastResult = 'in_progress';
 
         const sc = state.config.scenarios[idx];
         el.whereSlot.textContent = '';
@@ -179,11 +182,14 @@
 
         if (state.affectedRows === sc.targetRows) {
             playSound('success');
+            state.successfulScenarios = Math.max(state.successfulScenarios, state.scenarioIdx + 1);
+            state.lastResult = 'success';
             showOutcome(true, sc);
         } else {
             playSound('critical');
             document.body.classList.add('shake');
             setTimeout(() => document.body.classList.remove('shake'), 1000);
+            state.lastResult = 'fail';
             showOutcome(false, sc);
         }
     }
@@ -197,6 +203,36 @@
             el.overlay.classList.remove('hidden');
         }, 1500);
     }
+
+    function computeProgressPercent() {
+        const total = state.config && Array.isArray(state.config.scenarios) ? state.config.scenarios.length : 0;
+        if (total <= 0) return 0;
+        const inScenario = state.isComplete ? 0 : (el.whereSlot && el.whereSlot.textContent.trim().length > 0 ? 0.5 : 0);
+        const ratio = (state.successfulScenarios + inScenario) / total;
+        return Math.round(Math.max(0, Math.min(1, ratio)) * 100);
+    }
+
+    window.render_game_to_text = function renderGameToText() {
+        const total = state.config && Array.isArray(state.config.scenarios) ? state.config.scenarios.length : 0;
+        const sc = state.config && state.config.scenarios ? state.config.scenarios[state.scenarioIdx] : null;
+        return JSON.stringify({
+            mode: state.isComplete ? 'result' : 'where_clause',
+            measurable: true,
+            coordinate_system: 'origin top-left, x right, y down',
+            current_scenario: state.scenarioIdx + 1,
+            total_scenarios: total,
+            successful_scenarios: state.successfulScenarios,
+            affected_rows: state.affectedRows,
+            target_rows: sc ? sc.targetRows : null,
+            hazard_level: el.hazard ? el.hazard.textContent : '',
+            last_result: state.lastResult,
+            progress_percent: computeProgressPercent()
+        });
+    };
+
+    window.advanceTime = function advanceTime() {
+        return true;
+    };
 
     init();
 })();

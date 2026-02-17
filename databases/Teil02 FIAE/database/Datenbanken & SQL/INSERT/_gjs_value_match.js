@@ -4,9 +4,11 @@
     const state = {
         config: null,
         levelIdx: 0,
+        completedLevels: 0,
         filledSlots: 0,
         isComplete: false,
-        selectedCrate: null // For tap-mapping
+        selectedCrate: null, // For tap-mapping
+        lastPlacedValue: null
     };
 
     const el = {
@@ -76,6 +78,7 @@
         state.filledSlots = 0;
         state.isComplete = false;
         state.selectedCrate = null;
+        state.lastPlacedValue = null;
 
         const lv = state.config.levels[idx];
         el.title.textContent = `LOADING_UNIT // ${lv.title}`;
@@ -184,6 +187,7 @@
         if (crateEl) crateEl.remove();
 
         state.filledSlots++;
+        state.lastPlacedValue = pkg.label;
         updateSyntaxValue(zone.dataset.idx, pkg.label);
         checkWin();
     }
@@ -218,6 +222,7 @@
         const lv = state.config.levels[state.levelIdx];
         if (state.filledSlots === lv.columns.length) {
             state.isComplete = true;
+            state.completedLevels = Math.max(state.completedLevels, state.levelIdx + 1);
             setTimeout(() => {
                 playSound('truck');
                 el.ramp.classList.add('drive-away');
@@ -225,6 +230,42 @@
             }, 500);
         }
     }
+
+    function computeProgressPercent() {
+        const totalLevels = state.config && Array.isArray(state.config.levels) ? state.config.levels.length : 0;
+        if (totalLevels <= 0) return 0;
+
+        const lv = state.config.levels[state.levelIdx];
+        const totalSlots = lv && Array.isArray(lv.columns) ? lv.columns.length : 0;
+        const inLevel = totalSlots > 0 ? Math.max(0, Math.min(1, state.filledSlots / totalSlots)) : 0;
+        const done = Math.max(0, Math.min(state.completedLevels, totalLevels));
+        const ratio = (done + (state.isComplete ? 0 : inLevel)) / totalLevels;
+        return Math.round(Math.max(0, Math.min(1, ratio)) * 100);
+    }
+
+    window.render_game_to_text = function renderGameToText() {
+        const lv = state.config && state.config.levels ? state.config.levels[state.levelIdx] : null;
+        const totalSlots = lv && Array.isArray(lv.columns) ? lv.columns.length : 0;
+
+        return JSON.stringify({
+            mode: state.isComplete ? 'level_complete' : 'value_mapping',
+            coordinate_system: 'origin top-left, x right, y down',
+            current_level: state.levelIdx + 1,
+            total_levels: state.config && state.config.levels ? state.config.levels.length : 0,
+            completed_levels: state.completedLevels,
+            filled_slots: state.filledSlots,
+            total_slots: totalSlots,
+            progress_percent: computeProgressPercent(),
+            selected_crate: state.selectedCrate ? state.selectedCrate.pkg.label : null,
+            last_placed_value: state.lastPlacedValue,
+            overlay_open: !el.overlay.classList.contains('hidden'),
+            is_complete: state.isComplete
+        });
+    };
+
+    window.advanceTime = function advanceTime() {
+        return true;
+    };
 
     init();
 })();

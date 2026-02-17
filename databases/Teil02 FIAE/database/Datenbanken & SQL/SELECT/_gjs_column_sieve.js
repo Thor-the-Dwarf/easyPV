@@ -4,10 +4,12 @@
     const state = {
         config: null,
         levelIdx: 0,
+        completedLevels: 0,
         selectedCols: new Set(),
         currentWeight: 0,
         totalLevelWeight: 0,
-        isComplete: false
+        isComplete: false,
+        lastRank: null
     };
 
     const el = {
@@ -79,6 +81,7 @@
         state.levelIdx = idx;
         state.selectedCols.clear();
         state.isComplete = false;
+        state.lastRank = null;
 
         const lv = state.config.levels[idx];
         el.missionTitle.textContent = `CRITICAL_PROJECTION // ${lv.title}`;
@@ -205,6 +208,8 @@
             msg = "DATA_WASTE_CRITICAL: Full table scan active. Network saturation reached.";
         }
 
+        state.lastRank = rank;
+        state.completedLevels = Math.max(state.completedLevels, state.levelIdx + 1);
         showResult(rank, msg);
     }
 
@@ -226,6 +231,54 @@
             location.reload();
         }
     }
+
+    function getRequiredSelectionProgress(lv) {
+        if (!lv || !Array.isArray(lv.requiredColumns) || lv.requiredColumns.length === 0) return 0;
+        let selectedRequired = 0;
+        for (let i = 0; i < lv.requiredColumns.length; i += 1) {
+            if (state.selectedCols.has(lv.requiredColumns[i])) selectedRequired += 1;
+        }
+        return selectedRequired / lv.requiredColumns.length;
+    }
+
+    function computeProgressPercent() {
+        const totalLevels = state.config && Array.isArray(state.config.levels) ? state.config.levels.length : 0;
+        if (totalLevels <= 0) return 0;
+
+        const lv = state.config.levels[state.levelIdx];
+        const done = Math.max(0, Math.min(state.completedLevels, totalLevels));
+        const inLevel = state.isComplete ? 0 : getRequiredSelectionProgress(lv);
+        return Math.round(Math.max(0, Math.min(1, (done + inLevel) / totalLevels)) * 100);
+    }
+
+    window.render_game_to_text = function renderGameToText() {
+        const lv = state.config && state.config.levels ? state.config.levels[state.levelIdx] : null;
+        const requiredTotal = lv && Array.isArray(lv.requiredColumns) ? lv.requiredColumns.length : 0;
+        const requiredSelected = lv && Array.isArray(lv.requiredColumns)
+            ? lv.requiredColumns.filter((name) => state.selectedCols.has(name)).length
+            : 0;
+
+        return JSON.stringify({
+            mode: state.isComplete ? 'result' : 'column_selection',
+            coordinate_system: 'origin top-left, x right, y down',
+            current_level: state.levelIdx + 1,
+            total_levels: state.config && state.config.levels ? state.config.levels.length : 0,
+            completed_levels: state.completedLevels,
+            progress_percent: computeProgressPercent(),
+            selected_count: state.selectedCols.size,
+            selected_columns: Array.from(state.selectedCols),
+            required_selected: requiredSelected,
+            required_total: requiredTotal,
+            current_weight_kb: state.currentWeight,
+            total_weight_kb: state.totalLevelWeight,
+            is_complete: state.isComplete,
+            last_rank: state.lastRank
+        });
+    };
+
+    window.advanceTime = function advanceTime() {
+        return true;
+    };
 
     init();
 })();

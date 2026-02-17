@@ -587,3 +587,20 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `openPlayableFolder` nutzt jetzt `openPracticeView` (direktes Spiel-HTML wenn vorhanden, sonst `generic_c_suite` statt `generic_page`).
   - Bei direkter Spielseite wird `json` weiter als Query-Parameter gesetzt.
 - Syntaxcheck des Inline-Skripts erfolgreich (`new Function(...)`).
+
+- Original prompt (current turn): Fortschritt fuer unmessbares Spiel pro Durchlauf messbar machen (Team 02).
+- Zielspiel dieses Durchlaufs: Datenbanken & SQL/SELECT/column_sieve.
+- Umsetzung gestartet: `_gjs_column_sieve.js` um globale Fortschrittsmetrik erweitert (`completed_levels`, `progress_percent`) sowie `window.render_game_to_text()` + `window.advanceTime()` ergänzt.
+- Validierung ausgefuehrt: Playwright-Smoke fuer `.../Datenbanken & SQL/SELECT/_ghtml_column_sieve.html` mit Aktion `#btn-asterisk`.
+- Ergebnis: `state-0.json` liefert jetzt messbare Signale inkl. `progress_percent: 33`, `completed_levels`, `total_levels` und weiteren KPI-Werten.
+- Screenshot geprueft: `output/web-game-column-sieve/shot-0.png` zeigt spielbare UI mit aktiver Fortschrittsanzeige.
+- Hinweis: Test-Runner loggt weiterhin einen generischen 404-Console-Fehler (nicht aus den lokalen Spielressourcen laut HTTP-Server-Log).
+- TODO naechster Durchlauf: naechstes Spiel aus `necht_messbare_spiele.json` um gleichen Mess-Hook + Fortschrittssignale ergaenzen.
+- Teamaufstellung fuer diesen Durchlauf: Analyse-Spezialist02, UML-Spezialist02, Software-Spezialist02, Test-Spezialist02 (Leitung: EntwicklerTeam02).
+
+- Weiterer Durchlauf (EntwicklerTeam02): naechstes Spiel `Datenbanken & SQL/INSERT/value_match` bearbeitet.
+- `_gjs_value_match.js` erweitert um messbaren Fortschritt (`completed_levels`, `filled_slots`, `total_slots`, `progress_percent`) sowie Hooks `window.render_game_to_text()` und `window.advanceTime()`.
+- Validierung: `node --check` fuer `_gjs_value_match.js` erfolgreich.
+- Playwright-Smoke: `output/web-game-value-match/shot-0.png` und `state-0.json` erzeugt, ohne `errors-0.json`.
+- State-Check: Hook liefert jetzt messbare Felder (`progress_percent`, `filled_slots`, `total_slots`, `completed_levels`).
+- TODO naechster Durchlauf: weiteres Spiel aus `necht_messbare_spiele.json` mit gleichem Muster messbar machen.

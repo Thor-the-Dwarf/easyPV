@@ -226,7 +226,7 @@ body::after {
 }
 
 .drawer-header {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   padding-bottom: 1rem;
@@ -352,8 +352,24 @@ body::after {
   word-break: break-word;
 }
 
-.tree-meta-head-cell--tree {
-  color: transparent;
+.tree-meta-head-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--primary) / 0.35);
+  background: hsl(var(--bg-surface) / 0.6);
+  font-size: 0.88rem;
+  text-transform: none;
+  line-height: 1;
+  cursor: help;
+  user-select: none;
+}
+
+.tree-meta-head-spacer {
+  min-height: 1px;
 }
 
 .tree-meta-cell {
@@ -366,6 +382,7 @@ body::after {
 
 .tree-meta-cell--probability {
   white-space: nowrap;
+  color: hsl(var(--primary));
 }
 
 .tree-meta-cell--progress {

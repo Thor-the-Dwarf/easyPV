@@ -615,7 +615,7 @@
 
             const payload = await response.json();
             rootTree = normalizeTree(Array.isArray(payload.tree) ? payload.tree : []);
-            drawerTitleEl.textContent = String(payload.rootName || 'DATABASE').toUpperCase();
+            drawerTitleEl.textContent = '';
 
             const iconTargets = collectIconTargetNodes(rootTree);
             if (iconTargets.length > 0) {
@@ -665,19 +665,23 @@
           row.className = 'tree-meta-header';
 
           const probabilityCol = document.createElement('span');
-          probabilityCol.className = 'tree-meta-head-cell';
-          probabilityCol.textContent = 'Prüfungswarscheinlichkeit';
+          probabilityCol.className = 'tree-meta-head-cell tree-meta-head-icon';
+          probabilityCol.textContent = '🔥';
+          probabilityCol.title = 'Thema ist zu x% in vergangenen Prüfungen erschienen.';
+          probabilityCol.setAttribute('aria-label', 'Thema ist zu x% in vergangenen Prüfungen erschienen.');
           row.appendChild(probabilityCol);
 
           const progressCol = document.createElement('span');
-          progressCol.className = 'tree-meta-head-cell';
-          progressCol.textContent = 'Fortschritt';
+          progressCol.className = 'tree-meta-head-cell tree-meta-head-icon';
+          progressCol.textContent = '🧠';
+          progressCol.title = 'Fortschritt';
+          progressCol.setAttribute('aria-label', 'Fortschritt');
           row.appendChild(progressCol);
 
-          const treeCol = document.createElement('span');
-          treeCol.className = 'tree-meta-head-cell tree-meta-head-cell--tree';
-          treeCol.textContent = '';
-          row.appendChild(treeCol);
+          const spacer = document.createElement('span');
+          spacer.className = 'tree-meta-head-spacer';
+          spacer.setAttribute('aria-hidden', 'true');
+          row.appendChild(spacer);
 
           return row;
         }
@@ -970,11 +974,16 @@
             row.className = 'tree-row';
             row.style.setProperty('--level', level);
 
-            const probabilityKind = resolveExamProbabilityKind(node);
+            const probabilityPercent = resolveExamProbabilityPercent(node);
             const probabilityCell = document.createElement('span');
             probabilityCell.className = 'tree-meta-cell tree-meta-cell--probability';
-            probabilityCell.textContent = formatExamProbabilityLabel(probabilityKind);
-            probabilityCell.title = 'Prüfungswarscheinlichkeit: ' + formatExamProbabilityLabel(probabilityKind);
+            if (probabilityPercent === null) {
+              probabilityCell.textContent = '-';
+              probabilityCell.title = 'Thema ist zu x% in vergangenen Prüfungen erschienen.';
+            } else {
+              probabilityCell.textContent = '🔥 ' + probabilityPercent + '%';
+              probabilityCell.title = 'Thema ist zu ' + probabilityPercent + '% in vergangenen Prüfungen erschienen.';
+            }
             row.appendChild(probabilityCell);
 
             const progressValue = clampPercent(
@@ -1107,30 +1116,39 @@
           return hasFlame ? 'flame' : 'books';
         }
 
-        function resolveExamProbabilityKind(node) {
-          if (!node || !node.isFolder) return '';
+        function resolveExamProbabilityStats(node) {
+          if (!node || !node.isFolder) return { flame: 0, total: 0 };
 
           if (isGameLaunchNode(node)) {
-            return resolveNodeIconKind(node);
+            const isFlame = resolveNodeIconKind(node) === 'flame';
+            return { flame: isFlame ? 1 : 0, total: 1 };
           }
-
-          const direct = resolveThemeFolderIcon(node);
-          if (direct) return direct;
 
           const children = Array.isArray(node.children) ? node.children : [];
-          let hasBooks = false;
+          let flame = 0;
+          let total = 0;
           for (let i = 0; i < children.length; i += 1) {
-            const childKind = resolveExamProbabilityKind(children[i]);
-            if (childKind === 'flame') return 'flame';
-            if (childKind === 'books') hasBooks = true;
+            const childStats = resolveExamProbabilityStats(children[i]);
+            if (!childStats || typeof childStats !== 'object') continue;
+            flame += Number(childStats.flame) || 0;
+            total += Number(childStats.total) || 0;
           }
-          return hasBooks ? 'books' : '';
+
+          if (total === 0 && isPlayableFolder(node)) {
+            const ownFlame = resolveNodeIconKind(node) === 'flame' ? 1 : 0;
+            return { flame: ownFlame, total: 1 };
+          }
+
+          return { flame: flame, total: total };
         }
 
-        function formatExamProbabilityLabel(kind) {
-          if (kind === 'flame') return 'Hoch';
-          if (kind === 'books') return 'Mittel';
-          return '-';
+        function resolveExamProbabilityPercent(node) {
+          const stats = resolveExamProbabilityStats(node);
+          if (!stats || typeof stats !== 'object') return null;
+          const total = Number(stats.total) || 0;
+          if (total <= 0) return null;
+          const flame = Number(stats.flame) || 0;
+          return clampPercent((flame / total) * 100);
         }
 
         function folderEmoji(node, isCollapsed) {

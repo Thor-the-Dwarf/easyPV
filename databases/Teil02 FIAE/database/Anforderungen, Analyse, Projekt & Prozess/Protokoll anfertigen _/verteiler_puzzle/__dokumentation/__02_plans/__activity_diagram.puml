@@ -1,0 +1,12 @@
+@startuml
+title Lade Spiel...
+start
+:Nutzer oeffnet Seite (_ghtml_verteiler_puzzle.html);
+:Browser laedt HTML;
+:Inline Redirect-Script wird ausgefuehrt;
+:enginePath und configPath bestimmen;
+:Weiterleitung zur Spiel-Engine;
+:Engine laedt Konfiguration und Assets;
+:Spieloberflaeche wird angezeigt;
+stop
+@enduml

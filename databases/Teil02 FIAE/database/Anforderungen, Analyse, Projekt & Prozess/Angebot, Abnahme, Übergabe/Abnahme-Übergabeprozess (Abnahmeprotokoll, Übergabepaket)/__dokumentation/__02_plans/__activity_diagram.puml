@@ -1,0 +1,25 @@
+@startuml
+title Abnahme-Protokoll-Check
+start
+:Nutzer oeffnet Seite (_ghtml_abnahme_protokoll_check.html);
+:Browser laedt HTML/CSS/JS;
+:Game-Script initialisieren (_gjs_abnahme_protokoll_check.js);
+if (Externe Daten verfuegbar?) then (ja)
+  :JSON/Leveldaten laden (data/_gg01_abnahme_protokoll_check.json);
+else (nein)
+  :Mit lokalen Initialdaten arbeiten;
+endif
+:Startzustand der UI rendern;
+while (Spielrunde aktiv?) is (ja)
+  :Nutzereingabe verarbeiten;
+  :Regeln pruefen und Zustand aktualisieren;
+  if (Aktion korrekt?) then (ja)
+    :Positives Feedback und Fortschritt;
+  else (nein)
+    :Fehlerfeedback und ggf. Retry;
+  endif
+  :HUD/DOM neu zeichnen;
+endwhile (nein)
+:Ergebnis anzeigen;
+stop
+@enduml

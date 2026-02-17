@@ -1,0 +1,25 @@
+@startuml
+title Stakeholder Mapping - The Diplomat
+start
+:Nutzer oeffnet Seite (_ghtml_stakeholder_mapping.html);
+:Browser laedt HTML/CSS/JS;
+:Game-Script initialisieren (_gjs_stakeholder_mapping.js);
+if (Externe Daten verfuegbar?) then (ja)
+  :JSON/Leveldaten laden (data/_gg01_stakeholder_mapping.json);
+else (nein)
+  :Mit lokalen Initialdaten arbeiten;
+endif
+:Startzustand der UI rendern;
+while (Spielrunde aktiv?) is (ja)
+  :Nutzereingabe verarbeiten;
+  :Regeln pruefen und Zustand aktualisieren;
+  if (Aktion korrekt?) then (ja)
+    :Positives Feedback und Fortschritt;
+  else (nein)
+    :Fehlerfeedback und ggf. Retry;
+  endif
+  :HUD/DOM neu zeichnen;
+endwhile (nein)
+:Ergebnis anzeigen;
+stop
+@enduml

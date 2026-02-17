@@ -27,3 +27,11 @@ Learnings fuer Use-Case-Diagramm-Auftrag
 - Heuristiken aus Ordnerinhalt und JS (`.cjs`, `data/`, `fetch(...)`, externe Ressourcen) geben genug Signale fuer konsistente Use-Cases ohne manuelle Einzelmodellierung.
 - Einheitlicher Dateiname `__use_case_diagram.puml` pro Endordner ist fuer Audits und Folgeauftraege besser als viele individuelle Namen.
 - Ein TSV-Report (`use_case_generation_report.tsv`) ist wichtig, um Vollstaendigkeit und Ableitungsmerkmale pro Ordner nachvollziehbar zu halten.
+
+Learnings fuer Aktivitaetsdiagramm-Auftrag
+
+- Sinnvollkeitspruefung laesst sich robust ueber Heuristiken abbilden: Redirect-Pattern, lokales JS, Interaktions-HTML.
+- In diesem Repo sind fast alle Endordner mit `__02_plans` fuer Aktivitaetsdiagramme geeignet.
+- Einheitlicher Dateiname `__activity_diagram.puml` vereinfacht Wiederfinden und weitere Automatisierung.
+- Report-Datei mit `create/skip` ist hilfreich, um ausgeschlossene Ordner transparent zu machen (z. B. Hauptordner, Ordner ohne `__02_plans`).
+- Der Elternordner `Leasing/__dokumentation/__02_plans` ist kein HTML-Endordner; dort werden deshalb keine aufgabenbezogenen PUML-Dateien erzeugt.

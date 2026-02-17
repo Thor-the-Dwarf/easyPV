@@ -580,3 +580,10 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - Bereinigt vor jedem Lauf alte Exports: loescht `firebase_feedback_import/` unter allen `__04_lernings_*`.
   - Output-JSON `feedback_all_games.json` enthaelt zusaetzlich `learningExport` Summary (Counts + writtenPaths).
 - Parallel-Commit hatte `__admin_dont_push/fireBaseGetter` geloescht und `__admin_dont_push/` in `.gitignore` ignoriert; Ignorierung entfernt, damit der Getter wieder versioniert werden kann.
+- Original prompt (current turn): FolderTree-Klickverhalten korrigieren (`Wartbarkeit` -> generic_page, Spielklick -> Spielseite).
+- `index.html` angepasst:
+  - Spielknoten-Erkennung auf leaf + playable (`isPlayableFolder`) statt nur `gameRelPath`.
+  - Label-Klick auf Themenordner oeffnet `openGenericFolder`, Spielklick oeffnet `openPlayableFolder`.
+  - `openPlayableFolder` nutzt jetzt `openPracticeView` (direktes Spiel-HTML wenn vorhanden, sonst `generic_c_suite` statt `generic_page`).
+  - Bei direkter Spielseite wird `json` weiter als Query-Parameter gesetzt.
+- Syntaxcheck des Inline-Skripts erfolgreich (`new Function(...)`).

@@ -8,3 +8,4 @@
 - Korrektur: keine globale physische Migration mehr ohne manuelle Einzelprüfung, da `assets`/`data` in Einzelfällen auch fachliche Ordnernamen sein können.
 - Gründliche Hidden-Prüfung sollte immer auf den real sichtbaren Tree (nach Normalisierung) gehen, nicht nur auf Dateisystem-Namenlisten.
 - Für bessere UX im Tree: Themenknoten sollten Status-Icons tragen, Spielknoten selbst iconfrei bleiben und per Label-Klick direkt die Spielseite öffnen.
+- Spielklick-Logik muss zwischen `generic_page` (Thema) und `generic_c_suite`/direktem Game (Spiel) unterscheiden; bei fehlender HTML-Datei darf ein Spielklick nicht auf `generic_page` zurückfallen.

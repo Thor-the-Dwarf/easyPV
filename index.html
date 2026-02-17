@@ -285,8 +285,7 @@
           (Array.isArray(nodes) ? nodes : []).forEach((node) => {
             if (!node || !node.isFolder) return;
             const children = Array.isArray(node.children) ? node.children : [];
-            const hasFolderChild = children.some((child) => child && child.isFolder);
-            if (!hasFolderChild && (node.gameRelPath || node.jsonRelPath)) {
+            if (isGameLaunchNode(node)) {
               out.push(node);
             }
             collectIconTargetNodes(children, out);
@@ -561,7 +560,7 @@
 
             const hasChildren = Array.isArray(node.children) && node.children.length > 0;
             const canOpenPlayable = isPlayableFolder(node);
-            const isGameNode = !hasChildren && canOpenPlayable;
+            const isGameNode = isGameLaunchNode(node);
             const isCollapsed = !openedFolderIds.includes(node.id);
             rowNode.classList.toggle('tree-node--collapsed', isCollapsed);
 
@@ -604,8 +603,12 @@
             label.addEventListener('click', (event) => {
               event.preventDefault();
               event.stopPropagation();
+              if (isGameNode) {
+                openPlayableFolder(node);
+                return;
+              }
               if (hasChildren) {
-                toggleNode(rowNode, node.id, iconButton);
+                openGenericFolder(node);
                 return;
               }
               if (canOpenPlayable) {
@@ -657,8 +660,13 @@
           return children.some((child) => child && child.isFolder);
         }
 
-        function isLeafPlayableNode(node) {
-          return isPlayableFolder(node) && !hasFolderChild(node);
+        function isGameLaunchNode(node) {
+          return (
+            !!node &&
+            node.isFolder &&
+            !hasFolderChild(node) &&
+            isPlayableFolder(node)
+          );
         }
 
         function resolveNodeIconKind(node) {
@@ -671,7 +679,7 @@
         function resolveThemeFolderIcon(node) {
           if (!node || !node.isFolder) return '';
           const children = Array.isArray(node.children) ? node.children : [];
-          const playableChildren = children.filter((child) => isLeafPlayableNode(child));
+          const playableChildren = children.filter((child) => isGameLaunchNode(child));
           if (!playableChildren.length) return '';
           const hasFlame = playableChildren.some((child) => resolveNodeIconKind(child) === 'flame');
           return hasFlame ? 'flame' : 'books';
@@ -681,7 +689,7 @@
           const themeIcon = resolveThemeFolderIcon(node);
           if (themeIcon === 'flame') return '🔥';
           if (themeIcon === 'books') return '📚';
-          if (isLeafPlayableNode(node)) return '';
+          if (isGameLaunchNode(node)) return '';
           return isCollapsed ? '📁' : '📂';
         }
 
@@ -726,27 +734,47 @@
             : (node && node.attributesRelPath ? String(node.attributesRelPath) : '');
           const gameRelPath = node && node.gameRelPath ? String(node.gameRelPath) : '';
           const jsonUrl = jsonRelPath ? buildRepoUrl(jsonRelPath) : '';
-          const gameUrl = node && node.gameRelPath
-            ? buildRepoUrl(gameRelPath)
-            : '';
-          if (gameUrl) {
-            let directGameSrc = gameUrl;
-            try {
-              const url = new URL(gameUrl, window.location.href);
-              url.searchParams.set('theme', getCurrentTheme());
-              if (jsonUrl) url.searchParams.set('json', jsonUrl);
-              directGameSrc = url.href;
-            } catch (_) {
-              directGameSrc = gameUrl;
-            }
-            contentHost.innerHTML =
-              '<iframe class="content-frame" src="' + directGameSrc + '" title="Spielseite" loading="eager"></iframe>';
-            queueThemeSyncForNewFrame();
+          const gameUrl = gameRelPath ? buildRepoUrl(gameRelPath) : '';
+          if (gameUrl || jsonUrl) {
+            openPracticeView(gameUrl, jsonUrl, folderLabel);
             return;
           }
-          const src = buildGenericPageSrc(folderLabel, jsonUrl, gameUrl, jsonRelPath, gameRelPath, node && node.id ? node.id : '');
+          openGenericFolder(node);
+        }
+
+        function findBestContentNode(node) {
+          if (!node) return null;
+          if (node.jsonRelPath || node.attributesRelPath || node.gameRelPath) {
+            return node;
+          }
+          const children = Array.isArray(node.children) ? node.children : [];
+          for (let i = 0; i < children.length; i += 1) {
+            const found = findBestContentNode(children[i]);
+            if (found) return found;
+          }
+          return null;
+        }
+
+        function openGenericFolder(node) {
+          if (!contentHost) return;
+          const folderLabel = node && node.name ? node.name : 'Thema';
+          const sourceNode = findBestContentNode(node) || node || {};
+          const jsonRelPath = sourceNode && sourceNode.jsonRelPath
+            ? String(sourceNode.jsonRelPath)
+            : (sourceNode && sourceNode.attributesRelPath ? String(sourceNode.attributesRelPath) : '');
+          const gameRelPath = sourceNode && sourceNode.gameRelPath ? String(sourceNode.gameRelPath) : '';
+          const jsonUrl = jsonRelPath ? buildRepoUrl(jsonRelPath) : '';
+          const gameUrl = gameRelPath ? buildRepoUrl(gameRelPath) : '';
+          const src = buildGenericPageSrc(
+            folderLabel,
+            jsonUrl,
+            gameUrl,
+            jsonRelPath,
+            gameRelPath,
+            node && node.id ? node.id : ''
+          );
           contentHost.innerHTML =
-            '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
+            '<iframe class="content-frame" src="' + src + '" title="Thema" loading="eager"></iframe>';
           queueThemeSyncForNewFrame();
         }
 
@@ -788,6 +816,7 @@
             try {
               const url = new URL(safeGameUrl, window.location.href);
               url.searchParams.set('theme', getCurrentTheme());
+              if (jsonUrl) url.searchParams.set('json', jsonUrl);
               src = url.href;
             } catch (_) {
               src = safeGameUrl;

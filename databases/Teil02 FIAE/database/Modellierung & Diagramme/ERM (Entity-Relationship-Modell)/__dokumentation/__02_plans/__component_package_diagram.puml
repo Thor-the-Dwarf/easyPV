@@ -11,8 +11,8 @@ package "Ordner: ERM (Entity-Relationship-Modell)" as Scope {
   component "Styles (CSS)\n_gcss_entity_finder.css" as CSS
   component "Shared Scripts\n/__admin_dont_push/theme_bridge.js" as SHAREDJS
   package "Ressourcen" as RES {
-    database "data/\n2 Dateien" as DATA
-    folder "assets/\n0 Dateien" as ASSETS
+    database "_data/\n2 Dateien" as DATA
+    folder "_assets/\n0 Dateien" as ASSETS
   }
   package "Dokumentation" as DOC {
     folder "__dokumentation/__02_plans" as PLAN
@@ -27,7 +27,7 @@ JS --> ASSETS : nutzt Laufzeit-Assets
 HTML --> ASSETS : nutzt statische Assets
 
 note right of JS
-fetch()-Ziele: data/_gg01_entity_finder.json
+fetch()-Ziele: _data/_gg01_entity_finder.json
 end note
 
 note bottom

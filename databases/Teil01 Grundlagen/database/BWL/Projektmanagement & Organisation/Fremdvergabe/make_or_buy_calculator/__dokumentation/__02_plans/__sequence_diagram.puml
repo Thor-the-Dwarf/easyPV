@@ -15,7 +15,7 @@
  Assets --> Browser: Styles und Medien bereit
  Browser -> Game: Lade _gjs_make_or_buy_calculator.js
  Game -> Game: init() + Event-Handler
- Game -> Data: fetch data/_gg01_make_or_buy_calculator.json
+ Game -> Data: fetch _data/_gg01_make_or_buy_calculator.json
  Data --> Game: Konfig-/Leveldaten
  
  Nutzer -> Browser: Eingabe (Klick/Drag/Tap)

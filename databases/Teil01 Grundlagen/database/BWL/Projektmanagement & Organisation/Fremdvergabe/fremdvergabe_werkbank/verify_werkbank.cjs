@@ -4,7 +4,7 @@ const path = require('path');
 async function verifyWerkbank() {
     const dir = __dirname;
     const files = [
-        'data/_g01_fremdvergabe_werkbank.json',
+        '_data/_g01_fremdvergabe_werkbank.json',
         '_gcss_fremdvergabe_werkbank.css',
         '_ghtml_fremdvergabe_werkbank.html',
         '_gjs_fremdvergabe_werkbank.js'

@@ -59,7 +59,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_protokoll_arten_sortierer.json');
+            const resp = await fetch('_data/_gg01_protokoll_arten_sortierer.json');
             state.config = await resp.json();
             setupBins();
             el.restartBtn.addEventListener('click', startGame);

@@ -12,8 +12,8 @@ package "Ordner: UNION" as Scope {
   component "Shared Scripts\n/__admin_dont_push/theme_bridge.js" as SHAREDJS
   component "Externe Styles\nhttps://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" as EXTCSS
   package "Ressourcen" as RES {
-    database "data/\n3 Dateien" as DATA
-    folder "assets/\n0 Dateien" as ASSETS
+    database "_data/\n3 Dateien" as DATA
+    folder "_assets/\n0 Dateien" as ASSETS
   }
   package "Dokumentation" as DOC {
     folder "__dokumentation/__02_plans" as PLAN
@@ -29,7 +29,7 @@ JS --> ASSETS : nutzt Laufzeit-Assets
 HTML --> ASSETS : nutzt statische Assets
 
 note right of JS
-fetch()-Ziele: data/_gg01_union_compat.json
+fetch()-Ziele: _data/_gg01_union_compat.json
 end note
 
 note bottom

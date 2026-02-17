@@ -249,7 +249,7 @@ function main() {
     }
     const uniqueFetchTargets = [...new Set(fetchTargets)].sort((a, b) => a.localeCompare(b, 'de'));
 
-    const dataCount = countFilesRecursive(path.join(dir, 'data'));
+    const dataCount = countFilesRecursive(path.join(dir, '_data'));
     const title = extractTitle(htmlText, path.basename(dir));
     const outFile = path.join(dir, '__dokumentation', '__02_plans', '__use_case_diagram.puml');
 

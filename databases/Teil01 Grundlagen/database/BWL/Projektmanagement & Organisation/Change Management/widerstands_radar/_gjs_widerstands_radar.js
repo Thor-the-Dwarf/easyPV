@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Load Data
-  fetch('data/_g01_widerstands_radar.json')
+  fetch('_data/_g01_widerstands_radar.json')
     .then(r => r.json())
     .then(data => initGame(data))
     .catch(err => console.error("Load failed:", err));

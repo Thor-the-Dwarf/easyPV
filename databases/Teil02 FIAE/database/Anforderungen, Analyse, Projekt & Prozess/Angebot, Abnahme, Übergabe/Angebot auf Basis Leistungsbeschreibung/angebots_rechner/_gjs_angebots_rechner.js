@@ -19,7 +19,7 @@
   init();
 
   async function init() {
-    const resp = await fetch('data/_gg01_angebots_rechner.json');
+    const resp = await fetch('_data/_gg01_angebots_rechner.json');
     if (!resp.ok) {
       el.root.textContent = 'Konfiguration konnte nicht geladen werden.';
       return;

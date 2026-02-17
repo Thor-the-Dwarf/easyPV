@@ -10,7 +10,7 @@ const testsDir = path.resolve(unitDir, '..');
 const docsDir = path.resolve(testsDir, '..');
 const topicDir = path.resolve(docsDir, '..');
 const gameDir = topicDir;
-const configPath = path.join(gameDir, 'data/_gg01_risk_finder_das_kleingedruckte.json');
+const configPath = path.join(gameDir, '_data/_gg01_risk_finder_das_kleingedruckte.json');
 
 describe('Risk-Finder Config', () => {
   it('defines exactly 5 target terms and valid scoring settings', async () => {

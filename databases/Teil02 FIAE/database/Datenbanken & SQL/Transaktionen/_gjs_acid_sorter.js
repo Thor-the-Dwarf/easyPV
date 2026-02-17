@@ -55,7 +55,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_acid_sorter.json');
+            const resp = await fetch('_data/_gg01_acid_sorter.json');
             state.config = await resp.json();
             state.totalToSort = state.config.definitions.length;
 

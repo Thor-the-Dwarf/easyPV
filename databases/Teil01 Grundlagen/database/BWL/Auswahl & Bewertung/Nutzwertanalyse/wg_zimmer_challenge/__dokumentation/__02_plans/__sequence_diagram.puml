@@ -15,7 +15,7 @@
  Assets --> Browser: Styles und Medien bereit
  Browser -> Game: Lade _gjs_wg_zimmer_challenge.js
  Game -> Game: init() + Event-Handler
- Game -> Data: fetch data/_gg01_wg_zimmer_challenge.json
+ Game -> Data: fetch _data/_gg01_wg_zimmer_challenge.json
  Data --> Game: Konfig-/Leveldaten
  
  Nutzer -> Browser: Eingabe (Klick/Drag/Tap)

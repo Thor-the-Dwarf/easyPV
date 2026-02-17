@@ -4,7 +4,7 @@ const path = require('path');
 async function verifyRadar() {
     const dir = __dirname;
     const files = [
-        'data/_g01_widerstands_radar.json',
+        '_data/_g01_widerstands_radar.json',
         '_gcss_widerstands_radar.css',
         '_ghtml_widerstands_radar.html',
         '_gjs_widerstands_radar.js'

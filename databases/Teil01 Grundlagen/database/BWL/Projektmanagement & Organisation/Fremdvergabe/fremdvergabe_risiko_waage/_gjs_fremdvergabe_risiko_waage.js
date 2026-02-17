@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Load Game Data
-    fetch('data/_g01_fremdvergabe_risiko_waage.json')
+    fetch('_data/_g01_fremdvergabe_risiko_waage.json')
         .then(response => response.json())
         .then(data => initGame(data))
         .catch(err => {

@@ -15,5 +15,6 @@
 
 ## Abgeleitete Anforderungen
 1. Versteckte Ordner im sichtbaren Tree zuverlässig herausfiltern.
-2. Legacy-Ordner `assets/data` (ohne `_`) weiterhin ausblenden, bis Umbenennung überall erfolgt.
-3. Leaf-Game-Ordner müssen wieder 🔥/📚 statt 🧠 verwenden.
+2. Technische Ordner in den Game-Themen müssen physisch auf `_assets` und `_data` umbenannt werden.
+3. Die Sichtbarkeit wird ausschließlich über führendes `_` geregelt.
+4. Leaf-Game-Ordner müssen wieder 🔥/📚 statt 🧠 verwenden.

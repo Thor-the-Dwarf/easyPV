@@ -9,8 +9,8 @@ package "Ordner: finanzierungs_sortiermaschine" as Scope {
   component "HTML Entry\n_ghtml_finanzierungs_sortiermaschine.html" as HTML
   component "Game-Logik (JS)\n_gjs_finanzierungs_sortiermaschine.js" as JS
   package "Ressourcen" as RES {
-    database "data/\n2 Dateien" as DATA
-    folder "assets/\n7 Dateien" as ASSETS
+    database "_data/\n2 Dateien" as DATA
+    folder "_assets/\n7 Dateien" as ASSETS
   }
   package "Dokumentation" as DOC {
     folder "__dokumentation/__02_plans" as PLAN
@@ -23,7 +23,7 @@ JS --> ASSETS : nutzt Laufzeit-Assets
 HTML --> ASSETS : nutzt statische Assets
 
 note right of JS
-fetch()-Ziele: data/_gg01_finanzierungs_sortiermaschine.json
+fetch()-Ziele: _data/_gg01_finanzierungs_sortiermaschine.json
 end note
 
 note bottom

@@ -5,7 +5,7 @@ start
 :Browser laedt HTML/CSS/JS;
 :Game-Script initialisieren (_gjs_state_machine.js);
 if (Externe Daten verfuegbar?) then (ja)
-  :JSON/Leveldaten laden (data/_gg01_state_machine.json);
+  :JSON/Leveldaten laden (_data/_gg01_state_machine.json);
 else (nein)
   :Mit lokalen Initialdaten arbeiten;
 endif

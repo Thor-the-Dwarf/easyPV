@@ -4,7 +4,7 @@ const path = require('path');
 async function verifyChangeKurve() {
     const dir = __dirname;
     const files = [
-        'data/_g01_change_kurve.json',
+        '_data/_g01_change_kurve.json',
         '_gcss_change_kurve.css',
         '_ghtml_change_kurve.html',
         '_gjs_change_kurve.js'

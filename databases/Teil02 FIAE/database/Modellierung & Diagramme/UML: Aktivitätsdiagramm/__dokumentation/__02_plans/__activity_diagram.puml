@@ -5,7 +5,7 @@ start
 :Browser laedt HTML/CSS/JS;
 :Game-Script initialisieren (_gjs_token_runner.js);
 if (Externe Daten verfuegbar?) then (ja)
-  :JSON/Leveldaten laden (data/_gg01_token_runner.json);
+  :JSON/Leveldaten laden (_data/_gg01_token_runner.json);
 else (nein)
   :Mit lokalen Initialdaten arbeiten;
 endif

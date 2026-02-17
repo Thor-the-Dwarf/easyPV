@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Load Data
-    fetch('data/_g01_fremdvergabe_lieferanten_check.json')
+    fetch('_data/_g01_fremdvergabe_lieferanten_check.json')
         .then(r => r.json())
         .then(data => initGame(data))
         .catch(err => console.error("Load error:", err));

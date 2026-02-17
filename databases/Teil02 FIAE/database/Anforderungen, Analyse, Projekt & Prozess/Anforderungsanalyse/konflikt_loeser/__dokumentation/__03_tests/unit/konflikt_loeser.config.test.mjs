@@ -10,7 +10,7 @@ const testsDir = path.resolve(unitDir, '..');
 const docsDir = path.resolve(testsDir, '..');
 const topicDir = path.resolve(docsDir, '..');
 const gameDir = topicDir;
-const configPath = path.join(gameDir, 'data/_gg01_konflikt_loeser.json');
+const configPath = path.join(gameDir, '_data/_gg01_konflikt_loeser.json');
 
 describe('Konflikt-Loeser Config', () => {
   it('contains rounds with exactly one best strategy option', async () => {

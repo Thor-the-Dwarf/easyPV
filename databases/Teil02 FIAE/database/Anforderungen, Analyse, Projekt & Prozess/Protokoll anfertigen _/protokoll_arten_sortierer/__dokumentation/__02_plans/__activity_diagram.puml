@@ -5,7 +5,7 @@ start
 :Browser laedt HTML/CSS/JS;
 :Game-Script initialisieren (_gjs_protokoll_arten_sortierer.js);
 if (Externe Daten verfuegbar?) then (ja)
-  :JSON/Leveldaten laden (data/_gg01_protokoll_arten_sortierer.json);
+  :JSON/Leveldaten laden (_data/_gg01_protokoll_arten_sortierer.json);
 else (nein)
   :Mit lokalen Initialdaten arbeiten;
 endif

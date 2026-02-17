@@ -27,7 +27,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('data/_gg01_fehler_suche_der_korrupte_analyst.json');
+      const resp = await fetch('_data/_gg01_fehler_suche_der_korrupte_analyst.json');
       if (!resp.ok) throw new Error('Konfiguration konnte nicht geladen werden.');
       state.cfg = await resp.json();
       wire();

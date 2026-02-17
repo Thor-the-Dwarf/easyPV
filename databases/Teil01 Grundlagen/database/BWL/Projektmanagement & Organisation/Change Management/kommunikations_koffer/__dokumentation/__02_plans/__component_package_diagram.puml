@@ -10,8 +10,8 @@ package "Ordner: kommunikations_koffer" as Scope {
   component "Game-Logik (JS)\n_gjs_kommunikations_koffer.js" as JS
   component "Checks/Tools (CJS)\nverify_game.cjs" as CJS
   package "Ressourcen" as RES {
-    database "data/\n2 Dateien" as DATA
-    folder "assets/\n0 Dateien" as ASSETS
+    database "_data/\n2 Dateien" as DATA
+    folder "_assets/\n0 Dateien" as ASSETS
   }
   package "Dokumentation" as DOC {
     folder "__dokumentation/__02_plans" as PLAN
@@ -25,7 +25,7 @@ HTML --> ASSETS : nutzt statische Assets
 CJS ..> JS : validiert/verifiziert
 
 note right of JS
-fetch()-Ziele: data/_gg01_kommunikations_koffer.json
+fetch()-Ziele: _data/_gg01_kommunikations_koffer.json
 end note
 
 note bottom

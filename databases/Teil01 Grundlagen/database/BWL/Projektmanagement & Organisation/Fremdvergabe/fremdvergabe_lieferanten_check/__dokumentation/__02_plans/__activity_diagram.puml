@@ -5,7 +5,7 @@ start
 :Browser laedt HTML/CSS/JS;
 :Game-Script initialisieren (_gjs_fremdvergabe_lieferanten_check.js);
 if (Externe Daten verfuegbar?) then (ja)
-  :JSON/Leveldaten laden (data/_g01_fremdvergabe_lieferanten_check.json);
+  :JSON/Leveldaten laden (_data/_g01_fremdvergabe_lieferanten_check.json);
 else (nein)
   :Mit lokalen Initialdaten arbeiten;
 endif

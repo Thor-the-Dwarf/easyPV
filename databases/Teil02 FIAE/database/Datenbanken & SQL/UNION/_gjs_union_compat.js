@@ -43,7 +43,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_union_compat.json');
+            const resp = await fetch('_data/_gg01_union_compat.json');
             state.config = await resp.json();
 
             el.operator.onclick = toggleOperator;

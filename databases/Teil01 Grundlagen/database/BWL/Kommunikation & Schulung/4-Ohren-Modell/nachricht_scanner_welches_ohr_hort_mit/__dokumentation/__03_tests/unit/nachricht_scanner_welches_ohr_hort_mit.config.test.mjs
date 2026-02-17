@@ -10,7 +10,7 @@ const testsDir = path.resolve(unitDir, '..');
 const docsDir = path.resolve(testsDir, '..');
 const topicDir = path.resolve(docsDir, '..');
 const gameDir = topicDir;
-const configPath = path.join(gameDir, 'data/_gg01_nachricht_scanner_welches_ohr_hort_mit.json');
+const configPath = path.join(gameDir, '_data/_gg01_nachricht_scanner_welches_ohr_hort_mit.json');
 
 describe('Nachricht-Scanner Config', () => {
   it('contains 10 statements and 4 ears with valid mappings', async () => {

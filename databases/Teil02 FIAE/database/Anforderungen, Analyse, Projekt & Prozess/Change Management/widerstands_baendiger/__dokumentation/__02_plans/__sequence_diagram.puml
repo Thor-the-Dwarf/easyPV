@@ -15,7 +15,7 @@
  Assets --> Browser: Styles und Medien bereit
  Browser -> Game: Lade _gjs_widerstands_baendiger.js
  Game -> Game: init() + Event-Handler
- Game -> Data: fetch data/_gg01_widerstands_baendiger.json
+ Game -> Data: fetch _data/_gg01_widerstands_baendiger.json
  Data --> Game: Konfig-/Leveldaten
  
  Nutzer -> Browser: Eingabe (Klick/Drag/Tap)

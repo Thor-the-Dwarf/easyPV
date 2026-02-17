@@ -25,7 +25,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('data/_gg01_risk_finder_das_kleingedruckte.json');
+      const resp = await fetch('_data/_gg01_risk_finder_das_kleingedruckte.json');
       if (!resp.ok) throw new Error('Konfiguration konnte nicht geladen werden.');
       state.cfg = await resp.json();
       renderContract();

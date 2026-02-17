@@ -30,7 +30,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('data/_gg01_nachricht_scanner_welches_ohr_hort_mit.json');
+      const resp = await fetch('_data/_gg01_nachricht_scanner_welches_ohr_hort_mit.json');
       if (!resp.ok) throw new Error('Konfiguration konnte nicht geladen werden.');
       state.cfg = await resp.json();
       window.addEventListener('keydown', onKeyDown);

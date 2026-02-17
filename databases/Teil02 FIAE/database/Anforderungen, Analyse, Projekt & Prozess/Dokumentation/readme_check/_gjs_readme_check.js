@@ -34,7 +34,7 @@
 
     async function init() {
         try {
-            const res = await fetch('data/_gg01_readme_check.json');
+            const res = await fetch('_data/_gg01_readme_check.json');
             if (!res.ok) throw new Error('Config load failed');
             state.cfg = await res.json();
             

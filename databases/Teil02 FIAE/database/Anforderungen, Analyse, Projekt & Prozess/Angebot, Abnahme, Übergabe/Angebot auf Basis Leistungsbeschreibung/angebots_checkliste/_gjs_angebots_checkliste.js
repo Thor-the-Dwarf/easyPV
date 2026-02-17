@@ -21,7 +21,7 @@
   init();
 
   async function init() {
-    const resp = await fetch('data/_gg01_angebots_checkliste.json');
+    const resp = await fetch('_data/_gg01_angebots_checkliste.json');
     if (!resp.ok) {
       el.root.textContent = 'Konfiguration konnte nicht geladen werden.';
       return;

@@ -48,7 +48,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_space_waster.json');
+            const resp = await fetch('_data/_gg01_space_waster.json');
             state.config = await resp.json();
 
             el.btnCut.addEventListener('click', performCut);

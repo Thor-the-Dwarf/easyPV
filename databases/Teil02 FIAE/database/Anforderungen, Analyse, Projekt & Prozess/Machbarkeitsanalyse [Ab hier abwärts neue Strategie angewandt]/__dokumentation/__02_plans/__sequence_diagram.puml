@@ -15,7 +15,7 @@
  Assets --> Browser: Styles und Medien bereit
  Browser -> Game: Lade _gjs_go_oder_no_go.js
  Game -> Game: init() + Event-Handler
- Game -> Data: fetch data/_gg01_go_oder_no_go.json
+ Game -> Data: fetch _data/_gg01_go_oder_no_go.json
  Data --> Game: Konfig-/Leveldaten
  
  Nutzer -> Browser: Eingabe (Klick/Drag/Tap)

@@ -145,8 +145,8 @@ function buildDiagram(info) {
     lines.push(`  component "Externe Styles\\n${shortList(info.externalStyles, 2, 90)}" as EXTCSS`);
   }
   lines.push('  package "Ressourcen" as RES {');
-  lines.push(`    database "data/\\n${info.dataCount} Dateien" as DATA`);
-  lines.push(`    folder "assets/\\n${info.assetsCount} Dateien" as ASSETS`);
+  lines.push(`    database "_data/\\n${info.dataCount} Dateien" as DATA`);
+  lines.push(`    folder "_assets/\\n${info.assetsCount} Dateien" as ASSETS`);
   lines.push('  }');
   lines.push('  package "Dokumentation" as DOC {');
   lines.push('    folder "__dokumentation/__02_plans" as PLAN');
@@ -266,8 +266,8 @@ function main() {
       sharedScripts,
       externalStyles,
       fetchTargets: uniqueFetchTargets,
-      dataCount: countFilesRecursive(path.join(dir, 'data')),
-      assetsCount: countFilesRecursive(path.join(dir, 'assets'))
+      dataCount: countFilesRecursive(path.join(dir, '_data')),
+      assetsCount: countFilesRecursive(path.join(dir, '_assets'))
     });
 
     fs.writeFileSync(outFile, puml, 'utf8');
@@ -278,8 +278,8 @@ function main() {
       js: jsFiles.length,
       css: cssFiles.length,
       cjs: cjsFiles.length,
-      data: countFilesRecursive(path.join(dir, 'data')),
-      assets: countFilesRecursive(path.join(dir, 'assets')),
+      data: countFilesRecursive(path.join(dir, '_data')),
+      assets: countFilesRecursive(path.join(dir, '_assets')),
       puml: rel(outFile)
     });
   }

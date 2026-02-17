@@ -5,7 +5,7 @@ function verifyGameFiles() {
     // Portable: resolve relative to this script file.
     const dir = __dirname;
     const files = [
-        'data/_g01_fremdvergabe_lieferanten_check.json',
+        '_data/_g01_fremdvergabe_lieferanten_check.json',
         '_gcss_fremdvergabe_lieferanten_check.css',
         '_ghtml_fremdvergabe_lieferanten_check.html',
         '_gjs_fremdvergabe_lieferanten_check.js'

@@ -59,7 +59,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_json_puzzle.json');
+            const resp = await fetch('_data/_gg01_json_puzzle.json');
             state.config = await resp.json();
 
             el.nextBtn.addEventListener('click', () => {

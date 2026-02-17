@@ -47,7 +47,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_attribute_scanner.json');
+            const resp = await fetch('_data/_gg01_attribute_scanner.json');
             state.config = await resp.json();
 
             document.querySelectorAll('.stamp-btn').forEach(btn => {

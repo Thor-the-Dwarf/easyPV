@@ -15,7 +15,7 @@
  Browser -> Router: Script ausfuehren
  Router -> Router: enginePath + configPath lesen
  Router -> Engine: Redirect zu ../../../../../../../game_pages/MatchingGame/index.html
- Engine -> Config: Lade data/_gg01_join_puzzle.json
+ Engine -> Config: Lade _data/_gg01_join_puzzle.json
  Config --> Engine: JSON-Konfiguration
  Engine -> Assets: Lade CSS/JS/Medien
  Assets --> Engine: Ressourcen bereit

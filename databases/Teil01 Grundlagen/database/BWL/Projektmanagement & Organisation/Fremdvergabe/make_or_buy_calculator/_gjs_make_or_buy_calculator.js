@@ -38,7 +38,7 @@
 
   async function init() {
     try {
-      const response = await fetch('data/_gg01_make_or_buy_calculator.json');
+      const response = await fetch('_data/_gg01_make_or_buy_calculator.json');
       if (!response.ok) throw new Error('Konfiguration konnte nicht geladen werden.');
       state.config = await response.json();
       bindEvents();

@@ -10,7 +10,7 @@ const testsDir = path.resolve(unitDir, '..');
 const docsDir = path.resolve(testsDir, '..');
 const topicDir = path.resolve(docsDir, '..');
 const gameDir = topicDir;
-const configPath = path.join(gameDir, 'data/_gg01_interessen_profiler.json');
+const configPath = path.join(gameDir, '_data/_gg01_interessen_profiler.json');
 
 describe('Interessen-Profiler Config', () => {
   it('contains rounds with exactly one correct option', async () => {

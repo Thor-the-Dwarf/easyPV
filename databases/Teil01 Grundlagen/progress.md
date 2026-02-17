@@ -26,7 +26,7 @@ Original prompt: Teil01 Grundlagen ist ein Reroll der Backend_fiaeAP2. Neuerunge
 - Umgesetzt: Slideshow-Faelle, Entscheidung (Zahlen/Gratis), Score, Feedback je Fall, Endscreen mit "zu viel gezahlt".
 - Test-Hooks gesetzt: `window.render_game_to_text()` und `window.advanceTime(ms)`.
 - Playwright-Smoke-Test aktiviert und lauffaehig gemacht (Client + Browser installiert).
-- Erstes Screenshot zeigte graues Bild wegen externer Bild-URLs; behoben durch lokale SVG-Assets (`Leasing/assets/damage-01..05.svg`).
+- Erstes Screenshot zeigte graues Bild wegen externer Bild-URLs; behoben durch lokale SVG-Assets (`Leasing/_assets/damage-01..05.svg`).
 - Re-Test erfolgreich: Screenshot zeigt korrekten ersten Fall, `state-0.json` liefert erwarteten Zustand.
 
 ## 2026-02-11 - AP1-Pruefungsbezug hergestellt
@@ -47,7 +47,7 @@ Original prompt: Teil01 Grundlagen ist ein Reroll der Backend_fiaeAP2. Neuerunge
 - Playwright-Smoke-Test erfolgreich, Artefakte in `output/web-game-sortier/`.
 
 ## 2026-02-12 - Leasing-Kalkulator-Challenge Feinschliff
-- Bugfix: `assets/leasing-kalkulator-asset.svg` repariert (ungueltiges `<` in SVG-Text auf `&lt;=` korrigiert), dadurch wird das Asset im Browser wieder korrekt gerendert.
+- Bugfix: `_assets/leasing-kalkulator-asset.svg` repariert (ungueltiges `<` in SVG-Text auf `&lt;=` korrigiert), dadurch wird das Asset im Browser wieder korrekt gerendert.
 - Responsive-Optimierung fuer globale Browser-/Mobile-Ansicht in `_gcss_leasing.css`:
   - Assetbereich vergroessert (Desktop/Tablet) und besser gewichtet im Split-Layout.
   - Zusetzliche Breakpoints fuer <=760px und <=430px (kompakter Header, einspaltige Targets, optimierte Abstaende und Touch-Hoehen).

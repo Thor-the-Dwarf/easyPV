@@ -61,7 +61,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_constructor_injector.json');
+            const resp = await fetch('_data/_gg01_constructor_injector.json');
             state.config = await resp.json();
 
             el.restartBtn.addEventListener('click', restartGame);

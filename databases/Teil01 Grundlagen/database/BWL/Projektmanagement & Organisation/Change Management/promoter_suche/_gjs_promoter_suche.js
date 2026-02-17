@@ -26,7 +26,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('data/_gg01_promoter_suche.json');
+      const resp = await fetch('_data/_gg01_promoter_suche.json');
       if (!resp.ok) throw new Error('Config not reachable');
       state.cfg = await resp.json();
       render();

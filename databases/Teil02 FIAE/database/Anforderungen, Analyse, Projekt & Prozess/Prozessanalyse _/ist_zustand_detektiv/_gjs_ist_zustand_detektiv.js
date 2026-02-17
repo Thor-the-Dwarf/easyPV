@@ -64,7 +64,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_ist_zustand_detektiv.json');
+            const resp = await fetch('_data/_gg01_ist_zustand_detektiv.json');
             state.config = await resp.json();
 
             // Setup Move Listener

@@ -44,7 +44,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_rights_revoke.json');
+            const resp = await fetch('_data/_gg01_rights_revoke.json');
             state.config = await resp.json();
 
             initControls();

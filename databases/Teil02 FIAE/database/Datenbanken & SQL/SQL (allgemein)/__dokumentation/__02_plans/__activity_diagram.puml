@@ -5,7 +5,7 @@ start
 :Browser laedt HTML/CSS/JS;
 :Game-Script initialisieren (_gjs_sql_sorter.js);
 if (Externe Daten verfuegbar?) then (ja)
-  :JSON/Leveldaten laden (data/_gg01_sql_sorter.json);
+  :JSON/Leveldaten laden (_data/_gg01_sql_sorter.json);
 else (nein)
   :Mit lokalen Initialdaten arbeiten;
 endif

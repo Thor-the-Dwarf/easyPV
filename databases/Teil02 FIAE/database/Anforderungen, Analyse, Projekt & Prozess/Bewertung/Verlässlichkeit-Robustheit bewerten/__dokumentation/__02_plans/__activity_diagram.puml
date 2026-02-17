@@ -5,7 +5,7 @@ start
 :Browser laedt HTML/CSS/JS;
 :Game-Script initialisieren (_gjs_failover_simulator.js);
 if (Externe Daten verfuegbar?) then (ja)
-  :JSON/Leveldaten laden (data/_gg01_failover_simulator.json);
+  :JSON/Leveldaten laden (_data/_gg01_failover_simulator.json);
 else (nein)
   :Mit lokalen Initialdaten arbeiten;
 endif

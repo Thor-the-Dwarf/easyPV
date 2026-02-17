@@ -64,7 +64,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_change_curve.json');
+            const resp = await fetch('_data/_gg01_change_curve.json');
             state.config = await resp.json();
 
             setupOcean();

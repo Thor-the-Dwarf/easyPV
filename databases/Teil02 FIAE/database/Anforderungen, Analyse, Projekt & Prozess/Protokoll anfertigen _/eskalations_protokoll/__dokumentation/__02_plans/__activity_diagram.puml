@@ -5,7 +5,7 @@ start
 :Browser laedt HTML/CSS/JS;
 :Game-Script initialisieren (_gjs_eskalations_protokoll.js);
 if (Externe Daten verfuegbar?) then (ja)
-  :JSON/Leveldaten laden (data/_gg01abc1_eskalations_protokoll.json);
+  :JSON/Leveldaten laden (_data/_gg01abc1_eskalations_protokoll.json);
 else (nein)
   :Mit lokalen Initialdaten arbeiten;
 endif

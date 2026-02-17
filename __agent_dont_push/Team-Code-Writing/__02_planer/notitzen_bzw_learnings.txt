@@ -17,14 +17,14 @@ Learnings fuer Zustandsdiagramm-Auftrag
 - Bei Redirect-Wrappern ist ein eigener Zustandsfluss noetig, da dort der eigentliche Spielzustand in der Ziel-Engine liegt.
 - Ein TSV-Report (`state_generation_report.tsv`) hilft bei spaeteren Audits und bei der Kontrolle, ob alle Zielordner bedient wurden.
 2026-02-17
-- Fuer diese Struktur funktionieren Komponenten-/Package-Diagramme am stabilsten, wenn pro Spielordner nur direkt benachbarte Dateien (html/js/css/cjs/json) und die Ressourcenordner `data/` und `assets/` ausgewertet werden.
+- Fuer diese Struktur funktionieren Komponenten-/Package-Diagramme am stabilsten, wenn pro Spielordner nur direkt benachbarte Dateien (html/js/css/cjs/json) und die Ressourcenordner `_data/` und `_assets/` ausgewertet werden.
 - Einheitlicher Dateiname pro Zielordner (`__component_package_diagram.puml`) erleichtert spaetere automatisierte Pruefungen.
 - Das Sortieren der Zielordner per Relativpfad (`de`-Locale) liefert eine konsistente "oben nach unten"-Abarbeitung.
 
 Learnings fuer Use-Case-Diagramm-Auftrag
 
 - Fuer die Massenableitung reicht eine stabile Grundstruktur mit `Spieler` plus optionalen Sekundaerakteuren (`Tester`, `Datenquelle`, `Theme-Service`, `Style-CDN`).
-- Heuristiken aus Ordnerinhalt und JS (`.cjs`, `data/`, `fetch(...)`, externe Ressourcen) geben genug Signale fuer konsistente Use-Cases ohne manuelle Einzelmodellierung.
+- Heuristiken aus Ordnerinhalt und JS (`.cjs`, `_data/`, `fetch(...)`, externe Ressourcen) geben genug Signale fuer konsistente Use-Cases ohne manuelle Einzelmodellierung.
 - Einheitlicher Dateiname `__use_case_diagram.puml` pro Endordner ist fuer Audits und Folgeauftraege besser als viele individuelle Namen.
 - Ein TSV-Report (`use_case_generation_report.tsv`) ist wichtig, um Vollstaendigkeit und Ableitungsmerkmale pro Ordner nachvollziehbar zu halten.
 

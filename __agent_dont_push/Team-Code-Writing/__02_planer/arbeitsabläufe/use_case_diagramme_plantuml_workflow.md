@@ -13,7 +13,7 @@ Fuer jeden Endordner mit HTML-Datei ein Use-Case-Diagramm in `__dokumentation/__
 6. Inhalt des Diagramms aus den vorhandenen Artefakten ableiten:
    - Akteur `Spieler` immer
    - optional `Tester` bei vorhandenen `.cjs`
-   - optional `Datenquelle` bei `data/` oder `fetch(...)`
+   - optional `Datenquelle` bei `_data/` oder `fetch(...)`
    - optional `Theme-Service` / `Style-CDN` bei externen Einbindungen
 7. Hilfsdateien im Arbeitsordner schreiben:
    - `hilfsmittel/use_case_targets.txt`

@@ -5,7 +5,7 @@ start
 :Browser laedt HTML/CSS/JS;
 :Game-Script initialisieren (_gjs_union_compat.js);
 if (Externe Daten verfuegbar?) then (ja)
-  :JSON/Leveldaten laden (data/_gg01_union_compat.json);
+  :JSON/Leveldaten laden (_data/_gg01_union_compat.json);
 else (nein)
   :Mit lokalen Initialdaten arbeiten;
 endif

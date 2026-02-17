@@ -10,9 +10,9 @@ Fuer jeden Endordner mit HTML-Datei eine PlantUML-Datei in `__dokumentation/__02
 4. Pro Zielordner genau eine Datei `__component_package_diagram.puml` erzeugen.
 5. Diagramm aus den Ordnerartefakten ableiten:
    - HTML-Entry(s), JS, CSS, CJS
-   - `data/` und `assets/` als Ressourcen-Pakete
+   - `_data/` und `_assets/` als Ressourcen-Pakete
    - optionale Shared Scripts (z. B. `theme_bridge.js`) und externe Styles
-   - Beziehungen zwischen Komponenten (HTML -> JS/CSS, JS -> data/assets, usw.)
+   - Beziehungen zwischen Komponenten (HTML -> JS/CSS, JS -> _data/assets, usw.)
 6. Erzeugungsreports in `hilfsmittel` schreiben:
    - `component_package_targets.txt`
    - `component_package_generation_report.tsv`

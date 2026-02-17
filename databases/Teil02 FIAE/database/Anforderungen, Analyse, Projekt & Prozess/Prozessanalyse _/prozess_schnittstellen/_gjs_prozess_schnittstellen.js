@@ -23,7 +23,7 @@
 
   async function init() {
     try {
-      const response = await fetch('data/_gg01_prozess_schnittstellen.json');
+      const response = await fetch('_data/_gg01_prozess_schnittstellen.json');
       if (!response.ok) throw new Error('config unavailable');
       state.cfg = await response.json();
       render();

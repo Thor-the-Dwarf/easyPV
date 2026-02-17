@@ -10,7 +10,7 @@ const testsDir = path.resolve(unitDir, '..');
 const docsDir = path.resolve(testsDir, '..');
 const topicDir = path.resolve(docsDir, '..');
 const gameDir = topicDir;
-const configPath = path.join(gameDir, 'data/_gg01_kunden_wunsch_rechner.json');
+const configPath = path.join(gameDir, '_data/_gg01_kunden_wunsch_rechner.json');
 
 describe('Kunden-Wunsch-Rechner Config', () => {
   it('contains 5 rounds with ideal weights that sum to 100 and sane scoring thresholds', async () => {

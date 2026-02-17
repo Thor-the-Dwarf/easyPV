@@ -15,7 +15,7 @@
  Assets --> Browser: Styles und Medien bereit
  Browser -> Game: Lade _gjs_pm_methoden_match.js
  Game -> Game: init() + Event-Handler
- Game -> Data: fetch data/_gg01_pm_methoden_match.json
+ Game -> Data: fetch _data/_gg01_pm_methoden_match.json
  Data --> Game: Konfig-/Leveldaten
  
  Nutzer -> Browser: Eingabe (Klick/Drag/Tap)

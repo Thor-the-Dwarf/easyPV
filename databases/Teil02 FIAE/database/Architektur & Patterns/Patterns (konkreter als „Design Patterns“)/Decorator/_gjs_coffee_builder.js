@@ -57,7 +57,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_coffee_builder.json');
+            const resp = await fetch('_data/_gg01_coffee_builder.json');
             state.config = await resp.json();
 
             setupIngredients();

@@ -40,7 +40,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('data/_gg01_leasing_gutachter.json');
+      const resp = await fetch('_data/_gg01_leasing_gutachter.json');
       if (!resp.ok) throw new Error('Konfiguration nicht geladen.');
       STATE.config = await resp.json();
       render();

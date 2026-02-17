@@ -23,7 +23,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('data/_gg01_kultur_gaertner.json');
+      const resp = await fetch('_data/_gg01_kultur_gaertner.json');
       if (!resp.ok) throw new Error('config not reachable');
       state.cfg = await resp.json();
       state.health = clamp(state.cfg.start_health ?? 55, 0, 100);

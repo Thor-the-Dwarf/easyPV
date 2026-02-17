@@ -24,7 +24,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('data/_gg01_entscheidungs_detektiv.json');
+      const resp = await fetch('_data/_gg01_entscheidungs_detektiv.json');
       if (!resp.ok) throw new Error('Konfiguration konnte nicht geladen werden.');
       state.cfg = await resp.json();
       render();

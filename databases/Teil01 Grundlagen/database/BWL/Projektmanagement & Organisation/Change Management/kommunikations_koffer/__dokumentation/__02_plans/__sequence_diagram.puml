@@ -15,7 +15,7 @@
  Browser -> Router: Script ausfuehren
  Router -> Router: enginePath + configPath lesen
  Router -> Engine: Redirect zu ../../../../../../../game_pages/DecisionGame/index.html
- Engine -> Config: Lade data/_gg01_kommunikations_koffer.json
+ Engine -> Config: Lade _data/_gg01_kommunikations_koffer.json
  Config --> Engine: JSON-Konfiguration
  Engine -> Assets: Lade CSS/JS/Medien
  Assets --> Engine: Ressourcen bereit

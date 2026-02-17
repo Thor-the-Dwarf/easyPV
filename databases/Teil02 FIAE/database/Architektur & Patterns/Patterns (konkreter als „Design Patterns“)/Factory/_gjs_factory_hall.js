@@ -63,7 +63,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_factory_hall.json');
+            const resp = await fetch('_data/_gg01_factory_hall.json');
             state.config = await resp.json();
 
             setupControlPanel();

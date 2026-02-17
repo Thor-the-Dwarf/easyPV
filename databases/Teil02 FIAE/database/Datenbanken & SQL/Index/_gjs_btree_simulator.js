@@ -42,7 +42,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_btree_simulator.json');
+            const resp = await fetch('_data/_gg01_btree_simulator.json');
             state.config = await resp.json();
 
             el.btnStart.onclick = startRace;

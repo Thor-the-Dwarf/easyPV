@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Load Data
-    fetch('data/_g01_change_kurve.json')
+    fetch('_data/_g01_change_kurve.json')
         .then(r => r.json())
         .then(data => initGame(data))
         .catch(err => console.error("Load failed:", err));

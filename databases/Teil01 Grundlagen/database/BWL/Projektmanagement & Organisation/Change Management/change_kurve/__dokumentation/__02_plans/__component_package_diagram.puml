@@ -12,8 +12,8 @@ package "Ordner: change_kurve" as Scope {
   component "Checks/Tools (CJS)\nverify_kurve.cjs" as CJS
   component "Shared Scripts\n/__admin_dont_push/theme_bridge.js" as SHAREDJS
   package "Ressourcen" as RES {
-    database "data/\n2 Dateien" as DATA
-    folder "assets/\n0 Dateien" as ASSETS
+    database "_data/\n2 Dateien" as DATA
+    folder "_assets/\n0 Dateien" as ASSETS
   }
   package "Dokumentation" as DOC {
     folder "__dokumentation/__02_plans" as PLAN
@@ -29,7 +29,7 @@ HTML --> ASSETS : nutzt statische Assets
 CJS ..> JS : validiert/verifiziert
 
 note right of JS
-fetch()-Ziele: data/_g01_change_kurve.json
+fetch()-Ziele: _data/_g01_change_kurve.json
 end note
 
 note bottom

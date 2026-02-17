@@ -3,7 +3,7 @@ const path = require('path');
 
 const gameName = "workshop_agenda_puzzle";
 const htmlFile = `_ghtml_${gameName}.html`;
-const jsonFile = `data/_gg01_${gameName}.json`;
+const jsonFile = `_data/_gg01_${gameName}.json`;
 const enginePath = "../../../../../../game_pages/ConstructionGame/index.html";
 
 console.log(`Verifying ${gameName}...`);

@@ -34,7 +34,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_missverstaendnis_match.json');
+            const resp = await fetch('_data/_gg01_missverstaendnis_match.json');
             if (!resp.ok) throw new Error('Konfiguration fehlt.');
             state.cfg = await resp.json();
             setupGame();

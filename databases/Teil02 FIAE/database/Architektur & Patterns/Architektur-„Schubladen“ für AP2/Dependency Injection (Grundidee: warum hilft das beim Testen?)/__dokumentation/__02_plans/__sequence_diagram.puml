@@ -15,7 +15,7 @@
  Assets --> Browser: Styles und Medien bereit
  Browser -> Game: Lade _gjs_constructor_injector.js
  Game -> Game: init() + Event-Handler
- Game -> Data: fetch data/_gg01_constructor_injector.json
+ Game -> Data: fetch _data/_gg01_constructor_injector.json
  Data --> Game: Konfig-/Leveldaten
  
  Nutzer -> Browser: Eingabe (Klick/Drag/Tap)

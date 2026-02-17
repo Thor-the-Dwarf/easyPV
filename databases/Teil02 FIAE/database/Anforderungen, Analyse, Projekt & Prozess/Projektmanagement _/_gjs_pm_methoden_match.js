@@ -68,7 +68,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_pm_methoden_match.json');
+            const resp = await fetch('_data/_gg01_pm_methoden_match.json');
             if (!resp.ok) throw new Error('Konfiguration konnte nicht geladen werden.');
             state.config = await resp.json();
 

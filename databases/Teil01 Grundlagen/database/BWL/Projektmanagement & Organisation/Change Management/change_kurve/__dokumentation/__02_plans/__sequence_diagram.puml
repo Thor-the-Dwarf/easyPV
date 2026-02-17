@@ -15,7 +15,7 @@
  Assets --> Browser: Styles und Medien bereit
  Browser -> Game: Lade _gjs_change_kurve.js
  Game -> Game: init() + Event-Handler
- Game -> Data: fetch data/_g01_change_kurve.json
+ Game -> Data: fetch _data/_g01_change_kurve.json
  Data --> Game: Konfig-/Leveldaten
  
  Nutzer -> Browser: Eingabe (Klick/Drag/Tap)

@@ -23,7 +23,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('data/_gg01_drei_phasen_modell.json');
+      const resp = await fetch('_data/_gg01_drei_phasen_modell.json');
       if (!resp.ok) throw new Error('config unavailable');
       state.cfg = await resp.json();
       render();

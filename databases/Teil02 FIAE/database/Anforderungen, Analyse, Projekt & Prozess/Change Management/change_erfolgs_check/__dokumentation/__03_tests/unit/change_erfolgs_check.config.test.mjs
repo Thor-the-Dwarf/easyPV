@@ -10,7 +10,7 @@ const testsDir = path.resolve(unitDir, '..');
 const docsDir = path.resolve(testsDir, '..');
 const topicDir = path.resolve(docsDir, '..');
 const gameDir = topicDir;
-const configPath = path.join(gameDir, 'data/_gg01_change_erfolgs_check.json');
+const configPath = path.join(gameDir, '_data/_gg01_change_erfolgs_check.json');
 
 describe('Change-Erfolgs-Check Config', () => {
   it('contains rounds with exactly 2 correct KPIs', async () => {

@@ -10,8 +10,8 @@ package "Ordner: prozess_schnittstellen" as Scope {
   component "Game-Logik (JS)\n_gjs_prozess_schnittstellen.js" as JS
   component "Styles (CSS)\n_gcss_prozess_schnittstellen.css" as CSS
   package "Ressourcen" as RES {
-    database "data/\n2 Dateien" as DATA
-    folder "assets/\n0 Dateien" as ASSETS
+    database "_data/\n2 Dateien" as DATA
+    folder "_assets/\n0 Dateien" as ASSETS
   }
   package "Dokumentation" as DOC {
     folder "__dokumentation/__02_plans" as PLAN
@@ -25,7 +25,7 @@ JS --> ASSETS : nutzt Laufzeit-Assets
 HTML --> ASSETS : nutzt statische Assets
 
 note right of JS
-fetch()-Ziele: data/_gg01_prozess_schnittstellen.json
+fetch()-Ziele: _data/_gg01_prozess_schnittstellen.json
 end note
 
 note bottom

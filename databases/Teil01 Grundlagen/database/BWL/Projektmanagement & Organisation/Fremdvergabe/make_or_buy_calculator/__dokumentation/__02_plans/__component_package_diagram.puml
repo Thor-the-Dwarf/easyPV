@@ -10,8 +10,8 @@ package "Ordner: make_or_buy_calculator" as Scope {
   component "Game-Logik (JS)\n_gjs_make_or_buy_calculator.js" as JS
   component "Shared Scripts\n/__admin_dont_push/theme_bridge.js" as SHAREDJS
   package "Ressourcen" as RES {
-    database "data/\n2 Dateien" as DATA
-    folder "assets/\n0 Dateien" as ASSETS
+    database "_data/\n2 Dateien" as DATA
+    folder "_assets/\n0 Dateien" as ASSETS
   }
   package "Dokumentation" as DOC {
     folder "__dokumentation/__02_plans" as PLAN
@@ -25,7 +25,7 @@ JS --> ASSETS : nutzt Laufzeit-Assets
 HTML --> ASSETS : nutzt statische Assets
 
 note right of JS
-fetch()-Ziele: data/_gg01_make_or_buy_calculator.json
+fetch()-Ziele: _data/_gg01_make_or_buy_calculator.json
 end note
 
 note bottom

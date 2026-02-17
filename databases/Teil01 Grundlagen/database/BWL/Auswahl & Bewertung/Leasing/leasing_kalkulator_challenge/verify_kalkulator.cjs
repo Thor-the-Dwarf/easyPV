@@ -3,7 +3,7 @@ const path = require('path');
 
 const gameName = "leasing_kalkulator_challenge";
 const htmlFile = `_ghtml_${gameName}.html`;
-const jsonFile = `data/_gg01_${gameName}.json`;
+const jsonFile = `_data/_gg01_${gameName}.json`;
 const enginePath = "../../../../../../../game_pages/SimulationGame/index.html";
 
 console.log(`Verifying ${gameName}...`);

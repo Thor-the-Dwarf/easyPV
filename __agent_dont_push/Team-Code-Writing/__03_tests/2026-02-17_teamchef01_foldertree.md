@@ -20,3 +20,8 @@
   - `openableFolders = 375`
   - `openableIconCounts = { 📚: 286, 🔥: 89 }`
   - Keine `📁`-Icons mehr bei `is-openable`-Knoten.
+- Nach strikter `_`-Migration erneut geprüft:
+  - `find databases ... -name assets -o -name data` liefert `0` Treffer.
+  - Browser-DOM-Test: `underscoreLeaks = 0` (kein sichtbarer Tree-Label mit führendem `_`).
+  - Browser-DOM-Test: `openableIconCounts = { 📚: 286, 🔥: 89 }`, `errors = []`.
+  - Screenshot: `output/web-game-foldertree-underscore/shot-0.png`.

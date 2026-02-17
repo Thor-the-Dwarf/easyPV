@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Load Game Data
-    fetch('data/_g01_fremdvergabe_outsourcing_vertrag.json')
+    fetch('_data/_g01_fremdvergabe_outsourcing_vertrag.json')
         .then(response => response.json())
         .then(data => initGame(data))
         .catch(err => {

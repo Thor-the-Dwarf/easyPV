@@ -393,8 +393,6 @@
           const key = normalizeFolderNameKey(clean || raw);
           if (!key) return false;
           if (raw.startsWith('_') || clean.startsWith('_')) return true;
-          // Backward compatibility for existing non-prefixed technical folders.
-          if (key === 'assets' || key === 'data') return true;
           return false;
         }
 

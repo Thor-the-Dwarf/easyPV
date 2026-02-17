@@ -10,7 +10,7 @@ const testsDir = path.resolve(unitDir, '..');
 const docsDir = path.resolve(testsDir, '..');
 const topicDir = path.resolve(docsDir, '..');
 const gameDir = topicDir;
-const configPath = path.join(gameDir, 'data/_gg01_entscheidungs_detektiv.json');
+const configPath = path.join(gameDir, '_data/_gg01_entscheidungs_detektiv.json');
 
 describe('Entscheidungs-Detektiv Config', () => {
   it('contains 5 rounds with valid weighted options and one clear winner id', async () => {

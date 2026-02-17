@@ -10,7 +10,7 @@ const testsDir = path.resolve(unitDir, '..');
 const docsDir = path.resolve(testsDir, '..');
 const topicDir = path.resolve(docsDir, '..');
 const gameDir = topicDir;
-const configPath = path.join(gameDir, 'data/_gg01_zuweisungs_meister.json');
+const configPath = path.join(gameDir, '_data/_gg01_zuweisungs_meister.json');
 
 describe('Zuweisungs-Meister Config', () => {
   it('defines roles and rounds with valid role mappings', async () => {

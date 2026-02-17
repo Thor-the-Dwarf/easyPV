@@ -47,7 +47,7 @@
 
     async function init() {
         try {
-            const resp = await fetch('data/_gg01_token_runner.json');
+            const resp = await fetch('_data/_gg01_token_runner.json');
             state.config = await resp.json();
 
             el.btnRelease.addEventListener('click', startFlow);

@@ -53,7 +53,7 @@
   init();
 
   async function init() {
-    const resp = await fetch('data/_gg01_failover_simulator.json');
+    const resp = await fetch('_data/_gg01_failover_simulator.json');
     if (!resp.ok) {
       el.resultBanner.textContent = 'Konfigurationsdatei konnte nicht geladen werden.';
       return;

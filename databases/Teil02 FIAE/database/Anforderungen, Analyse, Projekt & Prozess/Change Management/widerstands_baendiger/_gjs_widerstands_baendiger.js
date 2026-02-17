@@ -23,7 +23,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('data/_gg01_widerstands_baendiger.json');
+      const resp = await fetch('_data/_gg01_widerstands_baendiger.json');
       if (!resp.ok) throw new Error('config unavailable');
       state.cfg = await resp.json();
       state.mood = Number(state.cfg.start_mood || 60);

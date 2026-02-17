@@ -10,7 +10,7 @@ const testsDir = path.resolve(unitDir, '..');
 const docsDir = path.resolve(testsDir, '..');
 const topicDir = path.resolve(docsDir, '..');
 const gameDir = topicDir;
-const configPath = path.join(gameDir, 'data/_gg01abc1_verteiler_puzzle.json');
+const configPath = path.join(gameDir, '_data/_gg01abc1_verteiler_puzzle.json');
 
 describe('Verteiler-Puzzle Config', () => {
   it('contains rounds with valid option ids and correct mapping', async () => {

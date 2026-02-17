@@ -175,7 +175,7 @@
         }
 
         function clampDrawerWidth(width) {
-          const min = 240;
+          const min = 320;
           const max = Math.min(window.innerWidth * 0.88, 720);
           return Math.max(min, Math.min(max, width));
         }
@@ -421,7 +421,7 @@
           nodeElements.forEach(function (rowNode) {
             const id = String(rowNode.dataset.id || '');
             if (!id) return;
-            const badge = rowNode.querySelector('.tree-progress');
+            const badge = rowNode.querySelector('.tree-meta-cell--progress');
             if (!badge) return;
             const percent = clampPercent(progressMap.has(id) ? progressMap.get(id) : 0);
             badge.textContent = percent + '%';
@@ -628,7 +628,11 @@
 
             treeRootEl.innerHTML = '';
             const progressMap = buildNodeProgressMap(rootTree);
-            buildTree(treeRootEl, rootTree, 0, progressMap);
+            treeRootEl.appendChild(buildTreeMetaHeaderRow());
+            const treeList = document.createElement('div');
+            treeList.className = 'tree-list';
+            buildTree(treeList, rootTree, 0, progressMap);
+            treeRootEl.appendChild(treeList);
           } catch (error) {
             treeRootEl.innerHTML =
               '<div style="padding: 1rem; color: hsl(var(--txt-muted));">' +
@@ -654,6 +658,28 @@
             percent +
             '%</div>' +
             '</div>';
+        }
+
+        function buildTreeMetaHeaderRow() {
+          const row = document.createElement('div');
+          row.className = 'tree-meta-header';
+
+          const probabilityCol = document.createElement('span');
+          probabilityCol.className = 'tree-meta-head-cell';
+          probabilityCol.textContent = 'Prüfungswarscheinlichkeit';
+          row.appendChild(probabilityCol);
+
+          const progressCol = document.createElement('span');
+          progressCol.className = 'tree-meta-head-cell';
+          progressCol.textContent = 'Fortschritt';
+          row.appendChild(progressCol);
+
+          const treeCol = document.createElement('span');
+          treeCol.className = 'tree-meta-head-cell tree-meta-head-cell--tree';
+          treeCol.textContent = '';
+          row.appendChild(treeCol);
+
+          return row;
         }
 
         function collectIconTargetNodes(nodes, bucket) {
@@ -944,6 +970,25 @@
             row.className = 'tree-row';
             row.style.setProperty('--level', level);
 
+            const probabilityKind = resolveExamProbabilityKind(node);
+            const probabilityCell = document.createElement('span');
+            probabilityCell.className = 'tree-meta-cell tree-meta-cell--probability';
+            probabilityCell.textContent = formatExamProbabilityLabel(probabilityKind);
+            probabilityCell.title = 'Prüfungswarscheinlichkeit: ' + formatExamProbabilityLabel(probabilityKind);
+            row.appendChild(probabilityCell);
+
+            const progressValue = clampPercent(
+              progressMap && progressMap.has(node.id) ? progressMap.get(node.id) : 0
+            );
+            const progressCell = document.createElement('span');
+            progressCell.className = 'tree-meta-cell tree-meta-cell--progress';
+            progressCell.textContent = progressValue + '%';
+            progressCell.title = 'Fortschritt: ' + progressValue + '%';
+            row.appendChild(progressCell);
+
+            const treeMain = document.createElement('div');
+            treeMain.className = 'tree-main';
+
             const iconButton = document.createElement('button');
             iconButton.className = 'tree-icon-button';
             iconButton.type = 'button';
@@ -965,16 +1010,7 @@
             icon.className = 'tree-icon';
             icon.textContent = folderEmoji(node, isCollapsed);
             iconButton.appendChild(icon);
-            row.appendChild(iconButton);
-
-            const progressValue = clampPercent(
-              progressMap && progressMap.has(node.id) ? progressMap.get(node.id) : 0
-            );
-            const progressBadge = document.createElement('span');
-            progressBadge.className = 'tree-progress';
-            progressBadge.textContent = progressValue + '%';
-            progressBadge.title = 'Fortschritt: ' + progressValue + '%';
-            row.appendChild(progressBadge);
+            treeMain.appendChild(iconButton);
 
             const label = document.createElement('button');
             label.className = 'tree-label';
@@ -1001,7 +1037,8 @@
                 return;
               }
             });
-            row.appendChild(label);
+            treeMain.appendChild(label);
+            row.appendChild(treeMain);
 
             rowNode.appendChild(row);
 
@@ -1068,6 +1105,32 @@
           if (!playableChildren.length) return '';
           const hasFlame = playableChildren.some((child) => resolveNodeIconKind(child) === 'flame');
           return hasFlame ? 'flame' : 'books';
+        }
+
+        function resolveExamProbabilityKind(node) {
+          if (!node || !node.isFolder) return '';
+
+          if (isGameLaunchNode(node)) {
+            return resolveNodeIconKind(node);
+          }
+
+          const direct = resolveThemeFolderIcon(node);
+          if (direct) return direct;
+
+          const children = Array.isArray(node.children) ? node.children : [];
+          let hasBooks = false;
+          for (let i = 0; i < children.length; i += 1) {
+            const childKind = resolveExamProbabilityKind(children[i]);
+            if (childKind === 'flame') return 'flame';
+            if (childKind === 'books') hasBooks = true;
+          }
+          return hasBooks ? 'books' : '';
+        }
+
+        function formatExamProbabilityLabel(kind) {
+          if (kind === 'flame') return 'Hoch';
+          if (kind === 'books') return 'Mittel';
+          return '-';
         }
 
         function folderEmoji(node, isCollapsed) {

@@ -318,17 +318,66 @@ body::after {
 }
 
 .tree-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(6.2rem, 0.95fr) minmax(3.8rem, 0.62fr) minmax(9.2rem, 1.72fr);
   align-items: center;
   gap: 0.5rem;
   padding: 0.4rem 0.5rem;
-  padding-left: calc(0.5rem + (var(--level, 0) * 1.1rem));
   border-radius: var(--radius-sm);
   color: hsl(var(--txt));
   border: 1px solid hsl(var(--primary) / 0.1);
   background: hsl(var(--bg-surface) / 0.28);
   box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.04);
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tree-meta-header {
+  display: grid;
+  grid-template-columns: minmax(6.2rem, 0.95fr) minmax(3.8rem, 0.62fr) minmax(9.2rem, 1.72fr);
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem 0.55rem;
+  border-bottom: 1px solid hsl(var(--glass-border));
+  margin-bottom: 0.55rem;
+}
+
+.tree-meta-head-cell {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: hsl(var(--txt-muted));
+  white-space: normal;
+  line-height: 1.12;
+  word-break: break-word;
+}
+
+.tree-meta-head-cell--tree {
+  color: transparent;
+}
+
+.tree-meta-cell {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: hsl(var(--txt-muted));
+  min-width: 0;
+}
+
+.tree-meta-cell--probability {
+  white-space: nowrap;
+}
+
+.tree-meta-cell--progress {
+  text-align: right;
+}
+
+.tree-main {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: calc(0.5rem + (var(--level, 0) * 1.1rem));
 }
 
 .tree-row:hover {
@@ -390,18 +439,6 @@ body::after {
   font-size: 1rem;
   font-weight: 600;
   padding: 0;
-}
-
-.tree-progress {
-  min-width: 3.2rem;
-  text-align: right;
-  font-size: 0.72rem;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: hsl(var(--txt-muted));
-  text-shadow: 0 0 8px hsl(var(--primary) / 0.3);
-  flex: 0 0 auto;
 }
 
 .tree-label--play {
@@ -506,5 +543,19 @@ body::after {
 
   .drawer-resizer {
     display: none;
+  }
+
+  .tree-meta-header,
+  .tree-row {
+    grid-template-columns: minmax(5.2rem, 0.95fr) minmax(3.2rem, 0.6fr) minmax(8rem, 1.8fr);
+    gap: 0.4rem;
+  }
+
+  .tree-meta-head-cell {
+    font-size: 0.58rem;
+  }
+
+  .tree-meta-cell {
+    font-size: 0.66rem;
   }
 }

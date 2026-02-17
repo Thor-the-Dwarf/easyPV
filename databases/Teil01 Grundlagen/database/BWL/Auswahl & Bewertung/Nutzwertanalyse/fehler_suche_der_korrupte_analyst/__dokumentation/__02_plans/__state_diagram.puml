@@ -1,0 +1,33 @@
+@startuml
+title Fehler-Suche: Der korrupte Analyst - Zustandsdiagramm
+hide empty description
+
+[*] --> AppStart
+state AppStart : HTML geladen: _ghtml_fehler_suche_der_korrupte_analyst.html
+AppStart --> Initialisierung : Script(s) laden
+Initialisierung --> DatenLaden : fetch Konfiguration/Leveldaten
+DatenLaden --> Bereit : Daten erfolgreich geladen
+DatenLaden --> Fehler : Laden fehlgeschlagen
+Bereit --> Spielzyklus : Erste Runde starten
+
+state Spielzyklus {
+  [*] --> WarteAufEingabe
+  WarteAufEingabe --> Auswertung : Nutzerinteraktion
+  Auswertung --> Feedback : Regeln pruefen + Score/HUD aktualisieren
+  Feedback --> FortschrittPruefen : Weiter / Auto-Fortschritt
+  FortschrittPruefen --> WarteAufEingabe : Weitere Aufgabe offen
+  FortschrittPruefen --> Abschluss : Letzte Aufgabe erledigt
+}
+
+Abschluss --> Neustart : Neustart ausloesen
+Neustart --> Initialisierung : State zuruecksetzen
+Abschluss --> [*] : Sitzung verlassen
+Fehler --> [*]
+
+note right of Initialisierung
+Quelle: databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Nutzwertanalyse/fehler_suche_der_korrupte_analyst/_ghtml_fehler_suche_der_korrupte_analyst.html
+JS: _gjs_fehler_suche_der_korrupte_analyst.js
+fetch: data/_gg01_fehler_suche_der_korrupte_analyst.json
+Merkmale: neustart, score, fehlerbehandlung
+end note
+@enduml

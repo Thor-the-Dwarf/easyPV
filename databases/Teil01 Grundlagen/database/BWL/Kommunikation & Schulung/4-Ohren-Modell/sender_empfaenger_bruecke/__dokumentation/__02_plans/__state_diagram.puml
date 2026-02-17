@@ -1,0 +1,33 @@
+@startuml
+title Sender-Empfaenger-Bruecke - Zustandsdiagramm
+hide empty description
+
+[*] --> AppStart
+state AppStart : HTML geladen: _ghtml_sender_empfaenger_bruecke.html
+AppStart --> Initialisierung : Script(s) laden
+Initialisierung --> DatenLaden : fetch Konfiguration/Leveldaten
+DatenLaden --> Bereit : Daten erfolgreich geladen
+DatenLaden --> Fehler : Laden fehlgeschlagen
+Bereit --> Spielzyklus : Erste Runde starten
+
+state Spielzyklus {
+  [*] --> WarteAufEingabe
+  WarteAufEingabe --> Auswertung : Nutzerinteraktion
+  Auswertung --> Feedback : Regeln pruefen + Score/HUD aktualisieren
+  Feedback --> FortschrittPruefen : Weiter / Auto-Fortschritt
+  FortschrittPruefen --> WarteAufEingabe : Weitere Aufgabe offen
+  FortschrittPruefen --> Abschluss : Letzte Aufgabe erledigt
+}
+
+Abschluss --> Neustart : Neustart ausloesen
+Neustart --> Initialisierung : State zuruecksetzen
+Abschluss --> [*] : Sitzung verlassen
+Fehler --> [*]
+
+note right of Initialisierung
+Quelle: databases/Teil01 Grundlagen/database/BWL/Kommunikation & Schulung/4-Ohren-Modell/sender_empfaenger_bruecke/_ghtml_sender_empfaenger_bruecke.html
+JS: _gjs_sender_empfaenger_bruecke.js
+fetch: data/_gg01_sender_empfaenger_bruecke.json
+Merkmale: neustart, score, fehlerbehandlung
+end note
+@enduml

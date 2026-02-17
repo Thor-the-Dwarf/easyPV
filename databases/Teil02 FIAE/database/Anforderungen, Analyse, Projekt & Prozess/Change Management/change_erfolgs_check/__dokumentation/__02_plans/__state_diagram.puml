@@ -1,0 +1,33 @@
+@startuml
+title Change-Erfolgs-Check - Zustandsdiagramm
+hide empty description
+
+[*] --> AppStart
+state AppStart : HTML geladen: _ghtml_change_erfolgs_check.html
+AppStart --> Initialisierung : Script(s) laden
+Initialisierung --> DatenLaden : fetch Konfiguration/Leveldaten
+DatenLaden --> Bereit : Daten erfolgreich geladen
+DatenLaden --> Fehler : Laden fehlgeschlagen
+Bereit --> Spielzyklus : Erste Runde starten
+
+state Spielzyklus {
+  [*] --> WarteAufEingabe
+  WarteAufEingabe --> Auswertung : Nutzerinteraktion
+  Auswertung --> Feedback : Regeln pruefen + Score/HUD aktualisieren
+  Feedback --> FortschrittPruefen : Weiter / Auto-Fortschritt
+  FortschrittPruefen --> WarteAufEingabe : Weitere Aufgabe offen
+  FortschrittPruefen --> Abschluss : Letzte Aufgabe erledigt
+}
+
+Abschluss --> Neustart : Neustart ausloesen
+Neustart --> Initialisierung : State zuruecksetzen
+Abschluss --> [*] : Sitzung verlassen
+Fehler --> [*]
+
+note right of Initialisierung
+Quelle: databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Change Management/change_erfolgs_check/_ghtml_change_erfolgs_check.html
+JS: _gjs_change_erfolgs_check.js
+fetch: data/_gg01_change_erfolgs_check.json
+Merkmale: neustart, score, fehlerbehandlung
+end note
+@enduml

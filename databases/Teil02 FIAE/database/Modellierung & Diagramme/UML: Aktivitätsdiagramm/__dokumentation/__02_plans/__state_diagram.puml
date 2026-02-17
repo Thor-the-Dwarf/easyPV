@@ -1,0 +1,33 @@
+@startuml
+title Token Runner - UML Pipeline - Zustandsdiagramm
+hide empty description
+
+[*] --> AppStart
+state AppStart : HTML geladen: _ghtml_token_runner.html
+AppStart --> Initialisierung : Script(s) laden
+Initialisierung --> DatenLaden : fetch Konfiguration/Leveldaten
+DatenLaden --> Bereit : Daten erfolgreich geladen
+DatenLaden --> Fehler : Laden fehlgeschlagen
+Bereit --> Spielzyklus : Erste Runde starten
+
+state Spielzyklus {
+  [*] --> WarteAufEingabe
+  WarteAufEingabe --> Auswertung : Nutzerinteraktion
+  Auswertung --> Feedback : Regeln pruefen
+  Feedback --> FortschrittPruefen : Weiter / Auto-Fortschritt
+  FortschrittPruefen --> WarteAufEingabe : Weitere Aufgabe offen
+  FortschrittPruefen --> Abschluss : Letzte Aufgabe erledigt
+}
+
+Abschluss --> Neustart : Neustart ausloesen
+Neustart --> Initialisierung : State zuruecksetzen
+Abschluss --> [*] : Sitzung verlassen
+Fehler --> [*]
+
+note right of Initialisierung
+Quelle: databases/Teil02 FIAE/database/Modellierung & Diagramme/UML: Aktivitätsdiagramm/_ghtml_token_runner.html
+JS: _gjs_token_runner.js
+fetch: data/_gg01_token_runner.json
+Merkmale: neustart, fehlerbehandlung
+end note
+@enduml

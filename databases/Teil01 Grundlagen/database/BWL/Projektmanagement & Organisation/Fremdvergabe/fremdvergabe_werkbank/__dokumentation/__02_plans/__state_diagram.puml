@@ -1,0 +1,32 @@
+@startuml
+title Die verlängerte Werkbank - Zustandsdiagramm
+hide empty description
+
+[*] --> AppStart
+state AppStart : HTML geladen: _ghtml_fremdvergabe_werkbank.html
+AppStart --> Initialisierung : Script(s) laden
+Initialisierung --> DatenLaden : fetch Konfiguration/Leveldaten
+DatenLaden --> Bereit : Daten erfolgreich geladen
+DatenLaden --> Fehler : Laden fehlgeschlagen
+Bereit --> Spielzyklus : Erste Runde starten
+
+state Spielzyklus {
+  [*] --> WarteAufEingabe
+  WarteAufEingabe --> Auswertung : Nutzerinteraktion
+  Auswertung --> Feedback : Regeln pruefen
+  Feedback --> FortschrittPruefen : Weiter / Auto-Fortschritt
+  FortschrittPruefen --> WarteAufEingabe : Weitere Aufgabe offen
+  FortschrittPruefen --> Abschluss : Letzte Aufgabe erledigt
+}
+
+
+Abschluss --> [*] : Sitzung verlassen
+Fehler --> [*]
+
+note right of Initialisierung
+Quelle: databases/Teil01 Grundlagen/database/BWL/Projektmanagement & Organisation/Fremdvergabe/fremdvergabe_werkbank/_ghtml_fremdvergabe_werkbank.html
+JS: _gjs_fremdvergabe_werkbank.js
+fetch: data/_g01_fremdvergabe_werkbank.json
+Merkmale: fehlerbehandlung
+end note
+@enduml

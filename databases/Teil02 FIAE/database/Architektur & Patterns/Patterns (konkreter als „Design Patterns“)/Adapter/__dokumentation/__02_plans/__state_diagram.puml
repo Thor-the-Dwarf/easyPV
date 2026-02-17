@@ -1,0 +1,34 @@
+@startuml
+title Adapter Pattern - Bridge Builder - Zustandsdiagramm
+hide empty description
+
+[*] --> AppStart
+state AppStart : HTML geladen: _ghtml_compatibility_connector.html
+AppStart --> Initialisierung : Script(s) laden
+Initialisierung --> DatenLaden : fetch Konfiguration/Leveldaten
+DatenLaden --> Bereit : Daten erfolgreich geladen
+DatenLaden --> Fehler : Laden fehlgeschlagen
+Bereit --> Spielzyklus : Erste Runde starten
+
+state Spielzyklus {
+  [*] --> WarteAufEingabe
+  WarteAufEingabe --> Auswertung : Nutzerinteraktion
+  Auswertung --> Feedback : Regeln pruefen + Score/HUD aktualisieren
+  Feedback --> FortschrittPruefen : Weiter / Auto-Fortschritt
+  FortschrittPruefen --> Levelwechsel : Naechstes Level laden
+  Levelwechsel --> WarteAufEingabe : Level bereit
+  FortschrittPruefen --> Abschluss : Letztes Level abgeschlossen
+}
+
+Abschluss --> Neustart : Neustart ausloesen
+Neustart --> Initialisierung : State zuruecksetzen
+Abschluss --> [*] : Sitzung verlassen
+Fehler --> [*]
+
+note right of Initialisierung
+Quelle: databases/Teil02 FIAE/database/Architektur & Patterns/Patterns (konkreter als „Design Patterns“)/Adapter/_ghtml_compatibility_connector.html
+JS: _gjs_compatibility_connector.js
+fetch: data/_gg01_compatibility_connector.json
+Merkmale: level-zyklus, neustart, score, fehlerbehandlung
+end note
+@enduml

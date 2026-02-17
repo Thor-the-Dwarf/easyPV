@@ -22,7 +22,7 @@
 
 # Ablauf:
     1. Verschaffe dir einen Überblick, algemein und über die Zusammenhänge im gesamten Projekt
-    2. du evaluierst ob es sinn macht deinen Diagramm-Typ
-    3. in jedem EndOrdner(ausgenommen dem Hauptordner) befindet sich ein Ordner __dokumentation, darin ist ein 
-    __02_plans -Ordner. In diesen Ordner erstellst du eine puml-Datei die das zugehöhrige Programm(-Teil) abbildet
-    3. arbeite dich von oben nach unten durch
+    2. du evaluierst Programmteil für Programmteil, ob es Sinn macht deinen Diagramm-Typ zu erstellen
+        nur wenn es Sinn macht:
+        3. in jedem EndOrdner(ausgenommen dem Hauptordner) befindet sich ein Ordner __dokumentation, darin ist ein 
+        __02_plans -Ordner. In diesen Ordner erstellst du eine puml-Datei die das zugehöhrige Programm(-Teil) abbildet

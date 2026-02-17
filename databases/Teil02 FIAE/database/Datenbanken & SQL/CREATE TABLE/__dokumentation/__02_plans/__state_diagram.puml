@@ -1,0 +1,34 @@
+@startuml
+title Schema Architect // Create Table - Zustandsdiagramm
+hide empty description
+
+[*] --> AppStart
+state AppStart : HTML geladen: _ghtml_schema_architect.html
+AppStart --> Initialisierung : Script(s) laden
+Initialisierung --> DatenLaden : fetch Konfiguration/Leveldaten
+DatenLaden --> Bereit : Daten erfolgreich geladen
+DatenLaden --> Fehler : Laden fehlgeschlagen
+Bereit --> Spielzyklus : Erste Runde starten
+
+state Spielzyklus {
+  [*] --> WarteAufEingabe
+  WarteAufEingabe --> Auswertung : Nutzerinteraktion
+  Auswertung --> Feedback : Regeln pruefen
+  Feedback --> FortschrittPruefen : Weiter / Auto-Fortschritt
+  FortschrittPruefen --> Levelwechsel : Naechstes Level laden
+  Levelwechsel --> WarteAufEingabe : Level bereit
+  FortschrittPruefen --> Abschluss : Letztes Level abgeschlossen
+}
+
+Abschluss --> Neustart : Neustart ausloesen
+Neustart --> Initialisierung : State zuruecksetzen
+Abschluss --> [*] : Sitzung verlassen
+Fehler --> [*]
+
+note right of Initialisierung
+Quelle: databases/Teil02 FIAE/database/Datenbanken & SQL/CREATE TABLE/_ghtml_schema_architect.html
+JS: _gjs_schema_architect.js
+fetch: data/_gg01_schema_architect.json
+Merkmale: level-zyklus, neustart, fehlerbehandlung
+end note
+@enduml

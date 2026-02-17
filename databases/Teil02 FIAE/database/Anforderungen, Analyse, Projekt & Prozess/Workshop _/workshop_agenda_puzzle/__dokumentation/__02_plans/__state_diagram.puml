@@ -1,0 +1,21 @@
+@startuml
+title Lade Spiel... - Zustandsdiagramm
+hide empty description
+
+[*] --> EntryGeladen
+state EntryGeladen : HTML Entry geladen: _ghtml_workshop_agenda_puzzle.html
+EntryGeladen --> RedirectVorbereiten : enginePath/configPath auslesen
+RedirectVorbereiten --> RedirectAusfuehren : window.location.replace/assign
+RedirectAusfuehren --> EngineLaden : Zielseite aufrufen
+EngineLaden --> DatenLaden : Engine-/Config-Daten laden
+DatenLaden --> SpielBereit : Initialisierung abgeschlossen
+DatenLaden --> Fehler : Daten nicht ladbar
+SpielBereit --> [*] : Steuerung an Ziel-Engine
+Fehler --> [*]
+
+note right of RedirectVorbereiten
+Quelle: databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Workshop _/workshop_agenda_puzzle/_ghtml_workshop_agenda_puzzle.html
+enginePath: ../../../../../../game_pages/ConstructionGame/index.html
+configPath: data/_gg01_workshop_agenda_puzzle.json
+end note
+@enduml

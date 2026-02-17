@@ -1,0 +1,32 @@
+@startuml
+title Kurve der Veraenderung - Zustandsdiagramm
+hide empty description
+
+[*] --> AppStart
+state AppStart : HTML geladen: _ghtml_kurve_der_veraenderung.html
+AppStart --> Initialisierung : Script(s) laden
+Initialisierung --> DatenLaden : fetch Konfiguration/Leveldaten
+DatenLaden --> Bereit : Daten erfolgreich geladen
+DatenLaden --> Fehler : Laden fehlgeschlagen
+Bereit --> Spielzyklus : Erste Runde starten
+
+state Spielzyklus {
+  [*] --> WarteAufEingabe
+  WarteAufEingabe --> Auswertung : Nutzerinteraktion
+  Auswertung --> Feedback : Regeln pruefen + Score/HUD aktualisieren
+  Feedback --> FortschrittPruefen : Weiter / Auto-Fortschritt
+  FortschrittPruefen --> WarteAufEingabe : Weitere Aufgabe offen
+  FortschrittPruefen --> Abschluss : Letzte Aufgabe erledigt
+}
+
+
+Abschluss --> [*] : Sitzung verlassen
+Fehler --> [*]
+
+note right of Initialisierung
+Quelle: databases/Teil01 Grundlagen/database/BWL/Projektmanagement & Organisation/Change Management/kurve_der_veraenderung/_ghtml_kurve_der_veraenderung.html
+JS: _gjs_kurve_der_veraenderung.js
+fetch: data/_gg01_kurve_der_veraenderung.json
+Merkmale: score, fehlerbehandlung
+end note
+@enduml

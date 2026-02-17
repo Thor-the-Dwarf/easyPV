@@ -1,0 +1,21 @@
+@startuml
+title Lade Spiel... - Zustandsdiagramm
+hide empty description
+
+[*] --> EntryGeladen
+state EntryGeladen : HTML Entry geladen: _ghtml_finanzierungs_sortiermaschine.html
+EntryGeladen --> RedirectVorbereiten : enginePath/configPath auslesen
+RedirectVorbereiten --> RedirectAusfuehren : window.location.replace/assign
+RedirectAusfuehren --> EngineLaden : Zielseite aufrufen
+EngineLaden --> DatenLaden : Engine-/Config-Daten laden
+DatenLaden --> SpielBereit : Initialisierung abgeschlossen
+DatenLaden --> Fehler : Daten nicht ladbar
+SpielBereit --> [*] : Steuerung an Ziel-Engine
+Fehler --> [*]
+
+note right of RedirectVorbereiten
+Quelle: databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Leasing/finanzierungs_sortiermaschine/_ghtml_finanzierungs_sortiermaschine.html
+enginePath: ../../../../../../../game_pages/SortingGame/index.html
+configPath: data/_gg01_finanzierungs_sortiermaschine.json
+end note
+@enduml

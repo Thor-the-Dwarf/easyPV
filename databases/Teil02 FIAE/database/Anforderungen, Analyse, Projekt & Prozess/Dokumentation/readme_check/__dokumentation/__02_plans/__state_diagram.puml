@@ -1,0 +1,34 @@
+@startuml
+title README Builder - Zustandsdiagramm
+hide empty description
+
+[*] --> AppStart
+state AppStart : HTML geladen: _ghtml_readme_check.html
+AppStart --> Initialisierung : Script(s) laden
+Initialisierung --> DatenLaden : fetch Konfiguration/Leveldaten
+DatenLaden --> Bereit : Daten erfolgreich geladen
+DatenLaden --> Fehler : Laden fehlgeschlagen
+Bereit --> Spielzyklus : Erste Runde starten
+
+state Spielzyklus {
+  [*] --> WarteAufEingabe
+  WarteAufEingabe --> Auswertung : Nutzerinteraktion
+  Auswertung --> Feedback : Regeln pruefen + Score/HUD aktualisieren
+  Feedback --> FortschrittPruefen : Weiter / Auto-Fortschritt
+  FortschrittPruefen --> Levelwechsel : Naechstes Level laden
+  Levelwechsel --> WarteAufEingabe : Level bereit
+  FortschrittPruefen --> Abschluss : Letztes Level abgeschlossen
+}
+
+Abschluss --> Neustart : Neustart ausloesen
+Neustart --> Initialisierung : State zuruecksetzen
+Abschluss --> [*] : Sitzung verlassen
+Fehler --> [*]
+
+note right of Initialisierung
+Quelle: databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Dokumentation/readme_check/_ghtml_readme_check.html
+JS: _gjs_readme_check.js
+fetch: data/_gg01_readme_check.json
+Merkmale: level-zyklus, neustart, score, fehlerbehandlung
+end note
+@enduml

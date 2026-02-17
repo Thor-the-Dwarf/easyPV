@@ -8,6 +8,14 @@ Learnings fuer Sequenzdiagramm-Auftrag
 - Einheitlicher Dateiname `__sequence_diagram.puml` pro Zielordner ist praktikabel, da pro Endordner nur ein Diagramm gefordert war.
 - Top-down Verarbeitung wurde ueber sortierte Pfade umgesetzt, damit die Reihenfolge reproduzierbar bleibt.
 - Hilfsreport (`sequence_generation_report.tsv`) erleichtert spaeteres Nachvollziehen, welche Seite als Redirect oder Direct behandelt wurde.
+
+Learnings fuer Zustandsdiagramm-Auftrag
+
+- Die gleiche Zielmenge (110 Endordner) laesst sich fuer mehrere Diagrammtypen wiederverwenden, wenn die Ordnerliste aus den HTML-Pfaden + `__02_plans` abgeleitet wird.
+- Ein generisches Zustandsmodell mit optionalen Merkmalen aus JS (`level-zyklus`, `rollenwechsel`, `neustart`) ist fuer die Vielzahl an Spielvarianten konsistent und wartbar.
+- Einheitlicher Dateiname `__state_diagram.puml` vermeidet Namenschaos und ergaenzt bestehende Planartefakte sauber.
+- Bei Redirect-Wrappern ist ein eigener Zustandsfluss noetig, da dort der eigentliche Spielzustand in der Ziel-Engine liegt.
+- Ein TSV-Report (`state_generation_report.tsv`) hilft bei spaeteren Audits und bei der Kontrolle, ob alle Zielordner bedient wurden.
 2026-02-17
 - Fuer diese Struktur funktionieren Komponenten-/Package-Diagramme am stabilsten, wenn pro Spielordner nur direkt benachbarte Dateien (html/js/css/cjs/json) und die Ressourcenordner `data/` und `assets/` ausgewertet werden.
 - Einheitlicher Dateiname pro Zielordner (`__component_package_diagram.puml`) erleichtert spaetere automatisierte Pruefungen.

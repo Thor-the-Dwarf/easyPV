@@ -1,0 +1,34 @@
+@startuml
+title Dependency Injection - The Surgery - Zustandsdiagramm
+hide empty description
+
+[*] --> AppStart
+state AppStart : HTML geladen: _ghtml_constructor_injector.html
+AppStart --> Initialisierung : Script(s) laden
+Initialisierung --> DatenLaden : fetch Konfiguration/Leveldaten
+DatenLaden --> Bereit : Daten erfolgreich geladen
+DatenLaden --> Fehler : Laden fehlgeschlagen
+Bereit --> Spielzyklus : Erste Runde starten
+
+state Spielzyklus {
+  [*] --> WarteAufEingabe
+  WarteAufEingabe --> Auswertung : Nutzerinteraktion
+  Auswertung --> Feedback : Regeln pruefen
+  Feedback --> FortschrittPruefen : Weiter / Auto-Fortschritt
+  FortschrittPruefen --> Levelwechsel : Naechstes Level laden
+  Levelwechsel --> WarteAufEingabe : Level bereit
+  FortschrittPruefen --> Abschluss : Letztes Level abgeschlossen
+}
+
+Abschluss --> Neustart : Neustart ausloesen
+Neustart --> Initialisierung : State zuruecksetzen
+Abschluss --> [*] : Sitzung verlassen
+Fehler --> [*]
+
+note right of Initialisierung
+Quelle: databases/Teil02 FIAE/database/Architektur & Patterns/Architektur-„Schubladen“ für AP2/Dependency Injection (Grundidee: warum hilft das beim Testen?)/_ghtml_constructor_injector.html
+JS: _gjs_constructor_injector.js
+fetch: data/_gg01_constructor_injector.json
+Merkmale: level-zyklus, neustart, fehlerbehandlung
+end note
+@enduml

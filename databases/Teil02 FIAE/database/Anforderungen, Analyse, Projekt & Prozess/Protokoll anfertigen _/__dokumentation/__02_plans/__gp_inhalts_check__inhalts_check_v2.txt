@@ -1,0 +1,28 @@
+# __gp_inhalts_check__inhalts_check_v2
+
+## Spielidee
+Inhalts-Check: Erkenne, welche Pflichtangabe in einem Protokoll fehlt.
+
+## Lernziel
+- Formale Mindestanforderungen von Protokollen sicher beherrschen.
+- Dokumentationsqualitaet im Team verbessern.
+
+## Mechanik
+- 6 Protokollausschnitte.
+- Pro Runde eine fehlende Pflichtangabe auswaehlen.
+- Sofortfeedback je Entscheidung.
+
+## Bewertung
+- Richtige Auswahl: +20
+- Falsche Auswahl: -10
+- Bonus ab 2 Treffern in Serie: +5
+
+## Dateikonvention
+- `data/_gg01_inhalts_check.json`
+- `_ghtml_inhalts_check.html`
+- `_gjs_inhalts_check.js`
+- `_gcss_inhalts_check.css`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

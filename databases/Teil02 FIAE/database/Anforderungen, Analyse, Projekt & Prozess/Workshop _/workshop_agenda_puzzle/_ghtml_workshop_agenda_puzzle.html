@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lade Spiel...</title>
+    <script>
+        // Redirect to ConstructionGame Engine
+        // Path adjusted: 7 levels up to root
+        const enginePath = "../../../../../../game_pages/ConstructionGame/index.html";
+
+        // Path to config
+        // "Workshop Agenda Puzzle" -> _gg01_workshop_agenda_puzzle.json
+        const configPath = "data/_gg01_workshop_agenda_puzzle.json";
+
+        window.location.replace(`${enginePath}?config=${configPath}`);
+    </script>
+</head>
+
+<body>
+    <p>Lade Workshop-Agenda-Puzzle...</p>
+</body>
+
+</html>

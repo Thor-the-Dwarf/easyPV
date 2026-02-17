@@ -1,0 +1,42 @@
+Anforderungen
+4. "Der gnadenlose Gutachter"
+   - Ziel: Bewerte 5 Schäden korrekt als "Mangel" (zahlen) oder "Gebrauchsspur" (gratis).
+   - Spielmechanik: 
+     - Bild 1: Steinschlag in Sichtfeld (Mangel).
+     - Bild 2: Leichte Kratzer an Griffmulde (Gebrauchsspur).
+     - Spieler klickt "Zahlen" oder "Gratis".
+     - Messbarkeit: Abgleich mit offizieller Dekra-Liste. 5/5 richtig = 100%.
+   - Lernziel: Rückgaberisiken realistisch einschätzen.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Sichtprioritaeten festlegen (1 = Schadenbild, 2 = Entscheidung, 3 = Score).
+- [ ] Textbudget definieren (Keine langen Erklärungen vor der Entscheidung).
+- [ ] "Dekra-Protokoll" als Metapher für das UI nutzen.
+
+2. Screen-Layout (Container-Ebenen reduzieren)
+- [ ] Containerstruktur: `page -> damage-card -> controls`.
+- [ ] Bildsektion dominierend (Desktop 50%+, Mobile 40dvh).
+- [ ] Buttons "Mangel" (Rot) vs "Gebrauchsspur" (Grün) groß und fingerfreundlich (>48px).
+- [ ] Header minimal halten.
+
+3. Browser- und Device-Resilienz
+- [ ] `min-height: 100dvh` nutzen.
+- [ ] `object-fit: contain` für Beweisfotos (nichts abschneiden!).
+- [ ] Keine horizontale Scrollbar.
+
+4. Kernvisuals
+- [ ] Polaroid-Style für die Fotos beibehalten (CSS shadow/rotation).
+- [ ] Stempel-Animation bei Entscheidung ("ABGELEHNT" / "AKZEPTIERT").
+
+5. Interaktion und Feedback
+- [ ] Sofortiges Feedback nach Klick (kein "Submit" Button nötig).
+- [ ] Bei Fehler: Kurze Erklärung ("Kratzer < 2cm ist im Toleranzbereich").
+- [ ] End-Screen: "Du hättest X Euro gespart/verloren".
+
+6. KPI-Klarheit
+- [ ] Score als "Gesparter Betrag" anzeigen (Gamification).
+
+7. QA-Paket
+- [ ] Screenshot-Check Mobile (Bild gut erkennbar?).
+- [ ] Touch-Targets prüfen.

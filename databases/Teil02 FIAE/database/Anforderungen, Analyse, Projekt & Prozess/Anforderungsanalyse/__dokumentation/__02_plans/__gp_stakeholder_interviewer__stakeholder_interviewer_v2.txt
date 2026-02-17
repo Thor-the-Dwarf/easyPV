@@ -1,0 +1,27 @@
+# __gp_stakeholder_interviewer__stakeholder_interviewer_v2
+
+## Spielidee
+Stakeholder-Interviewer: Waehle die passende Ermittlungstechnik je Stakeholder-Situation.
+
+## Lernziel
+- Interview, Fragebogen, Beobachtung und Workshop zielgerichtet einsetzen.
+- Effizienz und Informationsqualitaet bei der Anforderungsermittlung steigern.
+
+## Mechanik
+- 6 Szenario-Runden.
+- Pro Runde 3 Technikoptionen, genau 1 ist passend.
+- Direkte Rueckmeldung inklusive Begruendung.
+
+## Bewertung
+- Richtige Technik: +20
+- Falsche Technik: -10
+- Serienbonus ab 3 richtigen Antworten: +10
+
+## Dateikonvention
+- `data/_gg01_stakeholder_interviewer.json`
+- `_ghtml_stakeholder_interviewer.html`
+- `_gjs_stakeholder_interviewer.js`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

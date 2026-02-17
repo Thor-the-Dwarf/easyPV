@@ -1,0 +1,37 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Identifikation psychologischer Phasen im Change Management und Auswahl der passenden Führungsmaßnahme.
+- Game-Mechanic: "The Change Surfer". Ein Boot (das Projekt-Team) navigiert auf der Change-Kurve durch ein emotionales Meer. Stürme (Widerstände) müssen durch korrekte Phasen-Einschätzung und Maßnahmenwahl umschifft werden.
+- Challenge: 
+  - Level 1: "Glattes Wasser" - Eindeutige Zitate (z.B. "Juhuu, endlich Neues!").
+  - Level 2: "Rauhe See" - Widersprüchliche Signale (z.B. stille Resignation vs. offene Aggression).
+  - Level 3: "Der Monster-Change" - Mehrere Teams gleichzeitig in verschiedenen Phasen balancieren.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD: "Team-Moral" (Health), "Project-Stability" (Balance), "Phase-Indicator" (Current Position).
+- [ ] Scoring: +500 Pkt für "Sanfte Landung" in der Zielphase (Integration). Abzug bei "Schiffsunglück" durch Ignorieren der Schock-Phase.
+
+2. Screen-Layout (The Ocean View)
+- [ ] `ocean-map -> change-curve-path -> survivor-cards -> intervention-tools`.
+- [ ] Map: Die Kurve als nautischer Pfad mit 7 Stationen (Schock bis Integration).
+- [ ] Tools: "Information", "Empathie", "Workshop", "Anweisung" als Aktions-Icons.
+
+3. Kernvisuals und Effekte
+- [ ] Marine-Ästhetik: Wasser-Shader, Wellenbewegung, Wetter-Effekte (Sonne bei Erfolg, Gewitter bei Krise).
+- [ ] "The Leap": Das Boot springt visuell zur nächsten Station, wenn die Phase korrekt gemeistert wurde.
+
+4. Browser- und Device-Resilienz
+- [ ] Parallax-Scrolling Effekt für das tiefe Gefühl des Meeres.
+- [ ] Touch-optimierte "Tool-Selection".
+
+5. Content-Strategie (Quotes from the Storm)
+- [ ] 20 Zitate von realen Charakteren (Der Skeptiker, der Innovator, der Ängstliche).
+
+6. QA-Paket
+- [ ] Test: Sind die Übergänge zwischen den Phasen logisch nachvollziehbar?
+- [ ] Test: Wirkt das "Wetter" motivierend/warnend genug?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler erkennt Change als emotionalen Prozess, der Zeit und Führung braucht.
+- [ ] Das Interface wirkt wie ein künstlerisches Abenteuerspiel (Monument Valley Vibes).
+- [ ] Strategisches Verständnis für die Reihenfolge der Change-Phasen.

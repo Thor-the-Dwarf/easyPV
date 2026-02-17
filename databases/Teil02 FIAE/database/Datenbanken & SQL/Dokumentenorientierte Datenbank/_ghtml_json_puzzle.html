@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lade Spiel...</title>
+    <script>
+        // Redirect to ConstructionGame Engine
+        const enginePath = "../../../../../game_pages/ConstructionGame/index.html";
+
+        // Path to config
+        // "JSON Puzzle" -> _gg01_json_puzzle.json
+        const configPath = "data/_gg01_json_puzzle.json";
+
+        window.location.replace(`${enginePath}?config=${configPath}`);
+    </script>
+</head>
+
+<body>
+    <p>Lade JSON-Puzzle...</p>
+</body>
+
+</html>

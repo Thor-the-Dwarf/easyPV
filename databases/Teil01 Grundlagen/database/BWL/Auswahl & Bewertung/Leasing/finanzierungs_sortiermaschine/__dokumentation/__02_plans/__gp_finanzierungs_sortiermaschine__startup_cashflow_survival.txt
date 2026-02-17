@@ -1,0 +1,46 @@
+Anforderungen
+1. "Startup-Cashflow-Survival"
+   - Ziel: Überlebe 12 Monate ohne dass das Konto ins Minus rutscht.
+   - Spielmechanik: 
+     - Startkapital: 20.000€. Monatliche Einnahmen: 5.000€.
+     - Ereignis: "Du brauchst einen Transporter."
+     - Option A: Kaufen (-30.000€ sofort).
+     - Option B: Leasen (-500€ monatlich).
+     - Wählt der Spieler Kauf -> Game Over (Pleite). Wählt er Leasing -> Spiel geht weiter.
+     - Nach 12 Monaten wird abgerechnet: Wer am meisten Geld übrig hat UND nicht pleite ging, gewinnt.
+     - Messbarkeit: Kontostand am Ende > 0€ = Bestanden. Highscore = Kontostand.
+   - Lernziel: Leasing als Liquiditätsinstrument verstehen.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Kontostand (Cashflow) über Zeit.
+- [ ] Entscheidung: "Kaufen" (Hohe einmalige Belastung) vs "Leasen" (Niedrige monatliche Rate).
+- [ ] Szenario: "Die Burn-Rate läuft!".
+
+2. Screen-Layout
+- [ ] Dashboard-Ansicht.
+- [ ] Oben: Heiliger Kontostand (Groß!).
+- [ ] Unten: Entscheidungskarten (Maschine A, Server B).
+- [ ] Hintergrund: Verlaufsgrafik (Chart).
+
+3. Browser- und Device-Resilienz
+- [ ] Chart muss responsive sein (SVG / Canvas).
+- [ ] Legende immer sichtbar.
+
+4. Kernvisuals
+- [ ] Lebenslinie (EKG) für den Cashflow.
+- [ ] Roter Alarm bei < 1000€.
+- [ ] Konfetti bei überlebtem Jahr.
+
+5. Interaktion und Feedback
+- [ ] Runde-basiert (Monat für Monat).
+- [ ] Entscheidung wirkt sich sofort visuell auf den Chart aus (Dip vs flache Kurve).
+- [ ] "Game Over" Screen muss lehrreich sein ("Du bist pleite gegangen, weil die Liquidität fehlte").
+
+6. KPI-Klarheit
+- [ ] Liquidität ist King.
+- [ ] Gesamtkosten (TCO) als Sekundär-Info (Aha-Effekt: Leasing war teurer, hat dich aber gerettet).
+
+7. QA-Paket
+- [ ] Mathe-Check (Summen müssen stimmen).
+- [ ] Chart-Rendering auf Mobile.

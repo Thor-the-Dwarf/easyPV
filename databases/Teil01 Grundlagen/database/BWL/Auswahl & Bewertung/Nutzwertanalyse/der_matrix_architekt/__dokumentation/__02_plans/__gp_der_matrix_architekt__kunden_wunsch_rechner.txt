@@ -1,0 +1,42 @@
+Anforderungen
+5. "Kunden-Wunsch-Rechner"
+   - Ziel: Erreiche mindestens 90% Kundenzufriedenheit durch korrekte Gewichtung.
+   - Spielmechanik: 
+     - Kunde sagt: "Preis ist mir extrem wichtig, Marke egal."
+     - Spieler muss Schieberegler einstellen: Preis auf 80-90%, Marke auf 0-10%.
+     - Das Spiel berechnet die Abweichung vom "Idealprofil" des Kunden.
+     - Messbarkeit: 
+       - Abweichung < 10% -> 100 Punkte.
+       - Abweichung < 20% -> 80 Punkte.
+       - Sonst -> 0 Punkte ("Kunde kauft woanders").
+   - Lernziel: Transfer von verbalen Anforderungen in numerische Prozentwerte.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Die Gewichtung (%).
+- [ ] Aufgabe: Schiebe die Regler so, dass Produkt A gewinnt (Reverse Engineering).
+- [ ] Szenario: "Der Kunde will unbedingt den Porsche, aber die Zahlen sagen Golf. Passen Sie die Gewichtung an."
+
+2. Screen-Layout
+- [ ] Split-Screen: Oben Ergebnis-Balken (Golf vs Porsche). Unten Slider für Kriterien (Preis, PS, Image).
+- [ ] Mobile: Sticky Header für das Ergebnis ("Who wins?").
+
+3. Browser- und Device-Resilienz
+- [ ] Range-Inputs (`<input type="range">`) sind perfekt für Mobile.
+- [ ] Debouncing beim Rechnen (Performance).
+
+4. Kernvisuals
+- [ ] Dynamische Balkendiagramme (Animated CSS height/width).
+- [ ] Farbe wechselt, wenn der "Wunsch-Kandidat" führt (Grau -> Gold).
+
+5. Interaktion und Feedback
+- [ ] Haptik: Vibration, wenn der Gewinner wechselt.
+- [ ] Realtime-Update: Keine "Berechnen"-Taste, alles live.
+- [ ] Limitierung: Summe der Gewichte darf 100% nicht (zu stark) überschreiten (oder Auto-Normalize).
+
+6. KPI-Klarheit
+- [ ] Ziel-Indikator: "Porsche muss > 80 Punkte haben".
+
+7. QA-Paket
+- [ ] Slider-Bedienung mit dicken Fingern.
+- [ ] Rechenlogik bei 0% Gewichtung.

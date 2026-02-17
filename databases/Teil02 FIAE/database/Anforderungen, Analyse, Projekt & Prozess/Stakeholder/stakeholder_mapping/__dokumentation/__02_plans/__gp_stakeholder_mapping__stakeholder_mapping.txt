@@ -1,0 +1,39 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Strategische Einordnung von Stakeholdern und Auswahl der korrekten Kommunikationsstrategie unter Berücksichtigung von Projektrisiken.
+- Game-Mechanic: "The Diplomat". Stakeholder erscheinen als "Problem-Karten". Sie müssen präzise auf der 2x2 Matrix platziert werden, bevor ihr "Geduldsfaden" reißt.
+- Challenge: 
+  - Level 1: Statische Profile, klare Macht/Interesse-Angaben.
+  - Level 2: "Hidden Agenda" - Der Spieler muss aus Zitaten (Audio/Text) die Position ableiten.
+  - Level 3: "Projekt-Krise" - Stakeholder ändern ihre Position dynamisch (z.B. IT-Leiter wird kritisch).
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Diplomacy-Bar" (Score), "Project-Heat" (Fail-Indicator), "Current Mission".
+- [ ] Scoring: Timing-Bonus für schnelle Platzierung. Abzug bei falscher Kommunikationsstrategie-Wahl ("Ignorieren" eines Key-Players = Instant Heat).
+
+2. Screen-Layout (Strategie-Zentrum)
+- [ ] `workspace -> tactical-matrix -> stakeholder-queue -> strategy-dock`.
+- [ ] Matrix: Pulsierende Quadranten. "Power" (Y) und "Interest" (X) als glühende Achsen.
+- [ ] Strategy-Dock: Stempel-System (Stempel: "Eng managen", "Informieren", "Beobachten").
+
+3. Kernvisuals und Effekte
+- [ ] War-Room Ästhetik: Dunkles Blau, holografische Karten, taktische Kartenansicht.
+- [ ] "Project Meltdown": Visuelle Warnungen (Alarmlicht), wenn die Project-Heat zu hoch steigt.
+- [ ] Stempel-Animation: Satte, haptische Feedback-Animation beim "Abstempeln" der Strategie.
+
+4. Browser- und Device-Resilienz
+- [ ] SVG-Matrix für perfekte Schärfe beim Zoomen.
+- [ ] Responsive Stacking: Mobile zeigt erst die Karte, dann die Matrix zur Auswahl.
+
+5. Content-Strategie (Risk-Profiles)
+- [ ] 15 Stakeholder-Archetypen (Der kühle CFO, der überlastete Admin, der euphorische User).
+- [ ] Dynamische Events (z.B. "Budgetkürzung -> CFO Interesse steigt").
+
+6. QA-Paket
+- [ ] Test: Ist die Matrix-Einrast-Funktion (Snap) intuitiv genug?
+- [ ] Test: Fühlt sich das "Diplomatie-Balancing" fordernd an?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler versteht die Konsequenz einer falschen Stakeholder-Einschätzung.
+- [ ] Das Interface wirkt wie ein professionelles High-Level Strategieboard.
+- [ ] Motivation, den Highscore durch präzise Strategiewahl zu knacken.

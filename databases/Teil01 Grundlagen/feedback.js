@@ -1,4 +1,4 @@
-(function () {
+ (function () {
   'use strict';
 
   const CONFIG_PATHS = ['/firebase.config.local.js', './config.local.js'];

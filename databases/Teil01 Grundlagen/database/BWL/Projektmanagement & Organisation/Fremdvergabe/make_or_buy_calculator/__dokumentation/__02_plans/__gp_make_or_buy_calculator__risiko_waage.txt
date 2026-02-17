@@ -1,0 +1,36 @@
+Anforderungen
+2. "Risiko-Waage"
+   - Ziel: Bewerte das Risiko der Fremdvergabe für verschiedene Güter.
+   - Spielmechanik: 
+     - Gut: "Kernkompetenz / Geheimrezept". -> Risiko: Hoch (Nicht vergeben!).
+     - Gut: "Klopapier / Büromaterial". -> Risiko: Niedrig (Kaufen).
+     - Gut: "Software-Entwicklung". -> Abhängigkeit prüfen.
+     - Messbarkeit: 5 Güter korrekt in "Selber machen" vs "Kaufen" sortiert.
+   - Lernziel: Strategische Bedeutung von Make-or-Buy (Kernkompetenzschutz).
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Abwägung von Chancen und Risiken beim Outsourcing.
+- [ ] Ziel: Waage im Gleichgewicht halten oder bewerten.
+
+2. Screen-Layout
+- [ ] Waage als zentrales Element.
+- [ ] Icons für Argumente.
+
+3. Browser- und Device-Resilienz
+- [ ] CSS-Animation für die Waage (Transform skew).
+- [ ] Responsives Canvas oder SVG.
+
+4. Kernvisuals
+- [ ] Justitia-Waage Optik.
+- [ ] Gewichte mit Labels.
+
+5. Interaktion und Feedback
+- [ ] Argument auf Waagschale legen.
+- [ ] Waage neigt sich dynamisch.
+
+6. KPI-Klarheit
+- [ ] Balance-Status.
+
+7. QA-Paket
+- [ ] Waage-Logik (Mathematischer Schwerpunkt).

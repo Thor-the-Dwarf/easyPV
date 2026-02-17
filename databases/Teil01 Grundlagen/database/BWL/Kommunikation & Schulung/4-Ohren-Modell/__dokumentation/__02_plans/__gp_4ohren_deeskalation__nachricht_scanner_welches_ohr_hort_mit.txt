@@ -1,0 +1,32 @@
+# __gp_nachricht_scanner_welches_ohr_hort_mit
+
+## Spielidee
+Nachricht-Scanner: Welches Ohr hoert mit?
+
+Du siehst kurze Aussagen und ordnest sie einem der 4 Ohren zu:
+- Sache
+- Ich (Selbstoffenbarung)
+- Du (Beziehung)
+- Tu was (Appell)
+
+## Lernziel
+- Kommunikationsebenen schnell erkennen (Training fuer Alltagssituationen).
+
+## Mechanik
+- 10 Aussagen, pro Aussage genau eine richtige Zuordnung.
+- Sofortfeedback (richtig/falsch) und naechste Aussage.
+- Punkte: +10 pro Treffer, keine Wartezeit-Orgie.
+
+## Dateikonvention (Teil01)
+- `data/_gg01_nachricht_scanner_welches_ohr_hort_mit.json`
+- `_ghtml_nachricht_scanner_welches_ohr_hort_mit.html`
+- `_gjs_nachricht_scanner_welches_ohr_hort_mit.js`
+- `_gcss_kommunikation.css` (shared)
+
+## Arbeitspakete
+- [x] Config (10 Statements + correct_ear + kurze Erklaerung) erstellen.
+- [ ] HTML erstellen (KPIs + Statement + 4 Buttons + Feedback + Next).
+- [ ] JS implementieren (load config, scoring, feedback, next, restart).
+- [ ] CSS erweitern (Button-Layout 2x2 + klare Feedbackfarben) ohne bestehende Styles zu brechen.
+- [ ] Lokalen Config-Test in `__03_testing_4-Ohren-Modell/unit` hinzufuegen.
+- [ ] Smoke: `node --check`, `node --test`, Playwright-Screenshot+State.

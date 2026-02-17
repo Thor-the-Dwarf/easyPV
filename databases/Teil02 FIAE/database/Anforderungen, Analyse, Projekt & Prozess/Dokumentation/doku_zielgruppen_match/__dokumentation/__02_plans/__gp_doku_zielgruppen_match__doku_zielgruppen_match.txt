@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Präzise Zuweisung von Informationsfragmenten zu den korrekten Dokumentations-Zielgruppen (Admin/User) zur Vermeidung von Informations-Overload.
+- Game-Mechanic: "The Content Filter". Technischer und fachlicher Content fließt auf einem Förderband. Der Spieler filtert ihn in die richtigen "Wissens-Datenbanken".
+- Challenge: 
+  - Level 1: Klare Sprache (z.B. "Hier klicken" vs. "SQL UPDATE").
+  - Level 2: "Target-Bleeding" - Fragmente, die für beide relevant sein könnten, müssen priorisiert werden.
+  - Level 3: "Support-Crisis" - Falsch zugeordnete Inhalte erhöhen den "User-Confusion" Score. Bei 100% Confusion ist das Game Over.
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "User-Confusion" (Schaden-Anzeige), "Knowledge-Points" (Score), "Target-Doc" (Status).
+- [ ] Scoring: +150 Pkt für "Silent Knowledge" (perfekt gefiltert). Abzug bei "Technical Noise" im User-Manual.
+
+2. Screen-Layout (The Editorial Desk)
+- [ ] `editor-dashboard -> conveyor-belt -> target-bins -> confusion-meter`.
+- [ ] Conveyor: Animierter Fluss von Inhalts-Fragmenten.
+- [ ] Bins: Zwei große, leuchtende Container (Blau: Tech/Admin, Grün: User/FAQ).
+
+3. Kernvisuals und Effekte
+- [ ] Clean-Tech Ästhetik: Minimalistisches Weiß, klare Typografie, Glas-Effekte.
+- [ ] "Confusion-Wave": Der Bildschirm flimmert leicht rot, wenn der User-Confusion Wert steigt.
+- [ ] High-Contrast Badges für "INSTALL", "CONFIG", "USAGE".
+
+4. Browser- und Device-Resilienz
+- [ ] `flex-wrap: nowrap` für das Förderband-Gefühl.
+- [ ] Mobile: Swipe-to-Bin (Links/Rechts) Geste.
+
+5. Content-Strategie (The Fragments)
+- [ ] 25 Snippets: Von API-Endpunkten über Workflow-Beschreibungen bis zu Troubleshooting-Steps.
+
+6. QA-Paket
+- [ ] Test: Erzeugt die Confusion-Bar echtes Stressgefühl beim Spieler?
+- [ ] Test: Sind die Snippets in 3 Sekunden erfassbar?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler entwickelt ein Gespür für die kognitive Last verschiedener Zielgruppen.
+- [ ] Das Interface wirkt wie ein modernes Redaktionssystem (z.B. Notion/Confluence Style).
+- [ ] Hohe Wiederspielbarkeit durch Streben nach "Zero Confusion".

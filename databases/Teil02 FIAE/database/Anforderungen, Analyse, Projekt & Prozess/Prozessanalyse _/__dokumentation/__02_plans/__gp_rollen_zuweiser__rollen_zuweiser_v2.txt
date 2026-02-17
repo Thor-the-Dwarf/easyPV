@@ -1,0 +1,28 @@
+# __gp_rollen_zuweiser__rollen_zuweiser_v2
+
+## Spielidee
+Rollen-Zuweiser: Ordne Aussagen der passenden RACI-Rolle zu.
+
+## Lernziel
+- RACI (Responsible, Accountable, Consulted, Informed) sicher anwenden.
+- Rollenunklarheiten in Projekten reduzieren.
+
+## Mechanik
+- 6 Szenarien zur Rollenverteilung.
+- Pro Runde eine RACI-Rolle auswaehlen.
+- Sofortfeedback nach jeder Antwort.
+
+## Bewertung
+- Richtige Rolle: +20
+- Falsche Rolle: -10
+- Bonus ab 2 richtigen in Serie: +5
+
+## Dateikonvention
+- `data/_gg01_rollen_zuweiser.json`
+- `_ghtml_rollen_zuweiser.html`
+- `_gjs_rollen_zuweiser.js`
+- `_gcss_rollen_zuweiser.css`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

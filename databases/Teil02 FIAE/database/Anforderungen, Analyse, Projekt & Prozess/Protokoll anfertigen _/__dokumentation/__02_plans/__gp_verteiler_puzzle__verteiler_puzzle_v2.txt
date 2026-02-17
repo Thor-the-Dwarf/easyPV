@@ -1,0 +1,28 @@
+# __gp_verteiler_puzzle__verteiler_puzzle_v2
+
+## Spielidee
+Verteiler-Puzzle: Waehle fuer jeden Protokollkontext den passenden Empfaengerkreis.
+
+## Lernziel
+- Informationsmanagement fuer Protokolle verbessern.
+- Zu viel und zu wenig Verteilung vermeiden.
+
+## Mechanik
+- 6 Meeting-Szenarien.
+- Pro Runde eine Verteiler-Option waehlen.
+- Sofortfeedback je Entscheidung.
+
+## Bewertung
+- Richtiger Verteiler: +20
+- Falscher Verteiler: -10
+- Bonus ab 2 Treffern in Serie: +5
+
+## Dateikonvention
+- `data/_gg01abc1_verteiler_puzzle.json`
+- `_ghtml_verteiler_puzzle.html`
+- `_gjs_verteiler_puzzle.js`
+- `_gcss_verteiler_puzzle.css`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

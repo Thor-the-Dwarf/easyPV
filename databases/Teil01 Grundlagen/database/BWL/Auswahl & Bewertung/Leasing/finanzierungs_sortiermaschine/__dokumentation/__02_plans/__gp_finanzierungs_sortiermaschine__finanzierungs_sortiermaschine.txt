@@ -1,0 +1,41 @@
+Anforderungen
+5. "Finanzierungs-Sortiermaschine"
+   - Ziel: Ordne 10 Begriffe korrekt den Kategorien "Leasing" und "Kreditkauf" zu.
+   - Spielmechanik: 
+     - Begriffe fallen herunter: "Eigentumserwerb sofort", "Bilanzneutral", "Liquiditätsschonend", "Abschreibung beim Nutzer".
+     - Spieler muss sie nach links (Leasing) oder rechts (Kauf) swipen.
+     - Messbarkeit: Jeder korrekte Swipe = +10%. Falscher Swipe = -10%. Score am Ende.
+   - Lernziel: Harte Fakten und Unterschiede auswendig lernen / verinnerlichen.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Der Begriff/Karton, der sortiert werden muss.
+- [ ] Kategorien: "Leasing", "Kredit", "Eigenkapital".
+- [ ] Schnelles Tempo erzwingen (Tinder-Style Swipe oder schnelle Klicks).
+
+2. Screen-Layout
+- [ ] 3-Spalten-Layout (Desktop) oder Karten-Stapel (Mobile).
+- [ ] Drop-Zonen deutlich markieren (Farblich codiert: Blau, Gelb, Grün).
+- [ ] Der aktuelle Begriff muss zentral und groß erscheinen (>2rem Font).
+
+3. Browser- und Device-Resilienz
+- [ ] Drag & Drop muss touch-fähig sein (Touch Events!).
+- [ ] Alternative: Klick-Steuerung für Accessibility (Buttons unter dem Begriff).
+- [ ] `user-select: none` um Textmarkierung beim Wischen zu verhindern.
+
+4. Kernvisuals
+- [ ] Karton-Optik für die Begriffe.
+- [ ] Förderband-Animation im Hintergrund (optional, wenn Performance OK).
+- [ ] Physik-Engine (leicht) für das "Reinfallen" in die Trichter.
+
+5. Interaktion und Feedback
+- [ ] Haptisches Feedback (Vibration) bei Mobile (wenn möglich).
+- [ ] Sound-Effekte (Swoosh, Pling, Buzz) - Mute-Button nicht vergessen!
+- [ ] Falsche Zuordnung: Karton wird "ausgespuckt".
+
+6. KPI-Klarheit
+- [ ] Highscore-Counter (Streak: "5 in Folge richtig!").
+
+7. QA-Paket
+- [ ] Test auf iPhone/Android (Drag gestures).
+- [ ] Fallback für Maus-User.

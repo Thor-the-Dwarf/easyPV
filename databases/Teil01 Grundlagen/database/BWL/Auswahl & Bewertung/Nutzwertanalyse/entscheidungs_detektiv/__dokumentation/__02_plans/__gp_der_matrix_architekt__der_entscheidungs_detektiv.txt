@@ -1,0 +1,43 @@
+Anforderungen
+1. "Der Entscheidungs-Detektiv"
+   - Ziel: Wähle in 5 Fällen jeweils die mathematisch beste Option aus.
+   - Spielmechanik: 
+     - Szenario: "Wähle den besten Fluchtwagen." (Attribute: Speed, Panzerung, Preis).
+     - Der Spieler setzt Gewichtungen (z.B. Speed 50%, Preis 30%).
+     - Er muss dann aus 3 Autos dasjenige wählen, das nach SEINER Gewichtung rechnerisch gewinnt.
+     - Messbarkeit: Wählt er das rechnerisch falsche Auto (z.B. Bauchgefühl sagt Porsche, Rechnung sagt Volvo) -> 0 Punkte. Wählt er das mathematisch korrekte -> 100 Punkte. 
+   - Lernziel: Verständnis, dass NWA eine objektive Entscheidungshilfe ist und man dem Rechenweg folgen muss.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Eine unvollständige Entscheidungsmatrix (Lückentext-Logik).
+- [ ] Aufgabe: Finde den fehlenden Wert, damit Ergebnis X gewinnt.
+- [ ] UI-Metapher: "Sherlock Holmes Lupe" über einer Akte.
+
+2. Screen-Layout
+- [ ] Zentral: Die Matrix (als "Beweisstück").
+- [ ] Unten: Inventar mit möglichen Werten (Drag & Drop oder Klick).
+- [ ] Responsives Grid für die Matrix (Scrollbar erst wenn > 4 Spalten).
+
+3. Browser- und Device-Resilienz
+- [ ] Matrix darf auf Mobile nicht "gequetscht" wirken (min-width pro Spalte).
+- [ ] Horizontales Scrollen innerhalb des Matrix-Containers erlauben (aber nicht Body!).
+- [ ] Touch-Targets für die Zellen > 48px.
+
+4. Kernvisuals
+- [ ] Sepia/Papier-Look für die Akte.
+- [ ] "Gelber Textmarker" Highlight für die aktive Zelle.
+- [ ] Animation: Lupe folgt dem Mauszeiger (Desktop) oder fixer Fokus (Mobile).
+
+5. Interaktion und Feedback
+- [ ] Klick auf leere Zelle -> Numpad oder Auswahl öffnet sich.
+- [ ] Live-Berechnung: Wenn Zahl eingetragen, aktualisiert sich die Summe sofort.
+- [ ] "Aha!"-Effekt: Wenn Summe > Konkurrenz, wird die Zeile grün.
+
+6. KPI-Klarheit
+- [ ] Fortschritt: "3 von 5 Fällen gelöst".
+- [ ] Detektiv-Rang (Anfänger -> Meister).
+
+7. QA-Paket
+- [ ] Mobile Landscape Mode testen (besser für Tabellen).
+- [ ] Kontrast bei Sepia-Hintergrund prüfen.

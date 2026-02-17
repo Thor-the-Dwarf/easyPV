@@ -1,0 +1,35 @@
+Anforderungen (aus __gi_workshop.txt)
+2. "Workshop-Agenda-Puzzle"
+   - Ziel: Plane einen sinnvollen Ablauf für einen Anforderungs-Workshop.
+   - Spielmechanik: 
+     - Teile: "Begrüßung", "Themensammlung", "Priorisierung", "Zusammenfassung", "Pause".
+     - Ziehe die Teile in die richtige zeitliche Reihenfolge.
+     - Messbarkeit: Logischer Fluss der Agenda.
+   - Lernziel: Workshop-Strukturierung.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus
+- [ ] Drag & Drop Interface für die Agenda-Teile.
+- [ ] Klare Trennung: "Pool" (verfügbare Teile) vs. "Agenda" (geordnete Liste).
+- [ ] Visuelles Feedback beim Droppen (Einrasten, Highlight).
+
+2. Screen-Layout
+- [ ] Split-Screen (Desktop): Links Pool, Rechts Agenda.
+- [ ] Stacked (Mobile): Oben Pool, Unten Agenda.
+- [ ] Sticky "Check/Fertig" Button.
+
+3. Visuals & Theme
+- [ ] Karten-Design für die Agenda-Items (wie Kanban-Karten).
+- [ ] Nummerierung in der Ziel-Liste (1., 2., 3., ...).
+- [ ] Glassmorphismus für die Container.
+
+4. Interaktion
+- [ ] Drag & Drop API (native oder Touch-Support via Mouse-Events für Kompatibilität).
+- [ ] Validierung: Prüfen der Reihenfolge gegen die Musterlösung.
+- [ ] Feedback:
+  - Richtig: Grüne Checkmarks.
+  - Falsch: Rote Markierung der falschen Positionen + Tipp.
+
+5. Datenstruktur
+- [ ] JSON enthält die korrekte Reihenfolge und die Items mit IDs.
+- [ ] Items haben Titel, Beschreibung und Dauer (optional für Realismus).

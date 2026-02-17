@@ -1,0 +1,28 @@
+# __gp_wg_zimmer_challenge__wg_zimmer_challenge_v2
+
+## Spielidee
+WG-Zimmer-Challenge: Finde aus 10 Angeboten das eine Zimmer, das den Ziel-Nutzwert von mehr als 450 Punkten erreicht.
+
+## Lernziel
+- Gewichtete Bewertung (Preis 60%, Groesse 40%) praktisch anwenden.
+- Objektive Auswahl statt Bauchgefuehl trainieren.
+
+## Mechanik
+- 10 Zimmerangebote mit Preis- und Groesse-Bewertung.
+- Genau ein Angebot liegt ueber dem Schwellenwert.
+- Zwei Versuche: 1. Treffer = 100 Punkte, 2. Treffer = 50 Punkte, sonst 0.
+
+## Bewertung
+- Erster Versuch korrekt: 100
+- Zweiter Versuch korrekt: 50
+- Nach zwei Fehlversuchen: 0
+
+## Dateikonvention
+- `data/_gg01_wg_zimmer_challenge.json`
+- `_ghtml_wg_zimmer_challenge.html`
+- `_gjs_wg_zimmer_challenge.js`
+- `_gcss_nutzwertanalyse.css` (bestehende gemeinsame Stylesheet-Datei)
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

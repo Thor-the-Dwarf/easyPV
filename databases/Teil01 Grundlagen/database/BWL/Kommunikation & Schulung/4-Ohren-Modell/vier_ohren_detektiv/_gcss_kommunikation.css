@@ -1,0 +1,350 @@
+:root {
+  --bg-a: #0c1630;
+  --bg-b: #0a1122;
+  --surface: rgba(8, 20, 44, 0.82);
+  --line: rgba(120, 150, 186, 0.45);
+  --ink: #eaf1ff;
+  --muted: #a8b8d1;
+  --good: #22c55e;
+  --bad: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.deesk-page {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 380px at 78% -10%, rgba(56, 189, 248, 0.16), transparent),
+    linear-gradient(180deg, var(--bg-a), var(--bg-b));
+}
+
+.deesk-app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.deesk-head,
+.deesk-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.deesk-head {
+  padding: 12px;
+}
+
+.deesk-head h1 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3.8vw, 2rem);
+}
+
+.deesk-head p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.deesk-kpis {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(90px, 1fr));
+  gap: 8px;
+}
+
+.kpi {
+  border: 1px solid rgba(120, 150, 186, 0.5);
+  border-radius: 10px;
+  background: rgba(1, 8, 26, 0.62);
+  padding: 8px;
+  display: grid;
+  gap: 2px;
+}
+
+.kpi span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.kpi strong {
+  font-size: 1.05rem;
+}
+
+.deesk-card {
+  margin-top: 10px;
+  padding: 12px;
+}
+
+.bubble {
+  border-radius: 12px;
+  border: 1px solid rgba(120, 150, 186, 0.45);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.bubble-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.bubble-text {
+  margin-top: 4px;
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+
+.options {
+  display: grid;
+  gap: 8px;
+}
+
+.option-btn {
+  width: 100%;
+  min-height: 50px;
+  border-radius: 10px;
+  border: 1px solid #9cb3d2;
+  background: #f8fbff;
+  color: #0f172a;
+  text-align: left;
+  padding: 10px;
+  font-size: 0.97rem;
+  font-weight: 700;
+}
+
+.option-btn:disabled {
+  opacity: 0.7;
+}
+
+.feedback {
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #4b5f7b;
+  padding: 10px;
+  background: rgba(1, 9, 28, 0.66);
+}
+
+.feedback.ok {
+  border-color: rgba(34, 197, 94, 0.78);
+  color: #bbf7d0;
+}
+
+.feedback.bad {
+  border-color: rgba(239, 68, 68, 0.8);
+  color: #fecaca;
+}
+
+.next-btn,
+.restart-btn {
+  margin-top: 10px;
+  width: 100%;
+  min-height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.next-btn {
+  color: #063b35;
+  background: linear-gradient(135deg, #5eead4, #22d3ee);
+}
+
+.restart-btn {
+  color: #052e16;
+  background: linear-gradient(135deg, #86efac, #22c55e);
+}
+
+.scanner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.scanner-btn {
+  width: 100%;
+  min-height: 62px;
+  border-radius: 10px;
+  border: 1px solid #9cb3d2;
+  background: #f8fbff;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.scanner-btn:disabled {
+  opacity: 0.72;
+  cursor: default;
+}
+
+.scanner-btn.correct {
+  border-color: rgba(34, 197, 94, 0.82);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.18) inset;
+}
+
+.scanner-btn.wrong {
+  border-color: rgba(239, 68, 68, 0.85);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.18) inset;
+}
+
+/* Flying Area & Messages */
+.flying-area {
+  position: relative;
+  width: 100%;
+  height: 60dvh;
+  min-height: 400px;
+  overflow: hidden;
+  background: rgba(1, 8, 26, 0.4);
+  border-radius: 0 0 14px 14px;
+}
+
+.flying-message {
+  position: absolute;
+  background: white;
+  color: #0f172a;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s, opacity 0.2s;
+  top: var(--top);
+  left: -200px;
+}
+
+.flying-message:active {
+  transform: scale(0.95);
+}
+
+.flying-message.correct {
+  background: var(--good);
+  color: white;
+  pointer-events: none;
+}
+
+.flying-message.wrong {
+  background: var(--bad);
+  color: white;
+  pointer-events: none;
+}
+
+@keyframes fly-across {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(100vw + 400px));
+  }
+}
+
+.target-ear-display {
+  text-align: center;
+  padding: 15px;
+  border-bottom: 2px solid var(--line);
+  background: rgba(120, 150, 186, 0.1);
+}
+
+.target-ear-display h2 {
+  margin: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.target-ear-display .current-target {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-top: 5px;
+  display: block;
+}
+
+.target-ear-display .current-target.sache {
+  color: #38bdf8;
+}
+
+.target-ear-display .current-target.selbstoffenbarung {
+  color: #fbbf24;
+}
+
+.target-ear-display .current-target.beziehung {
+  color: #f472b6;
+}
+
+.target-ear-display .current-target.appell {
+  color: #a78bfa;
+}
+
+@keyframes particle-fade {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(var(--x), var(--y)) scale(3);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particle-fade 0.5s ease-out forwards;
+}
+
+
+
+.hidden {
+  display: none !important;
+}
+
+.flying-message {
+  position: absolute;
+  background: white;
+  color: #0c1630;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.9rem;
+  border: 2px solid var(--theme-color);
+}
+
+#click-feedback.ok {
+  color: var(--good);
+}
+
+#click-feedback.bad {
+  color: var(--bad);
+}
+
+/* __THEME_RGB_START__ */
+:root {
+  --theme-label: "BWL";
+  --theme-rgb: 255, 0, 0;
+  --theme-color: rgb(var(--theme-rgb));
+  --theme-color-soft: rgba(var(--theme-rgb), 0.18);
+  --theme-color-strong: rgba(var(--theme-rgb), 0.85);
+  --accent: rgb(var(--theme-rgb));
+  --accent2: rgba(var(--theme-rgb), 0.75);
+  --accent-blue: rgb(var(--theme-rgb));
+  --accent-green: rgb(var(--theme-rgb));
+  --gold-accent: rgb(var(--theme-rgb));
+}
+
+/* __THEME_RGB_END__ */

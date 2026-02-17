@@ -1,0 +1,35 @@
+Anforderungen
+5. "Die verlängerte Werkbank"
+   - Ziel: Steuere die Qualität des externen Fertigers.
+   - Spielmechanik: 
+     - Produkte kommen vom Band (Extern). Manche sind defekt.
+     - Spieler ist Qualitätskontrolleur (Wareneingangsprüfung).
+     - Muss defekte Teile zurückschicken (Reklamation). Wenn er sie durchlässt -> Kunde unzufrieden.
+     - Messbarkeit: Gefundene Fehlerquote.
+   - Lernziel: Qualitätssicherung bei Fremdbezug.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Definition und Merkmale der verlängerten Werkbank.
+- [ ] Ziel: Identifiziere das richtige Szenario.
+
+2. Screen-Layout
+- [ ] Story-Karten zum Durchblättern (Swipe).
+
+3. Browser- und Device-Resilienz
+- [ ] Touch-Gesten Support.
+- [ ] Große, klare Buttons für Desktop.
+
+4. Kernvisuals
+- [ ] Fließband-Grafik.
+- [ ] Global-Trade Icons.
+
+5. Interaktion und Feedback
+- [ ] Swipe Links (Nein) / Rechts (Ja).
+- [ ] Auflösung: "Richtig, hier wird nur gelohnfertig."
+
+6. KPI-Klarheit
+- [ ] Korrekte Szenarien.
+
+7. QA-Paket
+- [ ] Swipe-Schwellenwert Konfiguration.

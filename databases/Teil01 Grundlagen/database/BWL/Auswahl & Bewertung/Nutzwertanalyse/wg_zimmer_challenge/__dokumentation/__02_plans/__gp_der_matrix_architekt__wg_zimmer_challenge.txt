@@ -1,0 +1,40 @@
+Anforderungen
+2. "WG-Zimmer-Challenge"
+   - Ziel: Finde unter 10 Angeboten die eine Wohnung, die mehr als 450 Nutzwertpunkte erreicht.
+   - Spielmechanik: 
+     - Liste von Wohnungen mit Werten (Miete 500€, 20qm...).
+     - Vorgegebene Gewichtung (Preis 60%, Größe 40%).
+     - Der Spieler muss im Kopf oder mit Taschenrechner überschlagen und auf die *EINE* richtige Wohnung klicken.
+     - Messbarkeit: Richtiger Klick = 100%. Falscher Klick = 0% (oder 2. Versuch = 50%).
+   - Lernziel: Anwendung der Berechnung "Wert * Gewicht".
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Persönliche Präferenzen (Subjektive Gewichtung).
+- [ ] Szenario: "Finde das beste WG-Zimmer für Student Tom."
+- [ ] Kriterien: Miete, Lage, Mitbewohner-Coolness.
+
+2. Screen-Layout
+- [ ] Karten-Stapel (Zimmer-Profile) mit Foto und Daten.
+- [ ] Bewertungs-Panel darunter (Sterne oder Slider 1-10).
+
+3. Browser- und Device-Resilienz
+- [ ] Bild-Galerie swipebar.
+- [ ] Wichtige Infos (Preis) immer sichtbar ("above the fold").
+
+4. Kernvisuals
+- [ ] Hipster/Studenten-Look (Handschrift-Font für Headlines).
+- [ ] Emojis für Kriterien (💰, 📍, 🍺).
+
+5. Interaktion und Feedback
+- [ ] User bewertet Zimmer A (Punkte vergeben). Dann Zimmer B.
+- [ ] Am Ende: "Die NWA sagt: Nimm Zimmer B!" -> User-Entscheidung vs Mathe.
+- [ ] Aha-Moment: "Mein Bauchgefühl war anders als die NWA".
+
+6. KPI-Klarheit
+- [ ] Match-Score in %.
+- [ ] Budget-Warnung wenn Miete zu hoch (K.O. Kriterium integrieren).
+
+7. QA-Paket
+- [ ] Bilder laden schnell (WebP).
+- [ ] Lange Texte bei Zimmerbeschreibungen (Expandable).

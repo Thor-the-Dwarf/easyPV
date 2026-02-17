@@ -1,0 +1,33 @@
+# __gp_startup_cashflow_survival__startup_cashflow_survival_v2
+
+## Spielidee
+Startup-Cashflow-Survival als Entscheidungs- und Simulationsspiel.
+
+## Lernziel
+- Leasing als Liquiditaetsinstrument verstehen.
+- Sofortkauf vs. laufende Rate im Zeitverlauf vergleichen.
+
+## Kernregeln
+1. Startkapital: 20.000 EUR
+2. Monatliche Einnahmen: +5.000 EUR
+3. Transporter-Entscheidung:
+- Kaufen: -30.000 EUR sofort
+- Leasen: -500 EUR pro Monat
+4. Laufzeit: 12 Monate
+5. Verlustbedingung: Kontostand < 0 EUR
+6. Gewinnbedingung: Nach Monat 12 Kontostand >= 0 EUR
+
+## UX-Anforderungen
+- Ziel direkt sichtbar im Header.
+- Kontostand, Monat und Modus immer sichtbar.
+- Ein-Klick-Flow: Kauf oder Leasing waehlen, dann Monate simulieren.
+- Kein unnötiger Leerlauf (keine langen Wartezeiten zwischen Aktionen).
+
+## Dateikonvention
+- HTML: `_ghtml_startup_cashflow_survival.html`
+- JS: `_gjs_startup_cashflow_survival.js`
+- Config: `data/_gg01_startup_cashflow_survival.json`
+
+## Test-Hooks
+- `window.render_game_to_text()` liefert aktuellen Lernstand (Monat, Cash, Entscheidung, Status).
+- `window.advanceTime(ms)` triggert deterministischen Simulationsschritt.

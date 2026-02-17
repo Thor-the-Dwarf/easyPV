@@ -1,0 +1,23 @@
+Anforderungen
+4. "Vier-Ohren-Detektiv"
+   - Ziel: Analysiere in 60 Sekunden so viele Nachrichten wie möglich.
+   - Spielmechanik: 
+     - Nachrichten fliegen rein.
+     - Ein "Ohr" wird zufällig highlighted (z.B. "Finde Selbstoffenbarungen!").
+     - Spieler darf nur Nachrichten anklicken, die primär Selbstoffenbarung sind (z.B. "Ich habe Hunger" vs "Der Döner kostet 5€").
+     - Messbarkeit: Richtige Klicks +Zeitbonus.
+   - Lernziel: Training der Wahrnehmungsgeschwindigkeit für Kommunikationstypen.
+
+Implementierungsplan
+- [ ] JSON Konfiguration erstellen ('game_4ohren_detektiv.json')
+  - `messages`: Array von Objekten { "text": "...", "type": "selbstoffenbarung" }.
+  - `targetType`: "selbstoffenbarung" (Das gesuchte Ohr für diese Runde).
+- [ ] Shared CSS Check ('_gcss_kommunikation.css')
+  - Styles für fliegende Nachrichten (`.flying-message`).
+  - Ohr-Icons oder Farbcodierung (Blau=Sache, Gelb=Selbst, etc.).
+- [ ] Game-Engine Logic ('game_4ohren_detektiv.js')
+  - Spawning-Mechanik: Nachrichten bewegen sich über den Screen.
+  - Klick-Handler: Prüfen ob `msg.type === currentTarget`.
+  - Zeit-Management (60s Timer).
+- [ ] Integration
+  - Startbar über JSON.

@@ -1,0 +1,32 @@
+# __gp_drei_phasen_modell__lewin_drei_phasen_v2
+
+## Spielidee
+Drei-Phasen-Modell (Lewin): Ordne Change-Massnahmen korrekt den Phasen Unfreezing, Changing, Refreezing zu.
+
+## Lernziel
+- Die drei Lewin-Phasen sicher unterscheiden.
+- Verstehen, welche Aktivitaeten in welcher Phase sinnvoll sind.
+
+## Mechanik
+- 6 Karten mit typischen Massnahmen.
+- Pro Karte genau eine richtige Phase.
+- Auswahl per Klick auf die passende Phase.
+
+## Bewertung
+- Richtige Zuordnung: +20
+- Falsche Zuordnung: -10
+- Bonus bei 6/6 korrekt: +20
+
+## UX
+- Aktuelle Karte, Fortschritt und Score sichtbar.
+- Direktes Lernfeedback je Zuordnung.
+- Einfache Interaktion fuer Desktop und Mobile.
+
+## Dateikonvention
+- `data/_gg01_drei_phasen_modell.json`
+- `_ghtml_drei_phasen_modell.html`
+- `_gjs_drei_phasen_modell.js`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

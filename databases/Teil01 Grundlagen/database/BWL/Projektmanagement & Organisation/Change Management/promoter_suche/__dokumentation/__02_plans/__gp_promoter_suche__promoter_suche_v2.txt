@@ -1,0 +1,35 @@
+# __gp_promoter_suche__promoter_suche_v2
+
+## Spielidee
+Promoter-Suche: In jeder Runde den Machtpromoter und den Fachpromoter im Organigramm identifizieren.
+
+## Lernziel
+- Unterschied zwischen Machtpromoter (Budget/Entscheidung) und Fachpromoter (Know-how/Umsetzung) verstehen.
+- Schluesselrollen fuer Change-Projekte sicher erkennen.
+
+## Mechanik
+- 4 Runden mit je 5 Profilen.
+- Rollen muessen exakt zugeordnet werden:
+  - `Machtpromoter`
+  - `Fachpromoter`
+- Zuweisung per Drag-and-Drop oder Klick-Auswahl.
+
+## Bewertung
+- Korrekte Rolle: +20
+- Falsche Rolle: -10
+- Perfekte Runde (2/2): +10 Bonus
+
+## UX
+- Zieltext dauerhaft sichtbar.
+- Runde, Score und Trefferquote immer sichtbar.
+- Klarer Feedback-Block pro Runde.
+- Mobile nutzbar ohne Pflicht-Drag (Klick-Fallback).
+
+## Dateikonvention
+- `data/_gg01_promoter_suche.json`
+- `_ghtml_promoter_suche.html`
+- `_gjs_promoter_suche.js`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

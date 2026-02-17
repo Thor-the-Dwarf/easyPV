@@ -1,0 +1,66 @@
+# Implementation Plan - Fremdvergabe: Risiko-Waage
+
+## Metadaten
+- **Spiel-Titel:** Risiko-Waage
+- **Thema:** Bewertung des Risikos bei Fremdvergabe (Make or Buy)
+- **Ziel:** Güter korrekt nach ihrem Risiko (Selber machen vs. Kaufen) sortieren.
+- **Prinzip:** Drag & Drop Sortierspiel (Waage/Zwei Schalen).
+
+## Spielmechanik (UX-Global-Optimized)
+- **Layout:**
+  - Zwei Hauptbereiche (Schalen/Zonen):
+    1.  **"Selber machen" (Hohes Risiko / Kernkompetenz)**
+    2.  **"Kaufen" (Niedriges Risiko / Standardgut)**
+  - Ein **"Güter-Pool"** mit ziehbaren Objekten (Karten/Icons).
+- **Interaktion:**
+  - Spieler zieht ein Gut aus dem Pool.
+  - Droppt es in eine der beiden Zonen.
+  - **Sofort-Feedback (optional) oder Prüfen-Button:** Wir nutzen einen "Prüfen"-Button für den Lerneffekt am Ende, oder sofortiges Feedback ("Richtig/Falsch") beim Droppen ist actionreicher. -> *Entscheidung: Prüfen-Button für bewusste Entscheidung.*
+- **Visuelles Feedback:**
+  - Zonen leuchten auf (Hover).
+  - Nach "Prüfen":
+    - Richtig sortierte Güter: Grün umrandet.
+    - Falsch sortierte Güter: Rot umrandet + Korrektur-Hinweis ("Das ist eine Kernkompetenz!").
+
+## Technische Architektur
+- **Dateinamen:**
+  - `_ghtml_fremdvergabe_risiko_waage.html`
+  - `_gjs_fremdvergabe_risiko_waage.js`
+  - `_gcss_fremdvergabe_risiko_waage.css`
+  - `_g01_fremdvergabe_risiko_waage.json`
+
+### JSON Struktur (`_g01_...json`)
+```json
+{
+  "gameTitle": "Risiko-Waage",
+  "instruction": "Sortiere die Güter: Hohes Risiko (Selber machen) oder Niedriges Risiko (Kaufen)?",
+  "categories": [
+    { "id": "make", "label": "Selber machen (Kernkompetenz)", "color": "var(--primary)" },
+    { "id": "buy", "label": "Kaufen (Standardgut)", "color": "var(--success)" }
+  ],
+  "items": [
+    { "id": "item1", "text": "Geheimrezept der Sauce", "category": "make", "explanation": "Das Kernprodukt darf nicht in fremde Hände!" },
+    { "id": "item2", "text": "Büromaterial", "category": "buy", "explanation": "Standardware, geringes Risiko." },
+    ...
+  ]
+}
+```
+
+### HTML Struktur
+- Header mit Stats (Score).
+- Game-Area:
+  - Linke Spalte: Zone "Make"
+  - Rechte Spalte: Zone "Buy"
+  - Unten/Mitte: Item Pool
+- Footer: Prüfen / Reset Buttons.
+
+### CSS (Theme-Compliant)
+- Nutzung von `shared_theme.css` Variablen.
+- Glassmorphism für die Zones.
+- Responsive: Auf Mobile untereinander (Pool oben, Zonen darunter oder umgekehrt).
+
+## Schritte
+1.  JSON erstellen.
+2.  CSS erstellen (Zonen-Layout).
+3.  HTML Grundgerüst.
+4.  JS Logik (Drag&Drop API, Validation).

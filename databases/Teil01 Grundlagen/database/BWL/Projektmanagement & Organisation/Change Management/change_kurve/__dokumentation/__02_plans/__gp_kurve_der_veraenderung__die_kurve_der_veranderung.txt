@@ -1,0 +1,35 @@
+Anforderungen
+1. "Die Kurve der Veränderung"
+   - Ziel: Ordne 7 Aussagen den Phasen der Change-Kurve zu (Schock, Verneinung, Einsicht, etc.).
+   - Spielmechanik: 
+     - Mitarbeiter sagt: "Das haben wir schon immer so gemacht, das brauchen wir nicht!" -> Phase: Verneinung/Widerstand.
+     - Mitarbeiter sagt: "Vielleicht klappt es ja doch ganz gut." -> Phase: Ausprobieren.
+     - Messbarkeit: Korrekte Zuordnung auf der Zeitachse.
+   - Lernziel: Emotionale Phasen bei Veränderungen verstehen (House of Change).
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Phasen der Veränderung (Schock, Verneinung, Einsicht, etc.).
+- [ ] Ziel: Ordne Zitate den Phasen zu.
+
+2. Screen-Layout
+- [ ] Grafik der Kurve (Elan-Verlauf).
+- [ ] Labels an der Kurve.
+
+3. Browser- und Device-Resilienz
+- [ ] Kurve passt sich Bildschirmbreite an.
+- [ ] Mobile: Vertikaler Verlauf der Kurve als Option.
+
+4. Kernvisuals
+- [ ] Wellen-Grafik (Path).
+- [ ] Smiley-Icons für die emotionale Lage.
+
+5. Interaktion und Feedback
+- [ ] Zitat auf Kurvenpunkt ziehen.
+- [ ] Kurze Beschreibung der Phase erscheint.
+
+6. KPI-Klarheit
+- [ ] Phasen-Kontrolle.
+
+7. QA-Paket
+- [ ] SVG-Path Skalierungstests.

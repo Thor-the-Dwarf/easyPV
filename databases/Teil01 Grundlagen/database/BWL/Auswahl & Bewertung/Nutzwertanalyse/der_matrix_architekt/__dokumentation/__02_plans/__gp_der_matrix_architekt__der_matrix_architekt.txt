@@ -1,0 +1,43 @@
+Anforderungen
+3. "Der Matrix-Architekt"
+   - Ziel: Baue die NWA-Tabelle fehlerfrei zusammen.
+   - Spielmechanik: 
+     - Drag & Drop Puzzle.
+     - Bausteine: "Kriterium", "Gewichtung", "Note", "Teilnutzwert", "Summe".
+     - Der Spieler muss die Spaltenköpfe und die Rechenoperationen (z.B. "Gewichtung * Note = ?") an die richtige Stelle ziehen.
+     - Messbarkeit: Jedes korrekt platzierte Element gibt Punkte. Am Ende %-Score der korrekten Struktur.
+   - Lernziel: Verinnerlichung des Tabellenaufbaus.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Strukturaufbau (Kriterien vs Alternativen).
+- [ ] Ziel: Baue eine leere Matrix korrekt auf.
+- [ ] Elemente: "Gewichtung", "K.O.-Kriterium", "Punkte", "Summe".
+
+2. Screen-Layout
+- [ ] Blueprint / Bauplan Optik (Blaupause).
+- [ ] Sidebar: Bauteile-Bibliothek.
+- [ ] Main Area: Das Raster (Grid).
+
+3. Browser- und Device-Resilienz
+- [ ] Grid-System (CSS Grid) nutzen.
+- [ ] Drag & Drop muss auf Touch funktionieren (Polyfill oder Native).
+- [ ] "Snap-to-Grid" Feeling.
+
+4. Kernvisuals
+- [ ] Technische Schriftart (Monospace Headers).
+- [ ] Linien zeichnen sich animiert (SVG stroke-dasharray).
+- [ ] Falsches Bauteil -> Rotes Aufblitzen + "Rüttel"-Animation.
+
+5. Interaktion und Feedback
+- [ ] User zieht "Gewichtung" in die erste Spalte -> "Korrekt!".
+- [ ] User zieht "Gewichtung" ganz nach unten -> "Fehler! Gewichtung gehört nach oben/vorn."
+- [ ] Fertig-Button pulsiert, wenn Struktur valide ist.
+
+6. KPI-Klarheit
+- [ ] Bau-Fortschritt in %.
+- [ ] Architekten-Feedback: "Stabil!" vs "Einsturzgefährdet".
+
+7. QA-Paket
+- [ ] Drag & Drop Grenzen testen.
+- [ ] Zoom-Verhalten auf kleinen Screens.

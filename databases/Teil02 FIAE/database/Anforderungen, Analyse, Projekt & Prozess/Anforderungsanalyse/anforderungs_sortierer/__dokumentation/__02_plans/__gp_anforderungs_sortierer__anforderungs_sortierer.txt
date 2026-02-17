@@ -1,0 +1,41 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Spieler beherrschen die Unterscheidung zwischen Funktionalen Anforderungen (WAS) und Nicht-Funktionalen Anforderungen (WIE) unter Zeitdruck und hoher Präzision.
+- Game-Mechanic: "The Part Collector". Ein endloser Strom von Anforderungen muss in die korrekten Fabrik-Container (FKT / NFA) sortiert werden.
+- Challenge: 
+  - Level 1 (Lehrling): Langsame Geschwindigkeit, einfache Texte.
+  - Level 2 (Profi): Zeitlimit pro Karte (5 Sek), komplexere ISO-25010 Kategorien (Portabilität, Wartbarkeit).
+  - Level 3 (Master): "Multi-Sort" - Anforderungen können mehrere Tags haben oder "Smells" enthalten (Aussortieren).
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: Live-Score (Top Right), Timer-Ring (Center), Streak-Meter (Bottom Left).
+- [ ] Scoring: +100 Pkt pro korrektem Treffer. X2 Multiplier ab 5er Streak. -50 Pkt bei Fehler.
+- [ ] Progress: Level-Bar (Experience Points) füllt sich bei Erfolg.
+
+2. Screen-Layout (Maximale Spielbarkeit)
+- [ ] `game-viewport -> hud-layer -> card-pit -> action-zones`.
+- [ ] Card-Pit: 3D-Kartenstapel in der Mitte. Swipe-Geste (Links: NFA / Rechts: FKT).
+- [ ] Action-Zones: Große, leuchtende Zonen am Bildschirmrand für schnelles "Throwing".
+
+3. Kernvisuals und Effekte
+- [ ] Industrie-Cyberpunk Ästhetik: Rostiger Stahl trifft auf neonfarbene holografische Displays.
+- [ ] Particle-Effekte: Funkenregen bei Fehlern, Gold-Glow bei Level-Up.
+- [ ] Dynamisches Licht: Hintergrundfarbe ändert sich leicht je nach "Project Health" (Score-Status).
+
+4. Browser- und Device-Resilienz
+- [ ] `touch-action: none` für perfekte Swipe-Kontrolle auf Mobile.
+- [ ] `will-change: transform` für 60 FPS Kartenanimationen.
+- [ ] Full-Screen Mode API Support.
+
+5. Content-Strategie (Challenge-Szenarien)
+- [ ] Rund 30 verschiedene Anforderungen (z.B. "Webshop muss in 500ms laden" -> NFA, "User kann Passwort zurücksetzen" -> FKT).
+- [ ] ISO-25010 Fokus im High-Level Bereich.
+
+6. QA-Paket
+- [ ] Test: Ist das Spielgefühl bei Level 3 stressig genug, um "Lern-Flow" zu erzeugen?
+- [ ] Test: Sind die Klick-Latenzen < 10ms?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler hat eine "Best-Score" Motivation (Wiederholbarkeit).
+- [ ] Die Unterscheidung FKT/NFA erfolgt instinktiv.
+- [ ] Das Interface wirkt wie ein vollwertiges Indie-Game.

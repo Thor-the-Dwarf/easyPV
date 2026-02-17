@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lade Spiel...</title>
+  <script>
+    // Redirect to the Game Engine
+    // This file acts as a trampoline to launch the standardized SortingGame engine
+    // with the specific content configuration.
+
+    // Relative path to engine from here: 8 levels up -> game_pages -> SortingGame
+    const enginePath = "../../../../../../../game_pages/SortingGame/index.html";
+
+    // Relative path to config from engine (2 levels up to root -> databases -> ...)
+    // Note: Spaces and special chars must be encoded for URL
+    const configPath = "data/_gg01_finanzierungs_sortiermaschine.json";
+
+    window.location.replace(`${enginePath}?config=${configPath}`);
+  </script>
+</head>
+
+<body>
+  <p>Lade Finanzierungs-Sortiermaschine...</p>
+</body>
+
+</html>

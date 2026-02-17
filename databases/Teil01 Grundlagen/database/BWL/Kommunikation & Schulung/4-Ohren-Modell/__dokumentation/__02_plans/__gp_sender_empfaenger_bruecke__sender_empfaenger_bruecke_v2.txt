@@ -1,0 +1,33 @@
+# __gp_sender_empfaenger_bruecke__sender_empfaenger_bruecke_v2
+
+## Spielidee
+Sender-Empfaenger-Bruecke trainiert, Appell-Botschaften klar und situationsgerecht zu formulieren.
+
+## Lernziel
+- Erkennen, welche Formulierung als klarer Appell wirkt.
+- Unterschied zwischen Sache/Selbstoffenbarung/Beziehung/Appell praktisch ueben.
+
+## Ablauf
+- 5 Situationen
+- Je Situation 3 Textbausteine
+- Genau 1 Option ist der passende Appell
+
+## Bewertung
+- Richtige Wahl: +20 Punkte
+- Falsche Wahl: 0 Punkte
+- Abschluss: 100% bei 5/5 korrekt
+
+## UX
+- Zieltext sichtbar im Header
+- Fortschritt und Score permanent sichtbar
+- Direktes Feedback nach jeder Wahl
+- Kein unnoetiger Leerlauf
+
+## Dateikonvention
+- `_ghtml_sender_empfaenger_bruecke.html`
+- `_gjs_sender_empfaenger_bruecke.js`
+- `data/_gg01_sender_empfaenger_bruecke.json`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

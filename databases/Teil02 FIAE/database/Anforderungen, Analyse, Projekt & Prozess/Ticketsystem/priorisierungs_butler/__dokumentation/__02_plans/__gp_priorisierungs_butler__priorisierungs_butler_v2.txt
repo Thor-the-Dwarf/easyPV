@@ -1,0 +1,27 @@
+# __gp_priorisierungs_butler__priorisierungs_butler_v2
+
+## Spielidee
+Priorisierungs-Butler: Ordne Tickets nach Prioritaet P1-P4 ein.
+
+## Lernziel
+- Kritikalitaet und SLA-Auswirkungen realistisch einschaetzen.
+- Support-Queue sinnvoll nach Dringlichkeit sortieren.
+
+## Mechanik
+- 6 Ticketszenarien.
+- Pro Ticket eine Prioritaet waehlen (P1/P2/P3/P4).
+- Sofortfeedback je Entscheidung.
+
+## Bewertung
+- Richtige Prioritaet: +20
+- Falsche Prioritaet: -10
+- Serienbonus ab 3 richtigen: +10
+
+## Dateikonvention
+- `data/_gg01_priorisierungs_butler.json`
+- `_ghtml_priorisierungs_butler.html`
+- `_gjs_priorisierungs_butler.js`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

@@ -1,0 +1,28 @@
+# __gp_aktivitaeten_sortierer__aktivitaeten_sortierer_v2
+
+## Spielidee
+Aktivitaeten-Sortierer: Ordne Aktivitaeten als wertschoepfend, Nacharbeit oder Verschwendung ein.
+
+## Lernziel
+- Wertstrom-Denken trainieren.
+- Prozessineffizienzen schnell erkennen.
+
+## Mechanik
+- 6 Aktivitaetskarten.
+- Pro Karte genau eine Kategorie waehlen.
+- Sofortfeedback je Entscheidung.
+
+## Bewertung
+- Richtige Zuordnung: +20
+- Falsche Zuordnung: -10
+- Bonus ab 3 Treffern in Serie: +10
+
+## Dateikonvention
+- `data/_gg01_aktivitaeten_sortierer.json`
+- `_ghtml_aktivitaeten_sortierer.html`
+- `_gjs_aktivitaeten_sortierer.js`
+- `_gcss_aktivitaeten_sortierer.css`
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

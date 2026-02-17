@@ -1,0 +1,35 @@
+Anforderungen
+1. "Make or Buy Calculator"
+   - Ziel: Entscheide in 5 Fällen rein rechnerisch korrekt: Eigenfertigung oder Fremdbezug?
+   - Spielmechanik: 
+     - Daten: Fixkosten Eigen (1000€), Variable (5€). Fremdpreis (10€). Menge (300 Stück).
+     - Rechne: Eigen = 1000 + 1500 = 2500€. Fremd = 3000€. -> Entscheidung: Make.
+     - Messbarkeit: Korrekte Entscheidung basierend auf Kostenvergleich.
+   - Lernziel: Break-Even-Analyse / Kostengleichung anwenden.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Kostenvergleich Eigenfertigung vs. Fremdbezug.
+- [ ] Ziel: Berechne den Break-Even Point.
+
+2. Screen-Layout
+- [ ] Dashboard mit zwei Kosten-Balken.
+- [ ] Slider für Stückzahlen.
+
+3. Browser- und Device-Resilienz
+- [ ] Slider-optimierte UI.
+- [ ] Realtime-Berechnung.
+
+4. Kernvisuals
+- [ ] Fabrikhalle vs. LKW-Lieferung Icons.
+- [ ] Kreuzungspunkt-Grafik.
+
+5. Interaktion und Feedback
+- [ ] Slider schieben -> Balken wachsen/schrumpfen.
+- [ ] Empfehlung: "Ab 1000 Stück lieber 'Make'."
+
+6. KPI-Klarheit
+- [ ] Kosten-Differenz.
+
+7. QA-Paket
+- [ ] Slider-Grenzen Validierung.

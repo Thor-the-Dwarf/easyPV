@@ -1,0 +1,28 @@
+# __gp_entscheidungs_detektiv__entscheidungs_detektiv_v2
+
+## Spielidee
+Der Entscheidungs-Detektiv: Waehle in jedem Fall die Option mit dem hoechsten rechnerischen Nutzwert.
+
+## Lernziel
+- Nutzwertanalyse als objektive Entscheidungsmethode verstehen.
+- Gewichtung und Punkte korrekt zu einer Gesamtentscheidung zusammenfuehren.
+
+## Mechanik
+- 5 Faelle mit je 3 Alternativen.
+- Pro Fall sind Kriterien und Gewichtungen vorgegeben.
+- Eine Alternative auswaehlen, danach Vergleich der berechneten Nutzwerte sehen.
+
+## Bewertung
+- Richtige Auswahl: +20
+- Falsche Auswahl: -10
+- Bonus ab 2 Treffern in Serie: +5
+
+## Dateikonvention
+- `data/_gg01_entscheidungs_detektiv.json`
+- `_ghtml_entscheidungs_detektiv.html`
+- `_gjs_entscheidungs_detektiv.js`
+- `_gcss_nutzwertanalyse.css` (bestehende gemeinsame Stylesheet-Datei)
+
+## Test-Hooks
+- `window.render_game_to_text()`
+- `window.advanceTime(ms)`

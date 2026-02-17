@@ -1,0 +1,38 @@
+Anforderungen (UX-Game-Optimiert)
+- Ziel: Wahl der effizientesten Protokollform zur Dokumentation von Meetings bei minimalem administrativem Aufwand.
+- Game-Mechanic: "The Efficiency Master". Meeting-Zettel regnen vom Himmel. Der Spieler muss sie mit den richtigen "Ablagekörben" (Ergebnis, Verlauf, Wort) auffangen.
+- Challenge: 
+  - Level 1: Klare Kontexte (Tägliches Meeting -> Ergebnis).
+  - Level 2: "Legal Pressure" - Meetings mit Rechtsfolgen erfordern plötzlich exaktere Formen (Verlauf/Wort). Fehler kosten "Legal Safety" Punkte.
+  - Level 3: "Bureaucracy Rain" - Ein Hagel von Meetings. Wer zu oft das falsche (zu aufwendige) Protokoll wählt, verliert durch "Team-Time-Waste".
+
+Arbeitspakete (UX-Game-Optimiert)
+1. Interactive HUD und Scoring
+- [ ] HUD-Elemente: "Team-Productivity" (Health), "Documentation-Score" (Punkte), "Time-Wasted" (Malus Bar).
+- [ ] Scoring: Bonus für "Lean Documentation". Malus für "Bürokratie-Wucher" (Wortprotokoll für Kaffeeklatsch).
+
+2. Screen-Layout (The Paper Flow)
+- [ ] `office-view -> falling-memos -> collection-bins -> productivity-meter`.
+- [ ] Memos: Herabfallende Notizzettel mit Kurzinfos zum Meeting.
+- [ ] Bins: Drei stylische Ablagen (Bronze: Ergebnis, Silber: Verlauf, Gold/Schwer: Wort).
+
+3. Kernvisuals und Effekte
+- [ ] Modern-Office Ästhetik: Isometrische Sicht, helle Farben, Papier-Physik (Flat-Design).
+- [ ] "Paper-Jam": Bei zu vielen Fehlern staut sich das Papier auf dem Bildschirm (Visual Obstruction).
+- [ ] High-Contrast Badges: "SHORT", "DETAILED", "VERBATIM".
+
+4. Browser- und Device-Resilienz
+- [ ] CSS `translateY` für flüssiges Herabfallen.
+- [ ] Mobile: "Catch-and-Slide" Steuerung.
+
+5. Content-Strategie (Meeting Cards)
+- [ ] 18 Szenarien: Stand-up, Projektbeirat-Sitzung, Gerichtsverhandlung, Workshop, Brainstorming.
+
+6. QA-Paket
+- [ ] Test: Ist die Fallgeschwindigkeit motivierend oder frustrierend?
+- [ ] Test: Vermittelt das Spiel das Prinzip der Wirtschaftlichkeit (Minimalprinzip)?
+
+7. Abnahme-Kriterien
+- [ ] Der Spieler verankert das Ergebnisprotokoll als Standard für die IT-Arbeitswelt.
+- [ ] Das Interface wirkt freundlich, kompetent und effizient.
+- [ ] Maximale Punkte werden nur durch minimale (aber ausreichende) Dokumentation erreicht.

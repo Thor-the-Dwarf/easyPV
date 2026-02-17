@@ -1,0 +1,36 @@
+Anforderungen
+2. "Widerstands-Radar"
+   - Ziel: Identifiziere in einem Team-Meeting die 3 "Blockierer".
+   - Spielmechanik: 
+     - 6 Personen am Tisch. Sprechblasen erscheinen.
+     - "Tolle Idee!" (Promoter). "Zu teuer & zu riskant!" (Bedenkenträger/Gegner). "Mir egal." (Mittsläufer).
+     - Spieler muss auf die Kritiker klicken, um sie zum Gespräch zu bitten.
+     - Messbarkeit: Alle Widerstände erkannt = 100%.
+   - Lernziel: Stakeholder-Analyse im Change-Prozess.
+
+Implementierungsplan (UX-Global-Optimiert)
+1. Informationsarchitektur und Fokus-Hierarchie
+- [ ] Fokus: Identifikation von Widerständen in einem Radar-Diagramm.
+- [ ] Ziel: Klicke auf die blockierenden Rollen.
+
+2. Screen-Layout
+- [ ] Radar-Visualisierung (Sektoren).
+- [ ] Mobile: Zoom-Funktion für Sektoren.
+
+3. Browser- und Device-Resilienz
+- [ ] SVG-Radar (voll-responsiv).
+- [ ] Touch-Targets auf den Radar-Punkten.
+
+4. Kernvisuals
+- [ ] Radar-Strahl Animation (Scannen).
+- [ ] Pulsierende Punkte für Stakeholder.
+
+5. Interaktion und Feedback
+- [ ] Punkt anklicken -> Profil öffnet sich.
+- [ ] Entscheidung: Ist das Widerstand?
+
+6. KPI-Klarheit
+- [ ] "Radar-Genauigkeit".
+
+7. QA-Paket
+- [ ] Überlappende Punkte Handling.

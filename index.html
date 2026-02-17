@@ -50,6 +50,7 @@
         const DRAWER_KEY = 'spaDrawerOpen_v1';
         const OPENED_KEY = 'spaOpenedFolders_v1';
         const DRAWER_WIDTH_KEY = 'spaDrawerWidth_v1';
+        const GAME_PROGRESS_KEY = 'spaGameProgress_v1';
 
         const appView = document.getElementById('app-view');
         const menuBtn = document.getElementById('menu-tree-btn');
@@ -65,6 +66,9 @@
         let openedFolderIds = [];
         let drawerWidth = 360;
         let rootTree = [];
+        let gameProgressByKey = {};
+        let activeGameProgressContext = null;
+        let activeGameProgressTimer = 0;
 
         init();
 
@@ -93,12 +97,24 @@
               return;
             }
 
+            if (data.type === 'generic:game-state-snapshot') {
+              handleGenericGameStateSnapshot(data);
+              return;
+            }
+
+            if (data.type === 'generic:game-unmeasurable') {
+              const progressKey = getProgressKeyFromMessage(data);
+              if (progressKey) markGameProgressUnmeasurable(progressKey);
+              return;
+            }
+
             if (data.type !== 'generic:start-practice') return;
 
             const jsonUrl = typeof data.json === 'string' ? data.json : '';
             const folderLabel = typeof data.folder === 'string' ? data.folder : 'Spielordner';
             const gameUrl = typeof data.game === 'string' ? data.game : '';
-            openPracticeView(gameUrl, jsonUrl, folderLabel);
+            const progressKey = getProgressKeyFromMessage(data) || inferProgressKeyFromUrls(gameUrl, jsonUrl);
+            openPracticeView(gameUrl, jsonUrl, folderLabel, progressKey);
           });
         }
 
@@ -125,12 +141,21 @@
 
           const rawWidth = Number(localStorage.getItem(DRAWER_WIDTH_KEY));
           if (!Number.isNaN(rawWidth) && rawWidth > 0) drawerWidth = rawWidth;
+
+          try {
+            const rawProgress = localStorage.getItem(GAME_PROGRESS_KEY);
+            const parsed = rawProgress ? JSON.parse(rawProgress) : {};
+            gameProgressByKey = sanitizeProgressStore(parsed);
+          } catch (_) {
+            gameProgressByKey = {};
+          }
         }
 
         function saveState() {
           localStorage.setItem(DRAWER_KEY, drawerOpen ? '1' : '0');
           localStorage.setItem(OPENED_KEY, JSON.stringify(openedFolderIds));
           localStorage.setItem(DRAWER_WIDTH_KEY, String(drawerWidth));
+          localStorage.setItem(GAME_PROGRESS_KEY, JSON.stringify(gameProgressByKey));
         }
 
         function toggleDrawer() {
@@ -232,6 +257,356 @@
           }, 120);
         }
 
+        function normalizeProgressKey(rawKey) {
+          return String(rawKey || '').trim();
+        }
+
+        function clampPercent(value) {
+          const numeric = Number(value);
+          if (!Number.isFinite(numeric)) return 0;
+          if (numeric <= 0) return 0;
+          if (numeric >= 100) return 100;
+          return Math.round(numeric);
+        }
+
+        function sanitizeProgressStore(rawStore) {
+          const input = rawStore && typeof rawStore === 'object' ? rawStore : {};
+          const out = {};
+          Object.keys(input).forEach(function (sourceKey) {
+            const key = normalizeProgressKey(sourceKey);
+            if (!key) return;
+            const entry = input[sourceKey];
+            const isObj = entry && typeof entry === 'object';
+            const percent = isObj ? clampPercent(entry.percent) : clampPercent(entry);
+            const measurable = !(isObj && entry.measurable === false);
+            const updatedAt = isObj && Number.isFinite(Number(entry.updatedAt))
+              ? Number(entry.updatedAt)
+              : Date.now();
+            out[key] = {
+              percent: percent,
+              measurable: measurable,
+              updatedAt: updatedAt
+            };
+          });
+          return out;
+        }
+
+        function buildNodeProgressKey(node) {
+          if (!node) return '';
+          return normalizeProgressKey(
+            String(node.gameRelPath || node.jsonRelPath || node.attributesRelPath || node.id || '')
+          );
+        }
+
+        function getProgressKeyFromMessage(data) {
+          const payload = data && typeof data === 'object' ? data : {};
+          return normalizeProgressKey(
+            String(payload.progressKey || payload.gameRel || payload.jsonRel || payload.nodeId || '')
+          );
+        }
+
+        function inferRepoPathFromUrl(urlValue) {
+          const source = String(urlValue || '').trim();
+          if (!source) return '';
+          try {
+            const parsed = new URL(source, window.location.href);
+            return decodeURIComponent(parsed.pathname).replace(/^\/+/, '');
+          } catch (_) {
+            return '';
+          }
+        }
+
+        function inferProgressKeyFromUrls(gameUrl, jsonUrl) {
+          const gamePath = normalizeProgressKey(inferRepoPathFromUrl(gameUrl));
+          if (gamePath) return gamePath;
+          return normalizeProgressKey(inferRepoPathFromUrl(jsonUrl));
+        }
+
+        function getProgressEntry(progressKey) {
+          const key = normalizeProgressKey(progressKey);
+          if (!key) return null;
+          const entry = gameProgressByKey[key];
+          if (!entry || typeof entry !== 'object') return null;
+          return entry;
+        }
+
+        function setGameProgress(progressKey, percentValue, measurable) {
+          const key = normalizeProgressKey(progressKey);
+          if (!key) return;
+          const nextPercent = clampPercent(percentValue);
+          const prev = getProgressEntry(key);
+          const nextMeasurable = measurable === false ? false : true;
+          const prevPercent = prev ? clampPercent(prev.percent) : -1;
+          const prevMeasurable = prev ? prev.measurable !== false : true;
+          if (prevPercent === nextPercent && prevMeasurable === nextMeasurable) return;
+          gameProgressByKey[key] = {
+            percent: nextPercent,
+            measurable: nextMeasurable,
+            updatedAt: Date.now()
+          };
+          saveState();
+          updateTreeProgressBadges();
+        }
+
+        function markGameProgressUnmeasurable(progressKey) {
+          const key = normalizeProgressKey(progressKey);
+          if (!key) return;
+          const prev = getProgressEntry(key);
+          const nextPercent = prev ? clampPercent(prev.percent) : 0;
+          if (prev && prev.measurable === false && clampPercent(prev.percent) === nextPercent) return;
+          gameProgressByKey[key] = {
+            percent: nextPercent,
+            measurable: false,
+            updatedAt: Date.now()
+          };
+          saveState();
+          updateTreeProgressBadges();
+        }
+
+        function handleGenericGameStateSnapshot(data) {
+          const progressKey = getProgressKeyFromMessage(data);
+          if (!progressKey) return;
+          const estimation = estimateProgressFromStateText(data.stateText);
+          if (!estimation.measurable) {
+            markGameProgressUnmeasurable(progressKey);
+            return;
+          }
+          setGameProgress(progressKey, estimation.percent, true);
+        }
+
+        function buildNodeProgressMap(nodes) {
+          const map = new Map();
+
+          function visit(node) {
+            if (!node || !node.isFolder) return { sum: 0, count: 0 };
+
+            if (isGameLaunchNode(node)) {
+              const entry = getProgressEntry(buildNodeProgressKey(node));
+              const percent = entry ? clampPercent(entry.percent) : 0;
+              map.set(node.id, percent);
+              return { sum: percent, count: 1 };
+            }
+
+            const children = Array.isArray(node.children) ? node.children : [];
+            let sum = 0;
+            let count = 0;
+            for (let i = 0; i < children.length; i += 1) {
+              const childResult = visit(children[i]);
+              sum += childResult.sum;
+              count += childResult.count;
+            }
+
+            if (count === 0 && isPlayableFolder(node)) {
+              const ownEntry = getProgressEntry(buildNodeProgressKey(node));
+              const ownPercent = ownEntry ? clampPercent(ownEntry.percent) : 0;
+              map.set(node.id, ownPercent);
+              return { sum: ownPercent, count: 1 };
+            }
+
+            const folderPercent = count > 0 ? Math.round(sum / count) : 0;
+            map.set(node.id, clampPercent(folderPercent));
+            return { sum: sum, count: count };
+          }
+
+          const list = Array.isArray(nodes) ? nodes : [];
+          for (let i = 0; i < list.length; i += 1) visit(list[i]);
+
+          return map;
+        }
+
+        function updateTreeProgressBadges() {
+          if (!treeRootEl) return;
+          const progressMap = buildNodeProgressMap(rootTree);
+          const nodeElements = treeRootEl.querySelectorAll('.tree-node[data-id]');
+          nodeElements.forEach(function (rowNode) {
+            const id = String(rowNode.dataset.id || '');
+            if (!id) return;
+            const badge = rowNode.querySelector('.tree-progress');
+            if (!badge) return;
+            const percent = clampPercent(progressMap.has(id) ? progressMap.get(id) : 0);
+            badge.textContent = percent + '%';
+            badge.title = 'Fortschritt: ' + percent + '%';
+          });
+        }
+
+        function estimateProgressFromStateText(stateText) {
+          if (stateText === null || stateText === undefined) return { measurable: false, percent: 0 };
+
+          if (typeof stateText === 'number') {
+            return { measurable: true, percent: normalizeProgressNumber(stateText) };
+          }
+
+          const rawText = String(stateText || '').trim();
+          if (!rawText) return { measurable: false, percent: 0 };
+
+          try {
+            const parsed = JSON.parse(rawText);
+            return estimateProgressFromPayload(parsed);
+          } catch (_) {
+            const byText = rawText.match(/([0-9]{1,3})\s*%/);
+            if (byText) return { measurable: true, percent: clampPercent(Number(byText[1])) };
+            return { measurable: false, percent: 0 };
+          }
+        }
+
+        function normalizeProgressNumber(value) {
+          const n = Number(value);
+          if (!Number.isFinite(n)) return 0;
+          if (n >= 0 && n <= 1) return clampPercent(n * 100);
+          return clampPercent(n);
+        }
+
+        function estimateProgressFromPayload(payload) {
+          const percentSignals = [];
+          const ratioSignals = [];
+          let hasCompletionFlag = false;
+
+          function visit(value, keyPath) {
+            if (value === null || value === undefined) return;
+
+            if (typeof value === 'number' && Number.isFinite(value)) {
+              const pathLower = String(keyPath || '').toLowerCase();
+              if (/(progress|fortschritt|percent|percentage|completion|completed|erledigt|abgeschlossen)/.test(pathLower)) {
+                percentSignals.push(normalizeProgressNumber(value));
+              }
+              return;
+            }
+
+            if (typeof value === 'boolean') {
+              if (value && /(won|win|complete|completed|finished|done|success|cleared|abgeschlossen|beendet|geloest|gelöst)/i.test(String(keyPath || ''))) {
+                hasCompletionFlag = true;
+              }
+              return;
+            }
+
+            if (Array.isArray(value)) {
+              for (let i = 0; i < value.length; i += 1) {
+                visit(value[i], String(keyPath || '') + '[' + i + ']');
+              }
+              return;
+            }
+
+            if (typeof value === 'object') {
+              const ratio = extractRatioProgressFromObject(value);
+              if (ratio !== null) ratioSignals.push(ratio);
+              const entries = Object.entries(value);
+              for (let i = 0; i < entries.length; i += 1) {
+                const item = entries[i];
+                const nestedPath = keyPath ? keyPath + '.' + item[0] : item[0];
+                visit(item[1], nestedPath);
+              }
+            }
+          }
+
+          visit(payload, '');
+
+          if (percentSignals.length) {
+            const avg = percentSignals.reduce((sum, val) => sum + val, 0) / percentSignals.length;
+            return { measurable: true, percent: clampPercent(avg) };
+          }
+
+          if (ratioSignals.length) {
+            const avgRatio = ratioSignals.reduce((sum, val) => sum + val, 0) / ratioSignals.length;
+            return { measurable: true, percent: clampPercent(avgRatio) };
+          }
+
+          if (hasCompletionFlag) return { measurable: true, percent: 100 };
+
+          return { measurable: false, percent: 0 };
+        }
+
+        function extractRatioProgressFromObject(obj) {
+          if (!obj || typeof obj !== 'object') return null;
+          const entries = Object.entries(obj).filter(function (entry) {
+            return typeof entry[1] === 'number' && Number.isFinite(entry[1]);
+          });
+          if (!entries.length) return null;
+
+          const totals = entries.filter(function (entry) {
+            return /(total|max|maximum|target|ziel|gesamt)/i.test(entry[0]) && entry[1] > 0;
+          });
+          if (!totals.length) return null;
+
+          const currents = entries.filter(function (entry) {
+            return /(current|done|completed|solved|answered|score|step|round|level|index|fortschritt|progress)/i.test(entry[0]) && entry[1] >= 0;
+          });
+          if (!currents.length) return null;
+
+          let best = null;
+          for (let i = 0; i < totals.length; i += 1) {
+            const totalValue = totals[i][1];
+            if (!(totalValue > 0)) continue;
+            for (let j = 0; j < currents.length; j += 1) {
+              const currentValue = currents[j][1];
+              if (currentValue < 0) continue;
+              const ratio = clampPercent((currentValue / totalValue) * 100);
+              if (best === null || ratio > best) best = ratio;
+            }
+          }
+          return best;
+        }
+
+        function readGameStateFromWindow(contentWindow) {
+          if (!contentWindow) return { kind: 'no-window' };
+          try {
+            if (typeof contentWindow.render_game_to_text !== 'function') return { kind: 'no-hook' };
+            const stateText = contentWindow.render_game_to_text();
+            if (stateText === null || stateText === undefined || String(stateText).trim() === '') {
+              return { kind: 'no-state' };
+            }
+            return { kind: 'state', stateText: String(stateText) };
+          } catch (_) {
+            return { kind: 'error' };
+          }
+        }
+
+        function stopActiveGameProgressTracking() {
+          if (activeGameProgressTimer) {
+            window.clearInterval(activeGameProgressTimer);
+            activeGameProgressTimer = 0;
+          }
+          activeGameProgressContext = null;
+        }
+
+        function startActiveGameProgressTracking(progressKey) {
+          const key = normalizeProgressKey(progressKey);
+          stopActiveGameProgressTracking();
+          if (!key) return;
+
+          activeGameProgressContext = {
+            progressKey: key,
+            noHookHits: 0
+          };
+
+          function tick() {
+            if (!activeGameProgressContext || !contentHost) return;
+            const frameEl = contentHost.querySelector('iframe.content-frame');
+            if (!frameEl || !frameEl.contentWindow) return;
+
+            const sample = readGameStateFromWindow(frameEl.contentWindow);
+            if (sample.kind === 'state') {
+              activeGameProgressContext.noHookHits = 0;
+              const estimation = estimateProgressFromStateText(sample.stateText);
+              if (estimation.measurable) {
+                setGameProgress(activeGameProgressContext.progressKey, estimation.percent, true);
+              }
+              return;
+            }
+
+            if (sample.kind === 'no-hook' || sample.kind === 'no-state') {
+              activeGameProgressContext.noHookHits += 1;
+              if (activeGameProgressContext.noHookHits >= 3) {
+                markGameProgressUnmeasurable(activeGameProgressContext.progressKey);
+              }
+              return;
+            }
+          }
+
+          activeGameProgressTimer = window.setInterval(tick, 1400);
+          window.setTimeout(tick, 450);
+          window.setTimeout(tick, 1400);
+        }
+
         async function initIndex() {
           try {
             renderTreeLoadingState(0, 'Lade Ordnerstruktur...');
@@ -252,7 +627,8 @@
             }
 
             treeRootEl.innerHTML = '';
-            buildTree(treeRootEl, rootTree, 0);
+            const progressMap = buildNodeProgressMap(rootTree);
+            buildTree(treeRootEl, rootTree, 0, progressMap);
           } catch (error) {
             treeRootEl.innerHTML =
               '<div style="padding: 1rem; color: hsl(var(--txt-muted));">' +
@@ -550,7 +926,7 @@
           return merged;
         }
 
-        function buildTree(container, nodes, level) {
+        function buildTree(container, nodes, level, progressMap) {
           nodes.forEach((node) => {
             if (!node || !node.isFolder) return;
 
@@ -591,6 +967,15 @@
             iconButton.appendChild(icon);
             row.appendChild(iconButton);
 
+            const progressValue = clampPercent(
+              progressMap && progressMap.has(node.id) ? progressMap.get(node.id) : 0
+            );
+            const progressBadge = document.createElement('span');
+            progressBadge.className = 'tree-progress';
+            progressBadge.textContent = progressValue + '%';
+            progressBadge.title = 'Fortschritt: ' + progressValue + '%';
+            row.appendChild(progressBadge);
+
             const label = document.createElement('button');
             label.className = 'tree-label';
             label.type = 'button';
@@ -623,7 +1008,7 @@
             const childContainer = document.createElement('div');
             childContainer.className = 'tree-children';
             if (Array.isArray(node.children) && node.children.length > 0) {
-              buildTree(childContainer, node.children, level + 1);
+              buildTree(childContainer, node.children, level + 1, progressMap);
             }
             rowNode.appendChild(childContainer);
 
@@ -733,10 +1118,11 @@
             ? String(node.jsonRelPath)
             : (node && node.attributesRelPath ? String(node.attributesRelPath) : '');
           const gameRelPath = node && node.gameRelPath ? String(node.gameRelPath) : '';
+          const progressKey = buildNodeProgressKey(node);
           const jsonUrl = jsonRelPath ? buildRepoUrl(jsonRelPath) : '';
           const gameUrl = gameRelPath ? buildRepoUrl(gameRelPath) : '';
           if (gameUrl || jsonUrl) {
-            openPracticeView(gameUrl, jsonUrl, folderLabel);
+            openPracticeView(gameUrl, jsonUrl, folderLabel, progressKey);
             return;
           }
           openGenericFolder(node);
@@ -757,6 +1143,7 @@
 
         function openGenericFolder(node) {
           if (!contentHost) return;
+          stopActiveGameProgressTracking();
           const folderLabel = node && node.name ? node.name : 'Thema';
           const sourceNode = findBestContentNode(node) || node || {};
           const jsonRelPath = sourceNode && sourceNode.jsonRelPath
@@ -808,7 +1195,7 @@
           );
         }
 
-        function openPracticeView(gameUrl, jsonUrl, folderLabel) {
+        function openPracticeView(gameUrl, jsonUrl, folderLabel, progressKey) {
           if (!contentHost) return;
           const safeGameUrl = String(gameUrl || '').trim();
           let src = safeGameUrl || buildPracticeSrc(folderLabel || 'Spielordner', jsonUrl || '');
@@ -825,6 +1212,12 @@
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
           queueThemeSyncForNewFrame();
+          const resolvedProgressKey = normalizeProgressKey(progressKey || inferProgressKeyFromUrls(gameUrl, jsonUrl));
+          if (resolvedProgressKey) {
+            startActiveGameProgressTracking(resolvedProgressKey);
+          } else {
+            stopActiveGameProgressTracking();
+          }
         }
 
         function findAttributesRelPath(children) {

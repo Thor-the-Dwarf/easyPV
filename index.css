@@ -392,6 +392,18 @@ body::after {
   padding: 0;
 }
 
+.tree-progress {
+  min-width: 3.2rem;
+  text-align: right;
+  font-size: 0.72rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: hsl(var(--txt-muted));
+  text-shadow: 0 0 8px hsl(var(--primary) / 0.3);
+  flex: 0 0 auto;
+}
+
 .tree-label--play {
   font-weight: 700;
 }

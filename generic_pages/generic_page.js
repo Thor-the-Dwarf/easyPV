@@ -27,6 +27,9 @@
   const gameRel = params.get('gameRel');
   const nodeId = params.get('nodeId');
   const urlTheme = normalizeTheme(params.get('theme'));
+  const progressKey = resolveProgressKey();
+  let gameProgressTimer = 0;
+  let gameProgressUnmeasurableSent = false;
 
   initThemeSync();
 
@@ -55,6 +58,9 @@
     });
     frame.addEventListener('load', function () {
       syncThemeToContentFrame();
+      if (feedbackOrigin === 'game') {
+        window.setTimeout(sampleGameProgressAndNotify, 220);
+      }
     });
 
     try {
@@ -138,6 +144,79 @@
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '_')
       .replace(/^_+|_+$/g, '');
+  }
+
+  function normalizeProgressKey(rawKey) {
+    return String(rawKey || '').trim();
+  }
+
+  function resolveProgressKey() {
+    const direct = normalizeProgressKey(gameRel || jsonRel || nodeId);
+    if (direct) return direct;
+    const fromUrls = normalizeProgressKey(resolveRepoPath('', game) || resolveRepoPath('', json));
+    if (fromUrls) return fromUrls;
+    return normalizeProgressKey(folder || 'generic-folder');
+  }
+
+  function postProgressMessage(type, payload) {
+    try {
+      if (!window.parent || window.parent === window) return;
+      window.parent.postMessage(
+        {
+          type: type,
+          progressKey: progressKey,
+          gameRel: gameRel || '',
+          jsonRel: jsonRel || '',
+          nodeId: nodeId || '',
+          folder: folder || '',
+          ...payload
+        },
+        '*'
+      );
+    } catch (_) {
+      // ignore cross-window access issues
+    }
+  }
+
+  function readGameStateSnapshot() {
+    if (!frame || !frame.contentWindow) return { kind: 'no-window' };
+    try {
+      if (typeof frame.contentWindow.render_game_to_text !== 'function') return { kind: 'no-hook' };
+      const stateText = frame.contentWindow.render_game_to_text();
+      if (stateText === null || stateText === undefined || String(stateText).trim() === '') {
+        return { kind: 'no-state' };
+      }
+      return { kind: 'state', stateText: String(stateText) };
+    } catch (_) {
+      return { kind: 'error' };
+    }
+  }
+
+  function sampleGameProgressAndNotify() {
+    const snapshot = readGameStateSnapshot();
+    if (snapshot.kind === 'state') {
+      gameProgressUnmeasurableSent = false;
+      postProgressMessage('generic:game-state-snapshot', { stateText: snapshot.stateText });
+      return;
+    }
+    if ((snapshot.kind === 'no-hook' || snapshot.kind === 'no-state') && !gameProgressUnmeasurableSent) {
+      gameProgressUnmeasurableSent = true;
+      postProgressMessage('generic:game-unmeasurable', { reason: snapshot.kind });
+    }
+  }
+
+  function stopGameProgressTracking() {
+    if (gameProgressTimer) {
+      window.clearInterval(gameProgressTimer);
+      gameProgressTimer = 0;
+    }
+  }
+
+  function startGameProgressTracking() {
+    stopGameProgressTracking();
+    gameProgressUnmeasurableSent = false;
+    sampleGameProgressAndNotify();
+    gameProgressTimer = window.setInterval(sampleGameProgressAndNotify, 1400);
   }
 
   function inferRepoPathFromUrl(urlValue) {
@@ -266,8 +345,10 @@
     if (next === 'game') {
       const practiceTarget = game || genericSuiteTarget;
       frame.src = practiceTarget;
+      startGameProgressTracking();
     } else {
       frame.src = genericSuiteTarget;
+      stopGameProgressTracking();
     }
 
     updatePracticeButtonState();
@@ -1042,4 +1123,6 @@
       }
     });
   }
+
+  window.addEventListener('beforeunload', stopGameProgressTracking);
 })();

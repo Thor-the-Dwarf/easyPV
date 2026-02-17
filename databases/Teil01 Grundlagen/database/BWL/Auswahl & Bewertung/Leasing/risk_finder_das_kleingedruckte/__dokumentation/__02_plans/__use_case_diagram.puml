@@ -1,0 +1,42 @@
+@startuml
+title Use-Case-Diagramm: Lade Spiel...
+left to right direction
+skinparam shadowing false
+
+actor "Spieler" as Player
+actor "Tester" as Tester
+actor "Datenquelle" as DataSource
+
+rectangle "System: risk_finder_das_kleingedruckte" as SystemBoundary {
+  usecase "Spiel starten" as UC_Start
+  usecase "Spielinhalte laden" as UC_LoadData
+  usecase "Aufgaben bearbeiten" as UC_Play
+  usecase "Feedback erhalten" as UC_Feedback
+  usecase "Punkte/Fortschritt sehen" as UC_Progress
+  usecase "Runde abschliessen" as UC_Finish
+  usecase "Neu starten" as UC_Restart
+  usecase "Spielablauf verifizieren" as UC_Verify
+}
+
+Player --> UC_Start
+Player --> UC_Play
+Player --> UC_Progress
+Player --> UC_Finish
+Player --> UC_Restart
+DataSource --> UC_LoadData
+Tester --> UC_Verify
+
+UC_Start .> UC_LoadData : <<include>>
+UC_Play .> UC_Feedback : <<include>>
+UC_Play .> UC_Progress : <<include>>
+UC_Finish .> UC_Progress : <<include>>
+UC_Restart .> UC_Start : <<include>>
+UC_Verify .> UC_Start : <<include>>
+UC_Verify .> UC_Play : <<include>>
+
+note bottom
+Quelle: databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Leasing/risk_finder_das_kleingedruckte
+Dateien: 1 HTML, 1 JS, 0 CSS, 1 CJS
+Fetch-Ziele: data/_gg01_risk_finder_das_kleingedruckte.json
+end note
+@enduml

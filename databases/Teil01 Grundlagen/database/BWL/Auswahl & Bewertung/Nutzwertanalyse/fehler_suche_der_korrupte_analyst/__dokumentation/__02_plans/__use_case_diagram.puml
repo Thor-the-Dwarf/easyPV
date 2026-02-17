@@ -1,0 +1,41 @@
+@startuml
+title Use-Case-Diagramm: Fehler-Suche: Der korrupte Analyst
+left to right direction
+skinparam shadowing false
+
+actor "Spieler" as Player
+actor "Datenquelle" as DataSource
+actor "Theme-Service" as ThemeSvc
+
+rectangle "System: fehler_suche_der_korrupte_analyst" as SystemBoundary {
+  usecase "Spiel starten" as UC_Start
+  usecase "Spielinhalte laden" as UC_LoadData
+  usecase "Theme anwenden" as UC_ApplyTheme
+  usecase "Aufgaben bearbeiten" as UC_Play
+  usecase "Feedback erhalten" as UC_Feedback
+  usecase "Punkte/Fortschritt sehen" as UC_Progress
+  usecase "Runde abschliessen" as UC_Finish
+  usecase "Neu starten" as UC_Restart
+}
+
+Player --> UC_Start
+Player --> UC_Play
+Player --> UC_Progress
+Player --> UC_Finish
+Player --> UC_Restart
+DataSource --> UC_LoadData
+ThemeSvc --> UC_ApplyTheme
+
+UC_Start .> UC_LoadData : <<include>>
+UC_Start .> UC_ApplyTheme : <<include>>
+UC_Play .> UC_Feedback : <<include>>
+UC_Play .> UC_Progress : <<include>>
+UC_Finish .> UC_Progress : <<include>>
+UC_Restart .> UC_Start : <<include>>
+
+note bottom
+Quelle: databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Nutzwertanalyse/fehler_suche_der_korrupte_analyst
+Dateien: 1 HTML, 1 JS, 1 CSS, 0 CJS
+Fetch-Ziele: data/_gg01_fehler_suche_der_korrupte_analyst.json
+end note
+@enduml

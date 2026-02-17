@@ -20,3 +20,10 @@ Learnings fuer Zustandsdiagramm-Auftrag
 - Fuer diese Struktur funktionieren Komponenten-/Package-Diagramme am stabilsten, wenn pro Spielordner nur direkt benachbarte Dateien (html/js/css/cjs/json) und die Ressourcenordner `data/` und `assets/` ausgewertet werden.
 - Einheitlicher Dateiname pro Zielordner (`__component_package_diagram.puml`) erleichtert spaetere automatisierte Pruefungen.
 - Das Sortieren der Zielordner per Relativpfad (`de`-Locale) liefert eine konsistente "oben nach unten"-Abarbeitung.
+
+Learnings fuer Use-Case-Diagramm-Auftrag
+
+- Fuer die Massenableitung reicht eine stabile Grundstruktur mit `Spieler` plus optionalen Sekundaerakteuren (`Tester`, `Datenquelle`, `Theme-Service`, `Style-CDN`).
+- Heuristiken aus Ordnerinhalt und JS (`.cjs`, `data/`, `fetch(...)`, externe Ressourcen) geben genug Signale fuer konsistente Use-Cases ohne manuelle Einzelmodellierung.
+- Einheitlicher Dateiname `__use_case_diagram.puml` pro Endordner ist fuer Audits und Folgeauftraege besser als viele individuelle Namen.
+- Ein TSV-Report (`use_case_generation_report.tsv`) ist wichtig, um Vollstaendigkeit und Ableitungsmerkmale pro Ordner nachvollziehbar zu halten.

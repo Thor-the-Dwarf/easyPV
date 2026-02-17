@@ -1,0 +1,47 @@
+@startuml
+title Supervisor/Router — 2-Durchlauf (Plan → Approval → Implementierung)
+
+actor Auftraggeber as Client
+participant Supervisor
+participant "Implementierungs-\nSpezialist" as Specialist
+participant Repository as Repo
+participant CI as CI
+
+== Auftrag ==
+Client -> Supervisor: Auftrag / Change-Request einreichen
+Supervisor -> Specialist: Aufgabe delegieren + Kontext + Constraints
+
+== Durchlauf 1: Plan ==
+Specialist -> Repo: Repo scannen / Ist-Zustand prüfen
+Specialist -> Specialist: Plan entwerfen\n(Tasks, Dateien, Risiken, Tests, PUML-Änderungen)
+Specialist -> Supervisor: Implementierungsplan vorlegen
+
+alt Plan abgelehnt
+  Supervisor -> Specialist: Feedback + Änderungswünsche
+  Specialist -> Specialist: Plan überarbeiten
+  Specialist -> Supervisor: Neuer Plan
+  note over Supervisor,Specialist: Schleife bis genehmigt oder abgebrochen
+else Plan genehmigt
+  Supervisor -> Specialist: Genehmigung + Go für Umsetzung
+end
+
+== Durchlauf 2: Implementierung ==
+Specialist -> Repo: Änderungen implementieren\n(Code/Files/Struktur)
+Specialist -> Repo: PUML aktualisieren (falls betroffen)
+Specialist -> CI: Tests/Lint/Checks ausführen
+
+alt Checks fehlgeschlagen
+  CI --> Specialist: Fehler/Reports
+  Specialist -> Repo: Fixes anwenden
+  Specialist -> CI: Checks erneut ausführen
+else Checks erfolgreich
+  CI --> Specialist: OK
+end
+
+== Abschluss ==
+Specialist -> Supervisor: Umsetzung melden\n(Was geändert, wo, wie verifiziert)
+Supervisor -> Repo: Review / Abgleich Plan vs Code
+Supervisor -> Repo: Merge/Commit auf main\n(nach Regeln)
+Supervisor -> Client: Ergebnis / Abschluss-Status
+
+@enduml

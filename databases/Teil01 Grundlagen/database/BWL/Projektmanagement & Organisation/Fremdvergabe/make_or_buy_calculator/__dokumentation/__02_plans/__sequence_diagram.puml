@@ -1,0 +1,29 @@
+@startuml
+ title Make or Buy Calculator
+ autonumber
+ actor Nutzer
+ participant Browser
+ participant "HTML Page" as Page
+ participant "Game Script" as Game
+ database "Data JSON" as Data
+ collections "Assets" as Assets
+ 
+ Nutzer -> Browser: Seite oeffnen
+ Browser -> Page: GET _ghtml_make_or_buy_calculator.html
+ Page --> Browser: HTML + CSS/JS Referenzen
+ Browser -> Assets: Statische Dateien laden
+ Assets --> Browser: Styles und Medien bereit
+ Browser -> Game: Lade _gjs_make_or_buy_calculator.js
+ Game -> Game: init() + Event-Handler
+ Game -> Data: fetch data/_gg01_make_or_buy_calculator.json
+ Data --> Game: Konfig-/Leveldaten
+ 
+ Nutzer -> Browser: Eingabe (Klick/Drag/Tap)
+ Browser -> Game: UI-Event weiterleiten
+ Game -> Game: Regeln pruefen + State aktualisieren
+ Game --> Browser: DOM/HUD/Feedback aktualisieren
+ 
+ note over Page
+ Quelle: databases/Teil01 Grundlagen/database/BWL/Projektmanagement & Organisation/Fremdvergabe/make_or_buy_calculator/_ghtml_make_or_buy_calculator.html
+ end note
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+ title Lade Spiel...
+ autonumber
+ actor Nutzer
+ participant Browser
+ participant "HTML Entry" as Entry
+ participant "Redirect Script" as Router
+ participant "Game Engine" as Engine
+ database "Config JSON" as Config
+ collections "Assets" as Assets
+ 
+ Nutzer -> Browser: Seite oeffnen
+ Browser -> Entry: GET _ghtml_workshop_agenda_puzzle.html
+ Entry --> Browser: HTML mit Inline-Script
+ Browser -> Router: Script ausfuehren
+ Router -> Router: enginePath + configPath lesen
+ Router -> Engine: Redirect zu ../../../../../../game_pages/ConstructionGame/index.html
+ Engine -> Config: Lade data/_gg01_workshop_agenda_puzzle.json
+ Config --> Engine: JSON-Konfiguration
+ Engine -> Assets: Lade CSS/JS/Medien
+ Assets --> Engine: Ressourcen bereit
+ Engine --> Browser: Spieloberflaeche initialisiert
+ 
+ note over Entry
+ Quelle: databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Workshop _/workshop_agenda_puzzle/_ghtml_workshop_agenda_puzzle.html
+ end note
+@enduml

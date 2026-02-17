@@ -1,0 +1,27 @@
+@startuml
+ title Lade Spiel...
+ autonumber
+ actor Nutzer
+ participant Browser
+ participant "HTML Entry" as Entry
+ participant "Redirect Script" as Router
+ participant "Game Engine" as Engine
+ database "Config JSON" as Config
+ collections "Assets" as Assets
+ 
+ Nutzer -> Browser: Seite oeffnen
+ Browser -> Entry: GET _ghtml_risk_finder_das_kleingedruckte.html
+ Entry --> Browser: HTML mit Inline-Script
+ Browser -> Router: Script ausfuehren
+ Router -> Router: enginePath + configPath lesen
+ Router -> Engine: Redirect zu ../../../../../../../game_pages/FindingGame/index.html
+ Engine -> Config: Lade data/_gg01_risk_finder_das_kleingedruckte.json
+ Config --> Engine: JSON-Konfiguration
+ Engine -> Assets: Lade CSS/JS/Medien
+ Assets --> Engine: Ressourcen bereit
+ Engine --> Browser: Spieloberflaeche initialisiert
+ 
+ note over Entry
+ Quelle: databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Leasing/risk_finder_das_kleingedruckte/_ghtml_risk_finder_das_kleingedruckte.html
+ end note
+@enduml

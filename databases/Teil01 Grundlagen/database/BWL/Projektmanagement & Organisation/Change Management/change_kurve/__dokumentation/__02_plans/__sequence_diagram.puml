@@ -1,0 +1,29 @@
+@startuml
+ title Die Kurve der Veränderung
+ autonumber
+ actor Nutzer
+ participant Browser
+ participant "HTML Page" as Page
+ participant "Game Script" as Game
+ database "Data JSON" as Data
+ collections "Assets" as Assets
+ 
+ Nutzer -> Browser: Seite oeffnen
+ Browser -> Page: GET _ghtml_change_kurve.html
+ Page --> Browser: HTML + CSS/JS Referenzen
+ Browser -> Assets: Statische Dateien laden
+ Assets --> Browser: Styles und Medien bereit
+ Browser -> Game: Lade _gjs_change_kurve.js
+ Game -> Game: init() + Event-Handler
+ Game -> Data: fetch data/_g01_change_kurve.json
+ Data --> Game: Konfig-/Leveldaten
+ 
+ Nutzer -> Browser: Eingabe (Klick/Drag/Tap)
+ Browser -> Game: UI-Event weiterleiten
+ Game -> Game: Regeln pruefen + State aktualisieren
+ Game --> Browser: DOM/HUD/Feedback aktualisieren
+ 
+ note over Page
+ Quelle: databases/Teil01 Grundlagen/database/BWL/Projektmanagement & Organisation/Change Management/change_kurve/_ghtml_change_kurve.html
+ end note
+@enduml

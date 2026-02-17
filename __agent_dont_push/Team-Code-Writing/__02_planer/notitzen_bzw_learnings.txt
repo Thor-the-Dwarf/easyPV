@@ -1,0 +1,10 @@
+Learnings fuer Sequenzdiagramm-Auftrag
+
+- In diesem Repo liegen viele fachliche Endordner mit genau einer `_ghtml_*.html` und einem zugehoerigen `__dokumentation/__02_plans`.
+- Es gibt zwei dominante HTML-Typen:
+  1) Redirect-Wrappers mit `window.location.replace(...)` und `configPath`.
+  2) Direkte Spielseiten mit lokalem `_gjs_*.js`.
+- Fuer eine robuste Massenbearbeitung lohnt sich ein Generator-Skript, das HTML und JS metadatenbasiert ausliest (Titel, Script-Quellen, fetch-Ziele).
+- Einheitlicher Dateiname `__sequence_diagram.puml` pro Zielordner ist praktikabel, da pro Endordner nur ein Diagramm gefordert war.
+- Top-down Verarbeitung wurde ueber sortierte Pfade umgesetzt, damit die Reihenfolge reproduzierbar bleibt.
+- Hilfsreport (`sequence_generation_report.tsv`) erleichtert spaeteres Nachvollziehen, welche Seite als Redirect oder Direct behandelt wurde.

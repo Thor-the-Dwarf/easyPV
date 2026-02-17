@@ -1,0 +1,27 @@
+@startuml
+ title Lade Spiel...
+ autonumber
+ actor Nutzer
+ participant Browser
+ participant "HTML Entry" as Entry
+ participant "Redirect Script" as Router
+ participant "Game Engine" as Engine
+ database "Config JSON" as Config
+ collections "Assets" as Assets
+ 
+ Nutzer -> Browser: Seite oeffnen
+ Browser -> Entry: GET _ghtml_join_puzzle.html
+ Entry --> Browser: HTML mit Inline-Script
+ Browser -> Router: Script ausfuehren
+ Router -> Router: enginePath + configPath lesen
+ Router -> Engine: Redirect zu ../../../../../../../game_pages/MatchingGame/index.html
+ Engine -> Config: Lade data/_gg01_join_puzzle.json
+ Config --> Engine: JSON-Konfiguration
+ Engine -> Assets: Lade CSS/JS/Medien
+ Assets --> Engine: Ressourcen bereit
+ Engine --> Browser: Spieloberflaeche initialisiert
+ 
+ note over Entry
+ Quelle: databases/Teil02 FIAE/database/Datenbanken & SQL/SQL-Abfragen (über Basics hinaus)/JOINs (INNER-LEFT) praxisnah/_ghtml_join_puzzle.html
+ end note
+@enduml

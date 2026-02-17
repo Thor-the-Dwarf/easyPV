@@ -249,6 +249,7 @@
 
         return JSON.stringify({
             mode: state.isComplete ? 'level_complete' : 'value_mapping',
+            measurable: true,
             coordinate_system: 'origin top-left, x right, y down',
             current_level: state.levelIdx + 1,
             total_levels: state.config && state.config.levels ? state.config.levels.length : 0,

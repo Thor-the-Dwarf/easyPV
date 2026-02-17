@@ -357,6 +357,7 @@
           const value = String(rawIcon || '').trim().toLowerCase();
           if (!value) return '';
           if (value === 'flame' || value === 'fire' || value === '🔥') return 'flame';
+          if (value === 'books' || value === 'book' || value === '📚') return 'books';
           if (value === 'brain' || value === '🧠') return 'brain';
           return '';
         }
@@ -642,8 +643,11 @@
           if (!hasFolderChild && node && (node.gameRelPath || node.jsonRelPath)) {
             const icon = normalizeIconValue(node.icon);
             if (icon === 'flame') return '🔥';
+            if (icon === 'books') return '📚';
             if (icon === 'brain') return '🧠';
-            if (resolveFolderIcon(node.jsonRelPath, node.gameRelPath) === 'flame') return '🔥';
+            const fallback = resolveFolderIcon(node.jsonRelPath, node.gameRelPath);
+            if (fallback === 'flame') return '🔥';
+            if (fallback === 'books') return '📚';
             return '🧠';
           }
           return isCollapsed ? '📁' : '📂';
@@ -653,6 +657,7 @@
           const source = String(gameRelPath || jsonRelPath || '');
           if (!source) return '';
           if (source.indexOf('/Erschienene Themen/') >= 0) return 'flame';
+          if (source.indexOf('/Mögliche Themen/') >= 0) return 'books';
           return 'brain';
         }
 

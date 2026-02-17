@@ -667,15 +667,19 @@
           const probabilityCol = document.createElement('span');
           probabilityCol.className = 'tree-meta-head-cell tree-meta-head-icon';
           probabilityCol.textContent = '🔥';
+          probabilityCol.dataset.tooltip = 'Thema ist zu x% in vergangenen Prüfungen erschienen.';
           probabilityCol.title = 'Thema ist zu x% in vergangenen Prüfungen erschienen.';
           probabilityCol.setAttribute('aria-label', 'Thema ist zu x% in vergangenen Prüfungen erschienen.');
+          probabilityCol.tabIndex = 0;
           row.appendChild(probabilityCol);
 
           const progressCol = document.createElement('span');
           progressCol.className = 'tree-meta-head-cell tree-meta-head-icon';
           progressCol.textContent = '🧠';
+          progressCol.dataset.tooltip = 'Fortschritt';
           progressCol.title = 'Fortschritt';
           progressCol.setAttribute('aria-label', 'Fortschritt');
+          progressCol.tabIndex = 0;
           row.appendChild(progressCol);
 
           const spacer = document.createElement('span');

@@ -4,8 +4,11 @@
     const state = {
         config: null,
         levelIdx: 0,
+        completedLevels: 0,
         selectedId: null,
-        isComplete: false
+        isComplete: false,
+        constraintInsight: false,
+        lastOutcome: 'none'
     };
 
     const el = {
@@ -15,7 +18,9 @@
         whereClause: document.getElementById('where-clause'),
         overlay: document.getElementById('overlay'),
         btnNext: document.getElementById('btn-next'),
-        status: document.getElementById('status-val')
+        status: document.getElementById('status-val'),
+        resultTitle: document.getElementById('result-title'),
+        resultDetails: document.getElementById('result-details')
     };
 
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -74,8 +79,10 @@
         state.levelIdx = idx;
         state.selectedId = null;
         state.isComplete = false;
+        state.constraintInsight = false;
+        state.lastOutcome = 'none';
         el.btnDelete.disabled = true;
-        el.whereClause.innerHTML = `WHERE id = <b>?</b>`;
+        el.whereClause.innerHTML = 'WHERE id = <b>?</b>';
         el.status.textContent = 'READY_FOR_OPERATION';
 
         const lv = state.config.levels[idx];
@@ -105,7 +112,7 @@
             div.innerHTML = `
         <div class="col-id">#${row.id}</div>
         <div class="col-data">${attrsHtml}</div>
-        ${row.locked ? `<div class="constraint-badge">CASCADE_RESTRICT</div>` : ''}
+        ${row.locked ? '<div class="constraint-badge">CASCADE_RESTRICT</div>' : ''}
       `;
 
             div.onclick = () => selectRow(row, div);
@@ -116,6 +123,7 @@
     function selectRow(row, rowEl) {
         if (state.isComplete) return;
 
+        const lv = state.config.levels[state.levelIdx];
         const all = document.querySelectorAll('.record-row');
         all.forEach(r => r.classList.remove('selected'));
 
@@ -126,7 +134,12 @@
             el.status.textContent = `INTEGRITY_HALT: ${row.reason}`;
             state.selectedId = null;
             el.btnDelete.disabled = true;
-            el.whereClause.innerHTML = `WHERE id = <b>?</b>`;
+            el.whereClause.innerHTML = 'WHERE id = <b>?</b>';
+
+            if (row.id === lv.target.id) {
+                state.constraintInsight = true;
+                completeLevel('constraint_blocked', row.reason);
+            }
             return;
         }
 
@@ -154,14 +167,81 @@
         state.isComplete = true;
         playSound('shred');
         el.status.textContent = 'ELIMINATING_RECORD...';
+        state.lastOutcome = 'record_deleted';
+        state.completedLevels = Math.max(state.completedLevels, state.levelIdx + 1);
 
         const selectedRow = document.querySelector('.record-row.selected');
-        selectedRow.classList.add('fade-out');
+        if (selectedRow) selectedRow.classList.add('fade-out');
 
         setTimeout(() => {
-            el.overlay.classList.remove('hidden');
+            showOverlay('RECORD_REMOVED', [
+                '> OPERATION_SUCCESS: 100%',
+                '> COLLATERAL_DAMAGE: 0',
+                '> INTEGRITY_VERIFIED: YES'
+            ]);
         }, 1000);
     }
+
+    function completeLevel(outcome, reason) {
+        state.isComplete = true;
+        state.lastOutcome = outcome;
+        state.completedLevels = Math.max(state.completedLevels, state.levelIdx + 1);
+        setTimeout(() => {
+            showOverlay('CONSTRAINT_CONFIRMED', [
+                '> OPERATION_SUCCESS: SAFE_ABORT',
+                '> COLLATERAL_DAMAGE: 0',
+                `> REASON: ${reason || 'Foreign key restriction detected.'}`
+            ]);
+        }, 300);
+    }
+
+    function showOverlay(title, lines) {
+        if (el.resultTitle) el.resultTitle.textContent = title;
+        if (el.resultDetails) {
+            el.resultDetails.innerHTML = (Array.isArray(lines) ? lines : [])
+                .map((line) => `${line}<br>`)
+                .join('');
+        }
+        el.overlay.classList.remove('hidden');
+    }
+
+    function computeProgressPercent() {
+        const totalLevels = state.config && Array.isArray(state.config.levels) ? state.config.levels.length : 0;
+        if (totalLevels <= 0) return 0;
+
+        const lv = state.config.levels[state.levelIdx];
+        const inLevel = state.isComplete ? 0 : (state.selectedId !== null || state.constraintInsight ? 0.5 : 0);
+        const done = Math.max(0, Math.min(state.completedLevels, totalLevels));
+        const ratio = (done + inLevel) / totalLevels;
+        return Math.round(Math.max(0, Math.min(1, ratio)) * 100);
+    }
+
+    window.render_game_to_text = function renderGameToText() {
+        const lv = state.config && state.config.levels ? state.config.levels[state.levelIdx] : null;
+        const targetId = lv && lv.target ? lv.target.id : null;
+        const targetRow = lv && Array.isArray(lv.data) ? lv.data.find((row) => row.id === targetId) : null;
+
+        return JSON.stringify({
+            mode: state.isComplete ? 'result' : 'target_selection',
+            measurable: true,
+            coordinate_system: 'origin top-left, x right, y down',
+            current_level: state.levelIdx + 1,
+            total_levels: state.config && state.config.levels ? state.config.levels.length : 0,
+            completed_levels: state.completedLevels,
+            progress_percent: computeProgressPercent(),
+            selected_id: state.selectedId,
+            target_id: targetId,
+            target_locked: !!(targetRow && targetRow.locked),
+            constraint_insight: state.constraintInsight,
+            status_text: el.status ? el.status.textContent : '',
+            last_outcome: state.lastOutcome,
+            is_complete: state.isComplete
+        });
+    };
+
+    window.advanceTime = function advanceTime() {
+        return true;
+    };
 
     init();
 })();

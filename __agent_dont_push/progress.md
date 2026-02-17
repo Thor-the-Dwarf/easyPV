@@ -604,3 +604,8 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 - Playwright-Smoke: `output/web-game-value-match/shot-0.png` und `state-0.json` erzeugt, ohne `errors-0.json`.
 - State-Check: Hook liefert jetzt messbare Felder (`progress_percent`, `filled_slots`, `total_slots`, `completed_levels`).
 - TODO naechster Durchlauf: weiteres Spiel aus `necht_messbare_spiele.json` mit gleichem Muster messbar machen.
+
+- Weiterer Durchlauf (EntwicklerTeam02): naechstes Spiel `Datenbanken & SQL/DELETE/point_delete` messbar gemacht.
+- Änderungen: `_gjs_point_delete.js` um Fortschrittslogik (`completed_levels`, `progress_percent`) sowie `render_game_to_text` + `advanceTime` erweitert.
+- Zusätzlich: Level mit gesperrtem Ziel-Datensatz wird nun als erfolgreiche Constraint-Erkenntnis abgeschlossen (`CONSTRAINT_CONFIRMED`), damit Aufgabenfortschritt vollstaendig erspielbar bleibt.
+- Validierung: `node --check` erfolgreich; Playwright-Smoke ohne Fehlerdatei, State liefert `measurable=true` und `progress_percent`.

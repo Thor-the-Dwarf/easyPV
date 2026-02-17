@@ -18,3 +18,7 @@
 2. Technische Ordner in den Game-Themen müssen physisch auf `_assets` und `_data` umbenannt werden.
 3. Die Sichtbarkeit wird ausschließlich über führendes `_` geregelt.
 4. Leaf-Game-Ordner müssen wieder 🔥/📚 statt 🧠 verwenden.
+
+## Zusatzanalyse (Spielbutton-Flow)
+- Neue UX-Anforderung: Thema trägt die 🔥/📚-Semantik, Spielknoten selbst sollen iconfrei sein.
+- Klick auf Spielknoten soll direkt in die Spielseite führen (kein zusätzlicher Zwischenklick im Generic-View).

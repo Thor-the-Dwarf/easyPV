@@ -20,3 +20,11 @@
 - Es existieren keine `assets`/`data`-Ordner mehr unter `databases/` (stattdessen `_assets`/`_data`).
 - Game-Folder in `Erschienene/Vergangene Themen` zeigen 🔥.
 - Andere Game-Folder zeigen 📚.
+
+## Nachtrag Plan (Spielbutton-Flow)
+1. Icon-Zuordnung verschieben:
+   - Themenordner (mit direkten Spielkindern) erhalten 🔥/📚.
+   - Spielknoten selbst zeigen kein Icon.
+2. Klickverhalten:
+   - Spielknoten-Label öffnet direkt die Spielseite (`gameRelPath`) inkl. Theme-Parameter.
+   - Generic-View bleibt Fallback für Knoten ohne `gameRelPath`.

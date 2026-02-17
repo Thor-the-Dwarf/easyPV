@@ -25,3 +25,10 @@
   - Browser-DOM-Test: `underscoreLeaks = 0` (kein sichtbarer Tree-Label mit führendem `_`).
   - Browser-DOM-Test: `openableIconCounts = { 📚: 286, 🔥: 89 }`, `errors = []`.
   - Screenshot: `output/web-game-foldertree-underscore/shot-0.png`.
+
+## Ergänzende Checks (Themen-Icon + Spielbutton)
+- `index.html` Inline-Script-Syntax geprüft (`new Function(script)`): OK.
+- Code-Review auf neue Funktionen:
+  - `resolveThemeFolderIcon` vorhanden (Themenordner-Icons).
+  - `isLeafPlayableNode` führt bei Spielknoten zu leerem Icon.
+  - `openPlayableFolder` öffnet bei vorhandenem `gameRelPath` direkt die Spielseite.

@@ -37,7 +37,7 @@
           <button id="theme-toggle-app" class="theme-toggle-btn" type="button" aria-label="Theme wechseln">🌙</button>
         </header>
         <section id="content-host" class="content-host" aria-live="polite">
-          <div class="content-placeholder">Klicke einen Endordner (🧠), um den C-Suite-Prototyp zu laden.</div>
+          <div class="content-placeholder">Klicke einen SpielButton im FolderTree, um die Spielseite zu laden.</div>
         </section>
       </main>
     </div>
@@ -561,6 +561,7 @@
 
             const hasChildren = Array.isArray(node.children) && node.children.length > 0;
             const canOpenPlayable = isPlayableFolder(node);
+            const isGameNode = !hasChildren && canOpenPlayable;
             const isCollapsed = !openedFolderIds.includes(node.id);
             rowNode.classList.toggle('tree-node--collapsed', isCollapsed);
 
@@ -579,17 +580,10 @@
                 event.stopPropagation();
                 toggleNode(rowNode, node.id, iconButton);
               });
-            } else if (canOpenPlayable) {
-              iconButton.classList.add('is-openable');
-              iconButton.setAttribute('aria-label', 'Ordner oeffnen');
-              iconButton.addEventListener('click', (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                openPlayableFolder(node);
-              });
             } else {
               iconButton.setAttribute('aria-hidden', 'true');
               iconButton.tabIndex = -1;
+              if (isGameNode) iconButton.classList.add('is-empty');
             }
 
             const icon = document.createElement('span');
@@ -603,6 +597,10 @@
             label.type = 'button';
             label.textContent = node.name;
             label.title = node.name;
+            if (isGameNode) {
+              label.classList.add('tree-label--play');
+              label.setAttribute('aria-label', 'Spielseite oeffnen: ' + node.name);
+            }
             label.addEventListener('click', (event) => {
               event.preventDefault();
               event.stopPropagation();
@@ -654,16 +652,36 @@
           saveState();
         }
 
-        function folderEmoji(node, isCollapsed) {
+        function hasFolderChild(node) {
+          const children = node && Array.isArray(node.children) ? node.children : [];
+          return children.some((child) => child && child.isFolder);
+        }
+
+        function isLeafPlayableNode(node) {
+          return isPlayableFolder(node) && !hasFolderChild(node);
+        }
+
+        function resolveNodeIconKind(node) {
+          if (!node) return '';
+          const direct = normalizeIconValue(node.icon);
+          if (direct) return direct;
+          return resolveFolderIcon(node.jsonRelPath, node.gameRelPath);
+        }
+
+        function resolveThemeFolderIcon(node) {
+          if (!node || !node.isFolder) return '';
           const children = Array.isArray(node.children) ? node.children : [];
-          const hasFolderChild = children.some((child) => child && child.isFolder);
-          if (!hasFolderChild && node && (node.gameRelPath || node.jsonRelPath || node.attributesRelPath)) {
-            const icon = normalizeIconValue(node.icon);
-            if (icon === 'flame') return '🔥';
-            const fallback = resolveFolderIcon(node.jsonRelPath, node.gameRelPath);
-            if (fallback === 'flame') return '🔥';
-            return '📚';
-          }
+          const playableChildren = children.filter((child) => isLeafPlayableNode(child));
+          if (!playableChildren.length) return '';
+          const hasFlame = playableChildren.some((child) => resolveNodeIconKind(child) === 'flame');
+          return hasFlame ? 'flame' : 'books';
+        }
+
+        function folderEmoji(node, isCollapsed) {
+          const themeIcon = resolveThemeFolderIcon(node);
+          if (themeIcon === 'flame') return '🔥';
+          if (themeIcon === 'books') return '📚';
+          if (isLeafPlayableNode(node)) return '';
           return isCollapsed ? '📁' : '📂';
         }
 
@@ -711,6 +729,21 @@
           const gameUrl = node && node.gameRelPath
             ? buildRepoUrl(gameRelPath)
             : '';
+          if (gameUrl) {
+            let directGameSrc = gameUrl;
+            try {
+              const url = new URL(gameUrl, window.location.href);
+              url.searchParams.set('theme', getCurrentTheme());
+              if (jsonUrl) url.searchParams.set('json', jsonUrl);
+              directGameSrc = url.href;
+            } catch (_) {
+              directGameSrc = gameUrl;
+            }
+            contentHost.innerHTML =
+              '<iframe class="content-frame" src="' + directGameSrc + '" title="Spielseite" loading="eager"></iframe>';
+            queueThemeSyncForNewFrame();
+            return;
+          }
           const src = buildGenericPageSrc(folderLabel, jsonUrl, gameUrl, jsonRelPath, gameRelPath, node && node.id ? node.id : '');
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';

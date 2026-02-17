@@ -367,6 +367,14 @@ body::after {
   box-shadow: var(--glow-soft);
 }
 
+.tree-icon-button.is-empty {
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .tree-icon {
   font-size: 1.05rem;
   filter: drop-shadow(0 0 8px hsl(var(--primary) / 0.45));

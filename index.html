@@ -977,13 +977,9 @@
             const probabilityPercent = resolveExamProbabilityPercent(node);
             const probabilityCell = document.createElement('span');
             probabilityCell.className = 'tree-meta-cell tree-meta-cell--probability';
-            if (probabilityPercent === null) {
-              probabilityCell.textContent = '-';
-              probabilityCell.title = 'Thema ist zu x% in vergangenen Prüfungen erschienen.';
-            } else {
-              probabilityCell.textContent = '🔥 ' + probabilityPercent + '%';
-              probabilityCell.title = 'Thema ist zu ' + probabilityPercent + '% in vergangenen Prüfungen erschienen.';
-            }
+            probabilityCell.textContent = probabilityPercent + '%';
+            probabilityCell.title = 'Thema ist zu ' + probabilityPercent + '% in vergangenen Prüfungen erschienen.';
+            probabilityCell.setAttribute('aria-label', probabilityCell.title);
             row.appendChild(probabilityCell);
 
             const progressValue = clampPercent(
@@ -993,6 +989,7 @@
             progressCell.className = 'tree-meta-cell tree-meta-cell--progress';
             progressCell.textContent = progressValue + '%';
             progressCell.title = 'Fortschritt: ' + progressValue + '%';
+            progressCell.setAttribute('aria-label', progressCell.title);
             row.appendChild(progressCell);
 
             const treeMain = document.createElement('div');
@@ -1144,9 +1141,9 @@
 
         function resolveExamProbabilityPercent(node) {
           const stats = resolveExamProbabilityStats(node);
-          if (!stats || typeof stats !== 'object') return null;
+          if (!stats || typeof stats !== 'object') return 0;
           const total = Number(stats.total) || 0;
-          if (total <= 0) return null;
+          if (total <= 0) return 0;
           const flame = Number(stats.flame) || 0;
           return clampPercent((flame / total) * 100);
         }

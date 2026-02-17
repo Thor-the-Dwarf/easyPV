@@ -1,0 +1,35 @@
+@startuml
+title Komponenten-/Package-Diagramm: Promotoren-Opponenten-Netz
+left to right direction
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+package "Ordner: promotoren_opponenten_netz" as Scope {
+  component "HTML Entry\n_ghtml_promotoren_opponenten_netz.html" as HTML
+  component "Game-Logik (JS)\n_gjs_promotoren_opponenten_netz.js" as JS
+  component "Shared Scripts\n/__admin_dont_push/theme_bridge.js" as SHAREDJS
+  package "Ressourcen" as RES {
+    database "data/\n2 Dateien" as DATA
+    folder "assets/\n0 Dateien" as ASSETS
+  }
+  package "Dokumentation" as DOC {
+    folder "__dokumentation/__02_plans" as PLAN
+  }
+}
+
+HTML --> JS : laedt Script
+HTML --> SHAREDJS : bindet Shared Runtime ein
+JS --> DATA : liest Konfig/Leveldaten
+JS --> ASSETS : nutzt Laufzeit-Assets
+HTML --> ASSETS : nutzt statische Assets
+
+note right of JS
+fetch()-Ziele: data/_gg01_promotoren_opponenten_netz.json
+end note
+
+note bottom
+Quelle: databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Stakeholder/promotoren_opponenten_netz
+Dateien: 1 HTML, 1 JS, 0 CSS, 0 CJS
+end note
+@enduml

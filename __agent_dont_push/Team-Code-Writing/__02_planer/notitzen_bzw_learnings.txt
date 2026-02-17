@@ -8,3 +8,7 @@ Learnings fuer Sequenzdiagramm-Auftrag
 - Einheitlicher Dateiname `__sequence_diagram.puml` pro Zielordner ist praktikabel, da pro Endordner nur ein Diagramm gefordert war.
 - Top-down Verarbeitung wurde ueber sortierte Pfade umgesetzt, damit die Reihenfolge reproduzierbar bleibt.
 - Hilfsreport (`sequence_generation_report.tsv`) erleichtert spaeteres Nachvollziehen, welche Seite als Redirect oder Direct behandelt wurde.
+2026-02-17
+- Fuer diese Struktur funktionieren Komponenten-/Package-Diagramme am stabilsten, wenn pro Spielordner nur direkt benachbarte Dateien (html/js/css/cjs/json) und die Ressourcenordner `data/` und `assets/` ausgewertet werden.
+- Einheitlicher Dateiname pro Zielordner (`__component_package_diagram.puml`) erleichtert spaetere automatisierte Pruefungen.
+- Das Sortieren der Zielordner per Relativpfad (`de`-Locale) liefert eine konsistente "oben nach unten"-Abarbeitung.

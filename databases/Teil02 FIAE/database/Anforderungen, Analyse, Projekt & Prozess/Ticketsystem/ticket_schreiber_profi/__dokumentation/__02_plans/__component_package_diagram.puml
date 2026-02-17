@@ -1,0 +1,35 @@
+@startuml
+title Komponenten-/Package-Diagramm: Ticket-Schreiber-Profi
+left to right direction
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+package "Ordner: ticket_schreiber_profi" as Scope {
+  component "HTML Entry\n_ghtml_ticket_schreiber_profi.html" as HTML
+  component "Game-Logik (JS)\n_gjs_ticket_schreiber_profi.js" as JS
+  component "Styles (CSS)\n_gcss_ticket_schreiber_profi.css" as CSS
+  package "Ressourcen" as RES {
+    database "data/\n2 Dateien" as DATA
+    folder "assets/\n0 Dateien" as ASSETS
+  }
+  package "Dokumentation" as DOC {
+    folder "__dokumentation/__02_plans" as PLAN
+  }
+}
+
+HTML --> JS : laedt Script
+HTML --> CSS : laedt Styles
+JS --> DATA : liest Konfig/Leveldaten
+JS --> ASSETS : nutzt Laufzeit-Assets
+HTML --> ASSETS : nutzt statische Assets
+
+note right of JS
+fetch()-Ziele: data/_gg01_ticket_schreiber_profi.json
+end note
+
+note bottom
+Quelle: databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Ticketsystem/ticket_schreiber_profi
+Dateien: 1 HTML, 1 JS, 1 CSS, 0 CJS
+end note
+@enduml

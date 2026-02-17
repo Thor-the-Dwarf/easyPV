@@ -1,0 +1,35 @@
+@startuml
+title Komponenten-/Package-Diagramm: Lade Spiel...
+left to right direction
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+package "Ordner: kommunikations_koffer" as Scope {
+  component "HTML Entry\n_ghtml_kommunikations_koffer.html" as HTML
+  component "Game-Logik (JS)\n_gjs_kommunikations_koffer.js" as JS
+  component "Checks/Tools (CJS)\nverify_game.cjs" as CJS
+  package "Ressourcen" as RES {
+    database "data/\n2 Dateien" as DATA
+    folder "assets/\n0 Dateien" as ASSETS
+  }
+  package "Dokumentation" as DOC {
+    folder "__dokumentation/__02_plans" as PLAN
+  }
+}
+
+HTML --> JS : laedt Script
+JS --> DATA : liest Konfig/Leveldaten
+JS --> ASSETS : nutzt Laufzeit-Assets
+HTML --> ASSETS : nutzt statische Assets
+CJS ..> JS : validiert/verifiziert
+
+note right of JS
+fetch()-Ziele: data/_gg01_kommunikations_koffer.json
+end note
+
+note bottom
+Quelle: databases/Teil01 Grundlagen/database/BWL/Projektmanagement & Organisation/Change Management/kommunikations_koffer
+Dateien: 1 HTML, 1 JS, 0 CSS, 1 CJS
+end note
+@enduml

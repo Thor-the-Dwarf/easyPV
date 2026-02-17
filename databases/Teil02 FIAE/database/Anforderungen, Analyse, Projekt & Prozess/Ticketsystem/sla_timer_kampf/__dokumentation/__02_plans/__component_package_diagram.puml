@@ -1,0 +1,35 @@
+@startuml
+title Komponenten-/Package-Diagramm: SLA-Timer-Kampf
+left to right direction
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+package "Ordner: sla_timer_kampf" as Scope {
+  component "HTML Entry\n_ghtml_sla_timer_kampf.html" as HTML
+  component "Game-Logik (JS)\n_gjs_sla_timer_kampf.js" as JS
+  component "Styles (CSS)\n_gcss_sla_timer_kampf.css" as CSS
+  package "Ressourcen" as RES {
+    database "data/\n2 Dateien" as DATA
+    folder "assets/\n0 Dateien" as ASSETS
+  }
+  package "Dokumentation" as DOC {
+    folder "__dokumentation/__02_plans" as PLAN
+  }
+}
+
+HTML --> JS : laedt Script
+HTML --> CSS : laedt Styles
+JS --> DATA : liest Konfig/Leveldaten
+JS --> ASSETS : nutzt Laufzeit-Assets
+HTML --> ASSETS : nutzt statische Assets
+
+note right of JS
+fetch()-Ziele: data/_gg01_sla_timer_kampf.json
+end note
+
+note bottom
+Quelle: databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Ticketsystem/sla_timer_kampf
+Dateien: 1 HTML, 1 JS, 1 CSS, 0 CJS
+end note
+@enduml

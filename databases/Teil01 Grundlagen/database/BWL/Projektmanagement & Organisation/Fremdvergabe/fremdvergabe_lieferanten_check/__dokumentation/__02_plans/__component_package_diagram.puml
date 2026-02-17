@@ -1,0 +1,39 @@
+@startuml
+title Komponenten-/Package-Diagramm: Lieferanten-Abhängigkeits-Check
+left to right direction
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+package "Ordner: fremdvergabe_lieferanten_check" as Scope {
+  component "HTML Entry\n_ghtml_fremdvergabe_lieferanten_check.html" as HTML
+  component "Game-Logik (JS)\n_gjs_fremdvergabe_lieferanten_check.js" as JS
+  component "Styles (CSS)\n_gcss_fremdvergabe_lieferanten_check.css" as CSS
+  component "Checks/Tools (CJS)\nverify_game.cjs" as CJS
+  component "Shared Scripts\n/__admin_dont_push/theme_bridge.js" as SHAREDJS
+  package "Ressourcen" as RES {
+    database "data/\n2 Dateien" as DATA
+    folder "assets/\n0 Dateien" as ASSETS
+  }
+  package "Dokumentation" as DOC {
+    folder "__dokumentation/__02_plans" as PLAN
+  }
+}
+
+HTML --> JS : laedt Script
+HTML --> CSS : laedt Styles
+HTML --> SHAREDJS : bindet Shared Runtime ein
+JS --> DATA : liest Konfig/Leveldaten
+JS --> ASSETS : nutzt Laufzeit-Assets
+HTML --> ASSETS : nutzt statische Assets
+CJS ..> JS : validiert/verifiziert
+
+note right of JS
+fetch()-Ziele: data/_g01_fremdvergabe_lieferanten_check.json
+end note
+
+note bottom
+Quelle: databases/Teil01 Grundlagen/database/BWL/Projektmanagement & Organisation/Fremdvergabe/fremdvergabe_lieferanten_check
+Dateien: 1 HTML, 1 JS, 1 CSS, 1 CJS
+end note
+@enduml

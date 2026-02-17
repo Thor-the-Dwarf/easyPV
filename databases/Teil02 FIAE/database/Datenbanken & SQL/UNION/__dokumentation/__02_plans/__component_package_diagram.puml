@@ -1,0 +1,39 @@
+@startuml
+title Komponenten-/Package-Diagramm: UNION Compatibility // Fusion Reactor
+left to right direction
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+package "Ordner: UNION" as Scope {
+  component "HTML Entry\n_ghtml_union_compat.html" as HTML
+  component "Game-Logik (JS)\n_gjs_union_compat.js" as JS
+  component "Styles (CSS)\n_gcss_union_compat.css" as CSS
+  component "Shared Scripts\n/__admin_dont_push/theme_bridge.js" as SHAREDJS
+  component "Externe Styles\nhttps://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" as EXTCSS
+  package "Ressourcen" as RES {
+    database "data/\n3 Dateien" as DATA
+    folder "assets/\n0 Dateien" as ASSETS
+  }
+  package "Dokumentation" as DOC {
+    folder "__dokumentation/__02_plans" as PLAN
+  }
+}
+
+HTML --> JS : laedt Script
+HTML --> CSS : laedt Styles
+HTML --> SHAREDJS : bindet Shared Runtime ein
+HTML --> EXTCSS : bindet externe Styles ein
+JS --> DATA : liest Konfig/Leveldaten
+JS --> ASSETS : nutzt Laufzeit-Assets
+HTML --> ASSETS : nutzt statische Assets
+
+note right of JS
+fetch()-Ziele: data/_gg01_union_compat.json
+end note
+
+note bottom
+Quelle: databases/Teil02 FIAE/database/Datenbanken & SQL/UNION
+Dateien: 1 HTML, 1 JS, 1 CSS, 0 CJS
+end note
+@enduml

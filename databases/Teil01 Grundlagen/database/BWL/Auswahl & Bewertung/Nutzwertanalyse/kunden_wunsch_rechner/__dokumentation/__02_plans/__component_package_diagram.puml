@@ -1,0 +1,37 @@
+@startuml
+title Komponenten-/Package-Diagramm: Kunden-Wunsch-Rechner
+left to right direction
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+package "Ordner: kunden_wunsch_rechner" as Scope {
+  component "HTML Entry\n_ghtml_kunden_wunsch_rechner.html" as HTML
+  component "Game-Logik (JS)\n_gjs_kunden_wunsch_rechner.js" as JS
+  component "Styles (CSS)\n_gcss_nutzwertanalyse.css" as CSS
+  component "Shared Scripts\n/__admin_dont_push/theme_bridge.js" as SHAREDJS
+  package "Ressourcen" as RES {
+    database "data/\n2 Dateien" as DATA
+    folder "assets/\n0 Dateien" as ASSETS
+  }
+  package "Dokumentation" as DOC {
+    folder "__dokumentation/__02_plans" as PLAN
+  }
+}
+
+HTML --> JS : laedt Script
+HTML --> CSS : laedt Styles
+HTML --> SHAREDJS : bindet Shared Runtime ein
+JS --> DATA : liest Konfig/Leveldaten
+JS --> ASSETS : nutzt Laufzeit-Assets
+HTML --> ASSETS : nutzt statische Assets
+
+note right of JS
+fetch()-Ziele: data/_gg01_kunden_wunsch_rechner.json
+end note
+
+note bottom
+Quelle: databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Nutzwertanalyse/kunden_wunsch_rechner
+Dateien: 1 HTML, 1 JS, 1 CSS, 0 CJS
+end note
+@enduml

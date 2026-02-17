@@ -1,0 +1,37 @@
+@startuml
+title Komponenten-/Package-Diagramm: Go oder No-Go - Machbarkeitsanalyse
+left to right direction
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+package "Ordner: Machbarkeitsanalyse [Ab hier abwärts neue Strategie angewandt]" as Scope {
+  component "HTML Entry\n_ghtml_go_oder_no_go.html" as HTML
+  component "Game-Logik (JS)\n_gjs_go_oder_no_go.js" as JS
+  component "Styles (CSS)\n_gcss_go_oder_no_go.css" as CSS
+  component "Shared Scripts\n/__admin_dont_push/theme_bridge.js" as SHAREDJS
+  package "Ressourcen" as RES {
+    database "data/\n2 Dateien" as DATA
+    folder "assets/\n0 Dateien" as ASSETS
+  }
+  package "Dokumentation" as DOC {
+    folder "__dokumentation/__02_plans" as PLAN
+  }
+}
+
+HTML --> JS : laedt Script
+HTML --> CSS : laedt Styles
+HTML --> SHAREDJS : bindet Shared Runtime ein
+JS --> DATA : liest Konfig/Leveldaten
+JS --> ASSETS : nutzt Laufzeit-Assets
+HTML --> ASSETS : nutzt statische Assets
+
+note right of JS
+fetch()-Ziele: data/_gg01_go_oder_no_go.json
+end note
+
+note bottom
+Quelle: databases/Teil02 FIAE/database/Anforderungen, Analyse, Projekt & Prozess/Machbarkeitsanalyse [Ab hier abwärts neue Strategie angewandt]
+Dateien: 1 HTML, 1 JS, 1 CSS, 0 CJS
+end note
+@enduml

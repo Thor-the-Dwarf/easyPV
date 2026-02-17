@@ -1,0 +1,35 @@
+@startuml
+title Komponenten-/Package-Diagramm: Lade Spiel...
+left to right direction
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+package "Ordner: leasing_gutachter" as Scope {
+  component "HTML Entry\n_ghtml_leasing_gutachter.html" as HTML
+  component "Game-Logik (JS)\n_gjs_leasing_gutachter.js" as JS
+  component "Checks/Tools (CJS)\nverify_gutachter.cjs" as CJS
+  package "Ressourcen" as RES {
+    database "data/\n2 Dateien" as DATA
+    folder "assets/\n7 Dateien" as ASSETS
+  }
+  package "Dokumentation" as DOC {
+    folder "__dokumentation/__02_plans" as PLAN
+  }
+}
+
+HTML --> JS : laedt Script
+JS --> DATA : liest Konfig/Leveldaten
+JS --> ASSETS : nutzt Laufzeit-Assets
+HTML --> ASSETS : nutzt statische Assets
+CJS ..> JS : validiert/verifiziert
+
+note right of JS
+fetch()-Ziele: data/_gg01_leasing_gutachter.json
+end note
+
+note bottom
+Quelle: databases/Teil01 Grundlagen/database/BWL/Auswahl & Bewertung/Leasing/leasing_gutachter
+Dateien: 1 HTML, 1 JS, 0 CSS, 1 CJS
+end note
+@enduml

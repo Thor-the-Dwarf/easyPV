@@ -668,7 +668,6 @@
           probabilityCol.className = 'tree-meta-head-cell tree-meta-head-icon';
           probabilityCol.textContent = '🔥';
           probabilityCol.dataset.tooltip = 'Thema ist zu x% in vergangenen Prüfungen erschienen.';
-          probabilityCol.title = 'Thema ist zu x% in vergangenen Prüfungen erschienen.';
           probabilityCol.setAttribute('aria-label', 'Thema ist zu x% in vergangenen Prüfungen erschienen.');
           probabilityCol.tabIndex = 0;
           row.appendChild(probabilityCol);
@@ -677,7 +676,6 @@
           progressCol.className = 'tree-meta-head-cell tree-meta-head-icon';
           progressCol.textContent = '🧠';
           progressCol.dataset.tooltip = 'Fortschritt';
-          progressCol.title = 'Fortschritt';
           progressCol.setAttribute('aria-label', 'Fortschritt');
           progressCol.tabIndex = 0;
           row.appendChild(progressCol);
@@ -981,9 +979,14 @@
             const probabilityPercent = resolveExamProbabilityPercent(node);
             const probabilityCell = document.createElement('span');
             probabilityCell.className = 'tree-meta-cell tree-meta-cell--probability';
-            probabilityCell.textContent = probabilityPercent + '%';
-            probabilityCell.title = 'Thema ist zu ' + probabilityPercent + '% in vergangenen Prüfungen erschienen.';
-            probabilityCell.setAttribute('aria-label', probabilityCell.title);
+            if (isGameNode) {
+              probabilityCell.textContent = '';
+              probabilityCell.setAttribute('aria-label', '');
+            } else {
+              probabilityCell.textContent = probabilityPercent + '%';
+              probabilityCell.title = 'Thema ist zu ' + probabilityPercent + '% in vergangenen Prüfungen erschienen.';
+              probabilityCell.setAttribute('aria-label', probabilityCell.title);
+            }
             row.appendChild(probabilityCell);
 
             const progressValue = clampPercent(

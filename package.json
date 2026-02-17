@@ -7,11 +7,11 @@
     "firebase-admin": "^13.5.0"
   },
   "scripts": {
-    "play": "node databases/testing/scripts/run-smoke-tests.mjs",
-    "test:smoke": "node databases/testing/scripts/run-smoke-tests.mjs",
-    "test:advanced": "node databases/testing/scripts/run-advanced-web-tests.mjs",
-    "test:relevant-g": "node databases/testing/scripts/run-relevant-tests-on-g-change.mjs",
-    "test:learner-ux": "node --test databases/testing/tests/learner-ux.finanzierungs-sortiermaschine.test.mjs",
+    "play": "node databases/_testing/scripts/run-smoke-tests.mjs",
+    "test:smoke": "node databases/_testing/scripts/run-smoke-tests.mjs",
+    "test:advanced": "node databases/_testing/scripts/run-advanced-web-tests.mjs",
+    "test:relevant-g": "node databases/_testing/scripts/run-relevant-tests-on-g-change.mjs",
+    "test:learner-ux": "node --test databases/_testing/tests/learner-ux.finanzierungs-sortiermaschine.test.mjs",
     "check:gjson": "node __admin_dont_push/scripts/gjson/check-gjson-consistency.mjs --baseline __agent_dont_push/metadata/gjson-index.baseline.json",
     "update:gjson-index": "node __admin_dont_push/scripts/gjson/check-gjson-consistency.mjs --baseline __agent_dont_push/metadata/gjson-index.baseline.json --update-baseline",
     "build:g0-catalog": "node __admin_dont_push/scripts/g0/build-normalized-catalog.mjs",

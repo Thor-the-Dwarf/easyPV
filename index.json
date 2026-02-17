@@ -1,13 +1,125 @@
 {
   "rootName": "databases",
-  "generatedAt": "2026-02-17T21:20:39.127Z",
+  "generatedAt": "2026-02-17T21:40:42.743Z",
   "totalFiles": 3128,
   "tree": [
+    {
+      "id": "folder_databases_testing",
+      "name": "_testing",
+      "isFolder": true,
+      "children": [
+        {
+          "id": "folder_databases_testing_config",
+          "name": "config",
+          "isFolder": true,
+          "children": [
+            {
+              "id": "file_databases_testing_config_advanced-web-scenarios_json",
+              "name": "advanced-web-scenarios.json",
+              "isFolder": false,
+              "kind": "json",
+              "relPath": "databases/_testing/config/advanced-web-scenarios.json"
+            }
+          ]
+        },
+        {
+          "id": "folder_databases_testing_scripts",
+          "name": "scripts",
+          "isFolder": true,
+          "children": [
+            {
+              "id": "file_databases_testing_scripts_bootstrap-testing-folders_mjs",
+              "name": "bootstrap-testing-folders.mjs",
+              "isFolder": false,
+              "kind": "mjs",
+              "relPath": "databases/_testing/scripts/bootstrap-testing-folders.mjs"
+            },
+            {
+              "id": "file_databases_testing_scripts_run-advanced-web-tests_mjs",
+              "name": "run-advanced-web-tests.mjs",
+              "isFolder": false,
+              "kind": "mjs",
+              "relPath": "databases/_testing/scripts/run-advanced-web-tests.mjs"
+            },
+            {
+              "id": "file_databases_testing_scripts_run-relevant-tests-on-g-change_mjs",
+              "name": "run-relevant-tests-on-g-change.mjs",
+              "isFolder": false,
+              "kind": "mjs",
+              "relPath": "databases/_testing/scripts/run-relevant-tests-on-g-change.mjs"
+            },
+            {
+              "id": "file_databases_testing_scripts_run-smoke-tests_mjs",
+              "name": "run-smoke-tests.mjs",
+              "isFolder": false,
+              "kind": "mjs",
+              "relPath": "databases/_testing/scripts/run-smoke-tests.mjs"
+            }
+          ]
+        },
+        {
+          "id": "folder_databases_testing_tests",
+          "name": "tests",
+          "isFolder": true,
+          "children": [
+            {
+              "id": "file_databases_testing_tests_core-rules_test_mjs",
+              "name": "core-rules.test.mjs",
+              "isFolder": false,
+              "kind": "mjs",
+              "relPath": "databases/_testing/tests/core-rules.test.mjs"
+            },
+            {
+              "id": "file_databases_testing_tests_global-doing-folders-smoke_test_mjs",
+              "name": "global-doing-folders-smoke.test.mjs",
+              "isFolder": false,
+              "kind": "mjs",
+              "relPath": "databases/_testing/tests/global-doing-folders-smoke.test.mjs"
+            },
+            {
+              "id": "file_databases_testing_tests_learner-ux_finanzierungs-sortiermaschine_test_mjs",
+              "name": "learner-ux.finanzierungs-sortiermaschine.test.mjs",
+              "isFolder": false,
+              "kind": "mjs",
+              "relPath": "databases/_testing/tests/learner-ux.finanzierungs-sortiermaschine.test.mjs"
+            }
+          ]
+        },
+        {
+          "id": "file_databases_testing_readme_md",
+          "name": "README.md",
+          "isFolder": false,
+          "kind": "txt",
+          "relPath": "databases/_testing/README.md"
+        }
+      ]
+    },
     {
       "id": "folder_databases_teil01_grundlagen",
       "name": "Teil01 Grundlagen",
       "isFolder": true,
       "children": [
+        {
+          "id": "folder_databases_teil01_grundlagen_scripts",
+          "name": "_scripts",
+          "isFolder": true,
+          "children": [
+            {
+              "id": "file_databases_teil01_grundlagen_scripts_build-database-index_mjs",
+              "name": "build-database-index.mjs",
+              "isFolder": false,
+              "kind": "mjs",
+              "relPath": "databases/Teil01 Grundlagen/_scripts/build-database-index.mjs"
+            },
+            {
+              "id": "file_databases_teil01_grundlagen_scripts_dev-server_mjs",
+              "name": "dev-server.mjs",
+              "isFolder": false,
+              "kind": "mjs",
+              "relPath": "databases/Teil01 Grundlagen/_scripts/dev-server.mjs"
+            }
+          ]
+        },
         {
           "id": "folder_databases_teil01_grundlagen_database",
           "name": "database",
@@ -13084,27 +13196,6 @@
               "isFolder": false,
               "kind": "txt",
               "relPath": "databases/Teil01 Grundlagen/database/inhaltsverzeichnis_Teil01_Grundlagen.txt"
-            }
-          ]
-        },
-        {
-          "id": "folder_databases_teil01_grundlagen_scripts",
-          "name": "scripts",
-          "isFolder": true,
-          "children": [
-            {
-              "id": "file_databases_teil01_grundlagen_scripts_build-database-index_mjs",
-              "name": "build-database-index.mjs",
-              "isFolder": false,
-              "kind": "mjs",
-              "relPath": "databases/Teil01 Grundlagen/scripts/build-database-index.mjs"
-            },
-            {
-              "id": "file_databases_teil01_grundlagen_scripts_dev-server_mjs",
-              "name": "dev-server.mjs",
-              "isFolder": false,
-              "kind": "mjs",
-              "relPath": "databases/Teil01 Grundlagen/scripts/dev-server.mjs"
             }
           ]
         },
@@ -35520,97 +35611,6 @@
           "isFolder": false,
           "kind": "js",
           "relPath": "databases/Teil03 WISO/index.js"
-        }
-      ]
-    },
-    {
-      "id": "folder_databases_testing",
-      "name": "testing",
-      "isFolder": true,
-      "children": [
-        {
-          "id": "folder_databases_testing_config",
-          "name": "config",
-          "isFolder": true,
-          "children": [
-            {
-              "id": "file_databases_testing_config_advanced-web-scenarios_json",
-              "name": "advanced-web-scenarios.json",
-              "isFolder": false,
-              "kind": "json",
-              "relPath": "databases/testing/config/advanced-web-scenarios.json"
-            }
-          ]
-        },
-        {
-          "id": "folder_databases_testing_scripts",
-          "name": "scripts",
-          "isFolder": true,
-          "children": [
-            {
-              "id": "file_databases_testing_scripts_bootstrap-testing-folders_mjs",
-              "name": "bootstrap-testing-folders.mjs",
-              "isFolder": false,
-              "kind": "mjs",
-              "relPath": "databases/testing/scripts/bootstrap-testing-folders.mjs"
-            },
-            {
-              "id": "file_databases_testing_scripts_run-advanced-web-tests_mjs",
-              "name": "run-advanced-web-tests.mjs",
-              "isFolder": false,
-              "kind": "mjs",
-              "relPath": "databases/testing/scripts/run-advanced-web-tests.mjs"
-            },
-            {
-              "id": "file_databases_testing_scripts_run-relevant-tests-on-g-change_mjs",
-              "name": "run-relevant-tests-on-g-change.mjs",
-              "isFolder": false,
-              "kind": "mjs",
-              "relPath": "databases/testing/scripts/run-relevant-tests-on-g-change.mjs"
-            },
-            {
-              "id": "file_databases_testing_scripts_run-smoke-tests_mjs",
-              "name": "run-smoke-tests.mjs",
-              "isFolder": false,
-              "kind": "mjs",
-              "relPath": "databases/testing/scripts/run-smoke-tests.mjs"
-            }
-          ]
-        },
-        {
-          "id": "folder_databases_testing_tests",
-          "name": "tests",
-          "isFolder": true,
-          "children": [
-            {
-              "id": "file_databases_testing_tests_core-rules_test_mjs",
-              "name": "core-rules.test.mjs",
-              "isFolder": false,
-              "kind": "mjs",
-              "relPath": "databases/testing/tests/core-rules.test.mjs"
-            },
-            {
-              "id": "file_databases_testing_tests_global-doing-folders-smoke_test_mjs",
-              "name": "global-doing-folders-smoke.test.mjs",
-              "isFolder": false,
-              "kind": "mjs",
-              "relPath": "databases/testing/tests/global-doing-folders-smoke.test.mjs"
-            },
-            {
-              "id": "file_databases_testing_tests_learner-ux_finanzierungs-sortiermaschine_test_mjs",
-              "name": "learner-ux.finanzierungs-sortiermaschine.test.mjs",
-              "isFolder": false,
-              "kind": "mjs",
-              "relPath": "databases/testing/tests/learner-ux.finanzierungs-sortiermaschine.test.mjs"
-            }
-          ]
-        },
-        {
-          "id": "file_databases_testing_readme_md",
-          "name": "README.md",
-          "isFolder": false,
-          "kind": "txt",
-          "relPath": "databases/testing/README.md"
         }
       ]
     }

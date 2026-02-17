@@ -6,3 +6,4 @@
 - Noch robuster: die Sichtbarkeitsregel nur auf `_` aufbauen und Ordner physisch zu `_assets`/`_data` migrieren.
 - Wenn ein Knoten per `is-openable` markiert wird, muss `folderEmoji` auch `attributesRelPath` berücksichtigen, sonst entstehen inkonsistente 📁-Icons.
 - Korrektur: keine globale physische Migration mehr ohne manuelle Einzelprüfung, da `assets`/`data` in Einzelfällen auch fachliche Ordnernamen sein können.
+- Gründliche Hidden-Prüfung sollte immer auf den real sichtbaren Tree (nach Normalisierung) gehen, nicht nur auf Dateisystem-Namenlisten.

@@ -11,4 +11,4 @@
 - reports: Testberichte
 
 ## Start
-- Global + lokal: `node databases/testing/scripts/run-smoke-tests.mjs`
+- Global + lokal: `node databases/_testing/scripts/run-smoke-tests.mjs`

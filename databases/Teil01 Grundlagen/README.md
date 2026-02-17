@@ -23,8 +23,8 @@ Das Interface wurde aus `Backend_fiaeAP2` in dieses Projekt uebernommen.
 - `/Users/thor/WebstormProjects/easyPV/databases/Teil01 Grundlagen/index.html` (direkt aus Backend_fiaeAP2)
 - `/Users/thor/WebstormProjects/easyPV/databases/Teil01 Grundlagen/shared_theme.css` (direkt aus Backend_fiaeAP2)
 - `/Users/thor/WebstormProjects/easyPV/databases/Teil01 Grundlagen/index.js` (auf lokale `database`-Quelle angepasst)
-- `/Users/thor/WebstormProjects/easyPV/databases/Teil01 Grundlagen/scripts/build-database-index.mjs`
-- `/Users/thor/WebstormProjects/easyPV/databases/Teil01 Grundlagen/scripts/dev-server.mjs`
+- `/Users/thor/WebstormProjects/easyPV/databases/Teil01 Grundlagen/_scripts/build-database-index.mjs`
+- `/Users/thor/WebstormProjects/easyPV/databases/Teil01 Grundlagen/_scripts/dev-server.mjs`
 
 ## Kommentar-Funktion (Firebase)
 Die Feedback-Komponente aus dem anderen Projekt ist eingebunden.

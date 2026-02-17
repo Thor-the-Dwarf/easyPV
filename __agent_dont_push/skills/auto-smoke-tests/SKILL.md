@@ -14,10 +14,10 @@ Use this skill for a lightweight "first play" gate plus optional advanced checks
 
 ## Workflow (Stage 1: Smoke)
 1. Prepare folder structure and local tests:
-- `node databases/testing/scripts/bootstrap-testing-folders.mjs`
+- `node databases/_testing/scripts/bootstrap-testing-folders.mjs`
 
 2. Run all smoke tests (global + local):
-- `node databases/testing/scripts/run-smoke-tests.mjs`
+- `node databases/_testing/scripts/run-smoke-tests.mjs`
 
 3. Report only high-signal results:
 - Number of discovered `__02_doing_*` folders.
@@ -28,10 +28,10 @@ Use this skill for a lightweight "first play" gate plus optional advanced checks
 Use this after edits in `_g*`, `_gs_*`, or `game_*` files.
 
 1. Run advanced coverage (gameplay behavior, scoring-data presence, UI interaction errors, visual frame sanity):
-- `node databases/testing/scripts/run-advanced-web-tests.mjs`
+- `node databases/_testing/scripts/run-advanced-web-tests.mjs`
 
 2. Run only relevant tests for current `_g*` changes:
-- `node databases/testing/scripts/run-relevant-tests-on-g-change.mjs`
+- `node databases/_testing/scripts/run-relevant-tests-on-g-change.mjs`
 
 ## Test Scope
 - Global tests:

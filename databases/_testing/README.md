@@ -7,13 +7,13 @@ Diese erste Teststufe prueft nur Basisqualitaet:
 
 ## Befehle
 - Struktur + lokale Tests erzeugen/aktualisieren:
-  - `node databases/testing/scripts/bootstrap-testing-folders.mjs`
+  - `node databases/_testing/scripts/bootstrap-testing-folders.mjs`
 - Alle Smoke-Tests starten:
-  - `node databases/testing/scripts/run-smoke-tests.mjs`
+  - `node databases/_testing/scripts/run-smoke-tests.mjs`
 - Alle Advanced-Tests (Gameplay/UI/Visual + Scoringdaten):
-  - `node databases/testing/scripts/run-advanced-web-tests.mjs`
+  - `node databases/_testing/scripts/run-advanced-web-tests.mjs`
 - Nur relevante Tests bei `_g*`/`game_*`-Aenderungen:
-  - `node databases/testing/scripts/run-relevant-tests-on-g-change.mjs`
+  - `node databases/_testing/scripts/run-relevant-tests-on-g-change.mjs`
 - Lernenden-UX-Checks (aktuell Finanzierungs-Sortiermaschine):
   - `npm run test:learner-ux`
 

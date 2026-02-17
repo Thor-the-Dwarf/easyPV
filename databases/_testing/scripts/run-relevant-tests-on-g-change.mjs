@@ -34,10 +34,10 @@ async function main() {
     process.exit(0);
   }
 
-  const smokeCode = await run(process.execPath, ['databases/testing/scripts/run-smoke-tests.mjs']);
+  const smokeCode = await run(process.execPath, ['databases/_testing/scripts/run-smoke-tests.mjs']);
   if (smokeCode !== 0) process.exit(smokeCode);
 
-  const advancedCode = await run(process.execPath, ['databases/testing/scripts/run-advanced-web-tests.mjs', '--only-changed']);
+  const advancedCode = await run(process.execPath, ['databases/_testing/scripts/run-advanced-web-tests.mjs', '--only-changed']);
   process.exit(advancedCode);
 }
 

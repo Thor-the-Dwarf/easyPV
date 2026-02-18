@@ -1,0 +1,213 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "easyPV_repo_maintainer_quality_standards",
+  "language": "de",
+  "maintainer_role": "Repo-Maintainer",
+  "intent": "Ein KI-freundliches, entscheidungsarmes Regelwerk fuer Struktur, Ablage, Migration, Validierung und Commit-Disziplin im easyPV-Repository.",
+  "global_policies": {
+    "no_data_loss": {
+      "priority": "MUST",
+      "description": "Keine Datei darf bei Umstrukturierungen verloren gehen."
+    },
+    "always_commit_all": {
+      "priority": "MUST",
+      "description": "Am Ende jedes Auftrags immer alle offenen Aenderungen committen (inkl. fremder Aenderungen)."
+    },
+    "commit_message_format": {
+      "priority": "MUST",
+      "pattern": "repo_maintainer: <kurzbeschreibung>",
+      "target_branch": "main"
+    }
+  },
+  "canonical_structures": {
+    "game_end_folder": {
+      "priority": "MUST",
+      "definition": {
+        "required_directories": [
+          "__dokumentation",
+          "assets",
+          "data"
+        ],
+        "required_documentation_subdirectories": [
+          "__01_analyses",
+          "__02_plans",
+          "__03_tests",
+          "__04_lernings",
+          "__05_feedback"
+        ],
+        "required_runtime_files": [
+          "*.html",
+          "*.css",
+          "*.js"
+        ],
+        "empty_folder_tracking_file": ".gitkeep"
+      }
+    },
+    "single_game_per_game_folder": {
+      "priority": "MUST",
+      "description": "Ein Game-Ordner enthaelt genau ein Spiel mit eigener __dokumentation."
+    }
+  },
+  "classification_rules": [
+    {
+      "rule_id": "classify_plan_texts",
+      "priority": "MUST",
+      "if": "Datei ist spielbezogene .txt (Plan/Idee/Briefing/Gameplay-Plan).",
+      "then": "Ablage in __dokumentation/__02_plans."
+    },
+    {
+      "rule_id": "classify_test_assets",
+      "priority": "MUST",
+      "if": "Datei oder Ordner ist spielbezogenes Testing/Pruefmaterial.",
+      "then": "Ablage in __dokumentation/__03_tests."
+    },
+    {
+      "rule_id": "keep_unmapped_in_game_root",
+      "priority": "MUST",
+      "if": "Datei ist nicht sicher zuordenbar.",
+      "then": "Datei bleibt vorerst im Game-Ordner."
+    }
+  ],
+  "migration_and_collision_rules": [
+    {
+      "rule_id": "path_adjustment_after_move",
+      "priority": "MUST",
+      "if": "Dateien/Ordner wurden verschoben oder umbenannt.",
+      "then": "Alle betroffenen Referenzen/Pfade in Dateien aktualisieren."
+    },
+    {
+      "rule_id": "collision_identical_files",
+      "priority": "MUST",
+      "if": "Quell- und Zieldatei sind inhaltlich identisch.",
+      "then": "Nur eine Datei behalten, Duplikat entfernen."
+    },
+    {
+      "rule_id": "collision_different_files",
+      "priority": "MUST",
+      "if": "Quell- und Zieldatei haben denselben Namen aber unterschiedlichen Inhalt.",
+      "then": "Beide Inhalte behalten; migrierte Datei mit Suffix '__from_<source_tag>' sichern."
+    }
+  ],
+  "foldertree_and_topic_rules": [
+    {
+      "rule_id": "icon_erschienene_themen",
+      "priority": "MUST",
+      "scope": "Alle Elemente unter 'Erschienene Themen'",
+      "then": "Icon = flame (GUI: FIRE).",
+      "json_targets": "__gAttributes_*.json"
+    },
+    {
+      "rule_id": "icon_moegliche_themen",
+      "priority": "MUST",
+      "scope": "Alle Elemente unter 'M\u00f6gliche Themen'",
+      "then": "Icon = books (GUI: BOOKS).",
+      "json_targets": "__gAttributes_*.json"
+    },
+    {
+      "rule_id": "flatten_topic_folders",
+      "priority": "MUST",
+      "if": "Ordnername ist 'Erschienene Themen' oder 'M\u00f6gliche Themen'.",
+      "then": "Ordner entfernen und Inhalte eine Ebene hoeher verschieben (ohne Datenverlust)."
+    }
+  ],
+  "uml_rules": [
+    {
+      "rule_id": "puml_location_for_html_game_folders",
+      "priority": "MUST",
+      "if": "Zugehoeriger Endordner enthaelt mindestens eine .html-Datei.",
+      "then": "Alle .puml-Dateien liegen in __dokumentation/__02_plans des zugehoerigen Endordners."
+    }
+  ],
+  "agent_and_admin_rules": [
+    {
+      "rule_id": "repo_maintainer_workdirs",
+      "priority": "MUST",
+      "then": [
+        "Hilfsdateien/-ordner in __agent_dont_push/agents/Repo Maintainer/hilfsmittel",
+        "Prozeduren in __agent_dont_push/agents/Repo Maintainer/arbeitsabl\u00e4ufe"
+      ]
+    },
+    {
+      "rule_id": "agent_generated_material",
+      "priority": "MUST",
+      "if": "Datei wurde von Agenten erzeugt und ist nicht produktiver Runtime-Inhalt.",
+      "then": "In passende Agent-/Admin-Struktur verschieben (nicht lose im Projekt-Root belassen)."
+    },
+    {
+      "rule_id": "root_sorting_policy",
+      "priority": "SHOULD",
+      "if": "Root-Dateien sind weder index* noch package*.",
+      "then": "In __admin_dont_push oder __agent_dont_push/agents einsortieren, je nach Zweck/Owner."
+    }
+  ],
+  "teil03_wiso_rules": [
+    {
+      "rule_id": "teil03_source_of_truth",
+      "priority": "MUST",
+      "source_file": "databases/Teil03 WISO/database/Inhaltsverzeichnis_Teil03_WISO.txt",
+      "parsing": {
+        "level1": "##",
+        "level2": "###",
+        "level3": "-"
+      }
+    },
+    {
+      "rule_id": "teil03_name_normalization",
+      "priority": "MUST",
+      "then": [
+        "Level-1 Nummern entfernen (Regex: ^\\\\d+\\\\)\\\\s*)",
+        "Slash durch ' - ' ersetzen",
+        "Mehrfach-Leerzeichen reduzieren und trimmen"
+      ]
+    }
+  ],
+  "validation_checklist": [
+    {
+      "check_id": "ensure_topic_dirs_removed",
+      "priority": "MUST",
+      "command_example": "find databases -type d \\( -name 'Erschienene Themen' -o -name 'M\u00f6gliche Themen' \\)",
+      "expected": "keine Treffer"
+    },
+    {
+      "check_id": "verify_puml_locations",
+      "priority": "MUST",
+      "command_example": "rg --files databases | rg '\\\\.puml$' | rg -v '/__dokumentation/__02_plans/'",
+      "expected": "keine Treffer"
+    },
+    {
+      "check_id": "verify_teil03_counts",
+      "priority": "MUST",
+      "expected_counts": {
+        "level1": 3,
+        "level2": 15,
+        "level3": 43
+      }
+    },
+    {
+      "check_id": "rebuild_root_index_after_structure_changes",
+      "priority": "MUST",
+      "script": "__agent_dont_push/agents/Repo Maintainer/hilfsmittel/rebuild_root_index.mjs",
+      "output_file": "index.json"
+    },
+    {
+      "check_id": "working_tree_clean_after_commit",
+      "priority": "MUST",
+      "command_example": "git status --short --branch",
+      "expected": "kein uncommitted file state"
+    }
+  ],
+  "default_execution_template": [
+    "1) Ist-Zustand und Scope per read-only Checks erfassen.",
+    "2) Ordner-/Dateiregeln anwenden und Inhalte verlustfrei umstrukturieren.",
+    "3) Referenzen/Pfade in betroffenen Dateien aktualisieren.",
+    "4) Validierungssuite ausfuehren (Struktur, Icons, UML-Ablage, Index, Kollisionen).",
+    "5) git add -A und commit mit Prefix 'repo_maintainer: ...'."
+  ],
+  "quality_gates": {
+    "gate_1_structure_valid": true,
+    "gate_2_no_file_loss": true,
+    "gate_3_paths_valid": true,
+    "gate_4_index_updated": true,
+    "gate_5_all_changes_committed": true
+  }
+}

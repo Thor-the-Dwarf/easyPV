@@ -1036,7 +1036,10 @@
                 return;
               }
               if (hasChildren) {
-                openGenericFolder(node);
+                if (openGenericFolder(node)) return;
+                if (!openedFolderIds.includes(node.id)) {
+                  toggleNode(rowNode, node.id, labelIcon);
+                }
                 return;
               }
               if (canOpenPlayable) {
@@ -1205,30 +1208,27 @@
           openGenericFolder(node);
         }
 
-        function findBestContentNode(node) {
-          if (!node) return null;
-          if (node.jsonRelPath || node.attributesRelPath || node.gameRelPath) {
-            return node;
-          }
-          const children = Array.isArray(node.children) ? node.children : [];
-          for (let i = 0; i < children.length; i += 1) {
-            const found = findBestContentNode(children[i]);
-            if (found) return found;
-          }
-          return null;
+        function hasOwnGenericContent(node) {
+          return !!(
+            node &&
+            node.hasFiles &&
+            (node.attributesRelPath || node.jsonRelPath || node.gameRelPath)
+          );
         }
 
         function openGenericFolder(node) {
-          if (!contentHost) return;
+          if (!contentHost) return false;
+          if (!hasOwnGenericContent(node)) return false;
           stopActiveGameProgressTracking();
           const folderLabel = node && node.name ? node.name : 'Thema';
-          const sourceNode = findBestContentNode(node) || node || {};
+          const sourceNode = node || {};
           const jsonRelPath = sourceNode && sourceNode.attributesRelPath
             ? String(sourceNode.attributesRelPath)
             : (sourceNode && sourceNode.jsonRelPath ? String(sourceNode.jsonRelPath) : '');
           const gameRelPath = sourceNode && sourceNode.gameRelPath ? String(sourceNode.gameRelPath) : '';
           const jsonUrl = jsonRelPath ? buildRepoUrl(jsonRelPath) : '';
           const gameUrl = gameRelPath ? buildRepoUrl(gameRelPath) : '';
+          if (!jsonUrl && !gameUrl) return false;
           const src = buildGenericPageSrc(
             folderLabel,
             jsonUrl,
@@ -1240,6 +1240,7 @@
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="Thema" loading="eager"></iframe>';
           queueThemeSyncForNewFrame();
+          return true;
         }
 
         function buildGenericPageSrc(folderLabel, jsonUrl, gameUrl, jsonRelPath, gameRelPath, nodeId) {

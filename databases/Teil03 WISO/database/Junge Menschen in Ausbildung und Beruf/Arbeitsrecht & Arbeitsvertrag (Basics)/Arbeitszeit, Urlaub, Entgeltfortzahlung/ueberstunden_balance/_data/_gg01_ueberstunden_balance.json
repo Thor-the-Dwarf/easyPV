@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Arbeitszeit und Entgelt", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 10, "wrong": -5, "completion_bonus": 8 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Monatskonto zeigt deutlichen Ueberhang. Was ist der fachliche Startpunkt?",
+      "hint": "Zunaechst Kontolage und Optionen abgleichen.",
+      "options": [
+        { "id": "a", "text": "Passende Ausgleichsoption fuer Kontostand waehlen", "correct": true, "feedback": "Richtig. Die Aktion muss zur Kontolage passen." },
+        { "id": "b", "text": "Kontostand ignorieren", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Zufaellig entscheiden", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Regel fuehrt zu Zusatzabzug?",
+      "hint": "Folgeeffekte der gewaehllten Aktion beachten.",
+      "options": [
+        { "id": "a", "text": "Aktion mit negativem Folgeeffekt", "correct": true, "feedback": "Richtig. Riskante Folge wird strenger bewertet." },
+        { "id": "b", "text": "Stabile Aktion", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Dokumentierte Entscheidung", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann gibt es Stabilitaetsbonus?",
+      "hint": "Bezieht sich auf mehrere Faelle hintereinander.",
+      "options": [
+        { "id": "a", "text": "Bei stabilem Verlauf ueber drei Faelle", "correct": true, "feedback": "Genau. Konstanz wird zusaetzlich belohnt." },
+        { "id": "b", "text": "Bei einem Zufallstreffer", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Bei maximaler Spielzeit", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI-Kombination ist vorgesehen?",
+      "hint": "Guete plus Stabilitaetskomponente.",
+      "options": [
+        { "id": "a", "text": "Balance-Genauigkeit und Stabilitaetsindex", "correct": true, "feedback": "Richtig. Das sind die zwei Kernmetriken." },
+        { "id": "b", "text": "Nur Endpunkte", "correct": false, "feedback": "Zu grob." },
+        { "id": "c", "text": "Nur Fallanzahl", "correct": false, "feedback": "Nicht ausreichend." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was macht den Kontoverlauf transparent?",
+      "hint": "Zahlen pro Entscheidung nachvollziehbar zeigen.",
+      "options": [
+        { "id": "a", "text": "Numerische Darstellung von Ausgangs- und Folgebalance", "correct": true, "feedback": "Richtig. So werden Entscheidungen nachvollziehbar." },
+        { "id": "b", "text": "Nur Ampelfarbe", "correct": false, "feedback": "Nicht ausreichend." },
+        { "id": "c", "text": "Keine Verlaufssicht", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

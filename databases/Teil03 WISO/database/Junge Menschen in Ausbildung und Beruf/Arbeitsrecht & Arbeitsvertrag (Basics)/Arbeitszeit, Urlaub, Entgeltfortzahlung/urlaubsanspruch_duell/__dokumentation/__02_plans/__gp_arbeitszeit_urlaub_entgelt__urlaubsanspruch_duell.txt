@@ -1,0 +1,53 @@
+# __gp_arbeitszeit_urlaub_entgelt__urlaubsanspruch_duell
+
+## Spielidee
+"Urlaubsanspruch-Duell" vergleicht Mitarbeiterszenarien. Lernende bestimmen den plausiblen Urlaubsanspruch und begruenden Abweichungen.
+
+## Lernziel
+- Urlaubsanspruch in unterschiedlichen Situationen einordnen.
+- Argumentation bei Urlaubsberechnung verbessern.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Anspruchsgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- LeaveRuleEngine
+- MetricService
+
+### Domaenenobjekte
+- LeaveDuel(duelId, profileA, profileB)
+- Profile(profileId, attributes)
+- DuelResult(correctProfileId, reasonScore)
+
+### Beziehungen
+- LeaveDuel besitzt 2 Profile.
+- LeaveRuleEngine erzeugt je Duel ein DuelResult.
+- MetricService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> PROFILE_REVIEW -> CHOICE -> RESULT -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet LeaveDuel.
+2. Player waehlt passendes Profil.
+3. LeaveRuleEngine validiert Wahl.
+4. DuelResult wird angezeigt.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Korrekte Wahl ohne Begruendung bringt Teilpunkte.
+- Bonus bei vier korrekten Duellen in Folge.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, profileA{}, profileB{}, expectedProfileId, rationaleOptions[]
+
+## Abnahmekriterien
+- Ergebnis erklaert die entscheidenden Faktoren.
+- KPI trennt Wahlleistung und Begruendung.
+- Fehleranalyse zeigt wiederkehrende Denkfehler.

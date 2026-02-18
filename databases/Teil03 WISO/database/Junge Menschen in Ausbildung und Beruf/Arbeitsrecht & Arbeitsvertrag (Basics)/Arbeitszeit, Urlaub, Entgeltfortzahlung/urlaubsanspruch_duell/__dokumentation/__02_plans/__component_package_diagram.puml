@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Urlaubsanspruch-Duell
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: urlaubsanspruch_duell" {
+  component "_ghtml_urlaubsanspruch_duell.html" as HTML
+  component "_gjs_urlaubsanspruch_duell.js" as JS
+  component "_gcss_urlaubsanspruch_duell.css" as CSS
+  database "_data/_gg01_urlaubsanspruch_duell.json" as GG
+  database "_data/__metaData_Arbeitszeit, Urlaub, Entgeltfortzahlung.json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

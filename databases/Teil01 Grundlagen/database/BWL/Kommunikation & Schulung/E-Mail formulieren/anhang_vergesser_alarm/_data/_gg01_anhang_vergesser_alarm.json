@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "id": "anhang_vergesser_alarm_v1",
+    "title": "Anhang-Vergesser-Alarm",
+    "topic": "E-Mail formulieren",
+    "mechanic": "binary_decision_with_timer",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 15,
+    "wrong": -8,
+    "timeout": -10,
+    "completion_bonus": 20
+  },
+  "timing": {
+    "default_round_ms": 9000
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "subject": "Abnahmeprotokoll final",
+      "body": "Hallo Team, anbei findet ihr das unterschriebene Abnahmeprotokoll. Viele Gruesse",
+      "hasAttachment": false,
+      "expectedAction": "block",
+      "reason": "Der Text kuendigt einen Anhang an, aber es ist keiner vorhanden."
+    },
+    {
+      "id": 2,
+      "subject": "Meeting-Notizen",
+      "body": "Hier die wichtigsten Punkte aus dem Termin in Kurzform. Kein Anhang notwendig.",
+      "hasAttachment": false,
+      "expectedAction": "send",
+      "reason": "Keine Anhang-Referenz, daher ist Senden korrekt."
+    },
+    {
+      "id": 3,
+      "subject": "Ticket-Auswertung Q1",
+      "body": "Siehe Anlage mit den SLA-Metriken fuer Q1.",
+      "hasAttachment": true,
+      "expectedAction": "send",
+      "reason": "Anhang wird erwaehnt und ist vorhanden."
+    },
+    {
+      "id": 4,
+      "subject": "Kostenaufstellung",
+      "body": "Im Anhang sende ich die aktuelle Kostenaufstellung.",
+      "hasAttachment": false,
+      "expectedAction": "block",
+      "reason": "Anhang angekuendigt, aber fehlend."
+    },
+    {
+      "id": 5,
+      "subject": "Sicherheitsinfo",
+      "body": "Bitte achtet heute auf den geplanten Wartungs-Slot von 22 bis 23 Uhr.",
+      "hasAttachment": false,
+      "expectedAction": "send",
+      "reason": "Informative Mail ohne Anhang-Hinweis."
+    },
+    {
+      "id": 6,
+      "subject": "API-Dokumentation v2",
+      "body": "Anbei die aktualisierte API-Dokumentation als PDF.",
+      "hasAttachment": true,
+      "expectedAction": "send",
+      "reason": "Anhang ist vorhanden und passt zur Aussage."
+    },
+    {
+      "id": 7,
+      "subject": "Deploy-Checklist",
+      "body": "Im Anhang ist die finale Deploy-Checklist. Bitte vor 16:00 gegenpruefen.",
+      "hasAttachment": false,
+      "expectedAction": "block",
+      "reason": "Anhang fehlt trotz klarer Referenz im Text."
+    }
+  ]
+}

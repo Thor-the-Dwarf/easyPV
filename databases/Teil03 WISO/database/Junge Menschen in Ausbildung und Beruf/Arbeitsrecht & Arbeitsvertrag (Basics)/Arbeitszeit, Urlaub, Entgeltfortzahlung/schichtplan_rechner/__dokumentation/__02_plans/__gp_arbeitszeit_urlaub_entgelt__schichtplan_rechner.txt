@@ -1,0 +1,52 @@
+# __gp_arbeitszeit_urlaub_entgelt__schichtplan_rechner
+
+## Spielidee
+"Schichtplan-Rechner" simuliert Wochenplaene. Lernende pruefen, ob Arbeitszeiten, Pausen und Ruhezeiten plausibel eingehalten werden.
+
+## Lernziel
+- Zeitregelungen im Arbeitsalltag anwenden.
+- Planungsfehler in Schichtsystemen erkennen.
+
+## Messbare Progression
+- 10 Wochenplaene.
+- Punkte: +9 korrekter Plancheck, -4 falsche Bewertung.
+- KPI: Planpruefungsgenauigkeit und Entscheidungszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScheduleController
+- TimeRuleEngine
+- ScoreBoard
+
+### Domaenenobjekte
+- WeekPlan(planId, shifts[])
+- Shift(shiftId, startTime, endTime, breakMin)
+- PlanResult(isCompliant, violations[])
+
+### Beziehungen
+- WeekPlan enthaelt 5..14 Shift.
+- TimeRuleEngine validiert je WeekPlan ein PlanResult.
+- ScoreBoard aggregiert 1..* PlanResult.
+
+### Zustandsmodell
+- READY -> PLAN_REVIEW -> DECISION -> VALIDATION -> NEXT_PLAN
+
+### Sequenz (Happy Path)
+1. ScheduleController laedt WeekPlan.
+2. Player bewertet Regelkonformitaet.
+3. TimeRuleEngine prueft Grenzen.
+4. PlanResult wird angezeigt.
+5. ScoreBoard aktualisiert KPI.
+
+## Regeln
+- Uebersehene schwere Abweichung ergibt Zusatzabzug.
+- Serie korrekter Checks erhoeht Schwierigkeitsgrad.
+
+## Datenmodell (JSON-Idee)
+- fields: planId, shifts[{startTime,endTime,breakMin}], expectedCompliance
+
+## Abnahmekriterien
+- Verstossdetails sind pro Schicht sichtbar.
+- KPI zeigt Genauigkeit und Tempo.
+- Lernreport nennt haeufig uebersehene Regelverstoesse.

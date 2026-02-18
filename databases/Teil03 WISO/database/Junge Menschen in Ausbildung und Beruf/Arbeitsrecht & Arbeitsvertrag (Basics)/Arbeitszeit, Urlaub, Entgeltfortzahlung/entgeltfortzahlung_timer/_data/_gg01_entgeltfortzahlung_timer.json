@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Arbeitszeit und Entgelt", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 8, "wrong": -4, "completion_bonus": 8 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Krankheitsfall mit klarer Nachweislage: Welche Grundentscheidung ist plausibel?",
+      "hint": "Pruefe zunaechst die Fallvoraussetzungen.",
+      "options": [
+        { "id": "a", "text": "Entgeltfortzahlung entsprechend Falllogik bejahen", "correct": true, "feedback": "Richtig. Die Entscheidung folgt den Fallmerkmalen." },
+        { "id": "b", "text": "Immer pauschal ablehnen", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Ohne Pruefung offen lassen", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Zusatzleistung bringt Bonuspunkte?",
+      "hint": "Neben Entscheidung zaehlt die Begruendung.",
+      "options": [
+        { "id": "a", "text": "Korrekte Begruendungsauswahl", "correct": true, "feedback": "Richtig. Die Begruendung wird separat honoriert." },
+        { "id": "b", "text": "Nur schnelles Klicken", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Leeres Feld abgeben", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was passiert bei Entscheidung ohne Begruendung?",
+      "hint": "Es gibt eine reduzierte Bewertung.",
+      "options": [
+        { "id": "a", "text": "Teilpunkte statt Vollwertung", "correct": true, "feedback": "Richtig. Ohne Begruendung wird reduziert gewertet." },
+        { "id": "b", "text": "Doppelte Punkte", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Automatischer Bonus", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI-Kombination ist vorgesehen?",
+      "hint": "Korrektheit und Geschwindigkeit trennen.",
+      "options": [
+        { "id": "a", "text": "Entscheidungsgenauigkeit und Reaktionszeit", "correct": true, "feedback": "Genau. So wird Qualitaet und Tempo sichtbar." },
+        { "id": "b", "text": "Nur Gesamtpunkte", "correct": false, "feedback": "Zu wenig differenziert." },
+        { "id": "c", "text": "Nur Zeit", "correct": false, "feedback": "Nicht ausreichend." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann greift ein adaptiver Hinweis?",
+      "hint": "Bei wiederholten Fehlentscheidungen.",
+      "options": [
+        { "id": "a", "text": "Bei Fehlserie", "correct": true, "feedback": "Richtig. Dann wird gezielt unterstuetzt." },
+        { "id": "b", "text": "Bei jeder richtigen Antwort", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nie", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

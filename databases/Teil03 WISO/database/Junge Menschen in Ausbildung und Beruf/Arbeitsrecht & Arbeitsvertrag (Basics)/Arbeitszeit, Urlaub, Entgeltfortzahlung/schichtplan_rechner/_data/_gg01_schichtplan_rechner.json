@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Arbeitszeit und Entgelt", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 9, "wrong": -4, "completion_bonus": 8 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was ist beim Schichtplan-Check zentral zu pruefen?",
+      "hint": "Arbeitszeit, Pausen, Ruhezeiten zusammen betrachten.",
+      "options": [
+        { "id": "a", "text": "Regelkonformitaet von Arbeitszeit, Pausen und Ruhezeiten", "correct": true, "feedback": "Richtig. Der Check betrachtet das Zusammenspiel aller Zeitregeln." },
+        { "id": "b", "text": "Nur Schichtfarbe", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur Wochennummer", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Folge hat eine uebersehene schwere Abweichung?",
+      "hint": "Der Plan nennt einen Zusatzabzug.",
+      "options": [
+        { "id": "a", "text": "Zusatzabzug", "correct": true, "feedback": "Richtig. Schwere Ueberseher wiegen besonders." },
+        { "id": "b", "text": "Automatischer Bonus", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Keine Auswirkung", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann steigt der Schwierigkeitsgrad?",
+      "hint": "Er basiert auf einer Serie korrekter Checks.",
+      "options": [
+        { "id": "a", "text": "Bei Serie korrekter Planchecks", "correct": true, "feedback": "Genau. Konstante Treffer erhoehen die Komplexitaet." },
+        { "id": "b", "text": "Bei jedem Fehler", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur am Spielende", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI-Kombination ist definiert?",
+      "hint": "Genauigkeit und Tempo zusammen.",
+      "options": [
+        { "id": "a", "text": "Planpruefungsgenauigkeit und Entscheidungszeit", "correct": true, "feedback": "Richtig. Beide Werte bilden Lernfortschritt ab." },
+        { "id": "b", "text": "Nur Punktestand", "correct": false, "feedback": "Zu wenig differenziert." },
+        { "id": "c", "text": "Nur Gesamtzeit", "correct": false, "feedback": "Nicht ausreichend." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was muss das Planfeedback pro Schicht leisten?",
+      "hint": "Verstossdetails klar ausweisen.",
+      "options": [
+        { "id": "a", "text": "Verstossdetails pro Schicht anzeigen", "correct": true, "feedback": "Richtig. Nur so ist Korrektur gezielt moeglich." },
+        { "id": "b", "text": "Nur Gesamtergebnis nennen", "correct": false, "feedback": "Nicht ausreichend." },
+        { "id": "c", "text": "Keine Rueckmeldung", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

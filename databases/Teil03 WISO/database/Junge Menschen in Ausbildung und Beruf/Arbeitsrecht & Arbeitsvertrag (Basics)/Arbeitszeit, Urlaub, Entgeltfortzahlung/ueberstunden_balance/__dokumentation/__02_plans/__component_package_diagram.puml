@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Ueberstunden-Balance
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: ueberstunden_balance" {
+  component "_ghtml_ueberstunden_balance.html" as HTML
+  component "_gjs_ueberstunden_balance.js" as JS
+  component "_gcss_ueberstunden_balance.css" as CSS
+  database "_data/_gg01_ueberstunden_balance.json" as GG
+  database "_data/__metaData_Arbeitszeit, Urlaub, Entgeltfortzahlung.json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Arbeitszeit und Entgelt", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 8, "wrong": -4, "completion_bonus": 8 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Zwei Profile mit unterschiedlicher Situation: Kernaufgabe im Duell?",
+      "hint": "Plausiblen Anspruch vergleichen und waehlen.",
+      "options": [
+        { "id": "a", "text": "Passenderes Anspruchsprofil waehlen", "correct": true, "feedback": "Richtig. Der Vergleich steht im Zentrum des Spiels." },
+        { "id": "b", "text": "Nur Namen vergleichen", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Zufaellig tippen", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wie wird korrekte Wahl ohne Begruendung gewertet?",
+      "hint": "Es gibt Teilpunkte.",
+      "options": [
+        { "id": "a", "text": "Mit Teilpunkten", "correct": true, "feedback": "Richtig. Begruendung liefert zusaetzlichen Score." },
+        { "id": "b", "text": "Mit doppelten Punkten", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Als Fehler", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann gibt es den Serienbonus?",
+      "hint": "Mehrere korrekte Duelle nacheinander.",
+      "options": [
+        { "id": "a", "text": "Bei vier korrekten Duellen in Folge", "correct": true, "feedback": "Genau. Dann wird Bonus aktiviert." },
+        { "id": "b", "text": "Bereits nach einem Duel", "correct": false, "feedback": "Zu frueh." },
+        { "id": "c", "text": "Nur am Ende", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI-Perspektiven sind vorgesehen?",
+      "hint": "Wahlleistung und Begruendung getrennt.",
+      "options": [
+        { "id": "a", "text": "Anspruchsgenauigkeit und Begruendungsquote", "correct": true, "feedback": "Richtig. So wird Wissen und Begruendung sichtbar." },
+        { "id": "b", "text": "Nur Zeit", "correct": false, "feedback": "Nicht ausreichend." },
+        { "id": "c", "text": "Nur Trefferanzahl", "correct": false, "feedback": "Zu grob." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was sollte die Fehleranalyse am Ende liefern?",
+      "hint": "Wiederkehrende Denkfehler benennen.",
+      "options": [
+        { "id": "a", "text": "Muster wiederholter Fehlannahmen", "correct": true, "feedback": "Richtig. Das ermoeglicht gezielte Verbesserung." },
+        { "id": "b", "text": "Nur Gesamtnote", "correct": false, "feedback": "Zu wenig Detail." },
+        { "id": "c", "text": "Keine Analyse", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

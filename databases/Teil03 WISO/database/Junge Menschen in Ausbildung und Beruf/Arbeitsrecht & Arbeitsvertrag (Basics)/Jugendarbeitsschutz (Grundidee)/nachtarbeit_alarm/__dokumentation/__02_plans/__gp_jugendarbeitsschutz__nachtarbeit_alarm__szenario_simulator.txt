@@ -1,0 +1,54 @@
+# __gp_jugendarbeitsschutz__nachtarbeit_alarm__szenario_simulator
+
+## Spielidee
+"Szenario-Simulator" trainiert Entscheidungen im Szenario "nachtarbeit alarm". Pro Runde waehlt der Player unter mehreren Handlungsoptionen und erhaelt direktes Feedback.
+
+## Lernziel
+- Entscheidungsqualitaet im Themenkontext "nachtarbeit alarm" verbessern.
+- Folgen von Fehlentscheidungen ueber Kennzahlen nachvollziehen.
+
+## Messbare Progression
+- 12 Runden pro Durchlauf.
+- Punkte: +9 fuer tragfaehige Entscheidungskette, -5 fuer Regelverstoss, +2 fuer stabile Folgeentscheidung.
+- KPI: Trefferquote, Durchschnittszeit, Fehlercluster nach Aufgabentyp.
+- Levelaufstieg bei mindestens 80 Prozent Trefferquote in zwei Durchlaeufen.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- RuleEngine
+- MetricService
+
+### Domaenenobjekte
+- ScenarioCard(cardId, difficulty, prompt)
+- DecisionOption(optionId, category, impactLevel)
+- RoundResult(isCorrect, responseSeconds, scoreDelta)
+- ProgressSnapshot(totalScore, accuracyRate, avgResponseSeconds)
+
+### Beziehungen
+- ScenarioController verwaltet 1..* ScenarioCard.
+- RuleEngine bewertet genau eine Player-Entscheidung pro Runde.
+- MetricService aggregiert 1..* RoundResult zu einem ProgressSnapshot.
+
+### Zustandsmodell
+- READY -> ROUND_ACTIVE -> SELECT -> EVALUATE -> FEEDBACK -> NEXT_ROUND -> FINISHED
+
+### Sequenz (Happy Path)
+1. ScenarioController laedt ScenarioCard.
+2. Player waehlt eine DecisionOption.
+3. RuleEngine validiert Auswahl und berechnet scoreDelta.
+4. MetricService aktualisiert ProgressSnapshot.
+5. Feedback zeigt KPI und naechste Runde startet.
+
+## Regeln
+- Folgefehler in zwei Runden hintereinander loesen einen Pflicht-Hinweis aus.
+- Nach jeder Runde wird die aktuelle Lernkurve persistent gespeichert.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, prompt, options[], expectedOptionId, difficulty, responseSeconds, scoreDelta, accuracyRate
+
+## Abnahmekriterien
+- Fortschritt ist eindeutig ueber Punkte, Zeit und Genauigkeit messbar.
+- Jeder Durchlauf erzeugt reproduzierbare KPI-Werte.
+- Fehlentscheidungen sind pro Runde transparent rueckverfolgbar.

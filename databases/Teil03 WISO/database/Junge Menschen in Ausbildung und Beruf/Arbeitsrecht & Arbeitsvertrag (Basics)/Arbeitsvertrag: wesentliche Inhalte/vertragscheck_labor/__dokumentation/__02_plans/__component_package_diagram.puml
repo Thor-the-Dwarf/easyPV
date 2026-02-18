@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Vertragscheck-Labor
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: vertragscheck_labor" {
+  component "_ghtml_vertragscheck_labor.html" as HTML
+  component "_gjs_vertragscheck_labor.js" as JS
+  component "_gcss_vertragscheck_labor.css" as CSS
+  database "_data/_gg01_vertragscheck_labor.json" as GG
+  database "_data/__metaData_Arbeitsvertrag: wesentliche Inhalte.json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

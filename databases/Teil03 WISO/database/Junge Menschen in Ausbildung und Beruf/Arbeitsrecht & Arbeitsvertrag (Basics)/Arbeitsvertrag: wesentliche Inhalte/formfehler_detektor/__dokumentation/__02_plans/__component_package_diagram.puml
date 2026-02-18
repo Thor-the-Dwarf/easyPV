@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Formfehler-Detektor
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: formfehler_detektor" {
+  component "_ghtml_formfehler_detektor.html" as HTML
+  component "_gjs_formfehler_detektor.js" as JS
+  component "_gcss_formfehler_detektor.css" as CSS
+  database "_data/_gg01_formfehler_detektor.json" as GG
+  database "_data/__metaData_Arbeitsvertrag: wesentliche Inhalte.json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

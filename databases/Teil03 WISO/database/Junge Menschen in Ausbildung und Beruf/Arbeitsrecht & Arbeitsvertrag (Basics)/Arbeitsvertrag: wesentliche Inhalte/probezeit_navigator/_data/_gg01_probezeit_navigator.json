@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Arbeitsvertrag", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 8, "wrong": -4, "completion_bonus": 8 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Unklare Situation in der Probezeit: Was ist der erste sinnvolle Schritt?",
+      "hint": "Zuerst passende Regel identifizieren.",
+      "options": [
+        { "id": "a", "text": "Regelbezug pruefen und korrekt zuordnen", "correct": true, "feedback": "Richtig. Der Navigator startet mit Regelklarheit." },
+        { "id": "b", "text": "Sofort eskalieren ohne Pruefung", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Situation ignorieren", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Was gibt bei korrekter Regel, aber falschem naechsten Schritt?",
+      "hint": "Bewertung ist zweidimensional.",
+      "options": [
+        { "id": "a", "text": "Teilscore", "correct": true, "feedback": "Richtig. Regel und Prozessschritt werden getrennt bewertet." },
+        { "id": "b", "text": "Immer null", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Immer volle Punkte", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPIs nennt der Plan?",
+      "hint": "Es sind zwei Genauigkeitswerte.",
+      "options": [
+        { "id": "a", "text": "Regelgenauigkeit und Prozessgenauigkeit", "correct": true, "feedback": "Genau. Beide Perspektiven werden erfasst." },
+        { "id": "b", "text": "Nur Gesamtzeit", "correct": false, "feedback": "Nicht ausreichend." },
+        { "id": "c", "text": "Nur Fehleranzahl", "correct": false, "feedback": "Zu grob." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann greift Hilfe im Probezeit-Navigator?",
+      "hint": "Bei wiederholten Fehlern.",
+      "options": [
+        { "id": "a", "text": "Bei Fehlserie aktiviert sich kontextbezogene Hilfe", "correct": true, "feedback": "Richtig. So werden wiederkehrende Unsicherheiten adressiert." },
+        { "id": "b", "text": "Bei jeder richtigen Antwort", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nie", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was ist Ziel dieses Spiels?",
+      "hint": "Regelwissen und Handlungssicherheit verbinden.",
+      "options": [
+        { "id": "a", "text": "Regelzuordnung plus passender naechster Schritt", "correct": true, "feedback": "Richtig. Genau diese Kombination wird trainiert." },
+        { "id": "b", "text": "Nur Regel auswendig lernen", "correct": false, "feedback": "Zu einseitig." },
+        { "id": "c", "text": "Nur schnell klicken", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

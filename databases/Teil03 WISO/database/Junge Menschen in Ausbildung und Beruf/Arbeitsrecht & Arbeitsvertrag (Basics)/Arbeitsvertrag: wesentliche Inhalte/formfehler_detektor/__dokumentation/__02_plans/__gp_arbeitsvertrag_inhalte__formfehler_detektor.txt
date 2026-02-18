@@ -1,0 +1,52 @@
+# __gp_arbeitsvertrag_inhalte__formfehler_detektor
+
+## Spielidee
+"Formfehler-Detektor" praesentiert Vertragsentwuerfe mit absichtlichen Form- und Inhaltsfehlern. Lernende finden moeglichst viele problematische Stellen innerhalb eines Zeitlimits.
+
+## Lernziel
+- Formale und inhaltliche Fehlerquellen erkennen.
+- Qualitaetscheck vor Vertragsabschluss trainieren.
+
+## Messbare Progression
+- 8 Entwurfspruefungen.
+- Punkte: +7 je korrekt erkanntem Fehler, -2 je Fehlmarkierung.
+- KPI: Fehlererkennungsrate pro Minute.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DraftController
+- ErrorDetectionEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- DraftCase(caseId, segments[])
+- Segment(segmentId, hasError, errorType)
+- DetectionResult(foundErrors, falseMarks, ratePerMinute)
+
+### Beziehungen
+- DraftCase enthaelt 10..30 Segment.
+- ErrorDetectionEngine erzeugt pro DraftCase ein DetectionResult.
+- AnalyticsService sammelt 1..* DetectionResult.
+
+### Zustandsmodell
+- LOAD_DRAFT -> REVIEW -> MARK_ERRORS -> SUBMIT -> RESULT
+
+### Sequenz (Happy Path)
+1. DraftController laedt DraftCase.
+2. Player markiert fehlerhafte Segment.
+3. ErrorDetectionEngine validiert Markierungen.
+4. DetectionResult wird berechnet.
+5. AnalyticsService aktualisiert Trendwerte.
+
+## Regeln
+- Markierung ohne Fehler kostet Punkte.
+- Volltreffer ohne Fehlmarkierung gibt Perfektionsbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, segments[{id,hasError,errorType,text}], timeLimitSec
+
+## Abnahmekriterien
+- Fehlerarten sind eindeutig rueckgemeldet.
+- KPI zeigt Quantitaet und Qualitaet der Erkennung.
+- Report gruppiert Fehler nach Typ.

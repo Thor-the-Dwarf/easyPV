@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Arbeitsvertrag", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 12, "wrong": -4, "completion_bonus": 10 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Im Mustervertrag fehlt ein Pflichtabschnitt. Was ist korrekt?",
+      "hint": "Fehlende Kerninhalte sollen eindeutig markiert werden.",
+      "options": [
+        { "id": "a", "text": "Luecke als fehlende Pflichtsektion markieren", "correct": true, "feedback": "Richtig. Das ist die Kernaufgabe im Check-Labor." },
+        { "id": "b", "text": "Ohne Pruefung freigeben", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur Schreibstil bewerten", "correct": false, "feedback": "Nicht ausreichend." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Zusatzregel erhoeht Punkte bei korrekter Erkennung?",
+      "hint": "Bezieht sich auf besonders wichtige Sektionen.",
+      "options": [
+        { "id": "a", "text": "Fehlende Kernsektion korrekt erkannt", "correct": true, "feedback": "Richtig. Dafuer gibt es Zusatzpunkte." },
+        { "id": "b", "text": "Beliebige Markierung", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur schnelle Abgabe", "correct": false, "feedback": "Nicht allein." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was passiert bei Pruefungen ueber Zeitlimit?",
+      "hint": "Plan nennt einen Zeitabzug.",
+      "options": [
+        { "id": "a", "text": "Zeitabzug wird angewendet", "correct": true, "feedback": "Genau. Ueberziehung kostet Punkte." },
+        { "id": "b", "text": "Keine Auswirkung", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Zeitbonus", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI-Kombination ist vorgesehen?",
+      "hint": "Qualitaet und Geschwindigkeit zusammen sehen.",
+      "options": [
+        { "id": "a", "text": "Luecken-Treffquote plus Pruefzeit", "correct": true, "feedback": "Richtig. So wird Vollstaendigkeit und Tempo bewertet." },
+        { "id": "b", "text": "Nur Endscore", "correct": false, "feedback": "Zu wenig Aussagekraft." },
+        { "id": "c", "text": "Nur Klickanzahl", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was soll der Export laut Plan enthalten?",
+      "hint": "Ergebnisse nach Abschnittstyp differenzieren.",
+      "options": [
+        { "id": "a", "text": "Top-Fehler je Abschnittstyp", "correct": true, "feedback": "Richtig. Das macht Folgeverbesserungen gezielt moeglich." },
+        { "id": "b", "text": "Nur Gesamtnote", "correct": false, "feedback": "Zu grob." },
+        { "id": "c", "text": "Keine Detaildaten", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

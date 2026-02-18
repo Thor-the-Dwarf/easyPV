@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Arbeitsvertrag", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 10, "wrong": -3, "completion_bonus": 8 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Aussage: Arbeit vereinbarungsgemaess leisten. Welche Rolle trifft primaer zu?",
+      "hint": "Pruefe die Hauptpflicht des Arbeitnehmers.",
+      "options": [
+        { "id": "a", "text": "Arbeitnehmer", "correct": true, "feedback": "Richtig. Die Arbeitspflicht liegt beim Arbeitnehmer." },
+        { "id": "b", "text": "Arbeitgeber", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Keine Rolle", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Aussage: Verguetung zahlen. Welche Rolle ist korrekt?",
+      "hint": "Denk an die Gegenleistung im Arbeitsvertrag.",
+      "options": [
+        { "id": "a", "text": "Arbeitgeber", "correct": true, "feedback": "Richtig. Die Entgeltzahlung ist Arbeitgeberpflicht." },
+        { "id": "b", "text": "Arbeitnehmer", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Beide gleich", "correct": false, "feedback": "Nicht in diesem Kernpunkt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Regel gilt fuer den Klassenbonus?",
+      "hint": "Er haengt von der Rollenwahl ab.",
+      "options": [
+        { "id": "a", "text": "Falsche Rollenwahl blockiert Klassenbonus", "correct": true, "feedback": "Richtig. Erst Rolle korrekt, dann Klassenbonus." },
+        { "id": "b", "text": "Klassenbonus immer aktiv", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Bonus nur nach Zeit", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Ab wann gibt es Serienbonus laut Plan?",
+      "hint": "Es braucht mehrere volle Treffer in Folge.",
+      "options": [
+        { "id": "a", "text": "Ab 6 voll korrekten Karten", "correct": true, "feedback": "Genau. Dann wird der Serienbonus vergeben." },
+        { "id": "b", "text": "Ab 2 Karten", "correct": false, "feedback": "Zu frueh." },
+        { "id": "c", "text": "Erst am Spielende", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI-Kombination ist vorgesehen?",
+      "hint": "Rolle und Pflichtklasse getrennt auswerten.",
+      "options": [
+        { "id": "a", "text": "Rollenquote und Pflichtartenquote", "correct": true, "feedback": "Richtig. Beide Dimensionen bleiben sichtbar." },
+        { "id": "b", "text": "Nur Gesamtquote", "correct": false, "feedback": "Zu wenig differenziert." },
+        { "id": "c", "text": "Nur Reaktionszeit", "correct": false, "feedback": "Nicht ausreichend." }
+      ]
+    }
+  ]
+}

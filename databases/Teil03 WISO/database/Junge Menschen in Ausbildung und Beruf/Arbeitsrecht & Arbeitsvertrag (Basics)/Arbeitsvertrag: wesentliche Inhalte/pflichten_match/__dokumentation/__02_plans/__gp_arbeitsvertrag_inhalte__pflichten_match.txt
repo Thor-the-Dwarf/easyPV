@@ -1,0 +1,52 @@
+# __gp_arbeitsvertrag_inhalte__pflichten_match
+
+## Spielidee
+"Pflichten-Match" ordnet Aussagen den Rollen Arbeitgeber oder Arbeitnehmer zu. Lernende muessen zudem kennzeichnen, ob es sich um Haupt- oder Nebenpflicht handelt.
+
+## Lernziel
+- Rechte und Pflichten rollensicher unterscheiden.
+- Vertragsinhalte in Pflichtkategorien einordnen.
+
+## Messbare Progression
+- 30 Aussagekarten.
+- Punkte: +5 korrekte Rolle, +5 korrekte Pflichtart, -3 bei Fehler.
+- KPI: Rollenquote und Pflichtartenquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- RoleRuleEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- DutyCard(cardId, statement)
+- Classification(roleType, dutyClass)
+- RoundResult(roleCorrect, classCorrect)
+
+### Beziehungen
+- CardController liefert 1..* DutyCard.
+- RoleRuleEngine erstellt je Karte ein RoundResult.
+- ProgressTracker aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> CLASSIFY -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt DutyCard.
+2. Player waehlt Rolle und Pflichtklasse.
+3. RoleRuleEngine prueft Auswahl.
+4. RoundResult wird angezeigt.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Falsche Rollenwahl blockiert Klassenbonus.
+- Serienbonus ab 6 voll korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, statement, expectedRole, expectedDutyClass
+
+## Abnahmekriterien
+- Rolle und Pflichtklasse sind getrennt rueckgemeldet.
+- KPI zeigt beide Dimensionen transparent.
+- Fehlkarten werden nach Themenclustern gruppiert.

@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Arbeitsvertrag-Klausel-Scan
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: klausel_scan" {
+  component "_ghtml_klausel_scan.html" as HTML
+  component "_gjs_klausel_scan.js" as JS
+  component "_gcss_klausel_scan.css" as CSS
+  database "_data/_gg01_klausel_scan.json" as GG
+  database "_data/__metaData_Arbeitsvertrag: wesentliche Inhalte.json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

@@ -1,0 +1,52 @@
+# __gp_arbeitszeit_urlaub_entgelt__ueberstunden_balance
+
+## Spielidee
+"Ueberstunden-Balance" simuliert Monatskonten mit Plus- und Minusstunden. Lernende entscheiden, ob Ausgleich, Auszahlung oder Umplanung sinnvoll ist.
+
+## Lernziel
+- Arbeitszeitkonten strukturiert bewerten.
+- Auswirkungen von Zeitentscheidungen erkennen.
+
+## Messbare Progression
+- 9 Monatsfaelle.
+- Punkte: +10 passende Ausgleichsentscheidung, -5 unpassende Entscheidung.
+- KPI: Balance-Genauigkeit und Stabilitaetsindex.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- AccountController
+- BalanceEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- TimeAccountCase(caseId, carryOver, monthEntries[])
+- BalanceAction(actionId, actionType)
+- BalanceResult(isAppropriate, projectedBalance)
+
+### Beziehungen
+- TimeAccountCase enthaelt 5..20 Monatseintraege.
+- BalanceEngine validiert BalanceAction pro Fall.
+- AnalyticsService sammelt 1..* BalanceResult.
+
+### Zustandsmodell
+- LOAD_CASE -> REVIEW_BALANCE -> ACTION_SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. AccountController laedt TimeAccountCase.
+2. Player waehlt BalanceAction.
+3. BalanceEngine berechnet projectedBalance.
+4. BalanceResult wird angezeigt.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Aktion mit negativem Folgeeffekt erzeugt Zusatzabzug.
+- Stabiler Kontoverlauf ueber drei Faelle gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, carryOver, monthEntries[], actionOptions[], expectedAction
+
+## Abnahmekriterien
+- Kontoverlauf ist numerisch transparent.
+- KPI zeigt Entscheidungsguete und Stabilitaet.
+- Endreport listet riskante Muster.

@@ -1,0 +1,52 @@
+# __gp_arbeitsvertrag_inhalte__vertragscheck_labor
+
+## Spielidee
+"Vertragscheck-Labor" bietet vollstaendige Mustervertraege. Lernende pruefen Schritt fuer Schritt, ob Mindestinhalte vorhanden sind und protokollieren Luecken.
+
+## Lernziel
+- Systematische Vollstaendigkeitspruefung trainieren.
+- Strukturierte Dokumentationskompetenz aufbauen.
+
+## Messbare Progression
+- 6 Komplettchecks.
+- Punkte: +12 pro korrekt identifizierter Luecke, -4 pro falscher Beanstandung.
+- KPI: Luecken-Treffquote und Pruefzeit pro Vertrag.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CheckController
+- CompletenessEngine
+- ReportService
+
+### Domaenenobjekte
+- ContractTemplate(templateId, sections[])
+- Section(sectionId, mandatory)
+- CheckResult(missingMandatory, falseFlags, durationMs)
+
+### Beziehungen
+- ContractTemplate enthaelt 8..20 Section.
+- CompletenessEngine erzeugt je Template ein CheckResult.
+- ReportService aggregiert 1..* CheckResult.
+
+### Zustandsmodell
+- START_CHECK -> SECTION_REVIEW -> FLAG_SUBMIT -> RESULT -> NEXT_TEMPLATE
+
+### Sequenz (Happy Path)
+1. CheckController laedt ContractTemplate.
+2. Player markiert fehlende Pflichtabschnitte.
+3. CompletenessEngine prueft Markierungen.
+4. CheckResult wird berechnet.
+5. ReportService erstellt Fortschrittsvergleich.
+
+## Regeln
+- Fehlende Kernsektion erzeugt Zusatzpunkte bei korrekter Erkennung.
+- Ueberpruefungen ueber Zeitlimit erhalten Zeitabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: templateId, sections[{id,mandatory,title}], expectedMissingIds[]
+
+## Abnahmekriterien
+- Check-Protokoll ist pro Abschnitt nachvollziehbar.
+- KPI vereint Qualitaet und Geschwindigkeit.
+- Export beinhaltet Top-Fehler je Abschnittstyp.

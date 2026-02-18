@@ -1,0 +1,53 @@
+# __gp_arbeitszeit_urlaub_entgelt__entgeltfortzahlung_timer
+
+## Spielidee
+"Entgeltfortzahlung-Timer" praesentiert Krankheits- und Abwesenheitsfaelle. Lernende entscheiden unter Zeitdruck, ob und in welchem Umfang Entgeltfortzahlung plausibel ist.
+
+## Lernziel
+- Falllogik zur Entgeltfortzahlung anwenden.
+- Schnelle und korrekte Entscheidung unter Zeitlimit treffen.
+
+## Messbare Progression
+- 18 Kurzfaelle mit 20 Sekunden Zeitlimit.
+- Punkte: +8 korrekte Entscheidung, -4 falsche Entscheidung.
+- +3 fuer korrekte Begruendungsauswahl.
+- KPI: Entscheidungsgenauigkeit und Reaktionszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseController
+- PaymentRuleEngine
+- ScoreService
+
+### Domaenenobjekte
+- PaymentCase(caseId, absenceType, durationDays)
+- Decision(decisionId, payoutLevel)
+- PaymentResult(isCorrect, reasonCode, responseTimeMs)
+
+### Beziehungen
+- CaseController steuert 1..* PaymentCase.
+- PaymentRuleEngine erzeugt pro Decision ein PaymentResult.
+- ScoreService aggregiert 1..* PaymentResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECISION_LOCK -> RESULT -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. CaseController zeigt PaymentCase.
+2. Player waehlt Decision und Begruendung.
+3. PaymentRuleEngine validiert Auswahl.
+4. PaymentResult wird dargestellt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Entscheidung ohne Begruendung gibt Teilpunkte.
+- Fehlserie loest adaptiven Hinweis aus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, absenceType, durationDays, options[], expectedDecision
+
+## Abnahmekriterien
+- Fallfeedback ist klar und kurz begruendet.
+- KPI trennt Korrektheit und Tempo.
+- Verlauf zeigt Verbesserung ueber Sessions.

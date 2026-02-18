@@ -1,0 +1,52 @@
+# __gp_arbeitsvertrag_inhalte__klausel_scan
+
+## Spielidee
+"Arbeitsvertrag-Klausel-Scan" zeigt Vertragsauszuege. Lernende markieren wesentliche Inhalte und unterscheiden sie von unverbindlichen Formulierungen.
+
+## Lernziel
+- Kernelemente eines Arbeitsvertrags sicher erkennen.
+- Vertragspruefung strukturiert durchfuehren.
+
+## Messbare Progression
+- 12 Dokumentsets.
+- Punkte: +6 je korrekt markiertem Pflichtpunkt, -3 je Fehlmarkierung.
+- KPI: Praezision, Recall, Vollstaendigkeitsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DocumentController
+- ClauseEngine
+- MetricService
+
+### Domaenenobjekte
+- ContractDoc(docId, clauses[])
+- Clause(clauseId, clauseType)
+- ScanResult(tp, fp, fn)
+
+### Beziehungen
+- ContractDoc enthaelt 5..15 Clause.
+- ClauseEngine validiert Markierungen und erzeugt ScanResult.
+- MetricService aggregiert 1..* ScanResult.
+
+### Zustandsmodell
+- LOAD_DOC -> SCAN -> SUBMIT -> FEEDBACK -> NEXT_DOC
+
+### Sequenz (Happy Path)
+1. DocumentController laedt ContractDoc.
+2. Player markiert Pflichtklauseln.
+3. ClauseEngine vergleicht mit Referenz.
+4. ScanResult wird berechnet.
+5. MetricService aktualisiert Lernkurve.
+
+## Regeln
+- Uebermarkierung reduziert Praezision.
+- Fehlende Pflichtklausel reduziert Recall.
+
+## Datenmodell (JSON-Idee)
+- fields: docId, clauses[{id,clauseType,text}], expectedMandatoryIds[]
+
+## Abnahmekriterien
+- Ergebnis zeigt fehlende und ueberfluessige Markierungen.
+- KPI ist pro Klauseltyp auswertbar.
+- Lernende koennen Fehlmuster exportieren.

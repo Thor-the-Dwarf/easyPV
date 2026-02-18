@@ -1,0 +1,52 @@
+# __gp_arbeitszeit_urlaub_entgelt__krankmeldung_flow
+
+## Spielidee
+"Krankmeldung-Flow" bildet einen Meldeprozess als Ablaufspiel ab. Lernende ordnen Schritte wie Meldung, Nachweis und Fristen in korrekter Reihenfolge.
+
+## Lernziel
+- Prozesssicherheit bei Krankmeldungen aufbauen.
+- Frist- und Reihenfolgenlogik anwenden.
+
+## Messbare Progression
+- 12 Prozessfaelle.
+- Punkte: +7 korrekter Schritt, -3 falscher Schritt.
+- KPI: Prozessgenauigkeit und Schritte bis zur Loesung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FlowController
+- SequenceEngine
+- ProgressService
+
+### Domaenenobjekte
+- FlowCase(caseId, context)
+- FlowStep(stepId, stepType)
+- FlowResult(orderScore, stepCount)
+
+### Beziehungen
+- FlowCase enthaelt 4..8 FlowStep.
+- SequenceEngine validiert FlowStep-Reihenfolge.
+- ProgressService aggregiert 1..* FlowResult.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> ORDER_CHECK -> FEEDBACK -> CASE_END
+
+### Sequenz (Happy Path)
+1. FlowController startet FlowCase.
+2. Player ordnet FlowStep.
+3. SequenceEngine prueft Reihenfolge.
+4. FlowResult wird berechnet.
+5. ProgressService aktualisiert KPI.
+
+## Regeln
+- Uebersprungener Pflichtschritt erzeugt doppelten Abzug.
+- Fehlerfreie Kette gibt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, context, steps[], expectedOrder[]
+
+## Abnahmekriterien
+- Prozesspfad ist visuell eindeutig.
+- KPI zeigt Korrektheit und Effizienz.
+- Feedback nennt den korrekten naechsten Schritt.

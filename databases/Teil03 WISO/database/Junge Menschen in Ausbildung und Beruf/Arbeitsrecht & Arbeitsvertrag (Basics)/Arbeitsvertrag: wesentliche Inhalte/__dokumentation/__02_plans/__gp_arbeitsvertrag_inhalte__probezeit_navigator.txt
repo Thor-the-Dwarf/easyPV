@@ -1,0 +1,53 @@
+# __gp_arbeitsvertrag_inhalte__probezeit_navigator
+
+## Spielidee
+"Probezeit-Navigator" simuliert Situationen zu Beginn des Arbeitsverhaeltnisses. Lernende entscheiden, welche Regelung in der Probezeit anwendbar ist und welcher naechste Schritt sinnvoll ist.
+
+## Lernziel
+- Probezeitbezogene Vertragsinhalte korrekt anwenden.
+- Entscheidungssicherheit in fruehen Beschaeftigungsphaenomenen gewinnen.
+
+## Messbare Progression
+- 14 Fallszenen.
+- Punkte: +8 korrekte Regelzuordnung, +4 korrekter naechster Schritt, -4 Fehler.
+- KPI: Regelgenauigkeit und Prozessgenauigkeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- RuleMappingEngine
+- ScoreService
+
+### Domaenenobjekte
+- ProbeCase(caseId, situationType)
+- RuleOption(ruleId, topic)
+- ActionOption(actionId, actionType)
+- CaseResult(ruleCorrect, actionCorrect)
+
+### Beziehungen
+- ProbeCase enthaelt 3..5 RuleOption und 2..4 ActionOption.
+- RuleMappingEngine validiert CaseResult.
+- ScoreService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- READY -> CASE_REVIEW -> RULE_SELECT -> ACTION_SELECT -> EVAL -> NEXT
+
+### Sequenz (Happy Path)
+1. ScenarioController startet ProbeCase.
+2. Player waehlt RuleOption und ActionOption.
+3. RuleMappingEngine prueft Entscheidungen.
+4. CaseResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Korrekte Regel ohne korrekten Schritt gibt Teilpunkte.
+- Fehlserie aktiviert kontextbezogene Hilfe.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, situationType, ruleOptions[], actionOptions[], expectedRule, expectedAction
+
+## Abnahmekriterien
+- Regel- und Prozessfeedback sind getrennt sichtbar.
+- KPI zeigt Lernfortschritt je Dimension.
+- Endreport nennt haeufigste Regelverwechslungen.

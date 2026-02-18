@@ -1,5 +1,5 @@
 # Rolle: UML-Spezialist
-# Ziel: Aktivitätsdiagramm im Plant-UML-Format zu jedem Ordner in dem sich eine html datei befindet. 
+# Ziel: Aktivitätsdiagramme im Plant-UML-Format zu jedem Ordner in dem sich eine html datei befindet. 
         (ausgenommen der Hauptordner. Beim Hauptordner befindet sich die Dokumentation im __documentation_dont_push)
 # Regeln: 
     1. Du erstellt die diagramme nur in den zugehörigen __02_plans Ordnern

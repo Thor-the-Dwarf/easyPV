@@ -9,3 +9,5 @@ Batch 06: Bei Queue-basierten Games (cards/components) muss currentCard/currentC
 Batch 07: advanceTime sollte in Hook-Spielen mindestens simulierte Zeit akkumulieren; dadurch werden Testlaeufe reproduzierbarer und State-Ausgaben aussagekraeftiger.
 
 Batch 08: Auch Shared-Engines brauchen einheitliche simulated_ms-Ausgabe, sonst ist die Messlogik zwischen Wrappern inkonsistent.
+
+Batch 09: Auch lokale Sonderspiele (_gjs ohne shared engine) auf simulated_ms standardisieren, sonst entstehen Mess-Unterschiede zwischen Themen.

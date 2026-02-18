@@ -1,0 +1,53 @@
+# __gp_verbraucherschutz__siegel_check
+
+## Spielidee
+"Siegel-Check" praesentiert Produktseiten mit Labels, Pflichtangaben und Warnsignalen. Lernende beurteilen, ob ein Angebot vertrauenswuerdig ist.
+
+## Lernziel
+- Aussagekraft von Siegeln und Pflichtinformationen einschaetzen.
+- Red-Flags bei unserioesen Angeboten systematisch erkennen.
+
+## Messbare Progression
+- 14 Angebotskarten.
+- Punkte: +10 korrekte Vertrauensbewertung, -5 falsche Bewertung.
+- +3 fuer jede korrekt erkannte Red-Flag.
+- KPI: Red-Flag-Trefferquote und Gesamtentscheidungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- OfferController
+- TrustEngine
+- ReportService
+
+### Domänenobjekte
+- OfferCard(cardId, sellerInfo, labels[])
+- Flag(flagId, type, severity)
+- TrustResult(score, verdict)
+
+### Beziehungen
+- OfferCard enthaelt 0..* Flag.
+- TrustEngine berechnet je OfferCard genau ein TrustResult.
+- ReportService sammelt 1..* TrustResult.
+
+### Zustandsmodell
+- READY -> INSPECTION -> DECISION -> RESULT -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. OfferController zeigt OfferCard.
+2. Player bewertet Vertrauen und markiert Flags.
+3. TrustEngine berechnet Score.
+4. ReportService aktualisiert KPI-Dashboard.
+5. Naechste Karte wird geladen.
+
+## Regeln
+- Fehlende Pflichtangaben haben hoehere Gewichtung als unklare Labels.
+- Drei korrekt erkannte Flags in Folge geben Serienbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, sellerInfo, labels[], flags[], expectedVerdict
+
+## Abnahmekriterien
+- Bewertung ist mit nachvollziehbarer Punktformel erklaert.
+- KPI-Dashboard trennt Vertrauensurteil und Flag-Erkennung.
+- Sessionvergleich zeigt Verbesserung bei Red-Flag-Trefferquote.

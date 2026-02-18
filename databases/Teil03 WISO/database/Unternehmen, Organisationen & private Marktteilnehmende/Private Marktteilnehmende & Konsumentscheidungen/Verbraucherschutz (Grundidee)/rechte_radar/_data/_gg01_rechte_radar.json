@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Verbraucherschutz", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 9, "wrong": -4, "completion_bonus": 9 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Onlinekauf, Artikel gefaellt nicht, Frist laeuft. Welches Recht ist zentral?",
+      "hint": "Bei Fernabsatz ohne Mangel ist oft Widerruf relevant.",
+      "options": [
+        { "id": "a", "text": "Widerruf", "correct": true, "feedback": "Richtig. Das ist der typische Rechtsweg bei Nichtgefallen im Fernabsatz." },
+        { "id": "b", "text": "Gewaehrleistung", "correct": false, "feedback": "Nicht primaer ohne Sachmangel." },
+        { "id": "c", "text": "Garantie", "correct": false, "feedback": "Nicht automatisch einschlaegig." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Produkt hat Defekt kurz nach Kauf. Welche Zuordnung passt?",
+      "hint": "Mangelrechte des Kaufrechts.",
+      "options": [
+        { "id": "a", "text": "Gewaehrleistung", "correct": true, "feedback": "Richtig. Defektfaelle laufen primaer ueber Gewaehrleistung." },
+        { "id": "b", "text": "Nur Kulanz", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Widerruf immer", "correct": false, "feedback": "Nicht pauschal." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI wird im Spiel neben Genauigkeit gemessen?",
+      "hint": "Es gibt ein Zeitlimit pro Karte.",
+      "options": [
+        { "id": "a", "text": "Reaktionszeit", "correct": true, "feedback": "Richtig. Zeit ist zweite Kernmetrik." },
+        { "id": "b", "text": "Bildschirmhelligkeit", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Mausweg", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Was passiert bei drei Fehlzuordnungen in Folge?",
+      "hint": "Der Plan beschreibt einen Hilfemodus.",
+      "options": [
+        { "id": "a", "text": "Hinweis-Modus startet", "correct": true, "feedback": "Genau. Dann gibt es Begriffsvergleiche als Hilfe." },
+        { "id": "b", "text": "Session endet sofort", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Punkte verdoppeln sich", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann gibt es Zeitbonus?",
+      "hint": "Tempo plus Korrektheit zaehlt.",
+      "options": [
+        { "id": "a", "text": "Bei schneller korrekter Antwort", "correct": true, "feedback": "Richtig. Nur korrekte schnelle Antworten werden belohnt." },
+        { "id": "b", "text": "Bei schneller falscher Antwort", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Immer bei kurzer Antwortzeit", "correct": false, "feedback": "Nicht ohne Korrektheit." }
+      ]
+    }
+  ]
+}

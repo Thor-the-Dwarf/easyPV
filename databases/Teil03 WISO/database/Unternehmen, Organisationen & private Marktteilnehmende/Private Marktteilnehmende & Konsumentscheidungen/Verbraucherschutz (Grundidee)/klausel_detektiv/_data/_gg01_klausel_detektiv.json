@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Verbraucherschutz", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 7, "wrong": -3, "completion_bonus": 8 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Eine Klausel schliesst saemtliche Maengelhaftung pauschal aus. Bewertung?",
+      "hint": "Achte auf klare Benachteiligung.",
+      "options": [
+        { "id": "a", "text": "Als hohes Risiko markieren", "correct": true, "feedback": "Richtig. Pauschaler Ausschluss ist kritisch." },
+        { "id": "b", "text": "Als unkritisch einstufen", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Ignorieren", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Was verbessert den Recall im Spiel?",
+      "hint": "Recall steigt, wenn relevante Klauseln nicht uebersehen werden.",
+      "options": [
+        { "id": "a", "text": "Weniger problematische Klauseln uebersehen", "correct": true, "feedback": "Richtig. Das reduziert FN und erhoeht Recall." },
+        { "id": "b", "text": "Beliebig viel markieren", "correct": false, "feedback": "Das schadet Praezision." },
+        { "id": "c", "text": "Keine Stelle markieren", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Handlung verschlechtert Praezision besonders?",
+      "hint": "Praezision leidet bei vielen False Positives.",
+      "options": [
+        { "id": "a", "text": "Uebermarkierung", "correct": true, "feedback": "Genau. Zu viele Fehlmarkierungen senken Praezision." },
+        { "id": "b", "text": "Gezielte Markierung", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Risikoklasse begruenden", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Neben Markierung ist laut Plan was zusaetzlich zu tun?",
+      "hint": "Es gibt eine Risiko-Klassifikation.",
+      "options": [
+        { "id": "a", "text": "Risikostufe klassifizieren", "correct": true, "feedback": "Richtig. Das gibt zusaetzliche Punkte." },
+        { "id": "b", "text": "Schriftart bewerten", "correct": false, "feedback": "Nicht relevant." },
+        { "id": "c", "text": "Nur Seitenzahl nennen", "correct": false, "feedback": "Nicht ausreichend." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Woran erkennst du gute Lernentwicklung?",
+      "hint": "Beobachte beide Kennzahlen gemeinsam.",
+      "options": [
+        { "id": "a", "text": "Praezision und Recall steigen gemeinsam", "correct": true, "feedback": "Richtig. Das zeigt bessere Erkennungsleistung." },
+        { "id": "b", "text": "Nur eine Kennzahl beachten", "correct": false, "feedback": "Zu einseitig." },
+        { "id": "c", "text": "Kennzahlen ignorieren", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

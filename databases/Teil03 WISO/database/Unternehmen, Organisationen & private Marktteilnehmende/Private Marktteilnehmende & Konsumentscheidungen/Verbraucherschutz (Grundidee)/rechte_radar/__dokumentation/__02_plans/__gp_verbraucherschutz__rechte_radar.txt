@@ -1,0 +1,53 @@
+# __gp_verbraucherschutz__rechte_radar
+
+## Spielidee
+"Rechte-Radar" zeigt Alltagssituationen im Online- und Offline-Kauf. Lernende waehlen, welches Verbraucherrecht anwendbar ist (z. B. Gewaehrleistung, Widerruf, Garantie).
+
+## Lernziel
+- Zentrale Verbraucherrechte situationsbezogen unterscheiden.
+- Rechtsbegriffe korrekt und schnell zuordnen.
+
+## Messbare Progression
+- 24 Fallkarten.
+- Punkte: +9 korrekte Rechtszuordnung, -4 falsche Zuordnung.
+- Zeitlimit: 20 Sekunden pro Karte.
+- KPI: Rechtszuordnungsgenauigkeit und Reaktionszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseController
+- LegalRuleEngine
+- ScoreTracker
+
+### Domänenobjekte
+- ConsumerCase(caseId, channel, issueType)
+- RightOption(rightId, label)
+- LegalResult(isCorrect, explanationId)
+
+### Beziehungen
+- ConsumerCase hat 3..5 RightOption.
+- LegalRuleEngine erzeugt je Auswahl ein LegalResult.
+- ScoreTracker aggregiert 1..* LegalResult.
+
+### Zustandsmodell
+- READY -> CASE_OPEN -> ANSWER_SUBMITTED -> LEGAL_FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. CaseController oeffnet ConsumerCase.
+2. Player waehlt RightOption.
+3. LegalRuleEngine prueft Rechtszuordnung.
+4. LegalResult wird als Feedback angezeigt.
+5. ScoreTracker aktualisiert Sessionwerte.
+
+## Regeln
+- Bei Fehlserie von drei Karten startet Hinweis-Modus mit Begriffsvergleich.
+- Schnelle korrekte Antworten geben Zeitbonuspunkte.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, channel, issueType, rightOptions[], expectedRight, explanation
+
+## Abnahmekriterien
+- Rechtsbegruendung ist pro Karte eindeutig.
+- KPI-Werte sind pro Rechtsgebiet auswertbar.
+- Lernende sehen am Ende ihr staerkstes und schwaechstes Themenfeld.

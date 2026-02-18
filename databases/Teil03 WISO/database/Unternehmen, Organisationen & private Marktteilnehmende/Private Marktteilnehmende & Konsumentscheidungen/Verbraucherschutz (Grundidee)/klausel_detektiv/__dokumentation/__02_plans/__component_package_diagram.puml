@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Klausel-Detektiv
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: klausel_detektiv" {
+  component "_ghtml_klausel_detektiv.html" as HTML
+  component "_gjs_klausel_detektiv.js" as JS
+  component "_gcss_klausel_detektiv.css" as CSS
+  database "_data/_gg01_klausel_detektiv.json" as GG
+  database "_data/__metaData_Verbraucherschutz (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

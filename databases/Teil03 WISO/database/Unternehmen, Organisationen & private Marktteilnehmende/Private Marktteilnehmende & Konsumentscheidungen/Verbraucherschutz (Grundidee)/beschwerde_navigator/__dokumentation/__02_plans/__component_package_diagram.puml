@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Beschwerde-Navigator
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: beschwerde_navigator" {
+  component "_ghtml_beschwerde_navigator.html" as HTML
+  component "_gjs_beschwerde_navigator.js" as JS
+  component "_gcss_beschwerde_navigator.css" as CSS
+  database "_data/_gg01_beschwerde_navigator.json" as GG
+  database "_data/__metaData_Verbraucherschutz (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

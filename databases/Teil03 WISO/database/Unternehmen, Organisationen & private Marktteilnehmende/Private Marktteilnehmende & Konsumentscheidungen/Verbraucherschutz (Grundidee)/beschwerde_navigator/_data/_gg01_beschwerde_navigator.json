@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Verbraucherschutz", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 8, "wrong": -4, "completion_bonus": 8 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Ware kommt beschaedigt an. Welcher Schritt steht zuerst an?",
+      "hint": "Der Prozess startet beim direkten Anbieter-Kontakt.",
+      "options": [
+        { "id": "a", "text": "Verkaeufer kontaktieren und Mangel melden", "correct": true, "feedback": "Richtig. Der erste Pflichtschritt ist die Mangelanzeige beim Verkaeufer." },
+        { "id": "b", "text": "Sofort Gericht einschalten", "correct": false, "feedback": "Zu frueh. Erst der regulaere Beschwerdeweg." },
+        { "id": "c", "text": "Nichts dokumentieren", "correct": false, "feedback": "Nicht korrekt. Dokumentation ist wichtig." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Auf Beschwerde kommt keine Reaktion. Was folgt sinnvoll?",
+      "hint": "Nach Erstkontakt kommt meist eine Fristsetzung.",
+      "options": [
+        { "id": "a", "text": "Frist zur Nachbesserung setzen", "correct": true, "feedback": "Richtig. Fristsetzung ist der naechste Prozessschritt." },
+        { "id": "b", "text": "Beschwerde abbrechen", "correct": false, "feedback": "Nicht sinnvoll." },
+        { "id": "c", "text": "Direkt oeffentlich posten", "correct": false, "feedback": "Nicht der strukturierte Prozessschritt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Nach Frist keine Einigung. Welche Eskalation passt?",
+      "hint": "Vor Klage ist eine neutrale Schlichtung moeglich.",
+      "options": [
+        { "id": "a", "text": "Schlichtungsstelle einschalten", "correct": true, "feedback": "Richtig. Das ist eine passende Eskalationsstufe." },
+        { "id": "b", "text": "Fall ignorieren", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Unbegruendete Strafzahlung fordern", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welcher Fehler kostet doppelte Abzuege laut Regelwerk?",
+      "hint": "Pflichtschritte duerfen nicht uebersprungen werden.",
+      "options": [
+        { "id": "a", "text": "Pflichtschritt ueberspringen", "correct": true, "feedback": "Genau. Das fuehrt zu doppeltem Punktabzug." },
+        { "id": "b", "text": "Dokumente sammeln", "correct": false, "feedback": "Das ist sinnvoll, nicht fehlerhaft." },
+        { "id": "c", "text": "Kontaktweg notieren", "correct": false, "feedback": "Kein Fehler." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann gibt es Effizienzbonus?",
+      "hint": "Bonus bei korrektem und kurzem Weg.",
+      "options": [
+        { "id": "a", "text": "Wenn korrekt mit minimalen Schritten geloest", "correct": true, "feedback": "Richtig. Korrektheit plus Effizienz loest den Bonus aus." },
+        { "id": "b", "text": "Wenn moeglichst viele Schritte gemacht werden", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur bei Zufallstreffern", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

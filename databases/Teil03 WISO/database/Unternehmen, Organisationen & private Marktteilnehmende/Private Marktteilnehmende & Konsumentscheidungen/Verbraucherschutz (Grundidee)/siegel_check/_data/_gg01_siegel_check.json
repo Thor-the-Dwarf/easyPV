@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Verbraucherschutz", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 10, "wrong": -5, "completion_bonus": 9 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Angebot ohne Anbieteradresse und ohne Impressum. Bewertung?",
+      "hint": "Fehlende Pflichtangaben sind starke Red-Flags.",
+      "options": [
+        { "id": "a", "text": "Misstrauisch bewerten und Red-Flag setzen", "correct": true, "feedback": "Richtig. Fehlende Pflichtinfos wiegen schwer." },
+        { "id": "b", "text": "Als voll vertrauenswuerdig einstufen", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur auf Logo schauen", "correct": false, "feedback": "Nicht ausreichend." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Kennzahl beschreibt Red-Flag-Leistung?",
+      "hint": "Gesucht ist die Trefferquote auf Warnsignale.",
+      "options": [
+        { "id": "a", "text": "Red-Flag-Trefferquote", "correct": true, "feedback": "Richtig. Diese KPI misst die Erkennungsleistung." },
+        { "id": "b", "text": "Scroll-Geschwindigkeit", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Fenstergroesse", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was hat laut Regeln hoehere Gewichtung?",
+      "hint": "Vergleiche Labels mit Pflichtangaben.",
+      "options": [
+        { "id": "a", "text": "Fehlende Pflichtangaben", "correct": true, "feedback": "Richtig. Diese sind gewichtiger als unklare Labels." },
+        { "id": "b", "text": "Farbschema der Seite", "correct": false, "feedback": "Nicht relevant." },
+        { "id": "c", "text": "Anzahl Emojis", "correct": false, "feedback": "Nicht relevant." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann entsteht Serienbonus?",
+      "hint": "Es gibt einen Bonus fuer aufeinanderfolgende Treffer.",
+      "options": [
+        { "id": "a", "text": "Bei 3 korrekt erkannten Flags in Folge", "correct": true, "feedback": "Genau. Dann wird der Serienbonus aktiv." },
+        { "id": "b", "text": "Bei 3 zufaelligen Klicks", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Bei einem einzigen Treffer", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Kombination zeigt solide Entscheidung?",
+      "hint": "Vertrauensurteil und Flag-Erkennung gemeinsam betrachten.",
+      "options": [
+        { "id": "a", "text": "Korrektes Urteil plus korrekte Flags", "correct": true, "feedback": "Richtig. Beide Teile muessen stimmen." },
+        { "id": "b", "text": "Nur Bauchgefuehl", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur Preis als Kriterium", "correct": false, "feedback": "Zu kurz gegriffen." }
+      ]
+    }
+  ]
+}

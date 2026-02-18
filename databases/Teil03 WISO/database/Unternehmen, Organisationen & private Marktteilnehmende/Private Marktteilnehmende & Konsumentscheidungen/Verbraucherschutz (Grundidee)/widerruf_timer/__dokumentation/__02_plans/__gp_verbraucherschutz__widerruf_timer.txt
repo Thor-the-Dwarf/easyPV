@@ -1,0 +1,53 @@
+# __gp_verbraucherschutz__widerruf_timer
+
+## Spielidee
+"Widerruf-Timer" trainiert Fristen: Lernende erhalten Bestell- und Lieferdaten und muessen in Echtzeit entscheiden, ob Widerruf noch moeglich ist.
+
+## Lernziel
+- Fristenberechnung strukturiert anwenden.
+- Datum- und Ereignislogik sicher beherrschen.
+
+## Messbare Progression
+- 12 Fristfaelle.
+- Punkte: +13 korrekte Fristentscheidung, -6 falsche Fristentscheidung.
+- Zusatzpunkte: +5 fuer korrekte Begruendung (Startdatum + Enddatum).
+- KPI: Fristgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DeadlineController
+- DateRuleEngine
+- FeedbackService
+
+### Domänenobjekte
+- DeadlineCase(caseId, orderDate, deliveryDate, todayDate)
+- DeadlineDecision(isAllowed, reasonCode)
+- DeadlineResult(isCorrect, deltaDays)
+
+### Beziehungen
+- DeadlineController steuert 1..* DeadlineCase.
+- DateRuleEngine mappt DeadlineCase auf DeadlineResult.
+- FeedbackService speichert 1..* DeadlineResult.
+
+### Zustandsmodell
+- INIT -> CASE_ACTIVE -> DECISION_LOCK -> EVALUATION -> NEXT
+
+### Sequenz (Happy Path)
+1. DeadlineController liefert DeadlineCase.
+2. Player trifft DeadlineDecision.
+3. DateRuleEngine berechnet gueltige Frist.
+4. FeedbackService gibt Delta in Tagen aus.
+5. Sessionscore wird aktualisiert.
+
+## Regeln
+- Entscheidung ohne Begruendung gibt nur 70 Prozent der Punkte.
+- Bei zweimal gleichem Fehler wird ein Mini-Tutorial eingeblendet.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, orderDate, deliveryDate, todayDate, legalWindowDays
+
+## Abnahmekriterien
+- Datumslogik ist timezone-unabhaengig reproduzierbar.
+- Fristberechnung wird im Feedback transparent dargestellt.
+- Lernfortschritt ist ueber Fristgenauigkeit numerisch sichtbar.

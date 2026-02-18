@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Verbraucherschutz", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 13, "wrong": -6, "completion_bonus": 10 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Bestellung online, Lieferung vor 10 Tagen. Widerruf moeglich?",
+      "hint": "Pruefe das Fristfenster ab relevantem Startdatum.",
+      "options": [
+        { "id": "a", "text": "Ja, innerhalb der regulaeren Frist", "correct": true, "feedback": "Richtig. Das liegt noch im typischen Widerrufszeitraum." },
+        { "id": "b", "text": "Nein, immer ausgeschlossen", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur mit Garantie", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Begruendung bringt volle Punkte im Timer?",
+      "hint": "Es muessen Start- und Enddatum genannt werden.",
+      "options": [
+        { "id": "a", "text": "Startdatum und Fristende korrekt angeben", "correct": true, "feedback": "Richtig. Das entspricht der geforderten Begruendung." },
+        { "id": "b", "text": "Nur Bauchgefuehl nennen", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur Lieferdatum nennen", "correct": false, "feedback": "Unvollstaendig." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Ohne Begruendung abgegeben: Wie viele Punkte laut Regel?",
+      "hint": "Es gibt eine prozentuale Reduktion.",
+      "options": [
+        { "id": "a", "text": "Nur 70 Prozent der Punkte", "correct": true, "feedback": "Genau. Ohne Begruendung wird reduziert bewertet." },
+        { "id": "b", "text": "Doppelte Punkte", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Immer Null", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Was zeigt das Feedback laut Plan zusaetzlich an?",
+      "hint": "Neben richtig/falsch wird ein Distanzwert genannt.",
+      "options": [
+        { "id": "a", "text": "Delta in Tagen", "correct": true, "feedback": "Richtig. Das Delta macht die Fristberechnung transparent." },
+        { "id": "b", "text": "Nur Farbe ohne Zahl", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur Symbol ohne Kontext", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann wird Mini-Tutorial eingeblendet?",
+      "hint": "Regel bezieht sich auf wiederholten gleichen Fehler.",
+      "options": [
+        { "id": "a", "text": "Bei zweimal gleichem Fehler", "correct": true, "feedback": "Richtig. Dann startet die Hilfefunktion." },
+        { "id": "b", "text": "Bei jeder richtigen Antwort", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur beim ersten Start", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

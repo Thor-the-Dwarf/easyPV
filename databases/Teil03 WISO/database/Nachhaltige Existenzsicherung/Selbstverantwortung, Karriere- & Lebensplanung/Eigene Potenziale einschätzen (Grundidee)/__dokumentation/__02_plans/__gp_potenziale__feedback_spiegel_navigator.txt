@@ -1,0 +1,53 @@
+# __gp_potenziale__feedback_spiegel_navigator
+
+## Spielidee
+"Feedback-Spiegel-Navigator" vergleicht Selbstbild und Fremdbild aus Feedbacks. Lernende priorisieren die wichtigsten Entwicklungsimpulse.
+
+## Lernziel
+- Selbst- und Fremdbild konstruktiv abgleichen.
+- Entwicklungsprioritaeten ableiten.
+
+## Messbare Progression
+- 10 Feedbackfaelle.
+- Punkte: +8 korrekte Priorisierung, -4 falsche Priorisierung.
+- KPI: Priorisierungsquote und Differenzanalyse-Score.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FeedbackController
+- GapEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- FeedbackCase(caseId, selfView, peerView)
+- Gap(gapId, magnitude)
+- PriorityDecision(decisionId, rank)
+- CaseResult(priorityCorrect, gapScore)
+
+### Beziehungen
+- FeedbackCase enthaelt 1..* Gap.
+- GapEngine berechnet Differenzmuster.
+- ProgressTracker aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- CASE_START -> REVIEW_FEEDBACK -> PRIORITIZE -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. FeedbackController startet FeedbackCase.
+2. Player priorisiert Gap.
+3. GapEngine prueft Rangfolge.
+4. CaseResult wird angezeigt.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Uebersehenes Hochprioritaets-Gap erzeugt Zusatzabzug.
+- Vollkorrekte Priorisierung gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, selfView[], peerView[], expectedPriority[]
+
+## Abnahmekriterien
+- Priorisierung ist transparent begruendet.
+- KPI zeigt Genauigkeit und Gap-Qualitaet.
+- Report listet haeufige blinde Flecken.

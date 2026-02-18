@@ -1,0 +1,53 @@
+# __gp_potenziale__entwicklungsweg_duell
+
+## Spielidee
+"Entwicklungsweg-Duell" stellt zwei Lernwege gegeneinander. Lernende waehlen den besser passenden Weg zum Profil.
+
+## Lernziel
+- Entwicklungswege kriterienbasiert vergleichen.
+- Passung zwischen Potenzial und Maßnahme bewerten.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- ScoreBoard
+
+### Domaenenobjekte
+- DuelCase(duelId, optionA, optionB)
+- PathOption(optionId, fitVector)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 PathOption.
+- EvaluationEngine validiert Auswahl.
+- ScoreBoard aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> REVIEW_OPTIONS -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt PathOption.
+3. EvaluationEngine prueft Wahl.
+4. DuelResult wird angezeigt.
+5. ScoreBoard aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Begruendung gibt Teilpunkte.
+- Serienbonus ab 4 Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, optionA{}, optionB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Vergleichslogik ist transparent.
+- KPI trennt Wahl und Begruendung.
+- Report nennt haeufige Fehlbewertungen.

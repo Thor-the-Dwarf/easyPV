@@ -1,0 +1,53 @@
+# __gp_rollenverhalten__perspektivwechsel_duell
+
+## Spielidee
+"Perspektivwechsel-Duell" vergleicht zwei Reaktionen auf dieselbe Situation aus unterschiedlichen Rollenperspektiven.
+
+## Lernziel
+- Perspektivwechsel in Kommunikationssituationen trainieren.
+- Rollenangemessene Reaktionen auswaehlen.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- PerspectiveEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, responseA, responseB)
+- ResponseOption(optionId, perspectiveType)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 ResponseOption.
+- PerspectiveEngine validiert Auswahl.
+- ScoreService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> REVIEW -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt ResponseOption.
+3. PerspectiveEngine prueft Passung.
+4. DuelResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Begruendung gibt Teilpunkte.
+- Serienbonus ab 4 Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, responseA{}, responseB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Perspektivkriterien sind transparent.
+- KPI trennt Wahl und Begruendung.
+- Report listet haeufige Perspektivfehler.

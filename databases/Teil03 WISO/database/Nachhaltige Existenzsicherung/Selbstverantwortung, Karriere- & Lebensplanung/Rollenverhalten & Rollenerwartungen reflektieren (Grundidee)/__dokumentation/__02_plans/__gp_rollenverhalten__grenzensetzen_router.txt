@@ -1,0 +1,52 @@
+# __gp_rollenverhalten__grenzensetzen_router
+
+## Spielidee
+"Grenzensetzen-Router" simuliert Situationen mit Rollenkollisionen und unklaren Erwartungen. Lernende waehlen einen klaren, respektvollen Grenzsetzungspfad.
+
+## Lernziel
+- Eigene Rollen- und Verantwortungsgrenzen kommunizieren.
+- Eskalationsarme Handlungswege aufbauen.
+
+## Messbare Progression
+- 12 Prozessfaelle.
+- Punkte: +8 korrekter Schritt, -4 falscher Schritt.
+- KPI: Routing-Genauigkeit und Schritte bis Loesung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FlowController
+- BoundaryEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- BoundaryCase(caseId, context)
+- RouteStep(stepId, stepType)
+- RouteResult(pathCorrect, stepCount)
+
+### Beziehungen
+- BoundaryCase enthaelt 3..7 RouteStep.
+- BoundaryEngine validiert Reihenfolge.
+- ProgressTracker aggregiert 1..* RouteResult.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. FlowController startet BoundaryCase.
+2. Player waehlt RouteStep.
+3. BoundaryEngine prueft Pfad.
+4. RouteResult wird berechnet.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Klaerungsstufe verursacht Zusatzabzug.
+- Fehlerfreie Kette gibt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, context, steps[], expectedPath[]
+
+## Abnahmekriterien
+- Prozesspfad ist klar visualisiert.
+- KPI trennt Korrektheit und Effizienz.
+- Report nennt haeufige Fehlrouten.

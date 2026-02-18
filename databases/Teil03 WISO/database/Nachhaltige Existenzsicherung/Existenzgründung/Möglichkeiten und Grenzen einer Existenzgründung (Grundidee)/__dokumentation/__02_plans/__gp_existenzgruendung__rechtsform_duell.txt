@@ -1,0 +1,53 @@
+# __gp_existenzgruendung__rechtsform_duell
+
+## Spielidee
+"Rechtsform-Duell" vergleicht zwei Gruendungsszenarien. Lernende waehlen die plausiblere Rechtsform und begruenden die Entscheidung.
+
+## Lernziel
+- Grundidee unterschiedlicher Rechtsformen einordnen.
+- Entscheidung nach Kontextkriterien treffen.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, optionA, optionB)
+- LegalFormOption(optionId, attributes)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 LegalFormOption.
+- EvaluationEngine validiert Auswahl.
+- ScoreService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> REVIEW -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt LegalFormOption.
+3. EvaluationEngine prueft Entscheidung.
+4. DuelResult wird gespeichert.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Begruendung gibt Teilpunkte.
+- Serienbonus ab 4 Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, optionA{}, optionB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Vergleichskriterien sind transparent.
+- KPI trennt Wahl und Begruendung.
+- Report listet haeufige Fehlentscheidungen.

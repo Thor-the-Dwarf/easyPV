@@ -1,0 +1,52 @@
+# __gp_existenzgruendung__startphase_planer
+
+## Spielidee
+"Startphase-Planer" simuliert die ersten 12 Gruendungswochen. Lernende setzen Aufgaben in einen realistischen Ablauf und vermeiden Fristkonflikte.
+
+## Lernziel
+- Startphase einer Gruendung strukturiert planen.
+- Abhaengigkeiten und Prioritaeten beruecksichtigen.
+
+## Messbare Progression
+- 8 Planungsrunden.
+- Punkte: +7 fristgerechte Aufgabe, -4 Fristkonflikt.
+- KPI: Fristtrefferquote und Konfliktanzahl.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- PlanningController
+- DeadlineEngine
+- KPIService
+
+### Domaenenobjekte
+- PlanningCase(caseId, tasks[])
+- Task(taskId, dueWindow, dependencies)
+- RoundResult(onTimeRate, conflicts)
+
+### Beziehungen
+- PlanningCase enthaelt 6..15 Task.
+- DeadlineEngine validiert Reihenfolge.
+- KPIService aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- LOAD_CASE -> PLAN_TASKS -> RUN_CHECK -> EVALUATE -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. PlanningController laedt PlanningCase.
+2. Player plant Task.
+3. DeadlineEngine prueft Fristen.
+4. RoundResult wird berechnet.
+5. KPIService aktualisiert Dashboard.
+
+## Regeln
+- Konflikt mit Pflichtaufgabe erzeugt Zusatzabzug.
+- Konfliktfreie Runde mit hoher Fristquote gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, tasks[], expectedScheduleConstraints
+
+## Abnahmekriterien
+- Fristen und Konflikte sind live sichtbar.
+- KPI zeigt Tempo und Planqualitaet.
+- Replay markiert kritische Planungsfehler.

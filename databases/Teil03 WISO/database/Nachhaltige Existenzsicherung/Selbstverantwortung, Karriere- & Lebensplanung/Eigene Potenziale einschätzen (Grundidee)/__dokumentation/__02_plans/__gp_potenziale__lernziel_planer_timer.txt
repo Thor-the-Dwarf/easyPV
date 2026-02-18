@@ -1,0 +1,53 @@
+# __gp_potenziale__lernziel_planer_timer
+
+## Spielidee
+"Lernziel-Planer-Timer" fordert das Setzen realistischer Lernziele unter Zeitdruck.
+
+## Lernziel
+- Realistische Lernziele aus Potenzialanalyse ableiten.
+- Priorisieren und planen unter Zeitlimit.
+
+## Messbare Progression
+- 18 Kurzfaelle, 20 Sekunden je Fall.
+- Punkte: +7 passendes Lernziel, -3 unpassendes Lernziel.
+- +3 fuer korrekte Prioritaet.
+- KPI: Zielgenauigkeit und Reaktionszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimerController
+- GoalEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- GoalCase(caseId, profileSnapshot)
+- GoalOption(goalId, priority)
+- CaseResult(goalCorrect, priorityCorrect, responseTimeMs)
+
+### Beziehungen
+- GoalCase enthaelt 3..6 GoalOption.
+- GoalEngine validiert Auswahl.
+- AnalyticsService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> SELECT_GOAL -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimerController startet GoalCase.
+2. Player waehlt GoalOption.
+3. GoalEngine prueft Passung.
+4. CaseResult wird berechnet.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Keine Antwort im Zeitfenster zaehlt als Fehler.
+- Drei Volltreffer in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, profileSnapshot, options[], expectedGoal, expectedPriority
+
+## Abnahmekriterien
+- Ziel- und Prioritaetsfeedback sind getrennt sichtbar.
+- KPI zeigt Tempo und Genauigkeit.
+- Report markiert wiederkehrende Planungsfehler.

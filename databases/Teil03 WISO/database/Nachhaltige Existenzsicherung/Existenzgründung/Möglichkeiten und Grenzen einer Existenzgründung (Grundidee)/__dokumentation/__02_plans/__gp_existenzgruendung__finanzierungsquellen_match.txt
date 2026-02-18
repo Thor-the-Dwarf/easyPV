@@ -1,0 +1,52 @@
+# __gp_existenzgruendung__finanzierungsquellen_match
+
+## Spielidee
+"Finanzierungsquellen-Match" ordnet Gruendungssituationen passenden Finanzierungsoptionen zu.
+
+## Lernziel
+- Finanzierungsoptionen grundlegend unterscheiden.
+- Passende Quellen je Ausgangslage waehlen.
+
+## Messbare Progression
+- 20 Zuordnungskarten.
+- Punkte: +6 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Trefferquote je Finanzierungsart.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- FundingEngine
+- MetricService
+
+### Domaenenobjekte
+- FundingCase(caseId, profileType)
+- SourceOption(optionId, sourceType)
+- MatchResult(isCorrect, sourceType)
+
+### Beziehungen
+- FundingCase enthaelt 3..5 SourceOption.
+- FundingEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt FundingCase.
+2. Player waehlt SourceOption.
+3. FundingEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlzuordnung bei kritischem Liquiditaetsfall verursacht Zusatzabzug.
+- Serienbonus ab 5 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, profileType, options[], expectedSource
+
+## Abnahmekriterien
+- Zuordnungslogik ist nachvollziehbar.
+- KPI zeigt Leistung pro Finanzierungsart.
+- Report markiert haeufige Verwechslungen.

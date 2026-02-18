@@ -1,0 +1,52 @@
+# __gp_potenziale__kompetenzprofil_builder
+
+## Spielidee
+"Kompetenzprofil-Builder" erstellt aus Beobachtungen und Aufgaben ein eigenes Staerkenprofil.
+
+## Lernziel
+- Eigene Potenziale strukturiert erfassen.
+- Selbsteinschaetzung an konkreten Evidenzen ausrichten.
+
+## Messbare Progression
+- 12 Profilfaelle.
+- Punkte: +8 plausibler Profilbaustein, -3 unplausibler Baustein.
+- KPI: Profilgenauigkeit und Konsistenzscore.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ProfileController
+- ConsistencyEngine
+- MetricService
+
+### Domaenenobjekte
+- ProfileCase(caseId, evidence[])
+- SkillTag(skillId, level)
+- ProfileResult(accuracyScore, consistencyScore)
+
+### Beziehungen
+- ProfileCase enthaelt 5..20 evidence.
+- ConsistencyEngine validiert SkillTag.
+- MetricService aggregiert 1..* ProfileResult.
+
+### Zustandsmodell
+- LOAD_CASE -> SELECT_SKILLS -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. ProfileController startet ProfileCase.
+2. Player waehlt SkillTag.
+3. ConsistencyEngine prueft Evidenzbezug.
+4. ProfileResult wird berechnet.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Widerspruch zwischen Evidenz und SkillLevel erzeugt Zusatzabzug.
+- Hohe Konsistenz in Serie gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, evidence[], skillOptions[], expectedProfile
+
+## Abnahmekriterien
+- Evidenzbezug ist je Skill nachvollziehbar.
+- KPI zeigt Genauigkeit und Konsistenz.
+- Report nennt haeufige Ueberschaetzungen.

@@ -1,0 +1,52 @@
+# __gp_potenziale__staerken_schwachstellen_match
+
+## Spielidee
+"Staerken-Schwachstellen-Match" ordnet Verhaltensbeobachtungen den Bereichen Staerken, Entwicklungsfelder und neutral zu.
+
+## Lernziel
+- Reflexionsfaehigkeit fuer eigene Potenziale verbessern.
+- Beobachtungen sachlich klassifizieren.
+
+## Messbare Progression
+- 24 Beobachtungskarten.
+- Punkte: +6 korrekte Klassifikation, -3 falsche Klassifikation.
+- KPI: Klassifikationsquote je Bereich.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- ClassificationEngine
+- ScoreService
+
+### Domaenenobjekte
+- ObservationCard(cardId, statement)
+- BucketOption(bucketId, bucketType)
+- MatchResult(isCorrect, bucketType)
+
+### Beziehungen
+- ObservationCard hat 3 BucketOption.
+- ClassificationEngine validiert Auswahl.
+- ScoreService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt ObservationCard.
+2. Player waehlt BucketOption.
+3. ClassificationEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Fehlklassifikation bei klarer Evidenz erzeugt Zusatzabzug.
+- Serienbonus ab 6 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, statement, expectedBucket
+
+## Abnahmekriterien
+- Klassifikation ist klar begruendet.
+- KPI zeigt Leistung je Bereich.
+- Report markiert haeufige Fehlklassifikationen.

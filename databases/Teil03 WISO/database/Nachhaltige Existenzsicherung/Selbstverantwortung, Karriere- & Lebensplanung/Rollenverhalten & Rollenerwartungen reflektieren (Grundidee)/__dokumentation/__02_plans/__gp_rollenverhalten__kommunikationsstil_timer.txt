@@ -1,0 +1,52 @@
+# __gp_rollenverhalten__kommunikationsstil_timer
+
+## Spielidee
+"Kommunikationsstil-Timer" stellt kurze Dialogausschnitte bereit. Lernende waehlen unter Zeitdruck den zur Rolle passenden Kommunikationsstil.
+
+## Lernziel
+- Rollenangemessene Kommunikation schnell einordnen.
+- Stilabweichungen in Dialogen erkennen.
+
+## Messbare Progression
+- 24 Kurzdialoge, 15 Sekunden je Dialog.
+- Punkte: +6 korrekte Stilauswahl, -3 falsche Stilauswahl.
+- KPI: korrekte Antworten pro Minute.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimerController
+- StyleEngine
+- KPIService
+
+### Domaenenobjekte
+- DialogueCase(caseId, roleContext)
+- StyleOption(optionId, styleType)
+- CaseResult(isCorrect, responseTimeMs)
+
+### Beziehungen
+- DialogueCase hat 3..4 StyleOption.
+- StyleEngine validiert Auswahl.
+- KPIService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimerController startet DialogueCase.
+2. Player waehlt StyleOption.
+3. StyleEngine prueft Passung.
+4. CaseResult wird gespeichert.
+5. KPIService aktualisiert KPI.
+
+## Regeln
+- Keine Antwort im Zeitfenster gilt als Fehler.
+- Zehn korrekte Antworten in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, roleContext, options[], expectedStyle, timeLimitSec
+
+## Abnahmekriterien
+- Stilentscheidung ist klar rueckgemeldet.
+- KPI zeigt Tempo und Genauigkeit.
+- Report gruppiert Fehler nach Rollenkontext.

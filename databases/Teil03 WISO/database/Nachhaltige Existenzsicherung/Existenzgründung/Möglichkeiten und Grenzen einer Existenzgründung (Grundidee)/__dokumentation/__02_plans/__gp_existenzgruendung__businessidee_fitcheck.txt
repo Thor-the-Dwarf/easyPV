@@ -1,0 +1,53 @@
+# __gp_existenzgruendung__businessidee_fitcheck
+
+## Spielidee
+"Businessidee-Fitcheck" stellt Gruendungsideen mit Markt-, Ressourcen- und Risikodaten dar. Lernende bewerten, ob die Idee tragfaehig ist.
+
+## Lernziel
+- Chancen und Grenzen von Gruendungsideen realistisch einschaetzen.
+- Grundlegende Eignungskriterien anwenden.
+
+## Messbare Progression
+- 15 Ideenfaelle.
+- Punkte: +8 korrekte Einschätzung, -4 falsche Einschätzung.
+- +3 fuer passende Begruendung.
+- KPI: Fitquote und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- IdeaController
+- FitEngine
+- ScoreService
+
+### Domaenenobjekte
+- IdeaCase(caseId, marketData, resourceData)
+- Decision(decisionId, isViable)
+- CaseResult(isCorrect, rationaleCorrect)
+
+### Beziehungen
+- IdeaController steuert 1..* IdeaCase.
+- FitEngine validiert Decision.
+- ScoreService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECIDE -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. IdeaController startet IdeaCase.
+2. Player trifft Decision.
+3. FitEngine prueft Viabilitaet.
+4. CaseResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Fehlentscheidung bei Hochrisiko-Idee erzeugt Zusatzabzug.
+- Vier Volltreffer in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, marketData, resourceData, expectedDecision, rationaleOptions[]
+
+## Abnahmekriterien
+- Entscheidung ist transparent begruendet.
+- KPI zeigt Entscheidung und Begruendung getrennt.
+- Report listet haeufige Fehleinschaetzungen.

@@ -1,0 +1,53 @@
+# __gp_rollenverhalten__rollenkonflikt_radar
+
+## Spielidee
+"Rollenkonflikt-Radar" zeigt Konfliktsituationen zwischen verschiedenen Rollen im Ausbildungsalltag. Lernende erkennen Konflikttyp und waehlen den passenden Umgang.
+
+## Lernziel
+- Rollenkonflikte frueh identifizieren.
+- Konstruktive Reaktionsmuster anwenden.
+
+## Messbare Progression
+- 14 Konfliktfaelle.
+- Punkte: +8 korrekter Konflikttyp, +3 passender Umgang, -4 Fehler.
+- KPI: Typgenauigkeit und Reaktionsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseController
+- ConflictEngine
+- ResponseService
+
+### Domaenenobjekte
+- ConflictCase(caseId, roleContext)
+- ConflictTypeOption(typeId)
+- ResponseOption(responseId)
+- CaseResult(typeCorrect, responseCorrect)
+
+### Beziehungen
+- ConflictCase hat 3..5 ConflictTypeOption und 2..4 ResponseOption.
+- ConflictEngine validiert Auswahl.
+- ResponseService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- CASE_START -> TYPE_SELECT -> RESPONSE_SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. CaseController startet ConflictCase.
+2. Player waehlt ConflictTypeOption.
+3. ConflictEngine prueft Zuordnung.
+4. Player waehlt ResponseOption.
+5. ResponseService aktualisiert KPI.
+
+## Regeln
+- Falscher Konflikttyp blockiert Reaktionsbonus.
+- Vollkorrekter Fall gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, roleContext, typeOptions[], responseOptions[], expectedType, expectedResponse
+
+## Abnahmekriterien
+- Typ und Reaktion sind getrennt rueckgemeldet.
+- KPI zeigt beide Lernziele.
+- Report listet haeufige Fehlreaktionen.

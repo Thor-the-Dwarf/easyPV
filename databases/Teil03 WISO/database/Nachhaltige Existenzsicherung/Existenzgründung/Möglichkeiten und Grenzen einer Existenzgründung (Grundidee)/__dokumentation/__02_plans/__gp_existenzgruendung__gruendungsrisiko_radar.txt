@@ -1,0 +1,53 @@
+# __gp_existenzgruendung__gruendungsrisiko_radar
+
+## Spielidee
+"Gruendungsrisiko-Radar" zeigt Szenarien mit operativen, finanziellen und rechtlichen Risiken. Lernende priorisieren Risiken und waehlen Gegenmaßnahmen.
+
+## Lernziel
+- Risiken in Gruendungsvorhaben erkennen.
+- Prioritaeten und Gegenmaßnahmen systematisch setzen.
+
+## Messbare Progression
+- 12 Risikofaelle.
+- Punkte: +8 korrekte Priorisierung, +3 passende Gegenmaßnahme, -4 Fehler.
+- KPI: Priorisierungsquote und Maßnahmenquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- RiskController
+- PriorityEngine
+- ResponseService
+
+### Domaenenobjekte
+- RiskCase(caseId, risks[])
+- Risk(riskId, severity, probability)
+- Response(responseId, responseType)
+- CaseResult(priorityCorrect, responseCorrect)
+
+### Beziehungen
+- RiskCase enthaelt 3..10 Risk.
+- PriorityEngine validiert Rangfolge.
+- ResponseService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- CASE_START -> PRIORITIZE -> RESPOND -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. RiskController startet RiskCase.
+2. Player priorisiert Risk.
+3. PriorityEngine prueft Reihenfolge.
+4. Player waehlt Response.
+5. ResponseService aktualisiert KPI.
+
+## Regeln
+- Uebersehenes Hochrisiko erzeugt Zusatzabzug.
+- Vollkorrekter Fall gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, risks[], expectedPriority[], responseOptions[]
+
+## Abnahmekriterien
+- Priorisierung und Response sind getrennt sichtbar.
+- KPI zeigt beide Lernachsen.
+- Report nennt haeufige Fehlpriorisierungen.

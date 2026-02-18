@@ -1,0 +1,52 @@
+# __gp_rollenverhalten__erwartungsabgleich_match
+
+## Spielidee
+"Erwartungsabgleich-Match" ordnet Aussagen zu Rollenanforderungen und realistischen Verhaltensoptionen.
+
+## Lernziel
+- Rollenerwartungen klar benennen.
+- Realistische Verhaltensoptionen zuordnen.
+
+## Messbare Progression
+- 22 Match-Karten.
+- Punkte: +6 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Zuordnungsquote und Fehlerquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- MappingEngine
+- MetricService
+
+### Domaenenobjekte
+- ExpectationCard(cardId, roleType)
+- BehaviorOption(optionId, behaviorType)
+- MatchResult(isCorrect, behaviorType)
+
+### Beziehungen
+- ExpectationCard hat 3..5 BehaviorOption.
+- MappingEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt ExpectationCard.
+2. Player waehlt BehaviorOption.
+3. MappingEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlzuordnung bei Kernanforderung erzeugt Zusatzabzug.
+- Serienbonus ab 5 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, roleType, options[], expectedBehavior
+
+## Abnahmekriterien
+- Zuordnung ist pro Karte begruendet.
+- KPI zeigt Leistung je Rollentyp.
+- Report markiert haeufige Fehlzuordnungen.

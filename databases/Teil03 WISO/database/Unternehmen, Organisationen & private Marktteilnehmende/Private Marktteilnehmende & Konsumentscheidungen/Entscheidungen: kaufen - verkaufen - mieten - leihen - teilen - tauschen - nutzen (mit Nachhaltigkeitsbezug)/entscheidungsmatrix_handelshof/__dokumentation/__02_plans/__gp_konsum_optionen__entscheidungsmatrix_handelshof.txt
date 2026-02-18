@@ -1,0 +1,53 @@
+# __gp_konsum_optionen__entscheidungsmatrix_handelshof
+
+## Spielidee
+"Entscheidungsmatrix Handelshof" simuliert einen Marktplatz mit wechselnden Preisen und Verfuegbarkeiten. Lernende waehlen fuer Produktgruppen die beste Nutzungsform und bauen damit eine stabilere Gesamtstrategie.
+
+## Lernziel
+- Systematische Entscheidungsfindung mit Matrixlogik.
+- Abhaengigkeiten zwischen Einzelentscheidungen erkennen.
+
+## Messbare Progression
+- 4 Markttage mit je 6 Produktgruppen.
+- Punkte: +11 fuer optimale Matrixentscheidung, -5 fuer Inkonsistenz zur Gesamtstrategie.
+- KPI: Strategiekonsistenz in Prozent.
+- Abschlussbedingung: mindestens 80 Prozent Konsistenz.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- MarketDayController
+- MatrixEngine
+- ConsistencyChecker
+
+### Domänenobjekte
+- MarketDay(dayId, constraints)
+- ProductGroup(groupId, options[])
+- StrategyProfile(profileId, rules[])
+
+### Beziehungen
+- MarketDayController steuert 1..* MarketDay.
+- MarketDay enthaelt 4..8 ProductGroup.
+- ConsistencyChecker prueft ProductGroup-Entscheidungen gegen StrategyProfile.
+
+### Zustandsmodell
+- PREP -> DAY_ACTIVE -> MATRIX_EVAL -> DAY_SUMMARY -> CAMPAIGN_END
+
+### Sequenz (Happy Path)
+1. MarketDayController startet Markttag.
+2. Player waehlt Optionen je ProductGroup.
+3. MatrixEngine berechnet lokale Scores.
+4. ConsistencyChecker berechnet Strategiekonsistenz.
+5. Tagesreport aktualisiert Kampagnenfortschritt.
+
+## Regeln
+- Jede Produktgruppe muss genau eine Nutzungsform haben.
+- Widerspruch zu StrategyProfile reduziert Tagesmultiplikator.
+
+## Datenmodell (JSON-Idee)
+- fields: dayId, constraints, productGroups[{id, options[], strategyTags[]}], profileRules[]
+
+## Abnahmekriterien
+- Matrixbewertung und Konsistenzscore sind getrennt sichtbar.
+- Kampagnenfortschritt ist ueber vier Markttage messbar.
+- Fehlerberichte benennen Regelverletzung praezise.

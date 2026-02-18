@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "topic": "Konsumoptionen",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 25,
+    "wrong": -8,
+    "completion_bonus": 12
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Race 1: Option A hat starken Oeko-Score, Option B besseren Preis. Was fehlt fuer die Entscheidung?",
+      "hint": "Mehrkriteriell bedeutet Gewichtung aller Kriterien.",
+      "options": [
+        { "id": "a", "text": "Gewichtete Gesamtrechnung aus Kosten, Oeko, Fit", "correct": true, "feedback": "Richtig. Nur die Gewichtung bildet den Zielkonflikt sauber ab." },
+        { "id": "b", "text": "Nur den niedrigsten Preis nehmen", "correct": false, "feedback": "Nicht korrekt. Das ignoriert Oeko- und Fit-Kriterien." },
+        { "id": "c", "text": "Nur den Oeko-Score nehmen", "correct": false, "feedback": "Nicht korrekt. Wirtschaftlichkeit fehlt." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Option wird laut Plan disqualifiziert?",
+      "hint": "Es gibt eine Mindestanforderung.",
+      "options": [
+        { "id": "a", "text": "Option ohne Mindest-Nutzungsfit", "correct": true, "feedback": "Richtig. Ohne Mindest-Fit darf die Option nicht gewinnen." },
+        { "id": "b", "text": "Option mit mittlerem Preis", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Option mit guter Verfuegbarkeit", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Punktgleichstand im Race: Welche Regel entscheidet?",
+      "hint": "Tie-Break ist im Plan festgelegt.",
+      "options": [
+        { "id": "a", "text": "hoeherer ecoScore", "correct": true, "feedback": "Genau. Bei Gleichstand gewinnt der bessere Oeko-Wert." },
+        { "id": "b", "text": "laengere Lieferzeit", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "hoeheres Marketingbudget", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Was macht den Gesamtscore reproduzierbar?",
+      "hint": "Denk an deterministische Berechnung.",
+      "options": [
+        { "id": "a", "text": "Feste Gewichtung + gleicher Input", "correct": true, "feedback": "Richtig. Damit ist das Leaderboard nachvollziehbar." },
+        { "id": "b", "text": "Spontane Bonuspunkte", "correct": false, "feedback": "Nicht reproduzierbar." },
+        { "id": "c", "text": "Zufaellige Endwertung", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was ist ein gutes Lernziel im Race?",
+      "hint": "Preis und Nachhaltigkeit gemeinsam betrachten.",
+      "options": [
+        { "id": "a", "text": "Zielkonflikte transparent abwaegen", "correct": true, "feedback": "Richtig. Genau darauf trainiert das Score-Race." },
+        { "id": "b", "text": "Nur guenstigste Option gewinnen lassen", "correct": false, "feedback": "Zu einseitig." },
+        { "id": "c", "text": "Nachhaltigkeit ignorieren", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

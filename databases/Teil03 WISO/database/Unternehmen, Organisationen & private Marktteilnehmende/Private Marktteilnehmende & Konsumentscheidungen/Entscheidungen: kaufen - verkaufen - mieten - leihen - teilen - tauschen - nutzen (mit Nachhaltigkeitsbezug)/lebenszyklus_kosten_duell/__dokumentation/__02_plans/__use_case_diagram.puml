@@ -1,0 +1,17 @@
+@startuml
+title Use-Case: Lebenszyklus-Kosten-Duell
+left to right direction
+actor "Spieler" as P
+rectangle "lebenszyklus_kosten_duell" {
+  usecase "Spiel starten" as UC1
+  usecase "Antwort waehlen" as UC2
+  usecase "Feedback lesen" as UC3
+  usecase "Fortschritt sehen" as UC4
+  usecase "Neustart" as UC5
+}
+P --> UC1
+P --> UC2
+P --> UC3
+P --> UC4
+P --> UC5
+@enduml

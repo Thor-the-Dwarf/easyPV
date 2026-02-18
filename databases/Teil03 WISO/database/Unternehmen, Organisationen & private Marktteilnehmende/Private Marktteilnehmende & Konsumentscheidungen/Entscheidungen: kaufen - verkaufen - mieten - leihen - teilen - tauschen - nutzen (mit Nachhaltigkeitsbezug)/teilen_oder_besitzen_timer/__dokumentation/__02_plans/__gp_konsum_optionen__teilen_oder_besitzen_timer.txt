@@ -1,0 +1,53 @@
+# __gp_konsum_optionen__teilen_oder_besitzen_timer
+
+## Spielidee
+"Teilen-oder-Besitzen-Timer" ist ein Speed-Game: In 20 Sekunden muss fuer jeden Fall entschieden werden, ob Besitz oder gemeinschaftliche Nutzung sinnvoller ist.
+
+## Lernziel
+- Zeitkritisch zwischen individueller und geteilter Nutzung unterscheiden.
+- Ressourceneffizienz in Entscheidungen verankern.
+
+## Messbare Progression
+- 18 Kurzfaelle.
+- Punkte: +8 korrekt, -4 falsch, +2 fuer Antwort unter 8 Sekunden.
+- KPI 1: korrekte Antworten pro Minute.
+- KPI 2: Anteil nachhaltiger und gleichzeitig passender Entscheidungen.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimerController
+- DecisionEngine
+- ProgressTracker
+
+### Domänenobjekte
+- QuickCase(caseId, context, urgency)
+- Choice(choiceType)
+- RoundMetric(responseTimeMs, isCorrect, isSustainable)
+
+### Beziehungen
+- TimerController steuert 1..* QuickCase.
+- QuickCase hat genau 2 Choice-Optionen.
+- ProgressTracker sammelt 1..* RoundMetric.
+
+### Zustandsmodell
+- READY -> TIMER_RUNNING -> ANSWER_LOCKED -> ROUND_FEEDBACK -> FINISHED
+
+### Sequenz (Happy Path)
+1. TimerController startet QuickCase mit Zeitlimit.
+2. Player waehlt Choice.
+3. DecisionEngine bewertet Korrektheit und Nachhaltigkeit.
+4. ProgressTracker aktualisiert Metriken.
+5. Naechster QuickCase wird geladen.
+
+## Regeln
+- Keine Antwort innerhalb des Limits gilt als Fehler.
+- Ab 80 Prozent Trefferquote wird Schwierigkeitsgrad erhoeht.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, context, urgency, options[{type, expectedFit, sustainabilityImpact}]
+
+## Abnahmekriterien
+- Timer-Verhalten ist stabil auf Desktop und Mobil.
+- Score und Nachhaltigkeitsanzeige bleiben synchron.
+- Lernfortschritt wird je Session dauerhaft gespeichert.

@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "topic": "Konsumoptionen",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 8,
+    "wrong": -4,
+    "completion_bonus": 6
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Quick Case: Transporter fuer einen einmaligen Umzug. Besitz oder Teilen?",
+      "hint": "Einmaliger Bedarf ist selten Besitzfall.",
+      "options": [
+        { "id": "a", "text": "Teilen/Mieten", "correct": true, "feedback": "Richtig. Seltene Nutzung spricht fuer gemeinschaftliche Loesung." },
+        { "id": "b", "text": "Besitzen", "correct": false, "feedback": "Nicht effizient fuer Einmalnutzung." },
+        { "id": "c", "text": "Ungeprueft kaufen", "correct": false, "feedback": "Nicht passend." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Quick Case: Eigenes Fahrrad fuer taegliche Strecke. Was ist passender?",
+      "hint": "Haeufige Nutzung kann Besitz rechtfertigen.",
+      "options": [
+        { "id": "a", "text": "Besitzen", "correct": true, "feedback": "Richtig. Hohe Frequenz passt zu Besitz." },
+        { "id": "b", "text": "Nur gelegentlich teilen", "correct": false, "feedback": "Nicht stabil fuer taegliche Nutzung." },
+        { "id": "c", "text": "Keine Entscheidung", "correct": false, "feedback": "Nicht zielfuehrend." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Quick Case: Party-Geschirr fuer zwei Events im Jahr.",
+      "hint": "Achte auf Ressourceneffizienz.",
+      "options": [
+        { "id": "a", "text": "Teilen/Leihen", "correct": true, "feedback": "Richtig. Seltene Nutzung + Nachhaltigkeit sprechen dafuer." },
+        { "id": "b", "text": "Groessenpaket kaufen", "correct": false, "feedback": "Nicht effizient bei niedriger Frequenz." },
+        { "id": "c", "text": "Doppelt kaufen", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Was gilt als Fehler laut Regelwerk?",
+      "hint": "Denk an das Zeitlimit.",
+      "options": [
+        { "id": "a", "text": "Keine Antwort innerhalb des Limits", "correct": true, "feedback": "Richtig. Timeout wird als Fehler gewertet." },
+        { "id": "b", "text": "Schnelle korrekte Antwort", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nachhaltige Wahl", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Ab welcher Trefferquote soll der Schwierigkeitsgrad steigen?",
+      "hint": "Der Schwellwert ist im Plan angegeben.",
+      "options": [
+        { "id": "a", "text": "ab 80 Prozent", "correct": true, "feedback": "Genau. Dann wird die Runde anspruchsvoller." },
+        { "id": "b", "text": "ab 40 Prozent", "correct": false, "feedback": "Zu niedrig." },
+        { "id": "c", "text": "ab 100 Prozent", "correct": false, "feedback": "Zu spaet." }
+      ]
+    }
+  ]
+}

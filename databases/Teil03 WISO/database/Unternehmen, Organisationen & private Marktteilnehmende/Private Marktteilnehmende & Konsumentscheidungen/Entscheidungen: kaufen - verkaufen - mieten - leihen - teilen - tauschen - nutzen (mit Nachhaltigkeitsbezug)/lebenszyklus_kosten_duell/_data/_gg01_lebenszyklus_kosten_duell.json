@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "topic": "Konsumoptionen",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 14,
+    "wrong": -7,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Duell 1: Geraet A guenstig im Kauf, aber hohe Wartung. Was zaehlt?",
+      "hint": "Vergleiche Gesamtkosten ueber die Nutzungsjahre.",
+      "options": [
+        { "id": "a", "text": "Lebenszyklusgesamtkosten", "correct": true, "feedback": "Richtig. Nur Gesamtbetrachtung liefert die bessere Option." },
+        { "id": "b", "text": "Nur Anschaffungspreis", "correct": false, "feedback": "Nicht korrekt. Wartung und Folgekosten fehlen." },
+        { "id": "c", "text": "Nur Markenimage", "correct": false, "feedback": "Nicht wirtschaftlich begruendet." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Duell 2: Zwei Optionen sind gleich teuer in der Anschaffung. Welche gewinnt?",
+      "hint": "Restwert und Reparaturquote entscheiden den Unterschied.",
+      "options": [
+        { "id": "a", "text": "Option mit hoeherem Restwert", "correct": true, "feedback": "Richtig. Hoeherer Restwert reduziert Lebenszykluskosten." },
+        { "id": "b", "text": "Option mit teurer Wartung", "correct": false, "feedback": "Nicht korrekt. Das verschlechtert den Gesamtwert." },
+        { "id": "c", "text": "Zufallsauswahl", "correct": false, "feedback": "Nicht begruendet." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Komponente wird im Lebenszyklus oft vergessen, ist aber kritisch?",
+      "hint": "Denke an laufende Lasten.",
+      "options": [
+        { "id": "a", "text": "Wartungskosten", "correct": true, "feedback": "Richtig. Wartung entscheidet haeufig ueber die Rangfolge." },
+        { "id": "b", "text": "Farbauswahl", "correct": false, "feedback": "Nicht relevant fuer Lebenszykluskosten." },
+        { "id": "c", "text": "Werbeslogan", "correct": false, "feedback": "Nicht relevant." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Bei Gleichstand der Kosten entscheidet laut Plan...",
+      "hint": "Es gibt eine Nachhaltigkeits- bzw. Ressourcenregel.",
+      "options": [
+        { "id": "a", "text": "geringerer Ressourcenverbrauch", "correct": true, "feedback": "Richtig. Das ist die Tie-Break-Regel." },
+        { "id": "b", "text": "laengere Lieferzeit", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "hoeherer Verkaufspreis", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Entscheidung ist fachlich belastbar?",
+      "hint": "Trenne Preisargument von Gesamtargument.",
+      "options": [
+        { "id": "a", "text": "Begruendung mit Anschaffung + Wartung + Restwert", "correct": true, "feedback": "Genau. Das ist Lebenszyklusdenken." },
+        { "id": "b", "text": "Nur Kaufpreis nennen", "correct": false, "feedback": "Zu kurz gegriffen." },
+        { "id": "c", "text": "Nur Trendbezug nennen", "correct": false, "feedback": "Nicht ausreichend." }
+      ]
+    }
+  ]
+}

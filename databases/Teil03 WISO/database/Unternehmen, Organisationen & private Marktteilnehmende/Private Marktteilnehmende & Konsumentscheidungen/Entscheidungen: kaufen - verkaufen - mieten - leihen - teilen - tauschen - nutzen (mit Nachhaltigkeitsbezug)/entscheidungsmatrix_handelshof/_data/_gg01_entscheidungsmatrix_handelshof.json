@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "topic": "Konsumoptionen",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 11,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Markttag 1: Laptop fuer 6 Monate Projektarbeit. Welche Option passt am besten?",
+      "hint": "Begrenzte Nutzungsdauer spricht oft gegen Besitz.",
+      "options": [
+        { "id": "a", "text": "Mieten", "correct": true, "feedback": "Richtig. Fuer kurze Projektphasen ist Mieten oft konsistent." },
+        { "id": "b", "text": "Neu kaufen", "correct": false, "feedback": "Nicht optimal. Bindet Kapital ueber die Projektzeit hinaus." },
+        { "id": "c", "text": "Sofort verkaufen", "correct": false, "feedback": "Nicht passend. Es fehlt die Nutzung." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Markttag 2: Werkzeug wird nur quartalsweise gebraucht. Matrix-Entscheidung?",
+      "hint": "Niedrige Frequenz bevorzugt geteilte Nutzung.",
+      "options": [
+        { "id": "a", "text": "Leihen", "correct": true, "feedback": "Richtig. Seltene Nutzung spricht fuer Leihen." },
+        { "id": "b", "text": "Kaufen und lagern", "correct": false, "feedback": "Nicht optimal bei geringer Nutzungsintensitaet." },
+        { "id": "c", "text": "Doppelt kaufen", "correct": false, "feedback": "Inkonsistent und teuer." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Markttag 3: Fahrrad taeglich, langfristig. Was ist konsistent?",
+      "hint": "Hohe und dauerhafte Nutzung veraendert die Matrix.",
+      "options": [
+        { "id": "a", "text": "Kaufen", "correct": true, "feedback": "Richtig. Bei hoher Langzeitnutzung ist Kauf oft effizient." },
+        { "id": "b", "text": "Jede Woche neu mieten", "correct": false, "feedback": "Nicht konsistent. Laufende Kosten steigen unnötig." },
+        { "id": "c", "text": "Gar nicht nutzen", "correct": false, "feedback": "Nicht passend zum Nutzungsziel." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Markttag 4: Kamera fuer ein Event-Team, monatlich wechselnder Bedarf.",
+      "hint": "Flexibilitaet ist hier zentral.",
+      "options": [
+        { "id": "a", "text": "Teilen", "correct": true, "feedback": "Richtig. Sharing passt zu schwankender Auslastung." },
+        { "id": "b", "text": "Luxusmodell kaufen", "correct": false, "feedback": "Nicht optimal. Risiko von Unterauslastung." },
+        { "id": "c", "text": "Ungepruefte Spontankaeufe", "correct": false, "feedback": "Verletzt die Matrixlogik." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Regel sichert Strategiekonsistenz ueber alle Markttage?",
+      "hint": "Die Matrix verlangt gleiche Bewertungslogik je Fall.",
+      "options": [
+        { "id": "a", "text": "Nutzungsdauer + Intensitaet immer mitbewerten", "correct": true, "feedback": "Genau. Das stabilisiert die Gesamtstrategie." },
+        { "id": "b", "text": "Nur auf Aktionspreise schauen", "correct": false, "feedback": "Zu kurz gedacht und inkonsistent." },
+        { "id": "c", "text": "Entscheidungen zufaellig treffen", "correct": false, "feedback": "Keine Matrixlogik." }
+      ]
+    }
+  ]
+}

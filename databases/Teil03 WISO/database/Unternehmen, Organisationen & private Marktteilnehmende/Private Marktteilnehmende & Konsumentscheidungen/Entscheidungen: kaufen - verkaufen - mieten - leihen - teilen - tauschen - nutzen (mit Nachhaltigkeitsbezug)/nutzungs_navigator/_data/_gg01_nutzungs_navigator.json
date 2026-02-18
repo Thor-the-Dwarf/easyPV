@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "topic": "Konsumoptionen",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 8
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Fall 1: Bohrmaschine fuer einmaligen Umzug. Beste Option?",
+      "hint": "Niedrige Dauer und Frequenz.",
+      "options": [
+        { "id": "a", "text": "Leihen", "correct": true, "feedback": "Richtig. Einmalige Nutzung spricht fuer Leihen." },
+        { "id": "b", "text": "Neu kaufen", "correct": false, "feedback": "Nicht optimal fuer Einmalnutzung." },
+        { "id": "c", "text": "Sofort ersetzen", "correct": false, "feedback": "Nicht sinnvoll." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Fall 2: Fahrrad fuer taeglichen Arbeitsweg. Was passt?",
+      "hint": "Hohe Regelmaessigkeit und langfristige Nutzung.",
+      "options": [
+        { "id": "a", "text": "Kaufen", "correct": true, "feedback": "Richtig. Dauerhafte Nutzung rechtfertigt Besitz." },
+        { "id": "b", "text": "Taeglich mieten", "correct": false, "feedback": "Nicht effizient auf Dauer." },
+        { "id": "c", "text": "Monatlich tauschen", "correct": false, "feedback": "Unnoetig komplex." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Fall 3: Kamera fuer monatliche Vereinsprojekte. Gute Wahl?",
+      "hint": "Schwankende Auslastung beachten.",
+      "options": [
+        { "id": "a", "text": "Teilen", "correct": true, "feedback": "Richtig. Sharing reduziert Kosten und Leerlauf." },
+        { "id": "b", "text": "Luxusmodell kaufen", "correct": false, "feedback": "Kann zu Unterauslastung fuehren." },
+        { "id": "c", "text": "Ohne Bedarf kaufen", "correct": false, "feedback": "Nicht passend." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Bei gleichem Preis zweier Optionen entscheidet laut Plan...",
+      "hint": "Es gibt eine Oeko-Vorrangregel.",
+      "options": [
+        { "id": "a", "text": "besserer ecoScore", "correct": true, "feedback": "Genau. Oeko-Wert ist Tie-Breaker." },
+        { "id": "b", "text": "laengerer Produktname", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "zufaelliger Wurf", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Woran erkennst du eine gute Nutzungsentscheidung?",
+      "hint": "Kosten + Nutzungsprofil + Nachhaltigkeit zusammen betrachten.",
+      "options": [
+        { "id": "a", "text": "Option passt zu Dauer, Intensitaet und Oeko-Ziel", "correct": true, "feedback": "Richtig. Das ist die Kernlogik des Navigators." },
+        { "id": "b", "text": "Nur auf Werbung reagieren", "correct": false, "feedback": "Nicht fundiert." },
+        { "id": "c", "text": "Nur spontane Verfuegbarkeit", "correct": false, "feedback": "Zu eng bewertet." }
+      ]
+    }
+  ]
+}

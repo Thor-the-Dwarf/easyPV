@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Teilen-oder-Besitzen-Timer
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: teilen_oder_besitzen_timer" {
+  component "_ghtml_teilen_oder_besitzen_timer.html" as HTML
+  component "_gjs_teilen_oder_besitzen_timer.js" as JS
+  component "_gcss_teilen_oder_besitzen_timer.css" as CSS
+  database "_data/_gg01_teilen_oder_besitzen_timer.json" as GG
+  database "_data/__metaData_Entscheidungen: kaufen - verkaufen - mieten - leihen - teilen - tauschen - nutzen (mit Nachhaltigkeitsbezug).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

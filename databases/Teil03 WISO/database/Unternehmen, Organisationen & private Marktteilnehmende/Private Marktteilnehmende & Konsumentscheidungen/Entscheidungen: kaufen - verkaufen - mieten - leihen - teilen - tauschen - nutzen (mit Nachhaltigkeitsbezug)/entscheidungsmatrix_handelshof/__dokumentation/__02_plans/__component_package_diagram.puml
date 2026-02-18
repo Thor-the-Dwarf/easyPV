@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Entscheidungsmatrix Handelshof
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: entscheidungsmatrix_handelshof" {
+  component "_ghtml_entscheidungsmatrix_handelshof.html" as HTML
+  component "_gjs_entscheidungsmatrix_handelshof.js" as JS
+  component "_gcss_entscheidungsmatrix_handelshof.css" as CSS
+  database "_data/_gg01_entscheidungsmatrix_handelshof.json" as GG
+  database "_data/__metaData_Entscheidungen: kaufen - verkaufen - mieten - leihen - teilen - tauschen - nutzen (mit Nachhaltigkeitsbezug).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

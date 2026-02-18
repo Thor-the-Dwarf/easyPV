@@ -1288,15 +1288,14 @@
               }
               if (hasChildren) {
                 if (openGenericFolder(node)) return;
-                if (!openedFolderIds.includes(node.id)) {
-                  toggleNode(rowNode, node.id, labelIcon);
-                }
+                toggleNode(rowNode, node.id, labelIcon);
                 return;
               }
               if (canOpenPlayable) {
                 openPlayableFolder(node);
                 return;
               }
+              openGenericFolder(node);
             });
             treeMain.appendChild(label);
             row.appendChild(treeMain);
@@ -1437,8 +1436,7 @@
           return (
             !!node &&
             node.isFolder &&
-            !!node.hasFiles &&
-            (!!node.jsonRelPath || !!node.gameRelPath || !!node.attributesRelPath)
+            !!node.gameRelPath
           );
         }
 
@@ -1452,7 +1450,7 @@
           const progressKey = buildNodeProgressKey(node);
           const jsonUrl = jsonRelPath ? buildRepoUrl(jsonRelPath) : '';
           const gameUrl = gameRelPath ? buildRepoUrl(gameRelPath) : '';
-          if (gameUrl || jsonUrl) {
+          if (gameUrl) {
             openPracticeView(gameUrl, jsonUrl, folderLabel, progressKey);
             return;
           }
@@ -1462,7 +1460,6 @@
         function hasOwnGenericContent(node) {
           return !!(
             node &&
-            node.hasFiles &&
             (node.attributesRelPath || node.jsonRelPath || node.gameRelPath)
           );
         }

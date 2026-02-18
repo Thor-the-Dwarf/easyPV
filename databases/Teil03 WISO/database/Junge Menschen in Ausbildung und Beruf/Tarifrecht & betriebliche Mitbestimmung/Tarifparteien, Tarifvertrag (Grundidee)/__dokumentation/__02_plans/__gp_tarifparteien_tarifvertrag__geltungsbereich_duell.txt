@@ -1,0 +1,53 @@
+# __gp_tarifparteien_tarifvertrag__geltungsbereich_duell
+
+## Spielidee
+"Geltungsbereich-Duell" vergleicht zwei Faelle und fragt, auf welchen Fall ein Tarifvertrag plausibler wirkt.
+
+## Lernziel
+- Grundidee des Geltungsbereichs anwenden.
+- Fallvergleich strukturiert begruenden.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- ScopeEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, caseA, caseB)
+- CaseProfile(profileId, attributes)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 CaseProfile.
+- ScopeEngine validiert Auswahl.
+- ScoreService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> CASE_REVIEW -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt CaseProfile.
+3. ScopeEngine prueft Geltung.
+4. DuelResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Korrekte Wahl ohne Begruendung bringt Teilpunkte.
+- Serienbonus ab 4 Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, caseA{}, caseB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Geltungsentscheidung ist nachvollziehbar erklaert.
+- KPI trennt Wahl und Begruendung.
+- Endreport zeigt haeufige Fehlannahmen.

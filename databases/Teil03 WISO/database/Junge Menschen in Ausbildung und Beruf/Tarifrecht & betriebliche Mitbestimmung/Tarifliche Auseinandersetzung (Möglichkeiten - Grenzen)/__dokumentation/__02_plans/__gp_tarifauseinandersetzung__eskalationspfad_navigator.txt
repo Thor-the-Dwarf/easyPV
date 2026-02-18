@@ -1,0 +1,52 @@
+# __gp_tarifauseinandersetzung__eskalationspfad_navigator
+
+## Spielidee
+"Eskalationspfad-Navigator" fuehrt durch verzweigte Konfliktverlaeufe. Lernende waehlen pro Knoten den naechsten angemessenen Schritt.
+
+## Lernziel
+- Eskalationsstufen in tariflichen Konflikten verstehen.
+- Prozessentscheidungen strukturiert treffen.
+
+## Messbare Progression
+- 10 Entscheidungsbaeume.
+- Punkte: +7 korrekter Knoten, -3 falscher Knoten.
+- KPI: Pfadgenauigkeit und Schritte bis Loesung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TreeController
+- BranchEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- EscalationTree(treeId, nodes[])
+- Node(nodeId, stage)
+- BranchResult(pathCorrect, stepCount)
+
+### Beziehungen
+- EscalationTree enthaelt 5..20 Node.
+- BranchEngine validiert Verzweigungen.
+- ProgressTracker aggregiert 1..* BranchResult.
+
+### Zustandsmodell
+- TREE_LOAD -> NODE_ACTIVE -> BRANCH_SELECT -> NODE_EVAL -> TREE_RESULT
+
+### Sequenz (Happy Path)
+1. TreeController laedt EscalationTree.
+2. Player waehlt Verzweigung.
+3. BranchEngine prueft Auswahl.
+4. BranchResult wird gespeichert.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Frueher Fehlknoten verursacht Zusatzabzug.
+- Vollkorrekter Pfad gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: treeId, nodes[], branches[], expectedPath[]
+
+## Abnahmekriterien
+- Entscheidungsbaum ist klar visualisiert.
+- KPI zeigt Korrektheit und Effizienz.
+- Replay markiert Fehlknoten.

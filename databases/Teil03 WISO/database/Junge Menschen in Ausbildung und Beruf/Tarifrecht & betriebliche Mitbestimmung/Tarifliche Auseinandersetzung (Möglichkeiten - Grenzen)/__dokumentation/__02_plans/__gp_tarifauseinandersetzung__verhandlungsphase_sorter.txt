@@ -1,0 +1,52 @@
+# __gp_tarifauseinandersetzung__verhandlungsphase_sorter
+
+## Spielidee
+"Verhandlungsphase-Sorter" ordnet Aktionen den passenden Phasen einer tariflichen Auseinandersetzung zu.
+
+## Lernziel
+- Ablauf tariflicher Verhandlungsphasen verstehen.
+- Phase und Handlung korrekt verknuepfen.
+
+## Messbare Progression
+- 22 Aktionskarten.
+- Punkte: +6 korrekte Phase, -3 falsche Phase.
+- KPI: Phasengenauigkeit und Fehlerquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- PhaseEngine
+- MetricService
+
+### Domaenenobjekte
+- ActionCard(cardId, actionType)
+- PhaseOption(optionId, phaseType)
+- MatchResult(isCorrect, phaseType)
+
+### Beziehungen
+- ActionCard hat 3..5 PhaseOption.
+- PhaseEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt ActionCard.
+2. Player waehlt PhaseOption.
+3. PhaseEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlzuordnung bei Schluesselaktion verursacht Zusatzabzug.
+- Serienbonus ab 5 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, actionType, options[], expectedPhase
+
+## Abnahmekriterien
+- Phasenfeedback ist klar erlaeutert.
+- KPI zeigt Leistung je Verhandlungsphase.
+- Report nennt haeufige Phasenverwechslungen.

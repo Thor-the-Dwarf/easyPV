@@ -1,0 +1,53 @@
+# __gp_tarifparteien_tarifvertrag__tarifwirkung_case_router
+
+## Spielidee
+"Tarifwirkung-Case-Router" simuliert betriebliche Faelle. Lernende entscheiden, welche tarifliche Wirkung relevant ist und welcher Folgeschritt passt.
+
+## Lernziel
+- Tarifwirkung auf Fallkonstellationen uebertragen.
+- Handlungsschritte nach Fallklassifikation ableiten.
+
+## Messbare Progression
+- 15 Fallketten.
+- Punkte: +8 korrekte Wirkung, +3 korrekter Folgeschritt, -4 Fehler.
+- KPI: Wirkungsquote und Prozessquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseController
+- EffectEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- EffectCase(caseId, scenarioType)
+- EffectOption(effectId, effectType)
+- StepOption(stepId, actionType)
+- CaseResult(effectCorrect, stepCorrect)
+
+### Beziehungen
+- EffectCase hat 3..5 EffectOption und 2..4 StepOption.
+- EffectEngine validiert Auswahl.
+- AnalyticsService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- CASE_START -> EFFECT_SELECT -> STEP_SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. CaseController startet EffectCase.
+2. Player waehlt EffectOption.
+3. EffectEngine prueft Tarifwirkung.
+4. Player waehlt StepOption.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Falsche Wirkung blockiert Schrittbonus.
+- Vollkorrekter Fall gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, scenarioType, effectOptions[], stepOptions[], expectedEffect, expectedStep
+
+## Abnahmekriterien
+- Wirkung und Folgeschritt sind getrennt rueckgemeldet.
+- KPI zeigt beide Lernziele.
+- Report listet haeufige Fehlrouten.

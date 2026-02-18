@@ -1,0 +1,53 @@
+# __gp_mitbestimmung__konfliktmoderation_duell
+
+## Spielidee
+"Konfliktmoderation-Duell" vergleicht zwei Vorgehensweisen in Streitfaellen. Lernende waehlen den deeskalierenden und regelkonformen Weg.
+
+## Lernziel
+- Mitbestimmungskonflikte strukturiert loesen.
+- Eskalation und Deeskalation differenzieren.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, optionA, optionB)
+- ModerationOption(optionId, style)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 ModerationOption.
+- EvaluationEngine validiert Entscheidung.
+- ScoreService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> OPTION_REVIEW -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt ModerationOption.
+3. EvaluationEngine prueft Auswahl.
+4. DuelResult wird dargestellt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Begruendung gibt Teilpunkte.
+- Serienbonus ab 4 Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, options[], expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Vergleichskriterien sind transparent.
+- KPI trennt Wahl und Begruendung.
+- Report listet haeufige Fehlentscheidungen.

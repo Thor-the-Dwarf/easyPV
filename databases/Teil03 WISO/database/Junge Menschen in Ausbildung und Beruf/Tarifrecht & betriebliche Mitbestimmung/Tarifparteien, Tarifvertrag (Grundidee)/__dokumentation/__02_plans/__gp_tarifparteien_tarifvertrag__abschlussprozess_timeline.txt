@@ -1,0 +1,52 @@
+# __gp_tarifparteien_tarifvertrag__abschlussprozess_timeline
+
+## Spielidee
+"Abschlussprozess-Timeline" ordnet Schritte von Verhandlung bis Abschluss eines Tarifvertrags in die richtige Reihenfolge.
+
+## Lernziel
+- Grundprozess des Tarifabschlusses verstehen.
+- Reihenfolge und Abhaengigkeiten sicher anwenden.
+
+## Messbare Progression
+- 12 Prozessfaelle.
+- Punkte: +8 korrekt platzierter Schritt, -3 falscher Schritt.
+- KPI: Reihenfolgegenauigkeit und Bearbeitungszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimelineController
+- SequenceEngine
+- MetricService
+
+### Domaenenobjekte
+- TimelineCase(caseId, steps[])
+- ProcessStep(stepId, stepType)
+- TimelineResult(correctPlacements, wrongPlacements)
+
+### Beziehungen
+- TimelineCase enthaelt 4..12 ProcessStep.
+- SequenceEngine validiert Reihenfolge.
+- MetricService aggregiert 1..* TimelineResult.
+
+### Zustandsmodell
+- LOAD_CASE -> PLACE_STEPS -> VALIDATE -> RESULT -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimelineController laedt TimelineCase.
+2. Player platziert ProcessStep.
+3. SequenceEngine prueft Reihenfolge.
+4. TimelineResult wird berechnet.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Falscher Startschritt verursacht Zusatzabzug.
+- Fehlerfreie Timeline gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, steps[], expectedOrder[]
+
+## Abnahmekriterien
+- Reihenfolgefehler sind je Schritt markiert.
+- KPI zeigt Genauigkeit und Tempo.
+- Report benennt wiederkehrende Prozessfehler.

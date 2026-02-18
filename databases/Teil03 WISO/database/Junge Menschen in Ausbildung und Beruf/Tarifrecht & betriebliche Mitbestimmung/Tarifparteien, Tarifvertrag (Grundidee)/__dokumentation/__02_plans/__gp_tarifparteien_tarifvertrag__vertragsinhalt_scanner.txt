@@ -1,0 +1,52 @@
+# __gp_tarifparteien_tarifvertrag__vertragsinhalt_scanner
+
+## Spielidee
+"Vertragsinhalt-Scanner" zeigt Tariftextauszuege. Lernende markieren zentrale Vertragsinhalte und trennen sie von Nebeninformationen.
+
+## Lernziel
+- Tarifvertragsinhalte strukturiert analysieren.
+- Relevante Inhalte schnell identifizieren.
+
+## Messbare Progression
+- 10 Dokumentsets.
+- Punkte: +6 korrekt markierter Kerninhalt, -3 Fehlmarkierung.
+- KPI: Praezision und Recall der Markierungen.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DocumentController
+- ContentEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- ContractSet(setId, sections[])
+- Section(sectionId, contentClass)
+- ScanResult(tp, fp, fn)
+
+### Beziehungen
+- ContractSet enthaelt 6..20 Section.
+- ContentEngine validiert Markierungen.
+- ProgressTracker aggregiert 1..* ScanResult.
+
+### Zustandsmodell
+- LOAD_SET -> REVIEW -> MARK -> SUBMIT -> RESULT
+
+### Sequenz (Happy Path)
+1. DocumentController laedt ContractSet.
+2. Player markiert relevante Section.
+3. ContentEngine prueft Markierung.
+4. ScanResult wird berechnet.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Uebermarkierung reduziert Praezision.
+- Untermarkierung reduziert Recall.
+
+## Datenmodell (JSON-Idee)
+- fields: setId, sections[], expectedCoreSectionIds[]
+
+## Abnahmekriterien
+- Markierungsfehler sind klar ausgewiesen.
+- KPI zeigt Praezision und Recall getrennt.
+- Report listet haeufig uebersehene Inhaltsarten.

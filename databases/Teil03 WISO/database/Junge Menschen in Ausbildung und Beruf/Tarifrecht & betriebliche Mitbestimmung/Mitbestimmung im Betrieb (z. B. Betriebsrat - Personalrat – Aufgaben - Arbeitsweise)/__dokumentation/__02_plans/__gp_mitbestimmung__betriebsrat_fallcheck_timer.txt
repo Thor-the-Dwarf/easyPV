@@ -1,0 +1,53 @@
+# __gp_mitbestimmung__betriebsrat_fallcheck_timer
+
+## Spielidee
+"Betriebsrat-Fallcheck-Timer" praesentiert Kurzfaelle mit Zeitlimit. Lernende entscheiden schnell, ob Mitbestimmung erforderlich ist und welcher Erstschritt folgt.
+
+## Lernziel
+- Schnelle Fallklassifikation im Mitbestimmungskontext.
+- Erstreaktionen in Standardsituationen trainieren.
+
+## Messbare Progression
+- 20 Kurzfaelle, 20 Sekunden je Fall.
+- Punkte: +7 korrekte Klassifikation, +3 korrekter Erstschritt, -4 Fehler.
+- KPI: Klassifikationsquote und Reaktionszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimerController
+- CheckEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- QuickCase(caseId, scenarioType)
+- Decision(decisionId, requiresParticipation)
+- StepOption(stepId, actionType)
+- CaseResult(classificationCorrect, stepCorrect, responseTimeMs)
+
+### Beziehungen
+- QuickCase hat 2..4 StepOption.
+- CheckEngine validiert Decision und StepOption.
+- AnalyticsService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECIDE -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimerController startet QuickCase.
+2. Player trifft Decision.
+3. CheckEngine prueft Falllogik.
+4. Player waehlt StepOption.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Keine Antwort im Zeitfenster gilt als Fehler.
+- Drei schnelle Volltreffer geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, scenarioType, expectedDecision, stepOptions[], expectedStep
+
+## Abnahmekriterien
+- Timer und Feedback laufen synchron.
+- KPI zeigt Tempo und Korrektheit.
+- Report markiert haeufig verpasste Erstschritte.

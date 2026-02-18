@@ -1,0 +1,53 @@
+# __gp_tarifauseinandersetzung__kompromiss_rechner
+
+## Spielidee
+"Kompromiss-Rechner" vergleicht Forderungen und Angebote. Lernende berechnen tragfaehige Kompromissvarianten und waehlen die stabilste Option.
+
+## Lernziel
+- Verhandlungsspielraeume quantifizieren.
+- Kompromisse nach Stabilitaet bewerten.
+
+## Messbare Progression
+- 12 Verhandlungsrunden.
+- Punkte: +9 korrekte Kompromisswahl, -4 falsche Wahl.
+- +3 fuer korrekte Rechenherleitung.
+- KPI: Wahlgenauigkeit und Herleitungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- RoundController
+- CalculationEngine
+- KPIService
+
+### Domaenenobjekte
+- NegotiationRound(roundId, demand, offer)
+- CompromiseOption(optionId, costImpact, acceptanceScore)
+- RoundResult(choiceCorrect, rationaleCorrect)
+
+### Beziehungen
+- NegotiationRound hat 3..5 CompromiseOption.
+- CalculationEngine validiert Auswahl.
+- KPIService aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- INIT -> REVIEW_VALUES -> CHOOSE_OPTION -> EVALUATE -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. RoundController startet NegotiationRound.
+2. Player waehlt CompromiseOption.
+3. CalculationEngine prueft Stabilitaet.
+4. RoundResult wird berechnet.
+5. KPIService aktualisiert Dashboard.
+
+## Regeln
+- Korrekte Option ohne Herleitung gibt Teilpunkte.
+- Drei Volltreffer in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: roundId, demand, offer, options[], expectedOption
+
+## Abnahmekriterien
+- Rechenlogik ist transparent dargestellt.
+- KPI zeigt Entscheidung und Herleitung.
+- Report nennt haeufige Rechenfehler.

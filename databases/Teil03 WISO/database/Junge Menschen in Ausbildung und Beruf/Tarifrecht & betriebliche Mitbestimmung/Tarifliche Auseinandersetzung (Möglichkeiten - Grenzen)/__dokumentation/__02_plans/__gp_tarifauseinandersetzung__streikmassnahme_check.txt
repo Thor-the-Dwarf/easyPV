@@ -1,0 +1,53 @@
+# __gp_tarifauseinandersetzung__streikmassnahme_check
+
+## Spielidee
+"Streikmassnahme-Check" stellt Szenarien mit unterschiedlichen Aktionsformen dar. Lernende bewerten Angemessenheit und Risiken der gewaehlten Maßnahme.
+
+## Lernziel
+- Moeglichkeiten und Grenzen von Aktionsformen einordnen.
+- Risikoabwägung bei Konfliktmaßnahmen trainieren.
+
+## Messbare Progression
+- 15 Szenarien.
+- Punkte: +8 korrekte Bewertung, -4 falsche Bewertung.
+- +3 fuer richtige Risikoeinschaetzung.
+- KPI: Bewertungsquote und Risikoquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- AssessmentEngine
+- ScoreService
+
+### Domaenenobjekte
+- ActionScenario(caseId, escalationLevel)
+- MeasureOption(optionId, measureType)
+- ScenarioResult(assessmentCorrect, riskCorrect)
+
+### Beziehungen
+- ActionScenario enthaelt 3..5 MeasureOption.
+- AssessmentEngine validiert Auswahl.
+- ScoreService aggregiert 1..* ScenarioResult.
+
+### Zustandsmodell
+- CASE_START -> OPTION_SELECT -> RISK_SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. ScenarioController startet ActionScenario.
+2. Player waehlt MeasureOption.
+3. AssessmentEngine prueft Bewertung.
+4. Player waehlt Risikoeinschaetzung.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Korrekte Maßnahme ohne korrekte Risikowahl gibt Teilpunkte.
+- Vollkorrekter Fall gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, escalationLevel, options[], expectedAssessment, expectedRisk
+
+## Abnahmekriterien
+- Maßnahme und Risiko sind getrennt rueckgemeldet.
+- KPI zeigt beide Lernziele.
+- Report markiert haeufige Fehleinschaetzungen.

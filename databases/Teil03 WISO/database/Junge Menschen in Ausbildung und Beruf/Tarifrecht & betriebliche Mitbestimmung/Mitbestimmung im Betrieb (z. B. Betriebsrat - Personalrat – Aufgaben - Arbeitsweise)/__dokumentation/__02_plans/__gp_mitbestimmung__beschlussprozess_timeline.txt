@@ -1,0 +1,52 @@
+# __gp_mitbestimmung__beschlussprozess_timeline
+
+## Spielidee
+"Beschlussprozess-Timeline" laesst Lernende Schritte von Antrag bis Beschluss in eine gueltige zeitliche Reihenfolge bringen.
+
+## Lernziel
+- Grundlogik formaler Beschlussprozesse verstehen.
+- Reihenfolgefehler erkennen und vermeiden.
+
+## Messbare Progression
+- 12 Zeitachsenfaelle.
+- Punkte: +8 korrekt platzierter Schritt, -3 falsche Platzierung.
+- KPI: Reihenfolgegenauigkeit und Bearbeitungszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimelineController
+- SequenceEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- TimelineCase(caseId, steps[])
+- ProcessStep(stepId, stepType)
+- TimelineResult(correctPlacements, wrongPlacements)
+
+### Beziehungen
+- TimelineCase enthaelt 4..12 ProcessStep.
+- SequenceEngine validiert Reihenfolge.
+- ProgressTracker aggregiert 1..* TimelineResult.
+
+### Zustandsmodell
+- LOAD_CASE -> PLACE_STEPS -> VALIDATE -> RESULT -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimelineController laedt TimelineCase.
+2. Player platziert ProcessStep.
+3. SequenceEngine prueft Anordnung.
+4. TimelineResult wird angezeigt.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Falscher Startschritt erzeugt Zusatzabzug.
+- Vollkorrekte Timeline gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, steps[], expectedOrder[]
+
+## Abnahmekriterien
+- Fehlplatzierungen sind je Schritt markiert.
+- KPI zeigt Genauigkeit und Tempo.
+- Report nennt wiederkehrende Reihenfolgefehler.

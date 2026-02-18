@@ -1,0 +1,52 @@
+# __gp_tarifauseinandersetzung__aktionskalender_timer
+
+## Spielidee
+"Aktionskalender-Timer" plant Ereignisse einer Auseinandersetzung unter Zeitdruck. Lernende setzen Termine konfliktfrei und fristgerecht.
+
+## Lernziel
+- Zeitliche Koordination in Konfliktprozessen trainieren.
+- Fristen und Abhaengigkeiten sicher managen.
+
+## Messbare Progression
+- 8 Kalenderrunden, je 90 Sekunden.
+- Punkte: +7 fristgerechte Platzierung, -4 Fristfehler.
+- KPI: Fristtrefferquote und Konfliktanzahl.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CalendarController
+- DeadlineEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- CalendarRound(roundId, events[])
+- Event(eventId, dueWindow, dependencies)
+- RoundResult(onTimeRate, conflicts)
+
+### Beziehungen
+- CalendarRound enthaelt 6..15 Event.
+- DeadlineEngine validiert Planung.
+- AnalyticsService aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- LOAD_ROUND -> PLACE_EVENTS -> RUN_TIMER -> EVALUATE -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. CalendarController laedt CalendarRound.
+2. Player plant Event.
+3. DeadlineEngine prueft Fristen.
+4. RoundResult wird berechnet.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Konflikt mit Pflichttermin verursacht Zusatzabzug.
+- Konfliktfreie Runde mit hoher Fristquote gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: roundId, events[{id,dueWindow,dependencies[]}], timeLimitSec
+
+## Abnahmekriterien
+- Fristen und Konflikte sind live sichtbar.
+- KPI zeigt Tempo und Planqualitaet.
+- Replay markiert kritische Planungsfehler.

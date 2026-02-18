@@ -1,0 +1,52 @@
+# __gp_mitbestimmung__gremien_aufgaben_match
+
+## Spielidee
+"Gremien-Aufgaben-Match" ordnet betriebliche Fragestellungen den passenden Mitbestimmungsgremien und Aufgabenbereichen zu.
+
+## Lernziel
+- Aufgaben von Betriebsrat/Personalrat differenzieren.
+- Zuständigkeiten in Standardsituationen sicher erkennen.
+
+## Messbare Progression
+- 24 Match-Karten.
+- Punkte: +6 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Zuordnungsquote je Aufgabenbereich.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- MappingEngine
+- MetricService
+
+### Domaenenobjekte
+- TaskCard(cardId, taskType)
+- CommitteeOption(optionId, committeeType)
+- MatchResult(isCorrect, committeeType)
+
+### Beziehungen
+- TaskCard hat 3..5 CommitteeOption.
+- MappingEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt TaskCard.
+2. Player waehlt CommitteeOption.
+3. MappingEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlzuordnung bei Kernaufgaben erzeugt Zusatzabzug.
+- Serienbonus ab 5 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, taskType, options[], expectedCommittee
+
+## Abnahmekriterien
+- Zuständigkeitsfeedback ist eindeutig.
+- KPI zeigt Leistung je Aufgabencluster.
+- Report listet haeufige Verwechslungen.

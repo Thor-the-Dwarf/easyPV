@@ -1,0 +1,52 @@
+# __gp_mitbestimmung__beteiligungsrechte_router
+
+## Spielidee
+"Beteiligungsrechte-Router" simuliert betriebliche Entscheidungen. Lernende waehlen je Fall den richtigen Beteiligungsweg (Information, Anhörung, Mitbestimmung).
+
+## Lernziel
+- Beteiligungsrechte situationsgerecht anwenden.
+- Prozesswege in korrekter Reihenfolge aufbauen.
+
+## Messbare Progression
+- 14 Prozessfaelle.
+- Punkte: +8 korrekter Weg, -4 falscher Weg.
+- KPI: Routing-Genauigkeit und Schritte bis Abschluss.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FlowController
+- RightsEngine
+- ScoreService
+
+### Domaenenobjekte
+- ParticipationCase(caseId, changeType)
+- RouteStep(stepId, rightLevel)
+- RouteResult(pathCorrect, stepCount)
+
+### Beziehungen
+- ParticipationCase enthaelt 3..8 RouteStep.
+- RightsEngine validiert Schrittfolge.
+- ScoreService aggregiert 1..* RouteResult.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. FlowController startet ParticipationCase.
+2. Player waehlt RouteStep.
+3. RightsEngine prueft Reihenfolge.
+4. RouteResult wird berechnet.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Pflichtstufe verursacht doppelten Abzug.
+- Fehlerfreie Kette gibt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, changeType, steps[], expectedPath[]
+
+## Abnahmekriterien
+- Prozesspfad ist klar visualisiert.
+- KPI trennt Korrektheit und Effizienz.
+- Fehlerhinweise nennen den korrekten naechsten Schritt.

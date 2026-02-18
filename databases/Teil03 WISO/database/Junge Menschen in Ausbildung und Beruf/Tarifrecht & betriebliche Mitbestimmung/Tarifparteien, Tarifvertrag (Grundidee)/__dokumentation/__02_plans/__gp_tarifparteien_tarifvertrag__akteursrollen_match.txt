@@ -1,0 +1,52 @@
+# __gp_tarifparteien_tarifvertrag__akteursrollen_match
+
+## Spielidee
+"Akteursrollen-Match" ordnet Aussagen und Aufgaben den Tarifparteien und beteiligten Akteuren zu.
+
+## Lernziel
+- Rollen von Tarifparteien klar unterscheiden.
+- Zuständigkeiten im Tarifprozess korrekt zuordnen.
+
+## Messbare Progression
+- 25 Karten.
+- Punkte: +6 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Rollenquote je Akteur.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- RoleEngine
+- MetricService
+
+### Domaenenobjekte
+- RoleCard(cardId, statementType)
+- ActorOption(optionId, actorType)
+- MatchResult(isCorrect, actorType)
+
+### Beziehungen
+- RoleCard enthaelt 3..5 ActorOption.
+- RoleEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt RoleCard.
+2. Player waehlt ActorOption.
+3. RoleEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Falsche Zuordnung bei Kernrolle erzeugt Zusatzabzug.
+- Serienbonus ab 5 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, statementType, options[], expectedActor
+
+## Abnahmekriterien
+- Rollenfeedback ist eindeutig.
+- KPI zeigt Leistung je Akteur.
+- Report nennt haeufige Verwechslungen.

@@ -1,17 +1,17 @@
 Anforderungen
-- Titel: "CC-Blindflug-Vermeider"
-- Ziel: Fuer 5 E-Mail-Szenarien den korrekten Verteiler in An, CC und BCC waehlen.
-- Lernziel: Datenschutzkonforme und fachlich korrekte Nutzung der Adressfelder.
+- Titel: "Phishing-Detektiv (E-Mail Edition)"
+- Ziel: In einem Posteingang 10 Mails als legitime Nachricht oder Phishing einstufen.
+- Lernziel: Sicherheitsbewusstsein in der E-Mail-Kommunikation durch Erkennen typischer Betrugsmerkmale.
 
 Spielidee
-- Pro Runde ein realistisches Kommunikationsszenario.
-- Drei Verteileroptionen stehen zur Auswahl.
-- Genau eine Option ist korrekt.
-- Messbar ueber Punkte (0..100), Trefferquote und Reaktionszeit.
+- Linke Seite: Posteingangsliste mit Status pro Mail.
+- Rechte Seite: Detailansicht der ausgewaehlten Mail.
+- Aktionen: "Als Spam markieren" oder "Als legitim behalten".
+- Messbar ueber Score, Trefferquote und Reaktionszeit; bei Fehlklassifikation optional sofortiges Game Over.
 
 Implementierungsplan
-- [x] JSON Konfiguration `_data/_gg01_cc_blindflug_vermeider.json`
-- [x] UI `_ghtml_cc_blindflug_vermeider.html` + `_gcss_cc_blindflug_vermeider.css`
-- [x] Spiel-Logik `_gjs_cc_blindflug_vermeider.js`
+- [x] JSON Konfiguration `_data/_gg01_phishing_detektiv_email_edition.json`
+- [x] UI `_ghtml_phishing_detektiv_email_edition.html` + `_gcss_phishing_detektiv_email_edition.css`
+- [x] Spiel-Logik `_gjs_phishing_detektiv_email_edition.js`
 - [x] Hooks `render_game_to_text` und `advanceTime`
 - [x] Tests in `__dokumentation/__03_tests` (reachability + config)

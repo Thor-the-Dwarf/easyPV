@@ -1353,7 +1353,7 @@
             const probabilityPercent = resolveExamProbabilityPercent(node);
             const probabilityCell = document.createElement('span');
             probabilityCell.className = 'tree-meta-cell tree-meta-cell--probability';
-            const shouldShowProbability = !isGameNode && level > 0 && Number.isFinite(probabilityPercent);
+            const shouldShowProbability = isProbabilityDisplayNode(node, level) && Number.isFinite(probabilityPercent);
             if (!shouldShowProbability) {
               probabilityCell.textContent = '';
               probabilityCell.setAttribute('aria-label', '');
@@ -1472,6 +1472,20 @@
             !hasFolderChild(node) &&
             isPlayableFolder(node)
           );
+        }
+
+        function hasDirectGameLaunchChild(node) {
+          const children = node && Array.isArray(node.children) ? node.children : [];
+          return children.some((child) => isGameLaunchNode(child));
+        }
+
+        function isProbabilityDisplayNode(node, level) {
+          if (!node || !node.isFolder) return false;
+          if (typeof level === 'number' && level <= 0) return false;
+          if (isGameLaunchNode(node)) return false;
+          const children = Array.isArray(node.children) ? node.children : [];
+          if (children.length === 0) return true;
+          return hasDirectGameLaunchChild(node);
         }
 
         function resolveNodeIconKind(node) {

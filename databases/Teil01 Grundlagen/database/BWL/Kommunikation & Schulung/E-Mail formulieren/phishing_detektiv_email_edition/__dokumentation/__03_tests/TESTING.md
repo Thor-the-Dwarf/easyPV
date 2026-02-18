@@ -1,4 +1,4 @@
-# Testing: CC-Blindflug-Vermeider
+# Testing: Phishing-Detektiv-E-Mail-Edition
 
 ## Ziel
 - Basisqualitaet sicherstellen: Spiel-Dateien vorhanden, Konfig validierbar, Kernlogik lauffaehig.

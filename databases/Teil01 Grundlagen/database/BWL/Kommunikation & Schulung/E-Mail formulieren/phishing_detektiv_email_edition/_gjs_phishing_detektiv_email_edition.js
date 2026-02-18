@@ -326,8 +326,10 @@
 
   function asStatePayload() {
     const mail = selectedMail();
+    const progressPercent = state.mails.length > 0 ? Math.round((state.reviewedCount / state.mails.length) * 100) : 0;
     return {
       mode: state.done ? 'result' : 'phishing_inbox',
+      measurable: true,
       coordinate_system: 'origin top-left, x right, y down',
       selected_mail_id: state.selectedMailId,
       reviewed_count: state.reviewedCount,
@@ -335,6 +337,7 @@
       correct_count: state.correctCount,
       score: state.score,
       rate_percent: ratePercent(),
+      progress_percent: progressPercent,
       failed: state.failed,
       done: state.done,
       remaining_ms: Math.round(state.remainingMs),
@@ -351,13 +354,28 @@
     };
   }
 
-  window.render_game_to_text = function renderGameToText() {
+  const __baseRenderToText = function renderGameToTextBase() {
     return JSON.stringify(asStatePayload());
+  };
+  let __simulatedMs = 0;
+
+  window.render_game_to_text = function renderGameToText() {
+    const raw = __baseRenderToText();
+    try {
+      const payload = JSON.parse(raw);
+      if (payload && typeof payload === 'object' && !Array.isArray(payload)) {
+        payload.simulated_ms = __simulatedMs;
+      }
+      return JSON.stringify(payload);
+    } catch (err) {
+      return raw;
+    }
   };
 
   window.advanceTime = function advanceTime(ms) {
     const delta = Number(ms);
     if (!Number.isFinite(delta) || delta <= 0) return true;
+    __simulatedMs += delta;
     tick(delta);
     render();
     return true;

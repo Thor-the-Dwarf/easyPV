@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Kaufkraft-Kompass
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: kaufkraft_kompass" {
+  component "_ghtml_kaufkraft_kompass.html" as HTML
+  component "_gjs_kaufkraft_kompass.js" as JS
+  component "_gcss_kaufkraft_kompass.css" as CSS
+  database "_data/_gg01_kaufkraft_kompass.json" as GG
+  database "_data/__metaData_Bedürfnisse, Bedarf, Kaufkraft (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

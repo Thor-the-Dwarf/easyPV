@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Prioritaeten-Sprint
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: prioritaeten_sprint" {
+  component "_ghtml_prioritaeten_sprint.html" as HTML
+  component "_gjs_prioritaeten_sprint.js" as JS
+  component "_gcss_prioritaeten_sprint.css" as CSS
+  database "_data/_gg01_prioritaeten_sprint.json" as GG
+  database "_data/__metaData_Bedürfnisse, Bedarf, Kaufkraft (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

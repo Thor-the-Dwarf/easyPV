@@ -1,0 +1,52 @@
+# __gp_jugendarbeitsschutz__gefahreneinsatz_filter
+
+## Spielidee
+"Gefahreneinsatz-Filter" zeigt Taetigkeiten in Werkstatt und Buero. Lernende filtern, welche Einsaetze fuer Jugendliche zulaessig sind und welche nicht.
+
+## Lernziel
+- Zulassige und unzulaessige Taetigkeiten unterscheiden.
+- Risikoabhaengige Einsatzplanung verstehen.
+
+## Messbare Progression
+- 20 Taetigkeitskarten.
+- Punkte: +6 korrekte Klassifikation, -3 falsche Klassifikation.
+- KPI: Zulassungsquote und Fehlerrate.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TaskController
+- EligibilityEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- TaskCard(cardId, hazardLevel, context)
+- Decision(decisionType)
+- DecisionResult(isAllowed, isCorrect)
+
+### Beziehungen
+- TaskController liefert 1..* TaskCard.
+- EligibilityEngine erzeugt pro Decision ein DecisionResult.
+- ProgressTracker aggregiert 1..* DecisionResult.
+
+### Zustandsmodell
+- READY -> CARD_REVIEW -> DECIDE -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. TaskController zeigt TaskCard.
+2. Player trifft Decision.
+3. EligibilityEngine prueft Zulassigkeit.
+4. DecisionResult wird angezeigt.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Fehlklassifikation bei Hochrisikoaufgabe gibt doppelten Abzug.
+- Korrekte Serie aktiviert Tempo-Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, hazardLevel, context, expectedAllowance
+
+## Abnahmekriterien
+- Klassifikationsgrund ist pro Karte sichtbar.
+- KPI zeigt Leistung nach Risikolevel.
+- Endreport hebt kritische Fehlentscheidungen hervor.

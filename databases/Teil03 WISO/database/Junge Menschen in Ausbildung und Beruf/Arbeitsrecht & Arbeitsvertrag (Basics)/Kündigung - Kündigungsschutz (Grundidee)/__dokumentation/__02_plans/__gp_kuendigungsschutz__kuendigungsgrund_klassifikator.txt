@@ -1,0 +1,52 @@
+# __gp_kuendigungsschutz__kuendigungsgrund_klassifikator
+
+## Spielidee
+"Kuendigungsgrund-Klassifikator" zeigt Fallbeschreibungen. Lernende ordnen den plausiblen Grundtyp zu und markieren fehlende Begruendungsbausteine.
+
+## Lernziel
+- Grundtypen im Kuendigungskontext differenzieren.
+- Begruendungsqualitaet kritisch bewerten.
+
+## Messbare Progression
+- 18 Fallkarten.
+- Punkte: +7 korrekter Grundtyp, +4 korrekte Lueckenmarkierung, -4 Fehler.
+- KPI: Typgenauigkeit und Luecken-Erkennung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseController
+- ClassificationEngine
+- ScoreService
+
+### Domaenenobjekte
+- TerminationCase(caseId, narrative)
+- GroundOption(optionId, groundType)
+- ClassificationResult(typeCorrect, gapsCorrect)
+
+### Beziehungen
+- TerminationCase hat 3..5 GroundOption.
+- ClassificationEngine erzeugt ClassificationResult pro Fall.
+- ScoreService aggregiert 1..* ClassificationResult.
+
+### Zustandsmodell
+- READY -> CASE_REVIEW -> CLASSIFY -> GAP_MARK -> RESULT -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. CaseController zeigt TerminationCase.
+2. Player waehlt GroundOption.
+3. Player markiert fehlende Bausteine.
+4. ClassificationEngine validiert Eingaben.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Falscher Grundtyp blockiert Teil des Lueckenbonus.
+- Serienbonus bei 5 voll korrekten Faellen.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, narrative, options[], expectedGround, expectedGaps[]
+
+## Abnahmekriterien
+- Typ- und Lueckenfeedback sind getrennt sichtbar.
+- KPI zeigt beide Lernziele separat.
+- Endreport gruppiert haeufige Verwechslungen.

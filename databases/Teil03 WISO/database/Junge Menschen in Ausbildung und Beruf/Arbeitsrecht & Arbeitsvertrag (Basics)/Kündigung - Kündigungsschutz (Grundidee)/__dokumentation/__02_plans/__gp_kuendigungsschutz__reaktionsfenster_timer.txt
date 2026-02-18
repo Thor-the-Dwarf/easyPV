@@ -1,0 +1,53 @@
+# __gp_kuendigungsschutz__reaktionsfenster_timer
+
+## Spielidee
+"Reaktionsfenster-Timer" simuliert den Zeitraum nach Kuendigungszugang. Lernende waehlen unter Zeitdruck die naechsten sinnvollen Schritte.
+
+## Lernziel
+- Fruehe Reaktionsschritte strukturiert priorisieren.
+- Zeitfenster-bezogene Entscheidungen beschleunigen.
+
+## Messbare Progression
+- 16 Kurzfaelle.
+- Punkte: +7 korrekter Schritt, -3 falscher Schritt.
+- +2 fuer Antwort unter 8 Sekunden.
+- KPI: Schrittgenauigkeit pro Minute.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimerCaseController
+- RoutingEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- TimerCase(caseId, stage, deadlineInfo)
+- StepOption(stepId, actionType)
+- StepResult(isCorrect, responseTimeMs)
+
+### Beziehungen
+- TimerCase hat 3..5 StepOption.
+- RoutingEngine validiert StepOption.
+- AnalyticsService aggregiert 1..* StepResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> STEP_PICK -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimerCaseController startet TimerCase.
+2. Player waehlt StepOption.
+3. RoutingEngine prueft Entscheidung.
+4. StepResult wird berechnet.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Keine Antwort im Zeitfenster zaehlt als Fehler.
+- Drei schnelle korrekte Antworten aktivieren Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, stage, deadlineInfo, options[], expectedStep
+
+## Abnahmekriterien
+- Timer und Feedback bleiben synchron.
+- KPI zeigt Geschwindigkeit und Korrektheit.
+- Endreport nennt haeufig verpasste Schritte.

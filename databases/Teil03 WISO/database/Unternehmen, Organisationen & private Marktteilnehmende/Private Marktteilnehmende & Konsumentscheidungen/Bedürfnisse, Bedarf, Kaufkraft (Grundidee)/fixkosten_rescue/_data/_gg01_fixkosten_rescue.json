@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "topic": "Beduerfnisse, Bedarf, Kaufkraft",
+    "mechanic": "scenario_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 20,
+    "wrong": -8,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Schock: Waschmaschine defekt (+320 EUR). Welche Reaktion ist zuerst sinnvoll?",
+      "hint": "Pflichtkosten muessen gedeckt bleiben.",
+      "options": [
+        { "id": "a", "text": "Luxusbudget kuerzen und Reparatur vorziehen", "correct": true, "feedback": "Richtig. Du stabilisierst den Pflichtbedarf." },
+        { "id": "b", "text": "Miete reduzieren", "correct": false, "feedback": "Nicht korrekt. Pflichtkosten duerfen nicht unterdeckt sein." },
+        { "id": "c", "text": "Nahrungsmittelbudget halbieren", "correct": false, "feedback": "Nicht korrekt. Grundbedarf wird gefaehrdet." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Energiekosten steigen unerwartet um 90 EUR. Was passt zur Resilienz-Regel?",
+      "hint": "Plane mit Priorisierung und Reserve.",
+      "options": [
+        { "id": "a", "text": "Kurzfristig variable Freizeitkosten senken", "correct": true, "feedback": "Gut. Flexible Kosten zuerst anpassen." },
+        { "id": "b", "text": "Pflichtversicherung streichen", "correct": false, "feedback": "Nicht korrekt. Das erzeugt Folgerisiken." },
+        { "id": "c", "text": "Keine Anpassung vornehmen", "correct": false, "feedback": "Nicht korrekt. Das fuehrt in Unterdeckung." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Kennzahl zeigt am besten, ob ein Szenario stabil geloest wurde?",
+      "hint": "Denke an Grundbedarf + Restbudget.",
+      "options": [
+        { "id": "a", "text": "Pflichtkosten gedeckt und Restbudget >= 0", "correct": true, "feedback": "Richtig. Das ist die Kernbedingung." },
+        { "id": "b", "text": "Anzahl Shopping-Tage", "correct": false, "feedback": "Nicht korrekt. Kein Stabilitaetskriterium." },
+        { "id": "c", "text": "Nur Anzahl Aktionen", "correct": false, "feedback": "Nicht korrekt. Aktionen allein sagen nichts ueber Deckung." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Warum sind zu viele Replan-Aktionen riskant?",
+      "hint": "Jede Aktion verursacht Reibung und Folgekosten.",
+      "options": [
+        { "id": "a", "text": "Weil sie Handlungspunkte verbrauchen und Unsicherheit erhoehen", "correct": true, "feedback": "Richtig. Zu viel Umplanung destabilisiert." },
+        { "id": "b", "text": "Weil dann immer mehr Einkommen entsteht", "correct": false, "feedback": "Nicht korrekt. Einkommen steigt dadurch nicht." },
+        { "id": "c", "text": "Weil Pflichtkosten automatisch sinken", "correct": false, "feedback": "Nicht korrekt. Pflichtkosten sind meist fix." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welcher Schritt verbessert langfristig die Fixkosten-Resilienz?",
+      "hint": "Nicht nur reagieren, auch vorsorgen.",
+      "options": [
+        { "id": "a", "text": "Monatliche Notfallruecklage einplanen", "correct": true, "feedback": "Genau. Ruecklagen puffern Schocks." },
+        { "id": "b", "text": "Alle Risiken ignorieren", "correct": false, "feedback": "Nicht korrekt. Das verschlechtert Stabilitaet." },
+        { "id": "c", "text": "Nur auf Sonderangebote hoffen", "correct": false, "feedback": "Nicht korrekt. Das ist keine verlaessliche Strategie." }
+      ]
+    }
+  ]
+}

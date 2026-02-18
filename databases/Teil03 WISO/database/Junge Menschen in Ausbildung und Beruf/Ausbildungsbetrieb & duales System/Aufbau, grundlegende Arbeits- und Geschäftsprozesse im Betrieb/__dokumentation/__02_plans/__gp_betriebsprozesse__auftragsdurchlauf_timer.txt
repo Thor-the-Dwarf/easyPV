@@ -1,0 +1,52 @@
+# __gp_betriebsprozesse__auftragsdurchlauf_timer
+
+## Spielidee
+"Auftragsdurchlauf-Timer" simuliert Auftragsstationen mit Bearbeitungszeiten. Lernende priorisieren Auftraege so, dass Durchlaufzeit und Rueckstaende sinken.
+
+## Lernziel
+- Zeitkritische Prozesssteuerung verstehen.
+- Priorisierungsentscheidungen unter Last treffen.
+
+## Messbare Progression
+- 6 Simulationsrunden a 90 Sekunden.
+- Punkte: +1 pro korrekt priorisiertem Auftrag, -2 pro verpasster Frist.
+- KPI: durchschnittliche Durchlaufzeit und Fristtrefferquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- SimulationController
+- QueueEngine
+- KPIService
+
+### Domaenenobjekte
+- Order(orderId, dueTime, processingTime)
+- WorkStation(stationId, capacity)
+- RoundResult(avgLeadTime, deadlineHitRate)
+
+### Beziehungen
+- SimulationController steuert 1..* Round.
+- QueueEngine verarbeitet 1..* Order ueber 1..* WorkStation.
+- KPIService aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- PREPARE -> RUNNING -> PRIORITIZE -> ROUND_END -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. SimulationController startet Runde.
+2. Player priorisiert Auftraege.
+3. QueueEngine verarbeitet Reihenfolge.
+4. RoundResult wird berechnet.
+5. KPIService aktualisiert Dashboard.
+
+## Regeln
+- Fristversaeumnisse reduzieren Punktestand stark.
+- Stabile Fristquote ueber Runden erzeugt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: roundId, orders[], stations[], timeLimitSec
+
+## Abnahmekriterien
+- Durchlaufzeit und Fristtreffer sind live sichtbar.
+- KPI ist ueber Runden vergleichbar.
+- Replay zeigt Engpassstellen im Ablauf.

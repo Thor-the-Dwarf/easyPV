@@ -1,0 +1,53 @@
+# __gp_bedarf_kaufkraft__prioritaeten_sprint
+
+## Spielidee
+"Prioritaeten-Sprint" ist ein Zeitmodus: Karten mit Ausgaben muessen in 30 Sekunden in die Spalten Muss, Soll, Kann verschoben werden, passend zu einem vorgegebenen Einkommen.
+
+## Lernziel
+- Bedarfe priorisieren, ohne Grundbeduerfnisse zu gefaehrden.
+- Entscheidungsfaehigkeit unter Zeitdruck trainieren.
+
+## Messbare Progression
+- 12 Sprint-Runden.
+- Punkte: +10 pro korrekt sortierter Karte, -3 pro Fehlzuordnung.
+- Kombobonus: +5 ab 5 korrekten Karten ohne Fehler.
+- KPI: korrekt sortierte Karten pro Minute.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- SprintController
+- SortRuleEngine
+- ComboTracker
+
+### Domänenobjekte
+- ExpenseCard(cardId, title, type, priorityClass)
+- SprintRound(roundId, timeLimitSec, cards[])
+- ScoreBoard(totalScore, comboCount)
+
+### Beziehungen
+- SprintController fuehrt 1..* SprintRound aus.
+- SprintRound enthaelt 8..12 ExpenseCard.
+- ComboTracker aktualisiert ScoreBoard.
+
+### Zustandsmodell
+- READY -> COUNTDOWN -> SORTING -> EVALUATION -> NEXT
+
+### Sequenz (Happy Path)
+1. SprintController startet Countdown.
+2. Player sortiert ExpenseCard in Kategorien.
+3. SortRuleEngine prueft Sortierung.
+4. ComboTracker setzt Bonuspunkte.
+5. ScoreBoard zeigt Zwischenstand und Trendpfeil.
+
+## Regeln
+- Falsche Platzierung eines Muss-Elements beendet Combo sofort.
+- Unsortierte Karte bei Ablauf zaehlt als Fehler.
+
+## Datenmodell (JSON-Idee)
+- fields: roundId, timeLimitSec, cards[{id, title, type, priorityClass}]
+
+## Abnahmekriterien
+- Zeitdruck und Punktelogik sind fuer Lernende nachvollziehbar.
+- Review-Ansicht zeigt Fehler nach Kategorie Muss/Soll/Kann.
+- KPI "Karten pro Minute" ist ueber Sessions vergleichbar.

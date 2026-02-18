@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "topic": "Beduerfnisse, Bedarf, Kaufkraft",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -4,
+    "completion_bonus": 8
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Monatsbudget 1200 EUR: Welche Ausgabe ist ein Grundbeduerfnis?",
+      "hint": "Achte auf zwingend notwendige Lebenshaltung.",
+      "options": [
+        { "id": "a", "text": "Miete", "correct": true, "feedback": "Richtig. Wohnen ist ein Grundbeduerfnis." },
+        { "id": "b", "text": "Streaming-Abo", "correct": false, "feedback": "Nicht korrekt. Das ist eher Luxus." },
+        { "id": "c", "text": "Gaming-Headset", "correct": false, "feedback": "Nicht korrekt. Kein Grundbeduerfnis." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Nach Fixkosten bleiben 180 EUR. Welche Entscheidung ist bei knapper Kaufkraft am sinnvollsten?",
+      "hint": "Priorisiere lebensnotwendige Positionen.",
+      "options": [
+        { "id": "a", "text": "Wocheneinkauf planen", "correct": true, "feedback": "Genau. Bedarf zuerst absichern." },
+        { "id": "b", "text": "Spontankauf neuer Sneaker", "correct": false, "feedback": "Nicht korrekt. Bedarf geht vor Wunsch." },
+        { "id": "c", "text": "Premium-Lieferservice", "correct": false, "feedback": "Nicht korrekt. Das belastet das Restbudget." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Aussage beschreibt Kaufkraft am besten?",
+      "hint": "Es geht um reale Leistbarkeit.",
+      "options": [
+        { "id": "a", "text": "Wie viele Gueter ich mir bei gegebenem Einkommen leisten kann", "correct": true, "feedback": "Richtig. Genau das ist Kaufkraft." },
+        { "id": "b", "text": "Wie viel Werbung ich sehe", "correct": false, "feedback": "Nicht korrekt. Werbung beeinflusst, definiert aber nicht Kaufkraft." },
+        { "id": "c", "text": "Wie viele Zahlungsarten ich habe", "correct": false, "feedback": "Nicht korrekt. Zahlungsart ist nicht Kaufkraft." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Preissteigerungen bei Lebensmitteln bei konstantem Einkommen bedeuten...",
+      "hint": "Denke in realer Kaufkraft.",
+      "options": [
+        { "id": "a", "text": "sinkende Kaufkraft", "correct": true, "feedback": "Richtig. Das Einkommen reicht real fuer weniger." },
+        { "id": "b", "text": "automatisch mehr Bedarf", "correct": false, "feedback": "Nicht korrekt. Bedarf steigt nicht automatisch." },
+        { "id": "c", "text": "mehr Luxusbudget", "correct": false, "feedback": "Nicht korrekt. Luxusbudget wird eher kleiner." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was ist in einem knappen Budget zuerst kuerzbar?",
+      "hint": "Kuerze nicht zuerst Grundbeduerfnisse.",
+      "options": [
+        { "id": "a", "text": "Luxusausgaben", "correct": true, "feedback": "Richtig. Luxus ist am ehesten verschiebbar." },
+        { "id": "b", "text": "Krankenversicherung", "correct": false, "feedback": "Nicht korrekt. Das gehoert zu essenziellen Absicherungen." },
+        { "id": "c", "text": "Grundnahrungsmittel", "correct": false, "feedback": "Nicht korrekt. Grundbedarf zuerst sichern." }
+      ]
+    }
+  ]
+}

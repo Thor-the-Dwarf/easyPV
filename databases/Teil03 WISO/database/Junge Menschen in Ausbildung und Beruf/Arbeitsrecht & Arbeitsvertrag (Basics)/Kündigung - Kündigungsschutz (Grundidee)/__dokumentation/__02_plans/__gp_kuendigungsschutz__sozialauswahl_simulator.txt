@@ -1,0 +1,53 @@
+# __gp_kuendigungsschutz__sozialauswahl_simulator
+
+## Spielidee
+"Sozialauswahl-Simulator" stellt Teams mit unterschiedlichen Profilen dar. Lernende priorisieren eine plausible Auswahl und begruenden sie anhand der Falldaten.
+
+## Lernziel
+- Mehrkriterielle Bewertung in Kuendigungssituationen trainieren.
+- Entscheidungen nachvollziehbar begruenden.
+
+## Messbare Progression
+- 9 Teamszenarien.
+- Punkte: +10 korrekte Priorisierung, -5 falsche Priorisierung.
+- +4 fuer konsistente Begruendung.
+- KPI: Priorisierungsquote und Begruendungskonsistenz.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TeamCaseController
+- WeightingEngine
+- ReportService
+
+### Domaenenobjekte
+- TeamCase(caseId, employees[])
+- Employee(empId, attributes)
+- RankingResult(rankList, consistencyScore)
+
+### Beziehungen
+- TeamCase enthaelt 3..12 Employee.
+- WeightingEngine berechnet RankingResult.
+- ReportService aggregiert 1..* RankingResult.
+
+### Zustandsmodell
+- LOAD_CASE -> REVIEW_PROFILES -> RANK -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TeamCaseController laedt TeamCase.
+2. Player erstellt Rangfolge.
+3. WeightingEngine vergleicht mit Solllogik.
+4. RankingResult wird angezeigt.
+5. ReportService aktualisiert KPI.
+
+## Regeln
+- Widerspruechliche Begruendung reduziert Konsistenzscore.
+- Korrekte Rangfolge mit hoher Konsistenz gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, employees[], weighting, expectedRanking
+
+## Abnahmekriterien
+- Rangfolge und Begruendung sind getrennt bewertbar.
+- KPI zeigt Korrektheit und Konsistenz.
+- Verlauf ueber Szenarien ist vergleichbar.

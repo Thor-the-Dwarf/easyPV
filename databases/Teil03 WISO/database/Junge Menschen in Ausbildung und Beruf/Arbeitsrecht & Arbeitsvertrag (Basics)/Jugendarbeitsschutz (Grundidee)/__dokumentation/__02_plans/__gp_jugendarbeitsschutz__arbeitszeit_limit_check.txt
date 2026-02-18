@@ -1,0 +1,53 @@
+# __gp_jugendarbeitsschutz__arbeitszeit_limit_check
+
+## Spielidee
+"Arbeitszeit-Limit-Check" zeigt Tagesplaene von Jugendlichen im Betrieb. Lernende entscheiden, welche Plaene regelkonform sind und welche gegen Zeitgrenzen verstossen.
+
+## Lernziel
+- Arbeitszeitgrenzen fuer Jugendliche sicher anwenden.
+- Verstossmuster in Schichtplaenen erkennen.
+
+## Messbare Progression
+- 14 Tagesfaelle.
+- Punkte: +9 korrekte Bewertung, -4 falsche Bewertung.
+- Zeitbonus: +2 bei Antwort unter 10 Sekunden.
+- KPI: Bewertungsgenauigkeit und durchschnittliche Antwortzeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DayPlanController
+- TimeLimitEngine
+- ScoreService
+
+### Domaenenobjekte
+- DayPlan(planId, workBlocks[])
+- WorkBlock(blockId, start, end, breakMin)
+- PlanResult(isValid, violations[])
+
+### Beziehungen
+- DayPlanController verwaltet 1..* DayPlan.
+- DayPlan enthaelt 2..8 WorkBlock.
+- TimeLimitEngine erzeugt pro Plan ein PlanResult.
+
+### Zustandsmodell
+- READY -> PLAN_REVIEW -> DECISION -> VALIDATION -> NEXT_PLAN
+
+### Sequenz (Happy Path)
+1. DayPlanController laedt DayPlan.
+2. Player bewertet den Plan.
+3. TimeLimitEngine prueft Zeitgrenzen.
+4. PlanResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Uebersehener Schwerverstoss erzeugt doppelten Abzug.
+- Drei korrekte Entscheidungen in Folge aktivieren Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: planId, workBlocks[{start,end,breakMin}], expectedValidity
+
+## Abnahmekriterien
+- Verstossdetails sind je Block sichtbar.
+- KPI zeigt Genauigkeit und Geschwindigkeit.
+- Endreport nennt haeufig uebersehene Grenzverletzungen.

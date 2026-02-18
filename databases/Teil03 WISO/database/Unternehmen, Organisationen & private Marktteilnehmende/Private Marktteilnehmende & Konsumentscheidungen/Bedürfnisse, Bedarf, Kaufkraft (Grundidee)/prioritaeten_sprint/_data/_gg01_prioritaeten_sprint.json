@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "topic": "Beduerfnisse, Bedarf, Kaufkraft",
+    "mechanic": "priority_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -3,
+    "completion_bonus": 7
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Ordne 'Miete' bei knappem Einkommen ein.",
+      "hint": "Nutze Muss/Soll/Kann.",
+      "options": [
+        { "id": "a", "text": "Muss", "correct": true, "feedback": "Richtig. Miete ist Muss." },
+        { "id": "b", "text": "Soll", "correct": false, "feedback": "Nicht korrekt. Zu kritisch fuer Soll." },
+        { "id": "c", "text": "Kann", "correct": false, "feedback": "Nicht korrekt. Das waere zu riskant." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Ordne 'Neues Smartphone trotz funktionierendem Geraet' ein.",
+      "hint": "Wunsch vs. Bedarf.",
+      "options": [
+        { "id": "a", "text": "Kann", "correct": true, "feedback": "Richtig. Das ist verzichtbar." },
+        { "id": "b", "text": "Muss", "correct": false, "feedback": "Nicht korrekt. Kein zwingender Bedarf." },
+        { "id": "c", "text": "Soll", "correct": false, "feedback": "Nicht optimal. Hier klar Kann." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Ordne 'Haushaltsversicherung' ein.",
+      "hint": "Absicherung gegen groessere Schaeden.",
+      "options": [
+        { "id": "a", "text": "Soll", "correct": true, "feedback": "Richtig. Sinnvoll und oft priorisiert." },
+        { "id": "b", "text": "Kann", "correct": false, "feedback": "Nicht optimal. Eher nicht ganz optional." },
+        { "id": "c", "text": "Muss", "correct": false, "feedback": "Nicht in jedem Fall Muss." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Ordne 'Grundnahrungsmittel' ein.",
+      "hint": "Essenzielle Versorgung.",
+      "options": [
+        { "id": "a", "text": "Muss", "correct": true, "feedback": "Richtig. Grundversorgung zuerst." },
+        { "id": "b", "text": "Soll", "correct": false, "feedback": "Nicht korrekt. Das ist Muss." },
+        { "id": "c", "text": "Kann", "correct": false, "feedback": "Nicht korrekt. Das ist nicht verzichtbar." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Ordne 'Kurztrip-Wochenende' bei knapper Kasse ein.",
+      "hint": "Zeitdruck darf Prioritaet nicht verzerren.",
+      "options": [
+        { "id": "a", "text": "Kann", "correct": true, "feedback": "Richtig. Das ist freiwillig." },
+        { "id": "b", "text": "Muss", "correct": false, "feedback": "Nicht korrekt. Kein Grundbedarf." },
+        { "id": "c", "text": "Soll", "correct": false, "feedback": "Nicht optimal. In diesem Kontext klar Kann." }
+      ]
+    }
+  ]
+}

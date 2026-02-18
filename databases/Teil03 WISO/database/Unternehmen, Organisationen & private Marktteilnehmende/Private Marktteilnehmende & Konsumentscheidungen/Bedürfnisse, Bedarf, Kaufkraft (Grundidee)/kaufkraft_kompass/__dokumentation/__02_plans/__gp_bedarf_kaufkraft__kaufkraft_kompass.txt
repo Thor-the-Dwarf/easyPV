@@ -1,0 +1,54 @@
+# __gp_bedarf_kaufkraft__kaufkraft_kompass
+
+## Spielidee
+"Kaufkraft-Kompass" zeigt Warenkoerbe mit Preisveraenderungen ueber mehrere Monate. Lernende waehlen den Warenkorb, der trotz Inflation das definierte Mindestniveau an Bedarfen abdeckt.
+
+## Lernziel
+- Kaufkraftveraenderung bei gleichem Einkommen erkennen.
+- Entscheidungen zwischen Preis, Menge und Notwendigkeit transparent treffen.
+
+## Messbare Progression
+- 8 Monats-Level.
+- Punkte: +15 fuer korrekte Warenkorbwahl, -6 fuer Unterdeckung bei Grundbedarfen.
+- KPI 1: Trefferquote in Prozent.
+- KPI 2: Durchschnittliche Entscheidungszeit je Level.
+- Bestehensgrenze: mindestens 75 Prozent Trefferquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- LevelManager
+- InflationEngine
+- EvaluationService
+
+### Domänenobjekte
+- MonthScenario(month, income, inflationRate)
+- BasketOption(optionId, totalPrice, coveredNeeds[])
+- Need(needId, criticality)
+
+### Beziehungen
+- LevelManager steuert 1..* MonthScenario.
+- MonthScenario bietet 3..5 BasketOption.
+- BasketOption deckt 1..* Need.
+
+### Zustandsmodell
+- INIT -> LEVEL_RUNNING -> LEVEL_REVIEW -> SUMMARY
+
+### Sequenz (Happy Path)
+1. LevelManager startet MonthScenario.
+2. InflationEngine passt Preise an.
+3. Player waehlt BasketOption.
+4. EvaluationService prueft Deckung der Needs.
+5. Score und Fortschrittsbalken werden aktualisiert.
+
+## Regeln
+- Unterdeckung eines kritischen Needs fuehrt zu automatischem Level-Minuspunkt.
+- Bonus bei drei schnellen und korrekten Entscheidungen in Folge.
+
+## Datenmodell (JSON-Idee)
+- fields: month, income, inflationRate, options[{id, totalPrice, coveredNeeds, sustainabilityTag}]
+
+## Abnahmekriterien
+- Progression zeigt klar, ob Kaufkraft sinkt oder stabil bleibt.
+- Nach jedem Level wird ein kurzer Ursache-Wirkung-Hinweis eingeblendet.
+- Session-Report exportiert Trefferquote und Zeitwerte pro Monat.

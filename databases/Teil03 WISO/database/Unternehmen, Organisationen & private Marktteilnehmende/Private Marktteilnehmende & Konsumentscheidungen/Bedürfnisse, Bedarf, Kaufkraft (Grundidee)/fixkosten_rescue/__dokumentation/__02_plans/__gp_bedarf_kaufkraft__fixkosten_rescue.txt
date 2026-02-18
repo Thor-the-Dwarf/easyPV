@@ -1,0 +1,53 @@
+# __gp_bedarf_kaufkraft__fixkosten_rescue
+
+## Spielidee
+"Fixkosten-Rescue" simuliert Monatsplaene mit ploetzlichen Ereignissen (z. B. Reparatur). Lernende muessen Ausgaben umplanen, sodass Grundbeduerfnisse weiterhin gedeckt sind.
+
+## Lernziel
+- Finanzielle Resilienz bei veraenderten Rahmenbedingungen trainieren.
+- Priorisierung und Kaufkraftdenken kombinieren.
+
+## Messbare Progression
+- 6 Szenarien mit je 2 Ereigniswellen.
+- Punkte: +20 bei erfolgreicher Stabilisierung, -8 wenn Grundbedarf unterdeckt.
+- KPI 1: Anzahl stabil geloeser Szenarien.
+- KPI 2: Restbudget am Szenarioende.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- EventEngine
+- BudgetValidator
+
+### Domänenobjekte
+- Scenario(scenarioId, startBudget, baselineCosts)
+- ShockEvent(eventId, amount, urgency)
+- ReplanAction(actionId, expenseId, newAmount)
+
+### Beziehungen
+- ScenarioController steuert 1..* Scenario.
+- Scenario enthaelt 1..* ShockEvent.
+- BudgetValidator prueft 1..* ReplanAction.
+
+### Zustandsmodell
+- PREPARE -> BASELINE -> SHOCK -> REPLAN -> VALIDATED -> FINISHED
+
+### Sequenz (Happy Path)
+1. ScenarioController startet Baseline.
+2. EventEngine loest ShockEvent aus.
+3. Player definiert ReplanAction.
+4. BudgetValidator prueft Deckung der Pflichtkosten.
+5. Score wird aus Stabilitaet und Restbudget berechnet.
+
+## Regeln
+- Pflichtkosten duerfen nie unter Mindestwert sinken.
+- Jede ReplanAction kostet 1 Aktionspunkt, max. 5 pro Ereigniswelle.
+
+## Datenmodell (JSON-Idee)
+- fields: scenarioId, startBudget, baselineCosts[], events[], minCoverageRules[]
+
+## Abnahmekriterien
+- Stabilitaet ist numerisch ueber Szenarien vergleichbar.
+- Ereignisfolgen sind reproduzierbar per Seed.
+- Session-Report zeigt Fehlerursachen pro ReplanAction.

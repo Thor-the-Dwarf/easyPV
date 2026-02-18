@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "topic": "Beduerfnisse, Bedarf, Kaufkraft",
+    "mechanic": "claim_classification",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 6,
+    "wrong": -2,
+    "completion_bonus": 6
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Claim: 'Nur heute: Smartwatch 40% guenstiger - du brauchst sie jetzt!'",
+      "hint": "Pruefe, ob ein echter Bedarf adressiert wird.",
+      "options": [
+        { "id": "a", "text": "Wunschimpuls", "correct": true, "feedback": "Richtig. Vor allem Kaufdruck ohne Pflichtbedarf." },
+        { "id": "b", "text": "Echter Bedarf", "correct": false, "feedback": "Nicht korrekt. Kein zwingender Bedarf erkennbar." },
+        { "id": "c", "text": "Neutral", "correct": false, "feedback": "Nicht korrekt. Claim ist klar impulsorientiert." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Claim: 'Rabatt auf Monatsabo fuer oeffentliche Verkehrsmittel'",
+      "hint": "Bezug zu alltaeglicher Mobilitaet.",
+      "options": [
+        { "id": "a", "text": "Echter Bedarf", "correct": true, "feedback": "Richtig. Mobilitaet kann Grundbedarf sein." },
+        { "id": "b", "text": "Wunschimpuls", "correct": false, "feedback": "Nicht korrekt. Kontext spricht fuer Bedarf." },
+        { "id": "c", "text": "Unwichtig", "correct": false, "feedback": "Nicht korrekt. Kann budgetrelevant sein." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Claim: 'Premium-Kaffeemaschine macht dich produktiver'",
+      "hint": "Werbeversprechen kritisch trennen.",
+      "options": [
+        { "id": "a", "text": "Wunschimpuls", "correct": true, "feedback": "Richtig. Nutzenversprechen ist marketinggetrieben." },
+        { "id": "b", "text": "Echter Bedarf", "correct": false, "feedback": "Nicht korrekt. Kein zwingender Bedarf." },
+        { "id": "c", "text": "Pflichtkauf", "correct": false, "feedback": "Nicht korrekt. Das ist nicht verpflichtend." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Claim: 'Energieeffizienter Kuehlschrank senkt Stromkosten dauerhaft'",
+      "hint": "Langfristige Kostenwirkung beachten.",
+      "options": [
+        { "id": "a", "text": "Echter Bedarf", "correct": true, "feedback": "Richtig. Bedarf + Wirtschaftlichkeit sind plausibel." },
+        { "id": "b", "text": "Nur Wunsch", "correct": false, "feedback": "Nicht korrekt. Hier gibt es realen Nutzen." },
+        { "id": "c", "text": "Reiner Trend", "correct": false, "feedback": "Nicht korrekt. Kostenargument ist sachlich." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Claim: 'Limitierte Edition - jetzt oder nie!'",
+      "hint": "Knappheitsdruck ist ein typischer Trigger.",
+      "options": [
+        { "id": "a", "text": "Wunschimpuls", "correct": true, "feedback": "Richtig. Das ist klassischer Verknappungsreiz." },
+        { "id": "b", "text": "Echter Bedarf", "correct": false, "feedback": "Nicht korrekt. Kein Bedarf wird sauber begruendet." },
+        { "id": "c", "text": "Sachlich notwendig", "correct": false, "feedback": "Nicht korrekt. Es ist ein Marketing-Trigger." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+# __gp_jugendarbeitsschutz__pausenplan_match
+
+## Spielidee
+"Pausenplan-Match" ordnet Arbeitsschichten passenden Pausenregelungen zu. Lernende kombinieren Dauer, Lage und Anzahl der Pausen korrekt.
+
+## Lernziel
+- Pausenregeln sicher auf konkrete Schichten anwenden.
+- Planungsqualitaet bei Jugendarbeit verbessern.
+
+## Messbare Progression
+- 18 Match-Runden.
+- Punkte: +7 korrektes Match, -3 falsches Match.
+- KPI: Match-Quote und Fehler pro Regeltyp.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- MatchController
+- BreakRuleEngine
+- MetricService
+
+### Domaenenobjekte
+- ShiftCase(caseId, shiftDuration)
+- BreakOption(optionId, breakPattern)
+- MatchResult(isCorrect, errorType)
+
+### Beziehungen
+- ShiftCase hat 3..5 BreakOption.
+- BreakRuleEngine validiert pro Auswahl ein MatchResult.
+- MetricService sammelt 1..* MatchResult.
+
+### Zustandsmodell
+- INIT -> ROUND_ACTIVE -> ANSWER_SUBMIT -> FEEDBACK -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. MatchController startet ShiftCase.
+2. Player waehlt BreakOption.
+3. BreakRuleEngine prueft Pattern.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert Statistiken.
+
+## Regeln
+- Fehlwahl bei langen Schichten zaehlt mit Zusatzabzug.
+- Serie von 5 korrekten Matches bringt Multiplikator.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, shiftDuration, options[], expectedOptionId
+
+## Abnahmekriterien
+- Feedback erklaert die korrekte Pausenlogik.
+- KPI ist pro Regelgruppe auswertbar.
+- Lernkurve ueber Sessions ist sichtbar.

@@ -1,0 +1,52 @@
+# __gp_kuendigungsschutz__anhoerung_prozesspfad
+
+## Spielidee
+"Anhoerung-Prozesspfad" bildet den Ablauf von Vorbereitung bis Entscheidung als Prozessspiel ab. Lernende ordnen Schritte in die korrekte Reihenfolge.
+
+## Lernziel
+- Prozesssicherheit in formalen Kuendigungsablaeufen aufbauen.
+- Reihenfolgefehler frueh erkennen.
+
+## Messbare Progression
+- 11 Prozessfaelle.
+- Punkte: +8 korrekter Schritt, -3 falscher Schritt.
+- KPI: Reihenfolgegenauigkeit und Schritte bis Ziel.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FlowController
+- SequenceEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- FlowCase(caseId, steps[])
+- FlowStep(stepId, stepType)
+- FlowResult(orderScore, efficiencyScore)
+
+### Beziehungen
+- FlowCase enthaelt 4..10 FlowStep.
+- SequenceEngine validiert FlowStep-Reihenfolge.
+- ProgressTracker sammelt 1..* FlowResult.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> VALIDATE -> FEEDBACK -> CASE_DONE
+
+### Sequenz (Happy Path)
+1. FlowController startet FlowCase.
+2. Player ordnet FlowStep.
+3. SequenceEngine prueft Reihenfolge.
+4. FlowResult wird berechnet.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Pflichtstufe kostet doppelt.
+- Fehlerfreie Kette gibt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, steps[], expectedOrder[]
+
+## Abnahmekriterien
+- Prozesspfad ist visuell eindeutig.
+- KPI zeigt Korrektheit und Effizienz.
+- Fehlerfeedback nennt den korrekten naechsten Schritt.

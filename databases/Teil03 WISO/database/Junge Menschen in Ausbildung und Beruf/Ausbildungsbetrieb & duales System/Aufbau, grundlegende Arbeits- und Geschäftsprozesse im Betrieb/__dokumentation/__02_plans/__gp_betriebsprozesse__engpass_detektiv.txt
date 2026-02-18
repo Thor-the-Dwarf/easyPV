@@ -1,0 +1,53 @@
+# __gp_betriebsprozesse__engpass_detektiv
+
+## Spielidee
+"Engpass-Detektiv" analysiert Prozessdaten mit Wartezeiten, Staupunkten und Fehlerhaeufungen. Lernende identifizieren den Hauptengpass und waehlen eine wirksame Gegenmassnahme.
+
+## Lernziel
+- Engpaesse datenbasiert erkennen.
+- Verbesserungsmassnahmen zielgerichtet ableiten.
+
+## Messbare Progression
+- 11 Analysefaelle.
+- Punkte: +10 korrekter Engpass, -5 falscher Engpass.
+- +4 fuer passende Massnahme.
+- KPI: Engpass-Treffquote und Massnahmenwirksamkeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- AnalysisController
+- BottleneckEngine
+- ImprovementService
+
+### Domaenenobjekte
+- AnalysisCase(caseId, metrics[])
+- Metric(metricId, value, metricType)
+- CaseResult(bottleneckCorrect, actionCorrect)
+
+### Beziehungen
+- AnalysisCase enthaelt 6..25 Metric.
+- BottleneckEngine erzeugt CaseResult pro Fall.
+- ImprovementService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- LOAD_CASE -> INSPECT_METRICS -> SELECT_BOTTLENECK -> SELECT_ACTION -> RESULT
+
+### Sequenz (Happy Path)
+1. AnalysisController laedt AnalysisCase.
+2. Player waehlt Engpass.
+3. BottleneckEngine validiert Auswahl.
+4. Player waehlt Gegenmassnahme.
+5. ImprovementService aktualisiert KPI.
+
+## Regeln
+- Falsche Massnahme bei korrektem Engpass gibt Teilpunkte.
+- Doppelt korrekte Faelle liefern Serienbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, metrics[{id,value,metricType}], expectedBottleneck, actionOptions[]
+
+## Abnahmekriterien
+- Engpasslogik wird mit Metriken erklaert.
+- KPI zeigt Erkennung und Massnahme getrennt.
+- Endreport markiert haeufige Fehlmuster.

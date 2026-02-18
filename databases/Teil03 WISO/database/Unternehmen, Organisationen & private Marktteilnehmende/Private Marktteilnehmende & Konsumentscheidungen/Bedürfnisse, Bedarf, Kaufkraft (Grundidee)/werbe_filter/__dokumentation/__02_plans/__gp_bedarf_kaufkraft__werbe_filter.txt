@@ -1,0 +1,53 @@
+# __gp_bedarf_kaufkraft__werbe_filter
+
+## Spielidee
+"Werbe-Filter" praesentiert kurze Werbeclaims und Produktdaten. Lernende entscheiden, ob ein Angebot einen echten Bedarf adressiert oder nur ein Wunschimpuls ist.
+
+## Lernziel
+- Bedarf von impulsgetriebenem Wunsch trennen.
+- Kaufentscheidungen argumentativ begruenden.
+
+## Messbare Progression
+- 20 Claims pro Session.
+- Punkte: +6 richtige Klassifikation, +4 fuer passende Begruendungsauswahl.
+- Zeitlimit: 25 Sekunden pro Claim.
+- KPI: Anteil korrekter Klassifikation plus Begruendungsqualitaet.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ClaimController
+- ClassificationEngine
+- FeedbackService
+
+### Domänenobjekte
+- ClaimCase(claimId, text, productType)
+- Decision(decisionType, rationaleId)
+- EvidenceTag(tagId, label)
+
+### Beziehungen
+- ClaimController liefert 1..* ClaimCase.
+- Player erzeugt pro ClaimCase genau eine Decision.
+- FeedbackService verknuepft Decision mit EvidenceTag.
+
+### Zustandsmodell
+- IDLE -> CLAIM_ACTIVE -> DECISION_LOCKED -> FEEDBACK -> NEXT_CLAIM
+
+### Sequenz (Happy Path)
+1. ClaimController zeigt ClaimCase.
+2. Player waehlt Entscheidung und Begruendung.
+3. ClassificationEngine vergleicht mit Soll-Muster.
+4. FeedbackService vergibt Punkte und Lernhinweis.
+5. Session-Progress wird gespeichert.
+
+## Regeln
+- Begruendung ohne passende Klassifikation bringt keine Zusatzpunkte.
+- Drei korrekte Entscheidungen in Folge aktivieren einen Multiplikator x1.5.
+
+## Datenmodell (JSON-Idee)
+- fields: claimId, text, expectedClass, rationaleOptions[], evidenceTags[]
+
+## Abnahmekriterien
+- Jede Entscheidung ist durch nachvollziehbares Feedback erklaert.
+- Fehlmuster-Analyse nach Session ist exportierbar.
+- Fortschritt kann ueber Klassifikationsquote gemessen werden.

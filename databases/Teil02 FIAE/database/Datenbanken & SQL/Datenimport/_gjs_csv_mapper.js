@@ -295,13 +295,23 @@
 
         if (totalUnits > 0) {
             const idx = getCurrentIndex(totalUnits);
-            const remainingKeys = ['cards', 'components'];
-            for (const key of remainingKeys) {
-                const value = state?.[key];
-                if (Array.isArray(value) && value.length <= totalUnits) {
-                    return Math.max(idx, Math.max(0, totalUnits - value.length));
+
+            if (Array.isArray(state?.cards) && state.cards.length <= totalUnits) {
+                const inHand = state?.currentCard ? 1 : 0;
+                const processed = totalUnits - state.cards.length - inHand;
+                if (processed >= 0) {
+                    return Math.max(idx, Math.min(totalUnits, processed));
                 }
             }
+
+            if (Array.isArray(state?.components) && state.components.length <= totalUnits) {
+                const inHand = state?.currentComponent ? 1 : 0;
+                const processed = totalUnits - state.components.length - inHand;
+                if (processed >= 0) {
+                    return Math.max(idx, Math.min(totalUnits, processed));
+                }
+            }
+
             return idx;
         }
 

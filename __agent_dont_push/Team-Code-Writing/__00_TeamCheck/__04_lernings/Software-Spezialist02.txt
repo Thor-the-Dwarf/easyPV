@@ -1,3 +1,5 @@
 Die minimal invasive Nachruestung bestehender Spiele ist stabil, wenn neue Progress-Felder nur additiv eingefuehrt und bestehende Spiellogik nicht umgebaut wird.
 
 Batch 04: Einheitlicher Hook-Patch fuer 36 direkte Spiele + Redirect-Wrapper-Pruefung. Wichtig: Redirect-Pfade immer gegen reales Repo-Root aufloesen, sonst zeigt der Wrapper aus dem Projekt heraus.
+
+Batch 05: Generische Mess-Hooks muessen mehrere Config-Schemata verstehen (levels/scenarios/patterns/phases) statt nur levels, sonst bleiben Fortschrittswerte bei 0.

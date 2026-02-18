@@ -220,25 +220,115 @@
         el.resultScreen.classList.remove('hidden');
     }
 
-    function computeProgressPercent() {
-        const totalLevels = Array.isArray(state?.config?.levels) ? state.config.levels.length : 0;
-        if (!totalLevels) return 0;
+    function getConfigRoot() {
+        return state?.config || state?.cfg || null;
+    }
 
-        const completedLevels = Math.max(0, Math.min(Number(state?.levelIdx) || 0, totalLevels));
+    function getTotalUnits() {
+        const cfg = getConfigRoot();
+        const arrayKeys = [
+            'levels', 'scenarios', 'phases', 'patterns', 'components', 'pillars',
+            'definitions', 'pairs', 'items', 'questions', 'tasks', 'steps',
+            'orders', 'cards', 'messages', 'events', 'columns'
+        ];
+
+        if (cfg) {
+            for (const key of arrayKeys) {
+                const value = cfg[key];
+                if (Array.isArray(value) && value.length > 0) return value.length;
+            }
+        }
+
+        const numericKeys = ['totalLevels', 'totalScenarios', 'totalRounds', 'totalToSort', 'targetTotal', 'storyTarget', 'maxResistance', 'entityTotal'];
+        for (const key of numericKeys) {
+            const value = Number(state?.[key]);
+            if (Number.isFinite(value) && value > 0) return Math.floor(value);
+        }
+
+        return 0;
+    }
+
+    function getCurrentIndex(totalUnits) {
+        const idxKeys = ['levelIdx', 'scenarioIdx', 'currentPhaseIdx', 'phaseIdx', 'roundIdx', 'stageIdx', 'questionIdx', 'taskIdx', 'pairIdx', 'waveIdx', 'storyIdx', 'targetIdx'];
+        for (const key of idxKeys) {
+            const value = Number(state?.[key]);
+            if (!Number.isFinite(value)) continue;
+            const floored = Math.floor(value);
+            if (totalUnits > 0) return Math.max(0, Math.min(floored, totalUnits));
+            return Math.max(0, floored);
+        }
+        return 0;
+    }
+
+    function getBaseCompleted(totalUnits) {
+        const countKeyPairs = [
+            ['sortedCount', 'totalToSort'],
+            ['placedCount', 'totalItems'],
+            ['targetsFound', 'targetTotal'],
+            ['scenariosDone', 'scenarioTotal'],
+            ['storiesTold', 'storyTarget'],
+            ['foundCount', 'maxResistance'],
+            ['discovered', 'entityTotal']
+        ];
+
+        for (const [doneKey, totalKey] of countKeyPairs) {
+            const doneValue = Number(state?.[doneKey]);
+            if (!Number.isFinite(doneValue) || doneValue < 0) continue;
+            const pairTotal = Number(state?.[totalKey]);
+            const cap = Number.isFinite(pairTotal) && pairTotal > 0 ? pairTotal : totalUnits;
+            if (cap > 0) return Math.max(0, Math.min(Math.floor(doneValue), Math.floor(cap)));
+            return Math.max(0, Math.floor(doneValue));
+        }
+
+        if (totalUnits > 0) {
+            const idx = getCurrentIndex(totalUnits);
+            const remainingKeys = ['cards', 'components'];
+            for (const key of remainingKeys) {
+                const value = state?.[key];
+                if (Array.isArray(value) && value.length <= totalUnits) {
+                    return Math.max(idx, Math.max(0, totalUnits - value.length));
+                }
+            }
+            return idx;
+        }
+
+        return getCurrentIndex(totalUnits);
+    }
+
+    function isRoundComplete() {
+        const boolKeys = ['isComplete', 'gameOver', 'solved', 'isChecked', 'finished'];
+        for (const key of boolKeys) {
+            if (Boolean(state?.[key])) return true;
+        }
+
         const overlayVisible = (el?.overlay && !el.overlay.classList.contains('hidden')) ||
             (el?.resultOverlay && !el.resultOverlay.classList.contains('hidden'));
-        const levelFinished = Boolean(state?.isComplete) || overlayVisible;
-        const solved = Math.min(totalLevels, completedLevels + (levelFinished ? 1 : 0));
-        return Math.round((solved / totalLevels) * 100);
+        if (overlayVisible) return true;
+
+        return false;
+    }
+
+    function computeProgressPercent() {
+        const totalUnits = getTotalUnits();
+        const baseCompleted = getBaseCompleted(totalUnits);
+        const completionBonus = isRoundComplete() ? 1 : 0;
+
+        if (totalUnits > 0) {
+            const solvedUnits = Math.max(0, Math.min(totalUnits, baseCompleted + completionBonus));
+            return Math.round((solvedUnits / totalUnits) * 100);
+        }
+
+        return isRoundComplete() ? 100 : 0;
     }
 
     function renderGameToText() {
+        const totalUnits = getTotalUnits();
         const payload = {
-            mode: 'running',
-            level_index: Number(state?.levelIdx) || 0,
-            level_total: Array.isArray(state?.config?.levels) ? state.config.levels.length : 0,
+            mode: isRoundComplete() ? 'result' : 'running',
+            level_index: getCurrentIndex(totalUnits),
+            level_total: totalUnits,
             progress_percent: computeProgressPercent(),
-            level_complete: Boolean(state?.isComplete),
+            level_complete: isRoundComplete(),
             title: (el?.levelTitle?.textContent || el?.title?.textContent || document.title || '').trim()
         };
 

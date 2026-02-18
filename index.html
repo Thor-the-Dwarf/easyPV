@@ -1002,34 +1002,32 @@
             const treeMain = document.createElement('div');
             treeMain.className = 'tree-main';
 
-            const iconButton = document.createElement('button');
-            iconButton.className = 'tree-icon-button';
-            iconButton.type = 'button';
-            if (hasChildren) {
-              iconButton.classList.add('is-toggleable');
-              iconButton.setAttribute('aria-label', 'Ordner auf- oder zuklappen');
-              iconButton.setAttribute('aria-expanded', String(!isCollapsed));
-              iconButton.addEventListener('click', (event) => {
-                event.stopPropagation();
-                toggleNode(rowNode, node.id, iconButton);
-              });
-            } else {
-              iconButton.setAttribute('aria-hidden', 'true');
-              iconButton.tabIndex = -1;
-              if (isGameNode) iconButton.classList.add('is-empty');
-            }
-
-            const icon = document.createElement('span');
-            icon.className = 'tree-icon';
-            icon.textContent = folderEmoji(node, isCollapsed);
-            iconButton.appendChild(icon);
-            treeMain.appendChild(iconButton);
-
             const label = document.createElement('button');
             label.className = 'tree-label';
             label.type = 'button';
-            label.textContent = node.name;
             label.title = node.name;
+
+            const labelIcon = document.createElement('span');
+            labelIcon.className = 'tree-label-icon';
+            labelIcon.textContent = folderEmoji(node, isCollapsed);
+            label.appendChild(labelIcon);
+
+            if (hasChildren) {
+              labelIcon.classList.add('tree-label-icon--toggleable');
+              labelIcon.setAttribute('aria-label', 'Ordner auf- oder zuklappen');
+              labelIcon.setAttribute('title', 'Ordner auf- oder zuklappen');
+              labelIcon.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                toggleNode(rowNode, node.id, labelIcon);
+              });
+            }
+
+            const labelText = document.createElement('span');
+            labelText.className = 'tree-label-text';
+            labelText.textContent = node.name;
+            label.appendChild(labelText);
+
             if (isGameNode) {
               label.classList.add('tree-label--play');
               label.setAttribute('aria-label', 'Spielseite oeffnen: ' + node.name);
@@ -1066,7 +1064,7 @@
           });
         }
 
-        function toggleNode(rowNode, id, iconButton) {
+        function toggleNode(rowNode, id, iconNode) {
           const idx = openedFolderIds.indexOf(id);
           if (idx >= 0) {
             openedFolderIds.splice(idx, 1);
@@ -1076,15 +1074,13 @@
             rowNode.classList.remove('tree-node--collapsed');
           }
 
-          const icon = iconButton && iconButton.querySelector('.tree-icon');
-          if (icon) {
+          if (iconNode) {
             const node = findNodeById(rootTree, id);
             const collapsed = !openedFolderIds.includes(id);
-            icon.textContent = folderEmoji(node || { isFolder: true, hasFiles: false, children: [] }, collapsed);
-          }
-
-          if (iconButton && iconButton.classList.contains('is-toggleable')) {
-            iconButton.setAttribute('aria-expanded', String(openedFolderIds.includes(id)));
+            iconNode.textContent = folderEmoji(
+              node || { isFolder: true, hasFiles: false, children: [] },
+              collapsed
+            );
           }
 
           saveState();

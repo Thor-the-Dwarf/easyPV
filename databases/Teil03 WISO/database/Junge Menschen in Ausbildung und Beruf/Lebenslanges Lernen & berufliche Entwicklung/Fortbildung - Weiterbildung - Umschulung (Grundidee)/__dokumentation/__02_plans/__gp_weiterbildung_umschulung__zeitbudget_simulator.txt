@@ -1,0 +1,52 @@
+# __gp_weiterbildung_umschulung__zeitbudget_simulator
+
+## Spielidee
+"Zeitbudget-Simulator" kombiniert Arbeit, Lernen und Privatzeit. Lernende planen Wochen, um Lernziele ohne Ueberlastung zu erreichen.
+
+## Lernziel
+- Realistische Lernzeitplanung aufbauen.
+- Zeitkonflikte frueh erkennen und loesen.
+
+## Messbare Progression
+- 8 Wochenrunden mit 90 Sekunden.
+- Punkte: +2 pro konfliktfrei geplantem Block, -3 pro Konflikt.
+- KPI: Konfliktfreie Planquote und Zielerreichung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- SimulationController
+- SchedulingEngine
+- KPIService
+
+### Domaenenobjekte
+- WeekCase(caseId, timeBlocks[])
+- TimeBlock(blockId, category, duration)
+- WeekResult(conflicts, targetCoverage)
+
+### Beziehungen
+- WeekCase enthaelt 10..30 TimeBlock.
+- SchedulingEngine validiert Blockbelegung.
+- KPIService aggregiert 1..* WeekResult.
+
+### Zustandsmodell
+- LOAD_WEEK -> PLAN_BLOCKS -> RUN_CHECK -> EVALUATE -> NEXT_WEEK
+
+### Sequenz (Happy Path)
+1. SimulationController laedt WeekCase.
+2. Player plant TimeBlock.
+3. SchedulingEngine prueft Konflikte.
+4. WeekResult wird berechnet.
+5. KPIService aktualisiert Dashboard.
+
+## Regeln
+- Ueberlastungstage verursachen Zusatzabzug.
+- Konfliktfreie Woche mit Zielerreichung gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, timeBlocks[], constraints[], targets[]
+
+## Abnahmekriterien
+- Konflikte sind pro Tag sichtbar.
+- KPI zeigt Konflikte und Zielerreichung getrennt.
+- Report markiert wiederkehrende Engpaesse.

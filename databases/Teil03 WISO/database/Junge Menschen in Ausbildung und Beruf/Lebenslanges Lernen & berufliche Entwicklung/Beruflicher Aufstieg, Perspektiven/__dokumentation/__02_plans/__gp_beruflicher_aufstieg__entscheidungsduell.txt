@@ -1,0 +1,53 @@
+# __gp_beruflicher_aufstieg__entscheidungsduell
+
+## Spielidee
+"Entscheidungsduell" stellt jeweils zwei Entwicklungspfade gegenueber. Lernende waehlen den nachhaltigeren Aufstiegsweg und begruenden die Entscheidung.
+
+## Lernziel
+- Entwicklungsoptionen gegeneinander abwaegen.
+- Langfristige Perspektive in Karriereentscheidungen beruecksichtigen.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer schluessige Begruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, optionA, optionB)
+- PathOption(optionId, scoreVector)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 PathOption.
+- EvaluationEngine berechnet Vergleichsergebnis.
+- ScoreService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> OPTION_REVIEW -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt Option.
+3. EvaluationEngine validiert Entscheidung.
+4. DuelResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Begruendung ergibt Teilpunkte.
+- Vier Volltreffer in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, optionA{}, optionB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Vergleichskriterien sind transparent.
+- KPI trennt Wahl und Begruendung.
+- Report zeigt haeufige Fehlbewertungen.

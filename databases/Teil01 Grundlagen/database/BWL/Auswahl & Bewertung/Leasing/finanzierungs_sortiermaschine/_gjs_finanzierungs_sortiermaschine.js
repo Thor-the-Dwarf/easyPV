@@ -273,7 +273,26 @@
   }
 
   window.render_game_to_text = renderGameToText;
-  window.advanceTime = function advanceTime() { return true; };
+  const __baseRenderToText = window.render_game_to_text;
+  let __simulatedMs = 0;
+  window.render_game_to_text = function renderGameToTextWithSimulatedMs() {
+    const raw = typeof __baseRenderToText === "function" ? __baseRenderToText() : "{}";
+    try {
+      const payload = JSON.parse(raw);
+      if (payload && typeof payload === "object" && !Array.isArray(payload) && !Object.prototype.hasOwnProperty.call(payload, "simulated_ms")) {
+        payload.simulated_ms = __simulatedMs;
+      }
+      return JSON.stringify(payload);
+    } catch (err) {
+      return raw;
+    }
+  };
+
+  window.advanceTime = function advanceTime(ms) {
+    if (!Number.isFinite(ms) || ms <= 0) return true;
+    __simulatedMs += ms;
+    return true;
+  };
 
   function escapeHtml(value) {
     return String(value)

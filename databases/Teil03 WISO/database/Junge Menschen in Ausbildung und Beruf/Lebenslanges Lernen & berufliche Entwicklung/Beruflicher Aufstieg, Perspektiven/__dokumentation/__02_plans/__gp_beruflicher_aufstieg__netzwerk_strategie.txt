@@ -1,0 +1,52 @@
+# __gp_beruflicher_aufstieg__netzwerk_strategie
+
+## Spielidee
+"Netzwerk-Strategie" simuliert berufliche Kontakte, Events und Mentoring-Optionen. Lernende bauen mit begrenzten Ressourcen einen wirksamen Entwicklungsplan.
+
+## Lernziel
+- Netzwerkaktivitaeten zielorientiert priorisieren.
+- Kurz- und Langzeiteffekte von Kontakten abwaegen.
+
+## Messbare Progression
+- 8 Strategiezyklen.
+- Punkte: +10 wirksame Aktion, -5 unpassende Aktion.
+- KPI: Wirkungsindex und Ressourceneffizienz.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- StrategyController
+- ImpactEngine
+- KPIService
+
+### Domaenenobjekte
+- StrategyCycle(cycleId, resourceBudget)
+- Action(actionId, actionType, cost)
+- CycleResult(impactScore, efficiencyScore)
+
+### Beziehungen
+- StrategyController steuert 1..* StrategyCycle.
+- ImpactEngine bewertet 1..* Action.
+- KPIService aggregiert 1..* CycleResult.
+
+### Zustandsmodell
+- CYCLE_START -> ACTION_SELECT -> IMPACT_RESOLVE -> CYCLE_END -> NEXT_CYCLE
+
+### Sequenz (Happy Path)
+1. StrategyController startet StrategyCycle.
+2. Player waehlt Action.
+3. ImpactEngine berechnet Wirkung.
+4. CycleResult wird angezeigt.
+5. KPIService aktualisiert Dashboard.
+
+## Regeln
+- Budgetueberschreitung erzeugt Strafabzug.
+- Hohe Effizienz in Serie aktiviert Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: cycleId, resourceBudget, actions[], expectedBestActions[]
+
+## Abnahmekriterien
+- Wirkung und Kosten sind pro Aktion sichtbar.
+- KPI zeigt Impact und Effizienz getrennt.
+- Report nennt ineffiziente Muster.

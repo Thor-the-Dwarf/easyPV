@@ -1,0 +1,52 @@
+# __gp_eu_bedeutung__verbraucherrecht_check
+
+## Spielidee
+"Verbraucherrecht-Check" praesentiert grenzueberschreitende Kauf- und Dienstleistungsfaelle. Lernende erkennen, wann europaweite Verbraucherregeln relevant sind.
+
+## Lernziel
+- EU-bezogene Verbraucherfragen im Alltag einordnen.
+- Regelrelevanz in grenzueberschreitenden Situationen erkennen.
+
+## Messbare Progression
+- 18 Fallkarten.
+- Punkte: +7 korrekte Einordnung, -3 falsche Einordnung.
+- KPI: Relevanz-Treffquote und Reaktionszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseController
+- RelevanceEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- ConsumerCase(caseId, crossBorderLevel)
+- Decision(decisionId, isEuRelevant)
+- DecisionResult(isCorrect, responseTimeMs)
+
+### Beziehungen
+- CaseController steuert 1..* ConsumerCase.
+- RelevanceEngine validiert Decision.
+- ProgressTracker aggregiert 1..* DecisionResult.
+
+### Zustandsmodell
+- READY -> CASE_REVIEW -> DECISION -> EVALUATION -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. CaseController zeigt ConsumerCase.
+2. Player trifft Decision.
+3. RelevanceEngine prueft Antwort.
+4. DecisionResult wird dargestellt.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Fehlentscheidung bei Hochrelevanzfall verursacht Zusatzabzug.
+- Schnelle Volltreffer liefern Zeitbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, crossBorderLevel, expectedRelevance, timeLimitSec
+
+## Abnahmekriterien
+- Relevanzfeedback ist klar begruendet.
+- KPI zeigt Genauigkeit und Tempo.
+- Report nennt haeufige Fehlklassifikationen.

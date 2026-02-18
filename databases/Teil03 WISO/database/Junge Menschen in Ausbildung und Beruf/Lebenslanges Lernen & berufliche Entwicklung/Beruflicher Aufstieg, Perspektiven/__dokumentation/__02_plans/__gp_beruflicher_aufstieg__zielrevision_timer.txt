@@ -1,0 +1,53 @@
+# __gp_beruflicher_aufstieg__zielrevision_timer
+
+## Spielidee
+"Zielrevision-Timer" zeigt veraenderte Marktbedingungen und persoenliche Rahmenfaktoren. Lernende passen Entwicklungsziele innerhalb eines Zeitlimits an.
+
+## Lernziel
+- Karriereziele flexibel an neue Bedingungen anpassen.
+- Prioritaeten unter Zeitdruck neu gewichten.
+
+## Messbare Progression
+- 15 Kurzfaelle mit 25 Sekunden Limit.
+- Punkte: +7 passende Zielanpassung, -3 unpassende Anpassung.
+- +3 fuer korrekte Prioritaetenfolge.
+- KPI: Anpassungsquote und Reaktionszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimerController
+- AdaptationEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- RevisionCase(caseId, changeSignals[])
+- GoalOption(goalId, priority)
+- RevisionResult(adaptationCorrect, priorityCorrect, responseTimeMs)
+
+### Beziehungen
+- RevisionCase enthaelt 3..6 GoalOption.
+- AdaptationEngine validiert Auswahl.
+- AnalyticsService aggregiert 1..* RevisionResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> ADAPT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimerController startet RevisionCase.
+2. Player waehlt GoalOption.
+3. AdaptationEngine prueft Anpassung.
+4. RevisionResult wird berechnet.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Keine Entscheidung im Zeitfenster zaehlt als Fehler.
+- Serie korrekter Anpassungen gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, changeSignals[], goalOptions[], expectedGoal, expectedPriority
+
+## Abnahmekriterien
+- Zielanpassung und Priorisierung sind getrennt rueckgemeldet.
+- KPI zeigt Genauigkeit und Tempo.
+- Endreport markiert wiederkehrende Anpassungsfehler.

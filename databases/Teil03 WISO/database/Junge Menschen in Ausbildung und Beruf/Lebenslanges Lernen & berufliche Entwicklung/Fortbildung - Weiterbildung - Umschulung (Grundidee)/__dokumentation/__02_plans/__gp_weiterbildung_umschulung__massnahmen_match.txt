@@ -1,0 +1,52 @@
+# __gp_weiterbildung_umschulung__massnahmen_match
+
+## Spielidee
+"Massnahmen-Match" ordnet Bildungsziele geeigneten Formaten zu: Fortbildung, Weiterbildung oder Umschulung. Lernende treffen die passende Wahl je Profil.
+
+## Lernziel
+- Unterschiede der drei Entwicklungsformate sicher anwenden.
+- Ziel-Massnahmen-Fit strukturiert begruenden.
+
+## Messbare Progression
+- 21 Profilkarten.
+- Punkte: +7 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Zuordnungsquote je Format.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ProfileController
+- FitEngine
+- MetricService
+
+### Domaenenobjekte
+- ProfileCard(cardId, goalType)
+- MeasureOption(optionId, measureType)
+- MatchResult(isCorrect, measureType)
+
+### Beziehungen
+- ProfileCard enthaelt 3 MeasureOption.
+- FitEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. ProfileController zeigt ProfileCard.
+2. Player waehlt MeasureOption.
+3. FitEngine prueft Fit.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Falsche Zuordnung bei klarer Zielart verursacht Zusatzabzug.
+- Hohe Trefferquote schaltet komplexere Profile frei.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, goalType, options[], expectedMeasure
+
+## Abnahmekriterien
+- Zuordnungsgruende sind transparent.
+- KPI zeigt Leistung pro Format.
+- Report listet haeufige Verwechslungen.

@@ -1,0 +1,52 @@
+# __gp_weiterbildung_umschulung__lernpfad_replaner
+
+## Spielidee
+"Lernpfad-Replaner" simuliert Stoerungen wie Kursausfall oder Zeitverlust. Lernende passen den Bildungsweg so an, dass das Ziel erreichbar bleibt.
+
+## Lernziel
+- Lernpfade adaptiv steuern.
+- Risikobasierte Neuplanung trainieren.
+
+## Messbare Progression
+- 10 Replan-Faelle.
+- Punkte: +9 erfolgreiche Neuplanung, -4 unpassende Neuplanung.
+- KPI: Replan-Erfolgsquote und Zielerreichung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ReplanController
+- AdaptationEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- ReplanCase(caseId, disruptionType)
+- PathOption(pathId, completionProbability)
+- ReplanResult(isViable, riskLevel)
+
+### Beziehungen
+- ReplanCase enthaelt 2..5 PathOption.
+- AdaptationEngine bewertet PathOption.
+- AnalyticsService aggregiert 1..* ReplanResult.
+
+### Zustandsmodell
+- CASE_OPEN -> REVIEW_DISRUPTION -> SELECT_REPLAN -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. ReplanController startet ReplanCase.
+2. Player waehlt PathOption.
+3. AdaptationEngine prueft Tragfaehigkeit.
+4. ReplanResult wird berechnet.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Auswahl mit hoher Abbruchwahrscheinlichkeit erzeugt Zusatzabzug.
+- Stabile Zielerreichung in Serie gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, disruptionType, pathOptions[], expectedViablePath
+
+## Abnahmekriterien
+- Neuplanungslogik ist klar begruendet.
+- KPI zeigt Erfolgsquote und Risiko separat.
+- Report listet haeufige Fehlanpassungen.

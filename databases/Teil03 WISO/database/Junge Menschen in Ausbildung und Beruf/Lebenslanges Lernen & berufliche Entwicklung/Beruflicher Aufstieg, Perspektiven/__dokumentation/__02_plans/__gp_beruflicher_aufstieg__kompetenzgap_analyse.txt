@@ -1,0 +1,53 @@
+# __gp_beruflicher_aufstieg__kompetenzgap_analyse
+
+## Spielidee
+"Kompetenzgap-Analyse" vergleicht aktuelles Profil mit Zielprofil. Lernende identifizieren die groessten Luecken und priorisieren Entwicklungsmaßnahmen.
+
+## Lernziel
+- Kompetenzluecken datenbasiert erkennen.
+- Entwicklungsprioritaeten sachgerecht setzen.
+
+## Messbare Progression
+- 14 Analysefaelle.
+- Punkte: +8 korrektes Gap, +4 korrekte Priorisierung, -4 Fehler.
+- KPI: Gap-Treffquote und Priorisierungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- AnalysisController
+- GapEngine
+- ProgressService
+
+### Domaenenobjekte
+- ProfileCase(caseId, currentSkills, targetSkills)
+- Gap(gapId, severity)
+- PriorityDecision(decisionId, rank)
+- AnalysisResult(gapCorrect, priorityCorrect)
+
+### Beziehungen
+- ProfileCase enthaelt 1..* Gap.
+- GapEngine validiert Auswahl.
+- ProgressService aggregiert 1..* AnalysisResult.
+
+### Zustandsmodell
+- LOAD_CASE -> IDENTIFY_GAPS -> PRIORITIZE -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. AnalysisController laedt ProfileCase.
+2. Player markiert Gap.
+3. GapEngine prueft Auswahl.
+4. Player priorisiert Entwicklungsmaßnahmen.
+5. ProgressService aktualisiert KPI.
+
+## Regeln
+- Falsche Priorisierung bei Hochrisiko-Gap verursacht Zusatzabzug.
+- Volltreffer in beiden Schritten gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, currentSkills[], targetSkills[], expectedGaps[], expectedPriority[]
+
+## Abnahmekriterien
+- Gap- und Priorisierungsfeedback sind getrennt sichtbar.
+- KPI zeigt beide Lernachsen.
+- Report benennt haeufig uebersehene Kernkompetenzen.

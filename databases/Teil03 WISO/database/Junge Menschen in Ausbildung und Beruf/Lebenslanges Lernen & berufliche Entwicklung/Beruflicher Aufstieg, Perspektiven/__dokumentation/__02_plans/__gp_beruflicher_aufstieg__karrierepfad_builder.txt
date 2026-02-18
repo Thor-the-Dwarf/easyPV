@@ -1,0 +1,52 @@
+# __gp_beruflicher_aufstieg__karrierepfad_builder
+
+## Spielidee
+"Karrierepfad-Builder" laesst Lernende aus Kompetenzprofil und Zielrolle einen realistischen Aufstiegspfad mit Zwischenstationen planen.
+
+## Lernziel
+- Berufliche Entwicklung in erreichbare Schritte unterteilen.
+- Kompetenzaufbau entlang eines Pfades planen.
+
+## Messbare Progression
+- 9 Karrierefaelle.
+- Punkte: +9 korrekte Zwischenstation, -4 unplausible Station.
+- KPI: Pfadgenauigkeit und Plausibilitaetsindex.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- PathController
+- PlausibilityEngine
+- MetricService
+
+### Domaenenobjekte
+- CareerCase(caseId, targetRole)
+- PathStep(stepId, level)
+- PathResult(correctSteps, plausibilityScore)
+
+### Beziehungen
+- CareerCase enthaelt 3..8 PathStep.
+- PlausibilityEngine validiert Schrittfolge.
+- MetricService aggregiert 1..* PathResult.
+
+### Zustandsmodell
+- CASE_LOAD -> BUILD_PATH -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. PathController startet CareerCase.
+2. Player ordnet PathStep.
+3. PlausibilityEngine prueft Pfad.
+4. PathResult wird angezeigt.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Qualifikationsstufe verursacht Zusatzabzug.
+- Fehlerfreie Pfade erzeugen Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, targetRole, possibleSteps[], expectedPath[]
+
+## Abnahmekriterien
+- Pfadfehler sind klar markiert.
+- KPI zeigt Genauigkeit und Plausibilitaet.
+- Report listet haeufige Sprungfehler.

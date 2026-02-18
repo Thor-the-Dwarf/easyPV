@@ -1,0 +1,53 @@
+# __gp_weiterbildung_umschulung__foerdermittel_navigator
+
+## Spielidee
+"Foerdermittel-Navigator" simuliert Finanzierungssituationen fuer verschiedene Bildungswege. Lernende waehlen den passenden Foerderpfad und den ersten Antragsschritt.
+
+## Lernziel
+- Foerderoptionen zielgerichtet einsetzen.
+- Antragsschritte in sinnvoller Reihenfolge planen.
+
+## Messbare Progression
+- 14 Foerderfaelle.
+- Punkte: +8 korrekter Foerderpfad, +4 korrekter erster Schritt, -4 Fehler.
+- KPI: Pfadgenauigkeit und Schrittgenauigkeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FundingController
+- RouteEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- FundingCase(caseId, profile)
+- FundingOption(optionId, criteria)
+- StepOption(stepId, actionType)
+- FundingResult(routeCorrect, stepCorrect)
+
+### Beziehungen
+- FundingCase hat 3..5 FundingOption und 2..4 StepOption.
+- RouteEngine validiert Auswahl.
+- ProgressTracker aggregiert 1..* FundingResult.
+
+### Zustandsmodell
+- CASE_START -> ROUTE_SELECT -> STEP_SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. FundingController startet FundingCase.
+2. Player waehlt FundingOption.
+3. RouteEngine prueft Kriterien.
+4. Player waehlt StepOption.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Falscher Foerderpfad blockiert Schrittbonus.
+- Vollkorrekter Fall liefert Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, profile, options[], expectedRoute, expectedStep
+
+## Abnahmekriterien
+- Pfad und Schritt sind getrennt auswertbar.
+- KPI zeigt beide Lernziele.
+- Report benennt haeufige Fehlpfade.

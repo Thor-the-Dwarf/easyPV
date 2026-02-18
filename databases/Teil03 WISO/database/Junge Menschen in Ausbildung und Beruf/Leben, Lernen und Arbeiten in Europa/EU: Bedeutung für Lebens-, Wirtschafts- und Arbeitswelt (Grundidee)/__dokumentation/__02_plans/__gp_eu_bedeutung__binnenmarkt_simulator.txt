@@ -1,0 +1,53 @@
+# __gp_eu_bedeutung__binnenmarkt_simulator
+
+## Spielidee
+"Binnenmarkt-Simulator" zeigt Waren- und Dienstleistungsfaelle mit unterschiedlichen Rahmenbedingungen. Lernende entscheiden, welche Option im Binnenmarkt am plausibelsten funktioniert.
+
+## Lernziel
+- Grundmechanik des Binnenmarktes verstehen.
+- Chancen und Grenzen in Alltagsszenarien abwaegen.
+
+## Messbare Progression
+- 12 Simulationsrunden.
+- Punkte: +9 korrekte Entscheidung, -4 falsche Entscheidung.
+- +3 fuer passende Begruendung.
+- KPI: Entscheidungsquote und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- SimulationController
+- MarketEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- MarketCase(caseId, factors[])
+- DecisionOption(optionId, impactType)
+- CaseResult(decisionCorrect, rationaleCorrect)
+
+### Beziehungen
+- MarketCase hat 3..5 DecisionOption.
+- MarketEngine validiert Auswahl.
+- AnalyticsService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECIDE -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. SimulationController zeigt MarketCase.
+2. Player waehlt DecisionOption.
+3. MarketEngine prueft Entscheidung.
+4. CaseResult wird angezeigt.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Korrekte Entscheidung ohne Begruendung gibt Teilpunkte.
+- Drei Volltreffer in Folge aktivieren Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, factors[], options[], expectedOption, rationaleOptions[]
+
+## Abnahmekriterien
+- Entscheidungslogik ist transparent rueckgemeldet.
+- KPI zeigt Entscheidung und Begruendung getrennt.
+- Endreport gruppiert Fehlmuster nach Faktortyp.

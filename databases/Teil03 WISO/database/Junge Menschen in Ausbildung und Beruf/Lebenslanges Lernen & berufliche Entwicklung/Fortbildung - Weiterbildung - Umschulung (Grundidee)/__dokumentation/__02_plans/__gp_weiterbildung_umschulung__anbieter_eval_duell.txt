@@ -1,0 +1,53 @@
+# __gp_weiterbildung_umschulung__anbieter_eval_duell
+
+## Spielidee
+"Anbieter-Eval-Duell" vergleicht zwei Bildungsangebote anhand Kriterien wie Inhalt, Dauer, Kosten und Zertifikat. Lernende waehlen das passendere Angebot.
+
+## Lernziel
+- Angebotsbewertung strukturiert anwenden.
+- Kriteriengewichtung nachvollziehbar begruenden.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer korrekte Kriterienbegruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, offerA, offerB)
+- Offer(offerId, criteriaVector)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 Offer.
+- EvaluationEngine validiert Auswahl.
+- ScoreService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> OFFER_REVIEW -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt Offer.
+3. EvaluationEngine prueft Entscheidung.
+4. DuelResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Begruendung gibt Teilpunkte.
+- Serienbonus ab 4 Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, offerA{}, offerB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Kriterienvergleich ist transparent.
+- KPI trennt Wahl und Begruendung.
+- Report zeigt typische Fehlgewichtungen.

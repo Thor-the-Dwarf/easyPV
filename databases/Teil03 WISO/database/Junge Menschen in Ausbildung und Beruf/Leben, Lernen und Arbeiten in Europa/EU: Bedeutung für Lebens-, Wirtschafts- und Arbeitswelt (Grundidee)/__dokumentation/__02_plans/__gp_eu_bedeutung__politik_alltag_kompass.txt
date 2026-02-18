@@ -1,0 +1,52 @@
+# __gp_eu_bedeutung__politik_alltag_kompass
+
+## Spielidee
+"Politik-Alltag-Kompass" verbindet politische Entscheidungen auf EU-Ebene mit Auswirkungen im Ausbildungs- und Arbeitsalltag. Lernende ordnen Wirkungsketten korrekt zu.
+
+## Lernziel
+- Wirkung politischer Entscheidungen auf den Alltag nachvollziehen.
+- Ursache-Wirkungsketten strukturiert bilden.
+
+## Messbare Progression
+- 10 Wirkungsketten.
+- Punkte: +8 korrekter Kettenschritt, -3 falscher Kettenschritt.
+- KPI: Kettengenauigkeit und Vollstaendigkeitsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ChainController
+- CausalityEngine
+- ScoreBoard
+
+### Domaenenobjekte
+- ImpactChain(chainId, nodes[])
+- ImpactNode(nodeId, levelType)
+- ChainResult(correctLinks, missingLinks)
+
+### Beziehungen
+- ImpactChain enthaelt 4..10 ImpactNode.
+- CausalityEngine validiert Verknuepfungen.
+- ScoreBoard aggregiert 1..* ChainResult.
+
+### Zustandsmodell
+- LOAD_CHAIN -> LINK_NODES -> SUBMIT -> EVALUATE -> NEXT_CHAIN
+
+### Sequenz (Happy Path)
+1. ChainController laedt ImpactChain.
+2. Player verlinkt ImpactNode.
+3. CausalityEngine prueft Kette.
+4. ChainResult wird berechnet.
+5. ScoreBoard aktualisiert KPI.
+
+## Regeln
+- Fehlender Schluesselknoten erzeugt Zusatzabzug.
+- Vollstaendige korrekte Kette gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: chainId, nodes[], expectedLinks[]
+
+## Abnahmekriterien
+- Ursache-Wirkung ist je Link erklaert.
+- KPI zeigt Korrektheit und Vollstaendigkeit.
+- Report markiert haeufig fehlende Zwischenschritte.

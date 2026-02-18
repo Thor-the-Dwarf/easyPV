@@ -1,0 +1,52 @@
+# __gp_eu_bedeutung__institutions_match
+
+## Spielidee
+"Institutions-Match" verbindet EU-Institutionen mit Aufgaben aus Arbeits-, Wirtschafts- und Lebenswelt. Lernende ordnen Fälle der passenden Institution zu.
+
+## Lernziel
+- Grundrollen zentraler EU-Institutionen unterscheiden.
+- Institutionelle Zuständigkeiten auf Alltagsthemen anwenden.
+
+## Messbare Progression
+- 24 Fallkarten.
+- Punkte: +6 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Zuordnungsquote je Institution.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- MappingEngine
+- MetricService
+
+### Domaenenobjekte
+- CaseCard(cardId, topicType)
+- InstitutionOption(optionId, institutionType)
+- MatchResult(isCorrect, institutionType)
+
+### Beziehungen
+- CaseCard enthaelt 3..5 InstitutionOption.
+- MappingEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt CaseCard.
+2. Player waehlt InstitutionOption.
+3. MappingEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlzuordnung bei Kernfaellen fuehrt zu Zusatzabzug.
+- Serienbonus ab 5 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, topicType, options[], expectedInstitution
+
+## Abnahmekriterien
+- Zuständigkeitsfeedback ist pro Fall nachvollziehbar.
+- KPI zeigt Leistung je Institutionstyp.
+- Lernreport listet haeufige Verwechslungen.

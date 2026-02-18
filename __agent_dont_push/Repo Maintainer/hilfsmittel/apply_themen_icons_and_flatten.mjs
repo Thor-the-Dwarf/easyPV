@@ -118,7 +118,7 @@ async function collectAttributeFiles(rootDir, out = []) {
       await collectAttributeFiles(fullPath, out);
       continue;
     }
-    if (entry.isFile() && /^__gAttributes_.*\.json$/i.test(entry.name)) {
+    if (entry.isFile() && /^__metaData_.*\.json$/i.test(entry.name)) {
       out.push(fullPath);
     }
   }

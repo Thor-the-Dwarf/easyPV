@@ -1,7 +1,7 @@
 # Arbeitsablauf: FolderTree-Icons und Themenordner auflösen
 
 1. Betroffene Themenordner lokalisieren (`Erschienene Themen`, `Mögliche Themen`).
-2. Relevante `__gAttributes_*.json` erfassen und Ziel-Icons setzen:
+2. Relevante `__metaData_*.json` erfassen und Ziel-Icons setzen:
    - Erschienene Themen -> `Icon: flame` (GUI: 🔥)
    - Mögliche Themen -> `Icon: books` (GUI: 📚)
 3. Inhalte der Themenordner eine Ebene höher verschieben.

@@ -176,7 +176,7 @@
 
         function clampDrawerWidth(width) {
           const min = 320;
-          const max = Math.min(window.innerWidth * 0.88, 720);
+          const max = window.innerWidth;
           return Math.max(min, Math.min(max, width));
         }
 
@@ -1223,9 +1223,9 @@
           stopActiveGameProgressTracking();
           const folderLabel = node && node.name ? node.name : 'Thema';
           const sourceNode = findBestContentNode(node) || node || {};
-          const jsonRelPath = sourceNode && sourceNode.jsonRelPath
-            ? String(sourceNode.jsonRelPath)
-            : (sourceNode && sourceNode.attributesRelPath ? String(sourceNode.attributesRelPath) : '');
+          const jsonRelPath = sourceNode && sourceNode.attributesRelPath
+            ? String(sourceNode.attributesRelPath)
+            : (sourceNode && sourceNode.jsonRelPath ? String(sourceNode.jsonRelPath) : '');
           const gameRelPath = sourceNode && sourceNode.gameRelPath ? String(sourceNode.gameRelPath) : '';
           const jsonUrl = jsonRelPath ? buildRepoUrl(jsonRelPath) : '';
           const gameUrl = gameRelPath ? buildRepoUrl(gameRelPath) : '';
@@ -1312,7 +1312,7 @@
               }
               const kind = String(child.kind || '').toLowerCase();
               const name = String(child.name || '').toLowerCase();
-              if ((kind === 'json' || name.endsWith('.json')) && /^__gattributes_.+\.json$/i.test(name) && child.relPath) {
+              if ((kind === 'json' || name.endsWith('.json')) && /^__(metadata|gattributes)_.+\.json$/i.test(name) && child.relPath) {
                 matches.push(child.relPath);
               }
             }
@@ -1340,7 +1340,7 @@
               const kind = String(child.kind || '').toLowerCase();
               const name = String(child.name || '').toLowerCase();
               if ((kind === 'json' || name.endsWith('.json')) && child.relPath) {
-                if (/^__gattributes_.+\.json$/i.test(name)) {
+                if (/^__(metadata|gattributes)_.+\.json$/i.test(name)) {
                   continue;
                 }
                 if (/^_g+\d+.*\.json$/i.test(name) || /^game_.+\.json$/i.test(name)) {

@@ -1,0 +1,52 @@
+# __gp_wandel_maerkte__markttrend_monitor
+
+## Spielidee
+"Markttrend-Monitor" zeigt Kennzahlenreihen zu Nachfrage, Preisen und Wettbewerbsdruck. Lernende identifizieren den dominanten Markttrend und priorisieren eine Reaktion.
+
+## Lernziel
+- Marktveraenderungen datenbasiert erkennen.
+- Unternehmensreaktionen auf Trends ableiten.
+
+## Messbare Progression
+- 12 Analysefaelle.
+- Punkte: +8 korrekter Trend, +3 passende Reaktion, -4 Fehler.
+- KPI: Trendquote und Reaktionsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DashboardController
+- TrendEngine
+- StrategyService
+
+### Domaenenobjekte
+- TrendCase(caseId, series[])
+- Series(seriesId, metricType, values)
+- CaseResult(trendCorrect, actionCorrect)
+
+### Beziehungen
+- TrendCase enthaelt 3..8 Series.
+- TrendEngine validiert Trendwahl.
+- StrategyService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- LOAD_CASE -> ANALYZE -> SELECT_ACTION -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. DashboardController laedt TrendCase.
+2. Player waehlt Trend.
+3. TrendEngine prueft Entscheidung.
+4. Player waehlt Reaktion.
+5. StrategyService aktualisiert KPI.
+
+## Regeln
+- Uebersehener kritischer Trend verursacht Zusatzabzug.
+- Vollkorrekter Fall gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, series[], expectedTrend, actionOptions[], expectedAction
+
+## Abnahmekriterien
+- Trend und Reaktion sind getrennt rueckgemeldet.
+- KPI zeigt beide Lernziele.
+- Report listet haeufige Fehlinterpretationen.

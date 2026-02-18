@@ -1,0 +1,52 @@
+# __gp_wirtschaftskreislauf__kreislauf_lueckenfinder
+
+## Spielidee
+"Kreislauf-Lueckenfinder" zeigt unvollstaendige Kreislaufdiagramme. Lernende fuellen fehlende Akteure, Stroeme und Beziehungen ein.
+
+## Lernziel
+- Strukturelemente des Kreislaufs sicher erkennen.
+- Fehlende Verbindungen logisch ergaenzen.
+
+## Messbare Progression
+- 10 Diagrammfaelle.
+- Punkte: +7 korrekt gefuellte Luecke, -3 falsche Fuellung.
+- KPI: Praezision und Vollstaendigkeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DiagramController
+- CompletionEngine
+- ScoreService
+
+### Domaenenobjekte
+- DiagramCase(caseId, missingNodes[])
+- Node(nodeId, nodeType)
+- CompletionResult(correctFills, wrongFills, completeness)
+
+### Beziehungen
+- DiagramCase enthaelt 2..12 missingNodes.
+- CompletionEngine validiert Einfuegungen.
+- ScoreService aggregiert 1..* CompletionResult.
+
+### Zustandsmodell
+- LOAD_DIAGRAM -> FILL_GAPS -> VALIDATE -> RESULT -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. DiagramController laedt DiagramCase.
+2. Player fuellt Node.
+3. CompletionEngine prueft Einfuegung.
+4. CompletionResult wird berechnet.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Falscher Schluesselknoten verursacht Zusatzabzug.
+- Vollstaendig korrektes Diagramm gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, missingNodes[], expectedNodes[]
+
+## Abnahmekriterien
+- Fehlstellen sind klar markiert.
+- KPI zeigt Praezision und Vollstaendigkeit.
+- Report nennt haeufige Lueckenfehler.

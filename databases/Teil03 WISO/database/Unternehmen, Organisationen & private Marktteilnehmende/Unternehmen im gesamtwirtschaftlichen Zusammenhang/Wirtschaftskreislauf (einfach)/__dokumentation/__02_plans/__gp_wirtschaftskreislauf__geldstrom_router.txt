@@ -1,0 +1,52 @@
+# __gp_wirtschaftskreislauf__geldstrom_router
+
+## Spielidee
+"Geldstrom-Router" simuliert wirtschaftliche Ereignisse und fordert den korrekten Geldfluss-Pfad zwischen Akteuren.
+
+## Lernziel
+- Geldstroeme im Kreislauf nachvollziehen.
+- Prozesswege korrekt aufbauen.
+
+## Messbare Progression
+- 14 Prozessfaelle.
+- Punkte: +8 korrekter Schritt, -4 falscher Schritt.
+- KPI: Routing-Genauigkeit und Schritte bis Ziel.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FlowController
+- RouteEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- MoneyCase(caseId, triggerType)
+- RouteStep(stepId, fromActor, toActor)
+- RouteResult(pathCorrect, stepCount)
+
+### Beziehungen
+- MoneyCase enthaelt 3..8 RouteStep.
+- RouteEngine validiert Reihenfolge.
+- ProgressTracker aggregiert 1..* RouteResult.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. FlowController startet MoneyCase.
+2. Player waehlt RouteStep.
+3. RouteEngine prueft Ablauf.
+4. RouteResult wird berechnet.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Kernstation verursacht Zusatzabzug.
+- Fehlerfreie Kette gibt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, triggerType, steps[], expectedPath[]
+
+## Abnahmekriterien
+- Prozesspfad ist klar visualisiert.
+- KPI trennt Korrektheit und Effizienz.
+- Report nennt haeufige Fehlrouten.

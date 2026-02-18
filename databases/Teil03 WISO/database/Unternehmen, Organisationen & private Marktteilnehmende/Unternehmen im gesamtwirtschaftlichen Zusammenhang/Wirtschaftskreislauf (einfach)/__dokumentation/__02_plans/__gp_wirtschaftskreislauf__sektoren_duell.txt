@@ -1,0 +1,53 @@
+# __gp_wirtschaftskreislauf__sektoren_duell
+
+## Spielidee
+"Sektoren-Duell" vergleicht zwei Kreislauffaelle. Lernende waehlen, welcher Sektorfluss plausibler ist.
+
+## Lernziel
+- Sektorbeziehungen im Kreislauf differenzieren.
+- Vergleichende Fallbewertung trainieren.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- MetricService
+
+### Domaenenobjekte
+- DuelCase(duelId, flowA, flowB)
+- FlowOption(optionId, attributes)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 FlowOption.
+- EvaluationEngine validiert Auswahl.
+- MetricService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> REVIEW -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt FlowOption.
+3. EvaluationEngine prueft Entscheidung.
+4. DuelResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Begruendung gibt Teilpunkte.
+- Serienbonus ab 4 Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, flowA{}, flowB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Vergleichslogik ist transparent.
+- KPI trennt Wahl und Begruendung.
+- Report listet haeufige Fehlbewertungen.

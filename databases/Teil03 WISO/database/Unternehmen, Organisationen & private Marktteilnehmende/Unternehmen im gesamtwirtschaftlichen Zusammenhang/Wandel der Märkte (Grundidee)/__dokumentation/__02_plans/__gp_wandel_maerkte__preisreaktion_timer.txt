@@ -1,0 +1,52 @@
+# __gp_wandel_maerkte__preisreaktion_timer
+
+## Spielidee
+"Preisreaktion-Timer" fordert schnelle Entscheidungen zu Preisanpassungen in wechselnden Marktlagen.
+
+## Lernziel
+- Preisreaktionen unter Zeitdruck einordnen.
+- Angemessene Anpassungen in einfachen Szenarien treffen.
+
+## Messbare Progression
+- 22 Kurzfaelle, 15 Sekunden je Fall.
+- Punkte: +6 korrekte Reaktion, -3 falsche Reaktion.
+- KPI: korrekte Antworten pro Minute.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimerController
+- PricingEngine
+- KPIService
+
+### Domaenenobjekte
+- PriceCase(caseId, marketState)
+- Decision(decisionId, priceMove)
+- CaseResult(isCorrect, responseTimeMs)
+
+### Beziehungen
+- TimerController steuert 1..* PriceCase.
+- PricingEngine validiert Decision.
+- KPIService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECIDE -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimerController startet PriceCase.
+2. Player trifft Decision.
+3. PricingEngine prueft Reaktion.
+4. CaseResult wird gespeichert.
+5. KPIService aktualisiert KPI.
+
+## Regeln
+- Keine Antwort im Zeitfenster zaehlt als Fehler.
+- Serienbonus ab 8 korrekten Antworten.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, marketState, expectedDecision, timeLimitSec
+
+## Abnahmekriterien
+- Timer und Bewertung laufen synchron.
+- KPI zeigt Tempo und Genauigkeit.
+- Report gruppiert Fehler nach Marktlage.

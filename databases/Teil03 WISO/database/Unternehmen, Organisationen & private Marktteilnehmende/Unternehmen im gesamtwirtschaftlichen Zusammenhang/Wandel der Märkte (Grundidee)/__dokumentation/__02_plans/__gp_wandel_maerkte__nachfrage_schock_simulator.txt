@@ -1,0 +1,52 @@
+# __gp_wandel_maerkte__nachfrage_schock_simulator
+
+## Spielidee
+"Nachfrage-Schock-Simulator" simuliert ploetzliche Nachfrageaenderungen. Lernende steuern Produktmengen und Preisreaktionen, um Stabilitaet zu halten.
+
+## Lernziel
+- Dynamik bei Nachfrageschocks verstehen.
+- Entscheidungen unter Unsicherheit treffen.
+
+## Messbare Progression
+- 8 Simulationsrunden.
+- Punkte: +2 pro stabiler Runde, -3 bei Fehlsteuerung.
+- KPI: Stabilitaetsindex und Fehlentscheidungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- SimulationController
+- ShockEngine
+- KPIService
+
+### Domaenenobjekte
+- RoundCase(roundId, shockLevel)
+- ControlAction(actionId, quantity, priceDelta)
+- RoundResult(stabilityScore, decisionQuality)
+
+### Beziehungen
+- SimulationController steuert 1..* RoundCase.
+- ShockEngine bewertet ControlAction.
+- KPIService aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- PREPARE -> RUN -> ADJUST -> EVALUATE -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. SimulationController startet RoundCase.
+2. Player setzt ControlAction.
+3. ShockEngine simuliert Wirkung.
+4. RoundResult wird berechnet.
+5. KPIService aktualisiert Dashboard.
+
+## Regeln
+- Ueberreaktion auf kleinen Schock verursacht Zusatzabzug.
+- Drei stabile Runden in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: roundId, shockLevel, options[], expectedBand
+
+## Abnahmekriterien
+- Schockwirkung ist nachvollziehbar visualisiert.
+- KPI zeigt Stabilitaet und Qualitaet getrennt.
+- Replay markiert Fehlsteuerungen.

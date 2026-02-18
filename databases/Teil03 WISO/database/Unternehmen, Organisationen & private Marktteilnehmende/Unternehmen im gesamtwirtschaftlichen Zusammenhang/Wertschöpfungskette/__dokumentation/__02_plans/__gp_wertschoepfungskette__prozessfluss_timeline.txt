@@ -1,0 +1,52 @@
+# __gp_wertschoepfungskette__prozessfluss_timeline
+
+## Spielidee
+"Prozessfluss-Timeline" ordnet Arbeitsschritte in die korrekte Reihenfolge von Input bis Service.
+
+## Lernziel
+- Zeitliche Logik der Kette verstehen.
+- Reihenfolgefehler erkennen.
+
+## Messbare Progression
+- 12 Timeline-Faelle.
+- Punkte: +8 korrekt platzierter Schritt, -3 falscher Schritt.
+- KPI: Reihenfolgegenauigkeit und Bearbeitungszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimelineController
+- SequenceEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- TimelineCase(caseId, steps[])
+- ProcessStep(stepId, stageType)
+- TimelineResult(correctPlacements, wrongPlacements)
+
+### Beziehungen
+- TimelineCase enthaelt 4..12 ProcessStep.
+- SequenceEngine validiert Reihenfolge.
+- ProgressTracker aggregiert 1..* TimelineResult.
+
+### Zustandsmodell
+- LOAD_CASE -> PLACE_STEPS -> VALIDATE -> RESULT -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimelineController laedt TimelineCase.
+2. Player platziert ProcessStep.
+3. SequenceEngine prueft Reihenfolge.
+4. TimelineResult wird berechnet.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Falscher Startschritt erzeugt Zusatzabzug.
+- Vollkorrekte Timeline gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, steps[], expectedOrder[]
+
+## Abnahmekriterien
+- Reihenfolgefehler sind klar markiert.
+- KPI zeigt Genauigkeit und Tempo.
+- Report listet wiederkehrende Ablaufprobleme.

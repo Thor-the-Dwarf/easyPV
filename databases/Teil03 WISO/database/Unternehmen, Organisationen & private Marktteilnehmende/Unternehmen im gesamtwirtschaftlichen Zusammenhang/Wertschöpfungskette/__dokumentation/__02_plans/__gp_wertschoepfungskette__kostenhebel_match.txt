@@ -1,0 +1,52 @@
+# __gp_wertschoepfungskette__kostenhebel_match
+
+## Spielidee
+"Kostenhebel-Match" verbindet Kostenprobleme mit passenden Hebeln zur Effizienzsteigerung in der Kette.
+
+## Lernziel
+- Kostenhebel je Prozessstufe erkennen.
+- Verbesserungsmassnahmen passend zuordnen.
+
+## Messbare Progression
+- 18 Match-Faelle.
+- Punkte: +7 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Trefferquote und Fehlerquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- MatchController
+- LeverEngine
+- ScoreService
+
+### Domaenenobjekte
+- CostCase(caseId, costIssue)
+- LeverOption(optionId, leverType)
+- MatchResult(isCorrect, leverType)
+
+### Beziehungen
+- CostCase enthaelt 3..5 LeverOption.
+- LeverEngine validiert Auswahl.
+- ScoreService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- INIT -> CASE_ACTIVE -> SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. MatchController startet CostCase.
+2. Player waehlt LeverOption.
+3. LeverEngine prueft Passung.
+4. MatchResult wird gespeichert.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Falscher Hebel bei Hochkostenfall verursacht Zusatzabzug.
+- Serienbonus ab 5 korrekten Zuordnungen.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, costIssue, options[], expectedLever
+
+## Abnahmekriterien
+- Passung ist transparent rueckgemeldet.
+- KPI zeigt Leistung je Hebeltyp.
+- Report benennt haeufige Fehlzuordnungen.

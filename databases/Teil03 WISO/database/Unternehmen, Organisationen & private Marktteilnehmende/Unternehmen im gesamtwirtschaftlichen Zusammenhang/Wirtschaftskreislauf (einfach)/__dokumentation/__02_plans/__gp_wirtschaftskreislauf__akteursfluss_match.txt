@@ -1,0 +1,52 @@
+# __gp_wirtschaftskreislauf__akteursfluss_match
+
+## Spielidee
+"Akteursfluss-Match" ordnet Gueter- und Geldstroeme den Akteuren Haushalte, Unternehmen, Staat und Banken zu.
+
+## Lernziel
+- Grundaufbau des einfachen Wirtschaftskreislaufs verstehen.
+- Flussrichtungen korrekt zuordnen.
+
+## Messbare Progression
+- 24 Karten.
+- Punkte: +6 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Trefferquote je Akteur.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- FlowEngine
+- MetricService
+
+### Domaenenobjekte
+- FlowCard(cardId, flowType)
+- ActorOption(optionId, actorType)
+- MatchResult(isCorrect, actorType)
+
+### Beziehungen
+- FlowCard enthaelt 3..5 ActorOption.
+- FlowEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt FlowCard.
+2. Player waehlt ActorOption.
+3. FlowEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlzuordnung bei Kernfluss erzeugt Zusatzabzug.
+- Serienbonus ab 5 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, flowType, options[], expectedActor
+
+## Abnahmekriterien
+- Zuordnung ist klar erklaert.
+- KPI zeigt Leistung je Akteur.
+- Report listet haeufige Verwechslungen.

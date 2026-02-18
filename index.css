@@ -190,7 +190,7 @@ body::after {
   top: 64px;
   left: 0;
   height: calc(100vh - 64px);
-  width: min(var(--drawer-width, 360px), 88vw);
+  width: min(var(--drawer-width, 360px), 100vw);
   min-width: 240px;
   background:
     linear-gradient(180deg, hsl(var(--bg-surface) / 0.5), hsl(var(--bg-surface) / 0.24)),
@@ -277,9 +277,9 @@ body::after {
 }
 
 .tree {
-  width: 20.25rem;
+  width: max-content;
   min-width: 20.25rem;
-  max-width: 20.25rem;
+  max-width: none;
 }
 
 .tree-loading {
@@ -326,7 +326,7 @@ body::after {
 
 .tree-row {
   display: grid;
-  grid-template-columns: minmax(0, 3.2rem) minmax(0, 3.2rem) minmax(0, 1fr);
+  grid-template-columns: 3.2rem 3.2rem max-content;
   align-items: center;
   gap: 0.42rem;
   padding: 0.2rem 0.5rem;
@@ -340,7 +340,7 @@ body::after {
 
 .tree-meta-header {
   display: grid;
-  grid-template-columns: minmax(0, 3.2rem) minmax(0, 3.2rem) minmax(0, 1fr);
+  grid-template-columns: 3.2rem 3.2rem max-content;
   align-items: center;
   gap: 0.42rem;
   padding: 0.35rem 0.5rem 0.55rem;
@@ -438,7 +438,7 @@ body::after {
 }
 
 .tree-main {
-  min-width: 0;
+  min-width: max-content;
   display: flex;
   align-items: center;
   gap: 0;
@@ -505,9 +505,10 @@ body::after {
   display: inline-flex;
   align-items: center;
   gap: 0.42rem;
-  flex: 1 1 auto;
-  width: 100%;
-  min-width: 0;
+  flex: 0 0 auto;
+  width: max-content;
+  min-width: max-content;
+  max-width: none;
   font-size: 1rem;
   font-weight: 600;
   padding: 0.35rem 0.5rem;
@@ -536,9 +537,9 @@ body::after {
 }
 
 .tree-label-text {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  min-width: auto;
+  overflow: visible;
+  text-overflow: initial;
   white-space: nowrap;
 }
 
@@ -657,14 +658,14 @@ body::after {
 
   .tree-meta-header,
   .tree-row {
-    grid-template-columns: minmax(0, 2.95rem) minmax(0, 2.95rem) minmax(0, 1fr);
+    grid-template-columns: 2.95rem 2.95rem max-content;
     gap: 0.32rem;
   }
 
   .tree {
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
+    width: max-content;
+    min-width: 20.25rem;
+    max-width: none;
   }
 
   .tree-meta-head-cell {

@@ -213,5 +213,33 @@ document.addEventListener('DOMContentLoaded', () => {
         feedbackArea.innerText = "";
     }
 
+    function computeProgressPercent() {
+        // 20 inspected products acts as one measurable round.
+        const target = 20;
+        const inspected = Number(gameState.totalInspected) || 0;
+        const base = Math.round((Math.min(inspected, target) / target) * 100);
+        if (!gameState.isRunning && inspected > 0) return Math.max(base, 100);
+        return base;
+    }
+
+    function renderGameToText() {
+        const payload = {
+            mode: gameState.isRunning ? 'running' : 'idle',
+            progress_percent: computeProgressPercent(),
+            total_inspected: Number(gameState.totalInspected) || 0,
+            defects_found: Number(gameState.defectsFound) || 0,
+            missed_defects: Number(gameState.missedDefects) || 0,
+            false_alarms: Number(gameState.falseAlarms) || 0,
+            satisfaction_percent: Number(gameState.satisfaction) || 0,
+            cost_eur: Number(gameState.costs) || 0
+        };
+        return JSON.stringify(payload);
+    }
+
+    window.render_game_to_text = renderGameToText;
+    window.advanceTime = function advanceTime(ms) {
+        return ms;
+    };
+
     initGame();
 });

@@ -162,5 +162,32 @@ document.addEventListener('DOMContentLoaded', () => {
         checkBtn.disabled = true;
     }
 
-    initGame();
+    function computeProgressPercent() {
+        const total = Array.isArray(gameState?.data?.phases) ? gameState.data.phases.length : 0;
+        if (!total) return 0;
+        const assigned = Object.keys(gameState.assignments || {}).length;
+        const base = Math.round((Math.min(assigned, total) / total) * 100);
+        return gameState.solved ? 100 : base;
+    }
+
+    function renderGameToText() {
+        const targetCount = Array.isArray(gameState?.data?.phases) ? gameState.data.phases.length : 0;
+        const assignedCount = Object.keys(gameState.assignments || {}).length;
+        const payload = {
+            mode: gameState.solved ? 'result' : 'play',
+            progress_percent: computeProgressPercent(),
+            assigned_count: assignedCount,
+            target_count: targetCount,
+            selected_statement_id: gameState.selectedStatement || null,
+            solved: Boolean(gameState.solved),
+            overlay_visible: overlay.style.display === 'block'
+        };
+        return JSON.stringify(payload);
+    }
+
+    window.render_game_to_text = renderGameToText;
+    window.advanceTime = function advanceTime(ms) {
+        return ms;
+    };
+
 });

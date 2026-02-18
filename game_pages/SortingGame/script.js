@@ -25,7 +25,6 @@ class SortingGame {
         this.loop = this.loop.bind(this);
         this.handleDragStart = this.handleDragStart.bind(this);
         this.handleDragEnd = this.handleDragEnd.bind(this);
-        this.handleDrop = this.handleDrop.bind(this);
 
         this.init();
     }
@@ -34,7 +33,8 @@ class SortingGame {
 
     async init() {
         const urlParams = new URLSearchParams(window.location.search);
-        let configPath = urlParams.get('config') || 'config.json';
+        const requestedConfigPath = urlParams.get('config') || 'config.json';
+        const configPath = this.resolveConfigPath(requestedConfigPath);
 
         // Handle relative paths from deep nested structures if needed
         // Assuming configPath is relative to the *caller* or absolute
@@ -49,6 +49,22 @@ class SortingGame {
             console.error("Failed to load game config:", e);
             document.body.innerHTML = "<h1>Fehler beim Laden der Konfiguration</h1><p>" + e.message + "</p>";
         }
+    }
+
+    resolveConfigPath(configPath) {
+        const rawPath = String(configPath || '').trim() || 'config.json';
+        if (/^(https?:)?\/\//i.test(rawPath) || rawPath.startsWith('/')) {
+            return rawPath;
+        }
+        const baseCandidates = [document.referrer, window.location.href].filter(Boolean);
+        for (const base of baseCandidates) {
+            try {
+                return new URL(rawPath, base).href;
+            } catch (_) {
+                // Try next candidate
+            }
+        }
+        return rawPath;
     }
 
     normalizeConfig(raw) {
@@ -307,8 +323,47 @@ class SortingGame {
             this.feedbackMessage.style.color = "orange";
         }
     }
+
+    getMode() {
+        const startHidden = document.getElementById('start-screen')?.classList.contains('hidden');
+        const endVisible = !document.getElementById('end-screen')?.classList.contains('hidden');
+        if (!startHidden) return 'start';
+        if (endVisible) return 'end';
+        return this.currentItem ? 'active' : 'loading';
+    }
+
+    getProgressPercent() {
+        if (!this.maxRounds || this.maxRounds <= 0) return 0;
+        const clamped = Math.max(0, Math.min(this.currentRound, this.maxRounds));
+        return Math.round((clamped / this.maxRounds) * 100);
+    }
+
+    renderGameToText() {
+        const payload = {
+            mode: this.getMode(),
+            coordinate_system: 'origin top-left, x right, y down',
+            score: this.score,
+            current_round: this.currentRound,
+            max_rounds: this.maxRounds,
+            progress_percent: this.getProgressPercent(),
+            current_item: this.currentItem
+                ? {
+                    text: this.currentItem.innerText || '',
+                    category: this.currentItem.dataset.category || '',
+                    top: parseFloat(this.currentItem.style.top) || 0
+                }
+                : null
+        };
+        return JSON.stringify(payload);
+    }
+
+    advanceTime() {
+        return true;
+    }
 }
 
 // Start the engine
 const gameEngine = new SortingGame();
 gameEngine.setupDropZones();
+window.render_game_to_text = () => gameEngine.renderGameToText();
+window.advanceTime = (ms) => gameEngine.advanceTime(ms);

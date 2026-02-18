@@ -255,5 +255,43 @@
         el.resultScreen.classList.remove('hidden');
     }
 
+    function computeProgressPercent() {
+        const totalLevels = Array.isArray(state?.config?.levels) ? state.config.levels.length : 0;
+        if (!totalLevels) return 0;
+
+        const completedLevels = Math.max(0, Math.min(Number(state?.levelIdx) || 0, totalLevels));
+        const overlayVisible = (el?.overlay && !el.overlay.classList.contains('hidden')) ||
+            (el?.resultOverlay && !el.resultOverlay.classList.contains('hidden'));
+        const levelFinished = Boolean(state?.isComplete) || overlayVisible;
+        const solved = Math.min(totalLevels, completedLevels + (levelFinished ? 1 : 0));
+        return Math.round((solved / totalLevels) * 100);
+    }
+
+    function renderGameToText() {
+        const payload = {
+            mode: 'running',
+            level_index: Number(state?.levelIdx) || 0,
+            level_total: Array.isArray(state?.config?.levels) ? state.config.levels.length : 0,
+            progress_percent: computeProgressPercent(),
+            level_complete: Boolean(state?.isComplete),
+            title: (el?.levelTitle?.textContent || el?.title?.textContent || document.title || '').trim()
+        };
+
+        const metricKeys = ['points', 'score', 'roi', 'pairIdx', 'activeColIdx'];
+        metricKeys.forEach((key) => {
+            if (typeof state?.[key] === 'number') payload[key] = state[key];
+        });
+
+        if (Array.isArray(state?.columns)) payload.columns_count = state.columns.length;
+        if (el?.statusVal?.textContent) payload.status = el.statusVal.textContent.trim();
+
+        return JSON.stringify(payload);
+    }
+
+    window.render_game_to_text = renderGameToText;
+    window.advanceTime = function advanceTime(ms) {
+        return ms;
+    };
+
     init();
 })();

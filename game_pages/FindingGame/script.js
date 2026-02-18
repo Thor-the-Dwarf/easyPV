@@ -32,7 +32,8 @@ class FindingGame {
 
     async init() {
         const urlParams = new URLSearchParams(window.location.search);
-        let configPath = urlParams.get('config') || 'config.json';
+        const requestedConfigPath = urlParams.get('config') || 'config.json';
+        const configPath = this.resolveConfigPath(requestedConfigPath);
 
         try {
             const response = await fetch(configPath);
@@ -44,6 +45,22 @@ class FindingGame {
             console.error("Failed to load game config:", e);
             document.body.innerHTML = "<h1>Fehler beim Laden der Konfiguration</h1><p>" + e.message + "</p>";
         }
+    }
+
+    resolveConfigPath(configPath) {
+        const rawPath = String(configPath || '').trim() || 'config.json';
+        if (/^(https?:)?\/\//i.test(rawPath) || rawPath.startsWith('/')) {
+            return rawPath;
+        }
+        const baseCandidates = [document.referrer, window.location.href].filter(Boolean);
+        for (const base of baseCandidates) {
+            try {
+                return new URL(rawPath, base).href;
+            } catch (_) {
+                // Try next candidate
+            }
+        }
+        return rawPath;
     }
 
     normalizeConfig(raw) {
@@ -220,7 +237,39 @@ class FindingGame {
     escapeRegExp(string) {
         return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
+
+    getMode() {
+        const startHidden = this.gameUI.startScreen?.classList.contains('hidden');
+        const endVisible = !this.gameUI.endScreen?.classList.contains('hidden');
+        if (!startHidden) return 'start';
+        if (endVisible) return 'end';
+        return this.config ? 'searching' : 'loading';
+    }
+
+    getProgressPercent() {
+        if (!this.totalTargets || this.totalTargets <= 0) return 0;
+        return Math.round((this.foundItems.size / this.totalTargets) * 100);
+    }
+
+    renderGameToText() {
+        return JSON.stringify({
+            mode: this.getMode(),
+            coordinate_system: 'origin top-left, x right, y down',
+            score: Math.round(this.score),
+            time_elapsed_sec: this.timeElapsed,
+            found_targets: this.foundItems.size,
+            total_targets: this.totalTargets,
+            found_item_ids: Array.from(this.foundItems),
+            progress_percent: this.getProgressPercent()
+        });
+    }
+
+    advanceTime() {
+        return true;
+    }
 }
 
 // Start Engine
-new FindingGame();
+const findingGame = new FindingGame();
+window.render_game_to_text = () => findingGame.renderGameToText();
+window.advanceTime = (ms) => findingGame.advanceTime(ms);

@@ -31,7 +31,8 @@ class MatchingGame {
 
     async init() {
         const urlParams = new URLSearchParams(window.location.search);
-        let configPath = urlParams.get('config') || 'config.json';
+        const requestedConfigPath = urlParams.get('config') || 'config.json';
+        const configPath = this.resolveConfigPath(requestedConfigPath);
 
         try {
             const response = await fetch(configPath);
@@ -43,6 +44,22 @@ class MatchingGame {
             console.error("Failed to load game config:", e);
             document.body.innerHTML = "<h1>Fehler beim Laden der Konfiguration</h1><p>" + e.message + "</p>";
         }
+    }
+
+    resolveConfigPath(configPath) {
+        const rawPath = String(configPath || '').trim() || 'config.json';
+        if (/^(https?:)?\/\//i.test(rawPath) || rawPath.startsWith('/')) {
+            return rawPath;
+        }
+        const baseCandidates = [document.referrer, window.location.href].filter(Boolean);
+        for (const base of baseCandidates) {
+            try {
+                return new URL(rawPath, base).href;
+            } catch (_) {
+                // Try next candidate
+            }
+        }
+        return rawPath;
     }
 
     normalizeConfig(raw) {
@@ -300,6 +317,41 @@ class MatchingGame {
         fb.classList.remove('hidden');
         setTimeout(() => fb.classList.add('hidden'), 3000);
     }
+
+    getMode() {
+        const startHidden = this.gameUI.startScreen?.classList.contains('hidden');
+        const endVisible = !this.gameUI.endScreen?.classList.contains('hidden');
+        if (!startHidden) return 'start';
+        if (endVisible) return 'end';
+        return this.config ? 'matching' : 'loading';
+    }
+
+    getProgressPercent() {
+        const level = this.config?.levels?.[this.currentLevel];
+        const needed = level ? (level.validPairs || level.pairs || []).length : 0;
+        if (!needed || needed <= 0) return 0;
+        return Math.round((this.connections.length / needed) * 100);
+    }
+
+    renderGameToText() {
+        const level = this.config?.levels?.[this.currentLevel] || null;
+        return JSON.stringify({
+            mode: this.getMode(),
+            coordinate_system: 'origin top-left, x right, y down',
+            current_level: this.currentLevel,
+            total_levels: this.config?.levels?.length || 0,
+            selected_left: this.selectedLeft,
+            connections: this.connections.map((c) => ({ left: c.leftId, right: c.rightId })),
+            expected_connections: level ? ((level.validPairs || level.pairs || []).length) : 0,
+            progress_percent: this.getProgressPercent()
+        });
+    }
+
+    advanceTime() {
+        return true;
+    }
 }
 
-new MatchingGame();
+const matchingGame = new MatchingGame();
+window.render_game_to_text = () => matchingGame.renderGameToText();
+window.advanceTime = (ms) => matchingGame.advanceTime(ms);

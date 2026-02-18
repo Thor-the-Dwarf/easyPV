@@ -127,4 +127,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderParticipants();
   }
+
+  function computeProgressPercent() {
+    const total = Number(gameState.maxResistance) || 0;
+    if (!total) return 0;
+    const base = Math.round((Math.min(gameState.foundCount, total) / total) * 100);
+    return gameState.solved ? 100 : base;
+  }
+
+  function renderGameToText() {
+    const payload = {
+      mode: gameState.solved ? 'result' : 'play',
+      progress_percent: computeProgressPercent(),
+      found_count: gameState.foundCount,
+      wrong_count: gameState.wrongCount,
+      target_count: Number(gameState.maxResistance) || 0,
+      clicked_count: gameState.clickedIds.size,
+      solved: Boolean(gameState.solved)
+    };
+    return JSON.stringify(payload);
+  }
+
+  window.render_game_to_text = renderGameToText;
+  window.advanceTime = function advanceTime(ms) {
+    return ms;
+  };
 });

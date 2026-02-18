@@ -28,7 +28,8 @@ class ConstructionGame {
 
     async init() {
         const urlParams = new URLSearchParams(window.location.search);
-        let configPath = urlParams.get('config') || 'config.json';
+        const requestedConfigPath = urlParams.get('config') || 'config.json';
+        const configPath = this.resolveConfigPath(requestedConfigPath);
 
         try {
             const response = await fetch(configPath);
@@ -39,6 +40,22 @@ class ConstructionGame {
             console.error("Failed to load game config:", e);
             document.body.innerHTML = "<h1>Fehler beim Laden der Konfiguration</h1><p>" + e.message + "</p>";
         }
+    }
+
+    resolveConfigPath(configPath) {
+        const rawPath = String(configPath || '').trim() || 'config.json';
+        if (/^(https?:)?\/\//i.test(rawPath) || rawPath.startsWith('/')) {
+            return rawPath;
+        }
+        const baseCandidates = [document.referrer, window.location.href].filter(Boolean);
+        for (const base of baseCandidates) {
+            try {
+                return new URL(rawPath, base).href;
+            } catch (_) {
+                // Try next candidate
+            }
+        }
+        return rawPath;
     }
 
     setupUI() {
@@ -207,7 +224,50 @@ class ConstructionGame {
             this.gameUI.finalMessage.innerText = this.config.feedbackTemplates?.correct || "Super gemacht!";
         }
     }
+
+    getMode() {
+        const startHidden = this.gameUI.startScreen?.classList.contains('hidden');
+        const endVisible = !this.gameUI.endScreen?.classList.contains('hidden');
+        if (!startHidden) return 'start';
+        if (endVisible) return 'end';
+        return this.config ? 'building' : 'loading';
+    }
+
+    getTargetOrder() {
+        const currentElements = [...this.gameUI.targetContainer.querySelectorAll('.draggable-item')];
+        return currentElements.map((el) => el.dataset.id);
+    }
+
+    getProgressPercent() {
+        const solution = this.config?.solution || [];
+        if (!solution.length) return 0;
+        const currentOrder = this.getTargetOrder();
+        let correctAtPosition = 0;
+        for (let i = 0; i < Math.min(solution.length, currentOrder.length); i += 1) {
+            if (solution[i] === currentOrder[i]) correctAtPosition += 1;
+        }
+        return Math.round((correctAtPosition / solution.length) * 100);
+    }
+
+    renderGameToText() {
+        const source = [...this.gameUI.sourceContainer.querySelectorAll('.draggable-item')].map((el) => el.dataset.id);
+        const target = this.getTargetOrder();
+        return JSON.stringify({
+            mode: this.getMode(),
+            coordinate_system: 'origin top-left, x right, y down',
+            source_order: source,
+            target_order: target,
+            solution_order: this.config?.solution || [],
+            progress_percent: this.getProgressPercent()
+        });
+    }
+
+    advanceTime() {
+        return true;
+    }
 }
 
 // Start Engine
-new ConstructionGame();
+const constructionGame = new ConstructionGame();
+window.render_game_to_text = () => constructionGame.renderGameToText();
+window.advanceTime = (ms) => constructionGame.advanceTime(ms);

@@ -31,7 +31,8 @@ class SimulationGame {
 
     async init() {
         const urlParams = new URLSearchParams(window.location.search);
-        let configPath = urlParams.get('config') || 'config.json';
+        const requestedConfigPath = urlParams.get('config') || 'config.json';
+        const configPath = this.resolveConfigPath(requestedConfigPath);
 
         try {
             const response = await fetch(configPath);
@@ -42,6 +43,22 @@ class SimulationGame {
             console.error("Failed to load game config:", e);
             document.body.innerHTML = "<h1>Fehler beim Laden der Konfiguration</h1><p>" + e.message + "</p>";
         }
+    }
+
+    resolveConfigPath(configPath) {
+        const rawPath = String(configPath || '').trim() || 'config.json';
+        if (/^(https?:)?\/\//i.test(rawPath) || rawPath.startsWith('/')) {
+            return rawPath;
+        }
+        const baseCandidates = [document.referrer, window.location.href].filter(Boolean);
+        for (const base of baseCandidates) {
+            try {
+                return new URL(rawPath, base).href;
+            } catch (_) {
+                // Try next candidate
+            }
+        }
+        return rawPath;
     }
 
     setupUI() {
@@ -176,7 +193,49 @@ class SimulationGame {
         document.getElementById('final-message').innerText =
             `Glückwunsch! Du hast eine Rate von ${this.currentValue} € erzielt.`;
     }
+
+    getMode() {
+        const startHidden = this.gameUI.startScreen?.classList.contains('hidden');
+        const endVisible = !this.gameUI.endScreen?.classList.contains('hidden');
+        if (!startHidden) return 'start';
+        if (endVisible) return 'end';
+        return this.config ? 'active' : 'loading';
+    }
+
+    getProgressPercent() {
+        if (!this.config || !this.config.goal || !this.config.goal.targetRateEur) return 0;
+        const targetRate = this.config.goal.targetRateEur;
+        const diff = Math.max(0, this.currentValue - targetRate);
+        const ratio = 1 - Math.min(1, diff / Math.max(1, targetRate));
+        return Math.round(ratio * 100);
+    }
+
+    renderGameToText() {
+        const term = this.controls['termMonths'] ? Number(this.controls['termMonths'].value) : 0;
+        const downPayment = this.controls['downPaymentEur'] ? Number(this.controls['downPaymentEur'].value) : 0;
+        const km = this.controls['kmPerYear'] ? Number(this.controls['kmPerYear'].value) : 0;
+        const goal = this.config?.goal || {};
+        const solved = !!(this.config && this.currentValue <= (goal.targetRateEur || 0) && downPayment <= (goal.maxDownPaymentEur || 0));
+        return JSON.stringify({
+            mode: this.getMode(),
+            coordinate_system: 'origin top-left, x right, y down',
+            term_months: term,
+            down_payment_eur: downPayment,
+            km_per_year: km,
+            monthly_rate_eur: this.currentValue,
+            target_rate_eur: goal.targetRateEur || 0,
+            max_down_payment_eur: goal.maxDownPaymentEur || 0,
+            solved: solved,
+            progress_percent: solved ? 100 : this.getProgressPercent()
+        });
+    }
+
+    advanceTime() {
+        return true;
+    }
 }
 
 // Start Engine
-new SimulationGame();
+const simulationGame = new SimulationGame();
+window.render_game_to_text = () => simulationGame.renderGameToText();
+window.advanceTime = (ms) => simulationGame.advanceTime(ms);

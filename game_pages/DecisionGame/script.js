@@ -40,7 +40,8 @@ class DecisionGame {
 
     async init() {
         const urlParams = new URLSearchParams(window.location.search);
-        let configPath = urlParams.get('config') || 'config.json';
+        const requestedConfigPath = urlParams.get('config') || 'config.json';
+        const configPath = this.resolveConfigPath(requestedConfigPath);
 
         try {
             const response = await fetch(configPath);
@@ -52,6 +53,22 @@ class DecisionGame {
             console.error("Failed to load game config:", e);
             document.body.innerHTML = "<h1>Fehler beim Laden der Konfiguration</h1><p>" + e.message + "</p>";
         }
+    }
+
+    resolveConfigPath(configPath) {
+        const rawPath = String(configPath || '').trim() || 'config.json';
+        if (/^(https?:)?\/\//i.test(rawPath) || rawPath.startsWith('/')) {
+            return rawPath;
+        }
+        const baseCandidates = [document.referrer, window.location.href].filter(Boolean);
+        for (const base of baseCandidates) {
+            try {
+                return new URL(rawPath, base).href;
+            } catch (_) {
+                // Try next candidate
+            }
+        }
+        return rawPath;
     }
 
     normalizeConfig(raw) {
@@ -228,7 +245,50 @@ class DecisionGame {
 
         this.gameUI.finalFeedback.innerText = feedback;
     }
+
+    getMode() {
+        const startHidden = this.gameUI.startScreen?.classList.contains('hidden');
+        const endVisible = !this.gameUI.endScreen?.classList.contains('hidden');
+        if (!startHidden) return 'start';
+        if (endVisible) return 'end';
+        if (!this.currentScenario) return 'loading';
+        return 'question';
+    }
+
+    getProgressPercent() {
+        if (!this.maxRounds || this.maxRounds <= 0) return 0;
+        const clamped = Math.max(0, Math.min(this.currentRound, this.maxRounds));
+        return Math.round((clamped / this.maxRounds) * 100);
+    }
+
+    renderGameToText() {
+        const options = this.currentScenario && Array.isArray(this.currentScenario.options)
+            ? this.currentScenario.options.map((opt) => ({ id: opt.id, text: opt.text, correct: !!opt.correct }))
+            : [];
+        return JSON.stringify({
+            mode: this.getMode(),
+            coordinate_system: 'origin top-left, x right, y down',
+            score: this.score,
+            streak: this.streak,
+            current_round: this.currentRound,
+            max_rounds: this.maxRounds,
+            progress_percent: this.getProgressPercent(),
+            scenario: this.currentScenario
+                ? {
+                    phase: this.currentScenario.phase || '',
+                    situation: this.currentScenario.situation || '',
+                    options: options
+                }
+                : null
+        });
+    }
+
+    advanceTime() {
+        return true;
+    }
 }
 
 // Start Engine
-new DecisionGame();
+const decisionGame = new DecisionGame();
+window.render_game_to_text = () => decisionGame.renderGameToText();
+window.advanceTime = (ms) => decisionGame.advanceTime(ms);

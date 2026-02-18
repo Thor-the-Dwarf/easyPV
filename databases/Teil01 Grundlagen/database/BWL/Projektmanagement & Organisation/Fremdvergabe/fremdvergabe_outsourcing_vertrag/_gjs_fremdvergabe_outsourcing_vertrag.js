@@ -210,4 +210,35 @@ document.addEventListener('DOMContentLoaded', () => {
         if (type === 'error') feedbackArea.style.color = 'hsl(var(--error))';
         if (type === 'success') feedbackArea.style.color = 'hsl(var(--success))';
     }
+
+    function computeProgressPercent() {
+        const total = Array.isArray(gameState.gaps) ? gameState.gaps.length : 0;
+        if (!total) return 0;
+        const filled = gameState.selections.size;
+        const base = Math.round((Math.min(filled, total) / total) * 100);
+        return gameState.isChecked ? 100 : base;
+    }
+
+    function readScorePercent() {
+        const parsed = parseInt((securityScore.innerText || '').replace('%', ''), 10);
+        return Number.isFinite(parsed) ? parsed : 0;
+    }
+
+    function renderGameToText() {
+        const total = Array.isArray(gameState.gaps) ? gameState.gaps.length : 0;
+        const payload = {
+            mode: gameState.isChecked ? 'result' : 'play',
+            progress_percent: computeProgressPercent(),
+            gaps_filled: gameState.selections.size,
+            gaps_total: total,
+            security_score_percent: readScorePercent(),
+            checked: Boolean(gameState.isChecked)
+        };
+        return JSON.stringify(payload);
+    }
+
+    window.render_game_to_text = renderGameToText;
+    window.advanceTime = function advanceTime(ms) {
+        return ms;
+    };
 });

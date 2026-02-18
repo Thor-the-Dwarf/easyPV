@@ -266,4 +266,35 @@ document.addEventListener('DOMContentLoaded', () => {
         const cat = gameState.categories.find(c => c.id === id);
         return cat ? cat.label : id;
     }
+
+    function computeProgressPercent() {
+        const total = Array.isArray(gameState.items) ? gameState.items.length : 0;
+        if (!total) return 0;
+        const placed = gameState.placements.size;
+        const base = Math.round((Math.min(placed, total) / total) * 100);
+        return gameState.isChecked ? 100 : base;
+    }
+
+    function readScorePercent() {
+        const parsed = parseInt((scoreDisplay.innerText || '').replace('%', ''), 10);
+        return Number.isFinite(parsed) ? parsed : 0;
+    }
+
+    function renderGameToText() {
+        const total = Array.isArray(gameState.items) ? gameState.items.length : 0;
+        const payload = {
+            mode: gameState.isChecked ? 'result' : 'play',
+            progress_percent: computeProgressPercent(),
+            placed_count: gameState.placements.size,
+            total_items: total,
+            score_percent: readScorePercent(),
+            checked: Boolean(gameState.isChecked)
+        };
+        return JSON.stringify(payload);
+    }
+
+    window.render_game_to_text = renderGameToText;
+    window.advanceTime = function advanceTime(ms) {
+        return ms;
+    };
 });

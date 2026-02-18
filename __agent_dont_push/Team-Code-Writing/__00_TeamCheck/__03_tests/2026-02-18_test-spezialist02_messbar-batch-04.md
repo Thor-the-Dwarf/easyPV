@@ -25,3 +25,4 @@
 - `output/web-game-measurable-batch4-procedure-kit/`
 - `output/web-game-measurable-batch4-state-machine/`
 - `output/web-game-measurable-batch4-leasing-gutachter/`
+- Nachtrag: JOIN-Wrapper-Pfad korrigiert und Wrapper-Ziel erfolgreich auf MatchingGame-Engine validiert.

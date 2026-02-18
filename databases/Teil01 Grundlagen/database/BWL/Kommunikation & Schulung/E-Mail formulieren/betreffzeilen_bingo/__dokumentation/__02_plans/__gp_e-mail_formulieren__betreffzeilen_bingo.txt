@@ -1,20 +1,17 @@
 Anforderungen
-- Titel: "Anhang-Vergesser-Alarm"
-- Ziel: In E-Mails den kritischen Fall erkennen: Text verweist auf Anhang, aber kein Anhang liegt bei.
-- Lernziel: Achtsamkeit vor dem Versand, Qualitaetskontrolle in der E-Mail-Kommunikation.
+- Titel: "Betreffzeilen-Bingo"
+- Ziel: Fuer 10 Mail-Snippets die praeziseste Betreffzeile aus drei Optionen auswaehlen.
+- Lernziel: Konkrete, aussagestarke Betreffzeilen formulieren und zu vage Formulierungen vermeiden.
 
 Spielidee
-- Pro Runde eine E-Mail (Betreff + Text + Anhang-Indikator).
-- Zwei Aktionen:
-  - `Senden`
-  - `Stopp: Anhang fehlt!`
-- Korrekt ist:
-  - `Stopp`, wenn Anhang im Text erwaehnt wird aber fehlt.
-  - `Senden`, wenn kein Widerspruch vorliegt.
-- Messbar ueber Punkte, Trefferquote und Reaktionszeit.
+- Pro Runde wird ein kurzer Mail-Inhalt gezeigt.
+- Drei Betreffoptionen stehen zur Auswahl.
+- Korrekt ist jeweils die inhaltlich praeziseste Option (Kontext + Aktion/Termin).
+- Messbar ueber Punkte (0..100), Trefferquote und Reaktionszeit.
 
 Implementierungsplan
-- [x] JSON Konfiguration `_data/_gg01_anhang_vergesser_alarm.json`
-- [x] UI `_ghtml_anhang_vergesser_alarm.html` + `_gcss_anhang_vergesser_alarm.css`
-- [x] Spiel-Logik `_gjs_anhang_vergesser_alarm.js`
+- [x] JSON Konfiguration `_data/_gg01_betreffzeilen_bingo.json`
+- [x] UI `_ghtml_betreffzeilen_bingo.html` + `_gcss_betreffzeilen_bingo.css`
+- [x] Spiel-Logik `_gjs_betreffzeilen_bingo.js`
 - [x] Hooks `render_game_to_text` und `advanceTime`
+- [x] Tests in `__dokumentation/__03_tests` (reachability + config)

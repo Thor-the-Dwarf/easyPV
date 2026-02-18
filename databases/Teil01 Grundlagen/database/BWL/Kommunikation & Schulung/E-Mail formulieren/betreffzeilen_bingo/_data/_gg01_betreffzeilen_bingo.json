@@ -1,16 +1,16 @@
 {
   "meta": {
-    "id": "anhang_vergesser_alarm_v1",
-    "title": "Anhang-Vergesser-Alarm",
+    "id": "betreffzeilen_bingo_v1",
+    "title": "Betreffzeilen-Bingo",
     "topic": "E-Mail formulieren",
-    "mechanic": "binary_decision_with_timer",
+    "mechanic": "best_subject_selection_with_timer",
     "version": "1.0"
   },
   "scoring": {
-    "correct": 15,
-    "wrong": -8,
-    "timeout": -10,
-    "completion_bonus": 20
+    "correct": 10,
+    "wrong": 0,
+    "timeout": 0,
+    "completion_bonus": 0
   },
   "timing": {
     "default_round_ms": 9000
@@ -18,59 +18,223 @@
   "rounds": [
     {
       "id": 1,
-      "subject": "Abnahmeprotokoll final",
-      "body": "Hallo Team, anbei findet ihr das unterschriebene Abnahmeprotokoll. Viele Gruesse",
-      "hasAttachment": false,
-      "expectedAction": "block",
-      "reason": "Der Text kuendigt einen Anhang an, aber es ist keiner vorhanden."
+      "bodyPreview": "Projekt X: Der Kundentermin wird vom 09.10. auf 12.10. verschoben.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wichtig!",
+          "feedback": "Zu vage. Der Leser erkennt den Inhalt nicht sofort."
+        },
+        {
+          "id": "b",
+          "text": "Termin",
+          "feedback": "Zu allgemein. Es fehlt Projekt und neues Datum."
+        },
+        {
+          "id": "c",
+          "text": "Verschiebung Projekt X auf 12.10.",
+          "feedback": "Richtig. Der Betreff ist klar, kurz und konkret."
+        }
+      ],
+      "correctOptionId": "c"
     },
     {
       "id": 2,
-      "subject": "Meeting-Notizen",
-      "body": "Hier die wichtigsten Punkte aus dem Termin in Kurzform. Kein Anhang notwendig.",
-      "hasAttachment": false,
-      "expectedAction": "send",
-      "reason": "Keine Anhang-Referenz, daher ist Senden korrekt."
+      "bodyPreview": "Bitte gib bis morgen 14:00 Uhr Feedback zum Angebot fuer Kunde Bergmann.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rueckmeldung",
+          "feedback": "Zu unspezifisch. Wozu und bis wann bleibt offen."
+        },
+        {
+          "id": "b",
+          "text": "Feedback Angebot Kunde Bergmann bis 14:00",
+          "feedback": "Richtig. Aufgabe, Bezug und Frist sind sichtbar."
+        },
+        {
+          "id": "c",
+          "text": "Dringend antworten!",
+          "feedback": "Nur Dringlichkeit ohne fachlichen Kontext."
+        }
+      ],
+      "correctOptionId": "b"
     },
     {
       "id": 3,
-      "subject": "Ticket-Auswertung Q1",
-      "body": "Siehe Anlage mit den SLA-Metriken fuer Q1.",
-      "hasAttachment": true,
-      "expectedAction": "send",
-      "reason": "Anhang wird erwaehnt und ist vorhanden."
+      "bodyPreview": "Die Rechnung 2026-118 enthaelt eine falsche Positionssumme und muss korrigiert werden.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Problem mit Rechnung",
+          "feedback": "Zu breit. Welche Rechnung ist unklar."
+        },
+        {
+          "id": "b",
+          "text": "Rechnung 2026-118: Korrektur der Positionssumme",
+          "feedback": "Richtig. Eindeutige Referenz und Aktion."
+        },
+        {
+          "id": "c",
+          "text": "Fehler",
+          "feedback": "Zu kurz und ohne Kontext."
+        }
+      ],
+      "correctOptionId": "b"
     },
     {
       "id": 4,
-      "subject": "Kostenaufstellung",
-      "body": "Im Anhang sende ich die aktuelle Kostenaufstellung.",
-      "hasAttachment": false,
-      "expectedAction": "block",
-      "reason": "Anhang angekuendigt, aber fehlend."
+      "bodyPreview": "Das Daily-Standup startet ab Montag dauerhaft um 08:45 statt 09:00 Uhr.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Neue Uhrzeit Daily-Standup ab Montag 08:45",
+          "feedback": "Richtig. Aenderung, Termin und Startzeit sind klar."
+        },
+        {
+          "id": "b",
+          "text": "Aenderung",
+          "feedback": "Unklar, was genau geaendert wurde."
+        },
+        {
+          "id": "c",
+          "text": "Daily",
+          "feedback": "Zu allgemein fuer einen Posteingang."
+        }
+      ],
+      "correctOptionId": "a"
     },
     {
       "id": 5,
-      "subject": "Sicherheitsinfo",
-      "body": "Bitte achtet heute auf den geplanten Wartungs-Slot von 22 bis 23 Uhr.",
-      "hasAttachment": false,
-      "expectedAction": "send",
-      "reason": "Informative Mail ohne Anhang-Hinweis."
+      "bodyPreview": "Bitte prueft die Version 2.4 des Lastenhefts bis Freitag 12:00 Uhr.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lastenheft",
+          "feedback": "Es fehlen Version und Deadline."
+        },
+        {
+          "id": "b",
+          "text": "Review Lastenheft v2.4 bis Fr 12:00",
+          "feedback": "Richtig. Objekt, Version und Frist sind enthalten."
+        },
+        {
+          "id": "c",
+          "text": "Bitte pruefen",
+          "feedback": "Aufforderung ohne konkreten Bezug."
+        }
+      ],
+      "correctOptionId": "b"
     },
     {
       "id": 6,
-      "subject": "API-Dokumentation v2",
-      "body": "Anbei die aktualisierte API-Dokumentation als PDF.",
-      "hasAttachment": true,
-      "expectedAction": "send",
-      "reason": "Anhang ist vorhanden und passt zur Aussage."
+      "bodyPreview": "Die VPN-Wartung am 21.11. dauert von 22:00 bis 23:30 Uhr, kurze Ausfaelle moeglich.",
+      "options": [
+        {
+          "id": "a",
+          "text": "IT Info",
+          "feedback": "Zu ungenau fuer betroffene Teams."
+        },
+        {
+          "id": "b",
+          "text": "VPN-Wartung 21.11., 22:00-23:30 (Ausfaelle moeglich)",
+          "feedback": "Richtig. Zeitpunkt und Auswirkung sind sofort erkennbar."
+        },
+        {
+          "id": "c",
+          "text": "Netzwerk",
+          "feedback": "Zu pauschal, keine Handlungssicherheit."
+        }
+      ],
+      "correctOptionId": "b"
     },
     {
       "id": 7,
-      "subject": "Deploy-Checklist",
-      "body": "Im Anhang ist die finale Deploy-Checklist. Bitte vor 16:00 gegenpruefen.",
-      "hasAttachment": false,
-      "expectedAction": "block",
-      "reason": "Anhang fehlt trotz klarer Referenz im Text."
+      "bodyPreview": "Die Schulung 'Sichere Passwoerter' wird auf Raum B-204 verlegt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Raumaenderung Schulung Sichere Passwoerter: B-204",
+          "feedback": "Richtig. Event und neuer Ort sind direkt sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Schulung",
+          "feedback": "Zu allgemein, keine konkrete Aenderung."
+        },
+        {
+          "id": "c",
+          "text": "Raum",
+          "feedback": "Kein Bezug, zu wenig Information."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": 8,
+      "bodyPreview": "Angebot ACME: Die Positionen 3 und 5 wurden angepasst, neue Gesamtsumme im Anhang.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Neues Angebot ACME: Position 3/5 angepasst",
+          "feedback": "Richtig. Kunde und geaenderter Inhalt sind benannt."
+        },
+        {
+          "id": "b",
+          "text": "Angebot aktualisiert",
+          "feedback": "Zu wenig Details fuer schnelle Einordnung."
+        },
+        {
+          "id": "c",
+          "text": "Bitte beachten",
+          "feedback": "Keine fachliche Aussage im Betreff."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": 9,
+      "bodyPreview": "Der Deploy auf Produktiv ist fuer Freitag 18:30 geplant, Freeze ab 17:45.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deploy Freitag 18:30, Freeze ab 17:45",
+          "feedback": "Richtig. Beide Schluesselzeiten sind klar benannt."
+        },
+        {
+          "id": "b",
+          "text": "Deployment",
+          "feedback": "Zu allgemein, keine Terminangaben."
+        },
+        {
+          "id": "c",
+          "text": "Wichtiges Update",
+          "feedback": "Unpraezise und ohne belastbare Fakten."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": 10,
+      "bodyPreview": "Bitte sendet den Monatsreport Sales Nord bis 03.12. an Finance.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Monatsreport",
+          "feedback": "Zu vage: Bereich, Empfaenger und Frist fehlen."
+        },
+        {
+          "id": "b",
+          "text": "Monatsreport Sales Nord bis 03.12. an Finance",
+          "feedback": "Richtig. Inhalt, Scope und Deadline sind praezise."
+        },
+        {
+          "id": "c",
+          "text": "Frist!",
+          "feedback": "Nur Dringlichkeit ohne Kontext."
+        }
+      ],
+      "correctOptionId": "b"
     }
   ]
 }

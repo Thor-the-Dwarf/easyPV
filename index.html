@@ -1020,6 +1020,129 @@
           return '';
         }
 
+        const EXAM_PROBABILITY_FALLBACK = Object.freeze({
+          ap1: 56,
+          ap2: 33
+        });
+
+        const EXAM_PROBABILITY_RULES = Object.freeze({
+          ap1: [
+            { percent: 100, keywords: ['hardware', 'cpu', 'ram', 'ssd', 'hdd', 'peripherie', 'usb', 'monitoranschluss', 'waermeleitpaste', 'geraeteklassen', 'rfid'] },
+            { percent: 100, keywords: ['wirtschaftlichkeit', 'amortisation', 'kalkulation', 'kosten', 'preisnachlass', 'zinsen', 'stundensatz', 'angebotserstellung'] },
+            { percent: 89, keywords: ['netzwerk', 'protokoll', 'ipv4', 'ipv6', 'dhcp', 'wlan', 'subnetting', 'apipa', 'slaac', 'rj45', 'mac adresse', 'vpn', 'ping', 'netzwerkkonfiguration', 'iso osi'] },
+            { percent: 89, keywords: ['softwareentwicklung', 'programmierung', 'coding', 'debugging', 'webentwicklung', 'pseudocode', 'compiler', 'interpreter', 'code erklaren'] },
+            { percent: 78, keywords: ['it sicherheit', 'phishing', 'endpoint security', 'hartung', 'schutzbedarf', 'schutzziele', 'risikoanalyse', 'malware', 'hashverfahren', 'zugangs', 'zugriffs', 'zutritts', 'bsi', 'zertifikat', 'passwortsicherheit'] },
+            { percent: 78, keywords: ['kundenberatung', 'kommunikation', 'schulung', 'prasentation', '4 ohren', 'email formulieren', 'englisch'] },
+            { percent: 78, keywords: ['projektmanagement', 'projektplanung', 'projektphasen', 'projektmerkmale', 'projektberater', 'stakeholder', 'smart kriterien', 'change management', 'lastenheft', 'pflichtenheft', 'prozessanalyse'] },
+            { percent: 56, keywords: ['angebotsvergleich', 'lieferantenauswahl', 'nutzwertanalyse', 'leasing', 'angebot'] },
+            { percent: 56, keywords: ['datenbank'] },
+            { percent: 56, keywords: ['datenschutz', 'dsgvo'] },
+            { percent: 44, keywords: ['multimedia'] },
+            { percent: 33, keywords: ['marktformen', 'markt', 'bedarfsanalyse', 'bedarf'] },
+            { percent: 22, keywords: ['leistungserbringung', 'servicequalitat'] },
+            { percent: 22, keywords: ['vertrag', 'kaufvertrag', 'vertragsstoerung', 'service level agreement', 'fremdvergabe'] },
+            { percent: 11, keywords: ['algorithmus'] },
+            { percent: 11, keywords: ['betriebssystem'] },
+            { percent: 11, keywords: ['kundenbeziehung'] },
+            { percent: 11, keywords: ['uml'] },
+            { percent: 11, keywords: ['software'] }
+          ],
+          ap2: [
+            { percent: 83, keywords: ['datenbank'] },
+            { percent: 83, keywords: ['softwareentwicklung', 'entwicklungsprozess'] },
+            { percent: 78, keywords: ['uml', 'klassdiagramm', 'sequenzdiagramm', 'aktivitaetsdiagramm', 'use case', 'zustandsdiagramm'] },
+            { percent: 72, keywords: ['algorithmus', 'sortier', 'such'] },
+            { percent: 50, keywords: ['sql', 'select', 'insert', 'update', 'delete', 'join', 'group by', 'having', 'subquery', 'constraint', 'view', 'trigger', 'stored procedure', 'grant', 'revoke', 'create table', 'union'] },
+            { percent: 50, keywords: ['testen', 'testfall', 'testkonzept', 'blackbox', 'schreibtischtest', 'abnahmeprufung'] },
+            { percent: 44, keywords: ['datenmodell', 'modellierung', 'erd', 'erm', 'relation', 'anomalie', 'redundanz', 'datenintegritat', 'datentyp'] },
+            { percent: 44, keywords: ['it sicherheit', 'verschlussel', 'hash', 'secret', 'tls', 'https', 'authentifizierung', 'autorisierung', 'single sign on', 'token', 'cors'] },
+            { percent: 39, keywords: ['projektmanagement', 'anforderungsanalyse', 'stakeholder', 'lastenheft', 'pflichtenheft', 'ticketsystem', 'protokoll', 'dokumentation', 'change management', 'umfeldanalyse', 'machbarkeitsanalyse', 'angebot', 'abnahme', 'ubergabe', 'planung', 'steuerung'] },
+            { percent: 33, keywords: ['qualitatssicherung', 'quality assurance', 'linting', 'static analysis', 'qualitatsmetrik'] },
+            { percent: 28, keywords: ['objektorient', 'oop', 'klasse', 'vererbung', 'polymorph'] },
+            { percent: 28, keywords: ['softwareergonomie', 'usability', 'ergonomie', 'user experience', 'ux', 'barrierefreiheit', 'responsive design', 'ui design', 'mockup', 'prototyp'] },
+            { percent: 22, keywords: ['design pattern', 'pattern', 'mvc', 'mvvm', 'factory', 'singleton', 'observer', 'strategy', 'adapter', 'decorator', 'repository', 'dependency injection', 'schichtenarchitektur'] },
+            { percent: 22, keywords: ['kundenbeziehung', 'kundenfeedback', 'kundenberatung'] },
+            { percent: 17, keywords: ['api', 'schnittstelle', 'json', 'rest', 'soap', 'http', 'statuscode', 'openapi', 'swagger', 'kontrakt'] },
+            { percent: 17, keywords: ['wirtschaftlichkeit', 'prozesskosten', 'entwicklungskosten'] },
+            { percent: 11, keywords: ['markte', 'markt', 'bedarfe', 'bedarf', 'normalisierung', 'softwarearchitektur', 'softwarequalitat', 'webentwicklung', 'netzwerk'] },
+            { percent: 6, keywords: ['datenschutz', 'dsgvo', 'hardware', 'multimedia', 'prasentieren'] }
+          ]
+        });
+
+        function normalizeExamMatchText(value) {
+          return String(value || '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+        }
+
+        function textIncludesAnyKeyword(text, keywords) {
+          const source = String(text || '');
+          const list = Array.isArray(keywords) ? keywords : [];
+          for (let i = 0; i < list.length; i += 1) {
+            const keyword = String(list[i] || '').trim();
+            if (!keyword) continue;
+            if (source.indexOf(keyword) >= 0) return true;
+          }
+          return false;
+        }
+
+        function resolveExamTrack(node) {
+          const source = normalizeExamMatchText([
+            node && node.gameRelPath ? node.gameRelPath : '',
+            node && node.jsonRelPath ? node.jsonRelPath : '',
+            node && node.attributesRelPath ? node.attributesRelPath : ''
+          ].join(' '));
+          if (!source) return '';
+          if (source.indexOf('teil01 grundlagen') >= 0) return 'ap1';
+          if (source.indexOf('teil02 fiae') >= 0) return 'ap2';
+          return '';
+        }
+
+        function resolveRuleBasedProbability(text, track) {
+          const normalizedText = normalizeExamMatchText(text);
+          if (!normalizedText) return null;
+          const rules = EXAM_PROBABILITY_RULES[track];
+          if (!Array.isArray(rules) || rules.length === 0) return null;
+
+          const matches = [];
+          for (let i = 0; i < rules.length; i += 1) {
+            const rule = rules[i];
+            if (!rule || typeof rule !== 'object') continue;
+            if (!textIncludesAnyKeyword(normalizedText, rule.keywords)) continue;
+            const percent = Number(rule.percent);
+            if (!Number.isFinite(percent)) continue;
+            matches.push(percent);
+          }
+
+          if (!matches.length) return null;
+          const sum = matches.reduce((acc, value) => acc + value, 0);
+          return clampPercent(sum / matches.length);
+        }
+
+        function resolveLeafExamProbabilityPercent(node) {
+          if (!node || !node.isFolder) return null;
+          const track = resolveExamTrack(node);
+          if (!track) return null;
+
+          const matchText = [
+            node.name,
+            node.gameRelPath,
+            node.jsonRelPath,
+            node.attributesRelPath
+          ].filter(Boolean).join(' ');
+
+          const rulePercent = resolveRuleBasedProbability(matchText, track);
+          if (Number.isFinite(rulePercent)) return rulePercent;
+
+          const fallback = Number(EXAM_PROBABILITY_FALLBACK[track]);
+          if (Number.isFinite(fallback)) return clampPercent(fallback);
+          return null;
+        }
+
         function safeDecodePathPart(value) {
           const source = String(value || '');
           try {
@@ -1230,11 +1353,12 @@
             const probabilityPercent = resolveExamProbabilityPercent(node);
             const probabilityCell = document.createElement('span');
             probabilityCell.className = 'tree-meta-cell tree-meta-cell--probability';
-            if (isGameNode) {
+            if (isGameNode || !Number.isFinite(probabilityPercent)) {
               probabilityCell.textContent = '';
               probabilityCell.setAttribute('aria-label', '');
             } else {
               probabilityCell.textContent = probabilityPercent + '%';
+              probabilityCell.setAttribute('aria-label', 'Pruefungswahrscheinlichkeit ' + probabilityPercent + ' Prozent');
             }
             row.appendChild(probabilityCell);
 
@@ -1366,38 +1490,40 @@
         }
 
         function resolveExamProbabilityStats(node) {
-          if (!node || !node.isFolder) return { flame: 0, total: 0 };
+          if (!node || !node.isFolder) return { sum: 0, total: 0 };
 
           if (isGameLaunchNode(node)) {
-            const isFlame = resolveNodeIconKind(node) === 'flame';
-            return { flame: isFlame ? 1 : 0, total: 1 };
+            const ownPercent = resolveLeafExamProbabilityPercent(node);
+            if (!Number.isFinite(ownPercent)) return { sum: 0, total: 0 };
+            return { sum: ownPercent, total: 1 };
           }
 
           const children = Array.isArray(node.children) ? node.children : [];
-          let flame = 0;
+          let sum = 0;
           let total = 0;
           for (let i = 0; i < children.length; i += 1) {
             const childStats = resolveExamProbabilityStats(children[i]);
             if (!childStats || typeof childStats !== 'object') continue;
-            flame += Number(childStats.flame) || 0;
+            sum += Number(childStats.sum) || 0;
             total += Number(childStats.total) || 0;
           }
 
-          if (total === 0 && isPlayableFolder(node)) {
-            const ownFlame = resolveNodeIconKind(node) === 'flame' ? 1 : 0;
-            return { flame: ownFlame, total: 1 };
+          if (total === 0) {
+            const ownPercent = resolveLeafExamProbabilityPercent(node);
+            if (!Number.isFinite(ownPercent)) return { sum: 0, total: 0 };
+            return { sum: ownPercent, total: 1 };
           }
 
-          return { flame: flame, total: total };
+          return { sum: sum, total: total };
         }
 
         function resolveExamProbabilityPercent(node) {
           const stats = resolveExamProbabilityStats(node);
-          if (!stats || typeof stats !== 'object') return 0;
+          if (!stats || typeof stats !== 'object') return null;
           const total = Number(stats.total) || 0;
-          if (total <= 0) return 0;
-          const flame = Number(stats.flame) || 0;
-          return clampPercent((flame / total) * 100);
+          if (total <= 0) return null;
+          const sum = Number(stats.sum) || 0;
+          return clampPercent(sum / total);
         }
 
         function folderEmoji(node, isCollapsed) {

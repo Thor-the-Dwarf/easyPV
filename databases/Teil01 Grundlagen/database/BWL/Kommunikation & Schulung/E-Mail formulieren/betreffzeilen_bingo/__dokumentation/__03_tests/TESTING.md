@@ -1,4 +1,4 @@
-# Testing: Anhang-Vergesser-Alarm
+# Testing: Betreffzeilen-Bingo
 
 ## Ziel
 - Basisqualitaet sicherstellen: Spiel-Dateien vorhanden, Konfig validierbar, Kernlogik lauffaehig.

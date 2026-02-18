@@ -1457,16 +1457,8 @@
           openGenericFolder(node);
         }
 
-        function hasOwnGenericContent(node) {
-          return !!(
-            node &&
-            (node.attributesRelPath || node.jsonRelPath || node.gameRelPath)
-          );
-        }
-
         function openGenericFolder(node) {
           if (!contentHost) return false;
-          if (!hasOwnGenericContent(node)) return false;
           stopActiveGameProgressTracking();
           const folderLabel = node && node.name ? node.name : 'Thema';
           const sourceNode = node || {};
@@ -1476,7 +1468,6 @@
           const gameRelPath = sourceNode && sourceNode.gameRelPath ? String(sourceNode.gameRelPath) : '';
           const jsonUrl = jsonRelPath ? buildRepoUrl(jsonRelPath) : '';
           const gameUrl = gameRelPath ? buildRepoUrl(gameRelPath) : '';
-          if (!jsonUrl && !gameUrl) return false;
           const src = buildGenericPageSrc(
             folderLabel,
             jsonUrl,

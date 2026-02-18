@@ -19,7 +19,7 @@ body {
 }
 
 .app {
-  width: min(980px, 100% - 1.2rem);
+  width: min(1080px, 100% - 1.2rem);
   margin: 0.6rem auto;
   display: grid;
   gap: 0.65rem;
@@ -32,7 +32,7 @@ body {
   background: color-mix(in srgb, var(--bg-soft) 82%, black 18%);
 }
 
-.head h1 { margin: 0 0 0.25rem; font-size: clamp(1.12rem, 2.8vw, 1.45rem); }
+.head h1 { margin: 0 0 0.25rem; font-size: clamp(1.1rem, 2.8vw, 1.4rem); }
 .head p { margin: 0 0 0.65rem; color: var(--muted); }
 
 .kpis {
@@ -74,105 +74,146 @@ body {
   background: color-mix(in srgb, var(--card) 88%, black 12%);
 }
 
-.scenario {
-  border: 1px solid color-mix(in srgb, var(--line) 30%, transparent);
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0.65rem;
+}
+
+.mail-list {
+  border: 1px solid color-mix(in srgb, var(--line) 28%, transparent);
   border-radius: 12px;
-  overflow: hidden;
-}
-
-.scenario-head {
-  padding: 0.52rem 0.65rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--line) 25%, transparent);
-  background: color-mix(in srgb, var(--bg-soft) 86%, black 14%);
-}
-
-.scenario-title {
-  font-weight: 700;
-  letter-spacing: 0.01em;
-}
-
-.scenario-body {
-  margin: 0;
-  padding: 0.75rem 0.65rem;
-  color: var(--text);
-  line-height: 1.45;
-}
-
-.option-list {
-  margin-top: 0.7rem;
+  padding: 0.5rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.5rem;
-}
-
-.option-btn {
-  border: 1px solid color-mix(in srgb, var(--line) 45%, transparent);
-  background: color-mix(in srgb, var(--bg) 80%, black 20%);
-  color: var(--text);
-  border-radius: 10px;
-  padding: 0.62rem 0.68rem;
-  text-align: left;
-  cursor: pointer;
-  display: grid;
-  gap: 0.38rem;
-}
-
-.option-btn:hover:not(:disabled) {
-  border-color: color-mix(in srgb, var(--line) 85%, transparent);
-}
-
-.option-btn.chosen {
-  border-color: color-mix(in srgb, var(--line) 90%, transparent);
-  background: color-mix(in srgb, var(--line) 16%, var(--bg));
-}
-
-.option-btn:disabled {
-  opacity: 0.78;
-  cursor: not-allowed;
-}
-
-.option-id {
-  font-size: 0.84rem;
-  font-weight: 800;
-  color: color-mix(in srgb, var(--line) 80%, white 20%);
-}
-
-.routing-row {
-  display: grid;
-  grid-template-columns: auto 1fr;
   gap: 0.35rem;
-  align-items: baseline;
-}
-
-.routing-row span {
-  color: var(--muted);
-  font-size: 0.82rem;
-  font-weight: 700;
-}
-
-.routing-row strong {
-  font-size: 0.9rem;
-  line-height: 1.3;
-  font-weight: 700;
-}
-
-.btn {
-  border: 1px solid color-mix(in srgb, var(--line) 45%, transparent);
+  max-height: 570px;
+  overflow: auto;
   background: color-mix(in srgb, var(--bg) 80%, black 20%);
+}
+
+.mail-list-head {
+  font-size: 0.84rem;
+  color: var(--muted);
+  font-weight: 700;
+  padding: 0.2rem 0.2rem 0.35rem;
+}
+
+.mail-row {
+  border: 1px solid color-mix(in srgb, var(--line) 34%, transparent);
+  background: color-mix(in srgb, var(--bg-soft) 72%, black 28%);
   color: var(--text);
   border-radius: 10px;
-  padding: 0.6rem 0.65rem;
-  font-size: 0.95rem;
-  font-weight: 700;
+  padding: 0.44rem 0.5rem;
+  text-align: left;
+  display: grid;
+  gap: 0.15rem;
   cursor: pointer;
 }
 
-.btn:hover:not(:disabled) {
+.mail-row:hover {
   border-color: color-mix(in srgb, var(--line) 80%, transparent);
 }
 
+.mail-row.selected {
+  border-color: color-mix(in srgb, var(--line) 88%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--line) 40%, transparent) inset;
+}
+
+.mail-row.decided {
+  opacity: 0.86;
+}
+
+.mail-sender {
+  font-size: 0.77rem;
+  color: var(--muted);
+}
+
+.mail-subject {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.mail-status {
+  font-size: 0.74rem;
+  color: #d7e8ff;
+}
+
+.mail-detail {
+  border: 1px solid color-mix(in srgb, var(--line) 30%, transparent);
+  border-radius: 12px;
+  padding: 0.65rem;
+  background: color-mix(in srgb, var(--bg-soft) 80%, black 20%);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.detail-header {
+  border: 1px solid color-mix(in srgb, var(--line) 20%, transparent);
+  border-radius: 10px;
+  padding: 0.5rem;
+  display: grid;
+  gap: 0.26rem;
+  font-size: 0.92rem;
+}
+
+.detail-header span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.detail-preview {
+  margin: 0;
+  color: #d8e8ff;
+  font-size: 0.96rem;
+  font-weight: 700;
+}
+
+.detail-body {
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--line) 20%, transparent);
+  border-radius: 10px;
+  padding: 0.55rem 0.6rem;
+  line-height: 1.45;
+}
+
+.actions {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  border: 1px solid color-mix(in srgb, var(--line) 45%, transparent);
+  background: color-mix(in srgb, var(--bg) 80%, black 20%);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.55rem 0.62rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.action-btn:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--line) 80%, transparent);
+}
+
+.action-btn:disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+}
+
+.action-btn.danger {
+  border-color: color-mix(in srgb, var(--bad) 65%, transparent);
+  background: color-mix(in srgb, var(--bad) 18%, var(--bg));
+}
+
+.locked-note {
+  margin: 0;
+  color: var(--muted);
+}
+
 .feedback {
-  margin-top: 0.62rem;
   border-radius: 10px;
   border: 1px solid transparent;
   padding: 0.55rem 0.6rem;
@@ -189,12 +230,6 @@ body {
   background: color-mix(in srgb, var(--bad) 14%, transparent);
 }
 
-.next-wrap {
-  margin-top: 0.55rem;
-  display: flex;
-  justify-content: flex-end;
-}
-
 .result {
   display: grid;
   gap: 0.5rem;
@@ -203,9 +238,13 @@ body {
 .result h2 { margin: 0; }
 .result p { margin: 0; color: var(--muted); }
 
-@media (max-width: 840px) {
-  .option-list {
+@media (max-width: 900px) {
+  .layout {
     grid-template-columns: 1fr;
+  }
+
+  .mail-list {
+    max-height: 260px;
   }
 }
 

@@ -3,24 +3,24 @@
 
   const state = {
     cfg: null,
-    roundIndex: 0,
+    mails: [],
+    selectedMailId: '',
     score: 0,
     correctCount: 0,
-    answered: false,
-    selectedOptionId: null,
+    reviewedCount: 0,
     done: false,
-    feedback: '',
+    failed: false,
     feedbackState: '',
+    feedback: '',
     remainingMs: 0,
     lastTickAt: 0,
     elapsedMs: 0,
-    totalReactionMs: 0,
     timerId: 0
   };
 
   const el = {
     root: document.getElementById('root'),
-    round: document.getElementById('kpi-round'),
+    reviewed: document.getElementById('kpi-reviewed'),
     score: document.getElementById('kpi-score'),
     rate: document.getElementById('kpi-rate'),
     time: document.getElementById('kpi-time'),
@@ -31,10 +31,14 @@
 
   async function init() {
     try {
-      const response = await fetch('_data/_gg01_cc_blindflug_vermeider.json');
+      const response = await fetch('_data/_gg01_phishing_detektiv_email_edition.json');
       if (!response.ok) throw new Error('Konfiguration konnte nicht geladen werden.');
       state.cfg = await response.json();
-      startRound();
+      state.mails = (state.cfg.mails || []).map(function (mail) {
+        return Object.assign({}, mail, { decision: '' });
+      });
+      state.selectedMailId = nextUndecidedMailId() || '';
+      startTimerForSelected();
       render();
     } catch (error) {
       if (el.root) {
@@ -43,38 +47,9 @@
     }
   }
 
-  function currentRound() {
-    if (!state.cfg || !Array.isArray(state.cfg.rounds)) return null;
-    return state.cfg.rounds[state.roundIndex] || null;
-  }
-
-  function getRoundLimitMs(round) {
-    const fromRound = Number(round && round.roundMs);
-    if (Number.isFinite(fromRound) && fromRound > 0) return fromRound;
+  function defaultDecisionMs() {
     const fallback = Number(state.cfg && state.cfg.timing && state.cfg.timing.default_round_ms);
-    if (Number.isFinite(fallback) && fallback > 0) return fallback;
-    return 12000;
-  }
-
-  function startRound() {
-    const round = currentRound();
-    if (!round) {
-      finishGame();
-      return;
-    }
-
-    state.answered = false;
-    state.selectedOptionId = null;
-    state.feedback = '';
-    state.feedbackState = '';
-    state.remainingMs = getRoundLimitMs(round);
-    state.lastTickAt = Date.now();
-
-    stopTimer();
-    state.timerId = window.setInterval(function () {
-      tick(Date.now() - state.lastTickAt);
-      state.lastTickAt = Date.now();
-    }, 100);
+    return Number.isFinite(fallback) && fallback > 0 ? fallback : 12000;
   }
 
   function stopTimer() {
@@ -83,8 +58,32 @@
     state.timerId = 0;
   }
 
+  function startTimerForSelected() {
+    stopTimer();
+
+    if (state.done) return;
+
+    const mail = selectedMail();
+    if (!mail || mail.decision) {
+      state.remainingMs = 0;
+      return;
+    }
+
+    state.remainingMs = defaultDecisionMs();
+    state.lastTickAt = Date.now();
+
+    state.timerId = window.setInterval(function () {
+      tick(Date.now() - state.lastTickAt);
+      state.lastTickAt = Date.now();
+    }, 100);
+  }
+
   function tick(deltaMs) {
-    if (state.done || state.answered) return;
+    if (state.done) return;
+
+    const mail = selectedMail();
+    if (!mail || mail.decision) return;
+
     const delta = Number(deltaMs);
     if (!Number.isFinite(delta) || delta <= 0) return;
 
@@ -92,79 +91,69 @@
     state.elapsedMs += delta;
 
     if (state.remainingMs <= 0) {
-      evaluate('timeout');
+      classify('timeout');
       return;
     }
 
     renderKpis();
   }
 
-  function evaluate(optionId) {
-    if (state.done || state.answered) return;
+  function selectedMail() {
+    return state.mails.find(function (mail) {
+      return mail.id === state.selectedMailId;
+    }) || null;
+  }
 
-    const round = currentRound();
-    if (!round || !Array.isArray(round.options)) return;
+  function nextUndecidedMailId() {
+    const next = state.mails.find(function (mail) {
+      return !mail.decision;
+    });
+    return next ? next.id : '';
+  }
+
+  function classify(action) {
+    if (state.done) return;
+
+    const mail = selectedMail();
+    if (!mail || mail.decision) return;
 
     const scoring = state.cfg && state.cfg.scoring ? state.cfg.scoring : {};
-    const selected = String(optionId || '').trim();
-    const correctId = String(round.correctOptionId || '').trim();
-    const correctOption = round.options.find(function (option) {
-      return String(option.id || '') === correctId;
-    }) || null;
+    const gameOverOnWrong = !!(state.cfg && state.cfg.settings && state.cfg.settings.game_over_on_wrong);
+    const expected = mail.isPhishing ? 'spam' : 'ok';
 
-    if (selected !== 'timeout') {
-      const selectedOption = round.options.find(function (option) {
-        return String(option.id || '') === selected;
-      });
-      if (!selectedOption) return;
-    }
+    mail.decision = action;
+    state.reviewedCount += 1;
 
-    state.answered = true;
-    state.selectedOptionId = selected;
-    stopTimer();
-
-    if (selected === 'timeout') {
+    if (action === 'timeout') {
       state.score += Number(scoring.timeout) || 0;
       state.feedbackState = 'bad';
-      state.feedback = 'Zeit abgelaufen. ' + (correctOption ? 'Korrekt waere Option ' + correctOption.id.toUpperCase() + '.' : '');
-      render();
-      return;
-    }
-
-    const option = round.options.find(function (entry) {
-      return String(entry.id || '') === selected;
-    });
-
-    const isCorrect = selected === correctId;
-    if (isCorrect) {
+      state.feedback = 'Zeit abgelaufen. Mail wurde nicht bewertet. Hinweise: ' + (mail.clues || []).join(', ');
+    } else if (action === expected) {
       state.score += Number(scoring.correct) || 0;
       state.correctCount += 1;
       state.feedbackState = 'ok';
-      state.feedback = option && option.feedback ? option.feedback : 'Korrekte Verteilerlogik.';
-      const roundMs = getRoundLimitMs(round);
-      state.totalReactionMs += Math.max(0, roundMs - state.remainingMs);
+      state.feedback = 'Korrekt. Hinweise: ' + (mail.clues || []).join(', ');
     } else {
       state.score += Number(scoring.wrong) || 0;
       state.feedbackState = 'bad';
-      state.feedback = option && option.feedback ? option.feedback : 'Nicht korrekt zugeordnet.';
-      if (correctOption) {
-        state.feedback += ' Korrekt waere Option ' + correctOption.id.toUpperCase() + '.';
+      state.feedback = 'Falsch klassifiziert. Erwartet war "' + (expected === 'spam' ? 'Spam' : 'Legitim') + '".';
+
+      if (gameOverOnWrong) {
+        state.failed = true;
+        state.done = true;
+        stopTimer();
+        render();
+        return;
       }
     }
 
-    render();
-  }
-
-  function nextRound() {
-    if (!state.answered || state.done || !state.cfg) return;
-
-    if (state.roundIndex >= state.cfg.rounds.length - 1) {
+    if (state.reviewedCount >= state.mails.length) {
       finishGame();
       return;
     }
 
-    state.roundIndex += 1;
-    startRound();
+    state.selectedMailId = nextUndecidedMailId();
+    startTimerForSelected();
     render();
   }
 
@@ -177,40 +166,51 @@
 
   function restart() {
     stopTimer();
-    state.roundIndex = 0;
+
+    state.mails = (state.cfg.mails || []).map(function (mail) {
+      return Object.assign({}, mail, { decision: '' });
+    });
+    state.selectedMailId = nextUndecidedMailId() || '';
     state.score = 0;
     state.correctCount = 0;
-    state.answered = false;
-    state.selectedOptionId = null;
+    state.reviewedCount = 0;
     state.done = false;
-    state.feedback = '';
+    state.failed = false;
     state.feedbackState = '';
+    state.feedback = '';
     state.remainingMs = 0;
     state.lastTickAt = 0;
     state.elapsedMs = 0;
-    state.totalReactionMs = 0;
-    startRound();
+
+    startTimerForSelected();
     render();
   }
 
-  function computeRatePercent() {
-    if (!state.cfg || !Array.isArray(state.cfg.rounds) || state.cfg.rounds.length === 0) return 0;
-    const perCorrect = Math.max(1, Number(state.cfg.scoring && state.cfg.scoring.correct) || 0);
-    const maxScore = state.cfg.rounds.length * perCorrect;
-    if (maxScore <= 0) return 0;
-    return Math.max(0, Math.min(100, Math.round((state.score / maxScore) * 100)));
+  function selectMail(mailId) {
+    if (!mailId) return;
+
+    const exists = state.mails.some(function (mail) {
+      return mail.id === mailId;
+    });
+    if (!exists) return;
+
+    state.selectedMailId = mailId;
+    startTimerForSelected();
+    render();
+  }
+
+  function ratePercent() {
+    if (state.reviewedCount <= 0) return 0;
+    return Math.max(0, Math.min(100, Math.round((state.correctCount / state.reviewedCount) * 100)));
   }
 
   function renderKpis() {
-    const total = state.cfg && state.cfg.rounds ? state.cfg.rounds.length : 0;
-    const shownRound = state.done ? total : state.roundIndex + 1;
-    const round = currentRound();
-    const limitMs = getRoundLimitMs(round);
-    const ratio = limitMs > 0 ? Math.max(0, Math.min(1, state.remainingMs / limitMs)) : 0;
+    const total = state.mails.length;
+    const ratio = defaultDecisionMs() > 0 ? Math.max(0, Math.min(1, state.remainingMs / defaultDecisionMs())) : 0;
 
-    if (el.round) el.round.textContent = String(shownRound) + '/' + String(total);
+    if (el.reviewed) el.reviewed.textContent = String(state.reviewedCount) + '/' + String(total);
     if (el.score) el.score.textContent = String(state.score);
-    if (el.rate) el.rate.textContent = String(computeRatePercent()) + '%';
+    if (el.rate) el.rate.textContent = String(ratePercent()) + '%';
     if (el.time) el.time.textContent = (state.remainingMs / 1000).toFixed(1) + 's';
 
     if (el.fill) {
@@ -225,20 +225,27 @@
     }
   }
 
+  function statusLabel(decision) {
+    if (decision === 'spam') return 'Spam';
+    if (decision === 'ok') return 'Legitim';
+    if (decision === 'timeout') return 'Timeout';
+    return 'Offen';
+  }
+
   function render() {
     renderKpis();
-    if (!state.cfg || !el.root) return;
+    if (!el.root || !state.cfg) return;
 
     if (state.done) {
-      const avgReactionMs = state.correctCount > 0 ? Math.round(state.totalReactionMs / state.correctCount) : 0;
+      const verdict = state.failed ? 'Sicherheitsvorfall' : 'Posteingang geprueft';
 
       el.root.innerHTML = [
         '<section class="result">',
-        '<h2>Durchlauf abgeschlossen</h2>',
-        '<p>Score: <strong>' + escapeHtml(String(state.score)) + '</strong> / 100</p>',
-        '<p>Trefferquote: <strong>' + escapeHtml(String(computeRatePercent())) + '%</strong></p>',
-        '<p>Durchschnitt Reaktionszeit (korrekte Treffer): <strong>' + escapeHtml(String(avgReactionMs)) + ' ms</strong></p>',
-        '<button id="restart-btn" class="btn" type="button">Nochmal spielen</button>',
+        '<h2>' + escapeHtml(verdict) + '</h2>',
+        '<p>Score: <strong>' + escapeHtml(String(state.score)) + '</strong></p>',
+        '<p>Trefferquote: <strong>' + escapeHtml(String(ratePercent())) + '%</strong></p>',
+        '<p>Korrekte Entscheidungen: <strong>' + escapeHtml(String(state.correctCount)) + '</strong> / ' + escapeHtml(String(state.mails.length)) + '</p>',
+        '<button id="restart-btn" class="action-btn" type="button">Nochmal spielen</button>',
         '</section>'
       ].join('');
 
@@ -247,53 +254,65 @@
       return;
     }
 
-    const round = currentRound();
-    if (!round) return;
+    const current = selectedMail();
+    if (!current) return;
 
     let html = '';
-    html += '<article class="scenario">';
-    html += '<header class="scenario-head"><div class="scenario-title">Szenario</div></header>';
-    html += '<p class="scenario-body">' + escapeHtml(round.scenario || '') + '</p>';
-    html += '</article>';
+    html += '<div class="layout">';
 
-    html += '<div class="option-list">';
-    round.options.forEach(function (option) {
-      const disabledAttr = state.answered ? ' disabled' : '';
-      const isChosen = state.selectedOptionId === String(option.id || '');
-      const chosenClass = isChosen ? ' chosen' : '';
-      html += '<button class="option-btn' + chosenClass + '" type="button" data-option-id="' + escapeHtml(String(option.id || '')) + '"' + disabledAttr + '>';
-      html += '<div class="option-id">Option ' + escapeHtml(String(option.id || '').toUpperCase()) + '</div>';
-      html += '<div class="routing-row"><span>An:</span><strong>' + escapeHtml(formatPeople(option.to)) + '</strong></div>';
-      html += '<div class="routing-row"><span>CC:</span><strong>' + escapeHtml(formatPeople(option.cc)) + '</strong></div>';
-      html += '<div class="routing-row"><span>BCC:</span><strong>' + escapeHtml(formatPeople(option.bcc)) + '</strong></div>';
+    html += '<aside class="mail-list">';
+    html += '<div class="mail-list-head">Posteingang</div>';
+    state.mails.forEach(function (mail) {
+      const selectedClass = mail.id === state.selectedMailId ? ' selected' : '';
+      const decidedClass = mail.decision ? ' decided' : '';
+      html += '<button class="mail-row' + selectedClass + decidedClass + '" type="button" data-mail-id="' + escapeHtml(mail.id) + '">';
+      html += '<div class="mail-sender">' + escapeHtml(mail.sender) + '</div>';
+      html += '<div class="mail-subject">' + escapeHtml(mail.subject) + '</div>';
+      html += '<div class="mail-status">' + escapeHtml(statusLabel(mail.decision)) + '</div>';
       html += '</button>';
     });
+    html += '</aside>';
+
+    const decisionLocked = !!current.decision;
+
+    html += '<section class="mail-detail">';
+    html += '<div class="detail-header">';
+    html += '<div><span>Von:</span> ' + escapeHtml(current.sender) + '</div>';
+    html += '<div><span>Betreff:</span> ' + escapeHtml(current.subject) + '</div>';
+    html += '</div>';
+    html += '<p class="detail-preview">' + escapeHtml(current.preview || '') + '</p>';
+    html += '<p class="detail-body">' + escapeHtml(current.body || '') + '</p>';
+
+    html += '<div class="actions">';
+    html += '<button id="mark-spam-btn" class="action-btn danger" type="button" ' + (decisionLocked ? 'disabled' : '') + '>Als Spam markieren</button>';
+    html += '<button id="mark-ok-btn" class="action-btn" type="button" ' + (decisionLocked ? 'disabled' : '') + '>Als legitim behalten</button>';
     html += '</div>';
 
-    if (state.feedback) {
-      html += '<section class="feedback ' + escapeHtml(state.feedbackState || 'bad') + '">';
-      html += escapeHtml(state.feedback);
-      html += '</section>';
-      html += '<div class="next-wrap"><button id="next-btn" class="btn" type="button">';
-      html += state.roundIndex >= state.cfg.rounds.length - 1 ? 'Auswertung' : 'Naechstes Szenario';
-      html += '</button></div>';
+    if (decisionLocked) {
+      html += '<p class="locked-note">Bereits bewertet: <strong>' + escapeHtml(statusLabel(current.decision)) + '</strong></p>';
     }
+
+    if (state.feedback) {
+      html += '<section class="feedback ' + escapeHtml(state.feedbackState || 'bad') + '">' + escapeHtml(state.feedback) + '</section>';
+    }
+
+    html += '</section>';
+    html += '</div>';
 
     el.root.innerHTML = html;
 
-    Array.from(el.root.querySelectorAll('[data-option-id]')).forEach(function (button) {
+    Array.from(el.root.querySelectorAll('[data-mail-id]')).forEach(function (button) {
       button.addEventListener('click', function () {
-        evaluate(button.getAttribute('data-option-id'));
+        const mailId = button.getAttribute('data-mail-id');
+        selectMail(mailId || '');
       });
     });
 
-    const nextBtn = document.getElementById('next-btn');
-    if (nextBtn) nextBtn.addEventListener('click', nextRound);
-  }
+    const markSpamBtn = document.getElementById('mark-spam-btn');
+    const markOkBtn = document.getElementById('mark-ok-btn');
 
-  function formatPeople(value) {
-    if (!Array.isArray(value) || value.length === 0) return '-';
-    return value.join(', ');
+    if (markSpamBtn) markSpamBtn.addEventListener('click', function () { classify('spam'); });
+    if (markOkBtn) markOkBtn.addEventListener('click', function () { classify('ok'); });
   }
 
   function escapeHtml(value) {
@@ -306,53 +325,39 @@
   }
 
   function asStatePayload() {
-    const round = currentRound();
-    const progressPercent = computeRatePercent();
+    const mail = selectedMail();
     return {
-      mode: state.done ? 'result' : 'recipient_routing',
-      measurable: true,
+      mode: state.done ? 'result' : 'phishing_inbox',
       coordinate_system: 'origin top-left, x right, y down',
-      round_index: state.roundIndex,
-      total_rounds: state.cfg && state.cfg.rounds ? state.cfg.rounds.length : 0,
+      selected_mail_id: state.selectedMailId,
+      reviewed_count: state.reviewedCount,
+      total_mails: state.mails.length,
+      correct_count: state.correctCount,
       score: state.score,
-      quality_percent: progressPercent,
-      progress_percent: progressPercent,
-      answered: state.answered,
-      selected_option_id: state.selectedOptionId,
+      rate_percent: ratePercent(),
+      failed: state.failed,
+      done: state.done,
       remaining_ms: Math.round(state.remainingMs),
       elapsed_ms: Math.round(state.elapsedMs),
-      current_scenario: round
+      current_mail: mail
         ? {
-            id: round.id,
-            scenario: round.scenario,
-            correct_option_id: round.correctOptionId
+            id: mail.id,
+            sender: mail.sender,
+            subject: mail.subject,
+            is_phishing: !!mail.isPhishing,
+            decision: mail.decision || null
           }
         : null
     };
   }
 
-  const __baseRenderToText = function renderGameToTextBase() {
-    return JSON.stringify(asStatePayload());
-  };
-  let __simulatedMs = 0;
-
   window.render_game_to_text = function renderGameToText() {
-    const raw = __baseRenderToText();
-    try {
-      const payload = JSON.parse(raw);
-      if (payload && typeof payload === 'object' && !Array.isArray(payload)) {
-        payload.simulated_ms = __simulatedMs;
-      }
-      return JSON.stringify(payload);
-    } catch (err) {
-      return raw;
-    }
+    return JSON.stringify(asStatePayload());
   };
 
   window.advanceTime = function advanceTime(ms) {
     const delta = Number(ms);
     if (!Number.isFinite(delta) || delta <= 0) return true;
-    __simulatedMs += delta;
     tick(delta);
     render();
     return true;

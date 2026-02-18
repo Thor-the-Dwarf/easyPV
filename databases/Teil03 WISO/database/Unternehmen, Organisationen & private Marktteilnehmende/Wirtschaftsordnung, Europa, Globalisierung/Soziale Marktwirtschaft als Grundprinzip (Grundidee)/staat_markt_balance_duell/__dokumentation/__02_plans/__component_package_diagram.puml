@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Staat-Markt-Balance-Duell
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: staat_markt_balance_duell" {
+  component "_ghtml_staat_markt_balance_duell.html" as HTML
+  component "_gjs_staat_markt_balance_duell.js" as JS
+  component "_gcss_staat_markt_balance_duell.css" as CSS
+  database "_data/_gg01_staat_markt_balance_duell.json" as GG
+  database "_data/__metaData_Soziale Marktwirtschaft als Grundprinzip (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

@@ -402,13 +402,16 @@
 
   function asStatePayload() {
     const round = currentRound();
+    const progressPercent = businessPercent();
     return {
       mode: state.done ? 'result' : 'tone_of_voice_editor',
+      measurable: true,
       coordinate_system: 'origin top-left, x right, y down',
       round_index: state.roundIndex,
       total_rounds: state.cfg && state.cfg.rounds ? state.cfg.rounds.length : 0,
       score: state.score,
-      business_percent: businessPercent(),
+      business_percent: progressPercent,
+      progress_percent: progressPercent,
       checked: state.checked,
       selected_terms: state.selections,
       remaining_ms: Math.round(state.remainingMs),
@@ -423,13 +426,28 @@
     };
   }
 
-  window.render_game_to_text = function renderGameToText() {
+  const __baseRenderToText = function renderGameToTextBase() {
     return JSON.stringify(asStatePayload());
+  };
+  let __simulatedMs = 0;
+
+  window.render_game_to_text = function renderGameToText() {
+    const raw = __baseRenderToText();
+    try {
+      const payload = JSON.parse(raw);
+      if (payload && typeof payload === 'object' && !Array.isArray(payload)) {
+        payload.simulated_ms = __simulatedMs;
+      }
+      return JSON.stringify(payload);
+    } catch (err) {
+      return raw;
+    }
   };
 
   window.advanceTime = function advanceTime(ms) {
     const delta = Number(ms);
     if (!Number.isFinite(delta) || delta <= 0) return true;
+    __simulatedMs += delta;
     tick(delta);
     render();
     return true;

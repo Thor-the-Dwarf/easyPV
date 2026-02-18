@@ -1,0 +1,32 @@
+# __gp_soziale_marktwirtschaft__ordnungsprinzip_match__zeitfenster_timer
+
+## Spielidee
+"Ordnungsprinzip-Match" in der Variante "zeitfenster_timer" trainiert Entscheidungen in der sozialen Marktwirtschaft unter Zeit- und Zielkorridordruck.
+
+## Lernziel
+- Ordnungs- und Steuerungsprinzipien situativ anwenden.
+- Zielkonflikte zwischen Effizienz, Wettbewerb und Ausgleich begruenden.
+
+## Messbare Progression
+- 8 Runden pro Durchlauf.
+- Punkte: +6 im Zeitfenster, -3 bei Ueberschreitung.
+- KPI: Tempoquote und Fehlerquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- RuleEngine
+- MetricService
+
+### Domaenenobjekte
+- ScenarioCard(cardId, prompt, difficulty)
+- DecisionOption(optionId, impactType)
+- RoundResult(isCorrect, scoreDelta, responseSeconds)
+
+### Zustandsmodell
+- READY -> ROUND_ACTIVE -> SELECT -> EVALUATE -> NEXT_ROUND -> FINISHED
+
+## Abnahmekriterien
+- Fortschritt ist ueber Punkte, Zeit und KPI sichtbar.
+- Regeln erzeugen reproduzierbare Bewertungen.

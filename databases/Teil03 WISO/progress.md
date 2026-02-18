@@ -14,3 +14,5 @@ Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine M
 - Je Spiel: Standardstruktur, UML/Plan-Dateien, Quiz-Mechanik und messbarer Fortschritt (`score`, `progress_percent`, `simulated_ms`).
 - Tests: Lokale Node-Unit-Tests fuer den Block komplett gruen (15/15).
 - Browser-Smoke: `output/web-game-kuendigungsschutz/` mit State/Screenshot erzeugt.
+- Reverse-Batch 2: Thema "Soziale Marktwirtschaft" mit 5 Gameordnern umgesetzt (wirtschaftspolitik_quiz_timer bis ordnungsprinzip_match).
+- Struktur aus Teil02 uebernommen: Themenordner enthaelt Gameordner; jeder Gameordner mit eigenem _data/_assets/__dokumentation und Tests.

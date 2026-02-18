@@ -1,160 +1,113 @@
 {
   "meta": {
-    "id": "cc_blindflug_vermeider_v1",
-    "title": "CC-Blindflug-Vermeider",
+    "id": "phishing_detektiv_email_edition_v1",
+    "title": "Phishing-Detektiv (E-Mail Edition)",
     "topic": "E-Mail formulieren",
-    "mechanic": "recipient_routing_decision",
+    "mechanic": "inbox_classification",
     "version": "1.0"
   },
   "scoring": {
-    "correct": 20,
-    "wrong": 0,
+    "correct": 10,
+    "wrong": -20,
     "timeout": 0,
     "completion_bonus": 0
   },
   "timing": {
     "default_round_ms": 12000
   },
-  "rounds": [
+  "settings": {
+    "game_over_on_wrong": true
+  },
+  "mails": [
     {
-      "id": 1,
-      "scenario": "Schicke das Angebot an Kunde Mueller. Teamleiterin Lea soll informiert sein, Azubi Tom soll nur intern mitlesen.",
-      "options": [
-        {
-          "id": "a",
-          "to": ["Kunde Mueller", "Lea"],
-          "cc": ["Tom"],
-          "bcc": [],
-          "feedback": "Datenschutzproblem: interne Rollen sind fuer den Kunden sichtbar."
-        },
-        {
-          "id": "b",
-          "to": ["Kunde Mueller"],
-          "cc": ["Lea"],
-          "bcc": ["Tom"],
-          "feedback": "Richtig. Kunde direkt in An, Leitung transparent in CC, interne Beobachtung per BCC."
-        },
-        {
-          "id": "c",
-          "to": ["Lea"],
-          "cc": ["Kunde Mueller"],
-          "bcc": ["Tom"],
-          "feedback": "Falsch priorisiert: Hauptempfaenger gehoert in An."
-        }
-      ],
-      "correctOptionId": "b"
+      "id": "m1",
+      "sender": "security@firma-it.de",
+      "subject": "Passwort-Rotation fuer VPN heute 18:00",
+      "preview": "Bitte aktualisieren Sie Ihr VPN-Passwort im Self-Service-Portal.",
+      "body": "Hallo Team, heute um 18:00 startet die geplante Passwort-Rotation im bekannten Self-Service-Portal. Support erreichbar bis 19:00.",
+      "isPhishing": false,
+      "clues": ["interne Domain", "konkreter Prozess", "kein Druckton"]
     },
     {
-      "id": 2,
-      "scenario": "Kunde Schuster meldet einen Fehler. Support soll direkt handeln, Bereichsleitung soll informiert werden.",
-      "options": [
-        {
-          "id": "a",
-          "to": ["Support-Team"],
-          "cc": ["Kunde Schuster", "Bereichsleitung"],
-          "bcc": [],
-          "feedback": "Kunde sollte direkt adressiert sein, nicht nur in CC."
-        },
-        {
-          "id": "b",
-          "to": ["Kunde Schuster", "Support-Team"],
-          "cc": ["Bereichsleitung"],
-          "bcc": [],
-          "feedback": "Richtig. Kunde und operatives Team direkt in An, Leitung in CC."
-        },
-        {
-          "id": "c",
-          "to": ["Kunde Schuster"],
-          "cc": [],
-          "bcc": ["Support-Team", "Bereichsleitung"],
-          "feedback": "Support darf hier nicht verdeckt im BCC versteckt werden."
-        }
-      ],
-      "correctOptionId": "b"
+      "id": "m2",
+      "sender": "amaz0n-payments@gmx-security.net",
+      "subject": "Sofort handeln: Konto wird gesperrt",
+      "preview": "Bestaetigen Sie Ihre Daten in den naechsten 15 Minuten.",
+      "body": "Ihr Konto wurde markiert. Oeffnen Sie jetzt den Link und geben Sie Ihre Bankdaten ein, sonst folgt eine endgueltige Sperre.",
+      "isPhishing": true,
+      "clues": ["verdrehte Marke im Absender", "massive Dringlichkeit", "fordert Bankdaten"]
     },
     {
-      "id": 3,
-      "scenario": "Interne Budgetabfrage an Abteilung Einkauf. Geschaeftsfuehrung soll informiert sein, externe Partner duerfen nichts sehen.",
-      "options": [
-        {
-          "id": "a",
-          "to": ["Einkauf"],
-          "cc": ["Geschaeftsfuehrung"],
-          "bcc": [],
-          "feedback": "Richtig. Interner Verteiler, transparente Information in CC."
-        },
-        {
-          "id": "b",
-          "to": ["Einkauf", "Externer Partner"],
-          "cc": ["Geschaeftsfuehrung"],
-          "bcc": [],
-          "feedback": "Externe haben in dieser internen Anfrage nichts zu suchen."
-        },
-        {
-          "id": "c",
-          "to": ["Geschaeftsfuehrung"],
-          "cc": ["Einkauf"],
-          "bcc": [],
-          "feedback": "Adressierungsfokus falsch: operatives Team gehoert in An."
-        }
-      ],
-      "correctOptionId": "a"
+      "id": "m3",
+      "sender": "rechnungen@lieferant-keller.de",
+      "subject": "Rechnung RE-2048 fuer Wartung Februar",
+      "preview": "Anhang PDF, Zahlungsziel 14 Tage.",
+      "body": "Guten Tag, anbei die Rechnung RE-2048 fuer die vereinbarte Wartung. Rueckfragen gerne ueber die bekannte Durchwahl.",
+      "isPhishing": false,
+      "clues": ["plausibler Geschaeftsbezug", "neutrale Sprache", "keine Zugangsdatenforderung"]
     },
     {
-      "id": 4,
-      "scenario": "Serienmail an 25 Bewerber mit gleichem Hinweis. Datenschutz: Empfaenger sollen sich nicht gegenseitig sehen.",
-      "options": [
-        {
-          "id": "a",
-          "to": ["Alle 25 Bewerber"],
-          "cc": [],
-          "bcc": [],
-          "feedback": "Datenschutz verletzt: alle Adressen werden offengelegt."
-        },
-        {
-          "id": "b",
-          "to": ["hr@firma.de"],
-          "cc": [],
-          "bcc": ["Alle 25 Bewerber"],
-          "feedback": "Richtig. Sammelversand ueber BCC schuetzt die Empfaengerdaten."
-        },
-        {
-          "id": "c",
-          "to": ["hr@firma.de"],
-          "cc": ["Alle 25 Bewerber"],
-          "bcc": [],
-          "feedback": "CC macht alle Empfaenger sichtbar und ist hier unzulaessig."
-        }
-      ],
-      "correctOptionId": "b"
+      "id": "m4",
+      "sender": "microsoft.support@micr0soft-update.com",
+      "subject": "Ungewoehnliche Anmeldung erkannt",
+      "preview": "Loggen Sie sich ueber den folgenden Link erneut ein.",
+      "body": "Wir haben eine ungewoehnliche Anmeldung erkannt. Zur Verifizierung muessen Sie innerhalb von 10 Minuten Benutzername und Passwort bestaetigen.",
+      "isPhishing": true,
+      "clues": ["Domain imitiert Marke", "Zeitdruck", "Passwortabfrage"]
     },
     {
-      "id": 5,
-      "scenario": "Liefertermin an Kunden Delta bestaetigen. Projektassistenz Jana soll intern still mitlesen.",
-      "options": [
-        {
-          "id": "a",
-          "to": ["Kunde Delta"],
-          "cc": ["Jana"],
-          "bcc": [],
-          "feedback": "Interne Assistenz wird fuer den Kunden sichtbar, das ist hier unnoetig."
-        },
-        {
-          "id": "b",
-          "to": ["Kunde Delta", "Jana"],
-          "cc": [],
-          "bcc": [],
-          "feedback": "Jana ist in An fuer den Kunden sichtbar; gefordert war stilles Mitlesen."
-        },
-        {
-          "id": "c",
-          "to": ["Kunde Delta"],
-          "cc": [],
-          "bcc": ["Jana"],
-          "feedback": "Richtig. Kunde direkt in An, interne stille Kenntnisnahme per BCC."
-        }
-      ],
-      "correctOptionId": "c"
+      "id": "m5",
+      "sender": "hr@firma.de",
+      "subject": "Einladung: Pflichtschulung Arbeitssicherheit",
+      "preview": "Termin am 12.03., Raum B-204.",
+      "body": "Hallo zusammen, hier die Einladung zur Pflichtschulung Arbeitssicherheit am 12.03. um 09:00 in Raum B-204. Bitte Teilnahme bestaetigen.",
+      "isPhishing": false,
+      "clues": ["interner Kontext", "sachlicher Ton", "keine sensiblen Daten angefragt"]
+    },
+    {
+      "id": "m6",
+      "sender": "it-helpdesk@firma-support.co",
+      "subject": "Mailbox voll - jetzt verifizieren",
+      "preview": "Ohne Verifizierung werden E-Mails geloescht.",
+      "body": "Ihre Mailbox ist ueber 99% belegt. Klicken Sie auf den Link und geben Sie Ihre Zugangsdaten ein, um Loeschungen zu vermeiden.",
+      "isPhishing": true,
+      "clues": ["fremde Domain", "Drohung mit Datenverlust", "Zugangsdatenabfrage"]
+    },
+    {
+      "id": "m7",
+      "sender": "meeting-bot@teams.microsoft.com",
+      "subject": "Terminupdate: Projekt Delta Weekly",
+      "preview": "Besprechung auf 10:30 verschoben.",
+      "body": "Automatische Benachrichtigung: Das Meeting Projekt Delta Weekly wurde auf 10:30 verschoben. Der bekannte Teams-Link bleibt gueltig.",
+      "isPhishing": false,
+      "clues": ["bekannter Dienst", "passender Kontext", "kein Sicherheitsdruck"]
+    },
+    {
+      "id": "m8",
+      "sender": "finanzamt-rueckzahlung@webmail.to",
+      "subject": "Steuererstattung 1.482 EUR sofort sichern",
+      "preview": "Jetzt Konto verifizieren fuer Auszahlung.",
+      "body": "Sie haben Anspruch auf eine sofortige Rueckzahlung. Um die Auszahlung zu erhalten, senden Sie bitte IBAN und Online-Banking-PIN ueber das Formular.",
+      "isPhishing": true,
+      "clues": ["generische Webmail-Domain", "zu gutes Versprechen", "fordert PIN"]
+    },
+    {
+      "id": "m9",
+      "sender": "noreply@cloud-backup.io",
+      "subject": "Backup-Report erfolgreich abgeschlossen",
+      "preview": "Alle 42 Systeme ohne Fehler gesichert.",
+      "body": "Der taegliche Backup-Report wurde erfolgreich abgeschlossen. Details finden Sie im Dashboard unter Operations > Backups.",
+      "isPhishing": false,
+      "clues": ["technisch plausibel", "kein Handlungsdruck", "kein Datenabgriff"]
+    },
+    {
+      "id": "m10",
+      "sender": "dhl-zoll@kundenservice-mail.net",
+      "subject": "Paket konnte nicht zugestellt werden",
+      "preview": "Offene Gebuehr von 1,99 EUR jetzt bezahlen.",
+      "body": "Ihr Paket wartet im Zollzentrum. Bezahlen Sie sofort die offene Gebuehr, sonst wird die Sendung vernichtet. Link unten.",
+      "isPhishing": true,
+      "clues": ["fremde Domain", "kleine Lockgebuehr", "starker Drohton"]
     }
   ]
 }

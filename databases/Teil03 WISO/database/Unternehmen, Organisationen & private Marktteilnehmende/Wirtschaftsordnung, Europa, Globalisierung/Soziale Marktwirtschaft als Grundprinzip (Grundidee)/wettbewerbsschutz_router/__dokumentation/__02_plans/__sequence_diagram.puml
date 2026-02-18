@@ -1,0 +1,16 @@
+@startuml
+title Wettbewerbsschutz-Router - Sequenzdiagramm
+autonumber
+actor Nutzer
+participant Browser
+participant "Game JS" as Game
+database "_gg01" as Data
+
+Nutzer -> Browser: Seite laden
+Browser -> Game: JS initialisieren
+Game -> Data: Konfig laden
+Data --> Game: Runden + Scoring
+Nutzer -> Game: Option waehlen
+Game -> Game: Auswertung + Punkte
+Game --> Browser: UI + KPI aktualisieren
+@enduml

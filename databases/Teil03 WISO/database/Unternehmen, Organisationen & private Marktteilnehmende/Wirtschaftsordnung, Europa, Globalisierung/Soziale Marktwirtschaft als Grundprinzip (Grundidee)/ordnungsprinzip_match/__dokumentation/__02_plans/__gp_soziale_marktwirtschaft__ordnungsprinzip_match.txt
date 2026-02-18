@@ -1,0 +1,46 @@
+# __gp_soziale_marktwirtschaft__ordnungsprinzip_match
+
+## Spielidee
+"Ordnungsprinzip-Match" ordnet Politikmaßnahmen den Grundprinzipien der sozialen Marktwirtschaft zu.
+
+## Lernziel
+- Grundprinzipien der sozialen Marktwirtschaft unterscheiden.
+- Maßnahmeneinordnung trainieren.
+
+## Messbare Progression
+- 24 Karten.
+- Punkte: +6 korrekt, -3 falsch.
+- KPI: Trefferquote je Prinzip.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- PrincipleEngine
+- MetricService
+
+### Domaenenobjekte
+- PolicyCard(cardId, policyType)
+- PrincipleOption(optionId, principleType)
+- MatchResult(isCorrect)
+
+### Beziehungen
+- PolicyCard hat 3 PrincipleOption.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE
+
+### Sequenz (Happy Path)
+1. Karte anzeigen.
+2. Prinzip waehlen.
+3. Validieren.
+
+## Regeln
+- Falsches Kernprinzip: Zusatzabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: policyType, options, expectedPrinciple
+
+## Abnahmekriterien
+- Zuordnung klar rueckgemeldet.
+- KPI nach Prinzip.

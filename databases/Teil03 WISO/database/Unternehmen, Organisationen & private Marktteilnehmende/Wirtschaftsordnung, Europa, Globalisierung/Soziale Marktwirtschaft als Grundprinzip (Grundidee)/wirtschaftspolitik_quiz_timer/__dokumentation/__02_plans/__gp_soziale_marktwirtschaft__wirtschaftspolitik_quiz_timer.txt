@@ -1,0 +1,46 @@
+# __gp_soziale_marktwirtschaft__wirtschaftspolitik_quiz_timer
+
+## Spielidee
+"Wirtschaftspolitik-Quiz-Timer" testet Grundideen der sozialen Marktwirtschaft im Schnellmodus.
+
+## Lernziel
+- Grundbegriffe sicher abrufen.
+- Politische Maßnahmen korrekt einordnen.
+
+## Messbare Progression
+- 28 Fragen, 15s je Frage.
+- Punkte: +5 korrekt, -2 falsch.
+- KPI: korrekte Antworten pro Minute.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- QuizController
+- ValidationEngine
+- KPIService
+
+### Domaenenobjekte
+- QuizItem(itemId, topic)
+- AnswerOption(optionId)
+- QuizResult(isCorrect, responseTimeMs)
+
+### Beziehungen
+- QuizItem hat 3..4 AnswerOption.
+
+### Zustandsmodell
+- READY -> QUESTION_ACTIVE -> ANSWER -> EVALUATE
+
+### Sequenz (Happy Path)
+1. Frage anzeigen.
+2. Antwort waehlen.
+3. Validieren.
+
+## Regeln
+- Keine Antwort im Zeitfenster: Fehler.
+
+## Datenmodell (JSON-Idee)
+- fields: topic, options, expectedOption
+
+## Abnahmekriterien
+- Timer stabil.
+- KPI Tempo + Genauigkeit.

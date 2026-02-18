@@ -8,3 +8,9 @@ Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine M
 - Validierung: Node-Unit-Smoke fuer alle 5 neuen Spiele erfolgreich (10/10 gruen).
 - Playwright: Verlagerungsszenario-Simulator visuell geprueft, state payload vorhanden, keine error-Datei im frischen Run (`output/web-game-teil03-reverse-standort-v2`).
 - Fix: Optionsbutton-Textfarbe explizit gesetzt, damit Inhalte sichtbar sind.
+
+- Fortsetzung: 5 weitere Spiele fuer "Kündigung - Kündigungsschutz (Grundidee)" umgesetzt.
+- Neu: `anhoerung_prozesspfad`, `fristrechner_duell`, `kuendigungsgrund_klassifikator`, `reaktionsfenster_timer`, `sozialauswahl_simulator`.
+- Je Spiel: Standardstruktur, UML/Plan-Dateien, Quiz-Mechanik und messbarer Fortschritt (`score`, `progress_percent`, `simulated_ms`).
+- Tests: Lokale Node-Unit-Tests fuer den Block komplett gruen (15/15).
+- Browser-Smoke: `output/web-game-kuendigungsschutz/` mit State/Screenshot erzeugt.

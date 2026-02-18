@@ -1,0 +1,17 @@
+Anforderungen
+- Titel: "Der Tone-of-Voice Editor"
+- Ziel: Aggressive Formulierungen in 5 E-Mail-Saetzen in professionelle Sprache ueberfuehren.
+- Lernziel: Deeskalation, professionelle Wortwahl und sachlicher Ton in Geschaefts-E-Mails.
+
+Spielidee
+- Pro Runde ein problematischer Ausgangssatz.
+- Markierte Woerter koennen fokussiert und ueber Auswahlfelder ersetzt werden.
+- Bewertung pro Begriff (korrekt/unkorrekt) plus Bonus fuer vollstaendig professionelle Runde.
+- Messbar ueber Score, Business-Prozent und Reaktionszeit.
+
+Implementierungsplan
+- [x] JSON Konfiguration `_data/_gg01_tone_of_voice_editor.json`
+- [x] UI `_ghtml_tone_of_voice_editor.html` + `_gcss_tone_of_voice_editor.css`
+- [x] Spiel-Logik `_gjs_tone_of_voice_editor.js`
+- [x] Hooks `render_game_to_text` und `advanceTime`
+- [x] Tests in `__dokumentation/__03_tests` (reachability + config)

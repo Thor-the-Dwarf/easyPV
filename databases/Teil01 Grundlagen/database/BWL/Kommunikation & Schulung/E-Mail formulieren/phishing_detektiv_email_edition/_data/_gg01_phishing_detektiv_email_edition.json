@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "id": "cc_blindflug_vermeider_v1",
+    "title": "CC-Blindflug-Vermeider",
+    "topic": "E-Mail formulieren",
+    "mechanic": "recipient_routing_decision",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 20,
+    "wrong": 0,
+    "timeout": 0,
+    "completion_bonus": 0
+  },
+  "timing": {
+    "default_round_ms": 12000
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "scenario": "Schicke das Angebot an Kunde Mueller. Teamleiterin Lea soll informiert sein, Azubi Tom soll nur intern mitlesen.",
+      "options": [
+        {
+          "id": "a",
+          "to": ["Kunde Mueller", "Lea"],
+          "cc": ["Tom"],
+          "bcc": [],
+          "feedback": "Datenschutzproblem: interne Rollen sind fuer den Kunden sichtbar."
+        },
+        {
+          "id": "b",
+          "to": ["Kunde Mueller"],
+          "cc": ["Lea"],
+          "bcc": ["Tom"],
+          "feedback": "Richtig. Kunde direkt in An, Leitung transparent in CC, interne Beobachtung per BCC."
+        },
+        {
+          "id": "c",
+          "to": ["Lea"],
+          "cc": ["Kunde Mueller"],
+          "bcc": ["Tom"],
+          "feedback": "Falsch priorisiert: Hauptempfaenger gehoert in An."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": 2,
+      "scenario": "Kunde Schuster meldet einen Fehler. Support soll direkt handeln, Bereichsleitung soll informiert werden.",
+      "options": [
+        {
+          "id": "a",
+          "to": ["Support-Team"],
+          "cc": ["Kunde Schuster", "Bereichsleitung"],
+          "bcc": [],
+          "feedback": "Kunde sollte direkt adressiert sein, nicht nur in CC."
+        },
+        {
+          "id": "b",
+          "to": ["Kunde Schuster", "Support-Team"],
+          "cc": ["Bereichsleitung"],
+          "bcc": [],
+          "feedback": "Richtig. Kunde und operatives Team direkt in An, Leitung in CC."
+        },
+        {
+          "id": "c",
+          "to": ["Kunde Schuster"],
+          "cc": [],
+          "bcc": ["Support-Team", "Bereichsleitung"],
+          "feedback": "Support darf hier nicht verdeckt im BCC versteckt werden."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": 3,
+      "scenario": "Interne Budgetabfrage an Abteilung Einkauf. Geschaeftsfuehrung soll informiert sein, externe Partner duerfen nichts sehen.",
+      "options": [
+        {
+          "id": "a",
+          "to": ["Einkauf"],
+          "cc": ["Geschaeftsfuehrung"],
+          "bcc": [],
+          "feedback": "Richtig. Interner Verteiler, transparente Information in CC."
+        },
+        {
+          "id": "b",
+          "to": ["Einkauf", "Externer Partner"],
+          "cc": ["Geschaeftsfuehrung"],
+          "bcc": [],
+          "feedback": "Externe haben in dieser internen Anfrage nichts zu suchen."
+        },
+        {
+          "id": "c",
+          "to": ["Geschaeftsfuehrung"],
+          "cc": ["Einkauf"],
+          "bcc": [],
+          "feedback": "Adressierungsfokus falsch: operatives Team gehoert in An."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": 4,
+      "scenario": "Serienmail an 25 Bewerber mit gleichem Hinweis. Datenschutz: Empfaenger sollen sich nicht gegenseitig sehen.",
+      "options": [
+        {
+          "id": "a",
+          "to": ["Alle 25 Bewerber"],
+          "cc": [],
+          "bcc": [],
+          "feedback": "Datenschutz verletzt: alle Adressen werden offengelegt."
+        },
+        {
+          "id": "b",
+          "to": ["hr@firma.de"],
+          "cc": [],
+          "bcc": ["Alle 25 Bewerber"],
+          "feedback": "Richtig. Sammelversand ueber BCC schuetzt die Empfaengerdaten."
+        },
+        {
+          "id": "c",
+          "to": ["hr@firma.de"],
+          "cc": ["Alle 25 Bewerber"],
+          "bcc": [],
+          "feedback": "CC macht alle Empfaenger sichtbar und ist hier unzulaessig."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": 5,
+      "scenario": "Liefertermin an Kunden Delta bestaetigen. Projektassistenz Jana soll intern still mitlesen.",
+      "options": [
+        {
+          "id": "a",
+          "to": ["Kunde Delta"],
+          "cc": ["Jana"],
+          "bcc": [],
+          "feedback": "Interne Assistenz wird fuer den Kunden sichtbar, das ist hier unnoetig."
+        },
+        {
+          "id": "b",
+          "to": ["Kunde Delta", "Jana"],
+          "cc": [],
+          "bcc": [],
+          "feedback": "Jana ist in An fuer den Kunden sichtbar; gefordert war stilles Mitlesen."
+        },
+        {
+          "id": "c",
+          "to": ["Kunde Delta"],
+          "cc": [],
+          "bcc": ["Jana"],
+          "feedback": "Richtig. Kunde direkt in An, interne stille Kenntnisnahme per BCC."
+        }
+      ],
+      "correctOptionId": "c"
+    }
+  ]
+}

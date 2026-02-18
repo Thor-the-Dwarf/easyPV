@@ -1353,7 +1353,8 @@
             const probabilityPercent = resolveExamProbabilityPercent(node);
             const probabilityCell = document.createElement('span');
             probabilityCell.className = 'tree-meta-cell tree-meta-cell--probability';
-            if (isGameNode || !Number.isFinite(probabilityPercent)) {
+            const shouldShowProbability = !isGameNode && level > 0 && Number.isFinite(probabilityPercent);
+            if (!shouldShowProbability) {
               probabilityCell.textContent = '';
               probabilityCell.setAttribute('aria-label', '');
             } else {

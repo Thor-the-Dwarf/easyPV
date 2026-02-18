@@ -25,3 +25,20 @@
 - Aus den verbliebenen Dateien in `E-Mail formulieren/` naechstes Spiel umsetzen:
   - `GamePlan-Der-Tone-of-Voice-Editor.txt`
   - `GamePlan-Phishing-Detektiv-E-Mail-Edition.txt`
+
+## 2026-02-18 - GamePlan-Umsetzung (Kündigungsschutz)
+- Neuer 5er-Block unter `databases/Teil03 WISO/.../Kündigung - Kündigungsschutz (Grundidee)/` umgesetzt:
+  - `anhoerung_prozesspfad`
+  - `fristrechner_duell`
+  - `kuendigungsgrund_klassifikator`
+  - `reaktionsfenster_timer`
+  - `sozialauswahl_simulator`
+- Pro Spiel erstellt: `_ghtml`, `_gjs`, `_gcss`, `_data/_gg01_*.json`, `_assets`, komplette `__dokumentation`-Ordnerstruktur.
+- Pro Spiel in `__02_plans`: Haupt-GamePlan + 4 Standardvarianten (`entscheidungsduell`, `kpi_challenge`, `szenario_simulator`, `zeitfenster_timer`) und UML-PUML-Dateien.
+- Fortschritts-Messbarkeit abgesichert:
+  - `render_game_to_text` enthaelt `measurable`, `score`, `progress_percent`.
+  - deterministischer Hook via `advanceTime` + `simulated_ms`.
+  - zusaetzlicher Unit-Test `${slug}.progress-metric.test.mjs` je Spiel.
+- Validierung:
+  - `node --test` ueber alle neuen Unit-Tests: 15/15 gruen.
+  - Playwright-Smoke fuer `anhoerung_prozesspfad` erfolgreich; State-Artifact unter `output/web-game-kuendigungsschutz/`.

@@ -14,7 +14,7 @@
         der Aufgaben verwendest
 
     2.3. in die Datei notitzen_bzw_learnings schreibst du wissenswertes das zur Erledigung er Aufgaben verwendest
-[uml_drawer.md](uml_drawer.md)
+
     3. Du Commitest am ende jedes Auftrags immer alles auf die mainbranch auch wenn Dateien dabei sind die nicht 
     von dir verändert wurden. Ich möchte das nichts verloren geht.
 

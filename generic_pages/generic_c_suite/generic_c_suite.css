@@ -65,6 +65,8 @@ body {
   font-size: 1.05rem;
   letter-spacing: 0.02em;
   text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .chat-header p {
@@ -109,6 +111,19 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35), 0 0 16px hsl(var(--avatar-color) / 0.35);
 }
 
+.message-avatar--topic {
+  width: min(320px, 34vw);
+  min-width: 190px;
+  height: auto;
+  min-height: 92px;
+  flex-basis: min(320px, 34vw);
+  border-radius: 18px;
+  align-items: flex-start;
+  text-align: left;
+  justify-content: center;
+  padding: 0.58rem 0.66rem;
+}
+
 .avatar-short {
   display: block;
   font-weight: 800;
@@ -116,6 +131,16 @@ body {
   letter-spacing: 0.02em;
   color: hsl(var(--text));
   line-height: 1.05;
+  width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.avatar-short--topic {
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: 0;
 }
 
 .avatar-long {
@@ -124,6 +149,9 @@ body {
   font-size: 0.58rem;
   line-height: 1.12;
   color: hsl(var(--text) / 0.9);
+  width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .message-bubble {
@@ -138,8 +166,21 @@ body {
 
 .message-topline {
   display: flex;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.45rem;
   margin-bottom: 0.25rem;
+}
+
+.author {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: hsl(var(--text) / 0.88);
+  line-height: 1.2;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .time {
@@ -147,12 +188,15 @@ body {
   color: hsl(var(--muted));
   white-space: nowrap;
   font-weight: 600;
+  margin-left: auto;
 }
 
 .message p {
   margin: 0;
   font-size: 0.92rem;
   line-height: 1.45;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 @media (max-width: 860px) {
@@ -171,6 +215,18 @@ body {
     font-size: 0.52rem;
   }
 
+  .message-avatar--topic {
+    width: min(280px, 48vw);
+    min-width: 0;
+    min-height: 78px;
+    flex-basis: min(280px, 48vw);
+    padding: 0.48rem 0.56rem;
+  }
+
+  .avatar-short--topic {
+    font-size: 0.72rem;
+  }
+
   .message-bubble {
     max-width: 100%;
   }
@@ -187,6 +243,12 @@ body {
     width: 74px;
     height: 74px;
     flex-basis: 74px;
+  }
+
+  .message-avatar--topic {
+    width: 100%;
+    min-height: 0;
+    flex-basis: auto;
   }
 
   .message-bubble {

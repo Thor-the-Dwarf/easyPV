@@ -52,7 +52,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
 
 ## 2026-02-14 - Arbeitspaket Leasing Bilder lokalisiert
 - 6 lizenzierte/kommerziell nutzbare Bilder fuer Leasing in der IT evaluiert und lokal in `__02_doing_Leasing/assets` gespeichert (`leasing_it_*.jpg`).
-- `__gAttributes_Leasing.json` umgestellt: `bild_quellen[].bild_url` zeigt jetzt auf lokale Assets, `quelle_url` + `lizenz` bleiben als Nachweis enthalten.
+- `__metaData_Leasing.json` umgestellt: `bild_quellen[].bild_url` zeigt jetzt auf lokale Assets, `quelle_url` + `lizenz` bleiben als Nachweis enthalten.
 - `generic_page.js` verbessert: relative `bild_url`/`quelle_url` aus `bild_quellen` werden korrekt relativ zur geladenen JSON aufgeloest.
 - Offene TODOs fuer naechste Runde: gleiches Vorgehen fuer weitere Themenordner, jeweils 6 thematisch belastbare Bilder kuratieren und lokalisieren.
 - Original prompt (current turn): ja mach weiter
@@ -265,7 +265,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `folderEmoji`: Game-Icon nur noch bei Leaf mit echter `gameRelPath` (nicht bei JSON-only Knoten).
   - Label-Klick auf Ordner mit Kindern toggelt jetzt den Ordner (statt no-op).
   - JSON/HTML-Erkennung für `jsonRelPath` und `gameRelPath` rekursiv über Unterordner.
-- Verifikation: DOM-Klicktest (Menü öffnen + Klick auf `Teil03 WISO`) lädt nun wieder ein `iframe.content-frame` mit `generic_page.html?...json=.../Teil03%20WISO/database/__gAttributes_database.json`.
+- Verifikation: DOM-Klicktest (Menü öffnen + Klick auf `Teil03 WISO`) lädt nun wieder ein `iframe.content-frame` mit `generic_page.html?...json=.../Teil03%20WISO/database/__metaData_database.json`.
 - Original prompt (current turn): weiter
 - Git-Abgleich: `Priorisierungs-Butler` war bereits vorhanden; daher mit naechstem fehlenden Ticketsystem-Spiel fortgesetzt.
 - Neues Spiel umgesetzt: `Ticket-Schreiber-Profi`.
@@ -398,7 +398,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - Artefakte: `databases/Teil02 FIAE/output/web-game-vom-gespraech-zum-punkt/`
 - Original prompt (current turn): Ändere die Icons im FolderTree; Game-Icon zu Brain, ancestor-basierte Flame-Markierung und Icon-Metadaten in __gAttributes.
 - Tree-UI in `/index.html` umgestellt: Endordner zeigen jetzt standardmäßig 🧠 statt 🎮; bei Pfad unter `Erschienene Themen` wird 🔥 angezeigt.
-- Datenbasis erweitert: 61 betroffene `__gAttributes_*.json` um Top-Level-Attribut `"Icon"` ergänzt (`"brain"` oder `"flame"`).
+- Datenbasis erweitert: 61 betroffene `__metaData_*.json` um Top-Level-Attribut `"Icon"` ergänzt (`"brain"` oder `"flame"`).
 - Konsistenzprüfung: alle 61 geänderten Attribute-Dateien erfolgreich als JSON validiert.
 - Original prompt (current turn): FolderTree-Algorithmus auf Icon-Lesen aus __gAttributes umstellen; Placeholder-Ladebalken waehrend Icon-Metadaten laden.
 - `index.html`: Tree-Init zweistufig gemacht (`index.json` laden -> Icon-Metadaten aus __gAttributes laden -> Tree rendern).
@@ -438,7 +438,7 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - Tree-Leaf-Icons sind jetzt klickbar, wenn der Knoten oeffenbar ist (`is-openable` + `openPlayableFolder`).
   - `isPlayableFolder` beruecksichtigt jetzt auch `attributesRelPath` (Fallback fuer Themenordner ohne Game-JSON).
   - `openPlayableFolder` nutzt `attributesRelPath`, falls kein `jsonRelPath` vorhanden ist.
-  - `findFirstJsonRelPath` priorisiert jetzt echte Game-JSON (`_g*<digits>...json`/`game_*.json`) und ignoriert `__gAttributes_*.json`, damit Spielordner nicht versehentlich auf Attribut-JSON zeigen.
+  - `findFirstJsonRelPath` priorisiert jetzt echte Game-JSON (`_g*<digits>...json`/`game_*.json`) und ignoriert `__metaData_*.json`, damit Spielordner nicht versehentlich auf Attribut-JSON zeigen.
 - Verifikation:
   - JS-Syntaxcheck von `/index.html` erfolgreich (`new Function(...)` Compile-only).
   - Logikcheck mit repräsentativen Beispielen: `__gAttributes`-only Ordner bleiben oeffenbar (via `attributesRelPath`), gemischte Ordner waehlen korrekt die Game-JSON.

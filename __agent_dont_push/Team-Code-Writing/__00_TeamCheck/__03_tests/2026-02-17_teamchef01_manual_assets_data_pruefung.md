@@ -20,7 +20,7 @@ Prüfen, ob durch die automatische Umbenennung `assets`/`data` -> `_assets`/`_da
 
 ## Ergebnis (manuell bestätigt)
 - In den geprüften Themenpfaden enthalten `_assets` nur Asset-Dateien (oder sind leer).
-- In den geprüften Themenpfaden enthalten `_data` nur Metadaten (`__gAttributes_*.json`) und/oder Konfigurationsdateien (`_gg*.json`).
+- In den geprüften Themenpfaden enthalten `_data` nur Metadaten (`__metaData_*.json`) und/oder Konfigurationsdateien (`_gg*.json`).
 - Keine der geprüften Umbenennungen hat einen sichtbaren Themenordner mit Spiel-Einstieg (`_ghtml_*`, `game_*.html`) ersetzt.
 
 ## Entscheidung

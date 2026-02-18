@@ -171,7 +171,8 @@
         return {
           short: meta.short,
           long: meta.long,
-          text: text
+          text: text,
+          isTopic: false
         };
       })
       .filter(Boolean);
@@ -183,7 +184,8 @@
       messages.unshift({
         short: pickSelfShort(rawSelfShort, folderFromQuery),
         long: pickSelfLong(rawSelfLong, folderFromQuery),
-        text: selfText
+        text: selfText,
+        isTopic: true
       });
     }
 
@@ -192,7 +194,8 @@
         short: message.short,
         long: message.long,
         text: message.text,
-        time: makeTime(index)
+        time: makeTime(index),
+        isTopic: Boolean(message.isTopic)
       };
     });
   }
@@ -231,9 +234,9 @@
 
   function pickSelfLong(rawLong, folderLabel) {
     const long = String(rawLong || '').trim();
-    if (long && !isCpuPlaceholder(long)) return long;
     const folder = normalizeFolderLabel(folderLabel);
-    if (folder) return 'Fachthema im C-Suite Dialog';
+    if (folder) return folder;
+    if (long && !isCpuPlaceholder(long)) return long;
     if (long) return long;
     return 'Fachthema im C-Suite Dialog';
   }
@@ -247,17 +250,25 @@
 
   function renderMessage(item, index) {
     const side = index % 2 === 0 ? 'left' : 'right';
-    const palette = roleColors[item.short] || { avatar: '195 100% 62%', bubble: '195 82% 56%' };
+    const palette = item.isTopic
+      ? roleColors.CPU
+      : roleColors[item.short] || { avatar: '195 100% 62%', bubble: '195 82% 56%' };
     const style = '--avatar-color: ' + palette.avatar + '; --bubble-color: ' + palette.bubble + ';';
+    const avatarClass = 'message-avatar' + (item.isTopic ? ' message-avatar--topic' : '');
+    const shortClass = 'avatar-short' + (item.isTopic ? ' avatar-short--topic' : '');
+    const avatarLong = item.isTopic ? '' : '<span class="avatar-long">' + escapeHtml(item.long) + '</span>';
 
     return (
       '<article class="message message--' + side + '" style="' + style + '">' +
-      '<div class="message-avatar" aria-label="' + escapeHtml(item.long) + '">' +
-      '<span class="avatar-short">' + escapeHtml(item.short) + '</span>' +
-      '<span class="avatar-long">' + escapeHtml(item.long) + '</span>' +
+      '<div class="' + avatarClass + '" aria-label="' + escapeHtml(item.long) + '">' +
+      '<span class="' + shortClass + '">' + escapeHtml(item.short) + '</span>' +
+      avatarLong +
       '</div>' +
       '<div class="message-bubble">' +
-      '<div class="message-topline"><span class="time">' + escapeHtml(item.time) + '</span></div>' +
+      '<div class="message-topline">' +
+      '<span class="author" title="' + escapeHtml(item.long) + '">' + escapeHtml(item.long) + '</span>' +
+      '<span class="time">' + escapeHtml(item.time) + '</span>' +
+      '</div>' +
       '<p>' + escapeHtml(item.text) + '</p>' +
       '</div>' +
       '</article>'

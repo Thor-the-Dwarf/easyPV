@@ -1,0 +1,53 @@
+# __gp_ausbildungsverhaeltnis_dauer_probezeit__probezeit_szenario_check
+
+## Spielidee
+"Probezeit-Szenario-Check" zeigt Konflikt- und Leistungssituationen in den ersten Monaten. Lernende waehlen passende Reaktionswege fuer Betrieb und Azubi.
+
+## Lernziel
+- Probezeitbezogene Entscheidungssicherheit erhoehen.
+- Angemessene Reaktionsschritte unterscheiden.
+
+## Messbare Progression
+- 15 Szenarien.
+- Punkte: +8 korrekter Reaktionsweg, -4 falscher Reaktionsweg.
+- +3 fuer korrekte Begruendung.
+- KPI: Weggenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- ResponseEngine
+- ScoreService
+
+### Domaenenobjekte
+- ProbeCase(caseId, context)
+- ResponseOption(optionId, actionType)
+- ProbeResult(pathCorrect, rationaleCorrect)
+
+### Beziehungen
+- ProbeCase hat 3..5 ResponseOption.
+- ResponseEngine validiert Auswahl.
+- ScoreService aggregiert 1..* ProbeResult.
+
+### Zustandsmodell
+- READY -> CASE_REVIEW -> RESPONSE_SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. ScenarioController zeigt ProbeCase.
+2. Player waehlt ResponseOption.
+3. ResponseEngine prueft Entscheidung.
+4. ProbeResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Reaktionsweg ohne Begruendung bringt Teilpunkte.
+- Serienbonus bei vier voll korrekten Antworten.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, context, options[], expectedResponse, rationaleOptions[]
+
+## Abnahmekriterien
+- Reaktionsweg und Begruendung sind getrennt bewertbar.
+- KPI zeigt beide Leistungsachsen.
+- Report nennt haeufige Fehlreaktionen.

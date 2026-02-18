@@ -1,0 +1,53 @@
+# __gp_berufliche_mobilitaet__foerderweg_router
+
+## Spielidee
+"Foerderweg-Router" simuliert Profile von Lernenden mit Mobilitaetszielen. Lernende waehlen den passenden Foerderweg und den korrekten Antragsschritt.
+
+## Lernziel
+- Foerderoptionen fuer Mobilitaet differenzieren.
+- Antragsschritte in sinnvoller Reihenfolge anwenden.
+
+## Messbare Progression
+- 15 Foerderfaelle.
+- Punkte: +8 korrekter Foerderweg, +4 korrekter Antragsschritt, -4 Fehler.
+- KPI: Weggenauigkeit und Prozessgenauigkeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FundingCaseController
+- RouteEngine
+- ProgressService
+
+### Domaenenobjekte
+- FundingCase(caseId, profile, goal)
+- FundingOption(optionId, criteria)
+- StepOption(stepId, actionType)
+- FundingResult(routeCorrect, stepCorrect)
+
+### Beziehungen
+- FundingCase hat 3..5 FundingOption und 2..4 StepOption.
+- RouteEngine validiert Auswahl.
+- ProgressService aggregiert 1..* FundingResult.
+
+### Zustandsmodell
+- CASE_START -> ROUTE_SELECT -> STEP_SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. FundingCaseController startet FundingCase.
+2. Player waehlt FundingOption.
+3. RouteEngine prueft Kriterienpassung.
+4. Player waehlt StepOption.
+5. ProgressService aktualisiert KPI.
+
+## Regeln
+- Falscher Foerderweg blockiert Schrittbonus.
+- Doppelkorrekte Faelle geben Serienbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, profile, goal, options[], expectedRoute, expectedStep
+
+## Abnahmekriterien
+- Foerderweg und Schritt sind getrennt bewertbar.
+- KPI zeigt beide Werte transparent.
+- Report benennt haeufige Fehlwege.

@@ -1,0 +1,52 @@
+# __gp_ausbildungsvertrag_rechte_pflichten__pflichtverletzung_router
+
+## Spielidee
+"Pflichtverletzung-Router" simuliert Alltagssituationen mit Regelverstoessen. Lernende waehlen den naechsten angemessenen Schritt im Betrieb.
+
+## Lernziel
+- Verstoesse gegen Vertragspflichten erkennen.
+- Passende Reaktionswege in richtiger Reihenfolge waehlen.
+
+## Messbare Progression
+- 14 Fallketten.
+- Punkte: +8 korrekter Schritt, -4 falscher Schritt.
+- KPI: Routing-Genauigkeit und Schritte bis zur Loesung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseController
+- RoutingEngine
+- ScoreService
+
+### Domaenenobjekte
+- ViolationCase(caseId, violationType)
+- RouteOption(optionId, actionType)
+- RouteResult(isCorrect, nextState)
+
+### Beziehungen
+- ViolationCase hat 3..6 RouteOption.
+- RoutingEngine validiert pro Auswahl ein RouteResult.
+- ScoreService aggregiert 1..* RouteResult.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. CaseController startet ViolationCase.
+2. Player waehlt RouteOption.
+3. RoutingEngine prueft Folgeschritt.
+4. RouteResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Uebersprungener Pflichtschritt verursacht Zusatzabzug.
+- Fehlerfreie Kette bringt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, violationType, options[], expectedPath[]
+
+## Abnahmekriterien
+- Prozesspfad ist je Fall nachvollziehbar.
+- KPI trennt Korrektheit und Effizienz.
+- Fehlerhinweise nennen den korrekten naechsten Schritt.

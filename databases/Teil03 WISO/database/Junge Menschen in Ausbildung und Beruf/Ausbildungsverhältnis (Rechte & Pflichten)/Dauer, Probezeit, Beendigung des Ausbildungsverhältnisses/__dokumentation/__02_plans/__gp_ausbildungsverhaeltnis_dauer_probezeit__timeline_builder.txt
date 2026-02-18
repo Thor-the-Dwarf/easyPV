@@ -1,0 +1,52 @@
+# __gp_ausbildungsverhaeltnis_dauer_probezeit__timeline_builder
+
+## Spielidee
+"Timeline-Builder" laesst Lernende Start, Probezeit, regulaeres Ende und Sonderereignisse in eine korrekte Zeitachse einordnen.
+
+## Lernziel
+- Zeitstruktur des Ausbildungsverhaeltnisses sicher verstehen.
+- Abhaengigkeiten zwischen Zeitpunkten erkennen.
+
+## Messbare Progression
+- 12 Zeitachsenfaelle.
+- Punkte: +8 korrekt platzierter Meilenstein, -3 falsche Platzierung.
+- KPI: Zeitachsen-Genauigkeit und Bearbeitungszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimelineController
+- DateRuleEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- TimelineCase(caseId, milestones[])
+- Milestone(milestoneId, dateWindow)
+- TimelineResult(correctPlacements, wrongPlacements)
+
+### Beziehungen
+- TimelineCase enthaelt 4..10 Milestone.
+- DateRuleEngine validiert Reihenfolge und Fenster.
+- ProgressTracker aggregiert 1..* TimelineResult.
+
+### Zustandsmodell
+- LOAD_CASE -> PLACE_MILESTONES -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimelineController laedt TimelineCase.
+2. Player platziert Milestone.
+3. DateRuleEngine prueft Zeitlogik.
+4. TimelineResult wird berechnet.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Falscher Startpunkt erzeugt doppelten Abzug.
+- Fehlerfreie Timeline gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, milestones[], expectedTimeline[]
+
+## Abnahmekriterien
+- Zeitfehler sind klar markiert.
+- KPI zeigt Genauigkeit und Tempo.
+- Verlauf ueber Faelle ist vergleichbar.

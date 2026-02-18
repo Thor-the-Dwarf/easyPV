@@ -1,0 +1,53 @@
+# __gp_ausbildungsverhaeltnis_dauer_probezeit__beendigungsgrund_klassifikator
+
+## Spielidee
+"Beendigungsgrund-Klassifikator" praesentiert Fallbeschreibungen mit unterschiedlichen Ausgaengen. Lernende klassifizieren den plausiblen Beendigungsgrund und markieren fehlende Voraussetzungen.
+
+## Lernziel
+- Beendigungsarten differenzieren.
+- Voraussetzungen pro Fall strukturieren.
+
+## Messbare Progression
+- 18 Fallkarten.
+- Punkte: +7 korrekte Klassifikation, +4 korrekt markierte Voraussetzung, -4 Fehler.
+- KPI: Typgenauigkeit und Voraussetzungstreffer.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseController
+- TypeEngine
+- MetricService
+
+### Domaenenobjekte
+- EndCase(caseId, narrative)
+- EndTypeOption(typeId, typeName)
+- Condition(conditionId, mandatory)
+- EndResult(typeCorrect, conditionsCorrect)
+
+### Beziehungen
+- EndCase hat 3..5 EndTypeOption und 2..6 Condition.
+- TypeEngine validiert typeCorrect.
+- MetricService aggregiert 1..* EndResult.
+
+### Zustandsmodell
+- CASE_START -> TYPE_SELECT -> CONDITION_MARK -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. CaseController startet EndCase.
+2. Player waehlt EndTypeOption.
+3. Player markiert Condition.
+4. TypeEngine prueft Ergebnis.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Falscher Typ blockiert Bedingungsbonus.
+- Vollstaendig korrekter Fall gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, narrative, typeOptions[], conditions[], expectedType, expectedConditions[]
+
+## Abnahmekriterien
+- Typ- und Bedingungsfeedback sind getrennt sichtbar.
+- KPI zeigt beide Lernziele.
+- Endreport listet haeufige Verwechslungen.

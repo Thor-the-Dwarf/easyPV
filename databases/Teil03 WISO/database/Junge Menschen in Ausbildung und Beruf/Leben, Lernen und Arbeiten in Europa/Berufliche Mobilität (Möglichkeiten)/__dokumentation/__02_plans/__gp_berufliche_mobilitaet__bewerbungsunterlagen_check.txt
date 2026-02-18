@@ -1,0 +1,53 @@
+# __gp_berufliche_mobilitaet__bewerbungsunterlagen_check
+
+## Spielidee
+"Bewerbungsunterlagen-Check" praesentiert Unterlagenpakete fuer Auslandseinsaetze. Lernende identifizieren fehlende Dokumente und priorisieren Nachreichungen.
+
+## Lernziel
+- Dokumentenanforderungen fuer Mobilitaet strukturiert pruefen.
+- Vollstaendigkeit und Priorisierung trainieren.
+
+## Messbare Progression
+- 12 Dokumentsets.
+- Punkte: +6 korrekt erkanntes fehlendes Dokument, -3 Fehlmarkierung.
+- +3 fuer korrekte Priorisierung.
+- KPI: Vollstaendigkeitsquote und Priorisierungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DocumentController
+- CompletenessEngine
+- MetricService
+
+### Domaenenobjekte
+- DocumentSet(setId, documents[])
+- Document(docId, docType, present)
+- CheckResult(missingCorrect, falseFlags, priorityCorrect)
+
+### Beziehungen
+- DocumentSet enthaelt 5..15 Document.
+- CompletenessEngine erzeugt pro Set ein CheckResult.
+- MetricService aggregiert 1..* CheckResult.
+
+### Zustandsmodell
+- LOAD_SET -> REVIEW_DOCS -> MARK_MISSING -> PRIORITIZE -> RESULT
+
+### Sequenz (Happy Path)
+1. DocumentController laedt DocumentSet.
+2. Player markiert fehlende Document.
+3. CompletenessEngine prueft Markierung.
+4. Player priorisiert Nachreichung.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Uebermarkierung reduziert Praezision.
+- Vollkorrekte Priorisierung liefert Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: setId, documents[], expectedMissing[], expectedPriority[]
+
+## Abnahmekriterien
+- Fehlende Dokumente sind klar rueckgemeldet.
+- KPI trennt Vollstaendigkeit und Priorisierung.
+- Report zeigt haeufig fehlende Dokumenttypen.

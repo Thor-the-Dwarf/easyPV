@@ -1,0 +1,53 @@
+# __gp_berufliche_mobilitaet__sprachlevel_simulator
+
+## Spielidee
+"Sprachlevel-Simulator" praesentiert berufliche Kommunikationssituationen im Ausland. Lernende waehlen das erforderliche Sprachniveau und passende Vorbereitungsmassnahmen.
+
+## Lernziel
+- Sprachanforderungen fuer Mobilitaetssituationen einschaetzen.
+- Vorbereitung gezielt planen.
+
+## Messbare Progression
+- 16 Szenarien.
+- Punkte: +7 korrektes Sprachniveau, +3 passende Massnahme, -4 Fehler.
+- KPI: Level-Genauigkeit und Massnahmenquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- LevelEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- LanguageCase(caseId, scenarioType)
+- LevelOption(levelId, descriptor)
+- PrepOption(prepId, prepType)
+- LanguageResult(levelCorrect, prepCorrect)
+
+### Beziehungen
+- LanguageCase hat 3..5 LevelOption und 2..4 PrepOption.
+- LevelEngine validiert Auswahl.
+- AnalyticsService aggregiert 1..* LanguageResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> LEVEL_SELECT -> PREP_SELECT -> RESULT
+
+### Sequenz (Happy Path)
+1. ScenarioController zeigt LanguageCase.
+2. Player waehlt LevelOption.
+3. LevelEngine prueft Level.
+4. Player waehlt PrepOption.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Falsches Level reduziert Massnahmenbonus.
+- Drei voll korrekte Faelle in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, scenarioType, levelOptions[], prepOptions[], expectedLevel, expectedPrep
+
+## Abnahmekriterien
+- Level- und Prepfeedback sind getrennt sichtbar.
+- KPI zeigt beide Lernziele.
+- Report nennt haeufige Level-Fehleinschaetzungen.

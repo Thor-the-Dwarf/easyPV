@@ -765,7 +765,15 @@
           if (!value) return '';
           if (value === 'flame' || value === 'fire' || value === '🔥') return 'flame';
           if (value === 'books' || value === 'book' || value === '📚') return 'books';
-          if (value === 'brain' || value === '🧠') return 'books';
+          if (
+            value === 'puzzle' ||
+            value === 'game' ||
+            value === 'brain' ||
+            value === '🧠' ||
+            value === '🧩'
+          ) {
+            return 'puzzle';
+          }
           return '';
         }
 
@@ -1154,7 +1162,7 @@
           const themeIcon = resolveThemeFolderIcon(node);
           if (themeIcon === 'flame') return '🔥';
           if (themeIcon === 'books') return '📚';
-          if (isGameLaunchNode(node)) return '';
+          if (isGameLaunchNode(node)) return '🧩';
           return isCollapsed ? '📁' : '📂';
         }
 

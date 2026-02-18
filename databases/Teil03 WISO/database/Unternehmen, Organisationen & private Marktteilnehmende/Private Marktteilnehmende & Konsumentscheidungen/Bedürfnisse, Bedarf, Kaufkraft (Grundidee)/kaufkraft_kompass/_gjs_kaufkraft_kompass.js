@@ -7,7 +7,8 @@
     score: 0,
     answered: false,
     done: false,
-    selectedCorrect: false
+    selectedCorrect: false,
+    simulatedMs: 0
   };
 
   const el = {
@@ -106,6 +107,7 @@
     state.index += 1;
     state.answered = false;
     state.selectedCorrect = false;
+    state.simulatedMs = 0;
     render();
   }
 
@@ -168,9 +170,14 @@
       completed_rounds: state.done ? (state.cfg && state.cfg.rounds ? state.cfg.rounds.length : 0) : (state.index + (state.answered ? 1 : 0)),
       score: state.score,
       progress_percent: computeProgressPercent(),
+      simulated_ms: state.simulatedMs,
       done: state.done
     });
   };
 
-  window.advanceTime = function advanceTime() { return true; };
+  window.advanceTime = function advanceTime(ms) {
+    if (!Number.isFinite(ms) || ms <= 0) return true;
+    state.simulatedMs += ms;
+    return true;
+  };
 })();

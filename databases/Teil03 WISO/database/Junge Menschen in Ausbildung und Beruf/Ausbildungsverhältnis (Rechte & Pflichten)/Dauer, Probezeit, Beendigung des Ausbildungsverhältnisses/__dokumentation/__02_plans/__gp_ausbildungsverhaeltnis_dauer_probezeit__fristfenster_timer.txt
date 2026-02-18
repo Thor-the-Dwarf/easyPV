@@ -1,0 +1,53 @@
+# __gp_ausbildungsverhaeltnis_dauer_probezeit__fristfenster_timer
+
+## Spielidee
+"Fristfenster-Timer" stellt Datumsfaelle zu Probezeit und Beendigungsprozessen dar. Lernende entscheiden, ob ein Schritt noch innerhalb des gueltigen Zeitfensters liegt.
+
+## Lernziel
+- Fristfenster sicher berechnen.
+- Datumsbezogene Entscheidungen unter Zeitdruck treffen.
+
+## Messbare Progression
+- 20 Kurzfaelle mit 18 Sekunden Limit.
+- Punkte: +8 korrekte Fristentscheidung, -4 falsche Entscheidung.
+- +3 fuer korrekte Herleitung.
+- KPI: Fristgenauigkeit und Reaktionszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimerController
+- DeadlineEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- DeadlineCase(caseId, startDate, eventDate)
+- Decision(isWithinWindow, reason)
+- DeadlineResult(isCorrect, deltaDays)
+
+### Beziehungen
+- TimerController steuert 1..* DeadlineCase.
+- DeadlineEngine validiert Decision.
+- AnalyticsService aggregiert 1..* DeadlineResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECISION_LOCK -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimerController zeigt DeadlineCase.
+2. Player trifft Decision.
+3. DeadlineEngine berechnet Delta.
+4. DeadlineResult wird ausgegeben.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Keine Antwort im Zeitfenster zaehlt als Fehler.
+- Drei schnelle Volltreffer liefern Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, startDate, eventDate, legalWindow, expectedDecision
+
+## Abnahmekriterien
+- Datumslogik ist nachvollziehbar dargestellt.
+- KPI zeigt Tempo und Genauigkeit.
+- Report gruppiert Fehler nach Fristtyp.

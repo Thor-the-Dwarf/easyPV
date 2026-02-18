@@ -1,0 +1,53 @@
+# __gp_ausbildungsvertrag_rechte_pflichten__vertragsklausel_pruefer
+
+## Spielidee
+"Vertragsklausel-Pruefer" zeigt Vertragsabschnitte mit neutralen und kritischen Formulierungen. Lernende klassifizieren jede Klausel und markieren Erklaerungsbedarf.
+
+## Lernziel
+- Vertragsklauseln strukturiert analysieren.
+- Kritische Klauseln in Bezug auf Rechte/Pflichten erkennen.
+
+## Messbare Progression
+- 10 Vertragssets.
+- Punkte: +6 korrekte Klassifikation, -3 Fehlklassifikation.
+- +2 fuer korrekt erkannten Erklaerungsbedarf.
+- KPI: Klassifikationsquote und Erklaerungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ContractController
+- ClauseRuleEngine
+- ScoreBoard
+
+### Domaenenobjekte
+- ContractSet(setId, clauses[])
+- Clause(clauseId, clauseClass)
+- ClauseResult(classCorrect, explainFlagCorrect)
+
+### Beziehungen
+- ContractSet enthaelt 5..12 Clause.
+- ClauseRuleEngine validiert pro Clause ein ClauseResult.
+- ScoreBoard aggregiert 1..* ClauseResult.
+
+### Zustandsmodell
+- LOAD_SET -> REVIEW -> CLASSIFY -> SUBMIT -> SET_RESULT
+
+### Sequenz (Happy Path)
+1. ContractController laedt ContractSet.
+2. Player klassifiziert Clause.
+3. ClauseRuleEngine prueft Antwort.
+4. ClauseResult wird gespeichert.
+5. ScoreBoard aktualisiert KPI.
+
+## Regeln
+- Fehlklassifikation einer Kernklausel verursacht Zusatzabzug.
+- Volltreffer-Set liefert Perfektionsbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: setId, clauses[{id,text,class}], expectedFlags[]
+
+## Abnahmekriterien
+- Pro Klausel ist Feedback eindeutig.
+- KPI zeigt Klassifikation und Erklaerung getrennt.
+- Lernreport benennt wiederkehrende Fehlmuster.

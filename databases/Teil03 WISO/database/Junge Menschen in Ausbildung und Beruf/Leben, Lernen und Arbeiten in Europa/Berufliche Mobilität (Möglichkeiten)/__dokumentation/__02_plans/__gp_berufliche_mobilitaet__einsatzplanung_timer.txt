@@ -1,0 +1,52 @@
+# __gp_berufliche_mobilitaet__einsatzplanung_timer
+
+## Spielidee
+"Einsatzplanung-Timer" simuliert die Vorbereitung eines Auslandspraktikums mit Fristen fuer Unterkunft, Versicherung, Reise und Betriebseinsatz. Lernende planen unter Zeitdruck ohne Kollisionen.
+
+## Lernziel
+- Mobilitaetsplanung mit Fristen und Abhaengigkeiten steuern.
+- Priorisierung bei knapper Zeit trainieren.
+
+## Messbare Progression
+- 8 Planungsrunden mit je 90 Sekunden.
+- Punkte: +7 fristgerechter Schritt, -4 verpasste Frist.
+- KPI: Fristtrefferquote und Konfliktanzahl.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- PlanningController
+- DeadlineEngine
+- KPIService
+
+### Domaenenobjekte
+- PlanningCase(caseId, tasks[])
+- Task(taskId, dueTime, dependencies)
+- RoundResult(onTimeRate, conflicts)
+
+### Beziehungen
+- PlanningCase enthaelt 6..15 Task.
+- DeadlineEngine validiert Reihenfolge und Termine.
+- KPIService aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- LOAD_CASE -> PLAN_TASKS -> RUN_TIMER -> EVALUATE -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. PlanningController laedt PlanningCase.
+2. Player plant Task-Reihenfolge.
+3. DeadlineEngine prueft Fristen.
+4. RoundResult wird berechnet.
+5. KPIService aktualisiert Dashboard.
+
+## Regeln
+- Konflikt mit Pflichttask erzeugt Zusatzabzug.
+- Konfliktfreie Runde mit hoher Fristquote gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, tasks[{id,dueTime,dependencies[]}], timeLimitSec
+
+## Abnahmekriterien
+- Fristen und Konflikte sind live sichtbar.
+- KPI zeigt Fristquote und Konflikte getrennt.
+- Replay markiert kritische Planungsfehler.

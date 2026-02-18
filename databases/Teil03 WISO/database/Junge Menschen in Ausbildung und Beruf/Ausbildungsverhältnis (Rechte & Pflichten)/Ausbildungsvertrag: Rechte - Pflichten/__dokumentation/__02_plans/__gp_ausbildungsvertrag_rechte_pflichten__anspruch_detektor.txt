@@ -1,0 +1,52 @@
+# __gp_ausbildungsvertrag_rechte_pflichten__anspruch_detektor
+
+## Spielidee
+"Anspruch-Detektor" zeigt kurze Vertrags- und Alltagsszenen. Lernende markieren, welche Ansprueche aus dem Ausbildungsverhaeltnis plausibel ableitbar sind.
+
+## Lernziel
+- Anspruchssituationen sicher identifizieren.
+- Vertragsbezug in Fallbeschreibungen erkennen.
+
+## Messbare Progression
+- 20 Szenenkarten.
+- Punkte: +7 korrekt erkannter Anspruch, -3 Fehlmarkierung.
+- KPI: Praezision und Recall der Anspruchserkennung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- SceneController
+- ClaimEngine
+- MetricService
+
+### Domaenenobjekte
+- SceneCard(cardId, narrative)
+- ClaimOption(claimId, claimType)
+- DetectionResult(tp, fp, fn)
+
+### Beziehungen
+- SceneCard enthaelt 3..6 ClaimOption.
+- ClaimEngine erzeugt pro Karte ein DetectionResult.
+- MetricService aggregiert 1..* DetectionResult.
+
+### Zustandsmodell
+- READY -> SCENE_REVIEW -> MARK_CLAIMS -> SUBMIT -> RESULT
+
+### Sequenz (Happy Path)
+1. SceneController zeigt SceneCard.
+2. Player markiert ClaimOption.
+3. ClaimEngine validiert Auswahl.
+4. DetectionResult wird berechnet.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Uebermarkierung reduziert Praezision.
+- Untermarkierung reduziert Recall.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, narrative, claimOptions[], expectedClaimIds[]
+
+## Abnahmekriterien
+- Fehlmarkierungen sind klar gekennzeichnet.
+- KPI zeigt Praezision und Recall separat.
+- Lernreport listet haeufig uebersehene Anspruchstypen.

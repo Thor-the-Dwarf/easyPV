@@ -1,0 +1,53 @@
+# __gp_ausbildungsverhaeltnis_dauer_probezeit__entscheidungsbaum_navigator
+
+## Spielidee
+"Entscheidungsbaum-Navigator" fuehrt durch verzweigte Fallbaeume rund um Dauer, Probezeit und Beendigung. Lernende waehlen je Knoten die richtige Verzweigung.
+
+## Lernziel
+- Komplexe Falllogik systematisch durchlaufen.
+- Konsequenzen von Entscheidungen erkennen.
+
+## Messbare Progression
+- 10 Entscheidungsbaeume.
+- Punkte: +6 korrekter Knotenentscheid, -3 falscher Knotenentscheid.
+- KPI: Pfadgenauigkeit und durchschnittliche Baumtiefe bis Loesung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TreeController
+- BranchEngine
+- ProgressService
+
+### Domaenenobjekte
+- DecisionTree(treeId, nodes[])
+- Node(nodeId, questionType)
+- Branch(branchId, targetNode)
+- TreeResult(correctPathRatio, stepsToResolution)
+
+### Beziehungen
+- DecisionTree enthaelt 5..25 Node.
+- BranchEngine validiert Branch-Auswahl.
+- ProgressService aggregiert 1..* TreeResult.
+
+### Zustandsmodell
+- TREE_LOAD -> NODE_ACTIVE -> BRANCH_SELECT -> NODE_EVAL -> TREE_RESULT
+
+### Sequenz (Happy Path)
+1. TreeController laedt DecisionTree.
+2. Player waehlt Branch.
+3. BranchEngine prueft Auswahl.
+4. Node-Evaluation wird angezeigt.
+5. ProgressService aktualisiert KPI.
+
+## Regeln
+- Falscher Knoten bei frueher Baumtiefe erzeugt Zusatzabzug.
+- Vollkorrekter Pfad bringt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: treeId, nodes[], branches[], expectedPath[]
+
+## Abnahmekriterien
+- Entscheidungswege sind visuell eindeutig.
+- KPI zeigt Pfadqualitaet und Effizienz.
+- Replay-Funktion markiert Fehlknoten.

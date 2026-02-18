@@ -1,0 +1,52 @@
+# __gp_berufliche_mobilitaet__zielmarkt_match
+
+## Spielidee
+"Zielmarkt-Match" koppelt Berufsprofile mit moeglichen Ziellaendern und Branchen. Lernende waehlen die plausibelste Kombination fuer einen Auslandsaufenthalt.
+
+## Lernziel
+- Berufliche Mobilitaet als Matching-Aufgabe verstehen.
+- Rahmenbedingungen von Ziellaendern einschaetzen.
+
+## Messbare Progression
+- 18 Match-Runden.
+- Punkte: +8 korrekte Kombination, -4 falsche Kombination.
+- KPI: Matching-Genauigkeit und Entscheidungszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- MatchController
+- FitEngine
+- ScoreService
+
+### Domaenenobjekte
+- MobilityCase(caseId, profile)
+- TargetOption(optionId, country, sector)
+- MatchResult(isCorrect, fitScore)
+
+### Beziehungen
+- MobilityCase enthaelt 3..6 TargetOption.
+- FitEngine validiert Zielwahl.
+- ScoreService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CASE_REVIEW -> TARGET_SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. MatchController startet MobilityCase.
+2. Player waehlt TargetOption.
+3. FitEngine berechnet fitScore.
+4. MatchResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Falsche Wahl bei Kernkriterium erzeugt Zusatzabzug.
+- Serienbonus bei vier korrekten Matches.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, profile, options[], expectedOption
+
+## Abnahmekriterien
+- Zielwahl wird mit Kriterien erklaert.
+- KPI zeigt Genauigkeit und Tempo.
+- Report listet haeufige Fehlzuordnungen.

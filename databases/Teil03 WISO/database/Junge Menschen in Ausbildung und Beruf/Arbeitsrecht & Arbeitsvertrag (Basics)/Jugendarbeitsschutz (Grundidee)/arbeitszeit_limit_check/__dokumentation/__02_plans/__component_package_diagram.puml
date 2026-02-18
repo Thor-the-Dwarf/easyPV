@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Arbeitszeit-Limit-Check
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: arbeitszeit_limit_check" {
+  component "_ghtml_arbeitszeit_limit_check.html" as HTML
+  component "_gjs_arbeitszeit_limit_check.js" as JS
+  component "_gcss_arbeitszeit_limit_check.css" as CSS
+  database "_data/_gg01_arbeitszeit_limit_check.json" as GG
+  database "_data/__metaData_Jugendarbeitsschutz (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

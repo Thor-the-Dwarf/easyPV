@@ -1,0 +1,123 @@
+:root {
+  --bg: #0b1020;
+  --panel: #121a2e;
+  --line: rgba(0, 220, 255, 0.28);
+  --text: #ecf7ff;
+  --muted: #95a9bf;
+  --ok: #22c55e;
+  --bad: #ef4444;
+  --accent: #1fd3ff;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font-family: Inter, Segoe UI, sans-serif;
+  background: radial-gradient(circle at 20% 0%, #123 0%, transparent 45%), var(--bg);
+  color: var(--text);
+}
+
+.game-app {
+  min-height: 100%;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: auto 1fr;
+}
+
+.game-head {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.9rem;
+  background: rgba(18, 26, 46, 0.82);
+}
+
+.game-head h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.2rem;
+}
+
+.game-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.kpis {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.kpi {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.45rem 0.55rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.kpi span { font-size: 0.72rem; color: var(--muted); }
+.kpi strong { font-size: 1rem; }
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+  background: rgba(18, 26, 46, 0.82);
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+}
+
+.prompt {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.45;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.options {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.option-btn {
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(31, 211, 255, 0.08);
+  color: var(--text);
+  padding: 0.65rem 0.75rem;
+  cursor: pointer;
+}
+
+.option-btn:hover { border-color: var(--accent); }
+.option-btn:disabled { opacity: 0.7; cursor: default; }
+
+.feedback {
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--line);
+  line-height: 1.4;
+}
+
+.feedback.ok { border-color: rgba(34, 197, 94, 0.55); background: rgba(34, 197, 94, 0.15); }
+.feedback.bad { border-color: rgba(239, 68, 68, 0.55); background: rgba(239, 68, 68, 0.15); }
+
+.actions { display: flex; gap: 0.6rem; }
+.action-btn {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(31, 211, 255, 0.14);
+  color: var(--text);
+  padding: 0.55rem 0.85rem;
+  cursor: pointer;
+}
+
+.action-btn:hover { border-color: var(--accent); }

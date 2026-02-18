@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Jugendarbeitsschutz", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 7, "wrong": -3, "completion_bonus": 8 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Lange Schicht ohne passende Pause: richtige Einordnung?",
+      "hint": "Pausenlogik zur Schichtdauer passend waehlen.",
+      "options": [
+        { "id": "a", "text": "Als falsches Pausenmuster markieren", "correct": true, "feedback": "Richtig. Die Pausenregel passt nicht zur Schichtlaenge." },
+        { "id": "b", "text": "Als immer korrekt akzeptieren", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Ohne Check freigeben", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Zusatzstrafe gilt bei langen Schichten und Fehlwahl?",
+      "hint": "Plan nennt einen Zusatzabzug.",
+      "options": [
+        { "id": "a", "text": "Zusatzabzug", "correct": true, "feedback": "Richtig. Kritische Fehlwahl wird strenger gewertet." },
+        { "id": "b", "text": "Kein Abzug", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Bonus", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann aktiviert sich ein Multiplikator?",
+      "hint": "Serie korrekter Matches erforderlich.",
+      "options": [
+        { "id": "a", "text": "Bei 5 korrekten Matches in Folge", "correct": true, "feedback": "Genau. Dann steigt der Multiplikator." },
+        { "id": "b", "text": "Bei jedem Treffer", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur bei Fehlern", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI-Auswertung soll moeglich sein?",
+      "hint": "Nach Regeltypen differenzieren.",
+      "options": [
+        { "id": "a", "text": "Match-Quote und Fehler pro Regeltyp", "correct": true, "feedback": "Richtig. So erkennt man gezielte Schwachstellen." },
+        { "id": "b", "text": "Nur Summenwert", "correct": false, "feedback": "Zu wenig differenziert." },
+        { "id": "c", "text": "Nur Antwortdauer", "correct": false, "feedback": "Nicht ausreichend." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wodurch wird Lernkurve sichtbar?",
+      "hint": "Session-Vergleich der Ergebniswerte.",
+      "options": [
+        { "id": "a", "text": "Vergleichbarer KPI-Verlauf ueber Sessions", "correct": true, "feedback": "Richtig. Dadurch werden Verbesserungen messbar." },
+        { "id": "b", "text": "Nur Startpunkt", "correct": false, "feedback": "Nicht ausreichend." },
+        { "id": "c", "text": "Keine Historie", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

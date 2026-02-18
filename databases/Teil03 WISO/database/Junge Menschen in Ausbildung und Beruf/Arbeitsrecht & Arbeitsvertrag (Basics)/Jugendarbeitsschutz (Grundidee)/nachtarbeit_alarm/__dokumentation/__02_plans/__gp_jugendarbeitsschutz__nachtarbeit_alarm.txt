@@ -1,0 +1,53 @@
+# __gp_jugendarbeitsschutz__nachtarbeit_alarm
+
+## Spielidee
+"Nachtarbeit-Alarm" simuliert Dienstplaene ueber mehrere Tage. Lernende markieren Schichten mit unzulaessigen Zeitfenstern und schlagen sichere Alternativen vor.
+
+## Lernziel
+- Zeitfenster mit besonderem Schutzbedarf erkennen.
+- Korrekturvorschlaege fuer regelkonforme Planung entwickeln.
+
+## Messbare Progression
+- 10 Wochenplaene.
+- Punkte: +8 korrekte Alarmierung, -4 Fehlalarm.
+- +4 fuer passenden Alternativvorschlag.
+- KPI: Alarm-Praezision und Korrekturquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- WeekController
+- AlarmEngine
+- SuggestionEngine
+
+### Domaenenobjekte
+- WeekRoster(rosterId, shifts[])
+- Shift(shiftId, day, start, end)
+- AlarmResult(tp, fp, correctionCorrect)
+
+### Beziehungen
+- WeekRoster enthaelt 5..21 Shift.
+- AlarmEngine erzeugt AlarmResult pro Roster.
+- SuggestionEngine bewertet Korrekturvorschlaege.
+
+### Zustandsmodell
+- LOAD_ROSTER -> SCAN -> ALARM_SUBMIT -> CORRECTION -> RESULT
+
+### Sequenz (Happy Path)
+1. WeekController laedt WeekRoster.
+2. Player markiert Verstoesse.
+3. AlarmEngine prueft Markierungen.
+4. Player waehlt Korrektur.
+5. SuggestionEngine aktualisiert Endergebnis.
+
+## Regeln
+- Unentdeckter Nachtverstoss kostet Zusatzpunkte.
+- Volltreffer ohne Fehlalarm bringt Perfektionsbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: rosterId, shifts[], expectedViolations[], correctionOptions[]
+
+## Abnahmekriterien
+- Alarme und Fehlalarme sind klar getrennt.
+- KPI zeigt Praezision und Korrekturleistung.
+- Verlauf ueber Plaene ist vergleichbar.

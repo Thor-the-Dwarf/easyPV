@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Jugendarbeitsschutz", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 9, "wrong": -4, "completion_bonus": 8 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Betreuung in kritischer Situation ist unklar. Welche Erstbewertung ist sinnvoll?",
+      "hint": "Sicherheitsorientiert und regelkonform einstufen.",
+      "options": [
+        { "id": "a", "text": "Aufsicht als unzureichend markieren", "correct": true, "feedback": "Richtig. Bei Unsicherheit in kritischer Lage ist Entwarnung falsch." },
+        { "id": "b", "text": "Immer ausreichend annehmen", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Ungeprueft uebergehen", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Leistung wird zusaetzlich bewertet?",
+      "hint": "Neben Einordnung auch Reaktionsweg.",
+      "options": [
+        { "id": "a", "text": "Passender Eskalationsschritt", "correct": true, "feedback": "Richtig. Bewertung und Eskalation sind getrennte Achsen." },
+        { "id": "b", "text": "Nur Klicktempo", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur Farbwahl", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was passiert bei falscher Entwarnung in kritischer Lage?",
+      "hint": "Der Plan definiert hohen Abzug.",
+      "options": [
+        { "id": "a", "text": "Hoher Abzug", "correct": true, "feedback": "Genau. Kritische Fehleinschaetzungen werden streng gewertet." },
+        { "id": "b", "text": "Bonus", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Keine Auswirkung", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gibt es den Doppelbonus?",
+      "hint": "Beide Entscheidungen muessen stimmen.",
+      "options": [
+        { "id": "a", "text": "Bei korrekter Bewertung und korrekter Eskalation", "correct": true, "feedback": "Richtig. Nur der Doppelentscheid aktiviert Bonus." },
+        { "id": "b", "text": "Bei einer Teilantwort", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Immer", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI-Auswertung ist gefordert?",
+      "hint": "Zwei Qualitaetsachsen getrennt sichtbar.",
+      "options": [
+        { "id": "a", "text": "Aufsichtsgenauigkeit und Eskalationsquote", "correct": true, "feedback": "Richtig. Das bildet den Lernfortschritt sauber ab." },
+        { "id": "b", "text": "Nur Gesamtquote", "correct": false, "feedback": "Zu grob." },
+        { "id": "c", "text": "Nur Zeit", "correct": false, "feedback": "Nicht ausreichend." }
+      ]
+    }
+  ]
+}

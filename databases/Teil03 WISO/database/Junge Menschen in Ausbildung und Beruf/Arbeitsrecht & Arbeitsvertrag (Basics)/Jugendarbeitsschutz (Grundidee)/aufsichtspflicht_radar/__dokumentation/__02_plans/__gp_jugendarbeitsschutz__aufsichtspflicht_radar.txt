@@ -1,0 +1,53 @@
+# __gp_jugendarbeitsschutz__aufsichtspflicht_radar
+
+## Spielidee
+"Aufsichtspflicht-Radar" zeigt Arbeitssituationen mit unterschiedlicher Betreuung. Lernende bewerten, ob die Aufsicht ausreichend ist und welche Eskalation noetig wird.
+
+## Lernziel
+- Anforderungen an Aufsicht in Ausbildungssituationen einschätzen.
+- Reaktionswege bei unzureichender Betreuung anwenden.
+
+## Messbare Progression
+- 12 Betreuungsszenarien.
+- Punkte: +9 korrekte Einordnung, -4 falsche Einordnung.
+- +3 fuer passenden Eskalationsschritt.
+- KPI: Aufsichtsgenauigkeit und Eskalationsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- SupervisionRuleEngine
+- EscalationService
+
+### Domaenenobjekte
+- SupervisionCase(caseId, supervisionLevel)
+- Assessment(level, rationale)
+- CaseResult(isSufficient, escalationCorrect)
+
+### Beziehungen
+- ScenarioController steuert 1..* SupervisionCase.
+- SupervisionRuleEngine erzeugt pro Assessment ein CaseResult.
+- EscalationService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- READY -> CASE_REVIEW -> ASSESS -> ESCALATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. ScenarioController startet SupervisionCase.
+2. Player bewertet Aufsichtsniveau.
+3. SupervisionRuleEngine validiert Entscheidung.
+4. Player waehlt Eskalation.
+5. EscalationService aktualisiert KPI.
+
+## Regeln
+- Falsche Entwarnung bei kritischer Lage fuehrt zu hohem Abzug.
+- Korrekter Doppelentscheid (Bewertung + Eskalation) gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, supervisionLevel, context, expectedAssessment, expectedEscalation
+
+## Abnahmekriterien
+- Bewertung und Eskalation sind getrennt nachvollziehbar.
+- KPI zeigt beide Qualitaetsachsen.
+- Fehlerbericht nennt konkrete Verbesserungsaktion.

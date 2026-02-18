@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Nachtarbeit-Alarm
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: nachtarbeit_alarm" {
+  component "_ghtml_nachtarbeit_alarm.html" as HTML
+  component "_gjs_nachtarbeit_alarm.js" as JS
+  component "_gcss_nachtarbeit_alarm.css" as CSS
+  database "_data/_gg01_nachtarbeit_alarm.json" as GG
+  database "_data/__metaData_Jugendarbeitsschutz (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

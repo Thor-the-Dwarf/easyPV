@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Aufsichtspflicht-Radar
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: aufsichtspflicht_radar" {
+  component "_ghtml_aufsichtspflicht_radar.html" as HTML
+  component "_gjs_aufsichtspflicht_radar.js" as JS
+  component "_gcss_aufsichtspflicht_radar.css" as CSS
+  database "_data/_gg01_aufsichtspflicht_radar.json" as GG
+  database "_data/__metaData_Jugendarbeitsschutz (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

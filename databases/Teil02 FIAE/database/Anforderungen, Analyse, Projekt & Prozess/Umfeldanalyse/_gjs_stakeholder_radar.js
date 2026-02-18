@@ -344,6 +344,7 @@
         });
 
         if (Array.isArray(state?.columns)) payload.columns_count = state.columns.length;
+        if (typeof state?.__simulated_ms === 'number') payload.simulated_ms = state.__simulated_ms;
         if (el?.statusVal?.textContent) payload.status = el.statusVal.textContent.trim();
 
         return JSON.stringify(payload);
@@ -351,7 +352,15 @@
 
     window.render_game_to_text = renderGameToText;
     window.advanceTime = function advanceTime(ms) {
-        return ms;
+        const deltaMs = Math.max(0, Number(ms) || 0);
+        state.__simulated_ms = (state.__simulated_ms || 0) + deltaMs;
+
+        if (deltaMs >= 1000 && typeof gameTick === 'function') {
+            const ticks = Math.floor(deltaMs / 1000);
+            for (let i = 0; i < ticks; i++) gameTick();
+        }
+
+        return state.__simulated_ms;
     };
 
     init();

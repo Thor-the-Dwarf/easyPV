@@ -5,3 +5,5 @@ Batch 04: Einheitlicher Hook-Patch fuer 36 direkte Spiele + Redirect-Wrapper-Pru
 Batch 05: Generische Mess-Hooks muessen mehrere Config-Schemata verstehen (levels/scenarios/patterns/phases) statt nur levels, sonst bleiben Fortschrittswerte bei 0.
 
 Batch 06: Bei Queue-basierten Games (cards/components) muss currentCard/currentComponent in der Progress-Formel abgezogen werden, sonst startet progress_percent faelschlich ueber 0.
+
+Batch 07: advanceTime sollte in Hook-Spielen mindestens simulierte Zeit akkumulieren; dadurch werden Testlaeufe reproduzierbarer und State-Ausgaben aussagekraeftiger.

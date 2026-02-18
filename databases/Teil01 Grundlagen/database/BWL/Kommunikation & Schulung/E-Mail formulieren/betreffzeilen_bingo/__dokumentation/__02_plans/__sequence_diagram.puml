@@ -1,0 +1,14 @@
+@startuml
+actor User
+participant UI
+participant Engine
+participant Config
+
+UI -> Config : fetch rounds
+Config --> UI : JSON
+UI -> Engine : start round
+User -> UI : click action
+UI -> Engine : evaluate(action)
+Engine --> UI : feedback + score
+UI -> Engine : next round
+@enduml

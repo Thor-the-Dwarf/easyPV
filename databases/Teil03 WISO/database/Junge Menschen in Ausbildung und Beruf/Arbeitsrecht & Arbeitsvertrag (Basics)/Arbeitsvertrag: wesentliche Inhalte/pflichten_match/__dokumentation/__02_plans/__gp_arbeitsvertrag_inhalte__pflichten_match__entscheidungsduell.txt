@@ -1,0 +1,54 @@
+# __gp_arbeitsvertrag_inhalte__pflichten_match__entscheidungsduell
+
+## Spielidee
+"Entscheidungsduell" trainiert Entscheidungen im Szenario "pflichten match". Pro Runde waehlt der Player unter mehreren Handlungsoptionen und erhaelt direktes Feedback.
+
+## Lernziel
+- Entscheidungsqualitaet im Themenkontext "pflichten match" verbessern.
+- Folgen von Fehlentscheidungen ueber Kennzahlen nachvollziehen.
+
+## Messbare Progression
+- 12 Runden pro Durchlauf.
+- Punkte: +8 korrekte Entscheidung, +2 Zeitbonus unter 20 Sekunden, -4 Fehlentscheidung.
+- KPI: Trefferquote, Durchschnittszeit, Fehlercluster nach Aufgabentyp.
+- Levelaufstieg bei mindestens 80 Prozent Trefferquote in zwei Durchlaeufen.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- RuleEngine
+- MetricService
+
+### Domaenenobjekte
+- ScenarioCard(cardId, difficulty, prompt)
+- DecisionOption(optionId, category, impactLevel)
+- RoundResult(isCorrect, responseSeconds, scoreDelta)
+- ProgressSnapshot(totalScore, accuracyRate, avgResponseSeconds)
+
+### Beziehungen
+- ScenarioController verwaltet 1..* ScenarioCard.
+- RuleEngine bewertet genau eine Player-Entscheidung pro Runde.
+- MetricService aggregiert 1..* RoundResult zu einem ProgressSnapshot.
+
+### Zustandsmodell
+- READY -> ROUND_ACTIVE -> SELECT -> EVALUATE -> FEEDBACK -> NEXT_ROUND -> FINISHED
+
+### Sequenz (Happy Path)
+1. ScenarioController laedt ScenarioCard.
+2. Player waehlt eine DecisionOption.
+3. RuleEngine validiert Auswahl und berechnet scoreDelta.
+4. MetricService aktualisiert ProgressSnapshot.
+5. Feedback zeigt KPI und naechste Runde startet.
+
+## Regeln
+- Drei korrekte Antworten in Folge aktivieren einen Multiplikator x1.5.
+- Nach jeder Runde wird die aktuelle Lernkurve persistent gespeichert.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, prompt, options[], expectedOptionId, difficulty, responseSeconds, scoreDelta, accuracyRate
+
+## Abnahmekriterien
+- Fortschritt ist eindeutig ueber Punkte, Zeit und Genauigkeit messbar.
+- Jeder Durchlauf erzeugt reproduzierbare KPI-Werte.
+- Fehlentscheidungen sind pro Runde transparent rueckverfolgbar.

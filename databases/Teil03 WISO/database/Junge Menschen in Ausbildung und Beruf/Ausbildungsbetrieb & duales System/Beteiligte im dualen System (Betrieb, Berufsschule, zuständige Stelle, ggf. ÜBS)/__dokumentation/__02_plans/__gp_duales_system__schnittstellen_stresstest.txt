@@ -1,0 +1,52 @@
+# __gp_duales_system__schnittstellen_stresstest
+
+## Spielidee
+"Schnittstellen-Stresstest" stellt parallele Anfragen und Fristen zwischen den Akteuren dar. Lernende priorisieren Bearbeitung, um Fristversaeumnisse zu vermeiden.
+
+## Lernziel
+- Schnittstellenbelastung im dualen System managen.
+- Priorisierung bei konkurrierenden Anforderungen trainieren.
+
+## Messbare Progression
+- 6 Stressrunden mit je 90 Sekunden.
+- Punkte: +2 pro korrekt priorisiertem Vorgang, -3 pro verpasster Frist.
+- KPI: Fristtrefferquote und Warteschlangenlaenge.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- StressController
+- QueueEngine
+- KPIService
+
+### Domaenenobjekte
+- Ticket(ticketId, sourceActor, dueTime)
+- QueueState(openTickets, overdueTickets)
+- RoundResult(hitRate, avgQueueSize)
+
+### Beziehungen
+- StressController erzeugt 1..* Ticket.
+- QueueEngine verwaltet QueueState.
+- KPIService aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- PREPARE -> RUNNING -> PRIORITIZE -> ROUND_END -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. StressController startet Runde.
+2. Player priorisiert Ticket.
+3. QueueEngine simuliert Bearbeitung.
+4. RoundResult wird berechnet.
+5. KPIService aktualisiert Dashboard.
+
+## Regeln
+- Hochprioritaets-Ticket ueber Faelligkeit gibt Zusatzabzug.
+- Konstante Trefferquote ueber 85 Prozent aktiviert Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: roundId, tickets[{id,sourceActor,dueTime,priority}], timeLimitSec
+
+## Abnahmekriterien
+- Fristen und Queue sind live sichtbar.
+- KPI zeigt Trefferquote und Lastentwicklung.
+- Replay markiert Ursachen fuer Verspaetungen.

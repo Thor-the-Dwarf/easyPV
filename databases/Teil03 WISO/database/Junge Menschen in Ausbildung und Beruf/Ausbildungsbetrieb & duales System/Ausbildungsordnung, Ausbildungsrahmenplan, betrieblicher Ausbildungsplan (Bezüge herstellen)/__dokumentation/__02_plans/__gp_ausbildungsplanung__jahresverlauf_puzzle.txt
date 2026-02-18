@@ -1,0 +1,52 @@
+# __gp_ausbildungsplanung__jahresverlauf_puzzle
+
+## Spielidee
+"Jahresverlauf-Puzzle" laesst Lernende Meilensteine, Themenmodule und Pruefungsfenster in einen konsistenten Jahresplan einsetzen.
+
+## Lernziel
+- Zeitliche Struktur einer Ausbildung planen.
+- Abhaengigkeiten zwischen Modulen verstehen.
+
+## Messbare Progression
+- 8 Jahresplaene.
+- Punkte: +9 korrekt platzierter Meilenstein, -4 falsch platzierter Meilenstein.
+- KPI: Planungsgenauigkeit und Bearbeitungszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimelineController
+- DependencyEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- YearPlan(planId, milestones[])
+- Milestone(milestoneId, window)
+- PlanResult(correctPlacements, dependencyViolations)
+
+### Beziehungen
+- YearPlan enthaelt 6..18 Milestone.
+- DependencyEngine validiert Reihenfolge und Fenster.
+- AnalyticsService aggregiert 1..* PlanResult.
+
+### Zustandsmodell
+- LOAD_PLAN -> PLACE_ITEMS -> VALIDATE -> RESULT -> NEXT_PLAN
+
+### Sequenz (Happy Path)
+1. TimelineController laedt YearPlan.
+2. Player platziert Milestones.
+3. DependencyEngine prueft Abhaengigkeiten.
+4. PlanResult wird berechnet.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Abhaengigkeitsbruch verursacht Zusatzabzug.
+- Vollstaendig korrekter Plan bringt Perfektionsbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: planId, milestones[{id,window,dependsOn[]}], expectedTimeline[]
+
+## Abnahmekriterien
+- Falsche Platzierungen sind klar hervorgehoben.
+- KPI zeigt Genauigkeit und Komplexitaetsniveau.
+- Report listet haeufige Reihenfolgefehler.

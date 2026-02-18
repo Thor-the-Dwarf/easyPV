@@ -1,0 +1,52 @@
+# __gp_ausbildungsplanung__lernziel_router
+
+## Spielidee
+"Lernziel-Router" praesentiert Kompetenzziele. Lernende bestimmen den passenden Lernort und den korrekten Zeitpunkt im Ausbildungsjahr.
+
+## Lernziel
+- Lernziele sinnvoll in Ausbildungsphasen einsortieren.
+- Lernortbezug (Betrieb/Berufsschule/ueberbetriebliche Phase) anwenden.
+
+## Messbare Progression
+- 20 Lernzielkarten.
+- Punkte: +6 korrekter Lernort, +4 korrekte Phase, -3 Fehler.
+- KPI: Lernortquote und Phasenquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- RouteController
+- RuleEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- GoalCard(cardId, competence)
+- RouteChoice(locationType, phase)
+- RouteResult(locationCorrect, phaseCorrect)
+
+### Beziehungen
+- RouteController steuert 1..* GoalCard.
+- RuleEngine validiert RouteChoice.
+- ProgressTracker aggregiert 1..* RouteResult.
+
+### Zustandsmodell
+- INIT -> CARD_ACTIVE -> CHOICE_SUBMIT -> FEEDBACK -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. RouteController zeigt GoalCard.
+2. Player waehlt RouteChoice.
+3. RuleEngine prueft Standort und Phase.
+4. RouteResult wird ausgegeben.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Korrekter Lernort ohne korrekte Phase gibt Teilpunkte.
+- Hohe Trefferquote erhoeht Kartenkomplexitaet.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, competence, expectedLocation, expectedPhase
+
+## Abnahmekriterien
+- Feedback trennt Lernort und Phase.
+- KPI ist pro Ausbildungsjahr auswertbar.
+- Verlauf zeigt Verbesserungen je Kompetenzgruppe.

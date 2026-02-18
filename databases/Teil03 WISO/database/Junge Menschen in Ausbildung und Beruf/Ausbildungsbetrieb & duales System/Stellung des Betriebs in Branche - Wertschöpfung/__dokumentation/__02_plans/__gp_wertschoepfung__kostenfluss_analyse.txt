@@ -1,0 +1,53 @@
+# __gp_wertschoepfung__kostenfluss_analyse
+
+## Spielidee
+"Kostenfluss-Analyse" zeigt Kostenanteile entlang der Prozessstufen. Lernende identifizieren die teuerste Stufe und waehlen die wirksamste Optimierung.
+
+## Lernziel
+- Kostenverteilung in der Wertschoepfung interpretieren.
+- Optimierungspotenziale datenbasiert priorisieren.
+
+## Messbare Progression
+- 12 Analysefaelle.
+- Punkte: +9 korrekte Engpassstufe, +4 passende Massnahme, -4 Fehler.
+- KPI: Engpassquote und Massnahmenwirkung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- AnalysisController
+- CostEngine
+- ImprovementService
+
+### Domaenenobjekte
+- CostCase(caseId, stageCosts[])
+- StageCost(stageId, amount)
+- ImprovementOption(optionId, targetStage)
+- AnalysisResult(bottleneckCorrect, actionCorrect)
+
+### Beziehungen
+- CostCase enthaelt 3..8 StageCost.
+- CostEngine berechnet Spitzenwerte.
+- ImprovementService aggregiert 1..* AnalysisResult.
+
+### Zustandsmodell
+- LOAD_CASE -> REVIEW_COSTS -> SELECT_BOTTLENECK -> SELECT_ACTION -> RESULT
+
+### Sequenz (Happy Path)
+1. AnalysisController laedt CostCase.
+2. Player waehlt Engpassstufe.
+3. CostEngine validiert Auswahl.
+4. Player waehlt ImprovementOption.
+5. ImprovementService aktualisiert KPI.
+
+## Regeln
+- Falsche Massnahme bei korrekter Stufe gibt Teilpunkte.
+- Doppelt korrekte Faelle geben Serienbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, stageCosts[], expectedBottleneck, actionOptions[]
+
+## Abnahmekriterien
+- Kostenfluss ist numerisch transparent.
+- KPI zeigt Engpass und Aktion getrennt.
+- Lernreport nennt haeufige Fehlpriorisierungen.

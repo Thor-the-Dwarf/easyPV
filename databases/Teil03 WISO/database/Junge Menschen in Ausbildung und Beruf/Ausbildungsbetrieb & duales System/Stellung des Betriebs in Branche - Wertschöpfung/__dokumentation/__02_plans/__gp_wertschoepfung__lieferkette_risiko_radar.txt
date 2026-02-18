@@ -1,0 +1,53 @@
+# __gp_wertschoepfung__lieferkette_risiko_radar
+
+## Spielidee
+"Lieferkette-Risiko-Radar" simuliert Stoerungen in Vorstufen. Lernende priorisieren Risiken nach Auswirkung und waehlen die passende Reaktion.
+
+## Lernziel
+- Risiken in der Wertschoepfungskette frueh erkennen.
+- Gegenmassnahmen je Risikostufe einsetzen.
+
+## Messbare Progression
+- 10 Risikoszenarien.
+- Punkte: +8 korrekte Priorisierung, +4 passende Reaktion, -4 Fehler.
+- KPI: Priorisierungsquote und Reaktionsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- RiskController
+- PriorityEngine
+- ResponseService
+
+### Domaenenobjekte
+- RiskScenario(scenarioId, risks[])
+- Risk(riskId, impact, probability)
+- Response(responseId, responseType)
+- RiskResult(priorityCorrect, responseCorrect)
+
+### Beziehungen
+- RiskScenario enthaelt 3..12 Risk.
+- PriorityEngine validiert Reihenfolge.
+- ResponseService aggregiert 1..* RiskResult.
+
+### Zustandsmodell
+- SCENARIO_START -> PRIORITIZE -> RESPOND -> EVALUATE -> NEXT_SCENARIO
+
+### Sequenz (Happy Path)
+1. RiskController startet RiskScenario.
+2. Player priorisiert Risk.
+3. PriorityEngine prueft Rangfolge.
+4. Player waehlt Response.
+5. ResponseService aktualisiert KPI.
+
+## Regeln
+- Uebersehenes Hochrisikoelement erzeugt Zusatzabzug.
+- Vollkorrekte Runde liefert Multiplikator.
+
+## Datenmodell (JSON-Idee)
+- fields: scenarioId, risks[{id,impact,probability}], expectedPriority[], responseOptions[]
+
+## Abnahmekriterien
+- Priorisierung und Reaktion sind getrennt ersichtlich.
+- KPI zeigt beide Kompetenzwerte.
+- Report markiert haeufige Fehleinschaetzungen.

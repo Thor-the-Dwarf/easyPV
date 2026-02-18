@@ -1,0 +1,52 @@
+# __gp_duales_system__terminkoordination_timer
+
+## Spielidee
+"Terminkoordination-Timer" zeigt Pruefungs- und Ausbildungsmeilensteine. Lernende koordinieren Termine zwischen Akteuren ohne Kollisionen.
+
+## Lernziel
+- Terminabhaengigkeiten im dualen System steuern.
+- Fruehzeitige Konflikterkennung trainieren.
+
+## Messbare Progression
+- 10 Planungsrunden mit je 75 Sekunden.
+- Punkte: +7 konfliktfreie Terminzuordnung, -3 pro Konflikt.
+- KPI: Konfliktfreie Planungen und Zeitverbrauch.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScheduleController
+- ConflictEngine
+- ScoreBoard
+
+### Domaenenobjekte
+- ScheduleCase(caseId, events[])
+- Event(eventId, actor, timeWindow)
+- ScheduleResult(conflicts, completionTimeMs)
+
+### Beziehungen
+- ScheduleCase enthaelt 6..15 Event.
+- ConflictEngine validiert Terminlagen.
+- ScoreBoard aggregiert 1..* ScheduleResult.
+
+### Zustandsmodell
+- LOAD_CASE -> PLAN_EVENTS -> SUBMIT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. ScheduleController laedt ScheduleCase.
+2. Player plant Event.
+3. ConflictEngine erkennt Kollisionen.
+4. ScheduleResult wird berechnet.
+5. ScoreBoard aktualisiert KPI.
+
+## Regeln
+- Konflikte mit Pruefungsterminen haben hoehere Strafpunkte.
+- Vollstaendig konfliktfreie Runde gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, events[{id,actor,timeWindow}], constraints[]
+
+## Abnahmekriterien
+- Kollisionen werden eindeutig angezeigt.
+- KPI zeigt Qualitaet und Geschwindigkeit.
+- Lernreport nennt haeufige Konfliktmuster.

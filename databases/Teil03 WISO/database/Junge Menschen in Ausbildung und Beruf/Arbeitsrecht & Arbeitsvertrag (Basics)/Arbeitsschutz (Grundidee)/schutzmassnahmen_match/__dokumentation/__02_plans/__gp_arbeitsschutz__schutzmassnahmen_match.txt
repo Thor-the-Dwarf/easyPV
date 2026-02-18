@@ -1,0 +1,53 @@
+# __gp_arbeitsschutz__schutzmassnahmen_match
+
+## Spielidee
+"Schutzmassnahmen-Match" koppelt Gefaehrdungssituationen mit passenden Massnahmen. Lernende ordnen technische, organisatorische und persoenliche Massnahmen korrekt zu.
+
+## Lernziel
+- Passende Schutzmassnahme zur Gefahr auswaehlen.
+- Wirksamkeitsdenken im Arbeitsschutz verankern.
+
+## Messbare Progression
+- 12 Match-Runden.
+- Punkte: +9 korrektes Match, -4 falsches Match.
+- Zeitbonus: +2 bei Antwort unter 10 Sekunden.
+- KPI: Match-Genauigkeit und mittlere Antwortzeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- MatchController
+- MeasureRuleEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- RiskCase(caseId, riskType)
+- MeasureOption(optionId, measureClass)
+- MatchResult(isCorrect, responseTimeMs)
+
+### Beziehungen
+- RiskCase hat 3..5 MeasureOption.
+- MeasureRuleEngine validiert pro Auswahl ein MatchResult.
+- ProgressTracker sammelt 1..* MatchResult.
+
+### Zustandsmodell
+- INIT -> ROUND_ACTIVE -> ANSWER_LOCK -> FEEDBACK -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. MatchController startet RiskCase.
+2. Player waehlt MeasureOption.
+3. MeasureRuleEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. ProgressTracker aktualisiert Fortschritt.
+
+## Regeln
+- Falsche Zuordnung bei Hochrisiko-Fall ergibt doppelten Abzug.
+- Ab 80 Prozent Genauigkeit steigt Schwierigkeit automatisch.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, riskType, options[{id,measureClass}], expectedOptionId
+
+## Abnahmekriterien
+- Feedback erklaert, warum eine Massnahme passt oder nicht.
+- KPI ist pro Massnahmenklasse auswertbar.
+- Lernende sehen Trend ueber mehrere Sessions.

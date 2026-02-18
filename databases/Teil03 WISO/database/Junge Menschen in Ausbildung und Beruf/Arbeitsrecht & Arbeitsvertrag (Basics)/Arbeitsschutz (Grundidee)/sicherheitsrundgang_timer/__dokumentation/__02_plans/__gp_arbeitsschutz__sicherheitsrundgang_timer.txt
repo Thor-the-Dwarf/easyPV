@@ -1,0 +1,53 @@
+# __gp_arbeitsschutz__sicherheitsrundgang_timer
+
+## Spielidee
+"Sicherheitsrundgang-Timer" fuehrt durch einen virtuellen Betrieb. Lernende muessen in begrenzter Zeit moeglichst viele Sicherheitsverstoesse finden.
+
+## Lernziel
+- Wahrnehmungsgeschwindigkeit fuer Sicherheitsrisiken steigern.
+- Routine fuer systematische Begehungen aufbauen.
+
+## Messbare Progression
+- 5 Rundgaenge mit je 60 Sekunden.
+- Punkte: +5 pro korrekt gefundenem Verstoss, -2 pro Fehlklick.
+- KPI: korrekte Funde pro Minute.
+- Zielwert: mindestens 12 korrekte Funde pro Rundgang.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TourController
+- ViolationEngine
+- ScoreBoard
+
+### Domaenenobjekte
+- Tour(tourId, durationSec)
+- Violation(violationId, area, severity)
+- TourResult(correctFinds, falseFinds, ratePerMinute)
+
+### Beziehungen
+- TourController steuert 1..* Tour.
+- Tour enthaelt 8..25 Violation.
+- ViolationEngine erzeugt pro Tour ein TourResult.
+
+### Zustandsmodell
+- PREPARE -> TOUR_RUNNING -> SUBMIT -> TOUR_EVAL -> NEXT_TOUR
+
+### Sequenz (Happy Path)
+1. TourController startet Tour.
+2. Player markiert Violation waehrend Timer laeuft.
+3. ViolationEngine prueft Markierungen.
+4. TourResult berechnet Fundrate.
+5. ScoreBoard zeigt Fortschrittsvergleich.
+
+## Regeln
+- Markierung nach Ablauf des Timers zaehlt nicht.
+- Perfekte Runde ohne Fehlklick gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: tourId, durationSec, violations[{id,area,severity,position}]
+
+## Abnahmekriterien
+- Timer und Trefferzaehlung laufen stabil synchron.
+- KPI pro Rundgang ist historisch vergleichbar.
+- Fehlklick-Hotspots werden im Report hervorgehoben.

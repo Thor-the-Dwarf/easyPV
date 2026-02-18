@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Arbeitsschutz", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 9, "wrong": -4, "completion_bonus": 8 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Offene Quetschstelle an Maschine: passende Schutzmassnahme?",
+      "hint": "Denke zuerst an technische Massnahmen.",
+      "options": [
+        { "id": "a", "text": "Technische Abschirmung nachruesten", "correct": true, "feedback": "Richtig. Das adressiert die Gefahr direkt an der Quelle." },
+        { "id": "b", "text": "Nur Hinweiszettel aufhaengen", "correct": false, "feedback": "Nicht ausreichend." },
+        { "id": "c", "text": "Massnahme verschieben", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Regel gilt fuer Hochrisiko-Faelle bei falschem Match?",
+      "hint": "Es gibt einen doppelten Abzug.",
+      "options": [
+        { "id": "a", "text": "Doppelter Punktabzug", "correct": true, "feedback": "Richtig. Hochrisiko-Fehlzuordnungen werden strenger bewertet." },
+        { "id": "b", "text": "Kein Abzug", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Automatisch Bonus", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Ab welcher Genauigkeit steigt laut Plan die Schwierigkeit?",
+      "hint": "Genannt ist ein Schwellenwert.",
+      "options": [
+        { "id": "a", "text": "ab 80 Prozent", "correct": true, "feedback": "Genau. Dann wird automatisch anspruchsvoller." },
+        { "id": "b", "text": "ab 20 Prozent", "correct": false, "feedback": "Zu niedrig." },
+        { "id": "c", "text": "erst ab 100 Prozent", "correct": false, "feedback": "Zu spaet." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche Zusatzmetrik wird neben Genauigkeit betrachtet?",
+      "hint": "Es geht um Zeit je Antwort.",
+      "options": [
+        { "id": "a", "text": "mittlere Antwortzeit", "correct": true, "feedback": "Richtig. Die KPI kombiniert Qualitaet und Tempo." },
+        { "id": "b", "text": "Monitorhelligkeit", "correct": false, "feedback": "Nicht relevant." },
+        { "id": "c", "text": "Mauswege", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was macht gutes Feedback im Match laut Plan aus?",
+      "hint": "Nicht nur richtig/falsch, sondern Begruendung.",
+      "options": [
+        { "id": "a", "text": "Es erklaert, warum die Massnahme passt oder nicht", "correct": true, "feedback": "Richtig. Das verbessert Lerntransfer." },
+        { "id": "b", "text": "Nur Farbe anzeigen", "correct": false, "feedback": "Zu wenig Information." },
+        { "id": "c", "text": "Keine Rueckmeldung", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

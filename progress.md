@@ -1,0 +1,10 @@
+- Original prompt (current turn): Feedback-FAB wiederherstellen (sichtbar auf generic_page und auf allen Spielen).
+- Umsetzung:
+  - Neuer getrackter Firebase-Client unter `shared/firebase-feedback-client.js` angelegt (entkoppelt von `__admin_dont_push`).
+  - `generic_pages/generic_page.html` auf `../shared/firebase-feedback-client.js` umgestellt.
+  - Root-`index.html` erweitert um Floating Feedback-FAB + Modal fuer direkt geladene Spielseiten (wenn nicht `generic_page` im Frame).
+  - Root-Feedback sendet an bestehende `EasyPvFirebaseFeedback.submitFeedback(...)`-Schnittstelle mit Frame-Kontext.
+  - Sichtbarkeit: Root-FAB blendet sich automatisch aus, wenn `generic_page` geladen ist (kein Doppel-FAB).
+- Validierung:
+  - Inline-Script-Syntax in `index.html` erfolgreich geprueft.
+  - Shared-Client-Datei vorhanden und Referenzen in `index.html` + `generic_page.html` korrekt.

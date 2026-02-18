@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Arbeitsschutz", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 7, "wrong": -4, "completion_bonus": 8 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Mitarbeiter stolpert ueber lose Kabel, verletzt sich aber nicht. Erster Analyseschritt?",
+      "hint": "Bei Beinaheunfaellen zuerst Ursache sauber bestimmen.",
+      "options": [
+        { "id": "a", "text": "Unfallursache erfassen und dokumentieren", "correct": true, "feedback": "Richtig. Die strukturierte Ursachenanalyse ist der Startpunkt." },
+        { "id": "b", "text": "Vorfall ignorieren", "correct": false, "feedback": "Nicht korrekt. Beinaheunfaelle muessen ausgewertet werden." },
+        { "id": "c", "text": "Nur Schuldige suchen", "correct": false, "feedback": "Zu kurz gegriffen." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Praeventionsmassnahme passt zu Stolpergefahr durch Kabel?",
+      "hint": "Massnahme soll Gefahr direkt reduzieren.",
+      "options": [
+        { "id": "a", "text": "Kabel sichern oder anders verlegen", "correct": true, "feedback": "Richtig. Das beseitigt die unmittelbare Gefahrenquelle." },
+        { "id": "b", "text": "Warnschild ohne Anpassung", "correct": false, "feedback": "Nicht ausreichend als alleinige Massnahme." },
+        { "id": "c", "text": "Nur spaeter darauf achten", "correct": false, "feedback": "Nicht wirksam." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI gehoert laut Plan zur Analyseleistung?",
+      "hint": "Es werden Ursache und Massnahme getrennt bewertet.",
+      "options": [
+        { "id": "a", "text": "Ursachenquote und Massnahmenquote", "correct": true, "feedback": "Genau. Beide Analyseebenen werden getrennt gemessen." },
+        { "id": "b", "text": "Nur Klickanzahl", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur Spielzeit", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche Regel gilt bei korrekter Ursache, aber falscher Massnahme?",
+      "hint": "Das Bewertungssystem kennt Teilpunkte.",
+      "options": [
+        { "id": "a", "text": "Es gibt Teilpunkte", "correct": true, "feedback": "Richtig. Ursache und Massnahme werden separat gewertet." },
+        { "id": "b", "text": "Immer volle Punkte", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Immer null Punkte", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann erscheint ein gezielter Hinweis laut Plan?",
+      "hint": "Hinweisregel greift bei wiederkehrendem Fehlerbild.",
+      "options": [
+        { "id": "a", "text": "Bei wiederholter Fehlklasse", "correct": true, "feedback": "Richtig. Das System unterstuetzt bei wiederholten Fehlmustern." },
+        { "id": "b", "text": "Bei jeder richtigen Antwort", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur zum Spielstart", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

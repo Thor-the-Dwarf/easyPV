@@ -1,0 +1,53 @@
+# __gp_arbeitsschutz__psa_checkrun
+
+## Spielidee
+"PSA-Checkrun" ist ein Zeitspiel: Lernende waehlen fuer Taetigkeiten die passende persoenliche Schutzausruestung (PSA) und vermeiden unnoetige Ausruestung.
+
+## Lernziel
+- PSA passend zur Taetigkeit einsetzen.
+- Unter- und Ueberausruestung unterscheiden.
+
+## Messbare Progression
+- 20 Kurzfaelle.
+- Punkte: +6 korrekte PSA-Auswahl, -3 falsche Auswahl.
+- +2 fuer vollstaendige, aber nicht ueberladene Kombination.
+- KPI: PSA-Treffsicherheit und Fehlerrate.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- RunController
+- PsaRuleEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- TaskCase(taskId, environmentType)
+- PsaItem(itemId, protectionType)
+- RunResult(correctItems, extraItems, missingItems)
+
+### Beziehungen
+- TaskCase hat 5..10 waehlbare PsaItem.
+- PsaRuleEngine validiert Item-Set pro TaskCase.
+- AnalyticsService aggregiert 1..* RunResult.
+
+### Zustandsmodell
+- READY -> TASK_ACTIVE -> ITEM_SELECT -> VALIDATION -> NEXT_TASK
+
+### Sequenz (Happy Path)
+1. RunController startet TaskCase.
+2. Player waehlt PsaItem.
+3. PsaRuleEngine prueft Vollstaendigkeit.
+4. RunResult wird berechnet.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Fehlende Pflicht-PSA verursacht hohen Abzug.
+- Ueberausruestung reduziert Effizienzscore.
+
+## Datenmodell (JSON-Idee)
+- fields: taskId, environmentType, availableItems[], requiredItems[], forbiddenItems[]
+
+## Abnahmekriterien
+- Pflicht- und optionale PSA sind klar unterscheidbar.
+- KPI zeigt Missing vs. Extra getrennt.
+- Endreport nennt meist fehlende PSA-Elemente.

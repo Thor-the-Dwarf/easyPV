@@ -1,0 +1,53 @@
+# __gp_arbeitsschutz__gefahrenradar_shopfloor
+
+## Spielidee
+"Gefahrenradar Shopfloor" zeigt Arbeitsplaetze mit versteckten Risiken. Lernende markieren Gefahrenquellen und priorisieren die dringendste Massnahme.
+
+## Lernziel
+- Gefaehrdungen am Arbeitsplatz systematisch erkennen.
+- Priorisierung von Schutzmassnahmen trainieren.
+
+## Messbare Progression
+- 15 Arbeitsplatzkarten.
+- Punkte: +8 je korrekt erkannter Gefahr, -3 je Fehlmarkierung.
+- Bonus: +5 fuer korrekte Priorisierung der Top-Gefahr.
+- KPI: Erkennungsquote und Priorisierungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- SceneController
+- HazardEngine
+- ScoreService
+
+### Domaenenobjekte
+- WorkScene(sceneId, hazards[])
+- Hazard(hazardId, severity, category)
+- ScanResult(foundCount, wrongCount, topPriorityCorrect)
+
+### Beziehungen
+- SceneController steuert 1..* WorkScene.
+- WorkScene enthaelt 2..10 Hazard.
+- HazardEngine erzeugt pro Szene ein ScanResult.
+
+### Zustandsmodell
+- READY -> SCENE_SCAN -> PRIORITY_SELECT -> EVALUATION -> NEXT_SCENE
+
+### Sequenz (Happy Path)
+1. SceneController laedt WorkScene.
+2. Player markiert Hazard und waehlt Prioritaet.
+3. HazardEngine vergleicht mit Referenz.
+4. ScanResult wird berechnet.
+5. ScoreService aktualisiert Session-KPI.
+
+## Regeln
+- Uebersehen einer Hochrisiko-Gefahr erzeugt Zusatzabzug.
+- Drei fehlerfreie Szenen in Folge aktivieren Multiplikator.
+
+## Datenmodell (JSON-Idee)
+- fields: sceneId, hazards[{id,severity,category,position}], expectedTopHazardId
+
+## Abnahmekriterien
+- Gefahren und Prioritaeten sind klar rueckgemeldet.
+- KPI zeigt Erkennung und Priorisierung getrennt.
+- Sessionreport listet meist uebersehene Gefahrtypen.

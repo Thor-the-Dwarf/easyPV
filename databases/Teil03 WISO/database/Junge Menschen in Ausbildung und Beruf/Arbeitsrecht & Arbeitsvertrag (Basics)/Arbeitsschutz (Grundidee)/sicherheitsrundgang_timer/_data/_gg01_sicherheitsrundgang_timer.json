@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Arbeitsschutz", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 5, "wrong": -2, "completion_bonus": 8 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Kernkompetenz trainiert der Sicherheitsrundgang-Timer?",
+      "hint": "Es geht um Geschwindigkeit und Systematik.",
+      "options": [
+        { "id": "a", "text": "Sicherheitsverstoesse schnell und systematisch erkennen", "correct": true, "feedback": "Richtig. Genau darauf zielt das Spiel ab." },
+        { "id": "b", "text": "Nur Regeltexte auswendig lernen", "correct": false, "feedback": "Nicht der Kernmechanismus." },
+        { "id": "c", "text": "Nur Laufwege optimieren", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Aktion zaehlt laut Regeln nicht?",
+      "hint": "Achte auf das Zeitende.",
+      "options": [
+        { "id": "a", "text": "Markierung nach Ablauf des Timers", "correct": true, "feedback": "Genau. Nach Zeitablauf werden Treffer nicht mehr gezaehlt." },
+        { "id": "b", "text": "Markierung waehrend der Runde", "correct": false, "feedback": "Die zaehlt natuerlich." },
+        { "id": "c", "text": "Korrekte Markierung im Zeitfenster", "correct": false, "feedback": "Die ist gueltig." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI steht im Plan als Primärmetrik?",
+      "hint": "Sie kombiniert Treffer und Zeit.",
+      "options": [
+        { "id": "a", "text": "korrekte Funde pro Minute", "correct": true, "feedback": "Richtig. Das ist die zentrale Leistungsmetrik." },
+        { "id": "b", "text": "nur Gesamtpunkte", "correct": false, "feedback": "Zu unspezifisch." },
+        { "id": "c", "text": "nur Fehlklickzahl", "correct": false, "feedback": "Nicht allein." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gibt es den Perfekt-Runden-Bonus?",
+      "hint": "Trefferqualitaet und Fehlklicke sind relevant.",
+      "options": [
+        { "id": "a", "text": "Bei Runde ohne Fehlklick", "correct": true, "feedback": "Richtig. Fehlerfreie Runde loest Bonus aus." },
+        { "id": "b", "text": "Bei hoechster Klickzahl", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Bei beliebiger Antwort", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Warum ist historischer KPI-Vergleich wichtig?",
+      "hint": "Der Plan fordert Trendbeobachtung pro Rundgang.",
+      "options": [
+        { "id": "a", "text": "Er zeigt Lernfortschritt ueber mehrere Rundgaenge", "correct": true, "feedback": "Richtig. So werden Verbesserungen sichtbar." },
+        { "id": "b", "text": "Er ersetzt jede inhaltliche Analyse", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Er ist nur Dekoration", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

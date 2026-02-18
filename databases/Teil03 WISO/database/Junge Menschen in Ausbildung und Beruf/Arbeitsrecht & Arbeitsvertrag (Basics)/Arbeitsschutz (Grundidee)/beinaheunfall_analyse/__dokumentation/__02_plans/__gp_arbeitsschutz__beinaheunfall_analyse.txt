@@ -1,0 +1,53 @@
+# __gp_arbeitsschutz__beinaheunfall_analyse
+
+## Spielidee
+"Beinaheunfall-Analyse" nutzt Kurzprotokolle aus dem Betrieb. Lernende identifizieren Ursache, Risikoebene und geeignete Praeventionsmassnahme.
+
+## Lernziel
+- Ursachenanalyse bei kritischen Ereignissen strukturieren.
+- Praeventive Massnahmen ableiten.
+
+## Messbare Progression
+- 10 Fallanalysen.
+- Punkte: +7 korrekte Ursache, +7 korrekte Massnahme, -4 falsche Zuordnung.
+- KPI: Ursachenquote, Massnahmenquote, Gesamtanalysegenauigkeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- IncidentController
+- CauseAnalysisEngine
+- ReportService
+
+### Domaenenobjekte
+- IncidentCase(caseId, incidentText)
+- CauseOption(causeId, causeType)
+- PreventionOption(preventionId, preventionType)
+- AnalysisResult(causeCorrect, preventionCorrect)
+
+### Beziehungen
+- IncidentCase hat 3..6 CauseOption und 3..6 PreventionOption.
+- CauseAnalysisEngine erzeugt pro Fall ein AnalysisResult.
+- ReportService aggregiert 1..* AnalysisResult.
+
+### Zustandsmodell
+- CASE_OPEN -> ANALYZE_CAUSE -> SELECT_PREVENTION -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. IncidentController zeigt IncidentCase.
+2. Player waehlt CauseOption und PreventionOption.
+3. CauseAnalysisEngine validiert Entscheidungen.
+4. AnalysisResult wird visualisiert.
+5. ReportService schreibt Lernstatistik fort.
+
+## Regeln
+- Falsche Massnahme bei korrekter Ursache gibt Teilpunkte.
+- Wiederholte Fehlklasse loest gezielten Hinweis aus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, incidentText, causeOptions[], preventionOptions[], expectedCause, expectedPrevention
+
+## Abnahmekriterien
+- Ursache und Massnahme sind einzeln bewertbar.
+- KPI deckt beide Analyseebenen getrennt ab.
+- Lernverlauf zeigt Reduktion wiederholter Fehler.

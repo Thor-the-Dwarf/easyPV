@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Gefahrenradar Shopfloor
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: gefahrenradar_shopfloor" {
+  component "_ghtml_gefahrenradar_shopfloor.html" as HTML
+  component "_gjs_gefahrenradar_shopfloor.js" as JS
+  component "_gcss_gefahrenradar_shopfloor.css" as CSS
+  database "_data/_gg01_gefahrenradar_shopfloor.json" as GG
+  database "_data/__metaData_Arbeitsschutz (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

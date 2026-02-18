@@ -1,0 +1,56 @@
+{
+  "meta": { "topic": "Arbeitsschutz", "mechanic": "classification_quiz", "version": "1.0" },
+  "scoring": { "correct": 6, "wrong": -3, "completion_bonus": 7 },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Schleifarbeiten mit Funkenflug: Welche PSA ist Pflicht?",
+      "hint": "Augenschutz und passende Ausruestung sind entscheidend.",
+      "options": [
+        { "id": "a", "text": "Schutzbrille und geeignete Handschuhe", "correct": true, "feedback": "Richtig. Das deckt zentrale Schutzanforderungen ab." },
+        { "id": "b", "text": "Keine PSA", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nur Basecap", "correct": false, "feedback": "Nicht ausreichend." }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Fehlart fuehrt laut Regeln zu hohem Abzug?",
+      "hint": "Es geht um Unterausruestung.",
+      "options": [
+        { "id": "a", "text": "Fehlende Pflicht-PSA", "correct": true, "feedback": "Richtig. Das wird streng sanktioniert." },
+        { "id": "b", "text": "Zu frueher Start", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Nennung der Umgebung", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wie wirkt sich Ueberausruestung aus?",
+      "hint": "Plan nennt einen Effizienzbezug.",
+      "options": [
+        { "id": "a", "text": "Sie reduziert den Effizienzscore", "correct": true, "feedback": "Genau. Unnoetige PSA kostet Effizienzpunkte." },
+        { "id": "b", "text": "Sie gibt immer Bonus", "correct": false, "feedback": "Nicht korrekt." },
+        { "id": "c", "text": "Sie ist immer neutral", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI trennt der Plan explizit?",
+      "hint": "Verglichen werden fehlende und zusaetzliche Items.",
+      "options": [
+        { "id": "a", "text": "Missing vs. Extra", "correct": true, "feedback": "Richtig. Genau diese Trennung macht die Analyse brauchbar." },
+        { "id": "b", "text": "Nur Gesamtpunkte", "correct": false, "feedback": "Zu grob." },
+        { "id": "c", "text": "Nur Antwortzeit", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was ist Ziel der PSA-Auswahl?",
+      "hint": "Vollstaendig, aber nicht ueberladen.",
+      "options": [
+        { "id": "a", "text": "Passend schuetzen ohne unnoetige Zusatz-PSA", "correct": true, "feedback": "Richtig. Das ist die Zielbalance im Checkrun." },
+        { "id": "b", "text": "Moeglichst viele Items ankreuzen", "correct": false, "feedback": "Nicht effizient." },
+        { "id": "c", "text": "Gar keine PSA waehlen", "correct": false, "feedback": "Nicht korrekt." }
+      ]
+    }
+  ]
+}

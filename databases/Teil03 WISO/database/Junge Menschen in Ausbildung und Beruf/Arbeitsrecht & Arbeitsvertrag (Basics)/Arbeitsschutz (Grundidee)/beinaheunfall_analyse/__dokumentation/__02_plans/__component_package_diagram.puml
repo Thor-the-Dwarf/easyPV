@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Beinaheunfall-Analyse
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: beinaheunfall_analyse" {
+  component "_ghtml_beinaheunfall_analyse.html" as HTML
+  component "_gjs_beinaheunfall_analyse.js" as JS
+  component "_gcss_beinaheunfall_analyse.css" as CSS
+  database "_data/_gg01_beinaheunfall_analyse.json" as GG
+  database "_data/__metaData_Arbeitsschutz (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

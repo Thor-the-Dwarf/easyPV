@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kuendigungsschutz",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 8,
+    "wrong": -3,
+    "completion_bonus": 9
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welcher Schritt gehoert im Regelfall vor die finale Entscheidung?",
+      "hint": "Ohne geordnete Vorbereitung fehlt die Prozesssicherheit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Anhoerung vorbereiten und Fallinformationen sammeln",
+          "correct": true,
+          "feedback": "Richtig. Die Vorbereitung ist Pflichtbasis."
+        },
+        {
+          "id": "b",
+          "text": "Direkt kuendigen und spaeter dokumentieren",
+          "correct": false,
+          "feedback": "Nicht korrekt. Die Reihenfolge ist fehlerhaft."
+        },
+        {
+          "id": "c",
+          "text": "Nur den Endtermin notieren",
+          "correct": false,
+          "feedback": "Zu wenig fuer einen formalen Ablauf."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Regel gilt bei uebersprungener Pflichtstufe?",
+      "hint": "Im Plan ist eine doppelte Strafe definiert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Die Punktstrafe wird verdoppelt",
+          "correct": true,
+          "feedback": "Genau. Pflichtstufen wiegen doppelt."
+        },
+        {
+          "id": "b",
+          "text": "Es gibt keinen Einfluss auf die Punkte",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur die Zeit wird gemessen",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI zeigt der Prozesspfad laut Plan?",
+      "hint": "Es geht um Korrektheit plus Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reihenfolgegenauigkeit und Schritte bis Ziel",
+          "correct": true,
+          "feedback": "Richtig. Beide Werte sind die Kernmetrik."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtspielzeit",
+          "correct": false,
+          "feedback": "Zu ungenau."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Klicks",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann erhaeltst du den Effizienzbonus?",
+      "hint": "Die Kette muss ohne Fehler bleiben.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei einer fehlerfreien Prozesskette",
+          "correct": true,
+          "feedback": "Richtig. Fehlerfrei bedeutet Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Bei jeder beliebigen Reihenfolge",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur wenn du langsamer antwortest",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was muss gutes Fehlerfeedback im Spiel enthalten?",
+      "hint": "Der naechste korrekte Schritt soll klar sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Den korrekten naechsten Prozessschritt nennen",
+          "correct": true,
+          "feedback": "Richtig. Das macht Lernen reproduzierbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur den Fehler markieren ohne Hinweis",
+          "correct": false,
+          "feedback": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Gar kein Feedback ausgeben",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    }
+  ]
+}

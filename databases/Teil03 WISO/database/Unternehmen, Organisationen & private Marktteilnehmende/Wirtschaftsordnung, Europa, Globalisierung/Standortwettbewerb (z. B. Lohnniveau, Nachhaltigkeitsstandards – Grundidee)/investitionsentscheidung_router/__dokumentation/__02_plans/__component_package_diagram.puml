@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Investitionsentscheidung-Router
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: investitionsentscheidung_router" {
+  component "_ghtml_investitionsentscheidung_router.html" as HTML
+  component "_gjs_investitionsentscheidung_router.js" as JS
+  component "_gcss_investitionsentscheidung_router.css" as CSS
+  database "_data/_gg01_investitionsentscheidung_router.json" as GG
+  database "_data/__metaData_Standortwettbewerb (z. B. Lohnniveau, Nachhaltigkeitsstandards – Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

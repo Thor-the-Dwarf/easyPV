@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Standortfaktoren-Match
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: standortfaktoren_match" {
+  component "_ghtml_standortfaktoren_match.html" as HTML
+  component "_gjs_standortfaktoren_match.js" as JS
+  component "_gcss_standortfaktoren_match.css" as CSS
+  database "_data/_gg01_standortfaktoren_match.json" as GG
+  database "_data/__metaData_Standortwettbewerb (z. B. Lohnniveau, Nachhaltigkeitsstandards – Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

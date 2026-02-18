@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kuendigungsschutz",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 8,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Wodurch wird im Duell ein Fall als korrekt bewertet?",
+      "hint": "Nicht nur waehlen, auch Fristlogik beachten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Durch korrekt berechnetes Fristende im Vergleich",
+          "correct": true,
+          "feedback": "Richtig. Das Duell basiert auf Fristgenauigkeit."
+        },
+        {
+          "id": "b",
+          "text": "Durch die laengere Textbegruendung",
+          "correct": false,
+          "feedback": "Nicht automatisch korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Durch spaeteres Startdatum ohne Pruefung",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann gibt es laut Regeln nur Teilpunkte?",
+      "hint": "Herleitung beeinflusst die volle Punktzahl.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei richtiger Wahl ohne Herleitungsangabe",
+          "correct": true,
+          "feedback": "Genau. Ohne Herleitung fehlen Bonuspunkte."
+        },
+        {
+          "id": "b",
+          "text": "Bei falscher Wahl mit schneller Antwort",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Bei keiner Eingabe",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI trennt das Spiel explizit?",
+      "hint": "Zwei Blickwinkel auf Leistung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Auswahlgenauigkeit und Herleitungsquote",
+          "correct": true,
+          "feedback": "Richtig. Genau diese Trennung ist gefordert."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "feedback": "Zu wenig Information."
+        },
+        {
+          "id": "c",
+          "text": "Nur Antwortzeit",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche Bonusregel gehoert zum Duell?",
+      "hint": "Eine Serie wird belohnt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vier korrekte Duelle in Folge geben Serienbonus",
+          "correct": true,
+          "feedback": "Richtig. Die Serie erhoeht den Score."
+        },
+        {
+          "id": "b",
+          "text": "Jeder Fehler gibt Bonuszeit",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur der erste Treffer zaehlt",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was zeigt ein guter Fehlerreport in diesem Spiel?",
+      "hint": "Die haeufigsten Muster sollen sichtbar sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Die haeufigsten Datumsfehler je Durchlauf",
+          "correct": true,
+          "feedback": "Richtig. Dadurch wird Fristlogik besser."
+        },
+        {
+          "id": "b",
+          "text": "Nur den Endpunktestand",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur die letzte Runde",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    }
+  ]
+}

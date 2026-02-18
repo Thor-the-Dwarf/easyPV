@@ -1,0 +1,53 @@
+# __gp_kuendigungsschutz__fristrechner_duell
+
+## Spielidee
+"Fristrechner-Duell" vergleicht zwei Kuendigungsfaelle. Lernende bestimmen, welcher Fall die korrekte Fristberechnung enthaelt.
+
+## Lernziel
+- Fristlogik bei Kuendigungen anwenden.
+- Datumsfehler in Kuendigungsprozessen erkennen.
+
+## Messbare Progression
+- 15 Duelle.
+- Punkte: +8 korrekte Auswahl, -4 falsche Auswahl.
+- +3 fuer korrekte Herleitungsangabe.
+- KPI: Fristgenauigkeit und Herleitungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- DeadlineEngine
+- MetricService
+
+### Domaenenobjekte
+- NoticeDuel(duelId, caseA, caseB)
+- NoticeCase(caseId, noticeDate, endDate)
+- DuelResult(correctCaseId, reasonScore)
+
+### Beziehungen
+- NoticeDuel enthaelt genau 2 NoticeCase.
+- DeadlineEngine bewertet beide Cases.
+- MetricService sammelt 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> CASE_COMPARE -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet NoticeDuel.
+2. Player waehlt korrekten Fall.
+3. DeadlineEngine prueft Fristlogik.
+4. DuelResult wird angezeigt.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Herleitung gibt Teilpunkte.
+- Vier korrekte Duelle in Folge geben Serienbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, caseA{}, caseB{}, expectedCaseId
+
+## Abnahmekriterien
+- Fristberechnung ist transparent erklaert.
+- KPI trennt Auswahl und Herleitung.
+- Fehlerreport nennt haeufigste Datumsfehler.

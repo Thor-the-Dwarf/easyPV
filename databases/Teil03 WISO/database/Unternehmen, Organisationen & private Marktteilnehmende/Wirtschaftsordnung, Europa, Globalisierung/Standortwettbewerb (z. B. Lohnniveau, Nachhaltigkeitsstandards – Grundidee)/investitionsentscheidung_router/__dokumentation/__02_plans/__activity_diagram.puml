@@ -1,0 +1,17 @@
+@startuml
+title Investitionsentscheidung-Router - Aktivitaetsdiagramm
+start
+:Nutzer oeffnet Spielseite (_ghtml_investitionsentscheidung_router.html);
+:Konfig laden (_data/_gg01_investitionsentscheidung_router.json);
+while (Runden offen?) is (ja)
+  :Szenario lesen;
+  :Option waehlen;
+  if (Auswahl korrekt?) then (ja)
+    :Punkte erhoehen;
+  else (nein)
+    :Feedback + Abzug;
+  endif
+endwhile (nein)
+:Ergebnis anzeigen;
+stop
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Reaktionsfenster-Timer
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: reaktionsfenster_timer" {
+  component "_ghtml_reaktionsfenster_timer.html" as HTML
+  component "_gjs_reaktionsfenster_timer.js" as JS
+  component "_gcss_reaktionsfenster_timer.css" as CSS
+  database "_data/_gg01_reaktionsfenster_timer.json" as GG
+  database "_data/__metaData_Kündigung - Kündigungsschutz (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

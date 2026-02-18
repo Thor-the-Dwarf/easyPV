@@ -8,3 +8,20 @@
 - Validierung:
   - Inline-Script-Syntax in `index.html` erfolgreich geprueft.
   - Shared-Client-Datei vorhanden und Referenzen in `index.html` + `generic_page.html` korrekt.
+
+## 2026-02-18 - GamePlan-Ordner Ausbau (E-Mail formulieren)
+- Anhang-Vergesser-Alarm geprueft: Struktur + Tests entsprechen bereits dem Standard-Game-Ordner.
+- Betreffzeilen-Bingo verifiziert (inkl. JSON/JS/Tests) und lokal per Playwright-Smoke (`output/web-game-betreffzeilen-bingo/`) gegengeklickt.
+- Neues Spiel aus GamePlan implementiert: `cc_blindflug_vermeider` unter
+  - `databases/Teil01 Grundlagen/database/BWL/Kommunikation & Schulung/E-Mail formulieren/cc_blindflug_vermeider/`
+  - inkl. `_gg01`, `_ghtml`, `_gjs`, `_gcss`, `__dokumentation`, `__03_tests`.
+- Lokale Validierung:
+  - `node --check _gjs_cc_blindflug_vermeider.js`
+  - `node --test __dokumentation/__03_tests/unit/*.test.mjs`
+  - Playwright-Smoke + State: `output/web-game-cc-blindflug-vermeider/`.
+- Root-Index und Teil01-Index neu gebaut, damit neue Ordner im FolderTree erscheinen.
+
+### TODO (naechster Schritt)
+- Aus den verbliebenen Dateien in `E-Mail formulieren/` naechstes Spiel umsetzen:
+  - `GamePlan-Der-Tone-of-Voice-Editor.txt`
+  - `GamePlan-Phishing-Detektiv-E-Mail-Edition.txt`

@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kuendigungsschutz",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 12
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was ist die zentrale Aufgabe im Simulator?",
+      "hint": "Rangfolge plus Begruendung sind gekoppelt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Plausible Priorisierung mit nachvollziehbarer Begruendung",
+          "correct": true,
+          "feedback": "Richtig. Beides wird getrennt bewertet."
+        },
+        {
+          "id": "b",
+          "text": "Nur Namen alphabetisch sortieren",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur das schnellste Profil waehlen",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Regel senkt den Konsistenzscore?",
+      "hint": "Widersprueche wirken sich direkt aus.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Widerspruechliche Begruendung",
+          "correct": true,
+          "feedback": "Genau. Inkonsistenz kostet Punkte."
+        },
+        {
+          "id": "b",
+          "text": "Kurze aber stimmige Begruendung",
+          "correct": false,
+          "feedback": "Nicht automatisch schlecht."
+        },
+        {
+          "id": "c",
+          "text": "Konsistente Priorisierung",
+          "correct": false,
+          "feedback": "Das ist positiv."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann gibt es den Begruendungsbonus?",
+      "hint": "Die Begruendung muss konsistent sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei konsistenter Begruendung zur Rangfolge",
+          "correct": true,
+          "feedback": "Richtig. Dann werden Zusatzpunkte vergeben."
+        },
+        {
+          "id": "b",
+          "text": "Bei fehlender Begruendung",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei zufaelliger Reihenfolge",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI sind laut Plan relevant?",
+      "hint": "Korrektheit und Konsistenz werden getrennt gemessen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Priorisierungsquote und Begruendungskonsistenz",
+          "correct": true,
+          "feedback": "Richtig. Beide KPI sind Pflicht."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtzeit",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl geoeffneter Profile",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann ist der Bonusfall voll erreicht?",
+      "hint": "Rangfolge und Konsistenz muessen gemeinsam stimmen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Rangfolge mit hoher Konsistenz",
+          "correct": true,
+          "feedback": "Richtig. Das ist der optimale Fall."
+        },
+        {
+          "id": "b",
+          "text": "Nur hohe Geschwindigkeit",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur viele Umordnungen",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+# __gp_standortwettbewerb__verlagerungsszenario_simulator
+
+## Spielidee
+"Verlagerungsszenario-Simulator" simuliert Standortverlagerungen und deren Auswirkungen auf Kosten, Qualitaet und Risiken.
+
+## Lernziel
+- Folgen von Standortverlagerungen verstehen.
+- Strategische Entscheidungen unter Unsicherheit treffen.
+
+## Messbare Progression
+- 8 Simulationsrunden.
+- Punkte: +10 stabile Entscheidung, -5 instabile Entscheidung.
+- KPI: Stabilitaetsindex und Risikoquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- SimulationController
+- ImpactEngine
+- KPIService
+
+### Domaenenobjekte
+- ScenarioRound(roundId, relocationType)
+- Action(actionId, parameterSet)
+- RoundResult(stabilityScore, riskScore)
+
+### Beziehungen
+- ScenarioRound enthaelt 1..* Action.
+- ImpactEngine berechnet Effekte.
+
+### Zustandsmodell
+- PREPARE -> RUN -> ADJUST -> EVALUATE
+
+### Sequenz (Happy Path)
+1. Szenario starten.
+2. Aktion setzen.
+3. Wirkung berechnen.
+
+## Regeln
+- Hohe Risiken ignoriert: Zusatzabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: relocationType, options[], expectedBand
+
+## Abnahmekriterien
+- Wirkung ist nachvollziehbar dargestellt.
+- KPI zeigt Stabilitaet + Risiko.

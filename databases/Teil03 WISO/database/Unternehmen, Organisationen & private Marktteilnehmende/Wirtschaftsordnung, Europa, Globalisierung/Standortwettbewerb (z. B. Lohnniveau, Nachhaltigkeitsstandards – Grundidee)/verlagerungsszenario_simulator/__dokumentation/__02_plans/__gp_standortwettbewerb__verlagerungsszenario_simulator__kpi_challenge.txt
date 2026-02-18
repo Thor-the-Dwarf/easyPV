@@ -1,0 +1,32 @@
+# __gp_standortwettbewerb__verlagerungsszenario_simulator__kpi_challenge
+
+## Spielidee
+"Verlagerungsszenario-Simulator - KPI-Challenge" trainiert Standortentscheidungen unter Kosten-, Qualitaets- und Risikodruck.
+
+## Lernziel
+- Standortfaktoren strukturiert bewerten.
+- Zielkonflikte transparent priorisieren.
+
+## Messbare Progression
+- 8 Runden pro Durchlauf.
+- Punkte: +7 Zielkorridor erreicht, -4 Zielkorridor verfehlt.
+- KPI: KPI-Zielerreichung und Ausreisserrate.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- RuleEngine
+- MetricService
+
+### Domaenenobjekte
+- ScenarioCard(cardId, prompt, difficulty)
+- DecisionOption(optionId, impactType)
+- RoundResult(isCorrect, scoreDelta, responseSeconds)
+
+### Zustandsmodell
+- READY -> ROUND_ACTIVE -> SELECT -> EVALUATE -> NEXT_ROUND -> FINISHED
+
+## Abnahmekriterien
+- Fortschritt ist ueber Punkte und Zeit messbar.
+- KPI ist je Runde nachvollziehbar.

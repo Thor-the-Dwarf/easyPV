@@ -1,0 +1,17 @@
+@startuml
+title Kosten-Standard-Duell - Aktivitaetsdiagramm
+start
+:Nutzer oeffnet Spielseite (_ghtml_kosten_standard_duell.html);
+:Konfig laden (_data/_gg01_kosten_standard_duell.json);
+while (Runden offen?) is (ja)
+  :Szenario lesen;
+  :Option waehlen;
+  if (Auswahl korrekt?) then (ja)
+    :Punkte erhoehen;
+  else (nein)
+    :Feedback + Abzug;
+  endif
+endwhile (nein)
+:Ergebnis anzeigen;
+stop
+@enduml

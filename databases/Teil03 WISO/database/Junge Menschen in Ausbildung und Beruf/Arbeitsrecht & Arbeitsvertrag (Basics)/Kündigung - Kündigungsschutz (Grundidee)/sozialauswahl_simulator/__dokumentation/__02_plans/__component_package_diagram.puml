@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Sozialauswahl-Simulator
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: sozialauswahl_simulator" {
+  component "_ghtml_sozialauswahl_simulator.html" as HTML
+  component "_gjs_sozialauswahl_simulator.js" as JS
+  component "_gcss_sozialauswahl_simulator.css" as CSS
+  database "_data/_gg01_sozialauswahl_simulator.json" as GG
+  database "_data/__metaData_Kündigung - Kündigungsschutz (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

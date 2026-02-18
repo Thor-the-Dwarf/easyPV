@@ -1,0 +1,47 @@
+# __gp_standortwettbewerb__investitionsentscheidung_router
+
+## Spielidee
+"Investitionsentscheidung-Router" fuehrt durch mehrstufige Standortentscheidungen von Vorauswahl bis Freigabe.
+
+## Lernziel
+- Entscheidungsprozess bei Standortwahl strukturieren.
+- Pruefschritte vollstaendig anwenden.
+
+## Messbare Progression
+- 14 Prozessfaelle.
+- Punkte: +8 korrekter Schritt, -4 falscher Schritt.
+- KPI: Routing-Genauigkeit, Schritte bis Abschluss.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FlowController
+- RouteEngine
+- ProgressService
+
+### Domaenenobjekte
+- InvestmentCase(caseId, candidateSites[])
+- RouteStep(stepId, actionType)
+- RouteResult(pathCorrect, stepCount)
+
+### Beziehungen
+- InvestmentCase enthaelt 3..8 RouteStep.
+- RouteEngine validiert Reihenfolge.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> VALIDATE -> NEXT
+
+### Sequenz (Happy Path)
+1. Schritt waehlen.
+2. Engine validiert.
+3. KPI aktualisieren.
+
+## Regeln
+- Pflichtpruefung uebersprungen: Zusatzabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: steps[], expectedPath
+
+## Abnahmekriterien
+- Prozesspfad klar visualisiert.
+- KPI fuer Korrektheit/Effizienz.

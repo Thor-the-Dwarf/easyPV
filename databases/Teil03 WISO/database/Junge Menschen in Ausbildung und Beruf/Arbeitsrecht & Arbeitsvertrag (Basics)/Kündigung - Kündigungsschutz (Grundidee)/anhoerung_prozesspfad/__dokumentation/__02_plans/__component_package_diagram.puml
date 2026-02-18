@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Anhoerung-Prozesspfad
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: anhoerung_prozesspfad" {
+  component "_ghtml_anhoerung_prozesspfad.html" as HTML
+  component "_gjs_anhoerung_prozesspfad.js" as JS
+  component "_gcss_anhoerung_prozesspfad.css" as CSS
+  database "_data/_gg01_anhoerung_prozesspfad.json" as GG
+  database "_data/__metaData_Kündigung - Kündigungsschutz (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

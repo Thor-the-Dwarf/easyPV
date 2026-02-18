@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kuendigungsschutz",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 7,
+    "wrong": -4,
+    "completion_bonus": 9
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Kernaufgabe hat der Klassifikator pro Fallkarte?",
+      "hint": "Typzuordnung und Begruendungscheck gehoeren zusammen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Grundtyp waehlen und fehlende Bausteine markieren",
+          "correct": true,
+          "feedback": "Richtig. Beide Teile zaehlen."
+        },
+        {
+          "id": "b",
+          "text": "Nur den Text kuerzen",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur die Zeit stoppen",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Regel beeinflusst den Lueckenbonus?",
+      "hint": "Ein Fehler im Typ kostet zusaetzlich.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Falscher Grundtyp blockiert Teile des Lueckenbonus",
+          "correct": true,
+          "feedback": "Genau. Erst Typ, dann Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Lueckenbonus ist immer voll",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Luecken werden nie bewertet",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI sollen getrennt sichtbar sein?",
+      "hint": "Zwei Lernziele, zwei Kennzahlen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Typgenauigkeit und Luecken-Erkennung",
+          "correct": true,
+          "feedback": "Richtig. Beide Werte sind Pflicht."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "feedback": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Rundenanzahl",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann greift laut Plan der Serienbonus?",
+      "hint": "Die Serie ist klar definiert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nach 5 voll korrekten Faellen",
+          "correct": true,
+          "feedback": "Richtig. Dann steigt der Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Nach jedem zweiten Fehler",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur in der ersten Runde",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was sollte der Endreport gruppieren?",
+      "hint": "Verwechslungen sind zentral fuer die Nacharbeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Haeufige Verwechslungen von Grundtypen",
+          "correct": true,
+          "feedback": "Richtig. Das zeigt Lernbedarf."
+        },
+        {
+          "id": "b",
+          "text": "Nur die laengsten Texte",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur die schnellsten Klicks",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    }
+  ]
+}

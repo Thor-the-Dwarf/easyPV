@@ -1,0 +1,49 @@
+# __gp_standortwettbewerb__standortfaktoren_match
+
+## Spielidee
+"Standortfaktoren-Match" ordnet Standortfaelle den passenden harten und weichen Standortfaktoren zu.
+
+## Lernziel
+- Standortfaktoren sicher unterscheiden.
+- Bedeutung fuer Wettbewerbsfaehigkeit einordnen.
+
+## Messbare Progression
+- 24 Karten.
+- Punkte: +6 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Trefferquote je Faktorenkategorie.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- FactorEngine
+- MetricService
+
+### Domaenenobjekte
+- FactorCard(cardId, scenarioType)
+- FactorOption(optionId, factorType)
+- MatchResult(isCorrect, factorType)
+
+### Beziehungen
+- FactorCard hat 3..5 FactorOption.
+- FactorEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. Fall anzeigen.
+2. Faktor waehlen.
+3. Validieren.
+4. KPI aktualisieren.
+
+## Regeln
+- Fehlzuordnung bei Schluesselfaktor erzeugt Zusatzabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: scenarioType, options[], expectedFactor
+
+## Abnahmekriterien
+- Zuordnung ist klar begruendet.
+- KPI je Faktorengruppe.

@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Nachhaltigkeitsbenchmark-Monitor
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: nachhaltigkeitsbenchmark_monitor" {
+  component "_ghtml_nachhaltigkeitsbenchmark_monitor.html" as HTML
+  component "_gjs_nachhaltigkeitsbenchmark_monitor.js" as JS
+  component "_gcss_nachhaltigkeitsbenchmark_monitor.css" as CSS
+  database "_data/_gg01_nachhaltigkeitsbenchmark_monitor.json" as GG
+  database "_data/__metaData_Standortwettbewerb (z. B. Lohnniveau, Nachhaltigkeitsstandards – Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

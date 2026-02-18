@@ -1,0 +1,17 @@
+@startuml
+title Standortfaktoren-Match - Aktivitaetsdiagramm
+start
+:Nutzer oeffnet Spielseite (_ghtml_standortfaktoren_match.html);
+:Konfig laden (_data/_gg01_standortfaktoren_match.json);
+while (Runden offen?) is (ja)
+  :Szenario lesen;
+  :Option waehlen;
+  if (Auswahl korrekt?) then (ja)
+    :Punkte erhoehen;
+  else (nein)
+    :Feedback + Abzug;
+  endif
+endwhile (nein)
+:Ergebnis anzeigen;
+stop
+@enduml

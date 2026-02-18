@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kuendigungsschutz",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 7,
+    "wrong": -3,
+    "completion_bonus": 9
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Entscheidung trainiert der Timer in erster Linie?",
+      "hint": "Es geht um den naechsten sinnvollen Schritt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Priorisierung frueher Reaktionsschritte im Zeitfenster",
+          "correct": true,
+          "feedback": "Richtig. Genau das trainiert der Timer."
+        },
+        {
+          "id": "b",
+          "text": "Beliebige Reihenfolge ohne Fristbezug",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur visuelle Sortierung",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wie wird eine ausbleibende Antwort gewertet?",
+      "hint": "Keine Entscheidung ist auch ein Ergebnis.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Als Fehler im jeweiligen Kurzfall",
+          "correct": true,
+          "feedback": "Richtig. Zeitversaeumnis zaehlt negativ."
+        },
+        {
+          "id": "b",
+          "text": "Als neutraler Durchlauf",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Als automatischer Treffer",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann gibt es den Zeitbonus laut Plan?",
+      "hint": "Unter einer klaren Sekundengrenze.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei korrekter Antwort unter 8 Sekunden",
+          "correct": true,
+          "feedback": "Richtig. Dann kommen Bonuspunkte dazu."
+        },
+        {
+          "id": "b",
+          "text": "Bei jeder Antwort ueber 20 Sekunden",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur in der letzten Runde",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche Serienregel ist definiert?",
+      "hint": "Schnell und korrekt wird kombiniert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Drei schnelle korrekte Antworten aktivieren Bonus",
+          "correct": true,
+          "feedback": "Genau. Serie + Tempo wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Drei Fehler geben Bonus",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Serien sind ohne Einfluss",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI passt zum Spielziel?",
+      "hint": "Genauigkeit wird zeitbezogen betrachtet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Schrittgenauigkeit pro Minute",
+          "correct": true,
+          "feedback": "Richtig. Das verbindet Tempo und Qualitaet."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endpunktzahl",
+          "correct": false,
+          "feedback": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl geoeffneter Faelle",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    }
+  ]
+}

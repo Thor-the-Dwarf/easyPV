@@ -1,0 +1,53 @@
+# __gp_grenzen_soziale_sicherung__vorsorge_lueckenfinder
+
+## Spielidee
+"Vorsorge-Lueckenfinder" zeigt Lebenssituationen mit Einkommensrisiken. Lernende identifizieren Versorgungsluecken und waehlen passende private Vorsorgeoptionen.
+
+## Lernziel
+- Grenzen der gesetzlichen Sicherung erkennen.
+- Private Vorsorgebedarfe situationsbezogen ableiten.
+
+## Messbare Progression
+- 14 Fallkarten.
+- Punkte: +8 korrekt erkannte Luecke, +3 passende Vorsorgeoption, -4 Fehler.
+- KPI: Lueckenquote und Vorsorgequote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseController
+- GapEngine
+- VorsorgeService
+
+### Domaenenobjekte
+- VorsorgeCase(caseId, riskProfile)
+- Gap(gapId, severity)
+- VorsorgeOption(optionId, optionType)
+- CaseResult(gapCorrect, optionCorrect)
+
+### Beziehungen
+- VorsorgeCase enthaelt 1..* Gap.
+- GapEngine validiert Gap-Auswahl.
+- VorsorgeService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- CASE_START -> GAP_SELECT -> OPTION_SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. CaseController startet VorsorgeCase.
+2. Player waehlt Gap.
+3. GapEngine prueft Auswahl.
+4. Player waehlt VorsorgeOption.
+5. VorsorgeService aktualisiert KPI.
+
+## Regeln
+- Uebersehenes Hochrisiko-Gap verursacht Zusatzabzug.
+- Vollkorrekter Fall gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, riskProfile, gaps[], options[], expectedGap, expectedOption
+
+## Abnahmekriterien
+- Gap- und Optionsfeedback sind getrennt sichtbar.
+- KPI zeigt beide Lernziele.
+- Report listet haeufige Fehlzuordnungen.

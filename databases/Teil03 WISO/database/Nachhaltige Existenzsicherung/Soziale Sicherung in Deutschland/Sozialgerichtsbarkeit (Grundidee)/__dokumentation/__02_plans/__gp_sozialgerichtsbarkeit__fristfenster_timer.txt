@@ -1,0 +1,53 @@
+# __gp_sozialgerichtsbarkeit__fristfenster_timer
+
+## Spielidee
+"Fristfenster-Timer" stellt Datumsfaelle in sozialgerichtlichen Verfahren dar. Lernende entscheiden unter Zeitdruck, ob Fristen eingehalten sind.
+
+## Lernziel
+- Fristlogik in Verfahrensschritten anwenden.
+- Datumsentscheidungen schnell und korrekt treffen.
+
+## Messbare Progression
+- 20 Kurzfaelle, 18 Sekunden je Fall.
+- Punkte: +8 korrekte Fristentscheidung, -4 falsche Entscheidung.
+- +3 fuer korrekte Herleitung.
+- KPI: Fristgenauigkeit und Reaktionszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimerController
+- DeadlineEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- DeadlineCase(caseId, startDate, eventDate)
+- Decision(decisionId, withinDeadline)
+- CaseResult(isCorrect, responseTimeMs)
+
+### Beziehungen
+- TimerController steuert 1..* DeadlineCase.
+- DeadlineEngine validiert Decision.
+- AnalyticsService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECIDE -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimerController startet DeadlineCase.
+2. Player trifft Decision.
+3. DeadlineEngine prueft Frist.
+4. CaseResult wird gespeichert.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Keine Antwort im Zeitfenster zaehlt als Fehler.
+- Drei schnelle Volltreffer geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, startDate, eventDate, legalWindow, expectedDecision
+
+## Abnahmekriterien
+- Fristlogik ist transparent.
+- KPI zeigt Tempo und Genauigkeit.
+- Report gruppiert Fristfehler nach Verfahrensart.

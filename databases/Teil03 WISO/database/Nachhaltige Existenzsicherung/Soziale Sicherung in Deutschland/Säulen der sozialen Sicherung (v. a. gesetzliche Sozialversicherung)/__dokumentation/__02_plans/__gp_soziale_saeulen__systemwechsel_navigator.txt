@@ -1,0 +1,52 @@
+# __gp_soziale_saeulen__systemwechsel_navigator
+
+## Spielidee
+"Systemwechsel-Navigator" simuliert Lebensereignisse mit Wechseln zwischen Sicherungssystemen. Lernende planen den korrekten Uebergangspfad.
+
+## Lernziel
+- Uebergange zwischen Sicherungssystemen verstehen.
+- Schrittfolgen bei Systemwechseln korrekt anwenden.
+
+## Messbare Progression
+- 12 Wechsel-Faelle.
+- Punkte: +8 korrekter Uebergangsschritt, -4 falscher Schritt.
+- KPI: Pfadgenauigkeit und Schritte bis Stabilisierung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TransitionController
+- TransitionEngine
+- ProgressService
+
+### Domaenenobjekte
+- TransitionCase(caseId, lifeEvent)
+- TransitionStep(stepId, fromSystem, toSystem)
+- TransitionResult(pathCorrect, stepCount)
+
+### Beziehungen
+- TransitionCase enthaelt 3..8 TransitionStep.
+- TransitionEngine validiert Reihenfolge.
+- ProgressService aggregiert 1..* TransitionResult.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TransitionController startet TransitionCase.
+2. Player waehlt TransitionStep.
+3. TransitionEngine prueft Ablauf.
+4. TransitionResult wird berechnet.
+5. ProgressService aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Pflichtmeldung verursacht Zusatzabzug.
+- Fehlerfreie Kette gibt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, lifeEvent, steps[], expectedPath[]
+
+## Abnahmekriterien
+- Uebergangspfad ist klar visualisiert.
+- KPI zeigt Korrektheit und Effizienz.
+- Report nennt haeufige Wechsel-Fehlrouten.

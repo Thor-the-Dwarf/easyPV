@@ -1,0 +1,52 @@
+# __gp_sozialgerichtsbarkeit__klageweg_router
+
+## Spielidee
+"Klageweg-Router" simuliert Streitfaelle aus Sozialleistungsfragen. Lernende waehlen den korrekten Verfahrensweg bis zur gerichtlichen Klaerung.
+
+## Lernziel
+- Prozesswege in sozialrechtlichen Streitfaellen erkennen.
+- Schritte logisch und vollstaendig anordnen.
+
+## Messbare Progression
+- 14 Fallketten.
+- Punkte: +8 korrekter Verfahrensschritt, -4 falscher Schritt.
+- KPI: Routing-Genauigkeit und Schritte bis Abschluss.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FlowController
+- RouteEngine
+- ScoreService
+
+### Domaenenobjekte
+- LegalCase(caseId, disputeType)
+- RouteStep(stepId, actionType)
+- RouteResult(pathCorrect, stepCount)
+
+### Beziehungen
+- LegalCase enthaelt 3..9 RouteStep.
+- RouteEngine validiert Reihenfolge.
+- ScoreService aggregiert 1..* RouteResult.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. FlowController startet LegalCase.
+2. Player waehlt RouteStep.
+3. RouteEngine prueft Ablauf.
+4. RouteResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Pflichtstufe verursacht Zusatzabzug.
+- Fehlerfreie Kette gibt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, disputeType, steps[], expectedPath[]
+
+## Abnahmekriterien
+- Prozesspfad ist visualisiert.
+- KPI trennt Korrektheit und Effizienz.
+- Report listet haeufige Fehlrouten.

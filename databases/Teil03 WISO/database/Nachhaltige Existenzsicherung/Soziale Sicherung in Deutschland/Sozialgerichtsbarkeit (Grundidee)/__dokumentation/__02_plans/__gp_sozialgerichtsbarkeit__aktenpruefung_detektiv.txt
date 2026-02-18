@@ -1,0 +1,52 @@
+# __gp_sozialgerichtsbarkeit__aktenpruefung_detektiv
+
+## Spielidee
+"Aktenpruefung-Detektiv" zeigt Aktenauszuege mit fehlenden oder widerspruechlichen Angaben. Lernende markieren kritische Punkte.
+
+## Lernziel
+- Strukturierte Aktenpruefung trainieren.
+- Relevante Unstimmigkeiten identifizieren.
+
+## Messbare Progression
+- 10 Aktenfaelle.
+- Punkte: +7 korrekt markierter Punkt, -3 Fehlmarkierung.
+- KPI: Praezision und Recall der Markierungen.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FileController
+- AuditEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- FileCase(caseId, entries[])
+- Issue(issueId, issueType)
+- AuditResult(tp, fp, fn)
+
+### Beziehungen
+- FileCase enthaelt 6..25 entries.
+- AuditEngine validiert Markierungen.
+- ProgressTracker aggregiert 1..* AuditResult.
+
+### Zustandsmodell
+- LOAD_FILE -> INSPECT -> MARK_ISSUES -> SUBMIT -> RESULT
+
+### Sequenz (Happy Path)
+1. FileController laedt FileCase.
+2. Player markiert Issue.
+3. AuditEngine prueft Auswahl.
+4. AuditResult wird berechnet.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Uebermarkierung reduziert Praezision.
+- Untermarkierung reduziert Recall.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, entries[], expectedIssues[]
+
+## Abnahmekriterien
+- Fehlerstellen sind klar hervorgehoben.
+- KPI zeigt Praezision und Recall.
+- Report nennt haeufig uebersehene Issue-Typen.

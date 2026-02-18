@@ -1,0 +1,52 @@
+# __gp_grenzen_soziale_sicherung__leistungsgrenze_check
+
+## Spielidee
+"Leistungsgrenze-Check" zeigt Versorgungsfaelle mit unterschiedlichen Parametern. Lernende beurteilen, ob die gesetzliche Sicherung ausreicht.
+
+## Lernziel
+- Leistungsgrenzen der sozialen Sicherung einordnen.
+- Bedarf fuer Zusatzvorsorge erkennen.
+
+## Messbare Progression
+- 18 Fallkarten.
+- Punkte: +7 korrekte Einschätzung, -3 falsche Einschätzung.
+- KPI: Einschätzungsquote und Reaktionszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseController
+- ThresholdEngine
+- MetricService
+
+### Domaenenobjekte
+- LimitCase(caseId, parameters)
+- Decision(decisionId, isSufficient)
+- CaseResult(isCorrect, responseTimeMs)
+
+### Beziehungen
+- CaseController steuert 1..* LimitCase.
+- ThresholdEngine validiert Decision.
+- MetricService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECIDE -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. CaseController zeigt LimitCase.
+2. Player trifft Decision.
+3. ThresholdEngine prueft Schwelle.
+4. CaseResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlentscheidung bei Grenzfall verursacht Zusatzabzug.
+- Schnelle Volltreffer geben Zeitbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, parameters, expectedDecision, timeLimitSec
+
+## Abnahmekriterien
+- Schwellenlogik ist klar erklaert.
+- KPI zeigt Genauigkeit und Tempo.
+- Report listet haeufige Grenzfallfehler.

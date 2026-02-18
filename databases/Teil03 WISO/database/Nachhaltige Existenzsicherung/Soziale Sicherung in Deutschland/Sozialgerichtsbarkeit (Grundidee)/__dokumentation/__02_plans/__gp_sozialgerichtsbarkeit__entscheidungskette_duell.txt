@@ -1,0 +1,53 @@
+# __gp_sozialgerichtsbarkeit__entscheidungskette_duell
+
+## Spielidee
+"Entscheidungskette-Duell" vergleicht zwei gerichtliche Entscheidungsverlaeufe. Lernende waehlen den konsistenteren Verlauf.
+
+## Lernziel
+- Logik gerichtlicher Entscheidungsketten nachvollziehen.
+- Inkonsistenzen im Verlauf erkennen.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- ConsistencyEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, chainA, chainB)
+- DecisionChain(chainId, nodes[])
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 DecisionChain.
+- ConsistencyEngine validiert Wahl.
+- ScoreService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> REVIEW_CHAINS -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt DecisionChain.
+3. ConsistencyEngine prueft Konsistenz.
+4. DuelResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Begruendung gibt Teilpunkte.
+- Serienbonus ab 4 Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, chainA{}, chainB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Kettenvergleich ist nachvollziehbar.
+- KPI trennt Wahl und Begruendung.
+- Report listet haeufige Fehlbewertungen.

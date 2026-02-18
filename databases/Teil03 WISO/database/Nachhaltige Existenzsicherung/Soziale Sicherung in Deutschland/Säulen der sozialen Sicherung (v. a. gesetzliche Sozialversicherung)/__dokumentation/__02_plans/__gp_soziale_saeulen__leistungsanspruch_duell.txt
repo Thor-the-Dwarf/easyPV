@@ -1,0 +1,53 @@
+# __gp_soziale_saeulen__leistungsanspruch_duell
+
+## Spielidee
+"Leistungsanspruch-Duell" vergleicht zwei Fallprofile. Lernende waehlen, bei welchem Profil der Anspruch plausibler ist.
+
+## Lernziel
+- Anspruchslogik in den Saeulen differenziert anwenden.
+- Vergleichende Fallbewertung trainieren.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- ClaimEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, profileA, profileB)
+- Profile(profileId, attributes)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 Profile.
+- ClaimEngine validiert Auswahl.
+- ScoreService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> PROFILE_REVIEW -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt Profile.
+3. ClaimEngine prueft Anspruchslogik.
+4. DuelResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Begruendung gibt Teilpunkte.
+- Serienbonus ab 4 Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, profileA{}, profileB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Vergleichsgruende sind transparent.
+- KPI trennt Wahl und Begruendung.
+- Report listet haeufige Fehlbewertungen.

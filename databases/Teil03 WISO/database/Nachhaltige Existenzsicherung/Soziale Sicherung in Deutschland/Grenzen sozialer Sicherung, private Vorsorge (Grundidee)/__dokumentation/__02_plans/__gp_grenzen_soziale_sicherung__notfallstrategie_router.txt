@@ -1,0 +1,52 @@
+# __gp_grenzen_soziale_sicherung__notfallstrategie_router
+
+## Spielidee
+"Notfallstrategie-Router" simuliert ploetzliche Einkommenseinbrueche. Lernende ordnen die sinnvollste Reihenfolge von Sofortmaßnahmen.
+
+## Lernziel
+- Handlungsfaehigkeit bei Sicherungsluecken entwickeln.
+- Priorisierte Notfallplanung trainieren.
+
+## Messbare Progression
+- 12 Prozessfaelle.
+- Punkte: +8 korrekter Schritt, -4 falscher Schritt.
+- KPI: Prozessgenauigkeit und Schritte bis Stabilisierung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FlowController
+- StrategyEngine
+- ProgressService
+
+### Domaenenobjekte
+- EmergencyCase(caseId, shockType)
+- RouteStep(stepId, actionType)
+- RouteResult(pathCorrect, stabilizationSteps)
+
+### Beziehungen
+- EmergencyCase enthaelt 3..8 RouteStep.
+- StrategyEngine validiert Reihenfolge.
+- ProgressService aggregiert 1..* RouteResult.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. FlowController startet EmergencyCase.
+2. Player waehlt RouteStep.
+3. StrategyEngine prueft Ablauf.
+4. RouteResult wird berechnet.
+5. ProgressService aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Sofortmaßnahme verursacht Zusatzabzug.
+- Fehlerfreie Kette gibt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, shockType, steps[], expectedPath[]
+
+## Abnahmekriterien
+- Prozesspfad ist eindeutig visualisiert.
+- KPI trennt Korrektheit und Effizienz.
+- Report nennt haeufige Fehlrouten.

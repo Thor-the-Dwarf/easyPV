@@ -1,0 +1,52 @@
+# __gp_grenzen_soziale_sicherung__vorsorge_mix_planer
+
+## Spielidee
+"Vorsorge-Mix-Planer" laesst Lernende mit begrenztem Budget einen Mix aus Absicherungsmaßnahmen planen.
+
+## Lernziel
+- Priorisierung bei knappen Ressourcen trainieren.
+- Vorsorgemix nach Risiko und Budget austarieren.
+
+## Messbare Progression
+- 8 Planungsrunden.
+- Punkte: +10 tragfaehiger Mix, -5 untragfaehiger Mix.
+- KPI: Mix-Qualitaet und Budgeteffizienz.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- PlanningController
+- BudgetEngine
+- KPIService
+
+### Domaenenobjekte
+- PlanCase(caseId, budget, riskSet)
+- MixItem(itemId, cost, effect)
+- RoundResult(isViable, efficiencyScore)
+
+### Beziehungen
+- PlanCase enthaelt 3..12 MixItem.
+- BudgetEngine validiert Zusammenstellung.
+- KPIService aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- LOAD_CASE -> BUILD_MIX -> VALIDATE -> FEEDBACK -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. PlanningController laedt PlanCase.
+2. Player waehlt MixItem.
+3. BudgetEngine prueft Budget und Wirkung.
+4. RoundResult wird berechnet.
+5. KPIService aktualisiert KPI.
+
+## Regeln
+- Budgetueberschreitung verursacht Zusatzabzug.
+- Hohe Effizienz in Serie gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, budget, riskSet[], items[], expectedViableMix
+
+## Abnahmekriterien
+- Kosten und Wirkung sind pro Mix sichtbar.
+- KPI zeigt Tragfaehigkeit und Effizienz.
+- Report nennt haeufige Fehlplanungen.

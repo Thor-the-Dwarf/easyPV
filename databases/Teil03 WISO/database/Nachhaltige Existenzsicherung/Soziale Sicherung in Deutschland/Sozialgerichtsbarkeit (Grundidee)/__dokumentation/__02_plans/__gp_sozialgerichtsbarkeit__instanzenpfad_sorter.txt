@@ -1,0 +1,52 @@
+# __gp_sozialgerichtsbarkeit__instanzenpfad_sorter
+
+## Spielidee
+"Instanzenpfad-Sorter" ordnet Fallschritte den korrekten Instanzen im Sozialgerichtssystem zu.
+
+## Lernziel
+- Grundstruktur der Sozialgerichtsbarkeit verstehen.
+- Instanzenfolge korrekt anwenden.
+
+## Messbare Progression
+- 18 Prozesskarten.
+- Punkte: +7 korrekte Instanzzuordnung, -3 falsche Zuordnung.
+- KPI: Instanzgenauigkeit und Reihenfolgequote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- InstanceEngine
+- MetricService
+
+### Domaenenobjekte
+- ProcessCard(cardId, processStep)
+- InstanceOption(optionId, instanceLevel)
+- MatchResult(isCorrect, instanceLevel)
+
+### Beziehungen
+- ProcessCard enthaelt 3..5 InstanceOption.
+- InstanceEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt ProcessCard.
+2. Player waehlt InstanceOption.
+3. InstanceEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlzuordnung bei Schluesselschritt verursacht Zusatzabzug.
+- Serienbonus ab 5 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, processStep, options[], expectedInstance
+
+## Abnahmekriterien
+- Instanzfeedback ist klar.
+- KPI zeigt Leistung je Instanzebene.
+- Report nennt haeufige Verwechslungen.

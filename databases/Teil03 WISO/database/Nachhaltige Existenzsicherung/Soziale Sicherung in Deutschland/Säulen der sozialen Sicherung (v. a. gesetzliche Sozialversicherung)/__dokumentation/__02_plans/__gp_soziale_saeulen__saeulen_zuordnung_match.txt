@@ -1,0 +1,52 @@
+# __gp_soziale_saeulen__saeulen_zuordnung_match
+
+## Spielidee
+"Saeulen-Zuordnung-Match" ordnet Leistungen und Situationen den passenden Saeulen der sozialen Sicherung zu.
+
+## Lernziel
+- Aufbau der sozialen Sicherung in Saeulen verstehen.
+- Fallbezogene Zuordnung sicher anwenden.
+
+## Messbare Progression
+- 25 Fallkarten.
+- Punkte: +6 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Trefferquote je Saeule.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- MappingEngine
+- MetricService
+
+### Domaenenobjekte
+- CaseCard(cardId, scenarioType)
+- PillarOption(optionId, pillarType)
+- MatchResult(isCorrect, pillarType)
+
+### Beziehungen
+- CaseCard enthaelt 3..5 PillarOption.
+- MappingEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt CaseCard.
+2. Player waehlt PillarOption.
+3. MappingEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlzuordnung bei Kernfall verursacht Zusatzabzug.
+- Serienbonus ab 5 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, scenarioType, options[], expectedPillar
+
+## Abnahmekriterien
+- Zuordnung ist klar begruendet.
+- KPI zeigt Leistung je Saeule.
+- Report listet haeufige Verwechslungen.

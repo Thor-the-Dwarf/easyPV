@@ -1,0 +1,52 @@
+# __gp_soziale_saeulen__versicherungsfall_router
+
+## Spielidee
+"Versicherungsfall-Router" simuliert Versicherungsfaelle und fuehrt Lernende durch die naechsten Schritte im jeweiligen Sicherungssystem.
+
+## Lernziel
+- Handlungswege bei Versicherungsfaellen strukturieren.
+- Passende Institution und Schrittfolge waehlen.
+
+## Messbare Progression
+- 14 Prozessfaelle.
+- Punkte: +8 korrekter Schritt, -4 falscher Schritt.
+- KPI: Routing-Genauigkeit und Schritte bis Abschluss.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FlowController
+- RouteEngine
+- ScoreService
+
+### Domaenenobjekte
+- InsuranceCase(caseId, eventType)
+- RouteStep(stepId, actionType)
+- RouteResult(pathCorrect, stepCount)
+
+### Beziehungen
+- InsuranceCase enthaelt 3..8 RouteStep.
+- RouteEngine validiert Ablauf.
+- ScoreService aggregiert 1..* RouteResult.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. FlowController startet InsuranceCase.
+2. Player waehlt RouteStep.
+3. RouteEngine prueft Reihenfolge.
+4. RouteResult wird berechnet.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Pflichtstufe verursacht Zusatzabzug.
+- Fehlerfreie Kette gibt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, eventType, steps[], expectedPath[]
+
+## Abnahmekriterien
+- Prozesspfad ist eindeutig visualisiert.
+- KPI trennt Korrektheit und Effizienz.
+- Report nennt haeufige Fehlrouten.

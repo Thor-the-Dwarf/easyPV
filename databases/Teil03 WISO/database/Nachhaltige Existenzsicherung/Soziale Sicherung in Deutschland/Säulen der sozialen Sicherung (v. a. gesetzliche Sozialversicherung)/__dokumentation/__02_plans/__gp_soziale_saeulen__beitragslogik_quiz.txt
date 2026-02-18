@@ -1,0 +1,52 @@
+# __gp_soziale_saeulen__beitragslogik_quiz
+
+## Spielidee
+"Beitragslogik-Quiz" fragt grundlegende Zusammenhaenge von Beitragszahlung, Anspruch und Leistung in den Sicherungssaeulen ab.
+
+## Lernziel
+- Grundprinzipien der Beitragslogik verstehen.
+- Zusammenhaenge schnell erkennen.
+
+## Messbare Progression
+- 28 Quizfragen.
+- Punkte: +5 korrekte Antwort, -2 falsche Antwort.
+- KPI: Trefferquote je Themenfeld.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- QuizController
+- ValidationEngine
+- KPIService
+
+### Domaenenobjekte
+- QuizItem(itemId, topic)
+- AnswerOption(optionId)
+- QuizResult(isCorrect, topic)
+
+### Beziehungen
+- QuizItem hat 3..4 AnswerOption.
+- ValidationEngine validiert Auswahl.
+- KPIService aggregiert 1..* QuizResult.
+
+### Zustandsmodell
+- READY -> QUESTION_ACTIVE -> ANSWER -> EVALUATE -> NEXT_QUESTION
+
+### Sequenz (Happy Path)
+1. QuizController zeigt QuizItem.
+2. Player waehlt AnswerOption.
+3. ValidationEngine prueft Antwort.
+4. QuizResult wird gespeichert.
+5. KPIService aktualisiert KPI.
+
+## Regeln
+- Fehler in Schluesselfragen verursachen Zusatzabzug.
+- Zehn korrekte Antworten in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: itemId, topic, options[], expectedOption
+
+## Abnahmekriterien
+- Antwortfeedback ist klar.
+- KPI zeigt Leistung je Themenfeld.
+- Report markiert schwache Bereiche.

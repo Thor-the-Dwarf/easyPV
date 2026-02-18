@@ -1,0 +1,53 @@
+# __gp_grenzen_soziale_sicherung__risikoprofil_duell
+
+## Spielidee
+"Risikoprofil-Duell" vergleicht zwei Haushaltsprofile. Lernende entscheiden, welches Profil hoeheren Absicherungsbedarf hat.
+
+## Lernziel
+- Risiko- und Absicherungsbedarf differenzieren.
+- Vergleichende Bewertung sicher anwenden.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, profileA, profileB)
+- Profile(profileId, riskFactors)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 Profile.
+- EvaluationEngine validiert Wahl.
+- ScoreService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> PROFILE_REVIEW -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt Profile.
+3. EvaluationEngine prueft Entscheidung.
+4. DuelResult wird gespeichert.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Begruendung gibt Teilpunkte.
+- Serienbonus ab 4 Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, profileA{}, profileB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Vergleichskriterien sind transparent.
+- KPI trennt Wahl und Begruendung.
+- Report markiert haeufige Fehlbewertungen.

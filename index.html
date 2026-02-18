@@ -984,8 +984,6 @@
               probabilityCell.setAttribute('aria-label', '');
             } else {
               probabilityCell.textContent = probabilityPercent + '%';
-              probabilityCell.title = 'Thema ist zu ' + probabilityPercent + '% in vergangenen Prüfungen erschienen.';
-              probabilityCell.setAttribute('aria-label', probabilityCell.title);
             }
             row.appendChild(probabilityCell);
 
@@ -995,8 +993,6 @@
             const progressCell = document.createElement('span');
             progressCell.className = 'tree-meta-cell tree-meta-cell--progress';
             progressCell.textContent = progressValue + '%';
-            progressCell.title = 'Fortschritt: ' + progressValue + '%';
-            progressCell.setAttribute('aria-label', progressCell.title);
             row.appendChild(progressCell);
 
             const treeMain = document.createElement('div');

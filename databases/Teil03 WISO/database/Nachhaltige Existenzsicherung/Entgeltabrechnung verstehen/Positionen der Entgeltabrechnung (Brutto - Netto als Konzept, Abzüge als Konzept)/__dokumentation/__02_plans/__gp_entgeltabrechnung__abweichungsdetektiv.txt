@@ -1,0 +1,53 @@
+# __gp_entgeltabrechnung__abweichungsdetektiv
+
+## Spielidee
+"Abweichungsdetektiv" vergleicht zwei Abrechnungsstaende. Lernende erkennen auffaellige Differenzen und priorisieren die wichtigste Prueffrage.
+
+## Lernziel
+- Abweichungen in Abrechnungspositionen identifizieren.
+- Plausibilitaetspruefung strukturiert aufbauen.
+
+## Messbare Progression
+- 10 Vergleichsfaelle.
+- Punkte: +8 korrekt erkannte Abweichung, -3 Fehlmarkierung.
+- +3 fuer korrekte Priorisierung.
+- KPI: Erkennungsquote und Priorisierungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CompareController
+- DiffEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- CompareCase(caseId, baseline, current)
+- Difference(diffId, diffType, severity)
+- CaseResult(tp, fp, priorityCorrect)
+
+### Beziehungen
+- CompareCase enthaelt 3..12 Difference.
+- DiffEngine validiert Markierungen.
+- AnalyticsService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- LOAD_CASE -> INSPECT_DIFFS -> MARK -> PRIORITIZE -> RESULT
+
+### Sequenz (Happy Path)
+1. CompareController laedt CompareCase.
+2. Player markiert Difference.
+3. DiffEngine prueft Auswahl.
+4. Player priorisiert Prueffrage.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Uebersehene kritische Abweichung verursacht Zusatzabzug.
+- Vollkorrekte Priorisierung gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, differences[], expectedDiffs[], expectedPriority
+
+## Abnahmekriterien
+- Differenzen sind klar visualisiert.
+- KPI zeigt Erkennung und Priorisierung getrennt.
+- Report nennt haeufig uebersehene Abweichungstypen.

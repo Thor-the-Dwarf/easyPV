@@ -1,0 +1,52 @@
+# __gp_compliance__regelverstoss_detector
+
+## Spielidee
+"Regelverstoss-Detector" zeigt kurze Arbeitssituationen mit digitalen Werkzeugen. Lernende markieren, ob ein Verstoß gegen betriebliche Nutzungsvorgaben vorliegt.
+
+## Lernziel
+- Compliance-Verstoesse in Alltagssituationen erkennen.
+- Erlaubte und unerlaubte Nutzungsweisen unterscheiden.
+
+## Messbare Progression
+- 22 Fallkarten.
+- Punkte: +7 korrekte Klassifikation, -3 falsche Klassifikation.
+- KPI: Trefferquote und durchschnittliche Reaktionszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseController
+- ComplianceEngine
+- MetricService
+
+### Domaenenobjekte
+- ComplianceCase(caseId, contextType)
+- Decision(decisionId, isViolation)
+- DecisionResult(isCorrect, responseTimeMs)
+
+### Beziehungen
+- CaseController steuert 1..* ComplianceCase.
+- ComplianceEngine validiert Decision.
+- MetricService aggregiert 1..* DecisionResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECIDE -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. CaseController startet ComplianceCase.
+2. Player trifft Decision.
+3. ComplianceEngine prueft Regelbezug.
+4. DecisionResult wird angezeigt.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlentscheidung bei Hochrisikofall verursacht Zusatzabzug.
+- Vier korrekte Faelle in Folge geben Serienbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, contextType, expectedViolation, severity
+
+## Abnahmekriterien
+- Entscheidung ist pro Fall begruendet rueckgemeldet.
+- KPI zeigt Genauigkeit und Tempo getrennt.
+- Report listet haeufige Fehlmuster.

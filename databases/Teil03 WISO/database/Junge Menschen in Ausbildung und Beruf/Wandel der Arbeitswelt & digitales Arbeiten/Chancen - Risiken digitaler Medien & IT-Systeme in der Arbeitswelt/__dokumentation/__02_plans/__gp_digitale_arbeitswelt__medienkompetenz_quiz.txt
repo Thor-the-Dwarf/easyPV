@@ -1,0 +1,52 @@
+# __gp_digitale_arbeitswelt__medienkompetenz_quiz
+
+## Spielidee
+"Medienkompetenz-Quiz" prueft den Umgang mit digitalen Inhalten, Quellen und Kommunikation im beruflichen Kontext.
+
+## Lernziel
+- Medienkompetenz fuer den Arbeitsalltag staerken.
+- Kritische Bewertung digitaler Informationen trainieren.
+
+## Messbare Progression
+- 30 Quizfragen.
+- Punkte: +5 korrekte Antwort, -2 falsche Antwort.
+- KPI: Trefferquote je Kompetenzfeld.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- QuizController
+- ValidationEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- QuizItem(itemId, competencyArea)
+- AnswerOption(optionId)
+- QuizResult(isCorrect, competencyArea)
+
+### Beziehungen
+- QuizItem hat 3..4 AnswerOption.
+- ValidationEngine validiert Auswahl.
+- ProgressTracker aggregiert 1..* QuizResult.
+
+### Zustandsmodell
+- READY -> QUESTION_ACTIVE -> ANSWER -> EVALUATE -> NEXT_QUESTION
+
+### Sequenz (Happy Path)
+1. QuizController zeigt QuizItem.
+2. Player waehlt AnswerOption.
+3. ValidationEngine prueft Antwort.
+4. QuizResult wird gespeichert.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Fehler in sicherheitskritischen Fragen verursachen Zusatzabzug.
+- Zehn korrekte Antworten in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: itemId, competencyArea, options[], expectedOption
+
+## Abnahmekriterien
+- Antwortfeedback ist klar und knapp.
+- KPI zeigt Leistung pro Kompetenzfeld.
+- Report markiert schwache Teilbereiche.

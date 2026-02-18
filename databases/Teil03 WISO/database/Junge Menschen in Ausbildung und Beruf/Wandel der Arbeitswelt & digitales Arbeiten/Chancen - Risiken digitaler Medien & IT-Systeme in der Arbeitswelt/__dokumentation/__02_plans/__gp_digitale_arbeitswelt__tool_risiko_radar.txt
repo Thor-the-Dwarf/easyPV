@@ -1,0 +1,52 @@
+# __gp_digitale_arbeitswelt__tool_risiko_radar
+
+## Spielidee
+"Tool-Risiko-Radar" zeigt digitale Tools im Arbeitseinsatz. Lernende bewerten Chancen und Risiken pro Einsatzfall.
+
+## Lernziel
+- Chancen-Risiken digitaler Tools differenziert einschaetzen.
+- Kontextsensitive Bewertungen trainieren.
+
+## Messbare Progression
+- 18 Tool-Faelle.
+- Punkte: +8 korrekte Bewertung, -4 falsche Bewertung.
+- KPI: Bewertungsgenauigkeit und Risikoquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ToolController
+- RiskEngine
+- ScoreService
+
+### Domaenenobjekte
+- ToolCase(caseId, toolType, context)
+- Assessment(assessmentId, chanceLevel, riskLevel)
+- CaseResult(isCorrect, confidenceScore)
+
+### Beziehungen
+- ToolController steuert 1..* ToolCase.
+- RiskEngine validiert Assessment.
+- ScoreService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> ASSESS -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. ToolController startet ToolCase.
+2. Player waehlt Assessment.
+3. RiskEngine prueft Bewertung.
+4. CaseResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Fehlbewertung bei Hochrisikofall verursacht Zusatzabzug.
+- Vier korrekte Bewertungen in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, toolType, context, expectedAssessment
+
+## Abnahmekriterien
+- Bewertung ist pro Fall begruendet.
+- KPI zeigt Genauigkeit und Risiko-Einschaetzung.
+- Report listet haeufige Fehleinschaetzungen.

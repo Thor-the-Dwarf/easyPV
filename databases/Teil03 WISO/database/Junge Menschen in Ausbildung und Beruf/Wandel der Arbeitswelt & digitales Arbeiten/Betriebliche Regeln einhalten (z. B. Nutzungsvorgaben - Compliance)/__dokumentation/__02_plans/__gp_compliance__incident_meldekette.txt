@@ -1,0 +1,52 @@
+# __gp_compliance__incident_meldekette
+
+## Spielidee
+"Incident-Meldekette" simuliert Sicherheitsvorfaelle. Lernende ordnen die richtige Meldekette und priorisieren den Erstschritt.
+
+## Lernziel
+- Meldeprozesse bei Vorfaellen korrekt anwenden.
+- Priorisierung in kritischen Situationen trainieren.
+
+## Messbare Progression
+- 12 Incident-Faelle.
+- Punkte: +8 korrekte Meldekette, +3 korrekter Erstschritt, -4 Fehler.
+- KPI: Ketten-Genauigkeit und Erstschrittquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- IncidentController
+- ChainEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- IncidentCase(caseId, incidentType)
+- ChainStep(stepId, receiverRole)
+- ChainResult(pathCorrect, firstStepCorrect)
+
+### Beziehungen
+- IncidentCase enthaelt 3..8 ChainStep.
+- ChainEngine validiert Reihenfolge.
+- AnalyticsService aggregiert 1..* ChainResult.
+
+### Zustandsmodell
+- CASE_OPEN -> STEP_SELECT -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. IncidentController startet IncidentCase.
+2. Player waehlt ChainStep.
+3. ChainEngine prueft Kette.
+4. ChainResult wird berechnet.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Falscher Erstschritt verursacht Zusatzabzug.
+- Vollkorrekter Fall gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, incidentType, steps[], expectedPath[], expectedFirstStep
+
+## Abnahmekriterien
+- Meldekette ist klar visualisiert.
+- KPI zeigt Kette und Erstschritt getrennt.
+- Endreport nennt haeufige Meldefehler.

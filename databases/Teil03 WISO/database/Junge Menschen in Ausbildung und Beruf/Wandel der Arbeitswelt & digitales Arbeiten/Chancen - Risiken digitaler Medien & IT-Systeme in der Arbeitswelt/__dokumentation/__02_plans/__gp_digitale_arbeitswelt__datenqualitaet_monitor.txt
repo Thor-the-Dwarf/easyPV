@@ -1,0 +1,53 @@
+# __gp_digitale_arbeitswelt__datenqualitaet_monitor
+
+## Spielidee
+"Datenqualitaet-Monitor" zeigt Datensaetze mit Fehlern, Duplikaten und Inkonsistenzen. Lernende identifizieren kritische Qualitaetsprobleme.
+
+## Lernziel
+- Datenqualitaetsrisiken im Arbeitsprozess erkennen.
+- Priorisierte Korrekturmaßnahmen ableiten.
+
+## Messbare Progression
+- 10 Datensatzfaelle.
+- Punkte: +7 korrekt erkannter Fehler, -3 Fehlmarkierung.
+- +3 fuer passende Priorisierung.
+- KPI: Fehlererkennungsquote und Priorisierungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DatasetController
+- QualityEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- DatasetCase(caseId, records[])
+- Issue(issueId, issueType, severity)
+- CaseResult(tp, fp, priorityCorrect)
+
+### Beziehungen
+- DatasetCase enthaelt 5..40 Issue.
+- QualityEngine validiert Markierungen.
+- AnalyticsService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- LOAD_CASE -> INSPECT -> MARK_ISSUES -> PRIORITIZE -> RESULT
+
+### Sequenz (Happy Path)
+1. DatasetController laedt DatasetCase.
+2. Player markiert Issue.
+3. QualityEngine prueft Markierungen.
+4. Player priorisiert Fehler.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Uebersehenes Hochrisiko-Issue erzeugt Zusatzabzug.
+- Vollkorrekte Priorisierung gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, issues[], expectedIssues[], expectedPriority[]
+
+## Abnahmekriterien
+- Fehler und Prioritaeten sind getrennt rueckgemeldet.
+- KPI zeigt beide Leistungsachsen.
+- Report listet haeufig uebersehene Fehlerarten.

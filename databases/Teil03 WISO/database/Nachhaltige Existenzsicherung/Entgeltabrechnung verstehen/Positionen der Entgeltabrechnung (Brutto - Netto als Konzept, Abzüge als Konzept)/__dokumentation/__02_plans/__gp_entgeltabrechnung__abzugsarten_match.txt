@@ -1,0 +1,52 @@
+# __gp_entgeltabrechnung__abzugsarten_match
+
+## Spielidee
+"Abzugsarten-Match" koppelt Abzugspositionen mit ihrer Kategorie und Wirkung auf das Nettoentgelt.
+
+## Lernziel
+- Typen von Abzuegen unterscheiden.
+- Auswirkungen auf Netto konzeptionell verstehen.
+
+## Messbare Progression
+- 20 Match-Runden.
+- Punkte: +7 korrekte Kategorisierung, -3 falsche Kategorisierung.
+- KPI: Trefferquote und Fehlerquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- MatchController
+- DeductionEngine
+- ScoreService
+
+### Domaenenobjekte
+- DeductionCase(caseId, deductionType)
+- CategoryOption(optionId, category)
+- MatchResult(isCorrect, impactClass)
+
+### Beziehungen
+- DeductionCase hat 3..5 CategoryOption.
+- DeductionEngine validiert Auswahl.
+- ScoreService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- INIT -> CASE_ACTIVE -> SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. MatchController startet DeductionCase.
+2. Player waehlt CategoryOption.
+3. DeductionEngine prueft Klassifikation.
+4. MatchResult wird angezeigt.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Fehlklassifikation bei Hauptabzug erzeugt Zusatzabzug.
+- Serienbonus ab 5 korrekten Matches.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, deductionType, options[], expectedCategory
+
+## Abnahmekriterien
+- Kategorie und Wirkung sind klar rueckgemeldet.
+- KPI zeigt Genauigkeit pro Abzugsgruppe.
+- Report nennt haeufige Fehlklassifikationen.

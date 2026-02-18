@@ -1,0 +1,52 @@
+# __gp_compliance__datenweitergabe_router
+
+## Spielidee
+"Datenweitergabe-Router" simuliert Anfragen nach Informationen. Lernende waehlen den korrekten Weitergabeweg oder die notwendige Ablehnung.
+
+## Lernziel
+- Sichere Datenweitergabe im Betrieb einhalten.
+- Entscheidungswege bei unklaren Anfragen anwenden.
+
+## Messbare Progression
+- 16 Prozessfaelle.
+- Punkte: +8 korrekter Schritt, -4 falscher Schritt.
+- KPI: Routing-Genauigkeit und Schritte bis Abschluss.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FlowController
+- DataRuleEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- DataCase(caseId, requestType)
+- RouteStep(stepId, actionType)
+- RouteResult(pathCorrect, stepCount)
+
+### Beziehungen
+- DataCase enthaelt 3..7 RouteStep.
+- DataRuleEngine validiert Reihenfolge.
+- ProgressTracker aggregiert 1..* RouteResult.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. FlowController startet DataCase.
+2. Player waehlt RouteStep.
+3. DataRuleEngine prueft Ablauf.
+4. RouteResult wird angezeigt.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Pruefstufe verursacht Zusatzabzug.
+- Fehlerfreie Kette gibt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, requestType, steps[], expectedPath[]
+
+## Abnahmekriterien
+- Prozesspfad ist eindeutig visualisiert.
+- KPI trennt Korrektheit und Effizienz.
+- Report nennt haeufige Fehlrouten.

@@ -1,0 +1,52 @@
+# __gp_compliance__zugriffsrechte_match
+
+## Spielidee
+"Zugriffsrechte-Match" ordnet Rollen im Betrieb den passenden Berechtigungsstufen zu.
+
+## Lernziel
+- Grundprinzipien von Rollen- und Rechtemodellen anwenden.
+- Ueberberechtigung und Unterberechtigung vermeiden.
+
+## Messbare Progression
+- 20 Zuordnungskarten.
+- Punkte: +6 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Rollen-Treffquote je Berechtigungsstufe.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- RoleController
+- AccessEngine
+- ScoreService
+
+### Domaenenobjekte
+- RoleCard(cardId, roleType)
+- AccessOption(optionId, accessLevel)
+- MatchResult(isCorrect, accessLevel)
+
+### Beziehungen
+- RoleCard enthaelt 3..5 AccessOption.
+- AccessEngine validiert Auswahl.
+- ScoreService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. RoleController zeigt RoleCard.
+2. Player waehlt AccessOption.
+3. AccessEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Kritische Fehlzuordnung erzeugt doppelten Abzug.
+- Serienbonus ab 5 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, roleType, options[], expectedAccessLevel
+
+## Abnahmekriterien
+- Zuordnungslogik ist transparent.
+- KPI zeigt Leistung pro Rollencluster.
+- Report nennt haeufige Ueberberechtigungen.

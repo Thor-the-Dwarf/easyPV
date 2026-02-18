@@ -1,0 +1,52 @@
+# __gp_compliance__policy_quiz_timer
+
+## Spielidee
+"Policy-Quiz-Timer" stellt kurze Regelabfragen mit Zeitlimit. Lernende muessen schnell die passende Vorgabe auswaehlen.
+
+## Lernziel
+- Kernaussagen betrieblicher Policies verinnerlichen.
+- Regelwissen unter Zeitdruck anwenden.
+
+## Messbare Progression
+- 25 Quizfragen mit 15 Sekunden je Frage.
+- Punkte: +5 korrekte Antwort, -2 falsche Antwort.
+- KPI: korrekte Antworten pro Minute.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- QuizController
+- ValidationEngine
+- KPIService
+
+### Domaenenobjekte
+- QuizItem(itemId, questionType)
+- AnswerOption(optionId, label)
+- QuizResult(isCorrect, responseTimeMs)
+
+### Beziehungen
+- QuizItem hat 3..4 AnswerOption.
+- ValidationEngine validiert Antwort.
+- KPIService aggregiert 1..* QuizResult.
+
+### Zustandsmodell
+- READY -> QUESTION_ACTIVE -> ANSWER_LOCK -> EVALUATE -> NEXT_QUESTION
+
+### Sequenz (Happy Path)
+1. QuizController startet QuizItem.
+2. Player waehlt AnswerOption.
+3. ValidationEngine prueft Antwort.
+4. QuizResult wird gespeichert.
+5. KPIService aktualisiert KPI.
+
+## Regeln
+- Keine Antwort im Zeitfenster gilt als Fehler.
+- Zehn korrekte Antworten in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: itemId, questionType, options[], expectedOption, timeLimitSec
+
+## Abnahmekriterien
+- Timer und Bewertung sind synchron.
+- KPI zeigt Tempo und Genauigkeit.
+- Report gruppiert Fehler nach Fragetyp.

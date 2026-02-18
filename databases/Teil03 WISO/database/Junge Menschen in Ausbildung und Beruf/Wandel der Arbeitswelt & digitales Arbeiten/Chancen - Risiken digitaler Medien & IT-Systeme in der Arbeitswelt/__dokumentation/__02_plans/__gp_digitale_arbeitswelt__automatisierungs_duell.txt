@@ -1,0 +1,53 @@
+# __gp_digitale_arbeitswelt__automatisierungs_duell
+
+## Spielidee
+"Automatisierungs-Duell" vergleicht zwei Prozessvarianten (manuell vs. automatisiert). Lernende waehlen die angemessenere Loesung fuer den Fall.
+
+## Lernziel
+- Nutzen und Grenzen von Automatisierung abwaegen.
+- Entscheidungskriterien systematisch anwenden.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- MetricService
+
+### Domaenenobjekte
+- DuelCase(duelId, optionA, optionB)
+- ProcessOption(optionId, metricVector)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 ProcessOption.
+- EvaluationEngine validiert Entscheidung.
+- MetricService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> REVIEW -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt ProcessOption.
+3. EvaluationEngine prueft Wahl.
+4. DuelResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Begruendung gibt Teilpunkte.
+- Serienbonus ab 4 Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, optionA{}, optionB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Vergleichskriterien sind transparent.
+- KPI trennt Wahl und Begruendung.
+- Report nennt haeufige Fehlbewertungsmuster.

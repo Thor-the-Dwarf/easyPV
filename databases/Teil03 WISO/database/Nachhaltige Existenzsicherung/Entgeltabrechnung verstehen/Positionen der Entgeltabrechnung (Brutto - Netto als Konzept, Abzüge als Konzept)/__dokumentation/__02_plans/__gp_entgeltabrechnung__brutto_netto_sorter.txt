@@ -1,0 +1,52 @@
+# __gp_entgeltabrechnung__brutto_netto_sorter
+
+## Spielidee
+"Brutto-Netto-Sorter" ordnet Abrechnungspositionen den Bereichen Brutto, Abzuege und Netto zu.
+
+## Lernziel
+- Grundstruktur der Entgeltabrechnung verstehen.
+- Positionen korrekt klassifizieren.
+
+## Messbare Progression
+- 26 Positionskarten.
+- Punkte: +6 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Sortierquote je Bereich.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- ClassificationEngine
+- MetricService
+
+### Domaenenobjekte
+- PositionCard(cardId, positionType)
+- BucketOption(bucketId, bucketType)
+- MatchResult(isCorrect, bucketType)
+
+### Beziehungen
+- PositionCard hat 3 BucketOption.
+- ClassificationEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt PositionCard.
+2. Player waehlt BucketOption.
+3. ClassificationEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Falsche Zuordnung bei Kernposition verursacht Zusatzabzug.
+- Serienbonus ab 6 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, positionType, options[], expectedBucket
+
+## Abnahmekriterien
+- Zuordnungsfeedback ist eindeutig.
+- KPI zeigt Leistung je Bereich.
+- Report listet haeufige Verwechslungen.

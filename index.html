@@ -42,6 +42,52 @@
       </main>
     </div>
 
+    <div id="root-feedback-shell" class="root-feedback-shell" hidden>
+      <button
+        id="root-feedback-fab"
+        class="root-feedback-fab"
+        type="button"
+        aria-label="Feedback geben"
+        title="Feedback geben"
+      >
+        💬
+      </button>
+    </div>
+
+    <div id="root-feedback-modal-layer" class="root-feedback-modal-layer" hidden>
+      <div class="root-feedback-modal-backdrop" data-root-feedback-close></div>
+      <section
+        class="root-feedback-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="root-feedback-modal-title"
+      >
+        <header class="root-feedback-modal-head">
+          <h2 id="root-feedback-modal-title">Feedback zum Spiel</h2>
+          <button type="button" class="root-feedback-close-btn" id="root-feedback-close-btn" aria-label="Schliessen">
+            ✕
+          </button>
+        </header>
+        <label class="root-feedback-modal-label" for="root-feedback-comment-input">Kommentar</label>
+        <textarea
+          id="root-feedback-comment-input"
+          class="root-feedback-comment-input"
+          placeholder="Was war gut, was ist unklar oder sollte verbessert werden?"
+          maxlength="2000"
+        ></textarea>
+        <div class="root-feedback-modal-actions">
+          <button type="button" class="root-feedback-btn root-feedback-btn-muted" id="root-feedback-cancel-btn">
+            Abbrechen
+          </button>
+          <button type="button" class="root-feedback-btn root-feedback-btn-primary" id="root-feedback-send-btn">
+            Senden
+          </button>
+        </div>
+        <p class="root-feedback-modal-status" id="root-feedback-modal-status" aria-live="polite"></p>
+      </section>
+    </div>
+
+    <script src="./shared/firebase-feedback-client.js"></script>
     <script>
       (function () {
         'use strict';
@@ -61,6 +107,14 @@
         const drawerTitleEl = document.getElementById('drawer-title');
         const treeRootEl = document.getElementById('tree-root');
         const contentHost = document.getElementById('content-host');
+        const rootFeedbackShell = document.getElementById('root-feedback-shell');
+        const rootFeedbackFab = document.getElementById('root-feedback-fab');
+        const rootFeedbackModalLayer = document.getElementById('root-feedback-modal-layer');
+        const rootFeedbackCloseBtn = document.getElementById('root-feedback-close-btn');
+        const rootFeedbackCancelBtn = document.getElementById('root-feedback-cancel-btn');
+        const rootFeedbackSendBtn = document.getElementById('root-feedback-send-btn');
+        const rootFeedbackCommentInput = document.getElementById('root-feedback-comment-input');
+        const rootFeedbackModalStatus = document.getElementById('root-feedback-modal-status');
 
         let drawerOpen = false;
         let openedFolderIds = [];
@@ -69,6 +123,7 @@
         let gameProgressByKey = {};
         let activeGameProgressContext = null;
         let activeGameProgressTimer = 0;
+        let rootFeedbackBusy = false;
 
         init();
 
@@ -83,6 +138,8 @@
           initResizer();
           applyDrawerWidth();
           initGenericPageBridge();
+          initRootFeedback();
+          syncRootFeedbackVisibility();
 
           initIndex();
         }
@@ -255,6 +312,192 @@
           window.setTimeout(function () {
             syncEmbeddedThemeToActiveFrame(theme);
           }, 120);
+        }
+
+        function initRootFeedback() {
+          if (!rootFeedbackFab || !rootFeedbackModalLayer) return;
+
+          rootFeedbackFab.addEventListener('click', openRootFeedbackModal);
+
+          if (rootFeedbackCloseBtn) rootFeedbackCloseBtn.addEventListener('click', closeRootFeedbackModal);
+          if (rootFeedbackCancelBtn) rootFeedbackCancelBtn.addEventListener('click', closeRootFeedbackModal);
+          if (rootFeedbackSendBtn) rootFeedbackSendBtn.addEventListener('click', submitRootFeedback);
+
+          if (rootFeedbackModalLayer) {
+            rootFeedbackModalLayer.addEventListener('click', function (event) {
+              const target = event && event.target;
+              if (!target) return;
+              if (target.getAttribute('data-root-feedback-close') !== null) {
+                closeRootFeedbackModal();
+              }
+            });
+          }
+
+          if (rootFeedbackCommentInput) {
+            rootFeedbackCommentInput.addEventListener('keydown', function (event) {
+              if (event.key !== 'Enter' || (!event.metaKey && !event.ctrlKey)) return;
+              event.preventDefault();
+              submitRootFeedback();
+            });
+          }
+
+          document.addEventListener('keydown', function (event) {
+            if (event.key !== 'Escape') return;
+            if (!rootFeedbackModalLayer || rootFeedbackModalLayer.hidden) return;
+            closeRootFeedbackModal();
+          });
+        }
+
+        function getActiveContentFrame() {
+          if (!contentHost) return null;
+          return contentHost.querySelector('iframe.content-frame');
+        }
+
+        function ensureRootFeedbackFrameBinding(frameEl) {
+          if (!frameEl || frameEl.dataset.rootFeedbackBound === '1') return;
+          frameEl.dataset.rootFeedbackBound = '1';
+          frameEl.addEventListener('load', syncRootFeedbackVisibility);
+        }
+
+        function isGenericPageSource(frameSrc) {
+          const source = String(frameSrc || '').trim();
+          if (!source) return false;
+          try {
+            const url = new URL(source, window.location.href);
+            return /\/generic_pages\/generic_page\.html$/i.test(url.pathname);
+          } catch (_) {
+            return source.indexOf('generic_pages/generic_page.html') >= 0;
+          }
+        }
+
+        function syncRootFeedbackVisibility() {
+          if (!rootFeedbackShell) return;
+          const frameEl = getActiveContentFrame();
+          const src = frameEl ? String(frameEl.getAttribute('src') || frameEl.src || '') : '';
+          const shouldShow = !!frameEl && !isGenericPageSource(src);
+          rootFeedbackShell.hidden = !shouldShow;
+          if (!shouldShow) closeRootFeedbackModal();
+        }
+
+        function setRootFeedbackStatus(text) {
+          if (!rootFeedbackModalStatus) return;
+          rootFeedbackModalStatus.textContent = String(text || '');
+        }
+
+        function setRootFeedbackBusy(isBusy) {
+          rootFeedbackBusy = !!isBusy;
+          if (rootFeedbackSendBtn) rootFeedbackSendBtn.disabled = rootFeedbackBusy;
+          if (rootFeedbackCancelBtn) rootFeedbackCancelBtn.disabled = rootFeedbackBusy;
+          if (rootFeedbackCloseBtn) rootFeedbackCloseBtn.disabled = rootFeedbackBusy;
+        }
+
+        function openRootFeedbackModal() {
+          if (!rootFeedbackModalLayer) return;
+          if (rootFeedbackShell && rootFeedbackShell.hidden) return;
+          rootFeedbackModalLayer.hidden = false;
+          setRootFeedbackStatus('');
+          if (rootFeedbackCommentInput) {
+            window.setTimeout(function () {
+              rootFeedbackCommentInput.focus();
+            }, 0);
+          }
+        }
+
+        function closeRootFeedbackModal() {
+          if (!rootFeedbackModalLayer) return;
+          if (rootFeedbackBusy) return;
+          rootFeedbackModalLayer.hidden = true;
+          setRootFeedbackStatus('');
+        }
+
+        function messageForRootFeedbackReason(reason) {
+          switch (String(reason || '')) {
+            case 'CONFIG_MISSING':
+              return 'Firebase ist noch nicht konfiguriert.';
+            case 'COMMENT_REQUIRED':
+              return 'Bitte zuerst einen Kommentar eingeben.';
+            case 'FIREBASE_APP_SDK_LOAD_FAILED':
+            case 'FIREBASE_PROVIDER_SDK_LOAD_FAILED':
+            case 'FIREBASE_GLOBAL_MISSING':
+            case 'RTDB_UNAVAILABLE':
+            case 'FIRESTORE_UNAVAILABLE':
+              return 'Firebase konnte nicht initialisiert werden.';
+            case 'FEEDBACK_DISABLED':
+              return 'Feedback ist aktuell deaktiviert.';
+            default:
+              return 'Feedback konnte nicht gesendet werden.';
+          }
+        }
+
+        function resolveRootFeedbackContext() {
+          const frameEl = getActiveContentFrame();
+          const rawFrameSrc = frameEl ? String(frameEl.getAttribute('src') || frameEl.src || '').trim() : '';
+          const framePath = inferRepoPathFromUrl(rawFrameSrc);
+          const context = {
+            frameSrc: rawFrameSrc || null,
+            framePath: framePath || null,
+            locationPath: window.location.pathname,
+            locationHref: window.location.href
+          };
+
+          if (!rawFrameSrc) return context;
+
+          try {
+            const parsed = new URL(rawFrameSrc, window.location.href);
+            context.frameUrl = parsed.href;
+            const folder = parsed.searchParams.get('folder');
+            const jsonUrl = parsed.searchParams.get('json');
+            const gameUrl = parsed.searchParams.get('game');
+            const nodeId = parsed.searchParams.get('nodeId');
+            if (folder) context.folder = folder;
+            if (jsonUrl) context.jsonUrl = jsonUrl;
+            if (gameUrl) context.gameUrl = gameUrl;
+            if (nodeId) context.nodeId = nodeId;
+          } catch (_) {
+            context.frameUrl = rawFrameSrc;
+          }
+
+          return context;
+        }
+
+        async function submitRootFeedback() {
+          if (!rootFeedbackCommentInput) return;
+          const comment = String(rootFeedbackCommentInput.value || '').trim();
+          if (!comment) {
+            setRootFeedbackStatus(messageForRootFeedbackReason('COMMENT_REQUIRED'));
+            return;
+          }
+          if (!window.EasyPvFirebaseFeedback || typeof window.EasyPvFirebaseFeedback.submitFeedback !== 'function') {
+            setRootFeedbackStatus('Feedback-Client fehlt. Bitte Seite neu laden.');
+            return;
+          }
+
+          setRootFeedbackBusy(true);
+          setRootFeedbackStatus('Sende Feedback...');
+
+          const payload = {
+            comment: comment,
+            source: 'game_page',
+            context: resolveRootFeedbackContext()
+          };
+
+          try {
+            const result = await window.EasyPvFirebaseFeedback.submitFeedback(payload);
+            if (!result || !result.ok) {
+              setRootFeedbackStatus(messageForRootFeedbackReason(result && result.reason));
+              return;
+            }
+            setRootFeedbackStatus('Danke, Feedback wurde gespeichert.');
+            rootFeedbackCommentInput.value = '';
+            window.setTimeout(function () {
+              if (rootFeedbackModalLayer) rootFeedbackModalLayer.hidden = true;
+              setRootFeedbackStatus('');
+            }, 380);
+          } catch (_) {
+            setRootFeedbackStatus('Feedback konnte nicht gesendet werden.');
+          } finally {
+            setRootFeedbackBusy(false);
+          }
         }
 
         function normalizeProgressKey(rawKey) {
@@ -1247,6 +1490,8 @@
           );
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="Thema" loading="eager"></iframe>';
+          ensureRootFeedbackFrameBinding(getActiveContentFrame());
+          syncRootFeedbackVisibility();
           queueThemeSyncForNewFrame();
           return true;
         }
@@ -1297,6 +1542,8 @@
           }
           contentHost.innerHTML =
             '<iframe class="content-frame" src="' + src + '" title="C-Suite Prototyp" loading="eager"></iframe>';
+          ensureRootFeedbackFrameBinding(getActiveContentFrame());
+          syncRootFeedbackVisibility();
           queueThemeSyncForNewFrame();
           const resolvedProgressKey = normalizeProgressKey(progressKey || inferProgressKeyFromUrls(gameUrl, jsonUrl));
           if (resolvedProgressKey) {

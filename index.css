@@ -277,8 +277,8 @@ body::after {
 }
 
 .tree {
-  width: max-content;
-  min-width: 20.25rem;
+  width: 100%;
+  min-width: max-content;
   max-width: none;
 }
 
@@ -326,7 +326,7 @@ body::after {
 
 .tree-row {
   display: grid;
-  grid-template-columns: 3.2rem 3.2rem max-content;
+  grid-template-columns: 3.2rem 3.2rem minmax(max-content, 1fr);
   align-items: center;
   gap: 0.42rem;
   padding: 0.2rem 0.5rem;
@@ -340,7 +340,7 @@ body::after {
 
 .tree-meta-header {
   display: grid;
-  grid-template-columns: 3.2rem 3.2rem max-content;
+  grid-template-columns: 3.2rem 3.2rem minmax(max-content, 1fr);
   align-items: center;
   gap: 0.42rem;
   padding: 0.35rem 0.5rem 0.55rem;
@@ -438,7 +438,7 @@ body::after {
 }
 
 .tree-main {
-  min-width: max-content;
+  min-width: 0;
   display: flex;
   align-items: center;
   gap: 0;
@@ -506,7 +506,7 @@ body::after {
   align-items: center;
   gap: 0.42rem;
   flex: 0 0 auto;
-  width: max-content;
+  width: 100%;
   min-width: max-content;
   max-width: none;
   font-size: 1rem;
@@ -658,13 +658,13 @@ body::after {
 
   .tree-meta-header,
   .tree-row {
-    grid-template-columns: 2.95rem 2.95rem max-content;
+    grid-template-columns: 2.95rem 2.95rem minmax(max-content, 1fr);
     gap: 0.32rem;
   }
 
   .tree {
-    width: max-content;
-    min-width: 20.25rem;
+    width: 100%;
+    min-width: max-content;
     max-width: none;
   }
 

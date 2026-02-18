@@ -4,6 +4,9 @@
     const state = {
         config: null,
         levelIdx: 0,
+        completedLevels: 0,
+        isComplete: false,
+        lastResult: 'none',
         revokedIds: new Set(),
         currentSyntax: {
             privilege: null,
@@ -78,6 +81,8 @@
     function startLevel(idx) {
         state.levelIdx = idx;
         state.revokedIds.clear();
+        state.isComplete = false;
+        state.lastResult = 'in_progress';
         state.currentSyntax = { privilege: null, table: null, user: null };
 
         const level = state.config.levels[idx];
@@ -132,6 +137,7 @@
         const target = level.target;
 
         if (!privilege || !table || !user) {
+            state.lastResult = 'incomplete';
             playTone(100, 'sawtooth', 0.3, 0.3);
             alert("COMMAND INCOMPLETE: Check all parameters.");
             return;
@@ -145,6 +151,9 @@
         );
 
         if (isSuccess) {
+            state.isComplete = true;
+            state.lastResult = 'success';
+            state.completedLevels = Math.max(state.completedLevels, state.levelIdx + 1);
             playTone(800, 'square', 0.1);
             setTimeout(() => playTone(200, 'square', 0.5, 0.2), 100);
 
@@ -163,6 +172,7 @@
             });
 
         } else {
+            state.lastResult = 'failed';
             playTone(150, 'sawtooth', 0.5, 0.4);
             // Screen shake
             document.body.style.animation = 'shake 0.2s 3';
@@ -180,6 +190,45 @@
             location.reload();
         }
     }
+
+    function computeSyntaxReadiness() {
+        const fields = [
+            state.currentSyntax.privilege,
+            state.currentSyntax.table,
+            state.currentSyntax.user
+        ];
+        const filled = fields.filter((v) => !!v).length;
+        return filled / fields.length;
+    }
+
+    function computeProgressPercent() {
+        const total = state.config && Array.isArray(state.config.levels) ? state.config.levels.length : 0;
+        if (total <= 0) return 0;
+        const done = Math.max(0, Math.min(state.completedLevels, total));
+        const inLevel = state.isComplete ? 0 : computeSyntaxReadiness() * 0.5;
+        return Math.round(Math.max(0, Math.min(1, (done + inLevel) / total)) * 100);
+    }
+
+    window.render_game_to_text = function renderGameToText() {
+        const level = state.config && state.config.levels ? state.config.levels[state.levelIdx] : null;
+        return JSON.stringify({
+            mode: state.isComplete ? 'result' : 'command_building',
+            measurable: true,
+            coordinate_system: 'origin top-left, x right, y down',
+            current_level: state.levelIdx + 1,
+            total_levels: state.config && state.config.levels ? state.config.levels.length : 0,
+            completed_levels: state.completedLevels,
+            syntax: { ...state.currentSyntax },
+            target: level ? level.target : null,
+            overlay_open: el.deniedOverlay ? el.deniedOverlay.classList.contains('active') : false,
+            last_result: state.lastResult,
+            progress_percent: computeProgressPercent()
+        });
+    };
+
+    window.advanceTime = function advanceTime() {
+        return true;
+    };
 
     init();
 })();

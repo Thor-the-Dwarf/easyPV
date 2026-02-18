@@ -617,3 +617,11 @@ Original prompt: Gut wie gesagt ich will ds du in dieser Session alles auf deine
   - `Datenbanken & SQL/UPDATE/mass_update`
 - Für alle drei Spiele ergänzt: `render_game_to_text`, `advanceTime`, `progress_percent` und eindeutige Fortschrittssignale.
 - Validierung: `node --check` für alle drei JS-Dateien erfolgreich; Playwright-Smoke mit State/Screenshot ohne `errors-0.json`.
+
+- Batch-Durchlauf (EntwicklerTeam02): weitere drei Spiele messbar gemacht.
+- Gefixt:
+  - `Datenbanken & SQL/GRANT/rights_manager`
+  - `Datenbanken & SQL/REVOKE/rights_revoke`
+  - `Datenbanken & SQL/Datentypen/type_match`
+- Für alle drei ergänzt: `render_game_to_text`, `advanceTime`, `progress_percent` und strukturierte Fortschrittssignale.
+- Validierung: `node --check` und Playwright-Smoke je Spiel erfolgreich; keine `errors-0.json` erzeugt.

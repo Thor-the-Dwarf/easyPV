@@ -5,10 +5,14 @@
         config: null,
         levelIdx: 0,
         itemIdx: 0,
+        totalItems: 0,
+        completedItems: 0,
         score: 0,
         efficiency: 100,
         currentItem: null,
-        isComplete: false
+        isComplete: false,
+        finished: false,
+        lastResult: 'none'
     };
 
     const el = {
@@ -43,9 +47,16 @@
         try {
             const resp = await fetch('_data/_gg01_type_match.json');
             state.config = await resp.json();
+            state.totalItems = state.config.levels.reduce((sum, level) => {
+                return sum + (Array.isArray(level.items) ? level.items.length : 0);
+            }, 0);
 
             el.btnNext.onclick = () => {
                 el.overlay.classList.add('hidden');
+                if (state.finished) {
+                    location.reload();
+                    return;
+                }
                 startLevel(state.levelIdx + 1);
             };
 
@@ -76,12 +87,16 @@
 
     function startLevel(idx) {
         if (idx >= state.config.levels.length) {
-            location.reload();
+            state.finished = true;
+            state.isComplete = true;
+            state.lastResult = 'archive_secured';
+            endGame("ARCHIVE_SECURED");
             return;
         }
         state.levelIdx = idx;
         state.itemIdx = 0;
         state.isComplete = false;
+        state.lastResult = 'in_progress';
 
         const lv = state.config.levels[idx];
         el.title.textContent = `LAB_PROCEDURE // ${lv.title}`;
@@ -149,6 +164,7 @@
         const itemEl = el.spawner.firstChild;
         if (itemEl) itemEl.classList.add('item-fit');
 
+        state.completedItems++;
         state.itemIdx++;
         state.currentItem = null;
         setTimeout(spawnItem, 600);
@@ -169,9 +185,42 @@
     }
 
     function endGame(msg) {
+        state.isComplete = true;
+        if (msg === 'ARCHIVE_SECURED') state.finished = true;
+        if (msg === 'CRITICAL_STORAGE_FAILURE') state.lastResult = 'critical_failure';
         el.resFinal.textContent = msg;
         el.overlay.classList.remove('hidden');
     }
+
+    function computeProgressPercent() {
+        if (state.totalItems <= 0) return 0;
+        return Math.round(Math.max(0, Math.min(1, state.completedItems / state.totalItems)) * 100);
+    }
+
+    window.render_game_to_text = function renderGameToText() {
+        const level = state.config && state.config.levels ? state.config.levels[state.levelIdx] : null;
+        return JSON.stringify({
+            mode: state.isComplete ? 'result' : 'type_assignment',
+            measurable: true,
+            coordinate_system: 'origin top-left, x right, y down',
+            current_level: state.levelIdx + 1,
+            total_levels: state.config && state.config.levels ? state.config.levels.length : 0,
+            level_item_index: state.itemIdx,
+            level_total_items: level && Array.isArray(level.items) ? level.items.length : 0,
+            completed_items: state.completedItems,
+            total_items: state.totalItems,
+            score: state.score,
+            efficiency_percent: state.efficiency,
+            current_item_value: state.currentItem ? state.currentItem.value : null,
+            finished: state.finished,
+            last_result: state.lastResult,
+            progress_percent: computeProgressPercent()
+        });
+    };
+
+    window.advanceTime = function advanceTime() {
+        return true;
+    };
 
     init();
 })();

@@ -1,0 +1,53 @@
+# __gp_versicherungsprinzipien__beitrag_leistung_duell
+
+## Spielidee
+"Beitrag-Leistung-Duell" vergleicht zwei Versicherungsprofile. Lernende waehlen, welches Profil im Kontext des Prinzips plausibler ist.
+
+## Lernziel
+- Zusammenhang von Beitrag und Leistung verstehen.
+- Unterschiedliche Logiken der Absicherung vergleichen.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, profileA, profileB)
+- Profile(profileId, contributionModel, benefitModel)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 Profile.
+- EvaluationEngine validiert Auswahl.
+- ScoreService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> PROFILE_REVIEW -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt Profile.
+3. EvaluationEngine prueft Entscheidung.
+4. DuelResult wird berechnet.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Begruendung gibt Teilpunkte.
+- Serienbonus ab 4 Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, profileA{}, profileB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Vergleichsgruende sind transparent.
+- KPI trennt Wahl und Begruendung.
+- Report markiert haeufige Fehlbewertungen.

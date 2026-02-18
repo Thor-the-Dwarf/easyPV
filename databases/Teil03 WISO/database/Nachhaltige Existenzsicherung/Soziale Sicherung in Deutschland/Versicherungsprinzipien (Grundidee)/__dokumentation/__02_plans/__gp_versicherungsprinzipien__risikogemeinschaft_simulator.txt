@@ -1,0 +1,52 @@
+# __gp_versicherungsprinzipien__risikogemeinschaft_simulator
+
+## Spielidee
+"Risikogemeinschaft-Simulator" simuliert Gruppen mit verschiedenen Risikoprofilen. Lernende beobachten, wie sich gemeinsame Absicherung auswirkt.
+
+## Lernziel
+- Funktionsweise von Risikogemeinschaften verstehen.
+- Effekte unterschiedlicher Risikomischungen erkennen.
+
+## Messbare Progression
+- 8 Simulationsrunden.
+- Punkte: +10 korrekte Interpretation, -5 falsche Interpretation.
+- KPI: Interpretationsquote und Stabilitaetsindex.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- SimulationController
+- RiskPoolEngine
+- KPIService
+
+### Domaenenobjekte
+- RoundCase(roundId, members[])
+- Member(memberId, riskClass)
+- RoundResult(stabilityScore, interpretationCorrect)
+
+### Beziehungen
+- RoundCase enthaelt 5..30 Member.
+- RiskPoolEngine berechnet Stabilitaet.
+- KPIService aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- PREPARE -> RUN_SIMULATION -> INTERPRET -> EVALUATE -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. SimulationController startet RoundCase.
+2. Player beobachtet Verlauf und trifft Interpretation.
+3. RiskPoolEngine berechnet Referenzwerte.
+4. RoundResult wird erzeugt.
+5. KPIService aktualisiert Dashboard.
+
+## Regeln
+- Falsche Interpretation bei Extremfall verursacht Zusatzabzug.
+- Drei korrekte Interpretationen in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: roundId, members[], expectedInterpretation
+
+## Abnahmekriterien
+- Simulationsergebnis ist nachvollziehbar.
+- KPI zeigt Stabilitaet und Interpretation getrennt.
+- Report markiert haeufige Denkfehler.

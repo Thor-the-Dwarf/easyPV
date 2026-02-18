@@ -1,0 +1,52 @@
+# __gp_wirksamkeit_stolperstellen__fristen_quiz_timer
+
+## Spielidee
+"Fristen-Quiz-Timer" fragt fristbezogene Stolperstellen in Kurzfaellen ab.
+
+## Lernziel
+- Fristrelevanz fuer Wirksamkeit besser einschaetzen.
+- Schnelle und korrekte Fallentscheidung trainieren.
+
+## Messbare Progression
+- 22 Kurzfaelle, 15 Sekunden je Fall.
+- Punkte: +6 korrekte Antwort, -3 falsche Antwort.
+- KPI: korrekte Antworten pro Minute.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- QuizController
+- DeadlineEngine
+- KPIService
+
+### Domaenenobjekte
+- QuizItem(itemId, caseType)
+- AnswerOption(optionId)
+- QuizResult(isCorrect, responseTimeMs)
+
+### Beziehungen
+- QuizItem enthaelt 3..4 AnswerOption.
+- DeadlineEngine validiert Antwort.
+- KPIService aggregiert 1..* QuizResult.
+
+### Zustandsmodell
+- READY -> QUESTION_ACTIVE -> ANSWER -> EVALUATE -> NEXT_QUESTION
+
+### Sequenz (Happy Path)
+1. QuizController startet QuizItem.
+2. Player waehlt AnswerOption.
+3. DeadlineEngine prueft Antwort.
+4. QuizResult wird gespeichert.
+5. KPIService aktualisiert KPI.
+
+## Regeln
+- Keine Antwort im Zeitfenster gilt als Fehler.
+- Serienbonus ab 8 korrekten Antworten.
+
+## Datenmodell (JSON-Idee)
+- fields: itemId, caseType, options[], expectedOption, timeLimitSec
+
+## Abnahmekriterien
+- Timer und Bewertung laufen synchron.
+- KPI zeigt Tempo und Genauigkeit.
+- Report gruppiert Fehler nach Fristtyp.

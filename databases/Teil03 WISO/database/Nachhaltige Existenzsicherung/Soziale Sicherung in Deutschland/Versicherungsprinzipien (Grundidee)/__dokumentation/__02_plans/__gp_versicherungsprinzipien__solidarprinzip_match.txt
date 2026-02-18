@@ -1,0 +1,52 @@
+# __gp_versicherungsprinzipien__solidarprinzip_match
+
+## Spielidee
+"Solidarprinzip-Match" ordnet Alltagssituationen den Versicherungsprinzipien Solidaritaet, Aequivalenz und Individualvorsorge zu.
+
+## Lernziel
+- Grundideen zentraler Versicherungsprinzipien sicher unterscheiden.
+- Prinzipien auf konkrete Lebensfaelle anwenden.
+
+## Messbare Progression
+- 24 Karten pro Session.
+- Punkte: +6 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Trefferquote je Prinzip und durchschnittliche Antwortzeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- PrincipleEngine
+- MetricService
+
+### Domaenenobjekte
+- CaseCard(cardId, scenarioType)
+- PrincipleOption(optionId, principleType)
+- MatchResult(isCorrect, principleType)
+
+### Beziehungen
+- CaseCard enthaelt 3 PrincipleOption.
+- PrincipleEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt CaseCard.
+2. Player waehlt PrincipleOption.
+3. PrincipleEngine prueft Auswahl.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlzuordnung bei Schluesselfaellen erzeugt Zusatzabzug.
+- Serienbonus ab 5 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, scenarioType, options[], expectedPrinciple
+
+## Abnahmekriterien
+- Zuordnung ist pro Fall erklaert.
+- KPI zeigt Leistung pro Prinzip.
+- Report nennt haeufige Verwechslungen.

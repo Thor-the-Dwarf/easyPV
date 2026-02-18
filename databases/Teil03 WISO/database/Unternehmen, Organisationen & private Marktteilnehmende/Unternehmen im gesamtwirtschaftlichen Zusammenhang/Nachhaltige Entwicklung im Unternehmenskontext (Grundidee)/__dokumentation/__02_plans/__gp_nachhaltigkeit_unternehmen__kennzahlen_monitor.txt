@@ -1,0 +1,52 @@
+# __gp_nachhaltigkeit_unternehmen__kennzahlen_monitor
+
+## Spielidee
+"Kennzahlen-Monitor" zeigt Nachhaltigkeitskennzahlen ueber mehrere Quartale. Lernende erkennen negative Trends und priorisieren Maßnahmen.
+
+## Lernziel
+- Nachhaltigkeitskennzahlen interpretieren.
+- Datengestuetzte Steuerungsentscheidungen treffen.
+
+## Messbare Progression
+- 10 Analysefaelle.
+- Punkte: +8 korrekt erkannter Trend, +3 passende Maßnahme, -4 Fehler.
+- KPI: Trendquote und Maßnahmenquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DashboardController
+- TrendEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- KPISet(caseId, series[])
+- Series(seriesId, metricType, values)
+- AnalysisResult(trendCorrect, actionCorrect)
+
+### Beziehungen
+- KPISet enthaelt 3..10 Series.
+- TrendEngine validiert Trendbewertung.
+- AnalyticsService aggregiert 1..* AnalysisResult.
+
+### Zustandsmodell
+- LOAD_DASHBOARD -> ANALYZE -> SELECT_ACTION -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. DashboardController laedt KPISet.
+2. Player bewertet Trend.
+3. TrendEngine prueft Bewertung.
+4. Player waehlt Maßnahme.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Uebersehter kritischer Trend verursacht Zusatzabzug.
+- Vollkorrekter Fall gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, series[], expectedTrend, actionOptions[], expectedAction
+
+## Abnahmekriterien
+- Trendanalyse ist nachvollziehbar.
+- KPI zeigt Trend und Maßnahme getrennt.
+- Report nennt haeufige Fehlinterpretationen.

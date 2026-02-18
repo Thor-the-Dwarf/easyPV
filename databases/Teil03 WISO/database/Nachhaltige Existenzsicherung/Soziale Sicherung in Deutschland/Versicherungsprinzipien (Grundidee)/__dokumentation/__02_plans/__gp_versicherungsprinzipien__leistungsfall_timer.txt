@@ -1,0 +1,53 @@
+# __gp_versicherungsprinzipien__leistungsfall_timer
+
+## Spielidee
+"Leistungsfall-Timer" zeigt Kurzfaelle mit Zeitlimit. Lernende entscheiden, ob und nach welchem Prinzip ein Leistungsanspruch plausibel ist.
+
+## Lernziel
+- Leistungsfaelle schnell korrekt einordnen.
+- Prinzipien unter Zeitdruck anwenden.
+
+## Messbare Progression
+- 20 Kurzfaelle, 15 Sekunden je Fall.
+- Punkte: +7 korrekte Entscheidung, -3 falsche Entscheidung.
+- +3 fuer korrekte Prinzip-Nennung.
+- KPI: Treffer pro Minute und Prinzip-Quote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimerController
+- ClaimEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- ClaimCase(caseId, eventType)
+- Decision(decisionId, hasClaim)
+- CaseResult(decisionCorrect, principleCorrect, responseTimeMs)
+
+### Beziehungen
+- TimerController steuert 1..* ClaimCase.
+- ClaimEngine validiert Decision.
+- AnalyticsService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECIDE -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimerController startet ClaimCase.
+2. Player trifft Decision.
+3. ClaimEngine prueft Anspruch.
+4. CaseResult wird berechnet.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Keine Antwort im Zeitfenster zaehlt als Fehler.
+- Serienbonus bei drei schnellen Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, eventType, expectedDecision, expectedPrinciple, timeLimitSec
+
+## Abnahmekriterien
+- Timer und Bewertung sind synchron.
+- KPI zeigt Tempo und Korrektheit.
+- Report gruppiert Fehler nach Falltyp.

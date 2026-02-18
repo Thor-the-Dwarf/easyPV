@@ -1,0 +1,53 @@
+# __gp_konsum_optionen__nutzungs_navigator
+
+## Spielidee
+"Nutzungs-Navigator" stellt Nutzungsfaelle dar (z. B. Fahrrad, Werkzeug, Laptop). Lernende waehlen zwischen kaufen, mieten, leihen, teilen oder tauschen, passend zu Nutzungsdauer und Intensitaet.
+
+## Lernziel
+- Nutzungsprofil in passende Konsumentscheidung ueberfuehren.
+- Wirtschaftliche und nachhaltige Faktoren gleichzeitig beruecksichtigen.
+
+## Messbare Progression
+- 15 Faelle pro Session.
+- Punkte: +10 fuer optimale Option, +5 fuer zweitbeste Option, -5 fuer unpassende Option.
+- KPI: Optimalquote und durchschnittliche Entscheidungszeit.
+- Zielwert: mindestens 70 Prozent optimale Optionen.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseController
+- OptionEvaluator
+- ScoreService
+
+### Domänenobjekte
+- UsageCase(caseId, frequency, durationMonths)
+- DecisionOption(type, totalCost, ecoScore)
+- DecisionResult(rank, points)
+
+### Beziehungen
+- UsageCase besitzt 5 DecisionOption.
+- OptionEvaluator erstellt pro Entscheidung genau ein DecisionResult.
+- ScoreService aggregiert 1..* DecisionResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECISION_MADE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. CaseController laedt UsageCase.
+2. Player waehlt DecisionOption.
+3. OptionEvaluator rankt Option nach Kosten und Oeko-Wert.
+4. DecisionResult wird gespeichert.
+5. ScoreService aktualisiert Gesamtfortschritt.
+
+## Regeln
+- Bei gleichem Kostenwert entscheidet der bessere ecoScore.
+- Falsche Entscheidung in drei Faellen hintereinander aktiviert Lernhilfe.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, frequency, durationMonths, options[{type, totalCost, ecoScore}]
+
+## Abnahmekriterien
+- Ranking-Logik ist transparent im Feedback.
+- Progression ist ueber Optimalquote und Zeit messbar.
+- Lernhilfe reduziert Fehlserie in Folgerunden nachweisbar.

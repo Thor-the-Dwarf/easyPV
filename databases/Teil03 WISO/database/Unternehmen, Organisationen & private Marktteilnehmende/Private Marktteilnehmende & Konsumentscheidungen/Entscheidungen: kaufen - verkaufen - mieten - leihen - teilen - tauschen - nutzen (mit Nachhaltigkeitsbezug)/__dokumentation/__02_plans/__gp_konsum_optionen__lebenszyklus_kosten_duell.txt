@@ -1,0 +1,53 @@
+# __gp_konsum_optionen__lebenszyklus_kosten_duell
+
+## Spielidee
+"Lebenszyklus-Kosten-Duell" vergleicht Konsumoptionen ueber den gesamten Nutzungszeitraum inklusive Wartung, Reparatur und Restwert.
+
+## Lernziel
+- Kurzfristige Preise von langfristigen Gesamtkosten unterscheiden.
+- Lebenszyklusdenken als Entscheidungsbasis nutzen.
+
+## Messbare Progression
+- 3 Kapitel mit je 5 Duellen.
+- Punkte: +14 korrekte Gesamtentscheidung, -7 falsche Gesamtentscheidung.
+- Bonus: +10 wenn Entscheidung und Kostenbegruendung korrekt sind.
+- KPI: Fehlerquote pro Kapitel.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- CostEngine
+- FeedbackService
+
+### Domänenobjekte
+- DuelCase(caseId, usageYears)
+- CostComponent(componentType, amountPerYear)
+- OptionTotal(optionType, lifecycleCost)
+
+### Beziehungen
+- DuelCase enthaelt 2..4 Optionen.
+- Jede Option besitzt 3..6 CostComponent.
+- CostEngine erzeugt OptionTotal fuer jede Option.
+
+### Zustandsmodell
+- INIT -> CALCULATION -> DECISION -> RESOLVE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. CostEngine summiert CostComponent ueber usageYears.
+3. Player waehlt Option mit bestem Gesamtergebnis.
+4. FeedbackService zeigt Kostenaufschluesselung.
+5. Kapitelstatistik wird aktualisiert.
+
+## Regeln
+- Fehlende Beruecksichtigung von Wartung fuehrt zu Teilpunktabzug.
+- Bei Gleichstand entscheidet geringerer Ressourcenverbrauch.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, usageYears, options[{type, costComponents[], resourceFootprint}]
+
+## Abnahmekriterien
+- Gesamtkosten sind pro Option nachvollziehbar aufgeschluesselt.
+- Kapitelvergleich zeigt Lernentwicklung eindeutig.
+- Korrektheits- und Begruendungswerte sind getrennt auswertbar.

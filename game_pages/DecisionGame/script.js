@@ -13,6 +13,7 @@ class DecisionGame {
         this.maxRounds = 0;
         this.rounds = [];
         this.currentScenario = null;
+        this.simulatedMs = 0;
         this.gameUI = {
             title: document.getElementById('game-title'),
             instruction: document.getElementById('instruction-text'),
@@ -273,6 +274,7 @@ class DecisionGame {
             current_round: this.currentRound,
             max_rounds: this.maxRounds,
             progress_percent: this.getProgressPercent(),
+            simulated_ms: this.simulatedMs,
             scenario: this.currentScenario
                 ? {
                     phase: this.currentScenario.phase || '',
@@ -283,8 +285,10 @@ class DecisionGame {
         });
     }
 
-    advanceTime() {
-        return true;
+    advanceTime(ms) {
+        const deltaMs = Math.max(0, Number(ms) || 0);
+        this.simulatedMs += deltaMs;
+        return this.simulatedMs;
     }
 }
 

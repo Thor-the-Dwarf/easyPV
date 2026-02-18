@@ -1,0 +1,53 @@
+# __gp_verbraucherschutz__klausel_detektiv
+
+## Spielidee
+"Klausel-Detektiv" zeigt Vertragsauszuege mit kritischen Formulierungen. Lernende markieren problematische Klauseln und klassifizieren das Risiko.
+
+## Lernziel
+- Versteckte Nachteile in Verbrauchertexten erkennen.
+- Relevanz einer Klausel strukturiert bewerten.
+
+## Messbare Progression
+- 10 Vertragssets mit je 6 Klauseln.
+- Punkte: +7 pro korrekt markierter Klausel, -3 pro Fehlmarkierung.
+- Risikostufe korrekt: +4 Zusatzpunkte.
+- KPI: Praezision und Recall der Markierungen.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ContractController
+- ClauseAnalyzer
+- MetricService
+
+### Domänenobjekte
+- ContractSet(setId, clauses[])
+- Clause(clauseId, text, riskClass)
+- DetectionResult(tp, fp, fn)
+
+### Beziehungen
+- ContractSet enthaelt 4..10 Clause.
+- ClauseAnalyzer erzeugt pro Set ein DetectionResult.
+- MetricService berechnet Praezision und Recall aus 1..* DetectionResult.
+
+### Zustandsmodell
+- LOAD_SET -> ANALYZE -> SUBMIT -> SCORE -> NEXT_SET
+
+### Sequenz (Happy Path)
+1. ContractController laedt ContractSet.
+2. Player markiert Clause und waehlt riskClass.
+3. ClauseAnalyzer vergleicht mit Loesung.
+4. MetricService berechnet Praezision/Recall.
+5. Feedback zeigt Fehlklassifikationen.
+
+## Regeln
+- Uebermarkierung reduziert Praezision und Punkte.
+- Untermarkierung reduziert Recall und Punkte.
+
+## Datenmodell (JSON-Idee)
+- fields: setId, clauses[{id,text,riskClass}], expectedFlags[], riskScale
+
+## Abnahmekriterien
+- Praezision und Recall sind pro Set sichtbar.
+- Fehlerstellen werden mit Begruendung markiert.
+- Verlauf zeigt Lernkurve ueber mehrere Sets.

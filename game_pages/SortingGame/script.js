@@ -13,6 +13,7 @@ class SortingGame {
         this.items = [];
         this.currentItem = null;
         this.gameLoopId = null;
+        this.simulatedMs = 0;
         this.dropZoneLeft = document.getElementById('drop-zone-left');
         this.dropZoneRight = document.getElementById('drop-zone-right');
         this.spawner = document.getElementById('item-spawner');
@@ -346,6 +347,7 @@ class SortingGame {
             current_round: this.currentRound,
             max_rounds: this.maxRounds,
             progress_percent: this.getProgressPercent(),
+            simulated_ms: this.simulatedMs,
             current_item: this.currentItem
                 ? {
                     text: this.currentItem.innerText || '',
@@ -357,8 +359,10 @@ class SortingGame {
         return JSON.stringify(payload);
     }
 
-    advanceTime() {
-        return true;
+    advanceTime(ms) {
+        const deltaMs = Math.max(0, Number(ms) || 0);
+        this.simulatedMs += deltaMs;
+        return this.simulatedMs;
     }
 }
 

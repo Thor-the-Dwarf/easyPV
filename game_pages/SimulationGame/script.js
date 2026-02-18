@@ -25,6 +25,7 @@ class SimulationGame {
         };
 
         this.currentValue = 0;
+        this.simulatedMs = 0;
 
         this.init();
     }
@@ -226,12 +227,15 @@ class SimulationGame {
             target_rate_eur: goal.targetRateEur || 0,
             max_down_payment_eur: goal.maxDownPaymentEur || 0,
             solved: solved,
-            progress_percent: solved ? 100 : this.getProgressPercent()
+            progress_percent: solved ? 100 : this.getProgressPercent(),
+            simulated_ms: this.simulatedMs
         });
     }
 
-    advanceTime() {
-        return true;
+    advanceTime(ms) {
+        const deltaMs = Math.max(0, Number(ms) || 0);
+        this.simulatedMs += deltaMs;
+        return this.simulatedMs;
     }
 }
 

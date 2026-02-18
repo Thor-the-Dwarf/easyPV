@@ -1,0 +1,53 @@
+# __gp_verbraucherschutz__beschwerde_navigator
+
+## Spielidee
+"Beschwerde-Navigator" simuliert Problemfaelle nach Kauf. Lernende waehlen den passenden naechsten Schritt: Verkaeuferkontakt, Fristsetzung, Schlichtungsstelle oder rechtliche Eskalation.
+
+## Lernziel
+- Beschwerdeprozess in sinnvoller Reihenfolge anwenden.
+- Eskalationsstufen situationsgerecht einsetzen.
+
+## Messbare Progression
+- 9 Prozessfaelle mit je 4 Entscheidungsschritten.
+- Punkte: +8 pro korrektem Prozessschritt, -4 pro unpassendem Schritt.
+- KPI 1: korrektes Prozessrouting in Prozent.
+- KPI 2: durchschnittliche Schritte bis zur Loesung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ProcessController
+- RoutingEngine
+- ProgressService
+
+### Domänenobjekte
+- ComplaintCase(caseId, problemType, currentStep)
+- ProcessStep(stepId, actionType)
+- RouteResult(isValidStep, nextStep)
+
+### Beziehungen
+- ComplaintCase umfasst 3..6 moegliche ProcessStep.
+- RoutingEngine validiert ProcessStep gegen currentStep.
+- ProgressService protokolliert 1..* RouteResult.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECTION -> STEP_VALIDATION -> CASE_PROGRESS -> CASE_DONE
+
+### Sequenz (Happy Path)
+1. ProcessController startet ComplaintCase.
+2. Player waehlt ProcessStep.
+3. RoutingEngine validiert Schrittfolge.
+4. RouteResult bestimmt nextStep.
+5. ProgressService berechnet Prozessrouting-KPI.
+
+## Regeln
+- Uebersprungene Pflichtschritte verursachen doppelten Punktabzug.
+- Effiziente Loesung mit minimalen Schritten gibt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, problemType, steps[{id,actionType,allowedNext[]}], requiredSteps[]
+
+## Abnahmekriterien
+- Prozesspfad ist fuer jeden Fall visualisierbar.
+- KPI zeigt sowohl Korrektheit als auch Effizienz.
+- Fehlentscheidungen sind mit konkretem naechstem Schritt erklaert.

@@ -11,6 +11,7 @@ class MatchingGame {
         this.currentLevel = 0;
         this.selectedLeft = null;
         this.connections = []; // [{leftId, rightId, svgLine}]
+        this.simulatedMs = 0;
 
         this.gameUI = {
             title: document.getElementById('game-title'),
@@ -343,12 +344,15 @@ class MatchingGame {
             selected_left: this.selectedLeft,
             connections: this.connections.map((c) => ({ left: c.leftId, right: c.rightId })),
             expected_connections: level ? ((level.validPairs || level.pairs || []).length) : 0,
-            progress_percent: this.getProgressPercent()
+            progress_percent: this.getProgressPercent(),
+            simulated_ms: this.simulatedMs
         });
     }
 
-    advanceTime() {
-        return true;
+    advanceTime(ms) {
+        const deltaMs = Math.max(0, Number(ms) || 0);
+        this.simulatedMs += deltaMs;
+        return this.simulatedMs;
     }
 }
 

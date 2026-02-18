@@ -11,6 +11,7 @@ class FindingGame {
         this.foundItems = new Set();
         this.totalTargets = 0;
         this.timeElapsed = 0;
+        this.simulatedMs = 0;
         this.timerId = null;
         this.gameUI = {
             title: document.getElementById('game-title'),
@@ -260,12 +261,24 @@ class FindingGame {
             found_targets: this.foundItems.size,
             total_targets: this.totalTargets,
             found_item_ids: Array.from(this.foundItems),
-            progress_percent: this.getProgressPercent()
+            progress_percent: this.getProgressPercent(),
+            simulated_ms: this.simulatedMs
         });
     }
 
-    advanceTime() {
-        return true;
+    advanceTime(ms) {
+        const deltaMs = Math.max(0, Number(ms) || 0);
+        this.simulatedMs += deltaMs;
+
+        if (this.getMode() === 'searching') {
+            const ticks = Math.floor(deltaMs / 1000);
+            if (ticks > 0) {
+                this.timeElapsed += ticks;
+                this.updateStats();
+            }
+        }
+
+        return this.simulatedMs;
     }
 }
 

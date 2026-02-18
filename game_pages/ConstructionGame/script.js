@@ -10,6 +10,7 @@ class ConstructionGame {
         this.config = null;
         this.items = [];
         this.draggedItem = null;
+        this.simulatedMs = 0;
         this.gameUI = {
             title: document.getElementById('game-title'),
             instruction: document.getElementById('instruction-text'),
@@ -258,12 +259,15 @@ class ConstructionGame {
             source_order: source,
             target_order: target,
             solution_order: this.config?.solution || [],
-            progress_percent: this.getProgressPercent()
+            progress_percent: this.getProgressPercent(),
+            simulated_ms: this.simulatedMs
         });
     }
 
-    advanceTime() {
-        return true;
+    advanceTime(ms) {
+        const deltaMs = Math.max(0, Number(ms) || 0);
+        this.simulatedMs += deltaMs;
+        return this.simulatedMs;
     }
 }
 

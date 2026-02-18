@@ -1,0 +1,53 @@
+# __gp_bedarf_kaufkraft__budget_barometer
+
+## Spielidee
+"Budget-Barometer" ist ein Runden-Spiel, in dem Lernende monatliche Einkommenssituationen sehen und Ausgaben den Kategorien Grundbeduerfnis, sinnvoller Bedarf oder Luxus zuordnen.
+
+## Lernziel
+- Unterschied zwischen Beduerfnis, Bedarf und Kaufkraft sicher anwenden.
+- Priorisierung bei begrenztem Budget begruenden.
+
+## Messbare Progression
+- 10 Runden pro Session.
+- Startzeit pro Runde: 45 Sekunden.
+- Punkte: +12 korrekt, -4 falsch, +8 Zeitbonus bei Abschluss unter 20 Sekunden.
+- Fortschritt: Stern 1 ab 70 Punkten, Stern 2 ab 95 Punkten, Stern 3 ab 120 Punkten.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- SessionController
+- RuleEngine
+- ScoreService
+
+### Domänenobjekte
+- BudgetCase(caseId, income, fixedCosts, options[])
+- Option(optionId, label, category)
+- RoundResult(correctCount, wrongCount, timeMs, roundScore)
+
+### Beziehungen
+- SessionController verwaltet 1..* BudgetCase.
+- BudgetCase besitzt 3..6 Option.
+- ScoreService aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- READY -> ROUND_ACTIVE -> ROUND_EVALUATED -> NEXT_ROUND -> FINISHED
+
+### Sequenz (Happy Path)
+1. SessionController laedt BudgetCase.
+2. RuleEngine berechnet erwartete Kategorien.
+3. Player ordnet Optionen zu.
+4. RuleEngine validiert und erzeugt RoundResult.
+5. ScoreService aktualisiert Gesamtpunkte und Fortschrittssterne.
+
+## Regeln
+- Falsche Zuordnung von Grundbeduerfnissen kostet zusaetzlich 2 Strafpunkte.
+- Bei drei korrekten Runden in Folge wird der Zeitbonus verdoppelt.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, income, fixedCosts, options[{id, label, category}], timeLimitSec
+
+## Abnahmekriterien
+- KPI-Anzeige fuer Punkte, Genauigkeit und Restzeit ist immer sichtbar.
+- Spieler kann nach Session die Fehlkategorien pro Runde einsehen.
+- Lernfortschritt ist ueber mindestens drei Sessions vergleichbar.

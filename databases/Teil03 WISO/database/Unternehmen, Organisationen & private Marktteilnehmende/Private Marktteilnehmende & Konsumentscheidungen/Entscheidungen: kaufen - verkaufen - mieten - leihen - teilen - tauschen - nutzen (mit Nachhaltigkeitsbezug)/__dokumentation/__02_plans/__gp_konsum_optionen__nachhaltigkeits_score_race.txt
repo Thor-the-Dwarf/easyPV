@@ -1,0 +1,53 @@
+# __gp_konsum_optionen__nachhaltigkeits_score_race
+
+## Spielidee
+"Nachhaltigkeits-Score-Race" kombiniert Kosten, Nutzungsdauer und CO2-Werte. Lernende bauen in mehreren Runden den besten Mix aus Wirtschaftlichkeit und Oeko-Wirkung.
+
+## Lernziel
+- Mehrkriterielle Konsumentscheidung praktisch anwenden.
+- Zielkonflikte zwischen Preis und Nachhaltigkeit verstehen.
+
+## Messbare Progression
+- 5 Rennen mit je 4 Entscheidungen.
+- Punkte: bis zu 25 pro Entscheidung aus Kosten-Score, Oeko-Score, Nutzungsfit.
+- KPI: gewichteter Gesamtscore pro Rennen.
+- Zielwert: mindestens 300 Punkte ueber alle Rennen.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- RaceController
+- MultiCriteriaEngine
+- RankingService
+
+### Domänenobjekte
+- RaceScenario(raceId, weighting)
+- OptionVector(costScore, ecoScore, fitScore)
+- RaceResult(totalWeightedScore)
+
+### Beziehungen
+- RaceController verwaltet 1..* RaceScenario.
+- RaceScenario definiert Gewichtung fuer OptionVector.
+- RankingService vergleicht 1..* RaceResult.
+
+### Zustandsmodell
+- SETUP -> DECIDE -> CALCULATE -> LEADERBOARD -> NEXT_RACE
+
+### Sequenz (Happy Path)
+1. RaceController setzt Gewichtungen.
+2. Player waehlt Option.
+3. MultiCriteriaEngine berechnet gewichteten Punktwert.
+4. RankingService aktualisiert Leaderboard.
+5. Rennen endet mit Lernhinweis zu Zielkonflikten.
+
+## Regeln
+- Option ohne Mindest-Nutzungsfit ist automatisch disqualifiziert.
+- Bei Punktgleichstand gewinnt hoeherer ecoScore.
+
+## Datenmodell (JSON-Idee)
+- fields: raceId, weighting{cost,eco,fit}, options[{id,costScore,ecoScore,fitScore}]
+
+## Abnahmekriterien
+- Gewichtung wirkt mathematisch korrekt auf Ergebnis.
+- Leaderboard ist reproduzierbar bei gleichem Input.
+- Session-Export enthaelt Teilscore je Kriterium.

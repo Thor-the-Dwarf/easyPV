@@ -7,3 +7,5 @@ Batch 05: Generische Mess-Hooks muessen mehrere Config-Schemata verstehen (level
 Batch 06: Bei Queue-basierten Games (cards/components) muss currentCard/currentComponent in der Progress-Formel abgezogen werden, sonst startet progress_percent faelschlich ueber 0.
 
 Batch 07: advanceTime sollte in Hook-Spielen mindestens simulierte Zeit akkumulieren; dadurch werden Testlaeufe reproduzierbarer und State-Ausgaben aussagekraeftiger.
+
+Batch 08: Auch Shared-Engines brauchen einheitliche simulated_ms-Ausgabe, sonst ist die Messlogik zwischen Wrappern inkonsistent.

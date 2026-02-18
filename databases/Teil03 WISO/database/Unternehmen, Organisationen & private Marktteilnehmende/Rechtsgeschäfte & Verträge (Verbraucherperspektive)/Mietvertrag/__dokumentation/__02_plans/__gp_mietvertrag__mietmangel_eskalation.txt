@@ -1,0 +1,53 @@
+# __gp_mietvertrag__mietmangel_eskalation
+
+## Spielidee
+"Mietmangel-Eskalation" stellt Mangelmeldungen dar. Lernende waehlen in welcher Reihenfolge Meldung, Fristsetzung, Nachweis und weitere Schritte erfolgen.
+
+## Lernziel
+- Strukturierter Umgang mit Mietmaengeln.
+- Verfahrensschritte sinnvoll und nachvollziehbar aufbauen.
+
+## Messbare Progression
+- 10 Mangel-Faelle.
+- Punkte: +9 korrekter Schritt, -4 falscher Schritt.
+- KPI: korrekte Prozessfolge und Schritt-Effizienz.
+- Ziel: mindestens 80 Prozent korrekte Schrittfolgen.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DefectFlowController
+- EscalationEngine
+- ProgressService
+
+### Domaenenobjekte
+- DefectFlowCase(caseId, defectSeverity)
+- ProcessAction(actionId, actionType)
+- FlowResult(sequenceScore, stepCount)
+
+### Beziehungen
+- DefectFlowController steuert 1..* DefectFlowCase.
+- DefectFlowCase enthaelt 4..7 ProcessAction.
+- ProgressService sammelt 1..* FlowResult.
+
+### Zustandsmodell
+- CASE_INIT -> ACTION_SELECT -> VALIDATE -> CASE_FEEDBACK -> CASE_CLOSE
+
+### Sequenz (Happy Path)
+1. DefectFlowController startet DefectFlowCase.
+2. Player ordnet ProcessAction.
+3. EscalationEngine validiert Reihenfolge.
+4. FlowResult wird berechnet.
+5. ProgressService aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Fristsetzung verursacht doppelten Abzug.
+- Loesung ohne Fehlschritt gibt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, defectSeverity, actions[], expectedOrder[]
+
+## Abnahmekriterien
+- Prozessfolge ist visuell und logisch eindeutig.
+- KPI trennt Korrektheit von Geschwindigkeit.
+- Fehlerfeedback nennt den korrekten naechsten Schritt.

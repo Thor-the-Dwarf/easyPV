@@ -1,0 +1,53 @@
+# __gp_kreditvertrag__ueberschuldungs_radar
+
+## Spielidee
+"Ueberschuldungs-Radar" simuliert Haushaltsentwicklungen ueber mehrere Monate. Lernende erkennen Warnsignale frueh und waehlen praeventive Massnahmen.
+
+## Lernziel
+- Risikofaktoren fuer Ueberschuldung frueh identifizieren.
+- Gegenmassnahmen priorisieren und zeitnah einsetzen.
+
+## Messbare Progression
+- 6 Monatskampagnen mit je 5 Ereignissen.
+- Punkte: +12 korrektes Risiko-Handling, -6 ignoriertes Warnsignal.
+- KPI 1: Warnsignal-Erkennungsquote.
+- KPI 2: Stabilitaetsindex am Kampagnenende.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CampaignController
+- RiskEngine
+- StabilityService
+
+### Domaenenobjekte
+- Campaign(campaignId, startBudget)
+- RiskEvent(eventId, severity, impact)
+- MitigationAction(actionId, expectedEffect)
+
+### Beziehungen
+- CampaignController steuert 1..* Campaign.
+- Campaign enthaelt 3..8 RiskEvent.
+- RiskEngine bewertet MitigationAction gegen RiskEvent.
+
+### Zustandsmodell
+- CAMPAIGN_START -> EVENT_ALERT -> ACTION_SELECT -> IMPACT_RESOLVE -> CAMPAIGN_SUMMARY
+
+### Sequenz (Happy Path)
+1. CampaignController startet Kampagne.
+2. RiskEngine meldet RiskEvent.
+3. Player waehlt MitigationAction.
+4. Impact wird berechnet und Stabilitaetsindex aktualisiert.
+5. StabilityService erstellt Monatsreport.
+
+## Regeln
+- Unbehandeltes Hochrisiko-Event halbiert Rundenpunkte.
+- Fruehzeitige Gegenmassnahme gibt Praeventionsbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: campaignId, startBudget, events[{id,severity,impact}], mitigationOptions[]
+
+## Abnahmekriterien
+- Warnsignale sind eindeutig priorisiert dargestellt.
+- Stabilitaetsindex ist ueber Kampagnen vergleichbar.
+- Sessionreport zeigt Wirkung der gewaehlten Massnahmen.

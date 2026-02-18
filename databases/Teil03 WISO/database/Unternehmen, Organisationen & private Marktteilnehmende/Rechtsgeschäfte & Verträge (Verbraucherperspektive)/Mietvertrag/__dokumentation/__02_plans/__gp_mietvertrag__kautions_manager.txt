@@ -1,0 +1,53 @@
+# __gp_mietvertrag__kautions_manager
+
+## Spielidee
+"Kautions-Manager" simuliert Einzug, Laufzeit und Auszug. Lernende bewerten, welche Abzuege aus der Kaution sachlich gerechtfertigt sind.
+
+## Lernziel
+- Kautionsabrechnung strukturiert beurteilen.
+- Begruendete Abzuege von unzulaessigen Positionen unterscheiden.
+
+## Messbare Progression
+- 7 Lebenszyklusfaelle.
+- Punkte: +12 korrekte Abzugsentscheidung, -6 falsche Entscheidung.
+- KPI 1: Abzugsgenauigkeit.
+- KPI 2: Anteil korrekt begruendeter Entscheidungen.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DepositCaseController
+- DeductionEngine
+- ScoreService
+
+### Domaenenobjekte
+- DepositCase(caseId, depositAmount, claims[])
+- Claim(claimId, amount, justificationType)
+- SettlementResult(acceptedClaims, rejectedClaims)
+
+### Beziehungen
+- DepositCase enthaelt 2..10 Claim.
+- DeductionEngine bewertet 1..* Claim.
+- ScoreService aggregiert 1..* SettlementResult.
+
+### Zustandsmodell
+- INIT_CASE -> CLAIM_REVIEW -> DECISION_SUBMIT -> SETTLEMENT -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. DepositCaseController startet DepositCase.
+2. Player bewertet Claim.
+3. DeductionEngine prueft Begruendung.
+4. SettlementResult berechnet Endstand.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Fehlende Begruendung reduziert Punktwert.
+- Falsche Vollablehnung aller Claims erzeugt Strafabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, depositAmount, claims[{id,amount,justificationType,isValid}]
+
+## Abnahmekriterien
+- Endabrechnung ist numerisch nachvollziehbar.
+- KPI trennt Bewertung und Begruendung.
+- Lernreport listet haeufigste Fehlannahmen.

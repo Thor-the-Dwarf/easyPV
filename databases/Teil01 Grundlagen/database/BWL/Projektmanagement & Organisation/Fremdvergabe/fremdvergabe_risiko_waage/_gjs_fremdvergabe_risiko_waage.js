@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         items: [],
         categories: [],
         placements: new Map(), // itemId -> categoryId
-        isChecked: false
+        isChecked: false,
+        simulatedMs: 0
     };
 
     // Load Game Data
@@ -288,13 +289,16 @@ document.addEventListener('DOMContentLoaded', () => {
             placed_count: gameState.placements.size,
             total_items: total,
             score_percent: readScorePercent(),
-            checked: Boolean(gameState.isChecked)
+            checked: Boolean(gameState.isChecked),
+            simulated_ms: gameState.simulatedMs
         };
         return JSON.stringify(payload);
     }
 
     window.render_game_to_text = renderGameToText;
     window.advanceTime = function advanceTime(ms) {
-        return ms;
+        const deltaMs = Math.max(0, Number(ms) || 0);
+        gameState.simulatedMs += deltaMs;
+        return gameState.simulatedMs;
     };
 });

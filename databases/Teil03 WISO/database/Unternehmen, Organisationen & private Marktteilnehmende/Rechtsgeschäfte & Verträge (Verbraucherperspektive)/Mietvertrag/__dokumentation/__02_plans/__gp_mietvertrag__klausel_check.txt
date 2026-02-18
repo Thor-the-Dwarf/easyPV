@@ -1,0 +1,53 @@
+# __gp_mietvertrag__klausel_check
+
+## Spielidee
+"Mietvertrag-Klausel-Check" praesentiert typische Vertragsklauseln. Lernende bewerten, ob sie unauffaellig, kritisch oder eindeutig problematisch sind.
+
+## Lernziel
+- Relevante Mietvertragsklauseln schneller einordnen.
+- Risikoerkennung bei Vertragsabschluss verbessern.
+
+## Messbare Progression
+- 20 Klauselkarten.
+- Punkte: +8 korrekte Einordnung, -4 falsche Einordnung.
+- +3 bei korrekter Risiko-Begruendung.
+- KPI: Einordnungsquote und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ClauseCaseController
+- RiskClassifier
+- ScoreService
+
+### Domaenenobjekte
+- ClauseCase(caseId, clauseText)
+- RiskDecision(level, reasonCode)
+- ClauseResult(isCorrect, hintId)
+
+### Beziehungen
+- ClauseCaseController verwaltet 1..* ClauseCase.
+- Player erzeugt pro ClauseCase genau eine RiskDecision.
+- RiskClassifier erzeugt ClauseResult.
+
+### Zustandsmodell
+- READY -> CLAUSE_REVIEW -> DECISION_SUBMIT -> FEEDBACK -> NEXT
+
+### Sequenz (Happy Path)
+1. ClauseCaseController zeigt ClauseCase.
+2. Player waehlt Risiko-Level und Begruendung.
+3. RiskClassifier prueft Entscheidung.
+4. ClauseResult wird visualisiert.
+5. ScoreService aktualisiert Sessionwerte.
+
+## Regeln
+- Korrektes Level ohne Begruendung gibt nur Teilpunkte.
+- Fehlserie von drei Karten aktiviert Lernhilfe.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, clauseText, expectedLevel, rationaleOptions[]
+
+## Abnahmekriterien
+- Risiko-Level sind konsistent und nachvollziehbar.
+- KPI zeigt getrennt Level- und Begruendungsleistung.
+- Sessionreport markiert wiederkehrende Fehlerarten.

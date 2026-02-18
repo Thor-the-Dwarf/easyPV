@@ -1,0 +1,53 @@
+# __gp_kaufvertrag__angebotsannahme_flowcheck
+
+## Spielidee
+"Angebotsannahme-Flowcheck" simuliert typische Verkaufssituationen. Lernende entscheiden pro Schritt, ob ein wirksamer Kaufvertrag bereits zustande gekommen ist.
+
+## Lernziel
+- Angebot und Annahme als Kernelemente des Kaufvertrags sicher anwenden.
+- Zeitpunkt des Vertragsschlusses in Alltagsszenarien erkennen.
+
+## Messbare Progression
+- 12 Fallketten pro Session.
+- Punkte: +10 korrekte Einordnung, -4 falsche Einordnung.
+- Zeitbonus: +3 bei Antwort unter 12 Sekunden.
+- KPI: Abschlussgenauigkeit und mittlere Reaktionszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseFlowController
+- ContractRuleEngine
+- ScoreService
+
+### Domaenenobjekte
+- FlowCase(caseId, steps[])
+- Step(stepId, actorRole, actionType)
+- EvaluationResult(isContractFormed, reasonCode)
+
+### Beziehungen
+- CaseFlowController verwaltet 1..* FlowCase.
+- FlowCase enthaelt 3..8 Step.
+- ContractRuleEngine erstellt je Step ein EvaluationResult.
+
+### Zustandsmodell
+- READY -> STEP_ACTIVE -> PLAYER_DECISION -> RULE_EVALUATION -> NEXT_STEP -> CASE_DONE
+
+### Sequenz (Happy Path)
+1. CaseFlowController laedt FlowCase.
+2. Player bewertet aktuellen Step.
+3. ContractRuleEngine prueft Vertragsstatus.
+4. EvaluationResult wird mit Begruendung angezeigt.
+5. ScoreService aktualisiert Sessionmetriken.
+
+## Regeln
+- Falsche Einordnung beim finalen Schritt erzeugt doppelten Punktabzug.
+- Drei korrekte Faelle in Folge aktivieren Serienbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, steps[{id, actorRole, actionType, legalHint}], expectedState
+
+## Abnahmekriterien
+- Vertragsstatus ist nach jedem Schritt nachvollziehbar.
+- KPI-Ansicht zeigt Korrektheit je Fallkette.
+- Lernende koennen Fehlgruende am Ende exportieren.

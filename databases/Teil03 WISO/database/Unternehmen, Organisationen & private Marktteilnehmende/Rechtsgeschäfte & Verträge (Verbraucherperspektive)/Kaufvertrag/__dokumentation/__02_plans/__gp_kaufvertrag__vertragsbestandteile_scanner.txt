@@ -1,0 +1,52 @@
+# __gp_kaufvertrag__vertragsbestandteile_scanner
+
+## Spielidee
+"Vertragsbestandteile-Scanner" zeigt Kurztexte aus Kaufabsprachen. Lernende markieren die zwingenden Bestandteile fuer einen wirksamen Kaufvertrag.
+
+## Lernziel
+- Wesentliche Vertragsbestandteile von unverbindlichen Angaben trennen.
+- Textanalyse bei Vertragspruefung trainieren.
+
+## Messbare Progression
+- 10 Dokumentsets mit je 7 Textbausteinen.
+- Punkte: +6 je korrekt markiertem Pflichtbaustein, -3 je Fehlmarkierung.
+- KPI: Praezision, Recall und Vollstaendigkeitsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DocumentController
+- ClauseClassifier
+- MetricService
+
+### Domaenenobjekte
+- DocumentSet(setId, clauses[])
+- Clause(clauseId, text, classType)
+- ScanResult(tp, fp, fn)
+
+### Beziehungen
+- DocumentSet enthaelt 5..12 Clause.
+- ClauseClassifier erzeugt je Set ein ScanResult.
+- MetricService berechnet 1..* ScanResult zu einer Lernkurve.
+
+### Zustandsmodell
+- LOAD_SET -> SCAN_ACTIVE -> SUBMIT -> RESULT_VIEW -> NEXT_SET
+
+### Sequenz (Happy Path)
+1. DocumentController liefert DocumentSet.
+2. Player markiert Pflichtbausteine.
+3. ClauseClassifier vergleicht mit Sollmuster.
+4. MetricService berechnet Kennzahlen.
+5. Feedback zeigt fehlende und ueberfluessige Markierungen.
+
+## Regeln
+- Uebermarkierung senkt Praezision.
+- Fehlende Pflichtangabe senkt Recall und Gesamtpunkte.
+
+## Datenmodell (JSON-Idee)
+- fields: setId, clauses[{id,text,classType}], expectedMandatoryIds[]
+
+## Abnahmekriterien
+- Praezision und Recall sind pro Set sichtbar.
+- Markierungsfehler werden textnah erklaert.
+- Fortschritt ist ueber mehrere Sessions vergleichbar.

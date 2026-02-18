@@ -1,0 +1,53 @@
+# __gp_kaufvertrag__preisfalle_detektor
+
+## Spielidee
+"Preisfalle-Detektor" praesentiert Shop-Angebote mit Zusatzkosten, Rabatten und Lieferbedingungen. Lernende identifizieren das wirtschaftlich und rechtlich sauberste Angebot.
+
+## Lernziel
+- Endpreis und Vertragsbedingungen gemeinsam bewerten.
+- Versteckte Kosten systematisch aufdecken.
+
+## Messbare Progression
+- 18 Angebotskarten.
+- Punkte: +8 richtige Wahl, -4 falsche Wahl.
+- Zusatzpunkte: +2 je korrekt erkannter Kostenfaktor.
+- KPI: Endpreis-Treffsicherheit und Kostenfaktor-Erkennung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- OfferController
+- PricingEngine
+- ScoreBoard
+
+### Domaenenobjekte
+- OfferCard(cardId, basePrice, addOns[])
+- CostFactor(factorId, amount, visibility)
+- OfferEvaluation(totalCost, complianceScore)
+
+### Beziehungen
+- OfferCard enthaelt 0..* CostFactor.
+- PricingEngine erzeugt je OfferCard ein OfferEvaluation.
+- ScoreBoard aggregiert 1..* OfferEvaluation.
+
+### Zustandsmodell
+- READY -> OFFER_REVIEW -> DECISION -> EVALUATION -> NEXT_OFFER
+
+### Sequenz (Happy Path)
+1. OfferController zeigt OfferCard.
+2. Player waehlt Angebot und markiert Kostenfaktoren.
+3. PricingEngine berechnet totalCost.
+4. OfferEvaluation wird mit Vergleichstabelle angezeigt.
+5. ScoreBoard aktualisiert KPI.
+
+## Regeln
+- Nicht erkannte Pflichtkosten fuehren zu Zusatzabzug.
+- Fuenf korrekte Karten in Folge aktivieren Multiplikator x1.25.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, basePrice, addOns[{id,amount,visibility}], expectedBestOffer
+
+## Abnahmekriterien
+- Endpreisberechnung ist transparent.
+- KPI zeigt getrennt Wahl- und Faktorenleistung.
+- Lernreport nennt haeufig uebersehene Kostenarten.

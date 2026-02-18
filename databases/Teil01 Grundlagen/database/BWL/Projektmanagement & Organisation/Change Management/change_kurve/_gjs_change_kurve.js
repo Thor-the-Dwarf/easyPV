@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         data: null,
         selectedStatement: null,
         assignments: {}, // phaseId -> statementId
-        solved: false
+        solved: false,
+        simulatedMs: 0
     };
 
     // Load Data
@@ -180,14 +181,17 @@ document.addEventListener('DOMContentLoaded', () => {
             target_count: targetCount,
             selected_statement_id: gameState.selectedStatement || null,
             solved: Boolean(gameState.solved),
-            overlay_visible: overlay.style.display === 'block'
+            overlay_visible: overlay.style.display === 'block',
+            simulated_ms: gameState.simulatedMs
         };
         return JSON.stringify(payload);
     }
 
     window.render_game_to_text = renderGameToText;
     window.advanceTime = function advanceTime(ms) {
-        return ms;
+        const deltaMs = Math.max(0, Number(ms) || 0);
+        gameState.simulatedMs += deltaMs;
+        return gameState.simulatedMs;
     };
 
 });

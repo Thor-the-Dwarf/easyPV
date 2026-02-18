@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     wrongCount: 0,
     maxResistance: 3,
     clickedIds: new Set(),
-    solved: false
+    solved: false,
+    simulatedMs: 0
   };
 
   // Load Data
@@ -143,13 +144,16 @@ document.addEventListener('DOMContentLoaded', () => {
       wrong_count: gameState.wrongCount,
       target_count: Number(gameState.maxResistance) || 0,
       clicked_count: gameState.clickedIds.size,
-      solved: Boolean(gameState.solved)
+      solved: Boolean(gameState.solved),
+      simulated_ms: gameState.simulatedMs
     };
     return JSON.stringify(payload);
   }
 
   window.render_game_to_text = renderGameToText;
   window.advanceTime = function advanceTime(ms) {
-    return ms;
+    const deltaMs = Math.max(0, Number(ms) || 0);
+    gameState.simulatedMs += deltaMs;
+    return gameState.simulatedMs;
   };
 });

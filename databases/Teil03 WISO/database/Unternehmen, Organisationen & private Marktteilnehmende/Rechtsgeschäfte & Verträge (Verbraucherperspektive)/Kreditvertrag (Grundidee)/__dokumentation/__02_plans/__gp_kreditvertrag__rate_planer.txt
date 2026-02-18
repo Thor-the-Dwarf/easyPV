@@ -1,0 +1,53 @@
+# __gp_kreditvertrag__rate_planer
+
+## Spielidee
+"Rate-Planer" simuliert verschiedene Kreditangebote. Lernende waehlen eine Monatsrate, die tragbar bleibt und gleichzeitig eine vernuenftige Laufzeit ermoeglicht.
+
+## Lernziel
+- Zusammenhang zwischen Rate, Laufzeit und Gesamtbelastung verstehen.
+- Finanzielle Tragfaehigkeit realistisch abschaetzen.
+
+## Messbare Progression
+- 10 Kreditfaelle.
+- Punkte: +10 tragfaehige Wahl, -5 untragbare Wahl.
+- +4 fuer ausgeglichene Wahl (Tragfaehigkeit + kurze Laufzeit).
+- KPI: Tragfaehigkeitsquote und Laufzeitqualitaet.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- LoanCaseController
+- AffordabilityEngine
+- ScoreTracker
+
+### Domaenenobjekte
+- LoanCase(caseId, income, fixedCosts, amount)
+- RateOption(optionId, monthlyRate, durationMonths)
+- LoanResult(isAffordable, burdenRatio)
+
+### Beziehungen
+- LoanCase enthaelt 3..6 RateOption.
+- AffordabilityEngine validiert je RateOption ein LoanResult.
+- ScoreTracker aggregiert 1..* LoanResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> RATE_SELECT -> EVALUATION -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. LoanCaseController laedt LoanCase.
+2. Player waehlt RateOption.
+3. AffordabilityEngine berechnet burdenRatio.
+4. LoanResult wird visualisiert.
+5. ScoreTracker aktualisiert Sessionfortschritt.
+
+## Regeln
+- Ueberschreitung des Max-Belastungswertes fuehrt zu Punktabzug.
+- Drei tragfaehige Entscheidungen in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, income, fixedCosts, amount, rateOptions[]
+
+## Abnahmekriterien
+- Tragfaehigkeit ist rechnerisch nachvollziehbar.
+- KPI zeigt Belastungstrend je Fall.
+- Endreport listet riskante Entscheidungen.

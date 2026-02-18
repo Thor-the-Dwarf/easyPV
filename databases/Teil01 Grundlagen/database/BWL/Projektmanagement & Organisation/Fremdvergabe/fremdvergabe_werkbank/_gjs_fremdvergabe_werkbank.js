@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         falseAlarms: 0,
         satisfaction: 100,
         costs: 0,
+        simulatedMs: 0,
         products: [], // Array of active product objects
         lastSpawn: 0,
         interval: null
@@ -231,14 +232,17 @@ document.addEventListener('DOMContentLoaded', () => {
             missed_defects: Number(gameState.missedDefects) || 0,
             false_alarms: Number(gameState.falseAlarms) || 0,
             satisfaction_percent: Number(gameState.satisfaction) || 0,
-            cost_eur: Number(gameState.costs) || 0
+            cost_eur: Number(gameState.costs) || 0,
+            simulated_ms: gameState.simulatedMs
         };
         return JSON.stringify(payload);
     }
 
     window.render_game_to_text = renderGameToText;
     window.advanceTime = function advanceTime(ms) {
-        return ms;
+        const deltaMs = Math.max(0, Number(ms) || 0);
+        gameState.simulatedMs += deltaMs;
+        return gameState.simulatedMs;
     };
 
     initGame();

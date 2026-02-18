@@ -1,0 +1,53 @@
+# __gp_kaufvertrag__maengelrechte_router
+
+## Spielidee
+"Maengelrechte-Router" zeigt Kaufmaengel-Faelle. Lernende waehlen den naechsten passenden Schritt: Nacherfuellung, Minderung, Ruecktritt oder Schadensersatz.
+
+## Lernziel
+- Reaktionslogik bei Maengeln strukturieren.
+- Passende Rechte je Falllage unterscheiden.
+
+## Messbare Progression
+- 15 Fallkarten.
+- Punkte: +9 korrekter Prozessschritt, -5 unpassender Schritt.
+- KPI 1: Routing-Genauigkeit.
+- KPI 2: durchschnittliche Schritte bis zur korrekten Loesung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DefectCaseController
+- RightsRoutingEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- DefectCase(caseId, defectType, priorAttempts)
+- RouteOption(optionId, actionType)
+- RouteResult(isValid, nextState)
+
+### Beziehungen
+- DefectCaseController steuert 1..* DefectCase.
+- DefectCase besitzt 3..5 RouteOption.
+- ProgressTracker sammelt 1..* RouteResult.
+
+### Zustandsmodell
+- CASE_START -> OPTION_SELECT -> ROUTE_VALIDATE -> CASE_PROGRESS -> CASE_FINISH
+
+### Sequenz (Happy Path)
+1. DefectCaseController startet DefectCase.
+2. Player waehlt RouteOption.
+3. RightsRoutingEngine validiert Reihenfolge.
+4. RouteResult liefert naechsten Zustand.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Pflichtstufe verursacht doppelten Punktabzug.
+- Effiziente Loesung mit Minimal-Schritten bringt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, defectType, priorAttempts, options[], expectedPath[]
+
+## Abnahmekriterien
+- Prozesspfad ist pro Fall visualisierbar.
+- KPI trennt Korrektheit und Effizienz.
+- Fehler werden mit Alternativschritt erklaert.

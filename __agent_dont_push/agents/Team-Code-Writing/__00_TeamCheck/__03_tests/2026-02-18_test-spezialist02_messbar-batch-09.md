@@ -26,3 +26,4 @@ Die verbleibenden 5 Teil01-Sonderspiele auf denselben Messstandard bringen wie E
 - `output/web-game-measurable-batch9-outsourcing-vertrag/`
 - `output/web-game-measurable-batch9-risiko-waage/`
 - `output/web-game-measurable-batch9-werkbank/`
+- Nachtrag: simulated_ms wurde in allen 5 Teil01-Sonderspielen in state-0.json nachgewiesen (alle ~200ms im Smoke-Lauf).

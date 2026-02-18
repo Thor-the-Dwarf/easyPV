@@ -1,0 +1,46 @@
+# __gp_globalisierung_chancen_risiken__arbeitsmarkt_impact_match
+
+## Spielidee
+"Arbeitsmarkt-Impact-Match" ordnet globale Entwicklungen ihren Auswirkungen auf Berufe zu.
+
+## Lernziel
+- Arbeitsmarkteffekte globaler Trends erkennen.
+- Chancen und Risiken fuer Berufsprofile einordnen.
+
+## Messbare Progression
+- 22 Karten.
+- Punkte: +6 korrekt, -3 falsch.
+- KPI: Trefferquote je Impact-Typ.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- ImpactEngine
+- ScoreService
+
+### Domaenenobjekte
+- ImpactCard(cardId, trendType)
+- ImpactOption(optionId, impactType)
+- MatchResult(isCorrect)
+
+### Beziehungen
+- ImpactCard hat 3..5 ImpactOption.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE
+
+### Sequenz (Happy Path)
+1. Trend anzeigen.
+2. Impact waehlen.
+3. Validieren.
+
+## Regeln
+- Kernimpact falsch: Zusatzabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: trendType, options, expectedImpact
+
+## Abnahmekriterien
+- Impact klar erklaert.
+- KPI je Impact-Kategorie.

@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Betriebsprozesse",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 9,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was ist der erste Schritt im Monitor-Szenario?",
+      "hint": "Zuerst Problemstelle diagnostizieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fehlerdiagnose der Schnittstelle",
+          "correct": true,
+          "feedback": "Richtig. Ohne Diagnose kein passender Fix."
+        },
+        {
+          "id": "b",
+          "text": "Direkt irgendeinen Fix waehlen",
+          "correct": false,
+          "feedback": "Zu frueh ohne Ursachenbild."
+        },
+        {
+          "id": "c",
+          "text": "Nur Nachrichten archivieren",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Folge hat eine falsche Diagnose laut Regel?",
+      "hint": "Der Korrekturbonus wird dadurch beeinflusst.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Der Korrekturbonus wird blockiert",
+          "correct": true,
+          "feedback": "Richtig. Erst Diagnose, dann Korrekturbonus."
+        },
+        {
+          "id": "b",
+          "text": "Es gibt immer vollen Bonus",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur die Zeit wird gezaehlt",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI muessen ausgewiesen werden?",
+      "hint": "Diagnose und Fix separat.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Diagnosequote und Korrekturquote",
+          "correct": true,
+          "feedback": "Richtig. Das zeigt beide Lernziele."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Meldungen",
+          "correct": false,
+          "feedback": "Keine Qualitaetsmetrik."
+        },
+        {
+          "id": "c",
+          "text": "Nur Spielzeit",
+          "correct": false,
+          "feedback": "Zu grob."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gibt es den Doppelbonus?",
+      "hint": "Beide Entscheidungen muessen stimmen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei korrekter Diagnose und korrektem Fix",
+          "correct": true,
+          "feedback": "Richtig. Doppelt korrekt wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei nur einem richtigen Klick",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Bei maximaler Rundendauer",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was sollte der Fehlerreport hervorheben?",
+      "hint": "Uebersehene Muster sind entscheidend.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Die uebersehenen Schnittstellenmuster",
+          "correct": true,
+          "feedback": "Richtig. Damit werden Blindspots sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur den Gesamtscore",
+          "correct": false,
+          "feedback": "Zu unpraezise."
+        },
+        {
+          "id": "c",
+          "text": "Nur die zuletzt bearbeitete Nachricht",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    }
+  ]
+}

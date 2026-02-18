@@ -1,0 +1,46 @@
+# __gp_globalisierung_chancen_risiken__wertschoepfungsnetz_duell
+
+## Spielidee
+"Wertschoepfungsnetz-Duell" vergleicht zwei globale Netzwerkoptionen.
+
+## Lernziel
+- Internationale Netzwerke nach Stabilitaet und Risiko vergleichen.
+- Auswirkungen von Abhaengigkeiten verstehen.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekt, -4 falsch, +3 Begruendung.
+- KPI: Wahlgenauigkeit, Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- MetricService
+
+### Domaenenobjekte
+- DuelCase(duelId, netA, netB)
+- NetworkOption(optionId, riskVector)
+- DuelResult(winnerId)
+
+### Beziehungen
+- DuelCase enthaelt 2 NetworkOption.
+
+### Zustandsmodell
+- INIT -> REVIEW -> CHOOSE -> EVALUATE
+
+### Sequenz (Happy Path)
+1. Optionen vergleichen.
+2. Entscheidung treffen.
+3. Validierung.
+
+## Regeln
+- Richtige Wahl ohne Begruendung: Teilpunkte.
+
+## Datenmodell (JSON-Idee)
+- fields: netA, netB, expectedWinner
+
+## Abnahmekriterien
+- Vergleichslogik sichtbar.
+- KPI getrennt nach Wahl/Begruendung.

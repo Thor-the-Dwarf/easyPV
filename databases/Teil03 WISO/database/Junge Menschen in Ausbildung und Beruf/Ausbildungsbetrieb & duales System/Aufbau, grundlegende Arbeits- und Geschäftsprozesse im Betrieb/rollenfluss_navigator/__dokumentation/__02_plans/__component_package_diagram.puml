@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Rollenfluss-Navigator
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: rollenfluss_navigator" {
+  component "_ghtml_rollenfluss_navigator.html" as HTML
+  component "_gjs_rollenfluss_navigator.js" as JS
+  component "_gcss_rollenfluss_navigator.css" as CSS
+  database "_data/_gg01_rollenfluss_navigator.json" as GG
+  database "_data/__metaData_Aufbau, grundlegende Arbeits- und Geschaeftsprozesse im Betrieb.json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

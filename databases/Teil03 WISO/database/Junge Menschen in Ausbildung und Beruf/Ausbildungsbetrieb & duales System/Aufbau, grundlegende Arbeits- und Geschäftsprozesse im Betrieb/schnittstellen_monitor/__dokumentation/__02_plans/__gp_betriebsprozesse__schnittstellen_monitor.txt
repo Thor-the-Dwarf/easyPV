@@ -1,0 +1,53 @@
+# __gp_betriebsprozesse__schnittstellen_monitor
+
+## Spielidee
+"Schnittstellen-Monitor" zeigt Datenaustausch zwischen Bereichen. Lernende erkennen fehlende oder fehlerhafte Uebergaben und setzen die naechste Korrekturmassnahme.
+
+## Lernziel
+- Schnittstellenrisiken in Prozessen erkennen.
+- Stoerungen mit passenden Schritten beheben.
+
+## Messbare Progression
+- 10 Monitor-Szenarien.
+- Punkte: +9 korrekte Fehlerdiagnose, -4 falsche Diagnose.
+- +4 fuer passende Korrekturmassnahme.
+- KPI: Diagnosequote und Korrekturquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- MonitorController
+- InterfaceEngine
+- ResolutionService
+
+### Domaenenobjekte
+- InterfaceScenario(scenarioId, messages[])
+- Message(messageId, status)
+- ResolutionResult(diagnosisCorrect, fixCorrect)
+
+### Beziehungen
+- InterfaceScenario enthaelt 5..20 Message.
+- InterfaceEngine erzeugt ResolutionResult pro Szenario.
+- ResolutionService aggregiert 1..* ResolutionResult.
+
+### Zustandsmodell
+- LOAD_SCENARIO -> DIAGNOSE -> FIX_SELECT -> EVALUATE -> NEXT_SCENARIO
+
+### Sequenz (Happy Path)
+1. MonitorController laedt InterfaceScenario.
+2. Player markiert Problemstelle.
+3. InterfaceEngine validiert Diagnose.
+4. Player waehlt Korrektur.
+5. ResolutionService aktualisiert KPI.
+
+## Regeln
+- Falsche Diagnose blockiert Korrekturbonus.
+- Doppelkorrekt (Diagnose + Fix) gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: scenarioId, messages[{id,status}], expectedDiagnosis, fixOptions[]
+
+## Abnahmekriterien
+- Diagnose und Fix werden getrennt bewertet.
+- KPI zeigt Stoerungsanalyse klar.
+- Fehlerreport nennt uebersehene Schnittstellenmuster.

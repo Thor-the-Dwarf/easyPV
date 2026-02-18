@@ -1,0 +1,46 @@
+# __gp_globalisierung_chancen_risiken__handelsschock_simulator
+
+## Spielidee
+"Handelsschock-Simulator" simuliert Zoll- oder Nachfrageeinbrueche und fordert Gegensteuerung.
+
+## Lernziel
+- Schockwirkungen auf Unternehmen verstehen.
+- Reaktionsstrategien testen.
+
+## Messbare Progression
+- 8 Runden.
+- Punkte: +10 stabile Runde, -5 instabile Runde.
+- KPI: Stabilitaetsindex, Fehlentscheidungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- SimulationController
+- ShockEngine
+- KPIService
+
+### Domaenenobjekte
+- RoundCase(roundId, shockType)
+- ControlAction(actionId, parameterSet)
+- RoundResult(stabilityScore)
+
+### Beziehungen
+- RoundCase enthaelt 1..* ControlAction.
+
+### Zustandsmodell
+- PREPARE -> RUN -> ADJUST -> EVALUATE
+
+### Sequenz (Happy Path)
+1. Schock starten.
+2. Aktion setzen.
+3. Ergebnis berechnen.
+
+## Regeln
+- Ueberreaktion bei kleinem Schock: Zusatzabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: shockType, options, expectedBand
+
+## Abnahmekriterien
+- Schockwirkung nachvollziehbar.
+- KPI Stabilitaet + Qualitaet.

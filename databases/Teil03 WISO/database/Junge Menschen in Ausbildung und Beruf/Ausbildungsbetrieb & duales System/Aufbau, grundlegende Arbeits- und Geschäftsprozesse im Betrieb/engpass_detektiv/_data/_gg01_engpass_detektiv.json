@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Betriebsprozesse",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Kennzahl weist am direktesten auf einen Engpass hin?",
+      "hint": "Hohe Wartezeit plus steigender Rueckstau sind typisch.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hohe Wartezeiten vor einer Station",
+          "correct": true,
+          "feedback": "Richtig. Das signalisiert Kapazitaetsmangel."
+        },
+        {
+          "id": "b",
+          "text": "Niedrige Fehlerquote im Versand",
+          "correct": false,
+          "feedback": "Kein Engpasssignal."
+        },
+        {
+          "id": "c",
+          "text": "Mehr Pausenprotokolle",
+          "correct": false,
+          "feedback": "Nicht ausreichend als Ursache."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wie wird eine falsche Engpassdiagnose bewertet?",
+      "hint": "Die Diagnose zaehlt als Kernentscheidung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mit deutlichem Punktabzug",
+          "correct": true,
+          "feedback": "Richtig. Fehlfokus kostet viele Punkte."
+        },
+        {
+          "id": "b",
+          "text": "Ohne Einfluss auf den Score",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Immer als korrekt",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Kombination bringt Teilpunkte?",
+      "hint": "Korrekter Engpass, aber falsche Massnahme.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Engpass korrekt, Massnahme unpassend",
+          "correct": true,
+          "feedback": "Genau. Erkennung stimmt, Wirkung nicht."
+        },
+        {
+          "id": "b",
+          "text": "Beides falsch",
+          "correct": false,
+          "feedback": "Keine Teilpunkte fuer doppelten Fehler."
+        },
+        {
+          "id": "c",
+          "text": "Nur schnell klicken",
+          "correct": false,
+          "feedback": "Tempo ersetzt keine Diagnose."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI trennt das Spiel laut Plan?",
+      "hint": "Erkennung und Wirksamkeit sind getrennt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Engpass-Treffquote und Massnahmenwirksamkeit",
+          "correct": true,
+          "feedback": "Richtig. Beide Achsen sind Pflicht."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "feedback": "Zu grob fuer Verbesserungen."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Faelle",
+          "correct": false,
+          "feedback": "Ohne Qualitaetsbezug."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann gibt es den Serienbonus?",
+      "hint": "Doppelt korrekte Faelle hintereinander.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Engpass und Massnahme beide korrekt sind",
+          "correct": true,
+          "feedback": "Richtig. Die komplette Analyse zaehlt."
+        },
+        {
+          "id": "b",
+          "text": "Bei zufaelligem Raten",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei der ersten Runde",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    }
+  ]
+}

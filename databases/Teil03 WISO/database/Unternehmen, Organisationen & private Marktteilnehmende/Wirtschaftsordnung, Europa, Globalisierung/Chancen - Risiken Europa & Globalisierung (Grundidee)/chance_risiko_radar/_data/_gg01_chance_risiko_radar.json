@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Europa & Globalisierung",
+    "mechanic": "decision_quiz",
+    "variant": "chance_risiko_radar",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Ein Unternehmen erschliesst neue EU-Maerkte. Welche Primarchance passt?",
+      "hint": "Skalierung und Absatz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Groesserer Absatzraum und Skaleneffekte",
+          "correct": true,
+          "feedback": "Richtig. Mehr Marktvolumen kann Effizienz heben."
+        },
+        {
+          "id": "b",
+          "text": "Automatisch keine Konkurrenz mehr",
+          "correct": false,
+          "feedback": "Falsch. Wettbewerb nimmt eher zu."
+        },
+        {
+          "id": "c",
+          "text": "Keine Rechtsanforderungen mehr",
+          "correct": false,
+          "feedback": "Falsch. Regeln bleiben relevant."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Risikobewertung passt bei einseitiger Lieferantenstruktur?",
+      "hint": "Konzentrationsrisiko beachten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hohes Ausfallrisiko bei Stoerung des Hauptlieferanten",
+          "correct": true,
+          "feedback": "Richtig. Single-Sourcing kann kritisch sein."
+        },
+        {
+          "id": "b",
+          "text": "Niedriges Risiko unabhaengig von Stoerungen",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Nur Marketingrisiko",
+          "correct": false,
+          "feedback": "Zu eng."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Kombination ist in Hochrisikofaellen sinnvoll?",
+      "hint": "Diversifikation und Monitoring.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Alternativlieferanten plus Fruehwarnindikatoren",
+          "correct": true,
+          "feedback": "Richtig. Das senkt Ausfallwahrscheinlichkeit."
+        },
+        {
+          "id": "b",
+          "text": "Ausschliesslich Kostenfokus ohne Backup",
+          "correct": false,
+          "feedback": "Risikoreich."
+        },
+        {
+          "id": "c",
+          "text": "Verzicht auf Transparenzdaten",
+          "correct": false,
+          "feedback": "Falsch. Transparenz ist zentral."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Was ist ein typischer Nutzen internationaler Kooperation?",
+      "hint": "Innovation und Wissenstransfer.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zugang zu Know-how und Innovationen",
+          "correct": true,
+          "feedback": "Richtig. Netzwerke beschleunigen Lernen."
+        },
+        {
+          "id": "b",
+          "text": "Automatischer Wegfall aller Standards",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Keine Qualitaetssicherung mehr noetig",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI zeigt Bewertungsqualitaet im Radar?",
+      "hint": "Treffer plus Begruendung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Einstufung mit nachvollziehbarer Begruendung",
+          "correct": true,
+          "feedback": "Richtig. Inhalt und Argument zaehlen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl abgegebener Antworten",
+          "correct": false,
+          "feedback": "Zu oberflaechlich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Zeit pro Klick",
+          "correct": false,
+          "feedback": "Ohne Inhalt unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Wie sollte ein Unternehmen auf volatile Nachfrage reagieren?",
+      "hint": "Flexibilitaet im Netzwerk.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kapazitaeten und Beschaffung flexibel steuern",
+          "correct": true,
+          "feedback": "Richtig. Das erhoeht Resilienz."
+        },
+        {
+          "id": "b",
+          "text": "Starre Planung ohne Szenarien",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Nur auf Preisnachlass hoffen",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Welche Einschatzung ist bei regulatorischen Aenderungen korrekt?",
+      "hint": "Compliance frueh integrieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Regelmonitoring reduziert Anpassungsrisiken",
+          "correct": true,
+          "feedback": "Richtig. Fruehe Anpassung verhindert spaetere Kosten."
+        },
+        {
+          "id": "b",
+          "text": "Regeln ignorieren und spaeter reagieren",
+          "correct": false,
+          "feedback": "Riskant."
+        },
+        {
+          "id": "c",
+          "text": "Nur interne Sicht ohne Marktbezug",
+          "correct": false,
+          "feedback": "Zu eng."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Welche Aussage trifft den Kern des Chance-Risiko-Radars?",
+      "hint": "Abwaegung statt Schwarz-Weiss.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Globalisierung braucht differenzierte Fallbewertung",
+          "correct": true,
+          "feedback": "Richtig. Kontext bestimmt die Entscheidung."
+        },
+        {
+          "id": "b",
+          "text": "Jeder Fall ist automatisch Chance",
+          "correct": false,
+          "feedback": "Zu pauschal."
+        },
+        {
+          "id": "c",
+          "text": "Jeder Fall ist automatisch Risiko",
+          "correct": false,
+          "feedback": "Ebenfalls zu pauschal."
+        }
+      ]
+    }
+  ]
+}

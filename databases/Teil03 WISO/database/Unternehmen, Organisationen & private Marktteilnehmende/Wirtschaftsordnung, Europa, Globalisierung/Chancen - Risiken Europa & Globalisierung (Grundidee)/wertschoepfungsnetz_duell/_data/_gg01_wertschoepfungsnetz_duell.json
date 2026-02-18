@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Europa & Globalisierung",
+    "mechanic": "decision_quiz",
+    "variant": "wertschoepfungsnetz_duell",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Option ist meist stabiler bei politischer Unsicherheit?",
+      "hint": "Verteilung statt Konzentration.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Netzwerk mit regionaler Diversifikation",
+          "correct": true,
+          "feedback": "Richtig. Diversifikation reduziert Klumpenrisiko."
+        },
+        {
+          "id": "b",
+          "text": "Monostruktur in einem Hochrisikoraum",
+          "correct": false,
+          "feedback": "Sehr anfaellig."
+        },
+        {
+          "id": "c",
+          "text": "Netz ohne Transparenz",
+          "correct": false,
+          "feedback": "Riskant."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Chance bietet ein globales Netzwerk mit mehreren Partnern?",
+      "hint": "Flexibilitaet und Innovation.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Schnellerer Zugang zu Maerkten und Kompetenzen",
+          "correct": true,
+          "feedback": "Richtig. Netzwerkvielfalt erweitert Optionen."
+        },
+        {
+          "id": "b",
+          "text": "Automatisch null Risiko",
+          "correct": false,
+          "feedback": "Falsch. Risiko bleibt vorhanden."
+        },
+        {
+          "id": "c",
+          "text": "Keine Koordinationskosten",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was ist ein klares Risiko in stark verflochtenen Netzen?",
+      "hint": "Dominoeffekte beachten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stoerungen koennen sich kettenartig ausbreiten",
+          "correct": true,
+          "feedback": "Richtig. Interdependenzen wirken systemisch."
+        },
+        {
+          "id": "b",
+          "text": "Ausfaelle bleiben immer lokal begrenzt",
+          "correct": false,
+          "feedback": "Nicht zwingend."
+        },
+        {
+          "id": "c",
+          "text": "Qualitaetskontrolle wird ueberfluessig",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI beschreibt Wahlgenauigkeit im Duell?",
+      "hint": "Treffer gegen Referenzoption.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Anteil korrekter Netzwerkentscheidungen je Runde",
+          "correct": true,
+          "feedback": "Richtig. Das zeigt Entscheidungsqualitaet."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl gespielter Duelle",
+          "correct": false,
+          "feedback": "Ohne Qualitaet nicht hilfreich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Zeit bis zum Start",
+          "correct": false,
+          "feedback": "Nicht zentral."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Begruendung staerkt eine Entscheidung fachlich?",
+      "hint": "Nenne Risiko- und Stabilitaetsargument.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Abhaengigkeiten, Ausfallpfade und Backup-Faehigkeit vergleichen",
+          "correct": true,
+          "feedback": "Richtig. Das ist belastbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Bauchgefuehl ohne Kriterien",
+          "correct": false,
+          "feedback": "Nicht belastbar."
+        },
+        {
+          "id": "c",
+          "text": "Nur den niedrigsten Preis betrachten",
+          "correct": false,
+          "feedback": "Zu eindimensional."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Wie laesst sich ein Hochrisikonetz absichern?",
+      "hint": "Redundanz und Transparenz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dual-Sourcing, Monitoring und Notfallrouten",
+          "correct": true,
+          "feedback": "Richtig. Das senkt Ausfallfolgen."
+        },
+        {
+          "id": "b",
+          "text": "Weitere Konzentration auf einen Knoten",
+          "correct": false,
+          "feedback": "Erhoeht Risiko."
+        },
+        {
+          "id": "c",
+          "text": "Verzicht auf Fruehwarnsysteme",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Welche Aussage zu globalen Netzen ist korrekt?",
+      "hint": "Trade-off erkennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mehr Reichweite bringt Chancen, braucht aber aktives Risikomanagement",
+          "correct": true,
+          "feedback": "Richtig. Das ist der Kerntrade-off."
+        },
+        {
+          "id": "b",
+          "text": "Mehr Reichweite beseitigt alle Unsicherheit",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Kleine Netze sind immer optimal",
+          "correct": false,
+          "feedback": "Nicht pauschal."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Wofuer steht das Wertschoepfungsnetz-Duell didaktisch?",
+      "hint": "Vergleichende Entscheidung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Optionen systematisch vergleichen und begruendet entscheiden",
+          "correct": true,
+          "feedback": "Richtig. Genau das trainiert das Duell."
+        },
+        {
+          "id": "b",
+          "text": "Nur schnelles Raten",
+          "correct": false,
+          "feedback": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Verzicht auf Messung",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

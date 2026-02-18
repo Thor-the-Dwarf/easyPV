@@ -1,0 +1,17 @@
+@startuml
+title Wertschoepfungsnetz-Duell - Aktivitaetsdiagramm
+start
+:Nutzer oeffnet Spielseite (_ghtml_wertschoepfungsnetz_duell.html);
+:Konfig laden (_data/_gg01_wertschoepfungsnetz_duell.json);
+while (Runden offen?) is (ja)
+  :Prompt lesen;
+  :Option waehlen;
+  if (korrekt?) then (ja)
+    :Punkte gutschreiben;
+  else (nein)
+    :Feedback + Abzug;
+  endif
+endwhile (nein)
+:Ergebnis anzeigen;
+stop
+@enduml

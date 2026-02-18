@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Betriebsprozesse",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 8,
+    "wrong": -3,
+    "completion_bonus": 9
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welcher Startschritt ist in einer Kundenprozesskette typischerweise zuerst?",
+      "hint": "Ohne Auftragserfassung gibt es keine Folgeaktionen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Auftrag erfassen",
+          "correct": true,
+          "feedback": "Richtig. Das ist der uebliche Startpunkt."
+        },
+        {
+          "id": "b",
+          "text": "Rechnung versenden",
+          "correct": false,
+          "feedback": "Zu spaet in der Kette."
+        },
+        {
+          "id": "c",
+          "text": "Retouren buchen",
+          "correct": false,
+          "feedback": "Das ist ein Sonderfall am Ende."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Folge hat ein falscher Startschritt laut Regeln?",
+      "hint": "Startfehler werden staerker bestraft.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Doppelt negativer Einfluss auf den Score",
+          "correct": true,
+          "feedback": "Richtig. Der Einstieg ist kritisch."
+        },
+        {
+          "id": "b",
+          "text": "Keine Auswirkung",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Automatischer Bonus",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI sollen sichtbar sein?",
+      "hint": "Genauigkeit und Zeit pro Kette.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reihenfolgegenauigkeit und Loesungszeit",
+          "correct": true,
+          "feedback": "Richtig. Das sind die Kernmetriken."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Karten",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Name der Kette",
+          "correct": false,
+          "feedback": "Keine Leistungsmetrik."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann werden Bonuspunkte vergeben?",
+      "hint": "Fehlerfreie Kette ist die Bedingung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei komplett fehlerfreier Kette",
+          "correct": true,
+          "feedback": "Richtig. Dann gibt es den Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Bei jedem Vertauschungsfehler",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei Zeitueberschreitung",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was muss der Fehlerhinweis nach Abgabe leisten?",
+      "hint": "Die exakte Positionsabweichung soll sichtbar sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Falsch platzierte Schritte klar markieren",
+          "correct": true,
+          "feedback": "Richtig. So wird die Ursache lernbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur den Endscore anzeigen",
+          "correct": false,
+          "feedback": "Zu wenig Rueckmeldung."
+        },
+        {
+          "id": "c",
+          "text": "Gar kein Feedback geben",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    }
+  ]
+}

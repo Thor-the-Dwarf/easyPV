@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Betriebsprozesse",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 1,
+    "wrong": -2,
+    "completion_bonus": 8
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Priorisierung senkt bei engem Takt zuerst die Durchlaufzeit?",
+      "hint": "Fruehfaellige Auftraege mit kurzer Bearbeitungszeit stabilisieren den Fluss.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kurz und fristnah zuerst einplanen",
+          "correct": true,
+          "feedback": "Richtig. Das senkt Rueckstau im Startbereich."
+        },
+        {
+          "id": "b",
+          "text": "Immer den groessten Auftrag zuerst",
+          "correct": false,
+          "feedback": "Fuehrt oft zu blockierten Stationen."
+        },
+        {
+          "id": "c",
+          "text": "Reihenfolge zufaellig mischen",
+          "correct": false,
+          "feedback": "Nicht planbar und ineffizient."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche KPI zeigt laut Plan die Terminqualitaet?",
+      "hint": "Fristen werden als Quote bewertet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fristtrefferquote",
+          "correct": true,
+          "feedback": "Richtig. Sie zeigt die Termintreue."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Auftraege",
+          "correct": false,
+          "feedback": "Ohne Qualitaetsaussage."
+        },
+        {
+          "id": "c",
+          "text": "Nur Stationsname",
+          "correct": false,
+          "feedback": "Keine Prozessmetrik."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was passiert bei verpasster Frist mit dem Score?",
+      "hint": "Fristversaeumnisse wiegen stark.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Es gibt einen deutlichen Punktabzug",
+          "correct": true,
+          "feedback": "Richtig. Fristfehler werden hart gewertet."
+        },
+        {
+          "id": "b",
+          "text": "Der Score bleibt unveraendert",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Es gibt immer Bonuspunkte",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche Entscheidung hilft gegen Engpassbildung zwischen zwei Stationen?",
+      "hint": "Pufferarme Uebergaben brauchen glatte Last.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Last ausgleichen und Stoesse entzerren",
+          "correct": true,
+          "feedback": "Richtig. Gleichmaessiger Zufluss entlastet."
+        },
+        {
+          "id": "b",
+          "text": "Alle Auftraege gleichzeitig starten",
+          "correct": false,
+          "feedback": "Erhoeht den Stau."
+        },
+        {
+          "id": "c",
+          "text": "Nur manuell ohne Priorisierung steuern",
+          "correct": false,
+          "feedback": "Zu traege bei Lastwechseln."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann soll ein Bonus ausgelost werden?",
+      "hint": "Die Regel verknuepft stabile Fristleistung mit Bonus.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei stabil hoher Fristquote ueber mehrere Runden",
+          "correct": true,
+          "feedback": "Richtig. Konstante Prozessqualitaet wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei jedem Fristfehler",
+          "correct": false,
+          "feedback": "Genau umgekehrt."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei hohem Zufall",
+          "correct": false,
+          "feedback": "Nicht regelbasiert."
+        }
+      ]
+    }
+  ]
+}

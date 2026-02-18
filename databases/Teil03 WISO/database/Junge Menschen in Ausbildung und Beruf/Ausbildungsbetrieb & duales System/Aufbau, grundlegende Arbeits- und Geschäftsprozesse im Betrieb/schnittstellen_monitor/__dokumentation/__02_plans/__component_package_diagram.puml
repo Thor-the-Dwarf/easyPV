@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Schnittstellen-Monitor
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: schnittstellen_monitor" {
+  component "_ghtml_schnittstellen_monitor.html" as HTML
+  component "_gjs_schnittstellen_monitor.js" as JS
+  component "_gcss_schnittstellen_monitor.css" as CSS
+  database "_data/_gg01_schnittstellen_monitor.json" as GG
+  database "_data/__metaData_Aufbau, grundlegende Arbeits- und Geschaeftsprozesse im Betrieb.json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

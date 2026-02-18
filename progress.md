@@ -42,3 +42,18 @@
 - Validierung:
   - `node --test` ueber alle neuen Unit-Tests: 15/15 gruen.
   - Playwright-Smoke fuer `anhoerung_prozesspfad` erfolgreich; State-Artifact unter `output/web-game-kuendigungsschutz/`.
+
+## 2026-02-18 - Weitere GamePlan-Umsetzungen (E-Mail formulieren)
+- `GamePlan-Der-Tone-of-Voice-Editor.txt` als neues Spiel umgesetzt unter:
+  - `databases/Teil01 Grundlagen/database/BWL/Kommunikation & Schulung/E-Mail formulieren/tone_of_voice_editor/`
+  - inkl. `_data`, `_ghtml`, `_gjs`, `_gcss`, Doku- und Teststruktur.
+- `GamePlan-Phishing-Detektiv-E-Mail-Edition.txt` als neues Spiel umgesetzt unter:
+  - `databases/Teil01 Grundlagen/database/BWL/Kommunikation & Schulung/E-Mail formulieren/phishing_detektiv_email_edition/`
+  - inkl. Inbox-Detailansicht, Klassifikationslogik, Doku- und Teststruktur.
+- Validierung erfolgreich:
+  - `node --check` fuer beide JS-Dateien
+  - `node --test "__dokumentation/__03_tests/unit/*.test.mjs"` in beiden neuen Spielordnern
+  - Playwright-Smoke-Artefakte:
+    - `output/web-game-tone-of-voice-editor/`
+    - `output/web-game-phishing-detektiv-email-edition/`
+- Root-Index und Teil01-Index neu gebaut, damit die neuen Spiele im FolderTree erscheinen.

@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Handelsschock-Simulator
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: handelsschock_simulator" {
+  component "_ghtml_handelsschock_simulator.html" as HTML
+  component "_gjs_handelsschock_simulator.js" as JS
+  component "_gcss_handelsschock_simulator.css" as CSS
+  database "_data/_gg01_handelsschock_simulator.json" as GG
+  database "_data/__metaData_Chancen - Risiken Europa & Globalisierung (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

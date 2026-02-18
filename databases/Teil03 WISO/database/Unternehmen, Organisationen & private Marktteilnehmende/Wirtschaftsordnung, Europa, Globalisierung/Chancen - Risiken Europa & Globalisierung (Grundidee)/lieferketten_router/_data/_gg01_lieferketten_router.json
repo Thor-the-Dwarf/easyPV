@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Europa & Globalisierung",
+    "mechanic": "decision_quiz",
+    "variant": "lieferketten_router",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welcher Schritt kommt bei einer Lieferstoerung zuerst?",
+      "hint": "Kritikalitaet und Verfuegbarkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Betroffene Teile priorisieren und Engpassgrad pruefen",
+          "correct": true,
+          "feedback": "Richtig. Priorisierung schafft Fokus."
+        },
+        {
+          "id": "b",
+          "text": "Alle Prozesse unveraendert lassen",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Nur Marketingbudget erhoehen",
+          "correct": false,
+          "feedback": "Kein direkter Lieferkettenhebel."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Was ist ein typischer Pflichtschritt im Routing?",
+      "hint": "Alternativen absichern.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ersatzlieferant inkl. Qualitaetscheck aktivieren",
+          "correct": true,
+          "feedback": "Richtig. Ohne Qualitaetscheck drohen Folgeprobleme."
+        },
+        {
+          "id": "b",
+          "text": "Liefertermine ohne Pruefung zusagen",
+          "correct": false,
+          "feedback": "Riskant."
+        },
+        {
+          "id": "c",
+          "text": "Datenlage ignorieren",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI misst Routing-Effizienz sinnvoll?",
+      "hint": "Korrektheit plus Zeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Pfadwahl pro Fall bei begrenzter Reaktionszeit",
+          "correct": true,
+          "feedback": "Richtig. Qualitaet und Tempo zusammen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl geklickter Schritte",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Textlaenge der Begruendung",
+          "correct": false,
+          "feedback": "Kein Prozessindikator."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gilt ein Routingpfad als fehlerhaft?",
+      "hint": "Pflichtschritt vergessen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn ein kritischer Sicherungsschritt ausgelassen wird",
+          "correct": true,
+          "feedback": "Richtig. Das erhoeht Ausfallrisiko."
+        },
+        {
+          "id": "b",
+          "text": "Wenn Alternativen dokumentiert werden",
+          "correct": false,
+          "feedback": "Das ist sinnvoll."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Risiken transparent gemacht werden",
+          "correct": false,
+          "feedback": "Ebenfalls sinnvoll."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Massnahme verbessert Lieferkettenrobustheit langfristig?",
+      "hint": "Mehrere Knoten statt Single Point.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Multi-Sourcing und Sicherheitsbestaende nach Risiko",
+          "correct": true,
+          "feedback": "Richtig. Das reduziert Ausfallfolgen."
+        },
+        {
+          "id": "b",
+          "text": "Nur ein Lieferant fuer alle Teile",
+          "correct": false,
+          "feedback": "Anfaellig."
+        },
+        {
+          "id": "c",
+          "text": "Verzicht auf Monitoring",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Welche Information braucht der Router fuer gute Entscheidungen?",
+      "hint": "Statusdaten entlang der Kette.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aktuelle Bestands-, Transit- und Risikoindikatoren",
+          "correct": true,
+          "feedback": "Richtig. Ohne Daten kein verlässliches Routing."
+        },
+        {
+          "id": "b",
+          "text": "Nur historische Jahreswerte",
+          "correct": false,
+          "feedback": "Zu trage."
+        },
+        {
+          "id": "c",
+          "text": "Nur subjektive Schaetzungen",
+          "correct": false,
+          "feedback": "Nicht belastbar."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Wie reagiert man bei Hafenstau am sinnvollsten?",
+      "hint": "Route und Zeitfenster neu planen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Transportweg umleiten und Priorauftraege staffeln",
+          "correct": true,
+          "feedback": "Richtig. So bleibt Lieferfaehigkeit erhalten."
+        },
+        {
+          "id": "b",
+          "text": "Nichts tun und warten",
+          "correct": false,
+          "feedback": "Zu passiv."
+        },
+        {
+          "id": "c",
+          "text": "Alle Auftraege gleich behandeln ohne Priorisierung",
+          "correct": false,
+          "feedback": "Ineffizient bei Engpass."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was ist der Kernnutzen des Lieferketten-Routers?",
+      "hint": "Systematisches Vorgehen bei Stoerungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Standardisierte, messbare Reaktionspfade unter Unsicherheit",
+          "correct": true,
+          "feedback": "Richtig. Das verbessert Entscheidungsqualitaet."
+        },
+        {
+          "id": "b",
+          "text": "Zufaellige Einzelfallreaktionen",
+          "correct": false,
+          "feedback": "Nicht robust."
+        },
+        {
+          "id": "c",
+          "text": "Nur theoretische Betrachtung ohne Handlungsbezug",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

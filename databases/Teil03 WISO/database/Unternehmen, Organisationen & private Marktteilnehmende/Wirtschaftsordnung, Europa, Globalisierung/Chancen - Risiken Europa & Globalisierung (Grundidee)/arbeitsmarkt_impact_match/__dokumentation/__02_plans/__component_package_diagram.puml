@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Arbeitsmarkt-Impact-Match
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: arbeitsmarkt_impact_match" {
+  component "_ghtml_arbeitsmarkt_impact_match.html" as HTML
+  component "_gjs_arbeitsmarkt_impact_match.js" as JS
+  component "_gcss_arbeitsmarkt_impact_match.css" as CSS
+  database "_data/_gg01_arbeitsmarkt_impact_match.json" as GG
+  database "_data/__metaData_Chancen - Risiken Europa & Globalisierung (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

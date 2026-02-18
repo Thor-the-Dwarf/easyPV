@@ -1,0 +1,52 @@
+# __gp_betriebsprozesse__prozessketten_sorter
+
+## Spielidee
+"Prozessketten-Sorter" zeigt betriebliche Aufgabenkarten. Lernende ordnen sie in die korrekte Reihenfolge eines Geschaeftsprozesses.
+
+## Lernziel
+- Grundlegende Prozessablaeufe im Betrieb verstehen.
+- Reihenfolgeabhaengigkeiten sicher erkennen.
+
+## Messbare Progression
+- 12 Prozessketten.
+- Punkte: +8 korrekter Schrittplatz, -3 falscher Platz.
+- KPI: Reihenfolgegenauigkeit und Loesungszeit pro Kette.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ChainController
+- OrderEngine
+- ProgressService
+
+### Domaenenobjekte
+- ProcessChain(chainId, steps[])
+- ProcessStep(stepId, role)
+- ChainResult(orderScore, durationMs)
+
+### Beziehungen
+- ProcessChain enthaelt 4..12 ProcessStep.
+- OrderEngine validiert ProcessStep-Reihenfolge.
+- ProgressService aggregiert 1..* ChainResult.
+
+### Zustandsmodell
+- LOAD_CHAIN -> SORT -> SUBMIT -> EVALUATE -> NEXT_CHAIN
+
+### Sequenz (Happy Path)
+1. ChainController laedt ProcessChain.
+2. Player sortiert ProcessStep.
+3. OrderEngine prueft Reihenfolge.
+4. ChainResult wird berechnet.
+5. ProgressService aktualisiert KPI.
+
+## Regeln
+- Falscher Startschritt zaehlt doppelt negativ.
+- Fehlerfreie Kette bringt Bonuspunkte.
+
+## Datenmodell (JSON-Idee)
+- fields: chainId, steps[{id,role,label}], expectedOrder[]
+
+## Abnahmekriterien
+- Reihenfolgefehler sind exakt markiert.
+- KPI trennt Genauigkeit und Zeit.
+- Historie zeigt Lernfortschritt je Kettentyp.

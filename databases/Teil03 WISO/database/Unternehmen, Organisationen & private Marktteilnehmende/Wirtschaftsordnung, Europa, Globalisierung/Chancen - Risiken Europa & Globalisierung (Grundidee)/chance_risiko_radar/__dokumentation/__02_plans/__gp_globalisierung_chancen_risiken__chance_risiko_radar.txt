@@ -1,0 +1,46 @@
+# __gp_globalisierung_chancen_risiken__chance_risiko_radar
+
+## Spielidee
+"Chance-Risiko-Radar" bewertet Globalisierungsfaelle nach Nutzen und Risiken.
+
+## Lernziel
+- Chancen und Risiken differenziert erfassen.
+- Fallbezogene Abwaegung trainieren.
+
+## Messbare Progression
+- 18 Faelle.
+- Punkte: +8 korrekt, -4 falsch, +3 Begruendung.
+- KPI: Bewertungsquote, Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CaseController
+- AssessmentEngine
+- ScoreService
+
+### Domaenenobjekte
+- GlobalCase(caseId, context)
+- Assessment(assessmentId, chanceLevel, riskLevel)
+- CaseResult(isCorrect)
+
+### Beziehungen
+- GlobalCase hat 3..5 Bewertungsoptionen.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> ASSESS -> EVALUATE
+
+### Sequenz (Happy Path)
+1. Fall lesen.
+2. Bewertung waehlen.
+3. Engine prueft.
+
+## Regeln
+- Fehlbewertung bei Hochrisiko: Zusatzabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: context, expectedAssessment
+
+## Abnahmekriterien
+- Bewertung klar rueckgemeldet.
+- KPI Genauigkeit + Tempo.

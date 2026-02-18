@@ -1,0 +1,53 @@
+# __gp_betriebsprozesse__rollenfluss_navigator
+
+## Spielidee
+"Rollenfluss-Navigator" simuliert Aufgabenuebergaben zwischen Abteilungen. Lernende waehlen je Schritt die passende Rolle und vermeiden Reibungsverluste.
+
+## Lernziel
+- Rollen und Verantwortlichkeiten in Betriebsprozessen zuordnen.
+- Uebergabefehler in Prozessablaeufen vermeiden.
+
+## Messbare Progression
+- 15 Uebergabefaelle.
+- Punkte: +7 korrekte Rollenwahl, -3 falsche Rollenwahl.
+- +3 fuer fehlerfreie Uebergabekette.
+- KPI: Rollenquote und Uebergabequote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- HandoverController
+- RoleMappingEngine
+- ScoreService
+
+### Domaenenobjekte
+- HandoverCase(caseId, handoverSteps[])
+- RoleOption(roleId, department)
+- HandoverResult(roleCorrect, chainStable)
+
+### Beziehungen
+- HandoverCase enthaelt 3..8 handoverSteps.
+- RoleMappingEngine validiert pro Schritt ein HandoverResult.
+- ScoreService aggregiert 1..* HandoverResult.
+
+### Zustandsmodell
+- CASE_START -> ROLE_SELECT -> STEP_VALIDATE -> CASE_FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. HandoverController startet HandoverCase.
+2. Player waehlt RoleOption.
+3. RoleMappingEngine prueft Zuordnung.
+4. HandoverResult wird berechnet.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Falsche Kernrolle verursacht Kettenabzug.
+- Vollstaendig stabile Kette gibt Multiplikator.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, handoverSteps[], roleOptions[], expectedRoles[]
+
+## Abnahmekriterien
+- Rollenfehler und Kettenfehler sind getrennt sichtbar.
+- KPI zeigt beide Leistungswerte.
+- Report listet haeufigste Rollenverwechslungen.

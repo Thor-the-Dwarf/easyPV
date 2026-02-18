@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Wertschoepfungsnetz-Duell
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: wertschoepfungsnetz_duell" {
+  component "_ghtml_wertschoepfungsnetz_duell.html" as HTML
+  component "_gjs_wertschoepfungsnetz_duell.js" as JS
+  component "_gcss_wertschoepfungsnetz_duell.css" as CSS
+  database "_data/_gg01_wertschoepfungsnetz_duell.json" as GG
+  database "_data/__metaData_Chancen - Risiken Europa & Globalisierung (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

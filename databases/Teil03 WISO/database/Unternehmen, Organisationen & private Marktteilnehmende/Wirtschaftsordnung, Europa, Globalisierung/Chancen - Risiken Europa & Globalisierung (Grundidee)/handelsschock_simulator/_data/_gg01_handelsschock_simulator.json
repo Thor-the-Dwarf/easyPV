@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Europa & Globalisierung",
+    "mechanic": "decision_quiz",
+    "variant": "handelsschock_simulator",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Ein Zollanstieg trifft ein Kernprodukt. Welche Erstreaktion ist sinnvoll?",
+      "hint": "Schnelle Wirkung + Datenbasis.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kostenwirkung bewerten und Alternativen priorisieren",
+          "correct": true,
+          "feedback": "Richtig. Erst Diagnose, dann Steuerung."
+        },
+        {
+          "id": "b",
+          "text": "Sofort alle Maerkte verlassen",
+          "correct": false,
+          "feedback": "Ueberreaktion."
+        },
+        {
+          "id": "c",
+          "text": "Keine Analyse, nur Hoffen",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Massnahme stabilisiert bei Nachfragerueckgang am ehesten?",
+      "hint": "Mix aus Absatz- und Kostenanpassung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Portfolio anpassen und variable Kosten steuern",
+          "correct": true,
+          "feedback": "Richtig. So bleibt Handlungsfaehigkeit erhalten."
+        },
+        {
+          "id": "b",
+          "text": "Nur Lager aufbauen ohne Absatzplan",
+          "correct": false,
+          "feedback": "Riskant."
+        },
+        {
+          "id": "c",
+          "text": "Preise blind erhoehen",
+          "correct": false,
+          "feedback": "Kann Nachfrage weiter senken."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was kennzeichnet eine instabile Runde im Simulator?",
+      "hint": "Risiko steigt bei Fehlsteuerung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sinkender Stabilitaetsindex trotz Intervention",
+          "correct": true,
+          "feedback": "Richtig. Wirkung bleibt negativ."
+        },
+        {
+          "id": "b",
+          "text": "Konstante Verbesserung in allen KPI",
+          "correct": false,
+          "feedback": "Dann waere sie stabil."
+        },
+        {
+          "id": "c",
+          "text": "Nur viele Klicks ohne Bewertung",
+          "correct": false,
+          "feedback": "Nicht aussagekraeftig."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche Rolle hat Szenarioplanung bei Handelsschocks?",
+      "hint": "Vorbereitung auf Varianten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Handlungsoptionen fuer mehrere Schockstaerken vorbereiten",
+          "correct": true,
+          "feedback": "Richtig. Das reduziert Reaktionszeit."
+        },
+        {
+          "id": "b",
+          "text": "Nur ein Best-Case-Szenario planen",
+          "correct": false,
+          "feedback": "Zu riskant."
+        },
+        {
+          "id": "c",
+          "text": "Auf Fruehwarnung verzichten",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI ist fuer die Simulationsqualitaet zentral?",
+      "hint": "Stabilitaet + Fehlentscheidungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stabilitaetsindex kombiniert mit Fehlentscheidungsquote",
+          "correct": true,
+          "feedback": "Richtig. Robustheit wird sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur gespielte Zeit",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Runden ohne Ergebnisbezug",
+          "correct": false,
+          "feedback": "Zu wenig Aussagekraft."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Wann ist eine Gegenmassnahme ueberreaktiv?",
+      "hint": "Massnahme groesser als Problem.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn sie bei kleinem Schock neue Instabilitaet erzeugt",
+          "correct": true,
+          "feedback": "Richtig. Genau das ist Ueberreaktion."
+        },
+        {
+          "id": "b",
+          "text": "Wenn sie Risiko senkt",
+          "correct": false,
+          "feedback": "Dann ist sie eher passend."
+        },
+        {
+          "id": "c",
+          "text": "Wenn sie datenbasiert priorisiert wird",
+          "correct": false,
+          "feedback": "Das ist positiv."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Welche Strategie erhoeht Resilienz mittelfristig?",
+      "hint": "Struktur statt Ad-hoc.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Diversifizierte Bezugsquellen und flexible Absatzkanaele",
+          "correct": true,
+          "feedback": "Richtig. Mehr Optionen senken Ausfallrisiko."
+        },
+        {
+          "id": "b",
+          "text": "Nur ein globaler Knoten ohne Backup",
+          "correct": false,
+          "feedback": "Sehr anfaellig."
+        },
+        {
+          "id": "c",
+          "text": "Keine Prozessanpassung",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Welche Aussage beschreibt den Simulationsnutzen korrekt?",
+      "hint": "Lernen durch iteratives Testen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Strategien koennen unter Schockbedingungen messbar verglichen werden",
+          "correct": true,
+          "feedback": "Richtig. Genau das trainiert der Simulator."
+        },
+        {
+          "id": "b",
+          "text": "Er ersetzt jede reale Analyse vollstaendig",
+          "correct": false,
+          "feedback": "Zu weitgehend."
+        },
+        {
+          "id": "c",
+          "text": "Er bewertet nur Geschwindigkeit, nicht Qualitaet",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

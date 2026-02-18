@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Betriebsprozesse",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 7,
+    "wrong": -3,
+    "completion_bonus": 9
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Wahl sichert eine stabile Uebergabekette?",
+      "hint": "Die Rolle muss zur Prozessverantwortung passen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kernrolle passend zum Schritt waehlen",
+          "correct": true,
+          "feedback": "Richtig. Das reduziert Reibungsverluste."
+        },
+        {
+          "id": "b",
+          "text": "Beliebige Rolle nach Bauchgefuehl",
+          "correct": false,
+          "feedback": "Fuehrt zu Uebergabefehlern."
+        },
+        {
+          "id": "c",
+          "text": "Immer dieselbe Rolle nutzen",
+          "correct": false,
+          "feedback": "Unrealistisch fuer Prozessketten."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann greift der Kettenabzug?",
+      "hint": "Bei falscher Kernrolle an kritischer Stelle.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn eine Kernrolle falsch zugeordnet wird",
+          "correct": true,
+          "feedback": "Richtig. Dann bricht die Kette."
+        },
+        {
+          "id": "b",
+          "text": "Bei korrekter Auswahl",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei letzter Runde",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI muessen laut Plan getrennt sein?",
+      "hint": "Rollenqualitaet und Uebergabequalitaet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rollenquote und Uebergabequote",
+          "correct": true,
+          "feedback": "Richtig. Beide Werte sind noetig."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtdauer",
+          "correct": false,
+          "feedback": "Zu einseitig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Score",
+          "correct": false,
+          "feedback": "Nicht detailliert genug."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann wird der Multiplikator aktiviert?",
+      "hint": "Die komplette Kette muss stabil sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei fehlerfreier Uebergabekette",
+          "correct": true,
+          "feedback": "Richtig. Stabilitaet wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei einer einzelnen richtigen Rolle",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Bei zufaelligen Klicks",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was sollte der Abschlussreport zeigen?",
+      "hint": "Haeufige Verwechslungen sollen sichtbar sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Die meistverwechselten Rollen pro Schritt",
+          "correct": true,
+          "feedback": "Richtig. Das steuert die Nachschulung."
+        },
+        {
+          "id": "b",
+          "text": "Nur die erste Entscheidung",
+          "correct": false,
+          "feedback": "Zu wenig Analyse."
+        },
+        {
+          "id": "c",
+          "text": "Keine Historie",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    }
+  ]
+}

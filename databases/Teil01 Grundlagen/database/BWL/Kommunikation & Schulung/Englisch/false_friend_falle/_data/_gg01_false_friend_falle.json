@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "id": "tone_of_voice_editor_v1",
+    "title": "Der Tone-of-Voice Editor",
+    "topic": "E-Mail formulieren",
+    "mechanic": "replacement_editor",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct_term": 6,
+    "full_round_bonus": 2,
+    "wrong_term": 0,
+    "timeout": 0,
+    "completion_bonus": 0
+  },
+  "timing": {
+    "default_round_ms": 15000
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "badText": "Das ist der letzte Mist, ich will mein Geld sofort zurueck!",
+      "goodExample": "Ich bin mit der Leistung unzufrieden und bitte um zeitnahe Erstattung.",
+      "terms": [
+        {
+          "id": "t1",
+          "word": "letzte",
+          "bestChoiceId": "b",
+          "options": [
+            { "id": "a", "text": "letzte", "reason": "Emotional und vorwurfsvoll." },
+            { "id": "b", "text": "erhebliche", "reason": "Sachlich und beschaeftigt den Inhalt." },
+            { "id": "c", "text": "riesige", "reason": "Noch immer ueberzogen." }
+          ]
+        },
+        {
+          "id": "t2",
+          "word": "Mist",
+          "bestChoiceId": "c",
+          "options": [
+            { "id": "a", "text": "Katastrophe", "reason": "Zu eskalierend." },
+            { "id": "b", "text": "Unsinn", "reason": "Abwertend." },
+            { "id": "c", "text": "Leistung", "reason": "Neutral und professionell." }
+          ]
+        },
+        {
+          "id": "t3",
+          "word": "sofort",
+          "bestChoiceId": "b",
+          "options": [
+            { "id": "a", "text": "unverzueglich", "reason": "Schroff in diesem Kontext." },
+            { "id": "b", "text": "zeitnah", "reason": "Verbindlich und respektvoll." },
+            { "id": "c", "text": "jetzt", "reason": "Druckaufbau statt Deeskalation." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "badText": "Sie haben schon wieder gepennt und die Datei total falsch geschickt.",
+      "goodExample": "Die Datei enthaelt Abweichungen. Bitte senden Sie die korrigierte Version erneut.",
+      "terms": [
+        {
+          "id": "t1",
+          "word": "gepennt",
+          "bestChoiceId": "a",
+          "options": [
+            { "id": "a", "text": "uebersehen", "reason": "Beschreibt den Fehler ohne Angriff." },
+            { "id": "b", "text": "verschlafen", "reason": "Bleibt persoenlich." },
+            { "id": "c", "text": "ignoriert", "reason": "Unterstellt Absicht." }
+          ]
+        },
+        {
+          "id": "t2",
+          "word": "total",
+          "bestChoiceId": "b",
+          "options": [
+            { "id": "a", "text": "komplett", "reason": "Immer noch ueberzogen." },
+            { "id": "b", "text": "inhaltlich", "reason": "Fokus auf Sachebene." },
+            { "id": "c", "text": "extrem", "reason": "Emotional verstaerkend." }
+          ]
+        },
+        {
+          "id": "t3",
+          "word": "falsch",
+          "bestChoiceId": "c",
+          "options": [
+            { "id": "a", "text": "daneben", "reason": "Umgangssprachlich." },
+            { "id": "b", "text": "schlecht", "reason": "Abwertend." },
+            { "id": "c", "text": "abweichend", "reason": "Praezise und sachlich." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "badText": "Diese Doku ist chaotisch, niemand versteht den Kram und das nervt.",
+      "goodExample": "Die Dokumentation ist derzeit unstrukturiert. Bitte ergaenzen Sie eine klare Gliederung.",
+      "terms": [
+        {
+          "id": "t1",
+          "word": "chaotisch",
+          "bestChoiceId": "b",
+          "options": [
+            { "id": "a", "text": "wuest", "reason": "Abwertend." },
+            { "id": "b", "text": "unstrukturiert", "reason": "Neutral und konkret." },
+            { "id": "c", "text": "durcheinander", "reason": "Unpraezise Alltagssprache." }
+          ]
+        },
+        {
+          "id": "t2",
+          "word": "Kram",
+          "bestChoiceId": "a",
+          "options": [
+            { "id": "a", "text": "Inhalt", "reason": "Fachlich sauber." },
+            { "id": "b", "text": "Zeug", "reason": "Zu umgangssprachlich." },
+            { "id": "c", "text": "Kram", "reason": "Unprofessionell." }
+          ]
+        },
+        {
+          "id": "t3",
+          "word": "nervt",
+          "bestChoiceId": "c",
+          "options": [
+            { "id": "a", "text": "stoert brutal", "reason": "Eskalierend." },
+            { "id": "b", "text": "nervt", "reason": "Bleibt emotional." },
+            { "id": "c", "text": "verzoegert den Ablauf", "reason": "Objektive Wirkung statt Emotion." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "badText": "Bitte endlich liefern, wir haengen wegen euch voll im Verzug!",
+      "goodExample": "Bitte liefern Sie bis zum vereinbarten Termin, da wir derzeit im Verzug sind.",
+      "terms": [
+        {
+          "id": "t1",
+          "word": "endlich",
+          "bestChoiceId": "a",
+          "options": [
+            { "id": "a", "text": "fristgerecht", "reason": "Sachlich und terminbezogen." },
+            { "id": "b", "text": "endlich", "reason": "Vorwurfsvoll." },
+            { "id": "c", "text": "sofort", "reason": "Erhoeht Druck." }
+          ]
+        },
+        {
+          "id": "t2",
+          "word": "wegen euch",
+          "bestChoiceId": "c",
+          "options": [
+            { "id": "a", "text": "durch euren Fehler", "reason": "Direkter Angriff." },
+            { "id": "b", "text": "durch euch", "reason": "Bleibt persoenlich." },
+            { "id": "c", "text": "aufgrund der aktuellen Situation", "reason": "Neutralisiert Schuldzuweisung." }
+          ]
+        },
+        {
+          "id": "t3",
+          "word": "voll",
+          "bestChoiceId": "b",
+          "options": [
+            { "id": "a", "text": "komplett", "reason": "Umgangssprachlich." },
+            { "id": "b", "text": "derzeit", "reason": "Nuechtern und professionell." },
+            { "id": "c", "text": "massiv", "reason": "Dramatisierend." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "badText": "Wenn das nochmal passiert, knallt es richtig und wir drehen den Hahn zu.",
+      "goodExample": "Bei erneuter Abweichung muessen wir die Zusammenarbeit neu bewerten.",
+      "terms": [
+        {
+          "id": "t1",
+          "word": "knallt",
+          "bestChoiceId": "a",
+          "options": [
+            { "id": "a", "text": "es folgen Konsequenzen", "reason": "Klar, aber sachlich." },
+            { "id": "b", "text": "es eskaliert", "reason": "Drohender Ton." },
+            { "id": "c", "text": "es knallt", "reason": "Aggressiv." }
+          ]
+        },
+        {
+          "id": "t2",
+          "word": "richtig",
+          "bestChoiceId": "b",
+          "options": [
+            { "id": "a", "text": "heftig", "reason": "Emotional verstaerkend." },
+            { "id": "b", "text": "nachvollziehbar", "reason": "Begruendende Sachsprache." },
+            { "id": "c", "text": "hart", "reason": "Konfrontativ." }
+          ]
+        },
+        {
+          "id": "t3",
+          "word": "Hahn zu",
+          "bestChoiceId": "c",
+          "options": [
+            { "id": "a", "text": "Sperre", "reason": "Zu hart formuliert." },
+            { "id": "b", "text": "Stopp", "reason": "Zu abrupt und unklar." },
+            { "id": "c", "text": "Zusammenarbeit neu bewerten", "reason": "Fachlich und klar." }
+          ]
+        }
+      ]
+    }
+  ]
+}

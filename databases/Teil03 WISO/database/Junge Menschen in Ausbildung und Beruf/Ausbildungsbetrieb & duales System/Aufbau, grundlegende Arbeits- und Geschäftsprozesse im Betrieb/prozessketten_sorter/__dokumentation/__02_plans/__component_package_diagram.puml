@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Prozessketten-Sorter
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: prozessketten_sorter" {
+  component "_ghtml_prozessketten_sorter.html" as HTML
+  component "_gjs_prozessketten_sorter.js" as JS
+  component "_gcss_prozessketten_sorter.css" as CSS
+  database "_data/_gg01_prozessketten_sorter.json" as GG
+  database "_data/__metaData_Aufbau, grundlegende Arbeits- und Geschaeftsprozesse im Betrieb.json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

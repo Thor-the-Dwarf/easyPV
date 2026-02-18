@@ -1,0 +1,46 @@
+# __gp_soziale_marktwirtschaft__sozialausgleich_planer
+
+## Spielidee
+"Sozialausgleich-Planer" plant mit begrenztem Budget Maßnahmen fuer sozialen Ausgleich.
+
+## Lernziel
+- Zielkonflikte zwischen Effizienz und Gerechtigkeit bewerten.
+- Priorisierung von Ausgleichsmaßnahmen trainieren.
+
+## Messbare Progression
+- 8 Planungsrunden.
+- Punkte: +10 tragfaehiger Plan, -5 unpassender Plan.
+- KPI: Wirkungsindex, Budgeteffizienz.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- PlanningController
+- AllocationEngine
+- KPIService
+
+### Domaenenobjekte
+- PlanCase(caseId, budget, measurePool)
+- Measure(measureId, cost, socialImpact)
+- RoundResult(impactScore, efficiencyScore)
+
+### Beziehungen
+- PlanCase enthaelt 4..15 Measure.
+
+### Zustandsmodell
+- LOAD -> PLAN -> VALIDATE -> EVALUATE
+
+### Sequenz (Happy Path)
+1. Maßnahmen waehlen.
+2. Budget pruefen.
+3. Ergebnis bewerten.
+
+## Regeln
+- Budgetueberschreitung: Zusatzabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: budget, measures, expectedPortfolio
+
+## Abnahmekriterien
+- Kosten/Wirkung transparent.
+- KPI zeigt Impact + Effizienz.

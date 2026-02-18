@@ -1,0 +1,46 @@
+# __gp_unternehmensaufbau__abteilungs_schnittstellen_router
+
+## Spielidee
+"Abteilungs-Schnittstellen-Router" fuehrt durch typische Uebergaben zwischen Bereichen.
+
+## Lernziel
+- Schnittstellen in Prozessen erkennen.
+- Reihenfolge von Uebergaben korrekt planen.
+
+## Messbare Progression
+- 14 Prozessfaelle.
+- Punkte: +8 korrekter Schritt, -4 falsch.
+- KPI: Routing-Quote, Schritte bis Ziel.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FlowController
+- RouteEngine
+- ProgressService
+
+### Domaenenobjekte
+- FlowCase(caseId, steps[])
+- RouteStep(stepId, fromDept, toDept)
+- RouteResult(pathCorrect)
+
+### Beziehungen
+- FlowCase enthaelt 3..8 RouteStep.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> VALIDATE -> NEXT
+
+### Sequenz (Happy Path)
+1. Schritt waehlen.
+2. RouteEngine validieren.
+3. KPI aktualisieren.
+
+## Regeln
+- Pflichtstation uebersprungen: Zusatzabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: steps[], expectedPath
+
+## Abnahmekriterien
+- Pfad ist nachvollziehbar.
+- KPI trennt Korrektheit/Effizienz.

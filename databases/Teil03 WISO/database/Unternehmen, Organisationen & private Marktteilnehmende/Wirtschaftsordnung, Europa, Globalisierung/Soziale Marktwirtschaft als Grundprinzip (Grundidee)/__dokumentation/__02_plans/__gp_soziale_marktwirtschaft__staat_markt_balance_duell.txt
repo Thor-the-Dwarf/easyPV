@@ -1,0 +1,46 @@
+# __gp_soziale_marktwirtschaft__staat_markt_balance_duell
+
+## Spielidee
+"Staat-Markt-Balance-Duell" vergleicht zwei politische Eingriffsoptionen.
+
+## Lernziel
+- Balance zwischen Marktmechanismus und sozialem Ausgleich abwaegen.
+- Eingriffe kontextbezogen bewerten.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekt, -4 falsch, +3 Begruendung.
+- KPI: Wahlgenauigkeit, Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, optionA, optionB)
+- PolicyOption(optionId, impactVector)
+- DuelResult(winnerId)
+
+### Beziehungen
+- DuelCase enthaelt 2 PolicyOption.
+
+### Zustandsmodell
+- INIT -> REVIEW -> CHOOSE -> EVALUATE
+
+### Sequenz (Happy Path)
+1. Optionen vergleichen.
+2. Wahl treffen.
+3. Ergebnis pruefen.
+
+## Regeln
+- Richtige Wahl ohne Begruendung: Teilpunkte.
+
+## Datenmodell (JSON-Idee)
+- fields: optionA, optionB, expectedWinner
+
+## Abnahmekriterien
+- Abwaegung transparent.
+- KPI getrennt Wahl/Begruendung.

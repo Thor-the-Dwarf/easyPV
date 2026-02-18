@@ -1,0 +1,48 @@
+# __gp_standortwettbewerb__kosten_standard_duell
+
+## Spielidee
+"Kosten-Standard-Duell" vergleicht zwei Standorte mit unterschiedlichen Lohn- und Nachhaltigkeitsstandards.
+
+## Lernziel
+- Zielkonflikte zwischen Kosten und Standards abwaegen.
+- Standortentscheidung begruenden.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Wahlgenauigkeit, Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, siteA, siteB)
+- SiteOption(siteId, costScore, standardScore)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 SiteOption.
+- EvaluationEngine validiert Wahl.
+
+### Zustandsmodell
+- INIT -> REVIEW -> CHOOSE -> EVALUATE
+
+### Sequenz (Happy Path)
+1. Standorte vergleichen.
+2. Wahl treffen.
+3. Ergebnis pruefen.
+
+## Regeln
+- Richtige Wahl ohne Begruendung: Teilpunkte.
+
+## Datenmodell (JSON-Idee)
+- fields: siteA{}, siteB{}, expectedWinner
+
+## Abnahmekriterien
+- Vergleichslogik transparent.
+- KPI getrennt nach Wahl/Begruendung.

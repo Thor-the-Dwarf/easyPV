@@ -1,0 +1,46 @@
+# __gp_unternehmensaufbau__aufbauorganisation_timer
+
+## Spielidee
+"Aufbauorganisation-Timer" stellt Kurzfaelle mit Zeitlimit zur Strukturentscheidung.
+
+## Lernziel
+- Strukturfragen schnell einordnen.
+- Organisatorische Grundmuster anwenden.
+
+## Messbare Progression
+- 24 Kurzfaelle, 15s je Fall.
+- Punkte: +6 korrekt, -3 falsch.
+- KPI: korrekte Antworten pro Minute.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimerController
+- ValidationEngine
+- KPIService
+
+### Domaenenobjekte
+- QuickCase(caseId, structurePrompt)
+- Decision(decisionId, structureChoice)
+- CaseResult(isCorrect, responseTimeMs)
+
+### Beziehungen
+- TimerController verarbeitet 1..* QuickCase.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECIDE -> EVALUATE
+
+### Sequenz (Happy Path)
+1. Fall anzeigen.
+2. Entscheidung treffen.
+3. Validieren.
+
+## Regeln
+- Keine Antwort im Zeitfenster: Fehler.
+
+## Datenmodell (JSON-Idee)
+- fields: prompt, options, expectedDecision
+
+## Abnahmekriterien
+- Timer/Scoring stabil.
+- KPI Tempo + Genauigkeit.

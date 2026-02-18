@@ -1,0 +1,48 @@
+# __gp_standortwettbewerb__nachhaltigkeitsbenchmark_monitor
+
+## Spielidee
+"Nachhaltigkeitsbenchmark-Monitor" vergleicht Standorte anhand Umwelt- und Sozialkennzahlen.
+
+## Lernziel
+- Benchmark-Daten interpretieren.
+- Nachhaltigkeitsleistung in Standortentscheidungen einbeziehen.
+
+## Messbare Progression
+- 12 Analysefaelle.
+- Punkte: +8 korrekte Interpretation, -4 falsche Interpretation.
+- +3 fuer passende Priorisierung.
+- KPI: Interpretationsquote, Priorisierungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DashboardController
+- BenchmarkEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- BenchmarkCase(caseId, metrics[])
+- Metric(metricId, value, metricType)
+- CaseResult(interpreationCorrect, priorityCorrect)
+
+### Beziehungen
+- BenchmarkCase enthaelt 4..12 Metric.
+- BenchmarkEngine validiert Bewertung.
+
+### Zustandsmodell
+- LOAD_CASE -> ANALYZE -> PRIORITIZE -> EVALUATE
+
+### Sequenz (Happy Path)
+1. Kennzahlen lesen.
+2. Bewertung wählen.
+3. Validierung.
+
+## Regeln
+- Uebersehen kritischer Kennzahl: Zusatzabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: metrics[], expectedInterpretation, expectedPriority
+
+## Abnahmekriterien
+- Analysefeedback ist nachvollziehbar.
+- KPI zeigt beide Lernziele.

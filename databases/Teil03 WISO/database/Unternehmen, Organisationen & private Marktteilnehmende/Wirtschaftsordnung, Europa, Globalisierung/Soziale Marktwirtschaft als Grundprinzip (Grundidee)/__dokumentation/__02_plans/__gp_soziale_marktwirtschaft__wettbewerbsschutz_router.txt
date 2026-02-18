@@ -1,0 +1,46 @@
+# __gp_soziale_marktwirtschaft__wettbewerbsschutz_router
+
+## Spielidee
+"Wettbewerbsschutz-Router" fuehrt durch Faelle mit Wettbewerbsproblemen und passenden Reaktionsschritten.
+
+## Lernziel
+- Funktion von Wettbewerbsregeln verstehen.
+- Korrekte Prozessschritte zur Marktordnung anwenden.
+
+## Messbare Progression
+- 14 Prozessfaelle.
+- Punkte: +8 Schritt korrekt, -4 falsch.
+- KPI: Routing-Genauigkeit, Effizienz.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FlowController
+- RuleEngine
+- ProgressService
+
+### Domaenenobjekte
+- CompetitionCase(caseId, issueType)
+- RouteStep(stepId, actionType)
+- RouteResult(pathCorrect)
+
+### Beziehungen
+- CompetitionCase enthaelt 3..8 RouteStep.
+
+### Zustandsmodell
+- START -> STEP_SELECT -> VALIDATE -> NEXT
+
+### Sequenz (Happy Path)
+1. Schritt waehlen.
+2. Regelpruefung.
+3. KPI aktualisieren.
+
+## Regeln
+- Pflichtschritt ausgelassen: Zusatzabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: steps, expectedPath
+
+## Abnahmekriterien
+- Pfad klar nachvollziehbar.
+- KPI Korrektheit/Effizienz.

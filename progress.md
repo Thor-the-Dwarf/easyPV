@@ -86,6 +86,31 @@
   - `GamePlan-Listening-Comprehension-The-Meeting.txt`
   - `GamePlan-Sentence-Builder-Support-Ticket.txt`
 
+## 2026-02-19 - Abschluss Englisch-Block
+- Weitere GamePlans umgesetzt:
+  - `databases/produktiv/Teil01 Grundlagen/database/BWL/Kommunikation & Schulung/Englisch/listening_comprehension_the_meeting/`
+  - `databases/produktiv/Teil01 Grundlagen/database/BWL/Kommunikation & Schulung/Englisch/sentence_builder_support_ticket/`
+- Inhalte je Spiel:
+  - `_data/_gg01_*.json`
+  - `_ghtml_*.html`, `_gjs_*.js`, `_gcss_*.css`
+  - `__dokumentation/__02_plans/__gp_englisch__*.txt`
+  - `__dokumentation/__03_tests/TESTING.md`
+  - `__dokumentation/__03_tests/unit/*.config.test.mjs`
+  - `__dokumentation/__03_tests/unit/*.progress-metric.test.mjs`
+- Validierung erfolgreich:
+  - JSON-Parse + `node --check` in beiden Ordnern
+  - `node --test "__dokumentation/__03_tests/unit/*.test.mjs"` in beiden Ordnern (je `3/3` gruen)
+  - Playwright-Smoke:
+    - `output/web-game-listening-comprehension-the-meeting/` (Briefing -> Quiz via Enter)
+    - `output/web-game-sentence-builder-support-ticket/` (Token-Auswahl verifiziert)
+  - `state-0.json` zeigt messbare Progress-Daten (`measurable`, `score`, `progress_percent`, `simulated_ms`)
+- Indexe neu erzeugt:
+  - `databases/produktiv/Teil01 Grundlagen/database-index.json`
+  - `index.json`
+
+### TODO (naechster Schritt)
+- Naechste GamePlan-Dateien ausserhalb von `Englisch/` scannen und im Standard-Game-Ordneraufbau umsetzen.
+
 ## 2026-02-19 - Weitere GamePlan-Umsetzung (Englisch)
 - Neues Spiel aus GamePlan umgesetzt:
   - `databases/produktiv/Teil01 Grundlagen/database/BWL/Kommunikation & Schulung/Englisch/it_vocab_sprint/`

@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Jahresverlauf-Puzzle
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: jahresverlauf_puzzle" {
+  component "_ghtml_jahresverlauf_puzzle.html" as HTML
+  component "_gjs_jahresverlauf_puzzle.js" as JS
+  component "_gcss_jahresverlauf_puzzle.css" as CSS
+  database "_data/_gg01_jahresverlauf_puzzle.json" as GG
+  database "_data/__metaData_Ausbildungsordnung, Ausbildungsrahmenplan, betrieblicher Ausbildungsplan (Bezuege herstellen).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

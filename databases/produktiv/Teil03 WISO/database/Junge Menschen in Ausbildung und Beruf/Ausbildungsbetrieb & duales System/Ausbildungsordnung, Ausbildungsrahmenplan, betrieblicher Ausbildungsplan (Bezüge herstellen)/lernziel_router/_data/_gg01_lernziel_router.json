@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Ausbildungsplanung",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Zuordnung ist im Lernziel-Router korrekt?",
+      "hint": "Lernort und Ausbildungsphase zusammen pruefen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lernziel mit passendem Lernort und passender Phase koppeln",
+          "correct": true,
+          "feedback": "Richtig. Nur die Doppelzuordnung ist voll korrekt."
+        },
+        {
+          "id": "b",
+          "text": "Nur den Lernort waehlen und Phase leer lassen",
+          "correct": false,
+          "feedback": "Phase fehlt, daher unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Nur die Phase waehlen und Lernort ignorieren",
+          "correct": false,
+          "feedback": "Lernort ist Pflichtkriterium."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann gibt es Teilpunkte?",
+      "hint": "Ein Teil korrekt, ein Teil falsch.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Lernort korrekt ist, die Phase aber nicht",
+          "correct": true,
+          "feedback": "Genau. Teiltreffer gibt Teilpunkte."
+        },
+        {
+          "id": "b",
+          "text": "Nur bei zwei Fehlern",
+          "correct": false,
+          "feedback": "Dafuer gibt es keine Teilpunkte."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei zufaelligem Klicken",
+          "correct": false,
+          "feedback": "Zufall wird nicht belohnt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI beobachtet die Standortqualitaet?",
+      "hint": "Lernortquote separat auswerten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lernortquote",
+          "correct": true,
+          "feedback": "Richtig. Das misst die Standorttreffer."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "feedback": "Zu unspezifisch fuer Standortqualitaet."
+        },
+        {
+          "id": "c",
+          "text": "Nur verbleibende Zeit",
+          "correct": false,
+          "feedback": "Zeit ist kein Standortmass."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Was passiert bei hoher Trefferquote laut Spielidee?",
+      "hint": "Komplexitaet steigt schrittweise.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Die Kartenkomplexitaet wird erhoeht",
+          "correct": true,
+          "feedback": "Richtig. Anspruch passt sich an."
+        },
+        {
+          "id": "b",
+          "text": "Alle Karten werden entfernt",
+          "correct": false,
+          "feedback": "Dann waere kein Lernen mehr moeglich."
+        },
+        {
+          "id": "c",
+          "text": "KPI werden ausgeblendet",
+          "correct": false,
+          "feedback": "KPI bleiben sichtbar."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Zielgroessen muessen laut Plan sichtbar sein?",
+      "hint": "Zwei Quoten parallel.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lernortquote und Phasenquote",
+          "correct": true,
+          "feedback": "Exakt diese beiden Quoten zaehlen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Fehleranzahl",
+          "correct": false,
+          "feedback": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Bonusanzahl",
+          "correct": false,
+          "feedback": "Kein vollwertiger KPI-Satz."
+        }
+      ]
+    }
+  ]
+}

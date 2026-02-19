@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Ausbildungsplanung",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was sollte zuerst in den Jahresplan gesetzt werden?",
+      "hint": "Fixe externe Termine sind harte Anker.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pruefungs- und Schulfenster als feste Zeitanker",
+          "correct": true,
+          "feedback": "Richtig. Fixpunkte zuerst."
+        },
+        {
+          "id": "b",
+          "text": "Beliebige Themen ohne Fristbezug",
+          "correct": false,
+          "feedback": "Ohne Anker entstehen Konflikte."
+        },
+        {
+          "id": "c",
+          "text": "Nur Wunschtermine aus dem Team",
+          "correct": false,
+          "feedback": "Wunschtermine sind nachrangig."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wie erkennst du eine verletzte Abhaengigkeit?",
+      "hint": "Vorwissen muss vor Folgeschritt liegen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ein Modul liegt vor seiner notwendigen Grundlage",
+          "correct": true,
+          "feedback": "Genau. Das ist ein Reihenfolgefehler."
+        },
+        {
+          "id": "b",
+          "text": "Zwei Module liegen im gleichen Monat",
+          "correct": false,
+          "feedback": "Das kann korrekt sein."
+        },
+        {
+          "id": "c",
+          "text": "Ein Modul hat eine kurze Beschreibung",
+          "correct": false,
+          "feedback": "Beschreibung sagt nichts ueber Reihenfolge."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Rueckmeldung passt zu einem perfekt gelegten Meilenstein?",
+      "hint": "Fenster + Abhaengigkeit korrekt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zeitfenster und Reihenfolge stimmen vollstaendig",
+          "correct": true,
+          "feedback": "Richtig. Das ist ein Volltreffer."
+        },
+        {
+          "id": "b",
+          "text": "Nur die Farbe im Plan passt",
+          "correct": false,
+          "feedback": "Optik ohne Logik reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Der Eintrag wurde zuletzt angeklickt",
+          "correct": false,
+          "feedback": "Klickreihenfolge ist irrelevant."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wofuer wird laut Plan ein Zusatzabzug vergeben?",
+      "hint": "Abhaengigkeitsbruch als Schluesselfehler.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn ein Meilenstein eine Pflichtabfolge verletzt",
+          "correct": true,
+          "feedback": "Richtig. Das kostet extra Punkte."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein Modul kuerzer benannt ist",
+          "correct": false,
+          "feedback": "Kein Kriterium."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ein Modul im Quartal endet",
+          "correct": false,
+          "feedback": "Quartalsende ist nicht automatisch falsch."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI passt zum Jahresverlauf-Puzzle?",
+      "hint": "Genauigkeit plus Zeitbedarf.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Planungsgenauigkeit und Bearbeitungszeit",
+          "correct": true,
+          "feedback": "Genau diese KPI sind vorgesehen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Klicks",
+          "correct": false,
+          "feedback": "Klickzahl misst keine Planqualitaet."
+        },
+        {
+          "id": "c",
+          "text": "Nur Bonuspunkte",
+          "correct": false,
+          "feedback": "Einzelwert ohne Kontext."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Unternehmensaufbau",
+    "mechanic": "decision_quiz",
+    "variant": "abteilungs_schnittstellen_router",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Abfolge ist bei einem Kundenauftrag typisch?",
+      "hint": "Vertrieb startet, danach Leistungserstellung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vertrieb -> Produktion/Leistung -> Versand/Service",
+          "correct": true,
+          "feedback": "Richtig. Das bildet die Kernschnittstelle ab."
+        },
+        {
+          "id": "b",
+          "text": "Buchhaltung -> Marketing -> Empfang",
+          "correct": false,
+          "feedback": "Nicht der typische Kernprozess."
+        },
+        {
+          "id": "c",
+          "text": "Nur Einkauf ohne Folgeabteilung",
+          "correct": false,
+          "feedback": "Unvollstaendig."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Was ist eine Pflichtstation bei Materialengpass?",
+      "hint": "Abstimmung zwischen Beschaffung und Planung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Einkauf und Produktionsplanung synchronisieren",
+          "correct": true,
+          "feedback": "Richtig. Ohne Abstimmung stockt der Ablauf."
+        },
+        {
+          "id": "b",
+          "text": "Nur intern warten ohne Rueckmeldung",
+          "correct": false,
+          "feedback": "Fehlerhaftes Routing."
+        },
+        {
+          "id": "c",
+          "text": "Sofort Rechnungswesen priorisieren",
+          "correct": false,
+          "feedback": "Nicht der erste Engpassschritt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI misst Routing-Qualitaet?",
+      "hint": "Korrekter Pfad plus noetige Schritte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Uebergaben bis Ziel mit minimalen Fehlwegen",
+          "correct": true,
+          "feedback": "Richtig. Das verbindet Qualitaet und Effizienz."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Klicks",
+          "correct": false,
+          "feedback": "Zu oberflaechlich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Lesezeit der Aufgabe",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gilt eine Route als unvollstaendig?",
+      "hint": "Pflichtschritt fehlt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn eine kritische Fachabteilung uebersprungen wird",
+          "correct": true,
+          "feedback": "Richtig. Pflichtstationen sind notwendig."
+        },
+        {
+          "id": "b",
+          "text": "Wenn eine zusaetzliche Plausibilisierung erfolgt",
+          "correct": false,
+          "feedback": "Das ist kein Fehler."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ein Status dokumentiert wird",
+          "correct": false,
+          "feedback": "Dokumentation ist sinnvoll."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Schnittstelle ist bei Reklamationen zentral?",
+      "hint": "Kunde, Service und Qualitaet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kundenservice -> Qualitaetssicherung -> Produktion",
+          "correct": true,
+          "feedback": "Richtig. So werden Ursachen bearbeitet."
+        },
+        {
+          "id": "b",
+          "text": "Nur Marketing ohne Rueckkopplung",
+          "correct": false,
+          "feedback": "Unzureichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Empfang ohne Fachbereich",
+          "correct": false,
+          "feedback": "Nicht tragfaehig."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Warum ist klares Schnittstellenrouting wichtig?",
+      "hint": "Vermeidet Medienbrueche und Wartezeiten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Es reduziert Reibungsverluste und Fehleruebergaben",
+          "correct": true,
+          "feedback": "Richtig. Transparente Uebergaben stabilisieren Prozesse."
+        },
+        {
+          "id": "b",
+          "text": "Es ersetzt jede Fachentscheidung",
+          "correct": false,
+          "feedback": "Nein, es strukturiert nur den Ablauf."
+        },
+        {
+          "id": "c",
+          "text": "Es macht Ziele ueberfluessig",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Welche Information braucht der Router pro Schritt?",
+      "hint": "Von wem, an wen, mit welchem Ergebnis.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Quelle, Zielbereich, Uebergabeobjekt, Status",
+          "correct": true,
+          "feedback": "Richtig. Das macht den Pfad pruefbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Schrittname ohne Kontext",
+          "correct": false,
+          "feedback": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Zeitstempel ohne Empfaenger",
+          "correct": false,
+          "feedback": "Unvollstaendig."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was trainiert der Abteilungs-Schnittstellen-Router?",
+      "hint": "Sequenzsicherheit im Organisationsprozess.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte und begruendbare Uebergabereihenfolgen",
+          "correct": true,
+          "feedback": "Richtig. Genau das ist das Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Reines Auswendiglernen ohne Prozessbezug",
+          "correct": false,
+          "feedback": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Nur Geschwindigkeit ohne Korrektheit",
+          "correct": false,
+          "feedback": "Unzureichend."
+        }
+      ]
+    }
+  ]
+}

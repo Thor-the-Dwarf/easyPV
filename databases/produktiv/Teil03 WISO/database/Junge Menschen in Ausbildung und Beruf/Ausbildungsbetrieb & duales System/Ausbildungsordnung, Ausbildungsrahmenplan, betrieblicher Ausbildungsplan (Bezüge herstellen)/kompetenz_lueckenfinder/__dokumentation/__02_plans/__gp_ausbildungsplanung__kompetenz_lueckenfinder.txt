@@ -1,0 +1,53 @@
+# __gp_ausbildungsplanung__kompetenz_lueckenfinder
+
+## Spielidee
+"Kompetenz-Lueckenfinder" vergleicht aktuellen Lernstand mit Plananforderungen. Lernende waehlen passende Nachsteuerungsmassnahmen.
+
+## Lernziel
+- Kompetenzluecken frueh identifizieren.
+- Massnahmen zur Plananpassung begruendet auswaehlen.
+
+## Messbare Progression
+- 10 Analysefaelle.
+- Punkte: +10 korrekt erkannte Luecke, +5 passende Massnahme, -5 Fehler.
+- KPI: Luecken-Treffquote und Massnahmenwirksamkeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- GapController
+- GapAnalysisEngine
+- ImprovementService
+
+### Domaenenobjekte
+- GapCase(caseId, currentSkills, targetSkills)
+- Gap(gapId, severity)
+- Action(actionId, actionType)
+- GapResult(gapCorrect, actionCorrect)
+
+### Beziehungen
+- GapCase enthaelt 1..* Gap.
+- GapAnalysisEngine validiert Gap-Erkennung.
+- ImprovementService bewertet Action und aggregiert GapResult.
+
+### Zustandsmodell
+- CASE_START -> GAP_SELECT -> ACTION_SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. GapController startet GapCase.
+2. Player waehlt Gap.
+3. GapAnalysisEngine validiert Luecke.
+4. Player waehlt Action.
+5. ImprovementService aktualisiert KPI.
+
+## Regeln
+- Korrekte Luecke ohne passende Action gibt Teilpunkte.
+- Fehlserie startet Hinweismodus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, currentSkills[], targetSkills[], expectedGaps[], actionOptions[]
+
+## Abnahmekriterien
+- Luecken- und Actionfeedback sind getrennt sichtbar.
+- KPI zeigt beide Zielgroessen.
+- Verlauf ueber Faelle ist vergleichbar.

@@ -1,0 +1,53 @@
+# __gp_ausbildungsplanung__plan_abgleich_matrix
+
+## Spielidee
+"Plan-Abgleich-Matrix" zeigt Lernziele aus Ausbildungsordnung, Rahmenplan und betrieblichem Plan. Lernende ordnen passende Zuordnungen und markieren Luecken.
+
+## Lernziel
+- Bezüge zwischen den drei Planebenen herstellen.
+- Abweichungen zwischen Soll und Ist erkennen.
+
+## Messbare Progression
+- 12 Abgleichfaelle.
+- Punkte: +8 korrekte Zuordnung, -3 falsche Zuordnung.
+- +4 fuer korrekt erkannte Planluecke.
+- KPI: Zuordnungsquote und Lueckenquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- MappingController
+- AlignmentEngine
+- ScoreService
+
+### Domaenenobjekte
+- MappingCase(caseId, sources[])
+- LearningTarget(targetId, sourceType)
+- MappingResult(correctLinks, wrongLinks, gapsFound)
+
+### Beziehungen
+- MappingCase enthaelt 3..12 LearningTarget.
+- AlignmentEngine erzeugt pro Fall ein MappingResult.
+- ScoreService aggregiert 1..* MappingResult.
+
+### Zustandsmodell
+- READY -> CASE_REVIEW -> LINK_ASSIGN -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. MappingController laedt MappingCase.
+2. Player erstellt Zuordnungen.
+3. AlignmentEngine prueft Verlinkungen.
+4. MappingResult wird visualisiert.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Fehlende Kernzuordnung erzeugt Zusatzabzug.
+- Drei fehlerfreie Faelle aktivieren Serienbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, targets[{id,sourceType,text}], expectedLinks[], expectedGaps[]
+
+## Abnahmekriterien
+- Zuordnungen und Luecken werden getrennt rueckgemeldet.
+- KPI zeigt beide Leistungswerte.
+- Sessionreport nennt haeufige Abgleichfehler.

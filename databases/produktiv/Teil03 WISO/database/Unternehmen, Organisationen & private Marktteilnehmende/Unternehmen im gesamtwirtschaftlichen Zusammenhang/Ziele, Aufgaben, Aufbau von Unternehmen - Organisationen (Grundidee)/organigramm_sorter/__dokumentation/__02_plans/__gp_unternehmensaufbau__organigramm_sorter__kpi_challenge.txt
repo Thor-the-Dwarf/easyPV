@@ -1,0 +1,32 @@
+# __gp_unternehmensaufbau__organigramm_sorter__kpi_challenge
+
+## Spielidee
+"Organigramm-Sorter" in der Variante "kpi_challenge" trainiert Entscheidungen zur Unternehmensorganisation unter Zeit- und Zielkorridordruck.
+
+## Lernziel
+- Aufbau- und Zielsysteme in Organisationen korrekt anwenden.
+- Aufgaben, Rollen und Schnittstellen mit begruendeten Entscheidungen verknuepfen.
+
+## Messbare Progression
+- 8 Runden pro Durchlauf.
+- Punkte: +7 KPI-Ziel erreicht, -4 KPI-Ziel verfehlt.
+- KPI: Zielerreichung und Korridorquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- RuleEngine
+- MetricService
+
+### Domaenenobjekte
+- ScenarioCard(cardId, prompt, difficulty)
+- DecisionOption(optionId, impactType)
+- RoundResult(isCorrect, scoreDelta, responseSeconds)
+
+### Zustandsmodell
+- READY -> ROUND_ACTIVE -> SELECT -> EVALUATE -> NEXT_ROUND -> FINISHED
+
+## Abnahmekriterien
+- Fortschritt ist ueber Punkte, Zeit und KPI sichtbar.
+- Regeln erzeugen reproduzierbare Bewertungen.

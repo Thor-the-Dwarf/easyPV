@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Aufgaben-Zuordnung-Match
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: aufgaben_zuordnung_match" {
+  component "_ghtml_aufgaben_zuordnung_match.html" as HTML
+  component "_gjs_aufgaben_zuordnung_match.js" as JS
+  component "_gcss_aufgaben_zuordnung_match.css" as CSS
+  database "_data/_gg01_aufgaben_zuordnung_match.json" as GG
+  database "_data/__metaData_Ziele, Aufgaben, Aufbau von Unternehmen - Organisationen (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

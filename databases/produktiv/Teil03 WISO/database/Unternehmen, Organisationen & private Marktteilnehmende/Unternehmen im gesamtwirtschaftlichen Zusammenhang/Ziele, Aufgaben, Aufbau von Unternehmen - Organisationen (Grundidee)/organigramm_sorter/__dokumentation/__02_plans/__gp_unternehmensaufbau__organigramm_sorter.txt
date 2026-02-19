@@ -1,0 +1,47 @@
+# __gp_unternehmensaufbau__organigramm_sorter
+
+## Spielidee
+"Organigramm-Sorter" ordnet Rollen und Stellen in ein passendes Organigramm.
+
+## Lernziel
+- Aufbauorganisation in Grundzuegen verstehen.
+- Hierarchieebenen korrekt zuordnen.
+
+## Messbare Progression
+- 20 Karten.
+- Punkte: +6 korrekt, -3 falsch.
+- KPI: Trefferquote je Ebene.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- StructureEngine
+- MetricService
+
+### Domaenenobjekte
+- RoleCard(cardId, roleType)
+- OrgSlot(slotId, level)
+- MatchResult(isCorrect, level)
+
+### Beziehungen
+- RoleCard wird genau einem OrgSlot zugeordnet.
+- StructureEngine validiert MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> DROP -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. Player zieht RoleCard auf OrgSlot.
+2. StructureEngine prueft Zuordnung.
+3. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlplatzierung von Leitungsrollen gibt Zusatzabzug.
+
+## Datenmodell (JSON-Idee)
+- fields: cards[], slots[], expectedMapping
+
+## Abnahmekriterien
+- Organigramm ist klar visualisiert.
+- KPI zeigt Genauigkeit und Tempo.

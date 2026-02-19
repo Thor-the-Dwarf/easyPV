@@ -30,3 +30,16 @@ Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine M
     - `output/web-game-teil03-reverse-global/`
     - `output/web-game-teil03-reverse-global-click/`
   - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.
+
+- Reverse-Batch 4: Thema "Ziele, Aufgaben, Aufbau von Unternehmen - Organisationen (Grundidee)" mit 5 Gameordnern umgesetzt:
+  - `abteilungs_schnittstellen_router`
+  - `aufbauorganisation_timer`
+  - `aufgaben_zuordnung_match`
+  - `organigramm_sorter`
+  - `zielhierarchie_duell`
+- Je Spiel erstellt: `_ghtml`, `_gjs`, `_gcss`, `_data/_gg01_*.json`, MetaData, UML-PUML, 5 GamePlan-Dateien, Teststruktur (`__03_tests`).
+- Validierung:
+  - Lokale Node-Tests fuer alle 5 neuen Spiele gruen (`10/10`).
+  - Playwright-Smoke fuer `organigramm_sorter` erfolgreich:
+    - `output/web-game-teil03-reverse-unternehmensaufbau/`
+  - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.

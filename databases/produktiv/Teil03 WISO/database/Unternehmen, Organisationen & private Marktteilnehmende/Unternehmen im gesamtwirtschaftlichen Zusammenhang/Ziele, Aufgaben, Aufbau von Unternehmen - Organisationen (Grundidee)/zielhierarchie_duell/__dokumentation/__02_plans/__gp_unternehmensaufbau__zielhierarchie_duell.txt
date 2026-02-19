@@ -1,0 +1,46 @@
+# __gp_unternehmensaufbau__zielhierarchie_duell
+
+## Spielidee
+"Zielhierarchie-Duell" vergleicht zwei Zielsysteme und fragt nach der logischeren Hierarchie.
+
+## Lernziel
+- Beziehungen zwischen Leit-, Bereichs- und Operativzielen verstehen.
+- Zielsysteme bewerten.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekt, -4 falsch, +3 Begruendung.
+- KPI: Wahlgenauigkeit, Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, systemA, systemB)
+- GoalSystem(systemId, goals[])
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 GoalSystem.
+
+### Zustandsmodell
+- INIT -> REVIEW -> CHOOSE -> EVALUATE
+
+### Sequenz (Happy Path)
+1. Systeme vergleichen.
+2. Wahl treffen.
+3. EvaluationEngine prueft.
+
+## Regeln
+- Richtige Wahl ohne Begruendung: Teilpunkte.
+
+## Datenmodell (JSON-Idee)
+- fields: systemA, systemB, expectedWinner
+
+## Abnahmekriterien
+- Vergleichslogik transparent.
+- KPI getrennt nach Wahl/Begruendung.

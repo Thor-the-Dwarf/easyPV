@@ -1,0 +1,47 @@
+# __gp_unternehmensaufbau__aufgaben_zuordnung_match
+
+## Spielidee
+"Aufgaben-Zuordnung-Match" verbindet Unternehmensaufgaben mit passenden Bereichen.
+
+## Lernziel
+- Aufgaben von Abteilungen differenzieren.
+- Funktionslogik verstehen.
+
+## Messbare Progression
+- 22 Karten.
+- Punkte: +6 korrekt, -3 falsch.
+- KPI: Trefferquote je Bereich.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- MatchController
+- TaskEngine
+- ScoreService
+
+### Domaenenobjekte
+- TaskCard(cardId, taskType)
+- DepartmentOption(optionId, departmentType)
+- MatchResult(isCorrect)
+
+### Beziehungen
+- TaskCard hat 3..5 DepartmentOption.
+
+### Zustandsmodell
+- READY -> TASK_ACTIVE -> SELECT -> EVALUATE -> NEXT
+
+### Sequenz (Happy Path)
+1. TaskCard anzeigen.
+2. Option waehlen.
+3. TaskEngine pruefen.
+4. Score aktualisieren.
+
+## Regeln
+- Kernaufgaben falsch: doppelter Abzug.
+
+## Datenmodell (JSON-Idee)
+- fields: taskType, options[], expectedDepartment
+
+## Abnahmekriterien
+- Fehler werden begruendet angezeigt.
+- KPI nach Aufgabencluster.

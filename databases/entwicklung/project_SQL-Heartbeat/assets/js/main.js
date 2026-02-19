@@ -163,8 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const [targetTable, targetCol] = targetStr.split('.');
 
-            // Find Target Header
-            // We need to search specifically within the target table's card
             const targetTableCard = document.getElementById(`table-card-${targetTable}`);
             if (!targetTableCard) return;
 
@@ -174,42 +172,50 @@ document.addEventListener('DOMContentLoaded', () => {
                 const startRect = fkTh.getBoundingClientRect();
                 const endRect = targetTh.getBoundingClientRect();
 
-                // Calculate center points
-                const x1 = startRect.left + startRect.width / 2;
-                const y1 = startRect.top + startRect.height / 2;
-                const x2 = endRect.left + endRect.width / 2;
-                const y2 = endRect.top + endRect.height / 2;
+                // Determine "Port" positions (Left or Right side)
+                let startX, startY, endX, endY;
 
-                // Draw Curve
+                // If Target is to the Right -> Connect FK Right to Target Left
+                if (startRect.left < endRect.left) {
+                    startX = startRect.right;
+                    endX = endRect.left;
+                } else {
+                    // Target is to the Left -> Connect FK Left to Target Right
+                    startX = startRect.left;
+                    endX = endRect.right;
+                }
+
+                startY = startRect.top + startRect.height / 2;
+                endY = endRect.top + endRect.height / 2;
+
                 ctx.beginPath();
-                ctx.moveTo(x1, y1);
+                ctx.moveTo(startX, startY);
 
-                // Control points for nice S-curve
-                // Adjust curvature based on distance
-                const cp1x = x1;
-                const cp1y = y1 - 50; // Curve up
-                const cp2x = x2;
-                const cp2y = y2 - 50;
+                // Orthogonal Path (Manhattan Style)
+                // Go to horizontal midpoint, then vertical, then horizontal
+                const midX = (startX + endX) / 2;
 
-                // Simple line for now or Bezier? Let's try Bezier to top of table or simple direct line.
-                // Since tables are floating, direct line might overlap.
-                // Let's draw a line with some transparency/dash.
+                ctx.lineTo(midX, startY);
+                ctx.lineTo(midX, endY);
+                ctx.lineTo(endX, endY);
 
-                ctx.strokeStyle = 'rgba(100, 200, 255, 0.4)';
+                // Styling
+                ctx.strokeStyle = '#64c8ff';
                 ctx.lineWidth = 2;
-                ctx.setLineDash([5, 5]);
-
-                ctx.lineTo(x2, y2); // Simple line for prototype reliability
-
+                ctx.setLineDash([]); // Solid line
                 ctx.stroke();
 
-                // Draw dots at ends
-                ctx.fillStyle = 'rgba(100, 200, 255, 0.8)';
+                // Markers
+                ctx.fillStyle = '#64c8ff';
+
+                // Start Circle
                 ctx.beginPath();
-                ctx.arc(x1, y1, 3, 0, Math.PI * 2);
+                ctx.arc(startX, startY, 3, 0, Math.PI * 2);
                 ctx.fill();
+
+                // End Circle
                 ctx.beginPath();
-                ctx.arc(x2, y2, 3, 0, Math.PI * 2);
+                ctx.arc(endX, endY, 3, 0, Math.PI * 2);
                 ctx.fill();
             }
         });

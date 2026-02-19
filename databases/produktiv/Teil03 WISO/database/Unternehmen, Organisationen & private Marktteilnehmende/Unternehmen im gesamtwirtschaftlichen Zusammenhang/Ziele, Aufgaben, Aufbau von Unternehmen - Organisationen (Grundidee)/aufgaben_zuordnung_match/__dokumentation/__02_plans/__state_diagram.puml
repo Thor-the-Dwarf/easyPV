@@ -1,0 +1,9 @@
+@startuml
+title Aufgaben-Zuordnung-Match - Zustandsdiagramm
+[*] --> READY
+READY --> ROUND_ACTIVE
+ROUND_ACTIVE --> ROUND_FEEDBACK
+ROUND_FEEDBACK --> ROUND_ACTIVE : weitere Runde
+ROUND_FEEDBACK --> FINISHED : letzte Runde
+FINISHED --> [*]
+@enduml

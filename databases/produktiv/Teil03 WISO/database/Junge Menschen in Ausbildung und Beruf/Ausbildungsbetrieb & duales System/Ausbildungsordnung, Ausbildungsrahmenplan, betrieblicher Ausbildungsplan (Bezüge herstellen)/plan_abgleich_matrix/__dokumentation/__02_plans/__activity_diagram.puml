@@ -1,0 +1,17 @@
+@startuml
+title Plan-Abgleich-Matrix - Aktivitaetsdiagramm
+start
+:Nutzer oeffnet Spielseite (_ghtml_plan_abgleich_matrix.html);
+:Konfigurationsdaten laden (_data/_gg01_plan_abgleich_matrix.json);
+while (Runden offen?) is (ja)
+  :Prompt anzeigen;
+  :Antwort auswaehlen;
+  if (Antwort korrekt?) then (ja)
+    :Punkte erhoehen;
+  else (nein)
+    :Fehlerfeedback zeigen;
+  endif
+endwhile (nein)
+:Ergebnis anzeigen;
+stop
+@enduml

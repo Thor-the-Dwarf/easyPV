@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Unternehmensaufbau",
+    "mechanic": "decision_quiz",
+    "variant": "zielhierarchie_duell",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Reihenfolge ist in einer Zielhierarchie typisch?",
+      "hint": "Von allgemein zu konkret.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Leitziel -> Bereichsziel -> Operatives Ziel",
+          "correct": true,
+          "feedback": "Richtig. So wird heruntergebrochen."
+        },
+        {
+          "id": "b",
+          "text": "Operatives Ziel -> Leitziel -> Bereichsziel",
+          "correct": false,
+          "feedback": "Unlogisch aufgebaut."
+        },
+        {
+          "id": "c",
+          "text": "Nur operative Einzelziele ohne Bezug",
+          "correct": false,
+          "feedback": "Hierarchie fehlt."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann ist ein Zielsystem widerspruechlich?",
+      "hint": "Teilziele konterkarieren Leitziel.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Bereichsziele dem Leitziel entgegenlaufen",
+          "correct": true,
+          "feedback": "Richtig. Dann fehlt Zielkonsistenz."
+        },
+        {
+          "id": "b",
+          "text": "Wenn operative Ziele messbar sind",
+          "correct": false,
+          "feedback": "Das ist positiv."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Prioritaeten benannt sind",
+          "correct": false,
+          "feedback": "Auch positiv."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was ist ein gutes operatives Ziel?",
+      "hint": "Konkret und messbar.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zeitlich terminiert, messbar und verantwortet",
+          "correct": true,
+          "feedback": "Richtig. So wird Steuerung moeglich."
+        },
+        {
+          "id": "b",
+          "text": "Vage und ohne Kennzahl",
+          "correct": false,
+          "feedback": "Zu unscharf."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Bezug zu Bereichszielen",
+          "correct": false,
+          "feedback": "Unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI passt im Duell zur Wahlgenauigkeit?",
+      "hint": "Vergleich gegen Referenzloesung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Anteil korrekter Siegerentscheidungen pro Duel",
+          "correct": true,
+          "feedback": "Richtig. Das misst Entscheidungstreffer."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl gespielter Duelle",
+          "correct": false,
+          "feedback": "Ohne Qualitaet unzureichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Klicktempo",
+          "correct": false,
+          "feedback": "Nicht genug."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Begruendung erhoeht die Punktzahl im Duell?",
+      "hint": "Logik zwischen Ebenen benennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aufzeigen, wie operative Ziele das Leitziel stuetzen",
+          "correct": true,
+          "feedback": "Richtig. Das zeigt Hierarchieverstaendnis."
+        },
+        {
+          "id": "b",
+          "text": "Nur subjektive Vorliebe nennen",
+          "correct": false,
+          "feedback": "Nicht belastbar."
+        },
+        {
+          "id": "c",
+          "text": "Vollstaendig ohne Argument entscheiden",
+          "correct": false,
+          "feedback": "Teilpunkte oder Abzug."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Wann bekommt man nur Teilpunkte?",
+      "hint": "Richtige Wahl, schwache Begruendung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn der Gewinner stimmt, die Begruendung aber fehlt",
+          "correct": true,
+          "feedback": "Richtig. Regel aus dem GamePlan."
+        },
+        {
+          "id": "b",
+          "text": "Wenn alles korrekt und begruendet ist",
+          "correct": false,
+          "feedback": "Dann volle Punkte."
+        },
+        {
+          "id": "c",
+          "text": "Wenn die Wahl falsch ist",
+          "correct": false,
+          "feedback": "Dann Abzug."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Warum ist Zielhierarchie fuer Unternehmen relevant?",
+      "hint": "Ausrichtung und Steuerbarkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sie verbindet Strategie mit konkreten Aufgaben",
+          "correct": true,
+          "feedback": "Richtig. So wird Strategie umsetzbar."
+        },
+        {
+          "id": "b",
+          "text": "Sie ersetzt jede Ressourcenplanung",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Sie macht Kommunikation unnoetig",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was trainiert das Zielhierarchie-Duell?",
+      "hint": "Vergleichende Bewertung von Zielsystemen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Logik, Konsistenz und Begruendung von Zielsystemen",
+          "correct": true,
+          "feedback": "Richtig. Genau das steht im Fokus."
+        },
+        {
+          "id": "b",
+          "text": "Nur Geschwindigkeit ohne Inhalt",
+          "correct": false,
+          "feedback": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Messung ausblenden",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Unternehmensaufbau",
+    "mechanic": "decision_quiz",
+    "variant": "organigramm_sorter",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Rolle gehoert typischerweise auf Leitungsebene?",
+      "hint": "Gesamtverantwortung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Geschaeftsfuehrung / Unternehmensleitung",
+          "correct": true,
+          "feedback": "Richtig. Das ist oberste Ebene."
+        },
+        {
+          "id": "b",
+          "text": "Auszubildende",
+          "correct": false,
+          "feedback": "Nicht Leitungsebene."
+        },
+        {
+          "id": "c",
+          "text": "Werkstudent ohne Fuehrungsauftrag",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Ebene folgt meist direkt unter der Unternehmensleitung?",
+      "hint": "Bereichs-/Abteilungsverantwortung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bereichs- oder Abteilungsleitung",
+          "correct": true,
+          "feedback": "Richtig. Das ist die mittlere Fuehrungsebene."
+        },
+        {
+          "id": "b",
+          "text": "Nur externe Partner",
+          "correct": false,
+          "feedback": "Nicht Organigramm-Kern."
+        },
+        {
+          "id": "c",
+          "text": "Ausschliesslich Praktikanten",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was zeigt ein Organigramm primär?",
+      "hint": "Struktur, nicht Ablauf.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hierarchie und Zuordnungen von Stellen",
+          "correct": true,
+          "feedback": "Richtig. Es visualisiert die Aufbauorganisation."
+        },
+        {
+          "id": "b",
+          "text": "Nur Bearbeitungszeiten eines Prozesses",
+          "correct": false,
+          "feedback": "Das ist eher Prozesssicht."
+        },
+        {
+          "id": "c",
+          "text": "Nur Produktpreise",
+          "correct": false,
+          "feedback": "Nicht passend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche Fehlplatzierung ist besonders kritisch?",
+      "hint": "Leitungsrolle auf operativer Ebene.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fuehrungsrolle ohne Weisungsbefugnis einordnen",
+          "correct": true,
+          "feedback": "Richtig. Das verzerrt Verantwortungen."
+        },
+        {
+          "id": "b",
+          "text": "Operative Rolle operativ platzieren",
+          "correct": false,
+          "feedback": "Das ist korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Abteilungsname klar beschriften",
+          "correct": false,
+          "feedback": "Kein Fehler."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI passt zum Sorter?",
+      "hint": "Trefferquote je Ebene.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Rollenplatzierung je Hierarchieebene",
+          "correct": true,
+          "feedback": "Richtig. So werden Schwachstellen sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl geoeffneter Karten",
+          "correct": false,
+          "feedback": "Zu oberflaechlich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtspielzeit",
+          "correct": false,
+          "feedback": "Ohne Genauigkeit unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Warum hilft ein klares Organigramm im Alltag?",
+      "hint": "Zustaendigkeiten transparent machen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Es klaert Verantwortlichkeiten und Eskalationswege",
+          "correct": true,
+          "feedback": "Richtig. Entscheidungen werden schneller zugeordnet."
+        },
+        {
+          "id": "b",
+          "text": "Es ersetzt alle Prozessdokumente",
+          "correct": false,
+          "feedback": "Nicht vollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Es macht Kommunikation unnoetig",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Welche Rolle ist haeufig als Stabsfunktion organisiert?",
+      "hint": "Beratung nahe der Leitung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rechts- oder Strategieberatung",
+          "correct": true,
+          "feedback": "Richtig. Typische Stabsaufgaben."
+        },
+        {
+          "id": "b",
+          "text": "Fließbandmontage",
+          "correct": false,
+          "feedback": "Operative Linie."
+        },
+        {
+          "id": "c",
+          "text": "Warenausgabe",
+          "correct": false,
+          "feedback": "Nicht Stab."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was trainiert der Organigramm-Sorter?",
+      "hint": "Hierarchiekompetenz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ebenen und Rollen systematisch richtig einordnen",
+          "correct": true,
+          "feedback": "Richtig. Genau das ist das Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Begriffe ohne Struktur",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Messbare Bewertung vermeiden",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

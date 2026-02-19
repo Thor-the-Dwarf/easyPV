@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Lernziel-Router
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: lernziel_router" {
+  component "_ghtml_lernziel_router.html" as HTML
+  component "_gjs_lernziel_router.js" as JS
+  component "_gcss_lernziel_router.css" as CSS
+  database "_data/_gg01_lernziel_router.json" as GG
+  database "_data/__metaData_Ausbildungsordnung, Ausbildungsrahmenplan, betrieblicher Ausbildungsplan (Bezuege herstellen).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

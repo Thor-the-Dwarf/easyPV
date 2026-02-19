@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Unternehmensaufbau",
+    "mechanic": "decision_quiz",
+    "variant": "aufgaben_zuordnung_match",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Wer verantwortet typischerweise die Lieferantenauswahl?",
+      "hint": "Beschaffungskompetenz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Einkauf/Beschaffung",
+          "correct": true,
+          "feedback": "Richtig. Dort liegt die Aufgabenhoheit."
+        },
+        {
+          "id": "b",
+          "text": "Personalabteilung",
+          "correct": false,
+          "feedback": "Nicht primaer."
+        },
+        {
+          "id": "c",
+          "text": "Kundenservice",
+          "correct": false,
+          "feedback": "Nicht der Kernbereich."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Aufgabe gehoert in den Vertrieb?",
+      "hint": "Markt- und Kundenbezug.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kundenakquise und Angebotsverhandlung",
+          "correct": true,
+          "feedback": "Richtig. Das ist klassische Vertriebsarbeit."
+        },
+        {
+          "id": "b",
+          "text": "Lohnabrechnung",
+          "correct": false,
+          "feedback": "Gehort ins Rechnungswesen/HR."
+        },
+        {
+          "id": "c",
+          "text": "Wartung der Produktionsmaschine",
+          "correct": false,
+          "feedback": "Nicht primaer Vertrieb."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wo liegt die Erstellung von Monatsabschluessen?",
+      "hint": "Finanztransparenz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rechnungswesen/Controlling",
+          "correct": true,
+          "feedback": "Richtig. Dort wird finanzielle Lage verdichtet."
+        },
+        {
+          "id": "b",
+          "text": "Produktion",
+          "correct": false,
+          "feedback": "Nicht der Hauptbereich."
+        },
+        {
+          "id": "c",
+          "text": "Wareneingang",
+          "correct": false,
+          "feedback": "Nicht passend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche Aufgabe passt zur Personalabteilung?",
+      "hint": "Mitarbeitende gewinnen und entwickeln.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Recruiting und Personalentwicklung",
+          "correct": true,
+          "feedback": "Richtig. Kernaufgabe von HR."
+        },
+        {
+          "id": "b",
+          "text": "Preisstrategie je Produkt",
+          "correct": false,
+          "feedback": "Eher Produktmanagement/Vertrieb."
+        },
+        {
+          "id": "c",
+          "text": "Lieferroute im Lager festlegen",
+          "correct": false,
+          "feedback": "Eher Logistik."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was misst die KPI Trefferquote je Bereich?",
+      "hint": "Zuordnungsqualitaet je Funktionscluster.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wie praezise Aufgaben den richtigen Bereichen zugeordnet werden",
+          "correct": true,
+          "feedback": "Richtig. Clusterstaerken werden sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur die Anzahl gespielter Runden",
+          "correct": false,
+          "feedback": "Ohne Qualitaet nicht aussagekraeftig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Klicktempo",
+          "correct": false,
+          "feedback": "Zu wenig."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Welche Aufgabe ist typisch fuer Logistik?",
+      "hint": "Materialfluss und Verfuegbarkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lagersteuerung und Versandkoordination",
+          "correct": true,
+          "feedback": "Richtig. Das ist Logistik-Kern."
+        },
+        {
+          "id": "b",
+          "text": "Arbeitsvertragserstellung",
+          "correct": false,
+          "feedback": "Eher HR/Legal."
+        },
+        {
+          "id": "c",
+          "text": "Anlagenbilanz buchen",
+          "correct": false,
+          "feedback": "Eher Rechnungswesen."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Warum ist klare Aufgabenverteilung wichtig?",
+      "hint": "Verantwortung und Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sie reduziert Doppelarbeit und Verantwortungslaecken",
+          "correct": true,
+          "feedback": "Richtig. Rollen werden klar."
+        },
+        {
+          "id": "b",
+          "text": "Sie verhindert jede Zusammenarbeit",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Sie ersetzt Schnittstellenmanagement",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was trainiert das Aufgaben-Zuordnung-Match?",
+      "hint": "Funktionslogik verstehen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aufgaben sicher Bereichen zuordnen und begruenden",
+          "correct": true,
+          "feedback": "Richtig. Genau das wird geuebt."
+        },
+        {
+          "id": "b",
+          "text": "Nur Fachbegriffe auswendig lernen",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Messung vermeiden",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

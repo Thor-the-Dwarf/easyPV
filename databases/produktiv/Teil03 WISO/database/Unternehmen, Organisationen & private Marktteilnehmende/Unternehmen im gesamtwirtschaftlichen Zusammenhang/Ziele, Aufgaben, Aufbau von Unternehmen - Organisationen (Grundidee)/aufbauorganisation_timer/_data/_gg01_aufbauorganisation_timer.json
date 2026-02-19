@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Unternehmensaufbau",
+    "mechanic": "decision_quiz",
+    "variant": "aufbauorganisation_timer",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Strukturfrage betrifft die Aufbauorganisation?",
+      "hint": "Wer ist wem zugeordnet?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hierarchie, Zuständigkeiten und Weisungswege",
+          "correct": true,
+          "feedback": "Richtig. Das ist Kern der Aufbauorganisation."
+        },
+        {
+          "id": "b",
+          "text": "Nur Reihenfolge einzelner Maschinenlaeufe",
+          "correct": false,
+          "feedback": "Das ist eher Ablauforganisation."
+        },
+        {
+          "id": "c",
+          "text": "Nur Werbetextgestaltung",
+          "correct": false,
+          "feedback": "Nicht passend."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wofuer steht das Einlinienprinzip?",
+      "hint": "Eindeutige Weisungsbeziehung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Jede Stelle hat genau eine vorgesetzte Stelle",
+          "correct": true,
+          "feedback": "Richtig. Weisungen bleiben eindeutig."
+        },
+        {
+          "id": "b",
+          "text": "Jede Stelle hat beliebig viele Vorgesetzte",
+          "correct": false,
+          "feedback": "Das waere Mehrliniensystem."
+        },
+        {
+          "id": "c",
+          "text": "Es gibt keine Hierarchieebenen",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Aufgabe hat eine Stabsstelle typischerweise?",
+      "hint": "Unterstuetzen statt direkt anweisen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Beraten und Entscheider fachlich vorbereiten",
+          "correct": true,
+          "feedback": "Richtig. Stab unterstuetzt die Linie."
+        },
+        {
+          "id": "b",
+          "text": "Direktive Gesamtsteuerung aller Linien",
+          "correct": false,
+          "feedback": "Nicht die typische Stabsrolle."
+        },
+        {
+          "id": "c",
+          "text": "Komplette Produktionsdurchfuehrung",
+          "correct": false,
+          "feedback": "Nicht der Kern."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI passt zum Timer-Format?",
+      "hint": "Tempo und Genauigkeit kombinieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Strukturentscheidungen pro Minute",
+          "correct": true,
+          "feedback": "Richtig. Das misst Leistung im Zeitmodus."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtspielzeit",
+          "correct": false,
+          "feedback": "Ohne Korrektheit wenig Aussagekraft."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl geoeffneter Fragen",
+          "correct": false,
+          "feedback": "Nicht entscheidend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Aussage zu Delegation ist richtig?",
+      "hint": "Aufgabe und Verantwortung sauber regeln.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aufgaben koennen delegiert werden, Gesamtverantwortung bleibt bei Fuehrung",
+          "correct": true,
+          "feedback": "Richtig. Delegation braucht Klarheit."
+        },
+        {
+          "id": "b",
+          "text": "Verantwortung verschwindet vollstaendig",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Delegation macht Abstimmung ueberfluessig",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Welche Struktur passt bei hoher Spezialisierung?",
+      "hint": "Funktionale Gliederung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aufteilung nach Funktionen wie Einkauf, Produktion, Vertrieb",
+          "correct": true,
+          "feedback": "Richtig. Das foerdert Fachfokus."
+        },
+        {
+          "id": "b",
+          "text": "Keine Abteilungen bilden",
+          "correct": false,
+          "feedback": "Unrealistisch."
+        },
+        {
+          "id": "c",
+          "text": "Nur zufaellige Teamzuordnung",
+          "correct": false,
+          "feedback": "Nicht tragfaehig."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Wann wird Koordination in der Aufbauorganisation kritisch?",
+      "hint": "Viele Schnittstellen und Ebenen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei vielen Abteilungen ohne klare Schnittstellenregeln",
+          "correct": true,
+          "feedback": "Richtig. Dann steigen Reibungsverluste."
+        },
+        {
+          "id": "b",
+          "text": "Bei klaren Rollen und kurzen Wegen",
+          "correct": false,
+          "feedback": "Dann ist Koordination eher leichter."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Ziele transparent sind",
+          "correct": false,
+          "feedback": "Das hilft eher."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was trainiert der Aufbauorganisation-Timer?",
+      "hint": "Schnelle Strukturdiagnose.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Grundmuster der Organisation sicher und schnell anwenden",
+          "correct": true,
+          "feedback": "Richtig. Genau das ist der Trainingszweck."
+        },
+        {
+          "id": "b",
+          "text": "Nur zufaelliges Raten unter Zeitdruck",
+          "correct": false,
+          "feedback": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Verzicht auf Messbarkeit",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

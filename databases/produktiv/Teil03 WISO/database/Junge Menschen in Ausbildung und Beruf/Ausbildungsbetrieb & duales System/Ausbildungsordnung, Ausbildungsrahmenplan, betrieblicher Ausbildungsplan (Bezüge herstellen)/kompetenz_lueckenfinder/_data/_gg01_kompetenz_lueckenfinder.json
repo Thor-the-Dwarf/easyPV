@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Ausbildungsplanung",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was ist der erste Schritt bei einem Gap-Case?",
+      "hint": "Ist-Stand mit Soll-Anforderung vergleichen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aktuelle Kompetenzen gegen Zielkompetenzen spiegeln",
+          "correct": true,
+          "feedback": "Richtig. Ohne Vergleich keine Luecke."
+        },
+        {
+          "id": "b",
+          "text": "Direkt eine Massnahme waehlen",
+          "correct": false,
+          "feedback": "Massnahme erst nach Analyse."
+        },
+        {
+          "id": "c",
+          "text": "Bewertung ueberspringen und Bonus erwarten",
+          "correct": false,
+          "feedback": "Das funktioniert nicht."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann gibt es Teilpunkte laut Regelwerk?",
+      "hint": "Luecke richtig, Massnahme falsch.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn die Luecke korrekt erkannt wurde",
+          "correct": true,
+          "feedback": "Genau. Erkennung gibt Teilpunkte."
+        },
+        {
+          "id": "b",
+          "text": "Nur bei komplett falscher Analyse",
+          "correct": false,
+          "feedback": "Dafuer gibt es keine Teilpunkte."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei maximaler Klickgeschwindigkeit",
+          "correct": false,
+          "feedback": "Tempo ist nicht ausschlaggebend."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Massnahme ist bei hoher Lueckenschwere am sinnvollsten?",
+      "hint": "Gezielte Nachsteuerung statt Aufschub.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sofortige Lernmassnahme mit klarer Zielkompetenz",
+          "correct": true,
+          "feedback": "Richtig. Hohe Schwere braucht direkte Aktion."
+        },
+        {
+          "id": "b",
+          "text": "Ignorieren bis zur naechsten Pruefung",
+          "correct": false,
+          "feedback": "Das vergroessert das Risiko."
+        },
+        {
+          "id": "c",
+          "text": "Nur kosmetische Dokumentation",
+          "correct": false,
+          "feedback": "Ohne inhaltliche Massnahme wirkungslos."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI misst das Ergebnis am besten?",
+      "hint": "Treffquote plus Wirksamkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Luecken-Treffquote und Massnahmenwirksamkeit",
+          "correct": true,
+          "feedback": "Exakt. Beide Werte sind Kern-KPI."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtanzahl Faelle",
+          "correct": false,
+          "feedback": "Zu grob fuer Lernsteuerung."
+        },
+        {
+          "id": "c",
+          "text": "Nur Sessiondauer",
+          "correct": false,
+          "feedback": "Dauer allein zeigt keine Qualitaet."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann aktiviert sich ein Hinweismodus?",
+      "hint": "Mehrere Fehler in Serie.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei anhaltender Fehlserie in aufeinanderfolgenden Faellen",
+          "correct": true,
+          "feedback": "Richtig. Dann hilft Guided Feedback."
+        },
+        {
+          "id": "b",
+          "text": "Nach jedem korrekten Treffer",
+          "correct": false,
+          "feedback": "Hinweise sind fuer Fehlmuster gedacht."
+        },
+        {
+          "id": "c",
+          "text": "Nur in der ersten Runde",
+          "correct": false,
+          "feedback": "Kein statischer Startmodus."
+        }
+      ]
+    }
+  ]
+}

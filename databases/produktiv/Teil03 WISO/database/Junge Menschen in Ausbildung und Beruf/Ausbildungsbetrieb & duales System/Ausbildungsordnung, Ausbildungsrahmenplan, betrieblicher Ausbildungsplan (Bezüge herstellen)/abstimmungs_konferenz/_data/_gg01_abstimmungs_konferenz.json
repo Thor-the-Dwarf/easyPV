@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Ausbildungsplanung",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welcher Konfliktpunkt hat in einer Abstimmungsrunde meist Vorrang?",
+      "hint": "Hohe Auswirkung auf Pruefung und Betriebsablauf zuerst.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Termin mit hoher Auswirkung auf Pruefung und Einsatzplanung",
+          "correct": true,
+          "feedback": "Richtig. Hoher Impact geht vor."
+        },
+        {
+          "id": "b",
+          "text": "Thema mit der schoensten Praesentation",
+          "correct": false,
+          "feedback": "Optik ist kein Priorisierungskriterium."
+        },
+        {
+          "id": "c",
+          "text": "Beliebiges Thema ohne Frist",
+          "correct": false,
+          "feedback": "Ohne Dringlichkeit kein Vorrang."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wodurch steigt der Konsistenzscore in der Konferenz?",
+      "hint": "Begruendung und Entscheidung muessen zusammenpassen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Entscheidung folgt nachvollziehbar der Priorisierung",
+          "correct": true,
+          "feedback": "Genau. Stringente Linie erhoeht Konsistenz."
+        },
+        {
+          "id": "b",
+          "text": "Jede Runde mit neuer Begruendung ohne Bezug",
+          "correct": false,
+          "feedback": "Das senkt Konsistenz."
+        },
+        {
+          "id": "c",
+          "text": "Konflikte werden ignoriert",
+          "correct": false,
+          "feedback": "Ignorieren loest keine Abstimmungsprobleme."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Aktion hilft bei widerspruechlichen Planvorgaben am meisten?",
+      "hint": "Transparenter Abgleich statt Bauchgefuehl.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Abweichung dokumentieren und gemeinsame Prioritaet festlegen",
+          "correct": true,
+          "feedback": "Richtig. Das schafft Verbindlichkeit."
+        },
+        {
+          "id": "b",
+          "text": "Nur den lautesten Beitrag uebernehmen",
+          "correct": false,
+          "feedback": "Das ist nicht belastbar."
+        },
+        {
+          "id": "c",
+          "text": "Diskussion vertagen ohne Entscheidung",
+          "correct": false,
+          "feedback": "Ohne Entscheidung bleibt der Konflikt bestehen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann ist ein Bonus in diesem Szenario plausibel?",
+      "hint": "Treffer bei Priorisierung und Entscheidung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Priorisierung und Entscheidung beide korrekt sind",
+          "correct": true,
+          "feedback": "Richtig. Doppelter Treffer gibt Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur schnell geklickt wird",
+          "correct": false,
+          "feedback": "Tempo ohne Qualitaet reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Bei jeder falschen Entscheidung",
+          "correct": false,
+          "feedback": "Fehler erzeugen keinen Bonus."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI zeigt den Fortschritt der Konferenz am klarsten?",
+      "hint": "Zwei Messachsen laut Plan.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Priorisierungsgenauigkeit und Konsistenzscore",
+          "correct": true,
+          "feedback": "Exakt diese zwei KPI steuern das Spiel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl der Wortmeldungen",
+          "correct": false,
+          "feedback": "Das misst keine Entscheidungsqualitaet."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtspielzeit",
+          "correct": false,
+          "feedback": "Zeit allein ist zu wenig."
+        }
+      ]
+    }
+  ]
+}

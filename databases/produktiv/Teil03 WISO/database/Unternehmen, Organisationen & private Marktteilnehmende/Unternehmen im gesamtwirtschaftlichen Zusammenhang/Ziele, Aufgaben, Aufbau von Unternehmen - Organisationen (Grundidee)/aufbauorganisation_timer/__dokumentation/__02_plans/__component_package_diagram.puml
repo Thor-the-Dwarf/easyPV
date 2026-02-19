@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Aufbauorganisation-Timer
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: aufbauorganisation_timer" {
+  component "_ghtml_aufbauorganisation_timer.html" as HTML
+  component "_gjs_aufbauorganisation_timer.js" as JS
+  component "_gcss_aufbauorganisation_timer.css" as CSS
+  database "_data/_gg01_aufbauorganisation_timer.json" as GG
+  database "_data/__metaData_Ziele, Aufgaben, Aufbau von Unternehmen - Organisationen (Grundidee).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

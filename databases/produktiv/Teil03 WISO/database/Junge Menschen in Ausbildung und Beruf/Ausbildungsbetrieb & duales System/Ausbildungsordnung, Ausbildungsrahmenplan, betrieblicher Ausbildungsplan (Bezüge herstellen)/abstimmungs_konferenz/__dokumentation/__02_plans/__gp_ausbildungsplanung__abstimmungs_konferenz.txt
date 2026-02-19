@@ -1,0 +1,53 @@
+# __gp_ausbildungsplanung__abstimmungs_konferenz
+
+## Spielidee
+"Abstimmungs-Konferenz" simuliert eine Planrunde zwischen Betrieb und Schule. Lernende priorisieren Konfliktpunkte und treffen konsistente Abstimmungsentscheidungen.
+
+## Lernziel
+- Planabstimmung zwischen Lernorten nachvollziehen.
+- Konflikte priorisieren und aufloesen.
+
+## Messbare Progression
+- 9 Konferenzrunden.
+- Punkte: +8 korrekte Priorisierung, +4 konsistente Entscheidung, -4 Fehler.
+- KPI: Priorisierungsgenauigkeit und Konsistenzscore.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ConferenceController
+- PriorityEngine
+- ConsistencyService
+
+### Domaenenobjekte
+- ConferenceCase(caseId, conflictItems[])
+- ConflictItem(itemId, impact, urgency)
+- Decision(decisionId, rationale)
+- ConferenceResult(priorityCorrect, consistencyScore)
+
+### Beziehungen
+- ConferenceCase enthaelt 3..10 ConflictItem.
+- PriorityEngine validiert Rangfolge.
+- ConsistencyService berechnet ConferenceResult.
+
+### Zustandsmodell
+- OPEN_CASE -> PRIORITIZE -> DECIDE -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. ConferenceController oeffnet ConferenceCase.
+2. Player priorisiert ConflictItem.
+3. PriorityEngine prueft Rangfolge.
+4. Player trifft Decision.
+5. ConsistencyService aktualisiert KPI.
+
+## Regeln
+- Widerspruechliche Entscheidung reduziert Konsistenzscore.
+- Volltreffer bei Priorisierung und Konsistenz gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, conflictItems[], expectedPriority[], decisionOptions[]
+
+## Abnahmekriterien
+- Priorisierung und Entscheidung sind einzeln auswertbar.
+- KPI zeigt Konsistenz ueber alle Runden.
+- Endreport nennt haeufige Konfliktmuster.

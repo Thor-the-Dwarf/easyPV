@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Ausbildungsplanung",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was ist die Kernaufgabe in der Plan-Abgleich-Matrix?",
+      "hint": "Zuordnung zwischen drei Planquellen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lernziele zwischen Ausbildungsordnung, Rahmenplan und Betriebsplan verlinken",
+          "correct": true,
+          "feedback": "Richtig. Genau dieser Abgleich ist zentral."
+        },
+        {
+          "id": "b",
+          "text": "Nur Farben im Plan anpassen",
+          "correct": false,
+          "feedback": "Farben loesen keinen Abgleich."
+        },
+        {
+          "id": "c",
+          "text": "Nur offene Punkte zaehlen",
+          "correct": false,
+          "feedback": "Zaehlen ohne Zuordnung reicht nicht."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Zusatzleistung bringt Pluspunkte?",
+      "hint": "Luecken nicht uebersehen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Planluecke korrekt erkennen und markieren",
+          "correct": true,
+          "feedback": "Richtig. Das gibt Zusatzpunkte."
+        },
+        {
+          "id": "b",
+          "text": "Beliebige Doppelverlinkung setzen",
+          "correct": false,
+          "feedback": "Falsche Links kosten Punkte."
+        },
+        {
+          "id": "c",
+          "text": "Alle Zuordnungen offen lassen",
+          "correct": false,
+          "feedback": "Ohne Zuordnung kein Fortschritt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann entsteht ein Zusatzabzug?",
+      "hint": "Kernzuordnung fehlt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn eine notwendige Kernzuordnung fehlt",
+          "correct": true,
+          "feedback": "Genau. Das ist ein Schluesselfehler."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein Ziel mehrfach geprueft wird",
+          "correct": false,
+          "feedback": "Mehrfachpruefung kann sinnvoll sein."
+        },
+        {
+          "id": "c",
+          "text": "Wenn die Session zu kurz ist",
+          "correct": false,
+          "feedback": "Dauer allein ist kein Abzugskriterium."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI muessen getrennt sichtbar sein?",
+      "hint": "Links und Luecken separat.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zuordnungsquote und Lueckenquote",
+          "correct": true,
+          "feedback": "Richtig. Zwei getrennte Leistungswerte."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunktestand",
+          "correct": false,
+          "feedback": "Zu wenig Information fuer Ursachenanalyse."
+        },
+        {
+          "id": "c",
+          "text": "Nur Sessionzeit",
+          "correct": false,
+          "feedback": "Kein Qualitaetsindikator."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann kann ein Serienbonus aktiviert werden?",
+      "hint": "Fehlerfreie Faelle in Folge.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nach drei fehlerfreien Abgleichfaellen hintereinander",
+          "correct": true,
+          "feedback": "Richtig. Das aktiviert den Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Nach jedem Fehlversuch",
+          "correct": false,
+          "feedback": "Fehler aktivieren keinen Bonus."
+        },
+        {
+          "id": "c",
+          "text": "Nur im ersten Fall",
+          "correct": false,
+          "feedback": "Bonus ist leistungsabhaengig, nicht positionsabhaengig."
+        }
+      ]
+    }
+  ]
+}

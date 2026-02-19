@@ -1,0 +1,11 @@
+Drawer auf ganzer Höhe, hat mindestbreite, kann per drag breiter und Schmaler gezogen werden, verschiebt übriges
+interface statt es zu Überlappen, inhalt scrollbar
+
+hat 2 Zustände:
+
+1. Zeigt einen chatverlauf statisch
+2. zeigt wärend der Simulation den Chatverlauf zeile für zeile weiter. Der Chatverlauf zeigt in welcher Reihenfolge die
+einzelnen Keywords und co vom Computer interpretiert und Zeigt eine Simulation.
+Simulation:
+Zeile für Zeile Text(Wie der Befehl-Teil interpretiert wir bsp. FROM A > get table A.) auf Ladebalken(dauer bis voll 3 sek.)
+jedesmal wenn der Ladebalken voll ist erscheint die nächste Zeile, am ende der Simulation kommt ne Leerzeile

@@ -1,0 +1,443 @@
+/* === style.css === */
+/* SQL-Heartbeat Specific Styles using Shared Theme */
+
+:root {
+    /* Use Shared Theme Vars or define local specifics if strictly necessary */
+    --header-height: 40px;
+    --drawer-border: 1px solid hsl(var(--glass-border));
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* Prevent body scroll because app handles it */
+    background-color: hsl(var(--bg));
+    color: hsl(var(--txt));
+}
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+/* Top Canvas Overlay */
+#top-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Main Area (Left - Center - Right) */
+#main-area {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    /* Optional: Subtle background pattern or tint */
+}
+
+.drawer {
+    /* Glassmorphic Drawer */
+    background: hsl(var(--bg-surface) / 0.9);
+    border: var(--drawer-border);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.drawer-content {
+    padding: 10px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Horizontal Drawers (Left/Right) */
+.horizontal-drawer {
+    width: 250px;
+    min-width: 150px;
+    max-width: 50%;
+}
+
+/* Specific Border Adjustments to avoid double borders */
+#left-drawer {
+    border-bottom: none;
+}
+
+#right-drawer {
+    border-bottom: none;
+}
+
+#center-content {
+    border-bottom: none;
+}
+
+/* Center Content */
+#center-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: transparent;
+    /* Main area bg is behind */
+    position: relative;
+}
+
+#center-content h1 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: hsl(var(--primary));
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+}
+
+/* Bottom Drawer */
+#bottom-drawer {
+    height: 200px;
+    min-height: 100px;
+    max-height: 50%;
+    background: hsl(var(--bg));
+    /* Slightly darker for code */
+    border-top: var(--drawer-border);
+}
+
+/* Resizer Handles */
+.resizer-handle {
+    background-color: transparent;
+    z-index: 100;
+    transition: background-color 0.2s;
+}
+
+.resizer-handle:hover,
+.resizer-handle.resizing {
+    background-color: hsl(var(--primary));
+}
+
+.horizontal-handle {
+    width: 5px;
+    height: 100%;
+    cursor: col-resize;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.horizontal-handle.left-side {
+    left: 0;
+    right: auto;
+}
+
+.vertical-handle {
+    width: 100%;
+    height: 5px;
+    cursor: row-resize;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Toolbar */
+.toolbar {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    background: hsl(var(--bg-surface));
+    border-bottom: var(--drawer-border);
+}
+
+.toolbar button {
+    /* Manual button styling to match shared theme */
+    padding: 5px 12px;
+    background: hsl(var(--bg-surface) / 0.5);
+    border: 1px solid hsl(var(--primary) / 0.3);
+    color: hsl(var(--txt));
+    cursor: pointer;
+    border-radius: 4px;
+    /* Using explicit value if var not available locally, or assume var exists in shared */
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.toolbar button:hover {
+    background: hsl(var(--primary) / 0.2);
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.4);
+}
+
+/* Editor Container */
+.editor-container {
+    flex: 1;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    /* CodeMirror scrolls itself */
+}
+
+/* CodeMirror Overrides */
+.CodeMirror {
+    height: 100% !important;
+    width: 100% !important;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 14px;
+    background-color: transparent !important;
+}
+
+/* Force Dracula to blend with our theme */
+.cm-s-dracula.CodeMirror {
+    background-color: hsl(var(--bg)) !important;
+    color: hsl(var(--txt)) !important;
+}
+
+.cm-s-dracula .CodeMirror-gutters {
+    background-color: hsl(var(--bg-surface)) !important;
+    border-right: 1px solid hsl(var(--glass-border)) !important;
+}
+
+/* === WP4: Step List Visualizer (Right Drawer) === */
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 20px;
+}
+
+.step-item {
+    background: hsl(var(--bg-surface) / 0.7);
+    border: 1px solid hsl(var(--glass-border));
+    border-radius: var(--radius-md);
+    /* Assumes shared theme */
+    padding: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    opacity: 0.5;
+    /* Default inactive state */
+    transform: scale(0.98);
+}
+
+.step-item.pending {
+    opacity: 0.6;
+}
+
+.step-item.active {
+    opacity: 1;
+    transform: scale(1);
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.3);
+    background: hsl(var(--bg-surface) / 0.9);
+}
+
+.step-item.done {
+    opacity: 0.8;
+    border-color: hsl(var(--success));
+    /* Dimmed slightly but marked complete */
+}
+
+.step-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.step-type {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: hsl(var(--primary));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.step-desc {
+    font-size: 0.9rem;
+    color: hsl(var(--txt));
+    line-height: 1.4;
+}
+
+/* Progress Bar within Step */
+.step-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: hsl(var(--primary));
+    width: 0%;
+    transition: width linear;
+    /* JS will handle duration */
+}
+
+/* Status Icon (Optional) */
+.step-status-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid hsl(var(--glass-border));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-item.active .step-status-icon {
+    border-color: hsl(var(--primary));
+    background-color: hsl(var(--primary));
+    box-shadow: 0 0 5px hsl(var(--primary));
+}
+
+.step-item.done .step-status-icon {
+    border-color: hsl(var(--success));
+    background-color: hsl(var(--success));
+}
+
+/* === WP5: Data Tables (Center Drawer) === */
+
+#tables-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+
+.table-card {
+    background: hsl(var(--bg-surface) / 0.8);
+    border: 1px solid hsl(var(--glass-border));
+    border-radius: var(--radius-md);
+    padding: 15px;
+    min-width: 250px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: var(--shadow-sm);
+    flex: 1 1 300px;
+    /* Flex Basis */
+    max-width: 400px;
+}
+
+.table-card-header {
+    font-weight: 700;
+    font-size: 1rem;
+    color: hsl(var(--primary));
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid hsl(var(--glass-border));
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.db-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    color: hsl(var(--txt));
+}
+
+.db-table th,
+.db-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid hsl(var(--glass-border) / 0.5);
+}
+
+.db-table th {
+    font-weight: 600;
+    color: hsl(var(--txt-muted));
+    font-size: 0.8rem;
+}
+
+.db-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Simulation States */
+.table-card.active-table {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.2);
+    transform: translateY(-2px);
+    background: hsl(var(--bg-surface) / 0.95);
+    z-index: 10;
+}
+
+.table-card.dimmed {
+    opacity: 0.4;
+    filter: grayscale(0.5);
+    transform: scale(0.98);
+}
+
+.table-row.highlight-row {
+    background-color: hsl(var(--primary) / 0.2);
+    color: hsl(var(--primary-fg));
+    /* Ensure contrast if needed, or keeping normal text */
+}
+
+/* Animation for row highlight */
+@keyframes flash-row {
+    0% {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: hsl(var(--primary) / 0.4);
+    }
+
+    100% {
+        background-color: hsl(var(--primary) / 0.2);
+    }
+}
+
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Custom Tooltips for Table Headers */
+.db-table th {
+    position: relative;
+    cursor: help;
+}
+
+.db-table th::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0f111a;
+    /* Komplett undurchsichtiges, sehr dunkles Grau */
+    color: #ffffff;
+    border: 1px solid hsl(var(--primary));
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s ease-out;
+    z-index: 9999;
+    /* Sehr hoch, um über allem zu liegen */
+    margin-bottom: 8px;
+}
+
+.db-table th:hover::after {
+    opacity: 1;
+}

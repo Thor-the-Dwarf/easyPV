@@ -1,0 +1,32 @@
+Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine Message> Und implementiere deine Game-Plans. Beginne mit dem letzten GamePlan und arbeite dich hoch. Du hast nen Kollegen der das Selbe von Oben herab macht. Schau dir an Welche Struktur und Namenskonventionen wir haben und leg los
+
+- Start: Reverse-Implementierung in Teil03 WISO begonnen.
+- Fokus dieses Durchlaufs: Topic "Standortwettbewerb" von unten nach oben umsetzen.
+
+- Umsetzung: 5 Reverse-Spiele fuer Standortwettbewerb angelegt (verlagerungsszenario_simulator bis investitionsentscheidung_router).
+- Enthalten: Spielcode, Daten, Doku-Struktur, UML-PUML, Unit-Smoke-Tests.
+- Validierung: Node-Unit-Smoke fuer alle 5 neuen Spiele erfolgreich (10/10 gruen).
+- Playwright: Verlagerungsszenario-Simulator visuell geprueft, state payload vorhanden, keine error-Datei im frischen Run (`output/web-game-teil03-reverse-standort-v2`).
+- Fix: Optionsbutton-Textfarbe explizit gesetzt, damit Inhalte sichtbar sind.
+
+- Fortsetzung: 5 weitere Spiele fuer "Kündigung - Kündigungsschutz (Grundidee)" umgesetzt.
+- Neu: `anhoerung_prozesspfad`, `fristrechner_duell`, `kuendigungsgrund_klassifikator`, `reaktionsfenster_timer`, `sozialauswahl_simulator`.
+- Je Spiel: Standardstruktur, UML/Plan-Dateien, Quiz-Mechanik und messbarer Fortschritt (`score`, `progress_percent`, `simulated_ms`).
+- Tests: Lokale Node-Unit-Tests fuer den Block komplett gruen (15/15).
+- Browser-Smoke: `output/web-game-kuendigungsschutz/` mit State/Screenshot erzeugt.
+- Reverse-Batch 2: Thema "Soziale Marktwirtschaft" mit 5 Gameordnern umgesetzt (wirtschaftspolitik_quiz_timer bis ordnungsprinzip_match).
+- Struktur aus Teil02 uebernommen: Themenordner enthaelt Gameordner; jeder Gameordner mit eigenem _data/_assets/__dokumentation und Tests.
+
+- Reverse-Batch 3: Thema "Chancen - Risiken Europa & Globalisierung (Grundidee)" mit 5 Gameordnern umgesetzt:
+  - `arbeitsmarkt_impact_match`
+  - `chance_risiko_radar`
+  - `handelsschock_simulator`
+  - `lieferketten_router`
+  - `wertschoepfungsnetz_duell`
+- Je Spiel erstellt: `_ghtml`, `_gjs`, `_gcss`, `_data/_gg01_*.json`, MetaData, UML-PUML, 5 GamePlan-Dateien, Teststruktur (`__03_tests`).
+- Validierung:
+  - Lokale Node-Tests fuer alle 5 neuen Spiele gruen (`10/10`).
+  - Playwright-Smoke fuer `chance_risiko_radar` erfolgreich:
+    - `output/web-game-teil03-reverse-global/`
+    - `output/web-game-teil03-reverse-global-click/`
+  - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.

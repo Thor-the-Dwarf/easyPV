@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "id": "false_friend_falle_v1",
+    "title": "False-Friend-Falle",
+    "topic": "Englisch",
+    "mechanic": "error_word_correction",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": 0,
+    "timeout": 0,
+    "completion_bonus": 0
+  },
+  "timing": {
+    "default_round_ms": 12000
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "sentence": "I become a steak after work.",
+      "errorWord": "become",
+      "options": [
+        { "id": "a", "text": "get", "reason": "Richtig: 'ich bekomme' = 'I get'." },
+        { "id": "b", "text": "receiveing", "reason": "Falsche Form." },
+        { "id": "c", "text": "bekome", "reason": "Kein korrektes Englisch." }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": 2,
+      "sentence": "We discuss the actual version tomorrow.",
+      "errorWord": "actual",
+      "options": [
+        { "id": "a", "text": "eventual", "reason": "Bedeutet etwas anderes." },
+        { "id": "b", "text": "current", "reason": "Richtig: 'aktuell' = 'current'." },
+        { "id": "c", "text": "factual", "reason": "Nicht passend zum Kontext." }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": 3,
+      "sentence": "Can you control the E-Mail to the customer?",
+      "errorWord": "control",
+      "options": [
+        { "id": "a", "text": "check", "reason": "Richtig: 'kontrollieren/pruefen' = 'check'." },
+        { "id": "b", "text": "command", "reason": "Hat andere Bedeutung." },
+        { "id": "c", "text": "steer", "reason": "Unpassend." }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": 4,
+      "sentence": "The chef will join the support call.",
+      "errorWord": "chef",
+      "options": [
+        { "id": "a", "text": "cook", "reason": "Wuerde Koch bedeuten." },
+        { "id": "b", "text": "boss", "reason": "Richtig: deutscher Chef = 'boss'/'manager'." },
+        { "id": "c", "text": "chiefly", "reason": "Falsche Wortart." }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": 5,
+      "sentence": "Please close your handy during the meeting.",
+      "errorWord": "handy",
+      "options": [
+        { "id": "a", "text": "mobile phone", "reason": "Richtig: 'Handy' = 'mobile phone'." },
+        { "id": "b", "text": "practical", "reason": "'handy' bedeutet auf Englisch praktisch." },
+        { "id": "c", "text": "handle", "reason": "Anderes Wort." }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": 6,
+      "sentence": "We need a protocol of the workshop.",
+      "errorWord": "protocol",
+      "options": [
+        { "id": "a", "text": "agenda", "reason": "Waere Tagesordnung." },
+        { "id": "b", "text": "minutes", "reason": "Richtig: Protokoll (Meeting) = minutes." },
+        { "id": "c", "text": "procedure", "reason": "Nicht der gemeinte Dokumenttyp." }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": 7,
+      "sentence": "The controlling checks our invoices.",
+      "errorWord": "controlling",
+      "options": [
+        { "id": "a", "text": "management", "reason": "Zu allgemein." },
+        { "id": "b", "text": "finance department", "reason": "Richtig im Unternehmenskontext." },
+        { "id": "c", "text": "inspectioning", "reason": "Kein korrektes Wort." }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": 8,
+      "sentence": "I have made my homeworks already.",
+      "errorWord": "homeworks",
+      "options": [
+        { "id": "a", "text": "houseworks", "reason": "Falsch." },
+        { "id": "b", "text": "homework", "reason": "Richtig: unzaehlbar, ohne s." },
+        { "id": "c", "text": "domestic tasks", "reason": "Andere Bedeutung." }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": 9,
+      "sentence": "We can make a photo from the whiteboard.",
+      "errorWord": "make",
+      "options": [
+        { "id": "a", "text": "do", "reason": "Nicht passend." },
+        { "id": "b", "text": "take", "reason": "Richtig: 'ein Foto machen' = 'take a photo'." },
+        { "id": "c", "text": "create", "reason": "Unnatuerlich im Kontext." }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": 10,
+      "sentence": "Can you send me the informations by mail?",
+      "errorWord": "informations",
+      "options": [
+        { "id": "a", "text": "information", "reason": "Richtig: 'information' ist im Englischen unzaehlbar." },
+        { "id": "b", "text": "datas", "reason": "Falsche Form." },
+        { "id": "c", "text": "informs", "reason": "Unpassend." }
+      ],
+      "correctOptionId": "a"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+Anforderungen
+- Titel: "False-Friend-Falle"
+- Ziel: Typische falsche Freunde in 10 Saetzen erkennen und korrigieren.
+- Lernziel: Denglisch-Fallen vermeiden und fachlich korrektes Englisch nutzen.
+
+Spielidee
+- Schritt 1: falsches Wort im Satz markieren.
+- Schritt 2: passende Korrektur aus Optionen waehlen.
+- Messung ueber Score, Trefferquote und Zeit.
+
+Implementierungsplan
+- [x] JSON Konfiguration `_data/_gg01_false_friend_falle.json`
+- [x] UI `_ghtml_false_friend_falle.html` + `_gcss_false_friend_falle.css`
+- [x] Spiel-Logik `_gjs_false_friend_falle.js`
+- [x] Hooks `render_game_to_text` und `advanceTime`
+- [x] Tests in `__dokumentation/__03_tests` (reachability + config + progress)

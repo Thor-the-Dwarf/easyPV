@@ -169,60 +169,106 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetTh = Array.from(targetTableCard.querySelectorAll('th')).find(th => th.dataset.colName === targetCol);
 
             if (targetTh) {
+                // Get Rects for Cells (Connection Points)
                 const startRect = fkTh.getBoundingClientRect();
                 const endRect = targetTh.getBoundingClientRect();
 
-                // Determine "Port" positions (Left or Right side)
+                // Get Rects for Tables (Obstacles)
+                const startTableRect = fkTh.closest('.table-card').getBoundingClientRect();
+                const endTableRect = targetTableCard.getBoundingClientRect();
+
+                ctx.beginPath();
+
+                // Logic to determine routing style
+                const gap = 40;
+                // Check if target is clearly to the Right or Left (ignoring small vertical overlaps)
+                const isTargetRight = endTableRect.left > (startTableRect.right + gap);
+                const isTargetLeft = endTableRect.right < (startTableRect.left - gap);
+
                 let startX, startY, endX, endY;
+                let startDir = 1; // 1 = Right, -1 = Left
 
-                // If Target is to the Right -> Connect FK Right to Target Left
-                if (startRect.left < endRect.left) {
-                    startX = startRect.right;
-                    endX = endRect.left;
-                } else {
-                    // Target is to the Left -> Connect FK Left to Target Right
-                    startX = startRect.left;
-                    endX = endRect.right;
-                }
-
+                // Vertical Center of the Cells
                 startY = startRect.top + startRect.height / 2;
                 endY = endRect.top + endRect.height / 2;
 
-                ctx.beginPath();
-                ctx.moveTo(startX, startY);
+                if (isTargetRight) {
+                    // Standard Z-shape: Source Right -> Target Left
+                    startX = startTableRect.right;
+                    endX = endTableRect.left;
+                    startDir = 1;
 
-                // Orthogonal Path (Manhattan Style)
-                // Go to horizontal midpoint, then vertical, then horizontal
-                const midX = (startX + endX) / 2;
+                    const midX = (startX + endX) / 2;
+                    ctx.moveTo(startX, startY);
+                    ctx.lineTo(midX, startY);
+                    ctx.lineTo(midX, endY);
+                    ctx.lineTo(endX, endY);
 
-                ctx.lineTo(midX, startY);
-                ctx.lineTo(midX, endY);
-                ctx.lineTo(endX, endY);
+                } else if (isTargetLeft) {
+                    // Standard Z-shape: Source Left -> Target Right
+                    startX = startTableRect.left;
+                    endX = endTableRect.right;
+                    startDir = -1;
 
-                // Styling
+                    const midX = (startX + endX) / 2;
+                    ctx.moveTo(startX, startY);
+                    ctx.lineTo(midX, startY);
+                    ctx.lineTo(midX, endY);
+                    ctx.lineTo(endX, endY);
+
+                } else {
+                    // Stacked or overlapping horizontally -> Route around the RIGHT side (C-Shape)
+                    startX = startTableRect.right;
+                    endX = endTableRect.right;
+                    startDir = 1; // Exiting Right
+
+                    // Determine channel X: max of both right edges + padding
+                    const channelX = Math.max(startTableRect.right, endTableRect.right) + 40;
+
+                    ctx.moveTo(startX, startY);
+                    ctx.lineTo(channelX, startY);
+                    ctx.lineTo(channelX, endY);
+                    ctx.lineTo(endX, endY);
+                }
+
+                // Stroke Line
                 ctx.strokeStyle = '#64c8ff';
                 ctx.lineWidth = 2;
-                ctx.setLineDash([]); // Solid line
+                ctx.setLineDash([]);
                 ctx.stroke();
 
-                // Markers
+                // --- Markers (Crow's Foot Notation) ---
                 ctx.fillStyle = '#64c8ff';
+                ctx.strokeStyle = '#64c8ff';
+                ctx.lineWidth = 2;
 
-                // Start Circle
+                // 1. FK Side (Source) -> "Many" (Crow's Foot)
+                // Symbol: Three prongs opening towards table
+                const footSize = 10;
                 ctx.beginPath();
-                ctx.arc(startX, startY, 3, 0, Math.PI * 2);
-                ctx.fill();
+                // Origin (startX, startY). If exiting Right (Dir=1), prongs point Left (<).
+                // Top prong
+                ctx.moveTo(startX + (footSize * startDir), startY - footSize / 2);
+                ctx.lineTo(startX, startY);
+                // Bottom prong
+                ctx.lineTo(startX + (footSize * startDir), startY + footSize / 2);
+                ctx.stroke();
 
-                // End Circle
+                // 2. PK Side (Target) -> "One" (Vertical Bar)
                 ctx.beginPath();
-                ctx.arc(endX, endY, 3, 0, Math.PI * 2);
-                ctx.fill();
+                // Bar is perpendicular to the entering line.
+                // Just draw a vertical bar at EndX
+                ctx.moveTo(endX, endY - 6);
+                ctx.lineTo(endX, endY + 6);
+
+                ctx.stroke();
             }
         });
     }
+}
 
-    // Helper: Reset Visualization
-    function resetVisualization() {
+// Helper: Reset Visualization
+function resetVisualization() {
         document.querySelectorAll('.table-card').forEach(el => {
             el.classList.remove('active-table', 'dimmed');
         });
@@ -231,8 +277,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Hook up UI feedback (WP4 + WP5 + WP6)
-    simulator.onStepChange = (step, index) => {
+// Hook up UI feedback (WP4 + WP5 + WP6)
+simulator.onStepChange = (step, index) => {
         console.log(`[SIM] Step ${index + 1}: ${step.description}`, step);
 
         // --- WP4: Step List Updates ---
@@ -369,52 +415,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    simulator.onFinish = () => {
-        console.log('[SIM] Simulation Finished');
-        const lastIndex = simulator.steps.length - 1;
-        const lastEl = document.getElementById(`step-${lastIndex}`);
-        if (lastEl) {
-            lastEl.classList.remove('active');
-            lastEl.classList.add('done');
-        }
-    };
+simulator.onFinish = () => {
+    console.log('[SIM] Simulation Finished');
+    const lastIndex = simulator.steps.length - 1;
+    const lastEl = document.getElementById(`step-${lastIndex}`);
+    if (lastEl) {
+        lastEl.classList.remove('active');
+        lastEl.classList.add('done');
+    }
+};
 
-    btnPlay.addEventListener('click', () => {
-        const sql = editor.getValue();
-        if (!sql.trim()) {
-            alert('Bitte SQL eingeben!');
-            return;
-        }
+btnPlay.addEventListener('click', () => {
+    const sql = editor.getValue();
+    if (!sql.trim()) {
+        alert('Bitte SQL eingeben!');
+        return;
+    }
 
-        console.log('Starting Simulation for:', sql);
-        simulator.reset();
+    console.log('Starting Simulation for:', sql);
+    simulator.reset();
 
-        // 1. Parse SQL into Steps
-        const steps = parser.parse(sql);
+    // 1. Parse SQL into Steps
+    const steps = parser.parse(sql);
 
-        if (steps.length > 0) {
-            // Visualize Initial List
-            renderSteps(steps);
+    if (steps.length > 0) {
+        // Visualize Initial List
+        renderSteps(steps);
 
-            // 2. Load Simulator
-            simulator.loadSteps(steps);
-            // 3. Start
-            simulator.start();
-        } else {
-            console.warn('Parser returned no steps.');
-        }
-    });
+        // 2. Load Simulator
+        simulator.loadSteps(steps);
+        // 3. Start
+        simulator.start();
+    } else {
+        console.warn('Parser returned no steps.');
+    }
+});
 
-    btnFF.addEventListener('click', () => {
-        if (simulator.isPlaying) {
-            simulator.fastForward();
-        }
-    });
+btnFF.addEventListener('click', () => {
+    if (simulator.isPlaying) {
+        simulator.fastForward();
+    }
+});
 
 
-    // Verify Init
-    console.log('SQL Editor Initialized');
+// Verify Init
+console.log('SQL Editor Initialized');
 
-    // Initial Render of Mock Data (WP5)
-    renderTables(parser.simulationData);
+// Initial Render of Mock Data (WP5)
+renderTables(parser.simulationData);
 });

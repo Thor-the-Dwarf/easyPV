@@ -43,3 +43,23 @@ Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine M
   - Playwright-Smoke fuer `organigramm_sorter` erfolgreich:
     - `output/web-game-teil03-reverse-unternehmensaufbau/`
   - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.
+
+- Batch fortgesetzt mit neuer Commit-Konvention `games_teil03 <message>`.
+- Neues 5er-Topic umgesetzt: "Ausbildungsordnung, Ausbildungsrahmenplan, betrieblicher Ausbildungsplan (Bezuege herstellen)".
+- Neu angelegte Gameordner:
+  - `abstimmungs_konferenz`
+  - `jahresverlauf_puzzle`
+  - `kompetenz_lueckenfinder`
+  - `lernziel_router`
+  - `plan_abgleich_matrix`
+- Je Spiel enthalten:
+  - `_ghtml`, `_gjs`, `_gcss`
+  - `_data/_gg01_*.json` + Topic-MetaData
+  - Vollstaendige `__dokumentation`-Struktur mit UML-PUML und 5 Plan-Dateien
+  - Unit-Tests inkl. Messbarkeits-Check (`measurable`, `score`, `progress_percent`, `simulated_ms`)
+- Validierung:
+  - Lokale Node-Tests fuer den Block komplett gruen (`15/15`).
+  - Playwright-Smoke fuer `abstimmungs_konferenz` erfolgreich:
+    - `output/web-game-ausbildungsplanung/shot-0.png`
+    - `output/web-game-ausbildungsplanung/state-0.json`
+  - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.

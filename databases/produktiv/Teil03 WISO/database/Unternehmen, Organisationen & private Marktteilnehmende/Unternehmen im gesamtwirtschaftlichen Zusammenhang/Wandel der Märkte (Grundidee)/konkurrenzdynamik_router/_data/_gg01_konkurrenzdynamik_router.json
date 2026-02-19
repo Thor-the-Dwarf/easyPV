@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wandel der Maerkte",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 8,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welcher erste Schritt ist bei ploetzlichem Wettbewerbsdruck korrekt?",
+      "hint": "Zuerst Lagebild, dann Aktion.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Auswirkungen auf Kunden, Marge und Kapazitaet analysieren",
+          "correct": true,
+          "feedback": "Richtig. Ohne Lagebild keine gute Route."
+        },
+        {
+          "id": "b",
+          "text": "Sofort alle Preise halbieren",
+          "correct": false,
+          "feedback": "Ungeprueft oft schaedlich."
+        },
+        {
+          "id": "c",
+          "text": "Reaktion komplett aussetzen",
+          "correct": false,
+          "feedback": "Stillstand verliert Marktanteile."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Route ist bei Konkurrenzaktion sinnvoll?",
+      "hint": "Analyse -> Priorisierung -> Umsetzung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trigger pruefen, Massnahme priorisieren, Wirkung messen",
+          "correct": true,
+          "feedback": "Genau der robuste Ablauf."
+        },
+        {
+          "id": "b",
+          "text": "Massnahme waehlen, danach erst Ziel definieren",
+          "correct": false,
+          "feedback": "Ziel muss vorher klar sein."
+        },
+        {
+          "id": "c",
+          "text": "Nur intern diskutieren ohne Entscheidung",
+          "correct": false,
+          "feedback": "Keine operative Wirkung."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was vermeidet Fehlrouten im Wettbewerbsprozess?",
+      "hint": "Klare Kriterien statt Aktionismus.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Entscheidungskriterien fuer Kosten, Tempo und Risiko nutzen",
+          "correct": true,
+          "feedback": "Richtig. Das stabilisiert den Pfad."
+        },
+        {
+          "id": "b",
+          "text": "Immer die lauteste Meinung nehmen",
+          "correct": false,
+          "feedback": "Nicht robust genug."
+        },
+        {
+          "id": "c",
+          "text": "Nur historische Loesung kopieren",
+          "correct": false,
+          "feedback": "Marktbedingungen koennen anders sein."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann ist der Router-Pfad abgeschlossen?",
+      "hint": "Wenn Wirkung verifiziert wurde.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn KPI nach Umsetzung gegen Zielbild geprueft sind",
+          "correct": true,
+          "feedback": "Exakt. Abschluss braucht Wirkungskontrolle."
+        },
+        {
+          "id": "b",
+          "text": "Sobald eine Massnahme gestartet wurde",
+          "correct": false,
+          "feedback": "Start ist noch kein Ergebnis."
+        },
+        {
+          "id": "c",
+          "text": "Wenn alle zustimmen, auch ohne Daten",
+          "correct": false,
+          "feedback": "Datenvalidierung fehlt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Kennzahl zeigt Routing-Qualitaet am besten?",
+      "hint": "Korrektheit und Effizienz kombinieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Prozessschritte bis zur wirksamen Loesung",
+          "correct": true,
+          "feedback": "Richtig. Genau das misst Routing-Qualitaet."
+        },
+        {
+          "id": "b",
+          "text": "Anzahl zufaelliger Ideen",
+          "correct": false,
+          "feedback": "Nicht entscheidend."
+        },
+        {
+          "id": "c",
+          "text": "Anzahl Meetings pro Woche",
+          "correct": false,
+          "feedback": "Nur indirekter Indikator."
+        }
+      ]
+    }
+  ]
+}

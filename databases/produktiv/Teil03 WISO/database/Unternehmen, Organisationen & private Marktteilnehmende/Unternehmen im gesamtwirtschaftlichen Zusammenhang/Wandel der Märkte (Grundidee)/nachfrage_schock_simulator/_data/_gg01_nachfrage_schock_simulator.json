@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wandel der Maerkte",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 7,
+    "wrong": -3,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Wie reagierst du auf einen ploetzlichen Nachfragesprung?",
+      "hint": "Kapazitaet und Lieferfaehigkeit zuerst sichern.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kurzfristig Kapazitaet umschichten und Engpaesse priorisieren",
+          "correct": true,
+          "feedback": "Richtig. So bleibt Versorgung stabil."
+        },
+        {
+          "id": "b",
+          "text": "Produktion unveraendert lassen",
+          "correct": false,
+          "feedback": "Fuehrt zu Rueckstau."
+        },
+        {
+          "id": "c",
+          "text": "Sofort alle Produkte auslisten",
+          "correct": false,
+          "feedback": "Unverhaeltnismaessig."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Was ist bei Nachfragerueckgang sinnvoll?",
+      "hint": "Kontrolliert anpassen statt hektisch kuerzen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mengen schrittweise anpassen und Nachfrage aktiv monitoren",
+          "correct": true,
+          "feedback": "Richtig. Das vermeidet Ueberreaktion."
+        },
+        {
+          "id": "b",
+          "text": "Alle Kapazitaeten sofort auf null",
+          "correct": false,
+          "feedback": "Zu radikal, hohe Folgekosten."
+        },
+        {
+          "id": "c",
+          "text": "Daten nicht mehr beobachten",
+          "correct": false,
+          "feedback": "Steuerungsverlust."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Fehlsteuerung ist bei kleinen Schocks typisch?",
+      "hint": "Zu starke Reaktion auf wenig Signal.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ueberreaktion mit zu grosser Preis- oder Mengenanpassung",
+          "correct": true,
+          "feedback": "Genau. Das erzeugt Instabilitaet."
+        },
+        {
+          "id": "b",
+          "text": "Moderate Testanpassung",
+          "correct": false,
+          "feedback": "Das ist eher sinnvoll."
+        },
+        {
+          "id": "c",
+          "text": "Kontinuierliches Monitoring",
+          "correct": false,
+          "feedback": "Monitoring ist positiv."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gilt eine Runde als stabil?",
+      "hint": "Servicelevel und Bestand im Zielkorridor.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Lieferfaehigkeit und Bestand innerhalb der Leitplanken bleiben",
+          "correct": true,
+          "feedback": "Richtig. Das ist stabile Steuerung."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur ein Wert zufaellig passt",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Wenn gar nicht gesteuert wurde",
+          "correct": false,
+          "feedback": "Keine aktive Stabilisierung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI zeigt Lernfortschritt im Simulator?",
+      "hint": "Stabilitaet und Fehlquote kombiniert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stabilitaetsindex plus Fehlentscheidungsquote",
+          "correct": true,
+          "feedback": "Exakt. Beide Seiten sind wichtig."
+        },
+        {
+          "id": "b",
+          "text": "Nur Klickanzahl",
+          "correct": false,
+          "feedback": "Keine inhaltliche Qualitaet."
+        },
+        {
+          "id": "c",
+          "text": "Nur Sessiondauer",
+          "correct": false,
+          "feedback": "Tempo allein reicht nicht."
+        }
+      ]
+    }
+  ]
+}

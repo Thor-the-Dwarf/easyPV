@@ -1,0 +1,53 @@
+# __gp_wandel_maerkte__innovationsdruck_duell
+
+## Spielidee
+"Innovationsdruck-Duell" vergleicht zwei Unternehmensstrategien bei Marktwandel. Lernende waehlen die robustere Strategie.
+
+## Lernziel
+- Strategien gegen Innovationsdruck beurteilen.
+- Kurz- und Langfristeffekte abwaegen.
+
+## Messbare Progression
+- 16 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer passende Begruendung.
+- KPI: Wahlgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EvaluationEngine
+- ScoreService
+
+### Domaenenobjekte
+- DuelCase(duelId, optionA, optionB)
+- StrategyOption(optionId, scoreVector)
+- DuelResult(winnerId, rationaleCorrect)
+
+### Beziehungen
+- DuelCase enthaelt 2 StrategyOption.
+- EvaluationEngine validiert Auswahl.
+- ScoreService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> REVIEW -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt StrategyOption.
+3. EvaluationEngine prueft Wahl.
+4. DuelResult wird gespeichert.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Richtige Wahl ohne Begruendung gibt Teilpunkte.
+- Serienbonus ab 4 Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, optionA{}, optionB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Entscheidungslogik ist transparent.
+- KPI trennt Wahl und Begruendung.
+- Report listet haeufige Fehlbewertungen.

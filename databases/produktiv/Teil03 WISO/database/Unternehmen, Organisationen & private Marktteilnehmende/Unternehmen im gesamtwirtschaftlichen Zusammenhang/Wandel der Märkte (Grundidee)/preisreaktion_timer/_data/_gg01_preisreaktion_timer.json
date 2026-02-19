@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wandel der Maerkte",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 6,
+    "wrong": -3,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Reaktion passt bei kurzfristigem Nachfragepeak?",
+      "hint": "Preis nur moderat und begruendet anpassen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Moderate, zeitlich befristete Preisanpassung mit Monitoring",
+          "correct": true,
+          "feedback": "Richtig. Das bleibt steuerbar."
+        },
+        {
+          "id": "b",
+          "text": "Sofort extreme Preiserhoehung ohne Pruefung",
+          "correct": false,
+          "feedback": "Zu riskant fuer Kundenbindung."
+        },
+        {
+          "id": "c",
+          "text": "Keine Reaktion trotz Engpass",
+          "correct": false,
+          "feedback": "Nutzt Marktlage nicht kontrolliert."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Was gilt bei staerkerem Konkurrenzrabatt?",
+      "hint": "Differenzierung vor blindem Mitgehen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Preisreaktion mit Leistungsargumenten und Zielsegmenten koppeln",
+          "correct": true,
+          "feedback": "Genau. So bleibt Wertposition klar."
+        },
+        {
+          "id": "b",
+          "text": "Automatisch unter jeden Konkurrenzpreis gehen",
+          "correct": false,
+          "feedback": "Kann Marge zerstoeren."
+        },
+        {
+          "id": "c",
+          "text": "Preisentscheid komplett aussetzen",
+          "correct": false,
+          "feedback": "Reaktionsfaehigkeit fehlt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wie vermeidest du Preisfehler unter Zeitdruck?",
+      "hint": "Schnelle Checkliste nutzen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kurzcheck zu Nachfrage, Marge und Wettbewerb vor Entscheidung",
+          "correct": true,
+          "feedback": "Richtig. Das stabilisiert Tempo und Qualitaet."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gefuehl und Tempo ohne Kriterien",
+          "correct": false,
+          "feedback": "Fehlerrisiko ist hoch."
+        },
+        {
+          "id": "c",
+          "text": "Auf Entscheidung bis nach dem Zeitfenster warten",
+          "correct": false,
+          "feedback": "Zaehlt als Fehlreaktion."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gibt es im Timer typischerweise Punktabzug?",
+      "hint": "Falsch oder zu spaet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei falscher Entscheidung oder Antwort ausserhalb des Zeitfensters",
+          "correct": true,
+          "feedback": "Richtig. Genau das senkt die KPI."
+        },
+        {
+          "id": "b",
+          "text": "Bei korrekter Schnellentscheidung",
+          "correct": false,
+          "feedback": "Das wird belohnt."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Hinweistext gelesen wird",
+          "correct": false,
+          "feedback": "Hinweise sind erlaubt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI zeigt Fortschritt im Preisreaktion-Timer?",
+      "hint": "Tempo und Genauigkeit gemeinsam.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Entscheidungen pro Minute",
+          "correct": true,
+          "feedback": "Genau diese KPI bildet Lernfortschritt ab."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtspielzeit",
+          "correct": false,
+          "feedback": "Ohne Korrektheit nicht aussagekraeftig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl geoeffneter Menues",
+          "correct": false,
+          "feedback": "Keine Leistungsmetrik."
+        }
+      ]
+    }
+  ]
+}

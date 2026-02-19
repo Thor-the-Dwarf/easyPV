@@ -1,0 +1,7 @@
+@startuml
+package "Anhang-Vergesser-Alarm" {
+  [HTML Shell] --> [Game JS]
+  [Game JS] --> [Config JSON]
+  [Game JS] --> [CSS Theme]
+}
+@enduml

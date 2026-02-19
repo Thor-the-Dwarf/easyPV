@@ -1,0 +1,9 @@
+@startuml
+[*] --> Loading
+Loading --> Running : config loaded
+Running --> Evaluated : action selected
+Running --> Evaluated : timeout
+Evaluated --> Running : next round
+Evaluated --> Finished : last round
+Finished --> [*]
+@enduml

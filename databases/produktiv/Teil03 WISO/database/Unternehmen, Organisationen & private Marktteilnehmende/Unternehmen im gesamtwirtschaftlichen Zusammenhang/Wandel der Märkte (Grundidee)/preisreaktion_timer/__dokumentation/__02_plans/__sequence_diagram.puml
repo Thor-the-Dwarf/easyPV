@@ -1,0 +1,12 @@
+@startuml
+actor Player
+participant UI
+participant Engine
+participant Metrics
+Player -> UI: waehlt Option
+UI -> Engine: pruefe(option)
+Engine --> UI: korrekt/falsch
+UI -> Metrics: update(score, progress)
+Metrics --> UI: KPI
+UI --> Player: Feedback
+@enduml

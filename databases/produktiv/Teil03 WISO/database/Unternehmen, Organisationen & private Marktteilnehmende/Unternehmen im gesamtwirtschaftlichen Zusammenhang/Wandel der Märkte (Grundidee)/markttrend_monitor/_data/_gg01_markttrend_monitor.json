@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wandel der Maerkte",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 8,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Kombination spricht am staerksten fuer einen Nachfragetrend nach oben?",
+      "hint": "Bestellungen steigen und Lager sinken.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Steigende Bestellungen bei sinkenden Lagerbestaenden",
+          "correct": true,
+          "feedback": "Richtig. Das ist ein klarer Trendhinweis."
+        },
+        {
+          "id": "b",
+          "text": "Konstante Daten ohne Veraenderung",
+          "correct": false,
+          "feedback": "Kein dominanter Trend."
+        },
+        {
+          "id": "c",
+          "text": "Sinkende Nachfrage bei steigenden Retouren",
+          "correct": false,
+          "feedback": "Das ist eher negativ."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Reaktion passt bei wachsendem Preisdruck?",
+      "hint": "Wertbeitrag absichern, nicht blind rabattieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kostenhebel und differenziertes Angebot kombinieren",
+          "correct": true,
+          "feedback": "Genau. So bleibt Marge steuerbar."
+        },
+        {
+          "id": "b",
+          "text": "Pauschal alle Preise massiv senken",
+          "correct": false,
+          "feedback": "Kann Marge unnoetig zerstoeren."
+        },
+        {
+          "id": "c",
+          "text": "Keine Anpassung trotz Marktsignal",
+          "correct": false,
+          "feedback": "Ignoriert Trendlage."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was erhoeht die Qualitaet der Trendentscheidung?",
+      "hint": "Mehrere Kennzahlen gemeinsam lesen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nachfrage-, Preis- und Wettbewerbsdaten gemeinsam bewerten",
+          "correct": true,
+          "feedback": "Richtig. Das reduziert Fehldeutungen."
+        },
+        {
+          "id": "b",
+          "text": "Nur eine Einzelkennzahl verwenden",
+          "correct": false,
+          "feedback": "Zu einseitig."
+        },
+        {
+          "id": "c",
+          "text": "Nur auf Gefuehl entscheiden",
+          "correct": false,
+          "feedback": "Nicht datenbasiert."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gilt ein Trend als kritisch?",
+      "hint": "Wenn Kern-KPI klar aus Zielkorridor laufen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn mehrere KPI gleichzeitig dauerhaft abweichen",
+          "correct": true,
+          "feedback": "Richtig. Das signalisiert Handlungsdruck."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein einzelner Messpunkt auffaellt",
+          "correct": false,
+          "feedback": "Noch kein stabiler Trend."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Berichte verspaetet kommen",
+          "correct": false,
+          "feedback": "Operativ relevant, aber kein Trendbeweis."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Auswertung hilft nach dem Fall am meisten?",
+      "hint": "Trendtreffer und Reaktionstreffer trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Getrennte Quote fuer Trendwahl und Reaktionswahl",
+          "correct": true,
+          "feedback": "Exakt. So wird Lernbedarf klar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endpunktzahl ohne Aufschluesselung",
+          "correct": false,
+          "feedback": "Zu wenig steuerbar."
+        },
+        {
+          "id": "c",
+          "text": "Nur Textfeedback ohne Kennzahl",
+          "correct": false,
+          "feedback": "Messbarkeit fehlt."
+        }
+      ]
+    }
+  ]
+}

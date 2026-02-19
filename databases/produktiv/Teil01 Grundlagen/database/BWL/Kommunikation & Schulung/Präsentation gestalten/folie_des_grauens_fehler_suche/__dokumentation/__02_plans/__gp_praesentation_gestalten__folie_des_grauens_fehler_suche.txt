@@ -1,0 +1,16 @@
+Anforderungen
+- Titel: "E-Mail-Translate-Race"
+- Ziel: Fuer 5 deutsche E-Mail-Phrasen jeweils die korrekte englische Entsprechung waehlen.
+- Lernziel: Formelle und fachlich passende Standardformulierungen in der englischen Geschaeftskommunikation.
+
+Spielidee
+- Pro Runde eine deutsche Phrase plus Kontext.
+- Drei englische Antwortoptionen.
+- Bewertung mit Punktefortschritt und Trefferquote.
+
+Implementierungsplan
+- [x] JSON Konfiguration `_data/_gg01_email_translate_race.json`
+- [x] UI `_ghtml_email_translate_race.html` + `_gcss_email_translate_race.css`
+- [x] Spiel-Logik `_gjs_email_translate_race.js`
+- [x] Hooks `render_game_to_text` und `advanceTime`
+- [x] Tests in `__dokumentation/__03_tests` (reachability + config + progress)

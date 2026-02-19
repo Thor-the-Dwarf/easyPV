@@ -479,8 +479,18 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Starting Simulation for:', sql);
         simulator.reset();
 
-        // 1. Parse SQL into Steps
-        const steps = parser.parse(sql);
+        // 1. Parse SQL into Steps (new format: { type, clauses, tables, columns, error, warning, steps })
+        const parseResult = parser.parse(sql);
+
+        // Show Parser feedback (WP10 – sichtbare Fehlermeldungen)
+        if (parseResult.error) {
+            const errEl = document.getElementById('sql-feedback');
+            if (errEl) { errEl.className = 'sql-feedback error'; errEl.textContent = '🔴 ' + parseResult.error; }
+            console.warn('[Parser]', parseResult.error);
+            return;
+        }
+
+        const steps = parseResult.steps;
 
         if (steps.length > 0) {
             // Visualize Initial List

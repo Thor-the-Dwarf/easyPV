@@ -127,3 +127,22 @@ Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine M
     - `output/web-game-wertschoepfung/shot-0.png`
     - `output/web-game-wertschoepfung/state-0.json`
   - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.
+
+- Neuer Umsetzungs-Batch: Topic "Wandel der Maerkte (Grundidee)" mit 5 neuen Gameordnern.
+- Neu angelegt:
+  - `innovationsdruck_duell`
+  - `konkurrenzdynamik_router`
+  - `markttrend_monitor`
+  - `nachfrage_schock_simulator`
+  - `preisreaktion_timer`
+- Je Spiel erstellt:
+  - `_ghtml`, `_gjs`, `_gcss`
+  - `_data/_gg01_*.json` + Topic-MetaData
+  - Vollstaendige `__dokumentation`-Struktur mit UML-PUML und 5 Plan-Dateien
+  - Unit-Tests inkl. Messbarkeits-Check (`measurable`, `score`, `progress_percent`, `simulated_ms`)
+- Validierung:
+  - Lokale Node-Tests fuer den Block komplett gruen (`15/15`).
+  - Playwright-Smoke fuer `markttrend_monitor` erfolgreich:
+    - `output/web-game-wandel-maerkte/shot-0.png`
+    - `output/web-game-wandel-maerkte/state-0.json`
+  - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.

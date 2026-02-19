@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "id": "email_translate_race_v1",
+    "title": "E-Mail-Translate-Race",
+    "topic": "Englisch",
+    "mechanic": "translation_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 20,
+    "wrong": 0,
+    "timeout": 0,
+    "completion_bonus": 0
+  },
+  "timing": {
+    "default_round_ms": 10000
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "de": "Sehr geehrte Damen und Herren",
+      "context": "Formelle Anrede in einer Geschaeftsmail",
+      "options": [
+        { "id": "a", "text": "Hello all", "reason": "Zu informell." },
+        { "id": "b", "text": "Dear Sir or Madam", "reason": "Richtig: formelle Standardanrede." },
+        { "id": "c", "text": "Hi guys", "reason": "Umgangssprachlich und unpassend." }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": 2,
+      "de": "Im Anhang finden Sie das Angebot.",
+      "context": "Hinweis auf beigefuegtes Dokument",
+      "options": [
+        { "id": "a", "text": "Please find the quotation attached.", "reason": "Richtig und professionell." },
+        { "id": "b", "text": "The offer is somewhere below.", "reason": "Unklar und unprofessionell." },
+        { "id": "c", "text": "I send you maybe an offer.", "reason": "Grammatikalisch und inhaltlich unpraezise." }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": 3,
+      "de": "Koennen Sie den Termin auf Freitag verschieben?",
+      "context": "Hoefliche Terminverschiebung",
+      "options": [
+        { "id": "a", "text": "Move the meeting now.", "reason": "Zu direkt und nicht hoeflich." },
+        { "id": "b", "text": "Could you reschedule the appointment to Friday?", "reason": "Richtig: hoeflich und praezise." },
+        { "id": "c", "text": "Can you put date maybe Friday.", "reason": "Falscher Satzbau." }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": 4,
+      "de": "Vielen Dank fuer Ihre Rueckmeldung.",
+      "context": "Dank in professioneller Korrespondenz",
+      "options": [
+        { "id": "a", "text": "Thanks for your feedback.", "reason": "Richtig, neutral-professionell." },
+        { "id": "b", "text": "Big thanks for answer.", "reason": "Unnatuerliche Formulierung." },
+        { "id": "c", "text": "Thx for your msg.", "reason": "Zu locker fuer Business-Mail." }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": 5,
+      "de": "Bei Rueckfragen stehe ich gern zur Verfuegung.",
+      "context": "Abschlussformel",
+      "options": [
+        { "id": "a", "text": "If you have any questions, please do not hesitate to contact me.", "reason": "Richtig: gaengige professionelle Abschlussformel." },
+        { "id": "b", "text": "Ask me if something weird.", "reason": "Unklar und unprofessionell." },
+        { "id": "c", "text": "Questions? Write maybe.", "reason": "Zu knapp und umgangssprachlich." }
+      ],
+      "correctOptionId": "a"
+    }
+  ]
+}

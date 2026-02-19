@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+actor Lerner
+rectangle "Anhang-Vergesser-Alarm" {
+  usecase "Mail pruefen" as UC1
+  usecase "Senden oder Stoppen" as UC2
+  usecase "Feedback erhalten" as UC3
+  usecase "Ergebnis ansehen" as UC4
+}
+Lerner --> UC1
+Lerner --> UC2
+Lerner --> UC3
+Lerner --> UC4
+@enduml

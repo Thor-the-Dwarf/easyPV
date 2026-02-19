@@ -83,6 +83,28 @@
 
 ### TODO (naechster Block Englisch)
 - Als nächste GamePlan-Ordner umsetzen:
-  - `GamePlan-IT-Vocab-Sprint.txt`
+  - `GamePlan-Listening-Comprehension-The-Meeting.txt`
+  - `GamePlan-Sentence-Builder-Support-Ticket.txt`
+
+## 2026-02-19 - Weitere GamePlan-Umsetzung (Englisch)
+- Neues Spiel aus GamePlan umgesetzt:
+  - `databases/produktiv/Teil01 Grundlagen/database/BWL/Kommunikation & Schulung/Englisch/it_vocab_sprint/`
+- Inhalte:
+  - 20 Begriffe in `_data/_gg01_it_vocab_sprint.json`
+  - 120s Sprint-Logik + lokaler Highscore in `_gjs_it_vocab_sprint.js`
+  - fliegender Begriff + 4 Ziel-Buckets in `_ghtml_it_vocab_sprint.html` / `_gcss_it_vocab_sprint.css`
+  - Test- und Plan-Dokumentation unter `__dokumentation/`
+- Validierung:
+  - JSON-Parse + `node --check` erfolgreich
+  - `node --test "__dokumentation/__03_tests/unit/*.test.mjs"` erfolgreich (`3/3`)
+  - Playwright-Interaktions-Smoke erfolgreich:
+    - `output/web-game-it-vocab-sprint-click/shot-0.png`
+    - `output/web-game-it-vocab-sprint-click/state-0.json`
+- Indexe neu erzeugt:
+  - `databases/produktiv/Teil01 Grundlagen/database-index.json`
+  - `index.json`
+
+### TODO (naechster Block Englisch)
+- Als nächste GamePlan-Ordner umsetzen:
   - `GamePlan-Listening-Comprehension-The-Meeting.txt`
   - `GamePlan-Sentence-Builder-Support-Ticket.txt`

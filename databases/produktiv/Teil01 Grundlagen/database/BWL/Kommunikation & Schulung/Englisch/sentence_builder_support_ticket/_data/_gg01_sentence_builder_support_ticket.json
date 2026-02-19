@@ -1,0 +1,45 @@
+{
+  "gameId": "sentence_builder_support_ticket",
+  "title": "Sentence-Builder: Support Ticket",
+  "description": "Baue aus Wortbausteinen korrekte englische Support-Saetze.",
+  "timing": {
+    "total_ms": 150000
+  },
+  "scoring": {
+    "correct": 25,
+    "wrong": -10,
+    "completion_bonus": 15
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "de": "Haben Sie den Computer neu gestartet?",
+      "target": "Have you restarted the computer?",
+      "words": ["you", "Have", "computer", "restarted", "the", "?"]
+    },
+    {
+      "id": 2,
+      "de": "Wir pruefen den Fehler noch heute.",
+      "target": "We will check the issue today.",
+      "words": ["issue", "today", ".", "the", "We", "will", "check"]
+    },
+    {
+      "id": 3,
+      "de": "Bitte senden Sie einen Screenshot.",
+      "target": "Please send a screenshot.",
+      "words": ["screenshot", "Please", "send", "a", "."]
+    },
+    {
+      "id": 4,
+      "de": "Der Server ist wieder erreichbar.",
+      "target": "The server is reachable again.",
+      "words": ["reachable", "The", "again", ".", "is", "server"]
+    },
+    {
+      "id": 5,
+      "de": "Koennen Sie das Ticket aktualisieren?",
+      "target": "Can you update the ticket?",
+      "words": ["the", "you", "Can", "?", "ticket", "update"]
+    }
+  ]
+}

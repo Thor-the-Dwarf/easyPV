@@ -1,0 +1,52 @@
+# __gp_wertschoepfung__durchlaufzeit_simulator
+
+## Spielidee
+"Durchlaufzeit-Simulator" bildet Auftraege ueber mehrere Prozessstufen ab. Lernende steuern Prioritaeten, um Engpaesse zu reduzieren und Lieferzeiten zu verbessern.
+
+## Lernziel
+- Zusammenhang zwischen Prozesssteuerung und Lieferperformance verstehen.
+- Engpaesse in der Wertschoepfung aktiv abbauen.
+
+## Messbare Progression
+- 6 Simulationsrunden mit je 100 Sekunden.
+- Punkte: +1 pro fristgerechtem Auftrag, -2 pro ueberfaelligem Auftrag.
+- KPI: mittlere Durchlaufzeit und Termintrefferquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- SimulationController
+- FlowEngine
+- KPIService
+
+### Domaenenobjekte
+- Order(orderId, dueTime, stagePath)
+- Stage(stageId, capacity)
+- RoundResult(avgLeadTime, onTimeRate)
+
+### Beziehungen
+- FlowEngine verarbeitet 1..* Order ueber 1..* Stage.
+- SimulationController steuert 1..* Runde.
+- KPIService aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- PREPARE -> RUNNING -> PRIORITIZE -> ROUND_END -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. SimulationController startet Runde.
+2. Player priorisiert Order.
+3. FlowEngine simuliert Bearbeitung.
+4. RoundResult wird berechnet.
+5. KPIService aktualisiert Dashboard.
+
+## Regeln
+- Ueberfaellige Auftraege ziehen hohe Strafpunkte.
+- Stabil hohe Termintrefferquote bringt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: roundId, orders[], stages[], timeLimitSec
+
+## Abnahmekriterien
+- KPI ist live und reproduzierbar.
+- Durchlaufzeitvergleich ueber Runden ist sichtbar.
+- Replay markiert Engpassstellen.

@@ -1,0 +1,251 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: radial-gradient(circle at 15% 0%, #103f67 0%, #051730 40%, #041127 100%);
+  color: #e7eef9;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: min(1050px, 100%);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.head,
+.card {
+  border: 1px solid #1f77bd;
+  border-radius: 16px;
+  background: rgba(10, 31, 58, 0.8);
+  box-shadow: inset 0 0 0 1px rgba(131, 218, 255, 0.12);
+}
+
+.head {
+  padding: 12px;
+}
+
+.head h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  line-height: 1.08;
+}
+
+.head p {
+  margin: 6px 0 10px;
+  color: #b8cde8;
+  font-size: clamp(1rem, 2vw, 1.12rem);
+}
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.kpi {
+  border: 1px solid #1f77bd;
+  border-radius: 10px;
+  padding: 7px 9px;
+  background: rgba(1, 16, 36, 0.66);
+  display: grid;
+  gap: 2px;
+}
+
+.kpi span {
+  color: #9eb8d7;
+  font-size: 0.95rem;
+}
+
+.kpi strong {
+  font-size: clamp(1.15rem, 2.2vw, 1.85rem);
+}
+
+.time-bar {
+  margin-top: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(6, 19, 38, 0.85);
+  border: 1px solid rgba(71, 157, 217, 0.72);
+  overflow: hidden;
+}
+
+.time-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #35d08a, #ffb347);
+}
+
+.card {
+  padding: 12px;
+}
+
+.prompt {
+  border: 1px solid #1f77bd;
+  border-radius: 12px;
+  padding: 11px;
+  background: rgba(6, 22, 43, 0.92);
+}
+
+.prompt h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.8vw, 1.7rem);
+}
+
+.prompt p {
+  margin: 6px 0 0;
+  color: #b8cde8;
+}
+
+.section-title {
+  margin: 12px 0 7px;
+  color: #9fc2e4;
+  font-size: 1rem;
+}
+
+.sentence-zone {
+  min-height: 74px;
+  border: 1px dashed #4ea6de;
+  border-radius: 12px;
+  padding: 9px;
+  background: rgba(3, 18, 38, 0.9);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: flex-start;
+}
+
+.placeholder {
+  color: #86a7c8;
+}
+
+.tokens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.token-btn {
+  appearance: none;
+  border: 1px solid #2a8fd5;
+  border-radius: 999px;
+  background: rgba(3, 19, 39, 0.96);
+  color: #e8f3ff;
+  font: inherit;
+  font-size: 1.03rem;
+  font-weight: 700;
+  padding: 8px 13px;
+  cursor: pointer;
+}
+
+.token-btn:hover:not(:disabled) {
+  border-color: #59d0ff;
+}
+
+.token-btn.assembled {
+  border-color: #64d2ff;
+  background: rgba(19, 58, 91, 0.9);
+}
+
+.token-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid #2a8fd5;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #0f365b, #0b2541);
+  color: #eef5ff;
+  font: inherit;
+  font-size: 1.02rem;
+  font-weight: 700;
+  padding: 9px 16px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: #57cbff;
+}
+
+.feedback {
+  margin-top: 10px;
+  border-radius: 11px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  font-size: 1.04rem;
+}
+
+.feedback.ok {
+  background: rgba(40, 144, 108, 0.24);
+  border-color: rgba(69, 221, 162, 0.68);
+  color: #dcfff1;
+}
+
+.feedback.bad {
+  background: rgba(160, 41, 70, 0.24);
+  border-color: rgba(255, 108, 150, 0.68);
+  color: #ffe2ed;
+}
+
+.result h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.45rem, 3.3vw, 2rem);
+}
+
+.result p {
+  margin: 4px 0;
+  color: #ccddf3;
+  font-size: 1.06rem;
+}
+
+.result strong {
+  color: #f0f7ff;
+}
+
+@media (max-width: 640px) {
+  .app {
+    margin: 8px;
+    gap: 10px;
+  }
+
+  .head,
+  .card {
+    border-radius: 13px;
+    padding: 10px;
+  }
+
+  .token-btn {
+    font-size: 0.98rem;
+  }
+}

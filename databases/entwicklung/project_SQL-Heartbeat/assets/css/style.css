@@ -441,3 +441,24 @@ html {
 .db-table th:hover::after {
     opacity: 1;
 }
+
+/* Toggle Button */
+.theme-btn {
+    padding: 6px 16px;
+    border-radius: 8px;
+    border: 2px solid hsl(var(--accent, 210 80% 60%) / 0.6);
+    background: transparent;
+    color: hsl(var(--txt));
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, opacity 0.2s;
+    opacity: 0.45;
+    letter-spacing: 0.03em;
+}
+
+.theme-btn.active {
+    background: hsl(var(--accent, 210 80% 60%) / 0.18);
+    border-color: hsl(var(--accent, 210 80% 60%));
+    opacity: 1;
+}

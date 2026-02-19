@@ -71,14 +71,14 @@ Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine M
   - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.
 
 - Batch fortgesetzt mit neuer Commit-Konvention `games_teil03 <message>`.
-- Neues 5er-Topic umgesetzt: "Ausbildungsordnung, Ausbildungsrahmenplan, betrieblicher Ausbildungsplan (Bezuege herstellen)".
-- Neu angelegte Gameordner:
+- Bestands-Validierung fuer Topic "Ausbildungsordnung, Ausbildungsrahmenplan, betrieblicher Ausbildungsplan (Bezuege herstellen)" durchgefuehrt.
+- Gepruefter 5er-Block:
   - `abstimmungs_konferenz`
   - `jahresverlauf_puzzle`
   - `kompetenz_lueckenfinder`
   - `lernziel_router`
   - `plan_abgleich_matrix`
-- Je Spiel enthalten:
+- Ergebnis:
   - `_ghtml`, `_gjs`, `_gcss`
   - `_data/_gg01_*.json` + Topic-MetaData
   - Vollstaendige `__dokumentation`-Struktur mit UML-PUML und 5 Plan-Dateien
@@ -88,4 +88,42 @@ Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine M
   - Playwright-Smoke fuer `abstimmungs_konferenz` erfolgreich:
     - `output/web-game-ausbildungsplanung/shot-0.png`
     - `output/web-game-ausbildungsplanung/state-0.json`
+  - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.
+
+- Bestands-Validierung: Topic "Beteiligte im dualen System (Betrieb, Berufsschule, zustaendige Stelle, ggf. UEBS)" mit 5 vorhandenen Games geprueft.
+- Gepruefter Block:
+  - `akteurszuordnung_match`
+  - `kommunikationspfad_router`
+  - `rollenkonflikt_navigator`
+  - `schnittstellen_stresstest`
+  - `terminkoordination_timer`
+- Ergebnis:
+  - `_ghtml`, `_gjs`, `_gcss`
+  - `_data/_gg01_*.json` + Topic-MetaData
+  - Vollstaendige `__dokumentation`-Struktur mit UML-PUML und 5 Plan-Dateien
+  - Unit-Tests inkl. Messbarkeits-Check (`measurable`, `score`, `progress_percent`, `simulated_ms`)
+- Validierung:
+  - Lokale Node-Tests fuer den Block komplett gruen (`15/15`).
+  - Playwright-Smoke fuer `akteurszuordnung_match` erfolgreich:
+    - `output/web-game-duales-system/shot-0.png`
+    - `output/web-game-duales-system/state-0.json`
+  - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.
+
+- Neuer Umsetzungs-Batch: Topic "Stellung des Betriebs in Branche - Wertschoepfung" mit 5 neuen Gameordnern.
+- Neu angelegt:
+  - `durchlaufzeit_simulator`
+  - `kostenfluss_analyse`
+  - `lieferkette_risiko_radar`
+  - `prozessstufe_sorter`
+  - `wertbeitrag_duell`
+- Je Spiel erstellt:
+  - `_ghtml`, `_gjs`, `_gcss`
+  - `_data/_gg01_*.json` + Topic-MetaData
+  - Vollstaendige `__dokumentation`-Struktur mit UML-PUML und 5 Plan-Dateien
+  - Unit-Tests inkl. Messbarkeits-Check (`measurable`, `score`, `progress_percent`, `simulated_ms`)
+- Validierung:
+  - Lokale Node-Tests fuer den Block komplett gruen (`15/15`).
+  - Playwright-Smoke fuer `durchlaufzeit_simulator` erfolgreich:
+    - `output/web-game-wertschoepfung/shot-0.png`
+    - `output/web-game-wertschoepfung/state-0.json`
   - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.

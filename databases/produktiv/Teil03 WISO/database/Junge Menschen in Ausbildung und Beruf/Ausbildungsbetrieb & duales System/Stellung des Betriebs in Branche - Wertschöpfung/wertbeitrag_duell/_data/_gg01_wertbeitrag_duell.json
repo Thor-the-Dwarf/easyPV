@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wertschoepfung",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Bewertungsidee passt zum Wertbeitrag-Duell?",
+      "hint": "Zeit, Kosten und Qualitaet zusammen betrachten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Variante mit besserem Gesamtwert aus Zeit, Kosten und Qualitaet waehlen",
+          "correct": true,
+          "feedback": "Richtig. Die kombinierte Bewertung ist entscheidend."
+        },
+        {
+          "id": "b",
+          "text": "Nur die kuerzeste Zeit waehlen",
+          "correct": false,
+          "feedback": "Einzelkriterium reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Nur die niedrigsten Kosten waehlen",
+          "correct": false,
+          "feedback": "Kosten allein koennen Qualitaetsrisiken verstecken."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann gibt es laut Spielidee Teilpunkte?",
+      "hint": "Wahl korrekt, Begruendung fehlt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn die Wahl korrekt ist, aber die Begruendung nicht passt",
+          "correct": true,
+          "feedback": "Genau. Teilpunkte fuer korrekte Wahl."
+        },
+        {
+          "id": "b",
+          "text": "Wenn beides falsch ist",
+          "correct": false,
+          "feedback": "Dafuer gibt es keine Teilpunkte."
+        },
+        {
+          "id": "c",
+          "text": "Wenn keine Option gewaehlt wurde",
+          "correct": false,
+          "feedback": "Ohne Wahl kein Punkt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI gehoeren zum Duell?",
+      "hint": "Wahl und Begruendung getrennt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Duellgenauigkeit und Begruendungsquote",
+          "correct": true,
+          "feedback": "Richtig. Diese KPI sind gefordert."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endpunktzahl",
+          "correct": false,
+          "feedback": "Zu wenig Detail fuer Lernfeedback."
+        },
+        {
+          "id": "c",
+          "text": "Nur Rundenzahl",
+          "correct": false,
+          "feedback": "Rundenzahl misst keine Qualitaet."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann aktiviert sich der Bonus laut Regeln?",
+      "hint": "Vier korrekte Duelle in Folge.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei vier richtigen Duellen hintereinander",
+          "correct": true,
+          "feedback": "Exakt. Das aktiviert den Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Nach einem Zufallstreffer",
+          "correct": false,
+          "feedback": "Ein Treffer reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Nur in der Abschlussrunde",
+          "correct": false,
+          "feedback": "Bonus ist leistungs- nicht positionsabhaengig."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Report-Sicht ist fuer Nachlernen wichtig?",
+      "hint": "Fehlmuster im Vergleich.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Welche Kriteriumskombinationen haeufig falsch gewichtet wurden",
+          "correct": true,
+          "feedback": "Richtig. Das zeigt systematische Fehlmuster."
+        },
+        {
+          "id": "b",
+          "text": "Nur der Name der letzten Runde",
+          "correct": false,
+          "feedback": "Zu wenig fuer Nachsteuerung."
+        },
+        {
+          "id": "c",
+          "text": "Nur die Anfangsoption",
+          "correct": false,
+          "feedback": "Ohne Vergleich nicht aussagekraeftig."
+        }
+      ]
+    }
+  ]
+}

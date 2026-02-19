@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wertschoepfung",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Wie priorisierst du Risiken im Szenario am wirksamsten?",
+      "hint": "Impact und Eintrittswahrscheinlichkeit kombinieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Risiken mit hoher Auswirkung und hoher Wahrscheinlichkeit zuerst",
+          "correct": true,
+          "feedback": "Richtig. Das minimiert den Gesamtschaden."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach alphabetischer Reihenfolge",
+          "correct": false,
+          "feedback": "Alphabet hat keinen Risikobezug."
+        },
+        {
+          "id": "c",
+          "text": "Niedrigrisiken zuerst, Hochrisiken spaeter",
+          "correct": false,
+          "feedback": "Das ist in der Regel unguenstig."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche zweite Entscheidung wird getrennt bewertet?",
+      "hint": "Reaktion auf priorisiertes Risiko.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Passende Gegenmassnahme zur Risikostufe",
+          "correct": true,
+          "feedback": "Genau. Reaktion ist eine eigene KPI-Achse."
+        },
+        {
+          "id": "b",
+          "text": "Nur die Rundenfarbe",
+          "correct": false,
+          "feedback": "Farben sind nicht die Reaktion."
+        },
+        {
+          "id": "c",
+          "text": "Nur die Reihenfolge der Mausklicks",
+          "correct": false,
+          "feedback": "Klickfolge ist kein Lernziel."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann entsteht ein Zusatzabzug?",
+      "hint": "Hochrisikoelement uebersehen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn ein Hochrisiko nicht in die Priorisierung aufgenommen wird",
+          "correct": true,
+          "feedback": "Richtig. Das wird streng bestraft."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein Niedrigrisiko dokumentiert wird",
+          "correct": false,
+          "feedback": "Dokumentation ist sinnvoll."
+        },
+        {
+          "id": "c",
+          "text": "Wenn der Hinweis gelesen wird",
+          "correct": false,
+          "feedback": "Hinweise sind erlaubt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI gehoeren zum Radar?",
+      "hint": "Priorisierung und Reaktion.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Priorisierungsquote und Reaktionsquote",
+          "correct": true,
+          "feedback": "Richtig. Beide Kompetenzwerte sind noetig."
+        },
+        {
+          "id": "b",
+          "text": "Nur Rundenlaenge",
+          "correct": false,
+          "feedback": "Rundenlaenge ist kein Kompetenzwert."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "feedback": "Zu unscharf fuer Risikosteuerung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann gibt es laut Regel einen Multiplikator?",
+      "hint": "Vollkorrekte Runde.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Priorisierung und Reaktion in einer Runde voll korrekt sind",
+          "correct": true,
+          "feedback": "Exakt. Das aktiviert den Multiplikator."
+        },
+        {
+          "id": "b",
+          "text": "Wenn gar keine Antwort gegeben wird",
+          "correct": false,
+          "feedback": "Ohne Antwort kein Bonus."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nur ein Risiko bewertet wurde",
+          "correct": false,
+          "feedback": "Teilbearbeitung reicht nicht."
+        }
+      ]
+    }
+  ]
+}

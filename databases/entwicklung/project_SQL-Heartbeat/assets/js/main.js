@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const topCanvas = document.getElementById('top-canvas');
     const ctx = topCanvas.getContext('2d');
 
+    // Toggle state for relationship lines (must be declared before drawRelationships is called)
+    let showRelationships = true;
+
     // Controls
     const btnPlay = document.getElementById('btn-play');
     const btnFF = document.getElementById('btn-ff');
@@ -38,6 +41,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // Initial Resize
     resizeCanvas();
+
+    // Default demo tables shown on load
+    const defaultData = {
+        TABLES: {
+            USERS: {
+                columns: [
+                    { name: 'id', type: 'INTEGER', isPK: true },
+                    { name: 'name', type: 'VARCHAR' },
+                    { name: 'role', type: 'VARCHAR' }
+                ],
+                rows: [
+                    { id: 1, name: 'Alice', role: 'Admin' },
+                    { id: 2, name: 'Bob', role: 'User' },
+                    { id: 3, name: 'Charlie', role: 'User' }
+                ]
+            },
+            LOGS: {
+                columns: [
+                    { name: 'log_id', type: 'INTEGER', isPK: true },
+                    { name: 'user_id', type: 'INTEGER', isFK: true, fkTarget: 'USERS.id' },
+                    { name: 'message', type: 'TEXT' }
+                ],
+                rows: [
+                    { log_id: 101, user_id: 1, message: 'Logged In' },
+                    { log_id: 102, user_id: 2, message: 'Viewed Page' },
+                    { log_id: 103, user_id: 1, message: 'Logout' }
+                ]
+            }
+        }
+    };
+    renderTables(defaultData);
 
 
     // Helper: Render Steps initially
@@ -136,7 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             tableData.rows.forEach((row, rIndex) => {
                 html += `<tr id="row-${tableName}-${rIndex}" class="table-row">`;
-                row.forEach(cell => {
+                const cells = Array.isArray(row) ? row : Object.values(row);
+                cells.forEach(cell => {
                     html += `<td>${cell}</td>`;
                 });
                 html += `</tr>`;
@@ -151,16 +186,30 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(drawRelationships, 50); // slight delay for layout
     }
 
-    let showRelationships = true;
 
     // WP7: Draw Relationship Lines (Top-Top "Staple" Routing)
     function drawRelationships() {
         ctx.clearRect(0, 0, topCanvas.width, topCanvas.height);
         if (!showRelationships) return; // Toggle Check
 
+        // High-contrast color palette for FK lines
+        // Hues spread evenly, bright enough on dark backgrounds
+        const LINE_COLORS = [
+            '#64c8ff', // sky blue
+            '#ff6b8a', // coral pink
+            '#6bff9e', // mint green
+            '#ffd166', // amber
+            '#c77dff', // violet
+            '#ff9f45', // orange
+            '#00f5d4', // teal
+            '#f72585', // hot pink
+            '#b5e48c', // lime
+            '#a8dadc', // powder blue
+        ];
+
         const fkHeaders = document.querySelectorAll('th[data-is-fk="true"]');
 
-        fkHeaders.forEach(fkTh => {
+        fkHeaders.forEach((fkTh, lineIndex) => {
             const targetStr = fkTh.dataset.fkTarget;
             if (!targetStr) return;
 
@@ -172,21 +221,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetTh = Array.from(targetTableCard.querySelectorAll('th')).find(th => th.dataset.colName === targetCol);
 
             if (targetTh) {
+                // Pick unique color for this line
+                const color = LINE_COLORS[lineIndex % LINE_COLORS.length];
+
                 const startRect = fkTh.getBoundingClientRect();
                 const endRect = targetTh.getBoundingClientRect();
 
                 const startTableRect = fkTh.closest('.table-card').getBoundingClientRect();
                 const endTableRect = targetTableCard.getBoundingClientRect();
 
-                ctx.beginPath();
-                ctx.strokeStyle = '#64c8ff';
-                ctx.lineWidth = 2;
-                ctx.setLineDash([]); // Solid
-
                 // Connection Points: Top-Center of the TH
                 const startX = startRect.left + startRect.width / 2;
                 const startY = startRect.top;
-
                 const endX = endRect.left + endRect.width / 2;
                 const endY = endRect.top;
 
@@ -194,21 +240,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 const startEscapeY = startTableRect.top - 20;
                 const endEscapeY = endTableRect.top - 20;
 
-                // Common Channel Y: Min of both escapes (highest point) - extra buffer
+                // Common Channel Y: highest of both + extra buffer
                 const channelY = Math.min(startEscapeY, endEscapeY) - 20;
 
-                // Draw Path: Staple Shape
+                // --- Draw Staple Path ---
+                ctx.beginPath();
+                ctx.strokeStyle = color;
+                ctx.fillStyle = color;
+                ctx.lineWidth = 2;
+                ctx.setLineDash([]);
+
                 ctx.moveTo(startX, startY);
-                ctx.lineTo(startX, channelY); // Up to channel
-                ctx.lineTo(endX, channelY);   // Across
-                ctx.lineTo(endX, endY);       // Down
+                ctx.lineTo(startX, channelY);
+                ctx.lineTo(endX, channelY);
+                ctx.lineTo(endX, endY);
                 ctx.stroke();
 
                 // --- Markers ---
-                ctx.fillStyle = '#64c8ff';
+                ctx.strokeStyle = color;
+                ctx.fillStyle = color;
                 ctx.lineWidth = 2;
 
-                // 1. FK Side (Source) -> Bar / Cross ("n")
+                // 1. FK Side -> Double Bar ("n")
                 ctx.beginPath();
                 ctx.moveTo(startX - 8, startY - 6);
                 ctx.lineTo(startX + 8, startY - 6);
@@ -217,19 +270,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.stroke();
 
                 // Label "n"
-                ctx.font = 'bold 14px monospace';
-                ctx.fillText('n', startX + 12, startY - 15);
+                ctx.font = 'bold 13px monospace';
+                ctx.fillText('n', startX + 12, startY - 14);
 
-                // 2. PK Side (Target) -> Arrow ("1")
+                // 2. PK Side -> Arrow ("1")
                 const footSize = 10;
                 ctx.beginPath();
-                ctx.moveTo(endX - footSize / 2, endY - footSize); // Left Prong Top
-                ctx.lineTo(endX, endY);                         // Tip
-                ctx.lineTo(endX + footSize / 2, endY - footSize); // Right Prong Top
+                ctx.moveTo(endX - footSize / 2, endY - footSize);
+                ctx.lineTo(endX, endY);
+                ctx.lineTo(endX + footSize / 2, endY - footSize);
                 ctx.stroke();
 
                 // Label "1"
-                ctx.fillText('1', endX + 12, endY - 15);
+                ctx.fillText('1', endX + 12, endY - 14);
 
                 // Dots at exact cell border
                 ctx.beginPath();
@@ -243,16 +296,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Toggle Button Logic
-    document.addEventListener('DOMContentLoaded', () => {
-        const toggleBtn = document.getElementById('btn-toggle-rels');
-        if (toggleBtn) {
-            toggleBtn.addEventListener('click', () => {
-                showRelationships = !showRelationships;
-                toggleBtn.style.opacity = showRelationships ? '1' : '0.5';
+    const toggleBtn = document.getElementById('btn-toggle-rels');
+    if (toggleBtn) {
+        toggleBtn.classList.add('active'); // starts active
+        toggleBtn.addEventListener('click', () => {
+            showRelationships = !showRelationships;
+            toggleBtn.classList.toggle('active', showRelationships);
+            if (showRelationships) {
                 drawRelationships();
-            });
-        }
-    });
+            } else {
+                ctx.clearRect(0, 0, topCanvas.width, topCanvas.height);
+            }
+        });
+    }
 
 
     // Helper: Reset Visualization

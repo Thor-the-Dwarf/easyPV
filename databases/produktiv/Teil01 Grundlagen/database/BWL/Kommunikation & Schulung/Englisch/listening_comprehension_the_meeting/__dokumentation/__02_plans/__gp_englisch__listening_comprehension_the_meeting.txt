@@ -1,0 +1,16 @@
+Anforderungen
+- Titel: "Listening-Comprehension: The Meeting"
+- Ziel: Nach einem kurzen Meeting-Dialog drei Verstaendnisfragen korrekt beantworten.
+- Lernziel: Lese-/Hoerverstehen in Business-Meetings trainieren.
+
+Spielidee
+- Meeting-Dialog wird schrittweise eingeblendet.
+- Danach startet eine 3-Fragen-Quizphase mit Multiple Choice.
+- Jede Frage ist zeitlich begrenzt und wird direkt ausgewertet.
+
+Implementierungsplan
+- [x] JSON Konfiguration `_data/_gg01_listening_comprehension_the_meeting.json`
+- [x] UI `_ghtml_listening_comprehension_the_meeting.html` + `_gcss_listening_comprehension_the_meeting.css`
+- [x] Spiel-Logik `_gjs_listening_comprehension_the_meeting.js`
+- [x] Hooks `render_game_to_text` und `advanceTime`
+- [x] Tests in `__dokumentation/__03_tests` (reachability + config + progress)

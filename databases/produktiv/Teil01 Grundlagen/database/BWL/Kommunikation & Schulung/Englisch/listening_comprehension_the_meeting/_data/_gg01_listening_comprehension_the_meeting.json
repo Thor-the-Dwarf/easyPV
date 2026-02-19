@@ -1,0 +1,63 @@
+{
+  "gameId": "listening_comprehension_the_meeting",
+  "title": "Listening-Comprehension: The Meeting",
+  "description": "Verfolge ein kurzes Meeting-Protokoll und beantworte danach drei Verstaendnisfragen.",
+  "dialog": {
+    "reveal_interval_ms": 2400,
+    "lines": [
+      { "speaker": "Emma", "text": "Good morning team. We need to move the mobile release." },
+      { "speaker": "Liam", "text": "Is the current deadline still Friday?" },
+      { "speaker": "Emma", "text": "No, quality checks are incomplete. The new deadline is next Tuesday at 4 PM." },
+      { "speaker": "Noah", "text": "Who will inform customer support?" },
+      { "speaker": "Emma", "text": "Sofia will send an update to support and sales by noon." },
+      { "speaker": "Sofia", "text": "Understood. I will share the update before 12:00." }
+    ]
+  },
+  "timing": {
+    "question_ms": 20000
+  },
+  "scoring": {
+    "correct": 30,
+    "wrong": -5,
+    "timeout": -8,
+    "completion_bonus": 10
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "When is the new deadline?",
+      "correctOptionId": "c",
+      "options": [
+        { "id": "a", "text": "This Friday at 4 PM" },
+        { "id": "b", "text": "Monday at noon" },
+        { "id": "c", "text": "Next Tuesday at 4 PM" },
+        { "id": "d", "text": "Next Wednesday morning" }
+      ],
+      "explanation": "Emma states that the new deadline is next Tuesday at 4 PM."
+    },
+    {
+      "id": 2,
+      "question": "Why is the release moved?",
+      "correctOptionId": "b",
+      "options": [
+        { "id": "a", "text": "The client asked for another feature" },
+        { "id": "b", "text": "Quality checks are incomplete" },
+        { "id": "c", "text": "The budget was reduced" },
+        { "id": "d", "text": "The team is waiting for legal approval" }
+      ],
+      "explanation": "The reason named in the meeting is incomplete quality checks."
+    },
+    {
+      "id": 3,
+      "question": "Who sends the update to support and sales?",
+      "correctOptionId": "a",
+      "options": [
+        { "id": "a", "text": "Sofia" },
+        { "id": "b", "text": "Liam" },
+        { "id": "c", "text": "Noah" },
+        { "id": "d", "text": "Emma" }
+      ],
+      "explanation": "Emma assigns this task to Sofia."
+    }
+  ]
+}

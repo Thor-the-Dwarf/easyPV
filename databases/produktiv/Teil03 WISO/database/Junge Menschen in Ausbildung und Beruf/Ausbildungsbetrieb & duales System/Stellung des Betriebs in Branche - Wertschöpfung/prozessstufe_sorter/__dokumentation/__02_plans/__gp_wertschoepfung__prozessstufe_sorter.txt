@@ -1,0 +1,52 @@
+# __gp_wertschoepfung__prozessstufe_sorter
+
+## Spielidee
+"Prozessstufe-Sorter" ordnet Taetigkeiten entlang der Wertschoepfung (Eingang, Produktion, Auslieferung, Service). Lernende setzen die richtige Prozessstufe und erkennen Spruenge.
+
+## Lernziel
+- Grundlogik der Wertschoepfungskette verstehen.
+- Prozessstufen korrekt zuordnen.
+
+## Messbare Progression
+- 22 Taetigkeitskarten.
+- Punkte: +6 korrekte Stufe, -3 falsche Stufe.
+- KPI: Stufengenauigkeit pro Bereich.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- StageController
+- StageRuleEngine
+- MetricService
+
+### Domaenenobjekte
+- ActivityCard(cardId, activityType)
+- StageOption(stageId, stageType)
+- StageResult(isCorrect, stageType)
+
+### Beziehungen
+- ActivityCard hat 4 StageOption.
+- StageRuleEngine validiert Auswahl.
+- MetricService aggregiert 1..* StageResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> STAGE_SELECT -> FEEDBACK -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. StageController zeigt ActivityCard.
+2. Player waehlt StageOption.
+3. StageRuleEngine prueft Zuordnung.
+4. StageResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Falsche Zuordnung bei Schluesselprozess erzeugt Zusatzabzug.
+- Hohe Genauigkeit erhoeht Kartenschwierigkeit.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, activityType, options[], expectedStage
+
+## Abnahmekriterien
+- Prozessstufe ist pro Karte klar begruendet.
+- KPI ist pro Stufe auswertbar.
+- Fehlercluster werden im Report markiert.

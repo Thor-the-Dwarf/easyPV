@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wertschoepfung",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Worum geht es im Kern beim Prozessstufe-Sorter?",
+      "hint": "Taetigkeit passend zur Stufe zuordnen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Taetigkeiten entlang Eingang, Produktion, Auslieferung, Service korrekt sortieren",
+          "correct": true,
+          "feedback": "Richtig. Das ist das Kernziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Farben der Karten vergleichen",
+          "correct": false,
+          "feedback": "Farben sind kein Stufenkriterium."
+        },
+        {
+          "id": "c",
+          "text": "Karten ohne Stufenzuordnung bestaetigen",
+          "correct": false,
+          "feedback": "Ohne Zuordnung kein Lernfortschritt."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche KPI wird laut Plan ausgewertet?",
+      "hint": "Genauigkeit pro Bereich.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stufengenauigkeit pro Bereich",
+          "correct": true,
+          "feedback": "Genau diese KPI ist gefordert."
+        },
+        {
+          "id": "b",
+          "text": "Nur Spielzeit",
+          "correct": false,
+          "feedback": "Zeit ist hier Nebenaspekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Karten",
+          "correct": false,
+          "feedback": "Anzahl ohne Trefferquote reicht nicht."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann greift ein Zusatzabzug?",
+      "hint": "Schluesselprozess falsch zugeordnet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn eine Schluesseltaetigkeit auf eine falsche Stufe gelegt wird",
+          "correct": true,
+          "feedback": "Richtig. Schluesselfehler wiegen schwerer."
+        },
+        {
+          "id": "b",
+          "text": "Wenn eine einfache Karte korrekt war",
+          "correct": false,
+          "feedback": "Korrektheit fuehrt nicht zu Abzug."
+        },
+        {
+          "id": "c",
+          "text": "Wenn der Spieler pausiert",
+          "correct": false,
+          "feedback": "Pause ist kein Bewertungsfehler."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Was passiert bei hoher Genauigkeit laut Regeln?",
+      "hint": "Kartenschwierigkeit steigt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Das System schaltet komplexere Karten frei",
+          "correct": true,
+          "feedback": "Richtig. Schwierigkeit passt sich an."
+        },
+        {
+          "id": "b",
+          "text": "Alle Karten werden entfernt",
+          "correct": false,
+          "feedback": "Dann gaebe es keinen Lernpfad."
+        },
+        {
+          "id": "c",
+          "text": "Score wird eingefroren",
+          "correct": false,
+          "feedback": "Der Score laeuft normal weiter."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Report-Information soll am Ende sichtbar sein?",
+      "hint": "Fehlercluster pro Stufe.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Haeufige Fehlzuordnungen je Prozessstufe",
+          "correct": true,
+          "feedback": "Exakt. Das macht Nachlernen zielgerichtet."
+        },
+        {
+          "id": "b",
+          "text": "Nur die erste Frage",
+          "correct": false,
+          "feedback": "Zu wenig fuer eine Abschlussanalyse."
+        },
+        {
+          "id": "c",
+          "text": "Nur den Endzeitpunkt",
+          "correct": false,
+          "feedback": "Zeitpunkt allein ist nicht hilfreich."
+        }
+      ]
+    }
+  ]
+}

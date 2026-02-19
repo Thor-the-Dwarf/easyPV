@@ -1,0 +1,16 @@
+Anforderungen
+- Titel: "Sentence-Builder: Support Ticket"
+- Ziel: Fuenf korrekte englische Support-Saetze aus Wortbausteinen zusammensetzen.
+- Lernziel: Satzbau und Grammatik fuer Support-Kommunikation festigen.
+
+Spielidee
+- Pro Runde eine deutsche Vorgabe.
+- Woerter werden als Bausteine angeboten und in eine Satzleiste geklickt.
+- Korrekte Reihenfolge gibt Punkte, falscher Satz bringt Abzug.
+
+Implementierungsplan
+- [x] JSON Konfiguration `_data/_gg01_sentence_builder_support_ticket.json`
+- [x] UI `_ghtml_sentence_builder_support_ticket.html` + `_gcss_sentence_builder_support_ticket.css`
+- [x] Spiel-Logik `_gjs_sentence_builder_support_ticket.js`
+- [x] Hooks `render_game_to_text` und `advanceTime`
+- [x] Tests in `__dokumentation/__03_tests` (reachability + config + progress)

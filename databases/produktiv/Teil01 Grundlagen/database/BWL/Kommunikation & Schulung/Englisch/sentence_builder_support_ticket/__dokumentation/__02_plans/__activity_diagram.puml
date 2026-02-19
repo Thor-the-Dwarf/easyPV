@@ -1,0 +1,19 @@
+@startuml
+start
+:Load config;
+:Render mail round;
+if (User chooses action?) then (yes)
+  :Evaluate choice;
+else (no)
+  :Timer expires;
+  :Mark timeout as wrong;
+endif
+:Update score/KPIs;
+if (More rounds?) then (yes)
+  :Next round;
+  --> [loop] Render mail round;
+else (no)
+  :Show result;
+endif
+stop
+@enduml

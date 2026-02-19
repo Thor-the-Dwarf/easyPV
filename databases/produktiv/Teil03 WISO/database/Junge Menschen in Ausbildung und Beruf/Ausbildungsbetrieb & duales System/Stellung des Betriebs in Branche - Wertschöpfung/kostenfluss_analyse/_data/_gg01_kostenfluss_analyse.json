@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wertschoepfung",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was ist der erste Schritt in einem Cost-Case?",
+      "hint": "Kosten je Stufe transparent vergleichen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kostenanteile aller Stufen gegenueberstellen",
+          "correct": true,
+          "feedback": "Richtig. Ohne Vergleich keine Engpassanalyse."
+        },
+        {
+          "id": "b",
+          "text": "Sofort eine Massnahme auswaehlen",
+          "correct": false,
+          "feedback": "Massnahme erst nach Engpasswahl."
+        },
+        {
+          "id": "c",
+          "text": "Nur den guenstigsten Wert betrachten",
+          "correct": false,
+          "feedback": "Engpaesse liegen meist bei Spitzenwerten."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann gibt es Teilpunkte laut Regeln?",
+      "hint": "Stufe korrekt, Massnahme falsch.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn die Engpassstufe korrekt erkannt wurde",
+          "correct": true,
+          "feedback": "Genau. Das gibt Teilpunkte."
+        },
+        {
+          "id": "b",
+          "text": "Wenn beides falsch ist",
+          "correct": false,
+          "feedback": "Dafuer gibt es keine Teilpunkte."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ohne Analyse geraten wird",
+          "correct": false,
+          "feedback": "Raten wird nicht belohnt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI gehoeren zur Kostenfluss-Analyse?",
+      "hint": "Engpass plus Wirkungsseite.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Engpassquote und Massnahmenwirkung",
+          "correct": true,
+          "feedback": "Richtig. Beide KPI sind vorgesehen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Bearbeitungszeit",
+          "correct": false,
+          "feedback": "Zeit ist hier nicht allein ausschlaggebend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Fallanzahl",
+          "correct": false,
+          "feedback": "Anzahl ohne Qualitaet ist zu wenig."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann aktiviert sich ein Serienbonus?",
+      "hint": "Doppelt korrekte Faelle.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Stufe und Massnahme mehrfach hintereinander korrekt sind",
+          "correct": true,
+          "feedback": "Richtig. Volltreffer in Serie geben Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur eine Stufe zufaellig passt",
+          "correct": false,
+          "feedback": "Einzeltreffer reichen nicht."
+        },
+        {
+          "id": "c",
+          "text": "Wenn keine Entscheidung getroffen wird",
+          "correct": false,
+          "feedback": "Ohne Entscheidung kein Fortschritt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Report-Info ist laut Abnahme wichtig?",
+      "hint": "Fehlpriorisierungen sichtbar machen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Haeufige Fehlpriorisierungen je Prozessstufe",
+          "correct": true,
+          "feedback": "Exakt. Das steuert die Verbesserung."
+        },
+        {
+          "id": "b",
+          "text": "Nur beste Runde",
+          "correct": false,
+          "feedback": "Nur Bestwert zeigt keine Fehlmuster."
+        },
+        {
+          "id": "c",
+          "text": "Nur Startpunktestand",
+          "correct": false,
+          "feedback": "Startwerte sind nicht ausreichend."
+        }
+      ]
+    }
+  ]
+}

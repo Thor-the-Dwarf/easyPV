@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Prozessstufe-Sorter
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: prozessstufe_sorter" {
+  component "_ghtml_prozessstufe_sorter.html" as HTML
+  component "_gjs_prozessstufe_sorter.js" as JS
+  component "_gcss_prozessstufe_sorter.css" as CSS
+  database "_data/_gg01_prozessstufe_sorter.json" as GG
+  database "_data/__metaData_Stellung des Betriebs in Branche - Wertschoepfung.json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

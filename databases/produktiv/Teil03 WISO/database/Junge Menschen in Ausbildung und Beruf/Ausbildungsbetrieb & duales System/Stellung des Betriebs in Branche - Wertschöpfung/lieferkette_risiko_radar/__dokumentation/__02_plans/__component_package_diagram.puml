@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Lieferkette-Risiko-Radar
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: lieferkette_risiko_radar" {
+  component "_ghtml_lieferkette_risiko_radar.html" as HTML
+  component "_gjs_lieferkette_risiko_radar.js" as JS
+  component "_gcss_lieferkette_risiko_radar.css" as CSS
+  database "_data/_gg01_lieferkette_risiko_radar.json" as GG
+  database "_data/__metaData_Stellung des Betriebs in Branche - Wertschoepfung.json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

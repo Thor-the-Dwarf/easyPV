@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wertschoepfung",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Priorisierung reduziert typischerweise die mittlere Durchlaufzeit zuerst?",
+      "hint": "Faellige Auftraege mit hoher Folgewirkung zuerst.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Faellige Auftraege mit hohem Rueckstaupotenzial zuerst bearbeiten",
+          "correct": true,
+          "feedback": "Richtig. So sinkt die Lead Time am schnellsten."
+        },
+        {
+          "id": "b",
+          "text": "Immer den kleinsten Auftrag zuerst bearbeiten",
+          "correct": false,
+          "feedback": "Kann sinnvoll sein, ist aber kein genereller Engpasshebel."
+        },
+        {
+          "id": "c",
+          "text": "Auftragsreihenfolge zufaellig festlegen",
+          "correct": false,
+          "feedback": "Zufall verschlechtert die Steuerbarkeit."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche KPI sind laut Plan zentral?",
+      "hint": "Zeit und Terminquote gemeinsam.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mittlere Durchlaufzeit und Termintrefferquote",
+          "correct": true,
+          "feedback": "Exakt diese beiden KPI sind gefordert."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "feedback": "Ohne Zeit-/Terminbezug unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl bearbeiteter Klicks",
+          "correct": false,
+          "feedback": "Klicks sagen nichts ueber Prozessqualitaet."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wodurch entsteht laut Regelwerk ein hoher Strafwert?",
+      "hint": "Ueberfaellige Auftraege.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mehrere ueberfaellige Auftraege im Engpassbereich",
+          "correct": true,
+          "feedback": "Richtig. Das zieht hohe Strafpunkte."
+        },
+        {
+          "id": "b",
+          "text": "Ein fristgerechter Abschluss",
+          "correct": false,
+          "feedback": "Fristgerecht ist positiv."
+        },
+        {
+          "id": "c",
+          "text": "Kurzer Hinweistext",
+          "correct": false,
+          "feedback": "Textlaenge beeinflusst den Score nicht."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann ist ein Bonus plausibel?",
+      "hint": "Stabil hohe Termintrefferquote.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn die Termintrefferquote ueber mehrere Runden stabil hoch bleibt",
+          "correct": true,
+          "feedback": "Richtig. Konstanz wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur die erste Runde korrekt war",
+          "correct": false,
+          "feedback": "Einzelrunde reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Wenn keine KPI angezeigt werden",
+          "correct": false,
+          "feedback": "KPI muessen sichtbar bleiben."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Auswertung soll das Replay liefern?",
+      "hint": "Engpassstellen klar markieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Welche Stufe den groessten Rueckstau verursacht hat",
+          "correct": true,
+          "feedback": "Genau das macht Engpasslernen moeglich."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endpunktzahl ohne Ursachenbezug",
+          "correct": false,
+          "feedback": "Ohne Ursache ist die Auswertung zu schwach."
+        },
+        {
+          "id": "c",
+          "text": "Nur Startzeit der Runde",
+          "correct": false,
+          "feedback": "Startzeit allein hilft nicht."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+# __gp_wertschoepfung__wertbeitrag_duell
+
+## Spielidee
+"Wertbeitrag-Duell" vergleicht zwei Prozessvarianten. Lernende entscheiden, welche Variante den hoeheren Wertbeitrag erzeugt und warum.
+
+## Lernziel
+- Wertbeitrag aus Zeit, Kosten und Qualitaet abwaegen.
+- Prozessvergleich strukturiert begruenden.
+
+## Messbare Progression
+- 14 Duelle.
+- Punkte: +8 korrekte Wahl, -4 falsche Wahl.
+- +3 fuer plausible Begruendung.
+- KPI: Duellgenauigkeit und Begruendungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- ValueEngine
+- MetricService
+
+### Domaenenobjekte
+- ValueDuel(duelId, optionA, optionB)
+- ProcessOption(optionId, timeScore, costScore, qualityScore)
+- DuelResult(winnerId, rationaleScore)
+
+### Beziehungen
+- ValueDuel enthaelt genau 2 ProcessOption.
+- ValueEngine berechnet Gesamtwert.
+- MetricService aggregiert 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> OPTION_REVIEW -> CHOOSE -> EVALUATE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet ValueDuel.
+2. Player waehlt Option.
+3. ValueEngine validiert Auswahl.
+4. DuelResult wird dargestellt.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Korrekte Wahl ohne Begruendung gibt Teilpunkte.
+- Vier richtige Duelle in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: duelId, optionA{}, optionB{}, expectedWinner, rationaleOptions[]
+
+## Abnahmekriterien
+- Wertbeitrag wird aus Teilkriterien nachvollziehbar gezeigt.
+- KPI trennt Wahl und Begruendung.
+- Endreport zeigt haeufige Fehlmuster im Vergleich.

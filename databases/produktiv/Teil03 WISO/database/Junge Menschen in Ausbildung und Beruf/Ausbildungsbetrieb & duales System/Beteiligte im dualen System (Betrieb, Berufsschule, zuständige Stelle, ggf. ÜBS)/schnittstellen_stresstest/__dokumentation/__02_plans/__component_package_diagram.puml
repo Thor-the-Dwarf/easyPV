@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Schnittstellen-Stresstest
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: schnittstellen_stresstest" {
+  component "_ghtml_schnittstellen_stresstest.html" as HTML
+  component "_gjs_schnittstellen_stresstest.js" as JS
+  component "_gcss_schnittstellen_stresstest.css" as CSS
+  database "_data/_gg01_schnittstellen_stresstest.json" as GG
+  database "_data/__metaData_Beteiligte im dualen System (Betrieb, Berufsschule, zustaendige Stelle, ggf. UEBS).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

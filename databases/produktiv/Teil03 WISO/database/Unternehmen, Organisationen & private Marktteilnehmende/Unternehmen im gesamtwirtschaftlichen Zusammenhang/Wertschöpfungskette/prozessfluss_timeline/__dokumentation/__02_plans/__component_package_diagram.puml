@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Prozessfluss-Timeline
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: prozessfluss_timeline" {
+  component "_ghtml_prozessfluss_timeline.html" as HTML
+  component "_gjs_prozessfluss_timeline.js" as JS
+  component "_gcss_prozessfluss_timeline.css" as CSS
+  database "_data/_gg01_prozessfluss_timeline.json" as GG
+  database "_data/__metaData_Wertschoepfungskette.json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

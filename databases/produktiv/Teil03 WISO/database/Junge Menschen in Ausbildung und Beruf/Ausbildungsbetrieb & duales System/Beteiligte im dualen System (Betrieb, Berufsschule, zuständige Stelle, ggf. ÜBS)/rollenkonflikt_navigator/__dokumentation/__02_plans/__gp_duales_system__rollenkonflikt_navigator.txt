@@ -1,0 +1,53 @@
+# __gp_duales_system__rollenkonflikt_navigator
+
+## Spielidee
+"Rollenkonflikt-Navigator" praesentiert Konfliktszenen zwischen Beteiligten. Lernende waehlen die sachlich passende Klaerungsinstanz und den naechsten Schritt.
+
+## Lernziel
+- Rollenbezogene Konflikte im dualen System loesen.
+- Zuständigkeiten in Konfliktfaellen sicher anwenden.
+
+## Messbare Progression
+- 14 Konfliktfaelle.
+- Punkte: +9 korrekte Instanzwahl, +4 korrekter Folgeschritt, -4 Fehler.
+- KPI: Instanzgenauigkeit und Prozessgenauigkeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ConflictController
+- JurisdictionEngine
+- ResolutionService
+
+### Domaenenobjekte
+- ConflictCase(caseId, conflictType)
+- InstanceOption(instanceId, scope)
+- ActionOption(actionId, actionType)
+- ConflictResult(instanceCorrect, actionCorrect)
+
+### Beziehungen
+- ConflictCase hat 3..5 InstanceOption und 2..4 ActionOption.
+- JurisdictionEngine validiert InstanceOption.
+- ResolutionService aggregiert 1..* ConflictResult.
+
+### Zustandsmodell
+- CASE_START -> INSTANCE_SELECT -> ACTION_SELECT -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. ConflictController startet ConflictCase.
+2. Player waehlt InstanceOption.
+3. JurisdictionEngine prueft Zuständigkeit.
+4. Player waehlt ActionOption.
+5. ResolutionService aktualisiert KPI.
+
+## Regeln
+- Falsche Instanz blockiert Aktionsbonus.
+- Vollkorrekte Faelle erzeugen Serienbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, conflictType, instanceOptions[], actionOptions[], expectedInstance, expectedAction
+
+## Abnahmekriterien
+- Instanz- und Schrittbewertung sind getrennt.
+- KPI deckt beide Lernziele ab.
+- Endreport nennt haeufige Fehlwege.

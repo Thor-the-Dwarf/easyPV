@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Wertschoepfungskette",
+    "mechanic": "decision_quiz",
+    "variant": "kostenhebel_match",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Hohe Ausschussquote in der Fertigung. Welcher Hebel passt zuerst?",
+      "hint": "Fehlerursache an der Quelle.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Qualitaetssicherung und Prozessstabilisierung",
+          "correct": true,
+          "feedback": "Richtig. Das senkt Nacharbeit und Ausschusskosten."
+        },
+        {
+          "id": "b",
+          "text": "Nur Marketingbudget kuerzen",
+          "correct": false,
+          "feedback": "Kein direkter Hebel."
+        },
+        {
+          "id": "c",
+          "text": "Transportweg verlaengern",
+          "correct": false,
+          "feedback": "Unpassend."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Hohe Lagerkosten bei geringer Umschlaghaeufigkeit. Bester Hebel?",
+      "hint": "Bestandssteuerung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Disposition und Losgroessen optimieren",
+          "correct": true,
+          "feedback": "Richtig. Das reduziert gebundenes Kapital."
+        },
+        {
+          "id": "b",
+          "text": "Mehr Sicherheitsbestand ohne Analyse",
+          "correct": false,
+          "feedback": "Kann Kosten erhoehen."
+        },
+        {
+          "id": "c",
+          "text": "Nur Verpackungsdesign aendern",
+          "correct": false,
+          "feedback": "Zu indirekt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI zeigt Matching-Qualitaet?",
+      "hint": "Treffer und Fehlzuordnung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trefferquote je Hebeltyp plus Fehlerquote",
+          "correct": true,
+          "feedback": "Richtig. So werden Muster sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtspielzeit",
+          "correct": false,
+          "feedback": "Ohne Inhalt wenig Aussage."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Faelle",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Warum ist falscher Hebel bei Hochkostenfall kritisch?",
+      "hint": "Zeitverlust + Folgekosten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Er verlaengert den Zustand und steigert Gesamtkosten",
+          "correct": true,
+          "feedback": "Richtig. Fehlpriorisierung ist teuer."
+        },
+        {
+          "id": "b",
+          "text": "Er wirkt immer neutral",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Er verbessert sicher jede KPI",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welcher Hebel passt bei langen Ruestzeiten?",
+      "hint": "Umruestung effizienter machen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ruestprozess standardisieren und vorbereiten",
+          "correct": true,
+          "feedback": "Richtig. Das senkt Stillstandskosten."
+        },
+        {
+          "id": "b",
+          "text": "Mehr Ebenen in Freigaben einbauen",
+          "correct": false,
+          "feedback": "Oft gegenteilig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Endkontrolle verdoppeln",
+          "correct": false,
+          "feedback": "Nicht primär."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Wie werden Kostenhebel verlässlich bewertet?",
+      "hint": "Wirkung vor/nach Massnahme.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mit klaren Vorher-Nachher-KPI pro Prozessstufe",
+          "correct": true,
+          "feedback": "Richtig. Wirkung wird messbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur per Bauchgefuehl",
+          "correct": false,
+          "feedback": "Unzuverlaessig."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Datenabgleich",
+          "correct": false,
+          "feedback": "Nicht belastbar."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Wann greift der Serienbonus?",
+      "hint": "Mehrere korrekte Zuordnungen in Folge.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ab 5 korrekten Zuordnungen am Stueck",
+          "correct": true,
+          "feedback": "Richtig. Das belohnt stabile Leistung."
+        },
+        {
+          "id": "b",
+          "text": "Nach jedem ersten Treffer",
+          "correct": false,
+          "feedback": "Zu frueh."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei maximaler Spielzeit",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was trainiert das Kostenhebel-Match?",
+      "hint": "Passende Massnahmeauswahl.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kostenprobleme fachlich passend den Hebeln zuordnen",
+          "correct": true,
+          "feedback": "Richtig. Genau darum geht es."
+        },
+        {
+          "id": "b",
+          "text": "Nur Begriffe lernen",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "KPI ignorieren",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

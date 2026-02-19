@@ -151,10 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(drawRelationships, 50); // slight delay for layout
     }
 
-    // WP7: Draw Relationship Lines
+    let showRelationships = true;
+
     // WP7: Draw Relationship Lines (Top-Top "Staple" Routing)
     function drawRelationships() {
         ctx.clearRect(0, 0, topCanvas.width, topCanvas.height);
+        if (!showRelationships) return; // Toggle Check
 
         const fkHeaders = document.querySelectorAll('th[data-is-fk="true"]');
 
@@ -189,10 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const endY = endRect.top;
 
                 // Escape Points (Above the Table Card)
-                // Use the higher of the two table tops to define a common "Bus" altitude if close?
-                // Or just independent escapes.
-                // Let's use independent escapes + a common joining channel.
-
                 const startEscapeY = startTableRect.top - 20;
                 const endEscapeY = endTableRect.top - 20;
 
@@ -200,8 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const channelY = Math.min(startEscapeY, endEscapeY) - 20;
 
                 // Draw Path: Staple Shape
-                // Start -> Up -> Horizontal -> Down -> End
-
                 ctx.moveTo(startX, startY);
                 ctx.lineTo(startX, channelY); // Up to channel
                 ctx.lineTo(endX, channelY);   // Across
@@ -212,43 +208,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.fillStyle = '#64c8ff';
                 ctx.lineWidth = 2;
 
-                // 1. FK Side (Source) -> "Many" (Crow's Foot)
-                // Connecting to Top of cell (Line comes from Above).
-                // Symbol: V shape opening Upwards (towards line).
+                // 1. FK Side (Source) -> Bar / Cross ("n")
+                ctx.beginPath();
+                ctx.moveTo(startX - 8, startY - 6);
+                ctx.lineTo(startX + 8, startY - 6);
+                ctx.moveTo(startX - 8, startY - 10);
+                ctx.lineTo(startX + 8, startY - 10);
+                ctx.stroke();
+
+                // Label "n"
+                ctx.font = 'bold 14px monospace';
+                ctx.fillText('n', startX + 12, startY - 15);
+
+                // 2. PK Side (Target) -> Arrow ("1")
                 const footSize = 10;
                 ctx.beginPath();
-                // Origin is startX, startY. Line goes Up.
-                // Prongs go Up-Left and Up-Right.
-                ctx.moveTo(startX - footSize / 2, startY - footSize); // Offset slightly up? 
-                // Wait, standard crow foot touches the entity.
-                // Entity edge is startY. Use that as base.
-                // Prongs open AWAY from entity?
-                // Line ---< Entity. Prongs open to Line.
-                // Here: Line (Above) -> V -> Entity (Below).
-                // So V opens Up.
-
-                ctx.moveTo(startX - footSize / 2, startY - footSize);
-                ctx.lineTo(startX, startY);
-                ctx.lineTo(startX + footSize / 2, startY - footSize);
-
-                // Center line? Usually implies "Many".
-                // Just the V is enough for basic "Many".
+                ctx.moveTo(endX - footSize / 2, endY - footSize); // Left Prong Top
+                ctx.lineTo(endX, endY);                         // Tip
+                ctx.lineTo(endX + footSize / 2, endY - footSize); // Right Prong Top
                 ctx.stroke();
 
-                // 2. PK Side (Target) -> "One" (Bar)
-                // Connecting to Top of cell. Line comes from Above.
-                // Bar is Horizontal.
-                ctx.beginPath();
-                ctx.moveTo(endX - 8, endY - 6); // Slightly above the edge
-                ctx.lineTo(endX + 8, endY - 6);
+                // Label "1"
+                ctx.fillText('1', endX + 12, endY - 15);
 
-                // Optional: Second bar
-                ctx.moveTo(endX - 8, endY - 10);
-                ctx.lineTo(endX + 8, endY - 10);
-
-                ctx.stroke();
-
-                // Debug / Dots at exact cell border
+                // Dots at exact cell border
                 ctx.beginPath();
                 ctx.arc(startX, startY, 2, 0, Math.PI * 2);
                 ctx.fill();
@@ -258,6 +241,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Toggle Button Logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleBtn = document.getElementById('btn-toggle-rels');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                showRelationships = !showRelationships;
+                toggleBtn.style.opacity = showRelationships ? '1' : '0.5';
+                drawRelationships();
+            });
+        }
+    });
+
 
     // Helper: Reset Visualization
     function resetVisualization() {

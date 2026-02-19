@@ -1,0 +1,32 @@
+# __gp_wertschoepfungskette__prozessfluss_timeline__kpi_challenge
+
+## Spielidee
+"Prozessfluss-Timeline" in der Variante "kpi_challenge" trainiert Entscheidungen in der Wertschoepfungskette unter Zeit- und Zielkorridordruck.
+
+## Lernziel
+- Prozessstufen, Engpaesse und Verbesserungshebel korrekt anwenden.
+- Wertbeitrag von Alternativen begruendet vergleichen.
+
+## Messbare Progression
+- 8 Runden pro Durchlauf.
+- Punkte: +7 KPI-Ziel erreicht, -4 KPI-Ziel verfehlt.
+- KPI: Zielerreichung und Korridorquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- RuleEngine
+- MetricService
+
+### Domaenenobjekte
+- ScenarioCard(cardId, prompt, difficulty)
+- DecisionOption(optionId, impactType)
+- RoundResult(isCorrect, scoreDelta, responseSeconds)
+
+### Zustandsmodell
+- READY -> ROUND_ACTIVE -> SELECT -> EVALUATE -> NEXT_ROUND -> FINISHED
+
+## Abnahmekriterien
+- Fortschritt ist ueber Punkte, Zeit und KPI sichtbar.
+- Regeln erzeugen reproduzierbare Bewertungen.

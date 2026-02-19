@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Terminkoordination-Timer
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: terminkoordination_timer" {
+  component "_ghtml_terminkoordination_timer.html" as HTML
+  component "_gjs_terminkoordination_timer.js" as JS
+  component "_gcss_terminkoordination_timer.css" as CSS
+  database "_data/_gg01_terminkoordination_timer.json" as GG
+  database "_data/__metaData_Beteiligte im dualen System (Betrieb, Berufsschule, zustaendige Stelle, ggf. UEBS).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

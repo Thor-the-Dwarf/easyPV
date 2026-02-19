@@ -1,0 +1,53 @@
+# __gp_duales_system__kommunikationspfad_router
+
+## Spielidee
+"Kommunikationspfad-Router" simuliert typische Anliegen (z. B. Fehlzeiten, Pruefungsthemen, Nachweise). Lernende waehlen den richtigen Kommunikationsweg zwischen den Beteiligten.
+
+## Lernziel
+- Informationswege im dualen System korrekt anwenden.
+- Eskalations- und Rueckmeldepfade kennen.
+
+## Messbare Progression
+- 16 Kommunikationsfaelle.
+- Punkte: +8 korrekter Pfad, -4 falscher Pfad.
+- +3 fuer korrekten Eskalationsschritt.
+- KPI: Pfadgenauigkeit und Eskalationsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- RouteController
+- PathEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- CommunicationCase(caseId, issueType)
+- RouteStep(stepId, actorFrom, actorTo)
+- RouteResult(pathCorrect, escalationCorrect)
+
+### Beziehungen
+- CommunicationCase enthaelt 3..8 RouteStep.
+- PathEngine validiert Reihenfolge der RouteStep.
+- ProgressTracker aggregiert 1..* RouteResult.
+
+### Zustandsmodell
+- CASE_OPEN -> PATH_SELECT -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. RouteController startet CommunicationCase.
+2. Player waehlt Kommunikationspfad.
+3. PathEngine prueft Pfad.
+4. RouteResult wird berechnet.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Pflichtstation fuehrt zu doppeltem Abzug.
+- Fehlerfreier Pfad mit korrekter Eskalation gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, issueType, routeOptions[], expectedRoute, escalationOptions[]
+
+## Abnahmekriterien
+- Pfadfehler sind klar visualisiert.
+- KPI zeigt Pfad und Eskalation getrennt.
+- Lernreport benennt kritische Kommunikationsluecken.

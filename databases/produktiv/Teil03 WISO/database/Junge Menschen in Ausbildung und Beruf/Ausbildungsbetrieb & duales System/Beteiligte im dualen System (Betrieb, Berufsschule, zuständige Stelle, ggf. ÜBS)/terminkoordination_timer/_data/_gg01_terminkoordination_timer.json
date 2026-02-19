@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Duales System",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welcher Schritt steht bei der Terminkoordination zuerst?",
+      "hint": "Abhaengigkeiten und Zeitfenster pruefen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pflichttermine und Zeitfenster als Fixpunkte setzen",
+          "correct": true,
+          "feedback": "Richtig. Fixpunkte zuerst verhindert Kollisionen."
+        },
+        {
+          "id": "b",
+          "text": "Beliebige Termine ohne Reihenfolge setzen",
+          "correct": false,
+          "feedback": "Ohne Struktur steigen Konflikte."
+        },
+        {
+          "id": "c",
+          "text": "Konflikte erst am Ende betrachten",
+          "correct": false,
+          "feedback": "Konflikte muessen frueh erkannt werden."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Konflikte sind laut Regelwerk staerker gewichtet?",
+      "hint": "Pruefungstermine.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kollisionen mit Pruefungsterminen",
+          "correct": true,
+          "feedback": "Genau. Diese Konflikte kosten mehr Punkte."
+        },
+        {
+          "id": "b",
+          "text": "Kollisionen ohne Fristbezug",
+          "correct": false,
+          "feedback": "Die Gewichtung ist niedriger."
+        },
+        {
+          "id": "c",
+          "text": "Termine ohne Beteiligte",
+          "correct": false,
+          "feedback": "Solche Termine sind hier nicht relevant."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI bilden den Fortschritt hier ab?",
+      "hint": "Qualitaet plus Geschwindigkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Konfliktfreie Planungen und Zeitverbrauch",
+          "correct": true,
+          "feedback": "Richtig. Beide Groessen sind gefordert."
+        },
+        {
+          "id": "b",
+          "text": "Nur Klickanzahl",
+          "correct": false,
+          "feedback": "Klicks sind kein Qualitaetsmass."
+        },
+        {
+          "id": "c",
+          "text": "Nur Rundenindex",
+          "correct": false,
+          "feedback": "Rundenindex zeigt keinen Lernerfolg."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gibt es einen Rundebonus?",
+      "hint": "Vollstaendig konfliktfrei.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn alle Termine in der Runde ohne Kollision geplant sind",
+          "correct": true,
+          "feedback": "Richtig. Konfliktfreiheit wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei mindestens einem Konflikt",
+          "correct": false,
+          "feedback": "Konflikte verhindern den Bonus."
+        },
+        {
+          "id": "c",
+          "text": "Nur wenn die Runde besonders lang dauert",
+          "correct": false,
+          "feedback": "Dauer allein bringt keinen Bonus."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Rueckmeldung fordert das Abnahmekriterium?",
+      "hint": "Konfliktmuster benennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Report mit haeufigen Konfliktmustern",
+          "correct": true,
+          "feedback": "Exakt. Musterfeedback unterstuetzt die Nachsteuerung."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endpunktzahl",
+          "correct": false,
+          "feedback": "Ohne Musteranalyse zu wenig Lerneffekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur die erste falsch geplante Uhrzeit",
+          "correct": false,
+          "feedback": "Zu punktuell fuer Gesamtlernen."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Wertschoepfungskette",
+    "mechanic": "decision_quiz",
+    "variant": "wertbeitrag_duell",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Variante hat meist den hoeheren Wertbeitrag?",
+      "hint": "Balance aus Kosten, Zeit, Qualitaet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Die Variante mit besserem Gesamtmix statt Einzelfokus",
+          "correct": true,
+          "feedback": "Richtig. Gesamtwert zaehlt."
+        },
+        {
+          "id": "b",
+          "text": "Die billigste Variante trotz hoher Fehler",
+          "correct": false,
+          "feedback": "Zu einseitig."
+        },
+        {
+          "id": "c",
+          "text": "Die schnellste Variante mit massiver Nacharbeit",
+          "correct": false,
+          "feedback": "Nicht nachhaltig."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann gibt es nur Teilpunkte?",
+      "hint": "Richtige Wahl ohne Begruendung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Option stimmt, Begründung aber fehlt oder unpassend ist",
+          "correct": true,
+          "feedback": "Richtig. Duell-Regel fuer Teilpunkte."
+        },
+        {
+          "id": "b",
+          "text": "Wenn alles korrekt ist",
+          "correct": false,
+          "feedback": "Dann volle Punkte."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Wahl falsch ist",
+          "correct": false,
+          "feedback": "Dann Abzug."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI zeigt Duel-Leistung?",
+      "hint": "Wahl + Begruendung trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wahlgenauigkeit und Begruendungsquote",
+          "correct": true,
+          "feedback": "Richtig. Beide Dimensionen sind wichtig."
+        },
+        {
+          "id": "b",
+          "text": "Nur Zahl der Duelle",
+          "correct": false,
+          "feedback": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Reaktionszeit",
+          "correct": false,
+          "feedback": "Unvollstaendig."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche Begruendung ist fachlich stark?",
+      "hint": "Kosten-, Zeit- und Qualitaetseffekt benennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sie zeigt Trade-offs und den besseren Gesamtbeitrag",
+          "correct": true,
+          "feedback": "Richtig. Das ist belastbar."
+        },
+        {
+          "id": "b",
+          "text": "Sie nennt nur Bauchgefuehl",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Sie ignoriert Qualitaet komplett",
+          "correct": false,
+          "feedback": "Einseitig."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Warum kann billig nicht automatisch besser sein?",
+      "hint": "Folgekosten beachten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Niedrige Anfangskosten koennen hohe Fehler- und Nacharbeitskosten ausloesen",
+          "correct": true,
+          "feedback": "Richtig. Total Cost zählt."
+        },
+        {
+          "id": "b",
+          "text": "Billig ist immer optimal",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Kosten sind irrelevant",
+          "correct": false,
+          "feedback": "Ebenfalls falsch."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Wann ist eine schnelle Option riskant?",
+      "hint": "Wenn Qualitaet einbricht.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Zeitgewinn durch hohe Fehlerquote erkauft wird",
+          "correct": true,
+          "feedback": "Richtig. Das reduziert Wertbeitrag."
+        },
+        {
+          "id": "b",
+          "text": "Wenn sie stabile Qualitaet behaelt",
+          "correct": false,
+          "feedback": "Dann eher positiv."
+        },
+        {
+          "id": "c",
+          "text": "Wenn sie transparent gemessen wird",
+          "correct": false,
+          "feedback": "Das ist gut."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Was bedeutet Volltreffer im Duell?",
+      "hint": "Wahl und Argument stimmen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Richtige Option plus passende begruendete Bewertung",
+          "correct": true,
+          "feedback": "Richtig. Das gibt volle Punkte."
+        },
+        {
+          "id": "b",
+          "text": "Nur richtige Option ohne Argument",
+          "correct": false,
+          "feedback": "Teilpunkte."
+        },
+        {
+          "id": "c",
+          "text": "Nur langes Argument ohne korrekte Wahl",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was trainiert das Wertbeitrag-Duell?",
+      "hint": "Vergleichskompetenz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prozessvarianten systematisch vergleichen und begruendet entscheiden",
+          "correct": true,
+          "feedback": "Richtig. Genau das ist der Kern."
+        },
+        {
+          "id": "b",
+          "text": "Nur Zeitrekorde",
+          "correct": false,
+          "feedback": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Messung vermeiden",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Duales System",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was ist bei einem Kommunikationsfall der erste Qualitaetscheck?",
+      "hint": "Pfad muss zur Art des Anliegens passen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pruefen, ob der Pfad zum Anliegen und Akteur passt",
+          "correct": true,
+          "feedback": "Richtig. Ohne Pfadpassung entsteht Reibung."
+        },
+        {
+          "id": "b",
+          "text": "Immer dieselbe Station waehlen",
+          "correct": false,
+          "feedback": "Der Pfad ist fallabhaengig."
+        },
+        {
+          "id": "c",
+          "text": "Eskalation sofort starten ohne Vorpruefung",
+          "correct": false,
+          "feedback": "Eskalation braucht Kontext."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann ist ein Eskalationsschritt korrekt?",
+      "hint": "Pflichtstation wurde sauber durchlaufen, Problem bleibt offen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn nach korrektem Grundpfad weiterfuehrende Klaerung noetig ist",
+          "correct": true,
+          "feedback": "Genau dann ist Eskalation korrekt."
+        },
+        {
+          "id": "b",
+          "text": "Bei jeder ersten Meldung",
+          "correct": false,
+          "feedback": "Nicht jede Meldung braucht Eskalation."
+        },
+        {
+          "id": "c",
+          "text": "Wenn der Fall bereits geloest ist",
+          "correct": false,
+          "feedback": "Bei geloestem Fall ist Eskalation unnoetig."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Regel fuehrt zu doppeltem Abzug?",
+      "hint": "Pflichtstation uebersprungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ueberspringen einer Pflichtstation im Kommunikationspfad",
+          "correct": true,
+          "feedback": "Richtig. Das ist ein schwerer Pfadfehler."
+        },
+        {
+          "id": "b",
+          "text": "Korrekter Pfad in normaler Zeit",
+          "correct": false,
+          "feedback": "Das ist positiv."
+        },
+        {
+          "id": "c",
+          "text": "Lesen des Hinweises",
+          "correct": false,
+          "feedback": "Hinweise sind erlaubt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI gehoeren zu diesem Router?",
+      "hint": "Pfad und Eskalation getrennt messen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pfadgenauigkeit und Eskalationsquote",
+          "correct": true,
+          "feedback": "Exakt diese KPI sind vorgesehen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Fehlermenge",
+          "correct": false,
+          "feedback": "Zu grob fuer Ursachenanalyse."
+        },
+        {
+          "id": "c",
+          "text": "Nur Endpunktestand",
+          "correct": false,
+          "feedback": "Ohne Prozesssicht unvollstaendig."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann gibt es laut Plan einen Bonus?",
+      "hint": "Pfad plus Eskalation fehlerfrei.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Pfad und Eskalationsschritt beide korrekt sind",
+          "correct": true,
+          "feedback": "Richtig. Volltreffer bringt Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur schnell geklickt wird",
+          "correct": false,
+          "feedback": "Tempo ersetzt keine Korrektheit."
+        },
+        {
+          "id": "c",
+          "text": "Wenn zufaellig geraten wird",
+          "correct": false,
+          "feedback": "Zufall wird nicht belohnt."
+        }
+      ]
+    }
+  ]
+}

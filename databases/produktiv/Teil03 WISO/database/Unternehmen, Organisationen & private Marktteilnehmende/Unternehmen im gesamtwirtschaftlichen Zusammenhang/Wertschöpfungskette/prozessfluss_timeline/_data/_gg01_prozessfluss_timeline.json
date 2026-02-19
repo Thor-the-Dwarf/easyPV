@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Wertschoepfungskette",
+    "mechanic": "decision_quiz",
+    "variant": "prozessfluss_timeline",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Reihenfolge ist in vielen Wertketten plausibel?",
+      "hint": "Beschaffung vor Produktion.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Beschaffung -> Produktion -> Distribution -> Service",
+          "correct": true,
+          "feedback": "Richtig. Das bildet die Grundlogik ab."
+        },
+        {
+          "id": "b",
+          "text": "Service -> Beschaffung -> Produktion",
+          "correct": false,
+          "feedback": "Unplausibel als Standardfluss."
+        },
+        {
+          "id": "c",
+          "text": "Distribution vor Produktion",
+          "correct": false,
+          "feedback": "Reihenfolgefehler."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welcher Fehler ist auf der Timeline besonders kritisch?",
+      "hint": "Startschritt falsch.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kernprozess mit falschem Einstieg beginnen",
+          "correct": true,
+          "feedback": "Richtig. Das verschiebt den ganzen Ablauf."
+        },
+        {
+          "id": "b",
+          "text": "Schrittbezeichnung leicht kuerzen",
+          "correct": false,
+          "feedback": "Nicht der Kernfehler."
+        },
+        {
+          "id": "c",
+          "text": "Farbe eines Kastens aendern",
+          "correct": false,
+          "feedback": "Nur Darstellung."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI passt zur Timeline?",
+      "hint": "Reihenfolge + Zeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reihenfolgegenauigkeit und Bearbeitungszeit",
+          "correct": true,
+          "feedback": "Richtig. Beide Ziele sind messbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtanzahl Schritte",
+          "correct": false,
+          "feedback": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Klickgeschwindigkeit",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Warum erzeugt falsche Reihenfolge Mehrkosten?",
+      "hint": "Nacharbeit und Wartezeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fehlreihenfolge fuehrt zu Rueckspruengen und Verzögerungen",
+          "correct": true,
+          "feedback": "Richtig. Das belastet Durchlaufzeit und Kosten."
+        },
+        {
+          "id": "b",
+          "text": "Sie hat keinen Einfluss",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Sie beschleunigt immer",
+          "correct": false,
+          "feedback": "Nicht plausibel."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann gilt eine Timeline als vollkorrekt?",
+      "hint": "Alle Schritte in richtiger Position.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn jeder Schritt exakt im erwarteten Sequenzslot steht",
+          "correct": true,
+          "feedback": "Richtig. Dann gibt es Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur der letzte Schritt stimmt",
+          "correct": false,
+          "feedback": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nur die ersten zwei stimmen",
+          "correct": false,
+          "feedback": "Nicht genug."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Welche Daten helfen bei Sequenzpruefung?",
+      "hint": "Soll- gegen Ist-Reihenfolge.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Soll-Reihenfolge, Ist-Reihenfolge und Abweichungsindex",
+          "correct": true,
+          "feedback": "Richtig. Das macht Fehler sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Teamnamen",
+          "correct": false,
+          "feedback": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Endtermin",
+          "correct": false,
+          "feedback": "Unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Was trainiert das Platzieren auf der Timeline?",
+      "hint": "Ablauflogik.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prozessschritte zeitlich logisch und reproduzierbar ordnen",
+          "correct": true,
+          "feedback": "Richtig. Das ist der Lernkern."
+        },
+        {
+          "id": "b",
+          "text": "Nur Begriffswissen ohne Reihenfolge",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Messung ausblenden",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was bedeutet Bonus in der Timeline?",
+      "hint": "Komplett richtige Reihenfolge.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vollstaendig korrekte Timeline ohne Fehler",
+          "correct": true,
+          "feedback": "Richtig. Das wird extra belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Beliebige Reihenfolge mit schneller Zeit",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur ein korrekter Schritt",
+          "correct": false,
+          "feedback": "Zu wenig."
+        }
+      ]
+    }
+  ]
+}

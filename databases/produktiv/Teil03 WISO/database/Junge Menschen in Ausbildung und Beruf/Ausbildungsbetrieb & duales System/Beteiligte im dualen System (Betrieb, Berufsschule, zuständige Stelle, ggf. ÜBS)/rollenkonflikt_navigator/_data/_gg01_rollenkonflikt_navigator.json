@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Duales System",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was ist der erste Entscheidungspunkt im Konfliktfall?",
+      "hint": "Zustaendige Instanz korrekt waehlen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Passende Klaerungsinstanz bestimmen",
+          "correct": true,
+          "feedback": "Richtig. Instanzwahl ist der Startpunkt."
+        },
+        {
+          "id": "b",
+          "text": "Direkt Massnahme ohne Instanzwahl",
+          "correct": false,
+          "feedback": "Ohne Instanz fehlt die Grundlage."
+        },
+        {
+          "id": "c",
+          "text": "Konflikt ignorieren",
+          "correct": false,
+          "feedback": "Ignorieren loest keinen Konflikt."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann wird ein Aktionsbonus blockiert?",
+      "hint": "Instanz war falsch.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn die Instanzwahl nicht zustaendig war",
+          "correct": true,
+          "feedback": "Genau. Falsche Instanz sperrt den Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Wenn die Instanzwahl korrekt war",
+          "correct": false,
+          "feedback": "Dann bleibt Bonus moeglich."
+        },
+        {
+          "id": "c",
+          "text": "Wenn der Hinweis gelesen wurde",
+          "correct": false,
+          "feedback": "Hinweise blockieren keinen Bonus."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI bilden den Lernerfolg hier ab?",
+      "hint": "Instanz und Prozess getrennt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Instanzgenauigkeit und Prozessgenauigkeit",
+          "correct": true,
+          "feedback": "Richtig. Beide Achsen sind relevant."
+        },
+        {
+          "id": "b",
+          "text": "Nur Fallanzahl",
+          "correct": false,
+          "feedback": "Anzahl allein zeigt keine Qualitaet."
+        },
+        {
+          "id": "c",
+          "text": "Nur Bearbeitungsdauer",
+          "correct": false,
+          "feedback": "Zeit ist nur Nebenindikator."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Was erzeugt einen Serienbonus?",
+      "hint": "Vollkorrekte Faelle hintereinander.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mehrere vollkorrekte Konfliktfaelle in Folge",
+          "correct": true,
+          "feedback": "Richtig. Das aktiviert den Serienbonus."
+        },
+        {
+          "id": "b",
+          "text": "Mehrere Fehlentscheidungen in Folge",
+          "correct": false,
+          "feedback": "Fehlserien geben keinen Bonus."
+        },
+        {
+          "id": "c",
+          "text": "Nur das Erreichen der letzten Runde",
+          "correct": false,
+          "feedback": "Bonus ist leistungsabhaengig."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Auswertung muss laut Abnahmekriterium getrennt sein?",
+      "hint": "Instanz und Schritt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Instanzbewertung und Schrittbewertung",
+          "correct": true,
+          "feedback": "Exakt. Beide Rueckmeldungen sind getrennt noetig."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtnote",
+          "correct": false,
+          "feedback": "Zu unscharf fuer Lernfeedback."
+        },
+        {
+          "id": "c",
+          "text": "Nur Restzeit",
+          "correct": false,
+          "feedback": "Restzeit ersetzt keine Konfliktanalyse."
+        }
+      ]
+    }
+  ]
+}

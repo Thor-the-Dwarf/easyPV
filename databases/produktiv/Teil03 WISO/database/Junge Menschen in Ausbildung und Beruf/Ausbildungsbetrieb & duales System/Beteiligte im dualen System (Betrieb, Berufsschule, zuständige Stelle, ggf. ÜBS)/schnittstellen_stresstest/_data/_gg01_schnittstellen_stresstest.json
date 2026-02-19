@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Duales System",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Priorisierung ist bei knappen Fristen zuerst sinnvoll?",
+      "hint": "Faellige Hochrisiko-Tickets zuerst.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hochprioritaets-Ticket mit naher Faelligkeit zuerst",
+          "correct": true,
+          "feedback": "Richtig. Das minimiert Fristschaden."
+        },
+        {
+          "id": "b",
+          "text": "Niedrigprioritaets-Ticket ohne Frist zuerst",
+          "correct": false,
+          "feedback": "Das blockiert kritische Arbeit."
+        },
+        {
+          "id": "c",
+          "text": "Ticket-Reihenfolge zufaellig waehlen",
+          "correct": false,
+          "feedback": "Zufall fuehrt zu Queue-Problemen."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche KPI gehoert zum Stresstest laut Plan?",
+      "hint": "Trefferquote plus Queue-Last.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fristtrefferquote und Warteschlangenlaenge",
+          "correct": true,
+          "feedback": "Genau. Beide KPI sind vorgesehen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "feedback": "Ohne Lastsicht unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Rundenzahl",
+          "correct": false,
+          "feedback": "Rundenzahl sagt nichts ueber Priorisierung."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann entsteht ein Zusatzabzug?",
+      "hint": "Kritisches Ticket ueber Faelligkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn ein Hochprioritaets-Ticket ueberfaellig wird",
+          "correct": true,
+          "feedback": "Richtig. Das wird strenger geahndet."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein Ticket erfolgreich abgeschlossen wurde",
+          "correct": false,
+          "feedback": "Abschluss ist positiv."
+        },
+        {
+          "id": "c",
+          "text": "Wenn die Queue kurzfristig kleiner wird",
+          "correct": false,
+          "feedback": "Das ist kein Abzug."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche Zielmarke aktiviert laut Plan einen Bonus?",
+      "hint": "Konstant hohe Trefferquote.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trefferquote ueber 85 Prozent ueber mehrere Runden",
+          "correct": true,
+          "feedback": "Richtig. Konstanz wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Ein einzelner Zufallstreffer",
+          "correct": false,
+          "feedback": "Ein Treffer reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Nur laengere Bearbeitungszeit",
+          "correct": false,
+          "feedback": "Laenge ohne Qualitaet bringt nichts."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was muss im Replay fuer Lernen sichtbar sein?",
+      "hint": "Ursachen fuer Verspaetungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Welche Priorisierungsentscheidung zu welcher Verspaetung fuehrte",
+          "correct": true,
+          "feedback": "Exakt. Ursache-Wirkung macht Lernen moeglich."
+        },
+        {
+          "id": "b",
+          "text": "Nur die Abschlussrunde",
+          "correct": false,
+          "feedback": "Das ist fuer Ursachenanalyse zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur die Farbe der Tickets",
+          "correct": false,
+          "feedback": "Farbe allein erklaert keine Ursache."
+        }
+      ]
+    }
+  ]
+}

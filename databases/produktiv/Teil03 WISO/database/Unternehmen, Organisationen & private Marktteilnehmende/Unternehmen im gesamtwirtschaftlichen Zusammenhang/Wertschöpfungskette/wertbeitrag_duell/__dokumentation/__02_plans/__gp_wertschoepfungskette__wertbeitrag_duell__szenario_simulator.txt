@@ -1,0 +1,32 @@
+# __gp_wertschoepfungskette__wertbeitrag_duell__szenario_simulator
+
+## Spielidee
+"Wertbeitrag-Duell" in der Variante "szenario_simulator" trainiert Entscheidungen in der Wertschoepfungskette unter Zeit- und Zielkorridordruck.
+
+## Lernziel
+- Prozessstufen, Engpaesse und Verbesserungshebel korrekt anwenden.
+- Wertbeitrag von Alternativen begruendet vergleichen.
+
+## Messbare Progression
+- 8 Runden pro Durchlauf.
+- Punkte: +9 stabile Entscheidung, -5 instabile Entscheidung.
+- KPI: Stabilitaetsindex und Fehlentscheidungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- RuleEngine
+- MetricService
+
+### Domaenenobjekte
+- ScenarioCard(cardId, prompt, difficulty)
+- DecisionOption(optionId, impactType)
+- RoundResult(isCorrect, scoreDelta, responseSeconds)
+
+### Zustandsmodell
+- READY -> ROUND_ACTIVE -> SELECT -> EVALUATE -> NEXT_ROUND -> FINISHED
+
+## Abnahmekriterien
+- Fortschritt ist ueber Punkte, Zeit und KPI sichtbar.
+- Regeln erzeugen reproduzierbare Bewertungen.

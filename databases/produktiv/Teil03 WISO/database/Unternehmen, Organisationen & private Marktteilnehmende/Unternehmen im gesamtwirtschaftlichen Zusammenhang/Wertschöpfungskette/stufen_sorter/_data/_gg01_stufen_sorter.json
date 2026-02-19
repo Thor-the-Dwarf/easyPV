@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Wertschoepfungskette",
+    "mechanic": "decision_quiz",
+    "variant": "stufen_sorter",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Wareneingangspruefung gehoert typischerweise zu welcher Stufe?",
+      "hint": "Fruehe Kettenphase.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Beschaffung / Eingang",
+          "correct": true,
+          "feedback": "Richtig. Dort wird Input geprueft."
+        },
+        {
+          "id": "b",
+          "text": "Kundenservice",
+          "correct": false,
+          "feedback": "Zu spaet im Ablauf."
+        },
+        {
+          "id": "c",
+          "text": "Marketing",
+          "correct": false,
+          "feedback": "Nicht primär."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Endmontage ist meist welcher Stufe zugeordnet?",
+      "hint": "Wertrealisierung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Produktion / Leistungserstellung",
+          "correct": true,
+          "feedback": "Richtig. Kernstufe der Wertschaffung."
+        },
+        {
+          "id": "b",
+          "text": "Vertrieb",
+          "correct": false,
+          "feedback": "Nachgelagerte Stufe."
+        },
+        {
+          "id": "c",
+          "text": "Finanzbuchhaltung",
+          "correct": false,
+          "feedback": "Nicht primär."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI passt zum Sorter?",
+      "hint": "Treffer pro Stufe.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trefferquote je Stufe und Gesamtfehlerquote",
+          "correct": true,
+          "feedback": "Richtig. Das zeigt konkrete Luecken."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Karten",
+          "correct": false,
+          "feedback": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtzeit",
+          "correct": false,
+          "feedback": "Ohne Qualitaet unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Warum ist Kernprozess-Fehlzuordnung gravierend?",
+      "hint": "Falsche Stellhebel.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Massnahmen werden an falscher Stufe angesetzt",
+          "correct": true,
+          "feedback": "Richtig. Das verschlechtert Verbesserungen."
+        },
+        {
+          "id": "b",
+          "text": "Sie bleibt folgenlos",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Sie verbessert automatisch Schnittstellen",
+          "correct": false,
+          "feedback": "Nicht plausibel."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Zuordnung passt zu Auslieferung?",
+      "hint": "Distribution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Logistik / Distribution",
+          "correct": true,
+          "feedback": "Richtig. Hier erfolgt Kundenbelieferung."
+        },
+        {
+          "id": "b",
+          "text": "Beschaffung",
+          "correct": false,
+          "feedback": "Vorstufe."
+        },
+        {
+          "id": "c",
+          "text": "Produktentwicklung",
+          "correct": false,
+          "feedback": "Nicht direkt."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Wann greift Serienbonus?",
+      "hint": "Mehrere korrekte Karten in Folge.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ab 5 korrekten Zuordnungen am Stueck",
+          "correct": true,
+          "feedback": "Richtig. Das belohnt sichere Klassifikation."
+        },
+        {
+          "id": "b",
+          "text": "Schon nach einem Treffer",
+          "correct": false,
+          "feedback": "Zu frueh."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei maximaler Spielzeit",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Was hilft gegen Stufenverwechslungen?",
+      "hint": "Klare Kriterien je Stufe.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Definitionen mit typischen Inputs/Outputs je Stufe",
+          "correct": true,
+          "feedback": "Richtig. Das schafft Trennschaerfe."
+        },
+        {
+          "id": "b",
+          "text": "Nur Farbcodes ohne Inhalt",
+          "correct": false,
+          "feedback": "Zu oberflaechlich."
+        },
+        {
+          "id": "c",
+          "text": "Kein Feedback anzeigen",
+          "correct": false,
+          "feedback": "Nicht lernfoerderlich."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was trainiert der Stufen-Sorter?",
+      "hint": "Sichere Prozessklassifikation.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Schritte den richtigen Wertkettenstufen fachlich zuordnen",
+          "correct": true,
+          "feedback": "Richtig. Genau das ist das Ziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur schnelle Rateklicks",
+          "correct": false,
+          "feedback": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "KPI ausblenden",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

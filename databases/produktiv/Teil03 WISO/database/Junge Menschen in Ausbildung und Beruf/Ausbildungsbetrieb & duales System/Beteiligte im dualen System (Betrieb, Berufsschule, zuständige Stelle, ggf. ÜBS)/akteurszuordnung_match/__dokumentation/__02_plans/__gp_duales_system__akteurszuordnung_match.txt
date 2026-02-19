@@ -1,0 +1,52 @@
+# __gp_duales_system__akteurszuordnung_match
+
+## Spielidee
+"Akteurszuordnung-Match" zeigt Aufgaben aus dem Ausbildungsalltag. Lernende ordnen sie den zustaendigen Akteuren im dualen System zu.
+
+## Lernziel
+- Rollen von Betrieb, Berufsschule, zustaendiger Stelle und UeBS unterscheiden.
+- Verantwortlichkeiten korrekt zuordnen.
+
+## Messbare Progression
+- 25 Aufgabenkarten.
+- Punkte: +6 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Rollen-Treffquote je Akteur.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TaskController
+- ResponsibilityEngine
+- MetricService
+
+### Domaenenobjekte
+- TaskCard(cardId, taskType)
+- ActorOption(actorId, actorType)
+- MatchResult(isCorrect, actorType)
+
+### Beziehungen
+- TaskCard hat 3..4 ActorOption.
+- ResponsibilityEngine validiert pro Auswahl ein MatchResult.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> MATCH -> FEEDBACK -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. TaskController zeigt TaskCard.
+2. Player waehlt ActorOption.
+3. ResponsibilityEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Falsche Zuordnung bei Kernaufgaben verursacht Zusatzabzug.
+- Hohe Trefferquote schaltet schwierigere Karten frei.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, taskType, options[], expectedActor
+
+## Abnahmekriterien
+- Feedback erklaert zustaendigen Akteur.
+- KPI ist pro Akteur auswertbar.
+- Report zeigt haeufige Rollenverwechslungen.

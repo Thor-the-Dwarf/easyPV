@@ -1,0 +1,53 @@
+# __gp_wertschoepfungskette__engpass_radar
+
+## Spielidee
+"Engpass-Radar" zeigt Durchlaufdaten ueber alle Stufen. Lernende identifizieren den Engpass und waehlen die wirksamste Gegenmassnahme.
+
+## Lernziel
+- Engpaesse datenbasiert erkennen.
+- Gegenmassnahmen priorisieren.
+
+## Messbare Progression
+- 12 Analysefaelle.
+- Punkte: +8 korrekter Engpass, +3 passende Maßnahme, -4 Fehler.
+- KPI: Engpassquote und Maßnahmenquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- AnalysisController
+- BottleneckEngine
+- ImprovementService
+
+### Domaenenobjekte
+- AnalysisCase(caseId, metrics[])
+- Metric(metricId, value)
+- ActionOption(actionId, actionType)
+- CaseResult(bottleneckCorrect, actionCorrect)
+
+### Beziehungen
+- AnalysisCase enthaelt 6..25 Metric.
+- BottleneckEngine validiert Auswahl.
+- ImprovementService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- LOAD_CASE -> ANALYZE -> SELECT_ACTION -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. AnalysisController laedt AnalysisCase.
+2. Player waehlt Engpass.
+3. BottleneckEngine prueft Auswahl.
+4. Player waehlt ActionOption.
+5. ImprovementService aktualisiert KPI.
+
+## Regeln
+- Uebersehter kritischer Engpass verursacht Zusatzabzug.
+- Vollkorrekter Fall gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, metrics[], expectedBottleneck, actionOptions[], expectedAction
+
+## Abnahmekriterien
+- Engpass und Maßnahme sind getrennt rueckgemeldet.
+- KPI zeigt beide Lernziele.
+- Report nennt haeufige Fehlanalysen.

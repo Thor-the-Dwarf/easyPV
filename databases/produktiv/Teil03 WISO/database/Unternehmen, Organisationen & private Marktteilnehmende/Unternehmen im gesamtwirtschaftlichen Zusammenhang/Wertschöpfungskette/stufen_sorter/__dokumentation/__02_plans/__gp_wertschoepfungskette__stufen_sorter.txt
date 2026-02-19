@@ -1,0 +1,52 @@
+# __gp_wertschoepfungskette__stufen_sorter
+
+## Spielidee
+"Stufen-Sorter" ordnet Prozessschritte den Stufen der Wertschoepfungskette zu.
+
+## Lernziel
+- Stufenlogik der Wertschoepfungskette sicher anwenden.
+- Prozessschritte korrekt klassifizieren.
+
+## Messbare Progression
+- 24 Karten.
+- Punkte: +6 korrekte Stufe, -3 falsche Stufe.
+- KPI: Trefferquote je Stufe.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- StageEngine
+- MetricService
+
+### Domaenenobjekte
+- StepCard(cardId, stepType)
+- StageOption(optionId, stageType)
+- MatchResult(isCorrect, stageType)
+
+### Beziehungen
+- StepCard enthaelt 4 StageOption.
+- StageEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt StepCard.
+2. Player waehlt StageOption.
+3. StageEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlzuordnung bei Kernprozess verursacht Zusatzabzug.
+- Serienbonus ab 5 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, stepType, options[], expectedStage
+
+## Abnahmekriterien
+- Zuordnung ist klar begruendet.
+- KPI zeigt Leistung je Stufe.
+- Report listet haeufige Verwechslungen.

@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Wertschoepfungskette",
+    "mechanic": "decision_quiz",
+    "variant": "engpass_radar",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Kennzahl deutet am staerksten auf einen Engpass hin?",
+      "hint": "Rueckstau + laengste Durchlaufzeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hohe Warteschlange bei gleichzeitig laengster Bearbeitungszeit",
+          "correct": true,
+          "feedback": "Richtig. Das ist ein klassischer Bottleneck-Hinweis."
+        },
+        {
+          "id": "b",
+          "text": "Niedrige Auslastung ohne Rueckstau",
+          "correct": false,
+          "feedback": "Spricht eher gegen Engpass."
+        },
+        {
+          "id": "c",
+          "text": "Nur ein einzelner Ausreisserwert",
+          "correct": false,
+          "feedback": "Noch kein klarer Engpassnachweis."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Erstmassnahme passt bei erkanntem Engpass?",
+      "hint": "Wirksamkeit vor Breite.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kapazitaet am Engpasspunkt gezielt erhoehen",
+          "correct": true,
+          "feedback": "Richtig. Fokus auf den Engpass bringt den groessten Hebel."
+        },
+        {
+          "id": "b",
+          "text": "Alle Stufen gleichmaessig aendern",
+          "correct": false,
+          "feedback": "Ineffizient bei klarem Bottleneck."
+        },
+        {
+          "id": "c",
+          "text": "Keine Massnahme, nur beobachten",
+          "correct": false,
+          "feedback": "Zu passiv."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI passt zum Engpass-Radar?",
+      "hint": "Erkennung + Massnahmequalitaet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Engpass-Trefferquote und passende Massnahmenquote",
+          "correct": true,
+          "feedback": "Richtig. Beides wird separat messbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl bearbeiteter Faelle",
+          "correct": false,
+          "feedback": "Ohne Qualitaet unzureichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Klicktempo",
+          "correct": false,
+          "feedback": "Zu oberflaechlich."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Warum ist ein uebersehener Engpass kritisch?",
+      "hint": "Folgewirkung auf gesamte Kette.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Er begrenzt den Gesamtdurchsatz trotz Optimierung anderer Stufen",
+          "correct": true,
+          "feedback": "Richtig. Die Kette bleibt am Engpass limitiert."
+        },
+        {
+          "id": "b",
+          "text": "Er verbessert automatisch die Leistung",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Er hat keine Auswirkungen auf Termine",
+          "correct": false,
+          "feedback": "Unplausibel."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Datenkombination ist fuer Engpassdiagnose sinnvoll?",
+      "hint": "Zeit, Bestand, Fehler.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Durchlaufzeit, WIP-Bestand und Nacharbeitsquote je Stufe",
+          "correct": true,
+          "feedback": "Richtig. Das ergibt ein belastbares Bild."
+        },
+        {
+          "id": "b",
+          "text": "Nur Monatsumsatz",
+          "correct": false,
+          "feedback": "Zu indirekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur Teamgroesse",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Wann ist eine Massnahme am Engpass gut priorisiert?",
+      "hint": "Schneller Effekt + geringe Nebenwirkung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn sie Durchsatz verbessert und Folgestufen nicht ueberlastet",
+          "correct": true,
+          "feedback": "Richtig. Das ist systemisch sinnvoll."
+        },
+        {
+          "id": "b",
+          "text": "Wenn sie nur lokal KPI verschoenert",
+          "correct": false,
+          "feedback": "Zu kurz gedacht."
+        },
+        {
+          "id": "c",
+          "text": "Wenn sie keinerlei Messung braucht",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Was bedeutet Bonusfall im Radar?",
+      "hint": "Engpass + Aktion beides korrekt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kritischen Engpass richtig erkannt und passende Gegenmassnahme gewaehlt",
+          "correct": true,
+          "feedback": "Richtig. Volltreffer gibt Zusatzpunkte."
+        },
+        {
+          "id": "b",
+          "text": "Nur Engpass erkannt",
+          "correct": false,
+          "feedback": "Noch unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Massnahme ohne Diagnose",
+          "correct": false,
+          "feedback": "Unsicher."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was trainiert das Engpass-Radar?",
+      "hint": "Datenbasierte Priorisierung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Engpaesse sicher erkennen und wirksame Massnahmen priorisieren",
+          "correct": true,
+          "feedback": "Richtig. Genau das ist das Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur schnelle Klickfolgen",
+          "correct": false,
+          "feedback": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Messbarkeit ausblenden",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

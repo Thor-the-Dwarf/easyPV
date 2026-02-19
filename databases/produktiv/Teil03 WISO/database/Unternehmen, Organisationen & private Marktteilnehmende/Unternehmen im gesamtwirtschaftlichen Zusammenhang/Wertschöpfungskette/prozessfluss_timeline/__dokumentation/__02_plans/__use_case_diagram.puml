@@ -1,0 +1,17 @@
+@startuml
+title Use-Case: Prozessfluss-Timeline
+left to right direction
+actor "Spieler" as P
+rectangle "prozessfluss_timeline" {
+  usecase "Spiel starten" as UC1
+  usecase "Option waehlen" as UC2
+  usecase "Feedback lesen" as UC3
+  usecase "KPI verfolgen" as UC4
+  usecase "Neustart" as UC5
+}
+P --> UC1
+P --> UC2
+P --> UC3
+P --> UC4
+P --> UC5
+@enduml

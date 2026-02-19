@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Schock-Szenario-Simulator
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: schock_szenario_simulator" {
+  component "_ghtml_schock_szenario_simulator.html" as HTML
+  component "_gjs_schock_szenario_simulator.js" as JS
+  component "_gcss_schock_szenario_simulator.css" as CSS
+  database "_data/_gg01_schock_szenario_simulator.json" as GG
+  database "_data/__metaData_Wirtschaftskreislauf (einfach).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

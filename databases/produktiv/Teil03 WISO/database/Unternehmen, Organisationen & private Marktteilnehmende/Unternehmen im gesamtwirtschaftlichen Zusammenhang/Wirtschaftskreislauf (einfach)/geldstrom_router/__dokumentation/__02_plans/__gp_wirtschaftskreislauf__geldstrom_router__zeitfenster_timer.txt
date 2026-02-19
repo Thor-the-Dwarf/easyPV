@@ -1,0 +1,32 @@
+# __gp_wirtschaftskreislauf__geldstrom_router__zeitfenster_timer
+
+## Spielidee
+"Geldstrom-Router" in der Variante "zeitfenster_timer" trainiert Entscheidungen im einfachen Wirtschaftskreislauf unter Zeit- und Zielkorridordruck.
+
+## Lernziel
+- Flussbeziehungen zwischen zentralen Akteuren korrekt anwenden.
+- Kreislaufwirkungen mit begruendeten Entscheidungen bewerten.
+
+## Messbare Progression
+- 8 Runden pro Durchlauf.
+- Punkte: +6 korrekt im Zeitfenster, -3 bei Zeitueberschreitung.
+- KPI: Zeitfensterquote und Antworttempo.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- RuleEngine
+- MetricService
+
+### Domaenenobjekte
+- ScenarioCard(cardId, prompt, difficulty)
+- DecisionOption(optionId, impactType)
+- RoundResult(isCorrect, scoreDelta, responseSeconds)
+
+### Zustandsmodell
+- READY -> ROUND_ACTIVE -> SELECT -> EVALUATE -> NEXT_ROUND -> FINISHED
+
+## Abnahmekriterien
+- Fortschritt ist ueber Punkte, Zeit und KPI sichtbar.
+- Regeln erzeugen reproduzierbare Bewertungen.

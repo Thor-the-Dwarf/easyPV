@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Wirtschaftskreislauf",
+    "mechanic": "decision_quiz",
+    "variant": "kreislauf_lueckenfinder",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "In einem Diagramm fehlt der Akteur, der Arbeitskraft anbietet. Wer fehlt?",
+      "hint": "Faktorangebot.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Haushalte",
+          "correct": true,
+          "feedback": "Richtig. Haushalte bieten Arbeit an."
+        },
+        {
+          "id": "b",
+          "text": "Unternehmen",
+          "correct": false,
+          "feedback": "Unternehmen fragen Arbeit nach."
+        },
+        {
+          "id": "c",
+          "text": "Nur Ausland",
+          "correct": false,
+          "feedback": "Nicht im einfachen Modell."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Luecke passt zwischen Konsumausgabe und Gueterstrom?",
+      "hint": "Gegenstromprinzip.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unternehmen liefern Gueter an Haushalte",
+          "correct": true,
+          "feedback": "Richtig. Das schliesst den Kreislauf."
+        },
+        {
+          "id": "b",
+          "text": "Haushalte liefern Gueter an Unternehmen",
+          "correct": false,
+          "feedback": "Im Grundmodell umgekehrt."
+        },
+        {
+          "id": "c",
+          "text": "Kein Rueckfluss notwendig",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann ist ein Diagramm unvollstaendig?",
+      "hint": "Schluesselknoten fehlt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn ein zentraler Akteur oder Kernfluss nicht vorkommt",
+          "correct": true,
+          "feedback": "Richtig. Dann fehlt Struktur."
+        },
+        {
+          "id": "b",
+          "text": "Wenn Farben fehlen",
+          "correct": false,
+          "feedback": "Optik ist zweitrangig."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ein Titel fehlt",
+          "correct": false,
+          "feedback": "Nicht der Kernfehler."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI passt zum Lueckenfinder?",
+      "hint": "Praezision und Vollstaendigkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Fuellungen und Vollstaendigkeitsquote",
+          "correct": true,
+          "feedback": "Richtig. Beides muss stimmen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtzeit",
+          "correct": false,
+          "feedback": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl geoeffneter Diagramme",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welcher Fehler wiegt besonders schwer?",
+      "hint": "Falscher Schluesselknoten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kernbeziehung falsch einsetzen",
+          "correct": true,
+          "feedback": "Richtig. Das verzerrt das gesamte Modell."
+        },
+        {
+          "id": "b",
+          "text": "Hinweistext kuerzen",
+          "correct": false,
+          "feedback": "Kein Kernproblem."
+        },
+        {
+          "id": "c",
+          "text": "Rahmenfarbe aendern",
+          "correct": false,
+          "feedback": "Nur Darstellung."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Wie prueft man eine gefuellte Luecke fachlich?",
+      "hint": "Stimmt die Flusslogik?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ist Richtung und Akteurbezug mit dem Kreislaufprinzip konsistent",
+          "correct": true,
+          "feedback": "Richtig. Das ist die Kernpruefung."
+        },
+        {
+          "id": "b",
+          "text": "Sieht es nur gut aus",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Ist es die kuerzeste Beschriftung",
+          "correct": false,
+          "feedback": "Kein Fachkriterium."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Warum ist Vollstaendigkeit wichtig?",
+      "hint": "Teilmodelle koennen falsche Schluesse erzeugen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nur ein vollstaendiges Modell zeigt Wechselwirkungen korrekt",
+          "correct": true,
+          "feedback": "Richtig. Luecken verzerren Interpretation."
+        },
+        {
+          "id": "b",
+          "text": "Teilmodelle sind immer ausreichend",
+          "correct": false,
+          "feedback": "Nicht generell."
+        },
+        {
+          "id": "c",
+          "text": "Vollstaendigkeit ist unwichtig",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was trainiert der Kreislauf-Lueckenfinder?",
+      "hint": "Struktursicherheit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fehlende Akteure und Fluesse logisch korrekt ergaenzen",
+          "correct": true,
+          "feedback": "Richtig. Genau das ist das Ziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur schnelle Klickfolgen",
+          "correct": false,
+          "feedback": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Bewertung ausblenden",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

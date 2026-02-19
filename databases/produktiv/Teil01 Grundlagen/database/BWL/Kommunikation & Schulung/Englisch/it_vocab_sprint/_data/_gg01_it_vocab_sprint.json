@@ -1,0 +1,259 @@
+{
+  "gameId": "it_vocab_sprint",
+  "title": "IT-Vocab-Sprint",
+  "description": "Ordne 20 englische IT-Begriffe in 120 Sekunden den korrekten deutschen Bedeutungen zu.",
+  "timing": {
+    "total_ms": 120000,
+    "tick_ms": 100
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -4,
+    "completion_bonus": 20
+  },
+  "storage": {
+    "highscore_key": "easy_pv_it_vocab_sprint_highscore"
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "en": "Maintenance",
+      "context": "Regelmaessige Systempflege",
+      "correctOptionId": "a",
+      "options": [
+        { "id": "a", "text": "Wartung" },
+        { "id": "b", "text": "Sicherheit" },
+        { "id": "c", "text": "Entwicklung" },
+        { "id": "d", "text": "Verwaltung" }
+      ]
+    },
+    {
+      "id": 2,
+      "en": "Security",
+      "context": "Schutz von Systemen und Daten",
+      "correctOptionId": "b",
+      "options": [
+        { "id": "a", "text": "Wartung" },
+        { "id": "b", "text": "Sicherheit" },
+        { "id": "c", "text": "Fehlersuche" },
+        { "id": "d", "text": "Bereitstellung" }
+      ]
+    },
+    {
+      "id": 3,
+      "en": "Development",
+      "context": "Erstellung neuer Software",
+      "correctOptionId": "c",
+      "options": [
+        { "id": "a", "text": "Verschluesselung" },
+        { "id": "b", "text": "Verwaltung" },
+        { "id": "c", "text": "Entwicklung" },
+        { "id": "d", "text": "Sicherung" }
+      ]
+    },
+    {
+      "id": 4,
+      "en": "Administration",
+      "context": "Betrieb und Betreuung der IT-Landschaft",
+      "correctOptionId": "d",
+      "options": [
+        { "id": "a", "text": "Fehlersuche" },
+        { "id": "b", "text": "Wartung" },
+        { "id": "c", "text": "Bereitstellung" },
+        { "id": "d", "text": "Verwaltung" }
+      ]
+    },
+    {
+      "id": 5,
+      "en": "Requirement",
+      "context": "Fachliche Vorgabe fuer ein System",
+      "correctOptionId": "b",
+      "options": [
+        { "id": "a", "text": "Abgabefrist" },
+        { "id": "b", "text": "Anforderung" },
+        { "id": "c", "text": "Berechtigung" },
+        { "id": "d", "text": "Wartung" }
+      ]
+    },
+    {
+      "id": 6,
+      "en": "Deployment",
+      "context": "Auslieferung einer Anwendung",
+      "correctOptionId": "c",
+      "options": [
+        { "id": "a", "text": "Besprechung" },
+        { "id": "b", "text": "Fehler" },
+        { "id": "c", "text": "Bereitstellung" },
+        { "id": "d", "text": "Verschluesselung" }
+      ]
+    },
+    {
+      "id": 7,
+      "en": "Bug",
+      "context": "Fehlverhalten im System",
+      "correctOptionId": "a",
+      "options": [
+        { "id": "a", "text": "Fehler" },
+        { "id": "b", "text": "Schnittstelle" },
+        { "id": "c", "text": "Verwaltung" },
+        { "id": "d", "text": "Protokoll" }
+      ]
+    },
+    {
+      "id": 8,
+      "en": "Feature",
+      "context": "Neue Nutzerfunktion",
+      "correctOptionId": "d",
+      "options": [
+        { "id": "a", "text": "Fehlersuche" },
+        { "id": "b", "text": "Sicherung" },
+        { "id": "c", "text": "Vorgang" },
+        { "id": "d", "text": "Funktion" }
+      ]
+    },
+    {
+      "id": 9,
+      "en": "Deadline",
+      "context": "Fixer Termin fuer Abgabe",
+      "correctOptionId": "c",
+      "options": [
+        { "id": "a", "text": "Wartung" },
+        { "id": "b", "text": "Quellcodeverwaltung" },
+        { "id": "c", "text": "Abgabefrist" },
+        { "id": "d", "text": "Zugriff" }
+      ]
+    },
+    {
+      "id": 10,
+      "en": "Meeting Minutes",
+      "context": "Schriftliche Zusammenfassung eines Meetings",
+      "correctOptionId": "a",
+      "options": [
+        { "id": "a", "text": "Besprechungsprotokoll" },
+        { "id": "b", "text": "Datenbank" },
+        { "id": "c", "text": "Verschluesselung" },
+        { "id": "d", "text": "Aktualisierung" }
+      ]
+    },
+    {
+      "id": 11,
+      "en": "Interface",
+      "context": "Definierte Verbindungsstelle zwischen Systemen",
+      "correctOptionId": "b",
+      "options": [
+        { "id": "a", "text": "Bereitstellung" },
+        { "id": "b", "text": "Schnittstelle" },
+        { "id": "c", "text": "Sicherheit" },
+        { "id": "d", "text": "Auswertung" }
+      ]
+    },
+    {
+      "id": 12,
+      "en": "Ticket",
+      "context": "Erfasster Supportfall",
+      "correctOptionId": "c",
+      "options": [
+        { "id": "a", "text": "Entwicklung" },
+        { "id": "b", "text": "Sicherung" },
+        { "id": "c", "text": "Vorgang" },
+        { "id": "d", "text": "Verschiebung" }
+      ]
+    },
+    {
+      "id": 13,
+      "en": "Backup",
+      "context": "Kopie fuer Wiederherstellung",
+      "correctOptionId": "d",
+      "options": [
+        { "id": "a", "text": "Fehlersuche" },
+        { "id": "b", "text": "Verwaltung" },
+        { "id": "c", "text": "Stoerfall" },
+        { "id": "d", "text": "Sicherung" }
+      ]
+    },
+    {
+      "id": 14,
+      "en": "Encryption",
+      "context": "Schutz durch mathematische Codierung",
+      "correctOptionId": "b",
+      "options": [
+        { "id": "a", "text": "Datenbank" },
+        { "id": "b", "text": "Verschluesselung" },
+        { "id": "c", "text": "Aktualisierung" },
+        { "id": "d", "text": "Wartung" }
+      ]
+    },
+    {
+      "id": 15,
+      "en": "Database",
+      "context": "Strukturierter Datenbestand",
+      "correctOptionId": "a",
+      "options": [
+        { "id": "a", "text": "Datenbank" },
+        { "id": "b", "text": "Anforderung" },
+        { "id": "c", "text": "Berechtigung" },
+        { "id": "d", "text": "Wartung" }
+      ]
+    },
+    {
+      "id": 16,
+      "en": "Repository",
+      "context": "Ablage fuer Quellcode und Historie",
+      "correctOptionId": "c",
+      "options": [
+        { "id": "a", "text": "Vorfall" },
+        { "id": "b", "text": "Protokoll" },
+        { "id": "c", "text": "Quellcodeverwaltung" },
+        { "id": "d", "text": "Entwicklung" }
+      ]
+    },
+    {
+      "id": 17,
+      "en": "Debugging",
+      "context": "Systematische Fehlersuche",
+      "correctOptionId": "d",
+      "options": [
+        { "id": "a", "text": "Zugriffskontrolle" },
+        { "id": "b", "text": "Schnittstelle" },
+        { "id": "c", "text": "Abgabefrist" },
+        { "id": "d", "text": "Fehlersuche" }
+      ]
+    },
+    {
+      "id": 18,
+      "en": "Incident",
+      "context": "Ungeplanter Stoerfall im Betrieb",
+      "correctOptionId": "b",
+      "options": [
+        { "id": "a", "text": "Funktion" },
+        { "id": "b", "text": "Stoerfall" },
+        { "id": "c", "text": "Verwaltung" },
+        { "id": "d", "text": "Sicherung" }
+      ]
+    },
+    {
+      "id": 19,
+      "en": "Access Rights",
+      "context": "Erlaubnisse fuer Nutzergruppen",
+      "correctOptionId": "a",
+      "options": [
+        { "id": "a", "text": "Zugriffsrechte" },
+        { "id": "b", "text": "Besprechung" },
+        { "id": "c", "text": "Entwicklung" },
+        { "id": "d", "text": "Wartung" }
+      ]
+    },
+    {
+      "id": 20,
+      "en": "Update",
+      "context": "Versionelle Aktualisierung",
+      "correctOptionId": "c",
+      "options": [
+        { "id": "a", "text": "Bereitstellung" },
+        { "id": "b", "text": "Besprechungsprotokoll" },
+        { "id": "c", "text": "Aktualisierung" },
+        { "id": "d", "text": "Verschluesselung" }
+      ]
+    }
+  ]
+}

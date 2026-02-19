@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Wirtschaftskreislauf",
+    "mechanic": "decision_quiz",
+    "variant": "schock_szenario_simulator",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Ein Nachfrageschock senkt Konsum. Welche Erstwirkung ist plausibel?",
+      "hint": "Einnahmenseite betrachten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unternehmen erzielen geringere Umsaetze",
+          "correct": true,
+          "feedback": "Richtig. Weniger Konsum senkt Einnahmen."
+        },
+        {
+          "id": "b",
+          "text": "Umsaetze steigen automatisch",
+          "correct": false,
+          "feedback": "Gegenteilig."
+        },
+        {
+          "id": "c",
+          "text": "Kein Effekt auf Unternehmen",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Interpretation passt bei Kostenanstieg in Unternehmen?",
+      "hint": "Preise, Produktion, Einkommen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Risiko sinkender Produktion und Kaufkraftdruck",
+          "correct": true,
+          "feedback": "Richtig. Kosten koennen sich durch den Kreislauf fortpflanzen."
+        },
+        {
+          "id": "b",
+          "text": "Automatisch mehr Kaufkraft",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Keine Anpassung noetig",
+          "correct": false,
+          "feedback": "Riskant."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI ist im Simulator zentral?",
+      "hint": "Interpretation + Stabilitaet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Deutung pro Runde und Stabilitaetsindex",
+          "correct": true,
+          "feedback": "Richtig. Beides zeigt Lernfortschritt."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Runden",
+          "correct": false,
+          "feedback": "Zu oberflaechlich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Klicktempo",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann ist eine Interpretation kritisch falsch?",
+      "hint": "Schock wird verharmlost.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn ein deutlicher Schock als folgenlos bewertet wird",
+          "correct": true,
+          "feedback": "Richtig. Dann fehlt Risikoverstaendnis."
+        },
+        {
+          "id": "b",
+          "text": "Wenn Risiken begruendet genannt werden",
+          "correct": false,
+          "feedback": "Das ist korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Unsicherheit transparent ist",
+          "correct": false,
+          "feedback": "Eher positiv."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Gegenmassnahme ist im einfachen Modell sinnvoll?",
+      "hint": "Stabilisieren statt uebersteuern.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gezielte Entlastung und Nachfrage-/Angebotsstabilisierung",
+          "correct": true,
+          "feedback": "Richtig. Das adressiert den Kreislaufeffekt."
+        },
+        {
+          "id": "b",
+          "text": "Keine Reaktion bei starkem Schock",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Nur zufaellige Einzelmassnahmen",
+          "correct": false,
+          "feedback": "Nicht robust."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Warum sind Folgeeffekte wichtig?",
+      "hint": "Schocks wirken kettenartig.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ein Stoerimpuls kann mehrere Akteure nacheinander treffen",
+          "correct": true,
+          "feedback": "Richtig. Das ist Systemlogik."
+        },
+        {
+          "id": "b",
+          "text": "Schocks bleiben immer lokal",
+          "correct": false,
+          "feedback": "Nicht zwingend."
+        },
+        {
+          "id": "c",
+          "text": "Es gibt keine Rueckkopplungen",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Woran erkennt man eine stabile Runde?",
+      "hint": "Interpretation stimmt und Risiken sinken.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Deutung plus verbesserter Stabilitaetswert",
+          "correct": true,
+          "feedback": "Richtig. Dann passt Analyse und Wirkung."
+        },
+        {
+          "id": "b",
+          "text": "Niedrige Genauigkeit trotz guter Zeit",
+          "correct": false,
+          "feedback": "Nicht stabil genug."
+        },
+        {
+          "id": "c",
+          "text": "Nur viele Klicks",
+          "correct": false,
+          "feedback": "Unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was trainiert der Schock-Szenario-Simulator?",
+      "hint": "Systemische Deutung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Schockwirkungen im Kreislauf fachlich richtig interpretieren",
+          "correct": true,
+          "feedback": "Richtig. Genau das trainiert der Simulator."
+        },
+        {
+          "id": "b",
+          "text": "Nur Zufallsentscheidungen",
+          "correct": false,
+          "feedback": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Messbare KPI ignorieren",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

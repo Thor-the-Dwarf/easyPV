@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Wirtschaftskreislauf",
+    "mechanic": "decision_quiz",
+    "variant": "geldstrom_router",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Ein Haushalt kauft ein Produkt. Welcher Geldpfad ist korrekt?",
+      "hint": "Direkter Konsumfluss.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Haushalt -> Unternehmen",
+          "correct": true,
+          "feedback": "Richtig. Konsumausgaben gehen an Unternehmen."
+        },
+        {
+          "id": "b",
+          "text": "Unternehmen -> Haushalt",
+          "correct": false,
+          "feedback": "Das waere eher Einkommensfluss."
+        },
+        {
+          "id": "c",
+          "text": "Haushalt -> Haushalt",
+          "correct": false,
+          "feedback": "Nicht der Fall."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Bei Lohnzahlung ist die Richtung?",
+      "hint": "Faktorentgelt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unternehmen -> Haushalt",
+          "correct": true,
+          "feedback": "Richtig. Einkommen fliesst an Haushalte."
+        },
+        {
+          "id": "b",
+          "text": "Haushalt -> Unternehmen",
+          "correct": false,
+          "feedback": "Umgekehrt."
+        },
+        {
+          "id": "c",
+          "text": "Nur Staat -> Haushalt",
+          "correct": false,
+          "feedback": "Nicht Kernfall."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was ist ein typischer Routing-Fehler?",
+      "hint": "Kernstation ueberspringen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Einkommensfluss ohne Unternehmen als Zahler darstellen",
+          "correct": true,
+          "feedback": "Richtig. Kernstation fehlt."
+        },
+        {
+          "id": "b",
+          "text": "Konsumfluss korrekt abbilden",
+          "correct": false,
+          "feedback": "Das ist richtig."
+        },
+        {
+          "id": "c",
+          "text": "Akteure eindeutig benennen",
+          "correct": false,
+          "feedback": "Kein Fehler."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI ist im Router zentral?",
+      "hint": "Pfadtreue und Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Schritte bis zum Zielpfad",
+          "correct": true,
+          "feedback": "Richtig. Genauigkeit und Weglaenge zaehlen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Klicks",
+          "correct": false,
+          "feedback": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Startzeit",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wie bleibt ein Geldpfad nachvollziehbar?",
+      "hint": "Von-Akteur, Zu-Akteur, Anlass.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Jeder Schritt nennt Quelle, Ziel und wirtschaftlichen Grund",
+          "correct": true,
+          "feedback": "Richtig. Das macht den Pfad pruefbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Pfeile ohne Beschriftung",
+          "correct": false,
+          "feedback": "Unklar."
+        },
+        {
+          "id": "c",
+          "text": "Nur Endergebnis ohne Zwischenschritte",
+          "correct": false,
+          "feedback": "Zu intransparent."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Warum ist Reihenfolge im Geldstrom wichtig?",
+      "hint": "Kausalitaet im Kreislauf.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sie zeigt, welcher Vorgang welchen Folgefluss ausloest",
+          "correct": true,
+          "feedback": "Richtig. Reihenfolge erklaert Wirkung."
+        },
+        {
+          "id": "b",
+          "text": "Sie ist beliebig",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Sie ersetzt alle Akteure",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Welche Route passt bei Konsumplus?",
+      "hint": "Haushalte geben mehr aus.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mehr Geld von Haushalten zu Unternehmen",
+          "correct": true,
+          "feedback": "Richtig. Das ist der direkte Effekt."
+        },
+        {
+          "id": "b",
+          "text": "Weniger Einnahmen der Unternehmen",
+          "correct": false,
+          "feedback": "Gegenteilig."
+        },
+        {
+          "id": "c",
+          "text": "Kein Einfluss auf Fluesse",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was trainiert der Geldstrom-Router?",
+      "hint": "Prozesssicherer Geldfluss.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte, effiziente und begruendete Geldfluss-Pfade",
+          "correct": true,
+          "feedback": "Richtig. Das ist der Kern."
+        },
+        {
+          "id": "b",
+          "text": "Nur Schnelligkeit ohne Inhalt",
+          "correct": false,
+          "feedback": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Messbarkeit ignorieren",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

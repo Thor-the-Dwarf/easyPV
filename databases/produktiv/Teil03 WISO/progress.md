@@ -44,6 +44,19 @@ Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine M
     - `output/web-game-teil03-reverse-unternehmensaufbau/`
   - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.
 
+- Reverse-Batch 5: Thema "Wirtschaftskreislauf (einfach)" mit 5 Gameordnern umgesetzt:
+  - `akteursfluss_match`
+  - `geldstrom_router`
+  - `kreislauf_lueckenfinder`
+  - `schock_szenario_simulator`
+  - `sektoren_duell`
+- Je Spiel erstellt: `_ghtml`, `_gjs`, `_gcss`, `_data/_gg01_*.json`, MetaData, UML-PUML, 5 GamePlan-Dateien, Teststruktur (`__03_tests`).
+- Validierung:
+  - Lokale Node-Tests fuer alle 5 neuen Spiele gruen (`10/10`).
+  - Playwright-Smoke fuer `geldstrom_router` erfolgreich:
+    - `output/web-game-teil03-reverse-wirtschaftskreislauf/`
+  - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.
+
 - Batch fortgesetzt mit neuer Commit-Konvention `games_teil03 <message>`.
 - Neues 5er-Topic umgesetzt: "Ausbildungsordnung, Ausbildungsrahmenplan, betrieblicher Ausbildungsplan (Bezuege herstellen)".
 - Neu angelegte Gameordner:

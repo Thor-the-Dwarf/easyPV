@@ -1,0 +1,52 @@
+# __gp_wirtschaftskreislauf__schock_szenario_simulator
+
+## Spielidee
+"Schock-Szenario-Simulator" modelliert einfache externe Schocks im Kreislauf. Lernende beobachten Auswirkungen und priorisieren Gegenmaßnahmen.
+
+## Lernziel
+- Grundeffekte von Schocks im Kreislauf verstehen.
+- Reaktionslogik auf Systemebene anwenden.
+
+## Messbare Progression
+- 8 Simulationsrunden.
+- Punkte: +10 korrekte Interpretation, -5 falsche Interpretation.
+- KPI: Interpretationsquote und Stabilitaetsindex.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- SimulationController
+- ShockEngine
+- KPIService
+
+### Domaenenobjekte
+- ScenarioRound(roundId, shockType)
+- Indicator(indicatorId, value)
+- RoundResult(stabilityScore, interpretationCorrect)
+
+### Beziehungen
+- ScenarioRound enthaelt 3..10 Indicator.
+- ShockEngine berechnet Wirkungen.
+- KPIService aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- PREPARE -> RUN -> ANALYZE -> EVALUATE -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. SimulationController startet ScenarioRound.
+2. Player analysiert Indicator.
+3. ShockEngine liefert Referenz.
+4. RoundResult wird berechnet.
+5. KPIService aktualisiert Dashboard.
+
+## Regeln
+- Falsche Interpretation bei kritischem Schock verursacht Zusatzabzug.
+- Drei korrekte Interpretationen in Folge geben Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: roundId, shockType, indicators[], expectedInterpretation
+
+## Abnahmekriterien
+- Schockwirkung ist nachvollziehbar visualisiert.
+- KPI zeigt Stabilitaet und Interpretation.
+- Report markiert haeufige Fehlinterpretationen.

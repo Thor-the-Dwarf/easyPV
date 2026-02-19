@@ -152,13 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // WP7: Draw Relationship Lines
+    // WP7: Draw Relationship Lines (Top-Top "Staple" Routing)
     function drawRelationships() {
         ctx.clearRect(0, 0, topCanvas.width, topCanvas.height);
 
         const fkHeaders = document.querySelectorAll('th[data-is-fk="true"]');
 
         fkHeaders.forEach(fkTh => {
-            const targetStr = fkTh.dataset.fkTarget; // e.g. "users.id"
+            const targetStr = fkTh.dataset.fkTarget;
             if (!targetStr) return;
 
             const [targetTable, targetCol] = targetStr.split('.');
@@ -169,106 +170,97 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetTh = Array.from(targetTableCard.querySelectorAll('th')).find(th => th.dataset.colName === targetCol);
 
             if (targetTh) {
-                // Get Rects for Cells (Connection Points)
                 const startRect = fkTh.getBoundingClientRect();
                 const endRect = targetTh.getBoundingClientRect();
 
-                // Get Rects for Tables (Obstacles)
                 const startTableRect = fkTh.closest('.table-card').getBoundingClientRect();
                 const endTableRect = targetTableCard.getBoundingClientRect();
 
                 ctx.beginPath();
-
-                // Logic to determine routing style
-                const gap = 40;
-                // Check if target is clearly to the Right or Left (ignoring small vertical overlaps)
-                const isTargetRight = endTableRect.left > (startTableRect.right + gap);
-                const isTargetLeft = endTableRect.right < (startTableRect.left - gap);
-
-                let startX, startY, endX, endY;
-                let startDir = 1; // 1 = Right, -1 = Left
-
-                // Vertical Center of the Cells
-                startY = startRect.top + startRect.height / 2;
-                endY = endRect.top + endRect.height / 2;
-
-                if (isTargetRight) {
-                    // Standard Z-shape: Source Right -> Target Left
-                    startX = startTableRect.right;
-                    endX = endTableRect.left;
-                    startDir = 1;
-
-                    const midX = (startX + endX) / 2;
-                    ctx.moveTo(startX, startY);
-                    ctx.lineTo(midX, startY);
-                    ctx.lineTo(midX, endY);
-                    ctx.lineTo(endX, endY);
-
-                } else if (isTargetLeft) {
-                    // Standard Z-shape: Source Left -> Target Right
-                    startX = startTableRect.left;
-                    endX = endTableRect.right;
-                    startDir = -1;
-
-                    const midX = (startX + endX) / 2;
-                    ctx.moveTo(startX, startY);
-                    ctx.lineTo(midX, startY);
-                    ctx.lineTo(midX, endY);
-                    ctx.lineTo(endX, endY);
-
-                } else {
-                    // Stacked or overlapping horizontally -> Route around the RIGHT side (C-Shape)
-                    startX = startTableRect.right;
-                    endX = endTableRect.right;
-                    startDir = 1; // Exiting Right
-
-                    // Determine channel X: max of both right edges + padding
-                    const channelX = Math.max(startTableRect.right, endTableRect.right) + 40;
-
-                    ctx.moveTo(startX, startY);
-                    ctx.lineTo(channelX, startY);
-                    ctx.lineTo(channelX, endY);
-                    ctx.lineTo(endX, endY);
-                }
-
-                // Stroke Line
                 ctx.strokeStyle = '#64c8ff';
                 ctx.lineWidth = 2;
-                ctx.setLineDash([]);
+                ctx.setLineDash([]); // Solid
+
+                // Connection Points: Top-Center of the TH
+                const startX = startRect.left + startRect.width / 2;
+                const startY = startRect.top;
+
+                const endX = endRect.left + endRect.width / 2;
+                const endY = endRect.top;
+
+                // Escape Points (Above the Table Card)
+                // Use the higher of the two table tops to define a common "Bus" altitude if close?
+                // Or just independent escapes.
+                // Let's use independent escapes + a common joining channel.
+
+                const startEscapeY = startTableRect.top - 20;
+                const endEscapeY = endTableRect.top - 20;
+
+                // Common Channel Y: Min of both escapes (highest point) - extra buffer
+                const channelY = Math.min(startEscapeY, endEscapeY) - 20;
+
+                // Draw Path: Staple Shape
+                // Start -> Up -> Horizontal -> Down -> End
+
+                ctx.moveTo(startX, startY);
+                ctx.lineTo(startX, channelY); // Up to channel
+                ctx.lineTo(endX, channelY);   // Across
+                ctx.lineTo(endX, endY);       // Down
                 ctx.stroke();
 
-                // --- Markers (Crow's Foot Notation) ---
+                // --- Markers ---
                 ctx.fillStyle = '#64c8ff';
-                ctx.strokeStyle = '#64c8ff';
                 ctx.lineWidth = 2;
 
                 // 1. FK Side (Source) -> "Many" (Crow's Foot)
-                // Symbol: Three prongs opening towards table
+                // Connecting to Top of cell (Line comes from Above).
+                // Symbol: V shape opening Upwards (towards line).
                 const footSize = 10;
                 ctx.beginPath();
-                // Origin (startX, startY). If exiting Right (Dir=1), prongs point Left (<).
-                // Top prong
-                ctx.moveTo(startX + (footSize * startDir), startY - footSize / 2);
+                // Origin is startX, startY. Line goes Up.
+                // Prongs go Up-Left and Up-Right.
+                ctx.moveTo(startX - footSize / 2, startY - footSize); // Offset slightly up? 
+                // Wait, standard crow foot touches the entity.
+                // Entity edge is startY. Use that as base.
+                // Prongs open AWAY from entity?
+                // Line ---< Entity. Prongs open to Line.
+                // Here: Line (Above) -> V -> Entity (Below).
+                // So V opens Up.
+
+                ctx.moveTo(startX - footSize / 2, startY - footSize);
                 ctx.lineTo(startX, startY);
-                // Bottom prong
-                ctx.lineTo(startX + (footSize * startDir), startY + footSize / 2);
+                ctx.lineTo(startX + footSize / 2, startY - footSize);
+
+                // Center line? Usually implies "Many".
+                // Just the V is enough for basic "Many".
                 ctx.stroke();
 
-                // 2. PK Side (Target) -> "One" (Vertical Bar)
+                // 2. PK Side (Target) -> "One" (Bar)
+                // Connecting to Top of cell. Line comes from Above.
+                // Bar is Horizontal.
                 ctx.beginPath();
-                // Bar is perpendicular to the entering line.
-                // Just draw a vertical bar at EndX
-                ctx.moveTo(endX, endY - 6);
-                ctx.lineTo(endX, endY + 6);
+                ctx.moveTo(endX - 8, endY - 6); // Slightly above the edge
+                ctx.lineTo(endX + 8, endY - 6);
+
+                // Optional: Second bar
+                ctx.moveTo(endX - 8, endY - 10);
+                ctx.lineTo(endX + 8, endY - 10);
 
                 ctx.stroke();
+
+                // Debug / Dots at exact cell border
+                ctx.beginPath();
+                ctx.arc(startX, startY, 2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(endX, endY, 2, 0, Math.PI * 2);
+                ctx.fill();
             }
         });
     }
-}
 
-// Helper: Reset Visualization
-function resetVisualization() {
+    // Helper: Reset Visualization
+    function resetVisualization() {
         document.querySelectorAll('.table-card').forEach(el => {
             el.classList.remove('active-table', 'dimmed');
         });
@@ -277,8 +269,8 @@ function resetVisualization() {
         });
     }
 
-// Hook up UI feedback (WP4 + WP5 + WP6)
-simulator.onStepChange = (step, index) => {
+    // Hook up UI feedback (WP4 + WP5 + WP6)
+    simulator.onStepChange = (step, index) => {
         console.log(`[SIM] Step ${index + 1}: ${step.description}`, step);
 
         // --- WP4: Step List Updates ---
@@ -415,52 +407,52 @@ simulator.onStepChange = (step, index) => {
         }
     };
 
-simulator.onFinish = () => {
-    console.log('[SIM] Simulation Finished');
-    const lastIndex = simulator.steps.length - 1;
-    const lastEl = document.getElementById(`step-${lastIndex}`);
-    if (lastEl) {
-        lastEl.classList.remove('active');
-        lastEl.classList.add('done');
-    }
-};
+    simulator.onFinish = () => {
+        console.log('[SIM] Simulation Finished');
+        const lastIndex = simulator.steps.length - 1;
+        const lastEl = document.getElementById(`step-${lastIndex}`);
+        if (lastEl) {
+            lastEl.classList.remove('active');
+            lastEl.classList.add('done');
+        }
+    };
 
-btnPlay.addEventListener('click', () => {
-    const sql = editor.getValue();
-    if (!sql.trim()) {
-        alert('Bitte SQL eingeben!');
-        return;
-    }
+    btnPlay.addEventListener('click', () => {
+        const sql = editor.getValue();
+        if (!sql.trim()) {
+            alert('Bitte SQL eingeben!');
+            return;
+        }
 
-    console.log('Starting Simulation for:', sql);
-    simulator.reset();
+        console.log('Starting Simulation for:', sql);
+        simulator.reset();
 
-    // 1. Parse SQL into Steps
-    const steps = parser.parse(sql);
+        // 1. Parse SQL into Steps
+        const steps = parser.parse(sql);
 
-    if (steps.length > 0) {
-        // Visualize Initial List
-        renderSteps(steps);
+        if (steps.length > 0) {
+            // Visualize Initial List
+            renderSteps(steps);
 
-        // 2. Load Simulator
-        simulator.loadSteps(steps);
-        // 3. Start
-        simulator.start();
-    } else {
-        console.warn('Parser returned no steps.');
-    }
-});
+            // 2. Load Simulator
+            simulator.loadSteps(steps);
+            // 3. Start
+            simulator.start();
+        } else {
+            console.warn('Parser returned no steps.');
+        }
+    });
 
-btnFF.addEventListener('click', () => {
-    if (simulator.isPlaying) {
-        simulator.fastForward();
-    }
-});
+    btnFF.addEventListener('click', () => {
+        if (simulator.isPlaying) {
+            simulator.fastForward();
+        }
+    });
 
 
-// Verify Init
-console.log('SQL Editor Initialized');
+    // Verify Init
+    console.log('SQL Editor Initialized');
 
-// Initial Render of Mock Data (WP5)
-renderTables(parser.simulationData);
+    // Initial Render of Mock Data (WP5)
+    renderTables(parser.simulationData);
 });

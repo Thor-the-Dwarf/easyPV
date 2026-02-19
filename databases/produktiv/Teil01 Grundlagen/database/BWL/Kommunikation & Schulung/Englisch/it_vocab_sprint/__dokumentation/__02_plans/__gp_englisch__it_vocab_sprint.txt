@@ -1,0 +1,17 @@
+Anforderungen
+- Titel: "IT-Vocab-Sprint"
+- Ziel: 20 englische IT-Fachbegriffe innerhalb von 120 Sekunden den passenden deutschen Bedeutungen zuordnen.
+- Lernziel: Fachwortschatz in der IT-Kommunikation festigen.
+
+Spielidee
+- Pro Runde wird ein englischer Begriff hervorgehoben (visuell "fliegend").
+- Vier Antwortziele (deutsche Bedeutungen) stehen als auswählbare Buckets bereit.
+- Richtige Zuordnung bringt Punkte, falsche Zuordnung kostet Punkte.
+- Nach Ablauf des Timers wird ausgewertet; Highscore wird lokal gespeichert.
+
+Implementierungsplan
+- [x] JSON Konfiguration `_data/_gg01_it_vocab_sprint.json`
+- [x] UI `_ghtml_it_vocab_sprint.html` + `_gcss_it_vocab_sprint.css`
+- [x] Spiel-Logik `_gjs_it_vocab_sprint.js`
+- [x] Hooks `render_game_to_text` und `advanceTime`
+- [x] Tests in `__dokumentation/__03_tests` (reachability + config + progress)

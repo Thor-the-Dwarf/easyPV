@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "topic": "Wirtschaftskreislauf",
+    "mechanic": "decision_quiz",
+    "variant": "akteursfluss_match",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Wer bietet im einfachen Kreislauf Arbeitskraft an?",
+      "hint": "Betrachte Haushalte und Unternehmen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Haushalte",
+          "correct": true,
+          "feedback": "Richtig. Haushalte bieten Produktionsfaktoren an."
+        },
+        {
+          "id": "b",
+          "text": "Unternehmen",
+          "correct": false,
+          "feedback": "Unternehmen fragen Arbeitskraft nach."
+        },
+        {
+          "id": "c",
+          "text": "Nur Banken",
+          "correct": false,
+          "feedback": "Nicht im Grundmodell."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Von wem erhalten Haushalte Einkommen fuer Arbeit?",
+      "hint": "Geldstrom fuer den Faktor Arbeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Von Unternehmen",
+          "correct": true,
+          "feedback": "Richtig. Lohn/Gehalt fliesst von Unternehmen zu Haushalten."
+        },
+        {
+          "id": "b",
+          "text": "Von Haushalten selbst",
+          "correct": false,
+          "feedback": "Nicht als Kreislaufbeziehung."
+        },
+        {
+          "id": "c",
+          "text": "Nur vom Staat",
+          "correct": false,
+          "feedback": "Zu eng."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wohin fliesst Konsumausgabe der Haushalte?",
+      "hint": "Geld gegen Gueter.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zu Unternehmen",
+          "correct": true,
+          "feedback": "Richtig. Haushalte zahlen fuer Gueter und Dienstleistungen."
+        },
+        {
+          "id": "b",
+          "text": "Nur zu Banken",
+          "correct": false,
+          "feedback": "Nicht als Hauptfluss hier."
+        },
+        {
+          "id": "c",
+          "text": "Zu niemandem",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Was liefern Unternehmen an Haushalte?",
+      "hint": "Gegenleistung fuer Konsumausgaben.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gueter und Dienstleistungen",
+          "correct": true,
+          "feedback": "Richtig. Das ist der Gueterstrom."
+        },
+        {
+          "id": "b",
+          "text": "Nur Steuern",
+          "correct": false,
+          "feedback": "Nicht passend."
+        },
+        {
+          "id": "c",
+          "text": "Ausschliesslich Kredite",
+          "correct": false,
+          "feedback": "Nicht Kernfluss."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI passt zu diesem Match?",
+      "hint": "Treffer je Akteur.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Zuordnungen je Akteurgruppe",
+          "correct": true,
+          "feedback": "Richtig. So werden Verwechslungen sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Fragen",
+          "correct": false,
+          "feedback": "Ohne Qualitaet wenig Aussage."
+        },
+        {
+          "id": "c",
+          "text": "Nur Lesegeschwindigkeit",
+          "correct": false,
+          "feedback": "Unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Welche Aussage zum Kreislauf ist korrekt?",
+      "hint": "Gegenlaeufige Stroeme beachten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gueter- und Geldstroeme laufen zwischen Akteuren gegenlaeufig",
+          "correct": true,
+          "feedback": "Richtig. Das ist das Grundprinzip."
+        },
+        {
+          "id": "b",
+          "text": "Es gibt nur Gueterstroeme",
+          "correct": false,
+          "feedback": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Es gibt nur Geldstroeme",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Warum sind Akteurrollen wichtig?",
+      "hint": "Nachfrage- und Angebotsseite trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sie erklaeren, wer was anbietet und wer was nachfragt",
+          "correct": true,
+          "feedback": "Richtig. Rollen klaeren Flussrichtung."
+        },
+        {
+          "id": "b",
+          "text": "Sie machen Fluesse beliebig",
+          "correct": false,
+          "feedback": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Sie ersetzen jede Messung",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Was trainiert das Akteursfluss-Match?",
+      "hint": "Sichere Flusszuordnung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kreislaufbeziehungen praezise und begruendet zuordnen",
+          "correct": true,
+          "feedback": "Richtig. Genau das ist das Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Begriffe auswendig lernen",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Messung vermeiden",
+          "correct": false,
+          "feedback": "Falsch."
+        }
+      ]
+    }
+  ]
+}

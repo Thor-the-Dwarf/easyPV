@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT-Vocab-Sprint</title>
+  <link rel="stylesheet" href="./_gcss_it_vocab_sprint.css">
+</head>
+<body>
+<main class="app">
+  <header class="head">
+    <h1>IT-Vocab-Sprint</h1>
+    <p>Ordne in 120 Sekunden englische IT-Begriffe den korrekten deutschen Bedeutungen zu.</p>
+    <div class="kpis">
+      <div class="kpi"><span>Runde</span><strong id="kpi-round">1/1</strong></div>
+      <div class="kpi"><span>Score</span><strong id="kpi-score">0</strong></div>
+      <div class="kpi"><span>Treffer</span><strong id="kpi-rate">0%</strong></div>
+      <div class="kpi"><span>Zeit</span><strong id="kpi-time">0.0s</strong></div>
+      <div class="kpi"><span>Highscore</span><strong id="kpi-highscore">0</strong></div>
+    </div>
+    <div class="time-bar" aria-hidden="true">
+      <div id="time-fill" class="time-fill"></div>
+    </div>
+  </header>
+
+  <section id="root" class="card" aria-live="polite"></section>
+</main>
+
+<script src="./_gjs_it_vocab_sprint.js" defer></script>
+<script src="/__admin_dont_push/theme_bridge.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+@startuml
+title Komponenten-/Package-Diagramm: Akteursfluss-Match
+left to right direction
+skinparam packageStyle rectangle
+
+package "Ordner: akteursfluss_match" {
+  component "_ghtml_akteursfluss_match.html" as HTML
+  component "_gjs_akteursfluss_match.js" as JS
+  component "_gcss_akteursfluss_match.css" as CSS
+  database "_data/_gg01_akteursfluss_match.json" as GG
+  database "_data/__metaData_Wirtschaftskreislauf (einfach).json" as META
+  folder "_assets" as ASSETS
+  folder "__dokumentation" as DOC
+}
+
+HTML --> JS
+HTML --> CSS
+JS --> GG
+JS --> META
+HTML --> ASSETS
+@enduml

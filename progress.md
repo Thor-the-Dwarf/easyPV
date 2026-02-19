@@ -57,3 +57,32 @@
     - `output/web-game-tone-of-voice-editor/`
     - `output/web-game-phishing-detektiv-email-edition/`
 - Root-Index und Teil01-Index neu gebaut, damit die neuen Spiele im FolderTree erscheinen.
+
+## 2026-02-19 - GamePlan-Umsetzungen (Englisch)
+- Neue Spiele aus GamePlan-Dateien umgesetzt:
+  - `databases/produktiv/Teil01 Grundlagen/database/BWL/Kommunikation & Schulung/Englisch/email_translate_race/`
+  - `databases/produktiv/Teil01 Grundlagen/database/BWL/Kommunikation & Schulung/Englisch/false_friend_falle/`
+- Pro Spiel erstellt:
+  - `_data/_gg01_*.json` + `_data/__metaData_Englisch.json`
+  - `_ghtml_*.html`, `_gjs_*.js`, `_gcss_*.css`
+  - `__dokumentation/__02_plans/__gp_englisch__*.txt`
+  - `__dokumentation/__03_tests/TESTING.md`
+  - `__dokumentation/__03_tests/unit/*.config.test.mjs`
+  - `__dokumentation/__03_tests/unit/*.progress-metric.test.mjs`
+- Fix: JSON-Quoting in `false_friend_falle` korrigiert (ungültige doppelte Anführungszeichen in `reason`-Texten entfernt).
+- Validierung:
+  - JSON-Parse + `node --check` für beide Spiele erfolgreich.
+  - Unit-Tests in beiden Spielordnern erfolgreich (`3/3` je Spiel).
+  - Playwright-Smoke durchgeführt:
+    - Basislauf: `output/web-game-email-translate-race/`, `output/web-game-false-friend-falle/`
+    - Interaktionslauf (Klicks + State): `output/web-game-email-translate-race-click/`, `output/web-game-false-friend-falle-click/`
+  - `state-0.json` bestätigt messbare Progress-Metriken und Interaktionszustände (`answered/armed`, `score`, `progress_percent`).
+- Indexe neu erzeugt:
+  - `databases/produktiv/Teil01 Grundlagen/database-index.json`
+  - `index.json`
+
+### TODO (naechster Block Englisch)
+- Als nächste GamePlan-Ordner umsetzen:
+  - `GamePlan-IT-Vocab-Sprint.txt`
+  - `GamePlan-Listening-Comprehension-The-Meeting.txt`
+  - `GamePlan-Sentence-Builder-Support-Ticket.txt`

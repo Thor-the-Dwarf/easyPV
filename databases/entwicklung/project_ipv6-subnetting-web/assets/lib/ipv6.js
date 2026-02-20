@@ -432,3 +432,38 @@ export function enumerateSubprefixes(parentCidr, targetPrefix, offset = 0, limit
         limit,
     };
 }
+
+/**
+ * Bestimmt nächstes/vorheriges Netz gleicher Präfixlänge.
+ * @param   {string} cidr                    z. B. '2001:db8::/64'
+ * @param   {number} [steps=1]               Schrittweite in Netzblöcken
+ * @returns {{ basePrefix: string, nextPrefix: string|null, previousPrefix: string|null, blockSize: bigint, steps: number, prefixLen: number }}
+ */
+export function nextPreviousNetwork(cidr, steps = 1) {
+    if (typeof cidr !== 'string') throw new TypeError('cidr muss ein String sein');
+    const m = cidr.trim().match(/^(.+?)\/(\d+)$/);
+    if (!m) throw new Error('cidr muss im Format "Adresse/Präfix" vorliegen');
+
+    const addr = m[1].trim();
+    const prefixLen = parseInt(m[2], 10);
+    if (!isValidIPv6(addr)) throw new Error(`Ungültige IPv6-Adresse: "${addr}"`);
+    if (prefixLen < 0 || prefixLen > 128) throw new RangeError('Präfixlänge muss 0–128 sein');
+    if (!Number.isInteger(steps) || steps < 1) throw new RangeError('steps muss eine ganze Zahl >= 1 sein');
+
+    const network = toBigInt(applyMask(addr, prefixLen));
+    const blockSize = 1n << BigInt(128 - prefixLen);
+    const stepJump = blockSize * BigInt(steps);
+    const maxNetworkStart = ALL_ONES - (blockSize - 1n);
+
+    const next = network + stepJump;
+    const previous = network >= stepJump ? network - stepJump : null;
+
+    return {
+        basePrefix: `${compress(fromBigInt(network))}/${prefixLen}`,
+        nextPrefix: next <= maxNetworkStart ? `${compress(fromBigInt(next))}/${prefixLen}` : null,
+        previousPrefix: previous !== null ? `${compress(fromBigInt(previous))}/${prefixLen}` : null,
+        blockSize,
+        steps,
+        prefixLen,
+    };
+}

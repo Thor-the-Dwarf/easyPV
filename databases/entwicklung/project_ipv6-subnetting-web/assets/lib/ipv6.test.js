@@ -296,6 +296,39 @@ test('enumerateSubprefixes(/64 -> /64) liefert genau ein Netz',
 testThrows('enumerateSubprefixes: zielPrefix < basis wirft',
     () => ipv6.enumerateSubprefixes('2001:db8::/64', 56, 0, 5));
 
+// ─── Tests: nextPreviousNetwork (WP-04) ──────────────────────────────────────
+
+test('nextPreviousNetwork base normalisiert auf Netzadresse',
+    () => ipv6.nextPreviousNetwork('2001:db8::1234/64', 1).basePrefix,
+    '2001:db8::/64');
+
+test('nextPreviousNetwork next bei /64',
+    () => ipv6.nextPreviousNetwork('2001:db8::/64', 1).nextPrefix,
+    '2001:db8:0:1::/64');
+
+test('nextPreviousNetwork previous bei /64',
+    () => ipv6.nextPreviousNetwork('2001:db8::/64', 1).previousPrefix,
+    '2001:db7:ffff:ffff::/64');
+
+test('nextPreviousNetwork blockSize bei /64',
+    () => ipv6.nextPreviousNetwork('2001:db8::/64', 1).blockSize,
+    18446744073709551616n);
+
+test('nextPreviousNetwork steps=2 bei /56',
+    () => ipv6.nextPreviousNetwork('2001:db8::/56', 2).nextPrefix,
+    '2001:db8:0:200::/56');
+
+test('nextPreviousNetwork previous bei ::/64 ist null',
+    () => String(ipv6.nextPreviousNetwork('::/64', 1).previousPrefix),
+    'null');
+
+test('nextPreviousNetwork next am oberen Rand ist null',
+    () => String(ipv6.nextPreviousNetwork('ffff:ffff:ffff:ffff::/64', 1).nextPrefix),
+    'null');
+
+testThrows('nextPreviousNetwork: steps < 1 wirft',
+    () => ipv6.nextPreviousNetwork('2001:db8::/64', 0));
+
 // ─── Auswertung ───────────────────────────────────────────────────────────────
 
 const passed = results.filter(r => r.pass).length;

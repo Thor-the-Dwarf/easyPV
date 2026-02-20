@@ -20,3 +20,8 @@ Original prompt: Planänderung: Du arbeitest auf ne reigenen Git-Branch die du e
 - Drawer-Integration erweitert (`assets/tools.js`, `assets/layout.js`) und in `subnetting/prefix-basics` als erster Tool-Eintrag aktiviert.
 - WP-03 visual verifiziert: `output/wp03-prefix-split-enumerator/shot-0.png` zeigt den neuen Drawer-Eintrag inkl. korrektem Fenster 0..15 bei /48 -> /56.
 - Zusätzliche WP-03-Tests in `assets/lib/ipv6.test.js` ergänzt (Fenster, Index, Equal-Prefix, Fehlerfall).
+- WP-04 umgesetzt: neues Tool `next-previous-network` mit Inputs `praefix`, optional `steps` und Outputs `nextPraefix`, `previousPraefix`, `blockgroesse`.
+- Core-Lib erweitert: `nextPreviousNetwork()` in `assets/lib/ipv6.js`; Tests in `assets/lib/ipv6.test.js` ergänzt.
+- Tool in Drawer integriert (`assets/tools.js`, `assets/layout.js`) und in `subnetting/prefix-basics` aktiviert.
+- Playwright-Visual-Checks: `output/wp04-next-previous-network/shot-0.png` und `output/wp04-next-previous-network-open/shot-0.png`.
+- Hinweis: Gesamtsuite hat weiterhin 2 bestehende Altfails ausserhalb von WP-04 (`compress(ULA)`, `prefixLastAddress(/48)`).

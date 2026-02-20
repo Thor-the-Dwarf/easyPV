@@ -191,5 +191,28 @@
         "why": "Sichtprüfung für reales Rendering und korrekte Ausgabe im laufenden Build"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-20 23:16:00",
+    "commit_message": "feat(WP-04): Next/Previous Network als Drawer-Tool",
+    "request": "weiter",
+    "response": [
+      {
+        "what": "Core-Funktion `nextPreviousNetwork()` in `assets/lib/ipv6.js` ergänzt",
+        "why": "Schrittweises Springen zum nächsten/vorherigen Netz gleicher Präfixlänge zentral berechnen"
+      },
+      {
+        "what": "Neues Tool `next-previous-network` erstellt",
+        "why": "WP-04 mit Inputs `praefix`, optional `steps` und Outputs `nextPraefix`, `previousPraefix`, `blockgroesse` nutzbar machen"
+      },
+      {
+        "what": "Drawer-Meta, Tool-Registry, CSS und lessons-Anbindung (`subnetting/prefix-basics`) erweitert",
+        "why": "Eigenen Arkodeon-Drawer-Eintrag wie gefordert bereitstellen"
+      },
+      {
+        "what": "Playwright-Screenshotläufe (`output/wp04-next-previous-network/*.png`) durchgeführt",
+        "why": "Reale UI-Sichtprüfung und Kontrolle der Widget-Ausgabe im laufenden Build"
+      }
+    ]
   }
 ]

@@ -2499,6 +2499,125 @@ body.exam-mode #app-layout {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   WP-04 – NEXT/PREVIOUS NETWORK
+═══════════════════════════════════════════════════════════ */
+
+.npn-widget {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.npn-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.npn-label {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-medium);
+}
+
+.npn-text-input,
+.npn-number-input {
+    height: 34px;
+    padding: 0 var(--space-3);
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    outline: none;
+    transition: border-color var(--transition);
+    width: 100%;
+}
+
+.npn-text-input:focus,
+.npn-number-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--color-accent-glow);
+}
+
+.npn-full-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.npn-summary-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+}
+
+.npn-summary-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+}
+
+.npn-summary-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+}
+
+.npn-summary-value {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    font-weight: var(--font-semibold);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.npn-summary-meta {
+    font-size: 10px;
+    color: var(--color-text-secondary);
+}
+
+.npn-copy-btn {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    border-radius: 3px;
+    color: var(--color-text-muted);
+    transition: background-color var(--transition), color var(--transition);
+    margin-top: 2px;
+}
+
+.npn-copy-btn:hover {
+    background-color: var(--color-bg-hover);
+    color: var(--color-accent);
+}
+
+.npn-edge {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+}
+
+.npn-error {
+    font-size: var(--text-xs);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-error-dim);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+}
+
+/* ═══════════════════════════════════════════════════════════
    25. WP08 – TASK-ENGINE ERWEITERUNGEN
 ═══════════════════════════════════════════════════════════ */
 

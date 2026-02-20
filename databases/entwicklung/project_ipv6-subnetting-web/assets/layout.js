@@ -14,6 +14,7 @@
 
 // ─── Tool-Definitionen (Metadaten für Accordion-Slots) ────────────────────────
 const TOOL_META = {
+    'prefix-calculator': { icon: '🧮', label: 'Präfix-Rechner', desc: 'Berechnet Adressanzahl pro Präfix und optional /alt → /neu Subnetze.' },
     'prefix-visualizer': { icon: '🔬', label: 'Präfix-Visualizer', desc: 'Visualisiert IPv6-Adressen und Präfix-Grenzen live.' },
     'prefix-slicer': { icon: '✂️', label: 'Präfix-Slicer', desc: 'Subnetting-Rechner: Bits hinzufügen, Subnetze berechnen.' },
     'scenario-generator': { icon: '🎲', label: 'Szenario-Generator', desc: 'Generiert realistische Planungsaufgaben mit Musterlösung.' },

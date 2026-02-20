@@ -200,6 +200,37 @@ export function subnetCount(addBits) {
     return 1n << BigInt(addBits);
 }
 
+/**
+ * Anzahl der Adressen in einem IPv6-Präfix (als BigInt).
+ * @param   {number} prefixLen  0–128
+ * @returns {bigint}            2^(128-prefixLen)
+ */
+export function addressCountForPrefix(prefixLen) {
+    if (prefixLen < 0 || prefixLen > 128) {
+        throw new RangeError(`Präfixlänge ${prefixLen} ungültig (0–128)`);
+    }
+    return 1n << BigInt(128 - prefixLen);
+}
+
+/**
+ * Anzahl der Subnetze für eine Präfix-Verfeinerung /alt -> /neu (als BigInt).
+ * @param   {number} prefixAlt  0–128
+ * @param   {number} prefixNeu  prefixNeu >= prefixAlt
+ * @returns {bigint}            2^(prefixNeu-prefixAlt)
+ */
+export function subnetCountBetween(prefixAlt, prefixNeu) {
+    if (prefixAlt < 0 || prefixAlt > 128) {
+        throw new RangeError(`prefixAlt ${prefixAlt} ungültig (0–128)`);
+    }
+    if (prefixNeu < 0 || prefixNeu > 128) {
+        throw new RangeError(`prefixNeu ${prefixNeu} ungültig (0–128)`);
+    }
+    if (prefixNeu < prefixAlt) {
+        throw new RangeError(`prefixNeu /${prefixNeu} muss >= prefixAlt /${prefixAlt} sein`);
+    }
+    return 1n << BigInt(prefixNeu - prefixAlt);
+}
+
 // ═══════════════════════════════════════════════════════════
 // 6. Validierung & Klassifizierung
 // ═══════════════════════════════════════════════════════════

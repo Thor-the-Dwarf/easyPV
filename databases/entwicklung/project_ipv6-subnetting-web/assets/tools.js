@@ -17,11 +17,13 @@ import { createPrefixSlicer } from './lib/prefix-slicer.js';
 import { createScenarioGenerator } from './lib/scenario-generator.js';
 import { createFehlerbilderWidget } from './lib/fehlerbilder.js';
 import { createRADemo } from './lib/ra-demo.js';
+import { createPrefixCalculator } from './lib/prefix-calculator.js';
 
 // ─── Tool-Factory-Registry ────────────────────────────────────────────────────
 // Neue Tools hier eintragen (WP09–WP11 erweitern diese Map).
 
 const TOOL_FACTORIES = new Map([
+    ['prefix-calculator', (ctx) => createPrefixCalculator(ctx?.prefixAlt ?? 48, ctx?.prefixNeu ?? null)],
     ['prefix-visualizer', (ctx) => createPrefixVisualizer(ctx?.defaultCidr)],
     ['prefix-slicer', (ctx) => createPrefixSlicer(ctx?.defaultCidr)],
     ['scenario-generator', (ctx) => createScenarioGenerator(ctx?.seed ?? null)],

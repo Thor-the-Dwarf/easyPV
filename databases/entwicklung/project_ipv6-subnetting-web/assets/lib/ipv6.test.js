@@ -174,6 +174,25 @@ test('subnetCount(16) = 65536n',
     () => ipv6.subnetCount(16),
     65536n);
 
+test('addressCountForPrefix(/64) = 2^64',
+    () => ipv6.addressCountForPrefix(64),
+    18446744073709551616n);
+
+test('addressCountForPrefix(/128) = 1',
+    () => ipv6.addressCountForPrefix(128),
+    1n);
+
+test('subnetCountBetween(/48 -> /56) = 256',
+    () => ipv6.subnetCountBetween(48, 56),
+    256n);
+
+test('subnetCountBetween(/64 -> /64) = 1',
+    () => ipv6.subnetCountBetween(64, 64),
+    1n);
+
+testThrows('subnetCountBetween: /neu < /alt → wirft',
+    () => ipv6.subnetCountBetween(64, 56));
+
 test('isNibbleBoundary(48) → true',
     () => ipv6.isNibbleBoundary(48),
     true);

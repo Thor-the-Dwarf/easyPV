@@ -2129,6 +2129,106 @@ body.exam-mode #app-layout {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   WP-01 – PREFIX-RECHNER
+═══════════════════════════════════════════════════════════ */
+
+.pc-widget {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.pc-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.pc-label {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-medium);
+}
+
+.pc-number-input {
+    height: 34px;
+    padding: 0 var(--space-3);
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    outline: none;
+    transition: border-color var(--transition);
+    width: 100%;
+}
+
+.pc-number-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--color-accent-glow);
+}
+
+.pc-full-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.pc-result-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+}
+
+.pc-result-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+}
+
+.pc-result-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+}
+
+.pc-result-value {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    font-weight: var(--font-semibold);
+}
+
+.pc-result-formula {
+    font-size: 10px;
+    color: var(--color-text-secondary);
+}
+
+.pc-result-hint {
+    border-style: dashed;
+}
+
+.pc-hint-text {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.pc-error {
+    font-size: var(--text-xs);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-error-dim);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+}
+
+/* ═══════════════════════════════════════════════════════════
    25. WP08 – TASK-ENGINE ERWEITERUNGEN
 ═══════════════════════════════════════════════════════════ */
 

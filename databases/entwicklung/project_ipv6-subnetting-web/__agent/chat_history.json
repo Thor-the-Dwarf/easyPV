@@ -145,5 +145,28 @@
         "why": "Sicherstellen, dass das neue Tool sichtbar ist und im bestehenden Drawer-Flow korrekt läuft"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-20 22:45:00",
+    "commit_message": "feat(WP-02): Netzadresse-&-Range Tool im Drawer",
+    "request": "WP2 starten und umsetzen",
+    "response": [
+      {
+        "what": "Neues Tool `network-range` erstellt (adresse + prefix -> netzadresse, ersteAdresseImPraefix, letzteAdresseImPraefix)",
+        "why": "WP-02 als eigenständiges, umgebungsneutrales IPv6-Tool funktionsfähig machen"
+      },
+      {
+        "what": "Core-Funktion `prefixRange()` in `assets/lib/ipv6.js` ergänzt und Tests erweitert",
+        "why": "Range-Berechnung zentral halten und wiederverwendbar absichern"
+      },
+      {
+        "what": "Drawer-Meta, Tool-Registry, CSS und lessons-Anbindung (`subnetting/prefix-basics`) aktualisiert",
+        "why": "Tool als eigener Accordion-Drawer wie gefordert sichtbar und nutzbar machen"
+      },
+      {
+        "what": "Playwright-Screenshotlauf (`output/wp02-network-range/shot-0.png`) durchgeführt",
+        "why": "Sichtprüfung auf reale UI-Integration und korrekte Ausgabe im laufenden Build"
+      }
+    ]
   }
 ]

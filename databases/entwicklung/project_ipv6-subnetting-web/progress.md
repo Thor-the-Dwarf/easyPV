@@ -10,3 +10,8 @@ Original prompt: Planänderung: Du arbeitest auf ne reigenen Git-Branch die du e
 - Visual check via Playwright abgeschlossen: Screenshot `output/wp01-prefix-calculator/shot-0.png` zeigt neuen Drawer-Eintrag und korrektes Ergebnis fuer /48.
 - Core-Funktionscheck (Node ESM-Snippet) erfolgreich: /64, /128, /48->/56, /64->/64 und Fehlerfall /64->/56.
 - Gesamt-Suite `assets/lib/ipv6.test.js` laeuft, hat aber 2 bereits bestehende Altfails (`compress(ULA)`, `prefixLastAddress(/48)`) ausserhalb von WP-01.
+- WP-02 umgesetzt: neues Tool `network-range` mit Inputs `adresse`, `prefix` und Outputs `netzadresse`, `ersteAdresseImPraefix`, `letzteAdresseImPraefix`.
+- Core-Lib erweitert: `prefixRange()` in `assets/lib/ipv6.js`; Tests in `assets/lib/ipv6.test.js` ergänzt.
+- Tool in Drawer integriert (`assets/layout.js`, `assets/tools.js`) und in `subnetting/prefix-basics` aktiviert.
+- Playwright-Visual-Check: `output/wp02-network-range/shot-0.png` zeigt korrektes Rendering und Ausgabe.
+- Hinweis: Gesamtsuite hat weiterhin 2 bestehende Altfails ausserhalb von WP-02 (`compress(ULA)`, `prefixLastAddress(/48)`).

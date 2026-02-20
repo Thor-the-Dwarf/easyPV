@@ -92,7 +92,7 @@ test('compress(GUA /48 Netz)',
 
 test('compress(ULA)',
     () => ipv6.compress('fd00:0000:0000:0001:0000:0000:0000:0001'),
-    'fd00::1:0:0:0:1');
+    'fd00:0:0:1::1');
 
 // ─── Tests: BigInt Round-Trip ─────────────────────────────────────────────────
 
@@ -211,7 +211,7 @@ test('isValidIPv6(invalid) → false',
 
 test('prefixLastAddress(2001:db8::/48)',
     () => ipv6.compress(ipv6.prefixLastAddress('2001:db8::', 48)),
-    '2001:db8::ffff:ffff:ffff:ffff:ffff');
+    '2001:db8:0:ffff:ffff:ffff:ffff:ffff');
 
 test('prefixRange(/64).network',
     () => ipv6.compress(ipv6.prefixRange('2001:db8::1234', 64).network),

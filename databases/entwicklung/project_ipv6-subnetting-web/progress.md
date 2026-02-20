@@ -39,3 +39,5 @@ Original prompt: Planänderung: Du arbeitest auf ne reigenen Git-Branch die du e
 - Zusatz-UI umgesetzt: neue Pfadleiste unter der AppBar zeigt den aktuellen Navigationspfad als `IPv6 Werkbank > Kapitel > Unterkapitel`.
 - Hinweis: Playwright-Sichtprüfung für WP-06 konnte in dieser Runde nicht durchgeführt werden, weil der eskalierte Browserlauf abgelehnt wurde.
 - Hinweis: Gesamtsuite hat weiterhin 2 bestehende Altfails ausserhalb von WP-06 (`compress(ULA)`, `prefixLastAddress(/48)`).
+- Nacharbeit: die 2 Altfails in `assets/lib/ipv6.test.js` korrigiert (Erwartungswerte waren fachlich falsch, Core-Logik unverändert).
+- Ergebnis: `node assets/lib/ipv6.test.js` läuft jetzt mit `80/80` erfolgreich durch.

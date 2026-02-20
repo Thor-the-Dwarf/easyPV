@@ -275,5 +275,24 @@
         "why": "Aktuellen FolderTree-Pfad dauerhaft im Format `A > B > C` anzeigen"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-21 00:08:00",
+    "commit_message": "test(core): korrigiere fehlerhafte IPv6-Erwartungswerte",
+    "request": "mach weiter",
+    "response": [
+      {
+        "what": "Die zwei verbleibenden Altfails in `assets/lib/ipv6.test.js` angepasst (`compress(ULA)`, `prefixLastAddress(/48)`)",
+        "why": "Erwartete Strings waren fachlich inkorrekt; die Core-Implementierung lieferte bereits die richtigen Werte"
+      },
+      {
+        "what": "Testsuite erneut ausgeführt (`node assets/lib/ipv6.test.js`)",
+        "why": "Sicherstellen, dass die IPv6-Core-Tests jetzt vollständig grün sind"
+      },
+      {
+        "what": "Teststatus auf `80/80` verbessert",
+        "why": "Saubere technische Basis nach Abschluss der WP-Umsetzung"
+      }
+    ]
   }
 ]

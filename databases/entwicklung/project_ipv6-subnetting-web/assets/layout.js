@@ -1,8 +1,8 @@
 /**
  * layout.js
  * Zweck:  Layout-Management für die IPv6-Werkbank.
- *         Sidebar (open/close, mobiler Backdrop), Tool-Panel-Slots,
- *         Breadcrumb-Update, Keyboard-Navigation in der Sidebar.
+ *         Sidebar (open/close, mobiler Backdrop), Tool-Drawer (fixed overlay,
+ *         Accordion-Slots), Breadcrumb-Update, Keyboard-Navigation.
  * Input:  DOM (index.html), Tool-IDs aus lessons.json
  * Output: Reaktives Layout; exportierte API für andere Module
  *
@@ -12,44 +12,48 @@
  *   updateBreadcrumb(['Subnetting', 'Präfixe verstehen']);
  */
 
-// ─── Tool-Definitionen (Metadaten für Platzhalter-Widgets) ────────────────────
+// ─── Tool-Definitionen (Metadaten für Accordion-Slots) ────────────────────────
 const TOOL_META = {
     'prefix-visualizer': { icon: '🔬', label: 'Präfix-Visualizer', desc: 'Visualisiert IPv6-Adressen und Präfix-Grenzen live.' },
     'prefix-slicer': { icon: '✂️', label: 'Präfix-Slicer', desc: 'Subnetting-Rechner: Bits hinzufügen, Subnetze berechnen.' },
     'scenario-generator': { icon: '🎲', label: 'Szenario-Generator', desc: 'Generiert realistische Planungsaufgaben mit Musterlösung.' },
-    'ra-demo': { icon: '📡', label: 'RA-Demo', desc: 'Zeigt den Effekt fehlender Router Advertisements.' },
-    'ndp-demo': { icon: '🔗', label: 'NDP-Demo', desc: 'Visualisiert die Neighbor-Discovery-Protokoll-Auflösung.' },
-    'pmtud-demo': { icon: '📦', label: 'PMTUD-Demo', desc: 'Erklärt Path-MTU-Discovery und Packet-Too-Big-Meldungen.' },
+    'fehlerbilder': { icon: '🔍', label: 'Fehlerbilder', desc: 'Recherchiere und teste typische IPv6-Fehlerbilder.' },
+    'ra-demo': { icon: '📡', label: 'RA-Demo', desc: '4 Szenarien: was passiert wenn RAs fehlen oder geblockt werden.' },
+    'ndp-demo': { icon: '🔗', label: 'NDP-Demo', desc: 'Visualisiert den Neighbor-Discovery-Ablauf.' },
+    'pmtud-demo': { icon: '📦', label: 'PMTUD-Demo', desc: 'Path-MTU-Discovery und Packet-Too-Big-Meldungen.' },
 };
 
-// ─── DOM-Refs ────────────────────────────────────────────────────────────────
+// ─── DOM-Refs ─────────────────────────────────────────────────────────────────
 const htmlEl = document.documentElement;
 const bodyEl = document.body;
 const sidebar = document.getElementById('sidebar');
-const backdrop = document.getElementById('sidebar-backdrop');
+const sidebarBackdrop = document.getElementById('sidebar-backdrop');
 const btnSidebar = document.getElementById('btn-sidebar-toggle');
+const toolPanel = document.getElementById('tool-panel');
 const toolPanelContent = document.getElementById('tool-panel-content');
 const toolPanelTitle = document.getElementById('tool-panel-title');
+const drawerBackdrop = document.getElementById('drawer-backdrop');
+const btnDrawerToggle = document.getElementById('btn-drawer-toggle');
+const btnDrawerClose = document.getElementById('btn-drawer-close');
 const breadcrumbList = document.getElementById('breadcrumb-list');
 const chapterList = document.getElementById('chapter-list');
 
 // ─── State ────────────────────────────────────────────────────────────────────
 let sidebarOpen = true;
+let drawerOpen = false;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function isMobile() {
-    return window.innerWidth < 768;
-}
+function isMobile() { return window.innerWidth < 768; }
 
-// ─── Sidebar API ──────────────────────────────────────────────────────────────
+// ─── Sidebar API ─────────────────────────────────────────────────────────────
 
 export function openSidebar() {
     sidebarOpen = true;
     if (isMobile()) {
         bodyEl.classList.add('sidebar-open');
         bodyEl.classList.remove('sidebar-closed');
-        backdrop?.removeAttribute('hidden');
+        sidebarBackdrop?.removeAttribute('hidden');
     } else {
         bodyEl.classList.remove('sidebar-closed');
     }
@@ -61,7 +65,7 @@ export function closeSidebar() {
     sidebarOpen = false;
     if (isMobile()) {
         bodyEl.classList.remove('sidebar-open');
-        backdrop?.setAttribute('hidden', '');
+        sidebarBackdrop?.setAttribute('hidden', '');
     } else {
         bodyEl.classList.add('sidebar-closed');
     }
@@ -69,16 +73,32 @@ export function closeSidebar() {
     sidebar.setAttribute('aria-hidden', 'true');
 }
 
-export function toggleSidebar() {
-    sidebarOpen ? closeSidebar() : openSidebar();
+export function toggleSidebar() { sidebarOpen ? closeSidebar() : openSidebar(); }
+
+// ─── Drawer API ───────────────────────────────────────────────────────────────
+
+export function openDrawer() {
+    drawerOpen = true;
+    toolPanel.classList.add('drawer-open');
+    toolPanel.setAttribute('aria-hidden', 'false');
+    btnDrawerToggle.setAttribute('aria-expanded', 'true');
+    btnDrawerToggle.classList.add('active');
+    drawerBackdrop?.removeAttribute('hidden');
 }
+
+export function closeDrawer() {
+    drawerOpen = false;
+    toolPanel.classList.remove('drawer-open');
+    toolPanel.setAttribute('aria-hidden', 'true');
+    btnDrawerToggle.setAttribute('aria-expanded', 'false');
+    btnDrawerToggle.classList.remove('active');
+    drawerBackdrop?.setAttribute('hidden', '');
+}
+
+export function toggleDrawer() { drawerOpen ? closeDrawer() : openDrawer(); }
 
 // ─── Breadcrumb ───────────────────────────────────────────────────────────────
 
-/**
- * Aktualisiert die Breadcrumb-Navigation im Header.
- * @param {string[]} parts  - Array von Labels (links nach rechts)
- */
 export function updateBreadcrumb(parts = []) {
     breadcrumbList.innerHTML = '';
     const base = document.createElement('li');
@@ -97,69 +117,91 @@ export function updateBreadcrumb(parts = []) {
     });
 }
 
-// ─── Tool-Panel Slot-System ───────────────────────────────────────────────────
+// ─── Tool-Panel Slot-System (Accordion) ───────────────────────────────────────
 
 /**
- * Bestückt das Tool-Panel mit Widgets für die gegebenen Tool-IDs.
- * @param {string[]} toolIds  - z. B. ['prefix-visualizer', 'prefix-slicer']
+ * Bestückt den Tool-Drawer mit Accordion-Widgets für die gegebenen Tool-IDs.
+ * @param {string[]} toolIds
+ * @param {boolean}  [autoOpen=true]  Drawer automatisch öffnen wenn Tools vorhanden
  */
-export function mountTools(toolIds = []) {
+export function mountTools(toolIds = [], autoOpen = true) {
     toolPanelContent.innerHTML = '';
 
     if (!toolIds.length) {
         toolPanelTitle.textContent = 'Tools';
         toolPanelContent.innerHTML =
             `<p class="tool-placeholder-text">Dieses Kapitel hat keine interaktiven Tools.</p>`;
+        // Drawer-Badge zurücksetzen
+        updateDrawerBadge(0);
         return;
     }
 
-    toolPanelTitle.textContent = toolIds.length === 1
-        ? (TOOL_META[toolIds[0]]?.label ?? 'Tool')
-        : 'Tools';
+    toolPanelTitle.textContent = `Tools (${toolIds.length})`;
+    updateDrawerBadge(toolIds.length);
 
-    toolIds.forEach(id => {
+    toolIds.forEach((id, idx) => {
         const meta = TOOL_META[id] ?? { icon: '🔧', label: id, desc: '' };
-        const widget = document.createElement('div');
-        widget.className = 'tool-widget';
-        widget.dataset.toolId = id;
-        widget.setAttribute('role', 'region');
-        widget.setAttribute('aria-label', meta.label);
 
-        widget.innerHTML = `
-      <div class="tool-widget-header">
-        <span class="tool-widget-icon" aria-hidden="true">${meta.icon}</span>
-        <h3 class="tool-widget-title">${meta.label}</h3>
-        <button class="tool-widget-collapse" aria-expanded="true" aria-label="${meta.label} ein-/ausblenden">▾</button>
-      </div>
-      <div class="tool-widget-body" id="tool-body-${id}">
-        <p class="tool-widget-desc">${meta.desc}</p>
-        <div class="tool-widget-slot" data-slot="${id}">
-          <!-- Tool-Implementierung wird hier gemountet (WP06-WP11) -->
-          <div class="tool-coming-soon">
-            <span class="tool-coming-icon">⚙️</span>
-            <span>Wird in einem späteren Schritt implementiert.</span>
-          </div>
-        </div>
-      </div>`;
+        const accordion = document.createElement('div');
+        accordion.className = 'tool-accordion';
+        accordion.dataset.toolId = id;
 
-        // Collapse-Toggle
-        const btn = widget.querySelector('.tool-widget-collapse');
-        const body = widget.querySelector('.tool-widget-body');
-        btn.addEventListener('click', () => {
-            const open = body.hidden;
-            body.hidden = !open;
-            btn.setAttribute('aria-expanded', String(open));
-            btn.textContent = open ? '▾' : '▸';
+        // Standardmäßig expandiert: erstes Tool offen, Rest geschlossen
+        const startOpen = idx === 0;
+
+        accordion.innerHTML = `
+          <button class="tool-acc-header" aria-expanded="${startOpen}" aria-controls="tool-body-${id}">
+            <span class="tool-acc-icon" aria-hidden="true">${meta.icon}</span>
+            <span class="tool-acc-title">${meta.label}</span>
+            <span class="tool-acc-chevron" aria-hidden="true">${startOpen ? '▾' : '▸'}</span>
+          </button>
+          <div class="tool-acc-body" id="tool-body-${id}" ${startOpen ? '' : 'hidden'}>
+            <p class="tool-acc-desc">${meta.desc}</p>
+            <div class="tool-acc-slot" data-slot="${id}">
+              <div class="tool-coming-soon">
+                <span class="tool-coming-icon">⚙️</span>
+                <span>Wird geladen…</span>
+              </div>
+            </div>
+          </div>`;
+
+        // Accordion-Toggle
+        const header = accordion.querySelector('.tool-acc-header');
+        const body = accordion.querySelector('.tool-acc-body');
+        const chevron = accordion.querySelector('.tool-acc-chevron');
+
+        header.addEventListener('click', () => {
+            const isOpen = body.hidden;
+            body.hidden = !isOpen;
+            header.setAttribute('aria-expanded', String(isOpen));
+            chevron.textContent = isOpen ? '▾' : '▸';
         });
 
-        toolPanelContent.appendChild(widget);
+        toolPanelContent.appendChild(accordion);
     });
+
+    // Drawer automatisch öffnen wenn Tools vorhanden
+    if (autoOpen && toolIds.length > 0) {
+        openDrawer();
+    }
+}
+
+/** Aktualisiert den Badge am Drawer-Toggle-Button (Anzahl aktiver Tools). */
+function updateDrawerBadge(count) {
+    let badge = btnDrawerToggle.querySelector('.drawer-badge');
+    if (!badge) {
+        badge = document.createElement('span');
+        badge.className = 'drawer-badge';
+        btnDrawerToggle.appendChild(badge);
+    }
+    badge.textContent = count > 0 ? String(count) : '';
+    badge.hidden = count === 0;
 }
 
 /**
- * Mountet ein fertiges DOM-Element (Tool-Implementierung) in einen Slot.
- * @param {string}      toolId   - Tool-ID (z. B. 'prefix-visualizer')
- * @param {HTMLElement} element  - Fertig gerenderte Tool-Komponente
+ * Mountet ein fertiges DOM-Element in einen Accordion-Slot.
+ * @param {string}      toolId
+ * @param {HTMLElement} element
  */
 export function slotTool(toolId, element) {
     const slot = toolPanelContent.querySelector(`[data-slot="${toolId}"]`);
@@ -174,29 +216,21 @@ export function slotTool(toolId, element) {
 // ─── Keyboard-Navigation (Sidebar) ───────────────────────────────────────────
 
 function initKeyboardNav() {
-    // Escape schließt Sidebar auf Mobile
     document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && isMobile() && sidebarOpen) {
-            closeSidebar();
-            btnSidebar.focus();
+        if (e.key === 'Escape') {
+            if (drawerOpen) { closeDrawer(); btnDrawerToggle.focus(); return; }
+            if (isMobile() && sidebarOpen) { closeSidebar(); btnSidebar.focus(); }
         }
     });
 
-    // Pfeil-Tasten navigieren in der Sidebar-Liste
     chapterList?.addEventListener('keydown', e => {
         const focusable = Array.from(
             chapterList.querySelectorAll('.chapter-item, .subchapter-item:not([hidden])')
         );
         const idx = focusable.indexOf(document.activeElement);
         if (idx === -1) return;
-
-        if (e.key === 'ArrowDown') {
-            e.preventDefault();
-            focusable[Math.min(idx + 1, focusable.length - 1)]?.focus();
-        } else if (e.key === 'ArrowUp') {
-            e.preventDefault();
-            focusable[Math.max(idx - 1, 0)]?.focus();
-        }
+        if (e.key === 'ArrowDown') { e.preventDefault(); focusable[Math.min(idx + 1, focusable.length - 1)]?.focus(); }
+        if (e.key === 'ArrowUp') { e.preventDefault(); focusable[Math.max(idx - 1, 0)]?.focus(); }
     });
 }
 
@@ -208,11 +242,9 @@ function initResizeHandler() {
         const mobile = isMobile();
         if (mobile === lastMobile) return;
         lastMobile = mobile;
-
         if (!mobile) {
-            // Auf Desktop: mobile Klassen entfernen
             bodyEl.classList.remove('sidebar-open');
-            backdrop?.setAttribute('hidden', '');
+            sidebarBackdrop?.setAttribute('hidden', '');
             if (sidebarOpen) bodyEl.classList.remove('sidebar-closed');
         }
     });
@@ -220,15 +252,9 @@ function initResizeHandler() {
 
 // ─── Progress-Badges in Sidebar ───────────────────────────────────────────────
 
-/**
- * Aktualisiert den Fortschritts-Badge eines Unterkapitels.
- * @param {string}  subId    - Unterkapitel-ID
- * @param {'done'|'active'|'none'} status
- */
 export function setSubchapterStatus(subId, status) {
     const btn = chapterList?.querySelector(`[data-sub-id="${subId}"]`);
     if (!btn) return;
-
     btn.classList.remove('status-done', 'status-active');
     const badge = btn.querySelector('.sub-badge');
     if (status === 'done') {
@@ -243,22 +269,18 @@ export function setSubchapterStatus(subId, status) {
 // ─── Init ─────────────────────────────────────────────────────────────────────
 
 export function initLayout() {
-    // Sidebar-Toggle (Button im Header)
+    // Sidebar
     btnSidebar.addEventListener('click', toggleSidebar);
+    sidebarBackdrop?.addEventListener('click', closeSidebar);
+    if (isMobile()) { closeSidebar(); } else { openSidebar(); }
 
-    // Backdrop anklicken schließt Sidebar
-    backdrop?.addEventListener('click', closeSidebar);
-
-    // Initial-State
-    if (isMobile()) {
-        closeSidebar();
-    } else {
-        openSidebar();
-    }
+    // Drawer
+    btnDrawerToggle.addEventListener('click', toggleDrawer);
+    btnDrawerClose?.addEventListener('click', closeDrawer);
+    drawerBackdrop?.addEventListener('click', closeDrawer);
+    updateDrawerBadge(0);
 
     initKeyboardNav();
     initResizeHandler();
-
-    // Breadcrumb Basis initialisieren
     updateBreadcrumb([]);
 }

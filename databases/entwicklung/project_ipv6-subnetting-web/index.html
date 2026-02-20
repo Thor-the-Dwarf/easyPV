@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
-
 <body>
 
     <!-- ═══════════════════════════════════════════
@@ -70,7 +69,8 @@
     </header>
 
     <!-- ═══════════════════════════════════════════
-       APP LAYOUT: Sidebar | Content | Tool-Panel
+       APP LAYOUT: Sidebar | Content
+       Tool-Drawer ist jetzt position:fixed (Overlay)
   ═══════════════════════════════════════════ -->
     <div id="app-layout">
 
@@ -99,18 +99,35 @@
             </div>
         </main>
 
-        <!-- RIGHT: Tool-Panel -->
-        <aside id="tool-panel" aria-label="Tool-Panel">
-            <div id="tool-panel-header">
-                <h2 id="tool-panel-title">Tools</h2>
-            </div>
-            <div id="tool-panel-content">
-                <!-- Wird kontextuell per app.js bestückt -->
-                <p class="tool-placeholder-text">Die Tools passen sich an das aktive Kapitel an.</p>
-            </div>
-        </aside>
-
     </div><!-- /#app-layout -->
+
+    <!-- ═══════════════════════════════════════════
+       TOOL-DRAWER (position:fixed, überlappt Content)
+  ═══════════════════════════════════════════ -->
+
+    <!-- Drawer-Toggle-Button (schwebt am rechten Rand) -->
+    <button id="btn-drawer-toggle" aria-label="Tool-Drawer öffnen/schließen" aria-expanded="false"
+        aria-controls="tool-drawer" title="Tools">
+        <span class="drawer-toggle-icon">🔧</span>
+        <span class="drawer-toggle-label" aria-hidden="true">Tools</span>
+    </button>
+
+    <!-- Drawer-Backdrop -->
+    <div id="drawer-backdrop" aria-hidden="true" hidden></div>
+
+    <!-- Tool-Drawer -->
+    <aside id="tool-panel" role="complementary" aria-label="Interaktive Tools" aria-hidden="true">
+
+        <div id="tool-panel-header">
+            <h2 id="tool-panel-title">Tools</h2>
+            <button id="btn-drawer-close" aria-label="Tool-Drawer schließen">✕</button>
+        </div>
+
+        <div id="tool-panel-content">
+            <!-- Wird kontextuell per app.js bestückt -->
+            <p class="tool-placeholder-text">Die Tools passen sich an das aktive Kapitel an.</p>
+        </div>
+    </aside>
 
     <!-- Mobile Sidebar Backdrop -->
     <div id="sidebar-backdrop" aria-hidden="true" hidden></div>

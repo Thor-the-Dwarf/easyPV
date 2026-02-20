@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kreditvertrag (Grundidee)",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 7,
+    "wrong": -3,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Klassifikation ist der Kern des Spiels?",
+      "hint": "Pflichtkosten vs optionale Kosten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kostenposten als verpflichtend oder optional korrekt zuordnen",
+          "correct": true,
+          "feedback": "Richtig. Das ist die Kernaufgabe."
+        },
+        {
+          "id": "b",
+          "text": "Alle Kosten als optional markieren",
+          "correct": false,
+          "feedback": "Fuehrt zu Fehlklassifikation."
+        },
+        {
+          "id": "c",
+          "text": "Nur Betragsgroesse bewerten",
+          "correct": false,
+          "feedback": "Kategorie bleibt entscheidend."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann gibt es Zusatzabzug laut Regelwerk?",
+      "hint": "Pflichtposten falsch klassifiziert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn verpflichtende Kostenposten als optional eingeordnet werden",
+          "correct": true,
+          "feedback": "Genau. Das ist kritisch."
+        },
+        {
+          "id": "b",
+          "text": "Wenn alle Positionen dokumentiert werden",
+          "correct": false,
+          "feedback": "Dokumentation ist positiv."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Hilfetext angezeigt wird",
+          "correct": false,
+          "feedback": "Kein Strafgrund."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI sollten sichtbar sein?",
+      "hint": "Quote und Fehlermuster.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Klassifikationsquote und Fehlerquote je Kostenart",
+          "correct": true,
+          "feedback": "Richtig. So wird Lernbedarf klar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Enddauer",
+          "correct": false,
+          "feedback": "Zu wenig fachlich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "feedback": "Zu undifferenziert."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann wird ein Serienbonus vergeben?",
+      "hint": "Mehrere fehlerfreie Karten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei aufeinanderfolgenden fehlerfreien Kostenkarten",
+          "correct": true,
+          "feedback": "Richtig. Serie wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei beliebigen Fehlserien",
+          "correct": false,
+          "feedback": "Kein Bonusprofil."
+        },
+        {
+          "id": "c",
+          "text": "Nur beim ersten Fall",
+          "correct": false,
+          "feedback": "Nicht regelkonform."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann ist eine Karte gut geloest?",
+      "hint": "Alle Posten korrekt getrennt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn alle Kostenarten korrekt und nachvollziehbar klassifiziert sind",
+          "correct": true,
+          "feedback": "Exakt. Das entspricht dem Ziel."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur der groesste Betrag stimmt",
+          "correct": false,
+          "feedback": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ohne Pruefung bestaetigt wird",
+          "correct": false,
+          "feedback": "Fehleranfaellig."
+        }
+      ]
+    }
+  ]
+}

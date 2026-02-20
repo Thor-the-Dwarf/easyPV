@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kreditvertrag (Grundidee)",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Wahl gilt als tragfaehig?",
+      "hint": "Belastungsquote im sicheren Bereich.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rate waehlen, die im Budget liegt und langfristig tragbar bleibt",
+          "correct": true,
+          "feedback": "Richtig. Tragfaehigkeit steht im Fokus."
+        },
+        {
+          "id": "b",
+          "text": "Maximalrate ohne Budgetpruefung waehlen",
+          "correct": false,
+          "feedback": "Erhoeht Risiko."
+        },
+        {
+          "id": "c",
+          "text": "Nur kuerzeste Laufzeit erzwingen",
+          "correct": false,
+          "feedback": "Nicht immer tragbar."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann gibt es Punktabzug?",
+      "hint": "Max-Belastungswert ueberschritten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn die ausgewaehlte Rate den Belastungskorridor ueberschreitet",
+          "correct": true,
+          "feedback": "Genau. Dann ist die Wahl untragbar."
+        },
+        {
+          "id": "b",
+          "text": "Wenn mehrere Optionen geprueft werden",
+          "correct": false,
+          "feedback": "Pruefung ist sinnvoll."
+        },
+        {
+          "id": "c",
+          "text": "Wenn KPI angezeigt werden",
+          "correct": false,
+          "feedback": "KPI sind gewuenscht."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI sind entscheidend?",
+      "hint": "Tragfaehigkeit + Laufzeitqualitaet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tragfaehigkeitsquote und Laufzeitqualitaet",
+          "correct": true,
+          "feedback": "Richtig. Beide Ziele werden gemessen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endpunktzahl",
+          "correct": false,
+          "feedback": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Faelle",
+          "correct": false,
+          "feedback": "Keine Qualitaetsmetrik."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gibt es Bonus im Rate-Planer?",
+      "hint": "Mehrere tragfaehige Entscheidungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei einer Serie tragfaehiger Entscheidungen ohne Grenzwertverletzung",
+          "correct": true,
+          "feedback": "Richtig. Konstanz wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei beliebigen schnellen Klicks",
+          "correct": false,
+          "feedback": "Tempo allein zaehlt nicht."
+        },
+        {
+          "id": "c",
+          "text": "Bei Abbruch des Falls",
+          "correct": false,
+          "feedback": "Kein Bonuskriterium."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann ist eine Ratenwahl ausgewogen?",
+      "hint": "Tragbar und nicht unnoetig lang.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Rate tragfaehig ist und die Laufzeit vernuenftig bleibt",
+          "correct": true,
+          "feedback": "Exakt. Das ist die Zielentscheidung."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur die niedrigste Rate gewaehlt wird",
+          "correct": false,
+          "feedback": "Kann zu lange Laufzeit erzeugen."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nur die hoechste Rate gewaehlt wird",
+          "correct": false,
+          "feedback": "Kann untragbar sein."
+        }
+      ]
+    }
+  ]
+}

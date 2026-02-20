@@ -1,0 +1,53 @@
+# __gp_kreditvertrag__effektivzins_duell
+
+## Spielidee
+"Effektivzins-Duell" vergleicht Kreditangebote mit unterschiedlichen Nebenkosten. Lernende identifizieren das insgesamt guenstigere Angebot.
+
+## Lernziel
+- Nominalzins und Effektivkosten auseinanderhalten.
+- Vergleich von Kreditangeboten sachgerecht durchfuehren.
+
+## Messbare Progression
+- 16 Angebotsduelle.
+- Punkte: +9 richtige Auswahl, -4 falsche Auswahl.
+- +3 fuer korrekte Begruendung der Kostenbestandteile.
+- KPI: Vergleichsgenauigkeit und Begruendungsqualitaet.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DuelController
+- EffectiveCostEngine
+- MetricService
+
+### Domaenenobjekte
+- DuelCase(caseId, offerA, offerB)
+- LoanOffer(offerId, nominalRate, fees[])
+- DuelResult(winnerOfferId, totalCost)
+
+### Beziehungen
+- DuelCase enthaelt genau 2 LoanOffer.
+- EffectiveCostEngine berechnet pro LoanOffer totalCost.
+- MetricService sammelt 1..* DuelResult.
+
+### Zustandsmodell
+- INIT -> OFFER_REVIEW -> DECISION -> COST_RESOLVE -> NEXT_DUEL
+
+### Sequenz (Happy Path)
+1. DuelController startet DuelCase.
+2. Player waehlt bevorzugtes Angebot.
+3. EffectiveCostEngine berechnet Gesamtkosten.
+4. DuelResult bestimmt Gewinner.
+5. MetricService aktualisiert Lernstatistik.
+
+## Regeln
+- Ignorierte Gebuehren fuehren zu Teilpunktverlust.
+- Perfekte Serie von 4 Duellen aktiviert Multiplikator.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, offerA{nominalRate,fees[]}, offerB{nominalRate,fees[]}, expectedWinner
+
+## Abnahmekriterien
+- Effektivkosten sind transparent aufgeschluesselt.
+- KPI trennt Auswahlleistung und Begruendung.
+- Fehleranalyse nennt uebersehene Kostenarten.

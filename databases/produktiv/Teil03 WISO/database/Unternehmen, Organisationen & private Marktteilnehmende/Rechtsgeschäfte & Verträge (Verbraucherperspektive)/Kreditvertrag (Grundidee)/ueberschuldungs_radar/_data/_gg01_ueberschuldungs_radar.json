@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kreditvertrag (Grundidee)",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 12,
+    "wrong": -6,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Reaktion ist bei Hochrisiko-Event zuerst sinnvoll?",
+      "hint": "Sofortmassnahme vor Verzoegerung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Warnsignal priorisieren und sofort geeignete Gegenmassnahme starten",
+          "correct": true,
+          "feedback": "Richtig. Fruehes Handeln stabilisiert."
+        },
+        {
+          "id": "b",
+          "text": "Event ignorieren und auf naechsten Monat warten",
+          "correct": false,
+          "feedback": "Fuehrt zu hohem Risiko."
+        },
+        {
+          "id": "c",
+          "text": "Nur Bericht schreiben ohne Aktion",
+          "correct": false,
+          "feedback": "Wirkung fehlt."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann halbieren sich Rundenpunkte laut Regelwerk?",
+      "hint": "Hochrisiko unbehandelt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn ein Hochrisiko-Event unbehandelt bleibt",
+          "correct": true,
+          "feedback": "Genau. Das ist ein kritischer Fehler."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein Event dokumentiert wird",
+          "correct": false,
+          "feedback": "Dokumentation ist korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ein Hinweis angezeigt wird",
+          "correct": false,
+          "feedback": "Kein Halbierungsgrund."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI bilden den Fortschritt im Radar?",
+      "hint": "Erkennung und Stabilitaet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Warnsignal-Erkennungsquote und Stabilitaetsindex",
+          "correct": true,
+          "feedback": "Richtig. Diese KPI sind zentral."
+        },
+        {
+          "id": "b",
+          "text": "Nur Kampagnendauer",
+          "correct": false,
+          "feedback": "Zu wenig fachlich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Endscore",
+          "correct": false,
+          "feedback": "Ohne Aufschluesselung zu grob."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gibt es Praeventionsbonus?",
+      "hint": "Fruehzeitiges Gegensteuern.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Warnsignale frueh erkannt und rechtzeitig behandelt werden",
+          "correct": true,
+          "feedback": "Richtig. Proaktive Steuerung wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Wenn erst am Ende reagiert wird",
+          "correct": false,
+          "feedback": "Zu spaet fuer Bonus."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Events uebersprungen werden",
+          "correct": false,
+          "feedback": "Nicht regelkonform."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann ist eine Kampagne erfolgreich?",
+      "hint": "Risiken kontrolliert, Stabilitaet gesichert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn kritische Risiken konsequent adressiert und Stabilitaet erhalten wird",
+          "correct": true,
+          "feedback": "Exakt. Das ist Ziel der Kampagne."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur wenige Klicks gemacht werden",
+          "correct": false,
+          "feedback": "Klickzahl ist irrelevant."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ohne Pruefung abgeschlossen wird",
+          "correct": false,
+          "feedback": "Kein belastbares Ergebnis."
+        }
+      ]
+    }
+  ]
+}

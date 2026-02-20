@@ -187,3 +187,43 @@ Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine M
     - `output/web-game-teil03-reverse-wirksamkeit/shot-0.png`
     - `output/web-game-teil03-reverse-wirksamkeit/state-0.json`
   - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.
+
+- Neuer Umsetzungs-Batch: Topic "Mietvertrag" mit 5 neuen Gameordnern.
+- Neu angelegt:
+  - `kautions_manager`
+  - `klausel_check`
+  - `kuendigungsfrist_timer`
+  - `mietmangel_eskalation`
+  - `nebenkosten_pruefpfad`
+- Je Spiel erstellt:
+  - `_ghtml`, `_gjs`, `_gcss`
+  - `_data/_gg01_*.json` + Topic-MetaData
+  - Vollstaendige `__dokumentation`-Struktur mit UML-PUML und 5 Plan-Dateien
+  - Unit-Tests inkl. Messbarkeits-Check (`measurable`, `score`, `progress_percent`, `simulated_ms`)
+- Validierung:
+  - Lokale Node-Tests fuer den Block komplett gruen (`15/15`).
+  - Playwright-Smoke fuer `klausel_check` erfolgreich:
+    - `output/web-game-teil03-reverse-mietvertrag/shot-0.png`
+    - `output/web-game-teil03-reverse-mietvertrag/state-0.json`
+  - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.
+
+- Hinweis: Bei den Topics "Nachhaltige Entwicklung im Unternehmenskontext (Grundidee)" und "Wirksamkeit - typische Stolperstellen (Grundidee)" waren die Spieldateien bereits in der Historie vorhanden; im Arbeitsbaum wurden sie lokal vervollstaendigt und validiert.
+
+- Neuer Umsetzungs-Batch: Topic "Mietvertrag" mit 5 neuen Gameordnern.
+- Neu angelegt:
+  - `kautions_manager`
+  - `klausel_check`
+  - `kuendigungsfrist_timer`
+  - `mietmangel_eskalation`
+  - `nebenkosten_pruefpfad`
+- Je Spiel erstellt:
+  - `_ghtml`, `_gjs`, `_gcss`
+  - `_data/_gg01_*.json` + Topic-MetaData
+  - Vollstaendige `__dokumentation`-Struktur mit UML-PUML und 5 Plan-Dateien
+  - Unit-Tests inkl. Messbarkeits-Check (`measurable`, `score`, `progress_percent`, `simulated_ms`)
+- Validierung:
+  - Lokale Node-Tests fuer den Block komplett gruen (`15/15`).
+  - Playwright-Smoke fuer `kuendigungsfrist_timer` erfolgreich:
+    - `output/web-game-mietvertrag/shot-0.png`
+    - `output/web-game-mietvertrag/state-0.json`
+  - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.

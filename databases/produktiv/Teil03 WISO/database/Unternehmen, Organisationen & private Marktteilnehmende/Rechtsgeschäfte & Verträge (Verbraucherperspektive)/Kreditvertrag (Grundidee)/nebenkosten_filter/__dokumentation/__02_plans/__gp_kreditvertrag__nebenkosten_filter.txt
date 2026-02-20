@@ -1,0 +1,52 @@
+# __gp_kreditvertrag__nebenkosten_filter
+
+## Spielidee
+"Nebenkosten-Filter" zeigt Vertragsangebote mit Bearbeitungsgebuehren, Versicherungen und Zusatzprodukten. Lernende filtern optionale von unvermeidbaren Kosten.
+
+## Lernziel
+- Kreditnebenkosten klar klassifizieren.
+- Kostenbewusstsein bei Vertragsentscheidung staerken.
+
+## Messbare Progression
+- 14 Angebotskarten.
+- Punkte: +7 korrekte Klassifikation je Kostenposten, -3 falsche Klassifikation.
+- KPI: Klassifikationsquote und Fehlerquote nach Kostenart.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CostCardController
+- CostFilterEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- CostCard(cardId, items[])
+- CostItem(itemId, amount, obligationType)
+- FilterResult(correctItems, wrongItems)
+
+### Beziehungen
+- CostCard enthaelt 4..12 CostItem.
+- CostFilterEngine validiert 1..* CostItem.
+- AnalyticsService aggregiert 1..* FilterResult.
+
+### Zustandsmodell
+- READY -> CARD_REVIEW -> FILTER_SUBMIT -> RESULT -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CostCardController zeigt CostCard.
+2. Player klassifiziert CostItem.
+3. CostFilterEngine prueft Ergebnis.
+4. FilterResult wird angezeigt.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Fehlklassifikation verpflichtender Kostenposten erzeugt Zusatzabzug.
+- Serienbonus ab 3 fehlerfreien Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, items[{id,amount,obligationType}], expectedFilter
+
+## Abnahmekriterien
+- Klassifikation ist pro Kostenposten nachvollziehbar.
+- KPI zeigt Fehlermuster nach Kostenart.
+- Lernreport nennt meist verwechselte Posten.

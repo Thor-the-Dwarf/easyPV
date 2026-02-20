@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kreditvertrag (Grundidee)",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 9,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was entscheidet im Effektivzins-Duell?",
+      "hint": "Gesamtkosten statt Nominalzins allein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Das Angebot mit den niedrigeren Gesamtkosten waehlen",
+          "correct": true,
+          "feedback": "Richtig. Alle Kostenarten zaehlen."
+        },
+        {
+          "id": "b",
+          "text": "Nur den niedrigeren Nominalzins betrachten",
+          "correct": false,
+          "feedback": "Nebenkosten koennen das Bild drehen."
+        },
+        {
+          "id": "c",
+          "text": "Zufaellig entscheiden",
+          "correct": false,
+          "feedback": "Keine belastbare Methode."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann sinkt der Score im Duell deutlich?",
+      "hint": "Gebuehren wurden ignoriert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn relevante Gebuehren bei der Wahl nicht beruecksichtigt werden",
+          "correct": true,
+          "feedback": "Genau. Das fuehrt zu Punktverlust."
+        },
+        {
+          "id": "b",
+          "text": "Wenn Kosten transparent aufgeschluesselt werden",
+          "correct": false,
+          "feedback": "Das ist korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ein Hinweis gelesen wird",
+          "correct": false,
+          "feedback": "Hinweise sind erlaubt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI sind im Plan vorgesehen?",
+      "hint": "Auswahl und Begruendung trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vergleichsgenauigkeit und Begruendungsqualitaet",
+          "correct": true,
+          "feedback": "Richtig. Beide Lernziele werden gemessen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endpunktzahl",
+          "correct": false,
+          "feedback": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Duelle",
+          "correct": false,
+          "feedback": "Keine Qualitaetsaussage."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann wird ein Multiplikator aktiv?",
+      "hint": "Serie korrekter Duelle.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei einer fehlerfreien Serie korrekter Entscheidungen",
+          "correct": true,
+          "feedback": "Richtig. Dann steigt der Multiplikator."
+        },
+        {
+          "id": "b",
+          "text": "Nach beliebigen Fehlentscheidungen",
+          "correct": false,
+          "feedback": "Kein Bonusprofil."
+        },
+        {
+          "id": "c",
+          "text": "Beim Neustart",
+          "correct": false,
+          "feedback": "Nicht regelrelevant."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann ist ein Duel-Case voll erfolgreich?",
+      "hint": "Richtig + begruendet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Gewinner korrekt und Kostenbestandteile nachvollziehbar begruendet sind",
+          "correct": true,
+          "feedback": "Exakt. Das ist Volltreffer."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur schnell geklickt wird",
+          "correct": false,
+          "feedback": "Tempo allein reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ohne Kostenvergleich geantwortet wird",
+          "correct": false,
+          "feedback": "Unvollstaendig."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kreditvertrag (Grundidee)",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 6,
+    "wrong": -2,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Beziehung gilt in jeder Zeile des Tilgungsplans?",
+      "hint": "Rate = Zinsanteil + Tilgungsanteil.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rate setzt sich aus Zinsanteil und Tilgungsanteil zusammen",
+          "correct": true,
+          "feedback": "Richtig. Das ist Grundlogik."
+        },
+        {
+          "id": "b",
+          "text": "Restschuld steigt immer",
+          "correct": false,
+          "feedback": "Bei Tilgung sinkt sie."
+        },
+        {
+          "id": "c",
+          "text": "Zinsanteil bleibt immer gleich",
+          "correct": false,
+          "feedback": "Nicht generell korrekt."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann entsteht Zusatzabzug im Puzzle?",
+      "hint": "Schluesselzelle falsch.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn eine Schluesselzelle mit zentralem Wert falsch gesetzt wird",
+          "correct": true,
+          "feedback": "Genau. Dieser Fehler wiegt mehr."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein Hilfetext genutzt wird",
+          "correct": false,
+          "feedback": "Kein Zusatzabzug."
+        },
+        {
+          "id": "c",
+          "text": "Wenn die Tabelle bestaetigt wird",
+          "correct": false,
+          "feedback": "Das ist normal."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI sind gefordert?",
+      "hint": "Genauigkeit und Zeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Feldgenauigkeit und Loesungszeit je Level",
+          "correct": true,
+          "feedback": "Richtig. Beide Perspektiven sind relevant."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Klicks",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtrunden",
+          "correct": false,
+          "feedback": "Keine Qualitaetsaussage."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gibt es Perfektionsbonus?",
+      "hint": "Level ohne Fehler.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn ein Level vollstaendig korrekt ausgefuellt ist",
+          "correct": true,
+          "feedback": "Richtig. Das aktiviert den Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur die erste Zeile stimmt",
+          "correct": false,
+          "feedback": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Wenn die Eingabe zufaellig ist",
+          "correct": false,
+          "feedback": "Nicht reproduzierbar."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was hilft im Review-Modus am meisten?",
+      "hint": "Sollwerte pro Zelle vergleichen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Werte je Zelle mit eigener Eingabe abgleichen",
+          "correct": true,
+          "feedback": "Exakt. So werden Muster klar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endsumme betrachten",
+          "correct": false,
+          "feedback": "Fehlerquelle bleibt verborgen."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Rueckmeldung weiterspielen",
+          "correct": false,
+          "feedback": "Lerneffekt sinkt."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+# __gp_kreditvertrag__tilgungsplan_puzzle
+
+## Spielidee
+"Tilgungsplan-Puzzle" zeigt Tabellenfragmente mit fehlenden Werten. Lernende setzen Zinsanteil, Tilgungsanteil und Restschuld korrekt zusammen.
+
+## Lernziel
+- Aufbau eines Tilgungsplans praktisch verstehen.
+- Zins- und Tilgungsdynamik ueber Zeit erkennen.
+
+## Messbare Progression
+- 9 Tabellenlevel.
+- Punkte: +6 je korrekt eingesetztem Feld, -2 je falschem Feld.
+- KPI: Feldgenauigkeit und Loesungszeit pro Level.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TableLevelController
+- AmortizationEngine
+- ProgressService
+
+### Domaenenobjekte
+- TableLevel(levelId, rows[])
+- TableCell(cellId, expectedValue)
+- LevelResult(correctCells, wrongCells, durationMs)
+
+### Beziehungen
+- TableLevel enthaelt 5..25 TableCell.
+- AmortizationEngine validiert 1..* TableCell.
+- ProgressService aggregiert 1..* LevelResult.
+
+### Zustandsmodell
+- LOAD_LEVEL -> EDIT_GRID -> SUBMIT -> GRID_EVALUATION -> NEXT_LEVEL
+
+### Sequenz (Happy Path)
+1. TableLevelController laedt Level.
+2. Player fuellt fehlende TableCell.
+3. AmortizationEngine prueft Werte.
+4. LevelResult wird berechnet.
+5. ProgressService zeigt Lerntrend.
+
+## Regeln
+- Fehler in Schluesselzellen verursachen Zusatzabzug.
+- Vollstaendig korrektes Level gibt Perfektionsbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: levelId, rows[], missingCells[], expectedValues[]
+
+## Abnahmekriterien
+- Tabellenlogik ist rechnerisch konsistent.
+- KPI zeigt Genauigkeit und Tempo.
+- Review-Modus zeigt korrekte Werte je Zelle.

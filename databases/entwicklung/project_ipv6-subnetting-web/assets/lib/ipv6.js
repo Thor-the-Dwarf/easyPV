@@ -350,3 +350,85 @@ export function listSubnets(parentCidr, addBits, maxShow = 5) {
 
     return { subnets, last, total, newPrefixLen };
 }
+
+/**
+ * Enumeriert Kind-Subnetze fensterweise (offset/limit) für basisPraefix -> zielPrefix.
+ * @param   {string} parentCidr             z. B. '2001:db8::/48'
+ * @param   {number} targetPrefix           z. B. 56
+ * @param   {number|bigint} [offset=0]
+ * @param   {number} [limit=16]
+ * @returns {{ total: bigint, subnets: Array, parentPrefixLen: number, targetPrefix: number, offset: bigint, limit: number }}
+ */
+export function enumerateSubprefixes(parentCidr, targetPrefix, offset = 0, limit = 16) {
+    if (typeof parentCidr !== 'string') {
+        throw new TypeError('parentCidr muss ein String sein');
+    }
+
+    const m = parentCidr.trim().match(/^(.+?)\/(\d+)$/);
+    if (!m) throw new Error('parentCidr muss im Format "Adresse/Präfix" vorliegen');
+
+    const addrPart = m[1].trim();
+    const parentPrefixLen = parseInt(m[2], 10);
+    if (!isValidIPv6(addrPart)) throw new Error(`Ungültige IPv6-Adresse: "${addrPart}"`);
+    if (parentPrefixLen < 0 || parentPrefixLen > 128) throw new RangeError('Basis-Präfixlänge muss 0–128 sein');
+
+    if (!Number.isInteger(targetPrefix) || targetPrefix < 0 || targetPrefix > 128) {
+        throw new RangeError('zielPrefix muss eine ganze Zahl von 0 bis 128 sein');
+    }
+    if (targetPrefix < parentPrefixLen) {
+        throw new RangeError(`zielPrefix /${targetPrefix} muss >= Basis /${parentPrefixLen} sein`);
+    }
+
+    const off = typeof offset === 'bigint' ? offset : BigInt(offset);
+    if (off < 0n) throw new RangeError('offset muss >= 0 sein');
+
+    if (!Number.isInteger(limit) || limit < 1) {
+        throw new RangeError('limit muss eine ganze Zahl >= 1 sein');
+    }
+
+    const addBits = targetPrefix - parentPrefixLen;
+    const total = 1n << BigInt(addBits);
+    const baseNetwork = applyMask(addrPart, parentPrefixLen);
+    const normalizedParent = `${baseNetwork}/${parentPrefixLen}`;
+
+    if (off >= total) {
+        return {
+            total,
+            subnets: [],
+            parentPrefixLen,
+            targetPrefix,
+            offset: off,
+            limit,
+        };
+    }
+
+    const remaining = total - off;
+    const count = remaining < BigInt(limit) ? Number(remaining) : limit;
+    const subnets = [];
+
+    for (let i = 0; i < count; i++) {
+        const idx = off + BigInt(i);
+        if (addBits === 0) {
+            subnets.push({
+                index: idx,
+                address: baseNetwork,
+                prefixLen: parentPrefixLen,
+                cidr: `${compress(baseNetwork)}/${parentPrefixLen}`,
+                cidrFull: `${baseNetwork}/${parentPrefixLen}`,
+            });
+            continue;
+        }
+
+        const sub = subprefix(normalizedParent, addBits, idx);
+        subnets.push({ index: idx, ...sub });
+    }
+
+    return {
+        total,
+        subnets,
+        parentPrefixLen,
+        targetPrefix,
+        offset: off,
+        limit,
+    };
+}

@@ -15,3 +15,8 @@ Original prompt: Planänderung: Du arbeitest auf ne reigenen Git-Branch die du e
 - Tool in Drawer integriert (`assets/layout.js`, `assets/tools.js`) und in `subnetting/prefix-basics` aktiviert.
 - Playwright-Visual-Check: `output/wp02-network-range/shot-0.png` zeigt korrektes Rendering und Ausgabe.
 - Hinweis: Gesamtsuite hat weiterhin 2 bestehende Altfails ausserhalb von WP-02 (`compress(ULA)`, `prefixLastAddress(/48)`).
+- WP-03 implementiert: neues Tool `prefix-split-enumerator` (basisPraefix, zielPrefix, offset, limit) mit Ausgabe `anzahlSubnetzeGesamt` und `subnetze[]`.
+- Core-Lib erweitert: `enumerateSubprefixes()` in `assets/lib/ipv6.js` inkl. Fensterlogik.
+- Drawer-Integration erweitert (`assets/tools.js`, `assets/layout.js`) und in `subnetting/prefix-basics` als erster Tool-Eintrag aktiviert.
+- WP-03 visual verifiziert: `output/wp03-prefix-split-enumerator/shot-0.png` zeigt den neuen Drawer-Eintrag inkl. korrektem Fenster 0..15 bei /48 -> /56.
+- Zusätzliche WP-03-Tests in `assets/lib/ipv6.test.js` ergänzt (Fenster, Index, Equal-Prefix, Fehlerfall).

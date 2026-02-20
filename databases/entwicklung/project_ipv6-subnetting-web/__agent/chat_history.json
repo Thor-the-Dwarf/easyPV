@@ -168,5 +168,28 @@
         "why": "Sichtprüfung auf reale UI-Integration und korrekte Ausgabe im laufenden Build"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-20 22:58:00",
+    "commit_message": "feat(WP-03): Präfix-Split (Enumerator) als Drawer-Tool",
+    "request": "Weiter mit dem nächsten Arbeitspaket",
+    "response": [
+      {
+        "what": "Core-Funktion `enumerateSubprefixes()` in `assets/lib/ipv6.js` ergänzt",
+        "why": "Subnetz-Fenster über `offset/limit` korrekt und wiederverwendbar berechnen"
+      },
+      {
+        "what": "Neues Tool `prefix-split-enumerator` erstellt",
+        "why": "WP-03 mit den Inputs `basisPraefix`, `zielPrefix`, optional `offset/limit` direkt nutzbar machen"
+      },
+      {
+        "what": "Drawer-Meta, Tool-Registry, CSS und lessons-Anbindung (`subnetting/prefix-basics`) erweitert",
+        "why": "Eigenen Arkodeon-Drawer-Eintrag wie gefordert herstellen"
+      },
+      {
+        "what": "Playwright-Screenshotlauf (`output/wp03-prefix-split-enumerator/shot-0.png`) durchgeführt",
+        "why": "Sichtprüfung für reales Rendering und korrekte Ausgabe im laufenden Build"
+      }
+    ]
   }
 ]

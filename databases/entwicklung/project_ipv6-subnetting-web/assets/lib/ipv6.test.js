@@ -275,6 +275,27 @@ test('listSubnets(/48, +8).last.cidr',
     () => ipv6.listSubnets('2001:db8::/48', 8).last.cidr,
     '2001:db8:0:ff00::/56');
 
+// ─── Tests: enumerateSubprefixes (WP-03) ─────────────────────────────────────
+
+test('enumerateSubprefixes(/48 -> /56).total = 256n',
+    () => ipv6.enumerateSubprefixes('2001:db8::1/48', 56, 0, 3).total,
+    256n);
+
+test('enumerateSubprefixes window[0] bei offset=2',
+    () => ipv6.enumerateSubprefixes('2001:db8::/48', 56, 2, 2).subnets[0].cidr,
+    '2001:db8:0:200::/56');
+
+test('enumerateSubprefixes window[1].index bei offset=2',
+    () => ipv6.enumerateSubprefixes('2001:db8::/48', 56, 2, 2).subnets[1].index,
+    3n);
+
+test('enumerateSubprefixes(/64 -> /64) liefert genau ein Netz',
+    () => ipv6.enumerateSubprefixes('2001:db8::1234/64', 64, 0, 10).subnets[0].cidr,
+    '2001:db8::/64');
+
+testThrows('enumerateSubprefixes: zielPrefix < basis wirft',
+    () => ipv6.enumerateSubprefixes('2001:db8::/64', 56, 0, 5));
+
 // ─── Auswertung ───────────────────────────────────────────────────────────────
 
 const passed = results.filter(r => r.pass).length;

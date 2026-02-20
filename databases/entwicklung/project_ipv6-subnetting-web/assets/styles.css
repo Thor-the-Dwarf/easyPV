@@ -2324,6 +2324,181 @@ body.exam-mode #app-layout {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   WP-03 – PRÄFIX-SPLIT (ENUMERATOR)
+═══════════════════════════════════════════════════════════ */
+
+.pse-widget {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.pse-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.pse-label {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-medium);
+}
+
+.pse-text-input,
+.pse-number-input {
+    height: 34px;
+    padding: 0 var(--space-3);
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    outline: none;
+    transition: border-color var(--transition);
+    width: 100%;
+}
+
+.pse-text-input:focus,
+.pse-number-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--color-accent-glow);
+}
+
+.pse-row-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+}
+
+.pse-full-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.pse-summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+}
+
+.pse-summary-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+}
+
+.pse-summary-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+}
+
+.pse-summary-value {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    font-weight: var(--font-semibold);
+}
+
+.pse-subnet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pse-subnet-list-header {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    padding: var(--space-1) 0;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-1);
+}
+
+.pse-subnet-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 3px var(--space-2);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-bg-elevated);
+    transition: background-color var(--transition);
+}
+
+.pse-subnet-item:hover {
+    background-color: var(--color-bg-hover);
+}
+
+.pse-subnet-idx {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--color-text-muted);
+    min-width: 24px;
+    text-align: right;
+}
+
+.pse-subnet-cidr {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--color-accent);
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pse-copy-cidr {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    border-radius: 3px;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.pse-copy-cidr:hover {
+    background-color: var(--color-bg-hover);
+    color: var(--color-accent);
+}
+
+.pse-empty {
+    font-size: var(--text-xs);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-warning-dim);
+    border: 1px solid var(--color-warning);
+    color: var(--color-warning);
+}
+
+.pse-error {
+    font-size: var(--text-xs);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-error-dim);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+}
+
+@media (max-width: 520px) {
+    .pse-row-two,
+    .pse-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════
    25. WP08 – TASK-ENGINE ERWEITERUNGEN
 ═══════════════════════════════════════════════════════════ */
 

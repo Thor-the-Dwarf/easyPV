@@ -10,46 +10,66 @@
   "subtitle": "Ordne jeden Begriff in die passende Kategorie ein.",
   "categories": [
     {
-      "key": "analyse",
-      "label": "Analyse",
-      "color": "#38bdf8"
+      "key": "entwurf",
+      "label": "Entwurf",
+      "color": "#60a5fa"
     },
     {
-      "key": "entscheidung",
-      "label": "Entscheidung",
-      "color": "#facc15"
+      "key": "betrieb",
+      "label": "Betrieb",
+      "color": "#fbbf24"
     }
   ],
   "terms": [
     {
-      "text": "Ausgangslage erfassen",
-      "category": "analyse",
-      "explanation": "Gehoert zur Analysephase."
+      "text": "Komponenten fuer Uml Klassdiagramm sauber abgrenzen",
+      "category": "entwurf",
+      "explanation": "Architektur wird klar."
     },
     {
-      "text": "Kriterien definieren",
-      "category": "analyse",
-      "explanation": "Ohne Kriterien keine saubere Bewertung."
+      "text": "Schnittstelle als Vertrag definieren",
+      "category": "entwurf",
+      "explanation": "Abhaengigkeiten sind geplant."
     },
     {
-      "text": "Option priorisieren",
-      "category": "entscheidung",
-      "explanation": "Das ist eine Entscheidungsaufgabe."
+      "text": "Datenmodell mit Schluesseln entwerfen",
+      "category": "entwurf",
+      "explanation": "Struktur vor Implementierung."
     },
     {
-      "text": "Massnahme festlegen",
-      "category": "entscheidung",
-      "explanation": "Festlegung gehoert zur Entscheidung."
+      "text": "Pattern begruendet auswaehlen",
+      "category": "entwurf",
+      "explanation": "Designentscheidung im Vorfeld."
     },
     {
-      "text": "Risiko pruefen",
-      "category": "analyse",
-      "explanation": "Risikoanalyse ist vorbereitend."
+      "text": "Testbarkeit im Entwurf beruecksichtigen",
+      "category": "entwurf",
+      "explanation": "Qualitaet spaeter besser pruefbar."
     },
     {
-      "text": "Umsetzung freigeben",
-      "category": "entscheidung",
-      "explanation": "Freigabe ist ein Entscheidungsakt."
+      "text": "Aenderung im Laufbetrieb kontrolliert ausrollen",
+      "category": "betrieb",
+      "explanation": "Operative Durchfuehrung."
+    },
+    {
+      "text": "Monitoring auf Abweichung pruefen",
+      "category": "betrieb",
+      "explanation": "Betriebssicht aktiv."
+    },
+    {
+      "text": "Indexwirkung im Produktivlauf beobachten",
+      "category": "betrieb",
+      "explanation": "Performance im Einsatz."
+    },
+    {
+      "text": "Fehlerbild im Log auswerten",
+      "category": "betrieb",
+      "explanation": "Laufender Systembetrieb."
+    },
+    {
+      "text": "Rollback bei Stoerung vorbereiten",
+      "category": "betrieb",
+      "explanation": "Betriebliche Absicherung."
     }
   ]
 }

@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "create_table",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "CREATE TABLE - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "CREATE TABLE - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "CREATE TABLE - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Basic User Table user_id",
+          "right": "Passende Entscheidung 1: user_id"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Unique Identifier"
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Basic User Table username",
+          "right": "Passende Entscheidung 2: username"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Login Name"
+        },
+        {
+          "left": "Szenario 3: Basic User Table email",
+          "right": "Passende Entscheidung 3: email"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Contact Email"
+        },
+        {
+          "left": "Szenario 4: Product Inventory product_id",
+          "right": "Passende Entscheidung 4: product_id"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: SKU Number"
         }
       ]
     }

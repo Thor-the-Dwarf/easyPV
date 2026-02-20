@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "wirksamkeit_typische_stolperstellen",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Wirksamkeit - typische Stolperstellen - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Wirksamkeit - typische Stolperstellen - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Wirksamkeit - typische Stolperstellen - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Einordnung passt zu einer klar zulaessigen Klausel? Kategorie: wirksam.",
+          "right": "Passende Entscheidung 1: Als wirksam einstufen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Die Zuordnung ist plausibel."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wann ist die Kategorie \"unklar\" sinnvoll? Wenn Angaben fuer sichere Wertung fehlen.",
+          "right": "Passende Entscheidung 2: Wenn entscheidende Informationen fuer die Bewertung fehlen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Dann ist \"unklar\" begruendet."
+        },
+        {
+          "left": "Szenario 3: Wann entsteht Zusatzabzug im Match? Kernklausel falsch klassifiziert.",
+          "right": "Passende Entscheidung 3: Bei Fehlklassifikation einer Kernklausel"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Das wiegt besonders schwer."
+        },
+        {
+          "left": "Szenario 4: Welche KPI zeigt den Lernfortschritt? Treffer je Kategorie.",
+          "right": "Passende Entscheidung 4: Trefferquote getrennt fuer wirksam, unwirksam und unklar"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Exakt. Das entspricht dem Plan."
         }
       ]
     }

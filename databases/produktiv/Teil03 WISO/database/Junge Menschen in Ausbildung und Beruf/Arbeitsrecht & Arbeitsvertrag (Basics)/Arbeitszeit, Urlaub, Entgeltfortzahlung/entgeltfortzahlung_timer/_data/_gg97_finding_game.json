@@ -3,7 +3,7 @@
     "topic": "Arbeitszeit und Entgelt",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "arbeitszeit_und_entgelt",
+    "variant": "entgeltfortzahlung_timer",
     "title": "Arbeitszeit und Entgelt - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Arbeitszeit Und Entgelt: Im Kontext Entgeltfortzahlung Timer stehen Arbeitszeit Und Entgelt, Entgeltfortzahlung Timer und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Urlaub und Richtig gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Arbeitszeit und Entgelt stehen Entgeltfortzahlung, Begruendung und Arbeitszeit im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Entscheidung und Entgelt entscheidend.",
+    "Leitgedanke: Krankheitsfall mit klarer Nachweislage: Welche Grundentscheidung ist plausibel.",
+    "Als Ablenker treten Automatischer, Gesamtpunkte und Schnelles auf.",
+    "Begriffe im Fokus: Entgeltfortzahlung, Begruendung, Arbeitszeit, Entscheidung, Entgelt, Automatischer, Gesamtpunkte, Schnelles."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Arbeitszeit Und Entgelt",
+      "label": "Entgeltfortzahlung",
       "is_target": true,
-      "explanation": "\"Arbeitszeit Und Entgelt\" ist ein zentraler Fachbegriff im Kontext Arbeitszeit Und Entgelt."
+      "explanation": "\"Entgeltfortzahlung\" ist ein relevanter Fachbegriff im Thema Arbeitszeit und Entgelt."
     },
     {
       "id": "t2",
-      "label": "Entgeltfortzahlung Timer",
+      "label": "Begruendung",
       "is_target": true,
-      "explanation": "\"Entgeltfortzahlung Timer\" ist ein zentraler Fachbegriff im Kontext Arbeitszeit Und Entgelt."
+      "explanation": "\"Begruendung\" ist ein relevanter Fachbegriff im Thema Arbeitszeit und Entgelt."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Arbeitszeit",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Arbeitszeit Und Entgelt."
+      "explanation": "\"Arbeitszeit\" ist ein relevanter Fachbegriff im Thema Arbeitszeit und Entgelt."
     },
     {
       "id": "t4",
-      "label": "Urlaub",
+      "label": "Entscheidung",
       "is_target": true,
-      "explanation": "\"Urlaub\" ist ein zentraler Fachbegriff im Kontext Arbeitszeit Und Entgelt."
+      "explanation": "\"Entscheidung\" ist ein relevanter Fachbegriff im Thema Arbeitszeit und Entgelt."
     },
     {
       "id": "t5",
-      "label": "Richtig",
+      "label": "Entgelt",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Arbeitszeit Und Entgelt."
+      "explanation": "\"Entgelt\" ist ein relevanter Fachbegriff im Thema Arbeitszeit und Entgelt."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Automatischer",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Automatischer\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Gesamtpunkte",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamtpunkte\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Schnelles",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Schnelles\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

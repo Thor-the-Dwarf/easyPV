@@ -3,7 +3,7 @@
     "topic": "Wertschoepfung",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "wertschoepfung",
+    "variant": "durchlaufzeit_simulator",
     "title": "Wertschoepfung - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Wertschoepfung: Im Kontext Durchlaufzeit Simulator stehen Wertschoepfung, Durchlaufzeit Simulator und zuerst im Fokus.",
-    "Fuer eine belastbare Einordnung werden Auftraege und Richtig gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Wertschoepfung stehen Auftraege, Durchlaufzeit und Termintrefferquote im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Mehrere und Mittlere entscheidend.",
+    "Leitgedanke: Welche Priorisierung reduziert typischerweise die mittlere Durchlaufzeit zuerst.",
+    "Als Ablenker treten Auftragsreihenfolge, Fristgerechter und Ursachenbezug auf.",
+    "Begriffe im Fokus: Auftraege, Durchlaufzeit, Termintrefferquote, Mehrere, Mittlere, Auftragsreihenfolge, Fristgerechter, Ursachenbezug."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Wertschoepfung",
+      "label": "Auftraege",
       "is_target": true,
-      "explanation": "\"Wertschoepfung\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Auftraege\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t2",
-      "label": "Durchlaufzeit Simulator",
+      "label": "Durchlaufzeit",
       "is_target": true,
-      "explanation": "\"Durchlaufzeit Simulator\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Durchlaufzeit\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t3",
-      "label": "zuerst",
+      "label": "Termintrefferquote",
       "is_target": true,
-      "explanation": "\"zuerst\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Termintrefferquote\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t4",
-      "label": "Auftraege",
+      "label": "Mehrere",
       "is_target": true,
-      "explanation": "\"Auftraege\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Mehrere\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t5",
-      "label": "Richtig",
+      "label": "Mittlere",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Mittlere\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Auftragsreihenfolge",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Auftragsreihenfolge\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Fristgerechter",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Fristgerechter\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Ursachenbezug",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Ursachenbezug\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

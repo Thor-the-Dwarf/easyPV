@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "change_erfolgs_check",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Change-Erfolgs-Check - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Change-Erfolgs-Check - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Change-Erfolgs-Check - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Neues ERP-System wurde eingefuehrt. Welche KPI-Kombination passt am besten?",
+          "right": "Passende Entscheidung 1: Fehlerrate bei Dateneingaben + Nutzerzufriedenheit im Fachbereich"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Qualitaet und Akzeptanz zeigen den realen Nutzen besser als reine Aktivitaetszahlen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Ein neues Ticketsystem ist live. Welche KPI-Kombination passt am besten?",
+          "right": "Passende Entscheidung 2: Durchschnittliche Loesungszeit + First-Contact-Resolution-Rate"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Servicequalitaet und Effizienz sind entscheidende Erfolgssignale."
+        },
+        {
+          "left": "Szenario 3: Cloud-Migration wurde abgeschlossen. Welche KPI-Kombination passt am besten?",
+          "right": "Passende Entscheidung 3: Verfuegbarkeit der Kernservices + Anzahl kritischer Incidents"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Stabilitaet und Betriebsrisiko zeigen, ob der Wandel technisch gelingt."
+        },
+        {
+          "left": "Szenario 4: Neuer Freigabeprozess wurde ausgerollt. Welche KPI-Kombination passt am besten?",
+          "right": "Passende Entscheidung 4: Durchlaufzeit pro Freigabe + Anteil Rueckfragen wegen Unklarheiten"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Prozessleistung und Verstaendlichkeit sind zentrale Outcome-KPIs."
         }
       ]
     }

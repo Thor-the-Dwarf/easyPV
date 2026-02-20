@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "arbeitsvertrag",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Arbeitsvertrag - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Arbeitsvertrag - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Arbeitsvertrag - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Im Mustervertrag fehlt ein Pflichtabschnitt. Was ist korrekt? Fehlende Kerninhalte sollen eindeutig markiert werden.",
+          "right": "Passende Entscheidung 1: Luecke als fehlende Pflichtsektion markieren"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das ist die Kernaufgabe im Check-Labor."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Zusatzregel erhoeht Punkte bei korrekter Erkennung? Bezieht sich auf besonders wichtige Sektionen.",
+          "right": "Passende Entscheidung 2: Fehlende Kernsektion korrekt erkannt"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Dafuer gibt es Zusatzpunkte."
+        },
+        {
+          "left": "Szenario 3: Was passiert bei Pruefungen ueber Zeitlimit? Plan nennt einen Zeitabzug.",
+          "right": "Passende Entscheidung 3: Zeitabzug wird angewendet"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Ueberziehung kostet Punkte."
+        },
+        {
+          "left": "Szenario 4: Welche KPI-Kombination ist vorgesehen? Qualitaet und Geschwindigkeit zusammen sehen.",
+          "right": "Passende Entscheidung 4: Luecken-Treffquote plus Pruefzeit"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. So wird Vollstaendigkeit und Tempo bewertet."
         }
       ]
     }

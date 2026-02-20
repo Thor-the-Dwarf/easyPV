@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "wertschoepfungskette",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Wertschoepfungskette - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Wertschoepfungskette - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Wertschoepfungskette - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Hohe Ausschussquote in der Fertigung. Welcher Hebel passt zuerst? Fehlerursache an der Quelle.",
+          "right": "Passende Entscheidung 1: Qualitaetssicherung und Prozessstabilisierung"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das senkt Nacharbeit und Ausschusskosten."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Hohe Lagerkosten bei geringer Umschlaghaeufigkeit. Bester Hebel? Bestandssteuerung.",
+          "right": "Passende Entscheidung 2: Disposition und Losgroessen optimieren"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Das reduziert gebundenes Kapital."
+        },
+        {
+          "left": "Szenario 3: Welche KPI zeigt Matching-Qualitaet? Treffer und Fehlzuordnung.",
+          "right": "Passende Entscheidung 3: Trefferquote je Hebeltyp plus Fehlerquote"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. So werden Muster sichtbar."
+        },
+        {
+          "left": "Szenario 4: Warum ist falscher Hebel bei Hochkostenfall kritisch? Zeitverlust + Folgekosten.",
+          "right": "Passende Entscheidung 4: Er verlaengert den Zustand und steigert Gesamtkosten"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Fehlpriorisierung ist teuer."
         }
       ]
     }

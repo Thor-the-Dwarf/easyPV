@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "kreditvertrag_grundidee",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Kreditvertrag (Grundidee) - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Kreditvertrag (Grundidee) - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Kreditvertrag (Grundidee) - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Was entscheidet im Effektivzins-Duell? Gesamtkosten statt Nominalzins allein.",
+          "right": "Passende Entscheidung 1: Das Angebot mit den niedrigeren Gesamtkosten waehlen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Alle Kostenarten zaehlen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wann sinkt der Score im Duell deutlich? Gebuehren wurden ignoriert.",
+          "right": "Passende Entscheidung 2: Wenn relevante Gebuehren bei der Wahl nicht beruecksichtigt werden"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Das fuehrt zu Punktverlust."
+        },
+        {
+          "left": "Szenario 3: Welche KPI sind im Plan vorgesehen? Auswahl und Begruendung trennen.",
+          "right": "Passende Entscheidung 3: Vergleichsgenauigkeit und Begruendungsqualitaet"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Beide Lernziele werden gemessen."
+        },
+        {
+          "left": "Szenario 4: Wann wird ein Multiplikator aktiv? Serie korrekter Duelle.",
+          "right": "Passende Entscheidung 4: Bei einer fehlerfreien Serie korrekter Entscheidungen"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Dann steigt der Multiplikator."
         }
       ]
     }

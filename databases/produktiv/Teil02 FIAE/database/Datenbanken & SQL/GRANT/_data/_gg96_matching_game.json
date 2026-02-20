@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "grant_revoke",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "GRANT & REVOKE - Zuordnen"
+    "title": "GRANT - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "GRANT & REVOKE - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "GRANT - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Intern Access The new Intern 'Max' needs to see the product list. He must NOT change anything.",
+          "right": "Passende Entscheidung 1: SELECT"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Intern Access",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Inventory Manager Sarah manages stock. She needs to update prices and add new items. Deletion is for Admins only.",
+          "right": "Passende Entscheidung 2: SELECT"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Inventory Manager",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Audit Mode The Auditor needs full read access to 'Orders'. NO changes allowed!",
+          "right": "Passende Entscheidung 3: SELECT"
+        },
+        {
+          "left": "Begruendung 3: Audit Mode",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

@@ -3,7 +3,7 @@
     "topic": "Kaufvertrag",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "kaufvertrag",
+    "variant": "maengelrechte_router",
     "title": "Kaufvertrag - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Kaufvertrag: Im Kontext Maengelrechte Router stehen Kaufvertrag, Maengelrechte Router und Richtig im Fokus.",
-    "Fuer eine belastbare Einordnung werden Reihenfolge und korrekter gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Kaufvertrag stehen Schritte, Kaufvertrag und Loesung im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Maengelrechte und Reihenfolge entscheidend.",
+    "Leitgedanke: Welche Entscheidung ist bei Mangel zuerst zu treffen.",
+    "Als Ablenker treten Schritt, Gesamtpunkte und Antwortdauer auf.",
+    "Begriffe im Fokus: Schritte, Kaufvertrag, Loesung, Maengelrechte, Reihenfolge, Schritt, Gesamtpunkte, Antwortdauer."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Kaufvertrag",
+      "label": "Schritte",
       "is_target": true,
-      "explanation": "\"Kaufvertrag\" ist ein zentraler Fachbegriff im Kontext Kaufvertrag."
+      "explanation": "\"Schritte\" ist ein relevanter Fachbegriff im Thema Kaufvertrag."
     },
     {
       "id": "t2",
-      "label": "Maengelrechte Router",
+      "label": "Kaufvertrag",
       "is_target": true,
-      "explanation": "\"Maengelrechte Router\" ist ein zentraler Fachbegriff im Kontext Kaufvertrag."
+      "explanation": "\"Kaufvertrag\" ist ein relevanter Fachbegriff im Thema Kaufvertrag."
     },
     {
       "id": "t3",
-      "label": "Richtig",
+      "label": "Loesung",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Kaufvertrag."
+      "explanation": "\"Loesung\" ist ein relevanter Fachbegriff im Thema Kaufvertrag."
     },
     {
       "id": "t4",
-      "label": "Reihenfolge",
+      "label": "Maengelrechte",
       "is_target": true,
-      "explanation": "\"Reihenfolge\" ist ein zentraler Fachbegriff im Kontext Kaufvertrag."
+      "explanation": "\"Maengelrechte\" ist ein relevanter Fachbegriff im Thema Kaufvertrag."
     },
     {
       "id": "t5",
-      "label": "korrekter",
+      "label": "Reihenfolge",
       "is_target": true,
-      "explanation": "\"korrekter\" ist ein zentraler Fachbegriff im Kontext Kaufvertrag."
+      "explanation": "\"Reihenfolge\" ist ein relevanter Fachbegriff im Thema Kaufvertrag."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Schritt",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Schritt\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Gesamtpunkte",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamtpunkte\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Antwortdauer",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Antwortdauer\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

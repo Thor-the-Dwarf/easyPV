@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "promoter_suche",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Promoter-Suche - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Promoter-Suche - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Promoter-Suche - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Kickoff eines CRM-Rollouts Wer ist hier der Machtpromotor?",
+          "right": "Passende Entscheidung 1: Laura (CFO) - Gibt Budget frei und entscheidet Prioritaeten."
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Gibt Budget frei und entscheidet Prioritaeten."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Einfuehrung eines neuen Ticketsystems Wer ist hier der Machtpromotor?",
+          "right": "Passende Entscheidung 2: Mira (COO) - Setzt Umsetzungspflichten in allen Teams."
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Setzt Umsetzungspflichten in allen Teams."
+        },
+        {
+          "left": "Szenario 3: Cloud-Migration im laufenden Betrieb Wer ist hier der Machtpromotor?",
+          "right": "Passende Entscheidung 3: Ari (CEO) - Kann Vorstandsentscheidungen verbindlich freigeben."
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Kann Vorstandsentscheidungen verbindlich freigeben."
+        },
+        {
+          "left": "Szenario 4: Neues Monitoring fuer Produktionssysteme Wer ist hier der Machtpromotor?",
+          "right": "Passende Entscheidung 4: Kai (Bereichsleiter IT) - Traegt Budgetverantwortung und priorisiert Roadmap."
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Traegt Budgetverantwortung und priorisiert Roadmap."
         }
       ]
     }

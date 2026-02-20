@@ -3,7 +3,7 @@
     "topic": "Wertschoepfung",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "wertschoepfung",
+    "variant": "prozessstufe_sorter",
     "title": "Wertschoepfung - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Wertschoepfung: Im Kontext Prozessstufe Sorter stehen Wertschoepfung, Prozessstufe Sorter und Karten im Fokus.",
-    "Fuer eine belastbare Einordnung werden Richtig und entlang gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Wertschoepfung stehen Stufe, Karten und Prozessstufe im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Bereich und Genauigkeit entscheidend.",
+    "Leitgedanke: Worum geht es im Kern beim Prozessstufe-Sorter.",
+    "Als Ablenker treten Stufenzuordnung, Endzeitpunkt und Vergleichen auf.",
+    "Begriffe im Fokus: Stufe, Karten, Prozessstufe, Bereich, Genauigkeit, Stufenzuordnung, Endzeitpunkt, Vergleichen."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Wertschoepfung",
+      "label": "Stufe",
       "is_target": true,
-      "explanation": "\"Wertschoepfung\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Stufe\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t2",
-      "label": "Prozessstufe Sorter",
+      "label": "Karten",
       "is_target": true,
-      "explanation": "\"Prozessstufe Sorter\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Karten\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t3",
-      "label": "Karten",
+      "label": "Prozessstufe",
       "is_target": true,
-      "explanation": "\"Karten\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Prozessstufe\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t4",
-      "label": "Richtig",
+      "label": "Bereich",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Bereich\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t5",
-      "label": "entlang",
+      "label": "Genauigkeit",
       "is_target": true,
-      "explanation": "\"entlang\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Genauigkeit\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Stufenzuordnung",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Stufenzuordnung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Endzeitpunkt",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Endzeitpunkt\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Vergleichen",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Vergleichen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

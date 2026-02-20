@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "uml_activity_diagrams",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "UML Activity Diagrams - Zuordnen"
+    "title": "UML: Aktivitaetsdiagramm - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "UML Activity Diagrams - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "UML: Aktivitaetsdiagramm - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Basic Dispatch A simple linear flow. Start the pulse and watch the token traverse Tasks A and B.",
+          "right": "Passende Entscheidung 1: Basic Dispatch"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Basic Dispatch",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: The Security Guard Decision time. Check if the user is authorized before granting access.",
+          "right": "Passende Entscheidung 2: The Security Guard"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: The Security Guard",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Parallel Processing A Fork splits the workflow. Both paths must complete before reaching the Join node.",
+          "right": "Passende Entscheidung 3: Parallel Processing"
+        },
+        {
+          "left": "Begruendung 3: Parallel Processing",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

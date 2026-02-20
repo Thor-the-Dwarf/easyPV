@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "wertschoepfungskette",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Wertschoepfungskette - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Wertschoepfungskette - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Wertschoepfungskette - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Kennzahl deutet am staerksten auf einen Engpass hin? Rueckstau + laengste Durchlaufzeit.",
+          "right": "Passende Entscheidung 1: Hohe Warteschlange bei gleichzeitig laengster Bearbeitungszeit"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das ist ein klassischer Bottleneck-Hinweis."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Erstmassnahme passt bei erkanntem Engpass? Wirksamkeit vor Breite.",
+          "right": "Passende Entscheidung 2: Kapazitaet am Engpasspunkt gezielt erhoehen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Fokus auf den Engpass bringt den groessten Hebel."
+        },
+        {
+          "left": "Szenario 3: Welche KPI passt zum Engpass-Radar? Erkennung + Massnahmequalitaet.",
+          "right": "Passende Entscheidung 3: Engpass-Trefferquote und passende Massnahmenquote"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Beides wird separat messbar."
+        },
+        {
+          "left": "Szenario 4: Warum ist ein uebersehener Engpass kritisch? Folgewirkung auf gesamte Kette.",
+          "right": "Passende Entscheidung 4: Er begrenzt den Gesamtdurchsatz trotz Optimierung anderer Stufen"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Die Kette bleibt am Engpass limitiert."
         }
       ]
     }

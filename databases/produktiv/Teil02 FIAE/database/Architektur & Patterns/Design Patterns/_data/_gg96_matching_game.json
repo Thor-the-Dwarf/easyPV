@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "design_patterns",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Design Patterns - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Design Patterns - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Design Patterns - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Pattern zuordnen: Singleton",
+          "right": "Passende Entscheidung 1: Singleton"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Ensures a class has only one instance."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Pattern zuordnen: Factory Method",
+          "right": "Passende Entscheidung 2: Factory Method"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Delegates instantiation to subclasses."
+        },
+        {
+          "left": "Szenario 3: Pattern zuordnen: Abstract Factory",
+          "right": "Passende Entscheidung 3: Abstract Factory"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Creates families of related objects."
+        },
+        {
+          "left": "Szenario 4: Pattern zuordnen: Builder",
+          "right": "Passende Entscheidung 4: Builder"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Constructs complex objects step by step."
         }
       ]
     }

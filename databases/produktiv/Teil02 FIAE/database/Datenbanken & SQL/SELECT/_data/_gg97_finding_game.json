@@ -1,10 +1,10 @@
 {
   "meta": {
-    "topic": "SQL SELECT (Projection)",
+    "topic": "SQL SELECT Projection",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "sql_select_projection",
-    "title": "SQL SELECT (Projection) - Begriffe finden",
+    "variant": "select",
+    "title": "SQL SELECT Projection - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
   },
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "SQL SELECT Projection: Im Kontext SELECT stehen SQL SELECT Projection, VARCHAR und email im Fokus.",
-    "Fuer eine belastbare Einordnung werden price und username gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema SQL SELECT Projection stehen SELECT, Projection und Email im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Price und Error code entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: SELECT, Projection, Email, Price, Error code, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "SQL SELECT Projection",
+      "label": "SELECT",
       "is_target": true,
-      "explanation": "\"SQL SELECT Projection\" ist ein zentraler Fachbegriff im Kontext SQL SELECT Projection."
+      "explanation": "\"SELECT\" ist ein relevanter Fachbegriff im Thema SQL SELECT Projection."
     },
     {
       "id": "t2",
-      "label": "VARCHAR",
+      "label": "Projection",
       "is_target": true,
-      "explanation": "\"VARCHAR\" ist ein zentraler Fachbegriff im Kontext SQL SELECT Projection."
+      "explanation": "\"Projection\" ist ein relevanter Fachbegriff im Thema SQL SELECT Projection."
     },
     {
       "id": "t3",
-      "label": "email",
+      "label": "Email",
       "is_target": true,
-      "explanation": "\"email\" ist ein zentraler Fachbegriff im Kontext SQL SELECT Projection."
+      "explanation": "\"Email\" ist ein relevanter Fachbegriff im Thema SQL SELECT Projection."
     },
     {
       "id": "t4",
-      "label": "price",
+      "label": "Price",
       "is_target": true,
-      "explanation": "\"price\" ist ein zentraler Fachbegriff im Kontext SQL SELECT Projection."
+      "explanation": "\"Price\" ist ein relevanter Fachbegriff im Thema SQL SELECT Projection."
     },
     {
       "id": "t5",
-      "label": "username",
+      "label": "Error code",
       "is_target": true,
-      "explanation": "\"username\" ist ein zentraler Fachbegriff im Kontext SQL SELECT Projection."
+      "explanation": "\"Error code\" ist ein relevanter Fachbegriff im Thema SQL SELECT Projection."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

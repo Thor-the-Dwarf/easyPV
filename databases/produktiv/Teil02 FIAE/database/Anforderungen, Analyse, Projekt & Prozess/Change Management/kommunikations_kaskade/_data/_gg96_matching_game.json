@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "kommunikations_kaskade",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Kommunikations-Kaskade - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Kommunikations-Kaskade - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Kommunikations-Kaskade - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Neues Ticketsystem startet naechste Woche.",
+          "right": "Passende Entscheidung 1: id: a | sequence: Management -> Teamleiter -> Mitarbeitende | channel: Townhall + Intranet-FAQ"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Klare Kaskade plus Q&A senkt Unsicherheit schnell."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Cloud-Migration mit moeglichen Downtimes wird angekuendigt.",
+          "right": "Passende Entscheidung 2: id: a | sequence: Management -> Teamleiter -> Schluesselanwender -> alle | channel: Briefing + Service-Update..."
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Betroffene Gruppen erhalten zuerst belastbare Fakten."
+        },
+        {
+          "left": "Szenario 3: Neue Rollen im Support-Prozess werden eingefuehrt.",
+          "right": "Passende Entscheidung 3: id: a | sequence: Prozess-Owner -> Teamleiter -> Support-Teams | channel: Workshop + Rollenkarten"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Rollenklarheit braucht Austausch und Praxisbezug."
+        },
+        {
+          "left": "Szenario 4: Sicherheitsrichtlinie wird verschaerft.",
+          "right": "Passende Entscheidung 4: id: a | sequence: CIO/ISB -> Fuehrungskraefte -> alle Mitarbeitenden | channel: Policy-Update + Q&A-Session"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Autoritaet plus Erklaerung sorgt fuer Verbindlichkeit."
         }
       ]
     }

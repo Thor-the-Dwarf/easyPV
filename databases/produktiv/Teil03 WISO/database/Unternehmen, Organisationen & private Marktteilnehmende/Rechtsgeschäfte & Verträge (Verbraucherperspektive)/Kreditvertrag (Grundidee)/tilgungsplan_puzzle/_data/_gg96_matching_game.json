@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "kreditvertrag_grundidee",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Kreditvertrag (Grundidee) - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Kreditvertrag (Grundidee) - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Kreditvertrag (Grundidee) - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Beziehung gilt in jeder Zeile des Tilgungsplans? Rate = Zinsanteil + Tilgungsanteil.",
+          "right": "Passende Entscheidung 1: Rate setzt sich aus Zinsanteil und Tilgungsanteil zusammen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das ist Grundlogik."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wann entsteht Zusatzabzug im Puzzle? Schluesselzelle falsch.",
+          "right": "Passende Entscheidung 2: Wenn eine Schluesselzelle mit zentralem Wert falsch gesetzt wird"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Dieser Fehler wiegt mehr."
+        },
+        {
+          "left": "Szenario 3: Welche KPI sind gefordert? Genauigkeit und Zeit.",
+          "right": "Passende Entscheidung 3: Feldgenauigkeit und Loesungszeit je Level"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Beide Perspektiven sind relevant."
+        },
+        {
+          "left": "Szenario 4: Wann gibt es Perfektionsbonus? Level ohne Fehler.",
+          "right": "Passende Entscheidung 4: Wenn ein Level vollstaendig korrekt ausgefuellt ist"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das aktiviert den Bonus."
         }
       ]
     }

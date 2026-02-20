@@ -3,7 +3,7 @@
     "topic": "Repository Pattern",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "repository_pattern",
+    "variant": "repository",
     "title": "Repository Pattern - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Repository Pattern: Im Kontext Repository stehen Repository Pattern, cache und Product im Fokus.",
-    "Fuer eine belastbare Einordnung werden SELECT und WHERE gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Repository Pattern stehen Repository, Pattern und Cache im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Patterns“ und Konkreter entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Repository, Pattern, Cache, Patterns“, Konkreter, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Repository Pattern",
+      "label": "Repository",
       "is_target": true,
-      "explanation": "\"Repository Pattern\" ist ein zentraler Fachbegriff im Kontext Repository Pattern."
+      "explanation": "\"Repository\" ist ein relevanter Fachbegriff im Thema Repository Pattern."
     },
     {
       "id": "t2",
-      "label": "cache",
+      "label": "Pattern",
       "is_target": true,
-      "explanation": "\"cache\" ist ein zentraler Fachbegriff im Kontext Repository Pattern."
+      "explanation": "\"Pattern\" ist ein relevanter Fachbegriff im Thema Repository Pattern."
     },
     {
       "id": "t3",
-      "label": "Product",
+      "label": "Cache",
       "is_target": true,
-      "explanation": "\"Product\" ist ein zentraler Fachbegriff im Kontext Repository Pattern."
+      "explanation": "\"Cache\" ist ein relevanter Fachbegriff im Thema Repository Pattern."
     },
     {
       "id": "t4",
-      "label": "SELECT",
+      "label": "Patterns“",
       "is_target": true,
-      "explanation": "\"SELECT\" ist ein zentraler Fachbegriff im Kontext Repository Pattern."
+      "explanation": "\"Patterns“\" ist ein relevanter Fachbegriff im Thema Repository Pattern."
     },
     {
       "id": "t5",
-      "label": "WHERE",
+      "label": "Konkreter",
       "is_target": true,
-      "explanation": "\"WHERE\" ist ein zentraler Fachbegriff im Kontext Repository Pattern."
+      "explanation": "\"Konkreter\" ist ein relevanter Fachbegriff im Thema Repository Pattern."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

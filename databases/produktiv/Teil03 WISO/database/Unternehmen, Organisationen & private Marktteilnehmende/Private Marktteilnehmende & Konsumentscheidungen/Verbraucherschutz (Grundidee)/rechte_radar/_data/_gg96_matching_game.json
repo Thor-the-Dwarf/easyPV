@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "verbraucherschutz",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Verbraucherschutz - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Verbraucherschutz - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Verbraucherschutz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Onlinekauf, Artikel gefaellt nicht, Frist laeuft. Welches Recht ist zentral? Bei Fernabsatz ohne Mangel ist oft Widerru...",
+          "right": "Passende Entscheidung 1: Widerruf"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das ist der typische Rechtsweg bei Nichtgefallen im Fernabsatz."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Produkt hat Defekt kurz nach Kauf. Welche Zuordnung passt? Mangelrechte des Kaufrechts.",
+          "right": "Passende Entscheidung 2: Gewaehrleistung"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Defektfaelle laufen primaer ueber Gewaehrleistung."
+        },
+        {
+          "left": "Szenario 3: Welche KPI wird im Spiel neben Genauigkeit gemessen? Es gibt ein Zeitlimit pro Karte.",
+          "right": "Passende Entscheidung 3: Reaktionszeit"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Zeit ist zweite Kernmetrik."
+        },
+        {
+          "left": "Szenario 4: Was passiert bei drei Fehlzuordnungen in Folge? Der Plan beschreibt einen Hilfemodus.",
+          "right": "Passende Entscheidung 4: Hinweis-Modus startet"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Genau. Dann gibt es Begriffsvergleiche als Hilfe."
         }
       ]
     }

@@ -3,7 +3,7 @@
     "topic": "Singleton Pattern",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "singleton_pattern",
+    "variant": "singleton",
     "title": "Singleton Pattern - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Singleton Pattern: Im Kontext Singleton stehen Singleton Pattern, Logger und getInstance im Fokus.",
-    "Fuer eine belastbare Einordnung werden clone und Verantwortlichkeiten gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Singleton Pattern stehen Logger, Singleton und Pattern im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Patterns“ und GetInstance entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Logger, Singleton, Pattern, Patterns“, GetInstance, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Singleton Pattern",
+      "label": "Logger",
       "is_target": true,
-      "explanation": "\"Singleton Pattern\" ist ein zentraler Fachbegriff im Kontext Singleton Pattern."
+      "explanation": "\"Logger\" ist ein relevanter Fachbegriff im Thema Singleton Pattern."
     },
     {
       "id": "t2",
-      "label": "Logger",
+      "label": "Singleton",
       "is_target": true,
-      "explanation": "\"Logger\" ist ein zentraler Fachbegriff im Kontext Singleton Pattern."
+      "explanation": "\"Singleton\" ist ein relevanter Fachbegriff im Thema Singleton Pattern."
     },
     {
       "id": "t3",
-      "label": "getInstance",
+      "label": "Pattern",
       "is_target": true,
-      "explanation": "\"getInstance\" ist ein zentraler Fachbegriff im Kontext Singleton Pattern."
+      "explanation": "\"Pattern\" ist ein relevanter Fachbegriff im Thema Singleton Pattern."
     },
     {
       "id": "t4",
-      "label": "clone",
+      "label": "Patterns“",
       "is_target": true,
-      "explanation": "\"clone\" ist ein zentraler Fachbegriff im Kontext Singleton Pattern."
+      "explanation": "\"Patterns“\" ist ein relevanter Fachbegriff im Thema Singleton Pattern."
     },
     {
       "id": "t5",
-      "label": "Verantwortlichkeiten",
+      "label": "GetInstance",
       "is_target": true,
-      "explanation": "\"Verantwortlichkeiten\" ist ein zentraler Fachbegriff im Kontext Singleton Pattern."
+      "explanation": "\"GetInstance\" ist ein relevanter Fachbegriff im Thema Singleton Pattern."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

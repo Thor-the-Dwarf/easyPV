@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "sql_update_precision",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "SQL UPDATE Precision - Zuordnen"
+    "title": "UPDATE - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "SQL UPDATE Precision - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "UPDATE - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Operation: CEO Raise: UPDATE employees SET salary = 250000 WHERE id = 1",
+          "right": "Passende Entscheidung 1: 1 Zeile(n) betroffen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Operation: CEO Raise",
+          "right": "Warum passend 1: Praezise UPDATE-Statements begrenzen den Schaden."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Branch Relocation: UPDATE branches SET location = 'HafenCity' WHERE branch_name = 'North'",
+          "right": "Passende Entscheidung 2: 1 Zeile(n) betroffen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Branch Relocation",
+          "right": "Warum passend 2: Praezise UPDATE-Statements begrenzen den Schaden."
+        },
+        {
+          "left": "Szenario 3: Emergency Password Reset: UPDATE users SET pass = 'emergency2024' WHERE username = 'admin'",
+          "right": "Passende Entscheidung 3: 1 Zeile(n) betroffen"
+        },
+        {
+          "left": "Begruendung 3: Emergency Password Reset",
+          "right": "Warum passend 3: Praezise UPDATE-Statements begrenzen den Schaden."
         }
       ]
     }

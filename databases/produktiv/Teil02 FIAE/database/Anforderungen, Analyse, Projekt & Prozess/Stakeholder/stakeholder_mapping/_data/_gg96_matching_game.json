@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "stakeholder_management",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "Stakeholder Management - Zuordnen"
+    "title": "stakeholder mapping - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "Stakeholder Management - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "stakeholder mapping - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Level 1: Das Projekt-Setup Ich zahle das Projekt und erwarte Ergebnisse bis Q3. Stoeren Sie mich nicht mit Details.",
+          "right": "Passende Entscheidung 1: Verbinden (Manage Closely)"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Hat die Macht (Geld), aber wenig Interesse am Tagesgeschaeft -> Keep Satisfied."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Level 1: Das Projekt-Setup Wenn das neue System meine Workflows verlangsamt, streikt die Abteilung!",
+          "right": "Passende Entscheidung 2: Verbinden (Manage Closely)"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Hohes Interesse, aber wenig hierarchische Macht -> Keep Informed / Einbinden."
+        },
+        {
+          "left": "Szenario 3: Level 1: Das Projekt-Setup Ich muss wissen, ob wir im Budget und Zeitplan sind. Taeglich.",
+          "right": "Passende Entscheidung 3: Verbinden (Manage Closely)"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Entscheidet und ist tief involviert -> Manage Closely."
+        },
+        {
+          "left": "Szenario 4: Level 1: Das Projekt-Setup Ich soll Kaffee kochen und mal ueber die Doku schauen.",
+          "right": "Passende Entscheidung 4: Verbinden (Manage Closely)"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Wenig Einfluss, wenig Interesse -> Monitor."
         }
       ]
     }

@@ -3,7 +3,7 @@
     "topic": "Stakeholder Management",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "stakeholder_management",
+    "variant": "stakeholder_mapping",
     "title": "Stakeholder Management - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Stakeholder Management: Im Kontext Stakeholder Mapping stehen Stakeholder Management, Stakeholder Mapping und Macht im Fokus.",
-    "Fuer eine belastbare Einordnung werden Interesse und Closely gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Stakeholder Management stehen Stakeholder, Interesse und Macht im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Manage und Satisfied entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Stakeholder, Interesse, Macht, Manage, Satisfied, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Stakeholder Management",
+      "label": "Stakeholder",
       "is_target": true,
-      "explanation": "\"Stakeholder Management\" ist ein zentraler Fachbegriff im Kontext Stakeholder Management."
+      "explanation": "\"Stakeholder\" ist ein relevanter Fachbegriff im Thema Stakeholder Management."
     },
     {
       "id": "t2",
-      "label": "Stakeholder Mapping",
+      "label": "Interesse",
       "is_target": true,
-      "explanation": "\"Stakeholder Mapping\" ist ein zentraler Fachbegriff im Kontext Stakeholder Management."
+      "explanation": "\"Interesse\" ist ein relevanter Fachbegriff im Thema Stakeholder Management."
     },
     {
       "id": "t3",
       "label": "Macht",
       "is_target": true,
-      "explanation": "\"Macht\" ist ein zentraler Fachbegriff im Kontext Stakeholder Management."
+      "explanation": "\"Macht\" ist ein relevanter Fachbegriff im Thema Stakeholder Management."
     },
     {
       "id": "t4",
-      "label": "Interesse",
+      "label": "Manage",
       "is_target": true,
-      "explanation": "\"Interesse\" ist ein zentraler Fachbegriff im Kontext Stakeholder Management."
+      "explanation": "\"Manage\" ist ein relevanter Fachbegriff im Thema Stakeholder Management."
     },
     {
       "id": "t5",
-      "label": "Closely",
+      "label": "Satisfied",
       "is_target": true,
-      "explanation": "\"Closely\" ist ein zentraler Fachbegriff im Kontext Stakeholder Management."
+      "explanation": "\"Satisfied\" ist ein relevanter Fachbegriff im Thema Stakeholder Management."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

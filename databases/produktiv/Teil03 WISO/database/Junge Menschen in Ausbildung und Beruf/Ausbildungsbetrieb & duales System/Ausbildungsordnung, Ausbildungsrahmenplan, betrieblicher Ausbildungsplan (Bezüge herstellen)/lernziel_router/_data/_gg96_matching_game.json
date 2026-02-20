@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "ausbildungsplanung",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Ausbildungsplanung - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Ausbildungsplanung - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Ausbildungsplanung - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Zuordnung ist im Lernziel-Router korrekt? Lernort und Ausbildungsphase zusammen pruefen.",
+          "right": "Passende Entscheidung 1: Lernziel mit passendem Lernort und passender Phase koppeln"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Nur die Doppelzuordnung ist voll korrekt."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wann gibt es Teilpunkte? Ein Teil korrekt, ein Teil falsch.",
+          "right": "Passende Entscheidung 2: Wenn Lernort korrekt ist, die Phase aber nicht"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Teiltreffer gibt Teilpunkte."
+        },
+        {
+          "left": "Szenario 3: Welche KPI beobachtet die Standortqualitaet? Lernortquote separat auswerten.",
+          "right": "Passende Entscheidung 3: Lernortquote"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Das misst die Standorttreffer."
+        },
+        {
+          "left": "Szenario 4: Was passiert bei hoher Trefferquote laut Spielidee? Komplexitaet steigt schrittweise.",
+          "right": "Passende Entscheidung 4: Die Kartenkomplexitaet wird erhoeht"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Anspruch passt sich an."
         }
       ]
     }

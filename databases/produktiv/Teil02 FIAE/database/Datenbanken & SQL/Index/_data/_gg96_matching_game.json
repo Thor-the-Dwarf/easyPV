@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "database_index_b_tree",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "Database Index (B-Tree) - Zuordnen"
+    "title": "Index - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "Database Index (B-Tree) - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Index - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Small Dataset Find ID 7. The dataset is small, so the advantage of an index is limited.",
+          "right": "Passende Entscheidung 1: ID 7"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Small Dataset",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Corporate Database Find Employee ID 42. Compare the steps needed for a scan vs. a seek.",
+          "right": "Passende Entscheidung 2: ID 42"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Corporate Database",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Big Data Simulation Find Record ID 789 in a massive table. See the true power of O(log n)!",
+          "right": "Passende Entscheidung 3: ID 789"
+        },
+        {
+          "left": "Begruendung 3: Big Data Simulation",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

@@ -4,7 +4,7 @@
     "mechanic": "finding_terms",
     "engine": "FindingGame",
     "variant": "inhalts_check",
-    "title": "Inhalts-Check - Begriffe finden",
+    "title": "inhalts check - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
   },
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Inhalts Check: Im Kontext Inhalts Check stehen Inhalts Check, Datum und Teilnehmende im Fokus.",
-    "Fuer eine belastbare Einordnung werden Protokoll und Aufgaben gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema inhalts check stehen Datum, Teilnehmende und Inhalts im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Verteiler und Aufgaben entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Datum, Teilnehmende, Inhalts, Verteiler, Aufgaben, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Inhalts Check",
+      "label": "Datum",
       "is_target": true,
-      "explanation": "\"Inhalts Check\" ist ein zentraler Fachbegriff im Kontext Inhalts Check."
+      "explanation": "\"Datum\" ist ein relevanter Fachbegriff im Thema inhalts check."
     },
     {
       "id": "t2",
-      "label": "Datum",
+      "label": "Teilnehmende",
       "is_target": true,
-      "explanation": "\"Datum\" ist ein zentraler Fachbegriff im Kontext Inhalts Check."
+      "explanation": "\"Teilnehmende\" ist ein relevanter Fachbegriff im Thema inhalts check."
     },
     {
       "id": "t3",
-      "label": "Teilnehmende",
+      "label": "Inhalts",
       "is_target": true,
-      "explanation": "\"Teilnehmende\" ist ein zentraler Fachbegriff im Kontext Inhalts Check."
+      "explanation": "\"Inhalts\" ist ein relevanter Fachbegriff im Thema inhalts check."
     },
     {
       "id": "t4",
-      "label": "Protokoll",
+      "label": "Verteiler",
       "is_target": true,
-      "explanation": "\"Protokoll\" ist ein zentraler Fachbegriff im Kontext Inhalts Check."
+      "explanation": "\"Verteiler\" ist ein relevanter Fachbegriff im Thema inhalts check."
     },
     {
       "id": "t5",
       "label": "Aufgaben",
       "is_target": true,
-      "explanation": "\"Aufgaben\" ist ein zentraler Fachbegriff im Kontext Inhalts Check."
+      "explanation": "\"Aufgaben\" ist ein relevanter Fachbegriff im Thema inhalts check."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

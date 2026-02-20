@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "sql_revoke",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "SQL REVOKE - Zuordnen"
+    "title": "REVOKE - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "SQL REVOKE - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "REVOKE - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Intern Internship Over User 'John_Doe' has finished his internship. Revoke his SELECT privilege on the 'Salaries' table.",
+          "right": "Passende Entscheidung 1: REVOKE SELECT auf Salaries"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Intern Internship Over",
+          "right": "Warum passend 1: Contract Ended"
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Role Change: Junior to Senior User 'Dev_Jane' is now a Senior. Revoke her LIMITED 'UPDATE' on 'Production' as she will...",
+          "right": "Passende Entscheidung 2: REVOKE UPDATE auf Production"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Role Change: Junior to Senior",
+          "right": "Warum passend 2: Promotion/Access Refactor"
+        },
+        {
+          "left": "Szenario 3: Security Incident! Suspicious activity detected on User 'Attacker_X'. Revoke ALL privileges on the 'Financials' table I...",
+          "right": "Passende Entscheidung 3: REVOKE ALL auf Financials"
+        },
+        {
+          "left": "Begruendung 3: Security Incident!",
+          "right": "Warum passend 3: Unauthorized Access Detected"
         }
       ]
     }

@@ -3,8 +3,8 @@
     "topic": "E-Mail formulieren",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "e_mail_formulieren",
-    "title": "Phishing-Detektiv (E-Mail Edition) - Begriffe finden",
+    "variant": "phishing_detektiv_email_edition",
+    "title": "E-Mail formulieren - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
   },
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Mail Formulieren: Im Kontext Phishing Detektiv Email Edition stehen Mail Formulieren, Phishing Detektiv Email Edition und E-Mail im Fokus.",
-    "Fuer eine belastbare Einordnung werden Domain und jetzt gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema E-Mail formulieren stehen E-Mail, Formulieren und Edition im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Phishing und Email entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: E-Mail, Formulieren, Edition, Phishing, Email, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Mail Formulieren",
+      "label": "E-Mail",
       "is_target": true,
-      "explanation": "\"Mail Formulieren\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"E-Mail\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t2",
-      "label": "Phishing Detektiv Email Edition",
+      "label": "Formulieren",
       "is_target": true,
-      "explanation": "\"Phishing Detektiv Email Edition\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"Formulieren\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t3",
-      "label": "E-Mail",
+      "label": "Edition",
       "is_target": true,
-      "explanation": "\"E-Mail\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"Edition\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t4",
-      "label": "Domain",
+      "label": "Phishing",
       "is_target": true,
-      "explanation": "\"Domain\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"Phishing\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t5",
-      "label": "jetzt",
+      "label": "Email",
       "is_target": true,
-      "explanation": "\"jetzt\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"Email\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

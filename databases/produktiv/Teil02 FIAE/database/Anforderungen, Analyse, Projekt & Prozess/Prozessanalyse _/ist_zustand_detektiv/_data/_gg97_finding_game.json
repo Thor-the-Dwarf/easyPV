@@ -3,7 +3,7 @@
     "topic": "Prozessanalyse",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "prozessanalyse",
+    "variant": "ist_zustand_detektiv",
     "title": "Prozessanalyse - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Prozessanalyse: Im Kontext Ist Zustand Detektiv stehen Prozessanalyse, Ist Zustand Detektiv und blocker im Fokus.",
-    "Fuer eine belastbare Einordnung werden delay und redundancy gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Prozessanalyse stehen Prozessanalyse, Zustand und Blocker im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Manuelle und Manuell entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Prozessanalyse, Zustand, Blocker, Manuelle, Manuell, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
       "label": "Prozessanalyse",
       "is_target": true,
-      "explanation": "\"Prozessanalyse\" ist ein zentraler Fachbegriff im Kontext Prozessanalyse."
+      "explanation": "\"Prozessanalyse\" ist ein relevanter Fachbegriff im Thema Prozessanalyse."
     },
     {
       "id": "t2",
-      "label": "Ist Zustand Detektiv",
+      "label": "Zustand",
       "is_target": true,
-      "explanation": "\"Ist Zustand Detektiv\" ist ein zentraler Fachbegriff im Kontext Prozessanalyse."
+      "explanation": "\"Zustand\" ist ein relevanter Fachbegriff im Thema Prozessanalyse."
     },
     {
       "id": "t3",
-      "label": "blocker",
+      "label": "Blocker",
       "is_target": true,
-      "explanation": "\"blocker\" ist ein zentraler Fachbegriff im Kontext Prozessanalyse."
+      "explanation": "\"Blocker\" ist ein relevanter Fachbegriff im Thema Prozessanalyse."
     },
     {
       "id": "t4",
-      "label": "delay",
+      "label": "Manuelle",
       "is_target": true,
-      "explanation": "\"delay\" ist ein zentraler Fachbegriff im Kontext Prozessanalyse."
+      "explanation": "\"Manuelle\" ist ein relevanter Fachbegriff im Thema Prozessanalyse."
     },
     {
       "id": "t5",
-      "label": "redundancy",
+      "label": "Manuell",
       "is_target": true,
-      "explanation": "\"redundancy\" ist ein zentraler Fachbegriff im Kontext Prozessanalyse."
+      "explanation": "\"Manuell\" ist ein relevanter Fachbegriff im Thema Prozessanalyse."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

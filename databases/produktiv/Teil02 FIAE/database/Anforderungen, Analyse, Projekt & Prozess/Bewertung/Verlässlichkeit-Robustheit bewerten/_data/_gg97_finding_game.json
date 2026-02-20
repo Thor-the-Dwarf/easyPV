@@ -3,7 +3,7 @@
     "topic": "The Chaos Engineer",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "the_chaos_engineer",
+    "variant": "verlasslichkeit_robustheit_bewerten",
     "title": "The Chaos Engineer - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "The Chaos Engineer: Im Kontext Verlässlichkeit Robustheit Bewerten stehen The Chaos Engineer, Verlässlichkeit Robustheit Bewerten und power im Fokus.",
-    "Fuer eine belastbare Einordnung werden primary und secondary gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema The Chaos Engineer stehen Power, Cache und Engineer im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Chaos und Verlässlichkeit-Robustheit entscheidend.",
+    "Leitgedanke: Failover-Simulator fuer Hochverfuegbarkeit und Robustheit.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Power, Cache, Engineer, Chaos, Verlässlichkeit-Robustheit, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "The Chaos Engineer",
+      "label": "Power",
       "is_target": true,
-      "explanation": "\"The Chaos Engineer\" ist ein zentraler Fachbegriff im Kontext The Chaos Engineer."
+      "explanation": "\"Power\" ist ein relevanter Fachbegriff im Thema The Chaos Engineer."
     },
     {
       "id": "t2",
-      "label": "Verlässlichkeit Robustheit Bewerten",
+      "label": "Cache",
       "is_target": true,
-      "explanation": "\"Verlässlichkeit Robustheit Bewerten\" ist ein zentraler Fachbegriff im Kontext The Chaos Engineer."
+      "explanation": "\"Cache\" ist ein relevanter Fachbegriff im Thema The Chaos Engineer."
     },
     {
       "id": "t3",
-      "label": "power",
+      "label": "Engineer",
       "is_target": true,
-      "explanation": "\"power\" ist ein zentraler Fachbegriff im Kontext The Chaos Engineer."
+      "explanation": "\"Engineer\" ist ein relevanter Fachbegriff im Thema The Chaos Engineer."
     },
     {
       "id": "t4",
-      "label": "primary",
+      "label": "Chaos",
       "is_target": true,
-      "explanation": "\"primary\" ist ein zentraler Fachbegriff im Kontext The Chaos Engineer."
+      "explanation": "\"Chaos\" ist ein relevanter Fachbegriff im Thema The Chaos Engineer."
     },
     {
       "id": "t5",
-      "label": "secondary",
+      "label": "Verlässlichkeit-Robustheit",
       "is_target": true,
-      "explanation": "\"secondary\" ist ein zentraler Fachbegriff im Kontext The Chaos Engineer."
+      "explanation": "\"Verlässlichkeit-Robustheit\" ist ein relevanter Fachbegriff im Thema The Chaos Engineer."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

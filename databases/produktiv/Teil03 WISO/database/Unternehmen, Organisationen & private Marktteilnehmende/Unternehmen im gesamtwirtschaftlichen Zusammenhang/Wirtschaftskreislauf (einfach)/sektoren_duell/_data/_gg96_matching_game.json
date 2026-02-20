@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "wirtschaftskreislauf",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Wirtschaftskreislauf - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Wirtschaftskreislauf - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Wirtschaftskreislauf - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welcher Fall zeigt eine plausiblere Sektorbeziehung? Achte auf konsistente Fluesse.",
+          "right": "Passende Entscheidung 1: Der Fall mit gegenseitig stimmigen Gueter- und Geldstroemen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Konsistenz entscheidet."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wann gibt es Teilpunkte laut Duell-Regel? Wahl korrekt, Begruendung fehlt.",
+          "right": "Passende Entscheidung 2: Bei richtiger Wahl ohne passende Begruendung"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Genau die Regel aus dem Plan."
+        },
+        {
+          "left": "Szenario 3: Welche KPI passt zum Duell? Wahl und Begruendung getrennt messen.",
+          "right": "Passende Entscheidung 3: Wahlgenauigkeit plus Begruendungsquote"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. So sieht man fachliche Tiefe."
+        },
+        {
+          "left": "Szenario 4: Welche Begruendung ist fachlich stark? Flusslogik benennen.",
+          "right": "Passende Entscheidung 4: Sie erklaert, warum die Fluesse zwischen Akteuren stimmig sind"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das ist der Bewertungsmaßstab."
         }
       ]
     }

@@ -3,7 +3,7 @@
     "topic": "Unternehmensaufbau",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "unternehmensaufbau",
+    "variant": "abteilungs_schnittstellen_router",
     "title": "Unternehmensaufbau - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Unternehmensaufbau: Im Kontext Abteilungs Schnittstellen Router stehen Unternehmensaufbau, Abteilungs Schnittstellen Router und Richtig im Fokus.",
-    "Fuer eine belastbare Einordnung werden Ziele und Unvollstaendig gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Unternehmensaufbau stehen Produktion, Vertrieb und Service im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Unternehmensaufbau und Einkauf entscheidend.",
+    "Leitgedanke: Welche Abfolge ist bei einem Kundenauftrag typisch.",
+    "Als Ablenker treten Marketing, Empfang und Plausibilisierung auf.",
+    "Begriffe im Fokus: Produktion, Vertrieb, Service, Unternehmensaufbau, Einkauf, Marketing, Empfang, Plausibilisierung."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Unternehmensaufbau",
+      "label": "Produktion",
       "is_target": true,
-      "explanation": "\"Unternehmensaufbau\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Produktion\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t2",
-      "label": "Abteilungs Schnittstellen Router",
+      "label": "Vertrieb",
       "is_target": true,
-      "explanation": "\"Abteilungs Schnittstellen Router\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Vertrieb\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t3",
-      "label": "Richtig",
+      "label": "Service",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Service\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t4",
-      "label": "Ziele",
+      "label": "Unternehmensaufbau",
       "is_target": true,
-      "explanation": "\"Ziele\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Unternehmensaufbau\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t5",
-      "label": "Unvollstaendig",
+      "label": "Einkauf",
       "is_target": true,
-      "explanation": "\"Unvollstaendig\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Einkauf\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Marketing",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Marketing\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Empfang",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Empfang\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Plausibilisierung",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Plausibilisierung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

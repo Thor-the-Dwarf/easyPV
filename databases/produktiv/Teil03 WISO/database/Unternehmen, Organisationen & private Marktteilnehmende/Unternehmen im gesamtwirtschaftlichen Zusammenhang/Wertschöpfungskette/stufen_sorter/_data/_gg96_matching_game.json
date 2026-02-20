@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "wertschoepfungskette",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Wertschoepfungskette - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Wertschoepfungskette - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Wertschoepfungskette - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Wareneingangspruefung gehoert typischerweise zu welcher Stufe? Fruehe Kettenphase.",
+          "right": "Passende Entscheidung 1: Beschaffung / Eingang"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Dort wird Input geprueft."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Endmontage ist meist welcher Stufe zugeordnet? Wertrealisierung.",
+          "right": "Passende Entscheidung 2: Produktion / Leistungserstellung"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Kernstufe der Wertschaffung."
+        },
+        {
+          "left": "Szenario 3: Welche KPI passt zum Sorter? Treffer pro Stufe.",
+          "right": "Passende Entscheidung 3: Trefferquote je Stufe und Gesamtfehlerquote"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Das zeigt konkrete Luecken."
+        },
+        {
+          "left": "Szenario 4: Warum ist Kernprozess-Fehlzuordnung gravierend? Falsche Stellhebel.",
+          "right": "Passende Entscheidung 4: Massnahmen werden an falscher Stufe angesetzt"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das verschlechtert Verbesserungen."
         }
       ]
     }

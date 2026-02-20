@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "interessen_profiler",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Interessen-Profiler - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Interessen-Profiler - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Interessen-Profiler - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Wir brauchen mehr Sicherheit im Prozess.",
+          "right": "Passende Entscheidung 1: Weniger Audit-Risiko und klare Nachvollziehbarkeit"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Hinter Sicherheitsaussagen steckt oft Risiko- und Compliance-Reduktion."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Das darf im Alltag nicht komplizierter werden.",
+          "right": "Passende Entscheidung 2: Schnellerer Ablauf bei geringerer Bedienkomplexitaet"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Der Kern ist Effizienz und einfache Nutzbarkeit im Tagesgeschaeft."
+        },
+        {
+          "left": "Szenario 3: Wir brauchen belastbare Zahlen zum Projektfortschritt.",
+          "right": "Passende Entscheidung 3: Plan-Ist-Vergleich fuer Kosten, Zeit und Nutzen"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Controlling sucht Steuerbarkeit und Nachweis der Wirtschaftlichkeit."
+        },
+        {
+          "left": "Szenario 4: Wir wollen nicht wieder bei jedem Incident raten muessen.",
+          "right": "Passende Entscheidung 4: Standardisierte Runbooks und klare Eskalationspfade"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Gewuenscht sind Handlungsfaehigkeit und klare Betriebsablaeufe."
         }
       ]
     }

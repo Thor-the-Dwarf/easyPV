@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "konsumoptionen",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Konsumoptionen - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Konsumoptionen - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Konsumoptionen - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Fall 1: Bohrmaschine fuer einmaligen Umzug. Beste Option? Niedrige Dauer und Frequenz.",
+          "right": "Passende Entscheidung 1: Leihen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Einmalige Nutzung spricht fuer Leihen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Fall 2: Fahrrad fuer taeglichen Arbeitsweg. Was passt? Hohe Regelmaessigkeit und langfristige Nutzung.",
+          "right": "Passende Entscheidung 2: Kaufen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Dauerhafte Nutzung rechtfertigt Besitz."
+        },
+        {
+          "left": "Szenario 3: Fall 3: Kamera fuer monatliche Vereinsprojekte. Gute Wahl? Schwankende Auslastung beachten.",
+          "right": "Passende Entscheidung 3: Teilen"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Sharing reduziert Kosten und Leerlauf."
+        },
+        {
+          "left": "Szenario 4: Bei gleichem Preis zweier Optionen entscheidet laut Plan... Es gibt eine Oeko-Vorrangregel.",
+          "right": "Passende Entscheidung 4: besserer ecoScore"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Genau. Oeko-Wert ist Tie-Breaker."
         }
       ]
     }

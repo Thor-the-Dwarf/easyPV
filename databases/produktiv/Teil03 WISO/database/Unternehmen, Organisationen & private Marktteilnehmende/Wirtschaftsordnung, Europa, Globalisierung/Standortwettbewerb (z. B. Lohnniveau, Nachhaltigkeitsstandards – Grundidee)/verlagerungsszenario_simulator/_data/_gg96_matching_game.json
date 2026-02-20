@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "standortwettbewerb",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Standortwettbewerb - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Standortwettbewerb - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Standortwettbewerb - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Ein Werk soll verlagert werden. Welche Pruefung zuerst? Start mit Risiko und Lieferfaehigkeit.",
+          "right": "Passende Entscheidung 1: Risiko- und Lieferanalyse vor Kostenvergleich"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Erst Stabilitaet, dann Feintuning."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche KPI zeigt Verlagerungsstabilitaet direkt? Suche eine robuste Prozess-KPI.",
+          "right": "Passende Entscheidung 2: Ausschussquote + Termintreue"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Qualitaet und Liefertreue sind zentral."
+        },
+        {
+          "left": "Szenario 3: Lieferkette wird laenger. Was ist die beste Gegenmassnahme? Denke an Puffer und Redundanz.",
+          "right": "Passende Entscheidung 3: Sicherheitsbestand und Zweitlieferant aufbauen"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Das senkt Ausfallrisiken."
+        },
+        {
+          "left": "Szenario 4: Wann gilt eine Verlagerung als instabil? Achte auf wiederholte KPI-Verletzung.",
+          "right": "Passende Entscheidung 4: Bei wiederholter KPI-Unterschreitung in Folge"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Instabilitaet ist trendbasiert."
         }
       ]
     }

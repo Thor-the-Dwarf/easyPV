@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "mietmangel_eskalation",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Mietmangel-Eskalation - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Mietmangel-Eskalation - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Mietmangel-Eskalation - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Heizungsausfall gemeldet. Welcher Schritt steht zuerst an? Dokumentation und saubere Erstmeldung schaffen die Basis.",
+          "right": "Passende Entscheidung 1: Mangel schriftlich dokumentieren und melden"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das ist der Startpunkt des Prozesspfads."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Nach erster Meldung reagiert niemand. Was folgt sinnvoll? Fristsetzung macht den naechsten Schritt belastbar.",
+          "right": "Passende Entscheidung 2: Frist zur Behebung klar setzen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Eine Frist strukturiert die weitere Eskalation."
+        },
+        {
+          "left": "Szenario 3: Frist laeuft ab, weiterhin keine Reaktion. Was ist jetzt wichtig? Nachweise und Chronologie sichern den Eskalationspfad.",
+          "right": "Passende Entscheidung 3: Alle Belege und Kommunikation chronologisch sichern"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Nachweisbarkeit ist fuer Folgeentscheidungen zentral."
+        },
+        {
+          "left": "Szenario 4: Der Vermieter bietet einen spaeten Termin an. Wie bewerten? Verhaeltnismaessigkeit und Nachvollziehbarkeit bleiben ents...",
+          "right": "Passende Entscheidung 4: Termin dokumentieren und Angemessenheit pruefen"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Dokumentierte Bewertung ermoeglicht saubere Entscheidung."
         }
       ]
     }

@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "europa_globalisierung",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Europa & Globalisierung - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Europa & Globalisierung - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Europa & Globalisierung - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welcher Schritt kommt bei einer Lieferstoerung zuerst? Kritikalitaet und Verfuegbarkeit.",
+          "right": "Passende Entscheidung 1: Betroffene Teile priorisieren und Engpassgrad pruefen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Priorisierung schafft Fokus."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Was ist ein typischer Pflichtschritt im Routing? Alternativen absichern.",
+          "right": "Passende Entscheidung 2: Ersatzlieferant inkl. Qualitaetscheck aktivieren"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Ohne Qualitaetscheck drohen Folgeprobleme."
+        },
+        {
+          "left": "Szenario 3: Welche KPI misst Routing-Effizienz sinnvoll? Korrektheit plus Zeit.",
+          "right": "Passende Entscheidung 3: Korrekte Pfadwahl pro Fall bei begrenzter Reaktionszeit"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Qualitaet und Tempo zusammen."
+        },
+        {
+          "left": "Szenario 4: Wann gilt ein Routingpfad als fehlerhaft? Pflichtschritt vergessen.",
+          "right": "Passende Entscheidung 4: Wenn ein kritischer Sicherungsschritt ausgelassen wird"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das erhoeht Ausfallrisiko."
         }
       ]
     }

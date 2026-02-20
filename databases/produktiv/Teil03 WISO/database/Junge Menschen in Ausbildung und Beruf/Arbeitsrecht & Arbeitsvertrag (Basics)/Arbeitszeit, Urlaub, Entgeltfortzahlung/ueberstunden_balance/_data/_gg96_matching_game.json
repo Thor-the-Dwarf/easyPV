@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "arbeitszeit_und_entgelt",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Arbeitszeit und Entgelt - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Arbeitszeit und Entgelt - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Arbeitszeit und Entgelt - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Monatskonto zeigt deutlichen Ueberhang. Was ist der fachliche Startpunkt? Zunaechst Kontolage und Optionen abgleichen.",
+          "right": "Passende Entscheidung 1: Passende Ausgleichsoption fuer Kontostand waehlen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Die Aktion muss zur Kontolage passen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Regel fuehrt zu Zusatzabzug? Folgeeffekte der gewaehllten Aktion beachten.",
+          "right": "Passende Entscheidung 2: Aktion mit negativem Folgeeffekt"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Riskante Folge wird strenger bewertet."
+        },
+        {
+          "left": "Szenario 3: Wann gibt es Stabilitaetsbonus? Bezieht sich auf mehrere Faelle hintereinander.",
+          "right": "Passende Entscheidung 3: Bei stabilem Verlauf ueber drei Faelle"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Konstanz wird zusaetzlich belohnt."
+        },
+        {
+          "left": "Szenario 4: Welche KPI-Kombination ist vorgesehen? Guete plus Stabilitaetskomponente.",
+          "right": "Passende Entscheidung 4: Balance-Genauigkeit und Stabilitaetsindex"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das sind die zwei Kernmetriken."
         }
       ]
     }

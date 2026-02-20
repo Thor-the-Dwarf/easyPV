@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "kuendigungsschutz",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Kuendigungsschutz - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Kuendigungsschutz - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Kuendigungsschutz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Wodurch wird im Duell ein Fall als korrekt bewertet? Nicht nur waehlen, auch Fristlogik beachten.",
+          "right": "Passende Entscheidung 1: Durch korrekt berechnetes Fristende im Vergleich"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das Duell basiert auf Fristgenauigkeit."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wann gibt es laut Regeln nur Teilpunkte? Herleitung beeinflusst die volle Punktzahl.",
+          "right": "Passende Entscheidung 2: Bei richtiger Wahl ohne Herleitungsangabe"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Ohne Herleitung fehlen Bonuspunkte."
+        },
+        {
+          "left": "Szenario 3: Welche KPI trennt das Spiel explizit? Zwei Blickwinkel auf Leistung.",
+          "right": "Passende Entscheidung 3: Auswahlgenauigkeit und Herleitungsquote"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Genau diese Trennung ist gefordert."
+        },
+        {
+          "left": "Szenario 4: Welche Bonusregel gehoert zum Duell? Eine Serie wird belohnt.",
+          "right": "Passende Entscheidung 4: Vier korrekte Duelle in Folge geben Serienbonus"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Die Serie erhoeht den Score."
         }
       ]
     }

@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "zuweisungs_meister",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "zuweisungs meister - Zuordnen"
+    "title": "Zuweisungs-Meister - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "zuweisungs meister - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Zuweisungs-Meister - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: API liefert bei Checkout 500-Fehler",
+          "right": "Passende Entscheidung 1: Backend-Entwicklung"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Der technische Defekt liegt in der Server- bzw. API-Logik."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Button im Warenkorb ist auf Mobile nicht klickbar",
+          "right": "Passende Entscheidung 2: Frontend-Entwicklung"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Layout-/Interaktionsproblem in der Oberflaeche."
+        },
+        {
+          "left": "Szenario 3: Nach Deployment keine Pods mehr healthy",
+          "right": "Passende Entscheidung 3: DevOps"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Betrifft Runtime, Deployment und Infrastruktur."
+        },
+        {
+          "left": "Szenario 4: Unklare Fehlermeldung durch User gemeldet",
+          "right": "Passende Entscheidung 4: Support"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Zuerst strukturierte Aufnahme und Nachfragen durch Support."
         }
       ]
     }

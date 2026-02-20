@@ -3,7 +3,7 @@
     "topic": "Arbeitsvertrag",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "arbeitsvertrag",
+    "variant": "probezeit_navigator",
     "title": "Arbeitsvertrag - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Arbeitsvertrag: Im Kontext Probezeit Navigator stehen Arbeitsvertrag, Probezeit Navigator und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden wesentliche und Inhalte gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Arbeitsvertrag stehen Schritt, Probezeit und Regel im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Arbeitsvertrag und Hilfe entscheidend.",
+    "Leitgedanke: Unklare Situation in der Probezeit: Was ist der erste sinnvolle Schritt.",
+    "Als Ablenker treten Fehleranzahl, Eskalieren und Ignorieren auf.",
+    "Begriffe im Fokus: Schritt, Probezeit, Regel, Arbeitsvertrag, Hilfe, Fehleranzahl, Eskalieren, Ignorieren."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Arbeitsvertrag",
+      "label": "Schritt",
       "is_target": true,
-      "explanation": "\"Arbeitsvertrag\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Schritt\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t2",
-      "label": "Probezeit Navigator",
+      "label": "Probezeit",
       "is_target": true,
-      "explanation": "\"Probezeit Navigator\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Probezeit\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Regel",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Regel\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t4",
-      "label": "wesentliche",
+      "label": "Arbeitsvertrag",
       "is_target": true,
-      "explanation": "\"wesentliche\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Arbeitsvertrag\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t5",
-      "label": "Inhalte",
+      "label": "Hilfe",
       "is_target": true,
-      "explanation": "\"Inhalte\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Hilfe\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Fehleranzahl",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Fehleranzahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Eskalieren",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Eskalieren\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Ignorieren",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Ignorieren\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

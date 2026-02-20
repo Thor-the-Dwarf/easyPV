@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "konsumoptionen",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Konsumoptionen - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Konsumoptionen - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Konsumoptionen - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Quick Case: Transporter fuer einen einmaligen Umzug. Besitz oder Teilen? Einmaliger Bedarf ist selten Besitzfall.",
+          "right": "Passende Entscheidung 1: Teilen/Mieten"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Seltene Nutzung spricht fuer gemeinschaftliche Loesung."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Quick Case: Eigenes Fahrrad fuer taegliche Strecke. Was ist passender? Haeufige Nutzung kann Besitz rechtfertigen.",
+          "right": "Passende Entscheidung 2: Besitzen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Hohe Frequenz passt zu Besitz."
+        },
+        {
+          "left": "Szenario 3: Quick Case: Party-Geschirr fuer zwei Events im Jahr. Achte auf Ressourceneffizienz.",
+          "right": "Passende Entscheidung 3: Teilen/Leihen"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Seltene Nutzung + Nachhaltigkeit sprechen dafuer."
+        },
+        {
+          "left": "Szenario 4: Was gilt als Fehler laut Regelwerk? Denk an das Zeitlimit.",
+          "right": "Passende Entscheidung 4: Keine Antwort innerhalb des Limits"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Timeout wird als Fehler gewertet."
         }
       ]
     }

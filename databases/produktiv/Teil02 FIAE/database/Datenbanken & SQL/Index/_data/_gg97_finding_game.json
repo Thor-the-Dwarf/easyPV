@@ -1,10 +1,10 @@
 {
   "meta": {
-    "topic": "Database Index (B-Tree)",
+    "topic": "Database Index B-Tree",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "database_index_b_tree",
-    "title": "Database Index (B-Tree) - Begriffe finden",
+    "variant": "index",
+    "title": "Database Index B-Tree - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
   },
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Database Index Tree: Im Kontext Index stehen Database Index Tree, Small und Dataset im Fokus.",
-    "Fuer eine belastbare Einordnung werden Datenmodell und Abfragen gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Database Index B-Tree stehen Index, Database und B-Tree im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Dataset und Small entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Index, Database, B-Tree, Dataset, Small, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Database Index Tree",
+      "label": "Index",
       "is_target": true,
-      "explanation": "\"Database Index Tree\" ist ein zentraler Fachbegriff im Kontext Database Index Tree."
+      "explanation": "\"Index\" ist ein relevanter Fachbegriff im Thema Database Index B-Tree."
     },
     {
       "id": "t2",
-      "label": "Small",
+      "label": "Database",
       "is_target": true,
-      "explanation": "\"Small\" ist ein zentraler Fachbegriff im Kontext Database Index Tree."
+      "explanation": "\"Database\" ist ein relevanter Fachbegriff im Thema Database Index B-Tree."
     },
     {
       "id": "t3",
-      "label": "Dataset",
+      "label": "B-Tree",
       "is_target": true,
-      "explanation": "\"Dataset\" ist ein zentraler Fachbegriff im Kontext Database Index Tree."
+      "explanation": "\"B-Tree\" ist ein relevanter Fachbegriff im Thema Database Index B-Tree."
     },
     {
       "id": "t4",
-      "label": "Datenmodell",
+      "label": "Dataset",
       "is_target": true,
-      "explanation": "\"Datenmodell\" ist ein zentraler Fachbegriff im Kontext Database Index Tree."
+      "explanation": "\"Dataset\" ist ein relevanter Fachbegriff im Thema Database Index B-Tree."
     },
     {
       "id": "t5",
-      "label": "Abfragen",
+      "label": "Small",
       "is_target": true,
-      "explanation": "\"Abfragen\" ist ein zentraler Fachbegriff im Kontext Database Index Tree."
+      "explanation": "\"Small\" ist ein relevanter Fachbegriff im Thema Database Index B-Tree."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

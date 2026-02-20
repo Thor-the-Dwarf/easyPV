@@ -3,7 +3,7 @@
     "topic": "Jugendarbeitsschutz",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "jugendarbeitsschutz",
+    "variant": "arbeitszeit_limit_check",
     "title": "Jugendarbeitsschutz - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Jugendarbeitsschutz: Im Kontext Arbeitszeit Limit Check stehen Jugendarbeitsschutz, Arbeitszeit Limit Check und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Grundidee und Richtig gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Jugendarbeitsschutz stehen Jugendarbeitsschutz, Grenzverletzungen und Folge im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Markieren und Abzug entscheidend.",
+    "Leitgedanke: Tagesplan mit langen Blöcken ohne ausreichende Unterbrechung: Bewertung.",
+    "Als Ablenker treten Punktesumme, Sofortbonus und Fallanzahl auf.",
+    "Begriffe im Fokus: Jugendarbeitsschutz, Grenzverletzungen, Folge, Markieren, Abzug, Punktesumme, Sofortbonus, Fallanzahl."
   ],
   "terms": [
     {
       "id": "t1",
       "label": "Jugendarbeitsschutz",
       "is_target": true,
-      "explanation": "\"Jugendarbeitsschutz\" ist ein zentraler Fachbegriff im Kontext Jugendarbeitsschutz."
+      "explanation": "\"Jugendarbeitsschutz\" ist ein relevanter Fachbegriff im Thema Jugendarbeitsschutz."
     },
     {
       "id": "t2",
-      "label": "Arbeitszeit Limit Check",
+      "label": "Grenzverletzungen",
       "is_target": true,
-      "explanation": "\"Arbeitszeit Limit Check\" ist ein zentraler Fachbegriff im Kontext Jugendarbeitsschutz."
+      "explanation": "\"Grenzverletzungen\" ist ein relevanter Fachbegriff im Thema Jugendarbeitsschutz."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Folge",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Jugendarbeitsschutz."
+      "explanation": "\"Folge\" ist ein relevanter Fachbegriff im Thema Jugendarbeitsschutz."
     },
     {
       "id": "t4",
-      "label": "Grundidee",
+      "label": "Markieren",
       "is_target": true,
-      "explanation": "\"Grundidee\" ist ein zentraler Fachbegriff im Kontext Jugendarbeitsschutz."
+      "explanation": "\"Markieren\" ist ein relevanter Fachbegriff im Thema Jugendarbeitsschutz."
     },
     {
       "id": "t5",
-      "label": "Richtig",
+      "label": "Abzug",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Jugendarbeitsschutz."
+      "explanation": "\"Abzug\" ist ein relevanter Fachbegriff im Thema Jugendarbeitsschutz."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Punktesumme",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Punktesumme\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Sofortbonus",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Sofortbonus\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Fallanzahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Fallanzahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "angebots_checkliste",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Angebots-Checkliste - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Angebots-Checkliste - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Angebots-Checkliste - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: IT-Serviceangebot fuer 12 Monate Support",
+          "right": "Passende Entscheidung 1: angebotsdatum"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Ohne diese Angaben ist das Angebot inhaltlich oder rechtlich angreifbar."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Hardwareangebot fuer 40 Notebooks",
+          "right": "Passende Entscheidung 2: angebotsdatum"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Liefer- und Zahlungslogik muss im Angebot eindeutig geregelt sein."
+        },
+        {
+          "left": "Szenario 3: Cloud-Migration als Projektleistung",
+          "right": "Passende Entscheidung 3: leistungsbeschreibung"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Bei Projekten sind Leistungsumfang und Haftungsrahmen besonders wichtig."
+        },
+        {
+          "left": "Szenario 4: Wartungsvertrag fuer Netzwerkkomponenten",
+          "right": "Passende Entscheidung 4: angebotsdatum"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Service-Level ohne klare Konditionen fuehren spaeter zu Streit."
         }
       ]
     }

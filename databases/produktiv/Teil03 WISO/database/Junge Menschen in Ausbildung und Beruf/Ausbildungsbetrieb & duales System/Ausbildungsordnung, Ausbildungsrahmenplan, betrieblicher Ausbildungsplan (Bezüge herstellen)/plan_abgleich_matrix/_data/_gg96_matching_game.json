@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "ausbildungsplanung",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Ausbildungsplanung - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Ausbildungsplanung - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Ausbildungsplanung - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Was ist die Kernaufgabe in der Plan-Abgleich-Matrix? Zuordnung zwischen drei Planquellen.",
+          "right": "Passende Entscheidung 1: Lernziele zwischen Ausbildungsordnung, Rahmenplan und Betriebsplan verlinken"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Genau dieser Abgleich ist zentral."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Zusatzleistung bringt Pluspunkte? Luecken nicht uebersehen.",
+          "right": "Passende Entscheidung 2: Planluecke korrekt erkennen und markieren"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Das gibt Zusatzpunkte."
+        },
+        {
+          "left": "Szenario 3: Wann entsteht ein Zusatzabzug? Kernzuordnung fehlt.",
+          "right": "Passende Entscheidung 3: Wenn eine notwendige Kernzuordnung fehlt"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Das ist ein Schluesselfehler."
+        },
+        {
+          "left": "Szenario 4: Welche KPI muessen getrennt sichtbar sein? Links und Luecken separat.",
+          "right": "Passende Entscheidung 4: Zuordnungsquote und Lueckenquote"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Zwei getrennte Leistungswerte."
         }
       ]
     }

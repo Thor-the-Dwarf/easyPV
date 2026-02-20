@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "verteiler_puzzle",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "verteiler puzzle - Zuordnen"
+    "title": "Verteiler-Puzzle - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "verteiler puzzle - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Verteiler-Puzzle - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Budgetabstimmung mit Finanzbezug und Terminrisiko",
+          "right": "Passende Entscheidung 1: Projektleitung, CFO/Controlling, betroffene Teamleads"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Nur entscheidungsrelevante Rollen sollten gezielt informiert werden."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Technischer Architekturentscheid fuer API-Sicherheit",
+          "right": "Passende Entscheidung 2: Backend-Team, Security, Architekt, Projektleitung"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Der Verteiler muss die fuer Umsetzung und Risiko verantwortlichen Rollen enthalten."
+        },
+        {
+          "left": "Szenario 3: Review eines Onboarding-Workshops mit Aufgabenlisten",
+          "right": "Passende Entscheidung 3: HR, Teamleitung, Mentoren, neue Mitarbeitende"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Alle direkt beteiligten Rollen muessen Zugriff auf Entscheidungen und Aufgaben haben."
+        },
+        {
+          "left": "Szenario 4: Abnahmeprotokoll nach Kunden-Workshop",
+          "right": "Passende Entscheidung 4: Kunde, Projektleitung, QA, verantwortliche Umsetzungsteams"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Abnahme betrifft Auftraggeber und operative Umsetzer zugleich."
         }
       ]
     }

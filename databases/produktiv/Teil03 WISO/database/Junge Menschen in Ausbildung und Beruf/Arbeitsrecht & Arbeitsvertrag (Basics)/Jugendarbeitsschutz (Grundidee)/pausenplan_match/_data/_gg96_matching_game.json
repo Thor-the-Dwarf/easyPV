@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "jugendarbeitsschutz",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Jugendarbeitsschutz - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Jugendarbeitsschutz - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Jugendarbeitsschutz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Lange Schicht ohne passende Pause: richtige Einordnung? Pausenlogik zur Schichtdauer passend waehlen.",
+          "right": "Passende Entscheidung 1: Als falsches Pausenmuster markieren"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Die Pausenregel passt nicht zur Schichtlaenge."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Zusatzstrafe gilt bei langen Schichten und Fehlwahl? Plan nennt einen Zusatzabzug.",
+          "right": "Passende Entscheidung 2: Zusatzabzug"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Kritische Fehlwahl wird strenger gewertet."
+        },
+        {
+          "left": "Szenario 3: Wann aktiviert sich ein Multiplikator? Serie korrekter Matches erforderlich.",
+          "right": "Passende Entscheidung 3: Bei 5 korrekten Matches in Folge"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Dann steigt der Multiplikator."
+        },
+        {
+          "left": "Szenario 4: Welche KPI-Auswertung soll moeglich sein? Nach Regeltypen differenzieren.",
+          "right": "Passende Entscheidung 4: Match-Quote und Fehler pro Regeltyp"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. So erkennt man gezielte Schwachstellen."
         }
       ]
     }

@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "projektmanagement",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Projektmanagement - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Projektmanagement - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Projektmanagement - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Level 1: Klare Verhaeltnisse Routine-Patch einspielen. Anforderungen 100% klar, Technik 100% bekannt.",
+          "right": "Passende Entscheidung 1: Wasserfall"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Sicherheits-Update Server",
+          "right": "Warum passend 1: Standard-Prozess, keine Ueberraschungen -> Einfach -> Wasserfall."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Level 1: Klare Verhaeltnisse Markt unbekannt, Technologie experimentell. Alles aendert sich taeglich.",
+          "right": "Passende Entscheidung 2: Wasserfall"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Innovatives KI-Startup",
+          "right": "Warum passend 2: Hohe Unsicherheit -> Chaos/Komplex -> Agil (Scrum) um zu lernen."
+        },
+        {
+          "left": "Szenario 3: Level 1: Klare Verhaeltnisse Strenge Vorgaben, genaues Lastenheft, Abnahmekriterien fixiert.",
+          "right": "Passende Entscheidung 3: Wasserfall"
+        },
+        {
+          "left": "Begruendung 3: Behoerden-Software V2",
+          "right": "Warum passend 3: Hohe Formalitaet und klare Specs -> V-Modell ist ideal fuer Validierung."
+        },
+        {
+          "left": "Szenario 4: Level 1: Klare Verhaeltnisse Kontinuierlicher Eingang von kleinen Bugs und Anfragen.",
+          "right": "Passende Entscheidung 4: Wasserfall"
+        },
+        {
+          "left": "Begruendung 4: Support-Tickets abarbeiten",
+          "right": "Warum passend 4: Laufender Betrieb, kein festes Projekt-Ende -> Kanban fuer Flow."
         }
       ]
     }

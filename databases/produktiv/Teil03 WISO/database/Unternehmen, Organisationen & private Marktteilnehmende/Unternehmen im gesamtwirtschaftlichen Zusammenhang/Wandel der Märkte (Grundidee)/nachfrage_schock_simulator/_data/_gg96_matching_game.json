@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "wandel_der_maerkte",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Wandel der Maerkte - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Wandel der Maerkte - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Wandel der Maerkte - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Wie reagierst du auf einen ploetzlichen Nachfragesprung? Kapazitaet und Lieferfaehigkeit zuerst sichern.",
+          "right": "Passende Entscheidung 1: Kurzfristig Kapazitaet umschichten und Engpaesse priorisieren"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. So bleibt Versorgung stabil."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Was ist bei Nachfragerueckgang sinnvoll? Kontrolliert anpassen statt hektisch kuerzen.",
+          "right": "Passende Entscheidung 2: Mengen schrittweise anpassen und Nachfrage aktiv monitoren"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Das vermeidet Ueberreaktion."
+        },
+        {
+          "left": "Szenario 3: Welche Fehlsteuerung ist bei kleinen Schocks typisch? Zu starke Reaktion auf wenig Signal.",
+          "right": "Passende Entscheidung 3: Ueberreaktion mit zu grosser Preis- oder Mengenanpassung"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Das erzeugt Instabilitaet."
+        },
+        {
+          "left": "Szenario 4: Wann gilt eine Runde als stabil? Servicelevel und Bestand im Zielkorridor.",
+          "right": "Passende Entscheidung 4: Wenn Lieferfaehigkeit und Bestand innerhalb der Leitplanken bleiben"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das ist stabile Steuerung."
         }
       ]
     }

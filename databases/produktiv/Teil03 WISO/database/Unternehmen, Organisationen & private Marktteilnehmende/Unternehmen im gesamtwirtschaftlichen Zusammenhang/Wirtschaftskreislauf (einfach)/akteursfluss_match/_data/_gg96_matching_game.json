@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "wirtschaftskreislauf",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Wirtschaftskreislauf - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Wirtschaftskreislauf - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Wirtschaftskreislauf - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Wer bietet im einfachen Kreislauf Arbeitskraft an? Betrachte Haushalte und Unternehmen.",
+          "right": "Passende Entscheidung 1: Haushalte"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Haushalte bieten Produktionsfaktoren an."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Von wem erhalten Haushalte Einkommen fuer Arbeit? Geldstrom fuer den Faktor Arbeit.",
+          "right": "Passende Entscheidung 2: Von Unternehmen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Lohn/Gehalt fliesst von Unternehmen zu Haushalten."
+        },
+        {
+          "left": "Szenario 3: Wohin fliesst Konsumausgabe der Haushalte? Geld gegen Gueter.",
+          "right": "Passende Entscheidung 3: Zu Unternehmen"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Haushalte zahlen fuer Gueter und Dienstleistungen."
+        },
+        {
+          "left": "Szenario 4: Was liefern Unternehmen an Haushalte? Gegenleistung fuer Konsumausgaben.",
+          "right": "Passende Entscheidung 4: Gueter und Dienstleistungen"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das ist der Gueterstrom."
         }
       ]
     }

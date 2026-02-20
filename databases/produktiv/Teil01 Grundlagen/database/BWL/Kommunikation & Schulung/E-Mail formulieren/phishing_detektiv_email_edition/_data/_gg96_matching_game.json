@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "e_mail_formulieren",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "E-Mail formulieren - Zuordnen"
+    "title": "Phishing-Detektiv (E-Mail Edition) - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "E-Mail formulieren - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Phishing-Detektiv (E-Mail Edition) - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: E-Mail klassifizieren: Passwort-Rotation fuer VPN heute 18:00",
+          "right": "Passende Entscheidung 1: Legitime E-Mail"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: E-Mail klassifizieren: Sofort handeln: Konto wird gesperrt",
+          "right": "Passende Entscheidung 2: Phishing"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: E-Mail klassifizieren: Rechnung RE-2048 fuer Wartung Februar",
+          "right": "Passende Entscheidung 3: Legitime E-Mail"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 4: E-Mail klassifizieren: Ungewoehnliche Anmeldung erkannt",
+          "right": "Passende Entscheidung 4: Phishing"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

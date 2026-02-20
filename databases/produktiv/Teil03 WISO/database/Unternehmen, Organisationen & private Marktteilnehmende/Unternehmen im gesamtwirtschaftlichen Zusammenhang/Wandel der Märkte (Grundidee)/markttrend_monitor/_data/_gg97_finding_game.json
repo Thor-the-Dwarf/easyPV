@@ -3,7 +3,7 @@
     "topic": "Wandel der Maerkte",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "wandel_der_maerkte",
+    "variant": "markttrend_monitor",
     "title": "Wandel der Maerkte - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Wandel Der Maerkte: Im Kontext Markttrend Monitor stehen Wandel Der Maerkte, Markttrend Monitor und Richtig im Fokus.",
-    "Fuer eine belastbare Einordnung werden Marge und Bestellungen gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Wandel der Maerkte stehen Wandel, Bestellungen und Gemeinsam im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Mehrere und Maerkte entscheidend.",
+    "Leitgedanke: Welche Kombination spricht am staerksten fuer einen Nachfragetrend nach oben.",
+    "Als Ablenker treten Aufschluesselung, Einzelkennzahl und Veraenderung auf.",
+    "Begriffe im Fokus: Wandel, Bestellungen, Gemeinsam, Mehrere, Maerkte, Aufschluesselung, Einzelkennzahl, Veraenderung."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Wandel Der Maerkte",
+      "label": "Wandel",
       "is_target": true,
-      "explanation": "\"Wandel Der Maerkte\" ist ein zentraler Fachbegriff im Kontext Wandel Der Maerkte."
+      "explanation": "\"Wandel\" ist ein relevanter Fachbegriff im Thema Wandel der Maerkte."
     },
     {
       "id": "t2",
-      "label": "Markttrend Monitor",
+      "label": "Bestellungen",
       "is_target": true,
-      "explanation": "\"Markttrend Monitor\" ist ein zentraler Fachbegriff im Kontext Wandel Der Maerkte."
+      "explanation": "\"Bestellungen\" ist ein relevanter Fachbegriff im Thema Wandel der Maerkte."
     },
     {
       "id": "t3",
-      "label": "Richtig",
+      "label": "Gemeinsam",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Wandel Der Maerkte."
+      "explanation": "\"Gemeinsam\" ist ein relevanter Fachbegriff im Thema Wandel der Maerkte."
     },
     {
       "id": "t4",
-      "label": "Marge",
+      "label": "Mehrere",
       "is_target": true,
-      "explanation": "\"Marge\" ist ein zentraler Fachbegriff im Kontext Wandel Der Maerkte."
+      "explanation": "\"Mehrere\" ist ein relevanter Fachbegriff im Thema Wandel der Maerkte."
     },
     {
       "id": "t5",
-      "label": "Bestellungen",
+      "label": "Maerkte",
       "is_target": true,
-      "explanation": "\"Bestellungen\" ist ein zentraler Fachbegriff im Kontext Wandel Der Maerkte."
+      "explanation": "\"Maerkte\" ist ein relevanter Fachbegriff im Thema Wandel der Maerkte."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Aufschluesselung",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Aufschluesselung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Einzelkennzahl",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Einzelkennzahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Veraenderung",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Veraenderung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

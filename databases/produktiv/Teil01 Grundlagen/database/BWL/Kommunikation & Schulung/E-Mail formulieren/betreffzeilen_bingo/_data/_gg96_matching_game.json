@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "e_mail_formulieren",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "E-Mail formulieren - Zuordnen"
+    "title": "Betreffzeilen-Bingo - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "E-Mail formulieren - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Betreffzeilen-Bingo - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Projekt X: Der Kundentermin wird vom 09.10. auf 12.10. verschoben.",
+          "right": "Passende Entscheidung 1: Verschiebung Projekt X auf 12.10."
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Der Betreff ist klar, kurz und konkret."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Bitte gib bis morgen 14:00 Uhr Feedback zum Angebot fuer Kunde Bergmann.",
+          "right": "Passende Entscheidung 2: Feedback Angebot Kunde Bergmann bis 14:00"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Aufgabe, Bezug und Frist sind sichtbar."
+        },
+        {
+          "left": "Szenario 3: Die Rechnung 2026-118 enthaelt eine falsche Positionssumme und muss korrigiert werden.",
+          "right": "Passende Entscheidung 3: Rechnung 2026-118: Korrektur der Positionssumme"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Eindeutige Referenz und Aktion."
+        },
+        {
+          "left": "Szenario 4: Das Daily-Standup startet ab Montag dauerhaft um 08:45 statt 09:00 Uhr.",
+          "right": "Passende Entscheidung 4: Neue Uhrzeit Daily-Standup ab Montag 08:45"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Aenderung, Termin und Startzeit sind klar."
         }
       ]
     }

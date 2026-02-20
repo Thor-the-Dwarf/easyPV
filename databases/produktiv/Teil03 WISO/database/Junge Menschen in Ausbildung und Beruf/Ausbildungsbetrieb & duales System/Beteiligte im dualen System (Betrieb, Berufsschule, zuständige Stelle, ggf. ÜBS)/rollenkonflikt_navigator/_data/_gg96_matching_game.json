@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "duales_system",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Duales System - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Duales System - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Duales System - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Was ist der erste Entscheidungspunkt im Konfliktfall? Zustaendige Instanz korrekt waehlen.",
+          "right": "Passende Entscheidung 1: Passende Klaerungsinstanz bestimmen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Instanzwahl ist der Startpunkt."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wann wird ein Aktionsbonus blockiert? Instanz war falsch.",
+          "right": "Passende Entscheidung 2: Wenn die Instanzwahl nicht zustaendig war"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Falsche Instanz sperrt den Bonus."
+        },
+        {
+          "left": "Szenario 3: Welche KPI bilden den Lernerfolg hier ab? Instanz und Prozess getrennt.",
+          "right": "Passende Entscheidung 3: Instanzgenauigkeit und Prozessgenauigkeit"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Beide Achsen sind relevant."
+        },
+        {
+          "left": "Szenario 4: Was erzeugt einen Serienbonus? Vollkorrekte Faelle hintereinander.",
+          "right": "Passende Entscheidung 4: Mehrere vollkorrekte Konfliktfaelle in Folge"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das aktiviert den Serienbonus."
         }
       ]
     }

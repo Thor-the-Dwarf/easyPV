@@ -3,7 +3,7 @@
     "topic": "Wandel der Maerkte",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "wandel_der_maerkte",
+    "variant": "preisreaktion_timer",
     "title": "Wandel der Maerkte - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Wandel Der Maerkte: Im Kontext Preisreaktion Timer stehen Wandel Der Maerkte, Preisreaktion Timer und Richtig im Fokus.",
-    "Fuer eine belastbare Einordnung werden Genau und Marge gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Wandel der Maerkte stehen Entscheidung, Preisreaktion und Wandel im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Maerkte und Reaktion entscheidend.",
+    "Leitgedanke: Welche Reaktion passt bei kurzfristigem Nachfragepeak.",
+    "Als Ablenker treten Schnellentscheidung, Konkurrenzpreis und Gesamtspielzeit auf.",
+    "Begriffe im Fokus: Entscheidung, Preisreaktion, Wandel, Maerkte, Reaktion, Schnellentscheidung, Konkurrenzpreis, Gesamtspielzeit."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Wandel Der Maerkte",
+      "label": "Entscheidung",
       "is_target": true,
-      "explanation": "\"Wandel Der Maerkte\" ist ein zentraler Fachbegriff im Kontext Wandel Der Maerkte."
+      "explanation": "\"Entscheidung\" ist ein relevanter Fachbegriff im Thema Wandel der Maerkte."
     },
     {
       "id": "t2",
-      "label": "Preisreaktion Timer",
+      "label": "Preisreaktion",
       "is_target": true,
-      "explanation": "\"Preisreaktion Timer\" ist ein zentraler Fachbegriff im Kontext Wandel Der Maerkte."
+      "explanation": "\"Preisreaktion\" ist ein relevanter Fachbegriff im Thema Wandel der Maerkte."
     },
     {
       "id": "t3",
-      "label": "Richtig",
+      "label": "Wandel",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Wandel Der Maerkte."
+      "explanation": "\"Wandel\" ist ein relevanter Fachbegriff im Thema Wandel der Maerkte."
     },
     {
       "id": "t4",
-      "label": "Genau",
+      "label": "Maerkte",
       "is_target": true,
-      "explanation": "\"Genau\" ist ein zentraler Fachbegriff im Kontext Wandel Der Maerkte."
+      "explanation": "\"Maerkte\" ist ein relevanter Fachbegriff im Thema Wandel der Maerkte."
     },
     {
       "id": "t5",
-      "label": "Marge",
+      "label": "Reaktion",
       "is_target": true,
-      "explanation": "\"Marge\" ist ein zentraler Fachbegriff im Kontext Wandel Der Maerkte."
+      "explanation": "\"Reaktion\" ist ein relevanter Fachbegriff im Thema Wandel der Maerkte."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Schnellentscheidung",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Schnellentscheidung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Konkurrenzpreis",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Konkurrenzpreis\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Gesamtspielzeit",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamtspielzeit\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

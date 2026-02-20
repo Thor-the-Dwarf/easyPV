@@ -3,7 +3,7 @@
     "topic": "Wertschoepfung",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "wertschoepfung",
+    "variant": "wertbeitrag_duell",
     "title": "Wertschoepfung - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Wertschoepfung: Im Kontext Wertbeitrag Duell stehen Wertschoepfung, Wertbeitrag Duell und Kosten im Fokus.",
-    "Fuer eine belastbare Einordnung werden Qualitaet und waehlen gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Wertschoepfung stehen Begruendung, Kosten und Qualitaet im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Passt und Waehlen entscheidend.",
+    "Leitgedanke: Welche Bewertungsidee passt zum Wertbeitrag-Duell.",
+    "Als Ablenker treten Zufallstreffer, Abschlussrunde und Anfangsoption auf.",
+    "Begriffe im Fokus: Begruendung, Kosten, Qualitaet, Passt, Waehlen, Zufallstreffer, Abschlussrunde, Anfangsoption."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Wertschoepfung",
+      "label": "Begruendung",
       "is_target": true,
-      "explanation": "\"Wertschoepfung\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Begruendung\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t2",
-      "label": "Wertbeitrag Duell",
+      "label": "Kosten",
       "is_target": true,
-      "explanation": "\"Wertbeitrag Duell\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Kosten\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t3",
-      "label": "Kosten",
+      "label": "Qualitaet",
       "is_target": true,
-      "explanation": "\"Kosten\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Qualitaet\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t4",
-      "label": "Qualitaet",
+      "label": "Passt",
       "is_target": true,
-      "explanation": "\"Qualitaet\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Passt\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t5",
-      "label": "waehlen",
+      "label": "Waehlen",
       "is_target": true,
-      "explanation": "\"waehlen\" ist ein zentraler Fachbegriff im Kontext Wertschoepfung."
+      "explanation": "\"Waehlen\" ist ein relevanter Fachbegriff im Thema Wertschoepfung."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Zufallstreffer",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallstreffer\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Abschlussrunde",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Abschlussrunde\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Anfangsoption",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Anfangsoption\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

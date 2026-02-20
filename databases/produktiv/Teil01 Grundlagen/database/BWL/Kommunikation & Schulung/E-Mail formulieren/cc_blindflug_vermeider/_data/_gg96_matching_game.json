@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "e_mail_formulieren",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "E-Mail formulieren - Zuordnen"
+    "title": "CC-Blindflug-Vermeider - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "E-Mail formulieren - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "CC-Blindflug-Vermeider - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Schicke das Angebot an Kunde Mueller. Teamleiterin Lea soll informiert sein, Azubi Tom soll nur intern mitlesen.",
+          "right": "Passende Entscheidung 1: An: Kunde Mueller | CC: Lea | BCC: Tom"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Kunde direkt in An, Leitung transparent in CC, interne Beobachtung per BCC."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Kunde Schuster meldet einen Fehler. Support soll direkt handeln, Bereichsleitung soll informiert werden.",
+          "right": "Passende Entscheidung 2: An: Kunde Schuster, Support-Team | CC: Bereichsleitung | BCC:"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Kunde und operatives Team direkt in An, Leitung in CC."
+        },
+        {
+          "left": "Szenario 3: Interne Budgetabfrage an Abteilung Einkauf. Geschaeftsfuehrung soll informiert sein, externe Partner duerfen nichts seh...",
+          "right": "Passende Entscheidung 3: An: Einkauf | CC: Geschaeftsfuehrung | BCC:"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Interner Verteiler, transparente Information in CC."
+        },
+        {
+          "left": "Szenario 4: Serienmail an 25 Bewerber mit gleichem Hinweis. Datenschutz: Empfaenger sollen sich nicht gegenseitig sehen.",
+          "right": "Passende Entscheidung 4: An: hr@firma.de | CC: | BCC: Alle 25 Bewerber"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Sammelversand ueber BCC schuetzt die Empfaengerdaten."
         }
       ]
     }

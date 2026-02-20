@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "verbraucherschutz",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Verbraucherschutz - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Verbraucherschutz - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Verbraucherschutz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Bestellung online, Lieferung vor 10 Tagen. Widerruf moeglich? Pruefe das Fristfenster ab relevantem Startdatum.",
+          "right": "Passende Entscheidung 1: Ja, innerhalb der regulaeren Frist"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das liegt noch im typischen Widerrufszeitraum."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Begruendung bringt volle Punkte im Timer? Es muessen Start- und Enddatum genannt werden.",
+          "right": "Passende Entscheidung 2: Startdatum und Fristende korrekt angeben"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Das entspricht der geforderten Begruendung."
+        },
+        {
+          "left": "Szenario 3: Ohne Begruendung abgegeben: Wie viele Punkte laut Regel? Es gibt eine prozentuale Reduktion.",
+          "right": "Passende Entscheidung 3: Nur 70 Prozent der Punkte"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Ohne Begruendung wird reduziert bewertet."
+        },
+        {
+          "left": "Szenario 4: Was zeigt das Feedback laut Plan zusaetzlich an? Neben richtig/falsch wird ein Distanzwert genannt.",
+          "right": "Passende Entscheidung 4: Delta in Tagen"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das Delta macht die Fristberechnung transparent."
         }
       ]
     }

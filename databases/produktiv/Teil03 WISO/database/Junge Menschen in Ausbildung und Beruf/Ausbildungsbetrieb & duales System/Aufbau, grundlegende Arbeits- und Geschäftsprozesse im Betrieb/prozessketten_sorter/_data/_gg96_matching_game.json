@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "betriebsprozesse",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Betriebsprozesse - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Betriebsprozesse - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Betriebsprozesse - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welcher Startschritt ist in einer Kundenprozesskette typischerweise zuerst? Ohne Auftragserfassung gibt es keine Folgea...",
+          "right": "Passende Entscheidung 1: Auftrag erfassen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das ist der uebliche Startpunkt."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Folge hat ein falscher Startschritt laut Regeln? Startfehler werden staerker bestraft.",
+          "right": "Passende Entscheidung 2: Doppelt negativer Einfluss auf den Score"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Der Einstieg ist kritisch."
+        },
+        {
+          "left": "Szenario 3: Welche KPI sollen sichtbar sein? Genauigkeit und Zeit pro Kette.",
+          "right": "Passende Entscheidung 3: Reihenfolgegenauigkeit und Loesungszeit"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Das sind die Kernmetriken."
+        },
+        {
+          "left": "Szenario 4: Wann werden Bonuspunkte vergeben? Fehlerfreie Kette ist die Bedingung.",
+          "right": "Passende Entscheidung 4: Bei komplett fehlerfreier Kette"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Dann gibt es den Bonus."
         }
       ]
     }

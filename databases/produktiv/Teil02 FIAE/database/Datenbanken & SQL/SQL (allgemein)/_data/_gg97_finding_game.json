@@ -3,7 +3,7 @@
     "topic": "SQL Taxonomy",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "sql_taxonomy",
+    "variant": "sql_allgemein",
     "title": "SQL Taxonomy - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "SQL Taxonomy: Im Kontext SQL Allgemein stehen SQL Taxonomy, SQL Allgemein und database im Fokus.",
-    "Fuer eine belastbare Einordnung werden Language und objects gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema SQL Taxonomy stehen Language, Taxonomy und Database im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Allgemein und Control entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Language, Taxonomy, Database, Allgemein, Control, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "SQL Taxonomy",
+      "label": "Language",
       "is_target": true,
-      "explanation": "\"SQL Taxonomy\" ist ein zentraler Fachbegriff im Kontext SQL Taxonomy."
+      "explanation": "\"Language\" ist ein relevanter Fachbegriff im Thema SQL Taxonomy."
     },
     {
       "id": "t2",
-      "label": "SQL Allgemein",
+      "label": "Taxonomy",
       "is_target": true,
-      "explanation": "\"SQL Allgemein\" ist ein zentraler Fachbegriff im Kontext SQL Taxonomy."
+      "explanation": "\"Taxonomy\" ist ein relevanter Fachbegriff im Thema SQL Taxonomy."
     },
     {
       "id": "t3",
-      "label": "database",
+      "label": "Database",
       "is_target": true,
-      "explanation": "\"database\" ist ein zentraler Fachbegriff im Kontext SQL Taxonomy."
+      "explanation": "\"Database\" ist ein relevanter Fachbegriff im Thema SQL Taxonomy."
     },
     {
       "id": "t4",
-      "label": "Language",
+      "label": "Allgemein",
       "is_target": true,
-      "explanation": "\"Language\" ist ein zentraler Fachbegriff im Kontext SQL Taxonomy."
+      "explanation": "\"Allgemein\" ist ein relevanter Fachbegriff im Thema SQL Taxonomy."
     },
     {
       "id": "t5",
-      "label": "objects",
+      "label": "Control",
       "is_target": true,
-      "explanation": "\"objects\" ist ein zentraler Fachbegriff im Kontext SQL Taxonomy."
+      "explanation": "\"Control\" ist ein relevanter Fachbegriff im Thema SQL Taxonomy."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

@@ -3,7 +3,7 @@
     "topic": "Betriebsprozesse",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "betriebsprozesse",
+    "variant": "prozessketten_sorter",
     "title": "Betriebsprozesse - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Betriebsprozesse: Im Kontext Prozessketten Sorter stehen Betriebsprozesse, Prozessketten Sorter und Geschaeftsprozesse im Fokus.",
-    "Fuer eine belastbare Einordnung werden Richtig und korrekt gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Betriebsprozesse stehen Kette, Startschritt und Sichtbar im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Betriebsprozesse und Prozessketten entscheidend.",
+    "Leitgedanke: Welcher Startschritt ist in einer Kundenprozesskette typischerweise zuerst.",
+    "Als Ablenker treten Vertauschungsfehler, Zeitueberschreitung und Automatischer auf.",
+    "Begriffe im Fokus: Kette, Startschritt, Sichtbar, Betriebsprozesse, Prozessketten, Vertauschungsfehler, Zeitueberschreitung, Automatischer."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Betriebsprozesse",
+      "label": "Kette",
       "is_target": true,
-      "explanation": "\"Betriebsprozesse\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Kette\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t2",
-      "label": "Prozessketten Sorter",
+      "label": "Startschritt",
       "is_target": true,
-      "explanation": "\"Prozessketten Sorter\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Startschritt\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t3",
-      "label": "Geschaeftsprozesse",
+      "label": "Sichtbar",
       "is_target": true,
-      "explanation": "\"Geschaeftsprozesse\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Sichtbar\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t4",
-      "label": "Richtig",
+      "label": "Betriebsprozesse",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Betriebsprozesse\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t5",
-      "label": "korrekt",
+      "label": "Prozessketten",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Prozessketten\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Vertauschungsfehler",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Vertauschungsfehler\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Zeitueberschreitung",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zeitueberschreitung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Automatischer",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Automatischer\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

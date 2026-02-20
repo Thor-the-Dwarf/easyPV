@@ -3,7 +3,7 @@
     "topic": "Wirtschaftskreislauf",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "wirtschaftskreislauf",
+    "variant": "geldstrom_router",
     "title": "Wirtschaftskreislauf - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Wirtschaftskreislauf: Im Kontext Geldstrom Router stehen Wirtschaftskreislauf, Geldstrom Router und Unternehmen im Fokus.",
-    "Fuer eine belastbare Einordnung werden Richtig und Haushalt gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Wirtschaftskreislauf stehen Unternehmen, Haushalt und Geldstrom im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Wirtschaftskreislauf und Geldpfad entscheidend.",
+    "Leitgedanke: Ein Haushalt kauft ein Produkt. Welcher Geldpfad ist korrekt.",
+    "Als Ablenker treten Akteure, Zwischenschritte und Schnelligkeit auf.",
+    "Begriffe im Fokus: Unternehmen, Haushalt, Geldstrom, Wirtschaftskreislauf, Geldpfad, Akteure, Zwischenschritte, Schnelligkeit."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Wirtschaftskreislauf",
+      "label": "Unternehmen",
       "is_target": true,
-      "explanation": "\"Wirtschaftskreislauf\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Unternehmen\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t2",
-      "label": "Geldstrom Router",
+      "label": "Haushalt",
       "is_target": true,
-      "explanation": "\"Geldstrom Router\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Haushalt\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t3",
-      "label": "Unternehmen",
+      "label": "Geldstrom",
       "is_target": true,
-      "explanation": "\"Unternehmen\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Geldstrom\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t4",
-      "label": "Richtig",
+      "label": "Wirtschaftskreislauf",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Wirtschaftskreislauf\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t5",
-      "label": "Haushalt",
+      "label": "Geldpfad",
       "is_target": true,
-      "explanation": "\"Haushalt\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Geldpfad\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Akteure",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Akteure\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Zwischenschritte",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zwischenschritte\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Schnelligkeit",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Schnelligkeit\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

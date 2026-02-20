@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "der_matrix_architekt",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Der Matrix-Architekt - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Der Matrix-Architekt - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Der Matrix-Architekt - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Platzbedarf: Welche Alternative erzielt die beste Punktzahl?",
+          "right": "Passende Entscheidung 1: Thin-Client"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Kriterium 1",
+          "right": "Warum passend 1: das kleinste lokale Geraet ist und besonders platzsparend aufgestellt wird"
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Ergonomie: Welche Alternative erzielt die beste Punktzahl?",
+          "right": "Passende Entscheidung 2: Desktop"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Kriterium 2",
+          "right": "Warum passend 2: mit frei waehlbarem Monitor, Tastatur und Hoehenanpassung am ergonomischsten konfigurierbar ist"
+        },
+        {
+          "left": "Szenario 3: Performance: Welche Alternative erzielt die beste Punktzahl?",
+          "right": "Passende Entscheidung 3: Desktop"
+        },
+        {
+          "left": "Begruendung 3: Kriterium 3",
+          "right": "Warum passend 3: die hoechste lokale Rechenleistung fuer CAD und Multitasking bereitstellt"
+        },
+        {
+          "left": "Szenario 4: Verfuegbarkeit: Welche Alternative erzielt die beste Punktzahl?",
+          "right": "Passende Entscheidung 4: Thin-Client"
+        },
+        {
+          "left": "Begruendung 4: Kriterium 4",
+          "right": "Warum passend 4: bei Defekt sehr schnell ersetzt werden kann und Daten zentral verfuegbar bleiben"
         }
       ]
     }

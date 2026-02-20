@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "sql_taxonomy",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "SQL Taxonomy - Zuordnen"
+    "title": "SQL (allgemein) - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "SQL Taxonomy - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "SQL (allgemein) - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: SQL-Befehl einordnen: CREATE",
+          "right": "Passende Entscheidung 1: Data Definition Language"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Creates new database objects."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: SQL-Befehl einordnen: DROP",
+          "right": "Passende Entscheidung 2: Data Definition Language"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Deletes database objects."
+        },
+        {
+          "left": "Szenario 3: SQL-Befehl einordnen: ALTER",
+          "right": "Passende Entscheidung 3: Data Definition Language"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Modifies database structures."
+        },
+        {
+          "left": "Szenario 4: SQL-Befehl einordnen: TRUNCATE",
+          "right": "Passende Entscheidung 4: Data Definition Language"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Removes all records from a table."
         }
       ]
     }

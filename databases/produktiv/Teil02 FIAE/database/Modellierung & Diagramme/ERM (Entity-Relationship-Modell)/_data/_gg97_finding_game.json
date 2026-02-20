@@ -3,7 +3,7 @@
     "topic": "ERM Entity Identification",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "erm_entity_identification",
+    "variant": "erm_entity_relationship_modell",
     "title": "ERM Entity Identification - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "ERM Entity Identification: Im Kontext ERM Entity Relationship Modell stehen ERM Entity Identification, ERM Entity Relationship Modell und attribute im Fokus.",
-    "Fuer eine belastbare Einordnung werden Pfleger und Mitglied gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema ERM Entity Identification stehen Entity, Identification und Attribute im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Entity-Relationship-Modell und Tierheim-Verwaltung entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Entity, Identification, Attribute, Entity-Relationship-Modell, Tierheim-Verwaltung, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "ERM Entity Identification",
+      "label": "Entity",
       "is_target": true,
-      "explanation": "\"ERM Entity Identification\" ist ein zentraler Fachbegriff im Kontext ERM Entity Identification."
+      "explanation": "\"Entity\" ist ein relevanter Fachbegriff im Thema ERM Entity Identification."
     },
     {
       "id": "t2",
-      "label": "ERM Entity Relationship Modell",
+      "label": "Identification",
       "is_target": true,
-      "explanation": "\"ERM Entity Relationship Modell\" ist ein zentraler Fachbegriff im Kontext ERM Entity Identification."
+      "explanation": "\"Identification\" ist ein relevanter Fachbegriff im Thema ERM Entity Identification."
     },
     {
       "id": "t3",
-      "label": "attribute",
+      "label": "Attribute",
       "is_target": true,
-      "explanation": "\"attribute\" ist ein zentraler Fachbegriff im Kontext ERM Entity Identification."
+      "explanation": "\"Attribute\" ist ein relevanter Fachbegriff im Thema ERM Entity Identification."
     },
     {
       "id": "t4",
-      "label": "Pfleger",
+      "label": "Entity-Relationship-Modell",
       "is_target": true,
-      "explanation": "\"Pfleger\" ist ein zentraler Fachbegriff im Kontext ERM Entity Identification."
+      "explanation": "\"Entity-Relationship-Modell\" ist ein relevanter Fachbegriff im Thema ERM Entity Identification."
     },
     {
       "id": "t5",
-      "label": "Mitglied",
+      "label": "Tierheim-Verwaltung",
       "is_target": true,
-      "explanation": "\"Mitglied\" ist ein zentraler Fachbegriff im Kontext ERM Entity Identification."
+      "explanation": "\"Tierheim-Verwaltung\" ist ein relevanter Fachbegriff im Thema ERM Entity Identification."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

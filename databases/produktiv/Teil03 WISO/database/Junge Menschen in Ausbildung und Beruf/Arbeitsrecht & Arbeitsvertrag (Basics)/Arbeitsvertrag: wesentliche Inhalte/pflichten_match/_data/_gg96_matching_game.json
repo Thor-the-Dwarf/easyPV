@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "arbeitsvertrag",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Arbeitsvertrag - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Arbeitsvertrag - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Arbeitsvertrag - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Aussage: Arbeit vereinbarungsgemaess leisten. Welche Rolle trifft primaer zu? Pruefe die Hauptpflicht des Arbeitnehmers.",
+          "right": "Passende Entscheidung 1: Arbeitnehmer"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Die Arbeitspflicht liegt beim Arbeitnehmer."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Aussage: Verguetung zahlen. Welche Rolle ist korrekt? Denk an die Gegenleistung im Arbeitsvertrag.",
+          "right": "Passende Entscheidung 2: Arbeitgeber"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Die Entgeltzahlung ist Arbeitgeberpflicht."
+        },
+        {
+          "left": "Szenario 3: Welche Regel gilt fuer den Klassenbonus? Er haengt von der Rollenwahl ab.",
+          "right": "Passende Entscheidung 3: Falsche Rollenwahl blockiert Klassenbonus"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Erst Rolle korrekt, dann Klassenbonus."
+        },
+        {
+          "left": "Szenario 4: Ab wann gibt es Serienbonus laut Plan? Es braucht mehrere volle Treffer in Folge.",
+          "right": "Passende Entscheidung 4: Ab 6 voll korrekten Karten"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Genau. Dann wird der Serienbonus vergeben."
         }
       ]
     }

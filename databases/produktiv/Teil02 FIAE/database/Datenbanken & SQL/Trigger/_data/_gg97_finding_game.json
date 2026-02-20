@@ -3,7 +3,7 @@
     "topic": "SQL Triggers",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "sql_triggers",
+    "variant": "trigger",
     "title": "SQL Triggers - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "SQL Triggers: Im Kontext Trigger stehen SQL Triggers, table und BEFORE im Fokus.",
-    "Fuer eine belastbare Einordnung werden password und Audit gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema SQL Triggers stehen Trigger, Table und BEFORE im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Audit und Triggers entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Trigger, Table, BEFORE, Audit, Triggers, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "SQL Triggers",
+      "label": "Trigger",
       "is_target": true,
-      "explanation": "\"SQL Triggers\" ist ein zentraler Fachbegriff im Kontext SQL Triggers."
+      "explanation": "\"Trigger\" ist ein relevanter Fachbegriff im Thema SQL Triggers."
     },
     {
       "id": "t2",
-      "label": "table",
+      "label": "Table",
       "is_target": true,
-      "explanation": "\"table\" ist ein zentraler Fachbegriff im Kontext SQL Triggers."
+      "explanation": "\"Table\" ist ein relevanter Fachbegriff im Thema SQL Triggers."
     },
     {
       "id": "t3",
       "label": "BEFORE",
       "is_target": true,
-      "explanation": "\"BEFORE\" ist ein zentraler Fachbegriff im Kontext SQL Triggers."
+      "explanation": "\"BEFORE\" ist ein relevanter Fachbegriff im Thema SQL Triggers."
     },
     {
       "id": "t4",
-      "label": "password",
+      "label": "Audit",
       "is_target": true,
-      "explanation": "\"password\" ist ein zentraler Fachbegriff im Kontext SQL Triggers."
+      "explanation": "\"Audit\" ist ein relevanter Fachbegriff im Thema SQL Triggers."
     },
     {
       "id": "t5",
-      "label": "Audit",
+      "label": "Triggers",
       "is_target": true,
-      "explanation": "\"Audit\" ist ein zentraler Fachbegriff im Kontext SQL Triggers."
+      "explanation": "\"Triggers\" ist ein relevanter Fachbegriff im Thema SQL Triggers."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

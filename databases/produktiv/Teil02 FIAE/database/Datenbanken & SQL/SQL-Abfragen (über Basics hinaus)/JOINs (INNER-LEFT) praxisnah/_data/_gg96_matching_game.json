@@ -4,32 +4,33 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "joins_inner_left_praxisnah",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "JOINs (INNER LEFT) praxisnah - Zuordnen"
+    "title": "JOINs (INNER-LEFT) praxisnah - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "JOINs (INNER LEFT) praxisnah - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "JOINs (INNER-LEFT) praxisnah - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Kunden & Bestellungen Verknuepfe jeden Kunden mit seinen getaetigten Bestellungen ueber die Kunden-ID.",
+          "right": "Passende Entscheidung 1: kunde.id -> bestellung.kunde_id"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Kunden & Bestellungen",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Autoren & Buecher Ordne die Buecher den entsprechenden Autoren zu.",
+          "right": "Passende Entscheidung 2: autor.id -> buch.autor_id"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Autoren & Buecher",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

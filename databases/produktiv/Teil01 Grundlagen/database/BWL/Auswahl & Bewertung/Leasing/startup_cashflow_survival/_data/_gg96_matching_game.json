@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "startup_cashflow_survival",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Startup-Cashflow-Survival - Zuordnen"
@@ -12,24 +13,24 @@
   "levels": [
     {
       "id": 1,
-      "title": "Startup-Cashflow-Survival - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Startup-Cashflow-Survival - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Startup braucht Transporter. Welche Entscheidung haelt die Liquiditaet ueber 12 Monate stabil?",
+          "right": "Passende Entscheidung 1: Leasen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Restliquiditaet bei Leasing: 74000 EUR"
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Aussage zur Endliquiditaet ist korrekt?",
+          "right": "Passende Entscheidung 2: Restcash Kauf: 50000 EUR"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Positiver Cash-Bestand bleibt ueberlebenswichtig."
         }
       ]
     }

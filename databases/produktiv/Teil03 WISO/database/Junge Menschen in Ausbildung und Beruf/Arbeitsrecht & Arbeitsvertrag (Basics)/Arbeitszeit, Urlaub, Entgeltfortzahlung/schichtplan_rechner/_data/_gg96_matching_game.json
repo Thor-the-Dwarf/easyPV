@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "arbeitszeit_und_entgelt",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Arbeitszeit und Entgelt - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Arbeitszeit und Entgelt - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Arbeitszeit und Entgelt - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Was ist beim Schichtplan-Check zentral zu pruefen? Arbeitszeit, Pausen, Ruhezeiten zusammen betrachten.",
+          "right": "Passende Entscheidung 1: Regelkonformitaet von Arbeitszeit, Pausen und Ruhezeiten"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Der Check betrachtet das Zusammenspiel aller Zeitregeln."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Folge hat eine uebersehene schwere Abweichung? Der Plan nennt einen Zusatzabzug.",
+          "right": "Passende Entscheidung 2: Zusatzabzug"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Schwere Ueberseher wiegen besonders."
+        },
+        {
+          "left": "Szenario 3: Wann steigt der Schwierigkeitsgrad? Er basiert auf einer Serie korrekter Checks.",
+          "right": "Passende Entscheidung 3: Bei Serie korrekter Planchecks"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Konstante Treffer erhoehen die Komplexitaet."
+        },
+        {
+          "left": "Szenario 4: Welche KPI-Kombination ist definiert? Genauigkeit und Tempo zusammen.",
+          "right": "Passende Entscheidung 4: Planpruefungsgenauigkeit und Entscheidungszeit"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Beide Werte bilden Lernfortschritt ab."
         }
       ]
     }

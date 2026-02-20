@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "uml_use_case_boundaries",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "UML Use-Case Boundaries - Zuordnen"
+    "title": "UML: Use-Case-Diagramm - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "UML Use-Case Boundaries - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "UML: Use-Case-Diagramm - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Public Roles Identify the external actors. Primary users belong outside the system boundary.",
+          "right": "Passende Entscheidung 1: Customer"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Public Roles",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Partner Systems External systems interacting with ours are also actors. Keep them off-stage.",
+          "right": "Passende Entscheidung 2: Payment Provider"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Partner Systems",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Boundary Leaks Complex roles. Decide if they trigger the system or are a part of its internal logic.",
+          "right": "Passende Entscheidung 3: Nightly Cronjob"
+        },
+        {
+          "left": "Begruendung 3: Boundary Leaks",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

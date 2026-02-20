@@ -3,7 +3,7 @@
     "topic": "Wertschoepfungskette",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "wertschoepfungskette",
+    "variant": "kostenhebel_match",
     "title": "Wertschoepfungskette - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Wertschoepfungskette: Im Kontext Kostenhebel Match stehen Wertschoepfungskette, Kostenhebel Match und Richtig im Fokus.",
-    "Fuer eine belastbare Einordnung werden Falsch und passt gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Wertschoepfungskette stehen Hebel, Kostenhebel und Passt im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Zuordnungen und Wertschoepfungskette entscheidend.",
+    "Leitgedanke: Hohe Ausschussquote in der Fertigung. Welcher Hebel passt zuerst.",
+    "Als Ablenker treten Sicherheitsbestand, Verpackungsdesign und Marketingbudget auf.",
+    "Begriffe im Fokus: Hebel, Kostenhebel, Passt, Zuordnungen, Wertschoepfungskette, Sicherheitsbestand, Verpackungsdesign, Marketingbudget."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Wertschoepfungskette",
+      "label": "Hebel",
       "is_target": true,
-      "explanation": "\"Wertschoepfungskette\" ist ein zentraler Fachbegriff im Kontext Wertschoepfungskette."
+      "explanation": "\"Hebel\" ist ein relevanter Fachbegriff im Thema Wertschoepfungskette."
     },
     {
       "id": "t2",
-      "label": "Kostenhebel Match",
+      "label": "Kostenhebel",
       "is_target": true,
-      "explanation": "\"Kostenhebel Match\" ist ein zentraler Fachbegriff im Kontext Wertschoepfungskette."
+      "explanation": "\"Kostenhebel\" ist ein relevanter Fachbegriff im Thema Wertschoepfungskette."
     },
     {
       "id": "t3",
-      "label": "Richtig",
+      "label": "Passt",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Wertschoepfungskette."
+      "explanation": "\"Passt\" ist ein relevanter Fachbegriff im Thema Wertschoepfungskette."
     },
     {
       "id": "t4",
-      "label": "Falsch",
+      "label": "Zuordnungen",
       "is_target": true,
-      "explanation": "\"Falsch\" ist ein zentraler Fachbegriff im Kontext Wertschoepfungskette."
+      "explanation": "\"Zuordnungen\" ist ein relevanter Fachbegriff im Thema Wertschoepfungskette."
     },
     {
       "id": "t5",
-      "label": "passt",
+      "label": "Wertschoepfungskette",
       "is_target": true,
-      "explanation": "\"passt\" ist ein zentraler Fachbegriff im Kontext Wertschoepfungskette."
+      "explanation": "\"Wertschoepfungskette\" ist ein relevanter Fachbegriff im Thema Wertschoepfungskette."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Sicherheitsbestand",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Sicherheitsbestand\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Verpackungsdesign",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Verpackungsdesign\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Marketingbudget",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Marketingbudget\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

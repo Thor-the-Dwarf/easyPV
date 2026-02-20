@@ -3,7 +3,7 @@
     "topic": "Kuendigungsschutz",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "kuendigungsschutz",
+    "variant": "kuendigungsgrund_klassifikator",
     "title": "Kuendigungsschutz - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Kuendigungsschutz: Im Kontext Kuendigungsgrund Klassifikator stehen Kuendigungsschutz, Kuendigungsgrund Klassifikator und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Kündigung und Grundidee gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Kuendigungsschutz stehen Lueckenbonus, Klassifikator und Grundtyp im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Verwechslungen und Kuendigungsschutz entscheidend.",
+    "Leitgedanke: Welche Kernaufgabe hat der Klassifikator pro Fallkarte.",
+    "Als Ablenker treten Gesamtpunkte, Rundenanzahl und Schnellsten auf.",
+    "Begriffe im Fokus: Lueckenbonus, Klassifikator, Grundtyp, Verwechslungen, Kuendigungsschutz, Gesamtpunkte, Rundenanzahl, Schnellsten."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Kuendigungsschutz",
+      "label": "Lueckenbonus",
       "is_target": true,
-      "explanation": "\"Kuendigungsschutz\" ist ein zentraler Fachbegriff im Kontext Kuendigungsschutz."
+      "explanation": "\"Lueckenbonus\" ist ein relevanter Fachbegriff im Thema Kuendigungsschutz."
     },
     {
       "id": "t2",
-      "label": "Kuendigungsgrund Klassifikator",
+      "label": "Klassifikator",
       "is_target": true,
-      "explanation": "\"Kuendigungsgrund Klassifikator\" ist ein zentraler Fachbegriff im Kontext Kuendigungsschutz."
+      "explanation": "\"Klassifikator\" ist ein relevanter Fachbegriff im Thema Kuendigungsschutz."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Grundtyp",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Kuendigungsschutz."
+      "explanation": "\"Grundtyp\" ist ein relevanter Fachbegriff im Thema Kuendigungsschutz."
     },
     {
       "id": "t4",
-      "label": "Kündigung",
+      "label": "Verwechslungen",
       "is_target": true,
-      "explanation": "\"Kündigung\" ist ein zentraler Fachbegriff im Kontext Kuendigungsschutz."
+      "explanation": "\"Verwechslungen\" ist ein relevanter Fachbegriff im Thema Kuendigungsschutz."
     },
     {
       "id": "t5",
-      "label": "Grundidee",
+      "label": "Kuendigungsschutz",
       "is_target": true,
-      "explanation": "\"Grundidee\" ist ein zentraler Fachbegriff im Kontext Kuendigungsschutz."
+      "explanation": "\"Kuendigungsschutz\" ist ein relevanter Fachbegriff im Thema Kuendigungsschutz."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Gesamtpunkte",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamtpunkte\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Rundenanzahl",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Rundenanzahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Schnellsten",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Schnellsten\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

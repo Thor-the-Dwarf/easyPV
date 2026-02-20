@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "unternehmensaufbau",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Unternehmensaufbau - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Unternehmensaufbau - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Unternehmensaufbau - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Abfolge ist bei einem Kundenauftrag typisch? Vertrieb startet, danach Leistungserstellung.",
+          "right": "Passende Entscheidung 1: Vertrieb -> Produktion/Leistung -> Versand/Service"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das bildet die Kernschnittstelle ab."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Was ist eine Pflichtstation bei Materialengpass? Abstimmung zwischen Beschaffung und Planung.",
+          "right": "Passende Entscheidung 2: Einkauf und Produktionsplanung synchronisieren"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Ohne Abstimmung stockt der Ablauf."
+        },
+        {
+          "left": "Szenario 3: Welche KPI misst Routing-Qualitaet? Korrekter Pfad plus noetige Schritte.",
+          "right": "Passende Entscheidung 3: Korrekte Uebergaben bis Ziel mit minimalen Fehlwegen"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Das verbindet Qualitaet und Effizienz."
+        },
+        {
+          "left": "Szenario 4: Wann gilt eine Route als unvollstaendig? Pflichtschritt fehlt.",
+          "right": "Passende Entscheidung 4: Wenn eine kritische Fachabteilung uebersprungen wird"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Pflichtstationen sind notwendig."
         }
       ]
     }

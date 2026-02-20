@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "beduerfnisse_bedarf_kaufkraft",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Beduerfnisse, Bedarf, Kaufkraft - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Beduerfnisse, Bedarf, Kaufkraft - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Beduerfnisse, Bedarf, Kaufkraft - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Monat 1: Einkommen 1500 EUR. Welche Option deckt Grundbedarf bei vertretbaren Kosten? Achte auf Bedarfsdeckung vor Zusa...",
+          "right": "Passende Entscheidung 1: Warenkorb A: Miete, Nahrung, Mobilitaet, kein Luxus"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Solide Grundabdeckung."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Inflation +8%, Einkommen unveraendert. Welche Folge ist korrekt? Kaufkraft veraendert sich real.",
+          "right": "Passende Entscheidung 2: Gleiches Einkommen deckt weniger Menge/Qualitaet"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Das ist sinkende Kaufkraft."
+        },
+        {
+          "left": "Szenario 3: Welche Entscheidung stabilisiert Kaufkraft am ehesten? Preis/Leistung + Notwendigkeit kombinieren.",
+          "right": "Passende Entscheidung 3: Bedarf priorisieren und substituierbare Produkte wechseln"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Damit bleibt Mindestniveau erhalten."
+        },
+        {
+          "left": "Szenario 4: Woran erkennst du Unterdeckung kritischer Needs? Kritische Needs duerfen nicht fehlen.",
+          "right": "Passende Entscheidung 4: Wenn Nahrung/Wohnen/Grundversorgung nicht voll gedeckt sind"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das ist eine kritische Unterdeckung."
         }
       ]
     }

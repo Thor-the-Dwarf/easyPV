@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "ausbildungsvertrag_rechte_pflichten",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Ausbildungsvertrag: Rechte - Pflichten - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Ausbildungsvertrag: Rechte - Pflichten - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Ausbildungsvertrag: Rechte - Pflichten - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Zuordnung ist korrekt? Rolle und Kategorie gemeinsam pruefen.",
+          "right": "Passende Entscheidung 1: Ausbildender: Pflicht zur fachlichen Anleitung"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das ist eine Kernpflicht."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Was ist typischerweise eine Pflicht des Azubis? Lern- und Mitwirkungspflichten.",
+          "right": "Passende Entscheidung 2: Lernaufgaben sorgfaeltig ausfuehren und Regeln beachten"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Korrekt. Das gehoert zu den Grundpflichten."
+        },
+        {
+          "left": "Szenario 3: Welche Aussage beschreibt ein Recht des Azubis? Anspruch aus dem Ausbildungsvertrag.",
+          "right": "Passende Entscheidung 3: Anspruch auf planvolle und zielgerichtete Ausbildung"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Ja. Das ist ein zentrales Recht."
+        },
+        {
+          "left": "Szenario 4: Welche Kombination ist falsch zugeordnet? Suche Rollenverwechslung.",
+          "right": "Passende Entscheidung 4: Azubi: Pflicht, keine Lerninhalte zu erhalten"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das ist eine klare Fehlzuordnung."
         }
       ]
     }

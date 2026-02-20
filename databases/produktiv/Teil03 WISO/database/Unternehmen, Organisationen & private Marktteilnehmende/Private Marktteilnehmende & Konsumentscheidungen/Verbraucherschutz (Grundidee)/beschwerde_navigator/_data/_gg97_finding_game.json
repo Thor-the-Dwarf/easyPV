@@ -3,7 +3,7 @@
     "topic": "Verbraucherschutz",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "verbraucherschutz",
+    "variant": "beschwerde_navigator",
     "title": "Verbraucherschutz - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Verbraucherschutz: Im Kontext Beschwerde Navigator stehen Verbraucherschutz, Beschwerde Navigator und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Grundidee und Richtig gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Verbraucherschutz stehen Kommt, Beschwerde und Verbraucherschutz im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Frist und Einschalten entscheidend.",
+    "Leitgedanke: Ware kommt beschaedigt an. Welcher Schritt steht zuerst an.",
+    "Als Ablenker treten Zufallstreffern, Dokumentieren und Unbegruendete auf.",
+    "Begriffe im Fokus: Kommt, Beschwerde, Verbraucherschutz, Frist, Einschalten, Zufallstreffern, Dokumentieren, Unbegruendete."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Verbraucherschutz",
+      "label": "Kommt",
       "is_target": true,
-      "explanation": "\"Verbraucherschutz\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Kommt\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t2",
-      "label": "Beschwerde Navigator",
+      "label": "Beschwerde",
       "is_target": true,
-      "explanation": "\"Beschwerde Navigator\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Beschwerde\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Verbraucherschutz",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Verbraucherschutz\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t4",
-      "label": "Grundidee",
+      "label": "Frist",
       "is_target": true,
-      "explanation": "\"Grundidee\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Frist\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t5",
-      "label": "Richtig",
+      "label": "Einschalten",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Einschalten\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Zufallstreffern",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallstreffern\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Dokumentieren",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Dokumentieren\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Unbegruendete",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Unbegruendete\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

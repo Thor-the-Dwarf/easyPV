@@ -3,8 +3,8 @@
     "topic": "E-Mail formulieren",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "e_mail_formulieren",
-    "title": "Der Tone-of-Voice Editor - Begriffe finden",
+    "variant": "tone_of_voice_editor",
+    "title": "E-Mail formulieren - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
   },
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Mail Formulieren: Im Kontext Tone Of Voice Editor stehen Mail Formulieren, Tone Of Voice Editor und E-Mail im Fokus.",
-    "Fuer eine belastbare Einordnung werden bitte und Emotional gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema E-Mail formulieren stehen Formulieren, E-Mail und Editor im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Voice und Bitte entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Formulieren, E-Mail, Editor, Voice, Bitte, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Mail Formulieren",
+      "label": "Formulieren",
       "is_target": true,
-      "explanation": "\"Mail Formulieren\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"Formulieren\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t2",
-      "label": "Tone Of Voice Editor",
+      "label": "E-Mail",
       "is_target": true,
-      "explanation": "\"Tone Of Voice Editor\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"E-Mail\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t3",
-      "label": "E-Mail",
+      "label": "Editor",
       "is_target": true,
-      "explanation": "\"E-Mail\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"Editor\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t4",
-      "label": "bitte",
+      "label": "Voice",
       "is_target": true,
-      "explanation": "\"bitte\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"Voice\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t5",
-      "label": "Emotional",
+      "label": "Bitte",
       "is_target": true,
-      "explanation": "\"Emotional\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"Bitte\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

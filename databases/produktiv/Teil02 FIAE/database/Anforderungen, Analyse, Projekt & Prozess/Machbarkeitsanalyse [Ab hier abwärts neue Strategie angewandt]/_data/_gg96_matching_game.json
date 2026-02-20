@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "machbarkeitsanalyse",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "Machbarkeitsanalyse - Zuordnen"
+    "title": "Machbarkeitsanalyse [Ab hier abwaerts neue Strategie angewandt] - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "Machbarkeitsanalyse - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Machbarkeitsanalyse [Ab hier abwaerts neue Strategie angewandt] - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Klares Budget Das Projektbudget ist vollstaendig bewilligt und auf dem Konto. Alle Stakeholder sind informiert.",
+          "right": "Passende Entscheidung 1: GO"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Klares Budget",
+          "right": "Warum passend 1: Alle Ampeln stehen auf Gruen. Ein klassischer Startschuss."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Fehlende Expertise Das Team soll eine KI entwickeln, aber niemand hat Erfahrung mit Python oder Machine Learning.",
+          "right": "Passende Entscheidung 2: NO-GO"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Fehlende Expertise",
+          "right": "Warum passend 2: Ohne Kompetenz ist das Scheitern garantiert. Schulung oder Externe noetig."
+        },
+        {
+          "left": "Szenario 3: Rechtliche Grauzone Wir wollen Nutzerdaten verkaufen, haben aber keine Einwilligung der Nutzer eingeholt.",
+          "right": "Passende Entscheidung 3: NO-GO"
+        },
+        {
+          "left": "Begruendung 3: Rechtliche Grauzone",
+          "right": "Warum passend 3: Ein Rechtsverstoss ist ein absoluter Showstopper. DSGVO-Strafen sind existenzbedrohend."
+        },
+        {
+          "left": "Szenario 4: Technisch machbar Die Technologie ist Standard (LAMP-Stack), das Team kennt sich aus, Hardware ist da.",
+          "right": "Passende Entscheidung 4: GO"
+        },
+        {
+          "left": "Begruendung 4: Technisch machbar",
+          "right": "Warum passend 4: Solide technische Basis, kein Grund zu warten."
         }
       ]
     }

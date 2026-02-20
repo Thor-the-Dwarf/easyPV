@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "konflikt_navi",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Konflikt-Navi - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Konflikt-Navi - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Konflikt-Navi - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Abteilung A will Feature X sofort, Abteilung B priorisiert Stabilitaet.",
+          "right": "Passende Entscheidung 1: Pilot mit klaren Erfolgsmetriken und Go/No-Go nach 2 Wochen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Entscheidung fachlich begruenden."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Sales fordert Individualloesung, IT fordert Standardisierung.",
+          "right": "Passende Entscheidung 2: Standardprozess mit begrenzter, begruendeter Ausnahme definieren"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Entscheidung fachlich begruenden."
+        },
+        {
+          "left": "Szenario 3: Fachbereich will schnellen Rollout, Support warnt vor Schulungsdefizit.",
+          "right": "Passende Entscheidung 3: Stufenrollout mit verbindlichem Schulungspaket"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Entscheidung fachlich begruenden."
+        },
+        {
+          "left": "Szenario 4: Controlling fordert harte KPI-Ziele, Team beklagt zu hohen Druck.",
+          "right": "Passende Entscheidung 4: KPI-Ziele mit realistischen Zwischenetappen und Review-Slots"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Entscheidung fachlich begruenden."
         }
       ]
     }

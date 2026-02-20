@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "standortwettbewerb",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Standortwettbewerb - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Standortwettbewerb - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Standortwettbewerb - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Was ist ein harter Standortfaktor? Direkt quantifizierbar.",
+          "right": "Passende Entscheidung 1: Lohnkosten pro Stunde"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Messbar und direkt vergleichbar."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Was ist ein weicher Standortfaktor? Schwerer exakt zu messen.",
+          "right": "Passende Entscheidung 2: Verfuegbarkeit qualifizierter Fachkraefte"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Zentral fuer Leistungsfaehigkeit."
+        },
+        {
+          "left": "Szenario 3: Welche Kombination ist fuer langfristige Stabilitaet am besten? Hart + weich balancieren.",
+          "right": "Passende Entscheidung 3: Moderate Kosten plus starke Fachkraeftebasis"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Balancierte Bewertung."
+        },
+        {
+          "left": "Szenario 4: Was zeigt ein Match-Fehler im Spiel? Falschklassifikation eines Faktors.",
+          "right": "Passende Entscheidung 4: Faktor wurde falscher Kategorie zugeordnet"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Kategoriefehler senken Punkte."
         }
       ]
     }

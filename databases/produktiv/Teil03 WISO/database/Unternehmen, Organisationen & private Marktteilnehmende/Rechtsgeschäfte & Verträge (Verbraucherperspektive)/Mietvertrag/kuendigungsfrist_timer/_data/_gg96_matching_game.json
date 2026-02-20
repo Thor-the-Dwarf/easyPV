@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "kuendigungsfrist_timer",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Kuendigungsfrist-Timer - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Kuendigungsfrist-Timer - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Kuendigungsfrist-Timer - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Fall: Eingang Kuendigung am 03.02., Vertragsende zum 31.03. Ist die Frist plausibel? Pruefe Zeitraum zwischen Zugang un...",
+          "right": "Passende Entscheidung 1: Nein, Frist wirkt zu kurz"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Der Zeitraum ist fuer regulaere Fristen typischerweise zu knapp."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Fall: Kuendigung geht am 28.02. ein, Ziel ist 31.05. Wie bewerten? Mehrere volle Monate sprechen fuer Fristeinhaltung.",
+          "right": "Passende Entscheidung 2: Frist eher eingehalten"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Der Zeitraum ist nachvollziehbar ausreichend."
+        },
+        {
+          "left": "Szenario 3: Fall: Zieltermin ist mitten im Monat statt Monatsende. Was ist der Kerncheck? Terminlogik und Vertragsbezug sauber herl...",
+          "right": "Passende Entscheidung 3: Start- und Enddatum transparent herleiten und dann bewerten"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Reproduzierbare Herleitung ist entscheidend."
+        },
+        {
+          "left": "Szenario 4: Fall: Zugang unklar, nur Versanddatum vorhanden. Wie reagieren? Ohne belastbaren Zugang bleibt die Fristbewertung unsic...",
+          "right": "Passende Entscheidung 4: Zugangsdokumentation klaeren, dann Fristentscheidung treffen"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Erst Zugang klarstellen, dann bewerten."
         }
       ]
     }

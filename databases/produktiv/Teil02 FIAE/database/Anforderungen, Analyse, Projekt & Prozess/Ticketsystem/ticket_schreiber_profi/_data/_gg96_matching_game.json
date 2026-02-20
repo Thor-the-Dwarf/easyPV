@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "ticket_schreiber_profi",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "ticket schreiber profi - Zuordnen"
+    "title": "Ticket-Schreiber-Profi - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "ticket schreiber profi - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Ticket-Schreiber-Profi - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Ticket 01",
+          "right": "Passende Entscheidung 1: Schritte zur Reproduktion"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Ohne reproduzierbare Schritte kann das Team den Fehler kaum gezielt nachstellen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Ticket 02",
+          "right": "Passende Entscheidung 2: Erwartetes Ergebnis"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Nur mit Soll-Zustand kann Entwicklung klaeren, ob wirklich ein Defekt vorliegt."
+        },
+        {
+          "left": "Szenario 3: Ticket 03",
+          "right": "Passende Entscheidung 3: Ist-Ergebnis"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Es fehlt die konkrete Beobachtung: Was passiert stattdessen tatsaechlich?"
+        },
+        {
+          "left": "Szenario 4: Ticket 04",
+          "right": "Passende Entscheidung 4: Umgebung / Version"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Gerade bei Device-Bugs ist die genaue Umgebung (Modell, OS, App-Version) entscheidend."
         }
       ]
     }

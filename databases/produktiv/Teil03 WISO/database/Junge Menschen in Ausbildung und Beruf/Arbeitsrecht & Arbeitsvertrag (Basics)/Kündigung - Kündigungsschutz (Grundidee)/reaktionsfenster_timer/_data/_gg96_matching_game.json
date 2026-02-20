@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "kuendigungsschutz",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Kuendigungsschutz - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Kuendigungsschutz - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Kuendigungsschutz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Entscheidung trainiert der Timer in erster Linie? Es geht um den naechsten sinnvollen Schritt.",
+          "right": "Passende Entscheidung 1: Priorisierung frueher Reaktionsschritte im Zeitfenster"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Genau das trainiert der Timer."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wie wird eine ausbleibende Antwort gewertet? Keine Entscheidung ist auch ein Ergebnis.",
+          "right": "Passende Entscheidung 2: Als Fehler im jeweiligen Kurzfall"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Zeitversaeumnis zaehlt negativ."
+        },
+        {
+          "left": "Szenario 3: Wann gibt es den Zeitbonus laut Plan? Unter einer klaren Sekundengrenze.",
+          "right": "Passende Entscheidung 3: Bei korrekter Antwort unter 8 Sekunden"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Dann kommen Bonuspunkte dazu."
+        },
+        {
+          "left": "Szenario 4: Welche Serienregel ist definiert? Schnell und korrekt wird kombiniert.",
+          "right": "Passende Entscheidung 4: Drei schnelle korrekte Antworten aktivieren Bonus"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Genau. Serie + Tempo wird belohnt."
         }
       ]
     }

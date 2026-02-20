@@ -3,7 +3,7 @@
     "topic": "Duales System",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "duales_system",
+    "variant": "akteurszuordnung_match",
     "title": "Duales System - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Duales System: Im Kontext Akteurszuordnung Match stehen Duales System, Akteurszuordnung Match und dualen im Fokus.",
-    "Fuer eine belastbare Einordnung werden Stelle und Kernaufgabe gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Duales System stehen Akteur, System und Kernaufgabe im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Stelle und Zuordnung entscheidend.",
+    "Leitgedanke: Wer ist im dualen System primaer fuer die betriebliche Einsatzplanung zustaendig.",
+    "Als Ablenker treten Gesamtspielzeit, Schichtplanung und Berufsschule auf.",
+    "Begriffe im Fokus: Akteur, System, Kernaufgabe, Stelle, Zuordnung, Gesamtspielzeit, Schichtplanung, Berufsschule."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Duales System",
+      "label": "Akteur",
       "is_target": true,
-      "explanation": "\"Duales System\" ist ein zentraler Fachbegriff im Kontext Duales System."
+      "explanation": "\"Akteur\" ist ein relevanter Fachbegriff im Thema Duales System."
     },
     {
       "id": "t2",
-      "label": "Akteurszuordnung Match",
+      "label": "System",
       "is_target": true,
-      "explanation": "\"Akteurszuordnung Match\" ist ein zentraler Fachbegriff im Kontext Duales System."
+      "explanation": "\"System\" ist ein relevanter Fachbegriff im Thema Duales System."
     },
     {
       "id": "t3",
-      "label": "dualen",
+      "label": "Kernaufgabe",
       "is_target": true,
-      "explanation": "\"dualen\" ist ein zentraler Fachbegriff im Kontext Duales System."
+      "explanation": "\"Kernaufgabe\" ist ein relevanter Fachbegriff im Thema Duales System."
     },
     {
       "id": "t4",
       "label": "Stelle",
       "is_target": true,
-      "explanation": "\"Stelle\" ist ein zentraler Fachbegriff im Kontext Duales System."
+      "explanation": "\"Stelle\" ist ein relevanter Fachbegriff im Thema Duales System."
     },
     {
       "id": "t5",
-      "label": "Kernaufgabe",
+      "label": "Zuordnung",
       "is_target": true,
-      "explanation": "\"Kernaufgabe\" ist ein zentraler Fachbegriff im Kontext Duales System."
+      "explanation": "\"Zuordnung\" ist ein relevanter Fachbegriff im Thema Duales System."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Gesamtspielzeit",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamtspielzeit\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Schichtplanung",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Schichtplanung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Berufsschule",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Berufsschule\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

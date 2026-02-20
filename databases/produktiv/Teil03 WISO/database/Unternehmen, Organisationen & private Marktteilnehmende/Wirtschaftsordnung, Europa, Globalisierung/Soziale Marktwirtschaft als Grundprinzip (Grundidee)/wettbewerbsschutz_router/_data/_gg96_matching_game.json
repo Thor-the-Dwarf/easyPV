@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "soziale_marktwirtschaft",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Soziale Marktwirtschaft - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Soziale Marktwirtschaft - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Soziale Marktwirtschaft - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Ein Anbieter dominiert den Markt stark. Erster Schritt? Sachverhalt strukturieren.",
+          "right": "Passende Entscheidung 1: Marktmachtindikatoren und Verhalten pruefen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Faktenbasis zuerst."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Kartellverdacht: welcher Pfad ist korrekt? Hinweise -> Pruefung -> Massnahme.",
+          "right": "Passende Entscheidung 2: Indizien sammeln, Verfahren starten, Auflagen festlegen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Prozesskette stimmt."
+        },
+        {
+          "left": "Szenario 3: Wann gibt es Zusatzabzug laut Regel? Pflichtschritt fehlt.",
+          "right": "Passende Entscheidung 3: Wenn ein Pflichtschritt im Routing ausgelassen wird"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Das verletzt die Prozesslogik."
+        },
+        {
+          "left": "Szenario 4: Welche KPI passt am besten? Pfad + Effizienz.",
+          "right": "Passende Entscheidung 4: Routing-Genauigkeit und Schritt-Effizienz"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Genau die Zielmetrik."
         }
       ]
     }

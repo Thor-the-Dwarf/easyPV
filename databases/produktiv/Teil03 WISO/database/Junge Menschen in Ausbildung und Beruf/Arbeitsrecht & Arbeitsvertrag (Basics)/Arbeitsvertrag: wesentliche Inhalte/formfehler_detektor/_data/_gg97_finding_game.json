@@ -3,7 +3,7 @@
     "topic": "Arbeitsvertrag",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "arbeitsvertrag",
+    "variant": "formfehler_detektor",
     "title": "Arbeitsvertrag - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Arbeitsvertrag: Im Kontext Formfehler Detektor stehen Arbeitsvertrag, Formfehler Detektor und wesentliche im Fokus.",
-    "Fuer eine belastbare Einordnung werden Inhalte und korrekt gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Arbeitsvertrag stehen Detektor, Fehler und Arbeitsvertrag im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Pflichtangaben und Formfehler entscheidend.",
+    "Leitgedanke: Im Entwurf fehlen zentrale Vertragsdaten z. B. Beginn . Was ist der richtige Check.",
+    "Als Ablenker treten Bearbeitungszeit, Gesamtspielzeit und Pflichtinhalte auf.",
+    "Begriffe im Fokus: Detektor, Fehler, Arbeitsvertrag, Pflichtangaben, Formfehler, Bearbeitungszeit, Gesamtspielzeit, Pflichtinhalte."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Arbeitsvertrag",
+      "label": "Detektor",
       "is_target": true,
-      "explanation": "\"Arbeitsvertrag\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Detektor\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t2",
-      "label": "Formfehler Detektor",
+      "label": "Fehler",
       "is_target": true,
-      "explanation": "\"Formfehler Detektor\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Fehler\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t3",
-      "label": "wesentliche",
+      "label": "Arbeitsvertrag",
       "is_target": true,
-      "explanation": "\"wesentliche\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Arbeitsvertrag\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t4",
-      "label": "Inhalte",
+      "label": "Pflichtangaben",
       "is_target": true,
-      "explanation": "\"Inhalte\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Pflichtangaben\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t5",
-      "label": "korrekt",
+      "label": "Formfehler",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Formfehler\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Bearbeitungszeit",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Bearbeitungszeit\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Gesamtspielzeit",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamtspielzeit\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Pflichtinhalte",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Pflichtinhalte\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

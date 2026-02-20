@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "adapter_pattern",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "Adapter Pattern - Zuordnen"
+    "title": "Adapter - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "Adapter Pattern - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Adapter - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: The Power Plug The Power Plug",
+          "right": "Passende Entscheidung 1: US-to-EU Adapter"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: The Power Plug",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Data Format Data Format",
+          "right": "Passende Entscheidung 2: XML-to-JSON"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Data Format",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Temperature Service Temperature Service",
+          "right": "Passende Entscheidung 3: Math: x * 1.8 + 32"
+        },
+        {
+          "left": "Begruendung 3: Temperature Service",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 4: Legacy Payment Legacy Payment",
+          "right": "Passende Entscheidung 4: Wrapper: pay() -> process()"
+        },
+        {
+          "left": "Begruendung 4: Legacy Payment",
+          "right": "Warum passend 4: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

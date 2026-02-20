@@ -3,7 +3,7 @@
     "topic": "Betriebsprozesse",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "betriebsprozesse",
+    "variant": "rollenfluss_navigator",
     "title": "Betriebsprozesse - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Betriebsprozesse: Im Kontext Rollenfluss Navigator stehen Betriebsprozesse, Rollenfluss Navigator und Geschaeftsprozesse im Fokus.",
-    "Fuer eine belastbare Einordnung werden Richtig und korrekt gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Betriebsprozesse stehen Kernrolle, Schritt und Uebergabekette im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Rolle und Betriebsprozesse entscheidend.",
+    "Leitgedanke: Welche Wahl sichert eine stabile Uebergabekette.",
+    "Als Ablenker treten Bauchgefuehl, Entscheidung und Gesamtdauer auf.",
+    "Begriffe im Fokus: Kernrolle, Schritt, Uebergabekette, Rolle, Betriebsprozesse, Bauchgefuehl, Entscheidung, Gesamtdauer."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Betriebsprozesse",
+      "label": "Kernrolle",
       "is_target": true,
-      "explanation": "\"Betriebsprozesse\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Kernrolle\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t2",
-      "label": "Rollenfluss Navigator",
+      "label": "Schritt",
       "is_target": true,
-      "explanation": "\"Rollenfluss Navigator\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Schritt\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t3",
-      "label": "Geschaeftsprozesse",
+      "label": "Uebergabekette",
       "is_target": true,
-      "explanation": "\"Geschaeftsprozesse\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Uebergabekette\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t4",
-      "label": "Richtig",
+      "label": "Rolle",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Rolle\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t5",
-      "label": "korrekt",
+      "label": "Betriebsprozesse",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Betriebsprozesse\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Bauchgefuehl",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Bauchgefuehl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Entscheidung",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Entscheidung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Gesamtdauer",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamtdauer\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "data_import",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "Data Import - Zuordnen"
+    "title": "Datenimport - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "Data Import - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Datenimport - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Schema customers: Welches Feld ist korrekt abgebildet?",
+          "right": "Passende Entscheidung 1: first_name"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Simple Contact Import",
+          "right": "Warum passend 1: Dieses Feld gehoert in das Zielschema."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Schema users: Welches Feld ist korrekt abgebildet?",
+          "right": "Passende Entscheidung 2: first_name"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Legacy System Migration",
+          "right": "Warum passend 2: Dieses Feld gehoert in das Zielschema."
+        },
+        {
+          "left": "Szenario 3: Schema products: Welches Feld ist korrekt abgebildet?",
+          "right": "Passende Entscheidung 3: sku"
+        },
+        {
+          "left": "Begruendung 3: E-Commerce Product Feed",
+          "right": "Warum passend 3: Dieses Feld gehoert in das Zielschema."
         }
       ]
     }

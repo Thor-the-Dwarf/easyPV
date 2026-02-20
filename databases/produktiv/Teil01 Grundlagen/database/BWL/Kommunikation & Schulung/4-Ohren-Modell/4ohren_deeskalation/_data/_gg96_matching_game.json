@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "der_deeskalations_profi",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Der Deeskalations-Profi - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Der Deeskalations-Profi - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Der Deeskalations-Profi - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Kollege sagt wuetend: 'Nie raeumst du die Spuelmaschine aus!'",
+          "right": "Passende Entscheidung 1: Die Maschine war noch nicht fertig. Ich raeume sie in 10 Minuten aus."
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Eine sachliche Antwort nimmt Druck raus und klaert den Fakt statt Schuldzuweisungen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Teamleiterin: 'Du bist schon wieder zu spaet mit dem Ticket.'",
+          "right": "Passende Entscheidung 2: Ich habe den Fehler reproduziert, Fix ist um 14:30 Uhr im Review."
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Sachebene heisst: Status + konkrete Naechsteschritte liefern."
+        },
+        {
+          "left": "Szenario 3: Kunde: 'Ihre Software ist unbrauchbar!'",
+          "right": "Passende Entscheidung 3: Welche Funktion betrifft es konkret? Dann priorisieren wir den Fix sofort."
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Deeskalation gelingt mit praezisem Nachfragen und faktenbasierter Eingrenzung."
+        },
+        {
+          "left": "Szenario 4: Azubi: 'Niemand erklaert mir hier etwas!'",
+          "right": "Passende Entscheidung 4: Nenn mir bitte zwei Themen. Wir planen heute 16:00 Uhr 20 Minuten dafuer ein."
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Sachebene strukturiert Erwartung und Termin statt Emotion gegen Emotion."
         }
       ]
     }

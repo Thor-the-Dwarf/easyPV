@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "sql_union_compatibility",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "SQL UNION Compatibility - Zuordnen"
+    "title": "UNION - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "SQL UNION Compatibility - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "UNION - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Basic ID Sync Merge IDs from 'Active_Users' and 'Archived_Users'. Both have exactly one INT column.",
+          "right": "Passende Entscheidung 1: Kompatibel fuer UNION"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Basic ID Sync",
+          "right": "Warum passend 1: Both queries have 1 column of type INT."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Contact Fusion Merge phone numbers. Wait, Query B has a Name as well!",
+          "right": "Passende Entscheidung 2: Nicht kompatibel"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Contact Fusion",
+          "right": "Warum passend 2: Column count mismatch (1 vs 2)."
+        },
+        {
+          "left": "Szenario 3: Type Mismatch Repel Try to merge IDs with Emails. The types won't snap!",
+          "right": "Passende Entscheidung 3: Nicht kompatibel"
+        },
+        {
+          "left": "Begruendung 3: Type Mismatch Repel",
+          "right": "Warum passend 3: Type mismatch at Position 1 (INT vs STR)."
+        },
+        {
+          "left": "Szenario 4: The Perfect Match Check if Product and Service catalogs are compatible.",
+          "right": "Passende Entscheidung 4: Kompatibel fuer UNION"
+        },
+        {
+          "left": "Begruendung 4: The Perfect Match",
+          "right": "Warum passend 4: Perfect match: 3 columns, INT-STR-DEC sequence."
         }
       ]
     }

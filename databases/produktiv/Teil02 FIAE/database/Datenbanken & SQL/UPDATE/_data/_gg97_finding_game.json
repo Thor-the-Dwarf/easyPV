@@ -3,7 +3,7 @@
     "topic": "SQL UPDATE Precision",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "sql_update_precision",
+    "variant": "update",
     "title": "SQL UPDATE Precision - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "SQL UPDATE Precision: Im Kontext UPDATE stehen SQL UPDATE Precision, Branch und admin im Fokus.",
-    "Fuer eine belastbare Einordnung werden North und salary gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema SQL UPDATE Precision stehen UPDATE, Branch und Precision im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Password und Reset entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: UPDATE, Branch, Precision, Password, Reset, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "SQL UPDATE Precision",
+      "label": "UPDATE",
       "is_target": true,
-      "explanation": "\"SQL UPDATE Precision\" ist ein zentraler Fachbegriff im Kontext SQL UPDATE Precision."
+      "explanation": "\"UPDATE\" ist ein relevanter Fachbegriff im Thema SQL UPDATE Precision."
     },
     {
       "id": "t2",
       "label": "Branch",
       "is_target": true,
-      "explanation": "\"Branch\" ist ein zentraler Fachbegriff im Kontext SQL UPDATE Precision."
+      "explanation": "\"Branch\" ist ein relevanter Fachbegriff im Thema SQL UPDATE Precision."
     },
     {
       "id": "t3",
-      "label": "admin",
+      "label": "Precision",
       "is_target": true,
-      "explanation": "\"admin\" ist ein zentraler Fachbegriff im Kontext SQL UPDATE Precision."
+      "explanation": "\"Precision\" ist ein relevanter Fachbegriff im Thema SQL UPDATE Precision."
     },
     {
       "id": "t4",
-      "label": "North",
+      "label": "Password",
       "is_target": true,
-      "explanation": "\"North\" ist ein zentraler Fachbegriff im Kontext SQL UPDATE Precision."
+      "explanation": "\"Password\" ist ein relevanter Fachbegriff im Thema SQL UPDATE Precision."
     },
     {
       "id": "t5",
-      "label": "salary",
+      "label": "Reset",
       "is_target": true,
-      "explanation": "\"salary\" ist ein zentraler Fachbegriff im Kontext SQL UPDATE Precision."
+      "explanation": "\"Reset\" ist ein relevanter Fachbegriff im Thema SQL UPDATE Precision."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "nachricht_scanner",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Nachricht-Scanner - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Nachricht-Scanner - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Nachricht-Scanner - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Aussage einordnen: Der Termin beginnt um 14:00 Uhr.",
+          "right": "Passende Entscheidung 1: Sache"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Sachinhalt: neutrale Information ueber Zeit."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Aussage einordnen: Ich bin gerade nervoes vor der Praesentation.",
+          "right": "Passende Entscheidung 2: Ich"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Selbstoffenbarung: Gefuehl/Zustand des Senders."
+        },
+        {
+          "left": "Szenario 3: Aussage einordnen: Du hoerst mir nie richtig zu.",
+          "right": "Passende Entscheidung 3: Du"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Beziehung: Bewertung/Vorwurf an den Empfaenger."
+        },
+        {
+          "left": "Szenario 4: Aussage einordnen: Schick mir bitte das Protokoll bis 16:00 Uhr.",
+          "right": "Passende Entscheidung 4: Tu was"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Appell: klare Handlungsaufforderung mit Zeitrahmen."
         }
       ]
     }

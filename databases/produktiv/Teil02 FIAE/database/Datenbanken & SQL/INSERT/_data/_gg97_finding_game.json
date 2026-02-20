@@ -3,7 +3,7 @@
     "topic": "INSERT Statement",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "insert_statement",
+    "variant": "insert",
     "title": "INSERT Statement - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "INSERT Statement: Im Kontext INSERT stehen INSERT Statement, VARCHAR und Alice im Fokus.",
-    "Fuer eine belastbare Einordnung werden Event und Login gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema INSERT Statement stehen INSERT, Statement und VARCHAR im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Alice und Login entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: INSERT, Statement, VARCHAR, Alice, Login, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "INSERT Statement",
+      "label": "INSERT",
       "is_target": true,
-      "explanation": "\"INSERT Statement\" ist ein zentraler Fachbegriff im Kontext INSERT Statement."
+      "explanation": "\"INSERT\" ist ein relevanter Fachbegriff im Thema INSERT Statement."
     },
     {
       "id": "t2",
-      "label": "VARCHAR",
+      "label": "Statement",
       "is_target": true,
-      "explanation": "\"VARCHAR\" ist ein zentraler Fachbegriff im Kontext INSERT Statement."
+      "explanation": "\"Statement\" ist ein relevanter Fachbegriff im Thema INSERT Statement."
     },
     {
       "id": "t3",
-      "label": "Alice",
+      "label": "VARCHAR",
       "is_target": true,
-      "explanation": "\"Alice\" ist ein zentraler Fachbegriff im Kontext INSERT Statement."
+      "explanation": "\"VARCHAR\" ist ein relevanter Fachbegriff im Thema INSERT Statement."
     },
     {
       "id": "t4",
-      "label": "Event",
+      "label": "Alice",
       "is_target": true,
-      "explanation": "\"Event\" ist ein zentraler Fachbegriff im Kontext INSERT Statement."
+      "explanation": "\"Alice\" ist ein relevanter Fachbegriff im Thema INSERT Statement."
     },
     {
       "id": "t5",
       "label": "Login",
       "is_target": true,
-      "explanation": "\"Login\" ist ein zentraler Fachbegriff im Kontext INSERT Statement."
+      "explanation": "\"Login\" ist ein relevanter Fachbegriff im Thema INSERT Statement."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

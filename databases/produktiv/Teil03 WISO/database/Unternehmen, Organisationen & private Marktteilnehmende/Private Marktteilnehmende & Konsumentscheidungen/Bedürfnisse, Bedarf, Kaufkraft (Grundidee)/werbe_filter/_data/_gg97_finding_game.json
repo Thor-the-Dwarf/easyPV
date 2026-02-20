@@ -3,7 +3,7 @@
     "topic": "Beduerfnisse, Bedarf, Kaufkraft",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "beduerfnisse_bedarf_kaufkraft",
+    "variant": "werbe_filter",
     "title": "Beduerfnisse, Bedarf, Kaufkraft - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Beduerfnisse Bedarf Kaufkraft: Im Kontext Werbe Filter stehen Beduerfnisse Bedarf Kaufkraft, Werbe Filter und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden claim und echter gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Beduerfnisse, Bedarf, Kaufkraft stehen Bedarf, Claim und Echter im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Wunschimpuls und Kaufkraft entscheidend.",
+    "Leitgedanke: Claim: 'Nur heute: Smartwatch 40% guenstiger - du brauchst sie jetzt!'.",
+    "Als Ablenker treten Pflichtkauf, Unwichtig und Notwendig auf.",
+    "Begriffe im Fokus: Bedarf, Claim, Echter, Wunschimpuls, Kaufkraft, Pflichtkauf, Unwichtig, Notwendig."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Beduerfnisse Bedarf Kaufkraft",
+      "label": "Bedarf",
       "is_target": true,
-      "explanation": "\"Beduerfnisse Bedarf Kaufkraft\" ist ein zentraler Fachbegriff im Kontext Beduerfnisse Bedarf Kaufkraft."
+      "explanation": "\"Bedarf\" ist ein relevanter Fachbegriff im Thema Beduerfnisse, Bedarf, Kaufkraft."
     },
     {
       "id": "t2",
-      "label": "Werbe Filter",
+      "label": "Claim",
       "is_target": true,
-      "explanation": "\"Werbe Filter\" ist ein zentraler Fachbegriff im Kontext Beduerfnisse Bedarf Kaufkraft."
+      "explanation": "\"Claim\" ist ein relevanter Fachbegriff im Thema Beduerfnisse, Bedarf, Kaufkraft."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Echter",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Beduerfnisse Bedarf Kaufkraft."
+      "explanation": "\"Echter\" ist ein relevanter Fachbegriff im Thema Beduerfnisse, Bedarf, Kaufkraft."
     },
     {
       "id": "t4",
-      "label": "claim",
+      "label": "Wunschimpuls",
       "is_target": true,
-      "explanation": "\"claim\" ist ein zentraler Fachbegriff im Kontext Beduerfnisse Bedarf Kaufkraft."
+      "explanation": "\"Wunschimpuls\" ist ein relevanter Fachbegriff im Thema Beduerfnisse, Bedarf, Kaufkraft."
     },
     {
       "id": "t5",
-      "label": "echter",
+      "label": "Kaufkraft",
       "is_target": true,
-      "explanation": "\"echter\" ist ein zentraler Fachbegriff im Kontext Beduerfnisse Bedarf Kaufkraft."
+      "explanation": "\"Kaufkraft\" ist ein relevanter Fachbegriff im Thema Beduerfnisse, Bedarf, Kaufkraft."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Pflichtkauf",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Pflichtkauf\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Unwichtig",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Unwichtig\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Notwendig",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Notwendig\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

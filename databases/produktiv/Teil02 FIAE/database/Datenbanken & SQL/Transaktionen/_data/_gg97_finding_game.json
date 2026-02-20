@@ -3,7 +3,7 @@
     "topic": "ACID Principles",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "acid_principles",
+    "variant": "transaktionen",
     "title": "ACID Principles - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "ACID Principles: Im Kontext Transaktionen stehen ACID Principles, Transaktionen und bleiben im Fokus.",
-    "Fuer eine belastbare Einordnung werden Daten und Nutzer gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema ACID Principles stehen Transaktionen, Principles und Transaktion im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Bleiben und Nutzer entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Transaktionen, Principles, Transaktion, Bleiben, Nutzer, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "ACID Principles",
+      "label": "Transaktionen",
       "is_target": true,
-      "explanation": "\"ACID Principles\" ist ein zentraler Fachbegriff im Kontext ACID Principles."
+      "explanation": "\"Transaktionen\" ist ein relevanter Fachbegriff im Thema ACID Principles."
     },
     {
       "id": "t2",
-      "label": "Transaktionen",
+      "label": "Principles",
       "is_target": true,
-      "explanation": "\"Transaktionen\" ist ein zentraler Fachbegriff im Kontext ACID Principles."
+      "explanation": "\"Principles\" ist ein relevanter Fachbegriff im Thema ACID Principles."
     },
     {
       "id": "t3",
-      "label": "bleiben",
+      "label": "Transaktion",
       "is_target": true,
-      "explanation": "\"bleiben\" ist ein zentraler Fachbegriff im Kontext ACID Principles."
+      "explanation": "\"Transaktion\" ist ein relevanter Fachbegriff im Thema ACID Principles."
     },
     {
       "id": "t4",
-      "label": "Daten",
+      "label": "Bleiben",
       "is_target": true,
-      "explanation": "\"Daten\" ist ein zentraler Fachbegriff im Kontext ACID Principles."
+      "explanation": "\"Bleiben\" ist ein relevanter Fachbegriff im Thema ACID Principles."
     },
     {
       "id": "t5",
       "label": "Nutzer",
       "is_target": true,
-      "explanation": "\"Nutzer\" ist ein zentraler Fachbegriff im Kontext ACID Principles."
+      "explanation": "\"Nutzer\" ist ein relevanter Fachbegriff im Thema ACID Principles."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

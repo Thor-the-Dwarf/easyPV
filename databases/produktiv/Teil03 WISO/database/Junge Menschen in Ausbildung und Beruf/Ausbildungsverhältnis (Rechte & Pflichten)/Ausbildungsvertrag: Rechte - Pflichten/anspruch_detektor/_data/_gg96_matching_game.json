@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "ausbildungsvertrag_rechte_pflichten",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Ausbildungsvertrag: Rechte - Pflichten - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Ausbildungsvertrag: Rechte - Pflichten - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Ausbildungsvertrag: Rechte - Pflichten - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Situation begruendet am klarsten einen Anspruch auf Ausbildungsvergutung? Verguetung ist eine Grundpflicht des A...",
+          "right": "Passende Entscheidung 1: Der Azubi arbeitet vertragsgemaess im vereinbarten Monat"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Daraus folgt der Verguetungsanspruch."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wann besteht ein Anspruch auf Bereitstellung notwendiger Ausbildungsmittel? Mittel muessen fuer die Ausbildung erforder...",
+          "right": "Passende Entscheidung 2: Wenn sie fuer Ausbildungsziele erforderlich sind"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Notwendige Mittel sind bereitzustellen."
+        },
+        {
+          "left": "Szenario 3: Welche Aussage passt zum Anspruch auf geordnete Ausbildung? Ausbildungsinhalt statt Hilfstaetigkeiten im Fokus.",
+          "right": "Passende Entscheidung 3: Taetigkeiten muessen dem Ausbildungszweck dienen"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Ausbildungsziel ist leitend."
+        },
+        {
+          "left": "Szenario 4: Wann ist ein Anspruch auf Anleitung besonders klar? Fachlich begleitete Lernphase.",
+          "right": "Passende Entscheidung 4: Bei neuen Aufgaben ohne bisherige Erfahrung"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Ja. Anleitung ist dann zentral."
         }
       ]
     }

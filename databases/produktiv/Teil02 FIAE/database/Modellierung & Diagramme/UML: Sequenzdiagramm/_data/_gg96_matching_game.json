@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "uml_sequence_diagrams",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "UML Sequence Diagrams - Zuordnen"
+    "title": "UML: Sequenzdiagramm - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "UML Sequence Diagrams - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "UML: Sequenzdiagramm - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Simple Echo Chronology flows from top to bottom. Arrange the Request and its Response.",
+          "right": "Passende Entscheidung 1: GET /index"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Simple Echo",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Auth Handshake The Server must verify the token with the DB before answering the Client.",
+          "right": "Passende Entscheidung 2: Login(user)"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Auth Handshake",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Async Log Asynchronous messages don't block. The Client sends a log and continues immediately.",
+          "right": "Passende Entscheidung 3: Log(event)"
+        },
+        {
+          "left": "Begruendung 3: Async Log",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

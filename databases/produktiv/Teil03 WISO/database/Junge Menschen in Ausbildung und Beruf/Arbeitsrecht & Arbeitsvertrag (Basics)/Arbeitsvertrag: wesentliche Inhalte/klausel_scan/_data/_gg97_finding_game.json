@@ -3,7 +3,7 @@
     "topic": "Arbeitsvertrag",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "arbeitsvertrag",
+    "variant": "klausel_scan",
     "title": "Arbeitsvertrag - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Arbeitsvertrag: Im Kontext Klausel Scan stehen Arbeitsvertrag, Klausel Scan und Wesentliche im Fokus.",
-    "Fuer eine belastbare Einordnung werden korrekt und Inhalte gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Arbeitsvertrag stehen Praezision, Recall und Sinkt im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Arbeitsvertrag und Getrennt entscheidend.",
+    "Leitgedanke: Welche Aussage beschreibt das Ziel des Klausel-Scans.",
+    "Als Ablenker treten Steigt, Bearbeitungsdauer und Designelemente auf.",
+    "Begriffe im Fokus: Praezision, Recall, Sinkt, Arbeitsvertrag, Getrennt, Steigt, Bearbeitungsdauer, Designelemente."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Arbeitsvertrag",
+      "label": "Praezision",
       "is_target": true,
-      "explanation": "\"Arbeitsvertrag\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Praezision\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t2",
-      "label": "Klausel Scan",
+      "label": "Recall",
       "is_target": true,
-      "explanation": "\"Klausel Scan\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Recall\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t3",
-      "label": "Wesentliche",
+      "label": "Sinkt",
       "is_target": true,
-      "explanation": "\"Wesentliche\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Sinkt\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t4",
-      "label": "korrekt",
+      "label": "Arbeitsvertrag",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Arbeitsvertrag\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t5",
-      "label": "Inhalte",
+      "label": "Getrennt",
       "is_target": true,
-      "explanation": "\"Inhalte\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Getrennt\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Steigt",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Steigt\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Bearbeitungsdauer",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Bearbeitungsdauer\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Designelemente",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Designelemente\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

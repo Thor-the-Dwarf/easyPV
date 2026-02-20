@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "ausbildungsvertrag_rechte_pflichten",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Ausbildungsvertrag: Rechte - Pflichten - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Ausbildungsvertrag: Rechte - Pflichten - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Ausbildungsvertrag: Rechte - Pflichten - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Ein Azubi fehlt wiederholt unentschuldigt. Was ist der erste passende Schritt? Sachverhalt zuerst klaeren.",
+          "right": "Passende Entscheidung 1: Gespräch fuehren und Sachverhalt dokumentieren"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Klaerung und Doku zuerst."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Bei wiederholter Pflichtverletzung trotz Hinweis: was folgt typischerweise? Stufenweise Reaktion.",
+          "right": "Passende Entscheidung 2: Formelle Ermahnung/Abmahnung nach interner Pruefung"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Korrekt. Der Prozess wird formeller."
+        },
+        {
+          "left": "Szenario 3: Warum ist Reihenfolge im Router wichtig? Nachvollziehbarkeit und Fairness.",
+          "right": "Passende Entscheidung 3: Weil dokumentierte Schritte Entscheidungen belastbar machen"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Prozesssicherheit entsteht durch Reihenfolge."
+        },
+        {
+          "left": "Szenario 4: Was sollte bei jeder Router-Entscheidung mitlaufen? Feedback und naechster Schritt.",
+          "right": "Passende Entscheidung 4: Begruendung, Massnahme und Folgeschritt festhalten"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. So bleibt der Pfad nachvollziehbar."
         }
       ]
     }

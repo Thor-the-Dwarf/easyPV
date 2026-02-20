@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "delete_statement",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "DELETE Statement - Zuordnen"
+    "title": "DELETE - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "DELETE Statement - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "DELETE - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Delete the user 'SpamBot_99' (ID: 404). Do NOT touch the others. Welche ID ist korrekt?",
+          "right": "Passende Entscheidung 1: ID 404 - SpamBot_99"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Surgical Removal",
+          "right": "Warum passend 1: Delete the user 'SpamBot_99' (ID: 404). Do NOT touch the others."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Delete the INACTIVE 'Hans'. Watch out, there are two 'Hans' users! Welche ID ist korrekt?",
+          "right": "Passende Entscheidung 2: ID 77 - Hans"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Duplicate Danger",
+          "right": "Warum passend 2: Delete the INACTIVE 'Hans'. Watch out, there are two 'Hans' users!"
+        },
+        {
+          "left": "Szenario 3: Try to delete 'BigCustomer'. Why is it blocked? Welche ID ist korrekt?",
+          "right": "Passende Entscheidung 3: ID 900 - BigCustomer"
+        },
+        {
+          "left": "Begruendung 3: Constraint Lock",
+          "right": "Warum passend 3: Try to delete 'BigCustomer'. Why is it blocked?"
         }
       ]
     }

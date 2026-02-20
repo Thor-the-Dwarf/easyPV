@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "unternehmensaufbau",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Unternehmensaufbau - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Unternehmensaufbau - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Unternehmensaufbau - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Wer verantwortet typischerweise die Lieferantenauswahl? Beschaffungskompetenz.",
+          "right": "Passende Entscheidung 1: Einkauf/Beschaffung"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Dort liegt die Aufgabenhoheit."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Aufgabe gehoert in den Vertrieb? Markt- und Kundenbezug.",
+          "right": "Passende Entscheidung 2: Kundenakquise und Angebotsverhandlung"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Das ist klassische Vertriebsarbeit."
+        },
+        {
+          "left": "Szenario 3: Wo liegt die Erstellung von Monatsabschluessen? Finanztransparenz.",
+          "right": "Passende Entscheidung 3: Rechnungswesen/Controlling"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Dort wird finanzielle Lage verdichtet."
+        },
+        {
+          "left": "Szenario 4: Welche Aufgabe passt zur Personalabteilung? Mitarbeitende gewinnen und entwickeln.",
+          "right": "Passende Entscheidung 4: Recruiting und Personalentwicklung"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Kernaufgabe von HR."
         }
       ]
     }

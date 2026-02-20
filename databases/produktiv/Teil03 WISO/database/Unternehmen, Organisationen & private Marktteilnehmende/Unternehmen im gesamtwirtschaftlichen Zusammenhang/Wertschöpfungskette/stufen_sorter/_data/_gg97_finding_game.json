@@ -3,7 +3,7 @@
     "topic": "Wertschoepfungskette",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "wertschoepfungskette",
+    "variant": "stufen_sorter",
     "title": "Wertschoepfungskette - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Wertschoepfungskette: Im Kontext Stufen Sorter stehen Wertschoepfungskette, Stufen Sorter und Richtig im Fokus.",
-    "Fuer eine belastbare Einordnung werden Qualitaet und Falsch gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Wertschoepfungskette stehen Stufe, Sorter und Passt im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Distribution und Wertschoepfungskette entscheidend.",
+    "Leitgedanke: Wareneingangspruefung gehoert typischerweise zu welcher Stufe.",
+    "Als Ablenker treten Produktentwicklung, Finanzbuchhaltung und Schnittstellen auf.",
+    "Begriffe im Fokus: Stufe, Sorter, Passt, Distribution, Wertschoepfungskette, Produktentwicklung, Finanzbuchhaltung, Schnittstellen."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Wertschoepfungskette",
+      "label": "Stufe",
       "is_target": true,
-      "explanation": "\"Wertschoepfungskette\" ist ein zentraler Fachbegriff im Kontext Wertschoepfungskette."
+      "explanation": "\"Stufe\" ist ein relevanter Fachbegriff im Thema Wertschoepfungskette."
     },
     {
       "id": "t2",
-      "label": "Stufen Sorter",
+      "label": "Sorter",
       "is_target": true,
-      "explanation": "\"Stufen Sorter\" ist ein zentraler Fachbegriff im Kontext Wertschoepfungskette."
+      "explanation": "\"Sorter\" ist ein relevanter Fachbegriff im Thema Wertschoepfungskette."
     },
     {
       "id": "t3",
-      "label": "Richtig",
+      "label": "Passt",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Wertschoepfungskette."
+      "explanation": "\"Passt\" ist ein relevanter Fachbegriff im Thema Wertschoepfungskette."
     },
     {
       "id": "t4",
-      "label": "Qualitaet",
+      "label": "Distribution",
       "is_target": true,
-      "explanation": "\"Qualitaet\" ist ein zentraler Fachbegriff im Kontext Wertschoepfungskette."
+      "explanation": "\"Distribution\" ist ein relevanter Fachbegriff im Thema Wertschoepfungskette."
     },
     {
       "id": "t5",
-      "label": "Falsch",
+      "label": "Wertschoepfungskette",
       "is_target": true,
-      "explanation": "\"Falsch\" ist ein zentraler Fachbegriff im Kontext Wertschoepfungskette."
+      "explanation": "\"Wertschoepfungskette\" ist ein relevanter Fachbegriff im Thema Wertschoepfungskette."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Produktentwicklung",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Produktentwicklung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Finanzbuchhaltung",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Finanzbuchhaltung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Schnittstellen",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Schnittstellen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

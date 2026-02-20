@@ -3,7 +3,7 @@
     "topic": "Arbeitsschutz",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "arbeitsschutz",
+    "variant": "gefahrenradar_shopfloor",
     "title": "Arbeitsschutz - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Arbeitsschutz: Im Kontext Gefahrenradar Shopfloor stehen Arbeitsschutz, Gefahrenradar Shopfloor und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Grundidee und richtig gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Arbeitsschutz stehen Priorisieren, Szene und Arbeitsschutz im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Top-Gefahr und Erkennen entscheidend.",
+    "Leitgedanke: In der Szene liegt Oel auf dem Boden im Laufweg. Welche Bewertung ist richtig.",
+    "Als Ablenker treten Prioritaet, Abzug und Fehlmarkierungen auf.",
+    "Begriffe im Fokus: Priorisieren, Szene, Arbeitsschutz, Top-Gefahr, Erkennen, Prioritaet, Abzug, Fehlmarkierungen."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Arbeitsschutz",
+      "label": "Priorisieren",
       "is_target": true,
-      "explanation": "\"Arbeitsschutz\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Priorisieren\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t2",
-      "label": "Gefahrenradar Shopfloor",
+      "label": "Szene",
       "is_target": true,
-      "explanation": "\"Gefahrenradar Shopfloor\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Szene\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Arbeitsschutz",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Arbeitsschutz\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t4",
-      "label": "Grundidee",
+      "label": "Top-Gefahr",
       "is_target": true,
-      "explanation": "\"Grundidee\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Top-Gefahr\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t5",
-      "label": "richtig",
+      "label": "Erkennen",
       "is_target": true,
-      "explanation": "\"richtig\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Erkennen\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Prioritaet",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Prioritaet\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Abzug",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Abzug\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Fehlmarkierungen",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Fehlmarkierungen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

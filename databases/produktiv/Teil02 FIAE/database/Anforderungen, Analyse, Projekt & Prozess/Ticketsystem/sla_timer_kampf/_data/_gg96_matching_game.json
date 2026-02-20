@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "sla_timer_kampf",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "sla timer kampf - Zuordnen"
+    "title": "SLA-Timer-Kampf - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "sla timer kampf - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "SLA-Timer-Kampf - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Runde r1: Welches Ticket hat jetzt Prioritaet?",
+          "right": "Passende Entscheidung 1: Checkout komplett offline (P1, 18 min)"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: P1 mit nur noch 18 Minuten Restzeit hat klare Eskalationsprioritaet."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Runde r2: Welches Ticket hat jetzt Prioritaet?",
+          "right": "Passende Entscheidung 2: Passwort-Reset Mails verzogert (P2, 25 min)"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: P2 ist kurz vor SLA-Verstoss und muss vor mittel/niedrig abgearbeitet werden."
+        },
+        {
+          "left": "Szenario 3: Runde r3: Welches Ticket hat jetzt Prioritaet?",
+          "right": "Passende Entscheidung 3: Bestellhistorie zeigt veraltete Daten (P2, 35 min)"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Bei gleicher Prioritaet gewinnt die geringere Restzeit."
+        },
+        {
+          "left": "Szenario 4: Runde r4: Welches Ticket hat jetzt Prioritaet?",
+          "right": "Passende Entscheidung 4: Upload API wirft gelegentlich 502 (P1, 120 min)"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: P1 bleibt trotz mehr Restzeit kritischer als ein fast faelliges P2."
         }
       ]
     }

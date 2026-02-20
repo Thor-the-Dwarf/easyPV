@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "body_language_coach",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Body-Language-Coach - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Body-Language-Coach - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Body-Language-Coach - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Koerpersprache bewerten: Arme verschraenkt, Blick zur Seite",
+          "right": "Passende Entscheidung 1: Dont"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Arme verschraenkt, Blick zur Seite",
+          "right": "Warum passend 1: Verschlossene Haltung signalisiert Distanz und Unsicherheit."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Koerpersprache bewerten: Offene Gestik, Blickkontakt",
+          "right": "Passende Entscheidung 2: Do"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Offene Gestik, Blickkontakt",
+          "right": "Warum passend 2: Offene Gestik und Blickkontakt staerken Vertrauen."
+        },
+        {
+          "left": "Szenario 3: Koerpersprache bewerten: Haende in den Taschen",
+          "right": "Passende Entscheidung 3: Dont"
+        },
+        {
+          "left": "Begruendung 3: Haende in den Taschen",
+          "right": "Warum passend 3: Wirkt unengagiert und kann als Unsicherheit wahrgenommen werden."
+        },
+        {
+          "left": "Szenario 4: Koerpersprache bewerten: Stabiler Stand, leichte Vorwaertsneigung",
+          "right": "Passende Entscheidung 4: Do"
+        },
+        {
+          "left": "Begruendung 4: Stabiler Stand, leichte Vorwaertsneigung",
+          "right": "Warum passend 4: Stabilitaet und Praesenz unterstuetzen die Botschaft."
         }
       ]
     }

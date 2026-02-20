@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "der_gnadenlose_gutachter_ap1_it",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Der gnadenlose Gutachter - AP1 IT - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Der gnadenlose Gutachter - AP1 IT - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Der gnadenlose Gutachter - AP1 IT - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Gelieferter Business-Laptop hat nur 8 GB RAM statt der bestellten 32 GB.",
+          "right": "Passende Entscheidung 1: Sachmangel"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Fall it1",
+          "right": "Warum passend 1: Die gelieferte Hardware weicht in der vereinbarten Beschaffenheit von der Bestellung ab."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: 50 Monitore bestellt, aber nur 46 Monitore wurden angeliefert.",
+          "right": "Passende Entscheidung 2: Mengenmangel"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Fall it2",
+          "right": "Warum passend 2: Die Stueckzahl der Lieferung ist geringer als vertraglich vereinbart."
+        },
+        {
+          "left": "Szenario 3: Switches liefern statt 10 Gbit/s im Lasttest nur 3-4 Gbit/s.",
+          "right": "Passende Entscheidung 3: Quantitaetsmangel"
+        },
+        {
+          "left": "Begruendung 3: Fall it3",
+          "right": "Warum passend 3: Die zugesicherte quantitative Leistungskennzahl wird nicht erreicht."
+        },
+        {
+          "left": "Szenario 4: Neue SSDs zeigen unter Dauerlast hohe Ausfallraten und inkonsistente Schreibwerte.",
+          "right": "Passende Entscheidung 4: Qualitaetsmangel"
+        },
+        {
+          "left": "Begruendung 4: Fall it4",
+          "right": "Warum passend 4: Funktion ist grundsaetzlich vorhanden, die Qualitaet ist aber mangelhaft."
         }
       ]
     }

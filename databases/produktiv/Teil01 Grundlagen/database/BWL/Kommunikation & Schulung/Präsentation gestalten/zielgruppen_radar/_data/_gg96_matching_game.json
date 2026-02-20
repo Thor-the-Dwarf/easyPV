@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "zielgruppen_radar",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Zielgruppen-Radar - Zuordnen"
@@ -12,24 +13,32 @@
   "levels": [
     {
       "id": 1,
-      "title": "Zielgruppen-Radar - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Zielgruppen-Radar - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Zielgruppenstil waehlen: Kurzfristiges Steering-Meeting zur Projektfreigabe",
+          "right": "Passende Entscheidung 1: Detailliert & technisch"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Zu tief im Detail fuer ein kurzes Entscheider-Meeting."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Zielgruppenstil waehlen: Einfuehrung in neue Support-Prozesse",
+          "right": "Passende Entscheidung 2: Didaktisch & schrittweise"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig: Lernende profitieren von Struktur, Beispielen und Wiederholung."
+        },
+        {
+          "left": "Szenario 3: Zielgruppenstil waehlen: Architektur-Review vor Implementierung",
+          "right": "Passende Entscheidung 3: Allgemein & oberflaechlich"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Zu wenig Substanz fuer ein technisches Review."
         }
       ]
     }

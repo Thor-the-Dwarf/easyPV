@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "arbeitsschutz",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Arbeitsschutz - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Arbeitsschutz - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Arbeitsschutz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: In der Szene liegt Oel auf dem Boden im Laufweg. Welche Bewertung ist richtig? Rutschgefahr ist ein unmittelbares Risik...",
+          "right": "Passende Entscheidung 1: Gefahr markieren und hohe Prioritaet setzen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das ist ein akutes Sturzrisiko."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Zusatzstrafe nennt der Plan explizit? Bezieht sich auf uebersehene Hochrisiko-Gefahren.",
+          "right": "Passende Entscheidung 2: Zusatzabzug bei uebersehener Hochrisiko-Gefahr"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Das ist regelbasiert vorgesehen."
+        },
+        {
+          "left": "Szenario 3: Was misst die Priorisierungsquote? Sie bezieht sich auf die Top-Gefahr pro Szene.",
+          "right": "Passende Entscheidung 3: Wie oft die Top-Gefahr korrekt priorisiert wurde"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Genau das ist die Priorisierungsleistung."
+        },
+        {
+          "left": "Szenario 4: Wann aktiviert sich der Multiplikator laut Regeln? Es braucht eine Fehlerfrei-Serie.",
+          "right": "Passende Entscheidung 4: Nach drei fehlerfreien Szenen in Folge"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Dann wird ein Multiplikator aktiviert."
         }
       ]
     }

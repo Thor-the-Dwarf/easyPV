@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "lastenheft_check",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Lastenheft-Check - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Lastenheft-Check - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Lastenheft-Check - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Inhalt bewerten: Die Software soll schnell sein.",
+          "right": "Passende Entscheidung 1: Unklar / unscharf"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Nicht messbar. Es fehlt ein konkreter Zielwert, z. B. Antwortzeit <= 2s."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Inhalt bewerten: Login mit E-Mail und Passwort muss moeglich sein.",
+          "right": "Passende Entscheidung 2: Klar und messbar"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Funktion klar beschrieben und eindeutig pruefbar."
+        },
+        {
+          "left": "Szenario 3: Inhalt bewerten: Systemantwort bei Suche maximal 2 Sekunden bei 95% der Anfragen.",
+          "right": "Passende Entscheidung 3: Klar und messbar"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Messbar, spezifisch und testbar formuliert."
+        },
+        {
+          "left": "Szenario 4: Inhalt bewerten: Die Benutzeroberflaeche soll modern wirken.",
+          "right": "Passende Entscheidung 4: Unklar / unscharf"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Subjektiv und ohne Abnahmekriterium."
         }
       ]
     }

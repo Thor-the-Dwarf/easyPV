@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "kreditvertrag_grundidee",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Kreditvertrag (Grundidee) - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Kreditvertrag (Grundidee) - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Kreditvertrag (Grundidee) - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Reaktion ist bei Hochrisiko-Event zuerst sinnvoll? Sofortmassnahme vor Verzoegerung.",
+          "right": "Passende Entscheidung 1: Warnsignal priorisieren und sofort geeignete Gegenmassnahme starten"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Fruehes Handeln stabilisiert."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wann halbieren sich Rundenpunkte laut Regelwerk? Hochrisiko unbehandelt.",
+          "right": "Passende Entscheidung 2: Wenn ein Hochrisiko-Event unbehandelt bleibt"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Das ist ein kritischer Fehler."
+        },
+        {
+          "left": "Szenario 3: Welche KPI bilden den Fortschritt im Radar? Erkennung und Stabilitaet.",
+          "right": "Passende Entscheidung 3: Warnsignal-Erkennungsquote und Stabilitaetsindex"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Diese KPI sind zentral."
+        },
+        {
+          "left": "Szenario 4: Wann gibt es Praeventionsbonus? Fruehzeitiges Gegensteuern.",
+          "right": "Passende Entscheidung 4: Wenn Warnsignale frueh erkannt und rechtzeitig behandelt werden"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Proaktive Steuerung wird belohnt."
         }
       ]
     }

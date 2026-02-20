@@ -3,7 +3,7 @@
     "topic": "Ausbildungsplanung",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "ausbildungsplanung",
+    "variant": "kompetenz_lueckenfinder",
     "title": "Ausbildungsplanung - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Ausbildungsplanung: Im Kontext Kompetenz Lueckenfinder stehen Ausbildungsplanung, Kompetenz Lueckenfinder und Massnahme im Fokus.",
-    "Fuer eine belastbare Einordnung werden Richtig und Teilpunkte gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Ausbildungsplanung stehen Massnahme, Luecke und Ausbildungsplanung im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Lueckenfinder und Teilpunkte entscheidend.",
+    "Leitgedanke: Was ist der erste Schritt bei einem Gap-Case.",
+    "Als Ablenker treten Klickgeschwindigkeit, Ueberspringen und Dokumentation auf.",
+    "Begriffe im Fokus: Massnahme, Luecke, Ausbildungsplanung, Lueckenfinder, Teilpunkte, Klickgeschwindigkeit, Ueberspringen, Dokumentation."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Ausbildungsplanung",
+      "label": "Massnahme",
       "is_target": true,
-      "explanation": "\"Ausbildungsplanung\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Massnahme\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t2",
-      "label": "Kompetenz Lueckenfinder",
+      "label": "Luecke",
       "is_target": true,
-      "explanation": "\"Kompetenz Lueckenfinder\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Luecke\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t3",
-      "label": "Massnahme",
+      "label": "Ausbildungsplanung",
       "is_target": true,
-      "explanation": "\"Massnahme\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Ausbildungsplanung\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t4",
-      "label": "Richtig",
+      "label": "Lueckenfinder",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Lueckenfinder\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t5",
       "label": "Teilpunkte",
       "is_target": true,
-      "explanation": "\"Teilpunkte\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Teilpunkte\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Klickgeschwindigkeit",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Klickgeschwindigkeit\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Ueberspringen",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Ueberspringen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Dokumentation",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Dokumentation\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

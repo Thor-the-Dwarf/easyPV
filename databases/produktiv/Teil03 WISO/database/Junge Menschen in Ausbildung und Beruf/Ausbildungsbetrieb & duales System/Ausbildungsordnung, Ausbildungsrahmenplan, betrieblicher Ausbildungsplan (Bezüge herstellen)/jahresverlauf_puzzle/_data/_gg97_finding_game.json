@@ -3,7 +3,7 @@
     "topic": "Ausbildungsplanung",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "ausbildungsplanung",
+    "variant": "jahresverlauf_puzzle",
     "title": "Ausbildungsplanung - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Ausbildungsplanung: Im Kontext Jahresverlauf Puzzle stehen Ausbildungsplanung, Jahresverlauf Puzzle und Modul im Fokus.",
-    "Fuer eine belastbare Einordnung werden Richtig und passt gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Ausbildungsplanung stehen Passt, Modul und Meilenstein im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Abhaengigkeit und Ausbildungsplanung entscheidend.",
+    "Leitgedanke: Was sollte zuerst in den Jahresplan gesetzt werden.",
+    "Als Ablenker treten Wunschtermine, Beschreibung und Bonuspunkte auf.",
+    "Begriffe im Fokus: Passt, Modul, Meilenstein, Abhaengigkeit, Ausbildungsplanung, Wunschtermine, Beschreibung, Bonuspunkte."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Ausbildungsplanung",
+      "label": "Passt",
       "is_target": true,
-      "explanation": "\"Ausbildungsplanung\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Passt\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t2",
-      "label": "Jahresverlauf Puzzle",
+      "label": "Modul",
       "is_target": true,
-      "explanation": "\"Jahresverlauf Puzzle\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Modul\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t3",
-      "label": "Modul",
+      "label": "Meilenstein",
       "is_target": true,
-      "explanation": "\"Modul\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Meilenstein\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t4",
-      "label": "Richtig",
+      "label": "Abhaengigkeit",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Abhaengigkeit\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t5",
-      "label": "passt",
+      "label": "Ausbildungsplanung",
       "is_target": true,
-      "explanation": "\"passt\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Ausbildungsplanung\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Wunschtermine",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Wunschtermine\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Beschreibung",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Beschreibung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Bonuspunkte",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Bonuspunkte\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

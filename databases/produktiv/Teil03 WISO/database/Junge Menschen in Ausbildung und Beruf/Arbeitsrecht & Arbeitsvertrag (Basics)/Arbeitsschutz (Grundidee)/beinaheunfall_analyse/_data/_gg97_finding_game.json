@@ -3,7 +3,7 @@
     "topic": "Arbeitsschutz",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "arbeitsschutz",
+    "variant": "beinaheunfall_analyse",
     "title": "Arbeitsschutz - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Arbeitsschutz: Im Kontext Beinaheunfall Analyse stehen Arbeitsschutz, Beinaheunfall Analyse und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Grundidee und Massnahme gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Arbeitsschutz stehen Kabel, Massnahme und Ursache im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Arbeitsschutz und Teilpunkte entscheidend.",
+    "Leitgedanke: Mitarbeiter stolpert ueber lose Kabel, verletzt sich aber nicht. Erster Analyseschritt.",
+    "Als Ablenker treten Klickanzahl, Ignorieren und Warnschild auf.",
+    "Begriffe im Fokus: Kabel, Massnahme, Ursache, Arbeitsschutz, Teilpunkte, Klickanzahl, Ignorieren, Warnschild."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Arbeitsschutz",
+      "label": "Kabel",
       "is_target": true,
-      "explanation": "\"Arbeitsschutz\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Kabel\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t2",
-      "label": "Beinaheunfall Analyse",
+      "label": "Massnahme",
       "is_target": true,
-      "explanation": "\"Beinaheunfall Analyse\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Massnahme\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Ursache",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Ursache\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t4",
-      "label": "Grundidee",
+      "label": "Arbeitsschutz",
       "is_target": true,
-      "explanation": "\"Grundidee\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Arbeitsschutz\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t5",
-      "label": "Massnahme",
+      "label": "Teilpunkte",
       "is_target": true,
-      "explanation": "\"Massnahme\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Teilpunkte\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Klickanzahl",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Klickanzahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Ignorieren",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Ignorieren\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Warnschild",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Warnschild\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

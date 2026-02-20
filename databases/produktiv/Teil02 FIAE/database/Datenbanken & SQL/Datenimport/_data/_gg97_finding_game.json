@@ -3,7 +3,7 @@
     "topic": "Data Import",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "data_import",
+    "variant": "datenimport",
     "title": "Data Import - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Data Import: Im Kontext Datenimport stehen Data Import, Datenimport und VARCHAR im Fokus.",
-    "Fuer eine belastbare Einordnung werden First und Email gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Data Import stehen Import, VARCHAR und First name im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Last name und Datenimport entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Import, VARCHAR, First name, Last name, Datenimport, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Data Import",
+      "label": "Import",
       "is_target": true,
-      "explanation": "\"Data Import\" ist ein zentraler Fachbegriff im Kontext Data Import."
+      "explanation": "\"Import\" ist ein relevanter Fachbegriff im Thema Data Import."
     },
     {
       "id": "t2",
-      "label": "Datenimport",
+      "label": "VARCHAR",
       "is_target": true,
-      "explanation": "\"Datenimport\" ist ein zentraler Fachbegriff im Kontext Data Import."
+      "explanation": "\"VARCHAR\" ist ein relevanter Fachbegriff im Thema Data Import."
     },
     {
       "id": "t3",
-      "label": "VARCHAR",
+      "label": "First name",
       "is_target": true,
-      "explanation": "\"VARCHAR\" ist ein zentraler Fachbegriff im Kontext Data Import."
+      "explanation": "\"First name\" ist ein relevanter Fachbegriff im Thema Data Import."
     },
     {
       "id": "t4",
-      "label": "First",
+      "label": "Last name",
       "is_target": true,
-      "explanation": "\"First\" ist ein zentraler Fachbegriff im Kontext Data Import."
+      "explanation": "\"Last name\" ist ein relevanter Fachbegriff im Thema Data Import."
     },
     {
       "id": "t5",
-      "label": "Email",
+      "label": "Datenimport",
       "is_target": true,
-      "explanation": "\"Email\" ist ein zentraler Fachbegriff im Kontext Data Import."
+      "explanation": "\"Datenimport\" ist ein relevanter Fachbegriff im Thema Data Import."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

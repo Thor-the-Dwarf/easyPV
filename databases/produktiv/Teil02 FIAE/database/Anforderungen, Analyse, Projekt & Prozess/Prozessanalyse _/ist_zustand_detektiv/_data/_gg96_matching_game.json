@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "prozessanalyse",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "Prozessanalyse - Zuordnen"
+    "title": "ist zustand detektiv - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "Prozessanalyse - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "ist zustand detektiv - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Level 1: Das Papier-Buero Manuelle Datenerfassung von Papier zu Digital ist fehleranfaellig.",
+          "right": "Passende Entscheidung 1: f1"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Der Postbote tippt Adressen vom Briefumschlag manuell in Excel ab."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Level 1: Das Papier-Buero Klassischer Medienbruch-Ping-Pong. Digitale Signatur nutzen!",
+          "right": "Passende Entscheidung 2: f2"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Das Dokument wird ausgedruckt, unterschrieben und wieder eingescannt."
+        },
+        {
+          "left": "Szenario 3: Level 1: Das Papier-Buero Technischer Engpass verzoegert den gesamten Prozess.",
+          "right": "Passende Entscheidung 3: f3"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Akten liegen hier 3 Tage, weil der Scanner oft klemmt."
+        },
+        {
+          "left": "Szenario 4: Level 1: Das Papier-Buero Prozess-Stau durch Ressourcenmangel.",
+          "right": "Passende Entscheidung 4: f4"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Das Archiv ist voll. Niemand weiss wohin mit neuen Ordnern."
         }
       ]
     }

@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "kaufvertrag",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Kaufvertrag - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Kaufvertrag - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Kaufvertrag - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Was markiert der Scanner als Treffer? Pflichtbestandteil korrekt erkannt.",
+          "right": "Passende Entscheidung 1: Ein zwingender Vertragsbestandteil wird korrekt markiert"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das ist ein echter Treffer."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Was senkt die Praezision? Zu viele falsche Markierungen.",
+          "right": "Passende Entscheidung 2: Uebermarkierung unverbindlicher Textbausteine"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Das reduziert Praezision."
+        },
+        {
+          "left": "Szenario 3: Was senkt den Recall? Pflichtangaben uebersehen.",
+          "right": "Passende Entscheidung 3: Wenn erforderliche Pflichtbausteine nicht markiert werden"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Dann sinkt Recall."
+        },
+        {
+          "left": "Szenario 4: Welche KPI sind gefordert? Praezision, Recall, Vollstaendigkeit.",
+          "right": "Passende Entscheidung 4: Praezision, Recall und Vollstaendigkeitsquote je Set"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Diese Kombination ist zentral."
         }
       ]
     }

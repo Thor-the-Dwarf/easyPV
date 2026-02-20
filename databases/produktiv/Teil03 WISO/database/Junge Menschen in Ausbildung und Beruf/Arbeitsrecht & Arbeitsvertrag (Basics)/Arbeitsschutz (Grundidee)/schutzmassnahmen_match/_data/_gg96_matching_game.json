@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "arbeitsschutz",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Arbeitsschutz - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Arbeitsschutz - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Arbeitsschutz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Offene Quetschstelle an Maschine: passende Schutzmassnahme? Denke zuerst an technische Massnahmen.",
+          "right": "Passende Entscheidung 1: Technische Abschirmung nachruesten"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das adressiert die Gefahr direkt an der Quelle."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Regel gilt fuer Hochrisiko-Faelle bei falschem Match? Es gibt einen doppelten Abzug.",
+          "right": "Passende Entscheidung 2: Doppelter Punktabzug"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Hochrisiko-Fehlzuordnungen werden strenger bewertet."
+        },
+        {
+          "left": "Szenario 3: Ab welcher Genauigkeit steigt laut Plan die Schwierigkeit? Genannt ist ein Schwellenwert.",
+          "right": "Passende Entscheidung 3: ab 80 Prozent"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Dann wird automatisch anspruchsvoller."
+        },
+        {
+          "left": "Szenario 4: Welche Zusatzmetrik wird neben Genauigkeit betrachtet? Es geht um Zeit je Antwort.",
+          "right": "Passende Entscheidung 4: mittlere Antwortzeit"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Die KPI kombiniert Qualitaet und Tempo."
         }
       ]
     }

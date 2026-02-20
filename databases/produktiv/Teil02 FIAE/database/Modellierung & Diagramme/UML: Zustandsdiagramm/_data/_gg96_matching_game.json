@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "uml_state_machines",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "UML State Machines - Zuordnen"
+    "title": "UML: Zustandsdiagramm - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "UML State Machines - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "UML: Zustandsdiagramm - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Device Lifecycle Bring the device from 'OFF' to 'ACTIVE'. Watch out for the 'BOOT_ERROR' event.",
+          "right": "Passende Entscheidung 1: Device Lifecycle"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Device Lifecycle",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Coffee Protocol Satisfy the machine logic. You need a coin before selection.",
+          "right": "Passende Entscheidung 2: Coffee Protocol"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Coffee Protocol",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Security Guard Transitions with Guards. You can only retry if count < 3.",
+          "right": "Passende Entscheidung 3: Security Guard"
+        },
+        {
+          "left": "Begruendung 3: Security Guard",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

@@ -3,7 +3,7 @@
     "topic": "Kaufvertrag",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "kaufvertrag",
+    "variant": "lieferverzug_reaktionskette",
     "title": "Kaufvertrag - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Kaufvertrag: Im Kontext Lieferverzug Reaktionskette stehen Kaufvertrag, Lieferverzug Reaktionskette und Richtig im Fokus.",
-    "Fuer eine belastbare Einordnung werden Korrekte und Schritt gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Kaufvertrag stehen Reaktionskette, Lieferverzug und Kaufvertrag im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Erste und Pruefen entscheidend.",
+    "Leitgedanke: Was ist bei Lieferverzug als erster Schritt sinnvoll.",
+    "Als Ablenker treten Zwischenschritt, Zusatzschritte und Endeskalation auf.",
+    "Begriffe im Fokus: Reaktionskette, Lieferverzug, Kaufvertrag, Erste, Pruefen, Zwischenschritt, Zusatzschritte, Endeskalation."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Kaufvertrag",
+      "label": "Reaktionskette",
       "is_target": true,
-      "explanation": "\"Kaufvertrag\" ist ein zentraler Fachbegriff im Kontext Kaufvertrag."
+      "explanation": "\"Reaktionskette\" ist ein relevanter Fachbegriff im Thema Kaufvertrag."
     },
     {
       "id": "t2",
-      "label": "Lieferverzug Reaktionskette",
+      "label": "Lieferverzug",
       "is_target": true,
-      "explanation": "\"Lieferverzug Reaktionskette\" ist ein zentraler Fachbegriff im Kontext Kaufvertrag."
+      "explanation": "\"Lieferverzug\" ist ein relevanter Fachbegriff im Thema Kaufvertrag."
     },
     {
       "id": "t3",
-      "label": "Richtig",
+      "label": "Kaufvertrag",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Kaufvertrag."
+      "explanation": "\"Kaufvertrag\" ist ein relevanter Fachbegriff im Thema Kaufvertrag."
     },
     {
       "id": "t4",
-      "label": "Korrekte",
+      "label": "Erste",
       "is_target": true,
-      "explanation": "\"Korrekte\" ist ein zentraler Fachbegriff im Kontext Kaufvertrag."
+      "explanation": "\"Erste\" ist ein relevanter Fachbegriff im Thema Kaufvertrag."
     },
     {
       "id": "t5",
-      "label": "Schritt",
+      "label": "Pruefen",
       "is_target": true,
-      "explanation": "\"Schritt\" ist ein zentraler Fachbegriff im Kontext Kaufvertrag."
+      "explanation": "\"Pruefen\" ist ein relevanter Fachbegriff im Thema Kaufvertrag."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Zwischenschritt",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zwischenschritt\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Zusatzschritte",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zusatzschritte\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Endeskalation",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Endeskalation\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "jugendarbeitsschutz",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Jugendarbeitsschutz - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Jugendarbeitsschutz - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Jugendarbeitsschutz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Tagesplan mit langen Blöcken ohne ausreichende Unterbrechung: Bewertung? Pruefe Grenzwerte und Belastung im Gesamtplan.",
+          "right": "Passende Entscheidung 1: Als nicht regelkonform markieren"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Der Plan verletzt zeitliche Schutzgrenzen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Kennzahl ist laut Plan zentral? Sie kombiniert Treffer mit Bearbeitungstempo.",
+          "right": "Passende Entscheidung 2: Bewertungsgenauigkeit und Antwortzeit"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Diese KPI bildet Fortschritt gut ab."
+        },
+        {
+          "left": "Szenario 3: Was passiert bei uebersehenem Schwerverstoss? Die Regel nennt eine strengere Sanktion.",
+          "right": "Passende Entscheidung 3: Doppelter Abzug"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Kritische Ueberseher werden stark gewichtet."
+        },
+        {
+          "left": "Szenario 4: Wann wird Serienbonus aktiv? Mehrere korrekte Entscheidungen in Folge.",
+          "right": "Passende Entscheidung 4: Nach drei korrekten Bewertungen in Folge"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Konstanz wird belohnt."
         }
       ]
     }

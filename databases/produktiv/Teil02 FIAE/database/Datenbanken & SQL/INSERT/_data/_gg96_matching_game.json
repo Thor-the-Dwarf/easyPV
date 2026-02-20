@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "insert_statement",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "INSERT Statement - Zuordnen"
+    "title": "INSERT - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "INSERT Statement - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "INSERT - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Basic User Profile Load the data for User 101: 'Alice', Age 25.",
+          "right": "Passende Entscheidung 1: Basic User Profile"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Basic User Profile",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Product Entry Enter the new Coffee Machine: Price 89.99, In Stock: true.",
+          "right": "Passende Entscheidung 2: Product Entry"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Product Entry",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Event Logging Log the Login event for today.",
+          "right": "Passende Entscheidung 3: Event Logging"
+        },
+        {
+          "left": "Begruendung 3: Event Logging",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

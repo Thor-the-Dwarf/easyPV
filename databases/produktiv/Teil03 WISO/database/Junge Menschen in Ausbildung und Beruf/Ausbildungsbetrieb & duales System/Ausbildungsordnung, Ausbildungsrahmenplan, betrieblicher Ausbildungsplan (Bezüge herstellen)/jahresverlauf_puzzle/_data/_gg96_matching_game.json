@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "ausbildungsplanung",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Ausbildungsplanung - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Ausbildungsplanung - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Ausbildungsplanung - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Was sollte zuerst in den Jahresplan gesetzt werden? Fixe externe Termine sind harte Anker.",
+          "right": "Passende Entscheidung 1: Pruefungs- und Schulfenster als feste Zeitanker"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Fixpunkte zuerst."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wie erkennst du eine verletzte Abhaengigkeit? Vorwissen muss vor Folgeschritt liegen.",
+          "right": "Passende Entscheidung 2: Ein Modul liegt vor seiner notwendigen Grundlage"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Das ist ein Reihenfolgefehler."
+        },
+        {
+          "left": "Szenario 3: Welche Rueckmeldung passt zu einem perfekt gelegten Meilenstein? Fenster + Abhaengigkeit korrekt.",
+          "right": "Passende Entscheidung 3: Zeitfenster und Reihenfolge stimmen vollstaendig"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Das ist ein Volltreffer."
+        },
+        {
+          "left": "Szenario 4: Wofuer wird laut Plan ein Zusatzabzug vergeben? Abhaengigkeitsbruch als Schluesselfehler.",
+          "right": "Passende Entscheidung 4: Wenn ein Meilenstein eine Pflichtabfolge verletzt"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das kostet extra Punkte."
         }
       ]
     }

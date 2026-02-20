@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "arbeitsvertrag",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Arbeitsvertrag - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Arbeitsvertrag - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Arbeitsvertrag - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Unklare Situation in der Probezeit: Was ist der erste sinnvolle Schritt? Zuerst passende Regel identifizieren.",
+          "right": "Passende Entscheidung 1: Regelbezug pruefen und korrekt zuordnen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Der Navigator startet mit Regelklarheit."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Was gibt bei korrekter Regel, aber falschem naechsten Schritt? Bewertung ist zweidimensional.",
+          "right": "Passende Entscheidung 2: Teilscore"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Regel und Prozessschritt werden getrennt bewertet."
+        },
+        {
+          "left": "Szenario 3: Welche KPIs nennt der Plan? Es sind zwei Genauigkeitswerte.",
+          "right": "Passende Entscheidung 3: Regelgenauigkeit und Prozessgenauigkeit"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Beide Perspektiven werden erfasst."
+        },
+        {
+          "left": "Szenario 4: Wann greift Hilfe im Probezeit-Navigator? Bei wiederholten Fehlern.",
+          "right": "Passende Entscheidung 4: Bei Fehlserie aktiviert sich kontextbezogene Hilfe"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. So werden wiederkehrende Unsicherheiten adressiert."
         }
       ]
     }

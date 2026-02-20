@@ -3,7 +3,7 @@
     "topic": "Unternehmensaufbau",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "unternehmensaufbau",
+    "variant": "aufgaben_zuordnung_match",
     "title": "Unternehmensaufbau - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Unternehmensaufbau: Im Kontext Aufgaben Zuordnung Match stehen Unternehmensaufbau, Aufgaben Zuordnung Match und Richtig im Fokus.",
-    "Fuer eine belastbare Einordnung werden Bereichen und Ziele gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Unternehmensaufbau stehen Aufgaben, Aufgabe und Bereichen im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Unternehmensaufbau und Rechnungswesen entscheidend.",
+    "Leitgedanke: Wer verantwortet typischerweise die Lieferantenauswahl.",
+    "Als Ablenker treten Arbeitsvertragserstellung, Schnittstellenmanagement und Produktionsmaschine auf.",
+    "Begriffe im Fokus: Aufgaben, Aufgabe, Bereichen, Unternehmensaufbau, Rechnungswesen, Arbeitsvertragserstellung, Schnittstellenmanagement, Produktionsmaschine."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Unternehmensaufbau",
+      "label": "Aufgaben",
       "is_target": true,
-      "explanation": "\"Unternehmensaufbau\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Aufgaben\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t2",
-      "label": "Aufgaben Zuordnung Match",
+      "label": "Aufgabe",
       "is_target": true,
-      "explanation": "\"Aufgaben Zuordnung Match\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Aufgabe\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t3",
-      "label": "Richtig",
+      "label": "Bereichen",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Bereichen\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t4",
-      "label": "Bereichen",
+      "label": "Unternehmensaufbau",
       "is_target": true,
-      "explanation": "\"Bereichen\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Unternehmensaufbau\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t5",
-      "label": "Ziele",
+      "label": "Rechnungswesen",
       "is_target": true,
-      "explanation": "\"Ziele\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Rechnungswesen\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Arbeitsvertragserstellung",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Arbeitsvertragserstellung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Schnittstellenmanagement",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Schnittstellenmanagement\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Produktionsmaschine",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Produktionsmaschine\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

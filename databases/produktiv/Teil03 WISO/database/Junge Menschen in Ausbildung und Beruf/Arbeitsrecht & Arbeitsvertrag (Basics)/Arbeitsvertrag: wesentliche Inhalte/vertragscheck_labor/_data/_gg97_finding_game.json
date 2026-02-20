@@ -3,7 +3,7 @@
     "topic": "Arbeitsvertrag",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "arbeitsvertrag",
+    "variant": "vertragscheck_labor",
     "title": "Arbeitsvertrag - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Arbeitsvertrag: Im Kontext Vertragscheck Labor stehen Arbeitsvertrag, Vertragscheck Labor und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden wesentliche und Inhalte gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Arbeitsvertrag stehen Fehlende, Arbeitsvertrag und Abschnittstyp im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Zeitabzug und Vertragscheck entscheidend.",
+    "Leitgedanke: Im Mustervertrag fehlt ein Pflichtabschnitt. Was ist korrekt.",
+    "Als Ablenker treten Schreibstil, Klickanzahl und Detaildaten auf.",
+    "Begriffe im Fokus: Fehlende, Arbeitsvertrag, Abschnittstyp, Zeitabzug, Vertragscheck, Schreibstil, Klickanzahl, Detaildaten."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Arbeitsvertrag",
+      "label": "Fehlende",
       "is_target": true,
-      "explanation": "\"Arbeitsvertrag\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Fehlende\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t2",
-      "label": "Vertragscheck Labor",
+      "label": "Arbeitsvertrag",
       "is_target": true,
-      "explanation": "\"Vertragscheck Labor\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Arbeitsvertrag\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Abschnittstyp",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Abschnittstyp\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t4",
-      "label": "wesentliche",
+      "label": "Zeitabzug",
       "is_target": true,
-      "explanation": "\"wesentliche\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Zeitabzug\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t5",
-      "label": "Inhalte",
+      "label": "Vertragscheck",
       "is_target": true,
-      "explanation": "\"Inhalte\" ist ein zentraler Fachbegriff im Kontext Arbeitsvertrag."
+      "explanation": "\"Vertragscheck\" ist ein relevanter Fachbegriff im Thema Arbeitsvertrag."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Schreibstil",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Schreibstil\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Klickanzahl",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Klickanzahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Detaildaten",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Detaildaten\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

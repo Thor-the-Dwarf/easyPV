@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "kuendigungsschutz",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Kuendigungsschutz - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Kuendigungsschutz - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Kuendigungsschutz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welcher Schritt gehoert im Regelfall vor die finale Entscheidung? Ohne geordnete Vorbereitung fehlt die Prozesssicherhe...",
+          "right": "Passende Entscheidung 1: Anhoerung vorbereiten und Fallinformationen sammeln"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Die Vorbereitung ist Pflichtbasis."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Regel gilt bei uebersprungener Pflichtstufe? Im Plan ist eine doppelte Strafe definiert.",
+          "right": "Passende Entscheidung 2: Die Punktstrafe wird verdoppelt"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Pflichtstufen wiegen doppelt."
+        },
+        {
+          "left": "Szenario 3: Welche KPI zeigt der Prozesspfad laut Plan? Es geht um Korrektheit plus Effizienz.",
+          "right": "Passende Entscheidung 3: Reihenfolgegenauigkeit und Schritte bis Ziel"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Beide Werte sind die Kernmetrik."
+        },
+        {
+          "left": "Szenario 4: Wann erhaeltst du den Effizienzbonus? Die Kette muss ohne Fehler bleiben.",
+          "right": "Passende Entscheidung 4: Bei einer fehlerfreien Prozesskette"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Fehlerfrei bedeutet Bonus."
         }
       ]
     }

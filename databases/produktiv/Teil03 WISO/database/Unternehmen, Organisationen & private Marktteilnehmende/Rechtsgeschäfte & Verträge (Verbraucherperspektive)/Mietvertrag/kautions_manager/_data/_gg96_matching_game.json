@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "kautions_manager",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Kautions-Manager - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Kautions-Manager - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Kautions-Manager - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Normale Abnutzung der Wandfarbe liegt vor. Ist ein Kautionsabzug berechtigt? Normale Gebrauchsspuren sind ein zentraler...",
+          "right": "Passende Entscheidung 1: Nein, normale Abnutzung rechtfertigt keinen Abzug"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Normale Abnutzung ist kein Schadenersatzfall."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Eine Fensterscheibe wurde mutwillig beschaedigt. Welche Entscheidung passt? Sachbeschaedigung kann als begruendeter Ans...",
+          "right": "Passende Entscheidung 2: Belegten Reparaturbetrag als Abzug pruefen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Nachweisbare Schadenskosten sind relevant."
+        },
+        {
+          "left": "Szenario 3: Es liegt nur eine pauschale Schadensliste ohne Rechnungen vor. Was ist richtig? Nachvollziehbarkeit und Belege sind ent...",
+          "right": "Passende Entscheidung 3: Abzug nur bei nachvollziehbaren Nachweisen akzeptieren"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Nachweise sichern die Begruendung."
+        },
+        {
+          "left": "Szenario 4: Bei Auszug fehlen zwei Schluessel, Austausch der Schliessanlage ist dokumentiert. Wie entscheiden? Konkreter Nachweis u...",
+          "right": "Passende Entscheidung 4: Belegten Kostenanteil aus der Kaution abziehen"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Dokumentierte Folgekosten sind pruefbar."
         }
       ]
     }

@@ -3,7 +3,7 @@
     "topic": "Konsumoptionen",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "konsumoptionen",
+    "variant": "nachhaltigkeits_score_race",
     "title": "Konsumoptionen - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Konsumoptionen: Im Kontext Nachhaltigkeits Score Race stehen Konsumoptionen, Nachhaltigkeits Score Race und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Entscheidungen und kaufen gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Konsumoptionen stehen Preis, Gewichtung und Konsumoptionen im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Nachhaltigkeits und Oeko-Score entscheidend.",
+    "Leitgedanke: Race 1: Option A hat starken Oeko-Score, Option B besseren Preis. Was fehlt fuer die Entscheidung.",
+    "Als Ablenker treten Nehmen, Marketingbudget und Verfuegbarkeit auf.",
+    "Begriffe im Fokus: Preis, Gewichtung, Konsumoptionen, Nachhaltigkeits, Oeko-Score, Nehmen, Marketingbudget, Verfuegbarkeit."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Konsumoptionen",
+      "label": "Preis",
       "is_target": true,
-      "explanation": "\"Konsumoptionen\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Preis\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t2",
-      "label": "Nachhaltigkeits Score Race",
+      "label": "Gewichtung",
       "is_target": true,
-      "explanation": "\"Nachhaltigkeits Score Race\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Gewichtung\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Konsumoptionen",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Konsumoptionen\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t4",
-      "label": "Entscheidungen",
+      "label": "Nachhaltigkeits",
       "is_target": true,
-      "explanation": "\"Entscheidungen\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Nachhaltigkeits\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t5",
-      "label": "kaufen",
+      "label": "Oeko-Score",
       "is_target": true,
-      "explanation": "\"kaufen\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Oeko-Score\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Nehmen",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nehmen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Marketingbudget",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Marketingbudget\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Verfuegbarkeit",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Verfuegbarkeit\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

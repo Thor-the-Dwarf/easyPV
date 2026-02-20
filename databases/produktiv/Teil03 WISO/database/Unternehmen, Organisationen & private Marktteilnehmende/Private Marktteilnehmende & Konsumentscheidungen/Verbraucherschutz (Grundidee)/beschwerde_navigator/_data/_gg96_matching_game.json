@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "verbraucherschutz",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Verbraucherschutz - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Verbraucherschutz - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Verbraucherschutz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Ware kommt beschaedigt an. Welcher Schritt steht zuerst an? Der Prozess startet beim direkten Anbieter-Kontakt.",
+          "right": "Passende Entscheidung 1: Verkaeufer kontaktieren und Mangel melden"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Der erste Pflichtschritt ist die Mangelanzeige beim Verkaeufer."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Auf Beschwerde kommt keine Reaktion. Was folgt sinnvoll? Nach Erstkontakt kommt meist eine Fristsetzung.",
+          "right": "Passende Entscheidung 2: Frist zur Nachbesserung setzen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Fristsetzung ist der naechste Prozessschritt."
+        },
+        {
+          "left": "Szenario 3: Nach Frist keine Einigung. Welche Eskalation passt? Vor Klage ist eine neutrale Schlichtung moeglich.",
+          "right": "Passende Entscheidung 3: Schlichtungsstelle einschalten"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Das ist eine passende Eskalationsstufe."
+        },
+        {
+          "left": "Szenario 4: Welcher Fehler kostet doppelte Abzuege laut Regelwerk? Pflichtschritte duerfen nicht uebersprungen werden.",
+          "right": "Passende Entscheidung 4: Pflichtschritt ueberspringen"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Genau. Das fuehrt zu doppeltem Punktabzug."
         }
       ]
     }

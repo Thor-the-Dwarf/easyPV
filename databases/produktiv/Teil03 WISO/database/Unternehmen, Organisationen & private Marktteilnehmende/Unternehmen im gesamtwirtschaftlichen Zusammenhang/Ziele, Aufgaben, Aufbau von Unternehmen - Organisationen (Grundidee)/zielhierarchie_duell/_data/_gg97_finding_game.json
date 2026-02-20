@@ -3,7 +3,7 @@
     "topic": "Unternehmensaufbau",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "unternehmensaufbau",
+    "variant": "zielhierarchie_duell",
     "title": "Unternehmensaufbau - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Unternehmensaufbau: Im Kontext Zielhierarchie Duell stehen Unternehmensaufbau, Zielhierarchie Duell und Richtig im Fokus.",
-    "Fuer eine belastbare Einordnung werden Leitziel und Ziele gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Unternehmensaufbau stehen Leitziel, Begruendung und Zielhierarchie im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Operatives und Messbar entscheidend.",
+    "Leitgedanke: Welche Reihenfolge ist in einer Zielhierarchie typisch.",
+    "Als Ablenker treten Operative, Bezug und Ressourcenplanung auf.",
+    "Begriffe im Fokus: Leitziel, Begruendung, Zielhierarchie, Operatives, Messbar, Operative, Bezug, Ressourcenplanung."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Unternehmensaufbau",
+      "label": "Leitziel",
       "is_target": true,
-      "explanation": "\"Unternehmensaufbau\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Leitziel\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t2",
-      "label": "Zielhierarchie Duell",
+      "label": "Begruendung",
       "is_target": true,
-      "explanation": "\"Zielhierarchie Duell\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Begruendung\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t3",
-      "label": "Richtig",
+      "label": "Zielhierarchie",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Zielhierarchie\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t4",
-      "label": "Leitziel",
+      "label": "Operatives",
       "is_target": true,
-      "explanation": "\"Leitziel\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Operatives\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t5",
-      "label": "Ziele",
+      "label": "Messbar",
       "is_target": true,
-      "explanation": "\"Ziele\" ist ein zentraler Fachbegriff im Kontext Unternehmensaufbau."
+      "explanation": "\"Messbar\" ist ein relevanter Fachbegriff im Thema Unternehmensaufbau."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Operative",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Operative\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Bezug",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Bezug\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Ressourcenplanung",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Ressourcenplanung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "arbeitszeit_und_entgelt",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Arbeitszeit und Entgelt - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Arbeitszeit und Entgelt - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Arbeitszeit und Entgelt - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Zwei Profile mit unterschiedlicher Situation: Kernaufgabe im Duell? Plausiblen Anspruch vergleichen und waehlen.",
+          "right": "Passende Entscheidung 1: Passenderes Anspruchsprofil waehlen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Der Vergleich steht im Zentrum des Spiels."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wie wird korrekte Wahl ohne Begruendung gewertet? Es gibt Teilpunkte.",
+          "right": "Passende Entscheidung 2: Mit Teilpunkten"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Begruendung liefert zusaetzlichen Score."
+        },
+        {
+          "left": "Szenario 3: Wann gibt es den Serienbonus? Mehrere korrekte Duelle nacheinander.",
+          "right": "Passende Entscheidung 3: Bei vier korrekten Duellen in Folge"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Dann wird Bonus aktiviert."
+        },
+        {
+          "left": "Szenario 4: Welche KPI-Perspektiven sind vorgesehen? Wahlleistung und Begruendung getrennt.",
+          "right": "Passende Entscheidung 4: Anspruchsgenauigkeit und Begruendungsquote"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. So wird Wissen und Begruendung sichtbar."
         }
       ]
     }

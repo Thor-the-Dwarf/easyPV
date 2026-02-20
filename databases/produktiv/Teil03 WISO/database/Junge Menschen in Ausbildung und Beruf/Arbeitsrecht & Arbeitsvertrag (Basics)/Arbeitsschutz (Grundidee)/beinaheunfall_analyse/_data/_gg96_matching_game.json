@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "arbeitsschutz",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Arbeitsschutz - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Arbeitsschutz - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Arbeitsschutz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Mitarbeiter stolpert ueber lose Kabel, verletzt sich aber nicht. Erster Analyseschritt? Bei Beinaheunfaellen zuerst Urs...",
+          "right": "Passende Entscheidung 1: Unfallursache erfassen und dokumentieren"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Die strukturierte Ursachenanalyse ist der Startpunkt."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Praeventionsmassnahme passt zu Stolpergefahr durch Kabel? Massnahme soll Gefahr direkt reduzieren.",
+          "right": "Passende Entscheidung 2: Kabel sichern oder anders verlegen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Das beseitigt die unmittelbare Gefahrenquelle."
+        },
+        {
+          "left": "Szenario 3: Welche KPI gehoert laut Plan zur Analyseleistung? Es werden Ursache und Massnahme getrennt bewertet.",
+          "right": "Passende Entscheidung 3: Ursachenquote und Massnahmenquote"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Beide Analyseebenen werden getrennt gemessen."
+        },
+        {
+          "left": "Szenario 4: Welche Regel gilt bei korrekter Ursache, aber falscher Massnahme? Das Bewertungssystem kennt Teilpunkte.",
+          "right": "Passende Entscheidung 4: Es gibt Teilpunkte"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Ursache und Massnahme werden separat gewertet."
         }
       ]
     }

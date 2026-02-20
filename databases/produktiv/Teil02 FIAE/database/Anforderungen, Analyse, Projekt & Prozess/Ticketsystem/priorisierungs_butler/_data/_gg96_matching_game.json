@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "priorisierungs_butler",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "priorisierungs butler - Zuordnen"
+    "title": "Priorisierungs-Butler - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "priorisierungs butler - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Priorisierungs-Butler - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Login-Seite zeigt nur noch 500-Fehler",
+          "right": "Passende Entscheidung 1: P1 Kritisch"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Kernfunktion ausgefallen, direkter Umsatz- und SLA-Schaden."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Rechnungs-Export bricht bei grossen Datenmengen ab",
+          "right": "Passende Entscheidung 2: P2 Hoch"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Business-kritisch, aber Plattform laeuft weiterhin."
+        },
+        {
+          "left": "Szenario 3: Suchfilter reagiert in Einzelfaellen sehr langsam",
+          "right": "Passende Entscheidung 3: P3 Mittel"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Workaround vorhanden, kein kompletter Ausfall."
+        },
+        {
+          "left": "Szenario 4: Tippfehler im Impressum",
+          "right": "Passende Entscheidung 4: P4 Niedrig"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Rein kosmetisch, niedrige Dringlichkeit."
         }
       ]
     }

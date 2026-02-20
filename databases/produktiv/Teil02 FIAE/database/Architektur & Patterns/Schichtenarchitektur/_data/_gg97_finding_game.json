@@ -3,7 +3,7 @@
     "topic": "Layered Architecture",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "layered_architecture",
+    "variant": "schichtenarchitektur",
     "title": "Layered Architecture - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Layered Architecture: Im Kontext Schichtenarchitektur stehen Layered Architecture, Schichtenarchitektur und presentation im Fokus.",
-    "Fuer eine belastbare Einordnung werden business und infrastructure gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Layered Architecture stehen Infrastructure, Architecture und Presentation im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Business und Layered entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Infrastructure, Architecture, Presentation, Business, Layered, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Layered Architecture",
+      "label": "Infrastructure",
       "is_target": true,
-      "explanation": "\"Layered Architecture\" ist ein zentraler Fachbegriff im Kontext Layered Architecture."
+      "explanation": "\"Infrastructure\" ist ein relevanter Fachbegriff im Thema Layered Architecture."
     },
     {
       "id": "t2",
-      "label": "Schichtenarchitektur",
+      "label": "Architecture",
       "is_target": true,
-      "explanation": "\"Schichtenarchitektur\" ist ein zentraler Fachbegriff im Kontext Layered Architecture."
+      "explanation": "\"Architecture\" ist ein relevanter Fachbegriff im Thema Layered Architecture."
     },
     {
       "id": "t3",
-      "label": "presentation",
+      "label": "Presentation",
       "is_target": true,
-      "explanation": "\"presentation\" ist ein zentraler Fachbegriff im Kontext Layered Architecture."
+      "explanation": "\"Presentation\" ist ein relevanter Fachbegriff im Thema Layered Architecture."
     },
     {
       "id": "t4",
-      "label": "business",
+      "label": "Business",
       "is_target": true,
-      "explanation": "\"business\" ist ein zentraler Fachbegriff im Kontext Layered Architecture."
+      "explanation": "\"Business\" ist ein relevanter Fachbegriff im Thema Layered Architecture."
     },
     {
       "id": "t5",
-      "label": "infrastructure",
+      "label": "Layered",
       "is_target": true,
-      "explanation": "\"infrastructure\" ist ein zentraler Fachbegriff im Kontext Layered Architecture."
+      "explanation": "\"Layered\" ist ein relevanter Fachbegriff im Thema Layered Architecture."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

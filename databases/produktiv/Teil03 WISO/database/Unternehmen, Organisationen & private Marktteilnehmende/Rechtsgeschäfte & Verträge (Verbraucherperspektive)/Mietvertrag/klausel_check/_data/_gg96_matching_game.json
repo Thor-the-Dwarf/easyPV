@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "mietvertrag_klausel_check",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Mietvertrag-Klausel-Check - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Mietvertrag-Klausel-Check - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Mietvertrag-Klausel-Check - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Klausel: \"Schoenheitsreparaturen stets unabhaengig vom Zustand alle 2 Jahre.\" Starre Fristen sind oft kritisch.",
+          "right": "Passende Entscheidung 1: Kritisch bis problematisch wegen starrer Frist"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Starre Vorgaben ohne Zustandsoffenheit sind riskant."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Klausel: \"Haustierhaltung nach vorheriger Abstimmung im Einzelfall.\" Einzelfallpruefung ist oft differenzierter als Pau...",
+          "right": "Passende Entscheidung 2: Eher unauffaellig mit Einzelfallbezug"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Einzelfallregelungen sind regelmaessig weniger problematisch."
+        },
+        {
+          "left": "Szenario 3: Klausel: \"Mieter traegt alle Reparaturen ohne Hoechstgrenze.\" Unbegrenzte Kostenueberwaelzung ist riskant.",
+          "right": "Passende Entscheidung 3: Eindeutig problematisch durch fehlende Begrenzung"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Ohne Begrenzung ist die Klausel stark angreifbar."
+        },
+        {
+          "left": "Szenario 4: Klausel: \"Nebenkosten werden jaehrlich transparent nach Positionen abgerechnet.\" Transparente Abrechnung ist ein positi...",
+          "right": "Passende Entscheidung 4: Unauffaellig"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Transparente, nachvollziehbare Abrechnung ist plausibel."
         }
       ]
     }

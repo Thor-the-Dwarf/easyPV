@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "dependency_injection",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "Dependency Injection - Zuordnen"
+    "title": "Dependency Injection (Grundidee: warum hilft das beim Testen?) - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "Dependency Injection - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Dependency Injection (Grundidee: warum hilft das beim Testen?) - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Routine Operation Assemble a production-ready OrderService.",
+          "right": "Passende Entscheidung 1: Routine Operation"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Routine Operation",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Emergency Surgery Pre-flight check! Unit Test the PaymentService. MOCKS ONLY!",
+          "right": "Passende Entscheidung 2: Emergency Surgery"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Emergency Surgery",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Dependency zuordnen: ConsoleLogger",
+          "right": "Passende Entscheidung 3: ConsoleLogger"
+        },
+        {
+          "left": "Begruendung 3: Runde 1",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 4: Dependency zuordnen: FileLogger",
+          "right": "Passende Entscheidung 4: FileLogger"
+        },
+        {
+          "left": "Begruendung 4: Runde 2",
+          "right": "Warum passend 4: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

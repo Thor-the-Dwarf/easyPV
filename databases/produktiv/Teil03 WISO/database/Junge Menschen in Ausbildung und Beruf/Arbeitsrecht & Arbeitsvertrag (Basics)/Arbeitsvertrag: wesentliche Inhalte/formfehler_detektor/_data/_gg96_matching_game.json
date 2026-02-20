@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "arbeitsvertrag",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Arbeitsvertrag - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Arbeitsvertrag - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Arbeitsvertrag - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Im Entwurf fehlen zentrale Vertragsdaten (z. B. Beginn). Was ist der richtige Check? Pflichtangaben muessen explizit be...",
+          "right": "Passende Entscheidung 1: Fehlende Pflichtangaben markieren"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das ist ein relevanter Form-/Inhaltsfehler."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Aktion senkt laut Regeln die Punktzahl? Fehlmarkierungen kosten Punkte.",
+          "right": "Passende Entscheidung 2: Markierung ohne echten Fehler"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. False Positives werden abgezogen."
+        },
+        {
+          "left": "Szenario 3: Wann gibt es den Perfektionsbonus? Bei vollstaendiger und sauberer Erkennung.",
+          "right": "Passende Entscheidung 3: Alle Fehler getroffen ohne Fehlmarkierung"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Dann wird der Bonus aktiviert."
+        },
+        {
+          "left": "Szenario 4: Welche KPI beschreibt die Leistung im Detektor? Sie kombiniert Treffer und Zeit.",
+          "right": "Passende Entscheidung 4: Fehlererkennungsrate pro Minute"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das ist die definierte Metrik."
         }
       ]
     }

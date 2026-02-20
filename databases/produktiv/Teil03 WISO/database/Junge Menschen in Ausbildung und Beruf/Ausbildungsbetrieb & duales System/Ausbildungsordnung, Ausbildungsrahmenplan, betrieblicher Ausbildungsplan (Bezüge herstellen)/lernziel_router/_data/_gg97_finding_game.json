@@ -3,7 +3,7 @@
     "topic": "Ausbildungsplanung",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "ausbildungsplanung",
+    "variant": "lernziel_router",
     "title": "Ausbildungsplanung - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Ausbildungsplanung: Im Kontext Lernziel Router stehen Ausbildungsplanung, Lernziel Router und Lernort im Fokus.",
-    "Fuer eine belastbare Einordnung werden Phase und korrekt gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Ausbildungsplanung stehen Lernort, Phase und Lernortquote im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Lernziel und Ausbildungsplanung entscheidend.",
+    "Leitgedanke: Welche Zuordnung ist im Lernziel-Router korrekt.",
+    "Als Ablenker treten Waehlen, Gesamtpunkte und Verbleibende auf.",
+    "Begriffe im Fokus: Lernort, Phase, Lernortquote, Lernziel, Ausbildungsplanung, Waehlen, Gesamtpunkte, Verbleibende."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Ausbildungsplanung",
+      "label": "Lernort",
       "is_target": true,
-      "explanation": "\"Ausbildungsplanung\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Lernort\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t2",
-      "label": "Lernziel Router",
+      "label": "Phase",
       "is_target": true,
-      "explanation": "\"Lernziel Router\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Phase\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t3",
-      "label": "Lernort",
+      "label": "Lernortquote",
       "is_target": true,
-      "explanation": "\"Lernort\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Lernortquote\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t4",
-      "label": "Phase",
+      "label": "Lernziel",
       "is_target": true,
-      "explanation": "\"Phase\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Lernziel\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t5",
-      "label": "korrekt",
+      "label": "Ausbildungsplanung",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Ausbildungsplanung\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Waehlen",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Waehlen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Gesamtpunkte",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamtpunkte\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Verbleibende",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Verbleibende\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

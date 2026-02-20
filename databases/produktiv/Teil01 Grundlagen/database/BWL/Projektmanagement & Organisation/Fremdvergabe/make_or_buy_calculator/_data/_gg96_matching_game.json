@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "make_or_buy_calculator",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Make or Buy Calculator - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Make or Buy Calculator - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Make or Buy Calculator - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Standardprodukt bei Menge 300. Was ist wirtschaftlicher?",
+          "right": "Passende Entscheidung 1: Make intern"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Standardprodukt",
+          "right": "Warum passend 1: Kosten Make=2500, Buy=3000."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Kleinserie bei Menge 140. Was ist wirtschaftlicher?",
+          "right": "Passende Entscheidung 2: Buy extern"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Kleinserie",
+          "right": "Warum passend 2: Kosten Make=2780, Buy=1260."
+        },
+        {
+          "left": "Szenario 3: Seriennahe Menge bei Menge 620. Was ist wirtschaftlicher?",
+          "right": "Passende Entscheidung 3: Make intern"
+        },
+        {
+          "left": "Begruendung 3: Seriennahe Menge",
+          "right": "Warum passend 3: Kosten Make=4680, Buy=4960."
+        },
+        {
+          "left": "Szenario 4: Prototypenphase bei Menge 90. Was ist wirtschaftlicher?",
+          "right": "Passende Entscheidung 4: Buy extern"
+        },
+        {
+          "left": "Begruendung 4: Prototypenphase",
+          "right": "Warum passend 4: Kosten Make=1440, Buy=990."
         }
       ]
     }

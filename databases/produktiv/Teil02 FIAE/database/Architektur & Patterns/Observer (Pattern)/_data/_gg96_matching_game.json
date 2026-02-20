@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "observer_pattern",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "Observer Pattern - Zuordnen"
+    "title": "Observer (Pattern) - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "Observer Pattern - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Observer (Pattern) - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Device 0: Welche Channel-Subscription ist gefordert?",
+          "right": "Passende Entscheidung 1: SPORT"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Level 1",
+          "right": "Warum passend 1: Subscription muss auf den richtigen Channel zeigen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Device 3: Welche Channel-Subscription ist gefordert?",
+          "right": "Passende Entscheidung 2: SPORT"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Level 2",
+          "right": "Warum passend 2: Subscription muss auf den richtigen Channel zeigen."
+        },
+        {
+          "left": "Szenario 3: Device 5: Welche Channel-Subscription ist gefordert?",
+          "right": "Passende Entscheidung 3: NEWS"
+        },
+        {
+          "left": "Begruendung 3: Level 2",
+          "right": "Warum passend 3: Subscription muss auf den richtigen Channel zeigen."
+        },
+        {
+          "left": "Szenario 4: Situation bewerten.",
+          "right": "Passende Entscheidung 4: 3"
+        },
+        {
+          "left": "Begruendung 4: Runde 5",
+          "right": "Warum passend 4: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "aktivitaeten_sortierer",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "aktivitaeten sortierer - Zuordnen"
+    "title": "Aktivitaeten-Sortierer - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "aktivitaeten sortierer - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Aktivitaeten-Sortierer - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Neue API-Funktion gemaess Fachanforderung implementieren",
+          "right": "Passende Entscheidung 1: Wertschoepfend"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Es entsteht direkt nutzbarer Funktionswert fuer den Kunden."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Hotfix fuer Bug aus letztem Release einspielen",
+          "right": "Passende Entscheidung 2: Nacharbeit"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Bugfixing ist notwendige Nacharbeit, aber keine neue Wertschoepfung."
+        },
+        {
+          "left": "Szenario 3: 30 Minuten auf Freigabe des Build-Servers warten",
+          "right": "Passende Entscheidung 3: Verschwendung"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Reine Wartezeit ohne direkten Ergebnisbeitrag."
+        },
+        {
+          "left": "Szenario 4: Kundensichtbares Formular fuer Antragstellung entwickeln",
+          "right": "Passende Entscheidung 4: Wertschoepfend"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Direkte Nutzung im Zielprozess bringt klaren Mehrwert."
         }
       ]
     }

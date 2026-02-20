@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "ticketsystem_workflow",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "Ticketsystem / Workflow - Zuordnen"
+    "title": "ticket status labyrinth - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "Ticketsystem / Workflow - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "ticket status labyrinth - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Level 1: The Happy Path Bringe das Ticket von NEW zu DONE. Einfacher Workflow.",
+          "right": "Passende Entscheidung 1: Level 1: The Happy Path"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Level 1: The Happy Path",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Level 2: The Loop Achtung! Das Ticket koennte im Review abgelehnt werden.",
+          "right": "Passende Entscheidung 2: Level 2: The Loop"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Level 2: The Loop",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Level 3: Compliance Hell Du musst die Rollen wechseln, um bestimmte Tore zu oeffnen.",
+          "right": "Passende Entscheidung 3: Level 3: Compliance Hell"
+        },
+        {
+          "left": "Begruendung 3: Level 3: Compliance Hell",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

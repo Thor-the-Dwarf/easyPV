@@ -3,7 +3,7 @@
     "topic": "The Content Filter",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "the_content_filter",
+    "variant": "doku_zielgruppen_match",
     "title": "The Content Filter - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "The Content Filter: Im Kontext Doku Zielgruppen Match stehen The Content Filter, Doku Zielgruppen Match und admin im Fokus.",
-    "Fuer eine belastbare Einordnung werden USAGE und Dokumentation gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema The Content Filter stehen Admin, USAGE und Content im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Filter und CONFIG entscheidend.",
+    "Leitgedanke: Ordne Dokumentations-Snippets der passenden Zielgruppe zu..",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Admin, USAGE, Content, Filter, CONFIG, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "The Content Filter",
+      "label": "Admin",
       "is_target": true,
-      "explanation": "\"The Content Filter\" ist ein zentraler Fachbegriff im Kontext The Content Filter."
+      "explanation": "\"Admin\" ist ein relevanter Fachbegriff im Thema The Content Filter."
     },
     {
       "id": "t2",
-      "label": "Doku Zielgruppen Match",
+      "label": "USAGE",
       "is_target": true,
-      "explanation": "\"Doku Zielgruppen Match\" ist ein zentraler Fachbegriff im Kontext The Content Filter."
+      "explanation": "\"USAGE\" ist ein relevanter Fachbegriff im Thema The Content Filter."
     },
     {
       "id": "t3",
-      "label": "admin",
+      "label": "Content",
       "is_target": true,
-      "explanation": "\"admin\" ist ein zentraler Fachbegriff im Kontext The Content Filter."
+      "explanation": "\"Content\" ist ein relevanter Fachbegriff im Thema The Content Filter."
     },
     {
       "id": "t4",
-      "label": "USAGE",
+      "label": "Filter",
       "is_target": true,
-      "explanation": "\"USAGE\" ist ein zentraler Fachbegriff im Kontext The Content Filter."
+      "explanation": "\"Filter\" ist ein relevanter Fachbegriff im Thema The Content Filter."
     },
     {
       "id": "t5",
-      "label": "Dokumentation",
+      "label": "CONFIG",
       "is_target": true,
-      "explanation": "\"Dokumentation\" ist ein zentraler Fachbegriff im Kontext The Content Filter."
+      "explanation": "\"CONFIG\" ist ein relevanter Fachbegriff im Thema The Content Filter."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

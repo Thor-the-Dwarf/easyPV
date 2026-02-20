@@ -3,7 +3,7 @@
     "topic": "Ticketsystem / Workflow",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "ticketsystem_workflow",
+    "variant": "ticket_status_labyrinth",
     "title": "Ticketsystem / Workflow - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Ticketsystem Workflow: Im Kontext Ticket Status Labyrinth stehen Ticketsystem Workflow, Ticket Status Labyrinth und review im Fokus.",
-    "Fuer eine belastbare Einordnung werden process und doing gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Ticketsystem / Workflow stehen Review, Ticketsystem und Ticket im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Workflow und Process entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Review, Ticketsystem, Ticket, Workflow, Process, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Ticketsystem Workflow",
+      "label": "Review",
       "is_target": true,
-      "explanation": "\"Ticketsystem Workflow\" ist ein zentraler Fachbegriff im Kontext Ticketsystem Workflow."
+      "explanation": "\"Review\" ist ein relevanter Fachbegriff im Thema Ticketsystem / Workflow."
     },
     {
       "id": "t2",
-      "label": "Ticket Status Labyrinth",
+      "label": "Ticketsystem",
       "is_target": true,
-      "explanation": "\"Ticket Status Labyrinth\" ist ein zentraler Fachbegriff im Kontext Ticketsystem Workflow."
+      "explanation": "\"Ticketsystem\" ist ein relevanter Fachbegriff im Thema Ticketsystem / Workflow."
     },
     {
       "id": "t3",
-      "label": "review",
+      "label": "Ticket",
       "is_target": true,
-      "explanation": "\"review\" ist ein zentraler Fachbegriff im Kontext Ticketsystem Workflow."
+      "explanation": "\"Ticket\" ist ein relevanter Fachbegriff im Thema Ticketsystem / Workflow."
     },
     {
       "id": "t4",
-      "label": "process",
+      "label": "Workflow",
       "is_target": true,
-      "explanation": "\"process\" ist ein zentraler Fachbegriff im Kontext Ticketsystem Workflow."
+      "explanation": "\"Workflow\" ist ein relevanter Fachbegriff im Thema Ticketsystem / Workflow."
     },
     {
       "id": "t5",
-      "label": "doing",
+      "label": "Process",
       "is_target": true,
-      "explanation": "\"doing\" ist ein zentraler Fachbegriff im Kontext Ticketsystem Workflow."
+      "explanation": "\"Process\" ist ein relevanter Fachbegriff im Thema Ticketsystem / Workflow."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

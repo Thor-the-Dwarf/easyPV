@@ -3,7 +3,7 @@
     "topic": "Arbeitsschutz",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "arbeitsschutz",
+    "variant": "psa_checkrun",
     "title": "Arbeitsschutz - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Arbeitsschutz: Im Kontext Psa Checkrun stehen Arbeitsschutz, Psa Checkrun und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Grundidee und Richtig gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Arbeitsschutz stehen Arbeitsschutz, Fehlende und Checkrun im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Unnoetige und Items entscheidend.",
+    "Leitgedanke: Schleifarbeiten mit Funkenflug: Welche PSA ist Pflicht.",
+    "Als Ablenker treten Gesamtpunkte, Antwortzeit und Moeglichst auf.",
+    "Begriffe im Fokus: Arbeitsschutz, Fehlende, Checkrun, Unnoetige, Items, Gesamtpunkte, Antwortzeit, Moeglichst."
   ],
   "terms": [
     {
       "id": "t1",
       "label": "Arbeitsschutz",
       "is_target": true,
-      "explanation": "\"Arbeitsschutz\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Arbeitsschutz\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t2",
-      "label": "Psa Checkrun",
+      "label": "Fehlende",
       "is_target": true,
-      "explanation": "\"Psa Checkrun\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Fehlende\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Checkrun",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Checkrun\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t4",
-      "label": "Grundidee",
+      "label": "Unnoetige",
       "is_target": true,
-      "explanation": "\"Grundidee\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Unnoetige\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t5",
-      "label": "Richtig",
+      "label": "Items",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Arbeitsschutz."
+      "explanation": "\"Items\" ist ein relevanter Fachbegriff im Thema Arbeitsschutz."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Gesamtpunkte",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamtpunkte\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Antwortzeit",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Antwortzeit\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Moeglichst",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Moeglichst\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

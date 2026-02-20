@@ -3,8 +3,8 @@
     "topic": "E-Mail formulieren",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "e_mail_formulieren",
-    "title": "Betreffzeilen-Bingo - Begriffe finden",
+    "variant": "betreffzeilen_bingo",
+    "title": "E-Mail formulieren - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
   },
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Mail Formulieren: Im Kontext Betreffzeilen Bingo stehen Mail Formulieren, Betreffzeilen Bingo und Richtig im Fokus.",
-    "Fuer eine belastbare Einordnung werden E-Mail und Bitte gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema E-Mail formulieren stehen Angebot, Formulieren und E-Mail im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Rechnung und Monatsreport entscheidend.",
+    "Als Ablenker treten Bitte, Rueckmeldung und Aktualisiert auf.",
+    "Begriffe im Fokus: Angebot, Formulieren, E-Mail, Rechnung, Monatsreport, Bitte, Rueckmeldung, Aktualisiert."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Mail Formulieren",
+      "label": "Angebot",
       "is_target": true,
-      "explanation": "\"Mail Formulieren\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"Angebot\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t2",
-      "label": "Betreffzeilen Bingo",
+      "label": "Formulieren",
       "is_target": true,
-      "explanation": "\"Betreffzeilen Bingo\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"Formulieren\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t3",
-      "label": "Richtig",
+      "label": "E-Mail",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"E-Mail\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t4",
-      "label": "E-Mail",
+      "label": "Rechnung",
       "is_target": true,
-      "explanation": "\"E-Mail\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"Rechnung\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t5",
-      "label": "Bitte",
+      "label": "Monatsreport",
       "is_target": true,
-      "explanation": "\"Bitte\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
+      "explanation": "\"Monatsreport\" ist ein relevanter Fachbegriff im Thema E-Mail formulieren."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Bitte",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Bitte\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Rueckmeldung",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Rueckmeldung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Aktualisiert",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Aktualisiert\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

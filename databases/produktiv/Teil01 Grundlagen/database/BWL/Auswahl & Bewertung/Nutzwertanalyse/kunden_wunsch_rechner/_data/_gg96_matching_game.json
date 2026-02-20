@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "kunden_wunsch_rechner",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "kunden wunsch rechner - Zuordnen"
+    "title": "Kunden-Wunsch-Rechner - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "kunden wunsch rechner - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Kunden-Wunsch-Rechner - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Preis ist mir extrem wichtig, Marke ist mir egal. Qualitaet soll solide sein.",
+          "right": "Passende Entscheidung 1: r1"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Ich will vor allem hohe Qualitaet. Preis ist zweitrangig, Marke egal.",
+          "right": "Passende Entscheidung 2: r2"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Ich brauche eine starke Marke fuer den Auftritt. Preis ist nicht so wichtig.",
+          "right": "Passende Entscheidung 3: r3"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 4: Preis und Qualitaet sind beide wichtig. Marke ist eher unwichtig.",
+          "right": "Passende Entscheidung 4: r4"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

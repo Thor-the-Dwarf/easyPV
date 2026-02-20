@@ -3,7 +3,7 @@
     "topic": "Konsumoptionen",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "konsumoptionen",
+    "variant": "nutzungs_navigator",
     "title": "Konsumoptionen - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Konsumoptionen: Im Kontext Nutzungs Navigator stehen Konsumoptionen, Nutzungs Navigator und kaufen im Fokus.",
-    "Fuer eine belastbare Einordnung werden Leihen und mieten gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Konsumoptionen stehen Kaufen, Dauer und Passt im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Leihen und Teilen entscheidend.",
+    "Leitgedanke: Fall 1: Bohrmaschine fuer einmaligen Umzug. Beste Option.",
+    "Als Ablenker treten Verfuegbarkeit, Luxusmodell und Produktname auf.",
+    "Begriffe im Fokus: Kaufen, Dauer, Passt, Leihen, Teilen, Verfuegbarkeit, Luxusmodell, Produktname."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Konsumoptionen",
+      "label": "Kaufen",
       "is_target": true,
-      "explanation": "\"Konsumoptionen\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Kaufen\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t2",
-      "label": "Nutzungs Navigator",
+      "label": "Dauer",
       "is_target": true,
-      "explanation": "\"Nutzungs Navigator\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Dauer\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t3",
-      "label": "kaufen",
+      "label": "Passt",
       "is_target": true,
-      "explanation": "\"kaufen\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Passt\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t4",
       "label": "Leihen",
       "is_target": true,
-      "explanation": "\"Leihen\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Leihen\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t5",
-      "label": "mieten",
+      "label": "Teilen",
       "is_target": true,
-      "explanation": "\"mieten\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Teilen\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Verfuegbarkeit",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Verfuegbarkeit\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Luxusmodell",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Luxusmodell\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Produktname",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Produktname\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

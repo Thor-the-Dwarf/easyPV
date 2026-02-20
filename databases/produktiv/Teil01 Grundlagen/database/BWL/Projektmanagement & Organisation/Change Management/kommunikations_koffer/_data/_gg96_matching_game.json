@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "kommunikations_koffer",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Kommunikations-Koffer - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Kommunikations-Koffer - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Kommunikations-Koffer - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: In der Geruechtekueche kursieren widerspruechliche Infos zum Projektstart.",
+          "right": "Passende Entscheidung 1: Townhall mit offener Fragerunde und klaren Fakten"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Unsicherheit",
+          "right": "Warum passend 1: Transparenz senkt Unsicherheit und stoppt Spekulationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Mehrere Teams sagen: 'Das haben wir schon immer so gemacht'.",
+          "right": "Passende Entscheidung 2: Workshop mit Stakeholdern und konkreten Sorgen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Widerstand",
+          "right": "Warum passend 2: Partizipation reduziert Abwehr und macht Probleme besprechbar."
+        },
+        {
+          "left": "Szenario 3: Das Team akzeptiert den Grund fuer die Aenderung, ist aber noch unsicher in der Anwendung.",
+          "right": "Passende Entscheidung 3: Praxisnahe Schulung mit Q&A und Checklisten"
+        },
+        {
+          "left": "Begruendung 3: Einsicht",
+          "right": "Warum passend 3: Einsicht braucht Enablement, damit Verhalten wirklich umgestellt wird."
+        },
+        {
+          "left": "Szenario 4: Pilotgruppen testen den neuen Prozess und sammeln erste Erfahrungen.",
+          "right": "Passende Entscheidung 4: Regelmaessige Retros mit Lessons Learned"
+        },
+        {
+          "left": "Begruendung 4: Ausprobieren",
+          "right": "Warum passend 4: Schnelles Feedback stabilisiert den Lernzyklus."
         }
       ]
     }

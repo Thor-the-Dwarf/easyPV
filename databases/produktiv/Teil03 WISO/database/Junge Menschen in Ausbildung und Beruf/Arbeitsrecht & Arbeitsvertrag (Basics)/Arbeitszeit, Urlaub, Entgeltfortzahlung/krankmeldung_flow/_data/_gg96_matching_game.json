@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "arbeitszeit_und_entgelt",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Arbeitszeit und Entgelt - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Arbeitszeit und Entgelt - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Arbeitszeit und Entgelt - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Kompetenz trainiert der Krankmeldung-Flow primaer? Es geht um Reihenfolge und Fristen.",
+          "right": "Passende Entscheidung 1: Prozesssicherheit bei Meldung und Nachweis"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Reihenfolge und Fristen stehen im Fokus."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Was passiert laut Regeln bei uebersprungenem Pflichtschritt? Es gibt einen verschärften Abzug.",
+          "right": "Passende Entscheidung 2: Doppelter Punktabzug"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Pflichtschritte duerfen nicht uebersprungen werden."
+        },
+        {
+          "left": "Szenario 3: Wann gibt es Effizienzbonus im Flow? Der Bonus haengt an fehlerfreier Kette.",
+          "right": "Passende Entscheidung 3: Bei fehlerfreier Prozesskette"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Saubere Reihenfolge wird zusaetzlich belohnt."
+        },
+        {
+          "left": "Szenario 4: Welche Kennzahlen bilden den Fortschritt ab? Korrektheit plus Weg-Effizienz.",
+          "right": "Passende Entscheidung 4: Prozessgenauigkeit und Schritte bis Loesung"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. So wird Qualitaet und Effizienz sichtbar."
         }
       ]
     }

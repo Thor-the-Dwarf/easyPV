@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "jugendarbeitsschutz",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Jugendarbeitsschutz - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Jugendarbeitsschutz - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Jugendarbeitsschutz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Taetigkeit mit hohem Gefahrenniveau fuer Jugendliche: plausible Einordnung? Risikobezogene Zulassigkeit beachten.",
+          "right": "Passende Entscheidung 1: Als unzulaessig klassifizieren"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Hochrisiko-Einsaetze sind besonders kritisch."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Fehlart erzeugt doppelten Abzug? Bezieht sich auf Hochrisiko-Aufgaben.",
+          "right": "Passende Entscheidung 2: Fehlklassifikation bei Hochrisiko"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Diese Fehler werden strenger bewertet."
+        },
+        {
+          "left": "Szenario 3: Welcher KPI-Satz ist vorgesehen? Treffer und Fehlerrate kombinieren.",
+          "right": "Passende Entscheidung 3: Zulassungsquote und Fehlerrate"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Genau. Beide Werte zeigen Lernfortschritt."
+        },
+        {
+          "left": "Szenario 4: Wann startet Tempo-Bonus? Serie korrekter Entscheidungen notwendig.",
+          "right": "Passende Entscheidung 4: Bei korrekter Serie"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Kontinuierliche Treffsicherheit wird belohnt."
         }
       ]
     }

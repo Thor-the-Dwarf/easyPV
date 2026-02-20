@@ -3,7 +3,7 @@
     "topic": "Jugendarbeitsschutz",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "jugendarbeitsschutz",
+    "variant": "aufsichtspflicht_radar",
     "title": "Jugendarbeitsschutz - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Jugendarbeitsschutz: Im Kontext Aufsichtspflicht Radar stehen Jugendarbeitsschutz, Aufsichtspflicht Radar und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Grundidee und Richtig gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Jugendarbeitsschutz stehen Kritischer, Jugendarbeitsschutz und Abzug im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Aufsichtspflicht und Eskalation entscheidend.",
+    "Leitgedanke: Betreuung in kritischer Situation ist unklar. Welche Erstbewertung ist sinnvoll.",
+    "Als Ablenker treten Ausreichend, Teilantwort und Gesamtquote auf.",
+    "Begriffe im Fokus: Kritischer, Jugendarbeitsschutz, Abzug, Aufsichtspflicht, Eskalation, Ausreichend, Teilantwort, Gesamtquote."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Jugendarbeitsschutz",
+      "label": "Kritischer",
       "is_target": true,
-      "explanation": "\"Jugendarbeitsschutz\" ist ein zentraler Fachbegriff im Kontext Jugendarbeitsschutz."
+      "explanation": "\"Kritischer\" ist ein relevanter Fachbegriff im Thema Jugendarbeitsschutz."
     },
     {
       "id": "t2",
-      "label": "Aufsichtspflicht Radar",
+      "label": "Jugendarbeitsschutz",
       "is_target": true,
-      "explanation": "\"Aufsichtspflicht Radar\" ist ein zentraler Fachbegriff im Kontext Jugendarbeitsschutz."
+      "explanation": "\"Jugendarbeitsschutz\" ist ein relevanter Fachbegriff im Thema Jugendarbeitsschutz."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Abzug",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Jugendarbeitsschutz."
+      "explanation": "\"Abzug\" ist ein relevanter Fachbegriff im Thema Jugendarbeitsschutz."
     },
     {
       "id": "t4",
-      "label": "Grundidee",
+      "label": "Aufsichtspflicht",
       "is_target": true,
-      "explanation": "\"Grundidee\" ist ein zentraler Fachbegriff im Kontext Jugendarbeitsschutz."
+      "explanation": "\"Aufsichtspflicht\" ist ein relevanter Fachbegriff im Thema Jugendarbeitsschutz."
     },
     {
       "id": "t5",
-      "label": "Richtig",
+      "label": "Eskalation",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Jugendarbeitsschutz."
+      "explanation": "\"Eskalation\" ist ein relevanter Fachbegriff im Thema Jugendarbeitsschutz."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Ausreichend",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Ausreichend\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Teilantwort",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Teilantwort\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Gesamtquote",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamtquote\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

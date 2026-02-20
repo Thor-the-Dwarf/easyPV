@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "wirtschaftskreislauf",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Wirtschaftskreislauf - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Wirtschaftskreislauf - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Wirtschaftskreislauf - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Ein Nachfrageschock senkt Konsum. Welche Erstwirkung ist plausibel? Einnahmenseite betrachten.",
+          "right": "Passende Entscheidung 1: Unternehmen erzielen geringere Umsaetze"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Weniger Konsum senkt Einnahmen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Interpretation passt bei Kostenanstieg in Unternehmen? Preise, Produktion, Einkommen.",
+          "right": "Passende Entscheidung 2: Risiko sinkender Produktion und Kaufkraftdruck"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Kosten koennen sich durch den Kreislauf fortpflanzen."
+        },
+        {
+          "left": "Szenario 3: Welche KPI ist im Simulator zentral? Interpretation + Stabilitaet.",
+          "right": "Passende Entscheidung 3: Korrekte Deutung pro Runde und Stabilitaetsindex"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Beides zeigt Lernfortschritt."
+        },
+        {
+          "left": "Szenario 4: Wann ist eine Interpretation kritisch falsch? Schock wird verharmlost.",
+          "right": "Passende Entscheidung 4: Wenn ein deutlicher Schock als folgenlos bewertet wird"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Dann fehlt Risikoverstaendnis."
         }
       ]
     }

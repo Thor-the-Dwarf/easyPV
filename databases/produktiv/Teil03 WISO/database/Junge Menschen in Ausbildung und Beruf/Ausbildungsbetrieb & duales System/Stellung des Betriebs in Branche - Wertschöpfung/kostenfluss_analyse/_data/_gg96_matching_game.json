@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "wertschoepfung",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Wertschoepfung - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Wertschoepfung - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Wertschoepfung - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Was ist der erste Schritt in einem Cost-Case? Kosten je Stufe transparent vergleichen.",
+          "right": "Passende Entscheidung 1: Kostenanteile aller Stufen gegenueberstellen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Ohne Vergleich keine Engpassanalyse."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wann gibt es Teilpunkte laut Regeln? Stufe korrekt, Massnahme falsch.",
+          "right": "Passende Entscheidung 2: Wenn die Engpassstufe korrekt erkannt wurde"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Das gibt Teilpunkte."
+        },
+        {
+          "left": "Szenario 3: Welche KPI gehoeren zur Kostenfluss-Analyse? Engpass plus Wirkungsseite.",
+          "right": "Passende Entscheidung 3: Engpassquote und Massnahmenwirkung"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Beide KPI sind vorgesehen."
+        },
+        {
+          "left": "Szenario 4: Wann aktiviert sich ein Serienbonus? Doppelt korrekte Faelle.",
+          "right": "Passende Entscheidung 4: Wenn Stufe und Massnahme mehrfach hintereinander korrekt sind"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Volltreffer in Serie geben Bonus."
         }
       ]
     }

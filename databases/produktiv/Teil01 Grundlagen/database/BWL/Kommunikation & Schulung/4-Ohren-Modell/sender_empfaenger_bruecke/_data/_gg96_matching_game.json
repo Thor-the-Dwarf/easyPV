@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "sender_empfaenger_bruecke",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Sender-Empfaenger-Bruecke - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Sender-Empfaenger-Bruecke - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Sender-Empfaenger-Bruecke - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Im Meeting ist das Fenster offen und es zieht.",
+          "right": "Passende Entscheidung 1: Schliess bitte jetzt das Fenster."
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Ein Appell fordert klar eine Handlung ein."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Das Ticket steht seit Stunden auf in Arbeit.",
+          "right": "Passende Entscheidung 2: Gib mir bitte bis 14:00 ein kurzes Status-Update."
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Der Satz nennt konkrete Aktion und Zeitpunkt."
+        },
+        {
+          "left": "Szenario 3: Der Drucker ist leer.",
+          "right": "Passende Entscheidung 3: Leg bitte neues Papier in den Drucker nach."
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Ein klarer Imperativ mit Bitte ist hier passend."
+        },
+        {
+          "left": "Szenario 4: Die Praesentation startet in 2 Minuten.",
+          "right": "Passende Entscheidung 4: Verbinde bitte jetzt den Beamer mit dem Laptop."
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Der Appell benennt direkt die noetige Handlung."
         }
       ]
     }

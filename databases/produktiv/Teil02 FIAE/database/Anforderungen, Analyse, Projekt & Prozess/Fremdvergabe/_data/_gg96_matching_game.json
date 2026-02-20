@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "the_strategic_scale",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "The Strategic Scale - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "The Strategic Scale - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "The Strategic Scale - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Make-or-Buy Faktor: Team kennt die Zieltechnologie nicht.",
+          "right": "Passende Entscheidung 1: Buy extern"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Kein internes Know-how",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Make-or-Buy Faktor: Das Feature ist Teil des strategischen Kernwissens.",
+          "right": "Passende Entscheidung 2: Make intern"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Kern-IP im Produkt",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Make-or-Buy Faktor: Menge ist niedrig und nicht wiederkehrend.",
+          "right": "Passende Entscheidung 3: Buy extern"
+        },
+        {
+          "left": "Begruendung 3: Einmalige Kleinserie",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 4: Make-or-Buy Faktor: Standardprodukte muessen stark angepasst werden.",
+          "right": "Passende Entscheidung 4: Make intern"
+        },
+        {
+          "left": "Begruendung 4: Hoher Customizing-Bedarf",
+          "right": "Warum passend 4: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

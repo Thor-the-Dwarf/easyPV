@@ -3,7 +3,7 @@
     "topic": "Europa & Globalisierung",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "europa_globalisierung",
+    "variant": "chance_risiko_radar",
     "title": "Europa & Globalisierung - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Europa Globalisierung: Im Kontext Chance Risiko Radar stehen Europa Globalisierung, Chance Risiko Radar und Richtig im Fokus.",
-    "Fuer eine belastbare Einordnung werden Falsch und Automatisch gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Europa & Globalisierung stehen Globalisierung, Europa und Risiko im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Unternehmen und Passt entscheidend.",
+    "Leitgedanke: Ein Unternehmen erschliesst neue EU-Maerkte. Welche Primarchance passt.",
+    "Als Ablenker treten Automatisch, Rechtsanforderungen und Qualitaetssicherung auf.",
+    "Begriffe im Fokus: Globalisierung, Europa, Risiko, Unternehmen, Passt, Automatisch, Rechtsanforderungen, Qualitaetssicherung."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Europa Globalisierung",
+      "label": "Globalisierung",
       "is_target": true,
-      "explanation": "\"Europa Globalisierung\" ist ein zentraler Fachbegriff im Kontext Europa Globalisierung."
+      "explanation": "\"Globalisierung\" ist ein relevanter Fachbegriff im Thema Europa & Globalisierung."
     },
     {
       "id": "t2",
-      "label": "Chance Risiko Radar",
+      "label": "Europa",
       "is_target": true,
-      "explanation": "\"Chance Risiko Radar\" ist ein zentraler Fachbegriff im Kontext Europa Globalisierung."
+      "explanation": "\"Europa\" ist ein relevanter Fachbegriff im Thema Europa & Globalisierung."
     },
     {
       "id": "t3",
-      "label": "Richtig",
+      "label": "Risiko",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Europa Globalisierung."
+      "explanation": "\"Risiko\" ist ein relevanter Fachbegriff im Thema Europa & Globalisierung."
     },
     {
       "id": "t4",
-      "label": "Falsch",
+      "label": "Unternehmen",
       "is_target": true,
-      "explanation": "\"Falsch\" ist ein zentraler Fachbegriff im Kontext Europa Globalisierung."
+      "explanation": "\"Unternehmen\" ist ein relevanter Fachbegriff im Thema Europa & Globalisierung."
     },
     {
       "id": "t5",
-      "label": "Automatisch",
+      "label": "Passt",
       "is_target": true,
-      "explanation": "\"Automatisch\" ist ein zentraler Fachbegriff im Kontext Europa Globalisierung."
+      "explanation": "\"Passt\" ist ein relevanter Fachbegriff im Thema Europa & Globalisierung."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Automatisch",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Automatisch\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Rechtsanforderungen",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Rechtsanforderungen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Qualitaetssicherung",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Qualitaetssicherung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

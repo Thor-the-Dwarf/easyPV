@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "konsumoptionen",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Konsumoptionen - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Konsumoptionen - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Konsumoptionen - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Duell 1: Geraet A guenstig im Kauf, aber hohe Wartung. Was zaehlt? Vergleiche Gesamtkosten ueber die Nutzungsjahre.",
+          "right": "Passende Entscheidung 1: Lebenszyklusgesamtkosten"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Nur Gesamtbetrachtung liefert die bessere Option."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Duell 2: Zwei Optionen sind gleich teuer in der Anschaffung. Welche gewinnt? Restwert und Reparaturquote entscheiden de...",
+          "right": "Passende Entscheidung 2: Option mit hoeherem Restwert"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Hoeherer Restwert reduziert Lebenszykluskosten."
+        },
+        {
+          "left": "Szenario 3: Welche Komponente wird im Lebenszyklus oft vergessen, ist aber kritisch? Denke an laufende Lasten.",
+          "right": "Passende Entscheidung 3: Wartungskosten"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Wartung entscheidet haeufig ueber die Rangfolge."
+        },
+        {
+          "left": "Szenario 4: Bei Gleichstand der Kosten entscheidet laut Plan... Es gibt eine Nachhaltigkeits- bzw. Ressourcenregel.",
+          "right": "Passende Entscheidung 4: geringerer Ressourcenverbrauch"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das ist die Tie-Break-Regel."
         }
       ]
     }

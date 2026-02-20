@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "vom_gespraech_zum_punkt",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "vom gespraech zum punkt - Zuordnen"
+    "title": "Vom Gespraech zum Punkt - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "vom gespraech zum punkt - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Vom Gespraech zum Punkt - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Herr Schmidt meinte, dass er wohl bis Freitag die Datenbank-Bereinigung machen kann.",
+          "right": "Passende Entscheidung 1: Schmidt: Datenbank bereinigen bis Freitag."
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Ein Aktionspunkt braucht Verantwortliche und Termin."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Lisa sagte, sie prueft den Testreport naechste Woche irgendwann.",
+          "right": "Passende Entscheidung 2: Lisa: Testreport pruefen bis Mittwoch (naechste Woche)."
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Praezise Frist + klare Zustaendigkeit macht den Punkt umsetzbar."
+        },
+        {
+          "left": "Szenario 3: Wir sollten den Kunden informieren, wenn die Aenderung durch ist.",
+          "right": "Passende Entscheidung 3: PM-Team: Kunde ueber Aenderung informieren bis Go-live+1 Tag."
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Aktionspunkte sind konkret, terminierbar und zugewiesen."
+        },
+        {
+          "left": "Szenario 4: Can kann wohl den API-Endpunkt dokumentieren, sobald Zeit frei ist.",
+          "right": "Passende Entscheidung 4: Can: API-Endpunkt dokumentieren bis 22.04."
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Die beste Version ersetzt Unschaerfe durch klaren Termin."
         }
       ]
     }

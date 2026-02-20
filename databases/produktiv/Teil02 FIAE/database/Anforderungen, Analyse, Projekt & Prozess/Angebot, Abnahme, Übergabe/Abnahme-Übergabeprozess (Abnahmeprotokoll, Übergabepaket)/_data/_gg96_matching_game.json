@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "abnahme_protokoll_check",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Abnahme-Protokoll-Check - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Abnahme-Protokoll-Check - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Abnahme-Protokoll-Check - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Typo in der FAQ-Ueberschrift, Funktionen arbeiten einwandfrei.",
+          "right": "Passende Entscheidung 1: Ohne Mangel"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Korrekt. Das ist ein geringer Mangel: dokumentieren, Frist zur Nachbesserung setzen, Abnahme moeglich."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Checkout bricht bei mehr als 10 gleichzeitigen Nutzern mit Server-Fehler ab.",
+          "right": "Passende Entscheidung 2: Ohne Mangel"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Korrekt. Wesentlicher Mangel: Abnahme zurueckstellen, Blocker dokumentieren, Nachbesserung verlangen."
+        },
+        {
+          "left": "Szenario 3: Firmenlogo auf der Startseite 12px nach links verschoben.",
+          "right": "Passende Entscheidung 3: Ohne Mangel"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Korrekt. Geringer Mangel: kein Abnahme-Stopp, aber protokollieren und nachziehen lassen."
+        },
+        {
+          "left": "Szenario 4: Rollenrechte fehlen: normale User sehen Admin-Funktionen.",
+          "right": "Passende Entscheidung 4: Ohne Mangel"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Korrekt. Wesentlicher Mangel: Abnahme verweigern bis der Rechtefehler behoben ist."
         }
       ]
     }

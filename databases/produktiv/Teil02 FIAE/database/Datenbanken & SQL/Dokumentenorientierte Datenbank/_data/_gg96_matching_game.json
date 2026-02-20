@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "json_structure",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "JSON Structure - Zuordnen"
+    "title": "Dokumentenorientierte Datenbank - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "JSON Structure - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Dokumentenorientierte Datenbank - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Profile Basics Create a User Object with name and age.",
+          "right": "Passende Entscheidung 1: {\"name\":\"Alice\",\"age\":25}"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Profile Basics",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Nested Address Add an address object inside the user.",
+          "right": "Passende Entscheidung 2: {\"name\":\"Bob\",\"address\":{\"city\":\"Berlin\",\"zip\":10115}}"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Nested Address",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Hobbies List Create a list of hobbies using an Array.",
+          "right": "Passende Entscheidung 3: {\"username\":\"Charlie\",\"hobbies\":[\"Coding\",\"Gaming\",\"Reading\"]}"
+        },
+        {
+          "left": "Begruendung 3: Hobbies List",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "leasing_kalkulator_challenge",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Leasing-Kalkulator-Challenge - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Leasing-Kalkulator-Challenge - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Leasing-Kalkulator-Challenge - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Leasingangebot: Laufzeit 12 Monate, Anzahlung 0 EUR. Erreicht der Plan das Ziel <= 200 EUR?",
+          "right": "Passende Entscheidung 1: Rate verfehlt Ziel oder Anzahlungslimit"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Rate ~ 439.6 EUR bei 12 Monaten und 0 EUR Anzahlung."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Leasingangebot: Laufzeit 24 Monate, Anzahlung 1000 EUR. Erreicht der Plan das Ziel <= 200 EUR?",
+          "right": "Passende Entscheidung 2: Rate verfehlt Ziel oder Anzahlungslimit"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Rate ~ 375.2 EUR bei 24 Monaten und 1000 EUR Anzahlung."
+        },
+        {
+          "left": "Szenario 3: Leasingangebot: Laufzeit 36 Monate, Anzahlung 2000 EUR. Erreicht der Plan das Ziel <= 200 EUR?",
+          "right": "Passende Entscheidung 3: Rate verfehlt Ziel oder Anzahlungslimit"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Rate ~ 310.8 EUR bei 36 Monaten und 2000 EUR Anzahlung."
+        },
+        {
+          "left": "Szenario 4: Leasingangebot: Laufzeit 48 Monate, Anzahlung 3000 EUR. Erreicht der Plan das Ziel <= 200 EUR?",
+          "right": "Passende Entscheidung 4: Rate verfehlt Ziel oder Anzahlungslimit"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Rate ~ 246.4 EUR bei 48 Monaten und 3000 EUR Anzahlung."
         }
       ]
     }

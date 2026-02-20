@@ -3,7 +3,7 @@
     "topic": "Verbraucherschutz",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "verbraucherschutz",
+    "variant": "klausel_detektiv",
     "title": "Verbraucherschutz - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Verbraucherschutz: Im Kontext Klausel Detektiv stehen Verbraucherschutz, Klausel Detektiv und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Grundidee und Praezision gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Verbraucherschutz stehen Praezision, Recall und Klausel im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Verbraucherschutz und Uebersehen entscheidend.",
+    "Leitgedanke: Eine Klausel schliesst saemtliche Maengelhaftung pauschal aus. Bewertung.",
+    "Als Ablenker treten Ignorieren, Markieren und Risikoklasse auf.",
+    "Begriffe im Fokus: Praezision, Recall, Klausel, Verbraucherschutz, Uebersehen, Ignorieren, Markieren, Risikoklasse."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Verbraucherschutz",
+      "label": "Praezision",
       "is_target": true,
-      "explanation": "\"Verbraucherschutz\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Praezision\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t2",
-      "label": "Klausel Detektiv",
+      "label": "Recall",
       "is_target": true,
-      "explanation": "\"Klausel Detektiv\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Recall\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Klausel",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Klausel\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t4",
-      "label": "Grundidee",
+      "label": "Verbraucherschutz",
       "is_target": true,
-      "explanation": "\"Grundidee\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Verbraucherschutz\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t5",
-      "label": "Praezision",
+      "label": "Uebersehen",
       "is_target": true,
-      "explanation": "\"Praezision\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Uebersehen\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Ignorieren",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Ignorieren\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Markieren",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Markieren\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Risikoklasse",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Risikoklasse\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

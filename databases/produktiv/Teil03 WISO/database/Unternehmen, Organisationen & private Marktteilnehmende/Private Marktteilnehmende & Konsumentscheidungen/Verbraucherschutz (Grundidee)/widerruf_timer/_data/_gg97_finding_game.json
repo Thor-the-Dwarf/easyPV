@@ -3,7 +3,7 @@
     "topic": "Verbraucherschutz",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "verbraucherschutz",
+    "variant": "widerruf_timer",
     "title": "Verbraucherschutz - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Verbraucherschutz: Im Kontext Widerruf Timer stehen Verbraucherschutz, Widerruf Timer und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Grundidee und Richtig gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Verbraucherschutz stehen Begruendung, Widerruf und Verbraucherschutz im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Tagen und Startdatum entscheidend.",
+    "Leitgedanke: Bestellung online, Lieferung vor 10 Tagen. Widerruf moeglich.",
+    "Als Ablenker treten Nennen, Ausgeschlossen und Bauchgefuehl auf.",
+    "Begriffe im Fokus: Begruendung, Widerruf, Verbraucherschutz, Tagen, Startdatum, Nennen, Ausgeschlossen, Bauchgefuehl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Verbraucherschutz",
+      "label": "Begruendung",
       "is_target": true,
-      "explanation": "\"Verbraucherschutz\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Begruendung\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t2",
-      "label": "Widerruf Timer",
+      "label": "Widerruf",
       "is_target": true,
-      "explanation": "\"Widerruf Timer\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Widerruf\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Verbraucherschutz",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Verbraucherschutz\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t4",
-      "label": "Grundidee",
+      "label": "Tagen",
       "is_target": true,
-      "explanation": "\"Grundidee\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Tagen\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t5",
-      "label": "Richtig",
+      "label": "Startdatum",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Verbraucherschutz."
+      "explanation": "\"Startdatum\" ist ein relevanter Fachbegriff im Thema Verbraucherschutz."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Nennen",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nennen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Ausgeschlossen",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Ausgeschlossen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Bauchgefuehl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Bauchgefuehl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

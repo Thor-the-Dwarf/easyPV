@@ -3,7 +3,7 @@
     "topic": "Konsumoptionen",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "konsumoptionen",
+    "variant": "lebenszyklus_kosten_duell",
     "title": "Konsumoptionen - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Konsumoptionen: Im Kontext Lebenszyklus Kosten Duell stehen Konsumoptionen, Lebenszyklus Kosten Duell und Entscheidungen im Fokus.",
-    "Fuer eine belastbare Einordnung werden kaufen und mieten gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Konsumoptionen stehen Restwert, Wartung und Lebenszyklus im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Kosten und Anschaffung entscheidend.",
+    "Leitgedanke: Duell 1: Geraet A guenstig im Kauf, aber hohe Wartung. Was zaehlt.",
+    "Als Ablenker treten Nennen, Anschaffungspreis und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Restwert, Wartung, Lebenszyklus, Kosten, Anschaffung, Nennen, Anschaffungspreis, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Konsumoptionen",
+      "label": "Restwert",
       "is_target": true,
-      "explanation": "\"Konsumoptionen\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Restwert\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t2",
-      "label": "Lebenszyklus Kosten Duell",
+      "label": "Wartung",
       "is_target": true,
-      "explanation": "\"Lebenszyklus Kosten Duell\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Wartung\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t3",
-      "label": "Entscheidungen",
+      "label": "Lebenszyklus",
       "is_target": true,
-      "explanation": "\"Entscheidungen\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Lebenszyklus\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t4",
-      "label": "kaufen",
+      "label": "Kosten",
       "is_target": true,
-      "explanation": "\"kaufen\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Kosten\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t5",
-      "label": "mieten",
+      "label": "Anschaffung",
       "is_target": true,
-      "explanation": "\"mieten\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Anschaffung\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Nennen",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nennen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Anschaffungspreis",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Anschaffungspreis\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

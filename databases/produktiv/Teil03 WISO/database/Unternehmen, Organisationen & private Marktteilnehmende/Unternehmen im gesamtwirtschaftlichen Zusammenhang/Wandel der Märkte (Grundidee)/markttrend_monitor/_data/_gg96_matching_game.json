@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "wandel_der_maerkte",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Wandel der Maerkte - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Wandel der Maerkte - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Wandel der Maerkte - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Kombination spricht am staerksten fuer einen Nachfragetrend nach oben? Bestellungen steigen und Lager sinken.",
+          "right": "Passende Entscheidung 1: Steigende Bestellungen bei sinkenden Lagerbestaenden"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das ist ein klarer Trendhinweis."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Reaktion passt bei wachsendem Preisdruck? Wertbeitrag absichern, nicht blind rabattieren.",
+          "right": "Passende Entscheidung 2: Kostenhebel und differenziertes Angebot kombinieren"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. So bleibt Marge steuerbar."
+        },
+        {
+          "left": "Szenario 3: Was erhoeht die Qualitaet der Trendentscheidung? Mehrere Kennzahlen gemeinsam lesen.",
+          "right": "Passende Entscheidung 3: Nachfrage-, Preis- und Wettbewerbsdaten gemeinsam bewerten"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Das reduziert Fehldeutungen."
+        },
+        {
+          "left": "Szenario 4: Wann gilt ein Trend als kritisch? Wenn Kern-KPI klar aus Zielkorridor laufen.",
+          "right": "Passende Entscheidung 4: Wenn mehrere KPI gleichzeitig dauerhaft abweichen"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Das signalisiert Handlungsdruck."
         }
       ]
     }

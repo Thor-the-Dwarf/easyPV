@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "beduerfnisse_bedarf_kaufkraft",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Beduerfnisse, Bedarf, Kaufkraft - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Beduerfnisse, Bedarf, Kaufkraft - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Beduerfnisse, Bedarf, Kaufkraft - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Ordne 'Miete' bei knappem Einkommen ein. Nutze Muss/Soll/Kann.",
+          "right": "Passende Entscheidung 1: Muss"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Miete ist Muss."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Ordne 'Neues Smartphone trotz funktionierendem Geraet' ein. Wunsch vs. Bedarf.",
+          "right": "Passende Entscheidung 2: Kann"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Das ist verzichtbar."
+        },
+        {
+          "left": "Szenario 3: Ordne 'Haushaltsversicherung' ein. Absicherung gegen groessere Schaeden.",
+          "right": "Passende Entscheidung 3: Soll"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Sinnvoll und oft priorisiert."
+        },
+        {
+          "left": "Szenario 4: Ordne 'Grundnahrungsmittel' ein. Essenzielle Versorgung.",
+          "right": "Passende Entscheidung 4: Muss"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Grundversorgung zuerst."
         }
       ]
     }

@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "wertschoepfung",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Wertschoepfung - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Wertschoepfung - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Wertschoepfung - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Bewertungsidee passt zum Wertbeitrag-Duell? Zeit, Kosten und Qualitaet zusammen betrachten.",
+          "right": "Passende Entscheidung 1: Variante mit besserem Gesamtwert aus Zeit, Kosten und Qualitaet waehlen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Die kombinierte Bewertung ist entscheidend."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wann gibt es laut Spielidee Teilpunkte? Wahl korrekt, Begruendung fehlt.",
+          "right": "Passende Entscheidung 2: Wenn die Wahl korrekt ist, aber die Begruendung nicht passt"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Teilpunkte fuer korrekte Wahl."
+        },
+        {
+          "left": "Szenario 3: Welche KPI gehoeren zum Duell? Wahl und Begruendung getrennt.",
+          "right": "Passende Entscheidung 3: Duellgenauigkeit und Begruendungsquote"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Diese KPI sind gefordert."
+        },
+        {
+          "left": "Szenario 4: Wann aktiviert sich der Bonus laut Regeln? Vier korrekte Duelle in Folge.",
+          "right": "Passende Entscheidung 4: Bei vier richtigen Duellen hintereinander"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Exakt. Das aktiviert den Bonus."
         }
       ]
     }

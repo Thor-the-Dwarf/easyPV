@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "arbeitsschutz",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Arbeitsschutz - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Arbeitsschutz - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Arbeitsschutz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Kernkompetenz trainiert der Sicherheitsrundgang-Timer? Es geht um Geschwindigkeit und Systematik.",
+          "right": "Passende Entscheidung 1: Sicherheitsverstoesse schnell und systematisch erkennen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Genau darauf zielt das Spiel ab."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Aktion zaehlt laut Regeln nicht? Achte auf das Zeitende.",
+          "right": "Passende Entscheidung 2: Markierung nach Ablauf des Timers"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Nach Zeitablauf werden Treffer nicht mehr gezaehlt."
+        },
+        {
+          "left": "Szenario 3: Welche KPI steht im Plan als Primärmetrik? Sie kombiniert Treffer und Zeit.",
+          "right": "Passende Entscheidung 3: korrekte Funde pro Minute"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Das ist die zentrale Leistungsmetrik."
+        },
+        {
+          "left": "Szenario 4: Wann gibt es den Perfekt-Runden-Bonus? Trefferqualitaet und Fehlklicke sind relevant.",
+          "right": "Passende Entscheidung 4: Bei Runde ohne Fehlklick"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Fehlerfreie Runde loest Bonus aus."
         }
       ]
     }

@@ -3,7 +3,7 @@
     "topic": "Abnahme-Protokoll-Check",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "abnahme_protokoll_check",
+    "variant": "abnahme_ubergabeprozess_abnahmeprotokoll_ubergabepaket",
     "title": "Abnahme-Protokoll-Check - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Abnahme Protokoll Check: Im Kontext Abnahme Übergabeprozess Abnahmeprotokoll Übergabepaket stehen Abnahme Protokoll Check, Abnahme Übergabeprozess Abnahmeprotokoll Übergabepaket und Mangel im Fokus.",
-    "Fuer eine belastbare Einordnung werden wesentlich und gering gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Abnahme-Protokoll-Check stehen Mangel, Abnahme und Abnahme-Protokoll-Check im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Abnahme-Übergabeprozess und Abnahmeprotokoll entscheidend.",
+    "Leitgedanke: Bewerte Maengel rechtssicher: Ohne Mangel, Geringer Mangel oder Wesentlicher Mangel..",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Mangel, Abnahme, Abnahme-Protokoll-Check, Abnahme-Übergabeprozess, Abnahmeprotokoll, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Abnahme Protokoll Check",
+      "label": "Mangel",
       "is_target": true,
-      "explanation": "\"Abnahme Protokoll Check\" ist ein zentraler Fachbegriff im Kontext Abnahme Protokoll Check."
+      "explanation": "\"Mangel\" ist ein relevanter Fachbegriff im Thema Abnahme-Protokoll-Check."
     },
     {
       "id": "t2",
-      "label": "Abnahme Übergabeprozess Abnahmeprotokoll Übergabepaket",
+      "label": "Abnahme",
       "is_target": true,
-      "explanation": "\"Abnahme Übergabeprozess Abnahmeprotokoll Übergabepaket\" ist ein zentraler Fachbegriff im Kontext Abnahme Protokoll Check."
+      "explanation": "\"Abnahme\" ist ein relevanter Fachbegriff im Thema Abnahme-Protokoll-Check."
     },
     {
       "id": "t3",
-      "label": "Mangel",
+      "label": "Abnahme-Protokoll-Check",
       "is_target": true,
-      "explanation": "\"Mangel\" ist ein zentraler Fachbegriff im Kontext Abnahme Protokoll Check."
+      "explanation": "\"Abnahme-Protokoll-Check\" ist ein relevanter Fachbegriff im Thema Abnahme-Protokoll-Check."
     },
     {
       "id": "t4",
-      "label": "wesentlich",
+      "label": "Abnahme-Übergabeprozess",
       "is_target": true,
-      "explanation": "\"wesentlich\" ist ein zentraler Fachbegriff im Kontext Abnahme Protokoll Check."
+      "explanation": "\"Abnahme-Übergabeprozess\" ist ein relevanter Fachbegriff im Thema Abnahme-Protokoll-Check."
     },
     {
       "id": "t5",
-      "label": "gering",
+      "label": "Abnahmeprotokoll",
       "is_target": true,
-      "explanation": "\"gering\" ist ein zentraler Fachbegriff im Kontext Abnahme Protokoll Check."
+      "explanation": "\"Abnahmeprotokoll\" ist ein relevanter Fachbegriff im Thema Abnahme-Protokoll-Check."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

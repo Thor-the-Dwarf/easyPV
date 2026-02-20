@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "konsumoptionen",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Konsumoptionen - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Konsumoptionen - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Konsumoptionen - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Markttag 1: Laptop fuer 6 Monate Projektarbeit. Welche Option passt am besten? Begrenzte Nutzungsdauer spricht oft gege...",
+          "right": "Passende Entscheidung 1: Mieten"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Fuer kurze Projektphasen ist Mieten oft konsistent."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Markttag 2: Werkzeug wird nur quartalsweise gebraucht. Matrix-Entscheidung? Niedrige Frequenz bevorzugt geteilte Nutzun...",
+          "right": "Passende Entscheidung 2: Leihen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Seltene Nutzung spricht fuer Leihen."
+        },
+        {
+          "left": "Szenario 3: Markttag 3: Fahrrad taeglich, langfristig. Was ist konsistent? Hohe und dauerhafte Nutzung veraendert die Matrix.",
+          "right": "Passende Entscheidung 3: Kaufen"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Bei hoher Langzeitnutzung ist Kauf oft effizient."
+        },
+        {
+          "left": "Szenario 4: Markttag 4: Kamera fuer ein Event-Team, monatlich wechselnder Bedarf. Flexibilitaet ist hier zentral.",
+          "right": "Passende Entscheidung 4: Teilen"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Sharing passt zu schwankender Auslastung."
         }
       ]
     }

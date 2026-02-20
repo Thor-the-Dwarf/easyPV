@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "duales_system",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Duales System - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Duales System - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Duales System - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Was ist bei einem Kommunikationsfall der erste Qualitaetscheck? Pfad muss zur Art des Anliegens passen.",
+          "right": "Passende Entscheidung 1: Pruefen, ob der Pfad zum Anliegen und Akteur passt"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Ohne Pfadpassung entsteht Reibung."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wann ist ein Eskalationsschritt korrekt? Pflichtstation wurde sauber durchlaufen, Problem bleibt offen.",
+          "right": "Passende Entscheidung 2: Wenn nach korrektem Grundpfad weiterfuehrende Klaerung noetig ist"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau dann ist Eskalation korrekt."
+        },
+        {
+          "left": "Szenario 3: Welche Regel fuehrt zu doppeltem Abzug? Pflichtstation uebersprungen.",
+          "right": "Passende Entscheidung 3: Ueberspringen einer Pflichtstation im Kommunikationspfad"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Das ist ein schwerer Pfadfehler."
+        },
+        {
+          "left": "Szenario 4: Welche KPI gehoeren zu diesem Router? Pfad und Eskalation getrennt messen.",
+          "right": "Passende Entscheidung 4: Pfadgenauigkeit und Eskalationsquote"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Exakt diese KPI sind vorgesehen."
         }
       ]
     }

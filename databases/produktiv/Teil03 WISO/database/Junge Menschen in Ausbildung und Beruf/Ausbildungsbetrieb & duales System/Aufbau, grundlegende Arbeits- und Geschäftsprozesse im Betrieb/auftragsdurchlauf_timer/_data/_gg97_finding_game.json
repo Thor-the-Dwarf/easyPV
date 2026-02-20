@@ -3,7 +3,7 @@
     "topic": "Betriebsprozesse",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "betriebsprozesse",
+    "variant": "auftragsdurchlauf_timer",
     "title": "Betriebsprozesse - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Betriebsprozesse: Im Kontext Auftragsdurchlauf Timer stehen Betriebsprozesse, Auftragsdurchlauf Timer und Geschaeftsprozesse im Fokus.",
-    "Fuer eine belastbare Einordnung werden Richtig und betriebliche gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Betriebsprozesse stehen Auftraege, Betriebsprozesse und Auftragsdurchlauf im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Priorisierung und Stationen entscheidend.",
+    "Leitgedanke: Welche Priorisierung senkt bei engem Takt zuerst die Durchlaufzeit.",
+    "Als Ablenker treten Stationsname, Unveraendert und Gleichzeitig auf.",
+    "Begriffe im Fokus: Auftraege, Betriebsprozesse, Auftragsdurchlauf, Priorisierung, Stationen, Stationsname, Unveraendert, Gleichzeitig."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Betriebsprozesse",
+      "label": "Auftraege",
       "is_target": true,
-      "explanation": "\"Betriebsprozesse\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Auftraege\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t2",
-      "label": "Auftragsdurchlauf Timer",
+      "label": "Betriebsprozesse",
       "is_target": true,
-      "explanation": "\"Auftragsdurchlauf Timer\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Betriebsprozesse\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t3",
-      "label": "Geschaeftsprozesse",
+      "label": "Auftragsdurchlauf",
       "is_target": true,
-      "explanation": "\"Geschaeftsprozesse\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Auftragsdurchlauf\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t4",
-      "label": "Richtig",
+      "label": "Priorisierung",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Priorisierung\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t5",
-      "label": "betriebliche",
+      "label": "Stationen",
       "is_target": true,
-      "explanation": "\"betriebliche\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Stationen\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Stationsname",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Stationsname\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Unveraendert",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Unveraendert\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Gleichzeitig",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gleichzeitig\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

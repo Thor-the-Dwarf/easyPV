@@ -3,7 +3,7 @@
     "topic": "Duales System",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "duales_system",
+    "variant": "rollenkonflikt_navigator",
     "title": "Duales System - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Duales System: Im Kontext Rollenkonflikt Navigator stehen Duales System, Rollenkonflikt Navigator und Instanz im Fokus.",
-    "Fuer eine belastbare Einordnung werden Bonus und Richtig gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Duales System stehen Instanz, System und Instanzwahl im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Getrennt und Vollkorrekte entscheidend.",
+    "Leitgedanke: Was ist der erste Entscheidungspunkt im Konfliktfall.",
+    "Als Ablenker treten Fehlentscheidungen, Bearbeitungsdauer und Ignorieren auf.",
+    "Begriffe im Fokus: Instanz, System, Instanzwahl, Getrennt, Vollkorrekte, Fehlentscheidungen, Bearbeitungsdauer, Ignorieren."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Duales System",
+      "label": "Instanz",
       "is_target": true,
-      "explanation": "\"Duales System\" ist ein zentraler Fachbegriff im Kontext Duales System."
+      "explanation": "\"Instanz\" ist ein relevanter Fachbegriff im Thema Duales System."
     },
     {
       "id": "t2",
-      "label": "Rollenkonflikt Navigator",
+      "label": "System",
       "is_target": true,
-      "explanation": "\"Rollenkonflikt Navigator\" ist ein zentraler Fachbegriff im Kontext Duales System."
+      "explanation": "\"System\" ist ein relevanter Fachbegriff im Thema Duales System."
     },
     {
       "id": "t3",
-      "label": "Instanz",
+      "label": "Instanzwahl",
       "is_target": true,
-      "explanation": "\"Instanz\" ist ein zentraler Fachbegriff im Kontext Duales System."
+      "explanation": "\"Instanzwahl\" ist ein relevanter Fachbegriff im Thema Duales System."
     },
     {
       "id": "t4",
-      "label": "Bonus",
+      "label": "Getrennt",
       "is_target": true,
-      "explanation": "\"Bonus\" ist ein zentraler Fachbegriff im Kontext Duales System."
+      "explanation": "\"Getrennt\" ist ein relevanter Fachbegriff im Thema Duales System."
     },
     {
       "id": "t5",
-      "label": "Richtig",
+      "label": "Vollkorrekte",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Duales System."
+      "explanation": "\"Vollkorrekte\" ist ein relevanter Fachbegriff im Thema Duales System."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Fehlentscheidungen",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Fehlentscheidungen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Bearbeitungsdauer",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Bearbeitungsdauer\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Ignorieren",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Ignorieren\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

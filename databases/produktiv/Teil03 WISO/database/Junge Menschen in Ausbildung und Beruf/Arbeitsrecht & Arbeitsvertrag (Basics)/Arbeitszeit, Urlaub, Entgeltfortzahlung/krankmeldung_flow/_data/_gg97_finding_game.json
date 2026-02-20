@@ -3,7 +3,7 @@
     "topic": "Arbeitszeit und Entgelt",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "arbeitszeit_und_entgelt",
+    "variant": "krankmeldung_flow",
     "title": "Arbeitszeit und Entgelt - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Arbeitszeit Und Entgelt: Im Kontext Krankmeldung Flow stehen Arbeitszeit Und Entgelt, Krankmeldung Flow und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Urlaub und Entgeltfortzahlung gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Arbeitszeit und Entgelt stehen Arbeitszeit, Fehlerfreier und Entgelt im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Krankmeldung und Reihenfolge entscheidend.",
+    "Leitgedanke: Welche Kompetenz trainiert der Krankmeldung-Flow primaer.",
+    "Als Ablenker treten Bearbeitungszeit, Gesamturteil und Schreibstil auf.",
+    "Begriffe im Fokus: Arbeitszeit, Fehlerfreier, Entgelt, Krankmeldung, Reihenfolge, Bearbeitungszeit, Gesamturteil, Schreibstil."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Arbeitszeit Und Entgelt",
+      "label": "Arbeitszeit",
       "is_target": true,
-      "explanation": "\"Arbeitszeit Und Entgelt\" ist ein zentraler Fachbegriff im Kontext Arbeitszeit Und Entgelt."
+      "explanation": "\"Arbeitszeit\" ist ein relevanter Fachbegriff im Thema Arbeitszeit und Entgelt."
     },
     {
       "id": "t2",
-      "label": "Krankmeldung Flow",
+      "label": "Fehlerfreier",
       "is_target": true,
-      "explanation": "\"Krankmeldung Flow\" ist ein zentraler Fachbegriff im Kontext Arbeitszeit Und Entgelt."
+      "explanation": "\"Fehlerfreier\" ist ein relevanter Fachbegriff im Thema Arbeitszeit und Entgelt."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Entgelt",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Arbeitszeit Und Entgelt."
+      "explanation": "\"Entgelt\" ist ein relevanter Fachbegriff im Thema Arbeitszeit und Entgelt."
     },
     {
       "id": "t4",
-      "label": "Urlaub",
+      "label": "Krankmeldung",
       "is_target": true,
-      "explanation": "\"Urlaub\" ist ein zentraler Fachbegriff im Kontext Arbeitszeit Und Entgelt."
+      "explanation": "\"Krankmeldung\" ist ein relevanter Fachbegriff im Thema Arbeitszeit und Entgelt."
     },
     {
       "id": "t5",
-      "label": "Entgeltfortzahlung",
+      "label": "Reihenfolge",
       "is_target": true,
-      "explanation": "\"Entgeltfortzahlung\" ist ein zentraler Fachbegriff im Kontext Arbeitszeit Und Entgelt."
+      "explanation": "\"Reihenfolge\" ist ein relevanter Fachbegriff im Thema Arbeitszeit und Entgelt."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Bearbeitungszeit",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Bearbeitungszeit\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Gesamturteil",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamturteil\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Schreibstil",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Schreibstil\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

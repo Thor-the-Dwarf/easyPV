@@ -3,7 +3,7 @@
     "topic": "Database Anomalies",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "database_anomalies",
+    "variant": "anomalien",
     "title": "Database Anomalies - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Database Anomalies: Im Kontext Anomalien stehen Database Anomalies, Anomalien und Project im Fokus.",
-    "Fuer eine belastbare Einordnung werden Employee und Müller gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Database Anomalies stehen Anomaly, Update und Müller im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Anomalies und Database entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Anomaly, Update, Müller, Anomalies, Database, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Database Anomalies",
+      "label": "Anomaly",
       "is_target": true,
-      "explanation": "\"Database Anomalies\" ist ein zentraler Fachbegriff im Kontext Database Anomalies."
+      "explanation": "\"Anomaly\" ist ein relevanter Fachbegriff im Thema Database Anomalies."
     },
     {
       "id": "t2",
-      "label": "Anomalien",
+      "label": "Update",
       "is_target": true,
-      "explanation": "\"Anomalien\" ist ein zentraler Fachbegriff im Kontext Database Anomalies."
+      "explanation": "\"Update\" ist ein relevanter Fachbegriff im Thema Database Anomalies."
     },
     {
       "id": "t3",
-      "label": "Project",
+      "label": "Müller",
       "is_target": true,
-      "explanation": "\"Project\" ist ein zentraler Fachbegriff im Kontext Database Anomalies."
+      "explanation": "\"Müller\" ist ein relevanter Fachbegriff im Thema Database Anomalies."
     },
     {
       "id": "t4",
-      "label": "Employee",
+      "label": "Anomalies",
       "is_target": true,
-      "explanation": "\"Employee\" ist ein zentraler Fachbegriff im Kontext Database Anomalies."
+      "explanation": "\"Anomalies\" ist ein relevanter Fachbegriff im Thema Database Anomalies."
     },
     {
       "id": "t5",
-      "label": "Müller",
+      "label": "Database",
       "is_target": true,
-      "explanation": "\"Müller\" ist ein zentraler Fachbegriff im Kontext Database Anomalies."
+      "explanation": "\"Database\" ist ein relevanter Fachbegriff im Thema Database Anomalies."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

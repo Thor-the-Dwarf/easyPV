@@ -3,7 +3,7 @@
     "topic": "Wirtschaftskreislauf",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "wirtschaftskreislauf",
+    "variant": "kreislauf_lueckenfinder",
     "title": "Wirtschaftskreislauf - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Wirtschaftskreislauf: Im Kontext Kreislauf Lueckenfinder stehen Wirtschaftskreislauf, Kreislauf Lueckenfinder und Richtig im Fokus.",
-    "Fuer eine belastbare Einordnung werden fehlt und Unternehmen gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Wirtschaftskreislauf stehen Fehlt, Haushalte und Lueckenfinder im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Vollstaendigkeit und Wirtschaftskreislauf entscheidend.",
+    "Leitgedanke: In einem Diagramm fehlt der Akteur, der Arbeitskraft anbietet. Wer fehlt.",
+    "Als Ablenker treten Unternehmen, Beschriftung und Geoeffneter auf.",
+    "Begriffe im Fokus: Fehlt, Haushalte, Lueckenfinder, Vollstaendigkeit, Wirtschaftskreislauf, Unternehmen, Beschriftung, Geoeffneter."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Wirtschaftskreislauf",
+      "label": "Fehlt",
       "is_target": true,
-      "explanation": "\"Wirtschaftskreislauf\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Fehlt\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t2",
-      "label": "Kreislauf Lueckenfinder",
+      "label": "Haushalte",
       "is_target": true,
-      "explanation": "\"Kreislauf Lueckenfinder\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Haushalte\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t3",
-      "label": "Richtig",
+      "label": "Lueckenfinder",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Lueckenfinder\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t4",
-      "label": "fehlt",
+      "label": "Vollstaendigkeit",
       "is_target": true,
-      "explanation": "\"fehlt\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Vollstaendigkeit\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t5",
-      "label": "Unternehmen",
+      "label": "Wirtschaftskreislauf",
       "is_target": true,
-      "explanation": "\"Unternehmen\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Wirtschaftskreislauf\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Unternehmen",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Unternehmen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Beschriftung",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Beschriftung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Geoeffneter",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Geoeffneter\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

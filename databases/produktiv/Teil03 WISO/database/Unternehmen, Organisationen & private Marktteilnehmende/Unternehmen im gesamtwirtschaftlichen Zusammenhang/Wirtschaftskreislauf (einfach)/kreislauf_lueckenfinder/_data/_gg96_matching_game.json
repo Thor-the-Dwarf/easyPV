@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "wirtschaftskreislauf",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Wirtschaftskreislauf - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Wirtschaftskreislauf - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Wirtschaftskreislauf - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: In einem Diagramm fehlt der Akteur, der Arbeitskraft anbietet. Wer fehlt? Faktorangebot.",
+          "right": "Passende Entscheidung 1: Haushalte"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Haushalte bieten Arbeit an."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Luecke passt zwischen Konsumausgabe und Gueterstrom? Gegenstromprinzip.",
+          "right": "Passende Entscheidung 2: Unternehmen liefern Gueter an Haushalte"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Das schliesst den Kreislauf."
+        },
+        {
+          "left": "Szenario 3: Wann ist ein Diagramm unvollstaendig? Schluesselknoten fehlt.",
+          "right": "Passende Entscheidung 3: Wenn ein zentraler Akteur oder Kernfluss nicht vorkommt"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Dann fehlt Struktur."
+        },
+        {
+          "left": "Szenario 4: Welche KPI passt zum Lueckenfinder? Praezision und Vollstaendigkeit.",
+          "right": "Passende Entscheidung 4: Korrekte Fuellungen und Vollstaendigkeitsquote"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Beides muss stimmen."
         }
       ]
     }

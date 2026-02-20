@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "wirtschaftskreislauf",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Wirtschaftskreislauf - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Wirtschaftskreislauf - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Wirtschaftskreislauf - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Ein Haushalt kauft ein Produkt. Welcher Geldpfad ist korrekt? Direkter Konsumfluss.",
+          "right": "Passende Entscheidung 1: Haushalt -> Unternehmen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Konsumausgaben gehen an Unternehmen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Bei Lohnzahlung ist die Richtung? Faktorentgelt.",
+          "right": "Passende Entscheidung 2: Unternehmen -> Haushalt"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Einkommen fliesst an Haushalte."
+        },
+        {
+          "left": "Szenario 3: Was ist ein typischer Routing-Fehler? Kernstation ueberspringen.",
+          "right": "Passende Entscheidung 3: Einkommensfluss ohne Unternehmen als Zahler darstellen"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Kernstation fehlt."
+        },
+        {
+          "left": "Szenario 4: Welche KPI ist im Router zentral? Pfadtreue und Effizienz.",
+          "right": "Passende Entscheidung 4: Korrekte Schritte bis zum Zielpfad"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Genauigkeit und Weglaenge zaehlen."
         }
       ]
     }

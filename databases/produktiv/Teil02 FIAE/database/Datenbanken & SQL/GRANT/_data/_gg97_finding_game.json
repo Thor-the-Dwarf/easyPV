@@ -3,7 +3,7 @@
     "topic": "GRANT & REVOKE",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "grant_revoke",
+    "variant": "grant",
     "title": "GRANT & REVOKE - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "GRANT REVOKE: Im Kontext GRANT stehen GRANT REVOKE, UPDATE und access im Fokus.",
-    "Fuer eine belastbare Einordnung werden Intern und needs gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema GRANT & REVOKE stehen GRANT, REVOKE und Intern im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Needs und Access entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: GRANT, REVOKE, Intern, Needs, Access, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "GRANT REVOKE",
+      "label": "GRANT",
       "is_target": true,
-      "explanation": "\"GRANT REVOKE\" ist ein zentraler Fachbegriff im Kontext GRANT REVOKE."
+      "explanation": "\"GRANT\" ist ein relevanter Fachbegriff im Thema GRANT & REVOKE."
     },
     {
       "id": "t2",
-      "label": "UPDATE",
+      "label": "REVOKE",
       "is_target": true,
-      "explanation": "\"UPDATE\" ist ein zentraler Fachbegriff im Kontext GRANT REVOKE."
+      "explanation": "\"REVOKE\" ist ein relevanter Fachbegriff im Thema GRANT & REVOKE."
     },
     {
       "id": "t3",
-      "label": "access",
+      "label": "Intern",
       "is_target": true,
-      "explanation": "\"access\" ist ein zentraler Fachbegriff im Kontext GRANT REVOKE."
+      "explanation": "\"Intern\" ist ein relevanter Fachbegriff im Thema GRANT & REVOKE."
     },
     {
       "id": "t4",
-      "label": "Intern",
+      "label": "Needs",
       "is_target": true,
-      "explanation": "\"Intern\" ist ein zentraler Fachbegriff im Kontext GRANT REVOKE."
+      "explanation": "\"Needs\" ist ein relevanter Fachbegriff im Thema GRANT & REVOKE."
     },
     {
       "id": "t5",
-      "label": "needs",
+      "label": "Access",
       "is_target": true,
-      "explanation": "\"needs\" ist ein zentraler Fachbegriff im Kontext GRANT REVOKE."
+      "explanation": "\"Access\" ist ein relevanter Fachbegriff im Thema GRANT & REVOKE."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

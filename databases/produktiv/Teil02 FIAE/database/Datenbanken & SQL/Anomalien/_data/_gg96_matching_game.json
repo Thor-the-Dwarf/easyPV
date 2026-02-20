@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "database_anomalies",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "Database Anomalies - Zuordnen"
+    "title": "Anomalien - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "Database Anomalies - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Anomalien - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Insertion Anomaly Try to add a new Project. Why is it blocked?",
+          "right": "Passende Entscheidung 1: Insertion Anomaly"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Insertion Anomaly",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Update Anomaly Update Mueller's name to 'Meyer'.",
+          "right": "Passende Entscheidung 2: Update Anomaly"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Update Anomaly",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Deletion Anomaly Delete Project 'Gamma'.",
+          "right": "Passende Entscheidung 3: Deletion Anomaly"
+        },
+        {
+          "left": "Begruendung 3: Deletion Anomaly",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

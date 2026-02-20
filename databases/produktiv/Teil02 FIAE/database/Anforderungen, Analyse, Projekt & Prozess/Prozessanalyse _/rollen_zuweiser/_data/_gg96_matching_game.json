@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "rollen_zuweiser",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "rollen zuweiser - Zuordnen"
+    "title": "Rollen-Zuweiser - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "rollen zuweiser - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Rollen-Zuweiser - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Wer programmiert die neue API-Schnittstelle?",
+          "right": "Passende Entscheidung 1: Responsible"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Die umsetzende Entwicklerrolle ist Responsible."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wer entscheidet final, ob das Release live geht?",
+          "right": "Passende Entscheidung 2: Accountable"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Die letzte Entscheidung liegt bei Accountable."
+        },
+        {
+          "left": "Szenario 3: Wer gibt fachliche Inputs zu Datenschutzanforderungen?",
+          "right": "Passende Entscheidung 3: Consulted"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Fachliche Beratung vor Umsetzung entspricht Consulted."
+        },
+        {
+          "left": "Szenario 4: Wer bekommt den Statusbericht nach Sprint-Abschluss?",
+          "right": "Passende Entscheidung 4: Informed"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Diese Rolle wird informiert, arbeitet aber nicht aktiv mit."
         }
       ]
     }

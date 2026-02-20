@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "standortwettbewerb",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Standortwettbewerb - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Standortwettbewerb - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Standortwettbewerb - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welcher KPI passt zu Nachhaltigkeitsbenchmarking? Vergleichbar und periodisch messbar.",
+          "right": "Passende Entscheidung 1: CO2 pro Produktionseinheit"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Direkter Benchmark-KPI."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Was bedeutet Benchmark-Abweichung nach oben? Hoeherer Wert ist nicht immer besser.",
+          "right": "Passende Entscheidung 2: Je nach KPI moeglicher Nachteil gegen Referenz"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Kontext entscheidet."
+        },
+        {
+          "left": "Szenario 3: Welcher Schritt folgt auf eine negative Abweichung? Massnahme planen.",
+          "right": "Passende Entscheidung 3: Gezielte Korrekturmassnahme mit Termin setzen"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Sonst keine Steuerung."
+        },
+        {
+          "left": "Szenario 4: Welche Visualisierung hilft beim Verlauf? Trend statt Einzelpunkt.",
+          "right": "Passende Entscheidung 4: Zeitreihe je Standort"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Trends sind entscheidend."
         }
       ]
     }

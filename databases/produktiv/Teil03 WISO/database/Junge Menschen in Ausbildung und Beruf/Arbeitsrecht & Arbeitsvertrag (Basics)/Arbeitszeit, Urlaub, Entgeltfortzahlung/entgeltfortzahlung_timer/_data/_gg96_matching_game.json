@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "arbeitszeit_und_entgelt",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Arbeitszeit und Entgelt - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Arbeitszeit und Entgelt - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Arbeitszeit und Entgelt - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Krankheitsfall mit klarer Nachweislage: Welche Grundentscheidung ist plausibel? Pruefe zunaechst die Fallvoraussetzunge...",
+          "right": "Passende Entscheidung 1: Entgeltfortzahlung entsprechend Falllogik bejahen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Die Entscheidung folgt den Fallmerkmalen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Welche Zusatzleistung bringt Bonuspunkte? Neben Entscheidung zaehlt die Begruendung.",
+          "right": "Passende Entscheidung 2: Korrekte Begruendungsauswahl"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Die Begruendung wird separat honoriert."
+        },
+        {
+          "left": "Szenario 3: Was passiert bei Entscheidung ohne Begruendung? Es gibt eine reduzierte Bewertung.",
+          "right": "Passende Entscheidung 3: Teilpunkte statt Vollwertung"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Ohne Begruendung wird reduziert gewertet."
+        },
+        {
+          "left": "Szenario 4: Welche KPI-Kombination ist vorgesehen? Korrektheit und Geschwindigkeit trennen.",
+          "right": "Passende Entscheidung 4: Entscheidungsgenauigkeit und Reaktionszeit"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Genau. So wird Qualitaet und Tempo sichtbar."
         }
       ]
     }

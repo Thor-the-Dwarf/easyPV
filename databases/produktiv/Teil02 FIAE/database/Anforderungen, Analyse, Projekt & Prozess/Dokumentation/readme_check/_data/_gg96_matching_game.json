@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "readme_check",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "readme check - Zuordnen"
+    "title": "README-Builder: The Documentation Lab - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "readme check - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "README-Builder: The Documentation Lab - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: README-Slot title: Welcher Block passt am besten?",
+          "right": "Passende Entscheidung 1: # Project Title"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Level 1: Basics",
+          "right": "Warum passend 1: Der Blocktyp title passt zu Slot title."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: README-Slot description: Welcher Block passt am besten?",
+          "right": "Passende Entscheidung 2: Description / About"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Level 1: Basics",
+          "right": "Warum passend 2: Der Blocktyp description passt zu Slot description."
+        },
+        {
+          "left": "Szenario 3: README-Slot installation: Welcher Block passt am besten?",
+          "right": "Passende Entscheidung 3: ## Installation"
+        },
+        {
+          "left": "Begruendung 3: Level 1: Basics",
+          "right": "Warum passend 3: Der Blocktyp installation passt zu Slot installation."
+        },
+        {
+          "left": "Szenario 4: README-Slot usage: Welcher Block passt am besten?",
+          "right": "Passende Entscheidung 4: ## Usage"
+        },
+        {
+          "left": "Begruendung 4: Level 1: Basics",
+          "right": "Warum passend 4: Der Blocktyp usage passt zu Slot usage."
         }
       ]
     }

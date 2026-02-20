@@ -3,7 +3,7 @@
     "topic": "Wirtschaftskreislauf",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "wirtschaftskreislauf",
+    "variant": "akteursfluss_match",
     "title": "Wirtschaftskreislauf - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Wirtschaftskreislauf: Im Kontext Akteursfluss Match stehen Wirtschaftskreislauf, Akteursfluss Match und Haushalte im Fokus.",
-    "Fuer eine belastbare Einordnung werden Unternehmen und Richtig gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Wirtschaftskreislauf stehen Haushalte, Unternehmen und Wirtschaftskreislauf im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Gueter und Kreislauf entscheidend.",
+    "Leitgedanke: Wer bietet im einfachen Kreislauf Arbeitskraft an.",
+    "Als Ablenker treten Messung, Banken und Lesegeschwindigkeit auf.",
+    "Begriffe im Fokus: Haushalte, Unternehmen, Wirtschaftskreislauf, Gueter, Kreislauf, Messung, Banken, Lesegeschwindigkeit."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Wirtschaftskreislauf",
+      "label": "Haushalte",
       "is_target": true,
-      "explanation": "\"Wirtschaftskreislauf\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Haushalte\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t2",
-      "label": "Akteursfluss Match",
+      "label": "Unternehmen",
       "is_target": true,
-      "explanation": "\"Akteursfluss Match\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Unternehmen\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t3",
-      "label": "Haushalte",
+      "label": "Wirtschaftskreislauf",
       "is_target": true,
-      "explanation": "\"Haushalte\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Wirtschaftskreislauf\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t4",
-      "label": "Unternehmen",
+      "label": "Gueter",
       "is_target": true,
-      "explanation": "\"Unternehmen\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Gueter\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t5",
-      "label": "Richtig",
+      "label": "Kreislauf",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Wirtschaftskreislauf."
+      "explanation": "\"Kreislauf\" ist ein relevanter Fachbegriff im Thema Wirtschaftskreislauf."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Messung",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Messung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Banken",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Banken\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Lesegeschwindigkeit",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Lesegeschwindigkeit\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

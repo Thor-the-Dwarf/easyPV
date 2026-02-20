@@ -3,7 +3,7 @@
     "topic": "Ausbildungsplanung",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "ausbildungsplanung",
+    "variant": "abstimmungs_konferenz",
     "title": "Ausbildungsplanung - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Ausbildungsplanung: Im Kontext Abstimmungs Konferenz stehen Ausbildungsplanung, Abstimmungs Konferenz und Entscheidung im Fokus.",
-    "Fuer eine belastbare Einordnung werden Richtig und Priorisierung gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Ausbildungsplanung stehen Entscheidung, Konferenz und Priorisierung im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Konsistenzscore und Auswirkung entscheidend.",
+    "Leitgedanke: Welcher Konfliktpunkt hat in einer Abstimmungsrunde meist Vorrang.",
+    "Als Ablenker treten Gesamtspielzeit, Praesentation und Wortmeldungen auf.",
+    "Begriffe im Fokus: Entscheidung, Konferenz, Priorisierung, Konsistenzscore, Auswirkung, Gesamtspielzeit, Praesentation, Wortmeldungen."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Ausbildungsplanung",
+      "label": "Entscheidung",
       "is_target": true,
-      "explanation": "\"Ausbildungsplanung\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Entscheidung\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t2",
-      "label": "Abstimmungs Konferenz",
+      "label": "Konferenz",
       "is_target": true,
-      "explanation": "\"Abstimmungs Konferenz\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Konferenz\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t3",
-      "label": "Entscheidung",
+      "label": "Priorisierung",
       "is_target": true,
-      "explanation": "\"Entscheidung\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Priorisierung\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t4",
-      "label": "Richtig",
+      "label": "Konsistenzscore",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Konsistenzscore\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t5",
-      "label": "Priorisierung",
+      "label": "Auswirkung",
       "is_target": true,
-      "explanation": "\"Priorisierung\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Auswirkung\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Gesamtspielzeit",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamtspielzeit\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Praesentation",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Praesentation\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Wortmeldungen",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Wortmeldungen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

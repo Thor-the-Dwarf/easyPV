@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "ausbildungsplanung",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Ausbildungsplanung - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Ausbildungsplanung - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Ausbildungsplanung - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Was ist der erste Schritt bei einem Gap-Case? Ist-Stand mit Soll-Anforderung vergleichen.",
+          "right": "Passende Entscheidung 1: Aktuelle Kompetenzen gegen Zielkompetenzen spiegeln"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Ohne Vergleich keine Luecke."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Wann gibt es Teilpunkte laut Regelwerk? Luecke richtig, Massnahme falsch.",
+          "right": "Passende Entscheidung 2: Wenn die Luecke korrekt erkannt wurde"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Erkennung gibt Teilpunkte."
+        },
+        {
+          "left": "Szenario 3: Welche Massnahme ist bei hoher Lueckenschwere am sinnvollsten? Gezielte Nachsteuerung statt Aufschub.",
+          "right": "Passende Entscheidung 3: Sofortige Lernmassnahme mit klarer Zielkompetenz"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Hohe Schwere braucht direkte Aktion."
+        },
+        {
+          "left": "Szenario 4: Welche KPI misst das Ergebnis am besten? Treffquote plus Wirksamkeit.",
+          "right": "Passende Entscheidung 4: Luecken-Treffquote und Massnahmenwirksamkeit"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Exakt. Beide Werte sind Kern-KPI."
         }
       ]
     }

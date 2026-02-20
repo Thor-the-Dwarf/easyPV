@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "workshop_agenda_puzzle",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Workshop-Agenda-Puzzle - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Workshop-Agenda-Puzzle - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Workshop-Agenda-Puzzle - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Inhalt bewerten: Vorstellung, Zielsetzung, Regeln",
+          "right": "Passende Entscheidung 1: Begruessung & Intro"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Begruessung & Intro",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Inhalt bewerten: Brainstorming, Kartenabfrage, Sammlung",
+          "right": "Passende Entscheidung 2: Themensammlung"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Themensammlung",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Inhalt bewerten: Themen strukturieren, Duplikate entfernen",
+          "right": "Passende Entscheidung 3: Clustern & Ordnen"
+        },
+        {
+          "left": "Begruendung 3: Clustern & Ordnen",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 4: Inhalt bewerten: Kaffee, Lueften, Networking",
+          "right": "Passende Entscheidung 4: Bio-Pause"
+        },
+        {
+          "left": "Begruendung 4: Bio-Pause",
+          "right": "Warum passend 4: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

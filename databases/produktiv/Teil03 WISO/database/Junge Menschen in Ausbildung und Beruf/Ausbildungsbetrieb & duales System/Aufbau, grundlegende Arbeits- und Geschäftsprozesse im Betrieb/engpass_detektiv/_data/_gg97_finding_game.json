@@ -3,7 +3,7 @@
     "topic": "Betriebsprozesse",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "betriebsprozesse",
+    "variant": "engpass_detektiv",
     "title": "Betriebsprozesse - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Betriebsprozesse: Im Kontext Engpass Detektiv stehen Betriebsprozesse, Engpass Detektiv und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Geschaeftsprozesse und Richtig gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Betriebsprozesse stehen Engpass, Massnahme und Betriebsprozesse im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Teilpunkte und Faelle entscheidend.",
+    "Leitgedanke: Welche Kennzahl weist am direktesten auf einen Engpass hin.",
+    "Als Ablenker treten Pausenprotokolle, Gesamtpunkte und Fehlerquote auf.",
+    "Begriffe im Fokus: Engpass, Massnahme, Betriebsprozesse, Teilpunkte, Faelle, Pausenprotokolle, Gesamtpunkte, Fehlerquote."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Betriebsprozesse",
+      "label": "Engpass",
       "is_target": true,
-      "explanation": "\"Betriebsprozesse\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Engpass\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t2",
-      "label": "Engpass Detektiv",
+      "label": "Massnahme",
       "is_target": true,
-      "explanation": "\"Engpass Detektiv\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Massnahme\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Betriebsprozesse",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Betriebsprozesse\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t4",
-      "label": "Geschaeftsprozesse",
+      "label": "Teilpunkte",
       "is_target": true,
-      "explanation": "\"Geschaeftsprozesse\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Teilpunkte\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t5",
-      "label": "Richtig",
+      "label": "Faelle",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Betriebsprozesse."
+      "explanation": "\"Faelle\" ist ein relevanter Fachbegriff im Thema Betriebsprozesse."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Pausenprotokolle",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Pausenprotokolle\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Gesamtpunkte",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamtpunkte\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Fehlerquote",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Fehlerquote\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

@@ -4,7 +4,7 @@
     "mechanic": "finding_terms",
     "engine": "FindingGame",
     "variant": "readme_check",
-    "title": "README-Builder: The Documentation Lab - Begriffe finden",
+    "title": "readme check - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
   },
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Readme Check: Im Kontext Readme Check stehen Readme Check, installation und Dokumentation im Fokus.",
-    "Fuer eine belastbare Einordnung werden title und usage gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema readme check stehen README, Installation und About im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Prerequisites und Configuration entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: README, Installation, About, Prerequisites, Configuration, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Readme Check",
+      "label": "README",
       "is_target": true,
-      "explanation": "\"Readme Check\" ist ein zentraler Fachbegriff im Kontext Readme Check."
+      "explanation": "\"README\" ist ein relevanter Fachbegriff im Thema readme check."
     },
     {
       "id": "t2",
-      "label": "installation",
+      "label": "Installation",
       "is_target": true,
-      "explanation": "\"installation\" ist ein zentraler Fachbegriff im Kontext Readme Check."
+      "explanation": "\"Installation\" ist ein relevanter Fachbegriff im Thema readme check."
     },
     {
       "id": "t3",
-      "label": "Dokumentation",
+      "label": "About",
       "is_target": true,
-      "explanation": "\"Dokumentation\" ist ein zentraler Fachbegriff im Kontext Readme Check."
+      "explanation": "\"About\" ist ein relevanter Fachbegriff im Thema readme check."
     },
     {
       "id": "t4",
-      "label": "title",
+      "label": "Prerequisites",
       "is_target": true,
-      "explanation": "\"title\" ist ein zentraler Fachbegriff im Kontext Readme Check."
+      "explanation": "\"Prerequisites\" ist ein relevanter Fachbegriff im Thema readme check."
     },
     {
       "id": "t5",
-      "label": "usage",
+      "label": "Configuration",
       "is_target": true,
-      "explanation": "\"usage\" ist ein zentraler Fachbegriff im Kontext Readme Check."
+      "explanation": "\"Configuration\" ist ein relevanter Fachbegriff im Thema readme check."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "the_chaos_engineer",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "The Chaos Engineer - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "The Chaos Engineer - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "The Chaos Engineer - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: DB-Ausfall Klassischer Single-Node-Ausfall. Promote den Slave sofort.",
+          "right": "Passende Entscheidung 1: Switch to Slave"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: DB-Ausfall",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Split-Brain Crisis Nur ein harter Node-Kill stoppt Divergenz und Datenkorruption.",
+          "right": "Passende Entscheidung 2: Node-Kill"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Split-Brain Crisis",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Cascading Failure Wenn du zu langsam bist, fallen weitere Komponenten aus.",
+          "right": "Passende Entscheidung 3: Hot-Standby Trigger"
+        },
+        {
+          "left": "Begruendung 3: Cascading Failure",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 4: DDoS Edge Storm Drossele den Traffic bevor Core-Services kippen.",
+          "right": "Passende Entscheidung 4: Traffic Shed"
+        },
+        {
+          "left": "Begruendung 4: DDoS Edge Storm",
+          "right": "Warum passend 4: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

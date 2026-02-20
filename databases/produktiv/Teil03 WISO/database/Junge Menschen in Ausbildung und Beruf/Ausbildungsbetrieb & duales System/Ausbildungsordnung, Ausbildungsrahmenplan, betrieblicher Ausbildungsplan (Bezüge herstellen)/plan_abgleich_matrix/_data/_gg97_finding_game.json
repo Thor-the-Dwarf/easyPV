@@ -3,7 +3,7 @@
     "topic": "Ausbildungsplanung",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "ausbildungsplanung",
+    "variant": "plan_abgleich_matrix",
     "title": "Ausbildungsplanung - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Ausbildungsplanung: Im Kontext Plan Abgleich Matrix stehen Ausbildungsplanung, Plan Abgleich Matrix und Richtig im Fokus.",
-    "Fuer eine belastbare Einordnung werden Zuordnung und zwischen gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Ausbildungsplanung stehen Kernzuordnung, Fehlt und Ausbildungsordnung im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Abgleich und Luecken entscheidend.",
+    "Leitgedanke: Was ist die Kernaufgabe in der Plan-Abgleich-Matrix.",
+    "Als Ablenker treten Gesamtpunktestand, Doppelverlinkung und Zuordnungen auf.",
+    "Begriffe im Fokus: Kernzuordnung, Fehlt, Ausbildungsordnung, Abgleich, Luecken, Gesamtpunktestand, Doppelverlinkung, Zuordnungen."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Ausbildungsplanung",
+      "label": "Kernzuordnung",
       "is_target": true,
-      "explanation": "\"Ausbildungsplanung\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Kernzuordnung\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t2",
-      "label": "Plan Abgleich Matrix",
+      "label": "Fehlt",
       "is_target": true,
-      "explanation": "\"Plan Abgleich Matrix\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Fehlt\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t3",
-      "label": "Richtig",
+      "label": "Ausbildungsordnung",
       "is_target": true,
-      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Ausbildungsordnung\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t4",
-      "label": "Zuordnung",
+      "label": "Abgleich",
       "is_target": true,
-      "explanation": "\"Zuordnung\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Abgleich\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t5",
-      "label": "zwischen",
+      "label": "Luecken",
       "is_target": true,
-      "explanation": "\"zwischen\" ist ein zentraler Fachbegriff im Kontext Ausbildungsplanung."
+      "explanation": "\"Luecken\" ist ein relevanter Fachbegriff im Thema Ausbildungsplanung."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Gesamtpunktestand",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Gesamtpunktestand\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Doppelverlinkung",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Doppelverlinkung\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zuordnungen",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zuordnungen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

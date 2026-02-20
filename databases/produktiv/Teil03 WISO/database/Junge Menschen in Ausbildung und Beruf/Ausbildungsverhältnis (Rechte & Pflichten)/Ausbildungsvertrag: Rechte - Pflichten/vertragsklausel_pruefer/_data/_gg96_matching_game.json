@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "ausbildungsvertrag_rechte_pflichten",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Ausbildungsvertrag: Rechte - Pflichten - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Ausbildungsvertrag: Rechte - Pflichten - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Ausbildungsvertrag: Rechte - Pflichten - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Welche Klausel braucht offensichtlich Erklaerung oder Pruefung? Unklare oder einseitige Formulierung.",
+          "right": "Passende Entscheidung 1: Unbegrenzte unbezahlte Mehrarbeit ohne Ausgleich"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Das ist kritisch und pruefungsbeduerftig."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Was ist beim Klausel-Check zuerst sinnvoll? Klarheit vor Bewertung.",
+          "right": "Passende Entscheidung 2: Klauselinhalt und Wirkung auf Rechte/Pflichten bestimmen"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Genau. Erst verstehen, dann bewerten."
+        },
+        {
+          "left": "Szenario 3: Welche Klausel wirkt ausgewogen? Beidseitig nachvollziehbare Regelung.",
+          "right": "Passende Entscheidung 3: Klare Lernzeiten, Betreuung und definierte Pflichten beider Seiten"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Das ist transparent und ausgewogen."
+        },
+        {
+          "left": "Szenario 4: Wann setzt der Pruefer ein Explain-Flag? Wenn Bedeutung fuer Lernende unklar bleibt.",
+          "right": "Passende Entscheidung 4: Bei unklaren Rechtsfolgen oder deutlichem Interpretationsspielraum"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Ja, dann ist Erklaerungsbedarf gegeben."
         }
       ]
     }

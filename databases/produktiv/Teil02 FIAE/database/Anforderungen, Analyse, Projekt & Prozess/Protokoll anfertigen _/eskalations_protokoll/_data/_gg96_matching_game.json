@@ -4,32 +4,49 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "eskalations_protokoll",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "eskalations protokoll - Zuordnen"
+    "title": "Eskalations-Protokoll - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "eskalations protokoll - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Eskalations-Protokoll - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Kunde lehnt Change Request CR-17 ab, Go-live ist betroffen.",
+          "right": "Passende Entscheidung 1: 18.03: Kunde lehnt CR-17 ab, Auswirkung +5 Tage, Entscheidungsgremium informiert, Angebot bis 20.03 durch Acc..."
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Eskalationen brauchen Datum, Entscheidung, Auswirkung und konkrete Folgeaktion."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Sicherheitsluecke im Login-Modul wurde als kritisch eingestuft.",
+          "right": "Passende Entscheidung 2: 19.03: CVSS 9.1 im Login, Risiko Datenabfluss, Hotfix bis 17:00 durch Backend, Freigabe durch Security Lead."
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Kritische Defekte muessen mit Risiko, Verantwortlichen und Frist dokumentiert werden."
+        },
+        {
+          "left": "Szenario 3: Abnahme blockiert wegen fehlender Testnachweise.",
+          "right": "Passende Entscheidung 3: 20.03: Abnahme gestoppt, Nachweis fuer Regression fehlt, QA liefert Report bis 14:00, neuer Abnahmetermin 21...."
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Ein belastbares Protokoll beschreibt Blocker, Verantwortung und neuen Entscheidungszeitpunkt."
+        },
+        {
+          "left": "Szenario 4: Budget fuer Zusatzlizenz wurde nicht freigegeben.",
+          "right": "Passende Entscheidung 4: 21.03: CFO lehnt Zusatzlizenz ab, Risiko Verzug in Migration, Alternative Open-Source-Paket bis 22.03 pruefen..."
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Bei Budgeteskalationen sind Entscheidungstraeger, Risiko und naechster Schritt Pflicht."
         }
       ]
     }

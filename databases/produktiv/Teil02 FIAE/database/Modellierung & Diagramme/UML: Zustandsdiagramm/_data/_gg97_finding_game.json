@@ -3,7 +3,7 @@
     "topic": "UML State Machines",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "uml_state_machines",
+    "variant": "uml_zustandsdiagramm",
     "title": "UML State Machines - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "UML State Machines: Im Kontext UML Zustandsdiagramm stehen UML State Machines, UML Zustandsdiagramm und ACTIVE im Fokus.",
-    "Fuer eine belastbare Einordnung werden LOGIN und CREDIT gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema UML State Machines stehen Machines, State und LOGIN im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Zustandsdiagramm und Device entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Machines, State, LOGIN, Zustandsdiagramm, Device, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "UML State Machines",
+      "label": "Machines",
       "is_target": true,
-      "explanation": "\"UML State Machines\" ist ein zentraler Fachbegriff im Kontext UML State Machines."
+      "explanation": "\"Machines\" ist ein relevanter Fachbegriff im Thema UML State Machines."
     },
     {
       "id": "t2",
-      "label": "UML Zustandsdiagramm",
+      "label": "State",
       "is_target": true,
-      "explanation": "\"UML Zustandsdiagramm\" ist ein zentraler Fachbegriff im Kontext UML State Machines."
+      "explanation": "\"State\" ist ein relevanter Fachbegriff im Thema UML State Machines."
     },
     {
       "id": "t3",
-      "label": "ACTIVE",
+      "label": "LOGIN",
       "is_target": true,
-      "explanation": "\"ACTIVE\" ist ein zentraler Fachbegriff im Kontext UML State Machines."
+      "explanation": "\"LOGIN\" ist ein relevanter Fachbegriff im Thema UML State Machines."
     },
     {
       "id": "t4",
-      "label": "LOGIN",
+      "label": "Zustandsdiagramm",
       "is_target": true,
-      "explanation": "\"LOGIN\" ist ein zentraler Fachbegriff im Kontext UML State Machines."
+      "explanation": "\"Zustandsdiagramm\" ist ein relevanter Fachbegriff im Thema UML State Machines."
     },
     {
       "id": "t5",
-      "label": "CREDIT",
+      "label": "Device",
       "is_target": true,
-      "explanation": "\"CREDIT\" ist ein zentraler Fachbegriff im Kontext UML State Machines."
+      "explanation": "\"Device\" ist ein relevanter Fachbegriff im Thema UML State Machines."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

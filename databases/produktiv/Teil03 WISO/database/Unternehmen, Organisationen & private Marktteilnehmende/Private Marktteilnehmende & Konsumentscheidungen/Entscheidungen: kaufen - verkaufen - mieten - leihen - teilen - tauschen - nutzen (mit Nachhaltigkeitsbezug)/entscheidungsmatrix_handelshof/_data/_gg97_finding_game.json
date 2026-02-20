@@ -3,7 +3,7 @@
     "topic": "Konsumoptionen",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "konsumoptionen",
+    "variant": "entscheidungsmatrix_handelshof",
     "title": "Konsumoptionen - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Konsumoptionen: Im Kontext Entscheidungsmatrix Handelshof stehen Konsumoptionen, Entscheidungsmatrix Handelshof und kaufen im Fokus.",
-    "Fuer eine belastbare Einordnung werden Mieten und Leihen gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Konsumoptionen stehen Markttag, Kaufen und Mieten im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Nutzung und Nutzungsdauer entscheidend.",
+    "Leitgedanke: Markttag 1: Laptop fuer 6 Monate Projektarbeit. Welche Option passt am besten.",
+    "Als Ablenker treten Entscheidungen, Spontankaeufe und Aktionspreise auf.",
+    "Begriffe im Fokus: Markttag, Kaufen, Mieten, Nutzung, Nutzungsdauer, Entscheidungen, Spontankaeufe, Aktionspreise."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Konsumoptionen",
+      "label": "Markttag",
       "is_target": true,
-      "explanation": "\"Konsumoptionen\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Markttag\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t2",
-      "label": "Entscheidungsmatrix Handelshof",
+      "label": "Kaufen",
       "is_target": true,
-      "explanation": "\"Entscheidungsmatrix Handelshof\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Kaufen\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t3",
-      "label": "kaufen",
+      "label": "Mieten",
       "is_target": true,
-      "explanation": "\"kaufen\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Mieten\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t4",
-      "label": "Mieten",
+      "label": "Nutzung",
       "is_target": true,
-      "explanation": "\"Mieten\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Nutzung\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t5",
-      "label": "Leihen",
+      "label": "Nutzungsdauer",
       "is_target": true,
-      "explanation": "\"Leihen\" ist ein zentraler Fachbegriff im Kontext Konsumoptionen."
+      "explanation": "\"Nutzungsdauer\" ist ein relevanter Fachbegriff im Thema Konsumoptionen."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Entscheidungen",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Entscheidungen\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Spontankaeufe",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Spontankaeufe\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Aktionspreise",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Aktionspreise\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

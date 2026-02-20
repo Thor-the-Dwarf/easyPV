@@ -3,7 +3,7 @@
     "topic": "DELETE Statement",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "delete_statement",
+    "variant": "delete",
     "title": "DELETE Statement - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,59 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "DELETE Statement: Im Kontext DELETE stehen DELETE Statement, SpamBot und Admin im Fokus.",
-    "Fuer eine belastbare Einordnung werden INACTIVE und Constraint gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema DELETE Statement stehen DELETE, Statement und Constraint im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Datenbanken und BigCustomer entscheidend.",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: DELETE, Statement, Constraint, Datenbanken, BigCustomer, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "DELETE Statement",
+      "label": "DELETE",
       "is_target": true,
-      "explanation": "\"DELETE Statement\" ist ein zentraler Fachbegriff im Kontext DELETE Statement."
+      "explanation": "\"DELETE\" ist ein relevanter Fachbegriff im Thema DELETE Statement."
     },
     {
       "id": "t2",
-      "label": "SpamBot",
+      "label": "Statement",
       "is_target": true,
-      "explanation": "\"SpamBot\" ist ein zentraler Fachbegriff im Kontext DELETE Statement."
+      "explanation": "\"Statement\" ist ein relevanter Fachbegriff im Thema DELETE Statement."
     },
     {
       "id": "t3",
-      "label": "Admin",
+      "label": "Constraint",
       "is_target": true,
-      "explanation": "\"Admin\" ist ein zentraler Fachbegriff im Kontext DELETE Statement."
+      "explanation": "\"Constraint\" ist ein relevanter Fachbegriff im Thema DELETE Statement."
     },
     {
       "id": "t4",
-      "label": "INACTIVE",
+      "label": "Datenbanken",
       "is_target": true,
-      "explanation": "\"INACTIVE\" ist ein zentraler Fachbegriff im Kontext DELETE Statement."
+      "explanation": "\"Datenbanken\" ist ein relevanter Fachbegriff im Thema DELETE Statement."
     },
     {
       "id": "t5",
-      "label": "Constraint",
+      "label": "BigCustomer",
       "is_target": true,
-      "explanation": "\"Constraint\" ist ein zentraler Fachbegriff im Kontext DELETE Statement."
+      "explanation": "\"BigCustomer\" ist ein relevanter Fachbegriff im Thema DELETE Statement."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

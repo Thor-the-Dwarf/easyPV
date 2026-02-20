@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "nebenkosten_pruefpfad",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Nebenkosten-Pruefpfad - Zuordnen"
@@ -12,24 +13,40 @@
   "levels": [
     {
       "id": 1,
-      "title": "Nebenkosten-Pruefpfad - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Nebenkosten-Pruefpfad - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Position: Allgemeinstrom Treppenhaus in ordentlicher Abrechnung. Pruefe, ob die Position typischerweise umlagefaehig is...",
+          "right": "Passende Entscheidung 1: Umlagefaehig, wenn transparent ausgewiesen"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Runde 1",
+          "right": "Warum passend 1: Richtig. Transparente Betriebskostenpositionen sind pruefbar umlagefaehig."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Position: Reparatur der Wohnungstuer als laufende Nebenkosten. Instandsetzung ist von laufenden Betriebskosten zu trenn...",
+          "right": "Passende Entscheidung 2: Nicht umlagefaehig als laufende Nebenkostenposition"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Runde 2",
+          "right": "Warum passend 2: Richtig. Instandsetzung ist typischerweise keine laufende Umlageposition."
+        },
+        {
+          "left": "Szenario 3: Position: Gartenpflege mit Dienstleisterrechnung und klarer Aufteilung. Leistung, Nachweis und Verteilungsschluessel ge...",
+          "right": "Passende Entscheidung 3: Umlagefaehig bei nachvollziehbarer Abrechnung"
+        },
+        {
+          "left": "Begruendung 3: Runde 3",
+          "right": "Warum passend 3: Richtig. Nachweis + transparenter Schluessel sprechen fuer Umlagefaehigkeit."
+        },
+        {
+          "left": "Szenario 4: Position: Verwaltungskosten werden als Nebenkosten weitergegeben. Nicht jede Kostenart ist umlagefaehig.",
+          "right": "Passende Entscheidung 4: Nicht umlagefaehig in der Regel"
+        },
+        {
+          "left": "Begruendung 4: Runde 4",
+          "right": "Warum passend 4: Richtig. Verwaltungskosten sind typischerweise nicht umlagefaehig."
         }
       ]
     }

@@ -3,7 +3,7 @@
     "topic": "Beduerfnisse, Bedarf, Kaufkraft",
     "mechanic": "finding_terms",
     "engine": "FindingGame",
-    "variant": "beduerfnisse_bedarf_kaufkraft",
+    "variant": "prioritaeten_sprint",
     "title": "Beduerfnisse, Bedarf, Kaufkraft - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
@@ -13,58 +13,60 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "Beduerfnisse Bedarf Kaufkraft: Im Kontext Prioritaeten Sprint stehen Beduerfnisse Bedarf Kaufkraft, Prioritaeten Sprint und korrekt im Fokus.",
-    "Fuer eine belastbare Einordnung werden Bedürfnisse und Grundidee gezielt geprueft und dokumentiert.",
-    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
+    "Im Thema Beduerfnisse, Bedarf, Kaufkraft stehen Ordne, Bedarf und Kaufkraft im Mittelpunkt.",
+    "Bei der Einordnung sind ausserdem Beduerfnisse und Prioritaeten entscheidend.",
+    "Leitgedanke: Ordne 'Miete' bei knappem Einkommen ein..",
+    "Als Ablenker treten Scheinargument, Nebenspur und Zufallsauswahl auf.",
+    "Begriffe im Fokus: Ordne, Bedarf, Kaufkraft, Beduerfnisse, Prioritaeten, Scheinargument, Nebenspur, Zufallsauswahl."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Beduerfnisse Bedarf Kaufkraft",
+      "label": "Ordne",
       "is_target": true,
-      "explanation": "\"Beduerfnisse Bedarf Kaufkraft\" ist ein zentraler Fachbegriff im Kontext Beduerfnisse Bedarf Kaufkraft."
+      "explanation": "\"Ordne\" ist ein relevanter Fachbegriff im Thema Beduerfnisse, Bedarf, Kaufkraft."
     },
     {
       "id": "t2",
-      "label": "Prioritaeten Sprint",
+      "label": "Bedarf",
       "is_target": true,
-      "explanation": "\"Prioritaeten Sprint\" ist ein zentraler Fachbegriff im Kontext Beduerfnisse Bedarf Kaufkraft."
+      "explanation": "\"Bedarf\" ist ein relevanter Fachbegriff im Thema Beduerfnisse, Bedarf, Kaufkraft."
     },
     {
       "id": "t3",
-      "label": "korrekt",
+      "label": "Kaufkraft",
       "is_target": true,
-      "explanation": "\"korrekt\" ist ein zentraler Fachbegriff im Kontext Beduerfnisse Bedarf Kaufkraft."
+      "explanation": "\"Kaufkraft\" ist ein relevanter Fachbegriff im Thema Beduerfnisse, Bedarf, Kaufkraft."
     },
     {
       "id": "t4",
-      "label": "Bedürfnisse",
+      "label": "Beduerfnisse",
       "is_target": true,
-      "explanation": "\"Bedürfnisse\" ist ein zentraler Fachbegriff im Kontext Beduerfnisse Bedarf Kaufkraft."
+      "explanation": "\"Beduerfnisse\" ist ein relevanter Fachbegriff im Thema Beduerfnisse, Bedarf, Kaufkraft."
     },
     {
       "id": "t5",
-      "label": "Grundidee",
+      "label": "Prioritaeten",
       "is_target": true,
-      "explanation": "\"Grundidee\" ist ein zentraler Fachbegriff im Kontext Beduerfnisse Bedarf Kaufkraft."
+      "explanation": "\"Prioritaeten\" ist ein relevanter Fachbegriff im Thema Beduerfnisse, Bedarf, Kaufkraft."
     },
     {
       "id": "t6",
-      "label": "Nebenaspekt",
+      "label": "Scheinargument",
       "is_target": false,
-      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Scheinargument\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t7",
-      "label": "Randnotiz",
+      "label": "Nebenspur",
       "is_target": false,
-      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Nebenspur\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     },
     {
       "id": "t8",
-      "label": "Ablenkbegriff",
+      "label": "Zufallsauswahl",
       "is_target": false,
-      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
+      "explanation": "\"Zufallsauswahl\" ist ein Ablenkbegriff und gehoert nicht zur Kernloesung."
     }
   ]
 }

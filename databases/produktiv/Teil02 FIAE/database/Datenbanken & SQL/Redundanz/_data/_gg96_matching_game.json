@@ -4,32 +4,33 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "sql_redundancy_normalization",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "SQL Redundancy & Normalization - Zuordnen"
+    "title": "Redundanz - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "SQL Redundancy & Normalization - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Redundanz - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Customer List Bloat Notice how the City and ZIP are repeated for every customer? That's a lot of wasted bytes!",
+          "right": "Passende Entscheidung 1: Customer List Bloat"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Customer List Bloat",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Industrial Catalog Category names are wide and heavy. Let's slim down the product table.",
+          "right": "Passende Entscheidung 2: Industrial Catalog"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Industrial Catalog",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

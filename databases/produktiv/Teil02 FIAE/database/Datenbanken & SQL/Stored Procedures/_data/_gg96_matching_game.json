@@ -4,7 +4,8 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "stored_procedures",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
     "title": "Stored Procedures - Zuordnen"
@@ -12,24 +13,32 @@
   "levels": [
     {
       "id": 1,
-      "title": "Stored Procedures - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "Stored Procedures - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Smart Discount Factory Calculate a 10% discount if the order amount is over 100 EUR.",
+          "right": "Passende Entscheidung 1: Smart Discount Factory"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Smart Discount Factory",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Inventory Control Center Check if enough stock is available. Set 'p_status' to 1 (Ready) if 'p_order_qty' <= 'p_stock_q...",
+          "right": "Passende Entscheidung 2: Inventory Control Center"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Inventory Control Center",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Customer Loyalty Upgrade Upgrade customers to 'Gold' if their total spending is > 1000 and they have > 5 orders.",
+          "right": "Passende Entscheidung 3: Customer Loyalty Upgrade"
+        },
+        {
+          "left": "Begruendung 3: Customer Loyalty Upgrade",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

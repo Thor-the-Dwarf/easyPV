@@ -4,32 +4,41 @@
     "mechanic": "matching_pairs",
     "engine": "MatchingGame",
     "variant": "sql_select_projection",
-    "version": "1.0"
+    "source": "_gg98_decision_game.json",
+    "version": "1.1"
   },
   "metadata": {
-    "title": "SQL SELECT (Projection) - Zuordnen"
+    "title": "SELECT - Zuordnen"
   },
   "levels": [
     {
       "id": 1,
-      "title": "SQL SELECT (Projection) - Grundlagen",
-      "description": "Verbinde Begriff und passende Beschreibung.",
+      "title": "SELECT - Szenario-Zuordnung",
+      "description": "Verbinde jedes Szenario mit der passenden Entscheidung und der Begruendung.",
       "pairs": [
         {
-          "left": "Begriff: Analyse",
-          "right": "Beschreibung: Ausgangslage strukturiert erfassen"
+          "left": "Szenario 1: Contact List Lite We need to send a newsletter. Retrieve only 'username' and 'email' from the User table.",
+          "right": "Passende Entscheidung 1: username"
         },
         {
-          "left": "Begriff: Kriterien",
-          "right": "Beschreibung: Bewertungsrahmen festlegen"
+          "left": "Begruendung 1: Contact List Lite",
+          "right": "Warum passend 1: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "left": "Begriff: Entscheidung",
-          "right": "Beschreibung: Option begruendet waehlen"
+          "left": "Szenario 2: Product Catalog Speedup Display the product catalog. We need 'prod_name', 'price', and 'stock'. Avoid the heavy descrip...",
+          "right": "Passende Entscheidung 2: prod_name"
         },
         {
-          "left": "Begriff: Feedback",
-          "right": "Beschreibung: Ergebnis nachschleifen"
+          "left": "Begruendung 2: Product Catalog Speedup",
+          "right": "Warum passend 2: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "left": "Szenario 3: Clean Log Review Review system errors. We only need the 'error_code', 'message', and 'timestamp'. Filter out the heavy...",
+          "right": "Passende Entscheidung 3: error_code"
+        },
+        {
+          "left": "Begruendung 3: Clean Log Review",
+          "right": "Warum passend 3: Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

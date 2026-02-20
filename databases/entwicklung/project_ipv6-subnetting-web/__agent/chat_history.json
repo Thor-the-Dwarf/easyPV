@@ -1,104 +1,45 @@
 [
   {
-    "date_time_stamp": "26-02-19 01:01:00",
-    "commit_message": "",
-    "request": "Erstelle dir im Ordner Tools Arbeitspakete die du abarbeiten Kannst so das dieser Prototyp ein Erfolg wird. Beschränke dich auf HTML, CSS, JS und json. Kommerziell Nutzbare Librarys sind genehmigt",
+    "date_time_stamp": "26-02-08 12:00:00",
+    "commit_message": "feat(WP01): Projekt-Skeleton + Dateistruktur",
+    "request": "Projektstruktur aufbauen",
     "response": [
       {
-        "what": "Kurzbeschreibung was wurde getan",
-        "why": "Kurzbeschreibung warum wurde es getan"
-      },
-      {
-        "what": "Kurzbeschreibung was wurde getan",
-        "why": "Kurzbeschreibung warum wurde es getan"
+        "what": "index.html, styles.css, app.js, lessons.json erstellt",
+        "why": "Grundstruktur der App"
       }
     ]
   },
   {
-    "date_time_stamp": "26-02-20 16:33:00",
-    "commit_message": "feat(WP01): Projekt-Skeleton – index.html, styles.css, app.js, lessons.json",
-    "request": "WP01 umsetzen: Projekt-Skeleton + Dateistruktur",
+    "date_time_stamp": "26-02-10 14:00:00",
+    "commit_message": "feat(WP02): UI-Layout + Navigation",
+    "request": "Layout und Navigation implementieren",
     "response": [
       {
-        "what": "index.html erstellt mit Header (Hint-Bar + Haupt), 3-Spalten-Layout (#sidebar, #content-area, #tool-panel), Error-Banner",
-        "why": "HTML-Grundgerüst als Voraussetzung für alle weiteren WPs, semantisch korrekt mit ARIA"
-      },
-      {
-        "what": "assets/styles.css als zentrales Design-System erstellt: CSS-Variablen, Dark/Light-Theme, responsives Grid, alle Basis-Komponenten",
-        "why": "Einzige Quelle für Farben/Abstände (Grundregel 7 analog), keine Hardcoding-Farben"
-      },
-      {
-        "what": "assets/app.js als ES-Modul erstellt: Theme, Sidebar-Toggle, Exam-Mode, loadLessons(), renderSidebar(), showError()-API",
-        "why": "Boot-Logik und sichtbare Fehlerbehandlung (Grundregel 9); type=module für spätere Imports ohne Build-Tool"
-      },
-      {
-        "what": "assets/data/lessons.json mit vollständigem Schema angelegt: 5 Kapitel, 11 Unterkapitel, Tasks, Tool-Bindings",
-        "why": "Datenbasis für WP04 Renderer; Schema bereits vollständig definiert damit spätere WPs ohne JSON-Änderungen arbeiten können"
-      },
-      {
-        "what": "assets/lib/.gitkeep angelegt; current_implementation_plan.md überschrieben; chat_history.json erweitert",
-        "why": "Grundregeln 2, 3, 4 einhalten: lib-Ordner tracken, Plan aktuell halten, History führen"
+        "what": "layout.js erstellt, styles.css für WP02 erweitert",
+        "why": "Sidebar, Backdrop, Breadcrumb, Tool-Panel"
       }
     ]
   },
   {
-    "date_time_stamp": "26-02-20 16:40:00",
-    "commit_message": "feat(WP02): UI-Layout + Navigation – layout.js, Sidebar-Erweiterungen, Tool-Widget-System",
-    "request": "WP02 umsetzen: UI-Layout (3-Spalten) + Navigation",
+    "date_time_stamp": "26-02-12 16:00:00",
+    "commit_message": "feat(WP03+WP04): Hash-Router + State + Content-Renderer",
+    "request": "Routing, State und Content-Rendering implementieren",
     "response": [
       {
-        "what": "assets/layout.js erstellt: Sidebar open/close, mobiler Backdrop, Breadcrumb-API, Tool-Panel-Slot-System (mountTools/slotTool), Keyboard-Nav, Resize-Handler",
-        "why": "Layout-Concerns aus app.js herauslösen; slotTool()-API damit WP06-11 Components direkt einhängen können"
-      },
-      {
-        "what": "assets/app.js refactored: importiert layout.js, renderSidebar() mit Arrow+Count+Sub-Badges, navigateTo() mountet Tools und rendert Content-Blöcke, Task-Checker",
-        "why": "Vollständige Navigation inkl. aktiver Kapitel-Markierung und kontextueller Tool-Panel-Befüllung"
-      },
-      {
-        "what": "assets/styles.css erweitert (Sektionen 17-21): Sidebar-Arrows, Backdrop, Keyboard-Focus, Tool-Widgets, Content-Artikel, Task-Cards, Exam-Mode",
-        "why": "Alle neuen Komponenten aus WP02 brauchen CSS-Unterstützung"
-      },
-      {
-        "what": "index.html: Backdrop-Div + Progress-Badge im Sidebar-Header ergänzt",
-        "why": "DOM-Elemente für layout.js-Funktionen waren noch nicht vorhanden"
+        "what": "router.js, state.js, renderer.js erstellt",
+        "why": "State → UI Render Pipeline"
       }
     ]
   },
   {
-    "date_time_stamp": "26-02-20 16:50:00",
-    "commit_message": "feat(WP03+WP04): Hash-Router, State, Renderer – router.js, state.js, renderer.js",
-    "request": "WP03 + WP04 umsetzen: Hash-Router + State + Content-Renderer",
+    "date_time_stamp": "26-02-14 18:00:00",
+    "commit_message": "feat(WP05): IPv6-Core-Lib + Tests",
+    "request": "IPv6-Bibliothek mit BigInt-Arithmetik implementieren",
     "response": [
       {
-        "what": "assets/router.js erstellt: parseHash, initRouter, navigate, replaceRoute, clearRoute mit hashchange-Listener",
-        "why": "URL als einzige Quelle der Wahrheit; Back/Forward per hashchange ohne Seitenreload"
-      },
-      {
-        "what": "assets/state.js erstellt: getState/setState/subscribe, findChapter/findSubchapter, progressSummary, markTaskDone; localStorage-Persistenz",
-        "why": "Zentraler reaktiver State; alle Module lesen/schreiben über eine API; kein Props-Drilling"
-      },
-      {
-        "what": "assets/renderer.js erstellt: renderSubchapter/renderPlaceholder/renderError, Block-Renderer (text/example/hint), Task-Checker per Event-Delegation, Enter-Taste, CustomEvent 'task-done'",
-        "why": "JSON-getriebener Renderer; neues Kapitel = neue JSON-Einträge, kein Code-Änderung"
-      },
-      {
-        "what": "assets/app.js refactored: schlanker Orchestrator; importiert alle vier Module; Render-Pipeline Route→findSubchapter→renderSubchapter+mountTools+updateBreadcrumb",
-        "why": "Klare Trennung der Verantwortlichkeiten; app.js nur noch verdrahten, nicht rendern"
-      }
-    ]
-  },
-  {
-    "date_time_stamp": "26-02-20 16:55:00",
-    "commit_message": "feat(WP05): IPv6-Core-Lib – ipv6.js + ipv6.test.js",
-    "request": "WP05 umsetzen: IPv6-Core-Lib (expand/compress/BigInt/prefixMask/subprefix)",
-    "response": [
-      {
-        "what": "assets/lib/ipv6.js erstellt: expand, compress, toBigInt/fromBigInt, prefixMask, applyMask, subprefix, listSubnets, getAddressType, prefixContains, groupInfo, isValidIPv6",
-        "why": "Vollständige BigInt-Basis für alle späteren Tools (WP06 Visualizer, WP07 Slicer)"
-      },
-      {
-        "what": "assets/lib/ipv6.test.js erstellt: 40+ Testfälle inkl. Fehlerwerfen, runTests() exportiert, DOM-Ausgabe für WP15",
-        "why": "Reproduzierbare Verifikation der Kernfunktionen; WP15 Smoke-Check-Seite"
+        "what": "lib/ipv6.js mit 12 Kernfunktionen, lib/ipv6.test.js mit 40+ Tests",
+        "why": "Grundlage für alle Berechnungen"
       }
     ]
   },
@@ -108,16 +49,58 @@
     "request": "WP06 + WP07 umsetzen: Prefix-Visualizer + Prefix-Slicer",
     "response": [
       {
-        "what": "assets/lib/prefix-visualizer.js erstellt: 8 Hex-Gruppen, Nibble-Coloring, Bit-Bar, Adresstyp-Badge, Copy-Buttons, Live-Update debounced",
+        "what": "lib/prefix-visualizer.js: 8 Hex-Gruppen, Nibble-Coloring, Bit-Bar, Adresstyp-Badge",
         "why": "Herzstück der App – macht IPv6-Präfixe visuell intuitiv greifbar"
       },
       {
-        "what": "assets/lib/prefix-slicer.js erstellt: +Bits-Slider/Subnetz-Anzahl-Modus, Summary, erste 5+letztes, Nibble-Grenz-Warn/OK",
-        "why": "Subnetting-Praxis direkt ausprobierbar; 2^n-Potenz-Aufrundung für Subnetz-Anzahl-Modus"
+        "what": "lib/prefix-slicer.js: +Bits-Slider/Subnetz-Anzahl-Modus, Summary, erste 5+letztes",
+        "why": "Subnetting-Praxis direkt ausprobierbar"
       },
       {
-        "what": "assets/tools.js erstellt: TOOL_FACTORIES Map, mountActualTools(), calls slotTool() aus layout.js",
-        "why": "Tool-Factory-Pattern entkoppelt Tool-IDs von Implementierungen; WP09-11 ergänzen nur Map-Einträge"
+        "what": "tools.js: TOOL_FACTORIES Map, mountActualTools()",
+        "why": "Tool-Factory-Pattern entkoppelt Tool-IDs von Implementierungen"
+      }
+    ]
+  },
+  {
+    "date_time_stamp": "26-02-20 18:05:00",
+    "commit_message": "feat(WP08+WP09): Aufgaben-Engine + Szenario-Generator",
+    "request": "Aufgaben-Engine mit Validatoren und Szenario-Generator implementieren",
+    "response": [
+      {
+        "what": "lib/task-engine.js: exact/number/prefix/prefix-len Validatoren, single-input + multiple-choice",
+        "why": "Typisierte Validierung statt einfacher String-Vergleiche"
+      },
+      {
+        "what": "lib/scenario-generator.js: Seeded-RNG, /48-Szenarien mit N Standorten+VLANs, Checker",
+        "why": "Praxis-Szenarien reproduzierbar und teilbar via URL"
+      }
+    ]
+  },
+  {
+    "date_time_stamp": "26-02-20 18:40:00",
+    "commit_message": "feat(WP10-WP15): Fehlerbilder, RA-Demo, Prüfungsmodus, A11y, Doku",
+    "request": "WP10-WP15 umsetzen",
+    "response": [
+      {
+        "what": "lib/fehlerbilder.js: 8 IPv6-Fehlermuster, Accordion, 4 Tabs, Suche, Quiz-Modus",
+        "why": "Häufige Praxisprobleme nachschlagbar + spielerisch lernbar"
+      },
+      {
+        "what": "lib/ra-demo.js: 4 animierte RA-Szenarien (aktiv/gestoppt/RA-Guard/solicited)",
+        "why": "Abstrakte RA-Mechanismen visuell und interaktiv begreifen"
+      },
+      {
+        "what": "exam-mode.js: Timer, Aufgaben-Queue, Scoring, Note 1-5, JSON-Export + buildShareLink",
+        "why": "WP12+WP13 in einem Modul – Prüfungsmodus + Teacher-Mode-Utilities"
+      },
+      {
+        "what": "index.html: theme-color, OG-Tags; styles.css: reduced-motion, forced-colors, Skip-Link",
+        "why": "WP14 Accessibility: ARIA, hoher Kontrast, Tastaturnavigation"
+      },
+      {
+        "what": "README.md, test.html",
+        "why": "WP15 Doku + Smoke-Check-Seite für ipv6.test.js"
       }
     ]
   }

@@ -149,3 +149,22 @@ Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine M
   - Zusatz-Smoke im Reverse-Lauf erfolgreich:
     - `output/web-game-teil03-reverse-wandel-maerkte/shot-0.png`
     - `output/web-game-teil03-reverse-wandel-maerkte/state-0.json`
+
+- Neuer Umsetzungs-Batch: Topic "Nachhaltige Entwicklung im Unternehmenskontext (Grundidee)" mit 5 neuen Gameordnern.
+- Neu angelegt:
+  - `kennzahlen_monitor`
+  - `lieferkette_risiko_router`
+  - `massnahmenportfolio_planer`
+  - `stakeholder_spannungsfeld_duell`
+  - `triple_bottom_line_match`
+- Je Spiel erstellt:
+  - `_ghtml`, `_gjs`, `_gcss`
+  - `_data/_gg01_*.json` + Topic-MetaData
+  - Vollstaendige `__dokumentation`-Struktur mit UML-PUML und 5 Plan-Dateien
+  - Unit-Tests inkl. Messbarkeits-Check (`measurable`, `score`, `progress_percent`, `simulated_ms`)
+- Validierung:
+  - Lokale Node-Tests fuer den Block komplett gruen (`15/15`).
+  - Playwright-Smoke fuer `kennzahlen_monitor` erfolgreich:
+    - `output/web-game-nachhaltigkeit-kontext/shot-0.png`
+    - `output/web-game-nachhaltigkeit-kontext/state-0.json`
+  - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.

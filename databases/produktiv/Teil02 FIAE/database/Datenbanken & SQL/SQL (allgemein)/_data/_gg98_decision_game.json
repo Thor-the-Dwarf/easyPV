@@ -3,84 +3,257 @@
     "topic": "SQL Taxonomy",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "sql_taxonomy",
-    "version": "1.0"
+    "source": "_gg01_sql_sorter.json",
+    "version": "2.0"
   },
-  "title": "SQL Taxonomy - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "SQL (allgemein)",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "SQL-Befehl einordnen: CREATE",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "DDL",
+          "text": "Data Definition Language",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Creates new database objects."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "DML",
+          "text": "Data Manipulation Language",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Creates new database objects."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "DCL",
+          "text": "Data Control Language",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Creates new database objects."
+        },
+        {
+          "id": "TCL",
+          "text": "Transaction Control Language",
+          "correct": false,
+          "reason": "Creates new database objects."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "SQL-Befehl einordnen: DROP",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "DDL",
+          "text": "Data Definition Language",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Deletes database objects."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "DML",
+          "text": "Data Manipulation Language",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Deletes database objects."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "DCL",
+          "text": "Data Control Language",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Deletes database objects."
+        },
+        {
+          "id": "TCL",
+          "text": "Transaction Control Language",
+          "correct": false,
+          "reason": "Deletes database objects."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "SQL-Befehl einordnen: ALTER",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "DDL",
+          "text": "Data Definition Language",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Modifies database structures."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "DML",
+          "text": "Data Manipulation Language",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Modifies database structures."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "DCL",
+          "text": "Data Control Language",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Modifies database structures."
+        },
+        {
+          "id": "TCL",
+          "text": "Transaction Control Language",
+          "correct": false,
+          "reason": "Modifies database structures."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "SQL-Befehl einordnen: TRUNCATE",
+      "options": [
+        {
+          "id": "DDL",
+          "text": "Data Definition Language",
+          "correct": true,
+          "reason": "Removes all records from a table."
+        },
+        {
+          "id": "DML",
+          "text": "Data Manipulation Language",
+          "correct": false,
+          "reason": "Removes all records from a table."
+        },
+        {
+          "id": "DCL",
+          "text": "Data Control Language",
+          "correct": false,
+          "reason": "Removes all records from a table."
+        },
+        {
+          "id": "TCL",
+          "text": "Transaction Control Language",
+          "correct": false,
+          "reason": "Removes all records from a table."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "SQL-Befehl einordnen: SELECT",
+      "options": [
+        {
+          "id": "DDL",
+          "text": "Data Definition Language",
+          "correct": true,
+          "reason": "Retrieves data from the database."
+        },
+        {
+          "id": "DML",
+          "text": "Data Manipulation Language",
+          "correct": false,
+          "reason": "Retrieves data from the database."
+        },
+        {
+          "id": "DCL",
+          "text": "Data Control Language",
+          "correct": false,
+          "reason": "Retrieves data from the database."
+        },
+        {
+          "id": "TCL",
+          "text": "Transaction Control Language",
+          "correct": false,
+          "reason": "Retrieves data from the database."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "SQL-Befehl einordnen: INSERT",
+      "options": [
+        {
+          "id": "DDL",
+          "text": "Data Definition Language",
+          "correct": true,
+          "reason": "Adds new data to the database."
+        },
+        {
+          "id": "DML",
+          "text": "Data Manipulation Language",
+          "correct": false,
+          "reason": "Adds new data to the database."
+        },
+        {
+          "id": "DCL",
+          "text": "Data Control Language",
+          "correct": false,
+          "reason": "Adds new data to the database."
+        },
+        {
+          "id": "TCL",
+          "text": "Transaction Control Language",
+          "correct": false,
+          "reason": "Adds new data to the database."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "SQL-Befehl einordnen: UPDATE",
+      "options": [
+        {
+          "id": "DDL",
+          "text": "Data Definition Language",
+          "correct": true,
+          "reason": "Modifies existing data."
+        },
+        {
+          "id": "DML",
+          "text": "Data Manipulation Language",
+          "correct": false,
+          "reason": "Modifies existing data."
+        },
+        {
+          "id": "DCL",
+          "text": "Data Control Language",
+          "correct": false,
+          "reason": "Modifies existing data."
+        },
+        {
+          "id": "TCL",
+          "text": "Transaction Control Language",
+          "correct": false,
+          "reason": "Modifies existing data."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "SQL-Befehl einordnen: DELETE",
+      "options": [
+        {
+          "id": "DDL",
+          "text": "Data Definition Language",
+          "correct": true,
+          "reason": "Removes data from the database."
+        },
+        {
+          "id": "DML",
+          "text": "Data Manipulation Language",
+          "correct": false,
+          "reason": "Removes data from the database."
+        },
+        {
+          "id": "DCL",
+          "text": "Data Control Language",
+          "correct": false,
+          "reason": "Removes data from the database."
+        },
+        {
+          "id": "TCL",
+          "text": "Transaction Control Language",
+          "correct": false,
+          "reason": "Removes data from the database."
         }
       ]
     }

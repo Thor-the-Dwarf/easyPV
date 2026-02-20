@@ -3,7 +3,7 @@
     "topic": "Duales System",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "duales_system",
+    "source": "_gg01_akteurszuordnung_match.json",
     "version": "1.0"
   },
   "title": "Duales System - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Wer ist im dualen System primaer fuer die betriebliche Einsatzplanung zustaendig?\nOperative Praxis liegt beim Ausbildungsbetrieb.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Ausbildungsbetrieb",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Die Einsatzplanung liegt im Betrieb."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Berufsschule",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Die Schule plant Unterricht, nicht betriebliche Einsaetze."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Beliebige externe Stelle",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Ohne Zuständigkeit keine korrekte Zuordnung."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Aufgabe passt zur zustaendigen Stelle (z. B. Kammer)?\nFormale Rahmenprozesse und Pruefungsorganisation.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Pruefungsorganisation und formale Begleitung",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das ist Kernaufgabe der zustaendigen Stelle."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Taegliche Schichtplanung im Betrieb",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das ist Betriebssache."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Alleinige Vermittlung aller Fachinhalte",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Das ist auf mehrere Lernorte verteilt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Woran erkennst du eine Rollenverwechslung?\nAufgabe wird einem fachfremden Akteur zugeordnet.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn eine Kernaufgabe beim falschen Akteur landet",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das ist die typische Rollenverwechslung."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn ein Akteur Rueckfragen stellt",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Rueckfragen sind normal."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn ein Fall mehrere Beteiligte hat",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Mehrere Beteiligte sind im dualen System ueblich."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI gehoert laut Plan zu diesem Spiel?\nTrefferquote je Akteur.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rollen-Treffquote je Akteur",
+          "correct": true,
+          "reason": "Richtig. Das ist die zentrale KPI."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtspielzeit",
+          "correct": false,
+          "reason": "Zeit allein zeigt keine Rollenqualitaet."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Klicks",
+          "correct": false,
+          "reason": "Klicks messen keine korrekte Zuordnung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann wird laut Regelwerk ein Zusatzabzug plausibel?\nKernaufgabe falsch zugeordnet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei falscher Zuordnung einer Kernaufgabe",
+          "correct": true,
+          "reason": "Exakt. Kernfehler werden strenger bewertet."
+        },
+        {
+          "id": "b",
+          "text": "Bei korrekter Zuordnung",
+          "correct": false,
+          "reason": "Korrekte Zuordnung gibt keine Strafe."
+        },
+        {
+          "id": "c",
+          "text": "Bei neutralem Hinweistext",
+          "correct": false,
+          "reason": "Hinweistext beeinflusst den Score nicht."
         }
       ]
     }

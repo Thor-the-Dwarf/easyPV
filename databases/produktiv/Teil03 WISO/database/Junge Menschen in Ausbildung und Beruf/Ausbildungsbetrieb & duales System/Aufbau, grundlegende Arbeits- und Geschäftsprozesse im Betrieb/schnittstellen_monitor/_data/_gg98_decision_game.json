@@ -3,7 +3,7 @@
     "topic": "Betriebsprozesse",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "betriebsprozesse",
+    "source": "_gg01_schnittstellen_monitor.json",
     "version": "1.0"
   },
   "title": "Betriebsprozesse - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was ist der erste Schritt im Monitor-Szenario?\nZuerst Problemstelle diagnostizieren.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Fehlerdiagnose der Schnittstelle",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Ohne Diagnose kein passender Fix."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Direkt irgendeinen Fix waehlen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu frueh ohne Ursachenbild."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Nachrichten archivieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht ausreichend."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Folge hat eine falsche Diagnose laut Regel?\nDer Korrekturbonus wird dadurch beeinflusst.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Der Korrekturbonus wird blockiert",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Erst Diagnose, dann Korrekturbonus."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Es gibt immer vollen Bonus",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur die Zeit wird gezaehlt",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI muessen ausgewiesen werden?\nDiagnose und Fix separat.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Diagnosequote und Korrekturquote",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das zeigt beide Lernziele."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Anzahl Meldungen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Keine Qualitaetsmetrik."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Spielzeit",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Zu grob."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gibt es den Doppelbonus?\nBeide Entscheidungen muessen stimmen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei korrekter Diagnose und korrektem Fix",
+          "correct": true,
+          "reason": "Richtig. Doppelt korrekt wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei nur einem richtigen Klick",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Bei maximaler Rundendauer",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was sollte der Fehlerreport hervorheben?\nUebersehene Muster sind entscheidend.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Die uebersehenen Schnittstellenmuster",
+          "correct": true,
+          "reason": "Richtig. Damit werden Blindspots sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur den Gesamtscore",
+          "correct": false,
+          "reason": "Zu unpraezise."
+        },
+        {
+          "id": "c",
+          "text": "Nur die zuletzt bearbeitete Nachricht",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

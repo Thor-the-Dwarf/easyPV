@@ -3,7 +3,7 @@
     "topic": "Arbeitsvertrag",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitsvertrag",
+    "source": "_gg01_vertragscheck_labor.json",
     "version": "1.0"
   },
   "title": "Arbeitsvertrag - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Im Mustervertrag fehlt ein Pflichtabschnitt. Was ist korrekt?\nFehlende Kerninhalte sollen eindeutig markiert werden.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Luecke als fehlende Pflichtsektion markieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist die Kernaufgabe im Check-Labor."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Ohne Pruefung freigeben",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Schreibstil bewerten",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht ausreichend."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Zusatzregel erhoeht Punkte bei korrekter Erkennung?\nBezieht sich auf besonders wichtige Sektionen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Fehlende Kernsektion korrekt erkannt",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Dafuer gibt es Zusatzpunkte."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Beliebige Markierung",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur schnelle Abgabe",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht allein."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was passiert bei Pruefungen ueber Zeitlimit?\nPlan nennt einen Zeitabzug.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Zeitabzug wird angewendet",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Ueberziehung kostet Punkte."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Keine Auswirkung",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Zeitbonus",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI-Kombination ist vorgesehen?\nQualitaet und Geschwindigkeit zusammen sehen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Luecken-Treffquote plus Pruefzeit",
+          "correct": true,
+          "reason": "Richtig. So wird Vollstaendigkeit und Tempo bewertet."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endscore",
+          "correct": false,
+          "reason": "Zu wenig Aussagekraft."
+        },
+        {
+          "id": "c",
+          "text": "Nur Klickanzahl",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was soll der Export laut Plan enthalten?\nErgebnisse nach Abschnittstyp differenzieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Top-Fehler je Abschnittstyp",
+          "correct": true,
+          "reason": "Richtig. Das macht Folgeverbesserungen gezielt moeglich."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtnote",
+          "correct": false,
+          "reason": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Keine Detaildaten",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

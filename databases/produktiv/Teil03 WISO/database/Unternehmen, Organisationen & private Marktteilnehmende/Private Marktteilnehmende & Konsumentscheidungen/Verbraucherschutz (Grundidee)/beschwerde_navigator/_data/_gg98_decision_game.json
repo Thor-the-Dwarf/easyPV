@@ -3,7 +3,7 @@
     "topic": "Verbraucherschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "verbraucherschutz",
+    "source": "_gg01_beschwerde_navigator.json",
     "version": "1.0"
   },
   "title": "Verbraucherschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Ware kommt beschaedigt an. Welcher Schritt steht zuerst an?\nDer Prozess startet beim direkten Anbieter-Kontakt.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Verkaeufer kontaktieren und Mangel melden",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Der erste Pflichtschritt ist die Mangelanzeige beim Verkaeufer."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Sofort Gericht einschalten",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu frueh. Erst der regulaere Beschwerdeweg."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nichts dokumentieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt. Dokumentation ist wichtig."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Auf Beschwerde kommt keine Reaktion. Was folgt sinnvoll?\nNach Erstkontakt kommt meist eine Fristsetzung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Frist zur Nachbesserung setzen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Fristsetzung ist der naechste Prozessschritt."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Beschwerde abbrechen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht sinnvoll."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Direkt oeffentlich posten",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht der strukturierte Prozessschritt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Nach Frist keine Einigung. Welche Eskalation passt?\nVor Klage ist eine neutrale Schlichtung moeglich.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Schlichtungsstelle einschalten",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das ist eine passende Eskalationsstufe."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Fall ignorieren",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Unbegruendete Strafzahlung fordern",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welcher Fehler kostet doppelte Abzuege laut Regelwerk?\nPflichtschritte duerfen nicht uebersprungen werden.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pflichtschritt ueberspringen",
+          "correct": true,
+          "reason": "Genau. Das fuehrt zu doppeltem Punktabzug."
+        },
+        {
+          "id": "b",
+          "text": "Dokumente sammeln",
+          "correct": false,
+          "reason": "Das ist sinnvoll, nicht fehlerhaft."
+        },
+        {
+          "id": "c",
+          "text": "Kontaktweg notieren",
+          "correct": false,
+          "reason": "Kein Fehler."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann gibt es Effizienzbonus?\nBonus bei korrektem und kurzem Weg.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn korrekt mit minimalen Schritten geloest",
+          "correct": true,
+          "reason": "Richtig. Korrektheit plus Effizienz loest den Bonus aus."
+        },
+        {
+          "id": "b",
+          "text": "Wenn moeglichst viele Schritte gemacht werden",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei Zufallstreffern",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

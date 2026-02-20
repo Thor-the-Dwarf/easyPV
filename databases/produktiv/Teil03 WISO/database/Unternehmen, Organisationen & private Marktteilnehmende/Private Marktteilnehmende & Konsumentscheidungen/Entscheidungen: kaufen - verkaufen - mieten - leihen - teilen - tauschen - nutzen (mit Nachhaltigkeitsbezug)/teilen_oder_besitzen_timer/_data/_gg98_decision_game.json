@@ -3,7 +3,7 @@
     "topic": "Konsumoptionen",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "konsumoptionen",
+    "source": "_gg01_teilen_oder_besitzen_timer.json",
     "version": "1.0"
   },
   "title": "Konsumoptionen - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Quick Case: Transporter fuer einen einmaligen Umzug. Besitz oder Teilen?\nEinmaliger Bedarf ist selten Besitzfall.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Teilen/Mieten",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Seltene Nutzung spricht fuer gemeinschaftliche Loesung."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Besitzen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht effizient fuer Einmalnutzung."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ungeprueft kaufen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht passend."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Quick Case: Eigenes Fahrrad fuer taegliche Strecke. Was ist passender?\nHaeufige Nutzung kann Besitz rechtfertigen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Besitzen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Hohe Frequenz passt zu Besitz."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur gelegentlich teilen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht stabil fuer taegliche Nutzung."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine Entscheidung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht zielfuehrend."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Quick Case: Party-Geschirr fuer zwei Events im Jahr.\nAchte auf Ressourceneffizienz.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Teilen/Leihen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Seltene Nutzung + Nachhaltigkeit sprechen dafuer."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Groessenpaket kaufen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht effizient bei niedriger Frequenz."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Doppelt kaufen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Was gilt als Fehler laut Regelwerk?\nDenk an das Zeitlimit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keine Antwort innerhalb des Limits",
+          "correct": true,
+          "reason": "Richtig. Timeout wird als Fehler gewertet."
+        },
+        {
+          "id": "b",
+          "text": "Schnelle korrekte Antwort",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nachhaltige Wahl",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Ab welcher Trefferquote soll der Schwierigkeitsgrad steigen?\nDer Schwellwert ist im Plan angegeben.",
+      "options": [
+        {
+          "id": "a",
+          "text": "ab 80 Prozent",
+          "correct": true,
+          "reason": "Genau. Dann wird die Runde anspruchsvoller."
+        },
+        {
+          "id": "b",
+          "text": "ab 40 Prozent",
+          "correct": false,
+          "reason": "Zu niedrig."
+        },
+        {
+          "id": "c",
+          "text": "ab 100 Prozent",
+          "correct": false,
+          "reason": "Zu spaet."
         }
       ]
     }

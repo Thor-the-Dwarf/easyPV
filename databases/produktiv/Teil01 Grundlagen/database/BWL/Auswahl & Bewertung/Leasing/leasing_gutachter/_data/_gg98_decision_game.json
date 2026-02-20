@@ -3,84 +3,199 @@
     "topic": "Der gnadenlose Gutachter - AP1 IT",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "der_gnadenlose_gutachter_ap1_it",
+    "source": "_gg01_leasing_gutachter.json",
     "version": "1.0"
   },
   "title": "Der gnadenlose Gutachter - AP1 IT - Entscheidungen",
   "subtitle": "Waehle pro Runde die fachlich beste Option.",
   "rounds": [
     {
-      "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "id": "it1",
+      "phase": "Fall it1",
+      "situation": "Gelieferter Business-Laptop hat nur 8 GB RAM statt der bestellten 32 GB.",
+      "imageUrl": "./_assets/damage-01.svg",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "sachmangel",
+          "text": "Sachmangel",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die gelieferte Hardware weicht in der vereinbarten Beschaffenheit von der Bestellung ab."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "qualitaetsmangel",
+          "text": "Qualitaetsmangel",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Lieferung funktioniert, aber Qualitaet/Leistung entspricht nicht der Anforderung."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "mengenmangel",
+          "text": "Mengenmangel",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Falsche Stueckzahl wurde geliefert."
+        },
+        {
+          "id": "quantitaetsmangel",
+          "text": "Quantitaetsmangel",
+          "correct": false,
+          "reason": "Vereinbarte quantitative Werte/Leistung werden nicht erreicht."
+        },
+        {
+          "id": "rechtsmangel",
+          "text": "Rechtsmangel",
+          "correct": false,
+          "reason": "Nutzungs- oder Verfuegungsrechte fehlen oder sind eingeschraenkt."
         }
       ]
     },
     {
-      "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "id": "it2",
+      "phase": "Fall it2",
+      "situation": "50 Monitore bestellt, aber nur 46 Monitore wurden angeliefert.",
+      "imageUrl": "./_assets/damage-02.svg",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "sachmangel",
+          "text": "Sachmangel",
+          "correct": false,
+          "reason": "Beschaffenheit weicht von vereinbarter Soll-Eigenschaft ab."
+        },
+        {
+          "id": "qualitaetsmangel",
+          "text": "Qualitaetsmangel",
+          "correct": false,
+          "reason": "Lieferung funktioniert, aber Qualitaet/Leistung entspricht nicht der Anforderung."
+        },
+        {
+          "id": "mengenmangel",
+          "text": "Mengenmangel",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die Stueckzahl der Lieferung ist geringer als vertraglich vereinbart."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "quantitaetsmangel",
+          "text": "Quantitaetsmangel",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Vereinbarte quantitative Werte/Leistung werden nicht erreicht."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "rechtsmangel",
+          "text": "Rechtsmangel",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nutzungs- oder Verfuegungsrechte fehlen oder sind eingeschraenkt."
         }
       ]
     },
     {
-      "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "id": "it3",
+      "phase": "Fall it3",
+      "situation": "Switches liefern statt 10 Gbit/s im Lasttest nur 3-4 Gbit/s.",
+      "imageUrl": "./_assets/damage-03.svg",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "sachmangel",
+          "text": "Sachmangel",
+          "correct": false,
+          "reason": "Beschaffenheit weicht von vereinbarter Soll-Eigenschaft ab."
+        },
+        {
+          "id": "qualitaetsmangel",
+          "text": "Qualitaetsmangel",
+          "correct": false,
+          "reason": "Lieferung funktioniert, aber Qualitaet/Leistung entspricht nicht der Anforderung."
+        },
+        {
+          "id": "mengenmangel",
+          "text": "Mengenmangel",
+          "correct": false,
+          "reason": "Falsche Stueckzahl wurde geliefert."
+        },
+        {
+          "id": "quantitaetsmangel",
+          "text": "Quantitaetsmangel",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Die zugesicherte quantitative Leistungskennzahl wird nicht erreicht."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "rechtsmangel",
+          "text": "Rechtsmangel",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nutzungs- oder Verfuegungsrechte fehlen oder sind eingeschraenkt."
+        }
+      ]
+    },
+    {
+      "id": "it4",
+      "phase": "Fall it4",
+      "situation": "Neue SSDs zeigen unter Dauerlast hohe Ausfallraten und inkonsistente Schreibwerte.",
+      "imageUrl": "./_assets/damage-04.svg",
+      "options": [
+        {
+          "id": "sachmangel",
+          "text": "Sachmangel",
+          "correct": false,
+          "reason": "Beschaffenheit weicht von vereinbarter Soll-Eigenschaft ab."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "qualitaetsmangel",
+          "text": "Qualitaetsmangel",
+          "correct": true,
+          "reason": "Funktion ist grundsaetzlich vorhanden, die Qualitaet ist aber mangelhaft."
+        },
+        {
+          "id": "mengenmangel",
+          "text": "Mengenmangel",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Falsche Stueckzahl wurde geliefert."
+        },
+        {
+          "id": "quantitaetsmangel",
+          "text": "Quantitaetsmangel",
+          "correct": false,
+          "reason": "Vereinbarte quantitative Werte/Leistung werden nicht erreicht."
+        },
+        {
+          "id": "rechtsmangel",
+          "text": "Rechtsmangel",
+          "correct": false,
+          "reason": "Nutzungs- oder Verfuegungsrechte fehlen oder sind eingeschraenkt."
+        }
+      ]
+    },
+    {
+      "id": "it5",
+      "phase": "Fall it5",
+      "situation": "Die gelieferte Software darf laut Lizenz nicht auf virtuellen Clients betrieben werden.",
+      "imageUrl": "./_assets/damage-05.svg",
+      "options": [
+        {
+          "id": "sachmangel",
+          "text": "Sachmangel",
+          "correct": false,
+          "reason": "Beschaffenheit weicht von vereinbarter Soll-Eigenschaft ab."
+        },
+        {
+          "id": "qualitaetsmangel",
+          "text": "Qualitaetsmangel",
+          "correct": false,
+          "reason": "Lieferung funktioniert, aber Qualitaet/Leistung entspricht nicht der Anforderung."
+        },
+        {
+          "id": "mengenmangel",
+          "text": "Mengenmangel",
+          "correct": false,
+          "reason": "Falsche Stueckzahl wurde geliefert."
+        },
+        {
+          "id": "quantitaetsmangel",
+          "text": "Quantitaetsmangel",
+          "correct": false,
+          "reason": "Vereinbarte quantitative Werte/Leistung werden nicht erreicht."
+        },
+        {
+          "id": "rechtsmangel",
+          "text": "Rechtsmangel",
+          "correct": true,
+          "reason": "Es fehlen die notwendigen Nutzungsrechte fuer den vorgesehenen Einsatz."
         }
       ]
     }

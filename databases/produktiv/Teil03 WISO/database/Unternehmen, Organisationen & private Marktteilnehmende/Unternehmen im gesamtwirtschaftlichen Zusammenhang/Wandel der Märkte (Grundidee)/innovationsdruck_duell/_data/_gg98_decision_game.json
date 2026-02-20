@@ -3,7 +3,7 @@
     "topic": "Wandel der Maerkte",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wandel_der_maerkte",
+    "source": "_gg01_innovationsdruck_duell.json",
     "version": "1.0"
   },
   "title": "Wandel der Maerkte - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Strategie reagiert robuster auf hohen Innovationsdruck?\nSchnelle Lernzyklen plus Kundennutzen priorisieren.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Kurze Release-Zyklen und Kundennutzen fokussieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das erhoeht Anpassungsfaehigkeit."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur bestehendes Produkt unveraendert verteidigen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu starr bei dynamischem Markt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Entscheidungen auf unbestimmte Zeit vertagen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Verzoegerung verschlechtert Wettbewerbsposition."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was ist bei Innovationsdruck der erste Analysefokus?\nMarktbedarf vor internem Wunschprogramm.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Kundenproblem und Marktbedarf klar verifizieren",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das senkt Fehlentwicklungsrisiko."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur interne Ideenliste priorisieren",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Ohne Marktvalidierung riskant."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur auf Preisnachlass der Konkurrenz warten",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Reaktiv statt strategisch."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Kennzahl hilft bei Innovationsentscheidungen am meisten?\nLern- und Nutzeneffekt kombiniert.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Zeit bis validiertes Kundenfeedback",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Diese KPI beschleunigt Lernen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Anzahl unbearbeiteter Meetings",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Kein direkter Innovationsindikator."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Anzahl PowerPoint-Folien",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Keine robuste Innovationsmetrik."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wie vermeidest du teure Fehlinnovationen?\nKlein testen, schnell anpassen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prototypen frueh testen und iterativ verbessern",
+          "correct": true,
+          "reason": "Richtig. Das reduziert Streuverluste."
+        },
+        {
+          "id": "b",
+          "text": "Direkt Vollausbau ohne Zwischentest",
+          "correct": false,
+          "reason": "Hoher Blindflugfaktor."
+        },
+        {
+          "id": "c",
+          "text": "Entscheidung ausschliesslich nach Bauchgefuehl",
+          "correct": false,
+          "reason": "Nicht belastbar genug."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann gilt eine Innovationsstrategie als belastbar?\nWirkung ist messbar und wiederholbar.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Nutzen-, Lern- und Umsetzungstempo stabil sind",
+          "correct": true,
+          "reason": "Genau. Das zeigt robuste Strategie."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur die Praesentation ueberzeugt",
+          "correct": false,
+          "reason": "Optik ersetzt keine Wirkung."
+        },
+        {
+          "id": "c",
+          "text": "Wenn es nur eine Einmalidee war",
+          "correct": false,
+          "reason": "Keine nachhaltige Strategie."
         }
       ]
     }

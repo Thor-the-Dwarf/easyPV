@@ -1,86 +1,161 @@
 {
   "meta": {
-    "topic": "eskalations protokoll",
+    "topic": "Eskalations-Protokoll",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "eskalations_protokoll",
-    "version": "1.0"
+    "source": "_gg01abc1_eskalations_protokoll.json",
+    "version": "2.0"
   },
-  "title": "eskalations protokoll - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Eskalations-Protokoll",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Kunde lehnt Change Request CR-17 ab, Go-live ist betroffen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "18.03: Kunde lehnt CR-17 ab, Auswirkung +5 Tage, Entscheidungsgremium informiert, Angebot bis 20.03 durch Account.",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Eskalationen brauchen Datum, Entscheidung, Auswirkung und konkrete Folgeaktion."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Kunde war irgendwie unzufrieden, wir schauen spaeter.",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Eskalationen brauchen Datum, Entscheidung, Auswirkung und konkrete Folgeaktion."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Teamchat: Bitte alle cool bleiben.",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Eskalationen brauchen Datum, Entscheidung, Auswirkung und konkrete Folgeaktion."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Sicherheitsluecke im Login-Modul wurde als kritisch eingestuft.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "b",
+          "text": "19.03: CVSS 9.1 im Login, Risiko Datenabfluss, Hotfix bis 17:00 durch Backend, Freigabe durch Security Lead.",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Kritische Defekte muessen mit Risiko, Verantwortlichen und Frist dokumentiert werden."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "a",
+          "text": "Schwerer Bug im Login, alle wissen Bescheid.",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Kritische Defekte muessen mit Risiko, Verantwortlichen und Frist dokumentiert werden."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Bug wurde weitergeleitet, kein Termin.",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Kritische Defekte muessen mit Risiko, Verantwortlichen und Frist dokumentiert werden."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Abnahme blockiert wegen fehlender Testnachweise.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "b",
+          "text": "20.03: Abnahme gestoppt, Nachweis fuer Regression fehlt, QA liefert Report bis 14:00, neuer Abnahmetermin 21.03 10:00.",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Ein belastbares Protokoll beschreibt Blocker, Verantwortung und neuen Entscheidungszeitpunkt."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "a",
+          "text": "Abnahme faellt aus.",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Ein belastbares Protokoll beschreibt Blocker, Verantwortung und neuen Entscheidungszeitpunkt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Vermutlich klappt es morgen.",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Ein belastbares Protokoll beschreibt Blocker, Verantwortung und neuen Entscheidungszeitpunkt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Budget fuer Zusatzlizenz wurde nicht freigegeben.",
+      "options": [
+        {
+          "id": "b",
+          "text": "21.03: CFO lehnt Zusatzlizenz ab, Risiko Verzug in Migration, Alternative Open-Source-Paket bis 22.03 pruefen, Entscheidung im Steering Board.",
+          "correct": true,
+          "reason": "Bei Budgeteskalationen sind Entscheidungstraeger, Risiko und naechster Schritt Pflicht."
+        },
+        {
+          "id": "a",
+          "text": "Budgetproblem ohne weitere Details.",
+          "correct": false,
+          "reason": "Bei Budgeteskalationen sind Entscheidungstraeger, Risiko und naechster Schritt Pflicht."
+        },
+        {
+          "id": "c",
+          "text": "Lizenz erstmal ignorieren.",
+          "correct": false,
+          "reason": "Bei Budgeteskalationen sind Entscheidungstraeger, Risiko und naechster Schritt Pflicht."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Lieferant verpasst den vereinbarten Integrationsslot.",
+      "options": [
+        {
+          "id": "a",
+          "text": "22.03: Lieferant ohne Lieferung, Integrationsslot verpasst, Vertragspartner schriftlich gemahnt, neuer Slot 24.03 09:00 bestaetigt.",
+          "correct": true,
+          "reason": "Verbindliche Eskalationsprotokolle sichern externe Abweichungen mit Fakten und Termin nach."
+        },
+        {
+          "id": "b",
+          "text": "Lieferant war wieder spaet.",
+          "correct": false,
+          "reason": "Verbindliche Eskalationsprotokolle sichern externe Abweichungen mit Fakten und Termin nach."
+        },
+        {
+          "id": "c",
+          "text": "Vielleicht kommt die Datei irgendwann.",
+          "correct": false,
+          "reason": "Verbindliche Eskalationsprotokolle sichern externe Abweichungen mit Fakten und Termin nach."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Go-live wird wegen Datenqualitaet verschoben.",
+      "options": [
+        {
+          "id": "b",
+          "text": "23.03: 12% Datensaetze fehlerhaft, Go-live auf 26.03 verschoben, Data-Cleansing durch BI-Team bis 25.03, Freigabe durch Projektleitung und Kunde.",
+          "correct": true,
+          "reason": "Rechtssichere Eintraege halten Ursache, neue Entscheidung und Freigabeinstanz fest."
+        },
+        {
+          "id": "a",
+          "text": "Go-live doch nicht heute.",
+          "correct": false,
+          "reason": "Rechtssichere Eintraege halten Ursache, neue Entscheidung und Freigabeinstanz fest."
+        },
+        {
+          "id": "c",
+          "text": "Mehr Qualitaet waere schoen.",
+          "correct": false,
+          "reason": "Rechtssichere Eintraege halten Ursache, neue Entscheidung und Freigabeinstanz fest."
         }
       ]
     }

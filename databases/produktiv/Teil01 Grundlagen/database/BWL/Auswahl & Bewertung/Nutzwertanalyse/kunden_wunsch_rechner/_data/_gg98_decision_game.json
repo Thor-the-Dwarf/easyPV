@@ -1,86 +1,136 @@
 {
   "meta": {
-    "topic": "kunden wunsch rechner",
+    "topic": "Kunden-Wunsch-Rechner",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kunden_wunsch_rechner",
-    "version": "1.0"
+    "source": "_gg01_kunden_wunsch_rechner.json",
+    "version": "2.0"
   },
-  "title": "kunden wunsch rechner - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Kunden-Wunsch-Rechner",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Preis ist mir extrem wichtig, Marke ist mir egal. Qualitaet soll solide sein.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "r1",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Ich will vor allem hohe Qualitaet. Preis ist zweitrangig, Marke egal.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "r2",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Ich brauche eine starke Marke fuer den Auftritt. Preis ist nicht so wichtig.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "r3",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Preis und Qualitaet sind beide wichtig. Marke ist eher unwichtig.",
+      "options": [
+        {
+          "id": "a",
+          "text": "r4",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Mir ist ein ausgewogenes Profil wichtig. Nichts soll ueberdominieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "r5",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

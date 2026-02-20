@@ -3,84 +3,134 @@
     "topic": "Kautions-Manager",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kautions_manager",
+    "source": "_gg01_kautions_manager.json",
     "version": "1.0"
   },
   "title": "Kautions-Manager - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "subtitle": "Abzuege aus der Kaution nachvollziehbar bewerten",
   "rounds": [
     {
-      "id": 1,
+      "id": "KM-1",
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Normale Abnutzung der Wandfarbe liegt vor. Ist ein Kautionsabzug berechtigt?\nNormale Gebrauchsspuren sind ein zentraler Pruefpunkt.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Nein, normale Abnutzung rechtfertigt keinen Abzug",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Normale Abnutzung ist kein Schadenersatzfall."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Ja, jede sichtbare Nutzung muss abgezogen werden",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt. Gebrauchsspuren sind mit der Miete abgegolten."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur wenn keine Kautionssumme offen bleibt",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt. Entscheidend ist die Ursache, nicht die Resthoehe."
         }
       ]
     },
     {
-      "id": 2,
+      "id": "KM-2",
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Eine Fensterscheibe wurde mutwillig beschaedigt. Welche Entscheidung passt?\nSachbeschaedigung kann als begruendeter Anspruch gelten.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
-          "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "text": "Vollstaendig ignorieren, weil Kaution unantastbar ist",
+          "correct": false,
+          "reason": "Nicht korrekt. Belegbare Schaeden koennen verrechnet werden."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
-          "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "text": "Belegten Reparaturbetrag als Abzug pruefen",
+          "correct": true,
+          "reason": "Richtig. Nachweisbare Schadenskosten sind relevant."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Pauschal 50 Prozent der Kaution einbehalten",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt. Pauschalabzuege ohne Bezug sind unzulaessig."
         }
       ]
     },
     {
-      "id": 3,
+      "id": "KM-3",
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Es liegt nur eine pauschale Schadensliste ohne Rechnungen vor. Was ist richtig?\nNachvollziehbarkeit und Belege sind entscheidend.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
-          "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "text": "Abzug voll akzeptieren, Liste reicht immer aus",
+          "correct": false,
+          "reason": "Nicht korrekt. Ohne Belege fehlt die Nachvollziehbarkeit."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
-          "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "text": "Abzug nur bei nachvollziehbaren Nachweisen akzeptieren",
+          "correct": true,
+          "reason": "Richtig. Nachweise sichern die Begruendung."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Immer den halben Betrag akzeptieren",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt. Pauschale Quoten ersetzen keine Pruefung."
+        }
+      ]
+    },
+    {
+      "id": "KM-4",
+      "phase": "Runde 4",
+      "situation": "Bei Auszug fehlen zwei Schluessel, Austausch der Schliessanlage ist dokumentiert. Wie entscheiden?\nKonkreter Nachweis und Kausalitaet sind wichtig.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kein Abzug moeglich, Schluessel sind Nebensache",
+          "correct": false,
+          "reason": "Nicht korrekt. Nachweisbare Sicherheitskosten koennen relevant sein."
+        },
+        {
+          "id": "b",
+          "text": "Belegten Kostenanteil aus der Kaution abziehen",
+          "correct": true,
+          "reason": "Richtig. Dokumentierte Folgekosten sind pruefbar."
+        },
+        {
+          "id": "c",
+          "text": "Immer gesamte Kaution einbehalten",
+          "correct": false,
+          "reason": "Nicht korrekt. Verhaeltnismaessigkeit bleibt Pflicht."
+        }
+      ]
+    },
+    {
+      "id": "KM-5",
+      "phase": "Runde 5",
+      "situation": "Der Vermieter nennt keine Endabrechnung trotz mehrfacher Nachfrage. Was passt?\nTransparenz der Endabrechnung ist ein Kernkriterium.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rueckzahlung ohne unbelegte Abzuege priorisieren",
+          "correct": true,
+          "reason": "Richtig. Ohne tragfaehige Abrechnung fehlt die Grundlage fuer Abzuege."
+        },
+        {
+          "id": "b",
+          "text": "Kaution unbefristet einbehalten",
+          "correct": false,
+          "reason": "Nicht korrekt. Unbegruendete Zurueckhaltung ist nicht tragfaehig."
+        },
+        {
+          "id": "c",
+          "text": "Jaehrlich neu pruefen und nichts dokumentieren",
+          "correct": false,
+          "reason": "Nicht korrekt. Dokumentation und klare Fristen sind erforderlich."
         }
       ]
     }

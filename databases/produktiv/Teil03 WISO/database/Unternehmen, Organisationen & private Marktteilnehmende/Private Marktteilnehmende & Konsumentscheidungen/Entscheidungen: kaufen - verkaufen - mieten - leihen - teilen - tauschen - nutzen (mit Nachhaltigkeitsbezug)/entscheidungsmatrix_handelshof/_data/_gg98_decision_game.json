@@ -3,7 +3,7 @@
     "topic": "Konsumoptionen",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "konsumoptionen",
+    "source": "_gg01_entscheidungsmatrix_handelshof.json",
     "version": "1.0"
   },
   "title": "Konsumoptionen - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Markttag 1: Laptop fuer 6 Monate Projektarbeit. Welche Option passt am besten?\nBegrenzte Nutzungsdauer spricht oft gegen Besitz.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Mieten",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Fuer kurze Projektphasen ist Mieten oft konsistent."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Neu kaufen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht optimal. Bindet Kapital ueber die Projektzeit hinaus."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Sofort verkaufen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht passend. Es fehlt die Nutzung."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Markttag 2: Werkzeug wird nur quartalsweise gebraucht. Matrix-Entscheidung?\nNiedrige Frequenz bevorzugt geteilte Nutzung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Leihen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Seltene Nutzung spricht fuer Leihen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Kaufen und lagern",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht optimal bei geringer Nutzungsintensitaet."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Doppelt kaufen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Inkonsistent und teuer."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Markttag 3: Fahrrad taeglich, langfristig. Was ist konsistent?\nHohe und dauerhafte Nutzung veraendert die Matrix.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Kaufen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Bei hoher Langzeitnutzung ist Kauf oft effizient."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Jede Woche neu mieten",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht konsistent. Laufende Kosten steigen unnötig."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Gar nicht nutzen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht passend zum Nutzungsziel."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Markttag 4: Kamera fuer ein Event-Team, monatlich wechselnder Bedarf.\nFlexibilitaet ist hier zentral.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Teilen",
+          "correct": true,
+          "reason": "Richtig. Sharing passt zu schwankender Auslastung."
+        },
+        {
+          "id": "b",
+          "text": "Luxusmodell kaufen",
+          "correct": false,
+          "reason": "Nicht optimal. Risiko von Unterauslastung."
+        },
+        {
+          "id": "c",
+          "text": "Ungepruefte Spontankaeufe",
+          "correct": false,
+          "reason": "Verletzt die Matrixlogik."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Regel sichert Strategiekonsistenz ueber alle Markttage?\nDie Matrix verlangt gleiche Bewertungslogik je Fall.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nutzungsdauer + Intensitaet immer mitbewerten",
+          "correct": true,
+          "reason": "Genau. Das stabilisiert die Gesamtstrategie."
+        },
+        {
+          "id": "b",
+          "text": "Nur auf Aktionspreise schauen",
+          "correct": false,
+          "reason": "Zu kurz gedacht und inkonsistent."
+        },
+        {
+          "id": "c",
+          "text": "Entscheidungen zufaellig treffen",
+          "correct": false,
+          "reason": "Keine Matrixlogik."
         }
       ]
     }

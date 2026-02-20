@@ -3,7 +3,7 @@
     "topic": "Standortwettbewerb",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "standortwettbewerb",
+    "source": "_gg01_verlagerungsszenario_simulator.json",
     "version": "1.0"
   },
   "title": "Standortwettbewerb - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Ein Werk soll verlagert werden. Welche Pruefung zuerst?\nStart mit Risiko und Lieferfaehigkeit.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Risiko- und Lieferanalyse vor Kostenvergleich",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Erst Stabilitaet, dann Feintuning."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Lohnkosten vergleichen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu kurz gedacht."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Entscheidung ohne Daten",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht belastbar."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche KPI zeigt Verlagerungsstabilitaet direkt?\nSuche eine robuste Prozess-KPI.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Ausschussquote + Termintreue",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Qualitaet und Liefertreue sind zentral."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Bueroauslastung",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht entscheidend."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur Strompreis",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Zu eng."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Lieferkette wird laenger. Was ist die beste Gegenmassnahme?\nDenke an Puffer und Redundanz.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Sicherheitsbestand und Zweitlieferant aufbauen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das senkt Ausfallrisiken."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Puffer komplett streichen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Erhoeht Risiko."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Marketingbudget erhoehen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Kein direkter Hebel."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gilt eine Verlagerung als instabil?\nAchte auf wiederholte KPI-Verletzung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei wiederholter KPI-Unterschreitung in Folge",
+          "correct": true,
+          "reason": "Richtig. Instabilitaet ist trendbasiert."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein Meeting ausfaellt",
+          "correct": false,
+          "reason": "Nicht relevant genug."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ein Team rotiert",
+          "correct": false,
+          "reason": "Allein kein Kriterium."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Reihenfolge ist strategisch sinnvoll?\nRisikosteuerung vor Skalierung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pilotphase -> KPI-Review -> Skalierung",
+          "correct": true,
+          "reason": "Richtig. So bleibt das Risiko kontrollierbar."
+        },
+        {
+          "id": "b",
+          "text": "Sofort volle Verlagerung",
+          "correct": false,
+          "reason": "Zu riskant."
+        },
+        {
+          "id": "c",
+          "text": "Nur Kostenreport senden",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Bei steigender Reklamationsquote sollte man...\nUrsache zuerst isolieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prozessschritt mit hoechster Fehlerdichte stabilisieren",
+          "correct": true,
+          "reason": "Richtig. Fokus auf den Engpass."
+        },
+        {
+          "id": "b",
+          "text": "Nur mehr Werbung schalten",
+          "correct": false,
+          "reason": "Keine Ursachenbehebung."
+        },
+        {
+          "id": "c",
+          "text": "KPI-Erhebung stoppen",
+          "correct": false,
+          "reason": "Transparenzverlust."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Welche Entscheidung reduziert Umstellungsrisiko?\nStufenmodell bevorzugen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Verlagerung in klaren Stufen mit Meilensteinen",
+          "correct": true,
+          "reason": "Richtig. Kontrollpunkte minimieren Fehlsteuerung."
+        },
+        {
+          "id": "b",
+          "text": "Alle Standorte gleichzeitig umstellen",
+          "correct": false,
+          "reason": "Hoechstes Risiko."
+        },
+        {
+          "id": "c",
+          "text": "Nur Personal verschieben",
+          "correct": false,
+          "reason": "Unvollstaendig."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Wann gibt es im Plan Zusatzabzug?\nRisiken ignorieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn hohe Risiken ohne Gegenmassnahme akzeptiert werden",
+          "correct": true,
+          "reason": "Richtig. Das verletzt die Grundregel."
+        },
+        {
+          "id": "b",
+          "text": "Wenn KPI dokumentiert wird",
+          "correct": false,
+          "reason": "Das ist positiv."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Pilotphase laeuft",
+          "correct": false,
+          "reason": "Kein Abzug."
         }
       ]
     }

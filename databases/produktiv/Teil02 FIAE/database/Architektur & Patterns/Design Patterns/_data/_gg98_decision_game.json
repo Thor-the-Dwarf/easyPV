@@ -3,84 +3,209 @@
     "topic": "Design Patterns",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "design_patterns",
-    "version": "1.0"
+    "source": "_gg01_pattern_categorizer.json",
+    "version": "2.0"
   },
-  "title": "Design Patterns - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Design Patterns",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Pattern zuordnen: Singleton",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Singleton",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Ensures a class has only one instance."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Pattern zuordnen: Factory Method",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Factory Method",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Delegates instantiation to subclasses."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Pattern zuordnen: Abstract Factory",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Abstract Factory",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Creates families of related objects."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Pattern zuordnen: Builder",
+      "options": [
+        {
+          "id": "a",
+          "text": "Builder",
+          "correct": true,
+          "reason": "Constructs complex objects step by step."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Pattern zuordnen: Prototype",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prototype",
+          "correct": true,
+          "reason": "Clones existing objects."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Pattern zuordnen: Adapter",
+      "options": [
+        {
+          "id": "a",
+          "text": "Adapter",
+          "correct": true,
+          "reason": "Allows incompatible interfaces to work together."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Pattern zuordnen: Bridge",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bridge",
+          "correct": true,
+          "reason": "Separates abstraction from implementation."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Pattern zuordnen: Composite",
+      "options": [
+        {
+          "id": "a",
+          "text": "Composite",
+          "correct": true,
+          "reason": "Tree structures of objects."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

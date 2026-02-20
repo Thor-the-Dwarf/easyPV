@@ -3,7 +3,7 @@
     "topic": "Unternehmensaufbau",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "unternehmensaufbau",
+    "source": "_gg01_zielhierarchie_duell.json",
     "version": "1.0"
   },
   "title": "Unternehmensaufbau - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Reihenfolge ist in einer Zielhierarchie typisch?\nVon allgemein zu konkret.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Leitziel -> Bereichsziel -> Operatives Ziel",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. So wird heruntergebrochen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Operatives Ziel -> Leitziel -> Bereichsziel",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Unlogisch aufgebaut."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur operative Einzelziele ohne Bezug",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Hierarchie fehlt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann ist ein Zielsystem widerspruechlich?\nTeilziele konterkarieren Leitziel.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn Bereichsziele dem Leitziel entgegenlaufen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Dann fehlt Zielkonsistenz."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Wenn operative Ziele messbar sind",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das ist positiv."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Wenn Prioritaeten benannt sind",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Auch positiv."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was ist ein gutes operatives Ziel?\nKonkret und messbar.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Zeitlich terminiert, messbar und verantwortet",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. So wird Steuerung moeglich."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Vage und ohne Kennzahl",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu unscharf."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Ohne Bezug zu Bereichszielen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI passt im Duell zur Wahlgenauigkeit?\nVergleich gegen Referenzloesung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Anteil korrekter Siegerentscheidungen pro Duel",
+          "correct": true,
+          "reason": "Richtig. Das misst Entscheidungstreffer."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl gespielter Duelle",
+          "correct": false,
+          "reason": "Ohne Qualitaet unzureichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Klicktempo",
+          "correct": false,
+          "reason": "Nicht genug."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Begruendung erhoeht die Punktzahl im Duell?\nLogik zwischen Ebenen benennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aufzeigen, wie operative Ziele das Leitziel stuetzen",
+          "correct": true,
+          "reason": "Richtig. Das zeigt Hierarchieverstaendnis."
+        },
+        {
+          "id": "b",
+          "text": "Nur subjektive Vorliebe nennen",
+          "correct": false,
+          "reason": "Nicht belastbar."
+        },
+        {
+          "id": "c",
+          "text": "Vollstaendig ohne Argument entscheiden",
+          "correct": false,
+          "reason": "Teilpunkte oder Abzug."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Wann bekommt man nur Teilpunkte?\nRichtige Wahl, schwache Begruendung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn der Gewinner stimmt, die Begruendung aber fehlt",
+          "correct": true,
+          "reason": "Richtig. Regel aus dem GamePlan."
+        },
+        {
+          "id": "b",
+          "text": "Wenn alles korrekt und begruendet ist",
+          "correct": false,
+          "reason": "Dann volle Punkte."
+        },
+        {
+          "id": "c",
+          "text": "Wenn die Wahl falsch ist",
+          "correct": false,
+          "reason": "Dann Abzug."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Warum ist Zielhierarchie fuer Unternehmen relevant?\nAusrichtung und Steuerbarkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sie verbindet Strategie mit konkreten Aufgaben",
+          "correct": true,
+          "reason": "Richtig. So wird Strategie umsetzbar."
+        },
+        {
+          "id": "b",
+          "text": "Sie ersetzt jede Ressourcenplanung",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Sie macht Kommunikation unnoetig",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was trainiert das Zielhierarchie-Duell?\nVergleichende Bewertung von Zielsystemen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Logik, Konsistenz und Begruendung von Zielsystemen",
+          "correct": true,
+          "reason": "Richtig. Genau das steht im Fokus."
+        },
+        {
+          "id": "b",
+          "text": "Nur Geschwindigkeit ohne Inhalt",
+          "correct": false,
+          "reason": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Messung ausblenden",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

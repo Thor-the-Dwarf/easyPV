@@ -3,84 +3,84 @@
     "topic": "SQL SELECT (Projection)",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "sql_select_projection",
-    "version": "1.0"
+    "source": "_gg01_column_sieve.json",
+    "version": "2.0"
   },
-  "title": "SQL SELECT (Projection) - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "SELECT",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Contact List Lite",
+      "situation": "Contact List Lite We need to send a newsletter. Retrieve only 'username' and 'email' from the User table.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "username",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "id",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "email",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Product Catalog Speedup",
+      "situation": "Product Catalog Speedup Display the product catalog. We need 'prod_name', 'price', and 'stock'. Avoid the heavy description and image data!",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "prod_name",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "prod_id",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "price",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Clean Log Review",
+      "situation": "Clean Log Review Review system errors. We only need the 'error_code', 'message', and 'timestamp'. Filter out the heavy 'stack_trace' and 'environment_dump'.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "error_code",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "log_id",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "timestamp",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

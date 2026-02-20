@@ -3,7 +3,7 @@
     "topic": "Arbeitsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitsschutz",
+    "source": "_gg01_schutzmassnahmen_match.json",
     "version": "1.0"
   },
   "title": "Arbeitsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Offene Quetschstelle an Maschine: passende Schutzmassnahme?\nDenke zuerst an technische Massnahmen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Technische Abschirmung nachruesten",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das adressiert die Gefahr direkt an der Quelle."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Hinweiszettel aufhaengen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht ausreichend."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Massnahme verschieben",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Regel gilt fuer Hochrisiko-Faelle bei falschem Match?\nEs gibt einen doppelten Abzug.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Doppelter Punktabzug",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Hochrisiko-Fehlzuordnungen werden strenger bewertet."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Kein Abzug",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Automatisch Bonus",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Ab welcher Genauigkeit steigt laut Plan die Schwierigkeit?\nGenannt ist ein Schwellenwert.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "ab 80 Prozent",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Dann wird automatisch anspruchsvoller."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "ab 20 Prozent",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu niedrig."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "erst ab 100 Prozent",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Zu spaet."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Zusatzmetrik wird neben Genauigkeit betrachtet?\nEs geht um Zeit je Antwort.",
+      "options": [
+        {
+          "id": "a",
+          "text": "mittlere Antwortzeit",
+          "correct": true,
+          "reason": "Richtig. Die KPI kombiniert Qualitaet und Tempo."
+        },
+        {
+          "id": "b",
+          "text": "Monitorhelligkeit",
+          "correct": false,
+          "reason": "Nicht relevant."
+        },
+        {
+          "id": "c",
+          "text": "Mauswege",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was macht gutes Feedback im Match laut Plan aus?\nNicht nur richtig/falsch, sondern Begruendung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Es erklaert, warum die Massnahme passt oder nicht",
+          "correct": true,
+          "reason": "Richtig. Das verbessert Lerntransfer."
+        },
+        {
+          "id": "b",
+          "text": "Nur Farbe anzeigen",
+          "correct": false,
+          "reason": "Zu wenig Information."
+        },
+        {
+          "id": "c",
+          "text": "Keine Rueckmeldung",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

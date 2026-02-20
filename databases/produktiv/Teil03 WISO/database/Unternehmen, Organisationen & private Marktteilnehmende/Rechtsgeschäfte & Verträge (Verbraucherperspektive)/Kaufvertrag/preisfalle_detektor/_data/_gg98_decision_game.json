@@ -3,7 +3,7 @@
     "topic": "Kaufvertrag",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kaufvertrag",
+    "source": "_gg01_preisfalle_detektor.json",
     "version": "1.0"
   },
   "title": "Kaufvertrag - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Wie erkennst du die Preisfalle am sichersten?\nEndpreis inkl. Zusatzkosten vergleichen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Gesamtkosten aller Angebote inkl. Pflichtzusatzkosten vergleichen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Nur so wird die Falle sichtbar."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Basispreis vergleichen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Versteckte Kosten fehlen."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Rabattprozente ansehen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht ausreichend."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann droht Zusatzabzug?\nPflichtkosten uebersehen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn verpflichtende Kostenfaktoren nicht erkannt werden",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das kostet Zusatzpunkte."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Wenn Kostenfaktoren markiert werden",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das ist gewuenscht."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Wenn Vergleichstabelle geoeffnet wird",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Kein Abzug."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI sollen sichtbar sein?\nWahlleistung + Faktorenleistung.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Endpreis-Treffsicherheit und Kostenfaktor-Erkennung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das entspricht dem Plan."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Sessiondauer",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu wenig fachlich."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Anzahl Karten",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Keine Qualitaetsaussage."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann steigt der Multiplikator?\nSerie korrekter Karten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei einer Serie mehrerer korrekter Karten ohne Fehlfaktor",
+          "correct": true,
+          "reason": "Richtig. Dann wird multipliziert."
+        },
+        {
+          "id": "b",
+          "text": "Bei beliebigen Fehlern",
+          "correct": false,
+          "reason": "Kein Bonus."
+        },
+        {
+          "id": "c",
+          "text": "Nach Neustart",
+          "correct": false,
+          "reason": "Nicht regelbasiert."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist eine Karte voll erfolgreich?\nBestes Angebot + Kostenfaktoren korrekt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn bestes Angebot und relevante Kostenfaktoren korrekt bestimmt sind",
+          "correct": true,
+          "reason": "Exakt. Das ist Zielerreichung."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur das teuerste Angebot erkannt wird",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Wenn zufaellig gewaehlt wird",
+          "correct": false,
+          "reason": "Keine valide Leistung."
         }
       ]
     }

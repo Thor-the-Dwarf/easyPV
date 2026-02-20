@@ -3,7 +3,7 @@
     "topic": "Verbraucherschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "verbraucherschutz",
+    "source": "_gg01_siegel_check.json",
     "version": "1.0"
   },
   "title": "Verbraucherschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Angebot ohne Anbieteradresse und ohne Impressum. Bewertung?\nFehlende Pflichtangaben sind starke Red-Flags.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Misstrauisch bewerten und Red-Flag setzen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Fehlende Pflichtinfos wiegen schwer."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Als voll vertrauenswuerdig einstufen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur auf Logo schauen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht ausreichend."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Kennzahl beschreibt Red-Flag-Leistung?\nGesucht ist die Trefferquote auf Warnsignale.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Red-Flag-Trefferquote",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Diese KPI misst die Erkennungsleistung."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Scroll-Geschwindigkeit",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Fenstergroesse",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was hat laut Regeln hoehere Gewichtung?\nVergleiche Labels mit Pflichtangaben.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Fehlende Pflichtangaben",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Diese sind gewichtiger als unklare Labels."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Farbschema der Seite",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht relevant."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Anzahl Emojis",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht relevant."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann entsteht Serienbonus?\nEs gibt einen Bonus fuer aufeinanderfolgende Treffer.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei 3 korrekt erkannten Flags in Folge",
+          "correct": true,
+          "reason": "Genau. Dann wird der Serienbonus aktiv."
+        },
+        {
+          "id": "b",
+          "text": "Bei 3 zufaelligen Klicks",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Bei einem einzigen Treffer",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Kombination zeigt solide Entscheidung?\nVertrauensurteil und Flag-Erkennung gemeinsam betrachten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrektes Urteil plus korrekte Flags",
+          "correct": true,
+          "reason": "Richtig. Beide Teile muessen stimmen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Bauchgefuehl",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur Preis als Kriterium",
+          "correct": false,
+          "reason": "Zu kurz gegriffen."
         }
       ]
     }

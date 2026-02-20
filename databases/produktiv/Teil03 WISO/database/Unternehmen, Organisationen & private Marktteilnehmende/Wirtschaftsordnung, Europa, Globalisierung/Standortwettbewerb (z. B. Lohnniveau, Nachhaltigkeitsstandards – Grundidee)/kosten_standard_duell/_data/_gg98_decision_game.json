@@ -3,7 +3,7 @@
     "topic": "Standortwettbewerb",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "standortwettbewerb",
+    "source": "_gg01_kosten_standard_duell.json",
     "version": "1.0"
   },
   "title": "Standortwettbewerb - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was vergleicht das Duell zuerst?\nKosten und Standards gemeinsam.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Gesamtkosten und Mindeststandard parallel",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Beides ist Pflicht."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur billigsten Standort",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Unvollstaendig."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Zertifikate ohne Kosten",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Unvollstaendig."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Entscheidung ist regelkonform?\nStandard darf nicht unterschritten werden.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Etwas teurer, aber Standard sicher erfuellt",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Regel priorisiert Mindeststandard."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Billiger trotz Standardluecke",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Regelverstoss."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine Entscheidung treffen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Keine Punkte."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann gibt es Zusatzabzug?\nBei ignorierten Hochrisiken.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn Risikoindikator rot ist und ignoriert wird",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das triggert Strafpunkte."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn Daten geprueft werden",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das ist positiv."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn KPI angezeigt wird",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Kein Abzug."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI passt zum Duell am besten?\nBalancierte Bewertung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kosten-Standard-Index",
+          "correct": true,
+          "reason": "Richtig. Kernmetrik des Spiels."
+        },
+        {
+          "id": "b",
+          "text": "Nur Klickzahl",
+          "correct": false,
+          "reason": "Nicht relevant."
+        },
+        {
+          "id": "c",
+          "text": "Nur Ladezeit",
+          "correct": false,
+          "reason": "Nicht inhaltlich."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wie verbessert man den Index nachhaltig?\nProzess statt Einmalmassnahme.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Standard sichern und Kosten ueber Effizienz senken",
+          "correct": true,
+          "reason": "Richtig. Nachhaltiger Hebel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Preis druecken",
+          "correct": false,
+          "reason": "Risikoreich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Reporting erweitern",
+          "correct": false,
+          "reason": "Zu indirekt."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Welche Entscheidung zeigt Priorisierungskompetenz?\nTrade-off transparent machen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Option mit bester Gesamtwirkung waehlen und begruenden",
+          "correct": true,
+          "reason": "Richtig. Begruendung ist Teil der Aufgabe."
+        },
+        {
+          "id": "b",
+          "text": "Beliebig entscheiden",
+          "correct": false,
+          "reason": "Keine Systematik."
+        },
+        {
+          "id": "c",
+          "text": "Nur Intuition nutzen",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Was zeigt eine sinkende Risikoquote?\nStabilisierung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Standortentscheidung wird belastbarer",
+          "correct": true,
+          "reason": "Richtig. Risiko sinkt bei stabileren Optionen."
+        },
+        {
+          "id": "b",
+          "text": "Datenfehler steigt",
+          "correct": false,
+          "reason": "Nicht zwingend."
+        },
+        {
+          "id": "c",
+          "text": "Punkte muessen sinken",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Wann ist die Runde optimal geloest?\nZielkorridor + saubere Entscheidung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korridor erreicht und keine Regel verletzt",
+          "correct": true,
+          "reason": "Richtig. Das ergibt Maximalwirkung."
+        },
+        {
+          "id": "b",
+          "text": "Nur schnell antworten",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur eine Teilkpi treffen",
+          "correct": false,
+          "reason": "Nicht komplett."
         }
       ]
     }

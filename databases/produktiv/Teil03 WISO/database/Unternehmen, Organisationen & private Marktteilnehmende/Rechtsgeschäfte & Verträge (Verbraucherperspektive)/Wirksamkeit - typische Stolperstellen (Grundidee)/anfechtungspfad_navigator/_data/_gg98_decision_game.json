@@ -3,7 +3,7 @@
     "topic": "Wirksamkeit - typische Stolperstellen",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wirksamkeit_typische_stolperstellen",
+    "source": "_gg01_anfechtungspfad_navigator.json",
     "version": "1.0"
   },
   "title": "Wirksamkeit - typische Stolperstellen - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was ist bei einem moeglichen Anfechtungsfall der erste Pruefschritt?\nSachverhalt und Ausloeser sauber erfassen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Sachverhalt und moeglichen Irrtumstyp zuerst klaeren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Der Startpunkt muss eindeutig sein."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Direkt Endentscheidung ohne Pruefung treffen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ohne Pruefpfad zu frueh."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Fall sofort ignorieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Fuehrt zu Prozessfehlern."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Reihenfolge ist im Navigator robust?\nPruefen -> bewerten -> reagieren.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Tatbestand pruefen, Frist bewerten, Reaktion ableiten",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau der korrekte Ablauf."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Reaktion zuerst, Pruefung spaeter",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Reihenfolge ist fehlerhaft."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur eine Teilpruefung ausfuehren",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht ausreichend."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann entsteht Zusatzabzug laut Regelwerk?\nFalscher Erstschritt.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn der erste Pflichtschritt falsch gesetzt wird",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das wirkt sich stark aus."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn die Schritte dokumentiert werden",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Dokumentation ist korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn Feedback angezeigt wird",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Feedback ist vorgesehen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI bilden den Lernfortschritt?\nGenauigkeit plus Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reihenfolgegenauigkeit und Schritte bis Abschluss",
+          "correct": true,
+          "reason": "Exakt die Ziel-KPI."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl geoeffneter Faelle",
+          "correct": false,
+          "reason": "Zu oberflaechlich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtdauer",
+          "correct": false,
+          "reason": "Ohne Korrektheit unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist ein Fall abgeschlossen?\nPruefpfad vollstaendig und korrekt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn die korrekte Kette bis zur Reaktion durchlaufen wurde",
+          "correct": true,
+          "reason": "Richtig. Dann ist der Fall sauber abgeschlossen."
+        },
+        {
+          "id": "b",
+          "text": "Sobald ein Schritt ausgewaehlt wurde",
+          "correct": false,
+          "reason": "Noch kein Abschluss."
+        },
+        {
+          "id": "c",
+          "text": "Wenn die Runde abgebrochen wird",
+          "correct": false,
+          "reason": "Abbruch ist kein Erfolg."
         }
       ]
     }

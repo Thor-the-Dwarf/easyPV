@@ -3,7 +3,7 @@
     "topic": "Beduerfnisse, Bedarf, Kaufkraft",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "beduerfnisse_bedarf_kaufkraft",
+    "source": "_gg01_kaufkraft_kompass.json",
     "version": "1.0"
   },
   "title": "Beduerfnisse, Bedarf, Kaufkraft - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Monat 1: Einkommen 1500 EUR. Welche Option deckt Grundbedarf bei vertretbaren Kosten?\nAchte auf Bedarfsdeckung vor Zusatzwuenschen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Warenkorb A: Miete, Nahrung, Mobilitaet, kein Luxus",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Solide Grundabdeckung."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Warenkorb B: Guenstige Miete, wenig Nahrung, Premium-Abo",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt. Grundbedarf ist unterdeckt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Warenkorb C: Viele Extras, zu hohe Gesamtkosten",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt. Kaufkraft wird ueberschritten."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Inflation +8%, Einkommen unveraendert. Welche Folge ist korrekt?\nKaufkraft veraendert sich real.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Gleiches Einkommen deckt weniger Menge/Qualitaet",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Das ist sinkende Kaufkraft."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Kaufkraft steigt automatisch",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt. Das Gegenteil ist der Fall."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Inflation betrifft nur Luxus",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt. Auch Grundbedarf verteuert sich."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Entscheidung stabilisiert Kaufkraft am ehesten?\nPreis/Leistung + Notwendigkeit kombinieren.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Bedarf priorisieren und substituierbare Produkte wechseln",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Damit bleibt Mindestniveau erhalten."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Markenprodukte trotz Preisaufschlag",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt. Das erhoeht Druck auf das Budget."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Monatliche Fixkosten ignorieren",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt. Fixkosten sind zentral."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Woran erkennst du Unterdeckung kritischer Needs?\nKritische Needs duerfen nicht fehlen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Nahrung/Wohnen/Grundversorgung nicht voll gedeckt sind",
+          "correct": true,
+          "reason": "Richtig. Das ist eine kritische Unterdeckung."
+        },
+        {
+          "id": "b",
+          "text": "Wenn kein Bonusprodukt enthalten ist",
+          "correct": false,
+          "reason": "Nicht korrekt. Bonusprodukt ist nicht kritisch."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Nachhaltigkeitslabel fehlt",
+          "correct": false,
+          "reason": "Nicht korrekt. Wichtig, aber nicht automatisch Grundbedarf."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was ist die beste Kurzdiagnose bei sinkender Kaufkraft?\nVergleiche Preisniveau und reales Budget.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mehr Anteil des Einkommens geht in Pflichtausgaben",
+          "correct": true,
+          "reason": "Genau. Das ist das zentrale Signal."
+        },
+        {
+          "id": "b",
+          "text": "Es bleibt automatisch gleich viel frei",
+          "correct": false,
+          "reason": "Nicht korrekt. Frei verfuegbares Budget sinkt meist."
+        },
+        {
+          "id": "c",
+          "text": "Kaufkraft ist von Preisen unabhaengig",
+          "correct": false,
+          "reason": "Nicht korrekt. Preise sind ein Kernfaktor."
         }
       ]
     }

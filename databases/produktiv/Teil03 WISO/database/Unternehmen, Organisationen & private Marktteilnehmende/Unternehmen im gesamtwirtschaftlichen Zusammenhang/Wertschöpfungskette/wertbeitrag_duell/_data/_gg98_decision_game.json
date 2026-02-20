@@ -3,7 +3,7 @@
     "topic": "Wertschoepfungskette",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wertschoepfungskette",
+    "source": "_gg01_wertbeitrag_duell.json",
     "version": "1.0"
   },
   "title": "Wertschoepfungskette - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Variante hat meist den hoeheren Wertbeitrag?\nBalance aus Kosten, Zeit, Qualitaet.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Die Variante mit besserem Gesamtmix statt Einzelfokus",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Gesamtwert zaehlt."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Die billigste Variante trotz hoher Fehler",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu einseitig."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Die schnellste Variante mit massiver Nacharbeit",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht nachhaltig."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann gibt es nur Teilpunkte?\nRichtige Wahl ohne Begruendung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn Option stimmt, Begründung aber fehlt oder unpassend ist",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Duell-Regel fuer Teilpunkte."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Wenn alles korrekt ist",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Dann volle Punkte."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Wenn Wahl falsch ist",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Dann Abzug."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI zeigt Duel-Leistung?\nWahl + Begruendung trennen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wahlgenauigkeit und Begruendungsquote",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Beide Dimensionen sind wichtig."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Zahl der Duelle",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu wenig."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Reaktionszeit",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Unvollstaendig."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Begruendung ist fachlich stark?\nKosten-, Zeit- und Qualitaetseffekt benennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sie zeigt Trade-offs und den besseren Gesamtbeitrag",
+          "correct": true,
+          "reason": "Richtig. Das ist belastbar."
+        },
+        {
+          "id": "b",
+          "text": "Sie nennt nur Bauchgefuehl",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Sie ignoriert Qualitaet komplett",
+          "correct": false,
+          "reason": "Einseitig."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Warum kann billig nicht automatisch besser sein?\nFolgekosten beachten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Niedrige Anfangskosten koennen hohe Fehler- und Nacharbeitskosten ausloesen",
+          "correct": true,
+          "reason": "Richtig. Total Cost zählt."
+        },
+        {
+          "id": "b",
+          "text": "Billig ist immer optimal",
+          "correct": false,
+          "reason": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Kosten sind irrelevant",
+          "correct": false,
+          "reason": "Ebenfalls falsch."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Wann ist eine schnelle Option riskant?\nWenn Qualitaet einbricht.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Zeitgewinn durch hohe Fehlerquote erkauft wird",
+          "correct": true,
+          "reason": "Richtig. Das reduziert Wertbeitrag."
+        },
+        {
+          "id": "b",
+          "text": "Wenn sie stabile Qualitaet behaelt",
+          "correct": false,
+          "reason": "Dann eher positiv."
+        },
+        {
+          "id": "c",
+          "text": "Wenn sie transparent gemessen wird",
+          "correct": false,
+          "reason": "Das ist gut."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Was bedeutet Volltreffer im Duell?\nWahl und Argument stimmen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Richtige Option plus passende begruendete Bewertung",
+          "correct": true,
+          "reason": "Richtig. Das gibt volle Punkte."
+        },
+        {
+          "id": "b",
+          "text": "Nur richtige Option ohne Argument",
+          "correct": false,
+          "reason": "Teilpunkte."
+        },
+        {
+          "id": "c",
+          "text": "Nur langes Argument ohne korrekte Wahl",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was trainiert das Wertbeitrag-Duell?\nVergleichskompetenz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prozessvarianten systematisch vergleichen und begruendet entscheiden",
+          "correct": true,
+          "reason": "Richtig. Genau das ist der Kern."
+        },
+        {
+          "id": "b",
+          "text": "Nur Zeitrekorde",
+          "correct": false,
+          "reason": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Messung vermeiden",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

@@ -3,84 +3,134 @@
     "topic": "Sender-Empfaenger-Bruecke",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "sender_empfaenger_bruecke",
+    "source": "_gg01_sender_empfaenger_bruecke.json",
     "version": "1.0"
   },
   "title": "Sender-Empfaenger-Bruecke - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "subtitle": "Waehle je Situation die Formulierung, die als klarer Appell verstanden wird.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Im Meeting ist das Fenster offen und es zieht.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
-          "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "text": "Mir ist kalt.",
+          "correct": false,
+          "reason": "Ein Appell fordert klar eine Handlung ein."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Es zieht stark am Tisch.",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ein Appell fordert klar eine Handlung ein."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
-          "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "text": "Schliess bitte jetzt das Fenster.",
+          "correct": true,
+          "reason": "Ein Appell fordert klar eine Handlung ein."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Das Ticket steht seit Stunden auf in Arbeit.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
-          "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "text": "Ich bin gerade unsicher wegen des Zeitplans.",
+          "correct": false,
+          "reason": "Der Satz nennt konkrete Aktion und Zeitpunkt."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
-          "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "text": "Gib mir bitte bis 14:00 ein kurzes Status-Update.",
+          "correct": true,
+          "reason": "Der Satz nennt konkrete Aktion und Zeitpunkt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Das Ticket ist seit Stunden offen.",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Der Satz nennt konkrete Aktion und Zeitpunkt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Der Drucker ist leer.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
-          "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "text": "Im Fach liegt kein Papier mehr.",
+          "correct": false,
+          "reason": "Ein klarer Imperativ mit Bitte ist hier passend."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
-          "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "text": "Leg bitte neues Papier in den Drucker nach.",
+          "correct": true,
+          "reason": "Ein klarer Imperativ mit Bitte ist hier passend."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Ich bin genervt vom Drucker.",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Ein klarer Imperativ mit Bitte ist hier passend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Die Praesentation startet in 2 Minuten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Der Beamer ist noch nicht verbunden.",
+          "correct": false,
+          "reason": "Der Appell benennt direkt die noetige Handlung."
+        },
+        {
+          "id": "b",
+          "text": "Verbinde bitte jetzt den Beamer mit dem Laptop.",
+          "correct": true,
+          "reason": "Der Appell benennt direkt die noetige Handlung."
+        },
+        {
+          "id": "c",
+          "text": "Ich fuerchte, wir sind nicht bereit.",
+          "correct": false,
+          "reason": "Der Appell benennt direkt die noetige Handlung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Im Chat fehlen Rueckmeldungen auf ein wichtiges Thema.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bitte gebt bis 16:00 euer kurzes Feedback im Thread.",
+          "correct": true,
+          "reason": "Appell + Zeitrahmen macht die Erwartung eindeutig."
+        },
+        {
+          "id": "b",
+          "text": "Der Thread hat bisher keine Antworten.",
+          "correct": false,
+          "reason": "Appell + Zeitrahmen macht die Erwartung eindeutig."
+        },
+        {
+          "id": "c",
+          "text": "Ich mache mir Sorgen wegen der Entscheidung.",
+          "correct": false,
+          "reason": "Appell + Zeitrahmen macht die Erwartung eindeutig."
         }
       ]
     }

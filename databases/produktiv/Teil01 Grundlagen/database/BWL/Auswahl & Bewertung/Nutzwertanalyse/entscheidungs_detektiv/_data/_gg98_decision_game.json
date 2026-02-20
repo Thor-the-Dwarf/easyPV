@@ -1,86 +1,136 @@
 {
   "meta": {
-    "topic": "entscheidungs detektiv",
+    "topic": "Der Entscheidungs-Detektiv",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "entscheidungs_detektiv",
-    "version": "1.0"
+    "source": "_gg01_entscheidungs_detektiv.json",
+    "version": "2.0"
   },
-  "title": "entscheidungs detektiv - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Der Entscheidungs-Detektiv",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Aussendienst-Team benoetigt ein neues Fahrzeugmodell fuer die naechsten 3 Jahre.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "b",
+          "text": "SafeLine",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "SafeLine erreicht mit der gegebenen Gewichtung den hoechsten Gesamtnutzwert."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "a",
+          "text": "Rapid X",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "SafeLine erreicht mit der gegebenen Gewichtung den hoechsten Gesamtnutzwert."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "BudgetGo",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "SafeLine erreicht mit der gegebenen Gewichtung den hoechsten Gesamtnutzwert."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Fuer ein CAD-Team soll die passende Arbeitsplatz-Hardware ausgewaehlt werden.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "b",
+          "text": "All-in-One Plus",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "All-in-One Plus kombiniert bei den aktuellen Gewichten den besten Gesamtwert."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "a",
+          "text": "Notebook Pro",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "All-in-One Plus kombiniert bei den aktuellen Gewichten den besten Gesamtwert."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "MiniDesktop",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "All-in-One Plus kombiniert bei den aktuellen Gewichten den besten Gesamtwert."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Ein Ticketportal soll schnell eingefuehrt werden, ohne die Qualitaet zu verlieren.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "b",
+          "text": "Standardprodukt",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Standardprodukt gewinnt deutlich durch hohe Zeit- und Kostenwerte."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "a",
+          "text": "Eigenentwicklung",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Standardprodukt gewinnt deutlich durch hohe Zeit- und Kostenwerte."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Outsourcing",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Standardprodukt gewinnt deutlich durch hohe Zeit- und Kostenwerte."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Drei Dashboard-Varianten stehen zur Auswahl fuer den Rollout bei Key-Usern.",
+      "options": [
+        {
+          "id": "b",
+          "text": "Variante Blau",
+          "correct": true,
+          "reason": "Variante Blau erzielt den besten Nutzwert durch starke Betriebsstabilitaet bei solidem Fit."
+        },
+        {
+          "id": "a",
+          "text": "Variante Rot",
+          "correct": false,
+          "reason": "Variante Blau erzielt den besten Nutzwert durch starke Betriebsstabilitaet bei solidem Fit."
+        },
+        {
+          "id": "c",
+          "text": "Variante Gruen",
+          "correct": false,
+          "reason": "Variante Blau erzielt den besten Nutzwert durch starke Betriebsstabilitaet bei solidem Fit."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Fuer das neue Security-Konzept sollen drei Paketvarianten verglichen werden.",
+      "options": [
+        {
+          "id": "b",
+          "text": "Hybrid Shield",
+          "correct": true,
+          "reason": "Hybrid Shield liegt im gewichteten Gesamtergebnis vor den anderen Optionen."
+        },
+        {
+          "id": "a",
+          "text": "ZeroTrust Lite",
+          "correct": false,
+          "reason": "Hybrid Shield liegt im gewichteten Gesamtergebnis vor den anderen Optionen."
+        },
+        {
+          "id": "c",
+          "text": "Cloud Basic",
+          "correct": false,
+          "reason": "Hybrid Shield liegt im gewichteten Gesamtergebnis vor den anderen Optionen."
         }
       ]
     }

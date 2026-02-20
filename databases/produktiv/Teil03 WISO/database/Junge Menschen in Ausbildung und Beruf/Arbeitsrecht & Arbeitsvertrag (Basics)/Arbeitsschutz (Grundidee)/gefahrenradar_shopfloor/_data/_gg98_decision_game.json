@@ -3,7 +3,7 @@
     "topic": "Arbeitsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitsschutz",
+    "source": "_gg01_gefahrenradar_shopfloor.json",
     "version": "1.0"
   },
   "title": "Arbeitsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "In der Szene liegt Oel auf dem Boden im Laufweg. Welche Bewertung ist richtig?\nRutschgefahr ist ein unmittelbares Risiko.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Gefahr markieren und hohe Prioritaet setzen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist ein akutes Sturzrisiko."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Ignorieren und weitergehen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Niedrige Prioritaet setzen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Zusatzstrafe nennt der Plan explizit?\nBezieht sich auf uebersehene Hochrisiko-Gefahren.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Zusatzabzug bei uebersehener Hochrisiko-Gefahr",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das ist regelbasiert vorgesehen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Abzug bei jeder richtigen Priorisierung",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Kein Abzug bei Fehlern",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was misst die Priorisierungsquote?\nSie bezieht sich auf die Top-Gefahr pro Szene.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wie oft die Top-Gefahr korrekt priorisiert wurde",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Genau das ist die Priorisierungsleistung."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur die Spielzeit",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Fehlklicks",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann aktiviert sich der Multiplikator laut Regeln?\nEs braucht eine Fehlerfrei-Serie.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nach drei fehlerfreien Szenen in Folge",
+          "correct": true,
+          "reason": "Richtig. Dann wird ein Multiplikator aktiviert."
+        },
+        {
+          "id": "b",
+          "text": "Nach jeder ersten Szene",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Bei drei Fehlmarkierungen",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Aussage trifft den Kern des Gefahrenradars?\nErkennen und Priorisieren gehoeren zusammen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gefahren erkennen und wichtigste sofort priorisieren",
+          "correct": true,
+          "reason": "Richtig. Das ist die zentrale Kompetenz."
+        },
+        {
+          "id": "b",
+          "text": "Nur markieren, ohne Prioritaet",
+          "correct": false,
+          "reason": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Priorisieren ohne Erkennung",
+          "correct": false,
+          "reason": "Nicht moeglich."
         }
       ]
     }

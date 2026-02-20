@@ -3,7 +3,7 @@
     "topic": "Jugendarbeitsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "jugendarbeitsschutz",
+    "source": "_gg01_pausenplan_match.json",
     "version": "1.0"
   },
   "title": "Jugendarbeitsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Lange Schicht ohne passende Pause: richtige Einordnung?\nPausenlogik zur Schichtdauer passend waehlen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Als falsches Pausenmuster markieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Die Pausenregel passt nicht zur Schichtlaenge."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Als immer korrekt akzeptieren",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ohne Check freigeben",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Zusatzstrafe gilt bei langen Schichten und Fehlwahl?\nPlan nennt einen Zusatzabzug.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Zusatzabzug",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Kritische Fehlwahl wird strenger gewertet."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Kein Abzug",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Bonus",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann aktiviert sich ein Multiplikator?\nSerie korrekter Matches erforderlich.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Bei 5 korrekten Matches in Folge",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Dann steigt der Multiplikator."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Bei jedem Treffer",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur bei Fehlern",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI-Auswertung soll moeglich sein?\nNach Regeltypen differenzieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Match-Quote und Fehler pro Regeltyp",
+          "correct": true,
+          "reason": "Richtig. So erkennt man gezielte Schwachstellen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Summenwert",
+          "correct": false,
+          "reason": "Zu wenig differenziert."
+        },
+        {
+          "id": "c",
+          "text": "Nur Antwortdauer",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wodurch wird Lernkurve sichtbar?\nSession-Vergleich der Ergebniswerte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vergleichbarer KPI-Verlauf ueber Sessions",
+          "correct": true,
+          "reason": "Richtig. Dadurch werden Verbesserungen messbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Startpunkt",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Keine Historie",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

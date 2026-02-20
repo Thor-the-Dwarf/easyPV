@@ -3,7 +3,7 @@
     "topic": "Duales System",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "duales_system",
+    "source": "_gg01_rollenkonflikt_navigator.json",
     "version": "1.0"
   },
   "title": "Duales System - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was ist der erste Entscheidungspunkt im Konfliktfall?\nZustaendige Instanz korrekt waehlen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Passende Klaerungsinstanz bestimmen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Instanzwahl ist der Startpunkt."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Direkt Massnahme ohne Instanzwahl",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ohne Instanz fehlt die Grundlage."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Konflikt ignorieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Ignorieren loest keinen Konflikt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann wird ein Aktionsbonus blockiert?\nInstanz war falsch.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn die Instanzwahl nicht zustaendig war",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Falsche Instanz sperrt den Bonus."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Wenn die Instanzwahl korrekt war",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Dann bleibt Bonus moeglich."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Wenn der Hinweis gelesen wurde",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Hinweise blockieren keinen Bonus."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI bilden den Lernerfolg hier ab?\nInstanz und Prozess getrennt.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Instanzgenauigkeit und Prozessgenauigkeit",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Beide Achsen sind relevant."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Fallanzahl",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Anzahl allein zeigt keine Qualitaet."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Bearbeitungsdauer",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Zeit ist nur Nebenindikator."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Was erzeugt einen Serienbonus?\nVollkorrekte Faelle hintereinander.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mehrere vollkorrekte Konfliktfaelle in Folge",
+          "correct": true,
+          "reason": "Richtig. Das aktiviert den Serienbonus."
+        },
+        {
+          "id": "b",
+          "text": "Mehrere Fehlentscheidungen in Folge",
+          "correct": false,
+          "reason": "Fehlserien geben keinen Bonus."
+        },
+        {
+          "id": "c",
+          "text": "Nur das Erreichen der letzten Runde",
+          "correct": false,
+          "reason": "Bonus ist leistungsabhaengig."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Auswertung muss laut Abnahmekriterium getrennt sein?\nInstanz und Schritt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Instanzbewertung und Schrittbewertung",
+          "correct": true,
+          "reason": "Exakt. Beide Rueckmeldungen sind getrennt noetig."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtnote",
+          "correct": false,
+          "reason": "Zu unscharf fuer Lernfeedback."
+        },
+        {
+          "id": "c",
+          "text": "Nur Restzeit",
+          "correct": false,
+          "reason": "Restzeit ersetzt keine Konfliktanalyse."
         }
       ]
     }

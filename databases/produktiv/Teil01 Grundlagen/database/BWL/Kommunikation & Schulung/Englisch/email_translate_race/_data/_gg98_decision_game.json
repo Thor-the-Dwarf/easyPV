@@ -3,7 +3,7 @@
     "topic": "Englisch",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "englisch",
+    "source": "_gg01_email_translate_race.json",
     "version": "1.0"
   },
   "title": "Englisch - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "\nFormelle Anrede in einer Geschaeftsmail",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
-          "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "text": "Hello all",
+          "correct": false,
+          "reason": "Zu informell."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
-          "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "text": "Dear Sir or Madam",
+          "correct": true,
+          "reason": "Richtig: formelle Standardanrede."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Hi guys",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Umgangssprachlich und unpassend."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "\nHinweis auf beigefuegtes Dokument",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Please find the quotation attached.",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig und professionell."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "The offer is somewhere below.",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Unklar und unprofessionell."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "I send you maybe an offer.",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Grammatikalisch und inhaltlich unpraezise."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "\nHoefliche Terminverschiebung",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
-          "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "text": "Move the meeting now.",
+          "correct": false,
+          "reason": "Zu direkt und nicht hoeflich."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
-          "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "text": "Could you reschedule the appointment to Friday?",
+          "correct": true,
+          "reason": "Richtig: hoeflich und praezise."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Can you put date maybe Friday.",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Falscher Satzbau."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "\nDank in professioneller Korrespondenz",
+      "options": [
+        {
+          "id": "a",
+          "text": "Thanks for your feedback.",
+          "correct": true,
+          "reason": "Richtig, neutral-professionell."
+        },
+        {
+          "id": "b",
+          "text": "Big thanks for answer.",
+          "correct": false,
+          "reason": "Unnatuerliche Formulierung."
+        },
+        {
+          "id": "c",
+          "text": "Thx for your msg.",
+          "correct": false,
+          "reason": "Zu locker fuer Business-Mail."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "\nAbschlussformel",
+      "options": [
+        {
+          "id": "a",
+          "text": "If you have any questions, please do not hesitate to contact me.",
+          "correct": true,
+          "reason": "Richtig: gaengige professionelle Abschlussformel."
+        },
+        {
+          "id": "b",
+          "text": "Ask me if something weird.",
+          "correct": false,
+          "reason": "Unklar und unprofessionell."
+        },
+        {
+          "id": "c",
+          "text": "Questions? Write maybe.",
+          "correct": false,
+          "reason": "Zu knapp und umgangssprachlich."
         }
       ]
     }

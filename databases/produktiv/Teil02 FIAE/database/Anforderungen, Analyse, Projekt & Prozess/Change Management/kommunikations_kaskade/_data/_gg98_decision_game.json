@@ -3,84 +3,159 @@
     "topic": "Kommunikations-Kaskade",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kommunikations_kaskade",
-    "version": "1.0"
+    "source": "_gg01_kommunikations_kaskade.json",
+    "version": "2.0"
   },
-  "title": "Kommunikations-Kaskade - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Kommunikations-Kaskade",
+  "subtitle": "Waehle Reihenfolge und Kanal, um Flurfunk zu minimieren.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Neues Ticketsystem startet naechste Woche.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "id: a | sequence: Management -> Teamleiter -> Mitarbeitende | channel: Townhall + Intranet-FAQ",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Klare Kaskade plus Q&A senkt Unsicherheit schnell."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "id: b | sequence: Mitarbeitende -> Teamleiter -> Management | channel: Geruechte im Chat",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ungeordnete Reihenfolge verstaerkt Flurfunk."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "id: c | sequence: Nur Management | channel: Einmalige E-Mail ohne Rueckfragen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Ohne Multiplikatoren bleibt Information stecken."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Cloud-Migration mit moeglichen Downtimes wird angekuendigt.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "id: a | sequence: Management -> Teamleiter -> Schluesselanwender -> alle | channel: Briefing + Service-Update + FAQ",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Betroffene Gruppen erhalten zuerst belastbare Fakten."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "id: b | sequence: Alle gleichzeitig | channel: Kurznotiz ohne Kontext",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Ohne Einordnung entstehen Nachfragen und Spekulationen."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "id: c | sequence: Nur Teamleiter | channel: Muendliche Weitergabe ohne Doku",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Inkonsistente Weitergabe erzeugt Versionschaos."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Neue Rollen im Support-Prozess werden eingefuehrt.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "id: a | sequence: Prozess-Owner -> Teamleiter -> Support-Teams | channel: Workshop + Rollenkarten",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Rollenklarheit braucht Austausch und Praxisbezug."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "id: b | sequence: Support-Teams zuerst | channel: Inoffizielle Folien",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Ohne Fuehrungsrahmen werden Rollen uneinheitlich interpretiert."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "id: c | sequence: Prozess-Owner -> HR | channel: Interner Vermerk",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Relevante Zielgruppen werden nicht erreicht."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Sicherheitsrichtlinie wird verschaerft.",
+      "options": [
+        {
+          "id": "a",
+          "text": "id: a | sequence: CIO/ISB -> Fuehrungskraefte -> alle Mitarbeitenden | channel: Policy-Update + Q&A-Session",
+          "correct": true,
+          "reason": "Autoritaet plus Erklaerung sorgt fuer Verbindlichkeit."
+        },
+        {
+          "id": "b",
+          "text": "id: b | sequence: Alle Mitarbeitenden | channel: Nur pop-up beim Login",
+          "correct": false,
+          "reason": "Einweg-Hinweis ohne Kontext schafft Unsicherheit."
+        },
+        {
+          "id": "c",
+          "text": "id: c | sequence: IT-Team intern | channel: Ticket-Kommentare",
+          "correct": false,
+          "reason": "Breite Kommunikation fehlt, Flurfunk steigt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Standortwechsel betrifft mehrere Teams.",
+      "options": [
+        {
+          "id": "a",
+          "text": "id: a | sequence: Management -> Standortleitungen -> Teams | channel: Info-Meeting + Ablaufplan",
+          "correct": true,
+          "reason": "Lokale Multiplikatoren sichern konsistente Botschaften."
+        },
+        {
+          "id": "b",
+          "text": "id: b | sequence: Teams zuerst | channel: Social Feed ohne Fakten",
+          "correct": false,
+          "reason": "Unklares Framing fuehrt zu Spekulationen ueber Auswirkungen."
+        },
+        {
+          "id": "c",
+          "text": "id: c | sequence: Management zuletzt | channel: Einzelgespraeche ohne Leitfaden",
+          "correct": false,
+          "reason": "Fehlende zentrale Linie erzeugt widerspruechliche Infos."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Rollout-Erfolg soll kommuniziert und verstetigt werden.",
+      "options": [
+        {
+          "id": "a",
+          "text": "id: a | sequence: Projektleitung -> Teamleiter -> gesamte Organisation | channel: Ergebnisbericht + Best-Practice-Session",
+          "correct": true,
+          "reason": "Erfolgstransparenz stabilisiert Akzeptanz und Lernen."
+        },
+        {
+          "id": "b",
+          "text": "id: b | sequence: Nur Projektleitung | channel: Ablage im Intranet ohne Hinweis",
+          "correct": false,
+          "reason": "Ohne aktive Verbreitung bleibt Wirkung aus."
+        },
+        {
+          "id": "c",
+          "text": "id: c | sequence: Beliebige Reihenfolge | channel: Spontane Chat-Nachrichten",
+          "correct": false,
+          "reason": "Unkoordinierte Kommunikation schwacht Vertrauen."
         }
       ]
     }

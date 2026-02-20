@@ -3,84 +3,159 @@
     "topic": "Drei-Phasen-Modell (Lewin)",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "drei_phasen_modell_lewin",
-    "version": "1.0"
+    "source": "_gg01_drei_phasen_modell.json",
+    "version": "2.0"
   },
-  "title": "Drei-Phasen-Modell (Lewin) - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Drei-Phasen-Modell (Lewin)",
+  "subtitle": "Ordne jede Massnahme der richtigen Change-Phase zu.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Karte einordnen: Bestehende Gewohnheiten und Problemfelder offenlegen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Unfreezing",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Vor der Veraenderung muessen Dringlichkeit und Einsicht entstehen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Changing",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Refreezing",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Karte einordnen: Mitarbeitende mit Kommunikation auf den Wandel vorbereiten.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Unfreezing",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Orientierung reduziert Unsicherheit in der Auftauphase."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Changing",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Refreezing",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Karte einordnen: Neuen Prozess in Pilotteams praktisch anwenden.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Changing",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Im Changing wird neues Verhalten ausprobiert und angepasst."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Unfreezing",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Refreezing",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Karte einordnen: Schulungen zu neuen Tools und Rollen durchfuehren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Changing",
+          "correct": true,
+          "reason": "Kompetenzaufbau ist Kern der Veraenderungsphase."
+        },
+        {
+          "id": "b",
+          "text": "Unfreezing",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Refreezing",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Karte einordnen: Neue Standards in Richtlinien und Onboarding verankern.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Refreezing",
+          "correct": true,
+          "reason": "Refreezing stabilisiert den neuen Soll-Zustand."
+        },
+        {
+          "id": "b",
+          "text": "Unfreezing",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Changing",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Karte einordnen: Erfolge messen und neues Verhalten als Normalfall absichern.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Refreezing",
+          "correct": true,
+          "reason": "Erfolgskontrolle und Verstetigung gehoeren zur Einfrierphase."
+        },
+        {
+          "id": "b",
+          "text": "Unfreezing",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Changing",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

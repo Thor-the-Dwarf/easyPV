@@ -1,86 +1,36 @@
 {
   "meta": {
-    "topic": "fehler suche der korrupte analyst",
+    "topic": "Fehler-Suche: Der korrupte Analyst",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "fehler_suche_der_korrupte_analyst",
-    "version": "1.0"
+    "source": "_gg01_fehler_suche_der_korrupte_analyst.json",
+    "version": "2.0"
   },
-  "title": "fehler suche der korrupte analyst - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Fehler-Suche: Der korrupte Analyst",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Rechnung pruefen: Situation bewerten.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Korrekt",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Fehlerhaft",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nicht beurteilbar",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
-      "options": [
-        {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
-          "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
-        },
-        {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
-          "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
-        },
-        {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
-          "correct": false,
-          "reason": "Nicht nachvollziehbar."
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
-      "options": [
-        {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
-          "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
-        },
-        {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
-          "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
-        },
-        {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
-          "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

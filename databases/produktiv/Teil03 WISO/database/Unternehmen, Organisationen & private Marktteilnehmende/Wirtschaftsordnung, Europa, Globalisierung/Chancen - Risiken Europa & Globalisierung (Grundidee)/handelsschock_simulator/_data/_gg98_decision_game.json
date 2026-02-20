@@ -3,7 +3,7 @@
     "topic": "Europa & Globalisierung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "europa_globalisierung",
+    "source": "_gg01_handelsschock_simulator.json",
     "version": "1.0"
   },
   "title": "Europa & Globalisierung - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Ein Zollanstieg trifft ein Kernprodukt. Welche Erstreaktion ist sinnvoll?\nSchnelle Wirkung + Datenbasis.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Kostenwirkung bewerten und Alternativen priorisieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Erst Diagnose, dann Steuerung."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Sofort alle Maerkte verlassen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ueberreaktion."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Keine Analyse, nur Hoffen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Falsch."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Massnahme stabilisiert bei Nachfragerueckgang am ehesten?\nMix aus Absatz- und Kostenanpassung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Portfolio anpassen und variable Kosten steuern",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. So bleibt Handlungsfaehigkeit erhalten."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Lager aufbauen ohne Absatzplan",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Riskant."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Preise blind erhoehen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Kann Nachfrage weiter senken."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was kennzeichnet eine instabile Runde im Simulator?\nRisiko steigt bei Fehlsteuerung.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Sinkender Stabilitaetsindex trotz Intervention",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Wirkung bleibt negativ."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Konstante Verbesserung in allen KPI",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Dann waere sie stabil."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur viele Klicks ohne Bewertung",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht aussagekraeftig."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Rolle hat Szenarioplanung bei Handelsschocks?\nVorbereitung auf Varianten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Handlungsoptionen fuer mehrere Schockstaerken vorbereiten",
+          "correct": true,
+          "reason": "Richtig. Das reduziert Reaktionszeit."
+        },
+        {
+          "id": "b",
+          "text": "Nur ein Best-Case-Szenario planen",
+          "correct": false,
+          "reason": "Zu riskant."
+        },
+        {
+          "id": "c",
+          "text": "Auf Fruehwarnung verzichten",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI ist fuer die Simulationsqualitaet zentral?\nStabilitaet + Fehlentscheidungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stabilitaetsindex kombiniert mit Fehlentscheidungsquote",
+          "correct": true,
+          "reason": "Richtig. Robustheit wird sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur gespielte Zeit",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Runden ohne Ergebnisbezug",
+          "correct": false,
+          "reason": "Zu wenig Aussagekraft."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Wann ist eine Gegenmassnahme ueberreaktiv?\nMassnahme groesser als Problem.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn sie bei kleinem Schock neue Instabilitaet erzeugt",
+          "correct": true,
+          "reason": "Richtig. Genau das ist Ueberreaktion."
+        },
+        {
+          "id": "b",
+          "text": "Wenn sie Risiko senkt",
+          "correct": false,
+          "reason": "Dann ist sie eher passend."
+        },
+        {
+          "id": "c",
+          "text": "Wenn sie datenbasiert priorisiert wird",
+          "correct": false,
+          "reason": "Das ist positiv."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Welche Strategie erhoeht Resilienz mittelfristig?\nStruktur statt Ad-hoc.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Diversifizierte Bezugsquellen und flexible Absatzkanaele",
+          "correct": true,
+          "reason": "Richtig. Mehr Optionen senken Ausfallrisiko."
+        },
+        {
+          "id": "b",
+          "text": "Nur ein globaler Knoten ohne Backup",
+          "correct": false,
+          "reason": "Sehr anfaellig."
+        },
+        {
+          "id": "c",
+          "text": "Keine Prozessanpassung",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Welche Aussage beschreibt den Simulationsnutzen korrekt?\nLernen durch iteratives Testen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Strategien koennen unter Schockbedingungen messbar verglichen werden",
+          "correct": true,
+          "reason": "Richtig. Genau das trainiert der Simulator."
+        },
+        {
+          "id": "b",
+          "text": "Er ersetzt jede reale Analyse vollstaendig",
+          "correct": false,
+          "reason": "Zu weitgehend."
+        },
+        {
+          "id": "c",
+          "text": "Er bewertet nur Geschwindigkeit, nicht Qualitaet",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

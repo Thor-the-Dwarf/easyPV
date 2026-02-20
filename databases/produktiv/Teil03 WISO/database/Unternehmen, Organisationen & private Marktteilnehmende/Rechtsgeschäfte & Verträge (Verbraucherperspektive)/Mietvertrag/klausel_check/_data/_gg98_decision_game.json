@@ -3,84 +3,134 @@
     "topic": "Mietvertrag-Klausel-Check",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "mietvertrag_klausel_check",
+    "source": "_gg01_klausel_check.json",
     "version": "1.0"
   },
   "title": "Mietvertrag-Klausel-Check - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "subtitle": "Klauseln nach Risiko einordnen und Begruendung trainieren",
   "rounds": [
     {
-      "id": 1,
+      "id": "KC-1",
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Klausel: \"Schoenheitsreparaturen stets unabhaengig vom Zustand alle 2 Jahre.\"\nStarre Fristen sind oft kritisch.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
-          "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "text": "Unauffaellig",
+          "correct": false,
+          "reason": "Nicht korrekt. Starre Fristen sind ein Warnsignal."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
-          "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "text": "Kritisch bis problematisch wegen starrer Frist",
+          "correct": true,
+          "reason": "Richtig. Starre Vorgaben ohne Zustandsoffenheit sind riskant."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Immer vorteilhaft fuer beide Seiten",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt. Der Inhalt kann einseitig belasten."
         }
       ]
     },
     {
-      "id": 2,
+      "id": "KC-2",
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Klausel: \"Haustierhaltung nach vorheriger Abstimmung im Einzelfall.\"\nEinzelfallpruefung ist oft differenzierter als Pauschalverbote.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Eher unauffaellig mit Einzelfallbezug",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Einzelfallregelungen sind regelmaessig weniger problematisch."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Eindeutig problematisch in jedem Fall",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt. Die Klausel ist nicht automatisch unzulaessig."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur gueltig bei zusaetzlicher Strafzahlung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt. Eine Strafzahlung ist nicht der zentrale Pruefpunkt."
         }
       ]
     },
     {
-      "id": 3,
+      "id": "KC-3",
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Klausel: \"Mieter traegt alle Reparaturen ohne Hoechstgrenze.\"\nUnbegrenzte Kostenueberwaelzung ist riskant.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
-          "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "text": "Unauffaellig",
+          "correct": false,
+          "reason": "Nicht korrekt. Unbegrenzte Uebertragung ist problematisch."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Kritisch",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Teilweise, hier ist die Klausel deutlicher problematisch."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Eindeutig problematisch durch fehlende Begrenzung",
+          "correct": true,
+          "reason": "Richtig. Ohne Begrenzung ist die Klausel stark angreifbar."
+        }
+      ]
+    },
+    {
+      "id": "KC-4",
+      "phase": "Runde 4",
+      "situation": "Klausel: \"Nebenkosten werden jaehrlich transparent nach Positionen abgerechnet.\"\nTransparente Abrechnung ist ein positives Signal.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unauffaellig",
+          "correct": true,
+          "reason": "Richtig. Transparente, nachvollziehbare Abrechnung ist plausibel."
+        },
+        {
+          "id": "b",
+          "text": "Kritisch",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt. Die Klausel beschreibt einen regulaeren Ablauf."
+        },
+        {
+          "id": "c",
+          "text": "Eindeutig problematisch",
+          "correct": false,
+          "reason": "Nicht korrekt. Problematisch waere eher Intransparenz."
+        }
+      ]
+    },
+    {
+      "id": "KC-5",
+      "phase": "Runde 5",
+      "situation": "Klausel: \"Kuendigung des Mieters nur mit Zustimmung des Vermieters moeglich.\"\nEinseitige Blockaden sind ein starkes Risikozeichen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unauffaellig",
+          "correct": false,
+          "reason": "Nicht korrekt. Die Klausel schraenkt grundlegend ein."
+        },
+        {
+          "id": "b",
+          "text": "Kritisch",
+          "correct": false,
+          "reason": "Teilweise, hier ist das Risiko deutlich hoeher."
+        },
+        {
+          "id": "c",
+          "text": "Eindeutig problematisch",
+          "correct": true,
+          "reason": "Richtig. Eine solche Blockade ist stark problematisch."
         }
       ]
     }

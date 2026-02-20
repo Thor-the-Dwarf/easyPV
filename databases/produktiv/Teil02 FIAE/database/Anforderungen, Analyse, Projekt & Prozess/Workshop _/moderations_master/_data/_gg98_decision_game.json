@@ -3,84 +3,474 @@
     "topic": "Moderations Master",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "moderations_master",
+    "source": "_gg01_moderations_master.json",
     "version": "1.0"
   },
   "title": "Moderations Master - Entscheidungen",
   "subtitle": "Waehle pro Runde die fachlich beste Option.",
   "rounds": [
     {
-      "id": 1,
+      "id": "r1",
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Start in den Tag",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "icebreaker",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "brainstorming",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "dotvoting",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "checkin",
+          "correct": false,
+          "reason": ""
         }
       ]
     },
     {
-      "id": 2,
+      "id": "r2",
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Thema oeffnen",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "brainstorming",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "dotvoting",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "mindmap",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "fisttofive",
+          "correct": false,
+          "reason": ""
         }
       ]
     },
     {
-      "id": 3,
+      "id": "r3",
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Gleiche Redeanteile",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "roundrobin",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "fishbowl",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "dotvoting",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "checkin",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "r4",
+      "phase": "Runde 4",
+      "situation": "Viele lose Themen",
+      "options": [
+        {
+          "id": "a",
+          "text": "mindmap",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "dotvoting",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "parkinglot",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "fivewhy",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "r5",
+      "phase": "Runde 5",
+      "situation": "Erste Priorisierung",
+      "options": [
+        {
+          "id": "a",
+          "text": "dotvoting",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "worldcafe",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "impacteffort",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "icebreaker",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "r6",
+      "phase": "Runde 6",
+      "situation": "Energie-Knick",
+      "options": [
+        {
+          "id": "a",
+          "text": "energizer",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "dotvoting",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "fivewhy",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "impacteffort",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "r7",
+      "phase": "Runde 7",
+      "situation": "Zu viele offene Enden",
+      "options": [
+        {
+          "id": "a",
+          "text": "parkinglot",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "brainstorming",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "fishbowl",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "dotvoting",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "r8",
+      "phase": "Runde 8",
+      "situation": "Root Cause gesucht",
+      "options": [
+        {
+          "id": "a",
+          "text": "fivewhy",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "energizer",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "dotvoting",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "mindmap",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "r9",
+      "phase": "Runde 9",
+      "situation": "Ideen stagnieren",
+      "options": [
+        {
+          "id": "a",
+          "text": "worldcafe",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "dotvoting",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "fisttofive",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "retromad",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "r10",
+      "phase": "Runde 10",
+      "situation": "Schneller Konsens-Check",
+      "options": [
+        {
+          "id": "a",
+          "text": "fisttofive",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "fivewhy",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "brainstorming",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "fishbowl",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "r11",
+      "phase": "Runde 11",
+      "situation": "Konflikt im Raum",
+      "options": [
+        {
+          "id": "a",
+          "text": "fishbowl",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "dotvoting",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "mindmap",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "icebreaker",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "r12",
+      "phase": "Runde 12",
+      "situation": "Emotionen steigen",
+      "options": [
+        {
+          "id": "a",
+          "text": "retromad",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "impacteffort",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "fisttofive",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "brainstorming",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "r13",
+      "phase": "Runde 13",
+      "situation": "Entscheidung unter Zeitdruck",
+      "options": [
+        {
+          "id": "a",
+          "text": "impacteffort",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "worldcafe",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "icebreaker",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "fivewhy",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "r14",
+      "phase": "Runde 14",
+      "situation": "Stille im Konflikt",
+      "options": [
+        {
+          "id": "a",
+          "text": "silentwriting",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "fishbowl",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "dotvoting",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "energizer",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "r15",
+      "phase": "Runde 15",
+      "situation": "Abschluss sichern",
+      "options": [
+        {
+          "id": "a",
+          "text": "fisttofive",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "brainstorming",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "parkinglot",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "icebreaker",
+          "correct": false,
+          "reason": ""
         }
       ]
     }

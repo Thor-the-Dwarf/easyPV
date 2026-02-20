@@ -3,84 +3,90 @@
     "topic": "UML Sequence Diagrams",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "uml_sequence_diagrams",
-    "version": "1.0"
+    "source": "_gg01_sequence_order.json",
+    "version": "2.0"
   },
-  "title": "UML Sequence Diagrams - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "UML: Sequenzdiagramm",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Simple Echo",
+      "situation": "Simple Echo Chronology flows from top to bottom. Arrange the Request and its Response.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "m1",
+          "text": "GET /index",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "m2",
+          "text": "200 OK",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Entscheidung in diesem Kontext."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Auth Handshake",
+      "situation": "Auth Handshake The Server must verify the token with the DB before answering the Client.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "m1",
+          "text": "Login(user)",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "m2",
+          "text": "Verify(u)",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "m3",
+          "text": "Valid",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "m4",
+          "text": "Success",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Async Log",
+      "situation": "Async Log Asynchronous messages don't block. The Client sends a log and continues immediately.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "m1",
+          "text": "Log(event)",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "m2",
+          "text": "DoNext()",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Entscheidung in diesem Kontext."
         }
       ]
     }

@@ -3,7 +3,7 @@
     "topic": "Kaufvertrag",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kaufvertrag",
+    "source": "_gg01_angebotsannahme_flowcheck.json",
     "version": "1.0"
   },
   "title": "Kaufvertrag - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Wann kommt ein Kaufvertrag in der Fallkette zustande?\nAngebot und Annahme muessen zusammenpassen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Wenn eine wirksame Annahme auf ein konkretes Angebot erfolgt",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist der Kernausloeser."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Schon beim ersten unverbindlichen Kontakt",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Noch kein Vertragsschluss."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Erst bei Zahlungseingang",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht zwingend erforderlich."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was bringt im Flowcheck den Zeitbonus?\nSchnell und korrekt entscheiden.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Korrekte Einordnung innerhalb des Zeitfensters",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Dann gibt es Bonuspunkte."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Beliebige schnelle Antwort",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nur Korrektheit zaehlt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Antwort ohne Pruefung verzoegern",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Kein Bonus."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann gibt es doppelten Abzug?\nFinaler Schritt falsch.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn der finale Vertragsschritt falsch bewertet wird",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Dieser Fehler wiegt schwerer."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn ein Hinweis gelesen wird",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Hinweis ist erlaubt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn KPI angezeigt werden",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "KPI sind vorgesehen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI sind im Flowcheck zentral?\nGenauigkeit + Reaktionszeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Abschlussgenauigkeit und mittlere Reaktionszeit",
+          "correct": true,
+          "reason": "Richtig. Beide werden gemessen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "reason": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Faelle",
+          "correct": false,
+          "reason": "Keine Qualitaetsmetrik."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist eine Fallkette erfolgreich geloest?\nStatus je Schritt nachvollziehbar.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn der Vertragsstatus in allen Schritten korrekt erkannt wird",
+          "correct": true,
+          "reason": "Exakt. Das ist Zielerreichung."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur der erste Schritt stimmt",
+          "correct": false,
+          "reason": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ohne Begruendung geraten wird",
+          "correct": false,
+          "reason": "Nicht belastbar."
         }
       ]
     }

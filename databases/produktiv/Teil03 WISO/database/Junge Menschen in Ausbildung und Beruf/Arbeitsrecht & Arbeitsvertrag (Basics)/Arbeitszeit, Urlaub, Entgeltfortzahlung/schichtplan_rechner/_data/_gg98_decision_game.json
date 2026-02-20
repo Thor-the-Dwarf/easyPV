@@ -3,7 +3,7 @@
     "topic": "Arbeitszeit und Entgelt",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitszeit_und_entgelt",
+    "source": "_gg01_schichtplan_rechner.json",
     "version": "1.0"
   },
   "title": "Arbeitszeit und Entgelt - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was ist beim Schichtplan-Check zentral zu pruefen?\nArbeitszeit, Pausen, Ruhezeiten zusammen betrachten.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Regelkonformitaet von Arbeitszeit, Pausen und Ruhezeiten",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Der Check betrachtet das Zusammenspiel aller Zeitregeln."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Schichtfarbe",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Wochennummer",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Folge hat eine uebersehene schwere Abweichung?\nDer Plan nennt einen Zusatzabzug.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Zusatzabzug",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Schwere Ueberseher wiegen besonders."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Automatischer Bonus",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine Auswirkung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann steigt der Schwierigkeitsgrad?\nEr basiert auf einer Serie korrekter Checks.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Bei Serie korrekter Planchecks",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Konstante Treffer erhoehen die Komplexitaet."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Bei jedem Fehler",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur am Spielende",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI-Kombination ist definiert?\nGenauigkeit und Tempo zusammen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Planpruefungsgenauigkeit und Entscheidungszeit",
+          "correct": true,
+          "reason": "Richtig. Beide Werte bilden Lernfortschritt ab."
+        },
+        {
+          "id": "b",
+          "text": "Nur Punktestand",
+          "correct": false,
+          "reason": "Zu wenig differenziert."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtzeit",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was muss das Planfeedback pro Schicht leisten?\nVerstossdetails klar ausweisen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Verstossdetails pro Schicht anzeigen",
+          "correct": true,
+          "reason": "Richtig. Nur so ist Korrektur gezielt moeglich."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtergebnis nennen",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Keine Rueckmeldung",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

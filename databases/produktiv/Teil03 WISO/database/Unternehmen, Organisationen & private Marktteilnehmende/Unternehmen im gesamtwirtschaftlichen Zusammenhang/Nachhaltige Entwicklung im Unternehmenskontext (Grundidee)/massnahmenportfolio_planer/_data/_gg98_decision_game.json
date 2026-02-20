@@ -3,7 +3,7 @@
     "topic": "Nachhaltige Entwicklung im Unternehmenskontext",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "nachhaltige_entwicklung_im_unternehmenskontext",
+    "source": "_gg01_massnahmenportfolio_planer.json",
     "version": "1.0"
   },
   "title": "Nachhaltige Entwicklung im Unternehmenskontext - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Regel gilt bei Portfolioplanung zuerst?\nBudgetgrenze einhalten.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Massnahmen so kombinieren, dass Budget und Mindestwirkung passen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist die Grundbedingung."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Wirkung ignorieren und nur guenstig kaufen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Niedrige Kosten allein reichen nicht."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Budget bewusst ueberziehen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Fuehrt zu Abzug."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Auswahl verbessert den Wirkungsindex?\nHebel mit hoher Wirkung priorisieren.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Massnahmen mit hohem Impact pro Budgeteinheit bevorzugen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. So steigt die Effizienz."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Massnahmen zufaellig anordnen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht planbar."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur bereits bekannte Massnahmen nehmen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Kann Potenzial verschenken."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was ist ein typischer Planungsfehler?\nHoher Impact ohne Umsetzbarkeit.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Portfolio mit Wirkung, aber ohne realistische Umsetzbarkeit",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Tragfaehigkeit fehlt."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Risiken vorab zu markieren",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das ist sinnvoll."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Budgetreserve zu planen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Das kann stabilisieren."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gibt es Bonus im Planer?\nKonstant hohe Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei stabil hoher Budgeteffizienz ueber mehrere Runden",
+          "correct": true,
+          "reason": "Richtig. Serie wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei einmaligem Zufallstreffer",
+          "correct": false,
+          "reason": "Einmal reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Bei groesster Einzelmassnahme",
+          "correct": false,
+          "reason": "Nicht zwingend effizient."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI-Kombination ist gefordert?\nWirkung und Effizienz getrennt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wirkungsindex und Budgeteffizienz gemeinsam anzeigen",
+          "correct": true,
+          "reason": "Exakt das Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Punktesumme anzeigen",
+          "correct": false,
+          "reason": "Zu wenig differenziert."
+        },
+        {
+          "id": "c",
+          "text": "Nur Rundenzahl anzeigen",
+          "correct": false,
+          "reason": "Keine Qualitaetsaussage."
         }
       ]
     }

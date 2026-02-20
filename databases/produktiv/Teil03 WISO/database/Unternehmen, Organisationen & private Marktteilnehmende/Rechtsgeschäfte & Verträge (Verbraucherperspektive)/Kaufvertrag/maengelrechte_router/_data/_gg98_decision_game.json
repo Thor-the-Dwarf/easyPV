@@ -3,7 +3,7 @@
     "topic": "Kaufvertrag",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kaufvertrag",
+    "source": "_gg01_maengelrechte_router.json",
     "version": "1.0"
   },
   "title": "Kaufvertrag - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Entscheidung ist bei Mangel zuerst zu treffen?\nPassende Erstreaktion je Falllage.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Zunaechst den geeigneten naechsten Prozessschritt waehlen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Dann bleibt der Pfad konsistent."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Beliebiges Recht direkt endgueltig auswaehlen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Reihenfolge kann fehlerhaft sein."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Fall ohne Pruefung schliessen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht zulaessig."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann droht doppelter Punktabzug?\nPflichtstufe uebersprungen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn eine notwendige Zwischenstufe ausgelassen wird",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das ist ein schwerer Fehler."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Wenn ein korrekter Schritt begruendet wird",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das ist positiv."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Wenn KPI sichtbar sind",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Kein Strafgrund."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI sind im Router zentral?\nGenauigkeit + Loesungsweg.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Routing-Genauigkeit und Schritte bis korrekter Loesung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Beides wird gebraucht."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Gesamtpunkte",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu wenig differenziert."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Antwortdauer",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Ohne Korrektheit nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann entsteht Bonus im Router?\nEffiziente korrekte Loesung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn der richtige Pfad mit minimalen Schritten erreicht wird",
+          "correct": true,
+          "reason": "Exakt. Das bringt Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Wenn viele Umwege geklickt werden",
+          "correct": false,
+          "reason": "Keine Effizienz."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nur geraten wird",
+          "correct": false,
+          "reason": "Nicht reproduzierbar."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist ein Defect-Case abgeschlossen?\nPfad korrekt bis Endzustand.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn alle erforderlichen Schritte in richtiger Reihenfolge durchlaufen sind",
+          "correct": true,
+          "reason": "Richtig. Dann ist der Case sauber."
+        },
+        {
+          "id": "b",
+          "text": "Wenn der erste Schritt passt",
+          "correct": false,
+          "reason": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Wenn der Fall ausgesetzt wird",
+          "correct": false,
+          "reason": "Kein Abschluss."
         }
       ]
     }

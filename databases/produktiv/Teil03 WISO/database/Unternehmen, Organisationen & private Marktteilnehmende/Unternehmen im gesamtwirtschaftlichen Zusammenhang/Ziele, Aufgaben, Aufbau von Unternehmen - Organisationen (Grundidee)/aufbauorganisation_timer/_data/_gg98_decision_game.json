@@ -3,7 +3,7 @@
     "topic": "Unternehmensaufbau",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "unternehmensaufbau",
+    "source": "_gg01_aufbauorganisation_timer.json",
     "version": "1.0"
   },
   "title": "Unternehmensaufbau - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Strukturfrage betrifft die Aufbauorganisation?\nWer ist wem zugeordnet?",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Hierarchie, Zuständigkeiten und Weisungswege",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist Kern der Aufbauorganisation."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Reihenfolge einzelner Maschinenlaeufe",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Das ist eher Ablauforganisation."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Werbetextgestaltung",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht passend."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wofuer steht das Einlinienprinzip?\nEindeutige Weisungsbeziehung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Jede Stelle hat genau eine vorgesetzte Stelle",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Weisungen bleiben eindeutig."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Jede Stelle hat beliebig viele Vorgesetzte",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das waere Mehrliniensystem."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Es gibt keine Hierarchieebenen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Falsch."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Aufgabe hat eine Stabsstelle typischerweise?\nUnterstuetzen statt direkt anweisen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Beraten und Entscheider fachlich vorbereiten",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Stab unterstuetzt die Linie."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Direktive Gesamtsteuerung aller Linien",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die typische Stabsrolle."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Komplette Produktionsdurchfuehrung",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht der Kern."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI passt zum Timer-Format?\nTempo und Genauigkeit kombinieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Strukturentscheidungen pro Minute",
+          "correct": true,
+          "reason": "Richtig. Das misst Leistung im Zeitmodus."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtspielzeit",
+          "correct": false,
+          "reason": "Ohne Korrektheit wenig Aussagekraft."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl geoeffneter Fragen",
+          "correct": false,
+          "reason": "Nicht entscheidend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Aussage zu Delegation ist richtig?\nAufgabe und Verantwortung sauber regeln.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aufgaben koennen delegiert werden, Gesamtverantwortung bleibt bei Fuehrung",
+          "correct": true,
+          "reason": "Richtig. Delegation braucht Klarheit."
+        },
+        {
+          "id": "b",
+          "text": "Verantwortung verschwindet vollstaendig",
+          "correct": false,
+          "reason": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Delegation macht Abstimmung ueberfluessig",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Welche Struktur passt bei hoher Spezialisierung?\nFunktionale Gliederung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aufteilung nach Funktionen wie Einkauf, Produktion, Vertrieb",
+          "correct": true,
+          "reason": "Richtig. Das foerdert Fachfokus."
+        },
+        {
+          "id": "b",
+          "text": "Keine Abteilungen bilden",
+          "correct": false,
+          "reason": "Unrealistisch."
+        },
+        {
+          "id": "c",
+          "text": "Nur zufaellige Teamzuordnung",
+          "correct": false,
+          "reason": "Nicht tragfaehig."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Wann wird Koordination in der Aufbauorganisation kritisch?\nViele Schnittstellen und Ebenen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei vielen Abteilungen ohne klare Schnittstellenregeln",
+          "correct": true,
+          "reason": "Richtig. Dann steigen Reibungsverluste."
+        },
+        {
+          "id": "b",
+          "text": "Bei klaren Rollen und kurzen Wegen",
+          "correct": false,
+          "reason": "Dann ist Koordination eher leichter."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Ziele transparent sind",
+          "correct": false,
+          "reason": "Das hilft eher."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was trainiert der Aufbauorganisation-Timer?\nSchnelle Strukturdiagnose.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Grundmuster der Organisation sicher und schnell anwenden",
+          "correct": true,
+          "reason": "Richtig. Genau das ist der Trainingszweck."
+        },
+        {
+          "id": "b",
+          "text": "Nur zufaelliges Raten unter Zeitdruck",
+          "correct": false,
+          "reason": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Verzicht auf Messbarkeit",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

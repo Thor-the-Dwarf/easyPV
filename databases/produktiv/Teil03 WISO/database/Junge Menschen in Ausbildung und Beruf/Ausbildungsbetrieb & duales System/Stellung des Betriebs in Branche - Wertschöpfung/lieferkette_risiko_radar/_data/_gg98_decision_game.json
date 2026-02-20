@@ -3,7 +3,7 @@
     "topic": "Wertschoepfung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wertschoepfung",
+    "source": "_gg01_lieferkette_risiko_radar.json",
     "version": "1.0"
   },
   "title": "Wertschoepfung - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Wie priorisierst du Risiken im Szenario am wirksamsten?\nImpact und Eintrittswahrscheinlichkeit kombinieren.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Risiken mit hoher Auswirkung und hoher Wahrscheinlichkeit zuerst",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das minimiert den Gesamtschaden."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur nach alphabetischer Reihenfolge",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Alphabet hat keinen Risikobezug."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Niedrigrisiken zuerst, Hochrisiken spaeter",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Das ist in der Regel unguenstig."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche zweite Entscheidung wird getrennt bewertet?\nReaktion auf priorisiertes Risiko.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Passende Gegenmassnahme zur Risikostufe",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Reaktion ist eine eigene KPI-Achse."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur die Rundenfarbe",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Farben sind nicht die Reaktion."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur die Reihenfolge der Mausklicks",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Klickfolge ist kein Lernziel."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann entsteht ein Zusatzabzug?\nHochrisikoelement uebersehen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn ein Hochrisiko nicht in die Priorisierung aufgenommen wird",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das wird streng bestraft."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn ein Niedrigrisiko dokumentiert wird",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Dokumentation ist sinnvoll."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn der Hinweis gelesen wird",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Hinweise sind erlaubt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI gehoeren zum Radar?\nPriorisierung und Reaktion.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Priorisierungsquote und Reaktionsquote",
+          "correct": true,
+          "reason": "Richtig. Beide Kompetenzwerte sind noetig."
+        },
+        {
+          "id": "b",
+          "text": "Nur Rundenlaenge",
+          "correct": false,
+          "reason": "Rundenlaenge ist kein Kompetenzwert."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "reason": "Zu unscharf fuer Risikosteuerung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann gibt es laut Regel einen Multiplikator?\nVollkorrekte Runde.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Priorisierung und Reaktion in einer Runde voll korrekt sind",
+          "correct": true,
+          "reason": "Exakt. Das aktiviert den Multiplikator."
+        },
+        {
+          "id": "b",
+          "text": "Wenn gar keine Antwort gegeben wird",
+          "correct": false,
+          "reason": "Ohne Antwort kein Bonus."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nur ein Risiko bewertet wurde",
+          "correct": false,
+          "reason": "Teilbearbeitung reicht nicht."
         }
       ]
     }

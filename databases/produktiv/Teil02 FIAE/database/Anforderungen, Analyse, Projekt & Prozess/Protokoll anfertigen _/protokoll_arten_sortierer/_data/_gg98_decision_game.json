@@ -1,86 +1,211 @@
 {
   "meta": {
-    "topic": "Protokollführung",
+    "topic": "Protokollfuehrung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "protokollfuhrung",
-    "version": "1.0"
+    "source": "_gg01_protokoll_arten_sortierer.json",
+    "version": "2.0"
   },
-  "title": "Protokollführung - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "protokoll arten sortierer",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Daily Standup",
+      "situation": "Level 1: Daily Business 15 Min Meeting. Wer macht was heute?",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "ergebnis",
+          "text": "Ergebnisprotokoll",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Nur To-Dos und Blocker zaehlen. Alles andere ist Zeitverschwendung."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "verlauf",
+          "text": "Verlaufsprotokoll",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nur To-Dos und Blocker zaehlen. Alles andere ist Zeitverschwendung."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "wort",
+          "text": "Wortprotokoll",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nur To-Dos und Blocker zaehlen. Alles andere ist Zeitverschwendung."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Vorstandssitzung",
+      "situation": "Level 1: Daily Business Strategische Beschluesse fuer das naechste Jahr.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "ergebnis",
+          "text": "Ergebnisprotokoll",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Management braucht nur die Fakten/Beschluesse. Keine Details."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "verlauf",
+          "text": "Verlaufsprotokoll",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Management braucht nur die Fakten/Beschluesse. Keine Details."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "wort",
+          "text": "Wortprotokoll",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Management braucht nur die Fakten/Beschluesse. Keine Details."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Brainstorming",
+      "situation": "Level 1: Daily Business Ideenfindung fuer Weihnachtsfeier. Keine Beschluesse.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "verlauf",
+          "text": "Verlaufsprotokoll",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Der Weg zur Idee ist wichtig. Gute Ideen duerfen nicht verloren gehen."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "ergebnis",
+          "text": "Ergebnisprotokoll",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Der Weg zur Idee ist wichtig. Gute Ideen duerfen nicht verloren gehen."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "wort",
+          "text": "Wortprotokoll",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Der Weg zur Idee ist wichtig. Gute Ideen duerfen nicht verloren gehen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Projekt-Kickoff",
+      "situation": "Level 1: Daily Business Ziele, Rollen, Meilensteine festlegen.",
+      "options": [
+        {
+          "id": "ergebnis",
+          "text": "Ergebnisprotokoll",
+          "correct": true,
+          "reason": "Wichtig sind die Fakten fuer den Projektstart."
+        },
+        {
+          "id": "verlauf",
+          "text": "Verlaufsprotokoll",
+          "correct": false,
+          "reason": "Wichtig sind die Fakten fuer den Projektstart."
+        },
+        {
+          "id": "wort",
+          "text": "Wortprotokoll",
+          "correct": false,
+          "reason": "Wichtig sind die Fakten fuer den Projektstart."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Code Review",
+      "situation": "Level 1: Daily Business Feedback zu Pull Request #42.",
+      "options": [
+        {
+          "id": "ergebnis",
+          "text": "Ergebnisprotokoll",
+          "correct": true,
+          "reason": "Aenderungswuensche (To-Dos) sind das einzige was zaehlt."
+        },
+        {
+          "id": "verlauf",
+          "text": "Verlaufsprotokoll",
+          "correct": false,
+          "reason": "Aenderungswuensche (To-Dos) sind das einzige was zaehlt."
+        },
+        {
+          "id": "wort",
+          "text": "Wortprotokoll",
+          "correct": false,
+          "reason": "Aenderungswuensche (To-Dos) sind das einzige was zaehlt."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Disziplinargespraech",
+      "situation": "Level 1: Daily Business Abmahnung wegen Arbeitszeitbetrug.",
+      "options": [
+        {
+          "id": "wort",
+          "text": "Wortprotokoll",
+          "correct": true,
+          "reason": "Arbeitsrechtlich relevant. Jedes Wort kann vor Gericht zaehlen."
+        },
+        {
+          "id": "ergebnis",
+          "text": "Ergebnisprotokoll",
+          "correct": false,
+          "reason": "Arbeitsrechtlich relevant. Jedes Wort kann vor Gericht zaehlen."
+        },
+        {
+          "id": "verlauf",
+          "text": "Verlaufsprotokoll",
+          "correct": false,
+          "reason": "Arbeitsrechtlich relevant. Jedes Wort kann vor Gericht zaehlen."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Gerichtsverhandlung",
+      "situation": "Level 2: Legal Pressure Streitfall Patentverletzung.",
+      "options": [
+        {
+          "id": "wort",
+          "text": "Wortprotokoll",
+          "correct": true,
+          "reason": "Gesetzliche Vorschrift fuer Beweiskraft."
+        },
+        {
+          "id": "ergebnis",
+          "text": "Ergebnisprotokoll",
+          "correct": false,
+          "reason": "Gesetzliche Vorschrift fuer Beweiskraft."
+        },
+        {
+          "id": "verlauf",
+          "text": "Verlaufsprotokoll",
+          "correct": false,
+          "reason": "Gesetzliche Vorschrift fuer Beweiskraft."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Anforderungs-Workshop",
+      "situation": "Level 2: Legal Pressure Kunde erklaert komplexe Business-Logik. Missverstaendnisse teuer.",
+      "options": [
+        {
+          "id": "verlauf",
+          "text": "Verlaufsprotokoll",
+          "correct": true,
+          "reason": "Diskussion hilft spaeter zu verstehen, WARUM etwas so definiert wurde."
+        },
+        {
+          "id": "ergebnis",
+          "text": "Ergebnisprotokoll",
+          "correct": false,
+          "reason": "Diskussion hilft spaeter zu verstehen, WARUM etwas so definiert wurde."
+        },
+        {
+          "id": "wort",
+          "text": "Wortprotokoll",
+          "correct": false,
+          "reason": "Diskussion hilft spaeter zu verstehen, WARUM etwas so definiert wurde."
         }
       ]
     }

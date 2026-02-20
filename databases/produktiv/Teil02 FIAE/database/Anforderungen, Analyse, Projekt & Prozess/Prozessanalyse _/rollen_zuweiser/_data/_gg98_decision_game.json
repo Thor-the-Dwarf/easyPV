@@ -1,86 +1,197 @@
 {
   "meta": {
-    "topic": "rollen zuweiser",
+    "topic": "Rollen-Zuweiser",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "rollen_zuweiser",
-    "version": "1.0"
+    "source": "_gg01_rollen_zuweiser.json",
+    "version": "2.0"
   },
-  "title": "rollen zuweiser - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Rollen-Zuweiser",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Wer programmiert die neue API-Schnittstelle?",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "R",
+          "text": "Responsible",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die umsetzende Entwicklerrolle ist Responsible."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "A",
+          "text": "Accountable",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Die umsetzende Entwicklerrolle ist Responsible."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "C",
+          "text": "Consulted",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Die umsetzende Entwicklerrolle ist Responsible."
+        },
+        {
+          "id": "I",
+          "text": "Informed",
+          "correct": false,
+          "reason": "Die umsetzende Entwicklerrolle ist Responsible."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wer entscheidet final, ob das Release live geht?",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "A",
+          "text": "Accountable",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die letzte Entscheidung liegt bei Accountable."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "R",
+          "text": "Responsible",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Die letzte Entscheidung liegt bei Accountable."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "C",
+          "text": "Consulted",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Die letzte Entscheidung liegt bei Accountable."
+        },
+        {
+          "id": "I",
+          "text": "Informed",
+          "correct": false,
+          "reason": "Die letzte Entscheidung liegt bei Accountable."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wer gibt fachliche Inputs zu Datenschutzanforderungen?",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "C",
+          "text": "Consulted",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Fachliche Beratung vor Umsetzung entspricht Consulted."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "R",
+          "text": "Responsible",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Fachliche Beratung vor Umsetzung entspricht Consulted."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "A",
+          "text": "Accountable",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Fachliche Beratung vor Umsetzung entspricht Consulted."
+        },
+        {
+          "id": "I",
+          "text": "Informed",
+          "correct": false,
+          "reason": "Fachliche Beratung vor Umsetzung entspricht Consulted."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wer bekommt den Statusbericht nach Sprint-Abschluss?",
+      "options": [
+        {
+          "id": "I",
+          "text": "Informed",
+          "correct": true,
+          "reason": "Diese Rolle wird informiert, arbeitet aber nicht aktiv mit."
+        },
+        {
+          "id": "R",
+          "text": "Responsible",
+          "correct": false,
+          "reason": "Diese Rolle wird informiert, arbeitet aber nicht aktiv mit."
+        },
+        {
+          "id": "A",
+          "text": "Accountable",
+          "correct": false,
+          "reason": "Diese Rolle wird informiert, arbeitet aber nicht aktiv mit."
+        },
+        {
+          "id": "C",
+          "text": "Consulted",
+          "correct": false,
+          "reason": "Diese Rolle wird informiert, arbeitet aber nicht aktiv mit."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wer beantwortet Rueckfragen aus dem Team zur Architekturentscheidung?",
+      "options": [
+        {
+          "id": "C",
+          "text": "Consulted",
+          "correct": true,
+          "reason": "Expertinnen und Experten werden beratend einbezogen (Consulted)."
+        },
+        {
+          "id": "R",
+          "text": "Responsible",
+          "correct": false,
+          "reason": "Expertinnen und Experten werden beratend einbezogen (Consulted)."
+        },
+        {
+          "id": "A",
+          "text": "Accountable",
+          "correct": false,
+          "reason": "Expertinnen und Experten werden beratend einbezogen (Consulted)."
+        },
+        {
+          "id": "I",
+          "text": "Informed",
+          "correct": false,
+          "reason": "Expertinnen und Experten werden beratend einbezogen (Consulted)."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Wer traegt Gesamtverantwortung fuer Budget und Zielerreichung?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Accountable",
+          "correct": true,
+          "reason": "Gesamtverantwortung und Rechenschaftspflicht bedeuten Accountable."
+        },
+        {
+          "id": "R",
+          "text": "Responsible",
+          "correct": false,
+          "reason": "Gesamtverantwortung und Rechenschaftspflicht bedeuten Accountable."
+        },
+        {
+          "id": "C",
+          "text": "Consulted",
+          "correct": false,
+          "reason": "Gesamtverantwortung und Rechenschaftspflicht bedeuten Accountable."
+        },
+        {
+          "id": "I",
+          "text": "Informed",
+          "correct": false,
+          "reason": "Gesamtverantwortung und Rechenschaftspflicht bedeuten Accountable."
         }
       ]
     }

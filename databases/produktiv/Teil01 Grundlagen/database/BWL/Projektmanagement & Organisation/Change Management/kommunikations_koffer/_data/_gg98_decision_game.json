@@ -3,84 +3,159 @@
     "topic": "Kommunikations-Koffer",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kommunikations_koffer",
+    "source": "_gg01_kommunikations_koffer.json",
     "version": "1.0"
   },
   "title": "Kommunikations-Koffer - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "subtitle": "Waehle pro Phase die passende Kommunikationsmassnahme.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Unsicherheit",
+      "situation": "In der Geruechtekueche kursieren widerspruechliche Infos zum Projektstart.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Townhall mit offener Fragerunde und klaren Fakten",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Transparenz senkt Unsicherheit und stoppt Spekulationen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Vorerst keine Kommunikation, bis alles final ist",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Informationsvakuum verstaerkt Geruechte und Widerstand."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur den Fuehrungskreis informieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Die breite Zielgruppe bleibt ohne Orientierung."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Widerstand",
+      "situation": "Mehrere Teams sagen: 'Das haben wir schon immer so gemacht'.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Workshop mit Stakeholdern und konkreten Sorgen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Partizipation reduziert Abwehr und macht Probleme besprechbar."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur per E-Mail auf neue Regeln hinweisen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Einwegkommunikation reicht in Konfliktphasen selten aus."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Kritik oeffentlich abwerten",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Abwertung verschaerft Fronten und Vertrauensverlust."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Einsicht",
+      "situation": "Das Team akzeptiert den Grund fuer die Aenderung, ist aber noch unsicher in der Anwendung.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Praxisnahe Schulung mit Q&A und Checklisten",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Einsicht braucht Enablement, damit Verhalten wirklich umgestellt wird."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Sofortige Leistungskontrolle ohne Erklaerung",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Druck ohne Anleitung erzeugt Rueckfall in alte Muster."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Kommunikation komplett pausieren",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Gerade jetzt braucht es Orientierung im Alltag."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Ausprobieren",
+      "situation": "Pilotgruppen testen den neuen Prozess und sammeln erste Erfahrungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Regelmaessige Retros mit Lessons Learned",
+          "correct": true,
+          "reason": "Schnelles Feedback stabilisiert den Lernzyklus."
+        },
+        {
+          "id": "b",
+          "text": "Pilotteam ohne Austausch alleine lassen",
+          "correct": false,
+          "reason": "Ohne Austausch gehen wichtige Erkenntnisse verloren."
+        },
+        {
+          "id": "c",
+          "text": "Sofortiger Voll-Rollout ohne Review",
+          "correct": false,
+          "reason": "Ohne Iteration steigt das Risiko fuer Fehlentscheidungen."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Erste Erfolge",
+      "situation": "Die ersten Kennzahlen verbessern sich sichtbar.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Erfolge sichtbar machen und Teamleistung anerkennen",
+          "correct": true,
+          "reason": "Positive Verstaerkung foerdert Akzeptanz und Momentum."
+        },
+        {
+          "id": "b",
+          "text": "Erfolge intern kleinhalten",
+          "correct": false,
+          "reason": "Unsichtbare Fortschritte verlieren Motivationswirkung."
+        },
+        {
+          "id": "c",
+          "text": "Sofort das naechste Grossprojekt starten",
+          "correct": false,
+          "reason": "Zu frueher Fokuswechsel untergraebt den Transfer."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Integration",
+      "situation": "Der neue Prozess soll langfristig Standard werden.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Standards dokumentieren und in Onboarding verankern",
+          "correct": true,
+          "reason": "Verankerung in Routinen sichert Nachhaltigkeit."
+        },
+        {
+          "id": "b",
+          "text": "Alles nur informell laufen lassen",
+          "correct": false,
+          "reason": "Ohne Verankerung ist Rueckfallwahrscheinlichkeit hoch."
+        },
+        {
+          "id": "c",
+          "text": "Verantwortung unklar lassen",
+          "correct": false,
+          "reason": "Unklare Ownership schwaecht dauerhafte Umsetzung."
         }
       ]
     }

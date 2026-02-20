@@ -3,7 +3,7 @@
     "topic": "Wertschoepfung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wertschoepfung",
+    "source": "_gg01_kostenfluss_analyse.json",
     "version": "1.0"
   },
   "title": "Wertschoepfung - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was ist der erste Schritt in einem Cost-Case?\nKosten je Stufe transparent vergleichen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Kostenanteile aller Stufen gegenueberstellen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Ohne Vergleich keine Engpassanalyse."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Sofort eine Massnahme auswaehlen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Massnahme erst nach Engpasswahl."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur den guenstigsten Wert betrachten",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Engpaesse liegen meist bei Spitzenwerten."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann gibt es Teilpunkte laut Regeln?\nStufe korrekt, Massnahme falsch.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn die Engpassstufe korrekt erkannt wurde",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das gibt Teilpunkte."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Wenn beides falsch ist",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Dafuer gibt es keine Teilpunkte."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Wenn ohne Analyse geraten wird",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Raten wird nicht belohnt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI gehoeren zur Kostenfluss-Analyse?\nEngpass plus Wirkungsseite.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Engpassquote und Massnahmenwirkung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Beide KPI sind vorgesehen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Bearbeitungszeit",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zeit ist hier nicht allein ausschlaggebend."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Fallanzahl",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Anzahl ohne Qualitaet ist zu wenig."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann aktiviert sich ein Serienbonus?\nDoppelt korrekte Faelle.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Stufe und Massnahme mehrfach hintereinander korrekt sind",
+          "correct": true,
+          "reason": "Richtig. Volltreffer in Serie geben Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur eine Stufe zufaellig passt",
+          "correct": false,
+          "reason": "Einzeltreffer reichen nicht."
+        },
+        {
+          "id": "c",
+          "text": "Wenn keine Entscheidung getroffen wird",
+          "correct": false,
+          "reason": "Ohne Entscheidung kein Fortschritt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Report-Info ist laut Abnahme wichtig?\nFehlpriorisierungen sichtbar machen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Haeufige Fehlpriorisierungen je Prozessstufe",
+          "correct": true,
+          "reason": "Exakt. Das steuert die Verbesserung."
+        },
+        {
+          "id": "b",
+          "text": "Nur beste Runde",
+          "correct": false,
+          "reason": "Nur Bestwert zeigt keine Fehlmuster."
+        },
+        {
+          "id": "c",
+          "text": "Nur Startpunktestand",
+          "correct": false,
+          "reason": "Startwerte sind nicht ausreichend."
         }
       ]
     }

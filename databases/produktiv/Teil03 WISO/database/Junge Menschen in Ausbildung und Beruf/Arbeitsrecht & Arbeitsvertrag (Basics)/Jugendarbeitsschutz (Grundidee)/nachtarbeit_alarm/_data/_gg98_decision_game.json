@@ -3,7 +3,7 @@
     "topic": "Jugendarbeitsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "jugendarbeitsschutz",
+    "source": "_gg01_nachtarbeit_alarm.json",
     "version": "1.0"
   },
   "title": "Jugendarbeitsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Dienstplan enthaelt unzulaessiges Nachtfenster. Was ist korrekt?\nVerstoss markieren und sichere Alternative vorschlagen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Alarm setzen und korrigierte Zeitlage vorschlagen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Erkennung und Korrektur gehoeren zusammen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Plan freigeben",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur markieren ohne Korrektur",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Unvollstaendig."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Fehleinschaetzung kostet Zusatzpunkte?\nUnentdeckte Nachtverstoesse sind kritisch.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Unentdeckter Nachtverstoss",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Diese Fehler sind besonders schwerwiegend."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Korrekter Alarm",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Korrektur begruenden",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann gilt eine Runde als perfekt?\nVolltreffer ohne Fehlalarm.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Alle Verstoesse erkannt, keine Fehlalarme",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Dann gibt es Perfektionsbonus."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur hohe Klickzahl",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur schnelle Antwort",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI-Achsen sind vorgesehen?\nAlarmqualitaet und Korrekturqualitaet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Alarm-Praezision und Korrekturquote",
+          "correct": true,
+          "reason": "Richtig. Beide Achsen werden getrennt bewertet."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endscore",
+          "correct": false,
+          "reason": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Zeit",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was soll im Verlauf vergleichbar sein?\nErgebnisse ueber mehrere Plaene.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Planleistung ueber die Zeit",
+          "correct": true,
+          "reason": "Richtig. Trends machen Lernfortschritt sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Startwert",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Keine Historie",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

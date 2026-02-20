@@ -3,84 +3,134 @@
     "topic": "Change-Erfolgs-Check",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "change_erfolgs_check",
-    "version": "1.0"
+    "source": "_gg01_change_erfolgs_check.json",
+    "version": "2.0"
   },
-  "title": "Change-Erfolgs-Check - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Change-Erfolgs-Check",
+  "subtitle": "Waehle die KPIs, die den Wandel wirklich messbar machen.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Neues ERP-System wurde eingefuehrt. Welche KPI-Kombination passt am besten?",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Fehlerrate bei Dateneingaben + Nutzerzufriedenheit im Fachbereich",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Qualitaet und Akzeptanz zeigen den realen Nutzen besser als reine Aktivitaetszahlen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Anzahl versendeter Projektmails + Anzahl Kickoff-Folien",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Das sind eher Aktivitaets- statt Ergebnis-KPIs."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Fehlerrate bei Dateneingaben + Anzahl versendeter Projektmails",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Gemischte Aussage, nicht die beste KPI-Kombination."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Ein neues Ticketsystem ist live. Welche KPI-Kombination passt am besten?",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Durchschnittliche Loesungszeit + First-Contact-Resolution-Rate",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Servicequalitaet und Effizienz sind entscheidende Erfolgssignale."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Anzahl Team-Meetings + Anzahl Sticker am Kanban-Board",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das sind eher Aktivitaets- statt Ergebnis-KPIs."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Durchschnittliche Loesungszeit + Anzahl Team-Meetings",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Gemischte Aussage, nicht die beste KPI-Kombination."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Cloud-Migration wurde abgeschlossen. Welche KPI-Kombination passt am besten?",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Verfuegbarkeit der Kernservices + Anzahl kritischer Incidents",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Stabilitaet und Betriebsrisiko zeigen, ob der Wandel technisch gelingt."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Anzahl geposteter News im Intranet + Anzahl Teilnehmender am Sommerfest",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das sind eher Aktivitaets- statt Ergebnis-KPIs."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Verfuegbarkeit der Kernservices + Anzahl geposteter News im Intranet",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Gemischte Aussage, nicht die beste KPI-Kombination."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Neuer Freigabeprozess wurde ausgerollt. Welche KPI-Kombination passt am besten?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Durchlaufzeit pro Freigabe + Anteil Rueckfragen wegen Unklarheiten",
+          "correct": true,
+          "reason": "Prozessleistung und Verstaendlichkeit sind zentrale Outcome-KPIs."
+        },
+        {
+          "id": "b",
+          "text": "Anzahl ausgegebener Prozessposter + Anzahl verschickter Kalender-Einladungen",
+          "correct": false,
+          "reason": "Das sind eher Aktivitaets- statt Ergebnis-KPIs."
+        },
+        {
+          "id": "c",
+          "text": "Durchlaufzeit pro Freigabe + Anzahl ausgegebener Prozessposter",
+          "correct": false,
+          "reason": "Gemischte Aussage, nicht die beste KPI-Kombination."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Schulungsoffensive fuer neue Arbeitsweise lief 8 Wochen. Welche KPI-Kombination passt am besten?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Transferquote in den Arbeitsalltag + Fehlerhaeufigkeit vor/nach Schulung",
+          "correct": true,
+          "reason": "Verhaltensaenderung und Fehlerreduktion zeigen den echten Schulungserfolg."
+        },
+        {
+          "id": "b",
+          "text": "Anzahl verteilter Handouts + Dauer der Abschlussrede",
+          "correct": false,
+          "reason": "Das sind eher Aktivitaets- statt Ergebnis-KPIs."
+        },
+        {
+          "id": "c",
+          "text": "Transferquote in den Arbeitsalltag + Anzahl verteilter Handouts",
+          "correct": false,
+          "reason": "Gemischte Aussage, nicht die beste KPI-Kombination."
         }
       ]
     }

@@ -3,84 +3,84 @@
     "topic": "SQL UPDATE Precision",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "sql_update_precision",
-    "version": "1.0"
+    "source": "_gg01_mass_update.json",
+    "version": "2.0"
   },
-  "title": "SQL UPDATE Precision - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "UPDATE",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Operation: CEO Raise",
+      "situation": "Operation: CEO Raise: UPDATE employees SET salary = 250000 WHERE id = 1",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "1 Zeile(n) betroffen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Praezise UPDATE-Statements begrenzen den Schaden."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Gesamte Tabelle betroffen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ohne passenden Filter waere das riskant."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Keine Zeile betroffen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Dann waere das Ziel nicht erreicht."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Branch Relocation",
+      "situation": "Branch Relocation: UPDATE branches SET location = 'HafenCity' WHERE branch_name = 'North'",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "1 Zeile(n) betroffen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Praezise UPDATE-Statements begrenzen den Schaden."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Gesamte Tabelle betroffen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Ohne passenden Filter waere das riskant."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine Zeile betroffen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Dann waere das Ziel nicht erreicht."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Emergency Password Reset",
+      "situation": "Emergency Password Reset: UPDATE users SET pass = 'emergency2024' WHERE username = 'admin'",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "1 Zeile(n) betroffen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Praezise UPDATE-Statements begrenzen den Schaden."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Gesamte Tabelle betroffen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Ohne passenden Filter waere das riskant."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Keine Zeile betroffen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Dann waere das Ziel nicht erreicht."
         }
       ]
     }

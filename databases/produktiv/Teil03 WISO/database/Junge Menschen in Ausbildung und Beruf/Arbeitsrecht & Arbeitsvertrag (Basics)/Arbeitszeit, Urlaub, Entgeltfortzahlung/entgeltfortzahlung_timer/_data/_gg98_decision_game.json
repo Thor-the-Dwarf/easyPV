@@ -3,7 +3,7 @@
     "topic": "Arbeitszeit und Entgelt",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitszeit_und_entgelt",
+    "source": "_gg01_entgeltfortzahlung_timer.json",
     "version": "1.0"
   },
   "title": "Arbeitszeit und Entgelt - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Krankheitsfall mit klarer Nachweislage: Welche Grundentscheidung ist plausibel?\nPruefe zunaechst die Fallvoraussetzungen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Entgeltfortzahlung entsprechend Falllogik bejahen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Die Entscheidung folgt den Fallmerkmalen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Immer pauschal ablehnen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ohne Pruefung offen lassen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Zusatzleistung bringt Bonuspunkte?\nNeben Entscheidung zaehlt die Begruendung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Korrekte Begruendungsauswahl",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Die Begruendung wird separat honoriert."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur schnelles Klicken",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Leeres Feld abgeben",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was passiert bei Entscheidung ohne Begruendung?\nEs gibt eine reduzierte Bewertung.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Teilpunkte statt Vollwertung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Ohne Begruendung wird reduziert gewertet."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Doppelte Punkte",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Automatischer Bonus",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI-Kombination ist vorgesehen?\nKorrektheit und Geschwindigkeit trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Entscheidungsgenauigkeit und Reaktionszeit",
+          "correct": true,
+          "reason": "Genau. So wird Qualitaet und Tempo sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "reason": "Zu wenig differenziert."
+        },
+        {
+          "id": "c",
+          "text": "Nur Zeit",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann greift ein adaptiver Hinweis?\nBei wiederholten Fehlentscheidungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei Fehlserie",
+          "correct": true,
+          "reason": "Richtig. Dann wird gezielt unterstuetzt."
+        },
+        {
+          "id": "b",
+          "text": "Bei jeder richtigen Antwort",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nie",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

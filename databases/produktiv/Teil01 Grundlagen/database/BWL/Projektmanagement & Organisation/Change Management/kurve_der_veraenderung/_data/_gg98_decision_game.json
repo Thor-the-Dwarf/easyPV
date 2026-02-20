@@ -3,84 +3,226 @@
     "topic": "Die Kurve der Veraenderung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "die_kurve_der_veraenderung",
-    "version": "1.0"
+    "source": "_gg01_kurve_der_veraenderung.json",
+    "version": "2.0"
   },
-  "title": "Die Kurve der Veraenderung - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Die Kurve der Veraenderung",
+  "subtitle": "Ordne sieben Aussagen den sieben emotionalen Phasen der Change-Kurve zu.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Aussage 1",
+      "situation": "Was ist passiert? Das ueberrollt mich gerade total.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "schock",
+          "text": "Schock",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die Veraenderung trifft unerwartet; Orientierung fehlt."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "verneinung",
+          "text": "Verneinung/Widerstand",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Die Notwendigkeit wird bestritten oder aktiv abgewehrt."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "einsicht",
+          "text": "Rationale Einsicht",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Der Kopf versteht die Lage, das Gefuehl zieht noch nicht mit."
+        },
+        {
+          "id": "akzeptanz",
+          "text": "Emotionale Akzeptanz",
+          "correct": false,
+          "reason": "Die Person nimmt an, dass der Wandel bleibt und moeglich ist."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Aussage 2",
+      "situation": "Das haben wir schon immer so gemacht, das brauchen wir nicht!",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "verneinung",
+          "text": "Verneinung/Widerstand",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die Notwendigkeit wird bestritten oder aktiv abgewehrt."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "schock",
+          "text": "Schock",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Die Veraenderung trifft unerwartet; Orientierung fehlt."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "einsicht",
+          "text": "Rationale Einsicht",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Der Kopf versteht die Lage, das Gefuehl zieht noch nicht mit."
+        },
+        {
+          "id": "akzeptanz",
+          "text": "Emotionale Akzeptanz",
+          "correct": false,
+          "reason": "Die Person nimmt an, dass der Wandel bleibt und moeglich ist."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Aussage 3",
+      "situation": "Ich sehe den Grund, aber ich fuehle mich trotzdem unsicher.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "einsicht",
+          "text": "Rationale Einsicht",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Der Kopf versteht die Lage, das Gefuehl zieht noch nicht mit."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "schock",
+          "text": "Schock",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Die Veraenderung trifft unerwartet; Orientierung fehlt."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "verneinung",
+          "text": "Verneinung/Widerstand",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Die Notwendigkeit wird bestritten oder aktiv abgewehrt."
+        },
+        {
+          "id": "akzeptanz",
+          "text": "Emotionale Akzeptanz",
+          "correct": false,
+          "reason": "Die Person nimmt an, dass der Wandel bleibt und moeglich ist."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Aussage 4",
+      "situation": "Okay, die Umstellung kommt. Dann schaue ich, wie ich damit arbeite.",
+      "options": [
+        {
+          "id": "akzeptanz",
+          "text": "Emotionale Akzeptanz",
+          "correct": true,
+          "reason": "Die Person nimmt an, dass der Wandel bleibt und moeglich ist."
+        },
+        {
+          "id": "schock",
+          "text": "Schock",
+          "correct": false,
+          "reason": "Die Veraenderung trifft unerwartet; Orientierung fehlt."
+        },
+        {
+          "id": "verneinung",
+          "text": "Verneinung/Widerstand",
+          "correct": false,
+          "reason": "Die Notwendigkeit wird bestritten oder aktiv abgewehrt."
+        },
+        {
+          "id": "einsicht",
+          "text": "Rationale Einsicht",
+          "correct": false,
+          "reason": "Der Kopf versteht die Lage, das Gefuehl zieht noch nicht mit."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Aussage 5",
+      "situation": "Ich teste den neuen Ablauf heute mit einem kleinen Teilprozess.",
+      "options": [
+        {
+          "id": "schock",
+          "text": "Schock",
+          "correct": true,
+          "reason": "Die Veraenderung trifft unerwartet; Orientierung fehlt."
+        },
+        {
+          "id": "verneinung",
+          "text": "Verneinung/Widerstand",
+          "correct": false,
+          "reason": "Die Notwendigkeit wird bestritten oder aktiv abgewehrt."
+        },
+        {
+          "id": "einsicht",
+          "text": "Rationale Einsicht",
+          "correct": false,
+          "reason": "Der Kopf versteht die Lage, das Gefuehl zieht noch nicht mit."
+        },
+        {
+          "id": "akzeptanz",
+          "text": "Emotionale Akzeptanz",
+          "correct": false,
+          "reason": "Die Person nimmt an, dass der Wandel bleibt und moeglich ist."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Aussage 6",
+      "situation": "So spare ich wirklich Zeit. Das funktioniert besser als gedacht.",
+      "options": [
+        {
+          "id": "schock",
+          "text": "Schock",
+          "correct": true,
+          "reason": "Die Veraenderung trifft unerwartet; Orientierung fehlt."
+        },
+        {
+          "id": "verneinung",
+          "text": "Verneinung/Widerstand",
+          "correct": false,
+          "reason": "Die Notwendigkeit wird bestritten oder aktiv abgewehrt."
+        },
+        {
+          "id": "einsicht",
+          "text": "Rationale Einsicht",
+          "correct": false,
+          "reason": "Der Kopf versteht die Lage, das Gefuehl zieht noch nicht mit."
+        },
+        {
+          "id": "akzeptanz",
+          "text": "Emotionale Akzeptanz",
+          "correct": false,
+          "reason": "Die Person nimmt an, dass der Wandel bleibt und moeglich ist."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Aussage 7",
+      "situation": "Wir arbeiten jetzt dauerhaft so, das Team kann es selbststaendig.",
+      "options": [
+        {
+          "id": "schock",
+          "text": "Schock",
+          "correct": true,
+          "reason": "Die Veraenderung trifft unerwartet; Orientierung fehlt."
+        },
+        {
+          "id": "verneinung",
+          "text": "Verneinung/Widerstand",
+          "correct": false,
+          "reason": "Die Notwendigkeit wird bestritten oder aktiv abgewehrt."
+        },
+        {
+          "id": "einsicht",
+          "text": "Rationale Einsicht",
+          "correct": false,
+          "reason": "Der Kopf versteht die Lage, das Gefuehl zieht noch nicht mit."
+        },
+        {
+          "id": "akzeptanz",
+          "text": "Emotionale Akzeptanz",
+          "correct": false,
+          "reason": "Die Person nimmt an, dass der Wandel bleibt und moeglich ist."
         }
       ]
     }

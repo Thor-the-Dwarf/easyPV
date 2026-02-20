@@ -3,84 +3,164 @@
     "topic": "Promotoren-Opponenten-Netz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "promotoren_opponenten_netz",
-    "version": "1.0"
+    "source": "_gg01_promotoren_opponenten_netz.json",
+    "version": "2.0"
   },
-  "title": "Promotoren-Opponenten-Netz - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Promotoren-Opponenten-Netz",
+  "subtitle": "Finde Machtpromotor, Fachpromotor und Opponenten.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "CRM-Rollout in Vertrieb und Support Wer ist die entscheidende Schluesselrolle?",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "p1",
+          "text": "COO - Entscheidet Prioritaeten und Ressourcen.",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Entscheidet Prioritaeten und Ressourcen."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "p2",
+          "text": "Solution Architect - Kennt Integrationen im Detail.",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Kennt Integrationen im Detail."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "p3",
+          "text": "Senior Sales - Sagt: Das kostet nur Zeit.",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Sagt: Das kostet nur Zeit."
+        },
+        {
+          "id": "p4",
+          "text": "Support Lead - Sagt: Altprozess reicht.",
+          "correct": false,
+          "reason": "Sagt: Altprozess reicht."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Einfuehrung eines neuen Ticketsystems Wer ist die entscheidende Schluesselrolle?",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "p1",
+          "text": "CIO - Kann den Rollout verbindlich freigeben.",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Kann den Rollout verbindlich freigeben."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "p2",
+          "text": "Service Owner - Kennt Prozesse und SLAs.",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Kennt Prozesse und SLAs."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "p3",
+          "text": "Teamleiter A - Blockt neue Workflows offen.",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Blockt neue Workflows offen."
+        },
+        {
+          "id": "p4",
+          "text": "Teamleiter B - Verweigert Schulungszeit.",
+          "correct": false,
+          "reason": "Verweigert Schulungszeit."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Migration auf neue Cloud-Plattform Wer ist die entscheidende Schluesselrolle?",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "p1",
+          "text": "CEO - Setzt strategische Richtung und Budgetrahmen.",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Setzt strategische Richtung und Budgetrahmen."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "p2",
+          "text": "Cloud Lead - Kennt Architektur und Cutover-Risiken.",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Kennt Architektur und Cutover-Risiken."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "p3",
+          "text": "Ops Engineer - Sagt: Wir koennen nichts aendern.",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Sagt: Wir koennen nichts aendern."
+        },
+        {
+          "id": "p4",
+          "text": "Legacy Admin - Streut Zweifel ohne Loesung.",
+          "correct": false,
+          "reason": "Streut Zweifel ohne Loesung."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Neuer Freigabeprozess fuer Releases Wer ist die entscheidende Schluesselrolle?",
+      "options": [
+        {
+          "id": "p1",
+          "text": "Bereichsleitung IT - Traegt Budget- und Prioritaetsverantwortung.",
+          "correct": true,
+          "reason": "Traegt Budget- und Prioritaetsverantwortung."
+        },
+        {
+          "id": "p2",
+          "text": "QA Lead - Definiert praktikable Qualitaetskriterien.",
+          "correct": false,
+          "reason": "Definiert praktikable Qualitaetskriterien."
+        },
+        {
+          "id": "p3",
+          "text": "Dev Lead - Sagt: Wir ignorieren die neuen Gates.",
+          "correct": false,
+          "reason": "Sagt: Wir ignorieren die neuen Gates."
+        },
+        {
+          "id": "p4",
+          "text": "Release Manager alt - Blockt jede Aenderung im Board.",
+          "correct": false,
+          "reason": "Blockt jede Aenderung im Board."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Unternehmensweite Einfuehrung eines Monitorings Wer ist die entscheidende Schluesselrolle?",
+      "options": [
+        {
+          "id": "p1",
+          "text": "CFO - Kann Finanzierung fuer Rollout absichern.",
+          "correct": true,
+          "reason": "Kann Finanzierung fuer Rollout absichern."
+        },
+        {
+          "id": "p2",
+          "text": "SRE Lead - Kennt Alerting und Betriebsgrenzen.",
+          "correct": false,
+          "reason": "Kennt Alerting und Betriebsgrenzen."
+        },
+        {
+          "id": "p3",
+          "text": "Abteilungsleiter X - Sagt: Brauchen wir nicht.",
+          "correct": false,
+          "reason": "Sagt: Brauchen wir nicht."
+        },
+        {
+          "id": "p4",
+          "text": "Abteilungsleiter Y - Verweigert Datentransparenz.",
+          "correct": false,
+          "reason": "Verweigert Datentransparenz."
         }
       ]
     }

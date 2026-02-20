@@ -3,84 +3,84 @@
     "topic": "INSERT Statement",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "insert_statement",
-    "version": "1.0"
+    "source": "_gg01_value_match.json",
+    "version": "2.0"
   },
-  "title": "INSERT Statement - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "INSERT",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Basic User Profile",
+      "situation": "Basic User Profile Load the data for User 101: 'Alice', Age 25.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Basic User Profile",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Product Entry",
+      "situation": "Product Entry Enter the new Coffee Machine: Price 89.99, In Stock: true.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Product Entry",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Event Logging",
+      "situation": "Event Logging Log the Login event for today.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Event Logging",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

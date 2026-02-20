@@ -3,7 +3,7 @@
     "topic": "Wertschoepfung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wertschoepfung",
+    "source": "_gg01_wertbeitrag_duell.json",
     "version": "1.0"
   },
   "title": "Wertschoepfung - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Bewertungsidee passt zum Wertbeitrag-Duell?\nZeit, Kosten und Qualitaet zusammen betrachten.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Variante mit besserem Gesamtwert aus Zeit, Kosten und Qualitaet waehlen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Die kombinierte Bewertung ist entscheidend."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur die kuerzeste Zeit waehlen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Einzelkriterium reicht nicht."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur die niedrigsten Kosten waehlen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Kosten allein koennen Qualitaetsrisiken verstecken."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann gibt es laut Spielidee Teilpunkte?\nWahl korrekt, Begruendung fehlt.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn die Wahl korrekt ist, aber die Begruendung nicht passt",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Teilpunkte fuer korrekte Wahl."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Wenn beides falsch ist",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Dafuer gibt es keine Teilpunkte."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Wenn keine Option gewaehlt wurde",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Ohne Wahl kein Punkt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI gehoeren zum Duell?\nWahl und Begruendung getrennt.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Duellgenauigkeit und Begruendungsquote",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Diese KPI sind gefordert."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Endpunktzahl",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu wenig Detail fuer Lernfeedback."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Rundenzahl",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Rundenzahl misst keine Qualitaet."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann aktiviert sich der Bonus laut Regeln?\nVier korrekte Duelle in Folge.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei vier richtigen Duellen hintereinander",
+          "correct": true,
+          "reason": "Exakt. Das aktiviert den Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Nach einem Zufallstreffer",
+          "correct": false,
+          "reason": "Ein Treffer reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Nur in der Abschlussrunde",
+          "correct": false,
+          "reason": "Bonus ist leistungs- nicht positionsabhaengig."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Report-Sicht ist fuer Nachlernen wichtig?\nFehlmuster im Vergleich.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Welche Kriteriumskombinationen haeufig falsch gewichtet wurden",
+          "correct": true,
+          "reason": "Richtig. Das zeigt systematische Fehlmuster."
+        },
+        {
+          "id": "b",
+          "text": "Nur der Name der letzten Runde",
+          "correct": false,
+          "reason": "Zu wenig fuer Nachsteuerung."
+        },
+        {
+          "id": "c",
+          "text": "Nur die Anfangsoption",
+          "correct": false,
+          "reason": "Ohne Vergleich nicht aussagekraeftig."
         }
       ]
     }

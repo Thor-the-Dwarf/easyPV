@@ -3,7 +3,7 @@
     "topic": "Ausbildungsplanung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "ausbildungsplanung",
+    "source": "_gg01_jahresverlauf_puzzle.json",
     "version": "1.0"
   },
   "title": "Ausbildungsplanung - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was sollte zuerst in den Jahresplan gesetzt werden?\nFixe externe Termine sind harte Anker.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Pruefungs- und Schulfenster als feste Zeitanker",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Fixpunkte zuerst."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Beliebige Themen ohne Fristbezug",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ohne Anker entstehen Konflikte."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Wunschtermine aus dem Team",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Wunschtermine sind nachrangig."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wie erkennst du eine verletzte Abhaengigkeit?\nVorwissen muss vor Folgeschritt liegen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Ein Modul liegt vor seiner notwendigen Grundlage",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das ist ein Reihenfolgefehler."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Zwei Module liegen im gleichen Monat",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das kann korrekt sein."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ein Modul hat eine kurze Beschreibung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Beschreibung sagt nichts ueber Reihenfolge."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Rueckmeldung passt zu einem perfekt gelegten Meilenstein?\nFenster + Abhaengigkeit korrekt.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Zeitfenster und Reihenfolge stimmen vollstaendig",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das ist ein Volltreffer."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur die Farbe im Plan passt",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Optik ohne Logik reicht nicht."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Der Eintrag wurde zuletzt angeklickt",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Klickreihenfolge ist irrelevant."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wofuer wird laut Plan ein Zusatzabzug vergeben?\nAbhaengigkeitsbruch als Schluesselfehler.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn ein Meilenstein eine Pflichtabfolge verletzt",
+          "correct": true,
+          "reason": "Richtig. Das kostet extra Punkte."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein Modul kuerzer benannt ist",
+          "correct": false,
+          "reason": "Kein Kriterium."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ein Modul im Quartal endet",
+          "correct": false,
+          "reason": "Quartalsende ist nicht automatisch falsch."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI passt zum Jahresverlauf-Puzzle?\nGenauigkeit plus Zeitbedarf.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Planungsgenauigkeit und Bearbeitungszeit",
+          "correct": true,
+          "reason": "Genau diese KPI sind vorgesehen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Klicks",
+          "correct": false,
+          "reason": "Klickzahl misst keine Planqualitaet."
+        },
+        {
+          "id": "c",
+          "text": "Nur Bonuspunkte",
+          "correct": false,
+          "reason": "Einzelwert ohne Kontext."
         }
       ]
     }

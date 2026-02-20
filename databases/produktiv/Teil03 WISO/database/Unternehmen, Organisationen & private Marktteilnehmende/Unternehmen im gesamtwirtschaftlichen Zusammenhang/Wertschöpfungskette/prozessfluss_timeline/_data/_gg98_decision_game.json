@@ -3,7 +3,7 @@
     "topic": "Wertschoepfungskette",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wertschoepfungskette",
+    "source": "_gg01_prozessfluss_timeline.json",
     "version": "1.0"
   },
   "title": "Wertschoepfungskette - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Reihenfolge ist in vielen Wertketten plausibel?\nBeschaffung vor Produktion.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Beschaffung -> Produktion -> Distribution -> Service",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das bildet die Grundlogik ab."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Service -> Beschaffung -> Produktion",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Unplausibel als Standardfluss."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Distribution vor Produktion",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Reihenfolgefehler."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welcher Fehler ist auf der Timeline besonders kritisch?\nStartschritt falsch.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Kernprozess mit falschem Einstieg beginnen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Das verschiebt den ganzen Ablauf."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Schrittbezeichnung leicht kuerzen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht der Kernfehler."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Farbe eines Kastens aendern",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nur Darstellung."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI passt zur Timeline?\nReihenfolge + Zeit.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Reihenfolgegenauigkeit und Bearbeitungszeit",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Beide Ziele sind messbar."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Gesamtanzahl Schritte",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu wenig."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Klickgeschwindigkeit",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Warum erzeugt falsche Reihenfolge Mehrkosten?\nNacharbeit und Wartezeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fehlreihenfolge fuehrt zu Rueckspruengen und Verzögerungen",
+          "correct": true,
+          "reason": "Richtig. Das belastet Durchlaufzeit und Kosten."
+        },
+        {
+          "id": "b",
+          "text": "Sie hat keinen Einfluss",
+          "correct": false,
+          "reason": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Sie beschleunigt immer",
+          "correct": false,
+          "reason": "Nicht plausibel."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann gilt eine Timeline als vollkorrekt?\nAlle Schritte in richtiger Position.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn jeder Schritt exakt im erwarteten Sequenzslot steht",
+          "correct": true,
+          "reason": "Richtig. Dann gibt es Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur der letzte Schritt stimmt",
+          "correct": false,
+          "reason": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nur die ersten zwei stimmen",
+          "correct": false,
+          "reason": "Nicht genug."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Welche Daten helfen bei Sequenzpruefung?\nSoll- gegen Ist-Reihenfolge.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Soll-Reihenfolge, Ist-Reihenfolge und Abweichungsindex",
+          "correct": true,
+          "reason": "Richtig. Das macht Fehler sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Teamnamen",
+          "correct": false,
+          "reason": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Endtermin",
+          "correct": false,
+          "reason": "Unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Was trainiert das Platzieren auf der Timeline?\nAblauflogik.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prozessschritte zeitlich logisch und reproduzierbar ordnen",
+          "correct": true,
+          "reason": "Richtig. Das ist der Lernkern."
+        },
+        {
+          "id": "b",
+          "text": "Nur Begriffswissen ohne Reihenfolge",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Messung ausblenden",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was bedeutet Bonus in der Timeline?\nKomplett richtige Reihenfolge.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vollstaendig korrekte Timeline ohne Fehler",
+          "correct": true,
+          "reason": "Richtig. Das wird extra belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Beliebige Reihenfolge mit schneller Zeit",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur ein korrekter Schritt",
+          "correct": false,
+          "reason": "Zu wenig."
         }
       ]
     }

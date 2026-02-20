@@ -3,7 +3,7 @@
     "topic": "Wandel der Maerkte",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wandel_der_maerkte",
+    "source": "_gg01_markttrend_monitor.json",
     "version": "1.0"
   },
   "title": "Wandel der Maerkte - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Kombination spricht am staerksten fuer einen Nachfragetrend nach oben?\nBestellungen steigen und Lager sinken.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Steigende Bestellungen bei sinkenden Lagerbestaenden",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist ein klarer Trendhinweis."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Konstante Daten ohne Veraenderung",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Kein dominanter Trend."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Sinkende Nachfrage bei steigenden Retouren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Das ist eher negativ."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Reaktion passt bei wachsendem Preisdruck?\nWertbeitrag absichern, nicht blind rabattieren.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Kostenhebel und differenziertes Angebot kombinieren",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. So bleibt Marge steuerbar."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Pauschal alle Preise massiv senken",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Kann Marge unnoetig zerstoeren."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine Anpassung trotz Marktsignal",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Ignoriert Trendlage."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was erhoeht die Qualitaet der Trendentscheidung?\nMehrere Kennzahlen gemeinsam lesen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Nachfrage-, Preis- und Wettbewerbsdaten gemeinsam bewerten",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das reduziert Fehldeutungen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur eine Einzelkennzahl verwenden",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu einseitig."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur auf Gefuehl entscheiden",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht datenbasiert."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gilt ein Trend als kritisch?\nWenn Kern-KPI klar aus Zielkorridor laufen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn mehrere KPI gleichzeitig dauerhaft abweichen",
+          "correct": true,
+          "reason": "Richtig. Das signalisiert Handlungsdruck."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein einzelner Messpunkt auffaellt",
+          "correct": false,
+          "reason": "Noch kein stabiler Trend."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Berichte verspaetet kommen",
+          "correct": false,
+          "reason": "Operativ relevant, aber kein Trendbeweis."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Auswertung hilft nach dem Fall am meisten?\nTrendtreffer und Reaktionstreffer trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Getrennte Quote fuer Trendwahl und Reaktionswahl",
+          "correct": true,
+          "reason": "Exakt. So wird Lernbedarf klar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endpunktzahl ohne Aufschluesselung",
+          "correct": false,
+          "reason": "Zu wenig steuerbar."
+        },
+        {
+          "id": "c",
+          "text": "Nur Textfeedback ohne Kennzahl",
+          "correct": false,
+          "reason": "Messbarkeit fehlt."
         }
       ]
     }

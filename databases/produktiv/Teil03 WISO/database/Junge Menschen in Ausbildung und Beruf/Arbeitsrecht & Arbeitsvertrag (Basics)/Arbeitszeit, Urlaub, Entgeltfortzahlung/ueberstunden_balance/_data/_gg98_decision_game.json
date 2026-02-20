@@ -3,7 +3,7 @@
     "topic": "Arbeitszeit und Entgelt",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitszeit_und_entgelt",
+    "source": "_gg01_ueberstunden_balance.json",
     "version": "1.0"
   },
   "title": "Arbeitszeit und Entgelt - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Monatskonto zeigt deutlichen Ueberhang. Was ist der fachliche Startpunkt?\nZunaechst Kontolage und Optionen abgleichen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Passende Ausgleichsoption fuer Kontostand waehlen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Die Aktion muss zur Kontolage passen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Kontostand ignorieren",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Zufaellig entscheiden",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Regel fuehrt zu Zusatzabzug?\nFolgeeffekte der gewaehllten Aktion beachten.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Aktion mit negativem Folgeeffekt",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Riskante Folge wird strenger bewertet."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Stabile Aktion",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Dokumentierte Entscheidung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann gibt es Stabilitaetsbonus?\nBezieht sich auf mehrere Faelle hintereinander.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Bei stabilem Verlauf ueber drei Faelle",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Konstanz wird zusaetzlich belohnt."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Bei einem Zufallstreffer",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Bei maximaler Spielzeit",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI-Kombination ist vorgesehen?\nGuete plus Stabilitaetskomponente.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Balance-Genauigkeit und Stabilitaetsindex",
+          "correct": true,
+          "reason": "Richtig. Das sind die zwei Kernmetriken."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endpunkte",
+          "correct": false,
+          "reason": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Fallanzahl",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was macht den Kontoverlauf transparent?\nZahlen pro Entscheidung nachvollziehbar zeigen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Numerische Darstellung von Ausgangs- und Folgebalance",
+          "correct": true,
+          "reason": "Richtig. So werden Entscheidungen nachvollziehbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Ampelfarbe",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Keine Verlaufssicht",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

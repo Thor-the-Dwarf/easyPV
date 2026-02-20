@@ -3,7 +3,7 @@
     "topic": "Ausbildungsvertrag: Rechte - Pflichten",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "ausbildungsvertrag_rechte_pflichten",
+    "source": "_gg01_nachweispflicht_timer.json",
     "version": "1.0"
   },
   "title": "Ausbildungsvertrag: Rechte - Pflichten - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Nachweispflicht besteht bei krankheitsbedingter Abwesenheit?\nNachweis rechtzeitig einreichen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Arbeitsunfaehigkeit nach betrieblichen Regeln nachweisen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Der Nachweis ist erforderlich."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur muendlich spaeter berichten",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Muendlich allein reicht nicht sicher aus."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Gar keinen Nachweis fuehren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Das verletzt Nachweispflichten."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wofuer dient das Berichtsheft im Ausbildungsalltag?\nLernfortschritt dokumentieren.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Als regelmaessiger Ausbildungsnachweis",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Es dokumentiert den Ausbildungsverlauf."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur fuer private Notizen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Der Zweck ist betrieblich/pruefungsbezogen."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur am letzten Ausbildungstag",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Es wird laufend gefuehrt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Reaktion ist bei fehlendem Fristnachweis korrekt?\nSchnell nachreichen und transparent kommunizieren.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Sofort nachreichen und Grund offenlegen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das minimiert Folgerisiken."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Ignorieren und auf Rueckfrage warten",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das verschlechtert die Lage."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Frist rueckwirkend selbst aendern",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Fristen sind nicht frei aenderbar."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann ist eine Begruendung beim Nachweis besonders wichtig?\nAbweichung vom regulaeren Ablauf.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Unterlagen verspaetet eingereicht werden",
+          "correct": true,
+          "reason": "Ja. Die Abweichung muss erklaert werden."
+        },
+        {
+          "id": "b",
+          "text": "Bei jeder puenktlichen Routineeinreichung",
+          "correct": false,
+          "reason": "Dann ist meist keine Sonderbegruendung noetig."
+        },
+        {
+          "id": "c",
+          "text": "Nur nach Ausbildungsende",
+          "correct": false,
+          "reason": "Zu spaet."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI passt zum Nachweispflicht-Timer?\nTrefferquote plus Tempo.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Entscheidungen und Reaktionszeit",
+          "correct": true,
+          "reason": "Exakt. Das misst Qualitaet und Tempo."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl geoeffneter Faelle",
+          "correct": false,
+          "reason": "Ohne Qualitaetsaussage."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtspielzeit ohne Ergebnis",
+          "correct": false,
+          "reason": "Unzureichend."
         }
       ]
     }

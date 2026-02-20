@@ -3,84 +3,133 @@
     "topic": "Promoter-Suche",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "promoter_suche",
-    "version": "1.0"
+    "source": "_gg01_promoter_suche.json",
+    "version": "2.0"
   },
-  "title": "Promoter-Suche - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Promoter-Suche",
+  "subtitle": "Finde Machtpromoter und Fachpromoter im Organigramm.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Kickoff eines CRM-Rollouts Wer ist hier der Machtpromotor?",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "p1",
+          "text": "Laura (CFO) - Gibt Budget frei und entscheidet Prioritaeten.",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Gibt Budget frei und entscheidet Prioritaeten."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "p2",
+          "text": "Can (Lead Developer) - Kennt Altsystem und Migration im Detail.",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Kennt Altsystem und Migration im Detail."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "p3",
+          "text": "Nina (HR) - Unterstuetzt Schulungen, aber entscheidet nicht ueber IT.",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Unterstuetzt Schulungen, aber entscheidet nicht ueber IT."
+        },
+        {
+          "id": "p4",
+          "text": "Timo (Azubi) - Lernt mit, hat keine Steuerungsrolle.",
+          "correct": false,
+          "reason": "Lernt mit, hat keine Steuerungsrolle."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Einfuehrung eines neuen Ticketsystems Wer ist hier der Machtpromotor?",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "p1",
+          "text": "Mira (COO) - Setzt Umsetzungspflichten in allen Teams.",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Setzt Umsetzungspflichten in allen Teams."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "p2",
+          "text": "Noah (Service Owner) - Kennt Prozesse, SLAs und Eskalationspfade.",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Kennt Prozesse, SLAs und Eskalationspfade."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "p3",
+          "text": "Pia (Office) - Organisiert Termine, trifft keine Systementscheidungen.",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Organisiert Termine, trifft keine Systementscheidungen."
+        },
+        {
+          "id": "p4",
+          "text": "Bela (Einkauf) - Hilft bei Bestellungen, nicht bei Prozessdesign.",
+          "correct": false,
+          "reason": "Hilft bei Bestellungen, nicht bei Prozessdesign."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Cloud-Migration im laufenden Betrieb Wer ist hier der Machtpromotor?",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "p1",
+          "text": "Ari (CEO) - Kann Vorstandsentscheidungen verbindlich freigeben.",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Kann Vorstandsentscheidungen verbindlich freigeben."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "p2",
+          "text": "Sven (Cloud Architect) - Kennt Zielarchitektur, Risiken und Cutover-Plan.",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Kennt Zielarchitektur, Risiken und Cutover-Plan."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "p3",
+          "text": "Lia (Sales) - Braucht Ergebnisse, steuert Technik aber nicht.",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Braucht Ergebnisse, steuert Technik aber nicht."
+        },
+        {
+          "id": "p4",
+          "text": "Jon (Support) - Meldet Incidents, hat keine Budgetmacht.",
+          "correct": false,
+          "reason": "Meldet Incidents, hat keine Budgetmacht."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Neues Monitoring fuer Produktionssysteme Wer ist hier der Machtpromotor?",
+      "options": [
+        {
+          "id": "p1",
+          "text": "Kai (Bereichsleiter IT) - Traegt Budgetverantwortung und priorisiert Roadmap.",
+          "correct": true,
+          "reason": "Traegt Budgetverantwortung und priorisiert Roadmap."
+        },
+        {
+          "id": "p2",
+          "text": "Yara (SRE Lead) - Kennt Alerting, Metriken und Betriebsgrenzen.",
+          "correct": false,
+          "reason": "Kennt Alerting, Metriken und Betriebsgrenzen."
+        },
+        {
+          "id": "p3",
+          "text": "Moe (Controlling) - Prueft Zahlen, steuert Implementierung nicht.",
+          "correct": false,
+          "reason": "Prueft Zahlen, steuert Implementierung nicht."
+        },
+        {
+          "id": "p4",
+          "text": "Ria (Praktikum) - Beobachtet Prozesse und lernt.",
+          "correct": false,
+          "reason": "Beobachtet Prozesse und lernt."
         }
       ]
     }

@@ -1,86 +1,197 @@
 {
   "meta": {
-    "topic": "priorisierungs butler",
+    "topic": "Priorisierungs-Butler",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "priorisierungs_butler",
-    "version": "1.0"
+    "source": "_gg01_priorisierungs_butler.json",
+    "version": "2.0"
   },
-  "title": "priorisierungs butler - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Priorisierungs-Butler",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Login-Seite zeigt nur noch 500-Fehler",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "P1",
+          "text": "P1 Kritisch",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Kernfunktion ausgefallen, direkter Umsatz- und SLA-Schaden."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "P2",
+          "text": "P2 Hoch",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Kernfunktion ausgefallen, direkter Umsatz- und SLA-Schaden."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "P3",
+          "text": "P3 Mittel",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Kernfunktion ausgefallen, direkter Umsatz- und SLA-Schaden."
+        },
+        {
+          "id": "P4",
+          "text": "P4 Niedrig",
+          "correct": false,
+          "reason": "Kernfunktion ausgefallen, direkter Umsatz- und SLA-Schaden."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Rechnungs-Export bricht bei grossen Datenmengen ab",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "P2",
+          "text": "P2 Hoch",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Business-kritisch, aber Plattform laeuft weiterhin."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "P1",
+          "text": "P1 Kritisch",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Business-kritisch, aber Plattform laeuft weiterhin."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "P3",
+          "text": "P3 Mittel",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Business-kritisch, aber Plattform laeuft weiterhin."
+        },
+        {
+          "id": "P4",
+          "text": "P4 Niedrig",
+          "correct": false,
+          "reason": "Business-kritisch, aber Plattform laeuft weiterhin."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Suchfilter reagiert in Einzelfaellen sehr langsam",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "P3",
+          "text": "P3 Mittel",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Workaround vorhanden, kein kompletter Ausfall."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "P1",
+          "text": "P1 Kritisch",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Workaround vorhanden, kein kompletter Ausfall."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "P2",
+          "text": "P2 Hoch",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Workaround vorhanden, kein kompletter Ausfall."
+        },
+        {
+          "id": "P4",
+          "text": "P4 Niedrig",
+          "correct": false,
+          "reason": "Workaround vorhanden, kein kompletter Ausfall."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Tippfehler im Impressum",
+      "options": [
+        {
+          "id": "P4",
+          "text": "P4 Niedrig",
+          "correct": true,
+          "reason": "Rein kosmetisch, niedrige Dringlichkeit."
+        },
+        {
+          "id": "P1",
+          "text": "P1 Kritisch",
+          "correct": false,
+          "reason": "Rein kosmetisch, niedrige Dringlichkeit."
+        },
+        {
+          "id": "P2",
+          "text": "P2 Hoch",
+          "correct": false,
+          "reason": "Rein kosmetisch, niedrige Dringlichkeit."
+        },
+        {
+          "id": "P3",
+          "text": "P3 Mittel",
+          "correct": false,
+          "reason": "Rein kosmetisch, niedrige Dringlichkeit."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Passwort-Reset E-Mails kommen nicht an",
+      "options": [
+        {
+          "id": "P1",
+          "text": "P1 Kritisch",
+          "correct": true,
+          "reason": "Security- und Zugriffsproblem mit direkter Nutzerblockade."
+        },
+        {
+          "id": "P2",
+          "text": "P2 Hoch",
+          "correct": false,
+          "reason": "Security- und Zugriffsproblem mit direkter Nutzerblockade."
+        },
+        {
+          "id": "P3",
+          "text": "P3 Mittel",
+          "correct": false,
+          "reason": "Security- und Zugriffsproblem mit direkter Nutzerblockade."
+        },
+        {
+          "id": "P4",
+          "text": "P4 Niedrig",
+          "correct": false,
+          "reason": "Security- und Zugriffsproblem mit direkter Nutzerblockade."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Dashboard-Farbkontrast im Dark Mode zu schwach",
+      "options": [
+        {
+          "id": "P3",
+          "text": "P3 Mittel",
+          "correct": true,
+          "reason": "Relevantes UX-Thema, aber kein harter Betriebsstillstand."
+        },
+        {
+          "id": "P1",
+          "text": "P1 Kritisch",
+          "correct": false,
+          "reason": "Relevantes UX-Thema, aber kein harter Betriebsstillstand."
+        },
+        {
+          "id": "P2",
+          "text": "P2 Hoch",
+          "correct": false,
+          "reason": "Relevantes UX-Thema, aber kein harter Betriebsstillstand."
+        },
+        {
+          "id": "P4",
+          "text": "P4 Niedrig",
+          "correct": false,
+          "reason": "Relevantes UX-Thema, aber kein harter Betriebsstillstand."
         }
       ]
     }

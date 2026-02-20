@@ -3,84 +3,134 @@
     "topic": "Mietmangel-Eskalation",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "mietmangel_eskalation",
+    "source": "_gg01_mietmangel_eskalation.json",
     "version": "1.0"
   },
   "title": "Mietmangel-Eskalation - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "subtitle": "Mangelprozesse strukturiert und nachvollziehbar aufbauen",
   "rounds": [
     {
-      "id": 1,
+      "id": "ME-1",
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Heizungsausfall gemeldet. Welcher Schritt steht zuerst an?\nDokumentation und saubere Erstmeldung schaffen die Basis.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
-          "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "text": "Sofort gerichtliche Eskalation ohne Meldung",
+          "correct": false,
+          "reason": "Nicht korrekt. Erstmeldung und Nachweis sind zuerst noetig."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
-          "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "text": "Mangel schriftlich dokumentieren und melden",
+          "correct": true,
+          "reason": "Richtig. Das ist der Startpunkt des Prozesspfads."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur muendlich beim Nachbarn erzaehlen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt. Der Prozess braucht belastbare Kommunikation."
         }
       ]
     },
     {
-      "id": 2,
+      "id": "ME-2",
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Nach erster Meldung reagiert niemand. Was folgt sinnvoll?\nFristsetzung macht den naechsten Schritt belastbar.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Frist zur Behebung klar setzen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Eine Frist strukturiert die weitere Eskalation."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Thema komplett fallen lassen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt. Ohne Folgeaktion fehlt Verfahrenslogik."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Unbegruendet Zahlung komplett stoppen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt. Unstrukturierte Schritte erhoehen Konfliktrisiko."
         }
       ]
     },
     {
-      "id": 3,
+      "id": "ME-3",
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Frist laeuft ab, weiterhin keine Reaktion. Was ist jetzt wichtig?\nNachweise und Chronologie sichern den Eskalationspfad.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Alle Belege und Kommunikation chronologisch sichern",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Nachweisbarkeit ist fuer Folgeentscheidungen zentral."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Dokumentation loeschen und neu beginnen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt. Das zerstoert die Nachvollziehbarkeit."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Beliebige Schritte ohne Reihenfolge auswaehlen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt. Reihenfolge ist Teil des Lernziels."
+        }
+      ]
+    },
+    {
+      "id": "ME-4",
+      "phase": "Runde 4",
+      "situation": "Der Vermieter bietet einen spaeten Termin an. Wie bewerten?\nVerhaeltnismaessigkeit und Nachvollziehbarkeit bleiben entscheidend.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Termin dokumentieren und Angemessenheit pruefen",
+          "correct": true,
+          "reason": "Richtig. Dokumentierte Bewertung ermoeglicht saubere Entscheidung."
+        },
+        {
+          "id": "b",
+          "text": "Immer sofort ablehnen",
+          "correct": false,
+          "reason": "Nicht korrekt. Pauschalablehnung ist nicht zielfuehrend."
+        },
+        {
+          "id": "c",
+          "text": "Nie Rueckmeldung geben",
+          "correct": false,
+          "reason": "Nicht korrekt. Kommunikation bleibt Pflicht."
+        }
+      ]
+    },
+    {
+      "id": "ME-5",
+      "phase": "Runde 5",
+      "situation": "Mehrere Schritte wurden korrekt erledigt. Was zeigt hohe Prozesseffizienz?\nFehlerfreie Reihenfolge und klare Belege steigern Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sprunghafte Entscheidungen ohne Referenz",
+          "correct": false,
+          "reason": "Nicht korrekt. Das senkt die Prozessqualitaet."
+        },
+        {
+          "id": "b",
+          "text": "Vollstaendige Schrittfolge ohne Luecken",
+          "correct": true,
+          "reason": "Richtig. Genau das bildet den Effizienz-KPI ab."
+        },
+        {
+          "id": "c",
+          "text": "Nur den letzten Schritt betrachten",
+          "correct": false,
+          "reason": "Nicht korrekt. Die Gesamtfolge zaehlt."
         }
       ]
     }

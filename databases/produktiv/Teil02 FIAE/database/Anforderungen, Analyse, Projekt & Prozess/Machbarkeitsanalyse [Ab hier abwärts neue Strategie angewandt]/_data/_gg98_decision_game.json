@@ -3,84 +3,209 @@
     "topic": "Machbarkeitsanalyse",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "machbarkeitsanalyse",
-    "version": "1.0"
+    "source": "_gg01_go_oder_no_go.json",
+    "version": "2.0"
   },
-  "title": "Machbarkeitsanalyse - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Machbarkeitsanalyse [Ab hier abwaerts neue Strategie angewandt]",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Klares Budget",
+      "situation": "Klares Budget Das Projektbudget ist vollstaendig bewilligt und auf dem Konto. Alle Stakeholder sind informiert.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "GO",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Alle Ampeln stehen auf Gruen. Ein klassischer Startschuss."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "NO-GO",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "HOLD",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Fehlende Expertise",
+      "situation": "Fehlende Expertise Das Team soll eine KI entwickeln, aber niemand hat Erfahrung mit Python oder Machine Learning.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "NO-GO",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Ohne Kompetenz ist das Scheitern garantiert. Schulung oder Externe noetig."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "GO",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "HOLD",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Rechtliche Grauzone",
+      "situation": "Rechtliche Grauzone Wir wollen Nutzerdaten verkaufen, haben aber keine Einwilligung der Nutzer eingeholt.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "NO-GO",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Ein Rechtsverstoss ist ein absoluter Showstopper. DSGVO-Strafen sind existenzbedrohend."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "GO",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "HOLD",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Technisch machbar",
+      "situation": "Technisch machbar Die Technologie ist Standard (LAMP-Stack), das Team kennt sich aus, Hardware ist da.",
+      "options": [
+        {
+          "id": "a",
+          "text": "GO",
+          "correct": true,
+          "reason": "Solide technische Basis, kein Grund zu warten."
+        },
+        {
+          "id": "b",
+          "text": "NO-GO",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "HOLD",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Zeitplan Utopie",
+      "situation": "Zeitplan Utopie Der Kunde will ein ERP-System in 2 Wochen. Normaldauer: 6 Monate.",
+      "options": [
+        {
+          "id": "a",
+          "text": "NO-GO",
+          "correct": true,
+          "reason": "Der Zeitplan ist physikalisch unmoeglich. Das Projekt wuerde gegen die Wand fahren."
+        },
+        {
+          "id": "b",
+          "text": "GO",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "HOLD",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Der Legacy-Schatten",
+      "situation": "Der Legacy-Schatten Das neue Frontend sieht gut aus, aber das Backend basiert auf COBOL-Code von 1980, den keiner wartet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "NO-GO",
+          "correct": true,
+          "reason": "Ohne Strategie fuer das Legacy-System wird das neue Frontend nicht funktionieren oder scheitern."
+        },
+        {
+          "id": "b",
+          "text": "GO",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "HOLD",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Abhaengigkeit vom Einzelkaempfer",
+      "situation": "Abhaengigkeit vom Einzelkaempfer Nur Heinz (64) versteht die Datenbank. Er geht in 2 Monaten in Rente. Doku gibt es nicht.",
+      "options": [
+        {
+          "id": "a",
+          "text": "NO-GO",
+          "correct": true,
+          "reason": "Das Wissensmonopol ist ein kritisches Risiko. Erst Knowledge-Transfer, dann Projektstart."
+        },
+        {
+          "id": "b",
+          "text": "GO",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "HOLD",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Lizenz-Falle",
+      "situation": "Lizenz-Falle Wir nutzen eine tolle Library, aber sie steht unter GPL v3 und wir wollen Closed Source verkaufen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "NO-GO",
+          "correct": true,
+          "reason": "Lizenzinkompatibilitaet zwingt uns, den Code offenzulegen oder die Library nicht zu nutzen."
+        },
+        {
+          "id": "b",
+          "text": "GO",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "HOLD",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

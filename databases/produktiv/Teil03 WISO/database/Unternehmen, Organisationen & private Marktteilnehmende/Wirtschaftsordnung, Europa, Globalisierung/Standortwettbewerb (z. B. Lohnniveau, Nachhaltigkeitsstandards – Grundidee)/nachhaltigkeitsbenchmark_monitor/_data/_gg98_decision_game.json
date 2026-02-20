@@ -3,7 +3,7 @@
     "topic": "Standortwettbewerb",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "standortwettbewerb",
+    "source": "_gg01_nachhaltigkeitsbenchmark_monitor.json",
     "version": "1.0"
   },
   "title": "Standortwettbewerb - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welcher KPI passt zu Nachhaltigkeitsbenchmarking?\nVergleichbar und periodisch messbar.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "CO2 pro Produktionseinheit",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Direkter Benchmark-KPI."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Firmenlogo",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht messbar."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Meeting-Anzahl",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht zentral."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was bedeutet Benchmark-Abweichung nach oben?\nHoeherer Wert ist nicht immer besser.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Je nach KPI moeglicher Nachteil gegen Referenz",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Kontext entscheidet."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Automatisch perfekt",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Falsch."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ohne Bedeutung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Falsch."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welcher Schritt folgt auf eine negative Abweichung?\nMassnahme planen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Gezielte Korrekturmassnahme mit Termin setzen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Sonst keine Steuerung."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wert ignorieren",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Regelverstoss."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "KPI loeschen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Keine Loesung."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Visualisierung hilft beim Verlauf?\nTrend statt Einzelpunkt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zeitreihe je Standort",
+          "correct": true,
+          "reason": "Richtig. Trends sind entscheidend."
+        },
+        {
+          "id": "b",
+          "text": "Nur ein Einzelwert",
+          "correct": false,
+          "reason": "Zu wenig Aussagekraft."
+        },
+        {
+          "id": "c",
+          "text": "Beliebiges Symbol",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann gilt ein Zielkorridor als erreicht?\nKorridor hat Ober- und Untergrenze.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn KPI stabil im definierten Bereich liegt",
+          "correct": true,
+          "reason": "Richtig. Stabilitaet ist wichtig."
+        },
+        {
+          "id": "b",
+          "text": "Bei einem einmaligen Treffer",
+          "correct": false,
+          "reason": "Zu kurz."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Messung",
+          "correct": false,
+          "reason": "Nicht moeglich."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Welche Kombination verbessert Nachhaltigkeit und Kosten?\nEffizienzhebel.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Energieeffizienz plus Ausschussreduktion",
+          "correct": true,
+          "reason": "Richtig. Doppelter Hebel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Reporting ausbauen",
+          "correct": false,
+          "reason": "Zu indirekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur Werbekampagne",
+          "correct": false,
+          "reason": "Kein Prozesshebel."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Was ist ein typischer Datenfehler im Benchmark?\nInkonsistente Basis.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vergleich auf unterschiedlichen Bezugsbasen",
+          "correct": true,
+          "reason": "Richtig. Vergleich wird verzerrt."
+        },
+        {
+          "id": "b",
+          "text": "Einheitliche Messlogik",
+          "correct": false,
+          "reason": "Das ist korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Dokumentierte Formel",
+          "correct": false,
+          "reason": "Das ist positiv."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Welche KPI zeigt Fortschritt im Monitor direkt?\nTrend + Zielbezug.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zielerreichungsquote pro Periode",
+          "correct": true,
+          "reason": "Richtig. Fortschritt klar messbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Abteilungen",
+          "correct": false,
+          "reason": "Nicht geeignet."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtumsatz",
+          "correct": false,
+          "reason": "Nicht spezifisch genug."
         }
       ]
     }

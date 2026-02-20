@@ -3,7 +3,7 @@
     "topic": "Wandel der Maerkte",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wandel_der_maerkte",
+    "source": "_gg01_nachfrage_schock_simulator.json",
     "version": "1.0"
   },
   "title": "Wandel der Maerkte - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Wie reagierst du auf einen ploetzlichen Nachfragesprung?\nKapazitaet und Lieferfaehigkeit zuerst sichern.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Kurzfristig Kapazitaet umschichten und Engpaesse priorisieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. So bleibt Versorgung stabil."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Produktion unveraendert lassen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Fuehrt zu Rueckstau."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Sofort alle Produkte auslisten",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Unverhaeltnismaessig."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was ist bei Nachfragerueckgang sinnvoll?\nKontrolliert anpassen statt hektisch kuerzen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Mengen schrittweise anpassen und Nachfrage aktiv monitoren",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Das vermeidet Ueberreaktion."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Alle Kapazitaeten sofort auf null",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Zu radikal, hohe Folgekosten."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Daten nicht mehr beobachten",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Steuerungsverlust."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Fehlsteuerung ist bei kleinen Schocks typisch?\nZu starke Reaktion auf wenig Signal.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Ueberreaktion mit zu grosser Preis- oder Mengenanpassung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Das erzeugt Instabilitaet."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Moderate Testanpassung",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das ist eher sinnvoll."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Kontinuierliches Monitoring",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Monitoring ist positiv."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gilt eine Runde als stabil?\nServicelevel und Bestand im Zielkorridor.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Lieferfaehigkeit und Bestand innerhalb der Leitplanken bleiben",
+          "correct": true,
+          "reason": "Richtig. Das ist stabile Steuerung."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur ein Wert zufaellig passt",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Wenn gar nicht gesteuert wurde",
+          "correct": false,
+          "reason": "Keine aktive Stabilisierung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI zeigt Lernfortschritt im Simulator?\nStabilitaet und Fehlquote kombiniert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stabilitaetsindex plus Fehlentscheidungsquote",
+          "correct": true,
+          "reason": "Exakt. Beide Seiten sind wichtig."
+        },
+        {
+          "id": "b",
+          "text": "Nur Klickanzahl",
+          "correct": false,
+          "reason": "Keine inhaltliche Qualitaet."
+        },
+        {
+          "id": "c",
+          "text": "Nur Sessiondauer",
+          "correct": false,
+          "reason": "Tempo allein reicht nicht."
         }
       ]
     }

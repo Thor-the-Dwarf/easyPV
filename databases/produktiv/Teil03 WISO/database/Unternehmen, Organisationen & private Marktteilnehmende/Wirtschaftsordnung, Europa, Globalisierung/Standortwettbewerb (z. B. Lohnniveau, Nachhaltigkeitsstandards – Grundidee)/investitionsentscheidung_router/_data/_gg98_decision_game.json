@@ -3,7 +3,7 @@
     "topic": "Standortwettbewerb",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "standortwettbewerb",
+    "source": "_gg01_investitionsentscheidung_router.json",
     "version": "1.0"
   },
   "title": "Standortwettbewerb - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Erster Schritt vor Investitionsfreigabe?\nDatenbasis sichern.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Nutzen-Risiko-Profil pro Standort erstellen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Ohne Profil keine belastbare Freigabe."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Direkt bestellen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu frueh."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Bauchgefuehl",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht belastbar."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Kennzahl ist fuer Router zentral?\nVergleichbarkeit.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Investitionsrendite im Zielzeitraum",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Kern fuer Priorisierung."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Anzahl Mails",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht relevant."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur Teamgroesse",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Unvollstaendig."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann sollte man Investition verschieben?\nHoher Unsicherheitsgrad.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn Risiko ueber Schwellwert und Gegenmassnahme fehlt",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Verschiebung ist dann sinnvoll."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn alles im Gruenen Bereich",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Dann eher freigeben."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Immer verschieben",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht sinnvoll."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Aktion verbessert Entscheidungsqualitaet direkt?\nSzenariovergleich.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Best-Case und Worst-Case parallel rechnen",
+          "correct": true,
+          "reason": "Richtig. Das verbessert Robustheit."
+        },
+        {
+          "id": "b",
+          "text": "Nur Best-Case zeigen",
+          "correct": false,
+          "reason": "Zu einseitig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Altdaten nutzen",
+          "correct": false,
+          "reason": "Zu starr."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Regel gilt fuer Freigabe?\nMindeststandard bleibt bindend.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Freigabe nur bei erfuellten Standards und tragfaehiger Rendite",
+          "correct": true,
+          "reason": "Richtig. Doppelte Absicherung."
+        },
+        {
+          "id": "b",
+          "text": "Rendite reicht allein",
+          "correct": false,
+          "reason": "Standards fehlen."
+        },
+        {
+          "id": "c",
+          "text": "Standard reicht allein",
+          "correct": false,
+          "reason": "Wirtschaftlichkeit fehlt."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Was signalisiert ein roter Risikoindikator?\nNicht ignorieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pflicht zur Gegenmassnahme oder Ablehnung",
+          "correct": true,
+          "reason": "Richtig. Direktes Handeln noetig."
+        },
+        {
+          "id": "b",
+          "text": "Kann ignoriert werden",
+          "correct": false,
+          "reason": "Regelverstoss."
+        },
+        {
+          "id": "c",
+          "text": "Nur kosmetische Warnung",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Wann ist die Entscheidung robust?\nStabil in mehreren Szenarien.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Option in mehreren Szenarien tragfaehig bleibt",
+          "correct": true,
+          "reason": "Richtig. Das ist Robustheit."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur ein Szenario passt",
+          "correct": false,
+          "reason": "Zu fragil."
+        },
+        {
+          "id": "c",
+          "text": "Wenn keine KPI erfasst wird",
+          "correct": false,
+          "reason": "Nicht bewertbar."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Welche KPI zeigt den Lernerfolg im Router?\nQualitaet der finalen Auswahl.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Quote korrekter Freigaben im Zielkorridor",
+          "correct": true,
+          "reason": "Richtig. Direkter Lernerfolgsindikator."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtzeit",
+          "correct": false,
+          "reason": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Klicks",
+          "correct": false,
+          "reason": "Nicht inhaltlich."
         }
       ]
     }

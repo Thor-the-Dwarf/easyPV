@@ -3,7 +3,7 @@
     "topic": "Arbeitsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitsschutz",
+    "source": "_gg01_beinaheunfall_analyse.json",
     "version": "1.0"
   },
   "title": "Arbeitsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Mitarbeiter stolpert ueber lose Kabel, verletzt sich aber nicht. Erster Analyseschritt?\nBei Beinaheunfaellen zuerst Ursache sauber bestimmen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Unfallursache erfassen und dokumentieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Die strukturierte Ursachenanalyse ist der Startpunkt."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Vorfall ignorieren",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt. Beinaheunfaelle muessen ausgewertet werden."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Schuldige suchen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Zu kurz gegriffen."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Praeventionsmassnahme passt zu Stolpergefahr durch Kabel?\nMassnahme soll Gefahr direkt reduzieren.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Kabel sichern oder anders verlegen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Das beseitigt die unmittelbare Gefahrenquelle."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Warnschild ohne Anpassung",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht ausreichend als alleinige Massnahme."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur spaeter darauf achten",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht wirksam."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI gehoert laut Plan zur Analyseleistung?\nEs werden Ursache und Massnahme getrennt bewertet.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Ursachenquote und Massnahmenquote",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Beide Analyseebenen werden getrennt gemessen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Klickanzahl",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Spielzeit",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Regel gilt bei korrekter Ursache, aber falscher Massnahme?\nDas Bewertungssystem kennt Teilpunkte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Es gibt Teilpunkte",
+          "correct": true,
+          "reason": "Richtig. Ursache und Massnahme werden separat gewertet."
+        },
+        {
+          "id": "b",
+          "text": "Immer volle Punkte",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Immer null Punkte",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann erscheint ein gezielter Hinweis laut Plan?\nHinweisregel greift bei wiederkehrendem Fehlerbild.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei wiederholter Fehlklasse",
+          "correct": true,
+          "reason": "Richtig. Das System unterstuetzt bei wiederholten Fehlmustern."
+        },
+        {
+          "id": "b",
+          "text": "Bei jeder richtigen Antwort",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur zum Spielstart",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

@@ -1,86 +1,161 @@
 {
   "meta": {
-    "topic": "durchlaufzeit rechner",
+    "topic": "Durchlaufzeit-Rechner",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "durchlaufzeit_rechner",
-    "version": "1.0"
+    "source": "_gg01_durchlaufzeit_rechner.json",
+    "version": "2.0"
   },
-  "title": "durchlaufzeit rechner - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Durchlaufzeit-Rechner",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Ticket-Freigabeprozess",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "o2",
+          "text": "16h",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "2 + 1 + 3 + 10 = 16 Stunden."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "o1",
+          "text": "14h",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "2 + 1 + 3 + 10 = 16 Stunden."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "o3",
+          "text": "18h",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "2 + 1 + 3 + 10 = 16 Stunden."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Angebotspruefung",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "o2",
+          "text": "10h",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "1.5 + 2 + 6.5 = 10 Stunden."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "o1",
+          "text": "9h",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "1.5 + 2 + 6.5 = 10 Stunden."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "o3",
+          "text": "11h",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "1.5 + 2 + 6.5 = 10 Stunden."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Bugfix bis Deployment",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "o3",
+          "text": "9h",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "1 + 2 + 4 + 2 = 9 Stunden."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "o1",
+          "text": "7h",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "1 + 2 + 4 + 2 = 9 Stunden."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "o2",
+          "text": "8h",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "1 + 2 + 4 + 2 = 9 Stunden."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Onboarding-Prozess",
+      "options": [
+        {
+          "id": "o3",
+          "text": "26h",
+          "correct": true,
+          "reason": "0.5 + 24 + 1.5 = 26 Stunden."
+        },
+        {
+          "id": "o1",
+          "text": "24h",
+          "correct": false,
+          "reason": "0.5 + 24 + 1.5 = 26 Stunden."
+        },
+        {
+          "id": "o2",
+          "text": "25h",
+          "correct": false,
+          "reason": "0.5 + 24 + 1.5 = 26 Stunden."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Aenderungsanforderung",
+      "options": [
+        {
+          "id": "o3",
+          "text": "18h",
+          "correct": true,
+          "reason": "2 + 1 + 12 + 3 = 18 Stunden."
+        },
+        {
+          "id": "o1",
+          "text": "16h",
+          "correct": false,
+          "reason": "2 + 1 + 12 + 3 = 18 Stunden."
+        },
+        {
+          "id": "o2",
+          "text": "17h",
+          "correct": false,
+          "reason": "2 + 1 + 12 + 3 = 18 Stunden."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Abnahmevorbereitung",
+      "options": [
+        {
+          "id": "o2",
+          "text": "8h",
+          "correct": true,
+          "reason": "2 + 2.5 + 3.5 = 8 Stunden."
+        },
+        {
+          "id": "o1",
+          "text": "7h",
+          "correct": false,
+          "reason": "2 + 2.5 + 3.5 = 8 Stunden."
+        },
+        {
+          "id": "o3",
+          "text": "9h",
+          "correct": false,
+          "reason": "2 + 2.5 + 3.5 = 8 Stunden."
         }
       ]
     }

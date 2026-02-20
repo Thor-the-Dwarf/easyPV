@@ -3,7 +3,7 @@
     "topic": "Nachhaltige Entwicklung im Unternehmenskontext",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "nachhaltige_entwicklung_im_unternehmenskontext",
+    "source": "_gg01_lieferkette_risiko_router.json",
     "version": "1.0"
   },
   "title": "Nachhaltige Entwicklung im Unternehmenskontext - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was ist bei erkanntem Lieferkettenrisiko der erste Pflichtschritt?\nRisiko klassifizieren und priorisieren.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Risikotyp erfassen und Kritikalitaet priorisieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. So wird der Pfad belastbar."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Direkt Sanktion ohne Pruefung ausloesen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ohne Bewertung zu frueh."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Vorfall ignorieren bis Jahresende",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Zu spaet und risikoreich."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Pfadlogik passt fuer hohe Risiken?\nAnalyse -> Sofortmassnahme -> Kontrolle.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Sofortmassnahme einleiten und Wirksamkeit nachhalten",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau der korrekte Ablauf."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Bericht erzeugen ohne Aktion",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Fehlende Stabilisierung."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur auf Selbstmeldung des Lieferanten warten",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Unzureichend abgesichert."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann entsteht Zusatzabzug laut Regelwerk?\nPflichtreaktion wird uebersprungen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn ein notwendiger Reaktionsschritt ausgelassen wird",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das erhoeht Risiko."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn ein Schritt dokumentiert wird",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Dokumentation ist erforderlich."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn KPI sichtbar bleiben",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Das ist korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Kennzahl zeigt Routing-Qualitaet?\nKorrektheit plus Stabilisierungstempo.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Routing-Genauigkeit und Schritte bis Stabilisierung",
+          "correct": true,
+          "reason": "Richtig. Das bildet Ziel und Effizienz ab."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl offener Mails",
+          "correct": false,
+          "reason": "Kein direkter Routing-Indikator."
+        },
+        {
+          "id": "c",
+          "text": "Nur Dauer der Sitzung",
+          "correct": false,
+          "reason": "Ohne Korrektheit unvollstaendig."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist ein Fall sauber abgeschlossen?\nRisiko reduziert und Wirkung geprueft.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Reaktionskette durchlaufen und Wirkung validiert ist",
+          "correct": true,
+          "reason": "Exakt. So wird der Fall geschlossen."
+        },
+        {
+          "id": "b",
+          "text": "Sobald die erste Massnahme startet",
+          "correct": false,
+          "reason": "Start ist noch kein Abschluss."
+        },
+        {
+          "id": "c",
+          "text": "Wenn niemand mehr fragt",
+          "correct": false,
+          "reason": "Nicht fachlich belastbar."
         }
       ]
     }

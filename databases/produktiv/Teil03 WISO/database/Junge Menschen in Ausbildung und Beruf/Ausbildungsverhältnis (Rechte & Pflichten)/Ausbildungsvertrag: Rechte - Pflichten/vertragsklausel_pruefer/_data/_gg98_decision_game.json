@@ -3,7 +3,7 @@
     "topic": "Ausbildungsvertrag: Rechte - Pflichten",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "ausbildungsvertrag_rechte_pflichten",
+    "source": "_gg01_vertragsklausel_pruefer.json",
     "version": "1.0"
   },
   "title": "Ausbildungsvertrag: Rechte - Pflichten - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Klausel braucht offensichtlich Erklaerung oder Pruefung?\nUnklare oder einseitige Formulierung.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Unbegrenzte unbezahlte Mehrarbeit ohne Ausgleich",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist kritisch und pruefungsbeduerftig."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Regelung zu Ausbildungsdauer und Lernzielen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Das ist typischer Standardinhalt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Hinweis auf Berichtsheftfuehrung",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Uebliche und erwartbare Regelung."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was ist beim Klausel-Check zuerst sinnvoll?\nKlarheit vor Bewertung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Klauselinhalt und Wirkung auf Rechte/Pflichten bestimmen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Erst verstehen, dann bewerten."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur nach Bauchgefuehl einstufen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Zu unzuverlaessig."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Alle Klauseln pauschal als kritisch markieren",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Keine differenzierte Analyse."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Klausel wirkt ausgewogen?\nBeidseitig nachvollziehbare Regelung.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Klare Lernzeiten, Betreuung und definierte Pflichten beider Seiten",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das ist transparent und ausgewogen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Einseitige Aenderungsrechte ohne Begrenzung",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das ist eher kritisch."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Verzicht auf jede Dokumentation",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Dokumentation ist wichtig."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann setzt der Pruefer ein Explain-Flag?\nWenn Bedeutung fuer Lernende unklar bleibt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei unklaren Rechtsfolgen oder deutlichem Interpretationsspielraum",
+          "correct": true,
+          "reason": "Ja, dann ist Erklaerungsbedarf gegeben."
+        },
+        {
+          "id": "b",
+          "text": "Bei jeder einfachen Standardklausel",
+          "correct": false,
+          "reason": "Nicht jede Klausel braucht Zusatzhinweis."
+        },
+        {
+          "id": "c",
+          "text": "Nur nach Ende des Vertrags",
+          "correct": false,
+          "reason": "Zu spaet fuer Lernsteuerung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI zeigt den Lernerfolg am besten?\nKlassifikation plus Explain-Treffer.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Klassifikationsquote und Erklaerungsquote getrennt",
+          "correct": true,
+          "reason": "Exakt. Beide Ziele werden sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl bearbeiteter Klauseln",
+          "correct": false,
+          "reason": "Menge ohne Qualitaet reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Nur Restzeit je Runde",
+          "correct": false,
+          "reason": "Zeit ohne Richtigkeit ist unzureichend."
         }
       ]
     }

@@ -1,86 +1,161 @@
 {
   "meta": {
-    "topic": "sla timer kampf",
+    "topic": "SLA-Timer-Kampf",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "sla_timer_kampf",
-    "version": "1.0"
+    "source": "_gg01_sla_timer_kampf.json",
+    "version": "2.0"
   },
-  "title": "sla timer kampf - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "SLA-Timer-Kampf",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Runde r1: Welches Ticket hat jetzt Prioritaet?",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "t1",
+          "text": "Checkout komplett offline (P1, 18 min)",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "P1 mit nur noch 18 Minuten Restzeit hat klare Eskalationsprioritaet."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "t2",
+          "text": "Export langsam bei Reports (P2, 210 min)",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "P1 mit nur noch 18 Minuten Restzeit hat klare Eskalationsprioritaet."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "t3",
+          "text": "Icon in Sidebar unscharf (P4, 2500 min)",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "P1 mit nur noch 18 Minuten Restzeit hat klare Eskalationsprioritaet."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Runde r2: Welches Ticket hat jetzt Prioritaet?",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "t1",
+          "text": "Passwort-Reset Mails verzogert (P2, 25 min)",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "P2 ist kurz vor SLA-Verstoss und muss vor mittel/niedrig abgearbeitet werden."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "t2",
+          "text": "Suchfilter braucht 4 Sekunden (P3, 610 min)",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "P2 ist kurz vor SLA-Verstoss und muss vor mittel/niedrig abgearbeitet werden."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "t3",
+          "text": "Footer-Rechtschreibfehler (P4, 1900 min)",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "P2 ist kurz vor SLA-Verstoss und muss vor mittel/niedrig abgearbeitet werden."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Runde r3: Welches Ticket hat jetzt Prioritaet?",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "t2",
+          "text": "Bestellhistorie zeigt veraltete Daten (P2, 35 min)",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Bei gleicher Prioritaet gewinnt die geringere Restzeit."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "t1",
+          "text": "Monitoring meldet sporadische Timeouts (P2, 70 min)",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Bei gleicher Prioritaet gewinnt die geringere Restzeit."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "t3",
+          "text": "Dark-Mode Kontrast bei Charts (P3, 400 min)",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Bei gleicher Prioritaet gewinnt die geringere Restzeit."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Runde r4: Welches Ticket hat jetzt Prioritaet?",
+      "options": [
+        {
+          "id": "t1",
+          "text": "Upload API wirft gelegentlich 502 (P1, 120 min)",
+          "correct": true,
+          "reason": "P1 bleibt trotz mehr Restzeit kritischer als ein fast faelliges P2."
+        },
+        {
+          "id": "t2",
+          "text": "Rechnungsvorschau ohne Steuerzeile (P2, 22 min)",
+          "correct": false,
+          "reason": "P1 bleibt trotz mehr Restzeit kritischer als ein fast faelliges P2."
+        },
+        {
+          "id": "t3",
+          "text": "Dialog-Animation ruckelt (P3, 200 min)",
+          "correct": false,
+          "reason": "P1 bleibt trotz mehr Restzeit kritischer als ein fast faelliges P2."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Runde r5: Welches Ticket hat jetzt Prioritaet?",
+      "options": [
+        {
+          "id": "t3",
+          "text": "Single-Sign-On fuer Teilgruppe ausgefallen (P1, 85 min)",
+          "correct": true,
+          "reason": "P1 mit absehbarem Verstoss schlaegt jedes P2/P4."
+        },
+        {
+          "id": "t1",
+          "text": "Kundenportal langsam bei Peak-Last (P2, 50 min)",
+          "correct": false,
+          "reason": "P1 mit absehbarem Verstoss schlaegt jedes P2/P4."
+        },
+        {
+          "id": "t2",
+          "text": "Onboarding Tooltip falsch positioniert (P4, 3000 min)",
+          "correct": false,
+          "reason": "P1 mit absehbarem Verstoss schlaegt jedes P2/P4."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Runde r6: Welches Ticket hat jetzt Prioritaet?",
+      "options": [
+        {
+          "id": "t3",
+          "text": "Webhook-Queue staut sich auf (P2, 95 min)",
+          "correct": true,
+          "reason": "P2 mit 95 Minuten Restzeit ist dringlicher als ein fast faelliges P3."
+        },
+        {
+          "id": "t1",
+          "text": "CSV-Download enthaelt Sonderzeichenfehler (P3, 110 min)",
+          "correct": false,
+          "reason": "P2 mit 95 Minuten Restzeit ist dringlicher als ein fast faelliges P3."
+        },
+        {
+          "id": "t2",
+          "text": "Avatar-Bild unscharf in Profilseite (P4, 800 min)",
+          "correct": false,
+          "reason": "P2 mit 95 Minuten Restzeit ist dringlicher als ein fast faelliges P3."
         }
       ]
     }

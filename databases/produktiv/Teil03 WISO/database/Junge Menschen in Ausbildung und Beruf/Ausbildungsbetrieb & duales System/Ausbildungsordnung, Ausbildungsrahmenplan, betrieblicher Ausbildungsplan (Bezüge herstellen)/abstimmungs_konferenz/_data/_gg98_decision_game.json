@@ -3,7 +3,7 @@
     "topic": "Ausbildungsplanung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "ausbildungsplanung",
+    "source": "_gg01_abstimmungs_konferenz.json",
     "version": "1.0"
   },
   "title": "Ausbildungsplanung - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welcher Konfliktpunkt hat in einer Abstimmungsrunde meist Vorrang?\nHohe Auswirkung auf Pruefung und Betriebsablauf zuerst.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Termin mit hoher Auswirkung auf Pruefung und Einsatzplanung",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Hoher Impact geht vor."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Thema mit der schoensten Praesentation",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Optik ist kein Priorisierungskriterium."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Beliebiges Thema ohne Frist",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Ohne Dringlichkeit kein Vorrang."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wodurch steigt der Konsistenzscore in der Konferenz?\nBegruendung und Entscheidung muessen zusammenpassen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Entscheidung folgt nachvollziehbar der Priorisierung",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Stringente Linie erhoeht Konsistenz."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Jede Runde mit neuer Begruendung ohne Bezug",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das senkt Konsistenz."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Konflikte werden ignoriert",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Ignorieren loest keine Abstimmungsprobleme."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Aktion hilft bei widerspruechlichen Planvorgaben am meisten?\nTransparenter Abgleich statt Bauchgefuehl.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Abweichung dokumentieren und gemeinsame Prioritaet festlegen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das schafft Verbindlichkeit."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur den lautesten Beitrag uebernehmen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das ist nicht belastbar."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Diskussion vertagen ohne Entscheidung",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Ohne Entscheidung bleibt der Konflikt bestehen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann ist ein Bonus in diesem Szenario plausibel?\nTreffer bei Priorisierung und Entscheidung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Priorisierung und Entscheidung beide korrekt sind",
+          "correct": true,
+          "reason": "Richtig. Doppelter Treffer gibt Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur schnell geklickt wird",
+          "correct": false,
+          "reason": "Tempo ohne Qualitaet reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Bei jeder falschen Entscheidung",
+          "correct": false,
+          "reason": "Fehler erzeugen keinen Bonus."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI zeigt den Fortschritt der Konferenz am klarsten?\nZwei Messachsen laut Plan.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Priorisierungsgenauigkeit und Konsistenzscore",
+          "correct": true,
+          "reason": "Exakt diese zwei KPI steuern das Spiel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl der Wortmeldungen",
+          "correct": false,
+          "reason": "Das misst keine Entscheidungsqualitaet."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtspielzeit",
+          "correct": false,
+          "reason": "Zeit allein ist zu wenig."
         }
       ]
     }

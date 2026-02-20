@@ -1,86 +1,211 @@
 {
   "meta": {
-    "topic": "Lösungsvarianten entwickeln und nach Kriterien vergleichen",
+    "topic": "Loesungsvarianten entwickeln und nach Kriterien vergleichen",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "losungsvarianten_entwickeln_und_nach_kriterien_vergleichen",
-    "version": "1.0"
+    "source": "_gg01_nutzwert_navigator.json",
+    "version": "2.0"
   },
-  "title": "Lösungsvarianten entwickeln und nach Kriterien vergleichen - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Loesungsvarianten entwickeln und nach Kriterien vergleichen",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Cloud vs. On-Prem (Basis)",
+      "situation": "Finde eine klare Startentscheidung fuer den ersten Rollout.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Cloud vs. On-Prem (Basis)",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Programmiersprache API-Team",
+      "situation": "Bewerte die beste Sprache fuer schnelle Lieferfaehigkeit.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Programmiersprache API-Team",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Ticket-Tool Auswahl",
+      "situation": "Das Team will schnell starten, aber auch sauber dokumentieren.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Ticket-Tool Auswahl",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "ERP-Einfuehrung",
+      "situation": "CFO fordert Kostenfokus, IT fordert Risikoabsicherung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "ERP-Einfuehrung",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "CRM-Migration",
+      "situation": "Sales will Tempo, Betrieb will Stabilitaet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "CRM-Migration",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Client-Hardware Beschaffung",
+      "situation": "Einkauf priorisiert Preis, Support priorisiert Servicefaehigkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Client-Hardware Beschaffung",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Preissteigerung SaaS",
+      "situation": "Nach dem Start steigen die SaaS-Kosten ploetzlich um 15%.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Preissteigerung SaaS",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Lieferengpass Hardware",
+      "situation": "Top-Anbieter bekommt Lieferprobleme, Zeitwert sinkt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lieferengpass Hardware",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

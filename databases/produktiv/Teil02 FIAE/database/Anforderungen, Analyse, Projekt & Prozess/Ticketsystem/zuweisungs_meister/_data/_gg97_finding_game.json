@@ -4,7 +4,7 @@
     "mechanic": "finding_terms",
     "engine": "FindingGame",
     "variant": "zuweisungs_meister",
-    "title": "zuweisungs meister - Begriffe finden",
+    "title": "Zuweisungs-Meister - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
   },
@@ -13,46 +13,58 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "zuweisungs meister: Ausgangslage, Kriterien und Umsetzung sollen sauber dokumentiert werden.",
-    "Fachlich wichtig sind Analyse, Bewertung und rueckgekoppelte Verbesserung.",
-    "Unscharfe Aussagen ohne Kriterien helfen nicht bei der Qualitaet."
+    "Zuweisungs Meister: Im Kontext Zuweisungs Meister stehen Zuweisungs Meister, Ticketsystem und support im Fokus.",
+    "Fuer eine belastbare Einordnung werden frontend und backend gezielt geprueft und dokumentiert.",
+    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Ausgangslage",
+      "label": "Zuweisungs Meister",
       "is_target": true,
-      "explanation": "Wichtiger Startpunkt fuer die Einordnung."
+      "explanation": "\"Zuweisungs Meister\" ist ein zentraler Fachbegriff im Kontext Zuweisungs Meister."
     },
     {
       "id": "t2",
-      "label": "Kriterien",
+      "label": "Ticketsystem",
       "is_target": true,
-      "explanation": "Kriterien sichern Vergleichbarkeit."
+      "explanation": "\"Ticketsystem\" ist ein zentraler Fachbegriff im Kontext Zuweisungs Meister."
     },
     {
       "id": "t3",
-      "label": "Bewertung",
+      "label": "support",
       "is_target": true,
-      "explanation": "Bewertung ist Kern der fachlichen Entscheidung."
+      "explanation": "\"support\" ist ein zentraler Fachbegriff im Kontext Zuweisungs Meister."
     },
     {
       "id": "t4",
-      "label": "Verbesserung",
+      "label": "frontend",
       "is_target": true,
-      "explanation": "Rueckkopplung verbessert das Ergebnis."
+      "explanation": "\"frontend\" ist ein zentraler Fachbegriff im Kontext Zuweisungs Meister."
     },
     {
       "id": "t5",
-      "label": "Unscharfe Aussagen",
-      "is_target": false,
-      "explanation": "Das ist kein tragfaehiger Fachbegriff."
+      "label": "backend",
+      "is_target": true,
+      "explanation": "\"backend\" ist ein zentraler Fachbegriff im Kontext Zuweisungs Meister."
     },
     {
       "id": "t6",
-      "label": "Qualitaet",
+      "label": "Nebenaspekt",
       "is_target": false,
-      "explanation": "Hier nur als Ablenkbegriff genutzt."
+      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+    },
+    {
+      "id": "t7",
+      "label": "Randnotiz",
+      "is_target": false,
+      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+    },
+    {
+      "id": "t8",
+      "label": "Ablenkbegriff",
+      "is_target": false,
+      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
     }
   ]
 }

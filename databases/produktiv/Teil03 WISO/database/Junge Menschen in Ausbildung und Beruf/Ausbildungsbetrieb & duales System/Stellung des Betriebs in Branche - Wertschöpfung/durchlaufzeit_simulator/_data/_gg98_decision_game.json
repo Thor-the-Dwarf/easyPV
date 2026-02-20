@@ -3,7 +3,7 @@
     "topic": "Wertschoepfung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wertschoepfung",
+    "source": "_gg01_durchlaufzeit_simulator.json",
     "version": "1.0"
   },
   "title": "Wertschoepfung - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Priorisierung reduziert typischerweise die mittlere Durchlaufzeit zuerst?\nFaellige Auftraege mit hoher Folgewirkung zuerst.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Faellige Auftraege mit hohem Rueckstaupotenzial zuerst bearbeiten",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. So sinkt die Lead Time am schnellsten."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Immer den kleinsten Auftrag zuerst bearbeiten",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Kann sinnvoll sein, ist aber kein genereller Engpasshebel."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Auftragsreihenfolge zufaellig festlegen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Zufall verschlechtert die Steuerbarkeit."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche KPI sind laut Plan zentral?\nZeit und Terminquote gemeinsam.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Mittlere Durchlaufzeit und Termintrefferquote",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Exakt diese beiden KPI sind gefordert."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Gesamtpunkte",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Ohne Zeit-/Terminbezug unvollstaendig."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur Anzahl bearbeiteter Klicks",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Klicks sagen nichts ueber Prozessqualitaet."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wodurch entsteht laut Regelwerk ein hoher Strafwert?\nUeberfaellige Auftraege.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Mehrere ueberfaellige Auftraege im Engpassbereich",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das zieht hohe Strafpunkte."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Ein fristgerechter Abschluss",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Fristgerecht ist positiv."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Kurzer Hinweistext",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Textlaenge beeinflusst den Score nicht."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann ist ein Bonus plausibel?\nStabil hohe Termintrefferquote.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn die Termintrefferquote ueber mehrere Runden stabil hoch bleibt",
+          "correct": true,
+          "reason": "Richtig. Konstanz wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur die erste Runde korrekt war",
+          "correct": false,
+          "reason": "Einzelrunde reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Wenn keine KPI angezeigt werden",
+          "correct": false,
+          "reason": "KPI muessen sichtbar bleiben."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Auswertung soll das Replay liefern?\nEngpassstellen klar markieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Welche Stufe den groessten Rueckstau verursacht hat",
+          "correct": true,
+          "reason": "Genau das macht Engpasslernen moeglich."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endpunktzahl ohne Ursachenbezug",
+          "correct": false,
+          "reason": "Ohne Ursache ist die Auswertung zu schwach."
+        },
+        {
+          "id": "c",
+          "text": "Nur Startzeit der Runde",
+          "correct": false,
+          "reason": "Startzeit allein hilft nicht."
         }
       ]
     }

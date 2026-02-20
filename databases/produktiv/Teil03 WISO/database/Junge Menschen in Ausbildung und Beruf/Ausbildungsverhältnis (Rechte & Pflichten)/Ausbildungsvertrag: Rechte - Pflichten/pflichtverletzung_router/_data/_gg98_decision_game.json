@@ -3,7 +3,7 @@
     "topic": "Ausbildungsvertrag: Rechte - Pflichten",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "ausbildungsvertrag_rechte_pflichten",
+    "source": "_gg01_pflichtverletzung_router.json",
     "version": "1.0"
   },
   "title": "Ausbildungsvertrag: Rechte - Pflichten - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Ein Azubi fehlt wiederholt unentschuldigt. Was ist der erste passende Schritt?\nSachverhalt zuerst klaeren.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Gespräch fuehren und Sachverhalt dokumentieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Klaerung und Doku zuerst."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Sofort ohne Gespraech kuendigen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Unverhaeltnismaessig als erster Schritt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Thema vollstaendig ignorieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Das loest den Verstoss nicht."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Bei wiederholter Pflichtverletzung trotz Hinweis: was folgt typischerweise?\nStufenweise Reaktion.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Formelle Ermahnung/Abmahnung nach interner Pruefung",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Korrekt. Der Prozess wird formeller."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Automatisch Ausbildungsende am gleichen Tag",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "So pauschal nicht richtig."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine weitere Massnahme",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Bei Wiederholung nicht angemessen."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Warum ist Reihenfolge im Router wichtig?\nNachvollziehbarkeit und Fairness.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Weil dokumentierte Schritte Entscheidungen belastbar machen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Prozesssicherheit entsteht durch Reihenfolge."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Weil Zufallsschritte schneller sind",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zufall ist kein Verfahren."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Weil Regeln nur fuer neue Azubis gelten",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Regeln gelten allgemein."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Was sollte bei jeder Router-Entscheidung mitlaufen?\nFeedback und naechster Schritt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Begruendung, Massnahme und Folgeschritt festhalten",
+          "correct": true,
+          "reason": "Richtig. So bleibt der Pfad nachvollziehbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Punktestand notieren",
+          "correct": false,
+          "reason": "Zu wenig fuer Fallsteuerung."
+        },
+        {
+          "id": "c",
+          "text": "Nur die letzte Entscheidung merken",
+          "correct": false,
+          "reason": "Der gesamte Verlauf ist relevant."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann gilt eine Fallkette als sauber geloest?\nKorrekte Route ohne ausgelassene Pflichtschritte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn alle Kernschritte in richtiger Reihenfolge erfolgt sind",
+          "correct": true,
+          "reason": "Ja. Das ist der Zielzustand."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur der erste Schritt stimmt",
+          "correct": false,
+          "reason": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Wenn man spaet alles pauschal zusammenfasst",
+          "correct": false,
+          "reason": "Die Route muss laufend korrekt sein."
         }
       ]
     }

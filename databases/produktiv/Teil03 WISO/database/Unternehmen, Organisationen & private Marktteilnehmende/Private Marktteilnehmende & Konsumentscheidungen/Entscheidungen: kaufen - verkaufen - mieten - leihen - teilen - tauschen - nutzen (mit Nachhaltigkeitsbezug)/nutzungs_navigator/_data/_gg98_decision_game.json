@@ -3,7 +3,7 @@
     "topic": "Konsumoptionen",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "konsumoptionen",
+    "source": "_gg01_nutzungs_navigator.json",
     "version": "1.0"
   },
   "title": "Konsumoptionen - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Fall 1: Bohrmaschine fuer einmaligen Umzug. Beste Option?\nNiedrige Dauer und Frequenz.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Leihen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Einmalige Nutzung spricht fuer Leihen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Neu kaufen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht optimal fuer Einmalnutzung."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Sofort ersetzen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht sinnvoll."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Fall 2: Fahrrad fuer taeglichen Arbeitsweg. Was passt?\nHohe Regelmaessigkeit und langfristige Nutzung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Kaufen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Dauerhafte Nutzung rechtfertigt Besitz."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Taeglich mieten",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht effizient auf Dauer."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Monatlich tauschen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Unnoetig komplex."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Fall 3: Kamera fuer monatliche Vereinsprojekte. Gute Wahl?\nSchwankende Auslastung beachten.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Teilen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Sharing reduziert Kosten und Leerlauf."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Luxusmodell kaufen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Kann zu Unterauslastung fuehren."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Ohne Bedarf kaufen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht passend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Bei gleichem Preis zweier Optionen entscheidet laut Plan...\nEs gibt eine Oeko-Vorrangregel.",
+      "options": [
+        {
+          "id": "a",
+          "text": "besserer ecoScore",
+          "correct": true,
+          "reason": "Genau. Oeko-Wert ist Tie-Breaker."
+        },
+        {
+          "id": "b",
+          "text": "laengerer Produktname",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "zufaelliger Wurf",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Woran erkennst du eine gute Nutzungsentscheidung?\nKosten + Nutzungsprofil + Nachhaltigkeit zusammen betrachten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Option passt zu Dauer, Intensitaet und Oeko-Ziel",
+          "correct": true,
+          "reason": "Richtig. Das ist die Kernlogik des Navigators."
+        },
+        {
+          "id": "b",
+          "text": "Nur auf Werbung reagieren",
+          "correct": false,
+          "reason": "Nicht fundiert."
+        },
+        {
+          "id": "c",
+          "text": "Nur spontane Verfuegbarkeit",
+          "correct": false,
+          "reason": "Zu eng bewertet."
         }
       ]
     }

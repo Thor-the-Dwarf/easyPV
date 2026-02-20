@@ -3,7 +3,7 @@
     "topic": "Arbeitsvertrag",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitsvertrag",
+    "source": "_gg01_probezeit_navigator.json",
     "version": "1.0"
   },
   "title": "Arbeitsvertrag - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Unklare Situation in der Probezeit: Was ist der erste sinnvolle Schritt?\nZuerst passende Regel identifizieren.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Regelbezug pruefen und korrekt zuordnen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Der Navigator startet mit Regelklarheit."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Sofort eskalieren ohne Pruefung",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Situation ignorieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was gibt bei korrekter Regel, aber falschem naechsten Schritt?\nBewertung ist zweidimensional.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Teilscore",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Regel und Prozessschritt werden getrennt bewertet."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Immer null",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Immer volle Punkte",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPIs nennt der Plan?\nEs sind zwei Genauigkeitswerte.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Regelgenauigkeit und Prozessgenauigkeit",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Beide Perspektiven werden erfasst."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Gesamtzeit",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht ausreichend."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Fehleranzahl",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Zu grob."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann greift Hilfe im Probezeit-Navigator?\nBei wiederholten Fehlern.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei Fehlserie aktiviert sich kontextbezogene Hilfe",
+          "correct": true,
+          "reason": "Richtig. So werden wiederkehrende Unsicherheiten adressiert."
+        },
+        {
+          "id": "b",
+          "text": "Bei jeder richtigen Antwort",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nie",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was ist Ziel dieses Spiels?\nRegelwissen und Handlungssicherheit verbinden.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Regelzuordnung plus passender naechster Schritt",
+          "correct": true,
+          "reason": "Richtig. Genau diese Kombination wird trainiert."
+        },
+        {
+          "id": "b",
+          "text": "Nur Regel auswendig lernen",
+          "correct": false,
+          "reason": "Zu einseitig."
+        },
+        {
+          "id": "c",
+          "text": "Nur schnell klicken",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

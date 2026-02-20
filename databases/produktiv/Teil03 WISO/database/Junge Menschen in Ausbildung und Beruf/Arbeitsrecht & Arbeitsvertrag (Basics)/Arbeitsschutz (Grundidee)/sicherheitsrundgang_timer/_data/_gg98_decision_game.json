@@ -3,7 +3,7 @@
     "topic": "Arbeitsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitsschutz",
+    "source": "_gg01_sicherheitsrundgang_timer.json",
     "version": "1.0"
   },
   "title": "Arbeitsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Kernkompetenz trainiert der Sicherheitsrundgang-Timer?\nEs geht um Geschwindigkeit und Systematik.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Sicherheitsverstoesse schnell und systematisch erkennen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Genau darauf zielt das Spiel ab."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Regeltexte auswendig lernen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht der Kernmechanismus."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Laufwege optimieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Aktion zaehlt laut Regeln nicht?\nAchte auf das Zeitende.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Markierung nach Ablauf des Timers",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Nach Zeitablauf werden Treffer nicht mehr gezaehlt."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Markierung waehrend der Runde",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Die zaehlt natuerlich."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Korrekte Markierung im Zeitfenster",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Die ist gueltig."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI steht im Plan als Primärmetrik?\nSie kombiniert Treffer und Zeit.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "korrekte Funde pro Minute",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das ist die zentrale Leistungsmetrik."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "nur Gesamtpunkte",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu unspezifisch."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "nur Fehlklickzahl",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht allein."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gibt es den Perfekt-Runden-Bonus?\nTrefferqualitaet und Fehlklicke sind relevant.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei Runde ohne Fehlklick",
+          "correct": true,
+          "reason": "Richtig. Fehlerfreie Runde loest Bonus aus."
+        },
+        {
+          "id": "b",
+          "text": "Bei hoechster Klickzahl",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Bei beliebiger Antwort",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Warum ist historischer KPI-Vergleich wichtig?\nDer Plan fordert Trendbeobachtung pro Rundgang.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Er zeigt Lernfortschritt ueber mehrere Rundgaenge",
+          "correct": true,
+          "reason": "Richtig. So werden Verbesserungen sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Er ersetzt jede inhaltliche Analyse",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Er ist nur Dekoration",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

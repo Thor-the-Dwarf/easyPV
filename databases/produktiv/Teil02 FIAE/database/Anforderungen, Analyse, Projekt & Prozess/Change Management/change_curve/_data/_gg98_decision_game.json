@@ -3,84 +3,226 @@
     "topic": "Change Management",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "change_management",
-    "version": "1.0"
+    "source": "_gg01_change_curve.json",
+    "version": "2.0"
   },
-  "title": "Change Management - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "change curve",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Das Team starrt schweigend auf die Ankuendigung der Reorganisation. Niemand bewegt sich.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "p1",
+          "text": "1. Schock",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Gut! Die Fakten geben Halt. Das Eis ist gebrochen."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "p2",
+          "text": "2. Verneinung",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Gut! Die Fakten geben Halt. Das Eis ist gebrochen."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "p3",
+          "text": "3. Rationale Einsicht",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Gut! Die Fakten geben Halt. Das Eis ist gebrochen."
+        },
+        {
+          "id": "p4",
+          "text": "4. Emotionale Akzeptanz",
+          "correct": false,
+          "reason": "Gut! Die Fakten geben Halt. Das Eis ist gebrochen."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Mueller ruft: 'Das haben wir schon 3x versucht! Das geht eh wieder schief!'",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "p2",
+          "text": "2. Verneinung",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Wichtig. Mueller fuehlt sich gehoert und faehrt etwas runter."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "p1",
+          "text": "1. Schock",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Wichtig. Mueller fuehlt sich gehoert und faehrt etwas runter."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "p3",
+          "text": "3. Rationale Einsicht",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Wichtig. Mueller fuehlt sich gehoert und faehrt etwas runter."
+        },
+        {
+          "id": "p4",
+          "text": "4. Emotionale Akzeptanz",
+          "correct": false,
+          "reason": "Wichtig. Mueller fuehlt sich gehoert und faehrt etwas runter."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Das Team diskutiert Prozesse. 'Ja, wir muessen wohl... aber eigentlich laeuft das Alte doch gut.'",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "p3",
+          "text": "3. Rationale Einsicht",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Guter Austausch. Die Notwendigkeit wird klarer."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "p1",
+          "text": "1. Schock",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Guter Austausch. Die Notwendigkeit wird klarer."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "p2",
+          "text": "2. Verneinung",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Guter Austausch. Die Notwendigkeit wird klarer."
+        },
+        {
+          "id": "p4",
+          "text": "4. Emotionale Akzeptanz",
+          "correct": false,
+          "reason": "Guter Austausch. Die Notwendigkeit wird klarer."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Stimmung am Tiefpunkt. 'Ich schaff das nicht mit der neuen Software. Alles ist so kompliziert.'",
+      "options": [
+        {
+          "id": "p4",
+          "text": "4. Emotionale Akzeptanz",
+          "correct": true,
+          "reason": "Training hilft gegen die Ohnmacht. Erste Zuversicht keimt auf."
+        },
+        {
+          "id": "p1",
+          "text": "1. Schock",
+          "correct": false,
+          "reason": "Training hilft gegen die Ohnmacht. Erste Zuversicht keimt auf."
+        },
+        {
+          "id": "p2",
+          "text": "2. Verneinung",
+          "correct": false,
+          "reason": "Training hilft gegen die Ohnmacht. Erste Zuversicht keimt auf."
+        },
+        {
+          "id": "p3",
+          "text": "3. Rationale Einsicht",
+          "correct": false,
+          "reason": "Training hilft gegen die Ohnmacht. Erste Zuversicht keimt auf."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Schmidt probiert das neue Tool. 'Hey, der Shortcut hier ist ja doch ganz praktisch.'",
+      "options": [
+        {
+          "id": "p5",
+          "text": "5. Ausprobieren",
+          "correct": true,
+          "reason": "Super! Das Ausprobieren wird zur Routine."
+        },
+        {
+          "id": "p1",
+          "text": "1. Schock",
+          "correct": false,
+          "reason": "Super! Das Ausprobieren wird zur Routine."
+        },
+        {
+          "id": "p2",
+          "text": "2. Verneinung",
+          "correct": false,
+          "reason": "Super! Das Ausprobieren wird zur Routine."
+        },
+        {
+          "id": "p3",
+          "text": "3. Rationale Einsicht",
+          "correct": false,
+          "reason": "Super! Das Ausprobieren wird zur Routine."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Das erste Projekt wurde mit der neuen Methode abgeschlossen. Schnell und fehlerfrei.",
+      "options": [
+        {
+          "id": "p6",
+          "text": "6. Erkenntnis",
+          "correct": true,
+          "reason": "Die Erkenntnis 'Es lohnt sich' setzt sich fest."
+        },
+        {
+          "id": "p1",
+          "text": "1. Schock",
+          "correct": false,
+          "reason": "Die Erkenntnis 'Es lohnt sich' setzt sich fest."
+        },
+        {
+          "id": "p2",
+          "text": "2. Verneinung",
+          "correct": false,
+          "reason": "Die Erkenntnis 'Es lohnt sich' setzt sich fest."
+        },
+        {
+          "id": "p3",
+          "text": "3. Rationale Einsicht",
+          "correct": false,
+          "reason": "Die Erkenntnis 'Es lohnt sich' setzt sich fest."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Niemand redet mehr ueber 'die neue Methode'. Es ist einfach 'unsere Arbeitsweise'.",
+      "options": [
+        {
+          "id": "p7",
+          "text": "7. Integration",
+          "correct": true,
+          "reason": "Perfekt. Der Change ist Kultur geworden."
+        },
+        {
+          "id": "p1",
+          "text": "1. Schock",
+          "correct": false,
+          "reason": "Perfekt. Der Change ist Kultur geworden."
+        },
+        {
+          "id": "p2",
+          "text": "2. Verneinung",
+          "correct": false,
+          "reason": "Perfekt. Der Change ist Kultur geworden."
+        },
+        {
+          "id": "p3",
+          "text": "3. Rationale Einsicht",
+          "correct": false,
+          "reason": "Perfekt. Der Change ist Kultur geworden."
         }
       ]
     }

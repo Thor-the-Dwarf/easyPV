@@ -3,7 +3,7 @@
     "topic": "Ausbildungsvertrag: Rechte - Pflichten",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "ausbildungsvertrag_rechte_pflichten",
+    "source": "_gg01_rollencheck_match.json",
     "version": "1.0"
   },
   "title": "Ausbildungsvertrag: Rechte - Pflichten - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Zuordnung ist korrekt?\nRolle und Kategorie gemeinsam pruefen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Ausbildender: Pflicht zur fachlichen Anleitung",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist eine Kernpflicht."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Azubi: Recht auf beliebige Arbeitsverweigerung",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "So besteht kein allgemeines Recht."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ausbildender: Recht auf fehlende Verguetung",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Verguetung ist geschuldet."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was ist typischerweise eine Pflicht des Azubis?\nLern- und Mitwirkungspflichten.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Lernaufgaben sorgfaeltig ausfuehren und Regeln beachten",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Korrekt. Das gehoert zu den Grundpflichten."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Ausbildungsinhalte eigenmaechtig streichen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht zulaessig."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Pruefungstermine frei festlegen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Pruefungsrahmen ist vorgegeben."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Aussage beschreibt ein Recht des Azubis?\nAnspruch aus dem Ausbildungsvertrag.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Anspruch auf planvolle und zielgerichtete Ausbildung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Ja. Das ist ein zentrales Recht."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Pflicht, auf Anleitung zu verzichten",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das waere kein Recht."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Recht, Sicherheitsregeln zu ignorieren",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Sicherheitsregeln bleiben verbindlich."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Kombination ist falsch zugeordnet?\nSuche Rollenverwechslung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ausbildender: Pflicht zur Verguetungszahlung",
+          "correct": false,
+          "reason": "Diese Zuordnung ist korrekt, also nicht die gesuchte Falsche."
+        },
+        {
+          "id": "b",
+          "text": "Azubi: Pflicht zum Fuehren des Berichtshefts",
+          "correct": false,
+          "reason": "Auch das ist korrekt zugeordnet."
+        },
+        {
+          "id": "c",
+          "text": "Azubi: Pflicht, keine Lerninhalte zu erhalten",
+          "correct": true,
+          "reason": "Richtig. Das ist eine klare Fehlzuordnung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI passt zum Rollencheck-Match?\nZwei Dimensionen messen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rollenquote und Kategorienquote getrennt ausweisen",
+          "correct": true,
+          "reason": "Genau. Beide Fehlerarten bleiben sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Zeitmessung ohne Trefferquote",
+          "correct": false,
+          "reason": "Zu wenig Aussagekraft."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl geklickter Karten",
+          "correct": false,
+          "reason": "Keine inhaltliche Qualitaetsmessung."
         }
       ]
     }

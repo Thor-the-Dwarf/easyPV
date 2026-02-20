@@ -3,7 +3,7 @@
     "topic": "Nachhaltige Entwicklung im Unternehmenskontext",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "nachhaltige_entwicklung_im_unternehmenskontext",
+    "source": "_gg01_kennzahlen_monitor.json",
     "version": "1.0"
   },
   "title": "Nachhaltige Entwicklung im Unternehmenskontext - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Entwicklung ist ein kritischer Nachhaltigkeitstrend?\nMehr Emissionen bei sinkender Effizienz.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Emissionen steigen bei gleichzeitig sinkender Ressourceneffizienz",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist klar kritisch."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Alle KPI bleiben stabil im Zielkorridor",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Das ist kein negativer Trend."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Einzelwert schwankt ohne Muster",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Noch kein belastbarer Trend."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche erste Reaktion passt bei negativem Trend?\nUrsache pruefen, dann Massnahme.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Treiber analysieren und priorisierte Gegenmassnahme starten",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Erst Ursache, dann Wirkung."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Reporting verschieben",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Veraendert die Ursache nicht."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Massnahme zufaellig waehlen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Ohne Analyse ineffektiv."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI-Kombination verbessert die Steuerung?\nTrend + Wirksamkeit gemeinsam.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Trendquote und Massnahmenquote getrennt ausweisen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. So wird Wirkung sichtbar."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Gesamtpunkte ohne Aufschluesselung",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu wenig steuerbar."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Anzahl Meetings messen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht zielnah genug."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gilt ein Trend als bestaetigt?\nMehrere Messpunkte, nicht Einzelfall.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn mehrere Perioden dieselbe Abweichungsrichtung zeigen",
+          "correct": true,
+          "reason": "Richtig. Das ist robust."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein Ausreisser auftritt",
+          "correct": false,
+          "reason": "Ein Wert reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nur ein Teammitglied es erwartet",
+          "correct": false,
+          "reason": "Ohne Daten keine Bestaetigung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Auswertung hilft nach dem Fall am meisten?\nTrendtreffer und Aktionsqualitaet trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Getrennte Rueckmeldung fuer Trend und Massnahme",
+          "correct": true,
+          "reason": "Exakt. Lernluecken werden sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endstand ohne Ursachenbezug",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Zeitstempel dokumentieren",
+          "correct": false,
+          "reason": "Zu wenig Aussagekraft."
         }
       ]
     }

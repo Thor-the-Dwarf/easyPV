@@ -3,7 +3,7 @@
     "topic": "Soziale Marktwirtschaft",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "soziale_marktwirtschaft",
+    "source": "_gg01_ordnungsprinzip_match.json",
     "version": "1.0"
   },
   "title": "Soziale Marktwirtschaft - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Massnahme: Kartellaufsicht verstaerken. Prinzip?\nWettbewerbsordnung.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Wettbewerb sichern",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das schuetzt Marktprozesse."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Preisbindung durch Staat",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht passend."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Beliebigkeitsprinzip",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Kein Prinzip."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Massnahme: Transfer fuer vulnerable Haushalte. Prinzip?\nSozialer Ausgleich.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Sozialausgleich",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Ziel ist Teilhabe."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Wettbewerbsabbau",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht passend."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Deregulierung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht passend."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Massnahme: Klare Haftungsregeln fuer Unternehmen. Prinzip?\nOrdnungspolitischer Rahmen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Verantwortungs- und Ordnungsrahmen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Regeln sichern Verlaesslichkeit."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Willkuerliche Ausnahme",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Falsch."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Planwirtschaftliche Einzelsteuerung",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht passend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gibt es Zusatzabzug laut Plan?\nKernprinzip falsch zugeordnet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn ein Kernprinzip falsch gematcht wird",
+          "correct": true,
+          "reason": "Richtig. Das ist ein Schwerfehler."
+        },
+        {
+          "id": "b",
+          "text": "Wenn korrekt gematcht wird",
+          "correct": false,
+          "reason": "Kein Abzug."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Hilfe angefragt wird",
+          "correct": false,
+          "reason": "Nicht automatisch."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI zeigt Lernfortschritt?\nTreffer je Prinzip.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trefferquote pro Prinzipgruppe",
+          "correct": true,
+          "reason": "Richtig. Damit sind Luecken sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtzeit",
+          "correct": false,
+          "reason": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Kartenzahl",
+          "correct": false,
+          "reason": "Nicht genug."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Massnahme: Missbrauchsaufsicht bei Marktmacht. Prinzip?\nFunktionierender Wettbewerb.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wettbewerbsschutz",
+          "correct": true,
+          "reason": "Richtig. Genau dieses Prinzip."
+        },
+        {
+          "id": "b",
+          "text": "Sozialtransfer",
+          "correct": false,
+          "reason": "Nicht passend."
+        },
+        {
+          "id": "c",
+          "text": "Subventionsautomatismus",
+          "correct": false,
+          "reason": "Nicht passend."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Massnahme: Mindestabsicherung bei Arbeitslosigkeit. Prinzip?\nSoziale Sicherung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sozialstaatlicher Ausgleich",
+          "correct": true,
+          "reason": "Richtig. Kern des Ausgleichsprinzips."
+        },
+        {
+          "id": "b",
+          "text": "Wettbewerbsabbau",
+          "correct": false,
+          "reason": "Nicht passend."
+        },
+        {
+          "id": "c",
+          "text": "Monopolfoerderung",
+          "correct": false,
+          "reason": "Nicht passend."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Wozu dient das Match-Spiel didaktisch?\nPrinzipien unterscheiden.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Massnahmen systematisch den Prinzipien zuordnen",
+          "correct": true,
+          "reason": "Richtig. Das ist das Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Begriffe auswendig lernen",
+          "correct": false,
+          "reason": "Zu eng."
+        },
+        {
+          "id": "c",
+          "text": "Nur Punkte sammeln",
+          "correct": false,
+          "reason": "Nicht ausreichend."
         }
       ]
     }

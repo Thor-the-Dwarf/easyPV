@@ -3,7 +3,7 @@
     "topic": "Wirksamkeit - typische Stolperstellen",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wirksamkeit_typische_stolperstellen",
+    "source": "_gg01_fristen_quiz_timer.json",
     "version": "1.0"
   },
   "title": "Wirksamkeit - typische Stolperstellen - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Aussage trifft bei Fristpruefung zuerst zu?\nFristtyp und Startpunkt klaeren.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Fristbeginn und Fristart muessen zuerst bestimmt werden",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Ohne Basis keine valide Entscheidung."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur auf Erinnerung vertrauen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu unsicher."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Frist generell ignorieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Fuehrt zu Fehlern."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann zaehlt eine Runde im Timer als Fehler?\nFalsch oder zu spaet.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Bei falscher Antwort oder ohne Antwort im Zeitfenster",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das entspricht den Regeln."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Bei korrekter Schnellantwort",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das ist positiv."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Beim Lesen des Hinweises",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Hinweis ist erlaubt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI zeigt Leistung im Quiz-Timer?\nTempo und Genauigkeit kombinieren.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Korrekte Antworten pro Minute",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Diese KPI ist gefordert."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Anzahl Klicks",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Keine Lernqualitaet."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Gesamtspielzeit",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Ohne Richtigkeit unbrauchbar."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Was verbessert die Trefferquote bei Fristfragen?\nSystematische Kurzpruefung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kurze Checkfolge: Fristtyp, Startpunkt, Endpunkt",
+          "correct": true,
+          "reason": "Genau. Das stabilisiert Entscheidungen."
+        },
+        {
+          "id": "b",
+          "text": "Nur auf Gewohnheit reagieren",
+          "correct": false,
+          "reason": "Fehleranfaellig."
+        },
+        {
+          "id": "c",
+          "text": "Antwort bis nach Ablauf verschieben",
+          "correct": false,
+          "reason": "Zeitfenster verpasst."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann gibt es Serienbonus?\nMehrere korrekte Antworten hintereinander.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ab einer stabilen Serie korrekter Antworten",
+          "correct": true,
+          "reason": "Richtig. Konstanz wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei beliebiger Reihenfolge mit vielen Fehlern",
+          "correct": false,
+          "reason": "Kein Bonusprofil."
+        },
+        {
+          "id": "c",
+          "text": "Beim Pausieren des Spiels",
+          "correct": false,
+          "reason": "Nicht bonusrelevant."
         }
       ]
     }

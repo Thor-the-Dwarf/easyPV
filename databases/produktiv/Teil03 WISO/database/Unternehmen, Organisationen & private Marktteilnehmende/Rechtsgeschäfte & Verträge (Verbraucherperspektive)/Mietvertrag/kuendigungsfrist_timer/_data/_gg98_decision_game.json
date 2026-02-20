@@ -3,84 +3,134 @@
     "topic": "Kuendigungsfrist-Timer",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kuendigungsfrist_timer",
+    "source": "_gg01_kuendigungsfrist_timer.json",
     "version": "1.0"
   },
   "title": "Kuendigungsfrist-Timer - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "subtitle": "Fristlogik unter Zeitdruck korrekt anwenden",
   "rounds": [
     {
-      "id": 1,
+      "id": "KT-1",
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Fall: Eingang Kuendigung am 03.02., Vertragsende zum 31.03. Ist die Frist plausibel?\nPruefe Zeitraum zwischen Zugang und Zieltermin.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Nein, Frist wirkt zu kurz",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Der Zeitraum ist fuer regulaere Fristen typischerweise zu knapp."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Ja, immer ausreichend",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt. Eine pauschale Zusage ist riskant."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur die Monatszahl zaehlt, nicht der Zugangstag",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt. Der Zugangstag ist relevant."
         }
       ]
     },
     {
-      "id": 2,
+      "id": "KT-2",
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Fall: Kuendigung geht am 28.02. ein, Ziel ist 31.05. Wie bewerten?\nMehrere volle Monate sprechen fuer Fristeinhaltung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Frist eher eingehalten",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Der Zeitraum ist nachvollziehbar ausreichend."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Frist niemals eingehalten",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt. Der Zeitraum spricht eher dagegen."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Bewertung nur nach Wochentag",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt. Wochentage allein reichen nicht."
         }
       ]
     },
     {
-      "id": 3,
+      "id": "KT-3",
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Fall: Zieltermin ist mitten im Monat statt Monatsende. Was ist der Kerncheck?\nTerminlogik und Vertragsbezug sauber herleiten.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
-          "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "text": "Mitte des Monats ist immer unzulaessig",
+          "correct": false,
+          "reason": "Nicht korrekt. Es kommt auf Regel und Vereinbarung an."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
-          "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "text": "Start- und Enddatum transparent herleiten und dann bewerten",
+          "correct": true,
+          "reason": "Richtig. Reproduzierbare Herleitung ist entscheidend."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Frist pruefen ist unnoetig",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt. Die Fristpruefung ist zentral."
+        }
+      ]
+    },
+    {
+      "id": "KT-4",
+      "phase": "Runde 4",
+      "situation": "Fall: Zugang unklar, nur Versanddatum vorhanden. Wie reagieren?\nOhne belastbaren Zugang bleibt die Fristbewertung unsicher.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Frist automatisch als eingehalten buchen",
+          "correct": false,
+          "reason": "Nicht korrekt. Der Zugang muss nachvollziehbar sein."
+        },
+        {
+          "id": "b",
+          "text": "Zugangsdokumentation klaeren, dann Fristentscheidung treffen",
+          "correct": true,
+          "reason": "Richtig. Erst Zugang klarstellen, dann bewerten."
+        },
+        {
+          "id": "c",
+          "text": "Immer vom schlechtesten Fall ausgehen",
+          "correct": false,
+          "reason": "Nicht korrekt. Es braucht nachvollziehbare Faktenbasis."
+        }
+      ]
+    },
+    {
+      "id": "KT-5",
+      "phase": "Runde 5",
+      "situation": "Fall: Berechnung ergibt Fristende einen Tag nach gewuenschtem Termin. Was gilt?\nEin Tag Differenz kann entscheidend sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Frist nicht eingehalten, Termin anpassen",
+          "correct": true,
+          "reason": "Richtig. Bei Ueberschreitung ist Korrektur noetig."
+        },
+        {
+          "id": "b",
+          "text": "Toleranz von drei Tagen ist immer erlaubt",
+          "correct": false,
+          "reason": "Nicht korrekt. Pauschale Toleranz ist kein Standard."
+        },
+        {
+          "id": "c",
+          "text": "Differenzen nie dokumentieren",
+          "correct": false,
+          "reason": "Nicht korrekt. Transparente Dokumentation ist Pflicht."
         }
       ]
     }

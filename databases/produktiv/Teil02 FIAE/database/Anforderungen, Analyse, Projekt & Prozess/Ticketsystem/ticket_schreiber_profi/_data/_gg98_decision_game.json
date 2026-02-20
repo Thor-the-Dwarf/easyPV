@@ -1,86 +1,161 @@
 {
   "meta": {
-    "topic": "ticket schreiber profi",
+    "topic": "Ticket-Schreiber-Profi",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "ticket_schreiber_profi",
-    "version": "1.0"
+    "source": "_gg01_ticket_schreiber_profi.json",
+    "version": "2.0"
   },
-  "title": "ticket schreiber profi - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Ticket-Schreiber-Profi",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Ticket 01",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "steps",
+          "text": "Schritte zur Reproduktion",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Ohne reproduzierbare Schritte kann das Team den Fehler kaum gezielt nachstellen."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "title",
+          "text": "Praeziser Titel",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ohne reproduzierbare Schritte kann das Team den Fehler kaum gezielt nachstellen."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "actual_result",
+          "text": "Ist-Ergebnis",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Ohne reproduzierbare Schritte kann das Team den Fehler kaum gezielt nachstellen."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Ticket 02",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "expected_result",
+          "text": "Erwartetes Ergebnis",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Nur mit Soll-Zustand kann Entwicklung klaeren, ob wirklich ein Defekt vorliegt."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "environment",
+          "text": "Umgebung / Version",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nur mit Soll-Zustand kann Entwicklung klaeren, ob wirklich ein Defekt vorliegt."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "steps",
+          "text": "Schritte zur Reproduktion",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nur mit Soll-Zustand kann Entwicklung klaeren, ob wirklich ein Defekt vorliegt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Ticket 03",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "actual_result",
+          "text": "Ist-Ergebnis",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Es fehlt die konkrete Beobachtung: Was passiert stattdessen tatsaechlich?"
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "title",
+          "text": "Praeziser Titel",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Es fehlt die konkrete Beobachtung: Was passiert stattdessen tatsaechlich?"
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "steps",
+          "text": "Schritte zur Reproduktion",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Es fehlt die konkrete Beobachtung: Was passiert stattdessen tatsaechlich?"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Ticket 04",
+      "options": [
+        {
+          "id": "environment",
+          "text": "Umgebung / Version",
+          "correct": true,
+          "reason": "Gerade bei Device-Bugs ist die genaue Umgebung (Modell, OS, App-Version) entscheidend."
+        },
+        {
+          "id": "expected_result",
+          "text": "Erwartetes Ergebnis",
+          "correct": false,
+          "reason": "Gerade bei Device-Bugs ist die genaue Umgebung (Modell, OS, App-Version) entscheidend."
+        },
+        {
+          "id": "actual_result",
+          "text": "Ist-Ergebnis",
+          "correct": false,
+          "reason": "Gerade bei Device-Bugs ist die genaue Umgebung (Modell, OS, App-Version) entscheidend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Ticket 05",
+      "options": [
+        {
+          "id": "title",
+          "text": "Praeziser Titel",
+          "correct": true,
+          "reason": "Ein eindeutiger Titel hilft beim Triaging und beim schnellen Wiederfinden des Incidents."
+        },
+        {
+          "id": "steps",
+          "text": "Schritte zur Reproduktion",
+          "correct": false,
+          "reason": "Ein eindeutiger Titel hilft beim Triaging und beim schnellen Wiederfinden des Incidents."
+        },
+        {
+          "id": "environment",
+          "text": "Umgebung / Version",
+          "correct": false,
+          "reason": "Ein eindeutiger Titel hilft beim Triaging und beim schnellen Wiederfinden des Incidents."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Ticket 06",
+      "options": [
+        {
+          "id": "expected_result",
+          "text": "Erwartetes Ergebnis",
+          "correct": true,
+          "reason": "Auch bei klarer Fehlerlage braucht das Team die genaue Erwartung fuer Abnahmekriterien."
+        },
+        {
+          "id": "actual_result",
+          "text": "Ist-Ergebnis",
+          "correct": false,
+          "reason": "Auch bei klarer Fehlerlage braucht das Team die genaue Erwartung fuer Abnahmekriterien."
+        },
+        {
+          "id": "environment",
+          "text": "Umgebung / Version",
+          "correct": false,
+          "reason": "Auch bei klarer Fehlerlage braucht das Team die genaue Erwartung fuer Abnahmekriterien."
         }
       ]
     }

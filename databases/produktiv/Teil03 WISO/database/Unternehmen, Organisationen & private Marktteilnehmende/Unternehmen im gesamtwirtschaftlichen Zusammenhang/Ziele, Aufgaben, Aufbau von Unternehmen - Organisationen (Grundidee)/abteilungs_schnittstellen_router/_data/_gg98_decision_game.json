@@ -3,7 +3,7 @@
     "topic": "Unternehmensaufbau",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "unternehmensaufbau",
+    "source": "_gg01_abteilungs_schnittstellen_router.json",
     "version": "1.0"
   },
   "title": "Unternehmensaufbau - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Abfolge ist bei einem Kundenauftrag typisch?\nVertrieb startet, danach Leistungserstellung.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Vertrieb -> Produktion/Leistung -> Versand/Service",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das bildet die Kernschnittstelle ab."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Buchhaltung -> Marketing -> Empfang",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht der typische Kernprozess."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Einkauf ohne Folgeabteilung",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Unvollstaendig."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was ist eine Pflichtstation bei Materialengpass?\nAbstimmung zwischen Beschaffung und Planung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Einkauf und Produktionsplanung synchronisieren",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Ohne Abstimmung stockt der Ablauf."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur intern warten ohne Rueckmeldung",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Fehlerhaftes Routing."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Sofort Rechnungswesen priorisieren",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht der erste Engpassschritt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI misst Routing-Qualitaet?\nKorrekter Pfad plus noetige Schritte.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Korrekte Uebergaben bis Ziel mit minimalen Fehlwegen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das verbindet Qualitaet und Effizienz."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Anzahl Klicks",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu oberflaechlich."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Lesezeit der Aufgabe",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gilt eine Route als unvollstaendig?\nPflichtschritt fehlt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn eine kritische Fachabteilung uebersprungen wird",
+          "correct": true,
+          "reason": "Richtig. Pflichtstationen sind notwendig."
+        },
+        {
+          "id": "b",
+          "text": "Wenn eine zusaetzliche Plausibilisierung erfolgt",
+          "correct": false,
+          "reason": "Das ist kein Fehler."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ein Status dokumentiert wird",
+          "correct": false,
+          "reason": "Dokumentation ist sinnvoll."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Schnittstelle ist bei Reklamationen zentral?\nKunde, Service und Qualitaet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kundenservice -> Qualitaetssicherung -> Produktion",
+          "correct": true,
+          "reason": "Richtig. So werden Ursachen bearbeitet."
+        },
+        {
+          "id": "b",
+          "text": "Nur Marketing ohne Rueckkopplung",
+          "correct": false,
+          "reason": "Unzureichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Empfang ohne Fachbereich",
+          "correct": false,
+          "reason": "Nicht tragfaehig."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Warum ist klares Schnittstellenrouting wichtig?\nVermeidet Medienbrueche und Wartezeiten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Es reduziert Reibungsverluste und Fehleruebergaben",
+          "correct": true,
+          "reason": "Richtig. Transparente Uebergaben stabilisieren Prozesse."
+        },
+        {
+          "id": "b",
+          "text": "Es ersetzt jede Fachentscheidung",
+          "correct": false,
+          "reason": "Nein, es strukturiert nur den Ablauf."
+        },
+        {
+          "id": "c",
+          "text": "Es macht Ziele ueberfluessig",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Welche Information braucht der Router pro Schritt?\nVon wem, an wen, mit welchem Ergebnis.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Quelle, Zielbereich, Uebergabeobjekt, Status",
+          "correct": true,
+          "reason": "Richtig. Das macht den Pfad pruefbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Schrittname ohne Kontext",
+          "correct": false,
+          "reason": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Zeitstempel ohne Empfaenger",
+          "correct": false,
+          "reason": "Unvollstaendig."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was trainiert der Abteilungs-Schnittstellen-Router?\nSequenzsicherheit im Organisationsprozess.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte und begruendbare Uebergabereihenfolgen",
+          "correct": true,
+          "reason": "Richtig. Genau das ist das Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Reines Auswendiglernen ohne Prozessbezug",
+          "correct": false,
+          "reason": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Nur Geschwindigkeit ohne Korrektheit",
+          "correct": false,
+          "reason": "Unzureichend."
         }
       ]
     }

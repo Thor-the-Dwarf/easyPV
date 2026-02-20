@@ -3,7 +3,7 @@
     "topic": "Kuendigungsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kuendigungsschutz",
+    "source": "_gg01_kuendigungsgrund_klassifikator.json",
     "version": "1.0"
   },
   "title": "Kuendigungsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Kernaufgabe hat der Klassifikator pro Fallkarte?\nTypzuordnung und Begruendungscheck gehoeren zusammen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Grundtyp waehlen und fehlende Bausteine markieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Beide Teile zaehlen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur den Text kuerzen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur die Zeit stoppen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Regel beeinflusst den Lueckenbonus?\nEin Fehler im Typ kostet zusaetzlich.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Falscher Grundtyp blockiert Teile des Lueckenbonus",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Erst Typ, dann Bonus."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Lueckenbonus ist immer voll",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Luecken werden nie bewertet",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI sollen getrennt sichtbar sein?\nZwei Lernziele, zwei Kennzahlen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Typgenauigkeit und Luecken-Erkennung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Beide Werte sind Pflicht."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Gesamtpunkte",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu grob."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Rundenanzahl",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann greift laut Plan der Serienbonus?\nDie Serie ist klar definiert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nach 5 voll korrekten Faellen",
+          "correct": true,
+          "reason": "Richtig. Dann steigt der Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Nach jedem zweiten Fehler",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur in der ersten Runde",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was sollte der Endreport gruppieren?\nVerwechslungen sind zentral fuer die Nacharbeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Haeufige Verwechslungen von Grundtypen",
+          "correct": true,
+          "reason": "Richtig. Das zeigt Lernbedarf."
+        },
+        {
+          "id": "b",
+          "text": "Nur die laengsten Texte",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur die schnellsten Klicks",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

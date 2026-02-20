@@ -3,84 +3,134 @@
     "topic": "Abnahme-Protokoll-Check",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "abnahme_protokoll_check",
-    "version": "1.0"
+    "source": "_gg01_abnahme_protokoll_check.json",
+    "version": "2.0"
   },
-  "title": "Abnahme-Protokoll-Check - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Abnahme-Protokoll-Check",
+  "subtitle": "Bewerte Maengel rechtssicher: Ohne Mangel, Geringer Mangel oder Wesentlicher Mangel.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Typo in der FAQ-Ueberschrift, Funktionen arbeiten einwandfrei.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "ohne",
+          "text": "Ohne Mangel",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Korrekt. Das ist ein geringer Mangel: dokumentieren, Frist zur Nachbesserung setzen, Abnahme moeglich."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "gering",
+          "text": "Geringer Mangel",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Korrekt. Das ist ein geringer Mangel: dokumentieren, Frist zur Nachbesserung setzen, Abnahme moeglich."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "wesentlich",
+          "text": "Wesentlicher Mangel",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Korrekt. Das ist ein geringer Mangel: dokumentieren, Frist zur Nachbesserung setzen, Abnahme moeglich."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Checkout bricht bei mehr als 10 gleichzeitigen Nutzern mit Server-Fehler ab.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "ohne",
+          "text": "Ohne Mangel",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Korrekt. Wesentlicher Mangel: Abnahme zurueckstellen, Blocker dokumentieren, Nachbesserung verlangen."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "gering",
+          "text": "Geringer Mangel",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Korrekt. Wesentlicher Mangel: Abnahme zurueckstellen, Blocker dokumentieren, Nachbesserung verlangen."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "wesentlich",
+          "text": "Wesentlicher Mangel",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Korrekt. Wesentlicher Mangel: Abnahme zurueckstellen, Blocker dokumentieren, Nachbesserung verlangen."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Firmenlogo auf der Startseite 12px nach links verschoben.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "ohne",
+          "text": "Ohne Mangel",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Korrekt. Geringer Mangel: kein Abnahme-Stopp, aber protokollieren und nachziehen lassen."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "gering",
+          "text": "Geringer Mangel",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Korrekt. Geringer Mangel: kein Abnahme-Stopp, aber protokollieren und nachziehen lassen."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "wesentlich",
+          "text": "Wesentlicher Mangel",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Korrekt. Geringer Mangel: kein Abnahme-Stopp, aber protokollieren und nachziehen lassen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Rollenrechte fehlen: normale User sehen Admin-Funktionen.",
+      "options": [
+        {
+          "id": "ohne",
+          "text": "Ohne Mangel",
+          "correct": true,
+          "reason": "Korrekt. Wesentlicher Mangel: Abnahme verweigern bis der Rechtefehler behoben ist."
+        },
+        {
+          "id": "gering",
+          "text": "Geringer Mangel",
+          "correct": false,
+          "reason": "Korrekt. Wesentlicher Mangel: Abnahme verweigern bis der Rechtefehler behoben ist."
+        },
+        {
+          "id": "wesentlich",
+          "text": "Wesentlicher Mangel",
+          "correct": false,
+          "reason": "Korrekt. Wesentlicher Mangel: Abnahme verweigern bis der Rechtefehler behoben ist."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Alle vereinbarten Features funktionieren, keine reproduzierbaren Fehler gefunden.",
+      "options": [
+        {
+          "id": "ohne",
+          "text": "Ohne Mangel",
+          "correct": true,
+          "reason": "Korrekt. Ohne Mangel: Abnahme erklaeren und Uebergabe sauber dokumentieren."
+        },
+        {
+          "id": "gering",
+          "text": "Geringer Mangel",
+          "correct": false,
+          "reason": "Korrekt. Ohne Mangel: Abnahme erklaeren und Uebergabe sauber dokumentieren."
+        },
+        {
+          "id": "wesentlich",
+          "text": "Wesentlicher Mangel",
+          "correct": false,
+          "reason": "Korrekt. Ohne Mangel: Abnahme erklaeren und Uebergabe sauber dokumentieren."
         }
       ]
     }

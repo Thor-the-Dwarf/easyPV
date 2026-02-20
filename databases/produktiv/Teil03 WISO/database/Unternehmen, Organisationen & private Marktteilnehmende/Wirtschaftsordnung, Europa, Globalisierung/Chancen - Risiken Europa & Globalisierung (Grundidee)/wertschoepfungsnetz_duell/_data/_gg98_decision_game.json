@@ -3,7 +3,7 @@
     "topic": "Europa & Globalisierung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "europa_globalisierung",
+    "source": "_gg01_wertschoepfungsnetz_duell.json",
     "version": "1.0"
   },
   "title": "Europa & Globalisierung - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Option ist meist stabiler bei politischer Unsicherheit?\nVerteilung statt Konzentration.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Netzwerk mit regionaler Diversifikation",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Diversifikation reduziert Klumpenrisiko."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Monostruktur in einem Hochrisikoraum",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Sehr anfaellig."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Netz ohne Transparenz",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Riskant."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Chance bietet ein globales Netzwerk mit mehreren Partnern?\nFlexibilitaet und Innovation.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Schnellerer Zugang zu Maerkten und Kompetenzen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Netzwerkvielfalt erweitert Optionen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Automatisch null Risiko",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Falsch. Risiko bleibt vorhanden."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine Koordinationskosten",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Falsch."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was ist ein klares Risiko in stark verflochtenen Netzen?\nDominoeffekte beachten.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Stoerungen koennen sich kettenartig ausbreiten",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Interdependenzen wirken systemisch."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Ausfaelle bleiben immer lokal begrenzt",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht zwingend."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Qualitaetskontrolle wird ueberfluessig",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI beschreibt Wahlgenauigkeit im Duell?\nTreffer gegen Referenzoption.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Anteil korrekter Netzwerkentscheidungen je Runde",
+          "correct": true,
+          "reason": "Richtig. Das zeigt Entscheidungsqualitaet."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl gespielter Duelle",
+          "correct": false,
+          "reason": "Ohne Qualitaet nicht hilfreich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Zeit bis zum Start",
+          "correct": false,
+          "reason": "Nicht zentral."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Begruendung staerkt eine Entscheidung fachlich?\nNenne Risiko- und Stabilitaetsargument.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Abhaengigkeiten, Ausfallpfade und Backup-Faehigkeit vergleichen",
+          "correct": true,
+          "reason": "Richtig. Das ist belastbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Bauchgefuehl ohne Kriterien",
+          "correct": false,
+          "reason": "Nicht belastbar."
+        },
+        {
+          "id": "c",
+          "text": "Nur den niedrigsten Preis betrachten",
+          "correct": false,
+          "reason": "Zu eindimensional."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Wie laesst sich ein Hochrisikonetz absichern?\nRedundanz und Transparenz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dual-Sourcing, Monitoring und Notfallrouten",
+          "correct": true,
+          "reason": "Richtig. Das senkt Ausfallfolgen."
+        },
+        {
+          "id": "b",
+          "text": "Weitere Konzentration auf einen Knoten",
+          "correct": false,
+          "reason": "Erhoeht Risiko."
+        },
+        {
+          "id": "c",
+          "text": "Verzicht auf Fruehwarnsysteme",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Welche Aussage zu globalen Netzen ist korrekt?\nTrade-off erkennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mehr Reichweite bringt Chancen, braucht aber aktives Risikomanagement",
+          "correct": true,
+          "reason": "Richtig. Das ist der Kerntrade-off."
+        },
+        {
+          "id": "b",
+          "text": "Mehr Reichweite beseitigt alle Unsicherheit",
+          "correct": false,
+          "reason": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Kleine Netze sind immer optimal",
+          "correct": false,
+          "reason": "Nicht pauschal."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Wofuer steht das Wertschoepfungsnetz-Duell didaktisch?\nVergleichende Entscheidung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Optionen systematisch vergleichen und begruendet entscheiden",
+          "correct": true,
+          "reason": "Richtig. Genau das trainiert das Duell."
+        },
+        {
+          "id": "b",
+          "text": "Nur schnelles Raten",
+          "correct": false,
+          "reason": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Verzicht auf Messung",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

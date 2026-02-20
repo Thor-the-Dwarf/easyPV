@@ -3,84 +3,84 @@
     "topic": "Data Import",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "data_import",
-    "version": "1.0"
+    "source": "_gg01_csv_mapper.json",
+    "version": "2.0"
   },
-  "title": "Data Import - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Datenimport",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Simple Contact Import",
+      "situation": "Schema customers: Welches Feld ist korrekt abgebildet?",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "first_name",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Dieses Feld gehoert in das Zielschema."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "dummy_field",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht Teil des Zielschemas."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "legacy_blob",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht Teil des Zielschemas."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Legacy System Migration",
+      "situation": "Schema users: Welches Feld ist korrekt abgebildet?",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "first_name",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Dieses Feld gehoert in das Zielschema."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "dummy_field",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht Teil des Zielschemas."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "legacy_blob",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht Teil des Zielschemas."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "E-Commerce Product Feed",
+      "situation": "Schema products: Welches Feld ist korrekt abgebildet?",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "sku",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Dieses Feld gehoert in das Zielschema."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "dummy_field",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht Teil des Zielschemas."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "legacy_blob",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht Teil des Zielschemas."
         }
       ]
     }

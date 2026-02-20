@@ -3,7 +3,7 @@
     "topic": "Arbeitsvertrag",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitsvertrag",
+    "source": "_gg01_formfehler_detektor.json",
     "version": "1.0"
   },
   "title": "Arbeitsvertrag - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Im Entwurf fehlen zentrale Vertragsdaten (z. B. Beginn). Was ist der richtige Check?\nPflichtangaben muessen explizit benannt sein.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Fehlende Pflichtangaben markieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist ein relevanter Form-/Inhaltsfehler."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Ungeprueft freigeben",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Layout pruefen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht ausreichend."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Aktion senkt laut Regeln die Punktzahl?\nFehlmarkierungen kosten Punkte.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Markierung ohne echten Fehler",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. False Positives werden abgezogen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Korrekte Fehlerkennung",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das gibt Punkte."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Fehlerart zuordnen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann gibt es den Perfektionsbonus?\nBei vollstaendiger und sauberer Erkennung.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Alle Fehler getroffen ohne Fehlmarkierung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Dann wird der Bonus aktiviert."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Bei moeglichst vielen Klicks",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur bei schneller Abgabe",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht allein."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI beschreibt die Leistung im Detektor?\nSie kombiniert Treffer und Zeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fehlererkennungsrate pro Minute",
+          "correct": true,
+          "reason": "Richtig. Das ist die definierte Metrik."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtspielzeit",
+          "correct": false,
+          "reason": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Farbkontrast",
+          "correct": false,
+          "reason": "Nicht relevant."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wozu dient der Formfehler-Check vor Abschluss?\nEs geht um Qualitaetssicherung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vermeidbare Vertragsfehler frueh erkennen",
+          "correct": true,
+          "reason": "Richtig. Der Check reduziert spaetere Konflikte."
+        },
+        {
+          "id": "b",
+          "text": "Nur Bearbeitungszeit verlaengern",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Pflichtinhalte ignorieren",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

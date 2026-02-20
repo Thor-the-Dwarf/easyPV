@@ -3,7 +3,7 @@
     "topic": "Kuendigungsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kuendigungsschutz",
+    "source": "_gg01_sozialauswahl_simulator.json",
     "version": "1.0"
   },
   "title": "Kuendigungsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was ist die zentrale Aufgabe im Simulator?\nRangfolge plus Begruendung sind gekoppelt.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Plausible Priorisierung mit nachvollziehbarer Begruendung",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Beides wird getrennt bewertet."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Namen alphabetisch sortieren",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur das schnellste Profil waehlen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Regel senkt den Konsistenzscore?\nWidersprueche wirken sich direkt aus.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Widerspruechliche Begruendung",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Inkonsistenz kostet Punkte."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Kurze aber stimmige Begruendung",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht automatisch schlecht."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Konsistente Priorisierung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Das ist positiv."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann gibt es den Begruendungsbonus?\nDie Begruendung muss konsistent sein.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Bei konsistenter Begruendung zur Rangfolge",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Dann werden Zusatzpunkte vergeben."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Bei fehlender Begruendung",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur bei zufaelliger Reihenfolge",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI sind laut Plan relevant?\nKorrektheit und Konsistenz werden getrennt gemessen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Priorisierungsquote und Begruendungskonsistenz",
+          "correct": true,
+          "reason": "Richtig. Beide KPI sind Pflicht."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtzeit",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl geoeffneter Profile",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist der Bonusfall voll erreicht?\nRangfolge und Konsistenz muessen gemeinsam stimmen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Rangfolge mit hoher Konsistenz",
+          "correct": true,
+          "reason": "Richtig. Das ist der optimale Fall."
+        },
+        {
+          "id": "b",
+          "text": "Nur hohe Geschwindigkeit",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur viele Umordnungen",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

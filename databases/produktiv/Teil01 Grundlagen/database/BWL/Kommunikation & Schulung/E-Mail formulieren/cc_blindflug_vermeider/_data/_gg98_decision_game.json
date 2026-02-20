@@ -3,84 +3,134 @@
     "topic": "E-Mail formulieren",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "e_mail_formulieren",
-    "version": "1.0"
+    "source": "_gg01_cc_blindflug_vermeider.json",
+    "version": "2.0"
   },
-  "title": "E-Mail formulieren - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "CC-Blindflug-Vermeider",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Schicke das Angebot an Kunde Mueller. Teamleiterin Lea soll informiert sein, Azubi Tom soll nur intern mitlesen.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "b",
+          "text": "An: Kunde Mueller | CC: Lea | BCC: Tom",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Kunde direkt in An, Leitung transparent in CC, interne Beobachtung per BCC."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "a",
+          "text": "An: Kunde Mueller, Lea | CC: Tom | BCC:",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Datenschutzproblem: interne Rollen sind fuer den Kunden sichtbar."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "An: Lea | CC: Kunde Mueller | BCC: Tom",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Falsch priorisiert: Hauptempfaenger gehoert in An."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Kunde Schuster meldet einen Fehler. Support soll direkt handeln, Bereichsleitung soll informiert werden.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "b",
+          "text": "An: Kunde Schuster, Support-Team | CC: Bereichsleitung | BCC:",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Kunde und operatives Team direkt in An, Leitung in CC."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "a",
+          "text": "An: Support-Team | CC: Kunde Schuster, Bereichsleitung | BCC:",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Kunde sollte direkt adressiert sein, nicht nur in CC."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "An: Kunde Schuster | CC: | BCC: Support-Team, Bereichsleitung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Support darf hier nicht verdeckt im BCC versteckt werden."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Interne Budgetabfrage an Abteilung Einkauf. Geschaeftsfuehrung soll informiert sein, externe Partner duerfen nichts sehen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "An: Einkauf | CC: Geschaeftsfuehrung | BCC:",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Interner Verteiler, transparente Information in CC."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "An: Einkauf, Externer Partner | CC: Geschaeftsfuehrung | BCC:",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Externe haben in dieser internen Anfrage nichts zu suchen."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "An: Geschaeftsfuehrung | CC: Einkauf | BCC:",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Adressierungsfokus falsch: operatives Team gehoert in An."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Serienmail an 25 Bewerber mit gleichem Hinweis. Datenschutz: Empfaenger sollen sich nicht gegenseitig sehen.",
+      "options": [
+        {
+          "id": "b",
+          "text": "An: hr@firma.de | CC: | BCC: Alle 25 Bewerber",
+          "correct": true,
+          "reason": "Richtig. Sammelversand ueber BCC schuetzt die Empfaengerdaten."
+        },
+        {
+          "id": "a",
+          "text": "An: Alle 25 Bewerber | CC: | BCC:",
+          "correct": false,
+          "reason": "Datenschutz verletzt: alle Adressen werden offengelegt."
+        },
+        {
+          "id": "c",
+          "text": "An: hr@firma.de | CC: Alle 25 Bewerber | BCC:",
+          "correct": false,
+          "reason": "CC macht alle Empfaenger sichtbar und ist hier unzulaessig."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Liefertermin an Kunden Delta bestaetigen. Projektassistenz Jana soll intern still mitlesen.",
+      "options": [
+        {
+          "id": "c",
+          "text": "An: Kunde Delta | CC: | BCC: Jana",
+          "correct": true,
+          "reason": "Richtig. Kunde direkt in An, interne stille Kenntnisnahme per BCC."
+        },
+        {
+          "id": "a",
+          "text": "An: Kunde Delta | CC: Jana | BCC:",
+          "correct": false,
+          "reason": "Interne Assistenz wird fuer den Kunden sichtbar, das ist hier unnoetig."
+        },
+        {
+          "id": "b",
+          "text": "An: Kunde Delta, Jana | CC: | BCC:",
+          "correct": false,
+          "reason": "Jana ist in An fuer den Kunden sichtbar; gefordert war stilles Mitlesen."
         }
       ]
     }

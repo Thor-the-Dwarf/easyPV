@@ -3,84 +3,257 @@
     "topic": "Stakeholder Management",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "stakeholder_management",
-    "version": "1.0"
+    "source": "_gg01_stakeholder_mapping.json",
+    "version": "2.0"
   },
-  "title": "Stakeholder Management - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "stakeholder mapping",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Level 1: Das Projekt-Setup Ich zahle das Projekt und erwarte Ergebnisse bis Q3. Stoeren Sie mich nicht mit Details.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "manage",
+          "text": "Verbinden (Manage Closely)",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Hat die Macht (Geld), aber wenig Interesse am Tagesgeschaeft -> Keep Satisfied."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "satisfy",
+          "text": "Zufriedenstellen (Keep Satisfied)",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Hat die Macht (Geld), aber wenig Interesse am Tagesgeschaeft -> Keep Satisfied."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "inform",
+          "text": "Informieren (Keep Informed)",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Hat die Macht (Geld), aber wenig Interesse am Tagesgeschaeft -> Keep Satisfied."
+        },
+        {
+          "id": "monitor",
+          "text": "Beobachten (Monitor)",
+          "correct": false,
+          "reason": "Hat die Macht (Geld), aber wenig Interesse am Tagesgeschaeft -> Keep Satisfied."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Level 1: Das Projekt-Setup Wenn das neue System meine Workflows verlangsamt, streikt die Abteilung!",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "manage",
+          "text": "Verbinden (Manage Closely)",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Hohes Interesse, aber wenig hierarchische Macht -> Keep Informed / Einbinden."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "satisfy",
+          "text": "Zufriedenstellen (Keep Satisfied)",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Hohes Interesse, aber wenig hierarchische Macht -> Keep Informed / Einbinden."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "inform",
+          "text": "Informieren (Keep Informed)",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Hohes Interesse, aber wenig hierarchische Macht -> Keep Informed / Einbinden."
+        },
+        {
+          "id": "monitor",
+          "text": "Beobachten (Monitor)",
+          "correct": false,
+          "reason": "Hohes Interesse, aber wenig hierarchische Macht -> Keep Informed / Einbinden."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Level 1: Das Projekt-Setup Ich muss wissen, ob wir im Budget und Zeitplan sind. Taeglich.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "manage",
+          "text": "Verbinden (Manage Closely)",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Entscheidet und ist tief involviert -> Manage Closely."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "satisfy",
+          "text": "Zufriedenstellen (Keep Satisfied)",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Entscheidet und ist tief involviert -> Manage Closely."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "inform",
+          "text": "Informieren (Keep Informed)",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Entscheidet und ist tief involviert -> Manage Closely."
+        },
+        {
+          "id": "monitor",
+          "text": "Beobachten (Monitor)",
+          "correct": false,
+          "reason": "Entscheidet und ist tief involviert -> Manage Closely."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Level 1: Das Projekt-Setup Ich soll Kaffee kochen und mal ueber die Doku schauen.",
+      "options": [
+        {
+          "id": "manage",
+          "text": "Verbinden (Manage Closely)",
+          "correct": true,
+          "reason": "Wenig Einfluss, wenig Interesse -> Monitor."
+        },
+        {
+          "id": "satisfy",
+          "text": "Zufriedenstellen (Keep Satisfied)",
+          "correct": false,
+          "reason": "Wenig Einfluss, wenig Interesse -> Monitor."
+        },
+        {
+          "id": "inform",
+          "text": "Informieren (Keep Informed)",
+          "correct": false,
+          "reason": "Wenig Einfluss, wenig Interesse -> Monitor."
+        },
+        {
+          "id": "monitor",
+          "text": "Beobachten (Monitor)",
+          "correct": false,
+          "reason": "Wenig Einfluss, wenig Interesse -> Monitor."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Level 1: Das Projekt-Setup Ein Verstoss gegen die DSGVO, und ich ziehe den Stecker.",
+      "options": [
+        {
+          "id": "manage",
+          "text": "Verbinden (Manage Closely)",
+          "correct": true,
+          "reason": "Enorme Veto-Macht, interessiert sich nur bei Problemen -> Keep Satisfied."
+        },
+        {
+          "id": "satisfy",
+          "text": "Zufriedenstellen (Keep Satisfied)",
+          "correct": false,
+          "reason": "Enorme Veto-Macht, interessiert sich nur bei Problemen -> Keep Satisfied."
+        },
+        {
+          "id": "inform",
+          "text": "Informieren (Keep Informed)",
+          "correct": false,
+          "reason": "Enorme Veto-Macht, interessiert sich nur bei Problemen -> Keep Satisfied."
+        },
+        {
+          "id": "monitor",
+          "text": "Beobachten (Monitor)",
+          "correct": false,
+          "reason": "Enorme Veto-Macht, interessiert sich nur bei Problemen -> Keep Satisfied."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Level 2: Hidden Agenda Ich entscheide, welche Memos auf dem Schreibtisch des Chefs landen.",
+      "options": [
+        {
+          "id": "manage",
+          "text": "Verbinden (Manage Closely)",
+          "correct": true,
+          "reason": "Gatekeeper-Macht wird oft unterschaetzt. Muss zufrieden gehalten werden."
+        },
+        {
+          "id": "satisfy",
+          "text": "Zufriedenstellen (Keep Satisfied)",
+          "correct": false,
+          "reason": "Gatekeeper-Macht wird oft unterschaetzt. Muss zufrieden gehalten werden."
+        },
+        {
+          "id": "inform",
+          "text": "Informieren (Keep Informed)",
+          "correct": false,
+          "reason": "Gatekeeper-Macht wird oft unterschaetzt. Muss zufrieden gehalten werden."
+        },
+        {
+          "id": "monitor",
+          "text": "Beobachten (Monitor)",
+          "correct": false,
+          "reason": "Gatekeeper-Macht wird oft unterschaetzt. Muss zufrieden gehalten werden."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Level 2: Hidden Agenda Ich habe dem Vorstand empfohlen, Ihre Abteilung umzustrukturieren.",
+      "options": [
+        {
+          "id": "manage",
+          "text": "Verbinden (Manage Closely)",
+          "correct": true,
+          "reason": "Einfluss auf den Vorstand und starkes Interesse am Change -> Manage Closely."
+        },
+        {
+          "id": "satisfy",
+          "text": "Zufriedenstellen (Keep Satisfied)",
+          "correct": false,
+          "reason": "Einfluss auf den Vorstand und starkes Interesse am Change -> Manage Closely."
+        },
+        {
+          "id": "inform",
+          "text": "Informieren (Keep Informed)",
+          "correct": false,
+          "reason": "Einfluss auf den Vorstand und starkes Interesse am Change -> Manage Closely."
+        },
+        {
+          "id": "monitor",
+          "text": "Beobachten (Monitor)",
+          "correct": false,
+          "reason": "Einfluss auf den Vorstand und starkes Interesse am Change -> Manage Closely."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Level 2: Hidden Agenda Macht was ihr wollt, solange ich keine neuen Ports oeffnen muss.",
+      "options": [
+        {
+          "id": "manage",
+          "text": "Verbinden (Manage Closely)",
+          "correct": true,
+          "reason": "Kann technisch blockieren (Macht), will aber Ruhe (wenig Interesse) -> Keep Satisfied."
+        },
+        {
+          "id": "satisfy",
+          "text": "Zufriedenstellen (Keep Satisfied)",
+          "correct": false,
+          "reason": "Kann technisch blockieren (Macht), will aber Ruhe (wenig Interesse) -> Keep Satisfied."
+        },
+        {
+          "id": "inform",
+          "text": "Informieren (Keep Informed)",
+          "correct": false,
+          "reason": "Kann technisch blockieren (Macht), will aber Ruhe (wenig Interesse) -> Keep Satisfied."
+        },
+        {
+          "id": "monitor",
+          "text": "Beobachten (Monitor)",
+          "correct": false,
+          "reason": "Kann technisch blockieren (Macht), will aber Ruhe (wenig Interesse) -> Keep Satisfied."
         }
       ]
     }

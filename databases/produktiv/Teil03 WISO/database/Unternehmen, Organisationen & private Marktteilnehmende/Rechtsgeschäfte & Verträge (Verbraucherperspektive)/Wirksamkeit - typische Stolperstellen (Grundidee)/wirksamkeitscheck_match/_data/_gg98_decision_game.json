@@ -3,7 +3,7 @@
     "topic": "Wirksamkeit - typische Stolperstellen",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wirksamkeit_typische_stolperstellen",
+    "source": "_gg01_wirksamkeitscheck_match.json",
     "version": "1.0"
   },
   "title": "Wirksamkeit - typische Stolperstellen - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Einordnung passt zu einer klar zulaessigen Klausel?\nKategorie: wirksam.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Als wirksam einstufen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Die Zuordnung ist plausibel."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Als unwirksam einstufen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Das ist zu streng."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Als unklar ohne Begruendung",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Unnoetig unscharf."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann ist die Kategorie \"unklar\" sinnvoll?\nWenn Angaben fuer sichere Wertung fehlen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn entscheidende Informationen fuer die Bewertung fehlen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Dann ist \"unklar\" begruendet."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Immer bei Zeitdruck waehlen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das ist kein fachlicher Grund."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nie verwenden",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Ist in Faellen notwendig."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann entsteht Zusatzabzug im Match?\nKernklausel falsch klassifiziert.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Bei Fehlklassifikation einer Kernklausel",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Das wiegt besonders schwer."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Bei korrekter, aber langsamer Antwort",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Keine Zusatzstrafe vorgesehen."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Bei sichtbaren KPI",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "KPI sind gewollt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI zeigt den Lernfortschritt?\nTreffer je Kategorie.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trefferquote getrennt fuer wirksam, unwirksam und unklar",
+          "correct": true,
+          "reason": "Exakt. Das entspricht dem Plan."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtdauer",
+          "correct": false,
+          "reason": "Ohne Qualitaetsbezug zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Antworten",
+          "correct": false,
+          "reason": "Keine Zuordnungsqualitaet."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was zeichnet eine gute Match-Runde aus?\nKorrekte Zuordnung mit stabiler Trefferquote.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Kategorien korrekt und konsistent zugeordnet werden",
+          "correct": true,
+          "reason": "Richtig. Das ist die Zielleistung."
+        },
+        {
+          "id": "b",
+          "text": "Wenn zufaellig verteilt wird",
+          "correct": false,
+          "reason": "Nicht reproduzierbar."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nur auf Geschwindigkeit geachtet wird",
+          "correct": false,
+          "reason": "Tempo allein reicht nicht."
         }
       ]
     }

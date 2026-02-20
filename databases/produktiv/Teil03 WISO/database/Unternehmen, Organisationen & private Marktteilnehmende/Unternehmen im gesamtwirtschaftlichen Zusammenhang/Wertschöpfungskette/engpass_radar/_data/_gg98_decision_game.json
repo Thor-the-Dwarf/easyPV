@@ -3,7 +3,7 @@
     "topic": "Wertschoepfungskette",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wertschoepfungskette",
+    "source": "_gg01_engpass_radar.json",
     "version": "1.0"
   },
   "title": "Wertschoepfungskette - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Kennzahl deutet am staerksten auf einen Engpass hin?\nRueckstau + laengste Durchlaufzeit.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Hohe Warteschlange bei gleichzeitig laengster Bearbeitungszeit",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist ein klassischer Bottleneck-Hinweis."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Niedrige Auslastung ohne Rueckstau",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Spricht eher gegen Engpass."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur ein einzelner Ausreisserwert",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Noch kein klarer Engpassnachweis."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Erstmassnahme passt bei erkanntem Engpass?\nWirksamkeit vor Breite.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Kapazitaet am Engpasspunkt gezielt erhoehen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Fokus auf den Engpass bringt den groessten Hebel."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Alle Stufen gleichmaessig aendern",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Ineffizient bei klarem Bottleneck."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine Massnahme, nur beobachten",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Zu passiv."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI passt zum Engpass-Radar?\nErkennung + Massnahmequalitaet.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Engpass-Trefferquote und passende Massnahmenquote",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Beides wird separat messbar."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Anzahl bearbeiteter Faelle",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Ohne Qualitaet unzureichend."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Klicktempo",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Zu oberflaechlich."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Warum ist ein uebersehener Engpass kritisch?\nFolgewirkung auf gesamte Kette.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Er begrenzt den Gesamtdurchsatz trotz Optimierung anderer Stufen",
+          "correct": true,
+          "reason": "Richtig. Die Kette bleibt am Engpass limitiert."
+        },
+        {
+          "id": "b",
+          "text": "Er verbessert automatisch die Leistung",
+          "correct": false,
+          "reason": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Er hat keine Auswirkungen auf Termine",
+          "correct": false,
+          "reason": "Unplausibel."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Datenkombination ist fuer Engpassdiagnose sinnvoll?\nZeit, Bestand, Fehler.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Durchlaufzeit, WIP-Bestand und Nacharbeitsquote je Stufe",
+          "correct": true,
+          "reason": "Richtig. Das ergibt ein belastbares Bild."
+        },
+        {
+          "id": "b",
+          "text": "Nur Monatsumsatz",
+          "correct": false,
+          "reason": "Zu indirekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur Teamgroesse",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Wann ist eine Massnahme am Engpass gut priorisiert?\nSchneller Effekt + geringe Nebenwirkung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn sie Durchsatz verbessert und Folgestufen nicht ueberlastet",
+          "correct": true,
+          "reason": "Richtig. Das ist systemisch sinnvoll."
+        },
+        {
+          "id": "b",
+          "text": "Wenn sie nur lokal KPI verschoenert",
+          "correct": false,
+          "reason": "Zu kurz gedacht."
+        },
+        {
+          "id": "c",
+          "text": "Wenn sie keinerlei Messung braucht",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Was bedeutet Bonusfall im Radar?\nEngpass + Aktion beides korrekt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kritischen Engpass richtig erkannt und passende Gegenmassnahme gewaehlt",
+          "correct": true,
+          "reason": "Richtig. Volltreffer gibt Zusatzpunkte."
+        },
+        {
+          "id": "b",
+          "text": "Nur Engpass erkannt",
+          "correct": false,
+          "reason": "Noch unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Massnahme ohne Diagnose",
+          "correct": false,
+          "reason": "Unsicher."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was trainiert das Engpass-Radar?\nDatenbasierte Priorisierung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Engpaesse sicher erkennen und wirksame Massnahmen priorisieren",
+          "correct": true,
+          "reason": "Richtig. Genau das ist das Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur schnelle Klickfolgen",
+          "correct": false,
+          "reason": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Messbarkeit ausblenden",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

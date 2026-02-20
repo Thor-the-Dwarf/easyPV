@@ -3,84 +3,159 @@
     "topic": "Lastenheft-Check",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "lastenheft_check",
-    "version": "1.0"
+    "source": "_gg01_lastenheft_check.json",
+    "version": "2.0"
   },
-  "title": "Lastenheft-Check - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Lastenheft-Check",
+  "subtitle": "Pruefe, ob Anforderungen klar und messbar formuliert sind.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Inhalt bewerten: Die Software soll schnell sein.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Unklar / unscharf",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Nicht messbar. Es fehlt ein konkreter Zielwert, z. B. Antwortzeit <= 2s."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Klar und messbar",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur formal korrekt",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Inhalt bewerten: Login mit E-Mail und Passwort muss moeglich sein.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Klar und messbar",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Funktion klar beschrieben und eindeutig pruefbar."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Unklar / unscharf",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur formal korrekt",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Inhalt bewerten: Systemantwort bei Suche maximal 2 Sekunden bei 95% der Anfragen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Klar und messbar",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Messbar, spezifisch und testbar formuliert."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Unklar / unscharf",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur formal korrekt",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Inhalt bewerten: Die Benutzeroberflaeche soll modern wirken.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unklar / unscharf",
+          "correct": true,
+          "reason": "Subjektiv und ohne Abnahmekriterium."
+        },
+        {
+          "id": "b",
+          "text": "Klar und messbar",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Nur formal korrekt",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Inhalt bewerten: Jede Bestellung muss eine eindeutige Bestellnummer erhalten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Klar und messbar",
+          "correct": true,
+          "reason": "Klare Regel mit eindeutiger Pruefbarkeit."
+        },
+        {
+          "id": "b",
+          "text": "Unklar / unscharf",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Nur formal korrekt",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Inhalt bewerten: Der Export soll moeglichst oft funktionieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unklar / unscharf",
+          "correct": true,
+          "reason": "Unpraezise Formulierung ohne messbare Zielgroesse."
+        },
+        {
+          "id": "b",
+          "text": "Klar und messbar",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Nur formal korrekt",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

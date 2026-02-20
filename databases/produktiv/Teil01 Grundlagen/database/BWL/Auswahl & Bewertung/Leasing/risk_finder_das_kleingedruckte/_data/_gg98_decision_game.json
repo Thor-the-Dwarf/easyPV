@@ -1,86 +1,211 @@
 {
   "meta": {
-    "topic": "risk finder das kleingedruckte",
+    "topic": "Risk-Finder: Das Kleingedruckte",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "risk_finder_das_kleingedruckte",
-    "version": "1.0"
+    "source": "_gg01_risk_finder_das_kleingedruckte.json",
+    "version": "2.0"
   },
-  "title": "risk finder das kleingedruckte - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Risk-Finder: Das Kleingedruckte",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Begriffseinordnung: Andienungspflicht",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Andienungspflicht",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Kann zu einem verpflichtenden Kauf am Laufzeitende fuehren."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Begriffseinordnung: Restwertrisiko",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Restwertrisiko",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Abweichungen beim Restwert koennen nachbelastet werden."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Begriffseinordnung: Vollamortisation",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Vollamortisation",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Hohe Gesamtkosten ueber die Laufzeit sind moeglich."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Begriffseinordnung: Mehrkilometerklausel",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mehrkilometerklausel",
+          "correct": true,
+          "reason": "Mehrnutzung fuehrt oft zu direkter Nachzahlung."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Begriffseinordnung: Wartungspaket",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wartungspaket",
+          "correct": true,
+          "reason": "Pflichtpakete koennen versteckte Zusatzkosten enthalten."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Begriffseinordnung: Serviceintervall",
+      "options": [
+        {
+          "id": "a",
+          "text": "Serviceintervall",
+          "correct": true,
+          "reason": "Organisatorischer Begriff, nicht automatisch Kostenfalle."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Begriffseinordnung: Liefertermin",
+      "options": [
+        {
+          "id": "a",
+          "text": "Liefertermin",
+          "correct": true,
+          "reason": "Reiner Terminbezug."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Begriffseinordnung: Vertragslaufzeit",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vertragslaufzeit",
+          "correct": true,
+          "reason": "Basisangabe ohne direkte Risikowertung."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

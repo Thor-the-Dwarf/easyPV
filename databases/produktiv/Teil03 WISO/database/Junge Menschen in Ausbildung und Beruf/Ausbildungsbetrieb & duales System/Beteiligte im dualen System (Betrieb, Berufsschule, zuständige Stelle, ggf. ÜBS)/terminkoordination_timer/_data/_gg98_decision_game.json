@@ -3,7 +3,7 @@
     "topic": "Duales System",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "duales_system",
+    "source": "_gg01_terminkoordination_timer.json",
     "version": "1.0"
   },
   "title": "Duales System - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welcher Schritt steht bei der Terminkoordination zuerst?\nAbhaengigkeiten und Zeitfenster pruefen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Pflichttermine und Zeitfenster als Fixpunkte setzen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Fixpunkte zuerst verhindert Kollisionen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Beliebige Termine ohne Reihenfolge setzen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ohne Struktur steigen Konflikte."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Konflikte erst am Ende betrachten",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Konflikte muessen frueh erkannt werden."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Konflikte sind laut Regelwerk staerker gewichtet?\nPruefungstermine.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Kollisionen mit Pruefungsterminen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Diese Konflikte kosten mehr Punkte."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Kollisionen ohne Fristbezug",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Die Gewichtung ist niedriger."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Termine ohne Beteiligte",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Solche Termine sind hier nicht relevant."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI bilden den Fortschritt hier ab?\nQualitaet plus Geschwindigkeit.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Konfliktfreie Planungen und Zeitverbrauch",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Beide Groessen sind gefordert."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Klickanzahl",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Klicks sind kein Qualitaetsmass."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Rundenindex",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Rundenindex zeigt keinen Lernerfolg."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gibt es einen Rundebonus?\nVollstaendig konfliktfrei.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn alle Termine in der Runde ohne Kollision geplant sind",
+          "correct": true,
+          "reason": "Richtig. Konfliktfreiheit wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei mindestens einem Konflikt",
+          "correct": false,
+          "reason": "Konflikte verhindern den Bonus."
+        },
+        {
+          "id": "c",
+          "text": "Nur wenn die Runde besonders lang dauert",
+          "correct": false,
+          "reason": "Dauer allein bringt keinen Bonus."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Rueckmeldung fordert das Abnahmekriterium?\nKonfliktmuster benennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Report mit haeufigen Konfliktmustern",
+          "correct": true,
+          "reason": "Exakt. Musterfeedback unterstuetzt die Nachsteuerung."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endpunktzahl",
+          "correct": false,
+          "reason": "Ohne Musteranalyse zu wenig Lerneffekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur die erste falsch geplante Uhrzeit",
+          "correct": false,
+          "reason": "Zu punktuell fuer Gesamtlernen."
         }
       ]
     }

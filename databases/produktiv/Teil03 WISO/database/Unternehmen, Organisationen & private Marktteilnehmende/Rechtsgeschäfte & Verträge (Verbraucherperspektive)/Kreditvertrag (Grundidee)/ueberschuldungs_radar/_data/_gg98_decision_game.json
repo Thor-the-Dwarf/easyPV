@@ -3,7 +3,7 @@
     "topic": "Kreditvertrag (Grundidee)",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kreditvertrag_grundidee",
+    "source": "_gg01_ueberschuldungs_radar.json",
     "version": "1.0"
   },
   "title": "Kreditvertrag (Grundidee) - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Reaktion ist bei Hochrisiko-Event zuerst sinnvoll?\nSofortmassnahme vor Verzoegerung.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Warnsignal priorisieren und sofort geeignete Gegenmassnahme starten",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Fruehes Handeln stabilisiert."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Event ignorieren und auf naechsten Monat warten",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Fuehrt zu hohem Risiko."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Bericht schreiben ohne Aktion",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Wirkung fehlt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann halbieren sich Rundenpunkte laut Regelwerk?\nHochrisiko unbehandelt.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn ein Hochrisiko-Event unbehandelt bleibt",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das ist ein kritischer Fehler."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Wenn ein Event dokumentiert wird",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Dokumentation ist korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Wenn ein Hinweis angezeigt wird",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Kein Halbierungsgrund."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI bilden den Fortschritt im Radar?\nErkennung und Stabilitaet.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Warnsignal-Erkennungsquote und Stabilitaetsindex",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Diese KPI sind zentral."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Kampagnendauer",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu wenig fachlich."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Endscore",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Ohne Aufschluesselung zu grob."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gibt es Praeventionsbonus?\nFruehzeitiges Gegensteuern.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Warnsignale frueh erkannt und rechtzeitig behandelt werden",
+          "correct": true,
+          "reason": "Richtig. Proaktive Steuerung wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Wenn erst am Ende reagiert wird",
+          "correct": false,
+          "reason": "Zu spaet fuer Bonus."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Events uebersprungen werden",
+          "correct": false,
+          "reason": "Nicht regelkonform."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist eine Kampagne erfolgreich?\nRisiken kontrolliert, Stabilitaet gesichert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn kritische Risiken konsequent adressiert und Stabilitaet erhalten wird",
+          "correct": true,
+          "reason": "Exakt. Das ist Ziel der Kampagne."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur wenige Klicks gemacht werden",
+          "correct": false,
+          "reason": "Klickzahl ist irrelevant."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ohne Pruefung abgeschlossen wird",
+          "correct": false,
+          "reason": "Kein belastbares Ergebnis."
         }
       ]
     }

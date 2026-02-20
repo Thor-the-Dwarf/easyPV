@@ -3,7 +3,7 @@
     "topic": "Soziale Marktwirtschaft",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "soziale_marktwirtschaft",
+    "source": "_gg01_sozialausgleich_planer.json",
     "version": "1.0"
   },
   "title": "Soziale Marktwirtschaft - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Budget begrenzt: erster Planungsschritt?\nWirkung und Kosten parallel.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Massnahmen nach Wirkung/Kosten priorisieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das schafft belastbare Auswahl."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Beliebig verteilen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu unsystematisch."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Alles auf eine Massnahme setzen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Zu riskant."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann ist ein Plan tragfaehig?\nBudget + Zielwirkung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn Budget eingehalten und Mindestwirkung erreicht wird",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Beides ist Pflicht."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur wenn Budget eingehalten wird",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Wirkung fehlt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur wenn Wirkung hoch wirkt",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Budget fehlt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Regel bei Budgetueberschreitung?\nZusatzabzug.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Punktabzug und Hinweis auf Neuplanung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Laut Plan ist das verpflichtend."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Kein Effekt",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Falsch."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Automatisch Bonus",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI misst soziale Wirkung?\nImpact-Index.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wirkungsindex ueber alle gewaehlen Massnahmen",
+          "correct": true,
+          "reason": "Richtig. Das zeigt Zielbeitrag."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Klicks",
+          "correct": false,
+          "reason": "Nicht inhaltlich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Dateigroesse",
+          "correct": false,
+          "reason": "Nicht relevant."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Kombination verbessert Effizienz?\nHoher Impact bei moderaten Kosten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mehrere mittelkostige Massnahmen mit hoher Wirkung",
+          "correct": true,
+          "reason": "Richtig. Bessere Streuung."
+        },
+        {
+          "id": "b",
+          "text": "Teuerste Option allein",
+          "correct": false,
+          "reason": "Oft ineffizient."
+        },
+        {
+          "id": "c",
+          "text": "Guenstigste Option allein",
+          "correct": false,
+          "reason": "Wirkung oft zu gering."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Warum ist Portfolio-Logik wichtig?\nDiversifikation.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Risiken und Wirkung werden ueber mehrere Hebel verteilt",
+          "correct": true,
+          "reason": "Richtig. Das stabilisiert Ergebnisse."
+        },
+        {
+          "id": "b",
+          "text": "Sie verhindert jede Kontrolle",
+          "correct": false,
+          "reason": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Sie ersetzt KPI",
+          "correct": false,
+          "reason": "Nein."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Wann erreicht man volle Punkte in einer Runde?\nTragfaehig + effizient.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei tragfaehigem Plan im Zielkorridor",
+          "correct": true,
+          "reason": "Richtig. Das entspricht der Maximalwertung."
+        },
+        {
+          "id": "b",
+          "text": "Nur bei hoher Ausgabe",
+          "correct": false,
+          "reason": "Nicht zwingend."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei niedriger Ausgabe",
+          "correct": false,
+          "reason": "Nicht zwingend."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Welche Lernleistung zeigt der Planer?\nAbwaegung trainieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wirkung und Effizienz konsistent ausbalancieren",
+          "correct": true,
+          "reason": "Richtig. Genau darum geht es."
+        },
+        {
+          "id": "b",
+          "text": "Nur einzelne Werte merken",
+          "correct": false,
+          "reason": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur schnell klicken",
+          "correct": false,
+          "reason": "Nicht ausreichend."
         }
       ]
     }

@@ -3,7 +3,7 @@
     "topic": "Kuendigungsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kuendigungsschutz",
+    "source": "_gg01_fristrechner_duell.json",
     "version": "1.0"
   },
   "title": "Kuendigungsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Wodurch wird im Duell ein Fall als korrekt bewertet?\nNicht nur waehlen, auch Fristlogik beachten.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Durch korrekt berechnetes Fristende im Vergleich",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das Duell basiert auf Fristgenauigkeit."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Durch die laengere Textbegruendung",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht automatisch korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Durch spaeteres Startdatum ohne Pruefung",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann gibt es laut Regeln nur Teilpunkte?\nHerleitung beeinflusst die volle Punktzahl.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Bei richtiger Wahl ohne Herleitungsangabe",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Ohne Herleitung fehlen Bonuspunkte."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Bei falscher Wahl mit schneller Antwort",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Bei keiner Eingabe",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI trennt das Spiel explizit?\nZwei Blickwinkel auf Leistung.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Auswahlgenauigkeit und Herleitungsquote",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Genau diese Trennung ist gefordert."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Gesamtpunkte",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu wenig Information."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Antwortzeit",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Bonusregel gehoert zum Duell?\nEine Serie wird belohnt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vier korrekte Duelle in Folge geben Serienbonus",
+          "correct": true,
+          "reason": "Richtig. Die Serie erhoeht den Score."
+        },
+        {
+          "id": "b",
+          "text": "Jeder Fehler gibt Bonuszeit",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur der erste Treffer zaehlt",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was zeigt ein guter Fehlerreport in diesem Spiel?\nDie haeufigsten Muster sollen sichtbar sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Die haeufigsten Datumsfehler je Durchlauf",
+          "correct": true,
+          "reason": "Richtig. Dadurch wird Fristlogik besser."
+        },
+        {
+          "id": "b",
+          "text": "Nur den Endpunktestand",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur die letzte Runde",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

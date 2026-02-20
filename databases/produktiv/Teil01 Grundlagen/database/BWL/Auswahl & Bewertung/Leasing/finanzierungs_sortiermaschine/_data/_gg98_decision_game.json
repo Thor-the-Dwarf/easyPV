@@ -3,84 +3,209 @@
     "topic": "Finanzierungs-Sortiermaschine",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "finanzierungs_sortiermaschine",
-    "version": "1.0"
+    "source": "_gg01_finanzierungs_sortiermaschine.json",
+    "version": "2.0"
   },
-  "title": "Finanzierungs-Sortiermaschine - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Finanzierungs-Sortiermaschine",
+  "subtitle": "Sortiere Begriffe schnell in die richtige Finanzierungsart.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Begriffseinordnung: Bilanzneutral beim Nutzer",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "leasing",
+          "text": "Leasing",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Leasingobjekte werden haeufig nicht als eigenes Anlagevermoegen beim Nutzer gefuehrt."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "kredit",
+          "text": "Kreditkauf",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Leasingobjekte werden haeufig nicht als eigenes Anlagevermoegen beim Nutzer gefuehrt."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "eigenkapital",
+          "text": "Eigenkapital",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Leasingobjekte werden haeufig nicht als eigenes Anlagevermoegen beim Nutzer gefuehrt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Begriffseinordnung: Eigentum geht sofort auf Kaeufer ueber",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "leasing",
+          "text": "Leasing",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Beim Kreditkauf wird das Gut direkt erworben, finanziert wird der Kaufpreis."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "kredit",
+          "text": "Kreditkauf",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Beim Kreditkauf wird das Gut direkt erworben, finanziert wird der Kaufpreis."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "eigenkapital",
+          "text": "Eigenkapital",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Beim Kreditkauf wird das Gut direkt erworben, finanziert wird der Kaufpreis."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Begriffseinordnung: Monatliche Raten ohne Eigentumserwerb",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "leasing",
+          "text": "Leasing",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Typisch fuer Leasing: Nutzung gegen Rate, Eigentum verbleibt beim Leasinggeber."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "kredit",
+          "text": "Kreditkauf",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Typisch fuer Leasing: Nutzung gegen Rate, Eigentum verbleibt beim Leasinggeber."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "eigenkapital",
+          "text": "Eigenkapital",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Typisch fuer Leasing: Nutzung gegen Rate, Eigentum verbleibt beim Leasinggeber."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Begriffseinordnung: Keine Zinsbelastung durch Fremdkapital",
+      "options": [
+        {
+          "id": "leasing",
+          "text": "Leasing",
+          "correct": true,
+          "reason": "Eigenkapitalfinanzierung benoetigt keinen Bankkredit und damit keine Kreditzinsen."
+        },
+        {
+          "id": "kredit",
+          "text": "Kreditkauf",
+          "correct": false,
+          "reason": "Eigenkapitalfinanzierung benoetigt keinen Bankkredit und damit keine Kreditzinsen."
+        },
+        {
+          "id": "eigenkapital",
+          "text": "Eigenkapital",
+          "correct": false,
+          "reason": "Eigenkapitalfinanzierung benoetigt keinen Bankkredit und damit keine Kreditzinsen."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Begriffseinordnung: Abschreibung beim Unternehmen als Eigentuemer",
+      "options": [
+        {
+          "id": "leasing",
+          "text": "Leasing",
+          "correct": true,
+          "reason": "Bei Kauf (auch kreditfinanziert) schreibt der Eigentuemer das Anlagegut ab."
+        },
+        {
+          "id": "kredit",
+          "text": "Kreditkauf",
+          "correct": false,
+          "reason": "Bei Kauf (auch kreditfinanziert) schreibt der Eigentuemer das Anlagegut ab."
+        },
+        {
+          "id": "eigenkapital",
+          "text": "Eigenkapital",
+          "correct": false,
+          "reason": "Bei Kauf (auch kreditfinanziert) schreibt der Eigentuemer das Anlagegut ab."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Begriffseinordnung: Liquiditaet wird geschont durch verteilte Nutzungskosten",
+      "options": [
+        {
+          "id": "leasing",
+          "text": "Leasing",
+          "correct": true,
+          "reason": "Leasing reduziert hohe Anfangsinvestitionen und verteilt Kosten ueber Laufzeiten."
+        },
+        {
+          "id": "kredit",
+          "text": "Kreditkauf",
+          "correct": false,
+          "reason": "Leasing reduziert hohe Anfangsinvestitionen und verteilt Kosten ueber Laufzeiten."
+        },
+        {
+          "id": "eigenkapital",
+          "text": "Eigenkapital",
+          "correct": false,
+          "reason": "Leasing reduziert hohe Anfangsinvestitionen und verteilt Kosten ueber Laufzeiten."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Begriffseinordnung: Hohe Anfangsausgabe aus eigenen Mitteln",
+      "options": [
+        {
+          "id": "leasing",
+          "text": "Leasing",
+          "correct": true,
+          "reason": "Eigenkapital bedeutet Finanzierung aus vorhandenen eigenen Geldmitteln."
+        },
+        {
+          "id": "kredit",
+          "text": "Kreditkauf",
+          "correct": false,
+          "reason": "Eigenkapital bedeutet Finanzierung aus vorhandenen eigenen Geldmitteln."
+        },
+        {
+          "id": "eigenkapital",
+          "text": "Eigenkapital",
+          "correct": false,
+          "reason": "Eigenkapital bedeutet Finanzierung aus vorhandenen eigenen Geldmitteln."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Begriffseinordnung: Kreditvertrag mit Tilgung und Zinsen",
+      "options": [
+        {
+          "id": "leasing",
+          "text": "Leasing",
+          "correct": true,
+          "reason": "Der Kreditkauf basiert auf Darlehen inkl. Rueckzahlung und Zinsaufwand."
+        },
+        {
+          "id": "kredit",
+          "text": "Kreditkauf",
+          "correct": false,
+          "reason": "Der Kreditkauf basiert auf Darlehen inkl. Rueckzahlung und Zinsaufwand."
+        },
+        {
+          "id": "eigenkapital",
+          "text": "Eigenkapital",
+          "correct": false,
+          "reason": "Der Kreditkauf basiert auf Darlehen inkl. Rueckzahlung und Zinsaufwand."
         }
       ]
     }

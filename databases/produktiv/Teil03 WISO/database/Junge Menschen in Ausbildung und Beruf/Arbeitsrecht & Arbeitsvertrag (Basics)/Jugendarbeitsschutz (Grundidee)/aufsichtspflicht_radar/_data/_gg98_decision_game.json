@@ -3,7 +3,7 @@
     "topic": "Jugendarbeitsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "jugendarbeitsschutz",
+    "source": "_gg01_aufsichtspflicht_radar.json",
     "version": "1.0"
   },
   "title": "Jugendarbeitsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Betreuung in kritischer Situation ist unklar. Welche Erstbewertung ist sinnvoll?\nSicherheitsorientiert und regelkonform einstufen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Aufsicht als unzureichend markieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Bei Unsicherheit in kritischer Lage ist Entwarnung falsch."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Immer ausreichend annehmen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ungeprueft uebergehen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Leistung wird zusaetzlich bewertet?\nNeben Einordnung auch Reaktionsweg.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Passender Eskalationsschritt",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Bewertung und Eskalation sind getrennte Achsen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Klicktempo",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur Farbwahl",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was passiert bei falscher Entwarnung in kritischer Lage?\nDer Plan definiert hohen Abzug.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Hoher Abzug",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Kritische Fehleinschaetzungen werden streng gewertet."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Bonus",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Keine Auswirkung",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gibt es den Doppelbonus?\nBeide Entscheidungen muessen stimmen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei korrekter Bewertung und korrekter Eskalation",
+          "correct": true,
+          "reason": "Richtig. Nur der Doppelentscheid aktiviert Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Bei einer Teilantwort",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Immer",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI-Auswertung ist gefordert?\nZwei Qualitaetsachsen getrennt sichtbar.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aufsichtsgenauigkeit und Eskalationsquote",
+          "correct": true,
+          "reason": "Richtig. Das bildet den Lernfortschritt sauber ab."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtquote",
+          "correct": false,
+          "reason": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Zeit",
+          "correct": false,
+          "reason": "Nicht ausreichend."
         }
       ]
     }

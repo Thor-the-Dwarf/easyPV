@@ -13,46 +13,58 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "GRANT & REVOKE: Ausgangslage, Kriterien und Umsetzung sollen sauber dokumentiert werden.",
-    "Fachlich wichtig sind Analyse, Bewertung und rueckgekoppelte Verbesserung.",
-    "Unscharfe Aussagen ohne Kriterien helfen nicht bei der Qualitaet."
+    "GRANT REVOKE: Im Kontext GRANT stehen GRANT REVOKE, UPDATE und access im Fokus.",
+    "Fuer eine belastbare Einordnung werden Intern und needs gezielt geprueft und dokumentiert.",
+    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Ausgangslage",
+      "label": "GRANT REVOKE",
       "is_target": true,
-      "explanation": "Wichtiger Startpunkt fuer die Einordnung."
+      "explanation": "\"GRANT REVOKE\" ist ein zentraler Fachbegriff im Kontext GRANT REVOKE."
     },
     {
       "id": "t2",
-      "label": "Kriterien",
+      "label": "UPDATE",
       "is_target": true,
-      "explanation": "Kriterien sichern Vergleichbarkeit."
+      "explanation": "\"UPDATE\" ist ein zentraler Fachbegriff im Kontext GRANT REVOKE."
     },
     {
       "id": "t3",
-      "label": "Bewertung",
+      "label": "access",
       "is_target": true,
-      "explanation": "Bewertung ist Kern der fachlichen Entscheidung."
+      "explanation": "\"access\" ist ein zentraler Fachbegriff im Kontext GRANT REVOKE."
     },
     {
       "id": "t4",
-      "label": "Verbesserung",
+      "label": "Intern",
       "is_target": true,
-      "explanation": "Rueckkopplung verbessert das Ergebnis."
+      "explanation": "\"Intern\" ist ein zentraler Fachbegriff im Kontext GRANT REVOKE."
     },
     {
       "id": "t5",
-      "label": "Unscharfe Aussagen",
-      "is_target": false,
-      "explanation": "Das ist kein tragfaehiger Fachbegriff."
+      "label": "needs",
+      "is_target": true,
+      "explanation": "\"needs\" ist ein zentraler Fachbegriff im Kontext GRANT REVOKE."
     },
     {
       "id": "t6",
-      "label": "Qualitaet",
+      "label": "Nebenaspekt",
       "is_target": false,
-      "explanation": "Hier nur als Ablenkbegriff genutzt."
+      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+    },
+    {
+      "id": "t7",
+      "label": "Randnotiz",
+      "is_target": false,
+      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+    },
+    {
+      "id": "t8",
+      "label": "Ablenkbegriff",
+      "is_target": false,
+      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
     }
   ]
 }

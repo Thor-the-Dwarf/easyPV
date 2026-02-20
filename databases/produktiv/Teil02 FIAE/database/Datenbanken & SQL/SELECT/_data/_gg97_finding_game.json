@@ -13,46 +13,58 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "SQL SELECT (Projection): Ausgangslage, Kriterien und Umsetzung sollen sauber dokumentiert werden.",
-    "Fachlich wichtig sind Analyse, Bewertung und rueckgekoppelte Verbesserung.",
-    "Unscharfe Aussagen ohne Kriterien helfen nicht bei der Qualitaet."
+    "SQL SELECT Projection: Im Kontext SELECT stehen SQL SELECT Projection, VARCHAR und email im Fokus.",
+    "Fuer eine belastbare Einordnung werden price und username gezielt geprueft und dokumentiert.",
+    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Ausgangslage",
+      "label": "SQL SELECT Projection",
       "is_target": true,
-      "explanation": "Wichtiger Startpunkt fuer die Einordnung."
+      "explanation": "\"SQL SELECT Projection\" ist ein zentraler Fachbegriff im Kontext SQL SELECT Projection."
     },
     {
       "id": "t2",
-      "label": "Kriterien",
+      "label": "VARCHAR",
       "is_target": true,
-      "explanation": "Kriterien sichern Vergleichbarkeit."
+      "explanation": "\"VARCHAR\" ist ein zentraler Fachbegriff im Kontext SQL SELECT Projection."
     },
     {
       "id": "t3",
-      "label": "Bewertung",
+      "label": "email",
       "is_target": true,
-      "explanation": "Bewertung ist Kern der fachlichen Entscheidung."
+      "explanation": "\"email\" ist ein zentraler Fachbegriff im Kontext SQL SELECT Projection."
     },
     {
       "id": "t4",
-      "label": "Verbesserung",
+      "label": "price",
       "is_target": true,
-      "explanation": "Rueckkopplung verbessert das Ergebnis."
+      "explanation": "\"price\" ist ein zentraler Fachbegriff im Kontext SQL SELECT Projection."
     },
     {
       "id": "t5",
-      "label": "Unscharfe Aussagen",
-      "is_target": false,
-      "explanation": "Das ist kein tragfaehiger Fachbegriff."
+      "label": "username",
+      "is_target": true,
+      "explanation": "\"username\" ist ein zentraler Fachbegriff im Kontext SQL SELECT Projection."
     },
     {
       "id": "t6",
-      "label": "Qualitaet",
+      "label": "Nebenaspekt",
       "is_target": false,
-      "explanation": "Hier nur als Ablenkbegriff genutzt."
+      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+    },
+    {
+      "id": "t7",
+      "label": "Randnotiz",
+      "is_target": false,
+      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+    },
+    {
+      "id": "t8",
+      "label": "Ablenkbegriff",
+      "is_target": false,
+      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
     }
   ]
 }

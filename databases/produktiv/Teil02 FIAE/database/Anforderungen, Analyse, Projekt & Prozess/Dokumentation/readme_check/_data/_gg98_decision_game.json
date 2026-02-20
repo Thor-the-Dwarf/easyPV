@@ -1,86 +1,259 @@
 {
   "meta": {
-    "topic": "readme check",
+    "topic": "README-Builder: The Documentation Lab",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "readme_check",
-    "version": "1.0"
+    "source": "_gg01_readme_check.json",
+    "version": "2.0"
   },
-  "title": "readme check - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "README-Builder: The Documentation Lab",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Level 1: Basics",
+      "situation": "README-Slot title: Welcher Block passt am besten?",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "b_title",
+          "text": "# Project Title",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Der Blocktyp title passt zu Slot title."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "b_desc",
+          "text": "Description / About",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Der Blocktyp description passt nicht zu Slot title."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "b_install",
+          "text": "## Installation",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Der Blocktyp installation passt nicht zu Slot title."
+        },
+        {
+          "id": "b_usage",
+          "text": "## Usage",
+          "correct": false,
+          "reason": "Der Blocktyp usage passt nicht zu Slot title."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Level 1: Basics",
+      "situation": "README-Slot description: Welcher Block passt am besten?",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "b_desc",
+          "text": "Description / About",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Der Blocktyp description passt zu Slot description."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "b_title",
+          "text": "# Project Title",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Der Blocktyp title passt nicht zu Slot description."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "b_install",
+          "text": "## Installation",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Der Blocktyp installation passt nicht zu Slot description."
+        },
+        {
+          "id": "b_usage",
+          "text": "## Usage",
+          "correct": false,
+          "reason": "Der Blocktyp usage passt nicht zu Slot description."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Level 1: Basics",
+      "situation": "README-Slot installation: Welcher Block passt am besten?",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "b_install",
+          "text": "## Installation",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Der Blocktyp installation passt zu Slot installation."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "b_title",
+          "text": "# Project Title",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Der Blocktyp title passt nicht zu Slot installation."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "b_desc",
+          "text": "Description / About",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Der Blocktyp description passt nicht zu Slot installation."
+        },
+        {
+          "id": "b_usage",
+          "text": "## Usage",
+          "correct": false,
+          "reason": "Der Blocktyp usage passt nicht zu Slot installation."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Level 1: Basics",
+      "situation": "README-Slot usage: Welcher Block passt am besten?",
+      "options": [
+        {
+          "id": "b_usage",
+          "text": "## Usage",
+          "correct": true,
+          "reason": "Der Blocktyp usage passt zu Slot usage."
+        },
+        {
+          "id": "b_title",
+          "text": "# Project Title",
+          "correct": false,
+          "reason": "Der Blocktyp title passt nicht zu Slot usage."
+        },
+        {
+          "id": "b_desc",
+          "text": "Description / About",
+          "correct": false,
+          "reason": "Der Blocktyp description passt nicht zu Slot usage."
+        },
+        {
+          "id": "b_install",
+          "text": "## Installation",
+          "correct": false,
+          "reason": "Der Blocktyp installation passt nicht zu Slot usage."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Level 2: Dependencies",
+      "situation": "README-Slot prerequisites: Welcher Block passt am besten?",
+      "options": [
+        {
+          "id": "b_prereq",
+          "text": "## Prerequisites",
+          "correct": true,
+          "reason": "Der Blocktyp prerequisites passt zu Slot prerequisites."
+        },
+        {
+          "id": "b_install",
+          "text": "## Installation",
+          "correct": false,
+          "reason": "Der Blocktyp installation passt nicht zu Slot prerequisites."
+        },
+        {
+          "id": "b_config",
+          "text": "## Configuration",
+          "correct": false,
+          "reason": "Der Blocktyp configuration passt nicht zu Slot prerequisites."
+        },
+        {
+          "id": "b_test",
+          "text": "## Running Tests",
+          "correct": false,
+          "reason": "Der Blocktyp testing passt nicht zu Slot prerequisites."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Level 2: Dependencies",
+      "situation": "README-Slot configuration: Welcher Block passt am besten?",
+      "options": [
+        {
+          "id": "b_config",
+          "text": "## Configuration",
+          "correct": true,
+          "reason": "Der Blocktyp configuration passt zu Slot configuration."
+        },
+        {
+          "id": "b_prereq",
+          "text": "## Prerequisites",
+          "correct": false,
+          "reason": "Der Blocktyp prerequisites passt nicht zu Slot configuration."
+        },
+        {
+          "id": "b_install",
+          "text": "## Installation",
+          "correct": false,
+          "reason": "Der Blocktyp installation passt nicht zu Slot configuration."
+        },
+        {
+          "id": "b_test",
+          "text": "## Running Tests",
+          "correct": false,
+          "reason": "Der Blocktyp testing passt nicht zu Slot configuration."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Level 2: Dependencies",
+      "situation": "README-Slot testing: Welcher Block passt am besten?",
+      "options": [
+        {
+          "id": "b_test",
+          "text": "## Running Tests",
+          "correct": true,
+          "reason": "Der Blocktyp testing passt zu Slot testing."
+        },
+        {
+          "id": "b_prereq",
+          "text": "## Prerequisites",
+          "correct": false,
+          "reason": "Der Blocktyp prerequisites passt nicht zu Slot testing."
+        },
+        {
+          "id": "b_install",
+          "text": "## Installation",
+          "correct": false,
+          "reason": "Der Blocktyp installation passt nicht zu Slot testing."
+        },
+        {
+          "id": "b_config",
+          "text": "## Configuration",
+          "correct": false,
+          "reason": "Der Blocktyp configuration passt nicht zu Slot testing."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Level 3: Compliance",
+      "situation": "README-Slot contributing: Welcher Block passt am besten?",
+      "options": [
+        {
+          "id": "b_contrib",
+          "text": "## Contributing",
+          "correct": true,
+          "reason": "Der Blocktyp contributing passt zu Slot contributing."
+        },
+        {
+          "id": "b_license",
+          "text": "## License",
+          "correct": false,
+          "reason": "Der Blocktyp license passt nicht zu Slot contributing."
+        },
+        {
+          "id": "b_authors",
+          "text": "## Authors",
+          "correct": false,
+          "reason": "Der Blocktyp authors passt nicht zu Slot contributing."
+        },
+        {
+          "id": "b_support",
+          "text": "## Support / Contact",
+          "correct": false,
+          "reason": "Der Blocktyp support passt nicht zu Slot contributing."
         }
       ]
     }

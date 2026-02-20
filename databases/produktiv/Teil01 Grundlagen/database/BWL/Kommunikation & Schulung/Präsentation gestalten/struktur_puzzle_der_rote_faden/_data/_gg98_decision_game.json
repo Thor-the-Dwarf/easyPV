@@ -3,84 +3,159 @@
     "topic": "Struktur-Puzzle: Der Rote Faden",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "struktur_puzzle_der_rote_faden",
-    "version": "1.0"
+    "source": "_gg01_struktur_puzzle_der_rote_faden.json",
+    "version": "2.0"
   },
-  "title": "Struktur-Puzzle: Der Rote Faden - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Struktur-Puzzle: Der Rote Faden",
+  "subtitle": "Ordne die Abschnitte einer Projektpraesentation in die logisch richtige Reihenfolge.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Schritt 1",
+      "situation": "Welche Sektion gehoert an Position 1 der Praesentationsstruktur?",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Begruessung",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Diese Position gehoert in den roten Faden."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Agenda",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Diese Position passt hier nicht."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Fazit",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Diese Position passt hier nicht."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Schritt 2",
+      "situation": "Welche Sektion gehoert an Position 2 der Praesentationsstruktur?",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Agenda",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Diese Position gehoert in den roten Faden."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Fazit",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Diese Position passt hier nicht."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ist-Analyse",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Diese Position passt hier nicht."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Schritt 3",
+      "situation": "Welche Sektion gehoert an Position 3 der Praesentationsstruktur?",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Ist-Analyse",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Diese Position gehoert in den roten Faden."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Agenda",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Diese Position passt hier nicht."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Fazit",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Diese Position passt hier nicht."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Schritt 4",
+      "situation": "Welche Sektion gehoert an Position 4 der Praesentationsstruktur?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Soll-Konzept",
+          "correct": true,
+          "reason": "Diese Position gehoert in den roten Faden."
+        },
+        {
+          "id": "b",
+          "text": "Agenda",
+          "correct": false,
+          "reason": "Diese Position passt hier nicht."
+        },
+        {
+          "id": "c",
+          "text": "Fazit",
+          "correct": false,
+          "reason": "Diese Position passt hier nicht."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Schritt 5",
+      "situation": "Welche Sektion gehoert an Position 5 der Praesentationsstruktur?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Umsetzung",
+          "correct": true,
+          "reason": "Diese Position gehoert in den roten Faden."
+        },
+        {
+          "id": "b",
+          "text": "Agenda",
+          "correct": false,
+          "reason": "Diese Position passt hier nicht."
+        },
+        {
+          "id": "c",
+          "text": "Fazit",
+          "correct": false,
+          "reason": "Diese Position passt hier nicht."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Schritt 6",
+      "situation": "Welche Sektion gehoert an Position 6 der Praesentationsstruktur?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fazit",
+          "correct": true,
+          "reason": "Diese Position gehoert in den roten Faden."
+        },
+        {
+          "id": "b",
+          "text": "Agenda",
+          "correct": false,
+          "reason": "Diese Position passt hier nicht."
+        },
+        {
+          "id": "c",
+          "text": "Ist-Analyse",
+          "correct": false,
+          "reason": "Diese Position passt hier nicht."
         }
       ]
     }

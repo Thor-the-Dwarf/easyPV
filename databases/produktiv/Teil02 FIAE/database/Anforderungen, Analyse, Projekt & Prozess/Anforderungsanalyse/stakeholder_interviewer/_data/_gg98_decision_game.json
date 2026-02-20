@@ -3,84 +3,159 @@
     "topic": "Stakeholder-Interviewer",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "stakeholder_interviewer",
+    "source": "_gg01_stakeholder_interviewer.json",
     "version": "1.0"
   },
   "title": "Stakeholder-Interviewer - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "subtitle": "Finde die passende Ermittlungstechnik fuer jede Situation.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Viele Endnutzer, wenig Zeit, standardisierte Fragen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Fragebogen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Tiefeninterview mit jeder Person",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ungesteuerte Diskussion",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": ""
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Ein Einzelspezialist erklaert einen kritischen Sonderprozess.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Interview",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Massenumfrage",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur alte Doku lesen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": ""
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Mitarbeitende machen viele unbewusste Arbeitsschritte am Band.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Beobachtung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Kurzer Multiple-Choice-Test",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Management fragen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Mehrere Bereiche haben widerspruechliche Ziele und sollen sich abstimmen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Moderierter Workshop",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Einzelchat ohne Moderation",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Nur E-Mail-Abfrage",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Du brauchst schnell ein erstes Stimmungsbild zu einer Idee.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kurzer Fragebogen",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Vollstaendige Prozessbeobachtung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Langes Experteninterview",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Komplexe Fehlerbilder treten nur in der Nachtschicht auf.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Beobachtung plus Rueckfrage vor Ort",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Nur allgemeine Fragebogenwerte",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Ausschliesslich Management-Interview",
+          "correct": false,
+          "reason": ""
         }
       ]
     }

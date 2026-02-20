@@ -3,7 +3,7 @@
     "topic": "Wertschoepfungskette",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wertschoepfungskette",
+    "source": "_gg01_stufen_sorter.json",
     "version": "1.0"
   },
   "title": "Wertschoepfungskette - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Wareneingangspruefung gehoert typischerweise zu welcher Stufe?\nFruehe Kettenphase.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Beschaffung / Eingang",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Dort wird Input geprueft."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Kundenservice",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu spaet im Ablauf."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Marketing",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht primär."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Endmontage ist meist welcher Stufe zugeordnet?\nWertrealisierung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Produktion / Leistungserstellung",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Kernstufe der Wertschaffung."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Vertrieb",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nachgelagerte Stufe."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Finanzbuchhaltung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht primär."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI passt zum Sorter?\nTreffer pro Stufe.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Trefferquote je Stufe und Gesamtfehlerquote",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das zeigt konkrete Luecken."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Anzahl Karten",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu wenig."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Gesamtzeit",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Ohne Qualitaet unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Warum ist Kernprozess-Fehlzuordnung gravierend?\nFalsche Stellhebel.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Massnahmen werden an falscher Stufe angesetzt",
+          "correct": true,
+          "reason": "Richtig. Das verschlechtert Verbesserungen."
+        },
+        {
+          "id": "b",
+          "text": "Sie bleibt folgenlos",
+          "correct": false,
+          "reason": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Sie verbessert automatisch Schnittstellen",
+          "correct": false,
+          "reason": "Nicht plausibel."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Zuordnung passt zu Auslieferung?\nDistribution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Logistik / Distribution",
+          "correct": true,
+          "reason": "Richtig. Hier erfolgt Kundenbelieferung."
+        },
+        {
+          "id": "b",
+          "text": "Beschaffung",
+          "correct": false,
+          "reason": "Vorstufe."
+        },
+        {
+          "id": "c",
+          "text": "Produktentwicklung",
+          "correct": false,
+          "reason": "Nicht direkt."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Wann greift Serienbonus?\nMehrere korrekte Karten in Folge.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ab 5 korrekten Zuordnungen am Stueck",
+          "correct": true,
+          "reason": "Richtig. Das belohnt sichere Klassifikation."
+        },
+        {
+          "id": "b",
+          "text": "Schon nach einem Treffer",
+          "correct": false,
+          "reason": "Zu frueh."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei maximaler Spielzeit",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Was hilft gegen Stufenverwechslungen?\nKlare Kriterien je Stufe.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Definitionen mit typischen Inputs/Outputs je Stufe",
+          "correct": true,
+          "reason": "Richtig. Das schafft Trennschaerfe."
+        },
+        {
+          "id": "b",
+          "text": "Nur Farbcodes ohne Inhalt",
+          "correct": false,
+          "reason": "Zu oberflaechlich."
+        },
+        {
+          "id": "c",
+          "text": "Kein Feedback anzeigen",
+          "correct": false,
+          "reason": "Nicht lernfoerderlich."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was trainiert der Stufen-Sorter?\nSichere Prozessklassifikation.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Schritte den richtigen Wertkettenstufen fachlich zuordnen",
+          "correct": true,
+          "reason": "Richtig. Genau das ist das Ziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur schnelle Rateklicks",
+          "correct": false,
+          "reason": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "KPI ausblenden",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

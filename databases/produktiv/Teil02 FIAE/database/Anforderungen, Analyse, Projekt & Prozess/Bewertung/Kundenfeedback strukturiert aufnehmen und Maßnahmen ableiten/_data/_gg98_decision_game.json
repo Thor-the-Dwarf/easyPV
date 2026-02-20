@@ -3,84 +3,195 @@
     "topic": "Feedback-Kategorisierer",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "feedback_kategorisierer",
-    "version": "1.0"
+    "source": "_gg01_feedback_kategorisierer.json",
+    "version": "2.0"
   },
-  "title": "Feedback-Kategorisierer - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Feedback-Kategorisierer",
+  "subtitle": "Sortiere Kundenstimmen in den richtigen Prozesskanal.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Feedback kategorisieren: Nach dem Login sehe ich nur noch einen weissen Bildschirm.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "bug",
+          "text": "Bug",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "feature",
+          "text": "Feature",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "support",
+          "text": "Support",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "lob",
+          "text": "Lob",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Feedback kategorisieren: Bitte fuegt endlich einen Darkmode hinzu.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "feature",
+          "text": "Feature",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "bug",
+          "text": "Bug",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "support",
+          "text": "Support",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "lob",
+          "text": "Lob",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Feedback kategorisieren: Ich finde die App richtig stark, danke ans Team!",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "lob",
+          "text": "Lob",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "bug",
+          "text": "Bug",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "feature",
+          "text": "Feature",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "support",
+          "text": "Support",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Feedback kategorisieren: Wo aendere ich meine Rechnungsadresse? Ich finde die Option nicht.",
+      "options": [
+        {
+          "id": "support",
+          "text": "Support",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "bug",
+          "text": "Bug",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "feature",
+          "text": "Feature",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "lob",
+          "text": "Lob",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Feedback kategorisieren: Beim Bezahlen per Kreditkarte bricht der Vorgang bei 3D-Secure ab.",
+      "options": [
+        {
+          "id": "bug",
+          "text": "Bug",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "feature",
+          "text": "Feature",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "support",
+          "text": "Support",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "lob",
+          "text": "Lob",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Feedback kategorisieren: Kann man Exportberichte auch als CSV herunterladen?",
+      "options": [
+        {
+          "id": "feature",
+          "text": "Feature",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "bug",
+          "text": "Bug",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "support",
+          "text": "Support",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "lob",
+          "text": "Lob",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

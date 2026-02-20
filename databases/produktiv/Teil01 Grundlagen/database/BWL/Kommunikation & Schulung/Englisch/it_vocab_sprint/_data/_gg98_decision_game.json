@@ -3,7 +3,7 @@
     "topic": "IT-Vocab-Sprint",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "it_vocab_sprint",
+    "source": "_gg01_it_vocab_sprint.json",
     "version": "1.0"
   },
   "title": "IT-Vocab-Sprint - Entscheidungen",
@@ -12,75 +12,620 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "\nRegelmaessige Systempflege",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Wartung",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Sicherheit",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Entwicklung",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Verwaltung",
+          "correct": false,
+          "reason": ""
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "\nSchutz von Systemen und Daten",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
-          "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "text": "Wartung",
+          "correct": false,
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
-          "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "text": "Sicherheit",
+          "correct": true,
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Fehlersuche",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Bereitstellung",
+          "correct": false,
+          "reason": ""
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "\nErstellung neuer Software",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
-          "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "text": "Verschluesselung",
+          "correct": false,
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Verwaltung",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Entwicklung",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Sicherung",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "\nBetrieb und Betreuung der IT-Landschaft",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fehlersuche",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Wartung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Bereitstellung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Verwaltung",
+          "correct": true,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "\nFachliche Vorgabe fuer ein System",
+      "options": [
+        {
+          "id": "a",
+          "text": "Abgabefrist",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Anforderung",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Berechtigung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Wartung",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "\nAuslieferung einer Anwendung",
+      "options": [
+        {
+          "id": "a",
+          "text": "Besprechung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Fehler",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Bereitstellung",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Verschluesselung",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "\nFehlverhalten im System",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fehler",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Schnittstelle",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Verwaltung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Protokoll",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "\nNeue Nutzerfunktion",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fehlersuche",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Sicherung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Vorgang",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Funktion",
+          "correct": true,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "phase": "Runde 9",
+      "situation": "\nFixer Termin fuer Abgabe",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wartung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Quellcodeverwaltung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Abgabefrist",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Zugriff",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "phase": "Runde 10",
+      "situation": "\nSchriftliche Zusammenfassung eines Meetings",
+      "options": [
+        {
+          "id": "a",
+          "text": "Besprechungsprotokoll",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Datenbank",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Verschluesselung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Aktualisierung",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "phase": "Runde 11",
+      "situation": "\nDefinierte Verbindungsstelle zwischen Systemen",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bereitstellung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Schnittstelle",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Sicherheit",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Auswertung",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "phase": "Runde 12",
+      "situation": "\nErfasster Supportfall",
+      "options": [
+        {
+          "id": "a",
+          "text": "Entwicklung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Sicherung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Vorgang",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Verschiebung",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "phase": "Runde 13",
+      "situation": "\nKopie fuer Wiederherstellung",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fehlersuche",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Verwaltung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Stoerfall",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Sicherung",
+          "correct": true,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "phase": "Runde 14",
+      "situation": "\nSchutz durch mathematische Codierung",
+      "options": [
+        {
+          "id": "a",
+          "text": "Datenbank",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Verschluesselung",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Aktualisierung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Wartung",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "phase": "Runde 15",
+      "situation": "\nStrukturierter Datenbestand",
+      "options": [
+        {
+          "id": "a",
+          "text": "Datenbank",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Anforderung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Berechtigung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Wartung",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "phase": "Runde 16",
+      "situation": "\nAblage fuer Quellcode und Historie",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vorfall",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Protokoll",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Quellcodeverwaltung",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Entwicklung",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "phase": "Runde 17",
+      "situation": "\nSystematische Fehlersuche",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zugriffskontrolle",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Schnittstelle",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Abgabefrist",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Fehlersuche",
+          "correct": true,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "phase": "Runde 18",
+      "situation": "\nUngeplanter Stoerfall im Betrieb",
+      "options": [
+        {
+          "id": "a",
+          "text": "Funktion",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Stoerfall",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Verwaltung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Sicherung",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "phase": "Runde 19",
+      "situation": "\nErlaubnisse fuer Nutzergruppen",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zugriffsrechte",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Besprechung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Entwicklung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Wartung",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "phase": "Runde 20",
+      "situation": "\nVersionelle Aktualisierung",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bereitstellung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Besprechungsprotokoll",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Aktualisierung",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "d",
+          "text": "Verschluesselung",
+          "correct": false,
+          "reason": ""
         }
       ]
     }

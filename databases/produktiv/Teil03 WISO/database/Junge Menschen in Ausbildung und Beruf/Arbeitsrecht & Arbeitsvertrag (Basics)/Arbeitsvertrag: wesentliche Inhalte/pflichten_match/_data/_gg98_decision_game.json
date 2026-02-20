@@ -3,7 +3,7 @@
     "topic": "Arbeitsvertrag",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitsvertrag",
+    "source": "_gg01_pflichten_match.json",
     "version": "1.0"
   },
   "title": "Arbeitsvertrag - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Aussage: Arbeit vereinbarungsgemaess leisten. Welche Rolle trifft primaer zu?\nPruefe die Hauptpflicht des Arbeitnehmers.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Arbeitnehmer",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Die Arbeitspflicht liegt beim Arbeitnehmer."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Arbeitgeber",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Keine Rolle",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Aussage: Verguetung zahlen. Welche Rolle ist korrekt?\nDenk an die Gegenleistung im Arbeitsvertrag.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Arbeitgeber",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Die Entgeltzahlung ist Arbeitgeberpflicht."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Arbeitnehmer",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Beide gleich",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht in diesem Kernpunkt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Regel gilt fuer den Klassenbonus?\nEr haengt von der Rollenwahl ab.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Falsche Rollenwahl blockiert Klassenbonus",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Erst Rolle korrekt, dann Klassenbonus."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Klassenbonus immer aktiv",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Bonus nur nach Zeit",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Ab wann gibt es Serienbonus laut Plan?\nEs braucht mehrere volle Treffer in Folge.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ab 6 voll korrekten Karten",
+          "correct": true,
+          "reason": "Genau. Dann wird der Serienbonus vergeben."
+        },
+        {
+          "id": "b",
+          "text": "Ab 2 Karten",
+          "correct": false,
+          "reason": "Zu frueh."
+        },
+        {
+          "id": "c",
+          "text": "Erst am Spielende",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI-Kombination ist vorgesehen?\nRolle und Pflichtklasse getrennt auswerten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rollenquote und Pflichtartenquote",
+          "correct": true,
+          "reason": "Richtig. Beide Dimensionen bleiben sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtquote",
+          "correct": false,
+          "reason": "Zu wenig differenziert."
+        },
+        {
+          "id": "c",
+          "text": "Nur Reaktionszeit",
+          "correct": false,
+          "reason": "Nicht ausreichend."
         }
       ]
     }

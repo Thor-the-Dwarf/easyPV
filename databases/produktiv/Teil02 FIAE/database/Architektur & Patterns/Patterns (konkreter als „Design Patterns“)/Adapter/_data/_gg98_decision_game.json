@@ -3,84 +3,109 @@
     "topic": "Adapter Pattern",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "adapter_pattern",
-    "version": "1.0"
+    "source": "_gg01_compatibility_connector.json",
+    "version": "2.0"
   },
-  "title": "Adapter Pattern - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Adapter",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "The Power Plug",
+      "situation": "The Power Plug The Power Plug",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "m1",
+          "text": "US-to-EU Adapter",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "m2",
+          "text": "Extension Cord",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "m3",
+          "text": "UK Adapter",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Data Format",
+      "situation": "Data Format Data Format",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "m5",
+          "text": "XML-to-JSON",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "m4",
+          "text": "CSV Parser",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "m6",
+          "text": "Base64 Encoder",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Temperature Service",
+      "situation": "Temperature Service Temperature Service",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "m7",
+          "text": "Math: x * 1.8 + 32",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "m8",
+          "text": "Math: x + 273.15",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "m9",
+          "text": "Math: x",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Legacy Payment",
+      "situation": "Legacy Payment Legacy Payment",
+      "options": [
+        {
+          "id": "m10",
+          "text": "Wrapper: pay() -> process()",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "m11",
+          "text": "Direct Call",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "m12",
+          "text": "Retry Loop",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

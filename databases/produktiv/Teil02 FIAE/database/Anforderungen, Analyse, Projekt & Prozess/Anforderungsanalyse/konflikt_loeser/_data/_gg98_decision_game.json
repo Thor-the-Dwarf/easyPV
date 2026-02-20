@@ -3,84 +3,159 @@
     "topic": "Konflikt-Loeser",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "konflikt_loeser",
+    "source": "_gg01_konflikt_loeser.json",
     "version": "1.0"
   },
   "title": "Konflikt-Loeser - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "subtitle": "Erkenne Konfliktarten und waehle die passende Strategie.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Marketing will eine sehr visuelle Startseite, IT fordert maximale Performance.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Gemeinsame Zielmatrix und Performance-Budget mit Designgrenzen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Marketing entscheidet allein",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Thema fuer spaeter ignorieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": ""
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Zwei Abteilungen verlangen unterschiedliche Pflichtfelder im selben Formular.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Datenmodell abstimmen und Pflichtfelder je Prozessschritt differenzieren",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Alle Felder fuer alle immer verpflichtend",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur lautere Abteilung gewinnt",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": ""
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Management will schnell live gehen, QA fordert umfangreiche Tests.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Risikobasierter Scope fuer Go-Live plus klares Test-Minimum",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Tests komplett streichen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Go-Live unbegrenzt verschieben",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Support braucht einfache Bedienung, Fachbereich will viele Spezialfunktionen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "MVP-Kernfluss mit optionalen Expertenerweiterungen",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Alles in eine komplexe Standardmaske",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Nur Support-Wunsch umsetzen",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Datenschutz will minimale Datenerhebung, Sales will moeglichst viele Kundendaten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Datensparsamkeit + klarer Zweck je Feld + optionale Einwilligung",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Alle Daten ohne Zweckbegruendung sammeln",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Keine Daten mehr erfassen",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Produktteam fordert neue Features, Betriebsteam priorisiert Stabilitaet und Monitoring.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Roadmap mit festen Stabilitaetsanteilen und gemeinsamen KPI-Zielen",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Nur Features zaehlen",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Nur Betriebsaufgaben zulassen",
+          "correct": false,
+          "reason": ""
         }
       ]
     }

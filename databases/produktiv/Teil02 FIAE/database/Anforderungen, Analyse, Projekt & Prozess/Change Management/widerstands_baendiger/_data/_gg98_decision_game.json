@@ -3,84 +3,159 @@
     "topic": "Widerstands-Baendiger",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "widerstands_baendiger",
+    "source": "_gg01_widerstands_baendiger.json",
     "version": "1.0"
   },
   "title": "Widerstands-Baendiger - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "subtitle": "Reagiere passend auf Widerstand im Change-Prozess.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Ein Team arbeitet nur noch strikt nach Vorschrift und meldet keine Ideen mehr.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Dialogrunde + aktive Einbindung in Loesungsfindung",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Passiver Widerstand braucht Beteiligung und Sicherheit."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Sofortige Eskalation an HR",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu fruehe Eskalation verhaertet die Lage."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Widerstand ignorieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Ignorieren verlaengert die Blockade."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Ein Mitarbeiter sabotiert aktiv die Einfuehrung, indem er falsche Infos streut.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Klare Fuehrung, Faktencheck und verbindliche Konsequenzen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Aktiver Widerstand braucht klare Grenzen und Steuerung."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur auf freiwillige Einsicht hoffen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Ohne Fuehrung bleibt der Schaden hoch."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Alles im Team-Chat diskutieren",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Oeffentliche Eskalation ohne Struktur kann Konflikte steigern."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Mehrere Stakeholder erscheinen nicht zu Abstimmungsterminen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Zielgerichtete 1:1 Gespraeche ueber Bedenken und Nutzen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Persoenliche Klaerung loest versteckte Vorbehalte."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Meeting-Teilnahme optional lassen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Unverbindlichkeit verstaerkt passiven Widerstand."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Sanktionen ohne Gespraech",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Druck ohne Ursachenklaerung reduziert Akzeptanz."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Ein Teamleiter torpediert die Umstellung offen im Jour Fixe.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rollenklarheit herstellen und Fuehrungsentscheidung treffen",
+          "correct": true,
+          "reason": "Offener Machtwiderstand braucht klare Linie."
+        },
+        {
+          "id": "b",
+          "text": "Kritik ungefiltert laufen lassen",
+          "correct": false,
+          "reason": "Unmoderierter Widerstand verbreitet Unsicherheit."
+        },
+        {
+          "id": "c",
+          "text": "Thema auf unbestimmt vertagen",
+          "correct": false,
+          "reason": "Verzoegerung signalisiert Fuehrungsluecke."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Das Team nutzt neue Prozesse nur halbherzig und faellt oft in alte Muster zurueck.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Coaching + schnelle Erfolgserlebnisse sichtbar machen",
+          "correct": true,
+          "reason": "Praxisunterstuetzung stabilisiert Verhaltensaenderung."
+        },
+        {
+          "id": "b",
+          "text": "Nur Kennzahlen ohne Begleitung fordern",
+          "correct": false,
+          "reason": "Nur Druck ohne Hilfe fuehrt zu Rueckzug."
+        },
+        {
+          "id": "c",
+          "text": "Alten Prozess parallel unbefristet weiterfuehren",
+          "correct": false,
+          "reason": "Doppelstrukturen verhindern den Wandel."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Eine Gruppe ruft offen dazu auf, den Rollout zu blockieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Krisenkommunikation, klares Eskalationsprotokoll und Management-Support",
+          "correct": true,
+          "reason": "Koordinierte Gegensteuerung minimiert Eskalationsschaden."
+        },
+        {
+          "id": "b",
+          "text": "Reaktion verschieben bis zum naechsten Quartal",
+          "correct": false,
+          "reason": "Zeitverlust verfestigt aktive Blockade."
+        },
+        {
+          "id": "c",
+          "text": "Nur auf einzelne Geruechte reagieren",
+          "correct": false,
+          "reason": "Punktuelle Reaktion reicht bei organisiertem Widerstand nicht."
         }
       ]
     }

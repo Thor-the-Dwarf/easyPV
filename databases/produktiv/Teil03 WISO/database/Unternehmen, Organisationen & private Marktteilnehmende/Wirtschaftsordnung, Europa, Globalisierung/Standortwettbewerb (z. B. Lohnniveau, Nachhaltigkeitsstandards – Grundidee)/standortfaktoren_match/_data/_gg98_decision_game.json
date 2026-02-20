@@ -3,7 +3,7 @@
     "topic": "Standortwettbewerb",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "standortwettbewerb",
+    "source": "_gg01_standortfaktoren_match.json",
     "version": "1.0"
   },
   "title": "Standortwettbewerb - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was ist ein harter Standortfaktor?\nDirekt quantifizierbar.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Lohnkosten pro Stunde",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Messbar und direkt vergleichbar."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Teampraxis im Konflikt",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Eher weich."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Markenimage intern",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht der Kern hier."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was ist ein weicher Standortfaktor?\nSchwerer exakt zu messen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Verfuegbarkeit qualifizierter Fachkraefte",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Zentral fuer Leistungsfaehigkeit."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Netzentgelt in Euro",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Harter Faktor."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Mietvertrag Nummer",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Kein Faktor."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Kombination ist fuer langfristige Stabilitaet am besten?\nHart + weich balancieren.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Moderate Kosten plus starke Fachkraeftebasis",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Balancierte Bewertung."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur niedrigster Preis",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Kurzfristig gedacht."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur weiche Kriterien",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Unvollstaendig."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Was zeigt ein Match-Fehler im Spiel?\nFalschklassifikation eines Faktors.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Faktor wurde falscher Kategorie zugeordnet",
+          "correct": true,
+          "reason": "Richtig. Kategoriefehler senken Punkte."
+        },
+        {
+          "id": "b",
+          "text": "Datei nicht gespeichert",
+          "correct": false,
+          "reason": "Nicht der Spielkern."
+        },
+        {
+          "id": "c",
+          "text": "Layoutfehler",
+          "correct": false,
+          "reason": "Nicht relevant."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welcher KPI misst Match-Qualitaet?\nTreffer je Kategorie.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trefferquote pro Faktorenklasse",
+          "correct": true,
+          "reason": "Richtig. Das zeigt Lernfortschritt."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtzeit",
+          "correct": false,
+          "reason": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Browserversion",
+          "correct": false,
+          "reason": "Nicht relevant."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Warum sind Infrastrukturdaten wichtig?\nDirekter Einfluss auf Prozesse.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sie beeinflussen Liefer- und Produktionsstabilitaet",
+          "correct": true,
+          "reason": "Richtig. Infrastruktur wirkt operativ."
+        },
+        {
+          "id": "b",
+          "text": "Sie ersetzen Personalplanung",
+          "correct": false,
+          "reason": "Nein."
+        },
+        {
+          "id": "c",
+          "text": "Sie machen Risiken ueberfluessig",
+          "correct": false,
+          "reason": "Nein."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Wann sollte ein Standort neu bewertet werden?\nBei veraenderten Rahmenbedingungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei deutlichen Aenderungen von Kosten oder Standards",
+          "correct": true,
+          "reason": "Richtig. Re-Bewertung ist notwendig."
+        },
+        {
+          "id": "b",
+          "text": "Nie nach Erstentscheidung",
+          "correct": false,
+          "reason": "Zu starr."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei Designwechsel",
+          "correct": false,
+          "reason": "Zu eng."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Welche Regel steigert die Punkte im Match?\nFehlerarme Serie.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mehrere korrekte Zuordnungen in Folge",
+          "correct": true,
+          "reason": "Richtig. Serienbonus greift."
+        },
+        {
+          "id": "b",
+          "text": "Zufaellig klicken",
+          "correct": false,
+          "reason": "Fuehrt zu Abzug."
+        },
+        {
+          "id": "c",
+          "text": "Antworten auslassen",
+          "correct": false,
+          "reason": "Keine Punkte."
         }
       ]
     }

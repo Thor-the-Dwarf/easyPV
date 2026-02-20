@@ -3,7 +3,7 @@
     "topic": "Verbraucherschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "verbraucherschutz",
+    "source": "_gg01_widerruf_timer.json",
     "version": "1.0"
   },
   "title": "Verbraucherschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Bestellung online, Lieferung vor 10 Tagen. Widerruf moeglich?\nPruefe das Fristfenster ab relevantem Startdatum.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Ja, innerhalb der regulaeren Frist",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das liegt noch im typischen Widerrufszeitraum."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nein, immer ausgeschlossen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur mit Garantie",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Begruendung bringt volle Punkte im Timer?\nEs muessen Start- und Enddatum genannt werden.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Startdatum und Fristende korrekt angeben",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Das entspricht der geforderten Begruendung."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Bauchgefuehl nennen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur Lieferdatum nennen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Unvollstaendig."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Ohne Begruendung abgegeben: Wie viele Punkte laut Regel?\nEs gibt eine prozentuale Reduktion.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Nur 70 Prozent der Punkte",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Ohne Begruendung wird reduziert bewertet."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Doppelte Punkte",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Immer Null",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Was zeigt das Feedback laut Plan zusaetzlich an?\nNeben richtig/falsch wird ein Distanzwert genannt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Delta in Tagen",
+          "correct": true,
+          "reason": "Richtig. Das Delta macht die Fristberechnung transparent."
+        },
+        {
+          "id": "b",
+          "text": "Nur Farbe ohne Zahl",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur Symbol ohne Kontext",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann wird Mini-Tutorial eingeblendet?\nRegel bezieht sich auf wiederholten gleichen Fehler.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei zweimal gleichem Fehler",
+          "correct": true,
+          "reason": "Richtig. Dann startet die Hilfefunktion."
+        },
+        {
+          "id": "b",
+          "text": "Bei jeder richtigen Antwort",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur beim ersten Start",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

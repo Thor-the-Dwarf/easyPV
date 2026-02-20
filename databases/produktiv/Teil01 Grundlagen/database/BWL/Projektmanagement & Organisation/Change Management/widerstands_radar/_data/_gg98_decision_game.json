@@ -3,84 +3,164 @@
     "topic": "Widerstands-Radar",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "widerstands_radar",
-    "version": "1.0"
+    "source": "_gg01_widerstands_radar.json",
+    "version": "2.0"
   },
-  "title": "Widerstands-Radar - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Widerstands-Radar",
+  "subtitle": "Markiere pro Runde die drei Blockierer im Teammeeting.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Sprint-Review: Reaktionen auf neues Ticketsystem Welche Aussage ist ein klarer Widerstandshinweis?",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "Nora",
+          "text": "Nora: Zu teuer und zu riskant, das klappt nie.",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Das signalisiert klaren Widerstand."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "Mika",
+          "text": "Mika: Gute Chance, spart uns spaeter Arbeit.",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Das ist kein primaerer Blocker."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "Lea",
+          "text": "Lea: Ist mir egal, macht was ihr wollt.",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Das signalisiert klaren Widerstand."
+        },
+        {
+          "id": "Ben",
+          "text": "Ben: Ich teste es gern mit einem Pilot-Team.",
+          "correct": false,
+          "reason": "Das ist kein primaerer Blocker."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Townhall: Neue Support-Prozesse Welche Aussage ist ein klarer Widerstandshinweis?",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "Oli",
+          "text": "Oli: Das haben wir schon immer so gemacht.",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Das signalisiert klaren Widerstand."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "Ira",
+          "text": "Ira: Ich kann die Doku mit aufsetzen.",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das ist kein primaerer Blocker."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "Tom",
+          "text": "Tom: Bringt eh nichts, wird wieder verworfen.",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Das signalisiert klaren Widerstand."
+        },
+        {
+          "id": "Sue",
+          "text": "Sue: Wir brauchen nur klare Rollen.",
+          "correct": false,
+          "reason": "Das ist kein primaerer Blocker."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Projektkickoff: Cloud-Migration Welche Aussage ist ein klarer Widerstandshinweis?",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "Pia",
+          "text": "Pia: Machen wir nicht, ist politisch zu heikel.",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Das signalisiert klaren Widerstand."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "Noel",
+          "text": "Noel: Wir koennen mit einer Testumgebung starten.",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das ist kein primaerer Blocker."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "Mara",
+          "text": "Mara: Ich rede das intern sowieso schlecht.",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Das signalisiert klaren Widerstand."
+        },
+        {
+          "id": "Lio",
+          "text": "Lio: Wir brauchen einen realistischen Zeitplan.",
+          "correct": false,
+          "reason": "Das ist kein primaerer Blocker."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Retrospektive: Qualitaetssicherung Welche Aussage ist ein klarer Widerstandshinweis?",
+      "options": [
+        {
+          "id": "Nils",
+          "text": "Nils: Tests sind Zeitverschwendung.",
+          "correct": true,
+          "reason": "Das signalisiert klaren Widerstand."
+        },
+        {
+          "id": "Kira",
+          "text": "Kira: Wir automatisieren die Top-3 Fehlerquellen.",
+          "correct": false,
+          "reason": "Das ist kein primaerer Blocker."
+        },
+        {
+          "id": "Moe",
+          "text": "Moe: Ich blockiere jede Aenderung im Review.",
+          "correct": false,
+          "reason": "Das signalisiert klaren Widerstand."
+        },
+        {
+          "id": "Lena",
+          "text": "Lena: Gebt mir die Metriken, ich visualisiere sie.",
+          "correct": false,
+          "reason": "Das ist kein primaerer Blocker."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Go-Live-Planung: Neues Monitoring Welche Aussage ist ein klarer Widerstandshinweis?",
+      "options": [
+        {
+          "id": "Ava",
+          "text": "Ava: Wir ziehen den Stecker, sobald es Arbeit macht.",
+          "correct": true,
+          "reason": "Das signalisiert klaren Widerstand."
+        },
+        {
+          "id": "Sami",
+          "text": "Sami: Ich baue ein Dashboard fuer die KPIs.",
+          "correct": false,
+          "reason": "Das ist kein primaerer Blocker."
+        },
+        {
+          "id": "Nadja",
+          "text": "Nadja: Ich werde das Team gegen den Rollout aufbringen.",
+          "correct": false,
+          "reason": "Das signalisiert klaren Widerstand."
+        },
+        {
+          "id": "Bela",
+          "text": "Bela: Wir planen ein schrittweises Rollout-Fenster.",
+          "correct": false,
+          "reason": "Das ist kein primaerer Blocker."
         }
       ]
     }

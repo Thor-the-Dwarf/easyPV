@@ -3,84 +3,134 @@
     "topic": "Make or Buy Calculator",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "make_or_buy_calculator",
-    "version": "1.0"
+    "source": "_gg01_make_or_buy_calculator.json",
+    "version": "2.0"
   },
-  "title": "Make or Buy Calculator - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Make or Buy Calculator",
+  "subtitle": "Entscheide in 5 Faellen rechnerisch korrekt zwischen Eigenfertigung (Make) und Fremdbezug (Buy).",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Standardprodukt",
+      "situation": "Standardprodukt bei Menge 300. Was ist wirtschaftlicher?",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Make intern",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Kosten Make=2500, Buy=3000."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Buy extern",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Kosten Make=2500, Buy=3000."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Keine Entscheidung moeglich",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Die Daten reichen fuer einen Kostenvergleich."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Kleinserie",
+      "situation": "Kleinserie bei Menge 140. Was ist wirtschaftlicher?",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "b",
+          "text": "Buy extern",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Kosten Make=2780, Buy=1260."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "a",
+          "text": "Make intern",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Kosten Make=2780, Buy=1260."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine Entscheidung moeglich",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Die Daten reichen fuer einen Kostenvergleich."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Seriennahe Menge",
+      "situation": "Seriennahe Menge bei Menge 620. Was ist wirtschaftlicher?",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Make intern",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Kosten Make=4680, Buy=4960."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Buy extern",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Kosten Make=4680, Buy=4960."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Keine Entscheidung moeglich",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Die Daten reichen fuer einen Kostenvergleich."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Prototypenphase",
+      "situation": "Prototypenphase bei Menge 90. Was ist wirtschaftlicher?",
+      "options": [
+        {
+          "id": "b",
+          "text": "Buy extern",
+          "correct": true,
+          "reason": "Kosten Make=1440, Buy=990."
+        },
+        {
+          "id": "a",
+          "text": "Make intern",
+          "correct": false,
+          "reason": "Kosten Make=1440, Buy=990."
+        },
+        {
+          "id": "c",
+          "text": "Keine Entscheidung moeglich",
+          "correct": false,
+          "reason": "Die Daten reichen fuer einen Kostenvergleich."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Rollout Welle 1",
+      "situation": "Rollout Welle 1 bei Menge 820. Was ist wirtschaftlicher?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Make intern",
+          "correct": true,
+          "reason": "Kosten Make=5600, Buy=5740."
+        },
+        {
+          "id": "b",
+          "text": "Buy extern",
+          "correct": false,
+          "reason": "Kosten Make=5600, Buy=5740."
+        },
+        {
+          "id": "c",
+          "text": "Keine Entscheidung moeglich",
+          "correct": false,
+          "reason": "Die Daten reichen fuer einen Kostenvergleich."
         }
       ]
     }

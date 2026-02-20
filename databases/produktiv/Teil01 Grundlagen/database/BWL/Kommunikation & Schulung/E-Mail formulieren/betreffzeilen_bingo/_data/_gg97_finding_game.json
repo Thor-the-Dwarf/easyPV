@@ -4,7 +4,7 @@
     "mechanic": "finding_terms",
     "engine": "FindingGame",
     "variant": "e_mail_formulieren",
-    "title": "E-Mail formulieren - Begriffe finden",
+    "title": "Betreffzeilen-Bingo - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
   },
@@ -13,46 +13,58 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "E-Mail formulieren: Ausgangslage, Kriterien und Umsetzung sollen sauber dokumentiert werden.",
-    "Fachlich wichtig sind Analyse, Bewertung und rueckgekoppelte Verbesserung.",
-    "Unscharfe Aussagen ohne Kriterien helfen nicht bei der Qualitaet."
+    "Mail Formulieren: Im Kontext Betreffzeilen Bingo stehen Mail Formulieren, Betreffzeilen Bingo und Richtig im Fokus.",
+    "Fuer eine belastbare Einordnung werden E-Mail und Bitte gezielt geprueft und dokumentiert.",
+    "Nicht zu den Kernbegriffen gehoeren Nebenaspekt, Randnotiz und Ablenkbegriff."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Ausgangslage",
+      "label": "Mail Formulieren",
       "is_target": true,
-      "explanation": "Wichtiger Startpunkt fuer die Einordnung."
+      "explanation": "\"Mail Formulieren\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
     },
     {
       "id": "t2",
-      "label": "Kriterien",
+      "label": "Betreffzeilen Bingo",
       "is_target": true,
-      "explanation": "Kriterien sichern Vergleichbarkeit."
+      "explanation": "\"Betreffzeilen Bingo\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
     },
     {
       "id": "t3",
-      "label": "Bewertung",
+      "label": "Richtig",
       "is_target": true,
-      "explanation": "Bewertung ist Kern der fachlichen Entscheidung."
+      "explanation": "\"Richtig\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
     },
     {
       "id": "t4",
-      "label": "Verbesserung",
+      "label": "E-Mail",
       "is_target": true,
-      "explanation": "Rueckkopplung verbessert das Ergebnis."
+      "explanation": "\"E-Mail\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
     },
     {
       "id": "t5",
-      "label": "Unscharfe Aussagen",
-      "is_target": false,
-      "explanation": "Das ist kein tragfaehiger Fachbegriff."
+      "label": "Bitte",
+      "is_target": true,
+      "explanation": "\"Bitte\" ist ein zentraler Fachbegriff im Kontext Mail Formulieren."
     },
     {
       "id": "t6",
-      "label": "Qualitaet",
+      "label": "Nebenaspekt",
       "is_target": false,
-      "explanation": "Hier nur als Ablenkbegriff genutzt."
+      "explanation": "\"Nebenaspekt\" ist hier als Ablenkbegriff hinterlegt."
+    },
+    {
+      "id": "t7",
+      "label": "Randnotiz",
+      "is_target": false,
+      "explanation": "\"Randnotiz\" ist hier als Ablenkbegriff hinterlegt."
+    },
+    {
+      "id": "t8",
+      "label": "Ablenkbegriff",
+      "is_target": false,
+      "explanation": "\"Ablenkbegriff\" ist hier als Ablenkbegriff hinterlegt."
     }
   ]
 }

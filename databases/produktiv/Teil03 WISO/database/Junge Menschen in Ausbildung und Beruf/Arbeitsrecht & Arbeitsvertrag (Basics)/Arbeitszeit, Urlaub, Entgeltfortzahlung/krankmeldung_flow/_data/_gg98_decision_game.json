@@ -3,7 +3,7 @@
     "topic": "Arbeitszeit und Entgelt",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitszeit_und_entgelt",
+    "source": "_gg01_krankmeldung_flow.json",
     "version": "1.0"
   },
   "title": "Arbeitszeit und Entgelt - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Kompetenz trainiert der Krankmeldung-Flow primaer?\nEs geht um Reihenfolge und Fristen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Prozesssicherheit bei Meldung und Nachweis",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Reihenfolge und Fristen stehen im Fokus."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Schreibstil",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Layout",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was passiert laut Regeln bei uebersprungenem Pflichtschritt?\nEs gibt einen verschärften Abzug.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Doppelter Punktabzug",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Pflichtschritte duerfen nicht uebersprungen werden."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Kein Abzug",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Sofortiger Bonus",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann gibt es Effizienzbonus im Flow?\nDer Bonus haengt an fehlerfreier Kette.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Bei fehlerfreier Prozesskette",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Saubere Reihenfolge wird zusaetzlich belohnt."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Bei maximalen Klicks",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Bei jedem Fall",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Kennzahlen bilden den Fortschritt ab?\nKorrektheit plus Weg-Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prozessgenauigkeit und Schritte bis Loesung",
+          "correct": true,
+          "reason": "Richtig. So wird Qualitaet und Effizienz sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endpunkte",
+          "correct": false,
+          "reason": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Bearbeitungszeit",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was soll das Feedback explizit nennen?\nNaechster korrekter Handlungsschritt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Den korrekten naechsten Schritt",
+          "correct": true,
+          "reason": "Genau. Das hilft direkt beim Prozesslernen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Farbe",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamturteil",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

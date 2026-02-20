@@ -3,7 +3,7 @@
     "topic": "Kaufvertrag",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kaufvertrag",
+    "source": "_gg01_vertragsbestandteile_scanner.json",
     "version": "1.0"
   },
   "title": "Kaufvertrag - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was markiert der Scanner als Treffer?\nPflichtbestandteil korrekt erkannt.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Ein zwingender Vertragsbestandteil wird korrekt markiert",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist ein echter Treffer."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Beliebiger Zusatztext ohne Relevanz",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Das ist Fehlmarkierung."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Leere Stelle",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Kein gueltiger Treffer."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was senkt die Praezision?\nZu viele falsche Markierungen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Uebermarkierung unverbindlicher Textbausteine",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das reduziert Praezision."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Gezielte Markierung von Pflichtangaben",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das verbessert die Qualitaet."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Feedback lesen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Kein Praezisionsverlust."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was senkt den Recall?\nPflichtangaben uebersehen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn erforderliche Pflichtbausteine nicht markiert werden",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Dann sinkt Recall."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn zu viel Zeit eingeplant wird",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zeit allein senkt Recall nicht."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn korrekte Bausteine markiert werden",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Das ist positiv."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI sind gefordert?\nPraezision, Recall, Vollstaendigkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Praezision, Recall und Vollstaendigkeitsquote je Set",
+          "correct": true,
+          "reason": "Richtig. Diese Kombination ist zentral."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "reason": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Set-Anzahl",
+          "correct": false,
+          "reason": "Keine Qualitaetsmetrik."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist ein Set sauber geloest?\nPflichtangaben vollstaendig, wenig Fehlmarken.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn alle Pflichtangaben erkannt und Fehlmarkierungen gering sind",
+          "correct": true,
+          "reason": "Exakt. Das ist die Ziellinie."
+        },
+        {
+          "id": "b",
+          "text": "Wenn alles markiert wird",
+          "correct": false,
+          "reason": "Praezision sinkt."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nichts markiert wird",
+          "correct": false,
+          "reason": "Recall faellt auf null."
         }
       ]
     }

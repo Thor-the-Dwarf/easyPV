@@ -3,7 +3,7 @@
     "topic": "Kaufvertrag",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kaufvertrag",
+    "source": "_gg01_lieferverzug_reaktionskette.json",
     "version": "1.0"
   },
   "title": "Kaufvertrag - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was ist bei Lieferverzug als erster Schritt sinnvoll?\nSachlage pruefen und Frist strukturiert setzen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Verzug pruefen und passende Reaktion mit Frist vorbereiten",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Struktur vor Eskalation."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Sofort Endeskalation ohne Zwischenschritt",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu frueh eskaliert."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nichts unternehmen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Keine wirksame Kette."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann wird der erste Fehltritt besonders bestraft?\nFalscher Startschritt.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn der erste Reaktionsschritt unpassend ist",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Doppelter Strafpunkt laut Regel."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Wenn ein Zwischenschritt dokumentiert wird",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Dokumentation ist korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Wenn Hilfe eingeblendet wird",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Kein Strafgrund."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI sind hier relevant?\nKorrekte Ketten + Effizienz.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Korrekte Kettenbildung und benoetigte Schrittanzahl",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das bildet die Lernziele ab."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Endzeit",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu einseitig."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Klickanzahl",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht fachlich genug."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gibt es Effizienzbonus?\nMinimaler korrekter Pfad.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn der korrekte Ablauf mit minimalen Schritten erreicht wird",
+          "correct": true,
+          "reason": "Richtig. Das ist effizient."
+        },
+        {
+          "id": "b",
+          "text": "Wenn viele Zusatzschritte genutzt werden",
+          "correct": false,
+          "reason": "Keine Effizienz."
+        },
+        {
+          "id": "c",
+          "text": "Wenn zufaellig sortiert wird",
+          "correct": false,
+          "reason": "Nicht regelkonform."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann gilt ein Szenario als korrekt abgeschlossen?\nReihenfolge fehlerfrei.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn die gesamte Reaktionskette in korrekter Ordnung steht",
+          "correct": true,
+          "reason": "Exakt. Dann ist der Fall geloest."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur letzter Schritt passt",
+          "correct": false,
+          "reason": "Kette bleibt fehlerhaft."
+        },
+        {
+          "id": "c",
+          "text": "Wenn frueh abgebrochen wird",
+          "correct": false,
+          "reason": "Kein Abschluss."
         }
       ]
     }

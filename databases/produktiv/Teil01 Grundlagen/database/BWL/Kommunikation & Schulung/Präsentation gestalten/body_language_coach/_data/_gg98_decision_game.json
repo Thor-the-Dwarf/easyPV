@@ -3,84 +3,134 @@
     "topic": "Body-Language-Coach",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "body_language_coach",
-    "version": "1.0"
+    "source": "_gg01_body_language_coach.json",
+    "version": "2.0"
   },
-  "title": "Body-Language-Coach - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Body-Language-Coach",
+  "subtitle": "Bewerte gezeigte Koerpersprache als Do oder Don't.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Arme verschraenkt, Blick zur Seite",
+      "situation": "Koerpersprache bewerten: Arme verschraenkt, Blick zur Seite",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Dont",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Verschlossene Haltung signalisiert Distanz und Unsicherheit."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Do",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Abhaengig vom Kontext",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Offene Gestik, Blickkontakt",
+      "situation": "Koerpersprache bewerten: Offene Gestik, Blickkontakt",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Do",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Offene Gestik und Blickkontakt staerken Vertrauen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Dont",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Abhaengig vom Kontext",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Haende in den Taschen",
+      "situation": "Koerpersprache bewerten: Haende in den Taschen",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Dont",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Wirkt unengagiert und kann als Unsicherheit wahrgenommen werden."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Do",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Abhaengig vom Kontext",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Stabiler Stand, leichte Vorwaertsneigung",
+      "situation": "Koerpersprache bewerten: Stabiler Stand, leichte Vorwaertsneigung",
+      "options": [
+        {
+          "id": "a",
+          "text": "Do",
+          "correct": true,
+          "reason": "Stabilitaet und Praesenz unterstuetzen die Botschaft."
+        },
+        {
+          "id": "b",
+          "text": "Dont",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Abhaengig vom Kontext",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Ruecken zum Publikum",
+      "situation": "Koerpersprache bewerten: Ruecken zum Publikum",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dont",
+          "correct": true,
+          "reason": "Dauerhaft abgewandte Haltung kappt den Kontakt zum Publikum."
+        },
+        {
+          "id": "b",
+          "text": "Do",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Abhaengig vom Kontext",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

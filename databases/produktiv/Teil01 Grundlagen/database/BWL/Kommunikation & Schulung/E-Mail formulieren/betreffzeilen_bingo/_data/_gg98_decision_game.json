@@ -3,84 +3,209 @@
     "topic": "E-Mail formulieren",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "e_mail_formulieren",
-    "version": "1.0"
+    "source": "_gg01_betreffzeilen_bingo.json",
+    "version": "2.0"
   },
-  "title": "E-Mail formulieren - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Betreffzeilen-Bingo",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Projekt X: Der Kundentermin wird vom 09.10. auf 12.10. verschoben.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "c",
+          "text": "Verschiebung Projekt X auf 12.10.",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Der Betreff ist klar, kurz und konkret."
+        },
+        {
+          "id": "a",
+          "text": "Wichtig!",
+          "correct": false,
+          "reason": "Zu vage. Der Leser erkennt den Inhalt nicht sofort."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Termin",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
-        },
-        {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
-          "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Zu allgemein. Es fehlt Projekt und neues Datum."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Bitte gib bis morgen 14:00 Uhr Feedback zum Angebot fuer Kunde Bergmann.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "b",
+          "text": "Feedback Angebot Kunde Bergmann bis 14:00",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Aufgabe, Bezug und Frist sind sichtbar."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "a",
+          "text": "Rueckmeldung",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Zu unspezifisch. Wozu und bis wann bleibt offen."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Dringend antworten!",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nur Dringlichkeit ohne fachlichen Kontext."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Die Rechnung 2026-118 enthaelt eine falsche Positionssumme und muss korrigiert werden.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "b",
+          "text": "Rechnung 2026-118: Korrektur der Positionssumme",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Eindeutige Referenz und Aktion."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "a",
+          "text": "Problem mit Rechnung",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu breit. Welche Rechnung ist unklar."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Fehler",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Zu kurz und ohne Kontext."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Das Daily-Standup startet ab Montag dauerhaft um 08:45 statt 09:00 Uhr.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Neue Uhrzeit Daily-Standup ab Montag 08:45",
+          "correct": true,
+          "reason": "Richtig. Aenderung, Termin und Startzeit sind klar."
+        },
+        {
+          "id": "b",
+          "text": "Aenderung",
+          "correct": false,
+          "reason": "Unklar, was genau geaendert wurde."
+        },
+        {
+          "id": "c",
+          "text": "Daily",
+          "correct": false,
+          "reason": "Zu allgemein fuer einen Posteingang."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Bitte prueft die Version 2.4 des Lastenhefts bis Freitag 12:00 Uhr.",
+      "options": [
+        {
+          "id": "b",
+          "text": "Review Lastenheft v2.4 bis Fr 12:00",
+          "correct": true,
+          "reason": "Richtig. Objekt, Version und Frist sind enthalten."
+        },
+        {
+          "id": "a",
+          "text": "Lastenheft",
+          "correct": false,
+          "reason": "Es fehlen Version und Deadline."
+        },
+        {
+          "id": "c",
+          "text": "Bitte pruefen",
+          "correct": false,
+          "reason": "Aufforderung ohne konkreten Bezug."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Die VPN-Wartung am 21.11. dauert von 22:00 bis 23:30 Uhr, kurze Ausfaelle moeglich.",
+      "options": [
+        {
+          "id": "b",
+          "text": "VPN-Wartung 21.11., 22:00-23:30 (Ausfaelle moeglich)",
+          "correct": true,
+          "reason": "Richtig. Zeitpunkt und Auswirkung sind sofort erkennbar."
+        },
+        {
+          "id": "a",
+          "text": "IT Info",
+          "correct": false,
+          "reason": "Zu ungenau fuer betroffene Teams."
+        },
+        {
+          "id": "c",
+          "text": "Netzwerk",
+          "correct": false,
+          "reason": "Zu pauschal, keine Handlungssicherheit."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Die Schulung 'Sichere Passwoerter' wird auf Raum B-204 verlegt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Raumaenderung Schulung Sichere Passwoerter: B-204",
+          "correct": true,
+          "reason": "Richtig. Event und neuer Ort sind direkt sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Schulung",
+          "correct": false,
+          "reason": "Zu allgemein, keine konkrete Aenderung."
+        },
+        {
+          "id": "c",
+          "text": "Raum",
+          "correct": false,
+          "reason": "Kein Bezug, zu wenig Information."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Angebot ACME: Die Positionen 3 und 5 wurden angepasst, neue Gesamtsumme im Anhang.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Neues Angebot ACME: Position 3/5 angepasst",
+          "correct": true,
+          "reason": "Richtig. Kunde und geaenderter Inhalt sind benannt."
+        },
+        {
+          "id": "b",
+          "text": "Angebot aktualisiert",
+          "correct": false,
+          "reason": "Zu wenig Details fuer schnelle Einordnung."
+        },
+        {
+          "id": "c",
+          "text": "Bitte beachten",
+          "correct": false,
+          "reason": "Keine fachliche Aussage im Betreff."
         }
       ]
     }

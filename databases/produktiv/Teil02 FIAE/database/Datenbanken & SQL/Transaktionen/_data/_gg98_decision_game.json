@@ -3,84 +3,257 @@
     "topic": "ACID Principles",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "acid_principles",
-    "version": "1.0"
+    "source": "_gg01_acid_sorter.json",
+    "version": "2.0"
   },
-  "title": "ACID Principles - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Transaktionen",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "ACID-Satz zuordnen: Transaktion scheitert bei Stromausfall komplett.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "A",
+          "text": "Atomaritaet",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "C",
+          "text": "Konsistenz",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "I",
+          "text": "Isolation",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "D",
+          "text": "Dauerhaftigkeit",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "ACID-Satz zuordnen: Keine halben Buchungen in der Datenbank.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "A",
+          "text": "Atomaritaet",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "C",
+          "text": "Konsistenz",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "I",
+          "text": "Isolation",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "D",
+          "text": "Dauerhaftigkeit",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "ACID-Satz zuordnen: Fremdschluessel-Beziehungen bleiben immer intakt.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "C",
+          "text": "Konsistenz",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "A",
+          "text": "Atomaritaet",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "I",
+          "text": "Isolation",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "D",
+          "text": "Dauerhaftigkeit",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "ACID-Satz zuordnen: Kontostand darf niemals negativ werden (Regel).",
+      "options": [
+        {
+          "id": "C",
+          "text": "Konsistenz",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "A",
+          "text": "Atomaritaet",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "I",
+          "text": "Isolation",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "D",
+          "text": "Dauerhaftigkeit",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "ACID-Satz zuordnen: Nutzer B sieht keine Zwischenstaende von Nutzer A.",
+      "options": [
+        {
+          "id": "I",
+          "text": "Isolation",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "A",
+          "text": "Atomaritaet",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "C",
+          "text": "Konsistenz",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "D",
+          "text": "Dauerhaftigkeit",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "ACID-Satz zuordnen: Parallelzugriffe werden logisch getrennt.",
+      "options": [
+        {
+          "id": "I",
+          "text": "Isolation",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "A",
+          "text": "Atomaritaet",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "C",
+          "text": "Konsistenz",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "D",
+          "text": "Dauerhaftigkeit",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "ACID-Satz zuordnen: Daten sind nach COMMIT sicher auf der Festplatte.",
+      "options": [
+        {
+          "id": "D",
+          "text": "Dauerhaftigkeit",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "A",
+          "text": "Atomaritaet",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "C",
+          "text": "Konsistenz",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "I",
+          "text": "Isolation",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "ACID-Satz zuordnen: Wiederherstellung nach Crash ist garantiert.",
+      "options": [
+        {
+          "id": "D",
+          "text": "Dauerhaftigkeit",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "A",
+          "text": "Atomaritaet",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "C",
+          "text": "Konsistenz",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "I",
+          "text": "Isolation",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

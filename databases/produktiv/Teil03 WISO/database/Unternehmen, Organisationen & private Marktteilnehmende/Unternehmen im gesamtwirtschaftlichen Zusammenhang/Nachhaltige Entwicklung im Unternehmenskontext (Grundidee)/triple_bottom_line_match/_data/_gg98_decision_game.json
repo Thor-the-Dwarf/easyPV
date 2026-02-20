@@ -3,7 +3,7 @@
     "topic": "Nachhaltige Entwicklung im Unternehmenskontext",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "nachhaltige_entwicklung_im_unternehmenskontext",
+    "source": "_gg01_triple_bottom_line_match.json",
     "version": "1.0"
   },
   "title": "Nachhaltige Entwicklung im Unternehmenskontext - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Zuordnung passt zu Oekologie?\nRessourcen- und Emissionsbezug.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Energieeffizienzprogramm zur Emissionsreduktion",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist oekologische Wirkung."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Lieferantenrechnung frueher bezahlen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Eher wirtschaftlich/operativ."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Mentoring fuer Nachwuchskraefte",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Das ist eher soziale Dimension."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Massnahme gehoert primaer zur sozialen Dimension?\nMensch und Arbeitsbedingungen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Programm fuer Arbeitssicherheit und faire Arbeitszeiten",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das ist sozial."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Abfallvermeidung in Produktion",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das ist oekologisch."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Preisstrategie zur Margensteigerung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Das ist wirtschaftlich."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Zuordnung ist wirtschaftlich (Oekonomie)?\nWertschoepfung und finanzielle Tragfaehigkeit.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Prozessoptimierung zur nachhaltigen Kostensenkung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das ist oekonomischer Hebel."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Aufforstungsprojekt im Liefergebiet",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das ist oekologisch."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Gesundheitsprogramm fuer Mitarbeitende",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Das ist sozial."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gibt es Zusatzabzug im Match?\nKernmassnahme falsch einsortiert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn eine zentrale Kernmassnahme der falschen Dimension zugeordnet wird",
+          "correct": true,
+          "reason": "Richtig. Das ist besonders kritisch."
+        },
+        {
+          "id": "b",
+          "text": "Wenn Hinweistext gelesen wird",
+          "correct": false,
+          "reason": "Das ist erlaubt."
+        },
+        {
+          "id": "c",
+          "text": "Wenn KPI angezeigt werden",
+          "correct": false,
+          "reason": "Das ist gewuenscht."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI zeigt Lernfortschritt im Match?\nTreffer je Dimension.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trefferquote getrennt nach Oekonomie, Oekologie und Soziales",
+          "correct": true,
+          "reason": "Exakt. Das entspricht dem Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtdauer",
+          "correct": false,
+          "reason": "Ohne Qualitaet nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Antworten",
+          "correct": false,
+          "reason": "Metrik ohne Korrektheit."
         }
       ]
     }

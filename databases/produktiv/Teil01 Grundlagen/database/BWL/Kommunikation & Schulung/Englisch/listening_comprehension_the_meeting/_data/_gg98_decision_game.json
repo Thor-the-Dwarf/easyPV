@@ -3,84 +3,84 @@
     "topic": "Listening-Comprehension: The Meeting",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "listening_comprehension_the_meeting",
-    "version": "1.0"
+    "source": "_gg01_listening_comprehension_the_meeting.json",
+    "version": "2.0"
   },
-  "title": "Listening-Comprehension: The Meeting - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Listening-Comprehension: The Meeting",
+  "subtitle": "Verfolge ein kurzes Meeting-Protokoll und beantworte danach drei Verstaendnisfragen.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Listening-Comprehension: The Meeting: Welche Erstpruefung ist fachlich sinnvoll?",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Ausgangslage und Kriterien sauber erfassen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Damit wird die Entscheidung nachvollziehbar."
         },
         {
           "id": "b",
           "text": "Direkt ohne Kriterien entscheiden",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ohne Kriterien steigt das Fehlrisiko."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Entscheidung ohne Datengrundlage treffen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Fachlich nicht belastbar."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Listening-Comprehension: The Meeting: Wie wird die Optionenauswahl belastbar?",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Optionen mit Risiken und Nutzen vergleichen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Vergleich schafft Transparenz."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur die schnellste Variante waehlen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Zeit allein reicht nicht als Kriterium."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Rueckmeldungen ignorieren",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Fehlendes Feedback verschlechtert Entscheidungen."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Listening-Comprehension: The Meeting: Was sichert die Entscheidung am Ende ab?",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Begruendung und Ergebnis kurz dokumentieren",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "So bleibt die Entscheidung pruefbar."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Begruendung weglassen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Ohne Nachvollziehbarkeit sinkt die Qualitaet."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Gefuehl als Nachweis nutzen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht belastbar."
         }
       ]
     }

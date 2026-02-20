@@ -4,7 +4,7 @@
     "mechanic": "finding_terms",
     "engine": "FindingGame",
     "variant": "risk_finder_das_kleingedruckte",
-    "title": "risk finder das kleingedruckte - Begriffe finden",
+    "title": "Risk-Finder: Das Kleingedruckte - Begriffe finden",
     "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
     "version": "1.0"
   },
@@ -13,46 +13,78 @@
     "false_penalty": 10
   },
   "contract_excerpt": [
-    "risk finder das kleingedruckte: Ausgangslage, Kriterien und Umsetzung sollen sauber dokumentiert werden.",
-    "Fachlich wichtig sind Analyse, Bewertung und rueckgekoppelte Verbesserung.",
-    "Unscharfe Aussagen ohne Kriterien helfen nicht bei der Qualitaet."
+    "Der Leasinggeber kann bei Vertragsende eine Andienungspflicht ausueben.",
+    "Bei Ueberschreitung der Laufleistung greift eine Mehrkilometerklausel.",
+    "Restwertrisiko und Vollamortisation koennen zu Zusatzkosten fuehren.",
+    "Rueckgabe nur mit Serviceintervall-Nachweis und festgelegtem Wartungspaket.",
+    "Zusatzbegriffe im Fokus: Liefertermin, Vertragslaufzeit, Objektbezeichnung, Zahlungsintervall, Ansprechpartner."
   ],
   "terms": [
     {
       "id": "t1",
-      "label": "Ausgangslage",
+      "label": "Andienungspflicht",
       "is_target": true,
-      "explanation": "Wichtiger Startpunkt fuer die Einordnung."
+      "explanation": "Kann zu einem verpflichtenden Kauf am Laufzeitende fuehren."
     },
     {
       "id": "t2",
-      "label": "Kriterien",
+      "label": "Restwertrisiko",
       "is_target": true,
-      "explanation": "Kriterien sichern Vergleichbarkeit."
+      "explanation": "Abweichungen beim Restwert koennen nachbelastet werden."
     },
     {
       "id": "t3",
-      "label": "Bewertung",
+      "label": "Vollamortisation",
       "is_target": true,
-      "explanation": "Bewertung ist Kern der fachlichen Entscheidung."
+      "explanation": "Hohe Gesamtkosten ueber die Laufzeit sind moeglich."
     },
     {
       "id": "t4",
-      "label": "Verbesserung",
+      "label": "Mehrkilometerklausel",
       "is_target": true,
-      "explanation": "Rueckkopplung verbessert das Ergebnis."
+      "explanation": "Mehrnutzung fuehrt oft zu direkter Nachzahlung."
     },
     {
       "id": "t5",
-      "label": "Unscharfe Aussagen",
-      "is_target": false,
-      "explanation": "Das ist kein tragfaehiger Fachbegriff."
+      "label": "Wartungspaket",
+      "is_target": true,
+      "explanation": "Pflichtpakete koennen versteckte Zusatzkosten enthalten."
     },
     {
       "id": "t6",
-      "label": "Qualitaet",
+      "label": "Serviceintervall",
       "is_target": false,
-      "explanation": "Hier nur als Ablenkbegriff genutzt."
+      "explanation": "Organisatorischer Begriff, nicht automatisch Kostenfalle."
+    },
+    {
+      "id": "t7",
+      "label": "Liefertermin",
+      "is_target": false,
+      "explanation": "Reiner Terminbezug."
+    },
+    {
+      "id": "t8",
+      "label": "Vertragslaufzeit",
+      "is_target": false,
+      "explanation": "Basisangabe ohne direkte Risikowertung."
+    },
+    {
+      "id": "t9",
+      "label": "Objektbezeichnung",
+      "is_target": false,
+      "explanation": "Identifiziert den Gegenstand, ist aber keine Kostenfalle."
+    },
+    {
+      "id": "t10",
+      "label": "Zahlungsintervall",
+      "is_target": false,
+      "explanation": "Definiert nur den Rhythmus der Raten."
+    },
+    {
+      "id": "t11",
+      "label": "Ansprechpartner",
+      "is_target": false,
+      "explanation": "Kontaktinformation ohne Risikoklausel."
     }
   ]
 }

@@ -3,7 +3,7 @@
     "topic": "Unternehmensaufbau",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "unternehmensaufbau",
+    "source": "_gg01_organigramm_sorter.json",
     "version": "1.0"
   },
   "title": "Unternehmensaufbau - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Rolle gehoert typischerweise auf Leitungsebene?\nGesamtverantwortung.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Geschaeftsfuehrung / Unternehmensleitung",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist oberste Ebene."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Auszubildende",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht Leitungsebene."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Werkstudent ohne Fuehrungsauftrag",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Falsch."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Ebene folgt meist direkt unter der Unternehmensleitung?\nBereichs-/Abteilungsverantwortung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Bereichs- oder Abteilungsleitung",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Das ist die mittlere Fuehrungsebene."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur externe Partner",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht Organigramm-Kern."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ausschliesslich Praktikanten",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Falsch."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was zeigt ein Organigramm primär?\nStruktur, nicht Ablauf.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Hierarchie und Zuordnungen von Stellen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Es visualisiert die Aufbauorganisation."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Bearbeitungszeiten eines Prozesses",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das ist eher Prozesssicht."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Produktpreise",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht passend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Fehlplatzierung ist besonders kritisch?\nLeitungsrolle auf operativer Ebene.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fuehrungsrolle ohne Weisungsbefugnis einordnen",
+          "correct": true,
+          "reason": "Richtig. Das verzerrt Verantwortungen."
+        },
+        {
+          "id": "b",
+          "text": "Operative Rolle operativ platzieren",
+          "correct": false,
+          "reason": "Das ist korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Abteilungsname klar beschriften",
+          "correct": false,
+          "reason": "Kein Fehler."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI passt zum Sorter?\nTrefferquote je Ebene.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Rollenplatzierung je Hierarchieebene",
+          "correct": true,
+          "reason": "Richtig. So werden Schwachstellen sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl geoeffneter Karten",
+          "correct": false,
+          "reason": "Zu oberflaechlich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtspielzeit",
+          "correct": false,
+          "reason": "Ohne Genauigkeit unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Warum hilft ein klares Organigramm im Alltag?\nZustaendigkeiten transparent machen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Es klaert Verantwortlichkeiten und Eskalationswege",
+          "correct": true,
+          "reason": "Richtig. Entscheidungen werden schneller zugeordnet."
+        },
+        {
+          "id": "b",
+          "text": "Es ersetzt alle Prozessdokumente",
+          "correct": false,
+          "reason": "Nicht vollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Es macht Kommunikation unnoetig",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Welche Rolle ist haeufig als Stabsfunktion organisiert?\nBeratung nahe der Leitung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rechts- oder Strategieberatung",
+          "correct": true,
+          "reason": "Richtig. Typische Stabsaufgaben."
+        },
+        {
+          "id": "b",
+          "text": "Fließbandmontage",
+          "correct": false,
+          "reason": "Operative Linie."
+        },
+        {
+          "id": "c",
+          "text": "Warenausgabe",
+          "correct": false,
+          "reason": "Nicht Stab."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was trainiert der Organigramm-Sorter?\nHierarchiekompetenz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ebenen und Rollen systematisch richtig einordnen",
+          "correct": true,
+          "reason": "Richtig. Genau das ist das Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Begriffe ohne Struktur",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Messbare Bewertung vermeiden",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

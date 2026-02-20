@@ -3,7 +3,7 @@
     "topic": "Wandel der Maerkte",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wandel_der_maerkte",
+    "source": "_gg01_konkurrenzdynamik_router.json",
     "version": "1.0"
   },
   "title": "Wandel der Maerkte - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welcher erste Schritt ist bei ploetzlichem Wettbewerbsdruck korrekt?\nZuerst Lagebild, dann Aktion.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Auswirkungen auf Kunden, Marge und Kapazitaet analysieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Ohne Lagebild keine gute Route."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Sofort alle Preise halbieren",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ungeprueft oft schaedlich."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Reaktion komplett aussetzen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Stillstand verliert Marktanteile."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Route ist bei Konkurrenzaktion sinnvoll?\nAnalyse -> Priorisierung -> Umsetzung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Trigger pruefen, Massnahme priorisieren, Wirkung messen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau der robuste Ablauf."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Massnahme waehlen, danach erst Ziel definieren",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Ziel muss vorher klar sein."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur intern diskutieren ohne Entscheidung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Keine operative Wirkung."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was vermeidet Fehlrouten im Wettbewerbsprozess?\nKlare Kriterien statt Aktionismus.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Entscheidungskriterien fuer Kosten, Tempo und Risiko nutzen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das stabilisiert den Pfad."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Immer die lauteste Meinung nehmen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht robust genug."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur historische Loesung kopieren",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Marktbedingungen koennen anders sein."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann ist der Router-Pfad abgeschlossen?\nWenn Wirkung verifiziert wurde.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn KPI nach Umsetzung gegen Zielbild geprueft sind",
+          "correct": true,
+          "reason": "Exakt. Abschluss braucht Wirkungskontrolle."
+        },
+        {
+          "id": "b",
+          "text": "Sobald eine Massnahme gestartet wurde",
+          "correct": false,
+          "reason": "Start ist noch kein Ergebnis."
+        },
+        {
+          "id": "c",
+          "text": "Wenn alle zustimmen, auch ohne Daten",
+          "correct": false,
+          "reason": "Datenvalidierung fehlt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Kennzahl zeigt Routing-Qualitaet am besten?\nKorrektheit und Effizienz kombinieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Prozessschritte bis zur wirksamen Loesung",
+          "correct": true,
+          "reason": "Richtig. Genau das misst Routing-Qualitaet."
+        },
+        {
+          "id": "b",
+          "text": "Anzahl zufaelliger Ideen",
+          "correct": false,
+          "reason": "Nicht entscheidend."
+        },
+        {
+          "id": "c",
+          "text": "Anzahl Meetings pro Woche",
+          "correct": false,
+          "reason": "Nur indirekter Indikator."
         }
       ]
     }

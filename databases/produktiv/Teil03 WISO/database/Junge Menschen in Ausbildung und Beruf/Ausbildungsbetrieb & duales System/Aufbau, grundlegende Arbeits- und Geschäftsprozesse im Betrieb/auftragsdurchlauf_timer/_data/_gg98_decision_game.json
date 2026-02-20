@@ -3,7 +3,7 @@
     "topic": "Betriebsprozesse",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "betriebsprozesse",
+    "source": "_gg01_auftragsdurchlauf_timer.json",
     "version": "1.0"
   },
   "title": "Betriebsprozesse - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Priorisierung senkt bei engem Takt zuerst die Durchlaufzeit?\nFruehfaellige Auftraege mit kurzer Bearbeitungszeit stabilisieren den Fluss.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Kurz und fristnah zuerst einplanen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das senkt Rueckstau im Startbereich."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Immer den groessten Auftrag zuerst",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Fuehrt oft zu blockierten Stationen."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Reihenfolge zufaellig mischen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht planbar und ineffizient."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche KPI zeigt laut Plan die Terminqualitaet?\nFristen werden als Quote bewertet.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Fristtrefferquote",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Sie zeigt die Termintreue."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Anzahl Auftraege",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Ohne Qualitaetsaussage."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur Stationsname",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Keine Prozessmetrik."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was passiert bei verpasster Frist mit dem Score?\nFristversaeumnisse wiegen stark.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Es gibt einen deutlichen Punktabzug",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Fristfehler werden hart gewertet."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Der Score bleibt unveraendert",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Es gibt immer Bonuspunkte",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Entscheidung hilft gegen Engpassbildung zwischen zwei Stationen?\nPufferarme Uebergaben brauchen glatte Last.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Last ausgleichen und Stoesse entzerren",
+          "correct": true,
+          "reason": "Richtig. Gleichmaessiger Zufluss entlastet."
+        },
+        {
+          "id": "b",
+          "text": "Alle Auftraege gleichzeitig starten",
+          "correct": false,
+          "reason": "Erhoeht den Stau."
+        },
+        {
+          "id": "c",
+          "text": "Nur manuell ohne Priorisierung steuern",
+          "correct": false,
+          "reason": "Zu traege bei Lastwechseln."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann soll ein Bonus ausgelost werden?\nDie Regel verknuepft stabile Fristleistung mit Bonus.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei stabil hoher Fristquote ueber mehrere Runden",
+          "correct": true,
+          "reason": "Richtig. Konstante Prozessqualitaet wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei jedem Fristfehler",
+          "correct": false,
+          "reason": "Genau umgekehrt."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei hohem Zufall",
+          "correct": false,
+          "reason": "Nicht regelbasiert."
         }
       ]
     }

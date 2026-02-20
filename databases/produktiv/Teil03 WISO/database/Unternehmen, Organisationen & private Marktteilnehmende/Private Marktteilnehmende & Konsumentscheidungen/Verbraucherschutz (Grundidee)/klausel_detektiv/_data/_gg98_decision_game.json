@@ -3,7 +3,7 @@
     "topic": "Verbraucherschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "verbraucherschutz",
+    "source": "_gg01_klausel_detektiv.json",
     "version": "1.0"
   },
   "title": "Verbraucherschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Eine Klausel schliesst saemtliche Maengelhaftung pauschal aus. Bewertung?\nAchte auf klare Benachteiligung.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Als hohes Risiko markieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Pauschaler Ausschluss ist kritisch."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Als unkritisch einstufen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ignorieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was verbessert den Recall im Spiel?\nRecall steigt, wenn relevante Klauseln nicht uebersehen werden.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Weniger problematische Klauseln uebersehen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Das reduziert FN und erhoeht Recall."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Beliebig viel markieren",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das schadet Praezision."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine Stelle markieren",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Handlung verschlechtert Praezision besonders?\nPraezision leidet bei vielen False Positives.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Uebermarkierung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Zu viele Fehlmarkierungen senken Praezision."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Gezielte Markierung",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Risikoklasse begruenden",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Neben Markierung ist laut Plan was zusaetzlich zu tun?\nEs gibt eine Risiko-Klassifikation.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Risikostufe klassifizieren",
+          "correct": true,
+          "reason": "Richtig. Das gibt zusaetzliche Punkte."
+        },
+        {
+          "id": "b",
+          "text": "Schriftart bewerten",
+          "correct": false,
+          "reason": "Nicht relevant."
+        },
+        {
+          "id": "c",
+          "text": "Nur Seitenzahl nennen",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Woran erkennst du gute Lernentwicklung?\nBeobachte beide Kennzahlen gemeinsam.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Praezision und Recall steigen gemeinsam",
+          "correct": true,
+          "reason": "Richtig. Das zeigt bessere Erkennungsleistung."
+        },
+        {
+          "id": "b",
+          "text": "Nur eine Kennzahl beachten",
+          "correct": false,
+          "reason": "Zu einseitig."
+        },
+        {
+          "id": "c",
+          "text": "Kennzahlen ignorieren",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

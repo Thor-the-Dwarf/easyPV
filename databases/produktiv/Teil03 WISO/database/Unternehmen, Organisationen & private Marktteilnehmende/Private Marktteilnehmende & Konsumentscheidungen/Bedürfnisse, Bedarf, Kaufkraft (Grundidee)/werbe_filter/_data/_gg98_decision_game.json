@@ -3,7 +3,7 @@
     "topic": "Beduerfnisse, Bedarf, Kaufkraft",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "beduerfnisse_bedarf_kaufkraft",
+    "source": "_gg01_werbe_filter.json",
     "version": "1.0"
   },
   "title": "Beduerfnisse, Bedarf, Kaufkraft - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Claim: 'Nur heute: Smartwatch 40% guenstiger - du brauchst sie jetzt!'\nPruefe, ob ein echter Bedarf adressiert wird.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Wunschimpuls",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Vor allem Kaufdruck ohne Pflichtbedarf."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Echter Bedarf",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt. Kein zwingender Bedarf erkennbar."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Neutral",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt. Claim ist klar impulsorientiert."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Claim: 'Rabatt auf Monatsabo fuer oeffentliche Verkehrsmittel'\nBezug zu alltaeglicher Mobilitaet.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Echter Bedarf",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Mobilitaet kann Grundbedarf sein."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Wunschimpuls",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt. Kontext spricht fuer Bedarf."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Unwichtig",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt. Kann budgetrelevant sein."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Claim: 'Premium-Kaffeemaschine macht dich produktiver'\nWerbeversprechen kritisch trennen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wunschimpuls",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Nutzenversprechen ist marketinggetrieben."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Echter Bedarf",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt. Kein zwingender Bedarf."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Pflichtkauf",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt. Das ist nicht verpflichtend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Claim: 'Energieeffizienter Kuehlschrank senkt Stromkosten dauerhaft'\nLangfristige Kostenwirkung beachten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Echter Bedarf",
+          "correct": true,
+          "reason": "Richtig. Bedarf + Wirtschaftlichkeit sind plausibel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Wunsch",
+          "correct": false,
+          "reason": "Nicht korrekt. Hier gibt es realen Nutzen."
+        },
+        {
+          "id": "c",
+          "text": "Reiner Trend",
+          "correct": false,
+          "reason": "Nicht korrekt. Kostenargument ist sachlich."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Claim: 'Limitierte Edition - jetzt oder nie!'\nKnappheitsdruck ist ein typischer Trigger.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wunschimpuls",
+          "correct": true,
+          "reason": "Richtig. Das ist klassischer Verknappungsreiz."
+        },
+        {
+          "id": "b",
+          "text": "Echter Bedarf",
+          "correct": false,
+          "reason": "Nicht korrekt. Kein Bedarf wird sauber begruendet."
+        },
+        {
+          "id": "c",
+          "text": "Sachlich notwendig",
+          "correct": false,
+          "reason": "Nicht korrekt. Es ist ein Marketing-Trigger."
         }
       ]
     }

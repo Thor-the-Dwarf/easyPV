@@ -3,7 +3,7 @@
     "topic": "Verbraucherschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "verbraucherschutz",
+    "source": "_gg01_rechte_radar.json",
     "version": "1.0"
   },
   "title": "Verbraucherschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Onlinekauf, Artikel gefaellt nicht, Frist laeuft. Welches Recht ist zentral?\nBei Fernabsatz ohne Mangel ist oft Widerruf relevant.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Widerruf",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist der typische Rechtsweg bei Nichtgefallen im Fernabsatz."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Gewaehrleistung",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht primaer ohne Sachmangel."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Garantie",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht automatisch einschlaegig."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Produkt hat Defekt kurz nach Kauf. Welche Zuordnung passt?\nMangelrechte des Kaufrechts.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Gewaehrleistung",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Defektfaelle laufen primaer ueber Gewaehrleistung."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Kulanz",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Widerruf immer",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht pauschal."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI wird im Spiel neben Genauigkeit gemessen?\nEs gibt ein Zeitlimit pro Karte.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Reaktionszeit",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Zeit ist zweite Kernmetrik."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Bildschirmhelligkeit",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Mausweg",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Was passiert bei drei Fehlzuordnungen in Folge?\nDer Plan beschreibt einen Hilfemodus.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hinweis-Modus startet",
+          "correct": true,
+          "reason": "Genau. Dann gibt es Begriffsvergleiche als Hilfe."
+        },
+        {
+          "id": "b",
+          "text": "Session endet sofort",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Punkte verdoppeln sich",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann gibt es Zeitbonus?\nTempo plus Korrektheit zaehlt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei schneller korrekter Antwort",
+          "correct": true,
+          "reason": "Richtig. Nur korrekte schnelle Antworten werden belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei schneller falscher Antwort",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Immer bei kurzer Antwortzeit",
+          "correct": false,
+          "reason": "Nicht ohne Korrektheit."
         }
       ]
     }

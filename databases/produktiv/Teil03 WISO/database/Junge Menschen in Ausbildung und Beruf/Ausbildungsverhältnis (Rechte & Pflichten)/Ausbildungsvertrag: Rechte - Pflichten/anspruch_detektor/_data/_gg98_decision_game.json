@@ -3,7 +3,7 @@
     "topic": "Ausbildungsvertrag: Rechte - Pflichten",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "ausbildungsvertrag_rechte_pflichten",
+    "source": "_gg01_anspruch_detektor.json",
     "version": "1.0"
   },
   "title": "Ausbildungsvertrag: Rechte - Pflichten - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Situation begruendet am klarsten einen Anspruch auf Ausbildungsvergutung?\nVerguetung ist eine Grundpflicht des Ausbildenden.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Der Azubi arbeitet vertragsgemaess im vereinbarten Monat",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Daraus folgt der Verguetungsanspruch."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Der Azubi entscheidet sich spontan fuer Urlaub",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Allein dadurch entsteht kein neuer Anspruch."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Der Azubi ignoriert betriebliche Anweisungen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Das begruendet keinen Verguetungsanspruch."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann besteht ein Anspruch auf Bereitstellung notwendiger Ausbildungsmittel?\nMittel muessen fuer die Ausbildung erforderlich sein.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn sie fuer Ausbildungsziele erforderlich sind",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Notwendige Mittel sind bereitzustellen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur wenn der Azubi sie privat kaufen moechte",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Privater Wunsch allein reicht nicht."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Erst nach Ende der Ausbildung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Der Anspruch gilt waehrend der Ausbildung."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Aussage passt zum Anspruch auf geordnete Ausbildung?\nAusbildungsinhalt statt Hilfstaetigkeiten im Fokus.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Taetigkeiten muessen dem Ausbildungszweck dienen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Ausbildungsziel ist leitend."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Beliebige Dauer-Aushilfstaetigkeit ist ausreichend",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das verfehlt den Ausbildungszweck."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Lerninhalte sind optional und unverbindlich",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Lerninhalte sind verbindlich."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann ist ein Anspruch auf Anleitung besonders klar?\nFachlich begleitete Lernphase.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei neuen Aufgaben ohne bisherige Erfahrung",
+          "correct": true,
+          "reason": "Ja. Anleitung ist dann zentral."
+        },
+        {
+          "id": "b",
+          "text": "Nie, Azubis arbeiten immer allein",
+          "correct": false,
+          "reason": "Alleinarbeit ist nicht der Regelfall."
+        },
+        {
+          "id": "c",
+          "text": "Nur ausserhalb der Arbeitszeit",
+          "correct": false,
+          "reason": "Anleitung gehoert in die Ausbildung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Zuordnung zeigt einen plausiblen Anspruch des Azubis?\nAnspruch muss aus Vertrag/Pflichtsystem folgen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sichere Ausbildung + faire Behandlung",
+          "correct": true,
+          "reason": "Korrekt. Das ist vertraglich begruendbar."
+        },
+        {
+          "id": "b",
+          "text": "Beliebige Homeoffice-Freiwahl ohne Absprache",
+          "correct": false,
+          "reason": "Nicht automatisch geschuldet."
+        },
+        {
+          "id": "c",
+          "text": "Freie Wahl aller Pruefungsinhalte",
+          "correct": false,
+          "reason": "Pruefungsordnungen setzen den Rahmen."
         }
       ]
     }

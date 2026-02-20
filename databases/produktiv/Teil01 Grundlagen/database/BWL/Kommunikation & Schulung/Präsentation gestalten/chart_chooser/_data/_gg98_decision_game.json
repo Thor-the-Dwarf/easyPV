@@ -3,7 +3,7 @@
     "topic": "Chart-Chooser",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "chart_chooser",
+    "source": "_gg01_chart_chooser.json",
     "version": "1.0"
   },
   "title": "Chart-Chooser - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "\nAnteile eines Ganzen im gleichen Zeitraum",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
-          "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "text": "Liniendiagramm",
+          "correct": false,
+          "reason": "Zeigt Trends über Zeit, nicht Anteile in einem Moment."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
-          "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "text": "Kreisdiagramm",
+          "correct": true,
+          "reason": "Richtig: Marktanteile sind Teil-vom-Ganzen-Daten."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Balkendiagramm",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Vergleichbar, aber bei klaren Anteilen ist Kreisdiagramm naheliegender."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "\nVerlauf über Zeit",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Liniendiagramm",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig: Zeitreihen werden als Linie schnell lesbar."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Kreisdiagramm",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Kreisdiagramme zeigen keine kontinuierliche Entwicklung."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ohne Datengrundlage entscheiden",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "\nKategorien vergleichen",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
-          "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "text": "Kreisdiagramm",
+          "correct": false,
+          "reason": "Weniger gut für präzise Teamvergleiche."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Liniendiagramm",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Keine Zeitreihe, sondern Kategorienvergleich."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Balkendiagramm",
+          "correct": true,
+          "reason": "Richtig: Balken eignen sich für Kategorienvergleiche."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "\nAnteile in Prozent",
+      "options": [
+        {
+          "id": "a",
+          "text": "Balkendiagramm",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Geht auch, aber Anteile am Gesamtbudget sind im Kreis klar."
+        },
+        {
+          "id": "b",
+          "text": "Kreisdiagramm",
+          "correct": true,
+          "reason": "Richtig: Budgetanteile als Teil-vom-Ganzen."
+        },
+        {
+          "id": "c",
+          "text": "Liniendiagramm",
+          "correct": false,
+          "reason": "Linien sind für zeitliche Entwicklung gedacht."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "\nMesswerte entlang der Zeitachse",
+      "options": [
+        {
+          "id": "a",
+          "text": "Liniendiagramm",
+          "correct": true,
+          "reason": "Richtig: Wochenwerte als Verlauf darstellen."
+        },
+        {
+          "id": "b",
+          "text": "Balkendiagramm",
+          "correct": false,
+          "reason": "Vergleichbar, aber Verlaufstrends sind als Linie besser sichtbar."
+        },
+        {
+          "id": "c",
+          "text": "Kreisdiagramm",
+          "correct": false,
+          "reason": "Kreis passt nicht zu zeitlichen Messreihen."
         }
       ]
     }

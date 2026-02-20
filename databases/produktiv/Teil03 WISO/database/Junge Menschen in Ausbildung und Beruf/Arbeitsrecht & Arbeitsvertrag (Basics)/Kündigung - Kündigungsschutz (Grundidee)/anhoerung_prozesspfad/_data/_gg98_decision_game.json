@@ -3,7 +3,7 @@
     "topic": "Kuendigungsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kuendigungsschutz",
+    "source": "_gg01_anhoerung_prozesspfad.json",
     "version": "1.0"
   },
   "title": "Kuendigungsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welcher Schritt gehoert im Regelfall vor die finale Entscheidung?\nOhne geordnete Vorbereitung fehlt die Prozesssicherheit.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Anhoerung vorbereiten und Fallinformationen sammeln",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Die Vorbereitung ist Pflichtbasis."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Direkt kuendigen und spaeter dokumentieren",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt. Die Reihenfolge ist fehlerhaft."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur den Endtermin notieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Zu wenig fuer einen formalen Ablauf."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Regel gilt bei uebersprungener Pflichtstufe?\nIm Plan ist eine doppelte Strafe definiert.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Die Punktstrafe wird verdoppelt",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Pflichtstufen wiegen doppelt."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Es gibt keinen Einfluss auf die Punkte",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur die Zeit wird gemessen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI zeigt der Prozesspfad laut Plan?\nEs geht um Korrektheit plus Effizienz.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Reihenfolgegenauigkeit und Schritte bis Ziel",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Beide Werte sind die Kernmetrik."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Gesamtspielzeit",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu ungenau."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Anzahl Klicks",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann erhaeltst du den Effizienzbonus?\nDie Kette muss ohne Fehler bleiben.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei einer fehlerfreien Prozesskette",
+          "correct": true,
+          "reason": "Richtig. Fehlerfrei bedeutet Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Bei jeder beliebigen Reihenfolge",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur wenn du langsamer antwortest",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was muss gutes Fehlerfeedback im Spiel enthalten?\nDer naechste korrekte Schritt soll klar sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Den korrekten naechsten Prozessschritt nennen",
+          "correct": true,
+          "reason": "Richtig. Das macht Lernen reproduzierbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur den Fehler markieren ohne Hinweis",
+          "correct": false,
+          "reason": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Gar kein Feedback ausgeben",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

@@ -3,7 +3,7 @@
     "topic": "Betriebsprozesse",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "betriebsprozesse",
+    "source": "_gg01_rollenfluss_navigator.json",
     "version": "1.0"
   },
   "title": "Betriebsprozesse - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Wahl sichert eine stabile Uebergabekette?\nDie Rolle muss zur Prozessverantwortung passen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Kernrolle passend zum Schritt waehlen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das reduziert Reibungsverluste."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Beliebige Rolle nach Bauchgefuehl",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Fuehrt zu Uebergabefehlern."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Immer dieselbe Rolle nutzen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Unrealistisch fuer Prozessketten."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann greift der Kettenabzug?\nBei falscher Kernrolle an kritischer Stelle.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn eine Kernrolle falsch zugeordnet wird",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Dann bricht die Kette."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Bei korrekter Auswahl",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur bei letzter Runde",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI muessen laut Plan getrennt sein?\nRollenqualitaet und Uebergabequalitaet.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Rollenquote und Uebergabequote",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Beide Werte sind noetig."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Gesamtdauer",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu einseitig."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Score",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht detailliert genug."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann wird der Multiplikator aktiviert?\nDie komplette Kette muss stabil sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei fehlerfreier Uebergabekette",
+          "correct": true,
+          "reason": "Richtig. Stabilitaet wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei einer einzelnen richtigen Rolle",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Bei zufaelligen Klicks",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was sollte der Abschlussreport zeigen?\nHaeufige Verwechslungen sollen sichtbar sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Die meistverwechselten Rollen pro Schritt",
+          "correct": true,
+          "reason": "Richtig. Das steuert die Nachschulung."
+        },
+        {
+          "id": "b",
+          "text": "Nur die erste Entscheidung",
+          "correct": false,
+          "reason": "Zu wenig Analyse."
+        },
+        {
+          "id": "c",
+          "text": "Keine Historie",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

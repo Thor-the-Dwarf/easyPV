@@ -3,7 +3,7 @@
     "topic": "Wirtschaftskreislauf",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wirtschaftskreislauf",
+    "source": "_gg01_kreislauf_lueckenfinder.json",
     "version": "1.0"
   },
   "title": "Wirtschaftskreislauf - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "In einem Diagramm fehlt der Akteur, der Arbeitskraft anbietet. Wer fehlt?\nFaktorangebot.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Haushalte",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Haushalte bieten Arbeit an."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Unternehmen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Unternehmen fragen Arbeit nach."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Ausland",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht im einfachen Modell."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Luecke passt zwischen Konsumausgabe und Gueterstrom?\nGegenstromprinzip.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Unternehmen liefern Gueter an Haushalte",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Das schliesst den Kreislauf."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Haushalte liefern Gueter an Unternehmen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Im Grundmodell umgekehrt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Kein Rueckfluss notwendig",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Falsch."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann ist ein Diagramm unvollstaendig?\nSchluesselknoten fehlt.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn ein zentraler Akteur oder Kernfluss nicht vorkommt",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Dann fehlt Struktur."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn Farben fehlen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Optik ist zweitrangig."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn ein Titel fehlt",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht der Kernfehler."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI passt zum Lueckenfinder?\nPraezision und Vollstaendigkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Fuellungen und Vollstaendigkeitsquote",
+          "correct": true,
+          "reason": "Richtig. Beides muss stimmen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtzeit",
+          "correct": false,
+          "reason": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl geoeffneter Diagramme",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welcher Fehler wiegt besonders schwer?\nFalscher Schluesselknoten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kernbeziehung falsch einsetzen",
+          "correct": true,
+          "reason": "Richtig. Das verzerrt das gesamte Modell."
+        },
+        {
+          "id": "b",
+          "text": "Hinweistext kuerzen",
+          "correct": false,
+          "reason": "Kein Kernproblem."
+        },
+        {
+          "id": "c",
+          "text": "Rahmenfarbe aendern",
+          "correct": false,
+          "reason": "Nur Darstellung."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Wie prueft man eine gefuellte Luecke fachlich?\nStimmt die Flusslogik?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ist Richtung und Akteurbezug mit dem Kreislaufprinzip konsistent",
+          "correct": true,
+          "reason": "Richtig. Das ist die Kernpruefung."
+        },
+        {
+          "id": "b",
+          "text": "Sieht es nur gut aus",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Ist es die kuerzeste Beschriftung",
+          "correct": false,
+          "reason": "Kein Fachkriterium."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Warum ist Vollstaendigkeit wichtig?\nTeilmodelle koennen falsche Schluesse erzeugen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nur ein vollstaendiges Modell zeigt Wechselwirkungen korrekt",
+          "correct": true,
+          "reason": "Richtig. Luecken verzerren Interpretation."
+        },
+        {
+          "id": "b",
+          "text": "Teilmodelle sind immer ausreichend",
+          "correct": false,
+          "reason": "Nicht generell."
+        },
+        {
+          "id": "c",
+          "text": "Vollstaendigkeit ist unwichtig",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was trainiert der Kreislauf-Lueckenfinder?\nStruktursicherheit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fehlende Akteure und Fluesse logisch korrekt ergaenzen",
+          "correct": true,
+          "reason": "Richtig. Genau das ist das Ziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur schnelle Klickfolgen",
+          "correct": false,
+          "reason": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Bewertung ausblenden",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

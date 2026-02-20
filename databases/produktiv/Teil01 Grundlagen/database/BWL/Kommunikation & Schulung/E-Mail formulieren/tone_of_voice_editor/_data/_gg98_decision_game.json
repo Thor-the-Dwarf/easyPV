@@ -3,84 +3,134 @@
     "topic": "E-Mail formulieren",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "e_mail_formulieren",
-    "version": "1.0"
+    "source": "_gg01_tone_of_voice_editor.json",
+    "version": "2.0"
   },
-  "title": "E-Mail formulieren - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Der Tone-of-Voice Editor",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Das ist der letzte Mist, ich will mein Geld sofort zurueck! Welcher Ersatz passt fuer \"letzte\"?",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "b",
+          "text": "erhebliche",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Sachlich und beschaeftigt den Inhalt."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "a",
+          "text": "letzte",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Emotional und vorwurfsvoll."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "riesige",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Noch immer ueberzogen."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Sie haben schon wieder gepennt und die Datei total falsch geschickt. Welcher Ersatz passt fuer \"gepennt\"?",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "uebersehen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Beschreibt den Fehler ohne Angriff."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "verschlafen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Bleibt persoenlich."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "ignoriert",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Unterstellt Absicht."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Diese Doku ist chaotisch, niemand versteht den Kram und das nervt. Welcher Ersatz passt fuer \"chaotisch\"?",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "b",
+          "text": "unstrukturiert",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Neutral und konkret."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "a",
+          "text": "wuest",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Abwertend."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "durcheinander",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Unpraezise Alltagssprache."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Bitte endlich liefern, wir haengen wegen euch voll im Verzug! Welcher Ersatz passt fuer \"endlich\"?",
+      "options": [
+        {
+          "id": "a",
+          "text": "fristgerecht",
+          "correct": true,
+          "reason": "Sachlich und terminbezogen."
+        },
+        {
+          "id": "b",
+          "text": "endlich",
+          "correct": false,
+          "reason": "Vorwurfsvoll."
+        },
+        {
+          "id": "c",
+          "text": "sofort",
+          "correct": false,
+          "reason": "Erhoeht Druck."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wenn das nochmal passiert, knallt es richtig und wir drehen den Hahn zu. Welcher Ersatz passt fuer \"knallt\"?",
+      "options": [
+        {
+          "id": "a",
+          "text": "es folgen Konsequenzen",
+          "correct": true,
+          "reason": "Klar, aber sachlich."
+        },
+        {
+          "id": "b",
+          "text": "es eskaliert",
+          "correct": false,
+          "reason": "Drohender Ton."
+        },
+        {
+          "id": "c",
+          "text": "es knallt",
+          "correct": false,
+          "reason": "Aggressiv."
         }
       ]
     }

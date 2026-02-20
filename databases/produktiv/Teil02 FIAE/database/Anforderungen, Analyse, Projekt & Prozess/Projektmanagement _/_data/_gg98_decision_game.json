@@ -3,84 +3,257 @@
     "topic": "Projektmanagement",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "projektmanagement",
-    "version": "1.0"
+    "source": "_gg01_pm_methoden_match.json",
+    "version": "2.0"
   },
-  "title": "Projektmanagement - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Projektmanagement",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Sicherheits-Update Server",
+      "situation": "Level 1: Klare Verhaeltnisse Routine-Patch einspielen. Anforderungen 100% klar, Technik 100% bekannt.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "waterfall",
+          "text": "Wasserfall",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Standard-Prozess, keine Ueberraschungen -> Einfach -> Wasserfall."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "vmodel",
+          "text": "V-Modell",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Standard-Prozess, keine Ueberraschungen -> Einfach -> Wasserfall."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "scrum",
+          "text": "Scrum",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Standard-Prozess, keine Ueberraschungen -> Einfach -> Wasserfall."
+        },
+        {
+          "id": "kanban",
+          "text": "Kanban",
+          "correct": false,
+          "reason": "Standard-Prozess, keine Ueberraschungen -> Einfach -> Wasserfall."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Innovatives KI-Startup",
+      "situation": "Level 1: Klare Verhaeltnisse Markt unbekannt, Technologie experimentell. Alles aendert sich taeglich.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "waterfall",
+          "text": "Wasserfall",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Hohe Unsicherheit -> Chaos/Komplex -> Agil (Scrum) um zu lernen."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "vmodel",
+          "text": "V-Modell",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Hohe Unsicherheit -> Chaos/Komplex -> Agil (Scrum) um zu lernen."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "scrum",
+          "text": "Scrum",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Hohe Unsicherheit -> Chaos/Komplex -> Agil (Scrum) um zu lernen."
+        },
+        {
+          "id": "kanban",
+          "text": "Kanban",
+          "correct": false,
+          "reason": "Hohe Unsicherheit -> Chaos/Komplex -> Agil (Scrum) um zu lernen."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Behoerden-Software V2",
+      "situation": "Level 1: Klare Verhaeltnisse Strenge Vorgaben, genaues Lastenheft, Abnahmekriterien fixiert.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "waterfall",
+          "text": "Wasserfall",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Hohe Formalitaet und klare Specs -> V-Modell ist ideal fuer Validierung."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "vmodel",
+          "text": "V-Modell",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Hohe Formalitaet und klare Specs -> V-Modell ist ideal fuer Validierung."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "scrum",
+          "text": "Scrum",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Hohe Formalitaet und klare Specs -> V-Modell ist ideal fuer Validierung."
+        },
+        {
+          "id": "kanban",
+          "text": "Kanban",
+          "correct": false,
+          "reason": "Hohe Formalitaet und klare Specs -> V-Modell ist ideal fuer Validierung."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Support-Tickets abarbeiten",
+      "situation": "Level 1: Klare Verhaeltnisse Kontinuierlicher Eingang von kleinen Bugs und Anfragen.",
+      "options": [
+        {
+          "id": "waterfall",
+          "text": "Wasserfall",
+          "correct": true,
+          "reason": "Laufender Betrieb, kein festes Projekt-Ende -> Kanban fuer Flow."
+        },
+        {
+          "id": "vmodel",
+          "text": "V-Modell",
+          "correct": false,
+          "reason": "Laufender Betrieb, kein festes Projekt-Ende -> Kanban fuer Flow."
+        },
+        {
+          "id": "scrum",
+          "text": "Scrum",
+          "correct": false,
+          "reason": "Laufender Betrieb, kein festes Projekt-Ende -> Kanban fuer Flow."
+        },
+        {
+          "id": "kanban",
+          "text": "Kanban",
+          "correct": false,
+          "reason": "Laufender Betrieb, kein festes Projekt-Ende -> Kanban fuer Flow."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Webshop Relaunch",
+      "situation": "Level 2: Die Grauzonen Tech-Stack bekannt (Shopify), aber Design & UX noch in der Findung.",
+      "options": [
+        {
+          "id": "waterfall",
+          "text": "Wasserfall",
+          "correct": true,
+          "reason": "Anforderungen unklar, Technik stabil -> Kompliziert/Komplex -> Agil."
+        },
+        {
+          "id": "vmodel",
+          "text": "V-Modell",
+          "correct": false,
+          "reason": "Anforderungen unklar, Technik stabil -> Kompliziert/Komplex -> Agil."
+        },
+        {
+          "id": "scrum",
+          "text": "Scrum",
+          "correct": false,
+          "reason": "Anforderungen unklar, Technik stabil -> Kompliziert/Komplex -> Agil."
+        },
+        {
+          "id": "kanban",
+          "text": "Kanban",
+          "correct": false,
+          "reason": "Anforderungen unklar, Technik stabil -> Kompliziert/Komplex -> Agil."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Migration Legacy-DB",
+      "situation": "Level 2: Die Grauzonen Ziel ist klar (Daten rueber), aber alte DB ist eine 'Black Box'.",
+      "options": [
+        {
+          "id": "waterfall",
+          "text": "Wasserfall",
+          "correct": true,
+          "reason": "Technisches Risiko hoch -> Iteratives Vorgehen (Spikes) noetig."
+        },
+        {
+          "id": "vmodel",
+          "text": "V-Modell",
+          "correct": false,
+          "reason": "Technisches Risiko hoch -> Iteratives Vorgehen (Spikes) noetig."
+        },
+        {
+          "id": "scrum",
+          "text": "Scrum",
+          "correct": false,
+          "reason": "Technisches Risiko hoch -> Iteratives Vorgehen (Spikes) noetig."
+        },
+        {
+          "id": "kanban",
+          "text": "Kanban",
+          "correct": false,
+          "reason": "Technisches Risiko hoch -> Iteratives Vorgehen (Spikes) noetig."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Marketing-Kampagne",
+      "situation": "Level 2: Die Grauzonen Viele kleine Tasks, Deadlines fix, aber Inhalte dynamisch.",
+      "options": [
+        {
+          "id": "waterfall",
+          "text": "Wasserfall",
+          "correct": true,
+          "reason": "Operatives Tagesgeschaeft mit klarem Fokus auf Durchsatz -> Kanban."
+        },
+        {
+          "id": "vmodel",
+          "text": "V-Modell",
+          "correct": false,
+          "reason": "Operatives Tagesgeschaeft mit klarem Fokus auf Durchsatz -> Kanban."
+        },
+        {
+          "id": "scrum",
+          "text": "Scrum",
+          "correct": false,
+          "reason": "Operatives Tagesgeschaeft mit klarem Fokus auf Durchsatz -> Kanban."
+        },
+        {
+          "id": "kanban",
+          "text": "Kanban",
+          "correct": false,
+          "reason": "Operatives Tagesgeschaeft mit klarem Fokus auf Durchsatz -> Kanban."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Bau eines Rechenzentrums",
+      "situation": "Level 2: Die Grauzonen Physisches Projekt. Fundament muss vor Dach kommen.",
+      "options": [
+        {
+          "id": "waterfall",
+          "text": "Wasserfall",
+          "correct": true,
+          "reason": "Physische Abhaengigkeiten erzwingen Sequenz -> Wasserfall."
+        },
+        {
+          "id": "vmodel",
+          "text": "V-Modell",
+          "correct": false,
+          "reason": "Physische Abhaengigkeiten erzwingen Sequenz -> Wasserfall."
+        },
+        {
+          "id": "scrum",
+          "text": "Scrum",
+          "correct": false,
+          "reason": "Physische Abhaengigkeiten erzwingen Sequenz -> Wasserfall."
+        },
+        {
+          "id": "kanban",
+          "text": "Kanban",
+          "correct": false,
+          "reason": "Physische Abhaengigkeiten erzwingen Sequenz -> Wasserfall."
         }
       ]
     }

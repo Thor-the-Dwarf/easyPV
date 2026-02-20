@@ -3,7 +3,7 @@
     "topic": "Europa & Globalisierung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "europa_globalisierung",
+    "source": "_gg01_lieferketten_router.json",
     "version": "1.0"
   },
   "title": "Europa & Globalisierung - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welcher Schritt kommt bei einer Lieferstoerung zuerst?\nKritikalitaet und Verfuegbarkeit.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Betroffene Teile priorisieren und Engpassgrad pruefen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Priorisierung schafft Fokus."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Alle Prozesse unveraendert lassen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Falsch."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Marketingbudget erhoehen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Kein direkter Lieferkettenhebel."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was ist ein typischer Pflichtschritt im Routing?\nAlternativen absichern.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Ersatzlieferant inkl. Qualitaetscheck aktivieren",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Ohne Qualitaetscheck drohen Folgeprobleme."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Liefertermine ohne Pruefung zusagen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Riskant."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Datenlage ignorieren",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Falsch."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI misst Routing-Effizienz sinnvoll?\nKorrektheit plus Zeit.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Korrekte Pfadwahl pro Fall bei begrenzter Reaktionszeit",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Qualitaet und Tempo zusammen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Anzahl geklickter Schritte",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht ausreichend."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Textlaenge der Begruendung",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Kein Prozessindikator."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann gilt ein Routingpfad als fehlerhaft?\nPflichtschritt vergessen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn ein kritischer Sicherungsschritt ausgelassen wird",
+          "correct": true,
+          "reason": "Richtig. Das erhoeht Ausfallrisiko."
+        },
+        {
+          "id": "b",
+          "text": "Wenn Alternativen dokumentiert werden",
+          "correct": false,
+          "reason": "Das ist sinnvoll."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Risiken transparent gemacht werden",
+          "correct": false,
+          "reason": "Ebenfalls sinnvoll."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Massnahme verbessert Lieferkettenrobustheit langfristig?\nMehrere Knoten statt Single Point.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Multi-Sourcing und Sicherheitsbestaende nach Risiko",
+          "correct": true,
+          "reason": "Richtig. Das reduziert Ausfallfolgen."
+        },
+        {
+          "id": "b",
+          "text": "Nur ein Lieferant fuer alle Teile",
+          "correct": false,
+          "reason": "Anfaellig."
+        },
+        {
+          "id": "c",
+          "text": "Verzicht auf Monitoring",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Welche Information braucht der Router fuer gute Entscheidungen?\nStatusdaten entlang der Kette.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aktuelle Bestands-, Transit- und Risikoindikatoren",
+          "correct": true,
+          "reason": "Richtig. Ohne Daten kein verlässliches Routing."
+        },
+        {
+          "id": "b",
+          "text": "Nur historische Jahreswerte",
+          "correct": false,
+          "reason": "Zu trage."
+        },
+        {
+          "id": "c",
+          "text": "Nur subjektive Schaetzungen",
+          "correct": false,
+          "reason": "Nicht belastbar."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Wie reagiert man bei Hafenstau am sinnvollsten?\nRoute und Zeitfenster neu planen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Transportweg umleiten und Priorauftraege staffeln",
+          "correct": true,
+          "reason": "Richtig. So bleibt Lieferfaehigkeit erhalten."
+        },
+        {
+          "id": "b",
+          "text": "Nichts tun und warten",
+          "correct": false,
+          "reason": "Zu passiv."
+        },
+        {
+          "id": "c",
+          "text": "Alle Auftraege gleich behandeln ohne Priorisierung",
+          "correct": false,
+          "reason": "Ineffizient bei Engpass."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was ist der Kernnutzen des Lieferketten-Routers?\nSystematisches Vorgehen bei Stoerungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Standardisierte, messbare Reaktionspfade unter Unsicherheit",
+          "correct": true,
+          "reason": "Richtig. Das verbessert Entscheidungsqualitaet."
+        },
+        {
+          "id": "b",
+          "text": "Zufaellige Einzelfallreaktionen",
+          "correct": false,
+          "reason": "Nicht robust."
+        },
+        {
+          "id": "c",
+          "text": "Nur theoretische Betrachtung ohne Handlungsbezug",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

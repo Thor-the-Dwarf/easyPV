@@ -3,7 +3,7 @@
     "topic": "Wirtschaftskreislauf",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wirtschaftskreislauf",
+    "source": "_gg01_akteursfluss_match.json",
     "version": "1.0"
   },
   "title": "Wirtschaftskreislauf - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Wer bietet im einfachen Kreislauf Arbeitskraft an?\nBetrachte Haushalte und Unternehmen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Haushalte",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Haushalte bieten Produktionsfaktoren an."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Unternehmen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Unternehmen fragen Arbeitskraft nach."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Banken",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht im Grundmodell."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Von wem erhalten Haushalte Einkommen fuer Arbeit?\nGeldstrom fuer den Faktor Arbeit.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Von Unternehmen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Lohn/Gehalt fliesst von Unternehmen zu Haushalten."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Von Haushalten selbst",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht als Kreislaufbeziehung."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur vom Staat",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Zu eng."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wohin fliesst Konsumausgabe der Haushalte?\nGeld gegen Gueter.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Zu Unternehmen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Haushalte zahlen fuer Gueter und Dienstleistungen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur zu Banken",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht als Hauptfluss hier."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Zu niemandem",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Was liefern Unternehmen an Haushalte?\nGegenleistung fuer Konsumausgaben.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gueter und Dienstleistungen",
+          "correct": true,
+          "reason": "Richtig. Das ist der Gueterstrom."
+        },
+        {
+          "id": "b",
+          "text": "Nur Steuern",
+          "correct": false,
+          "reason": "Nicht passend."
+        },
+        {
+          "id": "c",
+          "text": "Ausschliesslich Kredite",
+          "correct": false,
+          "reason": "Nicht Kernfluss."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche KPI passt zu diesem Match?\nTreffer je Akteur.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Zuordnungen je Akteurgruppe",
+          "correct": true,
+          "reason": "Richtig. So werden Verwechslungen sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Fragen",
+          "correct": false,
+          "reason": "Ohne Qualitaet wenig Aussage."
+        },
+        {
+          "id": "c",
+          "text": "Nur Lesegeschwindigkeit",
+          "correct": false,
+          "reason": "Unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Welche Aussage zum Kreislauf ist korrekt?\nGegenlaeufige Stroeme beachten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gueter- und Geldstroeme laufen zwischen Akteuren gegenlaeufig",
+          "correct": true,
+          "reason": "Richtig. Das ist das Grundprinzip."
+        },
+        {
+          "id": "b",
+          "text": "Es gibt nur Gueterstroeme",
+          "correct": false,
+          "reason": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Es gibt nur Geldstroeme",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Warum sind Akteurrollen wichtig?\nNachfrage- und Angebotsseite trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sie erklaeren, wer was anbietet und wer was nachfragt",
+          "correct": true,
+          "reason": "Richtig. Rollen klaeren Flussrichtung."
+        },
+        {
+          "id": "b",
+          "text": "Sie machen Fluesse beliebig",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Sie ersetzen jede Messung",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was trainiert das Akteursfluss-Match?\nSichere Flusszuordnung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kreislaufbeziehungen praezise und begruendet zuordnen",
+          "correct": true,
+          "reason": "Richtig. Genau das ist das Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Begriffe auswendig lernen",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Messung vermeiden",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

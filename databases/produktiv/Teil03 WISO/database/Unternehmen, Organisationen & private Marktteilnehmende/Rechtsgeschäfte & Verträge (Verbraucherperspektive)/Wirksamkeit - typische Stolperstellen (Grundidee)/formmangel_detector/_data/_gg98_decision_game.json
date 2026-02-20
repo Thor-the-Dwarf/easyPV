@@ -3,7 +3,7 @@
     "topic": "Wirksamkeit - typische Stolperstellen",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wirksamkeit_typische_stolperstellen",
+    "source": "_gg01_formmangel_detector.json",
     "version": "1.0"
   },
   "title": "Wirksamkeit - typische Stolperstellen - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Markierung deutet auf einen Formmangel?\nVerbindliche Formvorgabe fehlt.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Wesentliche Formanforderung fehlt oder ist unvollstaendig",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist ein Kernmangel."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Layout ist ungewohnt",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Optik allein ist kein Formmangel."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Text ist lang",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Laenge ist nicht ausschlaggebend."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was verschlechtert die Praezision im Detector?\nZu viele falsche Markierungen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Uebermarkierung unkritischer Textstellen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das senkt Praezision."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Gezielte Markierung klarer Problemstellen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das verbessert die Qualitaet."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Hinweise lesen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Hinweise sind erlaubt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was reduziert den Recall?\nWichtige Mangelstelle uebersehen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Relevante Problemsegmente unmarkiert lassen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Dadurch sinkt Recall."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Mehrere korrekte Stellen markieren",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das ist positiv."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Reihenfolge der Markierung aendern",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Reihenfolge ist nicht entscheidend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI-Kombination ist gefordert?\nPraezision und Recall getrennt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Praezision und Recall als getrennte Kennzahlen anzeigen",
+          "correct": true,
+          "reason": "Exakt. Das zeigt beide Fehlerarten."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte ohne Aufteilung",
+          "correct": false,
+          "reason": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Bearbeitungszeit",
+          "correct": false,
+          "reason": "Keine inhaltliche Qualitaet."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist ein Dokumentset gut geloest?\nHohe Treffer bei wenigen Fehlmarkierungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn relevante Maengel getroffen und Fehlalarme niedrig sind",
+          "correct": true,
+          "reason": "Richtig. Das ist das Zielprofil."
+        },
+        {
+          "id": "b",
+          "text": "Wenn alles markiert wird",
+          "correct": false,
+          "reason": "Fuehrt zu schlechter Praezision."
+        },
+        {
+          "id": "c",
+          "text": "Wenn gar nichts markiert wird",
+          "correct": false,
+          "reason": "Dann fehlen Treffer."
         }
       ]
     }

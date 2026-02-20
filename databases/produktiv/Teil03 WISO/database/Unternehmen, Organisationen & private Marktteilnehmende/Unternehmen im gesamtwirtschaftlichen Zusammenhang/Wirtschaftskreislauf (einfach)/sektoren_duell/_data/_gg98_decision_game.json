@@ -3,7 +3,7 @@
     "topic": "Wirtschaftskreislauf",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wirtschaftskreislauf",
+    "source": "_gg01_sektoren_duell.json",
     "version": "1.0"
   },
   "title": "Wirtschaftskreislauf - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welcher Fall zeigt eine plausiblere Sektorbeziehung?\nAchte auf konsistente Fluesse.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Der Fall mit gegenseitig stimmigen Gueter- und Geldstroemen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Konsistenz entscheidet."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Der Fall mit widerspruechlicher Flussrichtung",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Unplausibel."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Der Fall ohne Akteure",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht bewertbar."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann gibt es Teilpunkte laut Duell-Regel?\nWahl korrekt, Begruendung fehlt.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Bei richtiger Wahl ohne passende Begruendung",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Genau die Regel aus dem Plan."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Bei falscher Wahl mit schneller Antwort",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Trotzdem falsch."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Bei komplett korrekter Loesung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Dann volle Punkte."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI passt zum Duell?\nWahl und Begruendung getrennt messen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wahlgenauigkeit plus Begruendungsquote",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. So sieht man fachliche Tiefe."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Anzahl gespielter Duelle",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu wenig."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Antwortzeit",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Unvollstaendig."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Begruendung ist fachlich stark?\nFlusslogik benennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sie erklaert, warum die Fluesse zwischen Akteuren stimmig sind",
+          "correct": true,
+          "reason": "Richtig. Das ist der Bewertungsmaßstab."
+        },
+        {
+          "id": "b",
+          "text": "Sie nennt nur ein Bauchgefuehl",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Sie ignoriert Akteure",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wodurch entstehen Fehlbewertungen im Duell haeufig?\nVerwechslung von Gueter- und Geldstrom.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Flussrichtungen vertauscht werden",
+          "correct": true,
+          "reason": "Richtig. Klassischer Fehler."
+        },
+        {
+          "id": "b",
+          "text": "Wenn Begriffe sauber definiert sind",
+          "correct": false,
+          "reason": "Das hilft eher."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Akteure klar benannt sind",
+          "correct": false,
+          "reason": "Auch positiv."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Warum ist Vergleichstraining hilfreich?\nKontrast schaerft Verstaendnis.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unterschiede zwischen plausiblen und unplausiblen Flows werden sichtbar",
+          "correct": true,
+          "reason": "Richtig. Das staerkt Urteilssicherheit."
+        },
+        {
+          "id": "b",
+          "text": "Es ersetzt jedes Fachwissen",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Es reduziert alles auf Zufall",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Welche Antwort beschreibt einen Volltreffer?\nWahl + Begruendung korrekt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Richtige Option mit passender fachlicher Begruendung",
+          "correct": true,
+          "reason": "Richtig. Das gibt volle Punkte."
+        },
+        {
+          "id": "b",
+          "text": "Richtige Option ohne Argument",
+          "correct": false,
+          "reason": "Nur Teilpunkte."
+        },
+        {
+          "id": "c",
+          "text": "Falsche Option mit langem Text",
+          "correct": false,
+          "reason": "Bleibt falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was trainiert das Sektoren-Duell?\nVergleichende Kreislaufbewertung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Plausibilitaet von Sektorfluesse begruendet vergleichen",
+          "correct": true,
+          "reason": "Richtig. Genau das ist das Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Klicktempo",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "KPI ignorieren",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

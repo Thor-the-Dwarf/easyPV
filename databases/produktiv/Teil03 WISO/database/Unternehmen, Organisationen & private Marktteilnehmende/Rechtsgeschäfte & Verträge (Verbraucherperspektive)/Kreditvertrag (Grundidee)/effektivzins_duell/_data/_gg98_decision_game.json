@@ -3,7 +3,7 @@
     "topic": "Kreditvertrag (Grundidee)",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kreditvertrag_grundidee",
+    "source": "_gg01_effektivzins_duell.json",
     "version": "1.0"
   },
   "title": "Kreditvertrag (Grundidee) - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was entscheidet im Effektivzins-Duell?\nGesamtkosten statt Nominalzins allein.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Das Angebot mit den niedrigeren Gesamtkosten waehlen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Alle Kostenarten zaehlen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur den niedrigeren Nominalzins betrachten",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nebenkosten koennen das Bild drehen."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Zufaellig entscheiden",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Keine belastbare Methode."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann sinkt der Score im Duell deutlich?\nGebuehren wurden ignoriert.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn relevante Gebuehren bei der Wahl nicht beruecksichtigt werden",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das fuehrt zu Punktverlust."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Wenn Kosten transparent aufgeschluesselt werden",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Das ist korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Wenn ein Hinweis gelesen wird",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Hinweise sind erlaubt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI sind im Plan vorgesehen?\nAuswahl und Begruendung trennen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Vergleichsgenauigkeit und Begruendungsqualitaet",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Beide Lernziele werden gemessen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Endpunktzahl",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu grob."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Anzahl Duelle",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Keine Qualitaetsaussage."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann wird ein Multiplikator aktiv?\nSerie korrekter Duelle.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei einer fehlerfreien Serie korrekter Entscheidungen",
+          "correct": true,
+          "reason": "Richtig. Dann steigt der Multiplikator."
+        },
+        {
+          "id": "b",
+          "text": "Nach beliebigen Fehlentscheidungen",
+          "correct": false,
+          "reason": "Kein Bonusprofil."
+        },
+        {
+          "id": "c",
+          "text": "Beim Neustart",
+          "correct": false,
+          "reason": "Nicht regelrelevant."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist ein Duel-Case voll erfolgreich?\nRichtig + begruendet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Gewinner korrekt und Kostenbestandteile nachvollziehbar begruendet sind",
+          "correct": true,
+          "reason": "Exakt. Das ist Volltreffer."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur schnell geklickt wird",
+          "correct": false,
+          "reason": "Tempo allein reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ohne Kostenvergleich geantwortet wird",
+          "correct": false,
+          "reason": "Unvollstaendig."
         }
       ]
     }

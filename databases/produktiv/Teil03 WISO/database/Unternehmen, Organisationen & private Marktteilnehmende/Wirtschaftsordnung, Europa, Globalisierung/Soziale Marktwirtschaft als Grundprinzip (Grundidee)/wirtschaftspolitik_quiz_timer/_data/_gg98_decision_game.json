@@ -3,7 +3,7 @@
     "topic": "Soziale Marktwirtschaft",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "soziale_marktwirtschaft",
+    "source": "_gg01_wirtschaftspolitik_quiz_timer.json",
     "version": "1.0"
   },
   "title": "Soziale Marktwirtschaft - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welches Ziel passt zur sozialen Marktwirtschaft?\nMarkt + sozialer Ausgleich kombinieren.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Wettbewerb sichern und soziale Haerten abfedern",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Beides gehoert zusammen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur staatliche Planvorgaben",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu einseitig."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur freie Preisbildung ohne Regeln",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Regelrahmen fehlt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Rolle hat Wettbewerbspolitik?\nMissbrauch verhindern.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Marktmacht begrenzen und fairen Wettbewerb schuetzen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Das sichert Marktordnung."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Alle Preise staatlich setzen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht der Kern."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Kartelle foerdern",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Gegenteil."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Zeitregel im Quiz-Timer?\n15 Sekunden je Frage laut Plan.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Keine Antwort im Zeitfenster zaehlt als Fehler",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Timer ist Teil der Bewertung."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Zeit spielt keine Rolle",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Falsch."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Zeit gibt immer Bonus",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nur bei korrekter Antwort."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Massnahme ist typisch sozialpolitisch?\nAbsicherung im Risiko.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sozialversicherung gegen Lebensrisiken",
+          "correct": true,
+          "reason": "Richtig. Klassischer Ausgleichsmechanismus."
+        },
+        {
+          "id": "b",
+          "text": "Wettbewerbsverbote ohne Grund",
+          "correct": false,
+          "reason": "Nicht passend."
+        },
+        {
+          "id": "c",
+          "text": "Preisabsprachen zwischen Firmen",
+          "correct": false,
+          "reason": "Unzulaessig."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was misst die KPI 'korrekte Antworten pro Minute'?\nTempo und Qualitaet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wissensabruf unter Zeitdruck",
+          "correct": true,
+          "reason": "Richtig. Genau das soll trainiert werden."
+        },
+        {
+          "id": "b",
+          "text": "Nur Lesegeschwindigkeit",
+          "correct": false,
+          "reason": "Zu kurz."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Klicks",
+          "correct": false,
+          "reason": "Nicht inhaltlich."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Welche Aussage ist ordnungspolitisch korrekt?\nRahmen statt Detailsteuerung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Der Staat setzt Regeln, der Markt koordiniert dezentral",
+          "correct": true,
+          "reason": "Richtig. Das beschreibt das Prinzip."
+        },
+        {
+          "id": "b",
+          "text": "Der Markt braucht gar keinen Rahmen",
+          "correct": false,
+          "reason": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Der Staat trifft jede Einzelentscheidung",
+          "correct": false,
+          "reason": "Zu zentralistisch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Wann ist eine Antwort voll bewertet?\nKorrekt und im Zeitfenster.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn sie richtig und rechtzeitig ist",
+          "correct": true,
+          "reason": "Richtig. Dann gibt es volle Punkte."
+        },
+        {
+          "id": "b",
+          "text": "Nur wenn sie schnell ist",
+          "correct": false,
+          "reason": "Korrektheit fehlt."
+        },
+        {
+          "id": "c",
+          "text": "Nur wenn sie lang ist",
+          "correct": false,
+          "reason": "Laenge ist irrelevant."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Wozu dient Wirtschaftspolitik im Grundmodell?\nStabilisieren und ausgleichen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wettbewerb, Stabilitaet und Teilhabe absichern",
+          "correct": true,
+          "reason": "Richtig. Dreifacher Ordnungsnutzen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gewinne maximieren",
+          "correct": false,
+          "reason": "Zu eng."
+        },
+        {
+          "id": "c",
+          "text": "Nur Buerokratie vergroessern",
+          "correct": false,
+          "reason": "Nicht Ziel."
         }
       ]
     }

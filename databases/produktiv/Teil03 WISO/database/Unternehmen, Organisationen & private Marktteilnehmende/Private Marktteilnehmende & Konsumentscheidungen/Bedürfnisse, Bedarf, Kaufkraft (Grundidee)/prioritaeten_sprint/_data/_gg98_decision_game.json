@@ -3,7 +3,7 @@
     "topic": "Beduerfnisse, Bedarf, Kaufkraft",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "beduerfnisse_bedarf_kaufkraft",
+    "source": "_gg01_prioritaeten_sprint.json",
     "version": "1.0"
   },
   "title": "Beduerfnisse, Bedarf, Kaufkraft - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Ordne 'Miete' bei knappem Einkommen ein.\nNutze Muss/Soll/Kann.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Muss",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Miete ist Muss."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Soll",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt. Zu kritisch fuer Soll."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Kann",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt. Das waere zu riskant."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Ordne 'Neues Smartphone trotz funktionierendem Geraet' ein.\nWunsch vs. Bedarf.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Kann",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Das ist verzichtbar."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Muss",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt. Kein zwingender Bedarf."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Soll",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht optimal. Hier klar Kann."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Ordne 'Haushaltsversicherung' ein.\nAbsicherung gegen groessere Schaeden.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Soll",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Sinnvoll und oft priorisiert."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Kann",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht optimal. Eher nicht ganz optional."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Muss",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht in jedem Fall Muss."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Ordne 'Grundnahrungsmittel' ein.\nEssenzielle Versorgung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Muss",
+          "correct": true,
+          "reason": "Richtig. Grundversorgung zuerst."
+        },
+        {
+          "id": "b",
+          "text": "Soll",
+          "correct": false,
+          "reason": "Nicht korrekt. Das ist Muss."
+        },
+        {
+          "id": "c",
+          "text": "Kann",
+          "correct": false,
+          "reason": "Nicht korrekt. Das ist nicht verzichtbar."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Ordne 'Kurztrip-Wochenende' bei knapper Kasse ein.\nZeitdruck darf Prioritaet nicht verzerren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kann",
+          "correct": true,
+          "reason": "Richtig. Das ist freiwillig."
+        },
+        {
+          "id": "b",
+          "text": "Muss",
+          "correct": false,
+          "reason": "Nicht korrekt. Kein Grundbedarf."
+        },
+        {
+          "id": "c",
+          "text": "Soll",
+          "correct": false,
+          "reason": "Nicht optimal. In diesem Kontext klar Kann."
         }
       ]
     }

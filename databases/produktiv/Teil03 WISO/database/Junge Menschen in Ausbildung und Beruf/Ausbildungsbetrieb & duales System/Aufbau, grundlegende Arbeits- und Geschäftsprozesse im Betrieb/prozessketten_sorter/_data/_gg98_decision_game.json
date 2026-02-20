@@ -3,7 +3,7 @@
     "topic": "Betriebsprozesse",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "betriebsprozesse",
+    "source": "_gg01_prozessketten_sorter.json",
     "version": "1.0"
   },
   "title": "Betriebsprozesse - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welcher Startschritt ist in einer Kundenprozesskette typischerweise zuerst?\nOhne Auftragserfassung gibt es keine Folgeaktionen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Auftrag erfassen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist der uebliche Startpunkt."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Rechnung versenden",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu spaet in der Kette."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Retouren buchen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Das ist ein Sonderfall am Ende."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Folge hat ein falscher Startschritt laut Regeln?\nStartfehler werden staerker bestraft.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Doppelt negativer Einfluss auf den Score",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Der Einstieg ist kritisch."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Keine Auswirkung",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Automatischer Bonus",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI sollen sichtbar sein?\nGenauigkeit und Zeit pro Kette.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Reihenfolgegenauigkeit und Loesungszeit",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das sind die Kernmetriken."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Anzahl Karten",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht ausreichend."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Name der Kette",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Keine Leistungsmetrik."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann werden Bonuspunkte vergeben?\nFehlerfreie Kette ist die Bedingung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei komplett fehlerfreier Kette",
+          "correct": true,
+          "reason": "Richtig. Dann gibt es den Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Bei jedem Vertauschungsfehler",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei Zeitueberschreitung",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was muss der Fehlerhinweis nach Abgabe leisten?\nDie exakte Positionsabweichung soll sichtbar sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Falsch platzierte Schritte klar markieren",
+          "correct": true,
+          "reason": "Richtig. So wird die Ursache lernbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur den Endscore anzeigen",
+          "correct": false,
+          "reason": "Zu wenig Rueckmeldung."
+        },
+        {
+          "id": "c",
+          "text": "Gar kein Feedback geben",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

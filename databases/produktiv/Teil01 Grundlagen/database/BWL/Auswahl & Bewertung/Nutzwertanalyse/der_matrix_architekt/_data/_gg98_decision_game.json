@@ -3,84 +3,195 @@
     "topic": "Der Matrix-Architekt",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "der_matrix_architekt",
-    "version": "1.0"
+    "source": "_gg01_der_matrix_architekt.json",
+    "version": "2.0"
   },
-  "title": "Der Matrix-Architekt - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Der Matrix-Architekt",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Kriterium 1",
+      "situation": "Platzbedarf: Welche Alternative erzielt die beste Punktzahl?",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "TC",
+          "text": "Thin-Client",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "das kleinste lokale Geraet ist und besonders platzsparend aufgestellt wird"
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "NB",
+          "text": "Notebook",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "sehr kompakt ist und auf kleinen Schreibtischen wenig Platz benoetigt"
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "AIO",
+          "text": "All-in-One-PC",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Monitor und Rechner kombiniert, aber weniger flexibel als mobile Loesungen bleibt"
+        },
+        {
+          "id": "DT",
+          "text": "Desktop",
+          "correct": false,
+          "reason": "separates Gehaeuse plus Monitor den meisten Stellplatz beansprucht"
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Kriterium 2",
+      "situation": "Ergonomie: Welche Alternative erzielt die beste Punktzahl?",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "DT",
+          "text": "Desktop",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "mit frei waehlbarem Monitor, Tastatur und Hoehenanpassung am ergonomischsten konfigurierbar ist"
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "NB",
+          "text": "Notebook",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "ohne Docking-Setup oft zu kleine Displays und unguenstige Haltung erzeugt"
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "AIO",
+          "text": "All-in-One-PC",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "grosses Display und aufgeraeumte Verkabelung fuer ergonomische Arbeitsplaetze bietet"
+        },
+        {
+          "id": "TC",
+          "text": "Thin-Client",
+          "correct": false,
+          "reason": "mit externer Peripherie akzeptabel ist, aber stark von der Ausstattung abhaengt"
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Kriterium 3",
+      "situation": "Performance: Welche Alternative erzielt die beste Punktzahl?",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "DT",
+          "text": "Desktop",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "die hoechste lokale Rechenleistung fuer CAD und Multitasking bereitstellt"
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "NB",
+          "text": "Notebook",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "solide Leistung liefert, aber thermisch schneller limitiert"
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "AIO",
+          "text": "All-in-One-PC",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "alltagstauglich ist, aber bei hoher Last hinter Top-Workstations liegt"
+        },
+        {
+          "id": "TC",
+          "text": "Thin-Client",
+          "correct": false,
+          "reason": "rechenintensive Aufgaben meist serverseitig auslagert und lokal begrenzt bleibt"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Kriterium 4",
+      "situation": "Verfuegbarkeit: Welche Alternative erzielt die beste Punktzahl?",
+      "options": [
+        {
+          "id": "TC",
+          "text": "Thin-Client",
+          "correct": true,
+          "reason": "bei Defekt sehr schnell ersetzt werden kann und Daten zentral verfuegbar bleiben"
+        },
+        {
+          "id": "NB",
+          "text": "Notebook",
+          "correct": false,
+          "reason": "mobil einsetzbar ist, aber bei Defekt oft komplett ausfaellt"
+        },
+        {
+          "id": "AIO",
+          "text": "All-in-One-PC",
+          "correct": false,
+          "reason": "als Komplettgeraet bei Hardwareproblemen schwerer schnell tauschbar ist"
+        },
+        {
+          "id": "DT",
+          "text": "Desktop",
+          "correct": false,
+          "reason": "modular austauschbar ist, aber mehr lokale Wartungszeit benoetigt"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Kriterium 5",
+      "situation": "Kosten Wartung + Erweiterung: Welche Alternative erzielt die beste Punktzahl?",
+      "options": [
+        {
+          "id": "TC",
+          "text": "Thin-Client",
+          "correct": true,
+          "reason": "zentral verwaltet wird und die geringsten lokalen Wartungskosten verursacht"
+        },
+        {
+          "id": "NB",
+          "text": "Notebook",
+          "correct": false,
+          "reason": "Erweiterungen begrenzt sind und Reparaturen oft teuer ausfallen"
+        },
+        {
+          "id": "AIO",
+          "text": "All-in-One-PC",
+          "correct": false,
+          "reason": "Aufruestung eingeschraenkt ist und Komponenten schwerer erreichbar sind"
+        },
+        {
+          "id": "DT",
+          "text": "Desktop",
+          "correct": false,
+          "reason": "gut aufruestbar ist, aber mehr Einzelteile gewartet werden muessen"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Kriterium 6",
+      "situation": "Preis: Welche Alternative erzielt die beste Punktzahl?",
+      "options": [
+        {
+          "id": "TC",
+          "text": "Thin-Client",
+          "correct": true,
+          "reason": "in der Anschaffung am guenstigsten ist, wenn Server-Infrastruktur bereits besteht"
+        },
+        {
+          "id": "NB",
+          "text": "Notebook",
+          "correct": false,
+          "reason": "bei vergleichbarer Business-Qualitaet meist am teuersten pro Arbeitsplatz ist"
+        },
+        {
+          "id": "AIO",
+          "text": "All-in-One-PC",
+          "correct": false,
+          "reason": "preislich im Mittelfeld liegt und Peripherie teilweise integriert"
+        },
+        {
+          "id": "DT",
+          "text": "Desktop",
+          "correct": false,
+          "reason": "oft gutes Preis-Leistungs-Verhaeltnis bietet, aber Zusatzgeraete erfordert"
         }
       ]
     }

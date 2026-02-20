@@ -3,7 +3,7 @@
     "topic": "Wirtschaftskreislauf",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wirtschaftskreislauf",
+    "source": "_gg01_geldstrom_router.json",
     "version": "1.0"
   },
   "title": "Wirtschaftskreislauf - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Ein Haushalt kauft ein Produkt. Welcher Geldpfad ist korrekt?\nDirekter Konsumfluss.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Haushalt -> Unternehmen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Konsumausgaben gehen an Unternehmen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Unternehmen -> Haushalt",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Das waere eher Einkommensfluss."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Haushalt -> Haushalt",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht der Fall."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Bei Lohnzahlung ist die Richtung?\nFaktorentgelt.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Unternehmen -> Haushalt",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Einkommen fliesst an Haushalte."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Haushalt -> Unternehmen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Umgekehrt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur Staat -> Haushalt",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht Kernfall."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was ist ein typischer Routing-Fehler?\nKernstation ueberspringen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Einkommensfluss ohne Unternehmen als Zahler darstellen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Kernstation fehlt."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Konsumfluss korrekt abbilden",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das ist richtig."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Akteure eindeutig benennen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Kein Fehler."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI ist im Router zentral?\nPfadtreue und Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Schritte bis zum Zielpfad",
+          "correct": true,
+          "reason": "Richtig. Genauigkeit und Weglaenge zaehlen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Klicks",
+          "correct": false,
+          "reason": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Startzeit",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wie bleibt ein Geldpfad nachvollziehbar?\nVon-Akteur, Zu-Akteur, Anlass.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Jeder Schritt nennt Quelle, Ziel und wirtschaftlichen Grund",
+          "correct": true,
+          "reason": "Richtig. Das macht den Pfad pruefbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Pfeile ohne Beschriftung",
+          "correct": false,
+          "reason": "Unklar."
+        },
+        {
+          "id": "c",
+          "text": "Nur Endergebnis ohne Zwischenschritte",
+          "correct": false,
+          "reason": "Zu intransparent."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Warum ist Reihenfolge im Geldstrom wichtig?\nKausalitaet im Kreislauf.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sie zeigt, welcher Vorgang welchen Folgefluss ausloest",
+          "correct": true,
+          "reason": "Richtig. Reihenfolge erklaert Wirkung."
+        },
+        {
+          "id": "b",
+          "text": "Sie ist beliebig",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Sie ersetzt alle Akteure",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Welche Route passt bei Konsumplus?\nHaushalte geben mehr aus.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mehr Geld von Haushalten zu Unternehmen",
+          "correct": true,
+          "reason": "Richtig. Das ist der direkte Effekt."
+        },
+        {
+          "id": "b",
+          "text": "Weniger Einnahmen der Unternehmen",
+          "correct": false,
+          "reason": "Gegenteilig."
+        },
+        {
+          "id": "c",
+          "text": "Kein Einfluss auf Fluesse",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was trainiert der Geldstrom-Router?\nProzesssicherer Geldfluss.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte, effiziente und begruendete Geldfluss-Pfade",
+          "correct": true,
+          "reason": "Richtig. Das ist der Kern."
+        },
+        {
+          "id": "b",
+          "text": "Nur Schnelligkeit ohne Inhalt",
+          "correct": false,
+          "reason": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Messbarkeit ignorieren",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

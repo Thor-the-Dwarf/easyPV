@@ -3,84 +3,209 @@
     "topic": "Englisch",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "englisch",
-    "version": "1.0"
+    "source": "_gg01_false_friend_falle.json",
+    "version": "2.0"
   },
-  "title": "Englisch - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "False-Friend-Falle",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "I become a steak after work.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "get",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig: 'ich bekomme' = 'I get'."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "receiveing",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Falsche Form."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "bekome",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Kein korrektes Englisch."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "We discuss the actual version tomorrow.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "b",
+          "text": "current",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig: 'aktuell' = 'current'."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "a",
+          "text": "eventual",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Bedeutet etwas anderes."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "factual",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht passend zum Kontext."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Can you control the E-Mail to the customer?",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "check",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig: 'kontrollieren/pruefen' = 'check'."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "command",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Hat andere Bedeutung."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "steer",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Unpassend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "The chef will join the support call.",
+      "options": [
+        {
+          "id": "b",
+          "text": "boss",
+          "correct": true,
+          "reason": "Richtig: deutscher Chef = 'boss'/'manager'."
+        },
+        {
+          "id": "a",
+          "text": "cook",
+          "correct": false,
+          "reason": "Wuerde Koch bedeuten."
+        },
+        {
+          "id": "c",
+          "text": "chiefly",
+          "correct": false,
+          "reason": "Falsche Wortart."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Please close your handy during the meeting.",
+      "options": [
+        {
+          "id": "a",
+          "text": "mobile phone",
+          "correct": true,
+          "reason": "Richtig: 'Handy' = 'mobile phone'."
+        },
+        {
+          "id": "b",
+          "text": "practical",
+          "correct": false,
+          "reason": "'handy' bedeutet auf Englisch praktisch."
+        },
+        {
+          "id": "c",
+          "text": "handle",
+          "correct": false,
+          "reason": "Anderes Wort."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "We need a protocol of the workshop.",
+      "options": [
+        {
+          "id": "b",
+          "text": "minutes",
+          "correct": true,
+          "reason": "Richtig: Protokoll (Meeting) = minutes."
+        },
+        {
+          "id": "a",
+          "text": "agenda",
+          "correct": false,
+          "reason": "Waere Tagesordnung."
+        },
+        {
+          "id": "c",
+          "text": "procedure",
+          "correct": false,
+          "reason": "Nicht der gemeinte Dokumenttyp."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "The controlling checks our invoices.",
+      "options": [
+        {
+          "id": "b",
+          "text": "finance department",
+          "correct": true,
+          "reason": "Richtig im Unternehmenskontext."
+        },
+        {
+          "id": "a",
+          "text": "management",
+          "correct": false,
+          "reason": "Zu allgemein."
+        },
+        {
+          "id": "c",
+          "text": "inspectioning",
+          "correct": false,
+          "reason": "Kein korrektes Wort."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "I have made my homeworks already.",
+      "options": [
+        {
+          "id": "b",
+          "text": "homework",
+          "correct": true,
+          "reason": "Richtig: unzaehlbar, ohne s."
+        },
+        {
+          "id": "a",
+          "text": "houseworks",
+          "correct": false,
+          "reason": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "domestic tasks",
+          "correct": false,
+          "reason": "Andere Bedeutung."
         }
       ]
     }

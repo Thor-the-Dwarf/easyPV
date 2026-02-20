@@ -3,7 +3,7 @@
     "topic": "Arbeitsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitsschutz",
+    "source": "_gg01_psa_checkrun.json",
     "version": "1.0"
   },
   "title": "Arbeitsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Schleifarbeiten mit Funkenflug: Welche PSA ist Pflicht?\nAugenschutz und passende Ausruestung sind entscheidend.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Schutzbrille und geeignete Handschuhe",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das deckt zentrale Schutzanforderungen ab."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Keine PSA",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Basecap",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht ausreichend."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Fehlart fuehrt laut Regeln zu hohem Abzug?\nEs geht um Unterausruestung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Fehlende Pflicht-PSA",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Das wird streng sanktioniert."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Zu frueher Start",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nennung der Umgebung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wie wirkt sich Ueberausruestung aus?\nPlan nennt einen Effizienzbezug.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Sie reduziert den Effizienzscore",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Unnoetige PSA kostet Effizienzpunkte."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Sie gibt immer Bonus",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Sie ist immer neutral",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI trennt der Plan explizit?\nVerglichen werden fehlende und zusaetzliche Items.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Missing vs. Extra",
+          "correct": true,
+          "reason": "Richtig. Genau diese Trennung macht die Analyse brauchbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "reason": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Antwortzeit",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was ist Ziel der PSA-Auswahl?\nVollstaendig, aber nicht ueberladen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Passend schuetzen ohne unnoetige Zusatz-PSA",
+          "correct": true,
+          "reason": "Richtig. Das ist die Zielbalance im Checkrun."
+        },
+        {
+          "id": "b",
+          "text": "Moeglichst viele Items ankreuzen",
+          "correct": false,
+          "reason": "Nicht effizient."
+        },
+        {
+          "id": "c",
+          "text": "Gar keine PSA waehlen",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

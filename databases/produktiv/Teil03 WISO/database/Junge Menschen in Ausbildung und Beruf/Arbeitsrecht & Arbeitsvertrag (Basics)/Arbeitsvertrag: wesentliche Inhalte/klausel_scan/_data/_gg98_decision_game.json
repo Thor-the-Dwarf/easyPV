@@ -3,7 +3,7 @@
     "topic": "Arbeitsvertrag",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitsvertrag",
+    "source": "_gg01_klausel_scan.json",
     "version": "1.0"
   },
   "title": "Arbeitsvertrag - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Aussage beschreibt das Ziel des Klausel-Scans?\nPflichtinhalte muessen von unverbindlichen Formulierungen getrennt werden.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Wesentliche Pflichtklauseln identifizieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Genau das ist der Kern."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Designelemente bewerten",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Klauseln zufaellig markieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Auswirkung hat Uebermarkierung?\nPraezision sinkt bei vielen Fehlmarkierungen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Praezision sinkt",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Zu viele False Positives schaedigen die Praezision."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Recall steigt automatisch",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht automatisch korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine Auswirkung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was passiert bei fehlender Pflichtklausel im Ergebnis?\nFehlende Treffer wirken sich auf Recall aus.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Recall sinkt",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Uebersehene Pflichtklauseln druecken Recall."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Praezision steigt immer",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Keine KPI-Aenderung",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI wird explizit mitgefuehrt?\nMehr als nur ein Prozentwert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Praezision, Recall und Vollstaendigkeitsquote",
+          "correct": true,
+          "reason": "Genau. Diese drei Kennzahlen sind vorgesehen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Punktestand",
+          "correct": false,
+          "reason": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Bearbeitungsdauer",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was zeichnet gutes Feedback im Scan aus?\nLuecken und Uebermarkierungen muessen sichtbar sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fehlende und ueberfluessige Markierungen getrennt anzeigen",
+          "correct": true,
+          "reason": "Richtig. So werden Fehlmuster klar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Ampelfarbe",
+          "correct": false,
+          "reason": "Zu wenig Information."
+        },
+        {
+          "id": "c",
+          "text": "Nur Endscore",
+          "correct": false,
+          "reason": "Nicht ausreichend."
         }
       ]
     }

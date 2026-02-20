@@ -3,7 +3,7 @@
     "topic": "Konsumoptionen",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "konsumoptionen",
+    "source": "_gg01_lebenszyklus_kosten_duell.json",
     "version": "1.0"
   },
   "title": "Konsumoptionen - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Duell 1: Geraet A guenstig im Kauf, aber hohe Wartung. Was zaehlt?\nVergleiche Gesamtkosten ueber die Nutzungsjahre.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Lebenszyklusgesamtkosten",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Nur Gesamtbetrachtung liefert die bessere Option."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Anschaffungspreis",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt. Wartung und Folgekosten fehlen."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Markenimage",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht wirtschaftlich begruendet."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Duell 2: Zwei Optionen sind gleich teuer in der Anschaffung. Welche gewinnt?\nRestwert und Reparaturquote entscheiden den Unterschied.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Option mit hoeherem Restwert",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Hoeherer Restwert reduziert Lebenszykluskosten."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Option mit teurer Wartung",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt. Das verschlechtert den Gesamtwert."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Zufallsauswahl",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht begruendet."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Komponente wird im Lebenszyklus oft vergessen, ist aber kritisch?\nDenke an laufende Lasten.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wartungskosten",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Wartung entscheidet haeufig ueber die Rangfolge."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Farbauswahl",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht relevant fuer Lebenszykluskosten."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Werbeslogan",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht relevant."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Bei Gleichstand der Kosten entscheidet laut Plan...\nEs gibt eine Nachhaltigkeits- bzw. Ressourcenregel.",
+      "options": [
+        {
+          "id": "a",
+          "text": "geringerer Ressourcenverbrauch",
+          "correct": true,
+          "reason": "Richtig. Das ist die Tie-Break-Regel."
+        },
+        {
+          "id": "b",
+          "text": "laengere Lieferzeit",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "hoeherer Verkaufspreis",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Entscheidung ist fachlich belastbar?\nTrenne Preisargument von Gesamtargument.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Begruendung mit Anschaffung + Wartung + Restwert",
+          "correct": true,
+          "reason": "Genau. Das ist Lebenszyklusdenken."
+        },
+        {
+          "id": "b",
+          "text": "Nur Kaufpreis nennen",
+          "correct": false,
+          "reason": "Zu kurz gegriffen."
+        },
+        {
+          "id": "c",
+          "text": "Nur Trendbezug nennen",
+          "correct": false,
+          "reason": "Nicht ausreichend."
         }
       ]
     }

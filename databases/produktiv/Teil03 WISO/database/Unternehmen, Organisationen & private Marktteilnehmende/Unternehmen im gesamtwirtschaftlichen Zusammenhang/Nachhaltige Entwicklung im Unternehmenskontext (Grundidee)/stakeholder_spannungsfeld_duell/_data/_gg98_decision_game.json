@@ -3,7 +3,7 @@
     "topic": "Nachhaltige Entwicklung im Unternehmenskontext",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "nachhaltige_entwicklung_im_unternehmenskontext",
+    "source": "_gg01_stakeholder_spannungsfeld_duell.json",
     "version": "1.0"
   },
   "title": "Nachhaltige Entwicklung im Unternehmenskontext - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Entscheidung ist im Stakeholderkonflikt meist robuster?\nKurzfristig tragbar, langfristig nachhaltig.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Loesung mit ausgewogener Wirkung fuer mehrere Stakeholder",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Balance steht im Vordergrund."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur kurzfristig guenstigste Option",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Langfristige Risiken bleiben."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur reputationswirksame Scheinmassnahme",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Substanz fehlt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Was verbessert die Begruendungsquote im Duell?\nTransparente Abwaegungskriterien.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Kriterien fuer Kosten, Risiko und Nachhaltigkeit klar benennen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Begruendung wird nachvollziehbar."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Bauchgefuehl als Grund nennen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht belastbar."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine Begruendung abgeben",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nur Teilpunkte moeglich."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann droht ein Fehlurteil im Spannungsfeld?\nEinseitige Perspektive.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn nur eine Stakeholdergruppe bewertet wird",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Balance geht verloren."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn Zielkonflikte sichtbar gemacht werden",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das ist positiv."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn Alternativen verglichen werden",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Das verbessert die Entscheidung."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI sind laut Plan zentral?\nWahl und Begruendung trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wahlgenauigkeit und Begruendungsquote",
+          "correct": true,
+          "reason": "Exakt. Beide Dimensionen sind gefordert."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "reason": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Spielzeit",
+          "correct": false,
+          "reason": "Nicht zielnah."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist die Duellrunde voll erfolgreich?\nRichtige Wahl mit passender Begruendung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Entscheidung korrekt und Begruendung fachlich passend ist",
+          "correct": true,
+          "reason": "Richtig. Das gibt Volltreffer."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur schnell geantwortet wurde",
+          "correct": false,
+          "reason": "Tempo allein reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nur ein Schlagwort genannt wird",
+          "correct": false,
+          "reason": "Zu wenig Substanz."
         }
       ]
     }

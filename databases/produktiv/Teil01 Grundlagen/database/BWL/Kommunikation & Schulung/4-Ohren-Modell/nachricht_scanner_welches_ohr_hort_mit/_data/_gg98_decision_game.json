@@ -3,84 +3,257 @@
     "topic": "Nachricht-Scanner",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "nachricht_scanner",
-    "version": "1.0"
+    "source": "_gg01_nachricht_scanner_welches_ohr_hort_mit.json",
+    "version": "2.0"
   },
-  "title": "Nachricht-Scanner - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Nachricht-Scanner",
+  "subtitle": "Welches Ohr hoert mit? Ordne Aussagen der Ebene zu, die am staerksten mitschwingt.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Aussage einordnen: Der Termin beginnt um 14:00 Uhr.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "sache",
+          "text": "Sache",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Sachinhalt: neutrale Information ueber Zeit."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "ich",
+          "text": "Ich",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Sachinhalt: neutrale Information ueber Zeit."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "du",
+          "text": "Du",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Sachinhalt: neutrale Information ueber Zeit."
+        },
+        {
+          "id": "appell",
+          "text": "Tu was",
+          "correct": false,
+          "reason": "Sachinhalt: neutrale Information ueber Zeit."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Aussage einordnen: Ich bin gerade nervoes vor der Praesentation.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "ich",
+          "text": "Ich",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Selbstoffenbarung: Gefuehl/Zustand des Senders."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "sache",
+          "text": "Sache",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Selbstoffenbarung: Gefuehl/Zustand des Senders."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "du",
+          "text": "Du",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Selbstoffenbarung: Gefuehl/Zustand des Senders."
+        },
+        {
+          "id": "appell",
+          "text": "Tu was",
+          "correct": false,
+          "reason": "Selbstoffenbarung: Gefuehl/Zustand des Senders."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Aussage einordnen: Du hoerst mir nie richtig zu.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "du",
+          "text": "Du",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Beziehung: Bewertung/Vorwurf an den Empfaenger."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "sache",
+          "text": "Sache",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Beziehung: Bewertung/Vorwurf an den Empfaenger."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "ich",
+          "text": "Ich",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Beziehung: Bewertung/Vorwurf an den Empfaenger."
+        },
+        {
+          "id": "appell",
+          "text": "Tu was",
+          "correct": false,
+          "reason": "Beziehung: Bewertung/Vorwurf an den Empfaenger."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Aussage einordnen: Schick mir bitte das Protokoll bis 16:00 Uhr.",
+      "options": [
+        {
+          "id": "appell",
+          "text": "Tu was",
+          "correct": true,
+          "reason": "Appell: klare Handlungsaufforderung mit Zeitrahmen."
+        },
+        {
+          "id": "sache",
+          "text": "Sache",
+          "correct": false,
+          "reason": "Appell: klare Handlungsaufforderung mit Zeitrahmen."
+        },
+        {
+          "id": "ich",
+          "text": "Ich",
+          "correct": false,
+          "reason": "Appell: klare Handlungsaufforderung mit Zeitrahmen."
+        },
+        {
+          "id": "du",
+          "text": "Du",
+          "correct": false,
+          "reason": "Appell: klare Handlungsaufforderung mit Zeitrahmen."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Aussage einordnen: Die Datei ist 12 MB gross.",
+      "options": [
+        {
+          "id": "sache",
+          "text": "Sache",
+          "correct": true,
+          "reason": "Sachinhalt: messbare Eigenschaft ohne Aufforderung."
+        },
+        {
+          "id": "ich",
+          "text": "Ich",
+          "correct": false,
+          "reason": "Sachinhalt: messbare Eigenschaft ohne Aufforderung."
+        },
+        {
+          "id": "du",
+          "text": "Du",
+          "correct": false,
+          "reason": "Sachinhalt: messbare Eigenschaft ohne Aufforderung."
+        },
+        {
+          "id": "appell",
+          "text": "Tu was",
+          "correct": false,
+          "reason": "Sachinhalt: messbare Eigenschaft ohne Aufforderung."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Aussage einordnen: Ich bin froh, dass wir das geklaert haben.",
+      "options": [
+        {
+          "id": "ich",
+          "text": "Ich",
+          "correct": true,
+          "reason": "Selbstoffenbarung: positive Emotion/Erleichterung."
+        },
+        {
+          "id": "sache",
+          "text": "Sache",
+          "correct": false,
+          "reason": "Selbstoffenbarung: positive Emotion/Erleichterung."
+        },
+        {
+          "id": "du",
+          "text": "Du",
+          "correct": false,
+          "reason": "Selbstoffenbarung: positive Emotion/Erleichterung."
+        },
+        {
+          "id": "appell",
+          "text": "Tu was",
+          "correct": false,
+          "reason": "Selbstoffenbarung: positive Emotion/Erleichterung."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Aussage einordnen: Mit dir ist alles immer so kompliziert.",
+      "options": [
+        {
+          "id": "du",
+          "text": "Du",
+          "correct": true,
+          "reason": "Beziehung: Abwertung/Etikettierung des Gegenuebers."
+        },
+        {
+          "id": "sache",
+          "text": "Sache",
+          "correct": false,
+          "reason": "Beziehung: Abwertung/Etikettierung des Gegenuebers."
+        },
+        {
+          "id": "ich",
+          "text": "Ich",
+          "correct": false,
+          "reason": "Beziehung: Abwertung/Etikettierung des Gegenuebers."
+        },
+        {
+          "id": "appell",
+          "text": "Tu was",
+          "correct": false,
+          "reason": "Beziehung: Abwertung/Etikettierung des Gegenuebers."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Aussage einordnen: Bitte mach die Tuer zu.",
+      "options": [
+        {
+          "id": "appell",
+          "text": "Tu was",
+          "correct": true,
+          "reason": "Appell: Bitte um konkrete Handlung."
+        },
+        {
+          "id": "sache",
+          "text": "Sache",
+          "correct": false,
+          "reason": "Appell: Bitte um konkrete Handlung."
+        },
+        {
+          "id": "ich",
+          "text": "Ich",
+          "correct": false,
+          "reason": "Appell: Bitte um konkrete Handlung."
+        },
+        {
+          "id": "du",
+          "text": "Du",
+          "correct": false,
+          "reason": "Appell: Bitte um konkrete Handlung."
         }
       ]
     }

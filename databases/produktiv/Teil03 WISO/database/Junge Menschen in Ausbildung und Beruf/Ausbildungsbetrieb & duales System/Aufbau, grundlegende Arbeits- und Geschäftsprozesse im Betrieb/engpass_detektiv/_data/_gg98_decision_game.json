@@ -3,7 +3,7 @@
     "topic": "Betriebsprozesse",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "betriebsprozesse",
+    "source": "_gg01_engpass_detektiv.json",
     "version": "1.0"
   },
   "title": "Betriebsprozesse - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Kennzahl weist am direktesten auf einen Engpass hin?\nHohe Wartezeit plus steigender Rueckstau sind typisch.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Hohe Wartezeiten vor einer Station",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das signalisiert Kapazitaetsmangel."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Niedrige Fehlerquote im Versand",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Kein Engpasssignal."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Mehr Pausenprotokolle",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht ausreichend als Ursache."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wie wird eine falsche Engpassdiagnose bewertet?\nDie Diagnose zaehlt als Kernentscheidung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Mit deutlichem Punktabzug",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Fehlfokus kostet viele Punkte."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Ohne Einfluss auf den Score",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Immer als korrekt",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Kombination bringt Teilpunkte?\nKorrekter Engpass, aber falsche Massnahme.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Engpass korrekt, Massnahme unpassend",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Erkennung stimmt, Wirkung nicht."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Beides falsch",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Keine Teilpunkte fuer doppelten Fehler."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur schnell klicken",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Tempo ersetzt keine Diagnose."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI trennt das Spiel laut Plan?\nErkennung und Wirksamkeit sind getrennt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Engpass-Treffquote und Massnahmenwirksamkeit",
+          "correct": true,
+          "reason": "Richtig. Beide Achsen sind Pflicht."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "reason": "Zu grob fuer Verbesserungen."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Faelle",
+          "correct": false,
+          "reason": "Ohne Qualitaetsbezug."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann gibt es den Serienbonus?\nDoppelt korrekte Faelle hintereinander.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Engpass und Massnahme beide korrekt sind",
+          "correct": true,
+          "reason": "Richtig. Die komplette Analyse zaehlt."
+        },
+        {
+          "id": "b",
+          "text": "Bei zufaelligem Raten",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei der ersten Runde",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

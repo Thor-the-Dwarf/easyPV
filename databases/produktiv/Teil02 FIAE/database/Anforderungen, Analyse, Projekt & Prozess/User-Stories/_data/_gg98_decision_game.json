@@ -3,84 +3,134 @@
     "topic": "User Stories",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "user_stories",
-    "version": "1.0"
+    "source": "_gg01_user_story_builder.json",
+    "version": "2.0"
   },
-  "title": "User Stories - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "User-Stories",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "User Story 1",
+      "situation": "Als Administrator: Welches Ziel passt semantisch am besten?",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "moechte ich Nutzer loeschen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Diese Zielaussage passt zur Rolle."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "moechte ich Artikel suchen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Tag/Intent passt nicht zur Rolle."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "moechte ich Logs einsehen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Tag/Intent passt nicht zur Rolle."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "User Story 2",
+      "situation": "Als Kunde: Welches Ziel passt semantisch am besten?",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "moechte ich Artikel suchen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Diese Zielaussage passt zur Rolle."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "moechte ich Nutzer loeschen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Tag/Intent passt nicht zur Rolle."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "moechte ich Logs einsehen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Tag/Intent passt nicht zur Rolle."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "User Story 3",
+      "situation": "Als Entwickler: Welches Ziel passt semantisch am besten?",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "moechte ich Logs einsehen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Diese Zielaussage passt zur Rolle."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "moechte ich Nutzer loeschen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Tag/Intent passt nicht zur Rolle."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "moechte ich Artikel suchen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Tag/Intent passt nicht zur Rolle."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "User Story 4",
+      "situation": "Als Product Owner: Welches Ziel passt semantisch am besten?",
+      "options": [
+        {
+          "id": "a",
+          "text": "moechte ich Nutzer loeschen",
+          "correct": true,
+          "reason": "Diese Zielaussage passt zur Rolle."
+        },
+        {
+          "id": "b",
+          "text": "moechte ich Artikel suchen",
+          "correct": false,
+          "reason": "Tag/Intent passt nicht zur Rolle."
+        },
+        {
+          "id": "c",
+          "text": "moechte ich Logs einsehen",
+          "correct": false,
+          "reason": "Tag/Intent passt nicht zur Rolle."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "User Story 5",
+      "situation": "Als Supporter: Welches Ziel passt semantisch am besten?",
+      "options": [
+        {
+          "id": "a",
+          "text": "moechte ich Artikel suchen",
+          "correct": true,
+          "reason": "Diese Zielaussage passt zur Rolle."
+        },
+        {
+          "id": "b",
+          "text": "moechte ich Nutzer loeschen",
+          "correct": false,
+          "reason": "Tag/Intent passt nicht zur Rolle."
+        },
+        {
+          "id": "c",
+          "text": "moechte ich Logs einsehen",
+          "correct": false,
+          "reason": "Tag/Intent passt nicht zur Rolle."
         }
       ]
     }

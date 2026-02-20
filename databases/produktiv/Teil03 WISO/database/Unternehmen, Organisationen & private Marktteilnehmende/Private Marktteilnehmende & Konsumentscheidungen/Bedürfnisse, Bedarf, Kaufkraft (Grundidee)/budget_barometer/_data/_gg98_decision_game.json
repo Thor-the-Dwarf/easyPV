@@ -3,7 +3,7 @@
     "topic": "Beduerfnisse, Bedarf, Kaufkraft",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "beduerfnisse_bedarf_kaufkraft",
+    "source": "_gg01_budget_barometer.json",
     "version": "1.0"
   },
   "title": "Beduerfnisse, Bedarf, Kaufkraft - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Monatsbudget 1200 EUR: Welche Ausgabe ist ein Grundbeduerfnis?\nAchte auf zwingend notwendige Lebenshaltung.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Miete",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Wohnen ist ein Grundbeduerfnis."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Streaming-Abo",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt. Das ist eher Luxus."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Gaming-Headset",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt. Kein Grundbeduerfnis."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Nach Fixkosten bleiben 180 EUR. Welche Entscheidung ist bei knapper Kaufkraft am sinnvollsten?\nPriorisiere lebensnotwendige Positionen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wocheneinkauf planen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Bedarf zuerst absichern."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Spontankauf neuer Sneaker",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt. Bedarf geht vor Wunsch."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Premium-Lieferservice",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt. Das belastet das Restbudget."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Aussage beschreibt Kaufkraft am besten?\nEs geht um reale Leistbarkeit.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wie viele Gueter ich mir bei gegebenem Einkommen leisten kann",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Genau das ist Kaufkraft."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wie viel Werbung ich sehe",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt. Werbung beeinflusst, definiert aber nicht Kaufkraft."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wie viele Zahlungsarten ich habe",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt. Zahlungsart ist nicht Kaufkraft."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Preissteigerungen bei Lebensmitteln bei konstantem Einkommen bedeuten...\nDenke in realer Kaufkraft.",
+      "options": [
+        {
+          "id": "a",
+          "text": "sinkende Kaufkraft",
+          "correct": true,
+          "reason": "Richtig. Das Einkommen reicht real fuer weniger."
+        },
+        {
+          "id": "b",
+          "text": "automatisch mehr Bedarf",
+          "correct": false,
+          "reason": "Nicht korrekt. Bedarf steigt nicht automatisch."
+        },
+        {
+          "id": "c",
+          "text": "mehr Luxusbudget",
+          "correct": false,
+          "reason": "Nicht korrekt. Luxusbudget wird eher kleiner."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was ist in einem knappen Budget zuerst kuerzbar?\nKuerze nicht zuerst Grundbeduerfnisse.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Luxusausgaben",
+          "correct": true,
+          "reason": "Richtig. Luxus ist am ehesten verschiebbar."
+        },
+        {
+          "id": "b",
+          "text": "Krankenversicherung",
+          "correct": false,
+          "reason": "Nicht korrekt. Das gehoert zu essenziellen Absicherungen."
+        },
+        {
+          "id": "c",
+          "text": "Grundnahrungsmittel",
+          "correct": false,
+          "reason": "Nicht korrekt. Grundbedarf zuerst sichern."
         }
       ]
     }

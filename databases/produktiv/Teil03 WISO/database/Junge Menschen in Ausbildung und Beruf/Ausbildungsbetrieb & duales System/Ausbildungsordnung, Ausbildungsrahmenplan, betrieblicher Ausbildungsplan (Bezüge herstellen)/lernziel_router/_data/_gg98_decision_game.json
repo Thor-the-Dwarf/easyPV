@@ -3,7 +3,7 @@
     "topic": "Ausbildungsplanung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "ausbildungsplanung",
+    "source": "_gg01_lernziel_router.json",
     "version": "1.0"
   },
   "title": "Ausbildungsplanung - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Zuordnung ist im Lernziel-Router korrekt?\nLernort und Ausbildungsphase zusammen pruefen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Lernziel mit passendem Lernort und passender Phase koppeln",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Nur die Doppelzuordnung ist voll korrekt."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur den Lernort waehlen und Phase leer lassen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Phase fehlt, daher unvollstaendig."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur die Phase waehlen und Lernort ignorieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Lernort ist Pflichtkriterium."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann gibt es Teilpunkte?\nEin Teil korrekt, ein Teil falsch.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn Lernort korrekt ist, die Phase aber nicht",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Teiltreffer gibt Teilpunkte."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur bei zwei Fehlern",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Dafuer gibt es keine Teilpunkte."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur bei zufaelligem Klicken",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Zufall wird nicht belohnt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI beobachtet die Standortqualitaet?\nLernortquote separat auswerten.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Lernortquote",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das misst die Standorttreffer."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Gesamtpunkte",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu unspezifisch fuer Standortqualitaet."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur verbleibende Zeit",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Zeit ist kein Standortmass."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Was passiert bei hoher Trefferquote laut Spielidee?\nKomplexitaet steigt schrittweise.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Die Kartenkomplexitaet wird erhoeht",
+          "correct": true,
+          "reason": "Richtig. Anspruch passt sich an."
+        },
+        {
+          "id": "b",
+          "text": "Alle Karten werden entfernt",
+          "correct": false,
+          "reason": "Dann waere kein Lernen mehr moeglich."
+        },
+        {
+          "id": "c",
+          "text": "KPI werden ausgeblendet",
+          "correct": false,
+          "reason": "KPI bleiben sichtbar."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Zielgroessen muessen laut Plan sichtbar sein?\nZwei Quoten parallel.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lernortquote und Phasenquote",
+          "correct": true,
+          "reason": "Exakt diese beiden Quoten zaehlen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Fehleranzahl",
+          "correct": false,
+          "reason": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Bonusanzahl",
+          "correct": false,
+          "reason": "Kein vollwertiger KPI-Satz."
         }
       ]
     }

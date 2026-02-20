@@ -3,84 +3,134 @@
     "topic": "Decorator Pattern",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "decorator_pattern",
-    "version": "1.0"
+    "source": "_gg01_coffee_builder.json",
+    "version": "2.0"
   },
-  "title": "Decorator Pattern - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Decorator",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Morning Routine",
+      "situation": "Cappuccino: Welche Komponente ist zwingend erforderlich?",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Espresso",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Diese Komponente ist Teil der Zielkombination."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Tea",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Diese Option gehoert nicht zur Zielkombination."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Milk",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Diese Option gehoert nicht zur Zielkombination."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Morning Routine",
+      "situation": "Sweet Tea: Welche Komponente ist zwingend erforderlich?",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Tea",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Diese Komponente ist Teil der Zielkombination."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Espresso",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Diese Option gehoert nicht zur Zielkombination."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Milk",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Diese Option gehoert nicht zur Zielkombination."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Morning Routine",
+      "situation": "Caramel Macchiato: Welche Komponente ist zwingend erforderlich?",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Espresso",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Diese Komponente ist Teil der Zielkombination."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Tea",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Diese Option gehoert nicht zur Zielkombination."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Milk",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Diese Option gehoert nicht zur Zielkombination."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Secure Stream",
+      "situation": "Secure File: Welche Komponente ist zwingend erforderlich?",
+      "options": [
+        {
+          "id": "a",
+          "text": "FileStream",
+          "correct": true,
+          "reason": "Diese Komponente ist Teil der Zielkombination."
+        },
+        {
+          "id": "b",
+          "text": "Espresso",
+          "correct": false,
+          "reason": "Diese Option gehoert nicht zur Zielkombination."
+        },
+        {
+          "id": "c",
+          "text": "Tea",
+          "correct": false,
+          "reason": "Diese Option gehoert nicht zur Zielkombination."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Secure Stream",
+      "situation": "Fast Reader: Welche Komponente ist zwingend erforderlich?",
+      "options": [
+        {
+          "id": "a",
+          "text": "FileStream",
+          "correct": true,
+          "reason": "Diese Komponente ist Teil der Zielkombination."
+        },
+        {
+          "id": "b",
+          "text": "Espresso",
+          "correct": false,
+          "reason": "Diese Option gehoert nicht zur Zielkombination."
+        },
+        {
+          "id": "c",
+          "text": "Tea",
+          "correct": false,
+          "reason": "Diese Option gehoert nicht zur Zielkombination."
         }
       ]
     }

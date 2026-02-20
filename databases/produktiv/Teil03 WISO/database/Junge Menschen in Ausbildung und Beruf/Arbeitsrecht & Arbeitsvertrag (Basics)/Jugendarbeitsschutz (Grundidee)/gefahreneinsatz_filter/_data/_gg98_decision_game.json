@@ -3,7 +3,7 @@
     "topic": "Jugendarbeitsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "jugendarbeitsschutz",
+    "source": "_gg01_gefahreneinsatz_filter.json",
     "version": "1.0"
   },
   "title": "Jugendarbeitsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Taetigkeit mit hohem Gefahrenniveau fuer Jugendliche: plausible Einordnung?\nRisikobezogene Zulassigkeit beachten.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Als unzulaessig klassifizieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Hochrisiko-Einsaetze sind besonders kritisch."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Als immer zulaessig einstufen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Zufaellig markieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Fehlart erzeugt doppelten Abzug?\nBezieht sich auf Hochrisiko-Aufgaben.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Fehlklassifikation bei Hochrisiko",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Diese Fehler werden strenger bewertet."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Korrekte Klassifikation",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Kurze Antwortzeit",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welcher KPI-Satz ist vorgesehen?\nTreffer und Fehlerrate kombinieren.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Zulassungsquote und Fehlerrate",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Beide Werte zeigen Lernfortschritt."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Endscore",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu wenig aussagekraeftig."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Dauer",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann startet Tempo-Bonus?\nSerie korrekter Entscheidungen notwendig.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei korrekter Serie",
+          "correct": true,
+          "reason": "Richtig. Kontinuierliche Treffsicherheit wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Nach jedem Fehler",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur am Start",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was hebt der Endreport hervor?\nKritische Fehlentscheidungen sichtbar machen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kritische Fehlklassifikationen",
+          "correct": true,
+          "reason": "Richtig. Das erleichtert gezieltes Nachlernen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtanzahl Karten",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Keine Detailanalyse",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

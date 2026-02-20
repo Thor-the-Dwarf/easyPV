@@ -1,86 +1,161 @@
 {
   "meta": {
-    "topic": "aktivitaeten sortierer",
+    "topic": "Aktivitaeten-Sortierer",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "aktivitaeten_sortierer",
-    "version": "1.0"
+    "source": "_gg01_aktivitaeten_sortierer.json",
+    "version": "2.0"
   },
-  "title": "aktivitaeten sortierer - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Aktivitaeten-Sortierer",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Neue API-Funktion gemaess Fachanforderung implementieren",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "value_add",
+          "text": "Wertschoepfend",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Es entsteht direkt nutzbarer Funktionswert fuer den Kunden."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "rework",
+          "text": "Nacharbeit",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Es entsteht direkt nutzbarer Funktionswert fuer den Kunden."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "waste",
+          "text": "Verschwendung",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Es entsteht direkt nutzbarer Funktionswert fuer den Kunden."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Hotfix fuer Bug aus letztem Release einspielen",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "rework",
+          "text": "Nacharbeit",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Bugfixing ist notwendige Nacharbeit, aber keine neue Wertschoepfung."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "value_add",
+          "text": "Wertschoepfend",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Bugfixing ist notwendige Nacharbeit, aber keine neue Wertschoepfung."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "waste",
+          "text": "Verschwendung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Bugfixing ist notwendige Nacharbeit, aber keine neue Wertschoepfung."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "30 Minuten auf Freigabe des Build-Servers warten",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "waste",
+          "text": "Verschwendung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Reine Wartezeit ohne direkten Ergebnisbeitrag."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "value_add",
+          "text": "Wertschoepfend",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Reine Wartezeit ohne direkten Ergebnisbeitrag."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "rework",
+          "text": "Nacharbeit",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Reine Wartezeit ohne direkten Ergebnisbeitrag."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Kundensichtbares Formular fuer Antragstellung entwickeln",
+      "options": [
+        {
+          "id": "value_add",
+          "text": "Wertschoepfend",
+          "correct": true,
+          "reason": "Direkte Nutzung im Zielprozess bringt klaren Mehrwert."
+        },
+        {
+          "id": "rework",
+          "text": "Nacharbeit",
+          "correct": false,
+          "reason": "Direkte Nutzung im Zielprozess bringt klaren Mehrwert."
+        },
+        {
+          "id": "waste",
+          "text": "Verschwendung",
+          "correct": false,
+          "reason": "Direkte Nutzung im Zielprozess bringt klaren Mehrwert."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Fehlende Feldvalidierung nachtraeglich korrigieren",
+      "options": [
+        {
+          "id": "rework",
+          "text": "Nacharbeit",
+          "correct": true,
+          "reason": "Korrektur eines Defizits aus vorheriger Umsetzung."
+        },
+        {
+          "id": "value_add",
+          "text": "Wertschoepfend",
+          "correct": false,
+          "reason": "Korrektur eines Defizits aus vorheriger Umsetzung."
+        },
+        {
+          "id": "waste",
+          "text": "Verschwendung",
+          "correct": false,
+          "reason": "Korrektur eines Defizits aus vorheriger Umsetzung."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Ticket dreimal zwischen Teams hin- und herschieben",
+      "options": [
+        {
+          "id": "waste",
+          "text": "Verschwendung",
+          "correct": true,
+          "reason": "Unnoetige Uebergaben erzeugen nur Verzogerung."
+        },
+        {
+          "id": "value_add",
+          "text": "Wertschoepfend",
+          "correct": false,
+          "reason": "Unnoetige Uebergaben erzeugen nur Verzogerung."
+        },
+        {
+          "id": "rework",
+          "text": "Nacharbeit",
+          "correct": false,
+          "reason": "Unnoetige Uebergaben erzeugen nur Verzogerung."
         }
       ]
     }

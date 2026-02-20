@@ -3,84 +3,184 @@
     "topic": "Folie des Grauens: Fehler-Suche",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "folie_des_grauens_fehler_suche",
-    "version": "1.0"
+    "source": "_gg01_folie_des_grauens_fehler_suche.json",
+    "version": "2.0"
   },
-  "title": "Folie des Grauens: Fehler-Suche - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Folie des Grauens: Fehler-Suche",
+  "subtitle": "Finde alle 7 Design-Suenden auf der Horror-Folie innerhalb von 60 Sekunden.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Foliendesign bewerten: Comic-Sans-Schriftmix",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Comic-Sans-Schriftmix",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Unruhige Schriftwahl wirkt unprofessionell und erschwert Lesbarkeit."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Foliendesign bewerten: Niedriger Kontrast",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Niedriger Kontrast",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Neongelb auf sehr hellem Hintergrund ist schwer zu lesen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Foliendesign bewerten: Textwand",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Textwand",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Zu viel Fliesstext auf einer Folie ueberfordert das Publikum."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Foliendesign bewerten: Zu kleine Schrift",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zu kleine Schrift",
+          "correct": true,
+          "reason": "Sehr kleine Schrift ist in Meetings schlecht erkennbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Foliendesign bewerten: Pixeliges Bild",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pixeliges Bild",
+          "correct": true,
+          "reason": "Unscharfe Bilder reduzieren Glaubwuerdigkeit und Professionalitaet."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Foliendesign bewerten: Farbueberladung",
+      "options": [
+        {
+          "id": "a",
+          "text": "Farbueberladung",
+          "correct": true,
+          "reason": "Zu viele aggressive Farben lenken vom Inhalt ab."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Foliendesign bewerten: Fehlende Struktur",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fehlende Struktur",
+          "correct": true,
+          "reason": "Keine klare visuelle Hierarchie erschwert das Verstaendnis."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Pruefung direkt festlegen",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

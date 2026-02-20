@@ -3,84 +3,102 @@
     "topic": "UML Use-Case Boundaries",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "uml_use_case_boundaries",
-    "version": "1.0"
+    "source": "_gg01_actor_match.json",
+    "version": "2.0"
   },
-  "title": "UML Use-Case Boundaries - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "UML: Use-Case-Diagramm",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Public Roles",
+      "situation": "Public Roles Identify the external actors. Primary users belong outside the system boundary.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "i1",
+          "text": "Customer",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "i2",
+          "text": "Admin",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "i3",
+          "text": "Register User",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "i4",
+          "text": "Manage Account",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Partner Systems",
+      "situation": "Partner Systems External systems interacting with ours are also actors. Keep them off-stage.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "i1",
+          "text": "Payment Provider",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "i2",
+          "text": "Internal DB",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "i3",
+          "text": "Process Payment",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "i4",
+          "text": "Logistics API",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Boundary Leaks",
+      "situation": "Boundary Leaks Complex roles. Decide if they trigger the system or are a part of its internal logic.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "i1",
+          "text": "Nightly Cronjob",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "i2",
+          "text": "Backup Service",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "i3",
+          "text": "Compress Data",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "i4",
+          "text": "Mail Server",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

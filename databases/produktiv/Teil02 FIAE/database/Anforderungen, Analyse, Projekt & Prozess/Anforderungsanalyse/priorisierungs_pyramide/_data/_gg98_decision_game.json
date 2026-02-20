@@ -3,84 +3,159 @@
     "topic": "Priorisierungs-Pyramide",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "priorisierungs_pyramide",
-    "version": "1.0"
+    "source": "_gg01_priorisierungs_pyramide.json",
+    "version": "2.0"
   },
-  "title": "Priorisierungs-Pyramide - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Priorisierungs-Pyramide",
+  "subtitle": "Ordne Anforderungen nach der Kano-Methode ein.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Karte einordnen: System stuerzt im Normalbetrieb nicht ab.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "basis",
+          "text": "Basismerkmal",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Stabilitaet wird vorausgesetzt. Fehlt sie, entsteht starke Unzufriedenheit."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "leistung",
+          "text": "Leistungsmerkmal",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Stabilitaet wird vorausgesetzt. Fehlt sie, entsteht starke Unzufriedenheit."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "begeisterung",
+          "text": "Begeisterungsmerkmal",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Stabilitaet wird vorausgesetzt. Fehlt sie, entsteht starke Unzufriedenheit."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Karte einordnen: Benutzer kann Profil und Passwort selbst verwalten.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "basis",
+          "text": "Basismerkmal",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die Qualitaet der Funktion beeinflusst Zufriedenheit direkt."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "leistung",
+          "text": "Leistungsmerkmal",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Die Qualitaet der Funktion beeinflusst Zufriedenheit direkt."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "begeisterung",
+          "text": "Begeisterungsmerkmal",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Die Qualitaet der Funktion beeinflusst Zufriedenheit direkt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Karte einordnen: Dark Mode per Klick aktivierbar.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "basis",
+          "text": "Basismerkmal",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Nicht erwartet, aber bei Vorhandensein positiv ueberraschend."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "leistung",
+          "text": "Leistungsmerkmal",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht erwartet, aber bei Vorhandensein positiv ueberraschend."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "begeisterung",
+          "text": "Begeisterungsmerkmal",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht erwartet, aber bei Vorhandensein positiv ueberraschend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Karte einordnen: Suchen liefert Ergebnisse in unter 2 Sekunden.",
+      "options": [
+        {
+          "id": "basis",
+          "text": "Basismerkmal",
+          "correct": true,
+          "reason": "Bessere Performance steigert Zufriedenheit kontinuierlich."
+        },
+        {
+          "id": "leistung",
+          "text": "Leistungsmerkmal",
+          "correct": false,
+          "reason": "Bessere Performance steigert Zufriedenheit kontinuierlich."
+        },
+        {
+          "id": "begeisterung",
+          "text": "Begeisterungsmerkmal",
+          "correct": false,
+          "reason": "Bessere Performance steigert Zufriedenheit kontinuierlich."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Karte einordnen: Sicherer Login mit Rollenberechtigungen.",
+      "options": [
+        {
+          "id": "basis",
+          "text": "Basismerkmal",
+          "correct": true,
+          "reason": "Sicherheit ist Grundvoraussetzung im produktiven Einsatz."
+        },
+        {
+          "id": "leistung",
+          "text": "Leistungsmerkmal",
+          "correct": false,
+          "reason": "Sicherheit ist Grundvoraussetzung im produktiven Einsatz."
+        },
+        {
+          "id": "begeisterung",
+          "text": "Begeisterungsmerkmal",
+          "correct": false,
+          "reason": "Sicherheit ist Grundvoraussetzung im produktiven Einsatz."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Karte einordnen: Automatische Vorschlaege fuer naechste Arbeitsschritte.",
+      "options": [
+        {
+          "id": "basis",
+          "text": "Basismerkmal",
+          "correct": true,
+          "reason": "Erwartet niemand zwingend, schafft aber starken Mehrwert."
+        },
+        {
+          "id": "leistung",
+          "text": "Leistungsmerkmal",
+          "correct": false,
+          "reason": "Erwartet niemand zwingend, schafft aber starken Mehrwert."
+        },
+        {
+          "id": "begeisterung",
+          "text": "Begeisterungsmerkmal",
+          "correct": false,
+          "reason": "Erwartet niemand zwingend, schafft aber starken Mehrwert."
         }
       ]
     }

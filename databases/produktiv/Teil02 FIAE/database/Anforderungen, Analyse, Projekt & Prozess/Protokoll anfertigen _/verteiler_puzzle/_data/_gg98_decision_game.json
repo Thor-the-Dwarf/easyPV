@@ -1,86 +1,161 @@
 {
   "meta": {
-    "topic": "verteiler puzzle",
+    "topic": "Verteiler-Puzzle",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "verteiler_puzzle",
-    "version": "1.0"
+    "source": "_gg01abc1_verteiler_puzzle.json",
+    "version": "2.0"
   },
-  "title": "verteiler puzzle - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Verteiler-Puzzle",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Budgetabstimmung mit Finanzbezug und Terminrisiko",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Projektleitung, CFO/Controlling, betroffene Teamleads",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Nur entscheidungsrelevante Rollen sollten gezielt informiert werden."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Praktikantenteam",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nur entscheidungsrelevante Rollen sollten gezielt informiert werden."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Gesamtes Unternehmen ungefiltert",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nur entscheidungsrelevante Rollen sollten gezielt informiert werden."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Technischer Architekturentscheid fuer API-Sicherheit",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Backend-Team, Security, Architekt, Projektleitung",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Der Verteiler muss die fuer Umsetzung und Risiko verantwortlichen Rollen enthalten."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Marketing",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Der Verteiler muss die fuer Umsetzung und Risiko verantwortlichen Rollen enthalten."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ausschliesslich Externe ohne Projektbezug",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Der Verteiler muss die fuer Umsetzung und Risiko verantwortlichen Rollen enthalten."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Review eines Onboarding-Workshops mit Aufgabenlisten",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "HR, Teamleitung, Mentoren, neue Mitarbeitende",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Alle direkt beteiligten Rollen muessen Zugriff auf Entscheidungen und Aufgaben haben."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur externe Lieferanten",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Alle direkt beteiligten Rollen muessen Zugriff auf Entscheidungen und Aufgaben haben."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Ausschliesslich Rechtsabteilung",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Alle direkt beteiligten Rollen muessen Zugriff auf Entscheidungen und Aufgaben haben."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Abnahmeprotokoll nach Kunden-Workshop",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kunde, Projektleitung, QA, verantwortliche Umsetzungsteams",
+          "correct": true,
+          "reason": "Abnahme betrifft Auftraggeber und operative Umsetzer zugleich."
+        },
+        {
+          "id": "b",
+          "text": "Nur interne Social-Media-Gruppe",
+          "correct": false,
+          "reason": "Abnahme betrifft Auftraggeber und operative Umsetzer zugleich."
+        },
+        {
+          "id": "c",
+          "text": "Nur zufaellige Mitarbeitende",
+          "correct": false,
+          "reason": "Abnahme betrifft Auftraggeber und operative Umsetzer zugleich."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Aenderung der Meeting-Struktur in einem kleinen Scrum-Team",
+      "options": [
+        {
+          "id": "a",
+          "text": "Scrum-Team, Product Owner, Scrum Master",
+          "correct": true,
+          "reason": "Der Verteiler richtet sich am betroffenen Arbeitskontext aus."
+        },
+        {
+          "id": "b",
+          "text": "Nur Buchhaltung",
+          "correct": false,
+          "reason": "Der Verteiler richtet sich am betroffenen Arbeitskontext aus."
+        },
+        {
+          "id": "c",
+          "text": "Nur Mitarbeitende einer anderen Niederlassung",
+          "correct": false,
+          "reason": "Der Verteiler richtet sich am betroffenen Arbeitskontext aus."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Eskalation wegen abgelehntem Change Request",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kunde, Projektleitung, Account Management, Entscheidungsgremium",
+          "correct": true,
+          "reason": "Eskalationen brauchen die verantwortlichen und entscheidungsbefugten Empfaenger."
+        },
+        {
+          "id": "b",
+          "text": "Nur Azubi-Chatgruppe",
+          "correct": false,
+          "reason": "Eskalationen brauchen die verantwortlichen und entscheidungsbefugten Empfaenger."
+        },
+        {
+          "id": "c",
+          "text": "Ausschliesslich nicht beteiligte Fachbereiche",
+          "correct": false,
+          "reason": "Eskalationen brauchen die verantwortlichen und entscheidungsbefugten Empfaenger."
         }
       ]
     }

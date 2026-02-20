@@ -1,86 +1,161 @@
 {
   "meta": {
-    "topic": "vom gespraech zum punkt",
+    "topic": "Vom Gespraech zum Punkt",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "vom_gespraech_zum_punkt",
-    "version": "1.0"
+    "source": "_gg01_vom_gespraech_zum_punkt.json",
+    "version": "2.0"
   },
-  "title": "vom gespraech zum punkt - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Vom Gespraech zum Punkt",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Herr Schmidt meinte, dass er wohl bis Freitag die Datenbank-Bereinigung machen kann.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Schmidt: Datenbank bereinigen bis Freitag.",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Ein Aktionspunkt braucht Verantwortliche und Termin."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Vielleicht Datenbank aufraeumen.",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ein Aktionspunkt braucht Verantwortliche und Termin."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Datenbank ist ein Thema.",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Ein Aktionspunkt braucht Verantwortliche und Termin."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Lisa sagte, sie prueft den Testreport naechste Woche irgendwann.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "b",
+          "text": "Lisa: Testreport pruefen bis Mittwoch (naechste Woche).",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Praezise Frist + klare Zustaendigkeit macht den Punkt umsetzbar."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "a",
+          "text": "Lisa schaut bei Gelegenheit auf den Testreport.",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Praezise Frist + klare Zustaendigkeit macht den Punkt umsetzbar."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Testreport muss geprueft werden.",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Praezise Frist + klare Zustaendigkeit macht den Punkt umsetzbar."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wir sollten den Kunden informieren, wenn die Aenderung durch ist.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "b",
+          "text": "PM-Team: Kunde ueber Aenderung informieren bis Go-live+1 Tag.",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Aktionspunkte sind konkret, terminierbar und zugewiesen."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "a",
+          "text": "Kundeninformation ist wichtig.",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Aktionspunkte sind konkret, terminierbar und zugewiesen."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Jemand informiert spaeter den Kunden.",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Aktionspunkte sind konkret, terminierbar und zugewiesen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Can kann wohl den API-Endpunkt dokumentieren, sobald Zeit frei ist.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Can: API-Endpunkt dokumentieren bis 22.04.",
+          "correct": true,
+          "reason": "Die beste Version ersetzt Unschaerfe durch klaren Termin."
+        },
+        {
+          "id": "b",
+          "text": "API-Dokumentation ggf. erledigen.",
+          "correct": false,
+          "reason": "Die beste Version ersetzt Unschaerfe durch klaren Termin."
+        },
+        {
+          "id": "c",
+          "text": "API wird irgendwann dokumentiert.",
+          "correct": false,
+          "reason": "Die beste Version ersetzt Unschaerfe durch klaren Termin."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Vielleicht koennte das QA-Team die Regressionstests am Montag starten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "QA-Team: Regressionstests starten am Montag, 09:00.",
+          "correct": true,
+          "reason": "Konkreter Startzeitpunkt senkt Interpretationsspielraum."
+        },
+        {
+          "id": "b",
+          "text": "Regressionstests bald starten.",
+          "correct": false,
+          "reason": "Konkreter Startzeitpunkt senkt Interpretationsspielraum."
+        },
+        {
+          "id": "c",
+          "text": "Montag ist ein guter Tag fuer Tests.",
+          "correct": false,
+          "reason": "Konkreter Startzeitpunkt senkt Interpretationsspielraum."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Es waere gut, wenn jemand die offene Budgetfrage mit Controlling klaert.",
+      "options": [
+        {
+          "id": "b",
+          "text": "Projektleitung: Budgetfrage mit Controlling klaeren bis Donnerstag 12:00.",
+          "correct": true,
+          "reason": "Nur mit Verantwortlicher und Deadline wird aus Absicht eine Aufgabe."
+        },
+        {
+          "id": "a",
+          "text": "Budgetfrage mit Controlling klaeren.",
+          "correct": false,
+          "reason": "Nur mit Verantwortlicher und Deadline wird aus Absicht eine Aufgabe."
+        },
+        {
+          "id": "c",
+          "text": "Controlling soll sich melden.",
+          "correct": false,
+          "reason": "Nur mit Verantwortlicher und Deadline wird aus Absicht eine Aufgabe."
         }
       ]
     }

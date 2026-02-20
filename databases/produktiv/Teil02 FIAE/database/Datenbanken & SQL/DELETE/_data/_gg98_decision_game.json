@@ -3,84 +3,90 @@
     "topic": "DELETE Statement",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "delete_statement",
-    "version": "1.0"
+    "source": "_gg01_point_delete.json",
+    "version": "2.0"
   },
-  "title": "DELETE Statement - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "DELETE",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Surgical Removal",
+      "situation": "Delete the user 'SpamBot_99' (ID: 404). Do NOT touch the others. Welche ID ist korrekt?",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "404",
+          "text": "ID 404 - SpamBot_99",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Delete the user 'SpamBot_99' (ID: 404). Do NOT touch the others."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "101",
+          "text": "ID 101 - Admin",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Delete the user 'SpamBot_99' (ID: 404). Do NOT touch the others."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "102",
+          "text": "ID 102 - User_A",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Delete the user 'SpamBot_99' (ID: 404). Do NOT touch the others."
+        },
+        {
+          "id": "105",
+          "text": "ID 105 - User_B",
+          "correct": false,
+          "reason": "Delete the user 'SpamBot_99' (ID: 404). Do NOT touch the others."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Duplicate Danger",
+      "situation": "Delete the INACTIVE 'Hans'. Watch out, there are two 'Hans' users! Welche ID ist korrekt?",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "77",
+          "text": "ID 77 - Hans",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Delete the INACTIVE 'Hans'. Watch out, there are two 'Hans' users!"
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "55",
+          "text": "ID 55 - Hans",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Delete the INACTIVE 'Hans'. Watch out, there are two 'Hans' users!"
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "88",
+          "text": "ID 88 - Greta",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Delete the INACTIVE 'Hans'. Watch out, there are two 'Hans' users!"
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Constraint Lock",
+      "situation": "Try to delete 'BigCustomer'. Why is it blocked? Welche ID ist korrekt?",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "900",
+          "text": "ID 900 - BigCustomer",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Try to delete 'BigCustomer'. Why is it blocked?"
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "901",
+          "text": "ID 901 - SmallFish",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Try to delete 'BigCustomer'. Why is it blocked?"
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Entscheidung in diesem Kontext."
         }
       ]
     }

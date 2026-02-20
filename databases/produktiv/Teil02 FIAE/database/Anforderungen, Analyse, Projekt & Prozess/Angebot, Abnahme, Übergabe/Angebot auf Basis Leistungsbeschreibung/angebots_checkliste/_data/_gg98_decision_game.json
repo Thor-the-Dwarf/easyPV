@@ -3,84 +3,134 @@
     "topic": "Angebots-Checkliste",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "angebots_checkliste",
-    "version": "1.0"
+    "source": "_gg01_angebots_checkliste.json",
+    "version": "2.0"
   },
-  "title": "Angebots-Checkliste - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Angebots-Checkliste",
+  "subtitle": "Waehle die formalen Pflichtangaben fuer ein rechtssicheres Angebot.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "IT-Serviceangebot fuer 12 Monate Support",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "angebotsdatum",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Ohne diese Angaben ist das Angebot inhaltlich oder rechtlich angreifbar."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nicht erforderlich",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur optional",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Hardwareangebot fuer 40 Notebooks",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "angebotsdatum",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Liefer- und Zahlungslogik muss im Angebot eindeutig geregelt sein."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nicht erforderlich",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur optional",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Cloud-Migration als Projektleistung",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "leistungsbeschreibung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Bei Projekten sind Leistungsumfang und Haftungsrahmen besonders wichtig."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nicht erforderlich",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur optional",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wartungsvertrag fuer Netzwerkkomponenten",
+      "options": [
+        {
+          "id": "a",
+          "text": "angebotsdatum",
+          "correct": true,
+          "reason": "Service-Level ohne klare Konditionen fuehren spaeter zu Streit."
+        },
+        {
+          "id": "b",
+          "text": "Nicht erforderlich",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Nur optional",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Sicherheitsaudit fuer Produktionssystem",
+      "options": [
+        {
+          "id": "a",
+          "text": "angebotsdatum",
+          "correct": true,
+          "reason": "Sicherheitsnahe Leistungen brauchen klare Datenschutz- und Laufzeitangaben."
+        },
+        {
+          "id": "b",
+          "text": "Nicht erforderlich",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        },
+        {
+          "id": "c",
+          "text": "Nur optional",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

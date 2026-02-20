@@ -3,7 +3,7 @@
     "topic": "Ausbildungsplanung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "ausbildungsplanung",
+    "source": "_gg01_kompetenz_lueckenfinder.json",
     "version": "1.0"
   },
   "title": "Ausbildungsplanung - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was ist der erste Schritt bei einem Gap-Case?\nIst-Stand mit Soll-Anforderung vergleichen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Aktuelle Kompetenzen gegen Zielkompetenzen spiegeln",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Ohne Vergleich keine Luecke."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Direkt eine Massnahme waehlen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Massnahme erst nach Analyse."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Bewertung ueberspringen und Bonus erwarten",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Das funktioniert nicht."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann gibt es Teilpunkte laut Regelwerk?\nLuecke richtig, Massnahme falsch.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn die Luecke korrekt erkannt wurde",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Erkennung gibt Teilpunkte."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur bei komplett falscher Analyse",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Dafuer gibt es keine Teilpunkte."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur bei maximaler Klickgeschwindigkeit",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Tempo ist nicht ausschlaggebend."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Massnahme ist bei hoher Lueckenschwere am sinnvollsten?\nGezielte Nachsteuerung statt Aufschub.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Sofortige Lernmassnahme mit klarer Zielkompetenz",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Hohe Schwere braucht direkte Aktion."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Ignorieren bis zur naechsten Pruefung",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das vergroessert das Risiko."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur kosmetische Dokumentation",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Ohne inhaltliche Massnahme wirkungslos."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI misst das Ergebnis am besten?\nTreffquote plus Wirksamkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Luecken-Treffquote und Massnahmenwirksamkeit",
+          "correct": true,
+          "reason": "Exakt. Beide Werte sind Kern-KPI."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtanzahl Faelle",
+          "correct": false,
+          "reason": "Zu grob fuer Lernsteuerung."
+        },
+        {
+          "id": "c",
+          "text": "Nur Sessiondauer",
+          "correct": false,
+          "reason": "Dauer allein zeigt keine Qualitaet."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann aktiviert sich ein Hinweismodus?\nMehrere Fehler in Serie.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei anhaltender Fehlserie in aufeinanderfolgenden Faellen",
+          "correct": true,
+          "reason": "Richtig. Dann hilft Guided Feedback."
+        },
+        {
+          "id": "b",
+          "text": "Nach jedem korrekten Treffer",
+          "correct": false,
+          "reason": "Hinweise sind fuer Fehlmuster gedacht."
+        },
+        {
+          "id": "c",
+          "text": "Nur in der ersten Runde",
+          "correct": false,
+          "reason": "Kein statischer Startmodus."
         }
       ]
     }

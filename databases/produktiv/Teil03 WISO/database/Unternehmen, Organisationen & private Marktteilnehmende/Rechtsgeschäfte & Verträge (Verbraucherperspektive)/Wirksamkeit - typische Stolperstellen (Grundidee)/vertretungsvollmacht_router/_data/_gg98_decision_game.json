@@ -3,7 +3,7 @@
     "topic": "Wirksamkeit - typische Stolperstellen",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wirksamkeit_typische_stolperstellen",
+    "source": "_gg01_vertretungsvollmacht_router.json",
     "version": "1.0"
   },
   "title": "Wirksamkeit - typische Stolperstellen - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welcher Schritt kommt bei Stellvertretungsfall zuerst?\nRolle und Vertretungsstatus klaeren.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Beteiligtenrolle und Vertretungsbefugnis zuerst pruefen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist der Startpunkt."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Direkt Ergebnis festlegen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ohne Pruefweg nicht belastbar."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur den Falltitel lesen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht ausreichend."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Route ist korrekt?\nBefugnis -> Umfang -> Wirksamkeit.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Vollmacht pruefen, Umfang validieren, Wirkung beurteilen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Exakt der korrekte Pfad."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Umfang ignorieren und direkt freigeben",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Pflichtpruefung fehlt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur auf Erfahrung verlassen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht regelbasiert."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann droht Zusatzabzug?\nPflichtpruefung ausgelassen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn eine notwendige Pruefstufe uebersprungen wird",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das ist regelwidrig."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn Zwischenergebnis dokumentiert wird",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Dokumentation ist richtig."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn Feedback angezeigt wird",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Feedback ist vorgesehen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI sind gefordert?\nKorrektheit und Effizienz trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Routing-Genauigkeit und Schritte bis Loesung",
+          "correct": true,
+          "reason": "Genau diese KPI sind relevant."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl geoeffneter Tabs",
+          "correct": false,
+          "reason": "Nicht fachlich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Sitzungsdauer",
+          "correct": false,
+          "reason": "Ohne Ergebnisqualitaet unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist ein Fall korrekt abgeschlossen?\nPfad vollstaendig und konsistent.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn der gesamte Pruefweg korrekt bis zur Loesung lief",
+          "correct": true,
+          "reason": "Richtig. Dann ist der Fall sauber."
+        },
+        {
+          "id": "b",
+          "text": "Sobald eine Antwort geklickt wurde",
+          "correct": false,
+          "reason": "Das ist kein Abschluss."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Zeit ablaeuft",
+          "correct": false,
+          "reason": "Ablauf ist kein Erfolg."
         }
       ]
     }

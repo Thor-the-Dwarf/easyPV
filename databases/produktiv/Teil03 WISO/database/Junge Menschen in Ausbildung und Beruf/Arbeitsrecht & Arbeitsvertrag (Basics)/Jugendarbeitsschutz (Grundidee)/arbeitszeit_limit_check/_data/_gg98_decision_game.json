@@ -3,7 +3,7 @@
     "topic": "Jugendarbeitsschutz",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "jugendarbeitsschutz",
+    "source": "_gg01_arbeitszeit_limit_check.json",
     "version": "1.0"
   },
   "title": "Jugendarbeitsschutz - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Tagesplan mit langen Blöcken ohne ausreichende Unterbrechung: Bewertung?\nPruefe Grenzwerte und Belastung im Gesamtplan.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Als nicht regelkonform markieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Der Plan verletzt zeitliche Schutzgrenzen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Als immer konform markieren",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ohne Pruefung freigeben",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Kennzahl ist laut Plan zentral?\nSie kombiniert Treffer mit Bearbeitungstempo.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Bewertungsgenauigkeit und Antwortzeit",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Diese KPI bildet Fortschritt gut ab."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Punktesumme",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Zu wenig differenziert."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur Fallanzahl",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Was passiert bei uebersehenem Schwerverstoss?\nDie Regel nennt eine strengere Sanktion.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Doppelter Abzug",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Kritische Ueberseher werden stark gewichtet."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Kein Abzug",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Sofortbonus",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann wird Serienbonus aktiv?\nMehrere korrekte Entscheidungen in Folge.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nach drei korrekten Bewertungen in Folge",
+          "correct": true,
+          "reason": "Richtig. Konstanz wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Nach einem Treffer",
+          "correct": false,
+          "reason": "Zu frueh."
+        },
+        {
+          "id": "c",
+          "text": "Nur am Ende",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was soll der Endreport hervorheben?\nTypische Grenzverletzungen sichtbar machen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Haeufig uebersehene Grenzverletzungen",
+          "correct": true,
+          "reason": "Richtig. Das hilft bei gezieltem Nachlernen."
+        },
+        {
+          "id": "b",
+          "text": "Nur den Endscore",
+          "correct": false,
+          "reason": "Zu wenig Information."
+        },
+        {
+          "id": "c",
+          "text": "Keine Auswertung",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

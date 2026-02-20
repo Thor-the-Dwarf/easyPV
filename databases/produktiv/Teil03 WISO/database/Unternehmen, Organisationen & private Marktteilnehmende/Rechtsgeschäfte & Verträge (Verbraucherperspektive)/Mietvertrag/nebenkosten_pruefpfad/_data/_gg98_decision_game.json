@@ -3,84 +3,134 @@
     "topic": "Nebenkosten-Pruefpfad",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "nebenkosten_pruefpfad",
+    "source": "_gg01_nebenkosten_pruefpfad.json",
     "version": "1.0"
   },
   "title": "Nebenkosten-Pruefpfad - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "subtitle": "Umlagefaehige Positionen sicher klassifizieren",
   "rounds": [
     {
-      "id": 1,
+      "id": "NP-1",
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Position: Allgemeinstrom Treppenhaus in ordentlicher Abrechnung.\nPruefe, ob die Position typischerweise umlagefaehig ist.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Umlagefaehig, wenn transparent ausgewiesen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Transparente Betriebskostenpositionen sind pruefbar umlagefaehig."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nie umlagefaehig",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt. Das ist zu pauschal."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Immer ohne Nachweis umlagefaehig",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt. Nachvollziehbarkeit bleibt Pflicht."
         }
       ]
     },
     {
-      "id": 2,
+      "id": "NP-2",
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Position: Reparatur der Wohnungstuer als laufende Nebenkosten.\nInstandsetzung ist von laufenden Betriebskosten zu trennen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
-          "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "text": "Umlagefaehig wie Heizkosten",
+          "correct": false,
+          "reason": "Nicht korrekt. Reparaturkosten sind anders zu behandeln."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
-          "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "text": "Nicht umlagefaehig als laufende Nebenkostenposition",
+          "correct": true,
+          "reason": "Richtig. Instandsetzung ist typischerweise keine laufende Umlageposition."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur bei hoher Miete umlagefaehig",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt. Die Hoehe der Miete ist hier nicht das Kernkriterium."
         }
       ]
     },
     {
-      "id": 3,
+      "id": "NP-3",
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Position: Gartenpflege mit Dienstleisterrechnung und klarer Aufteilung.\nLeistung, Nachweis und Verteilungsschluessel gemeinsam pruefen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Umlagefaehig bei nachvollziehbarer Abrechnung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Nachweis + transparenter Schluessel sprechen fuer Umlagefaehigkeit."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Immer ausgeschlossen",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt. Das ist zu pauschal."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur mit Zustimmung jedes Mieters",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt. Entscheidend ist vor allem die vertragliche und sachliche Einordnung."
+        }
+      ]
+    },
+    {
+      "id": "NP-4",
+      "phase": "Runde 4",
+      "situation": "Position: Verwaltungskosten werden als Nebenkosten weitergegeben.\nNicht jede Kostenart ist umlagefaehig.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Umlagefaehig, wenn Betrag klein ist",
+          "correct": false,
+          "reason": "Nicht korrekt. Die Hoehe allein entscheidet nicht."
+        },
+        {
+          "id": "b",
+          "text": "Nicht umlagefaehig in der Regel",
+          "correct": true,
+          "reason": "Richtig. Verwaltungskosten sind typischerweise nicht umlagefaehig."
+        },
+        {
+          "id": "c",
+          "text": "Automatisch umlagefaehig bei digitaler Verwaltung",
+          "correct": false,
+          "reason": "Nicht korrekt. Das aendert die Einordnung nicht automatisch."
+        }
+      ]
+    },
+    {
+      "id": "NP-5",
+      "phase": "Runde 5",
+      "situation": "Position: Kostenart fehlt in der Abrechnungserlaeuterung vollstaendig.\nFehlende Transparenz ist ein klares Warnsignal.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ohne Pruefung akzeptieren",
+          "correct": false,
+          "reason": "Nicht korrekt. Ohne Erlaeuterung fehlt die Pruefbasis."
+        },
+        {
+          "id": "b",
+          "text": "Als nicht ausreichend begruendet markieren und Rueckfrage ausloesen",
+          "correct": true,
+          "reason": "Richtig. So bleibt der Pruefpfad nachvollziehbar."
+        },
+        {
+          "id": "c",
+          "text": "Immer anteilig halbieren und buchen",
+          "correct": false,
+          "reason": "Nicht korrekt. Pauschalquoten ersetzen keine Sachpruefung."
         }
       ]
     }

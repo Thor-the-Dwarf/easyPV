@@ -3,7 +3,7 @@
     "topic": "Ausbildungsplanung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "ausbildungsplanung",
+    "source": "_gg01_plan_abgleich_matrix.json",
     "version": "1.0"
   },
   "title": "Ausbildungsplanung - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Was ist die Kernaufgabe in der Plan-Abgleich-Matrix?\nZuordnung zwischen drei Planquellen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Lernziele zwischen Ausbildungsordnung, Rahmenplan und Betriebsplan verlinken",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Genau dieser Abgleich ist zentral."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Farben im Plan anpassen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Farben loesen keinen Abgleich."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur offene Punkte zaehlen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Zaehlen ohne Zuordnung reicht nicht."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Zusatzleistung bringt Pluspunkte?\nLuecken nicht uebersehen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Planluecke korrekt erkennen und markieren",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Das gibt Zusatzpunkte."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Beliebige Doppelverlinkung setzen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Falsche Links kosten Punkte."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Alle Zuordnungen offen lassen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Ohne Zuordnung kein Fortschritt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann entsteht ein Zusatzabzug?\nKernzuordnung fehlt.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn eine notwendige Kernzuordnung fehlt",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Das ist ein Schluesselfehler."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn ein Ziel mehrfach geprueft wird",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Mehrfachpruefung kann sinnvoll sein."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn die Session zu kurz ist",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Dauer allein ist kein Abzugskriterium."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI muessen getrennt sichtbar sein?\nLinks und Luecken separat.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zuordnungsquote und Lueckenquote",
+          "correct": true,
+          "reason": "Richtig. Zwei getrennte Leistungswerte."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunktestand",
+          "correct": false,
+          "reason": "Zu wenig Information fuer Ursachenanalyse."
+        },
+        {
+          "id": "c",
+          "text": "Nur Sessionzeit",
+          "correct": false,
+          "reason": "Kein Qualitaetsindikator."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann kann ein Serienbonus aktiviert werden?\nFehlerfreie Faelle in Folge.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nach drei fehlerfreien Abgleichfaellen hintereinander",
+          "correct": true,
+          "reason": "Richtig. Das aktiviert den Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Nach jedem Fehlversuch",
+          "correct": false,
+          "reason": "Fehler aktivieren keinen Bonus."
+        },
+        {
+          "id": "c",
+          "text": "Nur im ersten Fall",
+          "correct": false,
+          "reason": "Bonus ist leistungsabhaengig, nicht positionsabhaengig."
         }
       ]
     }

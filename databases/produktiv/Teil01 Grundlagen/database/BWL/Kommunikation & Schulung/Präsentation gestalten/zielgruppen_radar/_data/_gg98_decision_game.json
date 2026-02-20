@@ -3,84 +3,84 @@
     "topic": "Zielgruppen-Radar",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "zielgruppen_radar",
-    "version": "1.0"
+    "source": "_gg01_zielgruppen_radar.json",
+    "version": "2.0"
   },
-  "title": "Zielgruppen-Radar - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Zielgruppen-Radar",
+  "subtitle": "Passe den Praesentationsstil an die jeweilige Zielgruppe an.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Zielgruppenstil waehlen: Kurzfristiges Steering-Meeting zur Projektfreigabe",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Detailliert & technisch",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Zu tief im Detail fuer ein kurzes Entscheider-Meeting."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Kurz & ergebnisorientiert",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Richtig: Fokus auf Optionen, Risiken und Entscheidungsvorlage."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Lustig & verspielt",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Unterhaltsam, aber nicht passend fuer Board-Entscheidungen."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Zielgruppenstil waehlen: Einfuehrung in neue Support-Prozesse",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Didaktisch & schrittweise",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig: Lernende profitieren von Struktur, Beispielen und Wiederholung."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur KPI-Folien",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Zu abstrakt und wenig lernfoerderlich fuer Einsteiger."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur Live-Demo ohne Erklaerung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Ohne Erklaerung bleibt Wissen schwer uebertragbar."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Zielgruppenstil waehlen: Architektur-Review vor Implementierung",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Allgemein & oberflaechlich",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Zu wenig Substanz fuer ein technisches Review."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Storytelling ohne technische Details",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Hilft beim Einstieg, ersetzt aber keine Architekturargumente."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Detailliert & technisch",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Richtig: das Team braucht konkrete technische Entscheidungsgrundlagen."
         }
       ]
     }

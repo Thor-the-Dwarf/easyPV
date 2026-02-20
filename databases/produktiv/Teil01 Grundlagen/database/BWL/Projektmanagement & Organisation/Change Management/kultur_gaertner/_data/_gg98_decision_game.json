@@ -3,84 +3,159 @@
     "topic": "Kultur-Gaertner",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kultur_gaertner",
+    "source": "_gg01_kultur_gaertner.json",
     "version": "1.0"
   },
   "title": "Kultur-Gaertner - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "subtitle": "Staerke eine gesunde Lernkultur im Team.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Ein Teammitglied macht einen Fehler im neuen Prozess.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "grow",
+          "text": "Fehler als Lernfall im Team teilen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Lernkultur erhoeht Sicherheit und Verbesserung."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "wilt",
+          "text": "Fehler oeffentlich bestrafen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Angstkultur reduziert Offenheit und Fortschritt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ohne Datengrundlage entscheiden",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wichtige Informationen zum Wandel sollen verteilt werden.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "grow",
+          "text": "Offene Fragerunde fuer alle Bereiche",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Transparenz baut Vertrauen auf."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "wilt",
+          "text": "Nur Fuehrungskreis informieren",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Ausschluss erzeugt Unsicherheit und Distanz."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ohne Datengrundlage entscheiden",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Das Team braucht schnellere Abstimmung.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "grow",
+          "text": "Open-Door-Policy und kurze Syncs einfuehren",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Zugaenglichkeit foerdert Zusammenarbeit."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "wilt",
+          "text": "Einzelbueros nur fuer Leitung und geschlossene Tueren",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Barrieren bremsen Austausch und Vertrauen."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Ohne Datengrundlage entscheiden",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Neue Mitarbeitende starten mitten in der Umstellung.",
+      "options": [
+        {
+          "id": "grow",
+          "text": "Mentoring und klares Onboarding bereitstellen",
+          "correct": true,
+          "reason": "Unterstuetzung beschleunigt Integration."
+        },
+        {
+          "id": "wilt",
+          "text": "Selbst herausfinden lassen",
+          "correct": false,
+          "reason": "Ohne Struktur steigen Frust und Fehler."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Datengrundlage entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Die Motivation sinkt nach mehreren Anpassungen.",
+      "options": [
+        {
+          "id": "grow",
+          "text": "Zwischenerfolge sichtbar machen und feiern",
+          "correct": true,
+          "reason": "Anerkennung stabilisiert Motivation."
+        },
+        {
+          "id": "wilt",
+          "text": "Nur auf Defizite hinweisen",
+          "correct": false,
+          "reason": "Dauernde Kritik entzieht Energie."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Datengrundlage entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Konflikte entstehen zwischen Alt- und Neuprozess.",
+      "options": [
+        {
+          "id": "grow",
+          "text": "Moderierten Dialog mit klaren Spielregeln nutzen",
+          "correct": true,
+          "reason": "Konfliktbearbeitung schafft gemeinsame Basis."
+        },
+        {
+          "id": "wilt",
+          "text": "Konflikte ignorieren",
+          "correct": false,
+          "reason": "Unausgesprochene Spannungen untergraben Kultur."
+        },
+        {
+          "id": "c",
+          "text": "Ohne Datengrundlage entscheiden",
+          "correct": false,
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

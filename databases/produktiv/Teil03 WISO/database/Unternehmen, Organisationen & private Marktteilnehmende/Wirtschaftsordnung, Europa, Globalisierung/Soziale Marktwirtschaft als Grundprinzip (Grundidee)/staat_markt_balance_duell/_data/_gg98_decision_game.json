@@ -3,7 +3,7 @@
     "topic": "Soziale Marktwirtschaft",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "soziale_marktwirtschaft",
+    "source": "_gg01_staat_markt_balance_duell.json",
     "version": "1.0"
   },
   "title": "Soziale Marktwirtschaft - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Nachfrageschock: Was ist ausgewogener?\nKurzfristig stabilisieren, langfristig marktnah.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Gezielte Entlastung plus Wettbewerbsimpulse",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Balance aus Hilfe und Marktstaerkung."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Dauerhafte Vollsubvention fuer alle",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Zu pauschal."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Gar keine Reaktion",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Zu passiv."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann gibt es Begruendungsbonus?\nRichtige Wahl plus plausible Begruendung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn die korrekte Option sachlich begruendet wird",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Bonus fuer Transparenz."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Bei jeder beliebigen Begruendung",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Qualitaet zaehlt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nie",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Doch, laut Plan."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Intervention schuetzt Wettbewerb?\nMarktzugang sichern.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Missbrauchsaufsicht bei dominanter Stellung",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Wettbewerbsrahmen bleibt offen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Marktzugang auf wenige Firmen beschraenken",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Falsch."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Preisabsprachen erlauben",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welcher Zielkonflikt ist typisch?\nEffizienz vs. Verteilung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kosteneffizienz gegen sozialen Ausgleich",
+          "correct": true,
+          "reason": "Richtig. Kernkonflikt."
+        },
+        {
+          "id": "b",
+          "text": "Farbe gegen Form",
+          "correct": false,
+          "reason": "Nicht relevant."
+        },
+        {
+          "id": "c",
+          "text": "Dateiname gegen Ordnername",
+          "correct": false,
+          "reason": "Nicht inhaltlich."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist eine Wahl unvollstaendig?\nBegruendung fehlt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn korrekt gewaehlt, aber nicht begruendet wurde",
+          "correct": true,
+          "reason": "Richtig. Dann nur Teilpunkte."
+        },
+        {
+          "id": "b",
+          "text": "Wenn falsch gewaehlt und begruendet",
+          "correct": false,
+          "reason": "Bleibt falsch."
+        },
+        {
+          "id": "c",
+          "text": "Wenn gar nicht gewaehlt",
+          "correct": false,
+          "reason": "Keine Wertung."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Welche KPI bildet Duellqualitaet ab?\nWahl + Begruendung trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wahlgenauigkeit und Begruendungsquote",
+          "correct": true,
+          "reason": "Richtig. Beide Ebenen werden sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Klickfrequenz",
+          "correct": false,
+          "reason": "Nicht aussagekraeftig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Antwortlaenge",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Was verbessert die Balanceentscheidung?\nWirkung in Szenarien pruefen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Optionen in kurzen Szenarien gegentesten",
+          "correct": true,
+          "reason": "Richtig. Robusteres Urteil."
+        },
+        {
+          "id": "b",
+          "text": "Nur eine Perspektive nutzen",
+          "correct": false,
+          "reason": "Zu eng."
+        },
+        {
+          "id": "c",
+          "text": "Zufaellig waehlen",
+          "correct": false,
+          "reason": "Keine Methode."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Wofuer steht das Duell im Lernziel?\nKontextbezogene Abwaegung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kontextgerecht zwischen Markt und Staat abwaegen",
+          "correct": true,
+          "reason": "Richtig. Das ist der Kern."
+        },
+        {
+          "id": "b",
+          "text": "Immer Staat waehlen",
+          "correct": false,
+          "reason": "Zu einseitig."
+        },
+        {
+          "id": "c",
+          "text": "Immer Markt waehlen",
+          "correct": false,
+          "reason": "Zu einseitig."
         }
       ]
     }

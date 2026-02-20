@@ -3,7 +3,7 @@
     "topic": "Unternehmensaufbau",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "unternehmensaufbau",
+    "source": "_gg01_aufgaben_zuordnung_match.json",
     "version": "1.0"
   },
   "title": "Unternehmensaufbau - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Wer verantwortet typischerweise die Lieferantenauswahl?\nBeschaffungskompetenz.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Einkauf/Beschaffung",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Dort liegt die Aufgabenhoheit."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Personalabteilung",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht primaer."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Kundenservice",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht der Kernbereich."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Aufgabe gehoert in den Vertrieb?\nMarkt- und Kundenbezug.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Kundenakquise und Angebotsverhandlung",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Das ist klassische Vertriebsarbeit."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Lohnabrechnung",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Gehort ins Rechnungswesen/HR."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Wartung der Produktionsmaschine",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht primaer Vertrieb."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wo liegt die Erstellung von Monatsabschluessen?\nFinanztransparenz.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Rechnungswesen/Controlling",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Dort wird finanzielle Lage verdichtet."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Produktion",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht der Hauptbereich."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wareneingang",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht passend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Aufgabe passt zur Personalabteilung?\nMitarbeitende gewinnen und entwickeln.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Recruiting und Personalentwicklung",
+          "correct": true,
+          "reason": "Richtig. Kernaufgabe von HR."
+        },
+        {
+          "id": "b",
+          "text": "Preisstrategie je Produkt",
+          "correct": false,
+          "reason": "Eher Produktmanagement/Vertrieb."
+        },
+        {
+          "id": "c",
+          "text": "Lieferroute im Lager festlegen",
+          "correct": false,
+          "reason": "Eher Logistik."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was misst die KPI Trefferquote je Bereich?\nZuordnungsqualitaet je Funktionscluster.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wie praezise Aufgaben den richtigen Bereichen zugeordnet werden",
+          "correct": true,
+          "reason": "Richtig. Clusterstaerken werden sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur die Anzahl gespielter Runden",
+          "correct": false,
+          "reason": "Ohne Qualitaet nicht aussagekraeftig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Klicktempo",
+          "correct": false,
+          "reason": "Zu wenig."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Welche Aufgabe ist typisch fuer Logistik?\nMaterialfluss und Verfuegbarkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lagersteuerung und Versandkoordination",
+          "correct": true,
+          "reason": "Richtig. Das ist Logistik-Kern."
+        },
+        {
+          "id": "b",
+          "text": "Arbeitsvertragserstellung",
+          "correct": false,
+          "reason": "Eher HR/Legal."
+        },
+        {
+          "id": "c",
+          "text": "Anlagenbilanz buchen",
+          "correct": false,
+          "reason": "Eher Rechnungswesen."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Warum ist klare Aufgabenverteilung wichtig?\nVerantwortung und Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sie reduziert Doppelarbeit und Verantwortungslaecken",
+          "correct": true,
+          "reason": "Richtig. Rollen werden klar."
+        },
+        {
+          "id": "b",
+          "text": "Sie verhindert jede Zusammenarbeit",
+          "correct": false,
+          "reason": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Sie ersetzt Schnittstellenmanagement",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was trainiert das Aufgaben-Zuordnung-Match?\nFunktionslogik verstehen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aufgaben sicher Bereichen zuordnen und begruenden",
+          "correct": true,
+          "reason": "Richtig. Genau das wird geuebt."
+        },
+        {
+          "id": "b",
+          "text": "Nur Fachbegriffe auswendig lernen",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Messung vermeiden",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

@@ -3,7 +3,7 @@
     "topic": "Kreditvertrag (Grundidee)",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "kreditvertrag_grundidee",
+    "source": "_gg01_nebenkosten_filter.json",
     "version": "1.0"
   },
   "title": "Kreditvertrag (Grundidee) - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Klassifikation ist der Kern des Spiels?\nPflichtkosten vs optionale Kosten.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Kostenposten als verpflichtend oder optional korrekt zuordnen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist die Kernaufgabe."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Alle Kosten als optional markieren",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Fuehrt zu Fehlklassifikation."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur Betragsgroesse bewerten",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Kategorie bleibt entscheidend."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wann gibt es Zusatzabzug laut Regelwerk?\nPflichtposten falsch klassifiziert.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Wenn verpflichtende Kostenposten als optional eingeordnet werden",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Das ist kritisch."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Wenn alle Positionen dokumentiert werden",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Dokumentation ist positiv."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Wenn Hilfetext angezeigt wird",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Kein Strafgrund."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI sollten sichtbar sein?\nQuote und Fehlermuster.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Klassifikationsquote und Fehlerquote je Kostenart",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. So wird Lernbedarf klar."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Enddauer",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu wenig fachlich."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Gesamtpunkte",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Zu undifferenziert."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann wird ein Serienbonus vergeben?\nMehrere fehlerfreie Karten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei aufeinanderfolgenden fehlerfreien Kostenkarten",
+          "correct": true,
+          "reason": "Richtig. Serie wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei beliebigen Fehlserien",
+          "correct": false,
+          "reason": "Kein Bonusprofil."
+        },
+        {
+          "id": "c",
+          "text": "Nur beim ersten Fall",
+          "correct": false,
+          "reason": "Nicht regelkonform."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Wann ist eine Karte gut geloest?\nAlle Posten korrekt getrennt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn alle Kostenarten korrekt und nachvollziehbar klassifiziert sind",
+          "correct": true,
+          "reason": "Exakt. Das entspricht dem Ziel."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur der groesste Betrag stimmt",
+          "correct": false,
+          "reason": "Zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ohne Pruefung bestaetigt wird",
+          "correct": false,
+          "reason": "Fehleranfaellig."
         }
       ]
     }

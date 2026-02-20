@@ -3,84 +3,134 @@
     "topic": "Konflikt-Navi",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "konflikt_navi",
+    "source": "_gg01_konflikt_navi.json",
     "version": "1.0"
   },
   "title": "Konflikt-Navi - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "subtitle": "Finde im Stakeholder-Konflikt die beste Entscheidung fuer das Projekt.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Abteilung A will Feature X sofort, Abteilung B priorisiert Stabilitaet.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Pilot mit klaren Erfolgsmetriken und Go/No-Go nach 2 Wochen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Feature X sofort fuer alle ausrollen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Thema vertagen ohne Termin",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": ""
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Sales fordert Individualloesung, IT fordert Standardisierung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Standardprozess mit begrenzter, begruendeter Ausnahme definieren",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Jede Sales-Anfrage als Sonderfall zulassen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Sales komplett ignorieren",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": ""
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Fachbereich will schnellen Rollout, Support warnt vor Schulungsdefizit.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Stufenrollout mit verbindlichem Schulungspaket",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": ""
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Rollout sofort ohne Training",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": ""
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Rollout komplett stoppen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Controlling fordert harte KPI-Ziele, Team beklagt zu hohen Druck.",
+      "options": [
+        {
+          "id": "a",
+          "text": "KPI-Ziele mit realistischen Zwischenetappen und Review-Slots",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Sofort maximale Ziele ohne Abstimmung",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "KPI komplett abschaffen",
+          "correct": false,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Security verlangt strenge Freigaben, Produktteam will schnell liefern.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Risk-based Freigabe mit Fast-Track fuer Low-Risk Changes",
+          "correct": true,
+          "reason": ""
+        },
+        {
+          "id": "b",
+          "text": "Alle Security-Checks entfernen",
+          "correct": false,
+          "reason": ""
+        },
+        {
+          "id": "c",
+          "text": "Jede kleine Aenderung durch Vollgremium",
+          "correct": false,
+          "reason": ""
         }
       ]
     }

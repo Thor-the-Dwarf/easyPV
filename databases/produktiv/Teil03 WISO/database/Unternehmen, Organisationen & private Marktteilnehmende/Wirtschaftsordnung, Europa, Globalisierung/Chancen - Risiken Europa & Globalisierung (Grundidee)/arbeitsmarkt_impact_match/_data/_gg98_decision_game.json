@@ -3,7 +3,7 @@
     "topic": "Europa & Globalisierung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "europa_globalisierung",
+    "source": "_gg01_arbeitsmarkt_impact_match.json",
     "version": "1.0"
   },
   "title": "Europa & Globalisierung - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welcher Trend veraendert taetigkeitsprofile in vielen Berufen direkt?\nAchte auf Automatisierung und Datenarbeit.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Digitalisierung und Automatisierung",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Prozesse und Rollen werden neu verteilt."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Stillstand von Technologie",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Falsch. Dann waere der Wandel kleiner."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur lokale Isolation",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Zu eng. Der Trend ist globaler."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Chance entsteht durch internationale Arbeitsteilung?\nSpezialisierung kann Produktivitaet steigern.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Hoehere Produktivitaet durch Spezialisierung",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Spezialisierung senkt oft Stueckkosten."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Keine Qualifikationsanforderungen mehr",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Falsch. Anforderungen steigen oft."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Automatisch sichere Jobs fuer alle",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht automatisch."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welches Risiko zeigt sich bei starker Auslandabhaengigkeit?\nDenke an Schocks und Unterbrechungen.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Anfaelligkeit bei Liefer- und Nachfrageschocks",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Abhaengigkeit erhoeht Verwundbarkeit."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Garantierte Preisstabilitaet",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Falsch. Schocks machen Preise oft volatiler."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Weniger Qualifikationsbedarf in jedem Beruf",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht generell."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Antwort passt zu lebenslangem Lernen?\nBeschaeftigungsfaehigkeit sichern.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Weiterbildung fuer neue Aufgabenprofile",
+          "correct": true,
+          "reason": "Richtig. Das macht Berufe anpassungsfaehig."
+        },
+        {
+          "id": "b",
+          "text": "Kompetenzen einmal lernen und nie erneuern",
+          "correct": false,
+          "reason": "Falsch. Wandel erfordert Updates."
+        },
+        {
+          "id": "c",
+          "text": "Nur auf Abschottung setzen",
+          "correct": false,
+          "reason": "Zu kurz gedacht."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was misst die KPI Trefferquote je Impact-Typ?\nSie zeigt inhaltliche Praezision.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wie sauber Chancen und Risiken zugeordnet werden",
+          "correct": true,
+          "reason": "Richtig. Genauigkeit je Kategorie wird sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Klickgeschwindigkeit",
+          "correct": false,
+          "reason": "Das ist nur ein Teilaspekt."
+        },
+        {
+          "id": "c",
+          "text": "Nur die Anzahl der Runden",
+          "correct": false,
+          "reason": "Ohne Qualitaet nicht aussagekraeftig."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Welche Entwicklung erhoeht Nachfrage nach IT- und Datenkompetenz?\nDigitale Vernetzung von Wertschoepfung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Globale Plattform- und Datenoekonomie",
+          "correct": true,
+          "reason": "Richtig. Datenkompetenz wird zentral."
+        },
+        {
+          "id": "b",
+          "text": "Ausschliesslich manuelle Abwicklung ohne Systeme",
+          "correct": false,
+          "reason": "Falsch. Das Gegenteil ist zu beobachten."
+        },
+        {
+          "id": "c",
+          "text": "Kompletter Verzicht auf Kooperation",
+          "correct": false,
+          "reason": "Nicht passend."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Wie lassen sich Risiken fuer Beschaeftigte mindern?\nKombination aus Qualifizierung und Absicherung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Umschulung, Weiterbildung und Uebergangsunterstuetzung",
+          "correct": true,
+          "reason": "Richtig. So werden Wechsel ermoeglicht."
+        },
+        {
+          "id": "b",
+          "text": "Keine Anpassung der Bildungssysteme",
+          "correct": false,
+          "reason": "Falsch. Anpassung ist zentral."
+        },
+        {
+          "id": "c",
+          "text": "Nur kurzfristige Kostensenkung",
+          "correct": false,
+          "reason": "Zu kurzsichtig."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Welche Aussage zu Globalisierung und Arbeitsmarkt ist tragfaehig?\nChance und Risiko gemeinsam denken.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nutzen steigt bei guter Regelsetzung und Qualifizierung",
+          "correct": true,
+          "reason": "Richtig. Rahmenbedingungen entscheiden."
+        },
+        {
+          "id": "b",
+          "text": "Globalisierung ist immer nur Gewinn ohne Nebenwirkungen",
+          "correct": false,
+          "reason": "Zu pauschal."
+        },
+        {
+          "id": "c",
+          "text": "Globalisierung ist immer nur Verlust",
+          "correct": false,
+          "reason": "Ebenfalls zu pauschal."
         }
       ]
     }

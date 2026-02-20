@@ -3,84 +3,109 @@
     "topic": "Observer Pattern",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "observer_pattern",
-    "version": "1.0"
+    "source": "_gg01_observer_simulation.json",
+    "version": "2.0"
   },
-  "title": "Observer Pattern - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Observer (Pattern)",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "Level 1",
+      "situation": "Device 0: Welche Channel-Subscription ist gefordert?",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "c1",
+          "text": "SPORT",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Subscription muss auf den richtigen Channel zeigen."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "c2",
+          "text": "TECH",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Subscription muss auf den richtigen Channel zeigen."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "c3",
+          "text": "NEWS",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Subscription muss auf den richtigen Channel zeigen."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Level 2",
+      "situation": "Device 3: Welche Channel-Subscription ist gefordert?",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "c1",
+          "text": "SPORT",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Subscription muss auf den richtigen Channel zeigen."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "c2",
+          "text": "TECH",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Subscription muss auf den richtigen Channel zeigen."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "c3",
+          "text": "NEWS",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Subscription muss auf den richtigen Channel zeigen."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Level 2",
+      "situation": "Device 5: Welche Channel-Subscription ist gefordert?",
+      "options": [
+        {
+          "id": "c3",
+          "text": "NEWS",
+          "correct": true,
+          "reason": "Subscription muss auf den richtigen Channel zeigen."
+        },
+        {
+          "id": "c1",
+          "text": "SPORT",
+          "correct": false,
+          "reason": "Subscription muss auf den richtigen Channel zeigen."
+        },
+        {
+          "id": "c2",
+          "text": "TECH",
+          "correct": false,
+          "reason": "Subscription muss auf den richtigen Channel zeigen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 5",
+      "situation": "Situation bewerten.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "3",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur nach Bauchgefuehl entscheiden",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Ohne Pruefung direkt festlegen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht die beste Wahl fuer das Szenario."
         }
       ]
     }

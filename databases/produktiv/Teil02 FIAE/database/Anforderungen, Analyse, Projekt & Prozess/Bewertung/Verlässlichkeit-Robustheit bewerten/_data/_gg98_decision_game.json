@@ -3,84 +3,257 @@
     "topic": "The Chaos Engineer",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "the_chaos_engineer",
-    "version": "1.0"
+    "source": "_gg01_failover_simulator.json",
+    "version": "2.0"
   },
-  "title": "The Chaos Engineer - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "The Chaos Engineer",
+  "subtitle": "Failover-Simulator fuer Hochverfuegbarkeit und Robustheit",
   "rounds": [
     {
       "id": 1,
-      "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "phase": "DB-Ausfall",
+      "situation": "DB-Ausfall Klassischer Single-Node-Ausfall. Promote den Slave sofort.",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "switch_to_slave",
+          "text": "Switch to Slave",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "node_kill",
+          "text": "Node-Kill",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "rebuild_replica",
+          "text": "Replica Rebuild",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "trigger_hot_standby",
+          "text": "Hot-Standby Trigger",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     },
     {
       "id": 2,
-      "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "phase": "Split-Brain Crisis",
+      "situation": "Split-Brain Crisis Nur ein harter Node-Kill stoppt Divergenz und Datenkorruption.",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "node_kill",
+          "text": "Node-Kill",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "switch_to_slave",
+          "text": "Switch to Slave",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "rebuild_replica",
+          "text": "Replica Rebuild",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "trigger_hot_standby",
+          "text": "Hot-Standby Trigger",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     },
     {
       "id": 3,
-      "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "phase": "Cascading Failure",
+      "situation": "Cascading Failure Wenn du zu langsam bist, fallen weitere Komponenten aus.",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "trigger_hot_standby",
+          "text": "Hot-Standby Trigger",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "switch_to_slave",
+          "text": "Switch to Slave",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "node_kill",
+          "text": "Node-Kill",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "rebuild_replica",
+          "text": "Replica Rebuild",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "DDoS Edge Storm",
+      "situation": "DDoS Edge Storm Drossele den Traffic bevor Core-Services kippen.",
+      "options": [
+        {
+          "id": "enable_traffic_shed",
+          "text": "Traffic Shed",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "switch_to_slave",
+          "text": "Switch to Slave",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "node_kill",
+          "text": "Node-Kill",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "rebuild_replica",
+          "text": "Replica Rebuild",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Power Loss",
+      "situation": "Power Loss Schalte in den Notstrom-Fallback, bevor Replikation stoppt.",
+      "options": [
+        {
+          "id": "power_fallback",
+          "text": "Power Fallback",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "switch_to_slave",
+          "text": "Switch to Slave",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "node_kill",
+          "text": "Node-Kill",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "rebuild_replica",
+          "text": "Replica Rebuild",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Sync Lag",
+      "situation": "Sync Lag Erst Rebuild, dann Last wieder freigeben.",
+      "options": [
+        {
+          "id": "rebuild_replica",
+          "text": "Replica Rebuild",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "switch_to_slave",
+          "text": "Switch to Slave",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "node_kill",
+          "text": "Node-Kill",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "trigger_hot_standby",
+          "text": "Hot-Standby Trigger",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Cache Thrash",
+      "situation": "Cache Thrash Hot-Standby verhindert, dass APIs komplett kollabieren.",
+      "options": [
+        {
+          "id": "trigger_hot_standby",
+          "text": "Hot-Standby Trigger",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "switch_to_slave",
+          "text": "Switch to Slave",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "node_kill",
+          "text": "Node-Kill",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "rebuild_replica",
+          "text": "Replica Rebuild",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Master-Master Conflict",
+      "situation": "Master-Master Conflict Nur Node-Kill erzwingt wieder eine eindeutige Wahrheit.",
+      "options": [
+        {
+          "id": "node_kill",
+          "text": "Node-Kill",
+          "correct": true,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "switch_to_slave",
+          "text": "Switch to Slave",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "rebuild_replica",
+          "text": "Replica Rebuild",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
+        },
+        {
+          "id": "trigger_hot_standby",
+          "text": "Hot-Standby Trigger",
+          "correct": false,
+          "reason": "Die korrekte Option folgt direkt aus den vorliegenden Informationen."
         }
       ]
     }

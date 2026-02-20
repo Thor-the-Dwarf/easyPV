@@ -3,7 +3,7 @@
     "topic": "Konsumoptionen",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "konsumoptionen",
+    "source": "_gg01_nachhaltigkeits_score_race.json",
     "version": "1.0"
   },
   "title": "Konsumoptionen - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Race 1: Option A hat starken Oeko-Score, Option B besseren Preis. Was fehlt fuer die Entscheidung?\nMehrkriteriell bedeutet Gewichtung aller Kriterien.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Gewichtete Gesamtrechnung aus Kosten, Oeko, Fit",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Nur die Gewichtung bildet den Zielkonflikt sauber ab."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur den niedrigsten Preis nehmen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt. Das ignoriert Oeko- und Fit-Kriterien."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nur den Oeko-Score nehmen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt. Wirtschaftlichkeit fehlt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Option wird laut Plan disqualifiziert?\nEs gibt eine Mindestanforderung.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Option ohne Mindest-Nutzungsfit",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Ohne Mindest-Fit darf die Option nicht gewinnen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Option mit mittlerem Preis",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Option mit guter Verfuegbarkeit",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Punktgleichstand im Race: Welche Regel entscheidet?\nTie-Break ist im Plan festgelegt.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "hoeherer ecoScore",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Bei Gleichstand gewinnt der bessere Oeko-Wert."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "laengere Lieferzeit",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "hoeheres Marketingbudget",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Was macht den Gesamtscore reproduzierbar?\nDenk an deterministische Berechnung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Feste Gewichtung + gleicher Input",
+          "correct": true,
+          "reason": "Richtig. Damit ist das Leaderboard nachvollziehbar."
+        },
+        {
+          "id": "b",
+          "text": "Spontane Bonuspunkte",
+          "correct": false,
+          "reason": "Nicht reproduzierbar."
+        },
+        {
+          "id": "c",
+          "text": "Zufaellige Endwertung",
+          "correct": false,
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was ist ein gutes Lernziel im Race?\nPreis und Nachhaltigkeit gemeinsam betrachten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zielkonflikte transparent abwaegen",
+          "correct": true,
+          "reason": "Richtig. Genau darauf trainiert das Score-Race."
+        },
+        {
+          "id": "b",
+          "text": "Nur guenstigste Option gewinnen lassen",
+          "correct": false,
+          "reason": "Zu einseitig."
+        },
+        {
+          "id": "c",
+          "text": "Nachhaltigkeit ignorieren",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

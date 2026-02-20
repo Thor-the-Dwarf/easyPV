@@ -3,7 +3,7 @@
     "topic": "Wertschoepfung",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wertschoepfung",
+    "source": "_gg01_prozessstufe_sorter.json",
     "version": "1.0"
   },
   "title": "Wertschoepfung - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Worum geht es im Kern beim Prozessstufe-Sorter?\nTaetigkeit passend zur Stufe zuordnen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Taetigkeiten entlang Eingang, Produktion, Auslieferung, Service korrekt sortieren",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das ist das Kernziel."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Farben der Karten vergleichen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Farben sind kein Stufenkriterium."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Karten ohne Stufenzuordnung bestaetigen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Ohne Zuordnung kein Lernfortschritt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche KPI wird laut Plan ausgewertet?\nGenauigkeit pro Bereich.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Stufengenauigkeit pro Bereich",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau diese KPI ist gefordert."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Spielzeit",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Zeit ist hier Nebenaspekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur Anzahl Karten",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Anzahl ohne Trefferquote reicht nicht."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann greift ein Zusatzabzug?\nSchluesselprozess falsch zugeordnet.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn eine Schluesseltaetigkeit auf eine falsche Stufe gelegt wird",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Schluesselfehler wiegen schwerer."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn eine einfache Karte korrekt war",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Korrektheit fuehrt nicht zu Abzug."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn der Spieler pausiert",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Pause ist kein Bewertungsfehler."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Was passiert bei hoher Genauigkeit laut Regeln?\nKartenschwierigkeit steigt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Das System schaltet komplexere Karten frei",
+          "correct": true,
+          "reason": "Richtig. Schwierigkeit passt sich an."
+        },
+        {
+          "id": "b",
+          "text": "Alle Karten werden entfernt",
+          "correct": false,
+          "reason": "Dann gaebe es keinen Lernpfad."
+        },
+        {
+          "id": "c",
+          "text": "Score wird eingefroren",
+          "correct": false,
+          "reason": "Der Score laeuft normal weiter."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Report-Information soll am Ende sichtbar sein?\nFehlercluster pro Stufe.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Haeufige Fehlzuordnungen je Prozessstufe",
+          "correct": true,
+          "reason": "Exakt. Das macht Nachlernen zielgerichtet."
+        },
+        {
+          "id": "b",
+          "text": "Nur die erste Frage",
+          "correct": false,
+          "reason": "Zu wenig fuer eine Abschlussanalyse."
+        },
+        {
+          "id": "c",
+          "text": "Nur den Endzeitpunkt",
+          "correct": false,
+          "reason": "Zeitpunkt allein ist nicht hilfreich."
         }
       ]
     }

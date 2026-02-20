@@ -3,84 +3,134 @@
     "topic": "Interessen-Profiler",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "interessen_profiler",
-    "version": "1.0"
+    "source": "_gg01_interessen_profiler.json",
+    "version": "2.0"
   },
-  "title": "Interessen-Profiler - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Interessen-Profiler",
+  "subtitle": "Finde das tatsaechliche Interesse hinter der Aussage.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Wir brauchen mehr Sicherheit im Prozess.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Weniger Audit-Risiko und klare Nachvollziehbarkeit",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Hinter Sicherheitsaussagen steckt oft Risiko- und Compliance-Reduktion."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Mehr bunte Dashboard-Farben",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Hinter Sicherheitsaussagen steckt oft Risiko- und Compliance-Reduktion."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Mehr Team-Events",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Hinter Sicherheitsaussagen steckt oft Risiko- und Compliance-Reduktion."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Das darf im Alltag nicht komplizierter werden.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Schnellerer Ablauf bei geringerer Bedienkomplexitaet",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Der Kern ist Effizienz und einfache Nutzbarkeit im Tagesgeschaeft."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Mehr Meetings pro Woche",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Der Kern ist Effizienz und einfache Nutzbarkeit im Tagesgeschaeft."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Mehr E-Mail-Verteiler",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Der Kern ist Effizienz und einfache Nutzbarkeit im Tagesgeschaeft."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wir brauchen belastbare Zahlen zum Projektfortschritt.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Plan-Ist-Vergleich fuer Kosten, Zeit und Nutzen",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Controlling sucht Steuerbarkeit und Nachweis der Wirtschaftlichkeit."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Mehr Storytelling im Teamchat",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Controlling sucht Steuerbarkeit und Nachweis der Wirtschaftlichkeit."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Weniger Dokumentation",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Controlling sucht Steuerbarkeit und Nachweis der Wirtschaftlichkeit."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wir wollen nicht wieder bei jedem Incident raten muessen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Standardisierte Runbooks und klare Eskalationspfade",
+          "correct": true,
+          "reason": "Gewuenscht sind Handlungsfaehigkeit und klare Betriebsablaeufe."
+        },
+        {
+          "id": "b",
+          "text": "Mehr Sticker auf Tickets",
+          "correct": false,
+          "reason": "Gewuenscht sind Handlungsfaehigkeit und klare Betriebsablaeufe."
+        },
+        {
+          "id": "c",
+          "text": "Weniger Kommunikation",
+          "correct": false,
+          "reason": "Gewuenscht sind Handlungsfaehigkeit und klare Betriebsablaeufe."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Die Mitarbeitenden sollen bei der Umstellung mitziehen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Akzeptanz durch Beteiligung, Schulung und klare Perspektive",
+          "correct": true,
+          "reason": "Hinter der Aussage steht Change-Akzeptanz statt rein formaler Einfuehrung."
+        },
+        {
+          "id": "b",
+          "text": "Sofortige Sanktionen ohne Dialog",
+          "correct": false,
+          "reason": "Hinter der Aussage steht Change-Akzeptanz statt rein formaler Einfuehrung."
+        },
+        {
+          "id": "c",
+          "text": "Nur Top-Down-Anweisungen",
+          "correct": false,
+          "reason": "Hinter der Aussage steht Change-Akzeptanz statt rein formaler Einfuehrung."
         }
       ]
     }

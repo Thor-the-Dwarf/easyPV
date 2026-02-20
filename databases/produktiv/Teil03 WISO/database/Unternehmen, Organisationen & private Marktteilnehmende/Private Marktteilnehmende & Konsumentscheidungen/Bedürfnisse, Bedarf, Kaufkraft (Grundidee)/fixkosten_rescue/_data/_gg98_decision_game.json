@@ -3,7 +3,7 @@
     "topic": "Beduerfnisse, Bedarf, Kaufkraft",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "beduerfnisse_bedarf_kaufkraft",
+    "source": "_gg01_fixkosten_rescue.json",
     "version": "1.0"
   },
   "title": "Beduerfnisse, Bedarf, Kaufkraft - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Schock: Waschmaschine defekt (+320 EUR). Welche Reaktion ist zuerst sinnvoll?\nPflichtkosten muessen gedeckt bleiben.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Luxusbudget kuerzen und Reparatur vorziehen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Du stabilisierst den Pflichtbedarf."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Miete reduzieren",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt. Pflichtkosten duerfen nicht unterdeckt sein."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Nahrungsmittelbudget halbieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt. Grundbedarf wird gefaehrdet."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Energiekosten steigen unerwartet um 90 EUR. Was passt zur Resilienz-Regel?\nPlane mit Priorisierung und Reserve.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Kurzfristig variable Freizeitkosten senken",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Gut. Flexible Kosten zuerst anpassen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Pflichtversicherung streichen",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt. Das erzeugt Folgerisiken."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine Anpassung vornehmen",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt. Das fuehrt in Unterdeckung."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche Kennzahl zeigt am besten, ob ein Szenario stabil geloest wurde?\nDenke an Grundbedarf + Restbudget.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Pflichtkosten gedeckt und Restbudget >= 0",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das ist die Kernbedingung."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Anzahl Shopping-Tage",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Nicht korrekt. Kein Stabilitaetskriterium."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Anzahl Aktionen",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt. Aktionen allein sagen nichts ueber Deckung."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Warum sind zu viele Replan-Aktionen riskant?\nJede Aktion verursacht Reibung und Folgekosten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Weil sie Handlungspunkte verbrauchen und Unsicherheit erhoehen",
+          "correct": true,
+          "reason": "Richtig. Zu viel Umplanung destabilisiert."
+        },
+        {
+          "id": "b",
+          "text": "Weil dann immer mehr Einkommen entsteht",
+          "correct": false,
+          "reason": "Nicht korrekt. Einkommen steigt dadurch nicht."
+        },
+        {
+          "id": "c",
+          "text": "Weil Pflichtkosten automatisch sinken",
+          "correct": false,
+          "reason": "Nicht korrekt. Pflichtkosten sind meist fix."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welcher Schritt verbessert langfristig die Fixkosten-Resilienz?\nNicht nur reagieren, auch vorsorgen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Monatliche Notfallruecklage einplanen",
+          "correct": true,
+          "reason": "Genau. Ruecklagen puffern Schocks."
+        },
+        {
+          "id": "b",
+          "text": "Alle Risiken ignorieren",
+          "correct": false,
+          "reason": "Nicht korrekt. Das verschlechtert Stabilitaet."
+        },
+        {
+          "id": "c",
+          "text": "Nur auf Sonderangebote hoffen",
+          "correct": false,
+          "reason": "Nicht korrekt. Das ist keine verlaessliche Strategie."
         }
       ]
     }

@@ -3,84 +3,134 @@
     "topic": "Der Deeskalations-Profi",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "der_deeskalations_profi",
-    "version": "1.0"
+    "source": "_gg01_4ohren_deeskalation.json",
+    "version": "2.0"
   },
-  "title": "Der Deeskalations-Profi - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Der Deeskalations-Profi",
+  "subtitle": "Entschaerfe Konflikte durch klare Antworten auf der Sachebene.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Kollege sagt wuetend: 'Nie raeumst du die Spuelmaschine aus!'",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "b",
+          "text": "Die Maschine war noch nicht fertig. Ich raeume sie in 10 Minuten aus.",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Eine sachliche Antwort nimmt Druck raus und klaert den Fakt statt Schuldzuweisungen."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "a",
+          "text": "Du hast recht, ich bin faul.",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Eine sachliche Antwort nimmt Druck raus und klaert den Fakt statt Schuldzuweisungen."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Immer meckerst du nur!",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Eine sachliche Antwort nimmt Druck raus und klaert den Fakt statt Schuldzuweisungen."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Teamleiterin: 'Du bist schon wieder zu spaet mit dem Ticket.'",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "b",
+          "text": "Ich habe den Fehler reproduziert, Fix ist um 14:30 Uhr im Review.",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Sachebene heisst: Status + konkrete Naechsteschritte liefern."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "a",
+          "text": "Dann mach es doch selbst.",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Sachebene heisst: Status + konkrete Naechsteschritte liefern."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Ich kann auch nichts dafuer, dass alles chaotisch ist.",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Sachebene heisst: Status + konkrete Naechsteschritte liefern."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Kunde: 'Ihre Software ist unbrauchbar!'",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "b",
+          "text": "Welche Funktion betrifft es konkret? Dann priorisieren wir den Fix sofort.",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Deeskalation gelingt mit praezisem Nachfragen und faktenbasierter Eingrenzung."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "a",
+          "text": "So schlimm ist es nicht.",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Deeskalation gelingt mit praezisem Nachfragen und faktenbasierter Eingrenzung."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Sie haben das System wahrscheinlich falsch bedient.",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Deeskalation gelingt mit praezisem Nachfragen und faktenbasierter Eingrenzung."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Azubi: 'Niemand erklaert mir hier etwas!'",
+      "options": [
+        {
+          "id": "b",
+          "text": "Nenn mir bitte zwei Themen. Wir planen heute 16:00 Uhr 20 Minuten dafuer ein.",
+          "correct": true,
+          "reason": "Sachebene strukturiert Erwartung und Termin statt Emotion gegen Emotion."
+        },
+        {
+          "id": "a",
+          "text": "Dann musst du eben besser aufpassen.",
+          "correct": false,
+          "reason": "Sachebene strukturiert Erwartung und Termin statt Emotion gegen Emotion."
+        },
+        {
+          "id": "c",
+          "text": "Ich habe dafuer jetzt wirklich keine Zeit.",
+          "correct": false,
+          "reason": "Sachebene strukturiert Erwartung und Termin statt Emotion gegen Emotion."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Projektpartner: 'Mit deinem Teil haengt das ganze Projekt fest.'",
+      "options": [
+        {
+          "id": "b",
+          "text": "Stand jetzt fehlen zwei API-Antworten. Ich liefere den Workaround bis 11:30 Uhr.",
+          "correct": true,
+          "reason": "Klarer Status, Risiko und Handlungsvorschlag senken Konfliktlevel sofort."
+        },
+        {
+          "id": "a",
+          "text": "Du uebertreibst total.",
+          "correct": false,
+          "reason": "Klarer Status, Risiko und Handlungsvorschlag senken Konfliktlevel sofort."
+        },
+        {
+          "id": "c",
+          "text": "Dann ist es halt so.",
+          "correct": false,
+          "reason": "Klarer Status, Risiko und Handlungsvorschlag senken Konfliktlevel sofort."
         }
       ]
     }

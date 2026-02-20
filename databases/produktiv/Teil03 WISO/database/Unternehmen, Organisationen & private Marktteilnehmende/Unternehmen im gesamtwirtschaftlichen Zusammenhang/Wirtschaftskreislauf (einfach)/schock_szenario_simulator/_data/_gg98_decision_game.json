@@ -3,7 +3,7 @@
     "topic": "Wirtschaftskreislauf",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "wirtschaftskreislauf",
+    "source": "_gg01_schock_szenario_simulator.json",
     "version": "1.0"
   },
   "title": "Wirtschaftskreislauf - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Ein Nachfrageschock senkt Konsum. Welche Erstwirkung ist plausibel?\nEinnahmenseite betrachten.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Unternehmen erzielen geringere Umsaetze",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Weniger Konsum senkt Einnahmen."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Umsaetze steigen automatisch",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Gegenteilig."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Kein Effekt auf Unternehmen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Falsch."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche Interpretation passt bei Kostenanstieg in Unternehmen?\nPreise, Produktion, Einkommen.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Risiko sinkender Produktion und Kaufkraftdruck",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Kosten koennen sich durch den Kreislauf fortpflanzen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Automatisch mehr Kaufkraft",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Falsch."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Keine Anpassung noetig",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Riskant."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Welche KPI ist im Simulator zentral?\nInterpretation + Stabilitaet.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Korrekte Deutung pro Runde und Stabilitaetsindex",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Beides zeigt Lernfortschritt."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Nur Anzahl Runden",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu oberflaechlich."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur Klicktempo",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Wann ist eine Interpretation kritisch falsch?\nSchock wird verharmlost.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn ein deutlicher Schock als folgenlos bewertet wird",
+          "correct": true,
+          "reason": "Richtig. Dann fehlt Risikoverstaendnis."
+        },
+        {
+          "id": "b",
+          "text": "Wenn Risiken begruendet genannt werden",
+          "correct": false,
+          "reason": "Das ist korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Unsicherheit transparent ist",
+          "correct": false,
+          "reason": "Eher positiv."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Welche Gegenmassnahme ist im einfachen Modell sinnvoll?\nStabilisieren statt uebersteuern.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gezielte Entlastung und Nachfrage-/Angebotsstabilisierung",
+          "correct": true,
+          "reason": "Richtig. Das adressiert den Kreislaufeffekt."
+        },
+        {
+          "id": "b",
+          "text": "Keine Reaktion bei starkem Schock",
+          "correct": false,
+          "reason": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Nur zufaellige Einzelmassnahmen",
+          "correct": false,
+          "reason": "Nicht robust."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Warum sind Folgeeffekte wichtig?\nSchocks wirken kettenartig.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ein Stoerimpuls kann mehrere Akteure nacheinander treffen",
+          "correct": true,
+          "reason": "Richtig. Das ist Systemlogik."
+        },
+        {
+          "id": "b",
+          "text": "Schocks bleiben immer lokal",
+          "correct": false,
+          "reason": "Nicht zwingend."
+        },
+        {
+          "id": "c",
+          "text": "Es gibt keine Rueckkopplungen",
+          "correct": false,
+          "reason": "Falsch."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Woran erkennt man eine stabile Runde?\nInterpretation stimmt und Risiken sinken.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Deutung plus verbesserter Stabilitaetswert",
+          "correct": true,
+          "reason": "Richtig. Dann passt Analyse und Wirkung."
+        },
+        {
+          "id": "b",
+          "text": "Niedrige Genauigkeit trotz guter Zeit",
+          "correct": false,
+          "reason": "Nicht stabil genug."
+        },
+        {
+          "id": "c",
+          "text": "Nur viele Klicks",
+          "correct": false,
+          "reason": "Unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Was trainiert der Schock-Szenario-Simulator?\nSystemische Deutung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Schockwirkungen im Kreislauf fachlich richtig interpretieren",
+          "correct": true,
+          "reason": "Richtig. Genau das trainiert der Simulator."
+        },
+        {
+          "id": "b",
+          "text": "Nur Zufallsentscheidungen",
+          "correct": false,
+          "reason": "Nicht Ziel."
+        },
+        {
+          "id": "c",
+          "text": "Messbare KPI ignorieren",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

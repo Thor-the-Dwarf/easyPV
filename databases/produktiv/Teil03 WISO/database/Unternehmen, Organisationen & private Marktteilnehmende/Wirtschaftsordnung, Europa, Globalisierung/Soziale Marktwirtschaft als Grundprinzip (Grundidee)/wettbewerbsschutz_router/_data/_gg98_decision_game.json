@@ -3,7 +3,7 @@
     "topic": "Soziale Marktwirtschaft",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "soziale_marktwirtschaft",
+    "source": "_gg01_wettbewerbsschutz_router.json",
     "version": "1.0"
   },
   "title": "Soziale Marktwirtschaft - Entscheidungen",
@@ -12,75 +12,200 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Ein Anbieter dominiert den Markt stark. Erster Schritt?\nSachverhalt strukturieren.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Marktmachtindikatoren und Verhalten pruefen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Faktenbasis zuerst."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Sofort alles verbieten",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Ohne Pruefung nicht regelkonform."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Thema ignorieren",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht zulaessig."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Kartellverdacht: welcher Pfad ist korrekt?\nHinweise -> Pruefung -> Massnahme.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Indizien sammeln, Verfahren starten, Auflagen festlegen",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Prozesskette stimmt."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Direkt abschliessen ohne Pruefung",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Falsch."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur Pressemitteilung schreiben",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht ausreichend."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann gibt es Zusatzabzug laut Regel?\nPflichtschritt fehlt.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn ein Pflichtschritt im Routing ausgelassen wird",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das verletzt die Prozesslogik."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn KPI berechnet wird",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Das ist korrekt."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn Begruendung geliefert wird",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Kein Abzug."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI passt am besten?\nPfad + Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Routing-Genauigkeit und Schritt-Effizienz",
+          "correct": true,
+          "reason": "Richtig. Genau die Zielmetrik."
+        },
+        {
+          "id": "b",
+          "text": "Nur Dateigroesse",
+          "correct": false,
+          "reason": "Nicht relevant."
+        },
+        {
+          "id": "c",
+          "text": "Nur Ladezeit",
+          "correct": false,
+          "reason": "Nicht inhaltlich."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Warum ist Dokumentation im Router wichtig?\nNachvollziehbarkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sie macht jeden Verfahrensschritt pruefbar",
+          "correct": true,
+          "reason": "Richtig. Compliance braucht Transparenz."
+        },
+        {
+          "id": "b",
+          "text": "Sie ersetzt Regeln",
+          "correct": false,
+          "reason": "Nein."
+        },
+        {
+          "id": "c",
+          "text": "Sie macht Pruefung unnoetig",
+          "correct": false,
+          "reason": "Nein."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "Welche Aktion reduziert Verfahrensfehler?\nFruehe Checkpoints.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pflicht-Checkpoint je Prozessphase",
+          "correct": true,
+          "reason": "Richtig. Fehler werden frueh erkannt."
+        },
+        {
+          "id": "b",
+          "text": "Checkpoints streichen",
+          "correct": false,
+          "reason": "Erhoeht Fehler."
+        },
+        {
+          "id": "c",
+          "text": "Nur Endkontrolle",
+          "correct": false,
+          "reason": "Zu spaet."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "phase": "Runde 7",
+      "situation": "Wann ist ein Routing erfolgreich?\nPfad korrekt + effizient.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn korrekter Pfad ohne Pflichtluecke durchlaufen wurde",
+          "correct": true,
+          "reason": "Richtig. Das ist das Ziel."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur schnell geklickt wurde",
+          "correct": false,
+          "reason": "Nicht genug."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Schritte ausgelassen wurden",
+          "correct": false,
+          "reason": "Regelverstoss."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "phase": "Runde 8",
+      "situation": "Welche Folge hat falsches Routing bei Wettbewerbsfaellen?\nZeit- und Wirksamkeitsverlust.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Verzoegerung und geringere Wirksamkeit der Massnahmen",
+          "correct": true,
+          "reason": "Richtig. Deshalb Routing trainieren."
+        },
+        {
+          "id": "b",
+          "text": "Immer bessere Ergebnisse",
+          "correct": false,
+          "reason": "Falsch."
+        },
+        {
+          "id": "c",
+          "text": "Keine Auswirkung",
+          "correct": false,
+          "reason": "Falsch."
         }
       ]
     }

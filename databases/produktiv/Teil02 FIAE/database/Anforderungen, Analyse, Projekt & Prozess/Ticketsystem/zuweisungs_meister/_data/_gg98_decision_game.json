@@ -1,86 +1,197 @@
 {
   "meta": {
-    "topic": "zuweisungs meister",
+    "topic": "Zuweisungs-Meister",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "zuweisungs_meister",
-    "version": "1.0"
+    "source": "_gg01_zuweisungs_meister.json",
+    "version": "2.0"
   },
-  "title": "zuweisungs meister - Entscheidungen",
-  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "title": "Zuweisungs-Meister",
+  "subtitle": "Waehle je Runde die fachlich beste Entscheidung.",
   "rounds": [
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "API liefert bei Checkout 500-Fehler",
       "options": [
         {
-          "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "id": "backend",
+          "text": "Backend-Entwicklung",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Der technische Defekt liegt in der Server- bzw. API-Logik."
         },
         {
-          "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "id": "support",
+          "text": "Support",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Der technische Defekt liegt in der Server- bzw. API-Logik."
         },
         {
-          "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "id": "frontend",
+          "text": "Frontend-Entwicklung",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Der technische Defekt liegt in der Server- bzw. API-Logik."
+        },
+        {
+          "id": "devops",
+          "text": "DevOps",
+          "correct": false,
+          "reason": "Der technische Defekt liegt in der Server- bzw. API-Logik."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Button im Warenkorb ist auf Mobile nicht klickbar",
       "options": [
         {
-          "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "id": "frontend",
+          "text": "Frontend-Entwicklung",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Layout-/Interaktionsproblem in der Oberflaeche."
         },
         {
-          "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "id": "support",
+          "text": "Support",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Layout-/Interaktionsproblem in der Oberflaeche."
         },
         {
-          "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "id": "backend",
+          "text": "Backend-Entwicklung",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Layout-/Interaktionsproblem in der Oberflaeche."
+        },
+        {
+          "id": "devops",
+          "text": "DevOps",
+          "correct": false,
+          "reason": "Layout-/Interaktionsproblem in der Oberflaeche."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Nach Deployment keine Pods mehr healthy",
       "options": [
         {
-          "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "id": "devops",
+          "text": "DevOps",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Betrifft Runtime, Deployment und Infrastruktur."
         },
         {
-          "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "id": "support",
+          "text": "Support",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Betrifft Runtime, Deployment und Infrastruktur."
         },
         {
-          "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "id": "frontend",
+          "text": "Frontend-Entwicklung",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Betrifft Runtime, Deployment und Infrastruktur."
+        },
+        {
+          "id": "backend",
+          "text": "Backend-Entwicklung",
+          "correct": false,
+          "reason": "Betrifft Runtime, Deployment und Infrastruktur."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Unklare Fehlermeldung durch User gemeldet",
+      "options": [
+        {
+          "id": "support",
+          "text": "Support",
+          "correct": true,
+          "reason": "Zuerst strukturierte Aufnahme und Nachfragen durch Support."
+        },
+        {
+          "id": "frontend",
+          "text": "Frontend-Entwicklung",
+          "correct": false,
+          "reason": "Zuerst strukturierte Aufnahme und Nachfragen durch Support."
+        },
+        {
+          "id": "backend",
+          "text": "Backend-Entwicklung",
+          "correct": false,
+          "reason": "Zuerst strukturierte Aufnahme und Nachfragen durch Support."
+        },
+        {
+          "id": "devops",
+          "text": "DevOps",
+          "correct": false,
+          "reason": "Zuerst strukturierte Aufnahme und Nachfragen durch Support."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Neuer Hotfix verursacht Nebenfehler im Bestellprozess",
+      "options": [
+        {
+          "id": "qa",
+          "text": "QA/Test",
+          "correct": true,
+          "reason": "QA sollte den Fehler systematisch nachstellen und absichern."
+        },
+        {
+          "id": "support",
+          "text": "Support",
+          "correct": false,
+          "reason": "QA sollte den Fehler systematisch nachstellen und absichern."
+        },
+        {
+          "id": "frontend",
+          "text": "Frontend-Entwicklung",
+          "correct": false,
+          "reason": "QA sollte den Fehler systematisch nachstellen und absichern."
+        },
+        {
+          "id": "backend",
+          "text": "Backend-Entwicklung",
+          "correct": false,
+          "reason": "QA sollte den Fehler systematisch nachstellen und absichern."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "phase": "Runde 6",
+      "situation": "CSV-Export liefert korrekte Datei, aber Werte falsch summiert",
+      "options": [
+        {
+          "id": "backend",
+          "text": "Backend-Entwicklung",
+          "correct": true,
+          "reason": "Fehler in Berechnungs-/Datenlogik des Services."
+        },
+        {
+          "id": "support",
+          "text": "Support",
+          "correct": false,
+          "reason": "Fehler in Berechnungs-/Datenlogik des Services."
+        },
+        {
+          "id": "frontend",
+          "text": "Frontend-Entwicklung",
+          "correct": false,
+          "reason": "Fehler in Berechnungs-/Datenlogik des Services."
+        },
+        {
+          "id": "devops",
+          "text": "DevOps",
+          "correct": false,
+          "reason": "Fehler in Berechnungs-/Datenlogik des Services."
         }
       ]
     }

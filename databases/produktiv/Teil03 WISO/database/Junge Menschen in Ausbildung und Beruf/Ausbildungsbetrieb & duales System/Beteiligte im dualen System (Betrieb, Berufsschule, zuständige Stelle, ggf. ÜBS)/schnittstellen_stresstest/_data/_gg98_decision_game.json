@@ -3,7 +3,7 @@
     "topic": "Duales System",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "duales_system",
+    "source": "_gg01_schnittstellen_stresstest.json",
     "version": "1.0"
   },
   "title": "Duales System - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Welche Priorisierung ist bei knappen Fristen zuerst sinnvoll?\nFaellige Hochrisiko-Tickets zuerst.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Hochprioritaets-Ticket mit naher Faelligkeit zuerst",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Das minimiert Fristschaden."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Niedrigprioritaets-Ticket ohne Frist zuerst",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Das blockiert kritische Arbeit."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Ticket-Reihenfolge zufaellig waehlen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Zufall fuehrt zu Queue-Problemen."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Welche KPI gehoert zum Stresstest laut Plan?\nTrefferquote plus Queue-Last.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Fristtrefferquote und Warteschlangenlaenge",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Genau. Beide KPI sind vorgesehen."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Nur Gesamtpunkte",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Ohne Lastsicht unvollstaendig."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Nur Rundenzahl",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Rundenzahl sagt nichts ueber Priorisierung."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann entsteht ein Zusatzabzug?\nKritisches Ticket ueber Faelligkeit.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Wenn ein Hochprioritaets-Ticket ueberfaellig wird",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Richtig. Das wird strenger geahndet."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Wenn ein Ticket erfolgreich abgeschlossen wurde",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Abschluss ist positiv."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Wenn die Queue kurzfristig kleiner wird",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Das ist kein Abzug."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche Zielmarke aktiviert laut Plan einen Bonus?\nKonstant hohe Trefferquote.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trefferquote ueber 85 Prozent ueber mehrere Runden",
+          "correct": true,
+          "reason": "Richtig. Konstanz wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Ein einzelner Zufallstreffer",
+          "correct": false,
+          "reason": "Ein Treffer reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Nur laengere Bearbeitungszeit",
+          "correct": false,
+          "reason": "Laenge ohne Qualitaet bringt nichts."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was muss im Replay fuer Lernen sichtbar sein?\nUrsachen fuer Verspaetungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Welche Priorisierungsentscheidung zu welcher Verspaetung fuehrte",
+          "correct": true,
+          "reason": "Exakt. Ursache-Wirkung macht Lernen moeglich."
+        },
+        {
+          "id": "b",
+          "text": "Nur die Abschlussrunde",
+          "correct": false,
+          "reason": "Das ist fuer Ursachenanalyse zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur die Farbe der Tickets",
+          "correct": false,
+          "reason": "Farbe allein erklaert keine Ursache."
         }
       ]
     }

@@ -3,7 +3,7 @@
     "topic": "Arbeitszeit und Entgelt",
     "mechanic": "decision_quiz",
     "engine": "DecisionGame",
-    "variant": "arbeitszeit_und_entgelt",
+    "source": "_gg01_urlaubsanspruch_duell.json",
     "version": "1.0"
   },
   "title": "Arbeitszeit und Entgelt - Entscheidungen",
@@ -12,75 +12,125 @@
     {
       "id": 1,
       "phase": "Runde 1",
-      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "situation": "Zwei Profile mit unterschiedlicher Situation: Kernaufgabe im Duell?\nPlausiblen Anspruch vergleichen und waehlen.",
       "options": [
         {
           "id": "a",
-          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "text": "Passenderes Anspruchsprofil waehlen",
           "correct": true,
-          "reason": "Das schafft eine belastbare Grundlage."
+          "reason": "Richtig. Der Vergleich steht im Zentrum des Spiels."
         },
         {
           "id": "b",
-          "text": "Direkt ohne Kriterien entscheiden",
+          "text": "Nur Namen vergleichen",
           "correct": false,
-          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Entscheidung vertagen ohne Analyse",
+          "text": "Zufaellig tippen",
           "correct": false,
-          "reason": "Es fehlt die fachliche Bearbeitung."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 2,
       "phase": "Runde 2",
-      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "situation": "Wie wird korrekte Wahl ohne Begruendung gewertet?\nEs gibt Teilpunkte.",
       "options": [
         {
           "id": "a",
-          "text": "Optionen vergleichen und Risiken benennen",
+          "text": "Mit Teilpunkten",
           "correct": true,
-          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+          "reason": "Richtig. Begruendung liefert zusaetzlichen Score."
         },
         {
           "id": "b",
-          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "text": "Mit doppelten Punkten",
           "correct": false,
-          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+          "reason": "Nicht korrekt."
         },
         {
           "id": "c",
-          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "text": "Als Fehler",
           "correct": false,
-          "reason": "Nicht nachvollziehbar."
+          "reason": "Nicht korrekt."
         }
       ]
     },
     {
       "id": 3,
       "phase": "Runde 3",
-      "situation": "Die Entscheidung soll abgesichert werden.",
+      "situation": "Wann gibt es den Serienbonus?\nMehrere korrekte Duelle nacheinander.",
       "options": [
         {
           "id": "a",
-          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "text": "Bei vier korrekten Duellen in Folge",
           "correct": true,
-          "reason": "Begruendung und Check sichern die Qualitaet."
+          "reason": "Genau. Dann wird Bonus aktiviert."
         },
         {
           "id": "b",
-          "text": "Keine Begruendung dokumentieren",
+          "text": "Bereits nach einem Duel",
           "correct": false,
-          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+          "reason": "Zu frueh."
         },
         {
           "id": "c",
-          "text": "Rueckmeldung ignorieren",
+          "text": "Nur am Ende",
           "correct": false,
-          "reason": "Feedback verbessert die Entscheidung."
+          "reason": "Nicht korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "phase": "Runde 4",
+      "situation": "Welche KPI-Perspektiven sind vorgesehen?\nWahlleistung und Begruendung getrennt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Anspruchsgenauigkeit und Begruendungsquote",
+          "correct": true,
+          "reason": "Richtig. So wird Wissen und Begruendung sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Zeit",
+          "correct": false,
+          "reason": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Trefferanzahl",
+          "correct": false,
+          "reason": "Zu grob."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "phase": "Runde 5",
+      "situation": "Was sollte die Fehleranalyse am Ende liefern?\nWiederkehrende Denkfehler benennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Muster wiederholter Fehlannahmen",
+          "correct": true,
+          "reason": "Richtig. Das ermoeglicht gezielte Verbesserung."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtnote",
+          "correct": false,
+          "reason": "Zu wenig Detail."
+        },
+        {
+          "id": "c",
+          "text": "Keine Analyse",
+          "correct": false,
+          "reason": "Nicht korrekt."
         }
       ]
     }

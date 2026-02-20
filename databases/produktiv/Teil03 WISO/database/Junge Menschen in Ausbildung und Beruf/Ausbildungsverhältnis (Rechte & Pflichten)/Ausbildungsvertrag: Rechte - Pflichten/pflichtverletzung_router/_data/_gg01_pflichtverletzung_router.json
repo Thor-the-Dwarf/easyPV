@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Ausbildungsvertrag: Rechte - Pflichten",
+    "mechanic": "routing_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Ein Azubi fehlt wiederholt unentschuldigt. Was ist der erste passende Schritt?",
+      "hint": "Sachverhalt zuerst klaeren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gespräch fuehren und Sachverhalt dokumentieren",
+          "correct": true,
+          "feedback": "Richtig. Klaerung und Doku zuerst."
+        },
+        {
+          "id": "b",
+          "text": "Sofort ohne Gespraech kuendigen",
+          "correct": false,
+          "feedback": "Unverhaeltnismaessig als erster Schritt."
+        },
+        {
+          "id": "c",
+          "text": "Thema vollstaendig ignorieren",
+          "correct": false,
+          "feedback": "Das loest den Verstoss nicht."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Bei wiederholter Pflichtverletzung trotz Hinweis: was folgt typischerweise?",
+      "hint": "Stufenweise Reaktion.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Formelle Ermahnung/Abmahnung nach interner Pruefung",
+          "correct": true,
+          "feedback": "Korrekt. Der Prozess wird formeller."
+        },
+        {
+          "id": "b",
+          "text": "Automatisch Ausbildungsende am gleichen Tag",
+          "correct": false,
+          "feedback": "So pauschal nicht richtig."
+        },
+        {
+          "id": "c",
+          "text": "Keine weitere Massnahme",
+          "correct": false,
+          "feedback": "Bei Wiederholung nicht angemessen."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Warum ist Reihenfolge im Router wichtig?",
+      "hint": "Nachvollziehbarkeit und Fairness.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Weil dokumentierte Schritte Entscheidungen belastbar machen",
+          "correct": true,
+          "feedback": "Genau. Prozesssicherheit entsteht durch Reihenfolge."
+        },
+        {
+          "id": "b",
+          "text": "Weil Zufallsschritte schneller sind",
+          "correct": false,
+          "feedback": "Zufall ist kein Verfahren."
+        },
+        {
+          "id": "c",
+          "text": "Weil Regeln nur fuer neue Azubis gelten",
+          "correct": false,
+          "feedback": "Regeln gelten allgemein."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Was sollte bei jeder Router-Entscheidung mitlaufen?",
+      "hint": "Feedback und naechster Schritt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Begruendung, Massnahme und Folgeschritt festhalten",
+          "correct": true,
+          "feedback": "Richtig. So bleibt der Pfad nachvollziehbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Punktestand notieren",
+          "correct": false,
+          "feedback": "Zu wenig fuer Fallsteuerung."
+        },
+        {
+          "id": "c",
+          "text": "Nur die letzte Entscheidung merken",
+          "correct": false,
+          "feedback": "Der gesamte Verlauf ist relevant."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann gilt eine Fallkette als sauber geloest?",
+      "hint": "Korrekte Route ohne ausgelassene Pflichtschritte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn alle Kernschritte in richtiger Reihenfolge erfolgt sind",
+          "correct": true,
+          "feedback": "Ja. Das ist der Zielzustand."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur der erste Schritt stimmt",
+          "correct": false,
+          "feedback": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Wenn man spaet alles pauschal zusammenfasst",
+          "correct": false,
+          "feedback": "Die Route muss laufend korrekt sein."
+        }
+      ]
+    }
+  ]
+}

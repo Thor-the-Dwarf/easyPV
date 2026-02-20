@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Ausbildungsvertrag: Rechte - Pflichten",
+    "mechanic": "clause_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Klausel braucht offensichtlich Erklaerung oder Pruefung?",
+      "hint": "Unklare oder einseitige Formulierung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unbegrenzte unbezahlte Mehrarbeit ohne Ausgleich",
+          "correct": true,
+          "feedback": "Richtig. Das ist kritisch und pruefungsbeduerftig."
+        },
+        {
+          "id": "b",
+          "text": "Regelung zu Ausbildungsdauer und Lernzielen",
+          "correct": false,
+          "feedback": "Das ist typischer Standardinhalt."
+        },
+        {
+          "id": "c",
+          "text": "Hinweis auf Berichtsheftfuehrung",
+          "correct": false,
+          "feedback": "Uebliche und erwartbare Regelung."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Was ist beim Klausel-Check zuerst sinnvoll?",
+      "hint": "Klarheit vor Bewertung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Klauselinhalt und Wirkung auf Rechte/Pflichten bestimmen",
+          "correct": true,
+          "feedback": "Genau. Erst verstehen, dann bewerten."
+        },
+        {
+          "id": "b",
+          "text": "Nur nach Bauchgefuehl einstufen",
+          "correct": false,
+          "feedback": "Zu unzuverlaessig."
+        },
+        {
+          "id": "c",
+          "text": "Alle Klauseln pauschal als kritisch markieren",
+          "correct": false,
+          "feedback": "Keine differenzierte Analyse."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Klausel wirkt ausgewogen?",
+      "hint": "Beidseitig nachvollziehbare Regelung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Klare Lernzeiten, Betreuung und definierte Pflichten beider Seiten",
+          "correct": true,
+          "feedback": "Richtig. Das ist transparent und ausgewogen."
+        },
+        {
+          "id": "b",
+          "text": "Einseitige Aenderungsrechte ohne Begrenzung",
+          "correct": false,
+          "feedback": "Das ist eher kritisch."
+        },
+        {
+          "id": "c",
+          "text": "Verzicht auf jede Dokumentation",
+          "correct": false,
+          "feedback": "Dokumentation ist wichtig."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann setzt der Pruefer ein Explain-Flag?",
+      "hint": "Wenn Bedeutung fuer Lernende unklar bleibt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei unklaren Rechtsfolgen oder deutlichem Interpretationsspielraum",
+          "correct": true,
+          "feedback": "Ja, dann ist Erklaerungsbedarf gegeben."
+        },
+        {
+          "id": "b",
+          "text": "Bei jeder einfachen Standardklausel",
+          "correct": false,
+          "feedback": "Nicht jede Klausel braucht Zusatzhinweis."
+        },
+        {
+          "id": "c",
+          "text": "Nur nach Ende des Vertrags",
+          "correct": false,
+          "feedback": "Zu spaet fuer Lernsteuerung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI zeigt den Lernerfolg am besten?",
+      "hint": "Klassifikation plus Explain-Treffer.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Klassifikationsquote und Erklaerungsquote getrennt",
+          "correct": true,
+          "feedback": "Exakt. Beide Ziele werden sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl bearbeiteter Klauseln",
+          "correct": false,
+          "feedback": "Menge ohne Qualitaet reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Nur Restzeit je Runde",
+          "correct": false,
+          "feedback": "Zeit ohne Richtigkeit ist unzureichend."
+        }
+      ]
+    }
+  ]
+}

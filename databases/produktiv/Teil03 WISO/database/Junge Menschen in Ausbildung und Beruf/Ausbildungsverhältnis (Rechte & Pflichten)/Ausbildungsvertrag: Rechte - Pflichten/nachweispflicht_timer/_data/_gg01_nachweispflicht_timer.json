@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Ausbildungsvertrag: Rechte - Pflichten",
+    "mechanic": "timer_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Nachweispflicht besteht bei krankheitsbedingter Abwesenheit?",
+      "hint": "Nachweis rechtzeitig einreichen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Arbeitsunfaehigkeit nach betrieblichen Regeln nachweisen",
+          "correct": true,
+          "feedback": "Richtig. Der Nachweis ist erforderlich."
+        },
+        {
+          "id": "b",
+          "text": "Nur muendlich spaeter berichten",
+          "correct": false,
+          "feedback": "Muendlich allein reicht nicht sicher aus."
+        },
+        {
+          "id": "c",
+          "text": "Gar keinen Nachweis fuehren",
+          "correct": false,
+          "feedback": "Das verletzt Nachweispflichten."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wofuer dient das Berichtsheft im Ausbildungsalltag?",
+      "hint": "Lernfortschritt dokumentieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Als regelmaessiger Ausbildungsnachweis",
+          "correct": true,
+          "feedback": "Genau. Es dokumentiert den Ausbildungsverlauf."
+        },
+        {
+          "id": "b",
+          "text": "Nur fuer private Notizen",
+          "correct": false,
+          "feedback": "Der Zweck ist betrieblich/pruefungsbezogen."
+        },
+        {
+          "id": "c",
+          "text": "Nur am letzten Ausbildungstag",
+          "correct": false,
+          "feedback": "Es wird laufend gefuehrt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Reaktion ist bei fehlendem Fristnachweis korrekt?",
+      "hint": "Schnell nachreichen und transparent kommunizieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sofort nachreichen und Grund offenlegen",
+          "correct": true,
+          "feedback": "Richtig. Das minimiert Folgerisiken."
+        },
+        {
+          "id": "b",
+          "text": "Ignorieren und auf Rueckfrage warten",
+          "correct": false,
+          "feedback": "Das verschlechtert die Lage."
+        },
+        {
+          "id": "c",
+          "text": "Frist rueckwirkend selbst aendern",
+          "correct": false,
+          "feedback": "Fristen sind nicht frei aenderbar."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann ist eine Begruendung beim Nachweis besonders wichtig?",
+      "hint": "Abweichung vom regulaeren Ablauf.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Unterlagen verspaetet eingereicht werden",
+          "correct": true,
+          "feedback": "Ja. Die Abweichung muss erklaert werden."
+        },
+        {
+          "id": "b",
+          "text": "Bei jeder puenktlichen Routineeinreichung",
+          "correct": false,
+          "feedback": "Dann ist meist keine Sonderbegruendung noetig."
+        },
+        {
+          "id": "c",
+          "text": "Nur nach Ausbildungsende",
+          "correct": false,
+          "feedback": "Zu spaet."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI passt zum Nachweispflicht-Timer?",
+      "hint": "Trefferquote plus Tempo.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Entscheidungen und Reaktionszeit",
+          "correct": true,
+          "feedback": "Exakt. Das misst Qualitaet und Tempo."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl geoeffneter Faelle",
+          "correct": false,
+          "feedback": "Ohne Qualitaetsaussage."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtspielzeit ohne Ergebnis",
+          "correct": false,
+          "feedback": "Unzureichend."
+        }
+      ]
+    }
+  ]
+}

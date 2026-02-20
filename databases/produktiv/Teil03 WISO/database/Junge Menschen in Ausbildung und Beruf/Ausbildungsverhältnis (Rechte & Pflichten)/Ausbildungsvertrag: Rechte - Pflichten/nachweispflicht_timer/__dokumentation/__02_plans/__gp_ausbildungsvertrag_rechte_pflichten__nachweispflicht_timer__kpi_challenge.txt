@@ -1,0 +1,32 @@
+# __gp_ausbildungsvertrag_rechte_pflichten__nachweispflicht_timer__kpi_challenge
+
+## Spielidee
+"Nachweispflicht-Timer" in der Variante "kpi_challenge" trainiert Ausbildungsvertragsentscheidungen unter klaren Regeln.
+
+## Lernziel
+- Rechte und Pflichten im Ausbildungsvertrag sicher erkennen.
+- Reproduzierbare Entscheidungs- und Pruefpfade anwenden.
+
+## Messbare Progression
+- 8 Runden pro Durchlauf.
+- Punkte: +8 korrekt, -4 falsch, +2 Serienbonus.
+- KPI: Genauigkeit, Reaktionszeit und Fortschritt.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- ScenarioController
+- RuleEngine
+- MetricService
+
+### Domaenenobjekte
+- ScenarioCard(cardId, prompt, difficulty)
+- DecisionOption(optionId, impactType)
+- RoundResult(isCorrect, scoreDelta, responseSeconds)
+
+### Zustandsmodell
+- READY -> ROUND_ACTIVE -> SELECT -> EVALUATE -> NEXT_ROUND -> FINISHED
+
+## Abnahmekriterien
+- Fortschritt ist ueber Punkte, Zeit und KPI sichtbar.
+- Regeln erzeugen reproduzierbare Bewertungen.

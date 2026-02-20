@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Ausbildungsvertrag: Rechte - Pflichten",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Situation begruendet am klarsten einen Anspruch auf Ausbildungsvergutung?",
+      "hint": "Verguetung ist eine Grundpflicht des Ausbildenden.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Der Azubi arbeitet vertragsgemaess im vereinbarten Monat",
+          "correct": true,
+          "feedback": "Richtig. Daraus folgt der Verguetungsanspruch."
+        },
+        {
+          "id": "b",
+          "text": "Der Azubi entscheidet sich spontan fuer Urlaub",
+          "correct": false,
+          "feedback": "Allein dadurch entsteht kein neuer Anspruch."
+        },
+        {
+          "id": "c",
+          "text": "Der Azubi ignoriert betriebliche Anweisungen",
+          "correct": false,
+          "feedback": "Das begruendet keinen Verguetungsanspruch."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann besteht ein Anspruch auf Bereitstellung notwendiger Ausbildungsmittel?",
+      "hint": "Mittel muessen fuer die Ausbildung erforderlich sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn sie fuer Ausbildungsziele erforderlich sind",
+          "correct": true,
+          "feedback": "Genau. Notwendige Mittel sind bereitzustellen."
+        },
+        {
+          "id": "b",
+          "text": "Nur wenn der Azubi sie privat kaufen moechte",
+          "correct": false,
+          "feedback": "Privater Wunsch allein reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Erst nach Ende der Ausbildung",
+          "correct": false,
+          "feedback": "Der Anspruch gilt waehrend der Ausbildung."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Aussage passt zum Anspruch auf geordnete Ausbildung?",
+      "hint": "Ausbildungsinhalt statt Hilfstaetigkeiten im Fokus.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Taetigkeiten muessen dem Ausbildungszweck dienen",
+          "correct": true,
+          "feedback": "Richtig. Ausbildungsziel ist leitend."
+        },
+        {
+          "id": "b",
+          "text": "Beliebige Dauer-Aushilfstaetigkeit ist ausreichend",
+          "correct": false,
+          "feedback": "Das verfehlt den Ausbildungszweck."
+        },
+        {
+          "id": "c",
+          "text": "Lerninhalte sind optional und unverbindlich",
+          "correct": false,
+          "feedback": "Lerninhalte sind verbindlich."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann ist ein Anspruch auf Anleitung besonders klar?",
+      "hint": "Fachlich begleitete Lernphase.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei neuen Aufgaben ohne bisherige Erfahrung",
+          "correct": true,
+          "feedback": "Ja. Anleitung ist dann zentral."
+        },
+        {
+          "id": "b",
+          "text": "Nie, Azubis arbeiten immer allein",
+          "correct": false,
+          "feedback": "Alleinarbeit ist nicht der Regelfall."
+        },
+        {
+          "id": "c",
+          "text": "Nur ausserhalb der Arbeitszeit",
+          "correct": false,
+          "feedback": "Anleitung gehoert in die Ausbildung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Zuordnung zeigt einen plausiblen Anspruch des Azubis?",
+      "hint": "Anspruch muss aus Vertrag/Pflichtsystem folgen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sichere Ausbildung + faire Behandlung",
+          "correct": true,
+          "feedback": "Korrekt. Das ist vertraglich begruendbar."
+        },
+        {
+          "id": "b",
+          "text": "Beliebige Homeoffice-Freiwahl ohne Absprache",
+          "correct": false,
+          "feedback": "Nicht automatisch geschuldet."
+        },
+        {
+          "id": "c",
+          "text": "Freie Wahl aller Pruefungsinhalte",
+          "correct": false,
+          "feedback": "Pruefungsordnungen setzen den Rahmen."
+        }
+      ]
+    }
+  ]
+}

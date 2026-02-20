@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Ausbildungsvertrag: Rechte - Pflichten",
+    "mechanic": "match_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Zuordnung ist korrekt?",
+      "hint": "Rolle und Kategorie gemeinsam pruefen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ausbildender: Pflicht zur fachlichen Anleitung",
+          "correct": true,
+          "feedback": "Richtig. Das ist eine Kernpflicht."
+        },
+        {
+          "id": "b",
+          "text": "Azubi: Recht auf beliebige Arbeitsverweigerung",
+          "correct": false,
+          "feedback": "So besteht kein allgemeines Recht."
+        },
+        {
+          "id": "c",
+          "text": "Ausbildender: Recht auf fehlende Verguetung",
+          "correct": false,
+          "feedback": "Verguetung ist geschuldet."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Was ist typischerweise eine Pflicht des Azubis?",
+      "hint": "Lern- und Mitwirkungspflichten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lernaufgaben sorgfaeltig ausfuehren und Regeln beachten",
+          "correct": true,
+          "feedback": "Korrekt. Das gehoert zu den Grundpflichten."
+        },
+        {
+          "id": "b",
+          "text": "Ausbildungsinhalte eigenmaechtig streichen",
+          "correct": false,
+          "feedback": "Nicht zulaessig."
+        },
+        {
+          "id": "c",
+          "text": "Pruefungstermine frei festlegen",
+          "correct": false,
+          "feedback": "Pruefungsrahmen ist vorgegeben."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Aussage beschreibt ein Recht des Azubis?",
+      "hint": "Anspruch aus dem Ausbildungsvertrag.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Anspruch auf planvolle und zielgerichtete Ausbildung",
+          "correct": true,
+          "feedback": "Ja. Das ist ein zentrales Recht."
+        },
+        {
+          "id": "b",
+          "text": "Pflicht, auf Anleitung zu verzichten",
+          "correct": false,
+          "feedback": "Das waere kein Recht."
+        },
+        {
+          "id": "c",
+          "text": "Recht, Sicherheitsregeln zu ignorieren",
+          "correct": false,
+          "feedback": "Sicherheitsregeln bleiben verbindlich."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche Kombination ist falsch zugeordnet?",
+      "hint": "Suche Rollenverwechslung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ausbildender: Pflicht zur Verguetungszahlung",
+          "correct": false,
+          "feedback": "Diese Zuordnung ist korrekt, also nicht die gesuchte Falsche."
+        },
+        {
+          "id": "b",
+          "text": "Azubi: Pflicht zum Fuehren des Berichtshefts",
+          "correct": false,
+          "feedback": "Auch das ist korrekt zugeordnet."
+        },
+        {
+          "id": "c",
+          "text": "Azubi: Pflicht, keine Lerninhalte zu erhalten",
+          "correct": true,
+          "feedback": "Richtig. Das ist eine klare Fehlzuordnung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI passt zum Rollencheck-Match?",
+      "hint": "Zwei Dimensionen messen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rollenquote und Kategorienquote getrennt ausweisen",
+          "correct": true,
+          "feedback": "Genau. Beide Fehlerarten bleiben sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Zeitmessung ohne Trefferquote",
+          "correct": false,
+          "feedback": "Zu wenig Aussagekraft."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl geklickter Karten",
+          "correct": false,
+          "feedback": "Keine inhaltliche Qualitaetsmessung."
+        }
+      ]
+    }
+  ]
+}

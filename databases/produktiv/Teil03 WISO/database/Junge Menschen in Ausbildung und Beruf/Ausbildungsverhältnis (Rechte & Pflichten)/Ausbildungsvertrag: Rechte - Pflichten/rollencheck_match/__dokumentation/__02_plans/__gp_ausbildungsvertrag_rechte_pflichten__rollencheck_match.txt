@@ -1,0 +1,52 @@
+# __gp_ausbildungsvertrag_rechte_pflichten__rollencheck_match
+
+## Spielidee
+"Rollencheck-Match" zeigt Vertragsaussagen. Lernende ordnen zu, ob die Aussage eine Pflicht oder ein Recht von Auszubildenden oder Ausbildenden beschreibt.
+
+## Lernziel
+- Rechte und Pflichten im Ausbildungsvertrag sauber unterscheiden.
+- Rollenbezogene Verantwortung korrekt zuordnen.
+
+## Messbare Progression
+- 30 Aussagekarten.
+- Punkte: +5 korrekte Rolle, +5 korrekte Kategorie, -3 Fehler.
+- KPI: Rollenquote und Kategorienquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- ClassificationEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- StatementCard(cardId, text)
+- Classification(roleType, rightOrDuty)
+- RoundResult(roleCorrect, classCorrect)
+
+### Beziehungen
+- CardController liefert 1..* StatementCard.
+- ClassificationEngine validiert Classification.
+- ProgressTracker aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> CLASSIFY -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt StatementCard.
+2. Player waehlt Classification.
+3. ClassificationEngine prueft Antwort.
+4. RoundResult wird gespeichert.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Falsche Rollenwahl blockiert Kategorienbonus.
+- Serienbonus ab 6 voll korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, text, expectedRole, expectedClass
+
+## Abnahmekriterien
+- Rolle und Kategorie werden getrennt rueckgemeldet.
+- KPI zeigt beide Dimensionen transparent.
+- Report gruppiert wiederkehrende Verwechslungen.

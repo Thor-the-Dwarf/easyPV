@@ -246,3 +246,24 @@ Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine M
     - `output/web-game-kaufvertrag/shot-0.png`
     - `output/web-game-kaufvertrag/state-0.json`
   - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.
+
+- Neuer Umsetzungs-Batch: Topic "Ausbildungsvertrag: Rechte - Pflichten" mit 5 neuen Gameordnern.
+- Neu angelegt:
+  - `anspruch_detektor`
+  - `nachweispflicht_timer`
+  - `pflichtverletzung_router`
+  - `rollencheck_match`
+  - `vertragsklausel_pruefer`
+- Je Spiel erstellt:
+  - `_ghtml`, `_gjs`, `_gcss`
+  - `_data/_gg01_*.json` + Topic-MetaData
+  - Vollstaendige `__dokumentation`-Struktur mit UML-PUML und 5 Plan-Dateien
+  - Unit-Tests inkl. Messbarkeits-Check (`measurable`, `score`, `progress_percent`, `simulated_ms`)
+- Validierung:
+  - Coverage-Check: `main_plans=5`, `game_dirs=5`.
+  - JSON-Parse und JS-Syntaxcheck fuer alle 5 Spiele erfolgreich.
+  - Lokale Node-Tests fuer den Block komplett gruen (`15/15`).
+  - Playwright-Smoke fuer `anspruch_detektor` erfolgreich:
+    - `output/web-game-ausbildungsvertrag-rechte-pflichten/shot-0.png`
+    - `output/web-game-ausbildungsvertrag-rechte-pflichten/state-0.json`
+  - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.

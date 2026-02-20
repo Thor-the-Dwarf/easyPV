@@ -1,0 +1,53 @@
+# __gp_ausbildungsvertrag_rechte_pflichten__nachweispflicht_timer
+
+## Spielidee
+"Nachweispflicht-Timer" stellt Fristfaelle zu Berichtsheft, Fehlzeiten und Nachweisen dar. Lernende entscheiden unter Zeitdruck, welche Nachweise erforderlich sind.
+
+## Lernziel
+- Nachweispflichten situationsgerecht anwenden.
+- Fristbezogene Entscheidungen beschleunigen.
+
+## Messbare Progression
+- 18 Kurzfaelle mit 20 Sekunden Limit.
+- Punkte: +8 korrekte Entscheidung, -4 falsche Entscheidung.
+- +3 fuer korrekte Begruendung.
+- KPI: Entscheidungstreffer und Reaktionszeit.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- TimerController
+- EvidenceRuleEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- EvidenceCase(caseId, contextType, deadline)
+- Decision(decisionId, evidenceNeeded)
+- CaseResult(isCorrect, responseTimeMs)
+
+### Beziehungen
+- TimerController steuert 1..* EvidenceCase.
+- EvidenceRuleEngine validiert Decision.
+- AnalyticsService aggregiert 1..* CaseResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECISION_LOCK -> EVALUATE -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. TimerController startet EvidenceCase.
+2. Player waehlt Decision.
+3. EvidenceRuleEngine prueft Nachweispflicht.
+4. CaseResult wird dargestellt.
+5. AnalyticsService aktualisiert KPI.
+
+## Regeln
+- Keine Antwort im Zeitfenster gilt als Fehler.
+- Serienbonus bei drei schnellen Volltreffern.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, contextType, deadline, options[], expectedDecision
+
+## Abnahmekriterien
+- Timer und Bewertung sind synchron.
+- KPI zeigt Genauigkeit und Tempo.
+- Report gruppiert Fehler nach Nachweistyp.

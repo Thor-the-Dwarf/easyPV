@@ -1,0 +1,8 @@
+@startuml
+[*] --> READY
+READY --> ACTIVE: Start
+ACTIVE --> EVALUATE: Antwort
+EVALUATE --> ACTIVE: naechste Runde
+EVALUATE --> FINISHED: letzte Runde
+FINISHED --> READY: Neustart
+@enduml

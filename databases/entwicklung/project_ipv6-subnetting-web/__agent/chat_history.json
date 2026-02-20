@@ -214,5 +214,20 @@
         "why": "Reale UI-Sichtprüfung und Kontrolle der Widget-Ausgabe im laufenden Build"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-20 23:26:00",
+    "commit_message": "fix(tool-visibility): neue Tools im gezeigten Kapitel sichtbar machen",
+    "request": "Hinweis: neue Tools sind nicht sichtbar",
+    "response": [
+      {
+        "what": "Tools-Zuordnung für `basics/hex-prefix` in `assets/data/lessons.json` erweitert",
+        "why": "Die neuen Arbeitspaket-Tools direkt im vom Nutzer gezeigten Drawer sichtbar machen"
+      },
+      {
+        "what": "Playwright-Sichtprüfung als Nachweis ausgeführt (`output/tools-visible-fix/shot-0.png`)",
+        "why": "Verifizieren, dass der Drawer nun `Tools (5)` und die neuen Einträge anzeigt"
+      }
+    ]
   }
 ]

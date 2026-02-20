@@ -25,3 +25,5 @@ Original prompt: Planänderung: Du arbeitest auf ne reigenen Git-Branch die du e
 - Tool in Drawer integriert (`assets/tools.js`, `assets/layout.js`) und in `subnetting/prefix-basics` aktiviert.
 - Playwright-Visual-Checks: `output/wp04-next-previous-network/shot-0.png` und `output/wp04-next-previous-network-open/shot-0.png`.
 - Hinweis: Gesamtsuite hat weiterhin 2 bestehende Altfails ausserhalb von WP-04 (`compress(ULA)`, `prefixLastAddress(/48)`).
+- Tool-Sichtbarkeit gefixt: `basics/hex-prefix` enthält jetzt zusätzlich `network-range`, `prefix-split-enumerator`, `next-previous-network`.
+- Verifiziert mit Screenshot: `output/tools-visible-fix/shot-0.png` (Tools(5) sichtbar).

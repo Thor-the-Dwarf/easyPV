@@ -25,5 +25,5 @@
 - Core-Lib erweitert (`assets/lib/ipv6.js`): `addressCountForPrefix()`, `subnetCountBetween()`, `prefixRange()`, `enumerateSubprefixes()`, `nextPreviousNetwork()`.
 - Tests erweitert (`assets/lib/ipv6.test.js`).
 - Lernpfad aktiviert (`assets/data/lessons.json`):
-  - `basics/hex-prefix` zeigt `prefix-calculator`
+  - `basics/hex-prefix` zeigt `prefix-calculator`, `network-range`, `prefix-split-enumerator`, `next-previous-network`, `prefix-visualizer`
   - `subnetting/prefix-basics` zeigt `prefix-split-enumerator`, `next-previous-network`, `network-range`, `prefix-slicer`

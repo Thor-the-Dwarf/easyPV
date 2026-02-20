@@ -7,3 +7,6 @@ Original prompt: Planänderung: Du arbeitest auf ne reigenen Git-Branch die du e
 - Core-Lib erweitert: `addressCountForPrefix()` und `subnetCountBetween()` in `assets/lib/ipv6.js`.
 - Smoke-Tests erweitert: neue Testfaelle in `assets/lib/ipv6.test.js`.
 - Tool in Lernpfad aktiviert: `basics/hex-prefix` nutzt jetzt auch `prefix-calculator`.
+- Visual check via Playwright abgeschlossen: Screenshot `output/wp01-prefix-calculator/shot-0.png` zeigt neuen Drawer-Eintrag und korrektes Ergebnis fuer /48.
+- Core-Funktionscheck (Node ESM-Snippet) erfolgreich: /64, /128, /48->/56, /64->/64 und Fehlerfall /64->/56.
+- Gesamt-Suite `assets/lib/ipv6.test.js` laeuft, hat aber 2 bereits bestehende Altfails (`compress(ULA)`, `prefixLastAddress(/48)`) ausserhalb von WP-01.

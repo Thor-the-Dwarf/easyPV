@@ -1,20 +1,23 @@
-# Implementierungsplan – Session 26-02-20
+# Implementierungsplan – Session 26-02-20 (WP-01 Umsetzung)
 
-## Ziel dieser Session
-- Arbeitspakete auf 6 fachlich sinnvolle IPv6-Tools reduzieren.
-- Jedes Tool als eigener Akkordeon-Eintrag im Tool-Drawer (wie Präfix-Visualizer) planen.
+## Branch
+- `codex-project_ipv6-subnetting-web`
 
-## Arbeitspakete
+## Status Arbeitspakete
 
-| WP | Tool | Status | Kernfunktion |
+| WP | Tool | Status | Ergebnis |
 |---|---|---|---|
-| WP-01 | Präfix-Rechner | Geplant | Adressanzahl pro Präfix, optional Subnetzanzahl /alt -> /neu |
-| WP-02 | Netzadresse & Range | Geplant | Netzadresse, erste/letzte Adresse im Präfix |
-| WP-03 | Präfix-Split (Enumerator) | Geplant | Präfix aufteilen und Subnetzfenster per offset/limit listen |
-| WP-04 | Next/Previous Network | Geplant | Nächstes/vorheriges Netz gleicher Präfixlänge |
-| WP-05 | Containment / Overlap Check | Geplant | Enthaltensein und Präfix-Überlappung prüfen |
-| WP-06 | Reverse-DNS Generator | Geplant | ip6.arpa vollständig und optional bis Präfixgrenze |
+| WP-01 | Präfix-Rechner | ✅ Umgesetzt | Tool-ID `prefix-calculator` mit Eingaben `prefixAlt`, `prefixNeu` und Outputs `adressenImPraefix`, `anzahlSubnetze` |
+| WP-02 | Netzadresse & Range | ⏳ Offen | Noch nicht implementiert |
+| WP-03 | Präfix-Split (Enumerator) | ⏳ Offen | Noch nicht implementiert |
+| WP-04 | Next/Previous Network | ⏳ Offen | Noch nicht implementiert |
+| WP-05 | Containment / Overlap Check | ⏳ Offen | Noch nicht implementiert |
+| WP-06 | Reverse-DNS Generator | ⏳ Offen | Noch nicht implementiert |
 
-## Architekturelle Leitplanke
-- Alle Tools werden über Tool-ID im Drawer-Accordion geführt.
-- Pro Tool: Metadaten-Eintrag + Slot im Drawer + Widget-Mount über Tool-Registry.
+## Umgesetzte Integrationen
+- Drawer-Metadaten erweitert (`assets/layout.js`): eigener Accordion-Eintrag fuer `prefix-calculator`.
+- Tool-Factory erweitert (`assets/tools.js`): Mounting ueber `createPrefixCalculator(...)`.
+- Neues Widget (`assets/lib/prefix-calculator.js`) inkl. Validierung und Ergebnisdarstellung.
+- Core-Lib erweitert (`assets/lib/ipv6.js`): `addressCountForPrefix()`, `subnetCountBetween()`.
+- Tests erweitert (`assets/lib/ipv6.test.js`).
+- Lernpfad aktiviert (`assets/data/lessons.json`): `basics/hex-prefix` zeigt den neuen Rechner.

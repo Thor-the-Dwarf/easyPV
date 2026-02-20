@@ -122,5 +122,28 @@
         "why": "Session-Plan konsistent mit der neuen Arbeitspaket-Definition halten"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-20 22:40:00",
+    "commit_message": "feat(WP-01): Präfix-Rechner als Drawer-Tool",
+    "request": "Planänderung auf eigenen Branch und Umsetzung des ersten Arbeitspakets",
+    "response": [
+      {
+        "what": "Branch `codex-project_ipv6-subnetting-web` erstellt und darauf gearbeitet",
+        "why": "WP-01 isoliert umsetzen und zukünftig dort committen"
+      },
+      {
+        "what": "Neues Tool `prefix-calculator` mit Inputs `prefixAlt` und optional `prefixNeu` implementiert",
+        "why": "Geforderte WP-01-Funktion direkt im Tool-Drawer nutzbar machen"
+      },
+      {
+        "what": "Core-Funktionen `addressCountForPrefix()` und `subnetCountBetween()` plus Tests ergänzt",
+        "why": "Rechenlogik zentral in der IPv6-Lib halten und nachvollziehbar absichern"
+      },
+      {
+        "what": "Tool-Meta/Registry/CSS/Lessons angebunden und per Playwright-Screenshot geprüft",
+        "why": "Sicherstellen, dass das neue Tool sichtbar ist und im bestehenden Drawer-Flow korrekt läuft"
+      }
+    ]
   }
 ]

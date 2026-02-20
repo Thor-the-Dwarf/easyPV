@@ -1414,16 +1414,17 @@ body.exam-mode #app-layout {
 }
 
 /* Gruppen-Row */
-.pv-groups-scroll {
-    overflow-x: auto;
-    padding-bottom: var(--space-1);
+/* 2×4-Grid: 4 Gruppen pro Zeile, kein horizontaler Overflow */
+.pv-groups-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-.pv-groups-row {
-    display: flex;
-    align-items: flex-end;
-    gap: 2px;
-    min-width: max-content;
+.pv-groups-rowline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
 }
 
 .pv-group {
@@ -1431,9 +1432,10 @@ body.exam-mode #app-layout {
     flex-direction: column;
     align-items: center;
     gap: 2px;
-    padding: var(--space-1);
+    padding: 3px var(--space-1);
     border-radius: var(--radius-sm);
-    min-width: 42px;
+    min-width: 0;
+    /* Grid übernimmt Breitenverteilung */
     transition: background-color var(--transition);
 }
 
@@ -1470,6 +1472,7 @@ body.exam-mode #app-layout {
 .pv-nibbles-row {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1px;
 }
 
@@ -1497,10 +1500,9 @@ body.exam-mode #app-layout {
     color: var(--color-text-muted);
 }
 
+/* pv-nibble-sep wird nicht mehr gerendert, bleibt als Fallback */
 .pv-nibble-sep {
-    font-size: 7px;
-    color: var(--color-border);
-    line-height: 1;
+    display: none;
 }
 
 .pv-group-idx {

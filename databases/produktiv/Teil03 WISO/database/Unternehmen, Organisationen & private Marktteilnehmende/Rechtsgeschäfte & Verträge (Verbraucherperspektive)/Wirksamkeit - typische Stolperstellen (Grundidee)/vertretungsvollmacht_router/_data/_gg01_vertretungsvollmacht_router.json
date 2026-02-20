@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wirksamkeit - typische Stolperstellen",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 8,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welcher Schritt kommt bei Stellvertretungsfall zuerst?",
+      "hint": "Rolle und Vertretungsstatus klaeren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Beteiligtenrolle und Vertretungsbefugnis zuerst pruefen",
+          "correct": true,
+          "feedback": "Richtig. Das ist der Startpunkt."
+        },
+        {
+          "id": "b",
+          "text": "Direkt Ergebnis festlegen",
+          "correct": false,
+          "feedback": "Ohne Pruefweg nicht belastbar."
+        },
+        {
+          "id": "c",
+          "text": "Nur den Falltitel lesen",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Route ist korrekt?",
+      "hint": "Befugnis -> Umfang -> Wirksamkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vollmacht pruefen, Umfang validieren, Wirkung beurteilen",
+          "correct": true,
+          "feedback": "Exakt der korrekte Pfad."
+        },
+        {
+          "id": "b",
+          "text": "Umfang ignorieren und direkt freigeben",
+          "correct": false,
+          "feedback": "Pflichtpruefung fehlt."
+        },
+        {
+          "id": "c",
+          "text": "Nur auf Erfahrung verlassen",
+          "correct": false,
+          "feedback": "Nicht regelbasiert."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann droht Zusatzabzug?",
+      "hint": "Pflichtpruefung ausgelassen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn eine notwendige Pruefstufe uebersprungen wird",
+          "correct": true,
+          "feedback": "Richtig. Das ist regelwidrig."
+        },
+        {
+          "id": "b",
+          "text": "Wenn Zwischenergebnis dokumentiert wird",
+          "correct": false,
+          "feedback": "Dokumentation ist richtig."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Feedback angezeigt wird",
+          "correct": false,
+          "feedback": "Feedback ist vorgesehen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI sind gefordert?",
+      "hint": "Korrektheit und Effizienz trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Routing-Genauigkeit und Schritte bis Loesung",
+          "correct": true,
+          "feedback": "Genau diese KPI sind relevant."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl geoeffneter Tabs",
+          "correct": false,
+          "feedback": "Nicht fachlich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Sitzungsdauer",
+          "correct": false,
+          "feedback": "Ohne Ergebnisqualitaet unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann ist ein Fall korrekt abgeschlossen?",
+      "hint": "Pfad vollstaendig und konsistent.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn der gesamte Pruefweg korrekt bis zur Loesung lief",
+          "correct": true,
+          "feedback": "Richtig. Dann ist der Fall sauber."
+        },
+        {
+          "id": "b",
+          "text": "Sobald eine Antwort geklickt wurde",
+          "correct": false,
+          "feedback": "Das ist kein Abschluss."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Zeit ablaeuft",
+          "correct": false,
+          "feedback": "Ablauf ist kein Erfolg."
+        }
+      ]
+    }
+  ]
+}

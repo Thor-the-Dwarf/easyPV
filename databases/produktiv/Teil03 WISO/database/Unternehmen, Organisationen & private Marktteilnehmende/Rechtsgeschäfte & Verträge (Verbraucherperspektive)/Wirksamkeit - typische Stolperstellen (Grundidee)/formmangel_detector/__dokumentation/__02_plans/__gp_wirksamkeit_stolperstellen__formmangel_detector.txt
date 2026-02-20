@@ -1,0 +1,52 @@
+# __gp_wirksamkeit_stolperstellen__formmangel_detector
+
+## Spielidee
+"Formmangel-Detector" zeigt Vertragsentwuerfe mit absichtlichen Formfehlern. Lernende markieren kritische Mangelstellen.
+
+## Lernziel
+- Formanforderungen als Wirksamkeitsfaktor erkennen.
+- Textpruefung auf Stolperstellen trainieren.
+
+## Messbare Progression
+- 10 Dokumentsets.
+- Punkte: +7 korrekt markierter Mangel, -3 Fehlmarkierung.
+- KPI: Praezision und Recall der Markierungen.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DocumentController
+- DetectionEngine
+- ProgressTracker
+
+### Domaenenobjekte
+- DraftSet(setId, segments[])
+- Segment(segmentId, hasIssue)
+- DetectionResult(tp, fp, fn)
+
+### Beziehungen
+- DraftSet enthaelt 8..30 Segment.
+- DetectionEngine validiert Markierungen.
+- ProgressTracker aggregiert 1..* DetectionResult.
+
+### Zustandsmodell
+- LOAD_SET -> REVIEW -> MARK -> SUBMIT -> RESULT
+
+### Sequenz (Happy Path)
+1. DocumentController laedt DraftSet.
+2. Player markiert Segment.
+3. DetectionEngine prueft Auswahl.
+4. DetectionResult wird berechnet.
+5. ProgressTracker aktualisiert KPI.
+
+## Regeln
+- Uebermarkierung reduziert Praezision.
+- Untermarkierung reduziert Recall.
+
+## Datenmodell (JSON-Idee)
+- fields: setId, segments[], expectedIssues[]
+
+## Abnahmekriterien
+- Fehlerstellen sind klar hervorgehoben.
+- KPI zeigt Praezision und Recall getrennt.
+- Report benennt haeufig uebersehene Mangeltypen.

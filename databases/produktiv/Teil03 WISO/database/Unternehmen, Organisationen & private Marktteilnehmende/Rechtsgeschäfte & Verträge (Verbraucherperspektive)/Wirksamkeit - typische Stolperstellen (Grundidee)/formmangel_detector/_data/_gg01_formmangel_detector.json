@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wirksamkeit - typische Stolperstellen",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 7,
+    "wrong": -3,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Markierung deutet auf einen Formmangel?",
+      "hint": "Verbindliche Formvorgabe fehlt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wesentliche Formanforderung fehlt oder ist unvollstaendig",
+          "correct": true,
+          "feedback": "Richtig. Das ist ein Kernmangel."
+        },
+        {
+          "id": "b",
+          "text": "Layout ist ungewohnt",
+          "correct": false,
+          "feedback": "Optik allein ist kein Formmangel."
+        },
+        {
+          "id": "c",
+          "text": "Text ist lang",
+          "correct": false,
+          "feedback": "Laenge ist nicht ausschlaggebend."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Was verschlechtert die Praezision im Detector?",
+      "hint": "Zu viele falsche Markierungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Uebermarkierung unkritischer Textstellen",
+          "correct": true,
+          "feedback": "Genau. Das senkt Praezision."
+        },
+        {
+          "id": "b",
+          "text": "Gezielte Markierung klarer Problemstellen",
+          "correct": false,
+          "feedback": "Das verbessert die Qualitaet."
+        },
+        {
+          "id": "c",
+          "text": "Hinweise lesen",
+          "correct": false,
+          "feedback": "Hinweise sind erlaubt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was reduziert den Recall?",
+      "hint": "Wichtige Mangelstelle uebersehen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Relevante Problemsegmente unmarkiert lassen",
+          "correct": true,
+          "feedback": "Richtig. Dadurch sinkt Recall."
+        },
+        {
+          "id": "b",
+          "text": "Mehrere korrekte Stellen markieren",
+          "correct": false,
+          "feedback": "Das ist positiv."
+        },
+        {
+          "id": "c",
+          "text": "Reihenfolge der Markierung aendern",
+          "correct": false,
+          "feedback": "Reihenfolge ist nicht entscheidend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI-Kombination ist gefordert?",
+      "hint": "Praezision und Recall getrennt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Praezision und Recall als getrennte Kennzahlen anzeigen",
+          "correct": true,
+          "feedback": "Exakt. Das zeigt beide Fehlerarten."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte ohne Aufteilung",
+          "correct": false,
+          "feedback": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Bearbeitungszeit",
+          "correct": false,
+          "feedback": "Keine inhaltliche Qualitaet."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann ist ein Dokumentset gut geloest?",
+      "hint": "Hohe Treffer bei wenigen Fehlmarkierungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn relevante Maengel getroffen und Fehlalarme niedrig sind",
+          "correct": true,
+          "feedback": "Richtig. Das ist das Zielprofil."
+        },
+        {
+          "id": "b",
+          "text": "Wenn alles markiert wird",
+          "correct": false,
+          "feedback": "Fuehrt zu schlechter Praezision."
+        },
+        {
+          "id": "c",
+          "text": "Wenn gar nichts markiert wird",
+          "correct": false,
+          "feedback": "Dann fehlen Treffer."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wirksamkeit - typische Stolperstellen",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 6,
+    "wrong": -3,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Aussage trifft bei Fristpruefung zuerst zu?",
+      "hint": "Fristtyp und Startpunkt klaeren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fristbeginn und Fristart muessen zuerst bestimmt werden",
+          "correct": true,
+          "feedback": "Richtig. Ohne Basis keine valide Entscheidung."
+        },
+        {
+          "id": "b",
+          "text": "Nur auf Erinnerung vertrauen",
+          "correct": false,
+          "feedback": "Zu unsicher."
+        },
+        {
+          "id": "c",
+          "text": "Frist generell ignorieren",
+          "correct": false,
+          "feedback": "Fuehrt zu Fehlern."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann zaehlt eine Runde im Timer als Fehler?",
+      "hint": "Falsch oder zu spaet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei falscher Antwort oder ohne Antwort im Zeitfenster",
+          "correct": true,
+          "feedback": "Genau. Das entspricht den Regeln."
+        },
+        {
+          "id": "b",
+          "text": "Bei korrekter Schnellantwort",
+          "correct": false,
+          "feedback": "Das ist positiv."
+        },
+        {
+          "id": "c",
+          "text": "Beim Lesen des Hinweises",
+          "correct": false,
+          "feedback": "Hinweis ist erlaubt."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI zeigt Leistung im Quiz-Timer?",
+      "hint": "Tempo und Genauigkeit kombinieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Antworten pro Minute",
+          "correct": true,
+          "feedback": "Richtig. Diese KPI ist gefordert."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl Klicks",
+          "correct": false,
+          "feedback": "Keine Lernqualitaet."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtspielzeit",
+          "correct": false,
+          "feedback": "Ohne Richtigkeit unbrauchbar."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Was verbessert die Trefferquote bei Fristfragen?",
+      "hint": "Systematische Kurzpruefung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kurze Checkfolge: Fristtyp, Startpunkt, Endpunkt",
+          "correct": true,
+          "feedback": "Genau. Das stabilisiert Entscheidungen."
+        },
+        {
+          "id": "b",
+          "text": "Nur auf Gewohnheit reagieren",
+          "correct": false,
+          "feedback": "Fehleranfaellig."
+        },
+        {
+          "id": "c",
+          "text": "Antwort bis nach Ablauf verschieben",
+          "correct": false,
+          "feedback": "Zeitfenster verpasst."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann gibt es Serienbonus?",
+      "hint": "Mehrere korrekte Antworten hintereinander.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ab einer stabilen Serie korrekter Antworten",
+          "correct": true,
+          "feedback": "Richtig. Konstanz wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei beliebiger Reihenfolge mit vielen Fehlern",
+          "correct": false,
+          "feedback": "Kein Bonusprofil."
+        },
+        {
+          "id": "c",
+          "text": "Beim Pausieren des Spiels",
+          "correct": false,
+          "feedback": "Nicht bonusrelevant."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wirksamkeit - typische Stolperstellen",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 6,
+    "wrong": -3,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Einordnung passt zu einer klar zulaessigen Klausel?",
+      "hint": "Kategorie: wirksam.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Als wirksam einstufen",
+          "correct": true,
+          "feedback": "Richtig. Die Zuordnung ist plausibel."
+        },
+        {
+          "id": "b",
+          "text": "Als unwirksam einstufen",
+          "correct": false,
+          "feedback": "Das ist zu streng."
+        },
+        {
+          "id": "c",
+          "text": "Als unklar ohne Begruendung",
+          "correct": false,
+          "feedback": "Unnoetig unscharf."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann ist die Kategorie \"unklar\" sinnvoll?",
+      "hint": "Wenn Angaben fuer sichere Wertung fehlen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn entscheidende Informationen fuer die Bewertung fehlen",
+          "correct": true,
+          "feedback": "Richtig. Dann ist \"unklar\" begruendet."
+        },
+        {
+          "id": "b",
+          "text": "Immer bei Zeitdruck waehlen",
+          "correct": false,
+          "feedback": "Das ist kein fachlicher Grund."
+        },
+        {
+          "id": "c",
+          "text": "Nie verwenden",
+          "correct": false,
+          "feedback": "Ist in Faellen notwendig."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann entsteht Zusatzabzug im Match?",
+      "hint": "Kernklausel falsch klassifiziert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei Fehlklassifikation einer Kernklausel",
+          "correct": true,
+          "feedback": "Genau. Das wiegt besonders schwer."
+        },
+        {
+          "id": "b",
+          "text": "Bei korrekter, aber langsamer Antwort",
+          "correct": false,
+          "feedback": "Keine Zusatzstrafe vorgesehen."
+        },
+        {
+          "id": "c",
+          "text": "Bei sichtbaren KPI",
+          "correct": false,
+          "feedback": "KPI sind gewollt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI zeigt den Lernfortschritt?",
+      "hint": "Treffer je Kategorie.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trefferquote getrennt fuer wirksam, unwirksam und unklar",
+          "correct": true,
+          "feedback": "Exakt. Das entspricht dem Plan."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtdauer",
+          "correct": false,
+          "feedback": "Ohne Qualitaetsbezug zu wenig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Antworten",
+          "correct": false,
+          "feedback": "Keine Zuordnungsqualitaet."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Was zeichnet eine gute Match-Runde aus?",
+      "hint": "Korrekte Zuordnung mit stabiler Trefferquote.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Kategorien korrekt und konsistent zugeordnet werden",
+          "correct": true,
+          "feedback": "Richtig. Das ist die Zielleistung."
+        },
+        {
+          "id": "b",
+          "text": "Wenn zufaellig verteilt wird",
+          "correct": false,
+          "feedback": "Nicht reproduzierbar."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nur auf Geschwindigkeit geachtet wird",
+          "correct": false,
+          "feedback": "Tempo allein reicht nicht."
+        }
+      ]
+    }
+  ]
+}

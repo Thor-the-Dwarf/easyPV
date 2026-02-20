@@ -1,0 +1,52 @@
+# __gp_wirksamkeit_stolperstellen__wirksamkeitscheck_match
+
+## Spielidee
+"Wirksamkeitscheck-Match" ordnet Vertragsaussagen den Kategorien wirksam, unwirksam oder unklar zu.
+
+## Lernziel
+- Typische Stolperstellen bei Rechtsgeschaeften erkennen.
+- Wirksamkeitseinschaetzung systematisch aufbauen.
+
+## Messbare Progression
+- 24 Karten.
+- Punkte: +6 korrekte Zuordnung, -3 falsche Zuordnung.
+- KPI: Trefferquote je Kategorie.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- CardController
+- ValidityEngine
+- MetricService
+
+### Domaenenobjekte
+- ClauseCard(cardId, clauseType)
+- CategoryOption(optionId, validityClass)
+- MatchResult(isCorrect, validityClass)
+
+### Beziehungen
+- ClauseCard enthaelt 3 CategoryOption.
+- ValidityEngine validiert Auswahl.
+- MetricService aggregiert 1..* MatchResult.
+
+### Zustandsmodell
+- READY -> CARD_ACTIVE -> SELECT -> EVALUATE -> NEXT_CARD
+
+### Sequenz (Happy Path)
+1. CardController zeigt ClauseCard.
+2. Player waehlt CategoryOption.
+3. ValidityEngine prueft Zuordnung.
+4. MatchResult wird gespeichert.
+5. MetricService aktualisiert KPI.
+
+## Regeln
+- Fehlklassifikation bei Kernklausel verursacht Zusatzabzug.
+- Serienbonus ab 5 korrekten Karten.
+
+## Datenmodell (JSON-Idee)
+- fields: cardId, clauseType, options[], expectedCategory
+
+## Abnahmekriterien
+- Zuordnung ist pro Fall begruendet.
+- KPI zeigt Leistung je Kategorie.
+- Report listet haeufige Verwechslungen.

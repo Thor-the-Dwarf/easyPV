@@ -1,0 +1,52 @@
+# __gp_wirksamkeit_stolperstellen__vertretungsvollmacht_router
+
+## Spielidee
+"Vertretungsvollmacht-Router" simuliert Faelle mit Stellvertretung. Lernende waehlen den korrekten Pruefpfad zur Wirksamkeit.
+
+## Lernziel
+- Stolperstellen bei Vertretungssituationen erkennen.
+- Pruefschritte strukturiert anwenden.
+
+## Messbare Progression
+- 14 Prozessfaelle.
+- Punkte: +8 korrekter Schritt, -4 falscher Schritt.
+- KPI: Routing-Genauigkeit und Schritte bis Loesung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- FlowController
+- AuthorityEngine
+- ScoreService
+
+### Domaenenobjekte
+- AuthorityCase(caseId, actorRole)
+- RouteStep(stepId, checkType)
+- RouteResult(pathCorrect, stepCount)
+
+### Beziehungen
+- AuthorityCase enthaelt 3..8 RouteStep.
+- AuthorityEngine validiert Reihenfolge.
+- ScoreService aggregiert 1..* RouteResult.
+
+### Zustandsmodell
+- CASE_START -> STEP_SELECT -> VALIDATE -> FEEDBACK -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. FlowController startet AuthorityCase.
+2. Player waehlt RouteStep.
+3. AuthorityEngine prueft Pruefweg.
+4. RouteResult wird berechnet.
+5. ScoreService aktualisiert KPI.
+
+## Regeln
+- Uebersprungene Pflichtpruefung verursacht Zusatzabzug.
+- Fehlerfreie Kette gibt Effizienzbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, actorRole, steps[], expectedPath[]
+
+## Abnahmekriterien
+- Prozesspfad ist klar visualisiert.
+- KPI trennt Korrektheit und Effizienz.
+- Report nennt haeufige Fehlrouten.

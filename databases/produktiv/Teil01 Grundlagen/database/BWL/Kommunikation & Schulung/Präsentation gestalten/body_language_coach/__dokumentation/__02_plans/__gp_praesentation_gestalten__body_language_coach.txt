@@ -1,0 +1,16 @@
+Anforderungen
+- Titel: "Body-Language-Coach"
+- Ziel: 5 Körpersprache-Szenen korrekt als Do oder Don't bewerten.
+- Lernziel: Bewusstsein für nonverbale Kommunikation in Präsentationen.
+
+Spielidee
+- Pro Runde eine Szene mit Haltung/Blickrichtung.
+- Entscheidung per Do/Don't.
+- Direktes Feedback mit kurzer Erklärung.
+
+Implementierungsplan
+- [x] JSON Konfiguration `_data/_gg01_body_language_coach.json`
+- [x] UI `_ghtml_body_language_coach.html` + `_gcss_body_language_coach.css`
+- [x] Spiel-Logik `_gjs_body_language_coach.js`
+- [x] Hooks `render_game_to_text` und `advanceTime`
+- [x] Tests in `__dokumentation/__03_tests` (reachability + config + progress)

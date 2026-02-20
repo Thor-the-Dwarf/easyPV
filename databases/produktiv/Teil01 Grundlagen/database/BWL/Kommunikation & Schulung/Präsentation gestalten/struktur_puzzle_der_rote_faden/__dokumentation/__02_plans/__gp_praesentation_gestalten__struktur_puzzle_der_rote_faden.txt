@@ -1,0 +1,16 @@
+Anforderungen
+- Titel: "Struktur-Puzzle: Der Rote Faden"
+- Ziel: 6 Präsentationsabschnitte in die logisch korrekte Reihenfolge bringen.
+- Lernziel: Aufbau einer schlüssigen Präsentationsgliederung.
+
+Spielidee
+- Abschnittsbausteine werden per Klick in die Reihenfolge gelegt.
+- Reihenfolge kann vor Prüfung angepasst werden.
+- Ergebnis: 100 bei korrekter Sequenz, sonst 0.
+
+Implementierungsplan
+- [x] JSON Konfiguration `_data/_gg01_struktur_puzzle_der_rote_faden.json`
+- [x] UI `_ghtml_struktur_puzzle_der_rote_faden.html` + `_gcss_struktur_puzzle_der_rote_faden.css`
+- [x] Spiel-Logik `_gjs_struktur_puzzle_der_rote_faden.js`
+- [x] Hooks `render_game_to_text` und `advanceTime`
+- [x] Tests in `__dokumentation/__03_tests` (reachability + config + progress)

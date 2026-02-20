@@ -1,0 +1,51 @@
+{
+  "gameId": "body_language_coach",
+  "title": "Body-Language-Coach",
+  "description": "Bewerte gezeigte Körpersprache als Do oder Don't.",
+  "timing": {
+    "default_round_ms": 12000
+  },
+  "scoring": {
+    "correct": 20,
+    "wrong": -5,
+    "timeout": -8,
+    "completion_bonus": 10
+  },
+  "poses": [
+    {
+      "id": 1,
+      "title": "Arme verschränkt, Blick zur Seite",
+      "scene": "Präsentator steht seitlich zum Publikum und wirkt abweisend.",
+      "rating": "dont",
+      "feedback": "Verschlossene Haltung signalisiert Distanz und Unsicherheit."
+    },
+    {
+      "id": 2,
+      "title": "Offene Gestik, Blickkontakt",
+      "scene": "Präsentator spricht mit offenen Händen und ruhigem Stand.",
+      "rating": "do",
+      "feedback": "Offene Gestik und Blickkontakt stärken Vertrauen."
+    },
+    {
+      "id": 3,
+      "title": "Hände in den Taschen",
+      "scene": "Präsentator zieht beide Hände dauerhaft in die Hosentaschen.",
+      "rating": "dont",
+      "feedback": "Wirkt unengagiert und kann als Unsicherheit wahrgenommen werden."
+    },
+    {
+      "id": 4,
+      "title": "Stabiler Stand, leichte Vorwärtsneigung",
+      "scene": "Präsentator steht fest, wirkt präsent und zugewandt.",
+      "rating": "do",
+      "feedback": "Stabilität und Präsenz unterstützen die Botschaft."
+    },
+    {
+      "id": 5,
+      "title": "Rücken zum Publikum",
+      "scene": "Präsentator liest lange direkt von der Folie ab.",
+      "rating": "dont",
+      "feedback": "Dauerhaft abgewandte Haltung kappt den Kontakt zum Publikum."
+    }
+  ]
+}

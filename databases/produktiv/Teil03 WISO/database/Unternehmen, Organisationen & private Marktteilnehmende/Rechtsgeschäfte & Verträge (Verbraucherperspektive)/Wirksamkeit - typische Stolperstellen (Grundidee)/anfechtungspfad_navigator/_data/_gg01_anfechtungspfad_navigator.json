@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Wirksamkeit - typische Stolperstellen",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 8,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was ist bei einem moeglichen Anfechtungsfall der erste Pruefschritt?",
+      "hint": "Sachverhalt und Ausloeser sauber erfassen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sachverhalt und moeglichen Irrtumstyp zuerst klaeren",
+          "correct": true,
+          "feedback": "Richtig. Der Startpunkt muss eindeutig sein."
+        },
+        {
+          "id": "b",
+          "text": "Direkt Endentscheidung ohne Pruefung treffen",
+          "correct": false,
+          "feedback": "Ohne Pruefpfad zu frueh."
+        },
+        {
+          "id": "c",
+          "text": "Fall sofort ignorieren",
+          "correct": false,
+          "feedback": "Fuehrt zu Prozessfehlern."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Reihenfolge ist im Navigator robust?",
+      "hint": "Pruefen -> bewerten -> reagieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tatbestand pruefen, Frist bewerten, Reaktion ableiten",
+          "correct": true,
+          "feedback": "Genau der korrekte Ablauf."
+        },
+        {
+          "id": "b",
+          "text": "Reaktion zuerst, Pruefung spaeter",
+          "correct": false,
+          "feedback": "Reihenfolge ist fehlerhaft."
+        },
+        {
+          "id": "c",
+          "text": "Nur eine Teilpruefung ausfuehren",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann entsteht Zusatzabzug laut Regelwerk?",
+      "hint": "Falscher Erstschritt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn der erste Pflichtschritt falsch gesetzt wird",
+          "correct": true,
+          "feedback": "Richtig. Das wirkt sich stark aus."
+        },
+        {
+          "id": "b",
+          "text": "Wenn die Schritte dokumentiert werden",
+          "correct": false,
+          "feedback": "Dokumentation ist korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Feedback angezeigt wird",
+          "correct": false,
+          "feedback": "Feedback ist vorgesehen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI bilden den Lernfortschritt?",
+      "hint": "Genauigkeit plus Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reihenfolgegenauigkeit und Schritte bis Abschluss",
+          "correct": true,
+          "feedback": "Exakt die Ziel-KPI."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl geoeffneter Faelle",
+          "correct": false,
+          "feedback": "Zu oberflaechlich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Gesamtdauer",
+          "correct": false,
+          "feedback": "Ohne Korrektheit unzureichend."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann ist ein Fall abgeschlossen?",
+      "hint": "Pruefpfad vollstaendig und korrekt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn die korrekte Kette bis zur Reaktion durchlaufen wurde",
+          "correct": true,
+          "feedback": "Richtig. Dann ist der Fall sauber abgeschlossen."
+        },
+        {
+          "id": "b",
+          "text": "Sobald ein Schritt ausgewaehlt wurde",
+          "correct": false,
+          "feedback": "Noch kein Abschluss."
+        },
+        {
+          "id": "c",
+          "text": "Wenn die Runde abgebrochen wird",
+          "correct": false,
+          "feedback": "Abbruch ist kein Erfolg."
+        }
+      ]
+    }
+  ]
+}

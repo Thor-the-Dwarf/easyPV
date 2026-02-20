@@ -18,12 +18,14 @@ import { createScenarioGenerator } from './lib/scenario-generator.js';
 import { createFehlerbilderWidget } from './lib/fehlerbilder.js';
 import { createRADemo } from './lib/ra-demo.js';
 import { createPrefixCalculator } from './lib/prefix-calculator.js';
+import { createNetworkRange } from './lib/network-range.js';
 
 // ─── Tool-Factory-Registry ────────────────────────────────────────────────────
 // Neue Tools hier eintragen (WP09–WP11 erweitern diese Map).
 
 const TOOL_FACTORIES = new Map([
     ['prefix-calculator', (ctx) => createPrefixCalculator(ctx?.prefixAlt ?? 48, ctx?.prefixNeu ?? null)],
+    ['network-range', (ctx) => createNetworkRange(ctx?.rangeAddress ?? '2001:db8::1234', ctx?.rangePrefix ?? 64)],
     ['prefix-visualizer', (ctx) => createPrefixVisualizer(ctx?.defaultCidr)],
     ['prefix-slicer', (ctx) => createPrefixSlicer(ctx?.defaultCidr)],
     ['scenario-generator', (ctx) => createScenarioGenerator(ctx?.seed ?? null)],

@@ -192,6 +192,19 @@ export function prefixLastAddress(addr, prefixLen) {
 }
 
 /**
+ * Liefert Netzwerk- und Range-Grenzen für addr/prefixLen (Vollform).
+ * Hinweis: Bei IPv6 ist die erste Adresse identisch zur Netzadresse.
+ * @param   {string} addr
+ * @param   {number} prefixLen
+ * @returns {{ network: string, first: string, last: string }}
+ */
+export function prefixRange(addr, prefixLen) {
+    const network = applyMask(addr, prefixLen);
+    const last = prefixLastAddress(addr, prefixLen);
+    return { network, first: network, last };
+}
+
+/**
  * Anzahl der Kind-Subnetze bei gegebener Bit-Erweiterung (als BigInt).
  * @param   {number} addBits
  * @returns {bigint}  2^addBits

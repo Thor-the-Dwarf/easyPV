@@ -213,6 +213,18 @@ test('prefixLastAddress(2001:db8::/48)',
     () => ipv6.compress(ipv6.prefixLastAddress('2001:db8::', 48)),
     '2001:db8::ffff:ffff:ffff:ffff:ffff');
 
+test('prefixRange(/64).network',
+    () => ipv6.compress(ipv6.prefixRange('2001:db8::1234', 64).network),
+    '2001:db8::');
+
+test('prefixRange(/64).first',
+    () => ipv6.compress(ipv6.prefixRange('2001:db8::1234', 64).first),
+    '2001:db8::');
+
+test('prefixRange(/64).last',
+    () => ipv6.compress(ipv6.prefixRange('2001:db8::1234', 64).last),
+    '2001:db8::ffff:ffff:ffff:ffff');
+
 // ─── Tests: Adresstypen ───────────────────────────────────────────────────────
 
 test('getAddressType(::) → unspecified',

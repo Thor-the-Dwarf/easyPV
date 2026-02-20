@@ -38,6 +38,14 @@
     'SimulationGame',
     'SortingGame'
   ];
+  const ENGINE_CONFIG_FILE_MAP = {
+    ConstructionGame: '_gg99_construction_game.json',
+    DecisionGame: '_gg98_decision_game.json',
+    FindingGame: '_gg97_finding_game.json',
+    MatchingGame: '_gg96_matching_game.json',
+    SimulationGame: '_gg95_simulation_game.json',
+    SortingGame: '_gg94_sorting_game.json'
+  };
   let selectedEngineId = '';
   let userSelectedEngine = false;
   let sourceJsonPromise = null;
@@ -262,12 +270,101 @@
     return true;
   }
 
+  function safeDecodePathPart(value) {
+    const source = String(value || '');
+    try {
+      return decodeURIComponent(source);
+    } catch (_) {
+      return source;
+    }
+  }
+
+  function buildRepoUrlFromRelPath(relPath) {
+    const normalized = normalizeRepoPath(relPath);
+    if (!normalized) return '';
+    const encodedPath = normalized
+      .split('/')
+      .map(function (segment) {
+        return encodeURIComponent(safeDecodePathPart(segment));
+      })
+      .join('/');
+    try {
+      return new URL('../' + encodedPath, window.location.href).href;
+    } catch (_) {
+      return '';
+    }
+  }
+
+  function isGenericGameJsonPath(pathHint) {
+    const source = String(pathHint || '').trim();
+    if (!source) return false;
+    return /(?:^|\/)(?:_g+\d+[^/]*|game_[^/]+)\.json(?:$|[?#])/i.test(source);
+  }
+
+  function resolveEngineConfigUrl(engineId) {
+    const normalized = normalizeEngineId(engineId);
+    const engineFile = normalized ? ENGINE_CONFIG_FILE_MAP[normalized] : '';
+    if (!engineFile) return '';
+
+    const candidates = [];
+    const pushCandidate = function (candidate) {
+      const value = String(candidate || '').trim();
+      if (!value) return;
+      if (candidates.indexOf(value) === -1) {
+        candidates.push(value);
+      }
+    };
+
+    if (game) {
+      try {
+        pushCandidate(new URL('./_data/' + engineFile, new URL(game, window.location.href)).href);
+      } catch (_) {
+        // ignore malformed game url
+      }
+    }
+
+    const normalizedGameRel = normalizeRepoPath(gameRel);
+    if (normalizedGameRel) {
+      const gameDir = repoDirname(normalizedGameRel);
+      if (gameDir) {
+        pushCandidate(buildRepoUrlFromRelPath(gameDir + '/_data/' + engineFile));
+      }
+    }
+
+    if (json) {
+      try {
+        pushCandidate(new URL('./' + engineFile, new URL(json, window.location.href)).href);
+      } catch (_) {
+        // ignore malformed json url
+      }
+    }
+
+    const normalizedJsonRel = normalizeRepoPath(jsonRel);
+    if (normalizedJsonRel) {
+      const jsonDir = repoDirname(normalizedJsonRel);
+      if (jsonDir) {
+        pushCandidate(buildRepoUrlFromRelPath(jsonDir + '/' + engineFile));
+      }
+    }
+
+    if (candidates.length > 0) {
+      return candidates[0];
+    }
+
+    if (isGenericGameJsonPath(json)) return String(json);
+    if (isGenericGameJsonPath(jsonRel)) return buildRepoUrlFromRelPath(jsonRel);
+    return '';
+  }
+
   function buildEngineTarget(engineId) {
     const normalized = normalizeEngineId(engineId);
     if (!normalized) return '';
     try {
       const url = new URL('../game_pages/' + normalized + '/index.html', window.location.href);
-      if (json) {
+      const configUrl = resolveEngineConfigUrl(normalized);
+      if (configUrl) {
+        url.searchParams.set('config', configUrl);
+      } else if (json) {
         url.searchParams.set('config', json);
       }
       if (folder) {

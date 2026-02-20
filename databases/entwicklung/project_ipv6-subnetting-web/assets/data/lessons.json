@@ -1,0 +1,268 @@
+{
+    "version": "1.0",
+    "chapters": [
+        {
+            "id": "basics",
+            "title": "Grundlagen",
+            "icon": "🔢",
+            "subchapters": [
+                {
+                    "id": "hex-prefix",
+                    "title": "Hex, Präfix, /64 – Warum?",
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "IPv6-Adressen bestehen aus 128 Bit, notiert als acht 16-Bit-Gruppen in Hexadezimal. Ein Hex-Zeichen repräsentiert exakt 4 Bit – ein sogenanntes **Nibble**. Dieses Grundprinzip ist entscheidend für sauberes Subnetting."
+                        },
+                        {
+                            "type": "example",
+                            "label": "Beispiel",
+                            "code": "2001:0db8:abcd:0000:0000:0000:0000:0001\n└──┘ └──┘ └──┘ └──────────────────────┘\n /16  /32  /48       Interface-ID (/64+)"
+                        },
+                        {
+                            "type": "hint",
+                            "content": "Hex = Nibble = 4 Bit. Ein Hex-Zeichen = 4 Bit. Zwei Hex-Zeichen = 1 Byte."
+                        }
+                    ],
+                    "examples": [],
+                    "tasks": [
+                        {
+                            "id": "basics-hex-1",
+                            "type": "single-input",
+                            "question": "Wie viele Bits hat ein einzelnes Hexadezimalzeichen?",
+                            "answer": "4",
+                            "hint": "Ein Hex-Zeichen kann 0–F (0–15) kodieren – das entspricht 2^4.",
+                            "error_messages": {
+                                "wrong": "Denke an die Basis: Hex ist Basis 16 = 2^? Bits."
+                            }
+                        }
+                    ],
+                    "tools": [
+                        "prefix-visualizer"
+                    ]
+                },
+                {
+                    "id": "compression",
+                    "title": "Adresskürzung (::) verstehen",
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "Aufeinanderfolgende Gruppen aus lauter Nullen dürfen **einmal** als `::` abgekürzt werden. Führende Nullen innerhalb einer Gruppe dürfen ebenfalls weggelassen werden."
+                        },
+                        {
+                            "type": "example",
+                            "label": "Vollform → Kurzform",
+                            "code": "2001:0db8:0000:0000:0000:0000:0000:0001\n→     2001:db8::1"
+                        }
+                    ],
+                    "examples": [],
+                    "tasks": [
+                        {
+                            "id": "basics-compress-1",
+                            "type": "single-input",
+                            "question": "Kürze: fe80:0000:0000:0000:0202:b3ff:fe1e:8329",
+                            "answer": "fe80::202:b3ff:fe1e:8329",
+                            "hint": "Vier aufeinanderfolgende :0000: können durch :: ersetzt werden.",
+                            "error_messages": {
+                                "wrong": "Prüfe: Welche aufeinanderfolgenden Null-Gruppen können durch :: ersetzt werden?"
+                            }
+                        }
+                    ],
+                    "tools": [
+                        "prefix-visualizer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "address-types",
+            "title": "Adresstypen",
+            "icon": "🏷️",
+            "subchapters": [
+                {
+                    "id": "gua",
+                    "title": "GUA – Global Unicast",
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "**Global Unicast Addresses (GUA)** beginnen mit dem Präfix `2000::/3` und sind weltweit eindeutig routbar – das IPv6-Äquivalent öffentlicher IPv4-Adressen."
+                        },
+                        {
+                            "type": "example",
+                            "label": "Typisches GUA",
+                            "code": "2001:db8:1234:5678::1/64\n└────────────────┘ Präfix\n                  └──────┘ Interface-ID"
+                        }
+                    ],
+                    "examples": [],
+                    "tasks": [],
+                    "tools": [
+                        "prefix-visualizer"
+                    ]
+                },
+                {
+                    "id": "ula",
+                    "title": "ULA – Unique Local",
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "**Unique Local Addresses (ULA)** beginnen mit `fc00::/7` (praktisch immer `fd00::/8`) und sind nicht global routbar – ähnlich wie RFC-1918-Adressen (192.168.x.x)."
+                        },
+                        {
+                            "type": "hint",
+                            "content": "ULA beginnt mit fd, GUA mit 2. Einfache Eselsbrücke: 'fd = für Drin (private)'"
+                        }
+                    ],
+                    "examples": [],
+                    "tasks": [],
+                    "tools": [
+                        "prefix-visualizer"
+                    ]
+                },
+                {
+                    "id": "lla",
+                    "title": "LLA – Link-Local",
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "**Link-Local Addresses** beginnen mit `fe80::/10` und sind nur innerhalb eines Netzwerksegments gültig. Sie werden automatisch konfiguriert und sind für NDP sowie Router Advertisements zwingend notwendig."
+                        },
+                        {
+                            "type": "hint",
+                            "content": "Kein ICMPv6 → kein NDP → kein LLA → kein IPv6. ICMPv6 niemals blockieren!"
+                        }
+                    ],
+                    "examples": [],
+                    "tasks": [],
+                    "tools": [
+                        "prefix-visualizer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "subnetting",
+            "title": "Subnetting",
+            "icon": "✂️",
+            "subchapters": [
+                {
+                    "id": "prefix-basics",
+                    "title": "Präfixe verstehen",
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "Die Präfixlänge (z. B. `/48`) gibt an, wie viele Bits des Netzanteils fest sind. Die restlichen Bits stehen für Subnetze und Hosts zur Verfügung."
+                        },
+                        {
+                            "type": "example",
+                            "label": "Präfix-Hierarchie",
+                            "code": "/48  → Standort  (von ISP zugewiesen)\n/56  → Gebäude   (+8 Bits = 256 Blöcke)\n/60  → Etage     (+4 Bits =  16 Blöcke)\n/64  → VLAN/Subnetz (Interface-ID beginnt)"
+                        }
+                    ],
+                    "examples": [],
+                    "tasks": [
+                        {
+                            "id": "subnetting-prefix-1",
+                            "type": "single-input",
+                            "question": "Du hast ein /48. Du willst /56-Subnetze. Wie viele bekommst du?",
+                            "answer": "256",
+                            "hint": "Differenz der Präfixlängen: 56 - 48 = 8 Bits. 2^8 = ?",
+                            "error_messages": {
+                                "wrong": "Zähle die Bits zwischen /48 und /56: Das sind 8 Bit → 2^8 Subnetze."
+                            }
+                        }
+                    ],
+                    "tools": [
+                        "prefix-slicer"
+                    ]
+                },
+                {
+                    "id": "nibble-boundaries",
+                    "title": "Nibble-Grenzen (Sauberes Design)",
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "Da ein Hex-Zeichen 4 Bit repräsentiert, lassen sich Präfixe auf **Nibble-Grenzen** (Vielfache von 4) am einfachsten ablesen und planen. Präfixe wie /44, /48, /52, /56, /60, /64 sind Nibble-konform."
+                        },
+                        {
+                            "type": "hint",
+                            "content": "Nicht-Nibble-Präfixe (z. B. /50) sind gültig, aber schwerer zu lesen. Bevorzuge Vielfache von 4."
+                        }
+                    ],
+                    "examples": [],
+                    "tasks": [],
+                    "tools": [
+                        "prefix-visualizer",
+                        "prefix-slicer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "practice",
+            "title": "Praxis & Planung",
+            "icon": "🏗️",
+            "subchapters": [
+                {
+                    "id": "vlan-planning",
+                    "title": "VLAN- & Standort-Planung",
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "In der Praxis erhältst du einen /48-Block vom ISP. Die Aufgabe: diesen Block hierarchisch auf Standorte, Gebäude und VLANs zu verteilen."
+                        },
+                        {
+                            "type": "example",
+                            "label": "Standardvorgehen",
+                            "code": "ISP gibt: 2001:db8:abcd::/48\n  /56 pro Standort  → 256 Standorte\n  /60 pro Gebäude   → 16 Gebäude je Standort\n  /64 pro VLAN      → 16 VLANs je Gebäude"
+                        }
+                    ],
+                    "examples": [],
+                    "tasks": [],
+                    "tools": [
+                        "prefix-slicer",
+                        "scenario-generator"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "troubleshooting",
+            "title": "Checks & Fehlerbilder",
+            "icon": "🔍",
+            "subchapters": [
+                {
+                    "id": "ra-missing",
+                    "title": "RA fehlt – keine Default-Route",
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "Router Advertisements (RA) sind der Mechanismus, über den Clients ihre Default-Route und Präfix-Informationen erhalten. Fehlt das RA, hat der Client keine Route ins Internet."
+                        },
+                        {
+                            "type": "hint",
+                            "content": "Symptom: Link-Local funktioniert, aber kein globaler Traffic. Prüfe: ICMPv6 Typ 134 (RA) geblockt?"
+                        }
+                    ],
+                    "examples": [],
+                    "tasks": [],
+                    "tools": [
+                        "ra-demo"
+                    ]
+                },
+                {
+                    "id": "icmpv6-blocked",
+                    "title": "ICMPv6 geblockt – Totale Selbstsabotage",
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "ICMPv6 ist bei IPv6 kein optionales Protokoll. NDP, PMTUD, RA – alles basiert auf ICMPv6. Ein pauschaler ICMPv6-Block in der Firewall bricht IPv6-Konnektivität vollständig."
+                        }
+                    ],
+                    "examples": [],
+                    "tasks": [],
+                    "tools": []
+                }
+            ]
+        }
+    ]
+}

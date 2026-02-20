@@ -1,0 +1,44 @@
+[
+  {
+    "date_time_stamp": "26-02-19 01:01:00",
+    "commit_message": "",
+    "request": "Erstelle dir im Ordner Tools Arbeitspakete die du abarbeiten Kannst so das dieser Prototyp ein Erfolg wird. Beschränke dich auf HTML, CSS, JS und json. Kommerziell Nutzbare Librarys sind genehmigt",
+    "response": [
+      {
+        "what": "Kurzbeschreibung was wurde getan",
+        "why": "Kurzbeschreibung warum wurde es getan"
+      },
+      {
+        "what": "Kurzbeschreibung was wurde getan",
+        "why": "Kurzbeschreibung warum wurde es getan"
+      }
+    ]
+  },
+  {
+    "date_time_stamp": "26-02-20 16:33:00",
+    "commit_message": "feat(WP01): Projekt-Skeleton – index.html, styles.css, app.js, lessons.json",
+    "request": "WP01 umsetzen: Projekt-Skeleton + Dateistruktur",
+    "response": [
+      {
+        "what": "index.html erstellt mit Header (Hint-Bar + Haupt), 3-Spalten-Layout (#sidebar, #content-area, #tool-panel), Error-Banner",
+        "why": "HTML-Grundgerüst als Voraussetzung für alle weiteren WPs, semantisch korrekt mit ARIA"
+      },
+      {
+        "what": "assets/styles.css als zentrales Design-System erstellt: CSS-Variablen, Dark/Light-Theme, responsives Grid, alle Basis-Komponenten",
+        "why": "Einzige Quelle für Farben/Abstände (Grundregel 7 analog), keine Hardcoding-Farben"
+      },
+      {
+        "what": "assets/app.js als ES-Modul erstellt: Theme, Sidebar-Toggle, Exam-Mode, loadLessons(), renderSidebar(), showError()-API",
+        "why": "Boot-Logik und sichtbare Fehlerbehandlung (Grundregel 9); type=module für spätere Imports ohne Build-Tool"
+      },
+      {
+        "what": "assets/data/lessons.json mit vollständigem Schema angelegt: 5 Kapitel, 11 Unterkapitel, Tasks, Tool-Bindings",
+        "why": "Datenbasis für WP04 Renderer; Schema bereits vollständig definiert damit spätere WPs ohne JSON-Änderungen arbeiten können"
+      },
+      {
+        "what": "assets/lib/.gitkeep angelegt; current_implementation_plan.md überschrieben; chat_history.json erweitert",
+        "why": "Grundregeln 2, 3, 4 einhalten: lib-Ordner tracken, Plan aktuell halten, History führen"
+      }
+    ]
+  }
+]

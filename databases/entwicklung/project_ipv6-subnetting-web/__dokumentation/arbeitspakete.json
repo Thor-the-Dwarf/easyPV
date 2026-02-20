@@ -1,0 +1,255 @@
+{
+  "project": "ipv6-subnetting-web",
+  "work_packages": [
+    {
+      "id": "WP01",
+      "name": "Projekt-Skeleton + Dateistruktur",
+      "goal": "Basis für eine reine HTML/CSS/JS-App ohne Build-Tool schaffen.",
+      "deliverables": [
+        "index.html",
+        "assets/styles.css",
+        "assets/app.js",
+        "assets/lib/",
+        "assets/data/lessons.json"
+      ],
+      "acceptance": [
+        "Seite lädt ohne Fehler in aktuellen Browsern",
+        "Keine externen Abhängigkeiten nötig",
+        "Grundlayout-Container vorhanden (Nav/Main/Tools)"
+      ],
+      "depends_on": []
+    },
+    {
+      "id": "WP02",
+      "name": "UI-Layout (3-Spalten) + Navigation",
+      "goal": "Links Lernpfad, Mitte Content, rechts Tool-Panel; responsiv.",
+      "deliverables": [
+        "Sidebar mit Kapiteln (Lessons aus JSON)",
+        "Main-Content Bereich",
+        "Tool-Panel Bereich",
+        "Mobile Layout (Sidebar einklappbar)"
+      ],
+      "acceptance": [
+        "Desktop: 3-Spalten sichtbar",
+        "Mobile: Sidebar per Button ein/aus",
+        "Aktives Kapitel ist visuell markiert"
+      ],
+      "depends_on": ["WP01"]
+    },
+    {
+      "id": "WP03",
+      "name": "Client-Routing (Hash) + Zustandsverwaltung",
+      "goal": "Kapitel per URL aufrufbar und wiederherstellbar machen.",
+      "deliverables": [
+        "Hash-Router (#/chapter/subchapter)",
+        "App-State (aktuelles Kapitel, Modus, Eingaben)",
+        "State -> UI Render Pipeline"
+      ],
+      "acceptance": [
+        "Reload behält Kapitel (URL-gesteuert)",
+        "Back/Forward funktioniert",
+        "Kein Vollseiten-Reload beim Wechsel"
+      ],
+      "depends_on": ["WP02"]
+    },
+    {
+      "id": "WP04",
+      "name": "Content-System (lessons.json) + Renderer",
+      "goal": "Lerninhalte, Beispiele und Aufgaben datengetrieben aus JSON rendern.",
+      "deliverables": [
+        "Schema für lessons.json (Kapitel, Textblöcke, Beispiele, Aufgaben, Tools)",
+        "Renderer für Text/Code/Beispielkarten",
+        "Tool-Panel-Binding: Kapitel bestimmt aktive Tools"
+      ],
+      "acceptance": [
+        "Neues Kapitel kann ohne Code-Änderung über JSON hinzugefügt werden",
+        "Beispiele und Aufgaben werden korrekt angezeigt",
+        "Tool-Panel wechselt passend zum Kapitel"
+      ],
+      "depends_on": ["WP03"]
+    },
+    {
+      "id": "WP05",
+      "name": "IPv6-Core-Lib (Parser/Formatter/Prefix-Utils)",
+      "goal": "Saubere IPv6-Berechnungen als wiederverwendbare JS-Funktionen.",
+      "deliverables": [
+        "expand(compressed) -> full 8x4-hex",
+        "compress(full) -> shortest form",
+        "toBigInt(address) / fromBigInt(bigint)",
+        "prefixMask(prefixLen) / applyMask(addr, prefixLen)",
+        "subprefix(parentPrefixLen, addBits, index) -> childPrefix"
+      ],
+      "acceptance": [
+        "Bekannte Testfälle bestehen (inkl. ::, führende Nullen, link-local, ULA, GUA)",
+        "Prefix-Berechnung liefert reproduzierbare Ergebnisse",
+        "Keine Float/Number-Overflows (BigInt-only)"
+      ],
+      "depends_on": ["WP01"]
+    },
+    {
+      "id": "WP06",
+      "name": "Prefix-Visualizer",
+      "goal": "IPv6-Adresse/Präfix visuell erklären (Hex-Gruppen, Präfix-Highlight, Nibble-Grenzen).",
+      "deliverables": [
+        "Komponente: Anzeige 8 Gruppen mit Highlight des Präfix-Anteils",
+        "Nibble-Grenzen Markierung (4-Bit Raster)",
+        "Option: 'Nur Präfix-Bereich' vs 'Ganzes Address-Layout'",
+        "Copy-Buttons (Adresse, Präfix, expandiert/komprimiert)"
+      ],
+      "acceptance": [
+        "Präfix-Highlight passt zu /48,/52,/56,/60,/64",
+        "Änderung der Eingabe aktualisiert Darstellung live",
+        "Copy liefert exakt erwartete Zeichenkette"
+      ],
+      "depends_on": ["WP05", "WP02"]
+    },
+    {
+      "id": "WP07",
+      "name": "Prefix-Slicer (Subnetting Tool)",
+      "goal": "Subnetting in der Praxis: /48 -> /56 usw. inkl. Subnet-Liste (erste/letzte).",
+      "deliverables": [
+        "Eingabe: Prefix (addr/prefixLen)",
+        "Eingabe: addBits ODER benötigte Subnetze (2^n)",
+        "Output: neuer Präfix, Anzahl Subnetze, 'erste 5 + letztes'",
+        "Warnungen: ungültige Grenzen, Nicht-Nibble-Len (optional Hinweis)"
+      ],
+      "acceptance": [
+        "Für /48 +8 ergibt /56 und 256 Subnetze",
+        "Liste zeigt korrekt index 0..4 und index last",
+        "UI bleibt schnell (keine Ausgabe riesiger Listen)"
+      ],
+      "depends_on": ["WP05", "WP06"]
+    },
+    {
+      "id": "WP08",
+      "name": "Aufgaben-Engine (Validator + Feedback)",
+      "goal": "Interaktive Aufgaben mit Sofortkorrektur und nachvollziehbarem Fehlerhinweis.",
+      "deliverables": [
+        "Aufgabentypen: single-input, multi-step, multiple-choice (optional)",
+        "Validatoren (z. B. 'wie viele /64 in /48', 'welcher Präfix für X Subnetze')",
+        "Feedback: korrekt/falsch + 'welcher Schritt' (Regel-basiert)"
+      ],
+      "acceptance": [
+        "Aufgaben können aus lessons.json geladen werden",
+        "Falsche Antworten liefern konkrete Fehlermeldung (z. B. Bits/Power vertauscht)",
+        "Progress pro Kapitel wird angezeigt (lokal)"
+      ],
+      "depends_on": ["WP04", "WP05"]
+    },
+    {
+      "id": "WP09",
+      "name": "Szenario-Generator (Praxis-Planung)",
+      "goal": "Realistische Planungsaufgaben generieren (Standorte/VLANs) inkl. Musterlösung.",
+      "deliverables": [
+        "Seeded Random (gleiche Aufgabe reproduzierbar via URL-Parameter)",
+        "Generator: /48, Standorte, VLANs, Reserven",
+        "Checker: bewertet Präfix-Hierarchie (Standort->VLAN) + Überschneidungen",
+        "Musterlösung einblendbar"
+      ],
+      "acceptance": [
+        "Link mit Seed erzeugt identische Aufgabe",
+        "Checker erkennt Überschneidungen sicher",
+        "Musterlösung ist konsistent (keine Kollisionen)"
+      ],
+      "depends_on": ["WP05", "WP08"]
+    },
+    {
+      "id": "WP10",
+      "name": "Fehlerbilder-Bibliothek (Troubleshooting-Karten)",
+      "goal": "Typische IPv6-Fallen als kurze, klickbare Diagnosekarten vermitteln.",
+      "deliverables": [
+        "Karten: RA fehlt, ICMPv6 geblockt, falsches /64, NDP-Probleme, Dual-Stack DNS",
+        "Pro Karte: Symptom, Ursache, Quick-Check (Befehle/Indikatoren), Fix",
+        "Einbindung in Lessons"
+      ],
+      "acceptance": [
+        "Karten sind direkt auffindbar über Suche",
+        "Karten können als 'Mini-Quiz' genutzt werden (Symptom -> Ursache wählen)",
+        "Lessons referenzieren Karten per ID"
+      ],
+      "depends_on": ["WP04", "WP08"]
+    },
+    {
+      "id": "WP11",
+      "name": "Mini-Simulationen (RA/NDP/PMTUD Demos)",
+      "goal": "Gezielte Mini-Demos statt riesiger Simulation: Ursache->Wirkung klickbar machen.",
+      "deliverables": [
+        "RA-Demo: Router sendet RA an/aus -> Client Default-Route an/aus",
+        "NDP-Demo: Neighbor Cache Request/Reply visualisiert",
+        "PMTUD-Demo: MTU kleiner -> 'Packet too big' zeigt warum ICMPv6 nötig ist"
+      ],
+      "acceptance": [
+        "Demos laufen offline ohne externe Ressourcen",
+        "Schalter an/aus zeigt sofort sichtbaren Effekt",
+        "Erklärt ohne Textwüste (max. kurze Labels)"
+      ],
+      "depends_on": ["WP02", "WP05"]
+    },
+    {
+      "id": "WP12",
+      "name": "Prüfungsmodus (Timed + Score + Auswertung)",
+      "goal": "Weniger Text, mehr Aufgaben: Zeit, Punkte, Themen-Heatmap.",
+      "deliverables": [
+        "Modus-Schalter 'Prüfung'",
+        "Timer optional (pro Block)",
+        "Scoring + Auswertung nach Themen (Subnetting/Typen/Routing-Basics)",
+        "Export Ergebnis als JSON"
+      ],
+      "acceptance": [
+        "Prüfungsmodus reduziert UI auf Aufgaben + minimalen Kontext",
+        "Ergebnisexport ist valides JSON und enthält Themen-Scores",
+        "Reset funktioniert sauber"
+      ],
+      "depends_on": ["WP08", "WP04"]
+    },
+    {
+      "id": "WP13",
+      "name": "Teacher-Mode light (Links/QR + Import/Export)",
+      "goal": "Aufgaben teilen und Ergebnisse einsammeln ohne Backend.",
+      "deliverables": [
+        "Share-Link: Kapitel + Aufgabe + Seed in URL",
+        "QR-Render (Canvas)",
+        "Import/Export: Ergebnisse als JSON-Datei"
+      ],
+      "acceptance": [
+        "URL öffnet exakt die geteilte Aufgabe",
+        "QR scanbar und führt korrekt zur Seite",
+        "Import merge’t Ergebnisse ohne Datenverlust"
+      ],
+      "depends_on": ["WP09", "WP12"]
+    },
+    {
+      "id": "WP14",
+      "name": "Qualität: Accessibility, Performance, Offline",
+      "goal": "Nutzbar im Unterricht: schnell, beamerfreundlich, offline stabil.",
+      "deliverables": [
+        "Keyboard-Navigation (Tab/Enter/Escape)",
+        "ARIA für Navigation/Tools",
+        "LocalStorage für Progress/Settings",
+        "Optional: Service Worker (PWA-light) für Offline-Caching"
+      ],
+      "acceptance": [
+        "Bedienung ohne Maus möglich",
+        "Seite bleibt nutzbar ohne Internet nach erstem Laden (wenn SW aktiv)",
+        "Keine Layout-Brüche auf 1366x768 und Handy"
+      ],
+      "depends_on": ["WP02", "WP08"]
+    },
+    {
+      "id": "WP15",
+      "name": "Deploy (GitHub Pages) + Minimal-Doku",
+      "goal": "Ein Klick veröffentlichen und wartbar halten.",
+      "deliverables": [
+        "gh-pages kompatible Struktur",
+        "README: Start, Struktur, lessons.json Schema, Beitrag/Änderung",
+        "Smoke-Check Seite (self-test der IPv6-lib)"
+      ],
+      "acceptance": [
+        "Deployment läuft ohne Build",
+        "Self-test zeigt 'OK' bei Kernfunktionen",
+        "Doku reicht, um neue Kapitel/Tasks einzupflegen"
+      ],
+      "depends_on": ["WP01", "WP05", "WP04"]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPv6 Werkbank – Subnetting interaktiv lernen</title>
+    <meta name="description"
+        content="Interaktive IPv6-Lernplattform: Präfix-Visualizer, Subnetting-Tool, Aufgaben-Engine und Mini-Simulationen für Netzwerktechniker und Azubis." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════ -->
+    <header id="app-header" role="banner">
+
+        <!-- Merksatz-Leiste (immer sichtbar) -->
+        <div id="hint-bar" aria-live="polite">
+            <span id="hint-text">💡 Hex = Nibble = 4 Bit &nbsp;|&nbsp; /64 ist fast immer Pflicht im LAN &nbsp;|&nbsp;
+                ICMPv6 blocken = Selbstsabotage</span>
+        </div>
+
+        <!-- Haupt-Header-Zeile -->
+        <div id="header-main">
+            <div id="header-left">
+                <button id="btn-sidebar-toggle" aria-label="Seitenleiste ein-/ausblenden"
+                    aria-expanded="true">☰</button>
+                <nav id="breadcrumb" aria-label="Breadcrumb">
+                    <ol id="breadcrumb-list">
+                        <li><span>IPv6 Werkbank</span></li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div id="header-center">
+                <div id="search-wrapper" role="search">
+                    <label for="search-input" class="sr-only">Kapitel und Begriffe suchen</label>
+                    <span id="search-icon" aria-hidden="true">🔍</span>
+                    <input type="search" id="search-input" placeholder="Suche … /64, SLAAC, NDP, ULA, Subnetting"
+                        autocomplete="off" spellcheck="false" />
+                </div>
+            </div>
+
+            <div id="header-right">
+                <button id="btn-theme-toggle" aria-label="Farbschema wechseln" title="Hell/Dunkel">🌙</button>
+                <button id="btn-exam-mode" aria-label="Prüfungsmodus an/aus" title="Prüfungsmodus">📋 Prüfung</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+       APP LAYOUT: Sidebar | Content | Tool-Panel
+  ═══════════════════════════════════════════ -->
+    <div id="app-layout">
+
+        <!-- LEFT: Lernpfad-Sidebar -->
+        <nav id="sidebar" aria-label="Lernpfad">
+            <div id="sidebar-header">
+                <h2 id="sidebar-title">Lernpfad</h2>
+            </div>
+            <ul id="chapter-list" role="tree" aria-label="Kapitel">
+                <!-- Wird durch app.js befüllt -->
+                <li class="chapter-skeleton"></li>
+                <li class="chapter-skeleton"></li>
+                <li class="chapter-skeleton"></li>
+            </ul>
+        </nav>
+
+        <!-- MIDDLE: Content -->
+        <main id="content-area" aria-live="polite" aria-label="Lerninhalt">
+            <!-- Wird durch router/renderer befüllt -->
+            <div id="content-placeholder" class="placeholder-screen">
+                <div class="placeholder-icon">⚡</div>
+                <h1 class="placeholder-title">IPv6 Werkbank</h1>
+                <p class="placeholder-sub">Wähle ein Kapitel aus dem Lernpfad, um zu starten.</p>
+                <button id="btn-start" class="btn btn-primary">Los geht's →</button>
+            </div>
+        </main>
+
+        <!-- RIGHT: Tool-Panel -->
+        <aside id="tool-panel" aria-label="Tool-Panel">
+            <div id="tool-panel-header">
+                <h2 id="tool-panel-title">Tools</h2>
+            </div>
+            <div id="tool-panel-content">
+                <!-- Wird kontextuell per app.js bestückt -->
+                <p class="tool-placeholder-text">Die Tools passen sich an das aktive Kapitel an.</p>
+            </div>
+        </aside>
+
+    </div><!-- /#app-layout -->
+
+    <!-- ═══════════════════════════════════════════
+       ERROR BANNER (sichtbar bei kritischen Fehlern)
+  ═══════════════════════════════════════════ -->
+    <div id="error-banner" role="alert" aria-live="assertive" hidden>
+        <span id="error-banner-icon">⚠️</span>
+        <span id="error-banner-msg"></span>
+        <button id="error-banner-close" aria-label="Fehlermeldung schließen">✕</button>
+    </div>
+
+    <script src="assets/app.js" type="module"></script>
+</body>
+
+</html>

@@ -354,6 +354,27 @@ test('containmentOverlapCheck prefix overlap=false',
 testThrows('containmentOverlapCheck: B ohne Präfix wirft',
     () => ipv6.containmentOverlapCheck('2001:db8::1', '2001:db8::1'));
 
+// ─── Tests: reverseDnsIp6Arpa (WP-06) ────────────────────────────────────────
+
+test('reverseDnsIp6Arpa(::).ip6ArpaFull',
+    () => ipv6.reverseDnsIp6Arpa('::').ip6ArpaFull,
+    `${'0.'.repeat(32)}ip6.arpa`);
+
+test('reverseDnsIp6Arpa(/32 cut)',
+    () => ipv6.reverseDnsIp6Arpa('2001:db8::1', 32).ip6ArpaBisPrefix,
+    '8.b.d.0.1.0.0.2.ip6.arpa');
+
+test('reverseDnsIp6Arpa(/48 cut)',
+    () => ipv6.reverseDnsIp6Arpa('2001:db8:abcd::1', 48).ip6ArpaBisPrefix,
+    'd.c.b.a.8.b.d.0.1.0.0.2.ip6.arpa');
+
+test('reverseDnsIp6Arpa non-nibble prefix floors to /48',
+    () => ipv6.reverseDnsIp6Arpa('2001:db8:abcd::1', 50).effectivePrefix,
+    48);
+
+testThrows('reverseDnsIp6Arpa: prefix > 128 wirft',
+    () => ipv6.reverseDnsIp6Arpa('2001:db8::1', 129));
+
 // ─── Auswertung ───────────────────────────────────────────────────────────────
 
 const passed = results.filter(r => r.pass).length;

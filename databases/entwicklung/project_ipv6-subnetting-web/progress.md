@@ -32,3 +32,10 @@ Original prompt: Planänderung: Du arbeitest auf ne reigenen Git-Branch die du e
 - Tool in Drawer integriert (`assets/tools.js`, `assets/layout.js`) und in `basics/hex-prefix` sowie `subnetting/prefix-basics` aktiviert.
 - Playwright-Sichtprüfung: `output/wp05-containment-overlap/shot-0.png` zeigt Tool sichtbar und geöffnet.
 - Hinweis: Gesamtsuite hat weiterhin 2 bestehende Altfails ausserhalb von WP-05 (`compress(ULA)`, `prefixLastAddress(/48)`).
+- WP-06 umgesetzt: neues Tool `reverse-dns-generator` mit Inputs `adresse`, optional `prefix` und Outputs `ip6ArpaFull`, `ip6ArpaBisPrefix`.
+- Core-Lib erweitert: `reverseDnsIp6Arpa()` in `assets/lib/ipv6.js`; Tests in `assets/lib/ipv6.test.js` ergänzt.
+- WP-06 in Drawer integriert (`assets/tools.js`, `assets/layout.js`) und in `basics/hex-prefix` sowie `subnetting/prefix-basics` aktiviert.
+- Bugfix in WP-06-Logik: Prefix-Cut wird korrekt aus der maskierten Netzadresse (MSB-Nibbles) gebildet, nicht aus Host-Ende.
+- Zusatz-UI umgesetzt: neue Pfadleiste unter der AppBar zeigt den aktuellen Navigationspfad als `IPv6 Werkbank > Kapitel > Unterkapitel`.
+- Hinweis: Playwright-Sichtprüfung für WP-06 konnte in dieser Runde nicht durchgeführt werden, weil der eskalierte Browserlauf abgelehnt wurde.
+- Hinweis: Gesamtsuite hat weiterhin 2 bestehende Altfails ausserhalb von WP-06 (`compress(ULA)`, `prefixLastAddress(/48)`).

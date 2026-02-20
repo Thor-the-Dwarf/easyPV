@@ -533,3 +533,36 @@ export function containmentOverlapCheck(A, B) {
         B_normalized: b.normalized,
     };
 }
+
+/**
+ * Erzeugt Reverse-DNS-Domains (ip6.arpa) aus einer IPv6-Adresse.
+ * @param   {string} address
+ * @param   {number|null|undefined} [prefix=null] Optionaler Delegations-Cut.
+ * @returns {{ ip6ArpaFull: string, ip6ArpaBisPrefix: string|null, effectivePrefix: number|null }}
+ */
+export function reverseDnsIp6Arpa(address, prefix = null) {
+    if (typeof address !== 'string') throw new TypeError('address muss ein String sein');
+    if (!isValidIPv6(address)) throw new Error('Ungültige IPv6-Adresse');
+
+    const hex32 = expand(address).replace(/:/g, '').toLowerCase();
+    const reversedLabels = hex32.split('').reverse();
+    const ip6ArpaFull = `${reversedLabels.join('.')}.ip6.arpa`;
+
+    if (prefix === null || prefix === undefined || prefix === '') {
+        return { ip6ArpaFull, ip6ArpaBisPrefix: null, effectivePrefix: null };
+    }
+
+    const p = Number(prefix);
+    if (!Number.isInteger(p) || p < 0 || p > 128) {
+        throw new RangeError('prefix muss eine ganze Zahl von 0 bis 128 sein');
+    }
+
+    const effectivePrefix = Math.floor(p / 4) * 4;
+    const nibbleCount = effectivePrefix / 4;
+    const maskedNetworkHex = applyMask(address, effectivePrefix).replace(/:/g, '').toLowerCase();
+    const prefixNibbles = maskedNetworkHex.slice(0, nibbleCount).split('').reverse();
+    const cutLabels = prefixNibbles;
+    const ip6ArpaBisPrefix = cutLabels.length ? `${cutLabels.join('.')}.ip6.arpa` : 'ip6.arpa';
+
+    return { ip6ArpaFull, ip6ArpaBisPrefix, effectivePrefix };
+}

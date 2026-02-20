@@ -19,6 +19,7 @@ const TOOL_META = {
     'prefix-split-enumerator': { icon: '🧩', label: 'Präfix-Split (Enumerator)', desc: 'Teilt ein Präfix auf zielPrefix und zeigt ein Subnetz-Fenster per offset/limit.' },
     'next-previous-network': { icon: '↔️', label: 'Next/Previous Network', desc: 'Berechnet nächstes und vorheriges Netz gleicher Präfixlänge inklusive Blockgröße.' },
     'containment-overlap-check': { icon: '🔁', label: 'Containment / Overlap', desc: 'Prüft A_in_B und bei Präfix-A die Überlappung mit B.' },
+    'reverse-dns-generator': { icon: '🔄', label: 'Reverse-DNS Generator', desc: 'Erzeugt ip6.arpa Full-Domain und optional den Delegations-Cut bis Präfix.' },
     'prefix-visualizer': { icon: '🔬', label: 'Präfix-Visualizer', desc: 'Visualisiert IPv6-Adressen und Präfix-Grenzen live.' },
     'prefix-slicer': { icon: '✂️', label: 'Präfix-Slicer', desc: 'Subnetting-Rechner: Bits hinzufügen, Subnetze berechnen.' },
     'scenario-generator': { icon: '🎲', label: 'Szenario-Generator', desc: 'Generiert realistische Planungsaufgaben mit Musterlösung.' },
@@ -41,6 +42,7 @@ const drawerBackdrop = document.getElementById('drawer-backdrop');
 const btnDrawerToggle = document.getElementById('btn-drawer-toggle');
 const btnDrawerClose = document.getElementById('btn-drawer-close');
 const breadcrumbList = document.getElementById('breadcrumb-list');
+const folderTreePath = document.getElementById('foldertree-path');
 const chapterList = document.getElementById('chapter-list');
 
 // ─── State ────────────────────────────────────────────────────────────────────
@@ -120,6 +122,13 @@ export function updateBreadcrumb(parts = []) {
         if (i === parts.length - 1) li.classList.add('breadcrumb-current');
         breadcrumbList.appendChild(li);
     });
+
+    const folderTreeParts = ['IPv6 Werkbank', ...parts];
+    const folderTreeText = folderTreeParts.join(' > ');
+    if (folderTreePath) {
+        folderTreePath.textContent = folderTreeText;
+        folderTreePath.title = folderTreeText;
+    }
 }
 
 // ─── Tool-Panel Slot-System (Accordion) ───────────────────────────────────────

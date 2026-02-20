@@ -252,5 +252,28 @@
         "why": "Live-Nachweis, dass das neue Tool im Drawer angezeigt und geöffnet wird"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-20 23:58:00",
+    "commit_message": "feat(WP-06): Reverse-DNS Tool + Pfadleiste unter AppBar",
+    "request": "Weiter mit naechstem Arbeitspaket und danach FolderTree-Pfad unter AppBar sichtbar machen",
+    "response": [
+      {
+        "what": "Core-Funktion `reverseDnsIp6Arpa()` in `assets/lib/ipv6.js` ergänzt und Prefix-Cut auf maskierte Netzadresse korrigiert",
+        "why": "WP-06-Ausgaben `ip6ArpaFull` und `ip6ArpaBisPrefix` fuer Delegations-Cuts fachlich korrekt berechnen"
+      },
+      {
+        "what": "Neues Tool `reverse-dns-generator` erstellt und in `assets/tools.js`/`assets/layout.js` angebunden",
+        "why": "WP-06 als eigener Drawer-Eintrag mit den geforderten Inputs/Outputs nutzbar machen"
+      },
+      {
+        "what": "Lernpfad-Anbindung in `assets/data/lessons.json` erweitert (`basics/hex-prefix`, `subnetting/prefix-basics`)",
+        "why": "Reverse-DNS-Tool in den relevanten Kapiteln direkt sichtbar bereitstellen"
+      },
+      {
+        "what": "Neue Pfadleiste unter der AppBar in `index.html`, `assets/styles.css` und `assets/layout.js` integriert",
+        "why": "Aktuellen FolderTree-Pfad dauerhaft im Format `A > B > C` anzeigen"
+      }
+    ]
   }
 ]

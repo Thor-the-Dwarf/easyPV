@@ -18,6 +18,8 @@ import {
 import { initLayout, mountTools, updateBreadcrumb } from './layout.js';
 import { renderSubchapter, renderPlaceholder, renderError } from './renderer.js';
 import { mountActualTools } from './tools.js';
+import { createExamPanel } from './exam-mode.js';
+
 
 // ─── Konstanten ───────────────────────────────────────────────────────────────
 const LESSONS_URL = './assets/data/lessons.json';
@@ -70,20 +72,42 @@ btnTheme.addEventListener('click', () => {
 
 // ─── Exam Mode ────────────────────────────────────────────────────────────────
 
+let _examPanelActive = false;
+
 function syncExamMode(examMode) {
     btnExam.classList.toggle('active', examMode);
     document.body.classList.toggle('exam-mode', examMode);
-    btnExam.textContent = examMode ? '📋 Prüfung ✓' : '📋 Prüfung';
+    btnExam.textContent = examMode ? '📋 Prüfung ✗' : '📋 Prüfung';
 }
 
 btnExam.addEventListener('click', () => {
-    const next = !getState().examMode;
-    setState({ examMode: next });
-    syncExamMode(next);
+    _examPanelActive = !_examPanelActive;
+    if (_examPanelActive) {
+        // Prüfungs-Panel in Content-Area mounten
+        const contentArea = document.getElementById('content-area');
+        contentArea.innerHTML = '';
+        contentArea.appendChild(createExamPanel({ durationMin: 30 }));
+        updateBreadcrumb(['📋 Prüfungsmodus']);
+        mountTools([]);         // Tool-Panel leeren
+        setState({ examMode: true });
+        syncExamMode(true);
+    } else {
+        setState({ examMode: false });
+        syncExamMode(false);
+        renderPlaceholder();    // zurück zum Startscreen
+        updateBreadcrumb([]);
+    }
 });
 
 // Initialen Exam-Mode aus State anwenden
 syncExamMode(getState().examMode);
+
+// Prüfungs-Panel beenden wenn task-done-Event nach exam-complete
+document.addEventListener('exam-complete', () => {
+    _examPanelActive = false;
+    syncExamMode(false);
+    setState({ examMode: false });
+});
 
 // ─── Sidebar rendern ──────────────────────────────────────────────────────────
 

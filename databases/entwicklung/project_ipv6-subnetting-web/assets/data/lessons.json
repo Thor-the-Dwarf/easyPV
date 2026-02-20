@@ -1,5 +1,5 @@
 {
-    "version": "1.0",
+    "version": "1.1",
     "chapters": [
         {
             "id": "basics",
@@ -8,33 +8,89 @@
             "subchapters": [
                 {
                     "id": "hex-prefix",
-                    "title": "Hex, Präfix, /64 – Warum?",
+                    "title": "Hex, Nibble & Präfix",
                     "blocks": [
                         {
                             "type": "text",
-                            "content": "IPv6-Adressen bestehen aus 128 Bit, notiert als acht 16-Bit-Gruppen in Hexadezimal. Ein Hex-Zeichen repräsentiert exakt 4 Bit – ein sogenanntes **Nibble**. Dieses Grundprinzip ist entscheidend für sauberes Subnetting."
+                            "content": "IPv6-Adressen bestehen aus **128 Bit**, notiert als acht 16-Bit-Gruppen in Hexadezimal. Ein Hex-Zeichen repräsentiert exakt **4 Bit** – ein sogenanntes **Nibble**. Dieses Grundprinzip ist entscheidend für sauberes Subnetting."
                         },
                         {
                             "type": "example",
-                            "label": "Beispiel",
+                            "label": "Adress-Aufbau",
                             "code": "2001:0db8:abcd:0000:0000:0000:0000:0001\n└──┘ └──┘ └──┘ └──────────────────────┘\n /16  /32  /48       Interface-ID (/64+)"
                         },
                         {
                             "type": "hint",
-                            "content": "Hex = Nibble = 4 Bit. Ein Hex-Zeichen = 4 Bit. Zwei Hex-Zeichen = 1 Byte."
+                            "content": "**Merksatz:** 1 Hex = 1 Nibble = 4 Bit. 4 Hex = 1 Gruppe = 16 Bit. 32 Hex = 1 Adresse = 128 Bit."
                         }
                     ],
-                    "examples": [],
                     "tasks": [
                         {
                             "id": "basics-hex-1",
                             "type": "single-input",
-                            "question": "Wie viele Bits hat ein einzelnes Hexadezimalzeichen?",
+                            "validator": "number",
+                            "question": "Wie viele Bits hat ein einzelnes Hexadezimalzeichen (Nibble)?",
                             "answer": "4",
-                            "hint": "Ein Hex-Zeichen kann 0–F (0–15) kodieren – das entspricht 2^4.",
-                            "error_messages": {
-                                "wrong": "Denke an die Basis: Hex ist Basis 16 = 2^? Bits."
-                            }
+                            "success_message": "✅ Exakt! 1 Hex = 4 Bit = 1 Nibble.",
+                            "hint": "Hex ist Basis 16 = 2^? Bits.",
+                            "error_rules": [
+                                {
+                                    "type": "equals",
+                                    "value": "16",
+                                    "message": "16 ist Basis von Hex – aber jedes Zeichen kodiert log₂(16) = 4 Bit."
+                                },
+                                {
+                                    "type": "equals",
+                                    "value": "8",
+                                    "message": "8 Bit = 1 Byte = 2 Nibbles. Ein Nibble = 4 Bit."
+                                }
+                            ]
+                        },
+                        {
+                            "id": "basics-hex-2",
+                            "type": "single-input",
+                            "validator": "number",
+                            "question": "Eine IPv6-Adresse hat 8 Gruppen à 16 Bit. Wie viele Bit insgesamt?",
+                            "answer": "128",
+                            "hint": "8 × 16 = ?",
+                            "error_rules": [
+                                {
+                                    "type": "equals",
+                                    "value": "64",
+                                    "message": "64 ist die Präfixlänge eines typischen Subnetzes – die Adresse hat 128 Bit."
+                                }
+                            ]
+                        },
+                        {
+                            "id": "basics-hex-3",
+                            "type": "multiple-choice",
+                            "question": "Was bedeutet /48 in der CIDR-Notation?",
+                            "success_message": "✅ Genau! Die ersten 48 Bits sind der Netzanteil.",
+                            "options": [
+                                {
+                                    "id": "a",
+                                    "text": "Die Adresse hat 48 Bit Länge.",
+                                    "correct": false,
+                                    "wrong_message": "IPv6-Adressen sind immer 128 Bit – /48 ist die Präfixlänge, nicht die Adresslänge."
+                                },
+                                {
+                                    "id": "b",
+                                    "text": "Die ersten 48 Bits sind der Netzanteil (Präfix).",
+                                    "correct": true
+                                },
+                                {
+                                    "id": "c",
+                                    "text": "Es gibt 48 mögliche Subnetze.",
+                                    "correct": false,
+                                    "wrong_message": "Die Zahl nach / ist die Länge des Netzanteils in Bit, nicht die Anzahl der Subnetze."
+                                },
+                                {
+                                    "id": "d",
+                                    "text": "Die Adresse gehört zu IPv4.",
+                                    "correct": false,
+                                    "wrong_message": "IPv4-Adressen haben maximal /32. Bei IPv6 geht es bis /128."
+                                }
+                            ]
                         }
                     ],
                     "tools": [
@@ -43,7 +99,7 @@
                 },
                 {
                     "id": "compression",
-                    "title": "Adresskürzung (::) verstehen",
+                    "title": "Adresskürzung verstehen",
                     "blocks": [
                         {
                             "type": "text",
@@ -52,20 +108,74 @@
                         {
                             "type": "example",
                             "label": "Vollform → Kurzform",
-                            "code": "2001:0db8:0000:0000:0000:0000:0000:0001\n→     2001:db8::1"
+                            "code": "2001:0db8:0000:0000:0000:0000:0000:0001\n→     2001:db8::1\n\nfe80:0000:0000:0000:0202:b3ff:fe1e:8329\n→     fe80::202:b3ff:fe1e:8329"
+                        },
+                        {
+                            "type": "hint",
+                            "content": "Der `::` darf **nur einmal** pro Adresse vorkommen. Sonst ist die Adresse nicht eindeutig rekonstruierbar."
                         }
                     ],
-                    "examples": [],
                     "tasks": [
                         {
                             "id": "basics-compress-1",
                             "type": "single-input",
+                            "validator": "prefix",
+                            "question": "Kürze diese Adresse maximal: 2001:0db8:0000:0000:0000:0000:0000:0001",
+                            "answer": "2001:db8::1",
+                            "hint": "Vier aufeinanderfolgende :0000:-Gruppen können durch :: ersetzt werden.",
+                            "error_rules": [
+                                {
+                                    "type": "contains",
+                                    "value": "0000",
+                                    "message": "Führende Nullen in Gruppen können weggelassen werden (0000 → 0)."
+                                },
+                                {
+                                    "type": "contains",
+                                    "value": ":0:0:0:0",
+                                    "message": "Mehrere aufeinanderfolgende Null-Gruppen können durch :: ersetzt werden."
+                                }
+                            ]
+                        },
+                        {
+                            "id": "basics-compress-2",
+                            "type": "single-input",
+                            "validator": "prefix",
                             "question": "Kürze: fe80:0000:0000:0000:0202:b3ff:fe1e:8329",
                             "answer": "fe80::202:b3ff:fe1e:8329",
-                            "hint": "Vier aufeinanderfolgende :0000: können durch :: ersetzt werden.",
+                            "hint": "Die ersten 4 Gruppen nach fe80 sind :0000: – diese können durch :: ersetzt werden.",
                             "error_messages": {
                                 "wrong": "Prüfe: Welche aufeinanderfolgenden Null-Gruppen können durch :: ersetzt werden?"
                             }
+                        },
+                        {
+                            "id": "basics-compress-3",
+                            "type": "multiple-choice",
+                            "question": "Welche dieser Kurzformen ist KORREKT für 2001:0db8:0000:0001:0000:0000:0000:0001?",
+                            "options": [
+                                {
+                                    "id": "a",
+                                    "text": "2001:db8::1:1",
+                                    "correct": false,
+                                    "wrong_message": "Diese Form vernichtet zu viele Gruppen – die :0001: nach /32 würde fehlen."
+                                },
+                                {
+                                    "id": "b",
+                                    "text": "2001:db8:0:1::1",
+                                    "correct": true
+                                },
+                                {
+                                    "id": "c",
+                                    "text": "2001:db8::0:1::1",
+                                    "correct": false,
+                                    "wrong_message": ":: darf nur einmal vorkommen."
+                                },
+                                {
+                                    "id": "d",
+                                    "text": "2001:db8:0000:1::1",
+                                    "correct": false,
+                                    "wrong_message": "Korrekt, aber 0000 kann zu 0 gekürzt werden – also nicht maximal komprimiert."
+                                }
+                            ]
                         }
                     ],
                     "tools": [
@@ -90,11 +200,42 @@
                         {
                             "type": "example",
                             "label": "Typisches GUA",
-                            "code": "2001:db8:1234:5678::1/64\n└────────────────┘ Präfix\n                  └──────┘ Interface-ID"
+                            "code": "2001:db8:1234:5678::1/64\n└────────────────┘ Präfix (/64)\n                  └──────────┘ Interface-ID"
                         }
                     ],
-                    "examples": [],
-                    "tasks": [],
+                    "tasks": [
+                        {
+                            "id": "at-gua-1",
+                            "type": "multiple-choice",
+                            "question": "Mit welchem Hex-Zeichen beginnen Global Unicast Addresses (GUA)?",
+                            "success_message": "✅ Richtig! GUA beginnen mit 2 oder 3 (= Präfix 2000::/3).",
+                            "options": [
+                                {
+                                    "id": "a",
+                                    "text": "fe80 (Link-Local)",
+                                    "correct": false,
+                                    "wrong_message": "fe80::/10 ist der Bereich für Link-Local-Adressen."
+                                },
+                                {
+                                    "id": "b",
+                                    "text": "2 oder 3 (Global Unicast)",
+                                    "correct": true
+                                },
+                                {
+                                    "id": "c",
+                                    "text": "fd (ULA)",
+                                    "correct": false,
+                                    "wrong_message": "fd::/8 ist der Bereich für Unique Local Addresses."
+                                },
+                                {
+                                    "id": "d",
+                                    "text": "ff (Multicast)",
+                                    "correct": false,
+                                    "wrong_message": "ff00::/8 ist der Bereich für Multicast-Adressen."
+                                }
+                            ]
+                        }
+                    ],
                     "tools": [
                         "prefix-visualizer"
                     ]
@@ -105,15 +246,30 @@
                     "blocks": [
                         {
                             "type": "text",
-                            "content": "**Unique Local Addresses (ULA)** beginnen mit `fc00::/7` (praktisch immer `fd00::/8`) und sind nicht global routbar – ähnlich wie RFC-1918-Adressen (192.168.x.x)."
+                            "content": "**Unique Local Addresses (ULA)** beginnen mit `fc00::/7` (praktisch immer `fd00::/8`) und sind **nicht global routbar** – ähnlich wie RFC-1918 (10.x, 192.168.x)."
                         },
                         {
                             "type": "hint",
-                            "content": "ULA beginnt mit fd, GUA mit 2. Einfache Eselsbrücke: 'fd = für Drin (private)'"
+                            "content": "**Eselsbrücke:** GUA = Global (2/3), ULA = Ums (fD = für Drin), LLA = Link (fE80)"
                         }
                     ],
-                    "examples": [],
-                    "tasks": [],
+                    "tasks": [
+                        {
+                            "id": "at-ula-1",
+                            "type": "single-input",
+                            "validator": "exact",
+                            "question": "ULA-Adressen beginnen mit welchem Byte? (Hex, 2 Zeichen)",
+                            "answer": "fd",
+                            "hint": "fc00::/7 wird praktisch immer als fd.../8 genutzt.",
+                            "error_rules": [
+                                {
+                                    "type": "equals",
+                                    "value": "fc",
+                                    "message": "fc ist technisch korrekt (/7), aber in der Praxis wird immer fd verwendet (/8)."
+                                }
+                            ]
+                        }
+                    ],
                     "tools": [
                         "prefix-visualizer"
                     ]
@@ -124,15 +280,46 @@
                     "blocks": [
                         {
                             "type": "text",
-                            "content": "**Link-Local Addresses** beginnen mit `fe80::/10` und sind nur innerhalb eines Netzwerksegments gültig. Sie werden automatisch konfiguriert und sind für NDP sowie Router Advertisements zwingend notwendig."
+                            "content": "**Link-Local Addresses** beginnen mit `fe80::/10` und sind **nur innerhalb eines Netzwerksegments** gültig. Sie werden automatisch konfiguriert und sind für NDP und Router Advertisements zwingend notwendig."
                         },
                         {
                             "type": "hint",
-                            "content": "Kein ICMPv6 → kein NDP → kein LLA → kein IPv6. ICMPv6 niemals blockieren!"
+                            "content": "**Achtung:** ICMPv6 niemals pauschal blockieren! NDP und RA basieren darauf – ohne ICMPv6 kein IPv6."
                         }
                     ],
-                    "examples": [],
-                    "tasks": [],
+                    "tasks": [
+                        {
+                            "id": "at-lla-1",
+                            "type": "multiple-choice",
+                            "question": "Wozu werden Link-Local-Adressen (fe80::/10) verwendet?",
+                            "success_message": "✅ Genau! LLA sind die Basis für NDP und Router Advertisements.",
+                            "options": [
+                                {
+                                    "id": "a",
+                                    "text": "Für globale Kommunikation im Internet",
+                                    "correct": false,
+                                    "wrong_message": "LLA sind nicht routbar – sie funktionieren nur im selben Segment."
+                                },
+                                {
+                                    "id": "b",
+                                    "text": "Als Quelle für NDP, RA/RS und Router-Kommunikation",
+                                    "correct": true
+                                },
+                                {
+                                    "id": "c",
+                                    "text": "Als Ersatz für NAT",
+                                    "correct": false,
+                                    "wrong_message": "IPv6 wurde entworfen, um NAT überflüssig zu machen – LLA haben damit nichts zu tun."
+                                },
+                                {
+                                    "id": "d",
+                                    "text": "Nur auf Loopback-Interfaces",
+                                    "correct": false,
+                                    "wrong_message": "Loopback ist ::1/128. LLA gibt es auf allen IPv6-fähigen Interfaces."
+                                }
+                            ]
+                        }
+                    ],
                     "tools": [
                         "prefix-visualizer"
                     ]
@@ -150,25 +337,80 @@
                     "blocks": [
                         {
                             "type": "text",
-                            "content": "Die Präfixlänge (z. B. `/48`) gibt an, wie viele Bits des Netzanteils fest sind. Die restlichen Bits stehen für Subnetze und Hosts zur Verfügung."
+                            "content": "Die Präfixlänge (z. B. `/48`) gibt an, wie viele Bits des Netzanteils fest sind. Die restlichen Bits stehen für Subnetze und Hosts zur Verfügung. **Formel: 2^(neue Länge − alte Länge) = Anzahl Subnetze.**"
                         },
                         {
                             "type": "example",
                             "label": "Präfix-Hierarchie",
-                            "code": "/48  → Standort  (von ISP zugewiesen)\n/56  → Gebäude   (+8 Bits = 256 Blöcke)\n/60  → Etage     (+4 Bits =  16 Blöcke)\n/64  → VLAN/Subnetz (Interface-ID beginnt)"
+                            "code": "/48  → Standort  (vom ISP zugewiesen)\n/56  → Gebäude   (+8 Bit = 256 Blöcke)\n/60  → Etage     (+4 Bit =  16 Blöcke)\n/64  → VLAN      (immer Endpunkt-Subnetz)"
+                        },
+                        {
+                            "type": "hint",
+                            "content": "Merke: `/64` ist fast immer die unterste Ebene – Interface-IDs brauchen genau 64 Bit für SLAAC."
                         }
                     ],
-                    "examples": [],
                     "tasks": [
                         {
-                            "id": "subnetting-prefix-1",
+                            "id": "sub-prefix-1",
                             "type": "single-input",
+                            "validator": "number",
                             "question": "Du hast ein /48. Du willst /56-Subnetze. Wie viele bekommst du?",
                             "answer": "256",
-                            "hint": "Differenz der Präfixlängen: 56 - 48 = 8 Bits. 2^8 = ?",
-                            "error_messages": {
-                                "wrong": "Zähle die Bits zwischen /48 und /56: Das sind 8 Bit → 2^8 Subnetze."
-                            }
+                            "hint": "56 − 48 = 8 zusätzliche Bits. 2^8 = ?",
+                            "success_message": "✅ Richtig! 2^8 = 256 /56-Subnetze in einem /48.",
+                            "error_rules": [
+                                {
+                                    "type": "equals",
+                                    "value": "8",
+                                    "message": "8 sind die zusätzlichen Bits, nicht die Anzahl. 2^8 = 256."
+                                },
+                                {
+                                    "type": "equals",
+                                    "value": "128",
+                                    "message": "Gutes Denken, aber: 2^7 = 128. Hier sind es 2^8 = 256."
+                                }
+                            ]
+                        },
+                        {
+                            "id": "sub-prefix-2",
+                            "type": "single-input",
+                            "validator": "number",
+                            "question": "Wie viele /64-Subnetze passen in ein /48?",
+                            "answer": "65536",
+                            "hint": "64 − 48 = 16 Bits. 2^16 = ?",
+                            "success_message": "✅ Korrekt! 2^16 = 65 536 /64-Subnetze in einem /48.",
+                            "error_rules": [
+                                {
+                                    "type": "equals",
+                                    "value": "16",
+                                    "message": "16 sind die Subnetting-Bits, nicht die Anzahl. 2^16 = 65 536."
+                                },
+                                {
+                                    "type": "equals",
+                                    "value": "256",
+                                    "message": "256 würde zu /56 passen. Für /64 aus /48: 2^(64-48) = 2^16 = 65 536."
+                                }
+                            ]
+                        },
+                        {
+                            "id": "sub-prefix-3",
+                            "type": "single-input",
+                            "validator": "prefix-len",
+                            "question": "Du brauchst 512 Subnetze aus einem /48. Welche Präfixlänge wählst du?",
+                            "answer": "57",
+                            "hint": "512 = 2^9. 48 + 9 = /57.",
+                            "error_rules": [
+                                {
+                                    "type": "equals",
+                                    "value": "56",
+                                    "message": "/56 gibt nur 256 = 2^8 Subnetze. Du brauchst 512 = 2^9 → /57."
+                                },
+                                {
+                                    "type": "equals",
+                                    "value": "58",
+                                    "message": "/58 gibt 1024 = 2^10 Subnetze – genug, aber du verschwendest Adressraum. Exakt wäre /57."
+                                }
+                            ]
                         }
                     ],
                     "tools": [
@@ -181,18 +423,105 @@
                     "blocks": [
                         {
                             "type": "text",
-                            "content": "Da ein Hex-Zeichen 4 Bit repräsentiert, lassen sich Präfixe auf **Nibble-Grenzen** (Vielfache von 4) am einfachsten ablesen und planen. Präfixe wie /44, /48, /52, /56, /60, /64 sind Nibble-konform."
+                            "content": "Da ein Hex-Zeichen 4 Bit repräsentiert, lassen sich Präfixe auf **Nibble-Grenzen** (Vielfache von 4) am einfachsten ablesen und planen. Bevorzuge: /44, /48, /52, /56, /60, /64."
+                        },
+                        {
+                            "type": "example",
+                            "label": "Nibble-konform vs. nicht-konform",
+                            "code": "✅  2001:db8:ab::/48  → Grenze nach 'ab' (Nibble-exakt)\n⚠️  2001:db8:ab::/50  → Grenze mitten in 'ab' (schwer lesbar)"
                         },
                         {
                             "type": "hint",
-                            "content": "Nicht-Nibble-Präfixe (z. B. /50) sind gültig, aber schwerer zu lesen. Bevorzuge Vielfache von 4."
+                            "content": "Nicht-Nibble-Präfixe sind **gültig**, aber schwerer zu debuggen. In der Praxis fast immer Nibble-Grenzen verwenden."
                         }
                     ],
-                    "examples": [],
-                    "tasks": [],
+                    "tasks": [
+                        {
+                            "id": "sub-nibble-1",
+                            "type": "multiple-choice",
+                            "question": "Welche dieser Präfixlängen ist KEINE Nibble-Grenze?",
+                            "success_message": "✅ Richtig! /50 ist keine Nibble-Grenze (kein Vielfaches von 4).",
+                            "options": [
+                                {
+                                    "id": "a",
+                                    "text": "/48",
+                                    "correct": false,
+                                    "wrong_message": "48 = 4 × 12 → Nibble-Grenze."
+                                },
+                                {
+                                    "id": "b",
+                                    "text": "/52",
+                                    "correct": false,
+                                    "wrong_message": "52 = 4 × 13 → Nibble-Grenze."
+                                },
+                                {
+                                    "id": "c",
+                                    "text": "/50",
+                                    "correct": true
+                                },
+                                {
+                                    "id": "d",
+                                    "text": "/64",
+                                    "correct": false,
+                                    "wrong_message": "64 = 4 × 16 → Nibble-Grenze, und für SLAAC sogar erforderlich."
+                                }
+                            ]
+                        }
+                    ],
                     "tools": [
                         "prefix-visualizer",
                         "prefix-slicer"
+                    ]
+                },
+                {
+                    "id": "slaac",
+                    "title": "SLAAC – Stateless Configuration",
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "**SLAAC** (Stateless Address Autoconfiguration) erlaubt Hosts, ihre IPv6-Adresse selbst zu konfigurieren – ohne DHCP-Server. Voraussetzung: Das Subnetz-Präfix im RA ist **genau /64**."
+                        },
+                        {
+                            "type": "example",
+                            "label": "SLAAC-Ablauf",
+                            "code": "1. Router sendet RA mit Präfix 2001:db8::/64\n2. Client generiert Interface-ID (EUI-64 oder Random)\n3. Client konfiguriert: 2001:db8::INTERFACE-ID/64\n4. Default-Route → Link-Local des Routers (fe80::1)"
+                        }
+                    ],
+                    "tasks": [
+                        {
+                            "id": "sub-slaac-1",
+                            "type": "multiple-choice",
+                            "question": "Welche Präfixlänge MUSS ein RA ankündigen, damit SLAAC funktioniert?",
+                            "success_message": "✅ Richtig! SLAAC benötigt exakt /64 (RFC 4862).",
+                            "options": [
+                                {
+                                    "id": "a",
+                                    "text": "/48",
+                                    "correct": false,
+                                    "wrong_message": "/48 ist zu groß. SLAAC braucht genau /64."
+                                },
+                                {
+                                    "id": "b",
+                                    "text": "/64",
+                                    "correct": true
+                                },
+                                {
+                                    "id": "c",
+                                    "text": "/128",
+                                    "correct": false,
+                                    "wrong_message": "/128 ist eine Host-Adresse. SLAAC braucht /64."
+                                },
+                                {
+                                    "id": "d",
+                                    "text": "Beliebige Länge",
+                                    "correct": false,
+                                    "wrong_message": "Nein – RFC 4862 schreibt /64 für SLAAC vor."
+                                }
+                            ]
+                        }
+                    ],
+                    "tools": [
+                        "ra-demo"
                     ]
                 }
             ]
@@ -208,59 +537,206 @@
                     "blocks": [
                         {
                             "type": "text",
-                            "content": "In der Praxis erhältst du einen /48-Block vom ISP. Die Aufgabe: diesen Block hierarchisch auf Standorte, Gebäude und VLANs zu verteilen."
+                            "content": "In der Praxis erhältst du einen /48-Block vom ISP. Die Aufgabe: diesen Block **hierarchisch** auf Standorte, Gebäude und VLANs zu verteilen."
                         },
                         {
                             "type": "example",
                             "label": "Standardvorgehen",
-                            "code": "ISP gibt: 2001:db8:abcd::/48\n  /56 pro Standort  → 256 Standorte\n  /60 pro Gebäude   → 16 Gebäude je Standort\n  /64 pro VLAN      → 16 VLANs je Gebäude"
+                            "code": "ISP gibt:  2001:db8:abcd::/48\n\n  /56 pro Standort  → 256 Standorte möglich\n  /60 pro Gebäude   →  16 Gebäude je Standort\n  /64 pro VLAN      →  16 VLANs je Gebäude\n\nBeispiel Standort 1, Gebäude 2, VLAN 3:\n  2001:db8:abcd:0123::/64"
+                        },
+                        {
+                            "type": "hint",
+                            "content": "Plane **immer mit Reserve**: Wenn du heute 4 Standorte hast und morgen 10 brauchst, willst du nicht die Architektur neu entwerfen."
                         }
                     ],
-                    "examples": [],
-                    "tasks": [],
+                    "tasks": [
+                        {
+                            "id": "prac-plan-1",
+                            "type": "single-input",
+                            "validator": "prefix-len",
+                            "question": "Du brauchst 16 Standorte aus /48. Welche Präfixlänge pro Standort ist die kleinste sinnvolle Nibble-Grenze?",
+                            "answer": "52",
+                            "hint": "16 = 2^4 → +4 Bits. 48 + 4 = /52 (Nibble-konform).",
+                            "success_message": "✅ Perfekt! /52 gibt 2^4 = 16 Standorte, exakt an der Nibble-Grenze.",
+                            "error_rules": [
+                                {
+                                    "type": "equals",
+                                    "value": "56",
+                                    "message": "/56 gibt 256 Standorte – mehr als nötig. Für genau 16: /52."
+                                }
+                            ]
+                        },
+                        {
+                            "id": "prac-plan-2",
+                            "type": "single-input",
+                            "validator": "prefix-len",
+                            "question": "Du bekommst /48 vom ISP. Die unterste Ebene soll VLAN-Subnetze mit SLAAC sein. Welche Präfixlänge haben diese VLANs?",
+                            "answer": "64",
+                            "hint": "SLAAC erfordert exakt /64.",
+                            "success_message": "✅ Korrekt! VLANs sind immer /64 damit SLAAC funktioniert."
+                        }
+                    ],
                     "tools": [
                         "prefix-slicer",
                         "scenario-generator"
+                    ]
+                },
+                {
+                    "id": "scenario-practice",
+                    "title": "Planungsübungen (Szenario-Generator)",
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "Der Szenario-Generator erstellt zufällige Planungsaufgaben für dich. Nutze den Prefix-Slicer daneben, um die Präfixe auszurechnen."
+                        },
+                        {
+                            "type": "hint",
+                            "content": "**Vorgehen:** 1. Berechne Bits für Standorte (log₂ aufrunden). 2. Berechne Bits für VLANs. 3. Präfixlängen = 48 + Standort-Bits und Standort-Länge + VLAN-Bits."
+                        }
+                    ],
+                    "tasks": [],
+                    "tools": [
+                        "scenario-generator",
+                        "prefix-slicer"
                     ]
                 }
             ]
         },
         {
             "id": "troubleshooting",
-            "title": "Checks & Fehlerbilder",
+            "title": "Fehlerbilder",
             "icon": "🔍",
             "subchapters": [
                 {
                     "id": "ra-missing",
-                    "title": "RA fehlt – keine Default-Route",
+                    "title": "RA fehlt – Simulation",
                     "blocks": [
                         {
                             "type": "text",
-                            "content": "Router Advertisements (RA) sind der Mechanismus, über den Clients ihre Default-Route und Präfix-Informationen erhalten. Fehlt das RA, hat der Client keine Route ins Internet."
+                            "content": "Router Advertisements (RA) sind der Mechanismus, über den Clients ihre Default-Route und Präfix-Informationen erhalten. **Fehlt das RA, hat der Client keine Route – trotz Link-Local-Adresse.**"
                         },
                         {
                             "type": "hint",
-                            "content": "Symptom: Link-Local funktioniert, aber kein globaler Traffic. Prüfe: ICMPv6 Typ 134 (RA) geblockt?"
+                            "content": "Symptom: `ping6 google.com` schlägt fehl. `ip -6 addr` zeigt nur `fe80::`. Diagnose: `rdisc6 eth0` oder `tcpdump -i eth0 icmp6 and icmp6[0]=134`"
                         }
                     ],
-                    "examples": [],
-                    "tasks": [],
+                    "tasks": [
+                        {
+                            "id": "ts-ra-1",
+                            "type": "multiple-choice",
+                            "question": "Ein Host hat nur fe80::-Adresse und kein Default-Gateway. Was ist die wahrscheinlichste Ursache?",
+                            "success_message": "✅ Genau! RA fehlen → kein Präfix → kein SLAAC → kein Gateway.",
+                            "options": [
+                                {
+                                    "id": "a",
+                                    "text": "Der Host hat IPv6 deaktiviert.",
+                                    "correct": false,
+                                    "wrong_message": "Wäre IPv6 deaktiviert, gäbe es auch keine fe80-Adresse."
+                                },
+                                {
+                                    "id": "b",
+                                    "text": "Router Advertisements werden nicht empfangen (RA-Guard oder keine RAs).",
+                                    "correct": true
+                                },
+                                {
+                                    "id": "c",
+                                    "text": "Die DNS-Server liefern keine AAAA-Records.",
+                                    "correct": false,
+                                    "wrong_message": "DNS-Probleme würden keine Auswirkung auf die Adresskonfiguration haben."
+                                },
+                                {
+                                    "id": "d",
+                                    "text": "ICMPv6 Typ 2 ist geblockt.",
+                                    "correct": false,
+                                    "wrong_message": "Typ 2 ist Packet-Too-Big (PMTUD). Für RA ist Typ 134 relevant."
+                                }
+                            ]
+                        }
+                    ],
                     "tools": [
                         "ra-demo"
                     ]
                 },
                 {
-                    "id": "icmpv6-blocked",
-                    "title": "ICMPv6 geblockt – Totale Selbstsabotage",
+                    "id": "error-library",
+                    "title": "Fehlerbilder-Bibliothek",
                     "blocks": [
                         {
                             "type": "text",
-                            "content": "ICMPv6 ist bei IPv6 kein optionales Protokoll. NDP, PMTUD, RA – alles basiert auf ICMPv6. Ein pauschaler ICMPv6-Block in der Firewall bricht IPv6-Konnektivität vollständig."
+                            "content": "Die häufigsten IPv6-Fehler folgen immer dem gleichen Muster: **ICMPv6 blockiert**, **RA fehlt**, **falsches Präfix**. Wer diese kennt, diagnostiziert in Minuten statt Stunden."
+                        },
+                        {
+                            "type": "hint",
+                            "content": "Nutze den **Quiz-Modus** im Tool rechts, um zu testen, ob du Symptome den richtigen Ursachen zuordnen kannst."
                         }
                     ],
-                    "examples": [],
-                    "tasks": [],
-                    "tools": []
+                    "tasks": [
+                        {
+                            "id": "ts-fb-1",
+                            "type": "multiple-choice",
+                            "question": "Große Pakete kommen nicht an, kleine schon. Was ist die Ursache?",
+                            "success_message": "✅ PMTUD-Black-Hole! ICMPv6 Typ 2 ist geblockt.",
+                            "options": [
+                                {
+                                    "id": "a",
+                                    "text": "RA-Guard ist aktiviert",
+                                    "correct": false,
+                                    "wrong_message": "RA-Guard verhindert RA-Empfang – kein Zusammenhang mit Paketgröße."
+                                },
+                                {
+                                    "id": "b",
+                                    "text": "ICMPv6 Typ 2 (Packet Too Big) ist durch Firewall geblockt",
+                                    "correct": true
+                                },
+                                {
+                                    "id": "c",
+                                    "text": "DNS hat keine AAAA-Records",
+                                    "correct": false,
+                                    "wrong_message": "DNS-Probleme betreffen die Namensauflösung, nicht die Übertragungsgröße."
+                                },
+                                {
+                                    "id": "d",
+                                    "text": "NDP-Cache ist veraltet",
+                                    "correct": false,
+                                    "wrong_message": "Ein veralteter NDP-Cache würde Verbindungen unterbrechen, nicht größenabhängig filtern."
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ts-fb-2",
+                            "type": "multiple-choice",
+                            "question": "Ein Server hat täglich eine andere IPv6-Adresse. Zugriff per IP schlägt fehl. Ursache?",
+                            "success_message": "✅ Privacy Extensions! Für Server immer deaktivieren.",
+                            "options": [
+                                {
+                                    "id": "a",
+                                    "text": "RA-Guard",
+                                    "correct": false,
+                                    "wrong_message": "RA-Guard würde alle Adressen blockieren, nicht nur täglich wechseln."
+                                },
+                                {
+                                    "id": "b",
+                                    "text": "Privacy Extensions (RFC 8981) generieren täglich neue Interface-IDs",
+                                    "correct": true
+                                },
+                                {
+                                    "id": "c",
+                                    "text": "ICMPv6 ist geblockt",
+                                    "correct": false,
+                                    "wrong_message": "Blockiertes ICMPv6 würde Konnektivität verhindern, nicht IP-Wechsel verursachen."
+                                },
+                                {
+                                    "id": "d",
+                                    "text": "ULA-Präfix nicht geroutet",
+                                    "correct": false,
+                                    "wrong_message": "Routing-Probleme würden alle Verbindungen betreffen, nicht only die Adress-Stabilität."
+                                }
+                            ]
+                        }
+                    ],
+                    "tools": [
+                        "fehlerbilder"
+                    ]
                 }
             ]
         }

@@ -1,0 +1,137 @@
+{
+  "game_id": "mietvertrag_mietmangel_eskalation",
+  "title": "Mietmangel-Eskalation",
+  "subtitle": "Mangelprozesse strukturiert und nachvollziehbar aufbauen",
+  "scoring": {
+    "correct": 9,
+    "wrong": -4,
+    "completion_bonus": 7
+  },
+  "rounds": [
+    {
+      "id": "ME-1",
+      "prompt": "Heizungsausfall gemeldet. Welcher Schritt steht zuerst an?",
+      "hint": "Dokumentation und saubere Erstmeldung schaffen die Basis.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sofort gerichtliche Eskalation ohne Meldung",
+          "correct": false,
+          "feedback": "Nicht korrekt. Erstmeldung und Nachweis sind zuerst noetig."
+        },
+        {
+          "id": "b",
+          "text": "Mangel schriftlich dokumentieren und melden",
+          "correct": true,
+          "feedback": "Richtig. Das ist der Startpunkt des Prozesspfads."
+        },
+        {
+          "id": "c",
+          "text": "Nur muendlich beim Nachbarn erzaehlen",
+          "correct": false,
+          "feedback": "Nicht korrekt. Der Prozess braucht belastbare Kommunikation."
+        }
+      ]
+    },
+    {
+      "id": "ME-2",
+      "prompt": "Nach erster Meldung reagiert niemand. Was folgt sinnvoll?",
+      "hint": "Fristsetzung macht den naechsten Schritt belastbar.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Frist zur Behebung klar setzen",
+          "correct": true,
+          "feedback": "Richtig. Eine Frist strukturiert die weitere Eskalation."
+        },
+        {
+          "id": "b",
+          "text": "Thema komplett fallen lassen",
+          "correct": false,
+          "feedback": "Nicht korrekt. Ohne Folgeaktion fehlt Verfahrenslogik."
+        },
+        {
+          "id": "c",
+          "text": "Unbegruendet Zahlung komplett stoppen",
+          "correct": false,
+          "feedback": "Nicht korrekt. Unstrukturierte Schritte erhoehen Konfliktrisiko."
+        }
+      ]
+    },
+    {
+      "id": "ME-3",
+      "prompt": "Frist laeuft ab, weiterhin keine Reaktion. Was ist jetzt wichtig?",
+      "hint": "Nachweise und Chronologie sichern den Eskalationspfad.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Alle Belege und Kommunikation chronologisch sichern",
+          "correct": true,
+          "feedback": "Richtig. Nachweisbarkeit ist fuer Folgeentscheidungen zentral."
+        },
+        {
+          "id": "b",
+          "text": "Dokumentation loeschen und neu beginnen",
+          "correct": false,
+          "feedback": "Nicht korrekt. Das zerstoert die Nachvollziehbarkeit."
+        },
+        {
+          "id": "c",
+          "text": "Beliebige Schritte ohne Reihenfolge auswaehlen",
+          "correct": false,
+          "feedback": "Nicht korrekt. Reihenfolge ist Teil des Lernziels."
+        }
+      ]
+    },
+    {
+      "id": "ME-4",
+      "prompt": "Der Vermieter bietet einen spaeten Termin an. Wie bewerten?",
+      "hint": "Verhaeltnismaessigkeit und Nachvollziehbarkeit bleiben entscheidend.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Termin dokumentieren und Angemessenheit pruefen",
+          "correct": true,
+          "feedback": "Richtig. Dokumentierte Bewertung ermoeglicht saubere Entscheidung."
+        },
+        {
+          "id": "b",
+          "text": "Immer sofort ablehnen",
+          "correct": false,
+          "feedback": "Nicht korrekt. Pauschalablehnung ist nicht zielfuehrend."
+        },
+        {
+          "id": "c",
+          "text": "Nie Rueckmeldung geben",
+          "correct": false,
+          "feedback": "Nicht korrekt. Kommunikation bleibt Pflicht."
+        }
+      ]
+    },
+    {
+      "id": "ME-5",
+      "prompt": "Mehrere Schritte wurden korrekt erledigt. Was zeigt hohe Prozesseffizienz?",
+      "hint": "Fehlerfreie Reihenfolge und klare Belege steigern Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sprunghafte Entscheidungen ohne Referenz",
+          "correct": false,
+          "feedback": "Nicht korrekt. Das senkt die Prozessqualitaet."
+        },
+        {
+          "id": "b",
+          "text": "Vollstaendige Schrittfolge ohne Luecken",
+          "correct": true,
+          "feedback": "Richtig. Genau das bildet den Effizienz-KPI ab."
+        },
+        {
+          "id": "c",
+          "text": "Nur den letzten Schritt betrachten",
+          "correct": false,
+          "feedback": "Nicht korrekt. Die Gesamtfolge zaehlt."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "game_id": "mietvertrag_klausel_check",
+  "title": "Mietvertrag-Klausel-Check",
+  "subtitle": "Klauseln nach Risiko einordnen und Begruendung trainieren",
+  "scoring": {
+    "correct": 8,
+    "wrong": -4,
+    "reason_bonus": 3,
+    "completion_bonus": 6
+  },
+  "rounds": [
+    {
+      "id": "KC-1",
+      "prompt": "Klausel: \"Schoenheitsreparaturen stets unabhaengig vom Zustand alle 2 Jahre.\"",
+      "hint": "Starre Fristen sind oft kritisch.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unauffaellig",
+          "correct": false,
+          "feedback": "Nicht korrekt. Starre Fristen sind ein Warnsignal."
+        },
+        {
+          "id": "b",
+          "text": "Kritisch bis problematisch wegen starrer Frist",
+          "correct": true,
+          "reason_ok": true,
+          "feedback": "Richtig. Starre Vorgaben ohne Zustandsoffenheit sind riskant."
+        },
+        {
+          "id": "c",
+          "text": "Immer vorteilhaft fuer beide Seiten",
+          "correct": false,
+          "feedback": "Nicht korrekt. Der Inhalt kann einseitig belasten."
+        }
+      ]
+    },
+    {
+      "id": "KC-2",
+      "prompt": "Klausel: \"Haustierhaltung nach vorheriger Abstimmung im Einzelfall.\"",
+      "hint": "Einzelfallpruefung ist oft differenzierter als Pauschalverbote.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Eher unauffaellig mit Einzelfallbezug",
+          "correct": true,
+          "reason_ok": true,
+          "feedback": "Richtig. Einzelfallregelungen sind regelmaessig weniger problematisch."
+        },
+        {
+          "id": "b",
+          "text": "Eindeutig problematisch in jedem Fall",
+          "correct": false,
+          "feedback": "Nicht korrekt. Die Klausel ist nicht automatisch unzulaessig."
+        },
+        {
+          "id": "c",
+          "text": "Nur gueltig bei zusaetzlicher Strafzahlung",
+          "correct": false,
+          "feedback": "Nicht korrekt. Eine Strafzahlung ist nicht der zentrale Pruefpunkt."
+        }
+      ]
+    },
+    {
+      "id": "KC-3",
+      "prompt": "Klausel: \"Mieter traegt alle Reparaturen ohne Hoechstgrenze.\"",
+      "hint": "Unbegrenzte Kostenueberwaelzung ist riskant.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unauffaellig",
+          "correct": false,
+          "feedback": "Nicht korrekt. Unbegrenzte Uebertragung ist problematisch."
+        },
+        {
+          "id": "b",
+          "text": "Kritisch",
+          "correct": false,
+          "feedback": "Teilweise, hier ist die Klausel deutlicher problematisch."
+        },
+        {
+          "id": "c",
+          "text": "Eindeutig problematisch durch fehlende Begrenzung",
+          "correct": true,
+          "reason_ok": true,
+          "feedback": "Richtig. Ohne Begrenzung ist die Klausel stark angreifbar."
+        }
+      ]
+    },
+    {
+      "id": "KC-4",
+      "prompt": "Klausel: \"Nebenkosten werden jaehrlich transparent nach Positionen abgerechnet.\"",
+      "hint": "Transparente Abrechnung ist ein positives Signal.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unauffaellig",
+          "correct": true,
+          "reason_ok": true,
+          "feedback": "Richtig. Transparente, nachvollziehbare Abrechnung ist plausibel."
+        },
+        {
+          "id": "b",
+          "text": "Kritisch",
+          "correct": false,
+          "feedback": "Nicht korrekt. Die Klausel beschreibt einen regulaeren Ablauf."
+        },
+        {
+          "id": "c",
+          "text": "Eindeutig problematisch",
+          "correct": false,
+          "feedback": "Nicht korrekt. Problematisch waere eher Intransparenz."
+        }
+      ]
+    },
+    {
+      "id": "KC-5",
+      "prompt": "Klausel: \"Kuendigung des Mieters nur mit Zustimmung des Vermieters moeglich.\"",
+      "hint": "Einseitige Blockaden sind ein starkes Risikozeichen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unauffaellig",
+          "correct": false,
+          "feedback": "Nicht korrekt. Die Klausel schraenkt grundlegend ein."
+        },
+        {
+          "id": "b",
+          "text": "Kritisch",
+          "correct": false,
+          "feedback": "Teilweise, hier ist das Risiko deutlich hoeher."
+        },
+        {
+          "id": "c",
+          "text": "Eindeutig problematisch",
+          "correct": true,
+          "reason_ok": true,
+          "feedback": "Richtig. Eine solche Blockade ist stark problematisch."
+        }
+      ]
+    }
+  ]
+}

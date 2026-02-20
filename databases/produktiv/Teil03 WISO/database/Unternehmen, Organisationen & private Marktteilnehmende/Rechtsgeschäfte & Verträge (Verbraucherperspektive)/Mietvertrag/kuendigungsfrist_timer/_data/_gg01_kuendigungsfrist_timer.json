@@ -1,0 +1,143 @@
+{
+  "game_id": "mietvertrag_kuendigungsfrist_timer",
+  "title": "Kuendigungsfrist-Timer",
+  "subtitle": "Fristlogik unter Zeitdruck korrekt anwenden",
+  "scoring": {
+    "correct": 11,
+    "wrong": -5,
+    "reason_bonus": 4,
+    "completion_bonus": 8
+  },
+  "rounds": [
+    {
+      "id": "KT-1",
+      "prompt": "Fall: Eingang Kuendigung am 03.02., Vertragsende zum 31.03. Ist die Frist plausibel?",
+      "hint": "Pruefe Zeitraum zwischen Zugang und Zieltermin.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nein, Frist wirkt zu kurz",
+          "correct": true,
+          "reason_ok": true,
+          "feedback": "Richtig. Der Zeitraum ist fuer regulaere Fristen typischerweise zu knapp."
+        },
+        {
+          "id": "b",
+          "text": "Ja, immer ausreichend",
+          "correct": false,
+          "feedback": "Nicht korrekt. Eine pauschale Zusage ist riskant."
+        },
+        {
+          "id": "c",
+          "text": "Nur die Monatszahl zaehlt, nicht der Zugangstag",
+          "correct": false,
+          "feedback": "Nicht korrekt. Der Zugangstag ist relevant."
+        }
+      ]
+    },
+    {
+      "id": "KT-2",
+      "prompt": "Fall: Kuendigung geht am 28.02. ein, Ziel ist 31.05. Wie bewerten?",
+      "hint": "Mehrere volle Monate sprechen fuer Fristeinhaltung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Frist eher eingehalten",
+          "correct": true,
+          "reason_ok": true,
+          "feedback": "Richtig. Der Zeitraum ist nachvollziehbar ausreichend."
+        },
+        {
+          "id": "b",
+          "text": "Frist niemals eingehalten",
+          "correct": false,
+          "feedback": "Nicht korrekt. Der Zeitraum spricht eher dagegen."
+        },
+        {
+          "id": "c",
+          "text": "Bewertung nur nach Wochentag",
+          "correct": false,
+          "feedback": "Nicht korrekt. Wochentage allein reichen nicht."
+        }
+      ]
+    },
+    {
+      "id": "KT-3",
+      "prompt": "Fall: Zieltermin ist mitten im Monat statt Monatsende. Was ist der Kerncheck?",
+      "hint": "Terminlogik und Vertragsbezug sauber herleiten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mitte des Monats ist immer unzulaessig",
+          "correct": false,
+          "feedback": "Nicht korrekt. Es kommt auf Regel und Vereinbarung an."
+        },
+        {
+          "id": "b",
+          "text": "Start- und Enddatum transparent herleiten und dann bewerten",
+          "correct": true,
+          "reason_ok": true,
+          "feedback": "Richtig. Reproduzierbare Herleitung ist entscheidend."
+        },
+        {
+          "id": "c",
+          "text": "Frist pruefen ist unnoetig",
+          "correct": false,
+          "feedback": "Nicht korrekt. Die Fristpruefung ist zentral."
+        }
+      ]
+    },
+    {
+      "id": "KT-4",
+      "prompt": "Fall: Zugang unklar, nur Versanddatum vorhanden. Wie reagieren?",
+      "hint": "Ohne belastbaren Zugang bleibt die Fristbewertung unsicher.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Frist automatisch als eingehalten buchen",
+          "correct": false,
+          "feedback": "Nicht korrekt. Der Zugang muss nachvollziehbar sein."
+        },
+        {
+          "id": "b",
+          "text": "Zugangsdokumentation klaeren, dann Fristentscheidung treffen",
+          "correct": true,
+          "reason_ok": true,
+          "feedback": "Richtig. Erst Zugang klarstellen, dann bewerten."
+        },
+        {
+          "id": "c",
+          "text": "Immer vom schlechtesten Fall ausgehen",
+          "correct": false,
+          "feedback": "Nicht korrekt. Es braucht nachvollziehbare Faktenbasis."
+        }
+      ]
+    },
+    {
+      "id": "KT-5",
+      "prompt": "Fall: Berechnung ergibt Fristende einen Tag nach gewuenschtem Termin. Was gilt?",
+      "hint": "Ein Tag Differenz kann entscheidend sein.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Frist nicht eingehalten, Termin anpassen",
+          "correct": true,
+          "reason_ok": true,
+          "feedback": "Richtig. Bei Ueberschreitung ist Korrektur noetig."
+        },
+        {
+          "id": "b",
+          "text": "Toleranz von drei Tagen ist immer erlaubt",
+          "correct": false,
+          "feedback": "Nicht korrekt. Pauschale Toleranz ist kein Standard."
+        },
+        {
+          "id": "c",
+          "text": "Differenzen nie dokumentieren",
+          "correct": false,
+          "feedback": "Nicht korrekt. Transparente Dokumentation ist Pflicht."
+        }
+      ]
+    }
+  ]
+}

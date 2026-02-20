@@ -1,0 +1,137 @@
+{
+  "game_id": "mietvertrag_kautions_manager",
+  "title": "Kautions-Manager",
+  "subtitle": "Abzuege aus der Kaution nachvollziehbar bewerten",
+  "scoring": {
+    "correct": 12,
+    "wrong": -6,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": "KM-1",
+      "prompt": "Normale Abnutzung der Wandfarbe liegt vor. Ist ein Kautionsabzug berechtigt?",
+      "hint": "Normale Gebrauchsspuren sind ein zentraler Pruefpunkt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nein, normale Abnutzung rechtfertigt keinen Abzug",
+          "correct": true,
+          "feedback": "Richtig. Normale Abnutzung ist kein Schadenersatzfall."
+        },
+        {
+          "id": "b",
+          "text": "Ja, jede sichtbare Nutzung muss abgezogen werden",
+          "correct": false,
+          "feedback": "Nicht korrekt. Gebrauchsspuren sind mit der Miete abgegolten."
+        },
+        {
+          "id": "c",
+          "text": "Nur wenn keine Kautionssumme offen bleibt",
+          "correct": false,
+          "feedback": "Nicht korrekt. Entscheidend ist die Ursache, nicht die Resthoehe."
+        }
+      ]
+    },
+    {
+      "id": "KM-2",
+      "prompt": "Eine Fensterscheibe wurde mutwillig beschaedigt. Welche Entscheidung passt?",
+      "hint": "Sachbeschaedigung kann als begruendeter Anspruch gelten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vollstaendig ignorieren, weil Kaution unantastbar ist",
+          "correct": false,
+          "feedback": "Nicht korrekt. Belegbare Schaeden koennen verrechnet werden."
+        },
+        {
+          "id": "b",
+          "text": "Belegten Reparaturbetrag als Abzug pruefen",
+          "correct": true,
+          "feedback": "Richtig. Nachweisbare Schadenskosten sind relevant."
+        },
+        {
+          "id": "c",
+          "text": "Pauschal 50 Prozent der Kaution einbehalten",
+          "correct": false,
+          "feedback": "Nicht korrekt. Pauschalabzuege ohne Bezug sind unzulaessig."
+        }
+      ]
+    },
+    {
+      "id": "KM-3",
+      "prompt": "Es liegt nur eine pauschale Schadensliste ohne Rechnungen vor. Was ist richtig?",
+      "hint": "Nachvollziehbarkeit und Belege sind entscheidend.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Abzug voll akzeptieren, Liste reicht immer aus",
+          "correct": false,
+          "feedback": "Nicht korrekt. Ohne Belege fehlt die Nachvollziehbarkeit."
+        },
+        {
+          "id": "b",
+          "text": "Abzug nur bei nachvollziehbaren Nachweisen akzeptieren",
+          "correct": true,
+          "feedback": "Richtig. Nachweise sichern die Begruendung."
+        },
+        {
+          "id": "c",
+          "text": "Immer den halben Betrag akzeptieren",
+          "correct": false,
+          "feedback": "Nicht korrekt. Pauschale Quoten ersetzen keine Pruefung."
+        }
+      ]
+    },
+    {
+      "id": "KM-4",
+      "prompt": "Bei Auszug fehlen zwei Schluessel, Austausch der Schliessanlage ist dokumentiert. Wie entscheiden?",
+      "hint": "Konkreter Nachweis und Kausalitaet sind wichtig.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kein Abzug moeglich, Schluessel sind Nebensache",
+          "correct": false,
+          "feedback": "Nicht korrekt. Nachweisbare Sicherheitskosten koennen relevant sein."
+        },
+        {
+          "id": "b",
+          "text": "Belegten Kostenanteil aus der Kaution abziehen",
+          "correct": true,
+          "feedback": "Richtig. Dokumentierte Folgekosten sind pruefbar."
+        },
+        {
+          "id": "c",
+          "text": "Immer gesamte Kaution einbehalten",
+          "correct": false,
+          "feedback": "Nicht korrekt. Verhaeltnismaessigkeit bleibt Pflicht."
+        }
+      ]
+    },
+    {
+      "id": "KM-5",
+      "prompt": "Der Vermieter nennt keine Endabrechnung trotz mehrfacher Nachfrage. Was passt?",
+      "hint": "Transparenz der Endabrechnung ist ein Kernkriterium.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rueckzahlung ohne unbelegte Abzuege priorisieren",
+          "correct": true,
+          "feedback": "Richtig. Ohne tragfaehige Abrechnung fehlt die Grundlage fuer Abzuege."
+        },
+        {
+          "id": "b",
+          "text": "Kaution unbefristet einbehalten",
+          "correct": false,
+          "feedback": "Nicht korrekt. Unbegruendete Zurueckhaltung ist nicht tragfaehig."
+        },
+        {
+          "id": "c",
+          "text": "Jaehrlich neu pruefen und nichts dokumentieren",
+          "correct": false,
+          "feedback": "Nicht korrekt. Dokumentation und klare Fristen sind erforderlich."
+        }
+      ]
+    }
+  ]
+}

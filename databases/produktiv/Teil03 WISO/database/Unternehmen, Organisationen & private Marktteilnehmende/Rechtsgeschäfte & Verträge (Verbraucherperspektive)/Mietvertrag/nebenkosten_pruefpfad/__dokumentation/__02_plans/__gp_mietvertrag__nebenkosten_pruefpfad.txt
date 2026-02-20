@@ -1,0 +1,52 @@
+# __gp_mietvertrag__nebenkosten_pruefpfad
+
+## Spielidee
+"Nebenkosten-Pruefpfad" simuliert Abrechnungen mit mehreren Positionen. Lernende markieren umlagefaehige und nicht umlagefaehige Kosten.
+
+## Lernziel
+- Nebenkostenpositionen systematisch pruefen.
+- Fehler in Abrechnungen schneller entdecken.
+
+## Messbare Progression
+- 8 Abrechnungsfaelle.
+- Punkte: +5 je korrekt klassifizierter Position, -2 je Fehlklassifikation.
+- KPI: Trefferquote und Bearbeitungszeit je Abrechnung.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- BillingController
+- AllocationRuleEngine
+- MetricService
+
+### Domaenenobjekte
+- BillingCase(caseId, entries[])
+- CostEntry(entryId, amount, category)
+- BillingResult(correctCount, wrongCount, timeMs)
+
+### Beziehungen
+- BillingCase enthaelt 6..20 CostEntry.
+- AllocationRuleEngine validiert 1..* CostEntry.
+- MetricService aggregiert 1..* BillingResult.
+
+### Zustandsmodell
+- LOAD_BILLING -> CLASSIFY -> SUBMIT -> RESULT -> NEXT_BILLING
+
+### Sequenz (Happy Path)
+1. BillingController laedt BillingCase.
+2. Player klassifiziert CostEntry.
+3. AllocationRuleEngine prueft Positionen.
+4. BillingResult wird berechnet.
+5. MetricService aktualisiert Lernkurve.
+
+## Regeln
+- Fehlklassifikation hoher Betraege erzeugt zusaetzlichen Punktabzug.
+- Komplette korrekte Abrechnung gibt Perfektionsbonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, entries[{id,amount,category,allocatable}], timeLimitSec
+
+## Abnahmekriterien
+- Pro Position wird ein klares Feedback geliefert.
+- KPI zeigt Genauigkeit und Tempo getrennt.
+- Wiederholungsmodus nutzt vorherige Fehlerpositionen.

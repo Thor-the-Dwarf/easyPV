@@ -1,0 +1,53 @@
+# __gp_mietvertrag__kuendigungsfrist_timer
+
+## Spielidee
+"Kuendigungsfrist-Timer" trainiert Fristberechnung fuer verschiedene Kuendigungssituationen. Lernende entscheiden unter Zeitdruck, ob die Frist korrekt eingehalten ist.
+
+## Lernziel
+- Fristenlogik im Mietkontext sicher anwenden.
+- Datumsbezogene Entscheidungen beschleunigen.
+
+## Messbare Progression
+- 14 Datumsfaelle.
+- Punkte: +11 korrekte Fristentscheidung, -5 falsche Entscheidung.
+- +4 bei korrekter Herleitung mit Start- und Enddatum.
+- KPI: Fristgenauigkeit und Herleitungsquote.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DeadlineCaseController
+- DateComputationEngine
+- AnalyticsService
+
+### Domaenenobjekte
+- DeadlineCase(caseId, noticeDate, targetDate)
+- DeadlineDecision(isValid, calculationPath)
+- DeadlineResult(isCorrect, dayDelta)
+
+### Beziehungen
+- DeadlineCaseController verwaltet 1..* DeadlineCase.
+- DateComputationEngine mappt DeadlineDecision auf DeadlineResult.
+- AnalyticsService aggregiert 1..* DeadlineResult.
+
+### Zustandsmodell
+- READY -> CASE_ACTIVE -> DECISION_LOCK -> RESULT_SHOW -> NEXT_CASE
+
+### Sequenz (Happy Path)
+1. DeadlineCaseController zeigt Fall.
+2. Player trifft DeadlineDecision.
+3. DateComputationEngine berechnet Referenzfrist.
+4. DeadlineResult wird angezeigt.
+5. AnalyticsService aktualisiert Fortschritt.
+
+## Regeln
+- Antwort ohne Herleitung bringt nur Teilpunkte.
+- Wiederholter Fehler aktiviert Hilfemodus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, noticeDate, targetDate, legalWindow, expectedDecision
+
+## Abnahmekriterien
+- Fristberechnung ist reproduzierbar und transparent.
+- KPI zeigt Genauigkeit und Geschwindigkeit.
+- Endreport gruppiert Fehler nach Fristtyp.

@@ -1,0 +1,137 @@
+{
+  "game_id": "mietvertrag_nebenkosten_pruefpfad",
+  "title": "Nebenkosten-Pruefpfad",
+  "subtitle": "Umlagefaehige Positionen sicher klassifizieren",
+  "scoring": {
+    "correct": 5,
+    "wrong": -2,
+    "completion_bonus": 6
+  },
+  "rounds": [
+    {
+      "id": "NP-1",
+      "prompt": "Position: Allgemeinstrom Treppenhaus in ordentlicher Abrechnung.",
+      "hint": "Pruefe, ob die Position typischerweise umlagefaehig ist.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Umlagefaehig, wenn transparent ausgewiesen",
+          "correct": true,
+          "feedback": "Richtig. Transparente Betriebskostenpositionen sind pruefbar umlagefaehig."
+        },
+        {
+          "id": "b",
+          "text": "Nie umlagefaehig",
+          "correct": false,
+          "feedback": "Nicht korrekt. Das ist zu pauschal."
+        },
+        {
+          "id": "c",
+          "text": "Immer ohne Nachweis umlagefaehig",
+          "correct": false,
+          "feedback": "Nicht korrekt. Nachvollziehbarkeit bleibt Pflicht."
+        }
+      ]
+    },
+    {
+      "id": "NP-2",
+      "prompt": "Position: Reparatur der Wohnungstuer als laufende Nebenkosten.",
+      "hint": "Instandsetzung ist von laufenden Betriebskosten zu trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Umlagefaehig wie Heizkosten",
+          "correct": false,
+          "feedback": "Nicht korrekt. Reparaturkosten sind anders zu behandeln."
+        },
+        {
+          "id": "b",
+          "text": "Nicht umlagefaehig als laufende Nebenkostenposition",
+          "correct": true,
+          "feedback": "Richtig. Instandsetzung ist typischerweise keine laufende Umlageposition."
+        },
+        {
+          "id": "c",
+          "text": "Nur bei hoher Miete umlagefaehig",
+          "correct": false,
+          "feedback": "Nicht korrekt. Die Hoehe der Miete ist hier nicht das Kernkriterium."
+        }
+      ]
+    },
+    {
+      "id": "NP-3",
+      "prompt": "Position: Gartenpflege mit Dienstleisterrechnung und klarer Aufteilung.",
+      "hint": "Leistung, Nachweis und Verteilungsschluessel gemeinsam pruefen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Umlagefaehig bei nachvollziehbarer Abrechnung",
+          "correct": true,
+          "feedback": "Richtig. Nachweis + transparenter Schluessel sprechen fuer Umlagefaehigkeit."
+        },
+        {
+          "id": "b",
+          "text": "Immer ausgeschlossen",
+          "correct": false,
+          "feedback": "Nicht korrekt. Das ist zu pauschal."
+        },
+        {
+          "id": "c",
+          "text": "Nur mit Zustimmung jedes Mieters",
+          "correct": false,
+          "feedback": "Nicht korrekt. Entscheidend ist vor allem die vertragliche und sachliche Einordnung."
+        }
+      ]
+    },
+    {
+      "id": "NP-4",
+      "prompt": "Position: Verwaltungskosten werden als Nebenkosten weitergegeben.",
+      "hint": "Nicht jede Kostenart ist umlagefaehig.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Umlagefaehig, wenn Betrag klein ist",
+          "correct": false,
+          "feedback": "Nicht korrekt. Die Hoehe allein entscheidet nicht."
+        },
+        {
+          "id": "b",
+          "text": "Nicht umlagefaehig in der Regel",
+          "correct": true,
+          "feedback": "Richtig. Verwaltungskosten sind typischerweise nicht umlagefaehig."
+        },
+        {
+          "id": "c",
+          "text": "Automatisch umlagefaehig bei digitaler Verwaltung",
+          "correct": false,
+          "feedback": "Nicht korrekt. Das aendert die Einordnung nicht automatisch."
+        }
+      ]
+    },
+    {
+      "id": "NP-5",
+      "prompt": "Position: Kostenart fehlt in der Abrechnungserlaeuterung vollstaendig.",
+      "hint": "Fehlende Transparenz ist ein klares Warnsignal.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ohne Pruefung akzeptieren",
+          "correct": false,
+          "feedback": "Nicht korrekt. Ohne Erlaeuterung fehlt die Pruefbasis."
+        },
+        {
+          "id": "b",
+          "text": "Als nicht ausreichend begruendet markieren und Rueckfrage ausloesen",
+          "correct": true,
+          "feedback": "Richtig. So bleibt der Pruefpfad nachvollziehbar."
+        },
+        {
+          "id": "c",
+          "text": "Immer anteilig halbieren und buchen",
+          "correct": false,
+          "feedback": "Nicht korrekt. Pauschalquoten ersetzen keine Sachpruefung."
+        }
+      ]
+    }
+  ]
+}

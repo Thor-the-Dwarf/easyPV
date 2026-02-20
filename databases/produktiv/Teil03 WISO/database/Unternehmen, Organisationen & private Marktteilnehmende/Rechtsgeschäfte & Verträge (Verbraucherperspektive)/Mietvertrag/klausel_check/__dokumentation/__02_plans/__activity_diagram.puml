@@ -1,0 +1,18 @@
+@startuml
+start
+:Fall laden;
+:Option waehlen;
+if (korrekt?) then (ja)
+  :Punkte +;
+else (nein)
+  :Punkte -;
+endif
+:Feedback anzeigen;
+if (weitere Runde?) then (ja)
+  :Naechste Runde;
+  -> [loop] Fall laden;
+else (nein)
+  :Auswertung zeigen;
+endif
+stop
+@enduml

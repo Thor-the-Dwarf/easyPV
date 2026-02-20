@@ -86,5 +86,20 @@
         "why": "Klare Trennung der Verantwortlichkeiten; app.js nur noch verdrahten, nicht rendern"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-20 16:55:00",
+    "commit_message": "feat(WP05): IPv6-Core-Lib – ipv6.js + ipv6.test.js",
+    "request": "WP05 umsetzen: IPv6-Core-Lib (expand/compress/BigInt/prefixMask/subprefix)",
+    "response": [
+      {
+        "what": "assets/lib/ipv6.js erstellt: expand, compress, toBigInt/fromBigInt, prefixMask, applyMask, subprefix, listSubnets, getAddressType, prefixContains, groupInfo, isValidIPv6",
+        "why": "Vollständige BigInt-Basis für alle späteren Tools (WP06 Visualizer, WP07 Slicer)"
+      },
+      {
+        "what": "assets/lib/ipv6.test.js erstellt: 40+ Testfälle inkl. Fehlerwerfen, runTests() exportiert, DOM-Ausgabe für WP15",
+        "why": "Reproduzierbare Verifikation der Kernfunktionen; WP15 Smoke-Check-Seite"
+      }
+    ]
   }
 ]

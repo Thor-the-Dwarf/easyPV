@@ -18,6 +18,7 @@ const TOOL_META = {
     'network-range': { icon: '📏', label: 'Netzadresse & Range', desc: 'Berechnet Netzadresse, erste und letzte Adresse für adresse/prefix.' },
     'prefix-split-enumerator': { icon: '🧩', label: 'Präfix-Split (Enumerator)', desc: 'Teilt ein Präfix auf zielPrefix und zeigt ein Subnetz-Fenster per offset/limit.' },
     'next-previous-network': { icon: '↔️', label: 'Next/Previous Network', desc: 'Berechnet nächstes und vorheriges Netz gleicher Präfixlänge inklusive Blockgröße.' },
+    'containment-overlap-check': { icon: '🔁', label: 'Containment / Overlap', desc: 'Prüft A_in_B und bei Präfix-A die Überlappung mit B.' },
     'prefix-visualizer': { icon: '🔬', label: 'Präfix-Visualizer', desc: 'Visualisiert IPv6-Adressen und Präfix-Grenzen live.' },
     'prefix-slicer': { icon: '✂️', label: 'Präfix-Slicer', desc: 'Subnetting-Rechner: Bits hinzufügen, Subnetze berechnen.' },
     'scenario-generator': { icon: '🎲', label: 'Szenario-Generator', desc: 'Generiert realistische Planungsaufgaben mit Musterlösung.' },

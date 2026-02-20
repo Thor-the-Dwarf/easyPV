@@ -27,3 +27,8 @@ Original prompt: Planänderung: Du arbeitest auf ne reigenen Git-Branch die du e
 - Hinweis: Gesamtsuite hat weiterhin 2 bestehende Altfails ausserhalb von WP-04 (`compress(ULA)`, `prefixLastAddress(/48)`).
 - Tool-Sichtbarkeit gefixt: `basics/hex-prefix` enthält jetzt zusätzlich `network-range`, `prefix-split-enumerator`, `next-previous-network`.
 - Verifiziert mit Screenshot: `output/tools-visible-fix/shot-0.png` (Tools(5) sichtbar).
+- WP-05 umgesetzt: neues Tool `containment-overlap-check` mit Inputs `A`, `B` und Outputs `A_in_B`, `overlap`.
+- Core-Lib erweitert: `containmentOverlapCheck()` in `assets/lib/ipv6.js`; Tests in `assets/lib/ipv6.test.js` ergänzt.
+- Tool in Drawer integriert (`assets/tools.js`, `assets/layout.js`) und in `basics/hex-prefix` sowie `subnetting/prefix-basics` aktiviert.
+- Playwright-Sichtprüfung: `output/wp05-containment-overlap/shot-0.png` zeigt Tool sichtbar und geöffnet.
+- Hinweis: Gesamtsuite hat weiterhin 2 bestehende Altfails ausserhalb von WP-05 (`compress(ULA)`, `prefixLastAddress(/48)`).

@@ -329,6 +329,31 @@ test('nextPreviousNetwork next am oberen Rand ist null',
 testThrows('nextPreviousNetwork: steps < 1 wirft',
     () => ipv6.nextPreviousNetwork('2001:db8::/64', 0));
 
+// ─── Tests: containmentOverlapCheck (WP-05) ──────────────────────────────────
+
+test('containmentOverlapCheck address in prefix -> A_in_B=true',
+    () => ipv6.containmentOverlapCheck('2001:db8::42', '2001:db8::/48').A_in_B,
+    true);
+
+test('containmentOverlapCheck address outside prefix -> A_in_B=false',
+    () => ipv6.containmentOverlapCheck('2001:db9::42', '2001:db8::/48').A_in_B,
+    false);
+
+test('containmentOverlapCheck prefix in prefix -> A_in_B=true',
+    () => ipv6.containmentOverlapCheck('2001:db8::/64', '2001:db8::/48').A_in_B,
+    true);
+
+test('containmentOverlapCheck prefix overlap=true',
+    () => ipv6.containmentOverlapCheck('2001:db8::/47', '2001:db8::/48').overlap,
+    true);
+
+test('containmentOverlapCheck prefix overlap=false',
+    () => ipv6.containmentOverlapCheck('2001:db9::/48', '2001:db8::/48').overlap,
+    false);
+
+testThrows('containmentOverlapCheck: B ohne Präfix wirft',
+    () => ipv6.containmentOverlapCheck('2001:db8::1', '2001:db8::1'));
+
 // ─── Auswertung ───────────────────────────────────────────────────────────────
 
 const passed = results.filter(r => r.pass).length;

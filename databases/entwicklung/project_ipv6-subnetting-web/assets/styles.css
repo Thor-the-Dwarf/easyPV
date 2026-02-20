@@ -2618,6 +2618,115 @@ body.exam-mode #app-layout {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   WP-05 – CONTAINMENT / OVERLAP CHECK
+═══════════════════════════════════════════════════════════ */
+
+.coc-widget {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.coc-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.coc-label {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-medium);
+}
+
+.coc-text-input {
+    height: 34px;
+    padding: 0 var(--space-3);
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    outline: none;
+    transition: border-color var(--transition);
+    width: 100%;
+}
+
+.coc-text-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--color-accent-glow);
+}
+
+.coc-full-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.coc-result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+}
+
+.coc-result-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+}
+
+.coc-result-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+}
+
+.coc-result-value {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    font-weight: var(--font-semibold);
+}
+
+.coc-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+    line-height: 1.4;
+}
+
+.coc-meta code {
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+}
+
+.coc-error {
+    font-size: var(--text-xs);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-error-dim);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+}
+
+@media (max-width: 520px) {
+    .coc-result-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════
    25. WP08 – TASK-ENGINE ERWEITERUNGEN
 ═══════════════════════════════════════════════════════════ */
 

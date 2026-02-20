@@ -467,3 +467,69 @@ export function nextPreviousNetwork(cidr, steps = 1) {
         prefixLen,
     };
 }
+
+/**
+ * Prüft Containment und optional Überlappung zwischen A (Adresse oder Präfix) und B (Präfix).
+ * @param   {string} A
+ * @param   {string} B
+ * @returns {{ aType: 'address'|'prefix', A_in_B: boolean, overlap: boolean|null, A_normalized: string, B_normalized: string }}
+ */
+export function containmentOverlapCheck(A, B) {
+    if (typeof A !== 'string' || typeof B !== 'string') {
+        throw new TypeError('A und B müssen Strings sein');
+    }
+
+    function parsePrefix(input, name) {
+        const m = input.trim().match(/^(.+?)\/(\d+)$/);
+        if (!m) throw new Error(`${name} muss ein Präfix im Format "Adresse/Präfix" sein`);
+        const addr = m[1].trim();
+        const prefixLen = parseInt(m[2], 10);
+        if (!isValidIPv6(addr)) throw new Error(`${name} enthält eine ungültige IPv6-Adresse`);
+        if (prefixLen < 0 || prefixLen > 128) throw new RangeError(`${name} Präfixlänge muss 0–128 sein`);
+
+        const net = toBigInt(applyMask(addr, prefixLen));
+        const hostBits = BigInt(128 - prefixLen);
+        const last = net | ((1n << hostBits) - 1n);
+        return {
+            addr,
+            prefixLen,
+            net,
+            last,
+            normalized: `${compress(fromBigInt(net))}/${prefixLen}`,
+        };
+    }
+
+    function parseAddress(input, name) {
+        const addr = input.trim();
+        if (!isValidIPv6(addr)) throw new Error(`${name} enthält eine ungültige IPv6-Adresse`);
+        const n = toBigInt(addr);
+        return { addr, n, normalized: compress(fromBigInt(n)) };
+    }
+
+    const b = parsePrefix(B, 'B');
+    const aAsPrefix = A.trim().includes('/');
+
+    if (!aAsPrefix) {
+        const a = parseAddress(A, 'A');
+        const A_in_B = a.n >= b.net && a.n <= b.last;
+        return {
+            aType: 'address',
+            A_in_B,
+            overlap: null,
+            A_normalized: a.normalized,
+            B_normalized: b.normalized,
+        };
+    }
+
+    const a = parsePrefix(A, 'A');
+    const A_in_B = a.net >= b.net && a.last <= b.last;
+    const overlap = !(a.last < b.net || b.last < a.net);
+
+    return {
+        aType: 'prefix',
+        A_in_B,
+        overlap,
+        A_normalized: a.normalized,
+        B_normalized: b.normalized,
+    };
+}

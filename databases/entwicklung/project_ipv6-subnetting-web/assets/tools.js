@@ -21,6 +21,7 @@ import { createPrefixCalculator } from './lib/prefix-calculator.js';
 import { createNetworkRange } from './lib/network-range.js';
 import { createPrefixSplitEnumerator } from './lib/prefix-split-enumerator.js';
 import { createNextPreviousNetwork } from './lib/next-previous-network.js';
+import { createContainmentOverlapCheck } from './lib/containment-overlap-check.js';
 
 // ─── Tool-Factory-Registry ────────────────────────────────────────────────────
 // Neue Tools hier eintragen (WP09–WP11 erweitern diese Map).
@@ -30,6 +31,7 @@ const TOOL_FACTORIES = new Map([
     ['network-range', (ctx) => createNetworkRange(ctx?.rangeAddress ?? '2001:db8::1234', ctx?.rangePrefix ?? 64)],
     ['prefix-split-enumerator', (ctx) => createPrefixSplitEnumerator(ctx?.basisPraefix ?? '2001:db8::/48', ctx?.zielPrefix ?? 56)],
     ['next-previous-network', (ctx) => createNextPreviousNetwork(ctx?.praefix ?? '2001:db8::/64', ctx?.steps ?? 1)],
+    ['containment-overlap-check', (ctx) => createContainmentOverlapCheck(ctx?.A ?? '2001:db8::42', ctx?.B ?? '2001:db8::/48')],
     ['prefix-visualizer', (ctx) => createPrefixVisualizer(ctx?.defaultCidr)],
     ['prefix-slicer', (ctx) => createPrefixSlicer(ctx?.defaultCidr)],
     ['scenario-generator', (ctx) => createScenarioGenerator(ctx?.seed ?? null)],

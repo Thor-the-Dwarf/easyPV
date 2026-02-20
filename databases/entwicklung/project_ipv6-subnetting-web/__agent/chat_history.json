@@ -229,5 +229,28 @@
         "why": "Verifizieren, dass der Drawer nun `Tools (5)` und die neuen Einträge anzeigt"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-20 23:32:00",
+    "commit_message": "feat(WP-05): Containment/Overlap Check als Drawer-Tool",
+    "request": "Weiter mit dem nächsten Arbeitspaket",
+    "response": [
+      {
+        "what": "Core-Funktion `containmentOverlapCheck()` in `assets/lib/ipv6.js` ergänzt",
+        "why": "A_in_B und Präfix-Überlappung robust für Adresse/Präfix gegen Präfix berechnen"
+      },
+      {
+        "what": "Neues Tool `containment-overlap-check` erstellt",
+        "why": "WP-05 als eigenständiges Drawer-Tool mit den geforderten Ein-/Ausgaben bereitstellen"
+      },
+      {
+        "what": "Drawer-Meta, Tool-Registry, CSS und lessons-Anbindung erweitert",
+        "why": "Tool in den relevanten Kapiteln sichtbar und direkt nutzbar machen"
+      },
+      {
+        "what": "Playwright-Sichtprüfung (`output/wp05-containment-overlap/shot-0.png`) durchgeführt",
+        "why": "Live-Nachweis, dass das neue Tool im Drawer angezeigt und geöffnet wird"
+      }
+    ]
   }
 ]

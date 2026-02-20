@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPv6 Werkbank – Smoke-Check</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        body {
+            padding: var(--space-6);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #test-results {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-top: var(--space-4);
+        }
+
+        .test-summary {
+            padding: var(--space-3) var(--space-4);
+            border-radius: var(--radius-md);
+            font-weight: var(--font-bold);
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-3);
+        }
+
+        .test-ok {
+            background: var(--color-success-dim);
+            color: var(--color-success);
+            border: 1px solid var(--color-success);
+        }
+
+        .test-err {
+            background: var(--color-error-dim);
+            color: var(--color-error);
+            border: 1px solid var(--color-error);
+        }
+
+        .test-row {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-3);
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--radius-sm);
+            font-size: var(--text-sm);
+            background-color: var(--color-bg-surface);
+            border: 1px solid var(--color-border);
+        }
+
+        .test-pass {
+            border-left: 3px solid var(--color-success);
+        }
+
+        .test-fail {
+            border-left: 3px solid var(--color-error);
+        }
+
+        .test-name {
+            flex: 1;
+            color: var(--color-text-secondary);
+        }
+
+        .test-icon {
+            flex-shrink: 0;
+        }
+
+        .test-detail {
+            font-size: var(--text-xs);
+            color: var(--color-error);
+            font-family: var(--font-mono);
+            margin-top: 2px;
+        }
+
+        .test-detail code {
+            background: var(--color-bg-elevated);
+            border-radius: 3px;
+            padding: 0 4px;
+        }
+
+        h1 {
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-2);
+        }
+
+        p {
+            color: var(--color-text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔬 IPv6 Werkbank – Smoke-Check</h1>
+    <p>Selbsttest der IPv6-Core-Lib (<code>assets/lib/ipv6.js</code>). Alle Tests müssen grün sein.</p>
+    <div id="test-results">
+        <p style="color:var(--color-text-muted)">Tests werden geladen …</p>
+    </div>
+
+    <script type="module">
+        import { runTests } from './assets/lib/ipv6.test.js';
+        const { ok, passed, total } = runTests();
+        console.log(`[smoke-check] ${passed}/${total} Tests bestanden`);
+    </script>
+</body>
+
+</html>

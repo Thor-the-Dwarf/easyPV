@@ -168,3 +168,22 @@ Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine M
     - `output/web-game-nachhaltigkeit-kontext/shot-0.png`
     - `output/web-game-nachhaltigkeit-kontext/state-0.json`
   - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.
+
+- Neuer Umsetzungs-Batch: Topic "Wirksamkeit - typische Stolperstellen (Grundidee)" mit 5 neuen Gameordnern.
+- Neu angelegt:
+  - `anfechtungspfad_navigator`
+  - `formmangel_detector`
+  - `fristen_quiz_timer`
+  - `vertretungsvollmacht_router`
+  - `wirksamkeitscheck_match`
+- Je Spiel erstellt:
+  - `_ghtml`, `_gjs`, `_gcss`
+  - `_data/_gg01_*.json` + Topic-MetaData
+  - Vollstaendige `__dokumentation`-Struktur mit UML-PUML und 5 Plan-Dateien
+  - Unit-Tests inkl. Messbarkeits-Check (`measurable`, `score`, `progress_percent`, `simulated_ms`)
+- Validierung:
+  - Lokale Node-Tests fuer den Block komplett gruen (`15/15`).
+  - Playwright-Smoke fuer `anfechtungspfad_navigator` erfolgreich:
+    - `output/web-game-teil03-reverse-wirksamkeit/shot-0.png`
+    - `output/web-game-teil03-reverse-wirksamkeit/state-0.json`
+  - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.

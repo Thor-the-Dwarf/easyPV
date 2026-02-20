@@ -1,56 +1,66 @@
 # Aktueller Implementierungsplan – Session 2026-02-20
 
-## Status: WP01 ✅ | WP02 ✅
+## Status: WP01 ✅ | WP02 ✅ | WP03 ✅ | WP04 ✅
 
 ---
 
-## WP02 – UI-Layout (3-Spalten) + Navigation
+## WP03 – Client-Routing (Hash) + Zustandsverwaltung
 
 ### Abgelieferte Dateien
-| Datei | Änderung |
+| Datei | Inhalt |
 |---|---|
-| `assets/layout.js` | **NEU** – Sidebar open/close/toggle, mobiler Backdrop, Breadcrumb-API, Tool-Panel-Slot-System (`mountTools`, `slotTool`), Keyboard-Nav (Escape, Pfeil-Tasten), Resize-Handler |
-| `assets/app.js` | Refactored – importiert `layout.js`, verbesserte `renderSidebar()` mit Arrow + Count-Badge + Sub-Badges, `navigateTo()` mountet Tools und rendert Content-Blöcke, Task-Checker |
-| `assets/styles.css` | Erweitert – Sidebar-Arrows, Progress-Badge, Backdrop, Keyboard-Focus-Ringe, Tool-Widget-System, Content-Artikel, Aufgaben-Cards, Exam-Mode |
-| `index.html` | Backdrop-Div, Progress-Badge im Sidebar-Header |
+| `assets/router.js` | **NEU** – `parseHash`, `initRouter(handler)`, `navigate(chapterId, subId)`, `replaceRoute`, `clearRoute`; hashchange-Event-Listener |
+| `assets/state.js` | **NEU** – `getState`, `setState(patch)`, `subscribe(fn)`, `findChapter`, `findSubchapter`, `progressSummary`, `markTaskDone`; localStorage-Persistenz für progress + examMode |
 
-### Design-Entscheidungen
-- **`layout.js` als eigenständiges Modul**: Trennt Layout-Concerns von App-Logic in `app.js`
-- **`slotTool(id, element)` API**: WP06-WP11 können fertige Components direkt einhängen, ohne Layout-Code zu ändern
-- **Exam-Mode via CSS-Klasse**: `body.exam-mode` blendet Hint-Bar, Tool-Panel, Beispiele und Hints aus
-- **Keyboard-Navigation**: Escape schließt Sidebar mobil; Pfeil-Tasten navigieren in der Sidebar
-- **Progress-Badge**: Zeigt `x/y` abgeschlossene Unterkapitel (basiert auf Task-Korrektheit)
+### Design-Entscheidungen WP03
+- **URL = einzige Quelle der Wahrheit** für aktives Kapitel/Unterkapitel
+- `hashchange` statt `pushState` – einfacher, kein Server-Config nötig
+- `initRouter` nach `loadLessons()` gestartet – Route erst auflösen wenn Daten vorhanden
+- `replaceRoute` für Redirect (z. B. Chapter ohne SubId → erstes SubKapitel) ohne Back-Stack-Eintrag
 
-### Acceptance Criteria – WP02
+### Acceptance Criteria – WP03
 | Kriterium | Status |
 |---|---|
-| Desktop: 3-Spalten sichtbar | ✅ Grid: `var(--sidebar-w) 1fr var(--tool-panel-w)` |
-| Mobile: Sidebar per Button ein/aus | ✅ Overlay-Sidebar + Backdrop + Escape |
-| Aktives Kapitel ist visuell markiert | ✅ `.chapter-item.active` + `.subchapter-item.active` |
+| Reload behält Kapitel (URL-gesteuert) | ✅ Hash im URL, initRouter parst bei Seitenstart |
+| Back/Forward funktioniert | ✅ hashchange-Event; jede navigate() = History-Eintrag |
+| Kein Vollseiten-Reload beim Wechsel | ✅ hash ändert sich ohne Seitenreload |
 
 ---
 
-## Nächste Schritte (WP03)
+## WP04 – Content-System (lessons.json) + Renderer
 
-- Hash-Router (`#/chapter/subchapter`) implementieren
-- `popstate`-Event für Browser Back/Forward
-- App-State aus URL wiederherstellen (ersetzt aktuellen `localStorage`-Ansatz)
+### Abgelieferte Dateien
+| Datei | Inhalt |
+|---|---|
+| `assets/renderer.js` | **NEU** – `renderSubchapter`, `renderPlaceholder`, `renderError`; Block-Renderer für text/example/hint; Task-Checker per Event-Delegation; Enter-Taste-Support; CustomEvent 'task-done' |
+| `assets/app.js` | Refactored – schlanker Orchestrator; importiert alle vier Module; Render-Pipeline: Route → findSubchapter → renderSubchapter + mountTools + updateBreadcrumb |
+| `assets/styles.css` | Ergänzt – Error-Screen, tasks-list Grid, task-done-State |
+
+### Acceptance Criteria – WP04
+| Kriterium | Status |
+|---|---|
+| Neues Kapitel ohne Code-Änderung über JSON | ✅ renderer.js rendert alle Block-Typen generisch |
+| Beispiele und Aufgaben korrekt angezeigt | ✅ example/hint/task-Blöcke implementiert |
+| Tool-Panel wechselt passend zum Kapitel | ✅ mountTools(sub.tools) in Render-Pipeline |
 
 ---
 
-## Offene WPs
+## Modulstruktur (aktuell)
 ```
-WP03 → Hash-Router + Zustandsverwaltung
-WP04 → Content-Renderer (Text/Code/Beispiel-Karten)  ← bereits Grundstruktur in app.js
-WP05 → IPv6-Core-Lib (Parser/Formatter/BigInt)
-WP06 → Prefix-Visualizer
-WP07 → Prefix-Slicer
-WP08 → Aufgaben-Engine
-WP09 → Szenario-Generator
-WP10 → Fehlerbilder-Bibliothek
-WP11 → Mini-Simulationen
-WP12 → Prüfungsmodus
-WP13 → Teacher-Mode
-WP14 → Accessibility + PWA
-WP15 → GitHub Pages Deploy + Doku
+app.js          ← Orchestrator (Bootstrap, Theme, Exam-Mode)
+├── router.js   ← Hash-Routing (#/chapter/sub)
+├── state.js    ← Zentraler App-State + Persistenz
+├── layout.js   ← Sidebar, Backdrop, Tool-Panel, Breadcrumb
+└── renderer.js ← Content-Renderer (Block-Typen, Task-Checker)
 ```
+
+---
+
+## Nächste Schritte (WP05)
+- `assets/lib/ipv6.js` – IPv6-Core-Lib
+  - `expand(compressed)` → 8×4-hex
+  - `compress(full)` → kürzeste Form
+  - `toBigInt(addr)` / `fromBigInt(bigint)`
+  - `prefixMask(len)` / `applyMask(addr, len)`
+  - `subprefix(parentLen, addBits, index)` → Kinder-Präfix
+- Basis für WP06 (Visualizer) und WP07 (Slicer)

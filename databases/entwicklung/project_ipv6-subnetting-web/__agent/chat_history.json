@@ -63,5 +63,28 @@
         "why": "DOM-Elemente für layout.js-Funktionen waren noch nicht vorhanden"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-20 16:50:00",
+    "commit_message": "feat(WP03+WP04): Hash-Router, State, Renderer – router.js, state.js, renderer.js",
+    "request": "WP03 + WP04 umsetzen: Hash-Router + State + Content-Renderer",
+    "response": [
+      {
+        "what": "assets/router.js erstellt: parseHash, initRouter, navigate, replaceRoute, clearRoute mit hashchange-Listener",
+        "why": "URL als einzige Quelle der Wahrheit; Back/Forward per hashchange ohne Seitenreload"
+      },
+      {
+        "what": "assets/state.js erstellt: getState/setState/subscribe, findChapter/findSubchapter, progressSummary, markTaskDone; localStorage-Persistenz",
+        "why": "Zentraler reaktiver State; alle Module lesen/schreiben über eine API; kein Props-Drilling"
+      },
+      {
+        "what": "assets/renderer.js erstellt: renderSubchapter/renderPlaceholder/renderError, Block-Renderer (text/example/hint), Task-Checker per Event-Delegation, Enter-Taste, CustomEvent 'task-done'",
+        "why": "JSON-getriebener Renderer; neues Kapitel = neue JSON-Einträge, kein Code-Änderung"
+      },
+      {
+        "what": "assets/app.js refactored: schlanker Orchestrator; importiert alle vier Module; Render-Pipeline Route→findSubchapter→renderSubchapter+mountTools+updateBreadcrumb",
+        "why": "Klare Trennung der Verantwortlichkeiten; app.js nur noch verdrahten, nicht rendern"
+      }
+    ]
   }
 ]

@@ -1273,3 +1273,60 @@ body.exam-mode .content-hint {
 body.exam-mode #app-layout {
     grid-template-columns: var(--sidebar-w) 1fr;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   22. WP03/WP04 – ROUTER + RENDERER ERGÄNZUNGEN
+═══════════════════════════════════════════════════════════ */
+
+/* Error-Screen im Content-Bereich */
+.content-error-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    gap: var(--space-4);
+    text-align: center;
+}
+
+.content-error-screen .error-icon {
+    font-size: 3rem;
+}
+
+.content-error-screen h1 {
+    font-size: var(--text-2xl);
+    color: var(--color-error);
+}
+
+.content-error-screen p {
+    color: var(--color-text-secondary);
+    max-width: 400px;
+}
+
+/* Tasks-Liste */
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+/* Task-Card: erledigter Zustand */
+.task-card.task-done {
+    border-color: var(--color-success);
+    background-color: var(--color-success-dim);
+}
+
+.task-card.task-done .task-question {
+    color: var(--color-success);
+}
+
+.task-card.task-done .task-input {
+    border-color: var(--color-success);
+    color: var(--color-success);
+    opacity: 0.8;
+}
+
+/* Task-Input Enter-Shortcut Hinweis */
+.task-input:focus::after {
+    content: '↵';
+}

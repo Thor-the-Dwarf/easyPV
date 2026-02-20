@@ -392,18 +392,43 @@
     }
   }
 
-  function initGameBottomBar() {
-    if (!gameChips.length) return;
+  function requestParentOpenEngine(engineId) {
+    const normalized = normalizeEngineId(engineId || selectedEngineId || '');
+    if (!normalized) return false;
+    try {
+      if (!window.parent || window.parent === window) return false;
+      window.parent.postMessage(
+        {
+          type: 'generic:open-engine',
+          engineId: normalized,
+          folder: folder || '',
+          json: json || '',
+          game: game || '',
+          jsonRel: jsonRel || '',
+          gameRel: gameRel || '',
+          nodeId: nodeId || '',
+          progressKey: progressKey || ''
+        },
+        '*'
+      );
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
 
-    gameChips.forEach(function (chip) {
-      chip.setAttribute('aria-pressed', 'false');
-      chip.addEventListener('click', function () {
-        const nextEngine = chip.getAttribute('data-engine-id') || '';
-        if (!setSelectedEngine(nextEngine)) return;
-        userSelectedEngine = true;
-        setFrameMode('game');
+  function initGameBottomBar() {
+    if (gameChips.length) {
+      gameChips.forEach(function (chip) {
+        chip.setAttribute('aria-pressed', 'false');
+        chip.addEventListener('click', function () {
+          const nextEngine = chip.getAttribute('data-engine-id') || '';
+          if (!setSelectedEngine(nextEngine)) return;
+          userSelectedEngine = true;
+          setFrameMode('game');
+        });
       });
-    });
+    }
 
     const fromSourcePath = inferEngineFromPathHint(jsonRel || json || gameRel || game || folder);
     setSelectedEngine(fromSourcePath || 'DecisionGame');
@@ -624,9 +649,19 @@
     fabPractice.setAttribute('aria-label', label);
   }
 
+  function ensureCSuiteDrawerOpen() {
+    const drawer = document.getElementById('c_suite_drawer');
+    if (!drawer) return;
+    setDrawerOpen(drawer, true);
+  }
+
   function setFrameMode(mode) {
     const next = mode === 'game' ? 'game' : 'generic';
+    ensureCSuiteDrawerOpen();
     if (next === 'game') {
+      if (requestParentOpenEngine(selectedEngineId)) {
+        return;
+      }
       const practiceTarget = resolveGameTargetUrl();
       if (practiceTarget) {
         feedbackOrigin = 'game';

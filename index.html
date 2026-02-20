@@ -54,6 +54,35 @@
       </button>
     </div>
 
+    <div id="root-game-bar-shell" class="root-game-bar-shell" hidden>
+      <nav class="root-game-bottom-bar" id="root-game-bottom-bar" aria-label="Spielauswahl">
+        <button type="button" class="root-game-chip" data-engine-id="ConstructionGame" aria-label="Construction Game" title="Construction Game">
+          <span class="root-game-chip-icon" aria-hidden="true">🧱</span>
+          <span class="root-game-chip-label">Build</span>
+        </button>
+        <button type="button" class="root-game-chip" data-engine-id="DecisionGame" aria-label="Decision Game" title="Decision Game">
+          <span class="root-game-chip-icon" aria-hidden="true">🧠</span>
+          <span class="root-game-chip-label">Decision</span>
+        </button>
+        <button type="button" class="root-game-chip" data-engine-id="FindingGame" aria-label="Finding Game" title="Finding Game">
+          <span class="root-game-chip-icon" aria-hidden="true">🔍</span>
+          <span class="root-game-chip-label">Find</span>
+        </button>
+        <button type="button" class="root-game-chip" data-engine-id="MatchingGame" aria-label="Matching Game" title="Matching Game">
+          <span class="root-game-chip-icon" aria-hidden="true">🧩</span>
+          <span class="root-game-chip-label">Match</span>
+        </button>
+        <button type="button" class="root-game-chip" data-engine-id="SimulationGame" aria-label="Simulation Game" title="Simulation Game">
+          <span class="root-game-chip-icon" aria-hidden="true">🖥️</span>
+          <span class="root-game-chip-label">Sim</span>
+        </button>
+        <button type="button" class="root-game-chip" data-engine-id="SortingGame" aria-label="Sorting Game" title="Sorting Game">
+          <span class="root-game-chip-icon" aria-hidden="true">🗂️</span>
+          <span class="root-game-chip-label">Sort</span>
+        </button>
+      </nav>
+    </div>
+
     <div id="root-feedback-modal-layer" class="root-feedback-modal-layer" hidden>
       <div class="root-feedback-modal-backdrop" data-root-feedback-close></div>
       <section
@@ -97,6 +126,22 @@
         const OPENED_KEY = 'spaOpenedFolders_v1';
         const DRAWER_WIDTH_KEY = 'spaDrawerWidth_v1';
         const GAME_PROGRESS_KEY = 'spaGameProgress_v1';
+        const ROOT_KNOWN_ENGINE_IDS = [
+          'ConstructionGame',
+          'DecisionGame',
+          'FindingGame',
+          'MatchingGame',
+          'SimulationGame',
+          'SortingGame'
+        ];
+        const ROOT_ENGINE_CONFIG_FILE_MAP = {
+          ConstructionGame: '_gg99_construction_game.json',
+          DecisionGame: '_gg98_decision_game.json',
+          FindingGame: '_gg97_finding_game.json',
+          MatchingGame: '_gg96_matching_game.json',
+          SimulationGame: '_gg95_simulation_game.json',
+          SortingGame: '_gg94_sorting_game.json'
+        };
 
         const appView = document.getElementById('app-view');
         const menuBtn = document.getElementById('menu-tree-btn');
@@ -109,6 +154,9 @@
         const contentHost = document.getElementById('content-host');
         const rootFeedbackShell = document.getElementById('root-feedback-shell');
         const rootFeedbackFab = document.getElementById('root-feedback-fab');
+        const rootGameBarShell = document.getElementById('root-game-bar-shell');
+        const rootGameBottomBar = document.getElementById('root-game-bottom-bar');
+        const rootGameChips = Array.from(document.querySelectorAll('.root-game-chip[data-engine-id]'));
         const rootFeedbackModalLayer = document.getElementById('root-feedback-modal-layer');
         const rootFeedbackCloseBtn = document.getElementById('root-feedback-close-btn');
         const rootFeedbackCancelBtn = document.getElementById('root-feedback-cancel-btn');
@@ -124,6 +172,8 @@
         let activeGameProgressContext = null;
         let activeGameProgressTimer = 0;
         let rootFeedbackBusy = false;
+        let activeLaunchContext = null;
+        let rootSelectedEngineId = '';
 
         init();
 
@@ -139,6 +189,7 @@
           applyDrawerWidth();
           initGenericPageBridge();
           initRootFeedback();
+          initRootGameBar();
           syncRootFeedbackVisibility();
 
           initIndex();
@@ -165,14 +216,297 @@
               return;
             }
 
+            if (data.type === 'generic:open-engine') {
+              handleGenericOpenEngineRequest(data);
+              return;
+            }
+
             if (data.type !== 'generic:start-practice') return;
 
             const jsonUrl = typeof data.json === 'string' ? data.json : '';
             const folderLabel = typeof data.folder === 'string' ? data.folder : 'Spielordner';
             const gameUrl = typeof data.game === 'string' ? data.game : '';
             const progressKey = getProgressKeyFromMessage(data) || inferProgressKeyFromUrls(gameUrl, jsonUrl);
-            openPracticeView(gameUrl, jsonUrl, folderLabel, progressKey);
+            const launchContext = normalizeLaunchContext({
+              folderLabel: folderLabel,
+              jsonUrl: jsonUrl,
+              gameUrl: gameUrl,
+              jsonRelPath: typeof data.jsonRel === 'string' ? data.jsonRel : inferRepoPathFromUrl(jsonUrl),
+              gameRelPath: typeof data.gameRel === 'string' ? data.gameRel : inferRepoPathFromUrl(gameUrl),
+              nodeId: typeof data.nodeId === 'string' ? data.nodeId : '',
+              progressKey: progressKey
+            });
+            openPracticeView(gameUrl, jsonUrl, folderLabel, progressKey, launchContext);
           });
+        }
+
+        function normalizeRootEngineId(rawEngineId) {
+          const compact = String(rawEngineId || '')
+            .trim()
+            .toLowerCase()
+            .replace(/[\s_-]+/g, '');
+          if (!compact) return '';
+          if (compact === 'constructiongame' || compact === 'construction' || compact === 'build' || compact === 'builder') {
+            return 'ConstructionGame';
+          }
+          if (compact === 'decisiongame' || compact === 'decision' || compact === 'quiz' || compact === 'scenario') {
+            return 'DecisionGame';
+          }
+          if (compact === 'findinggame' || compact === 'finding' || compact === 'find' || compact === 'search') {
+            return 'FindingGame';
+          }
+          if (compact === 'matchinggame' || compact === 'matching' || compact === 'match') {
+            return 'MatchingGame';
+          }
+          if (compact === 'simulationgame' || compact === 'simulation' || compact === 'simulator' || compact === 'sim') {
+            return 'SimulationGame';
+          }
+          if (compact === 'sortinggame' || compact === 'sorting' || compact === 'sort') {
+            return 'SortingGame';
+          }
+          return '';
+        }
+
+        function inferRootEngineFromPathHint(pathHint) {
+          const source = String(pathHint || '').toLowerCase();
+          if (!source) return '';
+          if (/(join|match|mapping|zuordnung|matrix|pair|connector)/.test(source)) return 'MatchingGame';
+          if (/(finder|find|hunt|scan|detektiv|sieve|suche)/.test(source)) return 'FindingGame';
+          if (/(simulator|simulation|timer|race|survival|labyrinth)/.test(source)) return 'SimulationGame';
+          if (/(builder|build|factory|stack|dock|construction|pipeline)/.test(source)) return 'ConstructionGame';
+          if (/(sort|classification|category|kategor|router|routing|prioris|order|flow)/.test(source)) return 'SortingGame';
+          if (/(decision|quiz|duell|scenario|waage|check)/.test(source)) return 'DecisionGame';
+          return '';
+        }
+
+        function inferRootEngineFromFrameSrc(frameSrc) {
+          const source = String(frameSrc || '').trim();
+          if (!source) return '';
+          try {
+            const url = new URL(source, window.location.href);
+            const match = /\/game_pages\/([^/]+)\/index\.html$/i.exec(url.pathname);
+            if (!match || !match[1]) return '';
+            return normalizeRootEngineId(match[1]);
+          } catch (_) {
+            return '';
+          }
+        }
+
+        function isGenericGameJsonPath(pathHint) {
+          const source = String(pathHint || '').trim();
+          if (!source) return false;
+          return /(?:^|\/)(?:_g+\d+[^/]*|game_[^/]+)\.json(?:$|[?#])/i.test(source);
+        }
+
+        function normalizeRepoPath(value) {
+          return String(value || '')
+            .trim()
+            .replace(/\\/g, '/')
+            .replace(/^\/+/, '')
+            .replace(/\/+$/, '');
+        }
+
+        function repoDirname(repoPath) {
+          const normalized = normalizeRepoPath(repoPath);
+          if (!normalized) return '';
+          const slashIndex = normalized.lastIndexOf('/');
+          if (slashIndex <= 0) return '';
+          return normalized.slice(0, slashIndex);
+        }
+
+        function normalizeLaunchContext(rawContext) {
+          const input = rawContext && typeof rawContext === 'object' ? rawContext : {};
+          const folderLabel = String(input.folderLabel || input.folder || '').trim();
+          const jsonRelPath = normalizeRepoPath(input.jsonRelPath || input.jsonRel || '');
+          const gameRelPath = normalizeRepoPath(input.gameRelPath || input.gameRel || '');
+          const jsonUrl = String(input.jsonUrl || input.json || '').trim();
+          const gameUrl = String(input.gameUrl || input.game || '').trim();
+          const nodeId = String(input.nodeId || '').trim();
+          const progressKey = normalizeProgressKey(
+            input.progressKey || gameRelPath || jsonRelPath || nodeId
+          );
+
+          if (!(folderLabel || jsonRelPath || gameRelPath || jsonUrl || gameUrl || progressKey)) {
+            return null;
+          }
+
+          return {
+            folderLabel: folderLabel || 'Thema',
+            jsonRelPath: jsonRelPath,
+            gameRelPath: gameRelPath,
+            jsonUrl: jsonUrl,
+            gameUrl: gameUrl,
+            nodeId: nodeId,
+            progressKey: progressKey
+          };
+        }
+
+        function inferPreferredEngineForContext(context) {
+          const source = context && typeof context === 'object' ? context : {};
+          return inferRootEngineFromPathHint(
+            source.jsonRelPath || source.gameRelPath || source.gameUrl || source.jsonUrl || source.folderLabel
+          );
+        }
+
+        function setSelectedRootEngine(engineId) {
+          const normalized = normalizeRootEngineId(engineId);
+          if (!normalized || ROOT_KNOWN_ENGINE_IDS.indexOf(normalized) === -1) return false;
+          rootSelectedEngineId = normalized;
+          if (rootGameBottomBar) rootGameBottomBar.setAttribute('data-selected-engine', normalized);
+          rootGameChips.forEach(function (chip) {
+            const chipEngine = normalizeRootEngineId(chip.getAttribute('data-engine-id'));
+            const active = chipEngine === normalized;
+            chip.classList.toggle('is-active', active);
+            chip.setAttribute('aria-pressed', active ? 'true' : 'false');
+          });
+          return true;
+        }
+
+        function syncRootGameBarVisibility() {
+          if (!rootGameBarShell) return;
+          const frameEl = getActiveContentFrame();
+          const frameSrc = frameEl ? String(frameEl.getAttribute('src') || frameEl.src || '') : '';
+          const showBar = !!activeLaunchContext && !!frameEl && (
+            isGenericPageSource(frameSrc) ||
+            inferRootEngineFromFrameSrc(frameSrc) !== '' ||
+            /\.html(?:$|[?#])/i.test(frameSrc)
+          );
+
+          rootGameBarShell.hidden = !showBar;
+          document.body.classList.toggle('has-root-game-bar', showBar);
+
+          if (!showBar) return;
+          const fromFrame = inferRootEngineFromFrameSrc(frameSrc);
+          const preferred = fromFrame || inferPreferredEngineForContext(activeLaunchContext) || rootSelectedEngineId || 'DecisionGame';
+          setSelectedRootEngine(preferred);
+        }
+
+        function setActiveLaunchContext(nextContext) {
+          activeLaunchContext = normalizeLaunchContext(nextContext);
+          syncRootGameBarVisibility();
+        }
+
+        function initRootGameBar() {
+          if (!rootGameChips.length) {
+            syncRootGameBarVisibility();
+            return;
+          }
+          rootGameChips.forEach(function (chip) {
+            chip.setAttribute('aria-pressed', 'false');
+            chip.addEventListener('click', function () {
+              const engineId = chip.getAttribute('data-engine-id') || '';
+              if (!setSelectedRootEngine(engineId)) return;
+              openRootEngineView(engineId);
+            });
+          });
+          setSelectedRootEngine('DecisionGame');
+          syncRootGameBarVisibility();
+        }
+
+        function resolveRootEngineConfigUrl(engineId, context) {
+          const normalizedEngineId = normalizeRootEngineId(engineId);
+          const engineFile = normalizedEngineId ? ROOT_ENGINE_CONFIG_FILE_MAP[normalizedEngineId] : '';
+          if (!engineFile) return '';
+          const source = normalizeLaunchContext(context);
+          if (!source) return '';
+
+          const candidates = [];
+          const pushCandidate = function (candidate) {
+            const value = String(candidate || '').trim();
+            if (!value) return;
+            if (candidates.indexOf(value) === -1) candidates.push(value);
+          };
+
+          if (source.gameUrl) {
+            try {
+              pushCandidate(new URL('./_data/' + engineFile, new URL(source.gameUrl, window.location.href)).href);
+            } catch (_) {}
+          }
+
+          if (source.gameRelPath) {
+            const gameDir = repoDirname(source.gameRelPath);
+            if (gameDir) {
+              pushCandidate(buildRepoUrl(gameDir + '/_data/' + engineFile));
+            }
+          }
+
+          if (source.jsonUrl) {
+            try {
+              pushCandidate(new URL('./' + engineFile, new URL(source.jsonUrl, window.location.href)).href);
+            } catch (_) {}
+          }
+
+          if (source.jsonRelPath) {
+            const jsonDir = repoDirname(source.jsonRelPath);
+            if (jsonDir) {
+              pushCandidate(buildRepoUrl(jsonDir + '/' + engineFile));
+            }
+          }
+
+          if (candidates.length > 0) return candidates[0];
+
+          if (isGenericGameJsonPath(source.jsonUrl)) return source.jsonUrl;
+          if (isGenericGameJsonPath(source.jsonRelPath)) return buildRepoUrl(source.jsonRelPath);
+          return '';
+        }
+
+        function buildRootEngineTarget(engineId, context) {
+          const normalized = normalizeRootEngineId(engineId);
+          if (!normalized) return '';
+          const source = normalizeLaunchContext(context);
+          if (!source) return '';
+          try {
+            const url = new URL('./game_pages/' + normalized + '/index.html', window.location.href);
+            const configUrl = resolveRootEngineConfigUrl(normalized, source);
+            if (configUrl) url.searchParams.set('config', configUrl);
+            if (source.folderLabel) url.searchParams.set('folder', source.folderLabel);
+            url.searchParams.set('theme', getCurrentTheme());
+            return url.href;
+          } catch (_) {
+            return '';
+          }
+        }
+
+        function openRootEngineView(engineId) {
+          if (!contentHost) return false;
+          const source = normalizeLaunchContext(activeLaunchContext);
+          if (!source) return false;
+          const target = buildRootEngineTarget(engineId, source);
+          if (!target) return false;
+
+          contentHost.innerHTML =
+            '<iframe class="content-frame" src="' + target + '" title="Lernspiel" loading="eager"></iframe>';
+          ensureRootFeedbackFrameBinding(getActiveContentFrame());
+          syncRootFeedbackVisibility();
+          queueThemeSyncForNewFrame();
+
+          const resolvedProgressKey = normalizeProgressKey(
+            source.progressKey || inferProgressKeyFromUrls(source.gameUrl, source.jsonUrl)
+          );
+          if (resolvedProgressKey) {
+            startActiveGameProgressTracking(resolvedProgressKey);
+          } else {
+            stopActiveGameProgressTracking();
+          }
+          return true;
+        }
+
+        function handleGenericOpenEngineRequest(data) {
+          const payload = data && typeof data === 'object' ? data : {};
+          const nextContext = normalizeLaunchContext({
+            folderLabel: typeof payload.folder === 'string' ? payload.folder : '',
+            jsonUrl: typeof payload.json === 'string' ? payload.json : '',
+            gameUrl: typeof payload.game === 'string' ? payload.game : '',
+            jsonRelPath: typeof payload.jsonRel === 'string' ? payload.jsonRel : inferRepoPathFromUrl(payload.json),
+            gameRelPath: typeof payload.gameRel === 'string' ? payload.gameRel : inferRepoPathFromUrl(payload.game),
+            nodeId: typeof payload.nodeId === 'string' ? payload.nodeId : '',
+            progressKey: getProgressKeyFromMessage(payload)
+          });
+          if (nextContext) setActiveLaunchContext(nextContext);
+          const normalizedEngine = normalizeRootEngineId(payload.engineId || rootSelectedEngineId || inferPreferredEngineForContext(activeLaunchContext));
+          if (!normalizedEngine) return;
+          if (!setSelectedRootEngine(normalizedEngine)) return;
+          openRootEngineView(normalizedEngine);
         }
 
         function getCurrentTheme() {
@@ -377,6 +711,7 @@
           const shouldShow = !!frameEl && !isGenericPageSource(src);
           rootFeedbackShell.hidden = !shouldShow;
           if (!shouldShow) closeRootFeedbackModal();
+          syncRootGameBarVisibility();
         }
 
         function setRootFeedbackStatus(text) {
@@ -1598,14 +1933,24 @@
           const progressKey = buildNodeProgressKey(node);
           const jsonUrl = jsonRelPath ? buildRepoUrl(jsonRelPath) : '';
           const gameUrl = gameRelPath ? buildRepoUrl(gameRelPath) : '';
+          const launchContext = normalizeLaunchContext({
+            folderLabel: folderLabel,
+            jsonRelPath: jsonRelPath,
+            gameRelPath: gameRelPath,
+            jsonUrl: jsonUrl,
+            gameUrl: gameUrl,
+            nodeId: node && node.id ? String(node.id) : '',
+            progressKey: progressKey
+          });
+          setActiveLaunchContext(launchContext);
           if (gameUrl) {
-            openPracticeView(gameUrl, jsonUrl, folderLabel, progressKey);
+            openPracticeView(gameUrl, jsonUrl, folderLabel, progressKey, launchContext);
             return;
           }
-          openGenericFolder(node);
+          openGenericFolder(node, launchContext);
         }
 
-        function openGenericFolder(node) {
+        function openGenericFolder(node, explicitLaunchContext) {
           if (!contentHost) return false;
           stopActiveGameProgressTracking();
           const folderLabel = node && node.name ? node.name : 'Thema';
@@ -1616,6 +1961,18 @@
           const gameRelPath = sourceNode && sourceNode.gameRelPath ? String(sourceNode.gameRelPath) : '';
           const jsonUrl = jsonRelPath ? buildRepoUrl(jsonRelPath) : '';
           const gameUrl = gameRelPath ? buildRepoUrl(gameRelPath) : '';
+          const launchContext = normalizeLaunchContext(
+            explicitLaunchContext || {
+              folderLabel: folderLabel,
+              jsonRelPath: jsonRelPath,
+              gameRelPath: gameRelPath,
+              jsonUrl: jsonUrl,
+              gameUrl: gameUrl,
+              nodeId: node && node.id ? String(node.id) : '',
+              progressKey: buildNodeProgressKey(node)
+            }
+          );
+          setActiveLaunchContext(launchContext);
           const src = buildGenericPageSrc(
             folderLabel,
             jsonUrl,
@@ -1662,8 +2019,19 @@
           );
         }
 
-        function openPracticeView(gameUrl, jsonUrl, folderLabel, progressKey) {
+        function openPracticeView(gameUrl, jsonUrl, folderLabel, progressKey, explicitLaunchContext) {
           if (!contentHost) return;
+          const launchContext = normalizeLaunchContext(
+            explicitLaunchContext || {
+              folderLabel: folderLabel || 'Spielordner',
+              jsonUrl: jsonUrl,
+              gameUrl: gameUrl,
+              jsonRelPath: inferRepoPathFromUrl(jsonUrl),
+              gameRelPath: inferRepoPathFromUrl(gameUrl),
+              progressKey: progressKey
+            }
+          );
+          setActiveLaunchContext(launchContext);
           const safeGameUrl = String(gameUrl || '').trim();
           let src = safeGameUrl || buildPracticeSrc(folderLabel || 'Spielordner', jsonUrl || '');
           if (safeGameUrl) {

@@ -12,6 +12,8 @@
   --glow-primary: 0 0 15px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--primary) / 0.3);
   --glow-soft: 0 0 10px hsl(var(--primary) / 0.4);
   --glow-text: 0 0 12px hsl(var(--primary) / 0.78);
+  --root-game-bar-height: 82px;
+  --root-game-bar-gap: 14px;
   --radius-sm: 10px;
   --radius-md: 16px;
 }
@@ -586,7 +588,7 @@ body::after {
 .content-host {
   margin: 0;
   width: 100%;
-  min-height: calc(100vh - 90px);
+  min-height: calc(100vh - 64px);
   border-radius: 0;
   border: none;
   background: transparent;
@@ -597,7 +599,7 @@ body::after {
 }
 
 .content-placeholder {
-  min-height: calc(100vh - 90px);
+  min-height: calc(100vh - 64px);
   display: grid;
   place-items: center;
   padding: 1rem;
@@ -608,8 +610,85 @@ body::after {
 
 .content-frame {
   width: 100%;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 64px);
   border: none;
+}
+
+body.has-root-game-bar .main-surface {
+  padding-bottom: calc(var(--root-game-bar-height) + var(--root-game-bar-gap));
+}
+
+body.has-root-game-bar .content-host,
+body.has-root-game-bar .content-placeholder,
+body.has-root-game-bar .content-frame {
+  min-height: calc(100vh - 64px - var(--root-game-bar-height) - var(--root-game-bar-gap));
+  height: calc(100vh - 64px - var(--root-game-bar-height) - var(--root-game-bar-gap));
+}
+
+.root-game-bar-shell[hidden] {
+  display: none !important;
+}
+
+.root-game-bar-shell {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 0.45rem);
+  width: min(1140px, calc(100vw - 1rem));
+  z-index: 75;
+  pointer-events: none;
+}
+
+.root-game-bottom-bar {
+  pointer-events: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.35rem;
+  padding: 0.45rem;
+  border-radius: 18px;
+  border: 1px solid hsl(var(--primary) / 0.44);
+  background: hsl(var(--glass-bg) / 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45), 0 0 22px hsl(var(--primary) / 0.2);
+}
+
+.root-game-chip {
+  min-height: 52px;
+  border-radius: 12px;
+  border: 1px solid hsl(var(--primary) / 0.28);
+  background: hsl(var(--bg-surface) / 0.66);
+  color: hsl(var(--txt));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.08rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.16s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.root-game-chip:hover {
+  transform: translateY(-1px);
+  border-color: hsl(var(--primary) / 0.7);
+}
+
+.root-game-chip.is-active {
+  border-color: hsl(var(--primary) / 0.95);
+  background: hsl(var(--bg-surface) / 0.92);
+  box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3) inset, 0 0 16px hsl(var(--primary) / 0.3);
+}
+
+.root-game-chip-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.root-game-chip-label {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 .root-feedback-shell[hidden],
@@ -622,6 +701,10 @@ body::after {
   right: 1rem;
   bottom: 1rem;
   z-index: 80;
+}
+
+body.has-root-game-bar .root-feedback-shell {
+  bottom: calc(var(--root-game-bar-height) + env(safe-area-inset-bottom, 0px) + 0.85rem);
 }
 
 .root-feedback-fab {
@@ -803,6 +886,35 @@ body::after {
     height: calc(100vh - 76px);
   }
 
+  body.has-root-game-bar .main-surface {
+    padding-bottom: calc(var(--root-game-bar-height) + 0.55rem);
+  }
+
+  body.has-root-game-bar .content-host,
+  body.has-root-game-bar .content-placeholder,
+  body.has-root-game-bar .content-frame {
+    min-height: calc(100vh - 76px - var(--root-game-bar-height) - 0.55rem);
+    height: calc(100vh - 76px - var(--root-game-bar-height) - 0.55rem);
+  }
+
+  .root-game-bar-shell {
+    width: calc(100vw - 0.55rem);
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 0.25rem);
+  }
+
+  .root-game-bottom-bar {
+    gap: 0.26rem;
+    padding: 0.32rem;
+  }
+
+  .root-game-chip {
+    min-height: 48px;
+  }
+
+  .root-game-chip-label {
+    font-size: 0.58rem;
+  }
+
   .drawer-resizer {
     display: none;
   }
@@ -830,6 +942,10 @@ body::after {
   .root-feedback-shell {
     right: 0.6rem;
     bottom: 0.6rem;
+  }
+
+  body.has-root-game-bar .root-feedback-shell {
+    bottom: calc(var(--root-game-bar-height) + env(safe-area-inset-bottom, 0px) + 0.65rem);
   }
 
   .root-feedback-fab {

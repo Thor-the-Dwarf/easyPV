@@ -40,5 +40,28 @@
         "why": "Grundregeln 2, 3, 4 einhalten: lib-Ordner tracken, Plan aktuell halten, History führen"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-20 16:40:00",
+    "commit_message": "feat(WP02): UI-Layout + Navigation – layout.js, Sidebar-Erweiterungen, Tool-Widget-System",
+    "request": "WP02 umsetzen: UI-Layout (3-Spalten) + Navigation",
+    "response": [
+      {
+        "what": "assets/layout.js erstellt: Sidebar open/close, mobiler Backdrop, Breadcrumb-API, Tool-Panel-Slot-System (mountTools/slotTool), Keyboard-Nav, Resize-Handler",
+        "why": "Layout-Concerns aus app.js herauslösen; slotTool()-API damit WP06-11 Components direkt einhängen können"
+      },
+      {
+        "what": "assets/app.js refactored: importiert layout.js, renderSidebar() mit Arrow+Count+Sub-Badges, navigateTo() mountet Tools und rendert Content-Blöcke, Task-Checker",
+        "why": "Vollständige Navigation inkl. aktiver Kapitel-Markierung und kontextueller Tool-Panel-Befüllung"
+      },
+      {
+        "what": "assets/styles.css erweitert (Sektionen 17-21): Sidebar-Arrows, Backdrop, Keyboard-Focus, Tool-Widgets, Content-Artikel, Task-Cards, Exam-Mode",
+        "why": "Alle neuen Komponenten aus WP02 brauchen CSS-Unterstützung"
+      },
+      {
+        "what": "index.html: Backdrop-Div + Progress-Badge im Sidebar-Header ergänzt",
+        "why": "DOM-Elemente für layout.js-Funktionen waren noch nicht vorhanden"
+      }
+    ]
   }
 ]

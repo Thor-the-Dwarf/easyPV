@@ -68,6 +68,7 @@
         <nav id="sidebar" aria-label="Lernpfad">
             <div id="sidebar-header">
                 <h2 id="sidebar-title">Lernpfad</h2>
+                <span id="sidebar-progress-badge" class="progress-badge" aria-label="Fortschritt"></span>
             </div>
             <ul id="chapter-list" role="tree" aria-label="Kapitel">
                 <!-- Wird durch app.js befüllt -->
@@ -100,6 +101,9 @@
         </aside>
 
     </div><!-- /#app-layout -->
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div id="sidebar-backdrop" aria-hidden="true" hidden></div>
 
     <!-- ═══════════════════════════════════════════
        ERROR BANNER (sichtbar bei kritischen Fehlern)

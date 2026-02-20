@@ -14,6 +14,7 @@
  */
 
 import { getState, findSubchapter, markTaskDone } from './state.js';
+import { createTaskCard } from './lib/task-engine.js';
 
 // ─── DOM-Ref ──────────────────────────────────────────────────────────────────
 const contentArea = document.getElementById('content-area');
@@ -24,7 +25,7 @@ const contentArea = document.getElementById('content-area');
  * Rendert den Startscreen (kein Kapitel aktiv).
  */
 export function renderPlaceholder() {
-    contentArea.innerHTML = `
+  contentArea.innerHTML = `
     <div id="content-placeholder" class="placeholder-screen">
       <div class="placeholder-icon">⚡</div>
       <h1 class="placeholder-title">IPv6 Werkbank</h1>
@@ -32,16 +33,16 @@ export function renderPlaceholder() {
       <button id="btn-start" class="btn btn-primary">Los geht's →</button>
     </div>`;
 
-    document.getElementById('btn-start')?.addEventListener('click', () => {
-        const state = getState();
-        const first = state.lessons?.chapters?.[0];
-        const firstSub = first?.subchapters?.[0];
-        if (first && firstSub) {
-            import('./router.js').then(({ navigate }) =>
-                navigate(first.id, firstSub.id)
-            );
-        }
-    });
+  document.getElementById('btn-start')?.addEventListener('click', () => {
+    const state = getState();
+    const first = state.lessons?.chapters?.[0];
+    const firstSub = first?.subchapters?.[0];
+    if (first && firstSub) {
+      import('./router.js').then(({ navigate }) =>
+        navigate(first.id, firstSub.id)
+      );
+    }
+  });
 }
 
 /**
@@ -49,7 +50,7 @@ export function renderPlaceholder() {
  * @param {string} msg
  */
 export function renderError(msg) {
-    contentArea.innerHTML = `
+  contentArea.innerHTML = `
     <div class="content-error-screen">
       <div class="error-icon">⚠️</div>
       <h1>Seite nicht gefunden</h1>
@@ -63,50 +64,61 @@ export function renderError(msg) {
  * @param {object} sub  - Subchapter-Objekt aus lessons.json
  */
 export function renderSubchapter(sub) {
-    if (!sub) { renderPlaceholder(); return; }
+  if (!sub) { renderPlaceholder(); return; }
 
+  // Article-Element
+  const article = document.createElement('article');
+  article.className = 'content-article';
+  article.innerHTML = `
+    <header class="content-header">
+      <h1 class="content-title">${escHtml(sub.title)}</h1>
+    </header>
+    <div class="content-body">
+      ${(sub.blocks ?? []).map(renderBlock).join('')}
+    </div>`;
+
+  // Tasks als echte DOM-Elemente (nicht innerHTML) – benötigt für task-engine Events
+  if ((sub.tasks ?? []).length) {
+    const sec = document.createElement('section');
+    sec.className = 'tasks-section';
+    sec.setAttribute('aria-label', 'Aufgaben');
+    sec.innerHTML = `<h2 class="tasks-heading">✍️ Aufgaben</h2>`;
+    const list = document.createElement('div');
+    list.className = 'tasks-list';
     const progress = getState().progress;
-    const tasksHtml = (sub.tasks ?? []).length
-        ? `<section class="tasks-section" aria-label="Aufgaben">
-         <h2 class="tasks-heading">✍️ Aufgaben</h2>
-         <div class="tasks-list">
-           ${sub.tasks.map(t => renderTaskCard(t, progress)).join('')}
-         </div>
-       </section>`
-        : '';
+    sub.tasks.forEach(task => {
+      list.appendChild(createTaskCard(task, progress, id => {
+        markTaskDone(id);
+        document.dispatchEvent(new CustomEvent('task-done', { detail: { taskId: id } }));
+      }));
+    });
+    sec.appendChild(list);
+    article.appendChild(sec);
+  }
 
-    contentArea.innerHTML = `
-    <article class="content-article">
-      <header class="content-header">
-        <h1 class="content-title">${escHtml(sub.title)}</h1>
-      </header>
-      <div class="content-body">
-        ${(sub.blocks ?? []).map(renderBlock).join('')}
-        ${tasksHtml}
-      </div>
-    </article>`;
-
-    contentArea.scrollTop = 0;
+  contentArea.innerHTML = '';
+  contentArea.appendChild(article);
+  contentArea.scrollTop = 0;
 }
 
 // ─── Block-Renderer ───────────────────────────────────────────────────────────
 
 function renderBlock(block) {
-    switch (block.type) {
-        case 'text': return renderTextBlock(block);
-        case 'example': return renderExampleBlock(block);
-        case 'hint': return renderHintBlock(block);
-        default: return `<!-- unbekannter Block-Typ: ${escHtml(block.type)} -->`;
-    }
+  switch (block.type) {
+    case 'text': return renderTextBlock(block);
+    case 'example': return renderExampleBlock(block);
+    case 'hint': return renderHintBlock(block);
+    default: return `<!-- unbekannter Block-Typ: ${escHtml(block.type)} -->`;
+  }
 }
 
 function renderTextBlock(block) {
-    const html = parseMiniMarkdown(block.content ?? '');
-    return `<p class="content-text">${html}</p>`;
+  const html = parseMiniMarkdown(block.content ?? '');
+  return `<p class="content-text">${html}</p>`;
 }
 
 function renderExampleBlock(block) {
-    return `
+  return `
     <div class="content-example">
       <div class="example-label">${escHtml(block.label ?? 'Beispiel')}</div>
       <pre class="example-code"><code>${escHtml(block.code ?? '')}</code></pre>
@@ -114,92 +126,13 @@ function renderExampleBlock(block) {
 }
 
 function renderHintBlock(block) {
-    return `
+  return `
     <div class="content-hint" role="note">
       <span class="hint-icon" aria-hidden="true">💡</span>
       <span>${parseMiniMarkdown(block.content ?? '')}</span>
     </div>`;
 }
 
-// ─── Task-Renderer ────────────────────────────────────────────────────────────
-
-function renderTaskCard(task, progress) {
-    const isDone = progress[task.id] === 'done';
-    const doneClass = isDone ? ' task-done' : '';
-    return `
-    <div class="task-card${doneClass}" data-task-id="${escAttr(task.id)}">
-      <p class="task-question">${escHtml(task.question)}</p>
-      <div class="task-input-row">
-        <input type="text" class="task-input"
-               id="task-input-${escAttr(task.id)}"
-               aria-label="Antwort für: ${escAttr(task.question)}"
-               placeholder="Antwort eingeben …"
-               autocomplete="off" spellcheck="false"
-               ${isDone ? 'disabled value="✓ Gelöst"' : ''} />
-        <button class="btn btn-primary task-check-btn"
-                data-task-id="${escAttr(task.id)}"
-                ${isDone ? 'disabled' : ''}>
-          ${isDone ? '✓' : 'Prüfen'}
-        </button>
-      </div>
-      <div class="task-feedback ${isDone ? 'feedback-ok' : ''}"
-           id="task-feedback-${escAttr(task.id)}"
-           aria-live="polite"
-           ${isDone ? '' : 'hidden'}>
-        ${isDone ? '✅ Bereits gelöst!' : ''}
-      </div>
-    </div>`;
-}
-
-// ─── Task-Checker (Event-Delegation) ─────────────────────────────────────────
-// Lauscht auf #content-area; WP08 ersetzt diese Logik durch eine vollständige Engine.
-
-contentArea.addEventListener('click', e => {
-    const btn = e.target.closest('.task-check-btn');
-    if (!btn || btn.disabled) return;
-
-    const taskId = btn.dataset.taskId;
-    const input = document.getElementById(`task-input-${taskId}`);
-    const feedback = document.getElementById(`task-feedback-${taskId}`);
-    const card = btn.closest('.task-card');
-    if (!input || !feedback || !card) return;
-
-    // Task-Definition aus State holen
-    const state = getState();
-    const allSub = (state.lessons?.chapters ?? []).flatMap(c => c.subchapters ?? []);
-    const task = allSub.flatMap(s => s.tasks ?? []).find(t => t.id === taskId);
-    if (!task) return;
-
-    const userVal = input.value.trim().toLowerCase();
-    const correct = String(task.answer).trim().toLowerCase();
-    const isOk = userVal === correct;
-
-    feedback.removeAttribute('hidden');
-    feedback.className = `task-feedback ${isOk ? 'feedback-ok' : 'feedback-err'}`;
-    feedback.textContent = isOk
-        ? '✅ Richtig!'
-        : `❌ ${task.error_messages?.wrong ?? 'Falsch – versuche es nochmal.'}${task.hint ? ` Tipp: ${task.hint}` : ''}`;
-
-    if (isOk) {
-        markTaskDone(taskId);
-        card.classList.add('task-done');
-        btn.disabled = true;
-        btn.textContent = '✓';
-        input.disabled = true;
-
-        // Event für andere Module (z. B. Sidebar-Badge)
-        document.dispatchEvent(new CustomEvent('task-done', { detail: { taskId } }));
-    }
-});
-
-// Enter-Taste in Task-Inputs
-contentArea.addEventListener('keydown', e => {
-    if (e.key !== 'Enter') return;
-    const input = e.target.closest('.task-input');
-    if (!input) return;
-    const card = input.closest('.task-card');
-    card?.querySelector('.task-check-btn')?.click();
-});
 
 // ─── Mini-Markdown ────────────────────────────────────────────────────────────
 
@@ -209,21 +142,21 @@ contentArea.addEventListener('keydown', e => {
  * @returns {string} HTML
  */
 function parseMiniMarkdown(text) {
-    return escHtml(text)
-        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-        .replace(/`(.+?)`/g, `<code>$1</code>`);
+  return escHtml(text)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/`(.+?)`/g, `<code>$1</code>`);
 }
 
 // ─── HTML-Escape ──────────────────────────────────────────────────────────────
 
 function escHtml(str = '') {
-    return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
 }
 
 function escAttr(str = '') {
-    return String(str).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  return String(str).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }

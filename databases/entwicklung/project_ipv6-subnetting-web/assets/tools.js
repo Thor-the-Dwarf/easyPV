@@ -14,6 +14,7 @@
 import { slotTool } from './layout.js';
 import { createPrefixVisualizer } from './lib/prefix-visualizer.js';
 import { createPrefixSlicer } from './lib/prefix-slicer.js';
+import { createScenarioGenerator } from './lib/scenario-generator.js';
 
 // ─── Tool-Factory-Registry ────────────────────────────────────────────────────
 // Neue Tools hier eintragen (WP09–WP11 erweitern diese Map).
@@ -21,9 +22,9 @@ import { createPrefixSlicer } from './lib/prefix-slicer.js';
 const TOOL_FACTORIES = new Map([
     ['prefix-visualizer', (ctx) => createPrefixVisualizer(ctx?.defaultCidr)],
     ['prefix-slicer', (ctx) => createPrefixSlicer(ctx?.defaultCidr)],
-    // WP09: ['scenario-generator', () => createScenarioGenerator()],
-    // WP11: ['ra-demo',            () => createRADemo()],
-    // WP11: ['ndp-demo',           () => createNDPDemo()],
+    ['scenario-generator', (ctx) => createScenarioGenerator(ctx?.seed ?? null)],
+    // WP11: ['ra-demo',  () => createRADemo()],
+    // WP11: ['ndp-demo', () => createNDPDemo()],
 ]);
 
 // ─── Mount-Funktion ───────────────────────────────────────────────────────────

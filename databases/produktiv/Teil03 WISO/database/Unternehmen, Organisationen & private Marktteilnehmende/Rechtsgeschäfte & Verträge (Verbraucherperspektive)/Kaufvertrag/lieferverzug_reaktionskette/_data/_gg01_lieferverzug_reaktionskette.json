@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kaufvertrag",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 7,
+    "wrong": -3,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was ist bei Lieferverzug als erster Schritt sinnvoll?",
+      "hint": "Sachlage pruefen und Frist strukturiert setzen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Verzug pruefen und passende Reaktion mit Frist vorbereiten",
+          "correct": true,
+          "feedback": "Richtig. Struktur vor Eskalation."
+        },
+        {
+          "id": "b",
+          "text": "Sofort Endeskalation ohne Zwischenschritt",
+          "correct": false,
+          "feedback": "Zu frueh eskaliert."
+        },
+        {
+          "id": "c",
+          "text": "Nichts unternehmen",
+          "correct": false,
+          "feedback": "Keine wirksame Kette."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann wird der erste Fehltritt besonders bestraft?",
+      "hint": "Falscher Startschritt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn der erste Reaktionsschritt unpassend ist",
+          "correct": true,
+          "feedback": "Genau. Doppelter Strafpunkt laut Regel."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein Zwischenschritt dokumentiert wird",
+          "correct": false,
+          "feedback": "Dokumentation ist korrekt."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Hilfe eingeblendet wird",
+          "correct": false,
+          "feedback": "Kein Strafgrund."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI sind hier relevant?",
+      "hint": "Korrekte Ketten + Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Kettenbildung und benoetigte Schrittanzahl",
+          "correct": true,
+          "feedback": "Richtig. Das bildet die Lernziele ab."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endzeit",
+          "correct": false,
+          "feedback": "Zu einseitig."
+        },
+        {
+          "id": "c",
+          "text": "Nur Klickanzahl",
+          "correct": false,
+          "feedback": "Nicht fachlich genug."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gibt es Effizienzbonus?",
+      "hint": "Minimaler korrekter Pfad.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn der korrekte Ablauf mit minimalen Schritten erreicht wird",
+          "correct": true,
+          "feedback": "Richtig. Das ist effizient."
+        },
+        {
+          "id": "b",
+          "text": "Wenn viele Zusatzschritte genutzt werden",
+          "correct": false,
+          "feedback": "Keine Effizienz."
+        },
+        {
+          "id": "c",
+          "text": "Wenn zufaellig sortiert wird",
+          "correct": false,
+          "feedback": "Nicht regelkonform."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann gilt ein Szenario als korrekt abgeschlossen?",
+      "hint": "Reihenfolge fehlerfrei.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn die gesamte Reaktionskette in korrekter Ordnung steht",
+          "correct": true,
+          "feedback": "Exakt. Dann ist der Fall geloest."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur letzter Schritt passt",
+          "correct": false,
+          "feedback": "Kette bleibt fehlerhaft."
+        },
+        {
+          "id": "c",
+          "text": "Wenn frueh abgebrochen wird",
+          "correct": false,
+          "feedback": "Kein Abschluss."
+        }
+      ]
+    }
+  ]
+}

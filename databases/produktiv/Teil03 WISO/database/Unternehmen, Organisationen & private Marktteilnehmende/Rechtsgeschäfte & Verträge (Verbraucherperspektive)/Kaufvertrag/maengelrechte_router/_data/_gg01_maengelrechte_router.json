@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kaufvertrag",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 9,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Entscheidung ist bei Mangel zuerst zu treffen?",
+      "hint": "Passende Erstreaktion je Falllage.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zunaechst den geeigneten naechsten Prozessschritt waehlen",
+          "correct": true,
+          "feedback": "Richtig. Dann bleibt der Pfad konsistent."
+        },
+        {
+          "id": "b",
+          "text": "Beliebiges Recht direkt endgueltig auswaehlen",
+          "correct": false,
+          "feedback": "Reihenfolge kann fehlerhaft sein."
+        },
+        {
+          "id": "c",
+          "text": "Fall ohne Pruefung schliessen",
+          "correct": false,
+          "feedback": "Nicht zulaessig."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann droht doppelter Punktabzug?",
+      "hint": "Pflichtstufe uebersprungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn eine notwendige Zwischenstufe ausgelassen wird",
+          "correct": true,
+          "feedback": "Genau. Das ist ein schwerer Fehler."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein korrekter Schritt begruendet wird",
+          "correct": false,
+          "feedback": "Das ist positiv."
+        },
+        {
+          "id": "c",
+          "text": "Wenn KPI sichtbar sind",
+          "correct": false,
+          "feedback": "Kein Strafgrund."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI sind im Router zentral?",
+      "hint": "Genauigkeit + Loesungsweg.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Routing-Genauigkeit und Schritte bis korrekter Loesung",
+          "correct": true,
+          "feedback": "Richtig. Beides wird gebraucht."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "feedback": "Zu wenig differenziert."
+        },
+        {
+          "id": "c",
+          "text": "Nur Antwortdauer",
+          "correct": false,
+          "feedback": "Ohne Korrektheit nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann entsteht Bonus im Router?",
+      "hint": "Effiziente korrekte Loesung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn der richtige Pfad mit minimalen Schritten erreicht wird",
+          "correct": true,
+          "feedback": "Exakt. Das bringt Bonus."
+        },
+        {
+          "id": "b",
+          "text": "Wenn viele Umwege geklickt werden",
+          "correct": false,
+          "feedback": "Keine Effizienz."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nur geraten wird",
+          "correct": false,
+          "feedback": "Nicht reproduzierbar."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann ist ein Defect-Case abgeschlossen?",
+      "hint": "Pfad korrekt bis Endzustand.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn alle erforderlichen Schritte in richtiger Reihenfolge durchlaufen sind",
+          "correct": true,
+          "feedback": "Richtig. Dann ist der Case sauber."
+        },
+        {
+          "id": "b",
+          "text": "Wenn der erste Schritt passt",
+          "correct": false,
+          "feedback": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Wenn der Fall ausgesetzt wird",
+          "correct": false,
+          "feedback": "Kein Abschluss."
+        }
+      ]
+    }
+  ]
+}

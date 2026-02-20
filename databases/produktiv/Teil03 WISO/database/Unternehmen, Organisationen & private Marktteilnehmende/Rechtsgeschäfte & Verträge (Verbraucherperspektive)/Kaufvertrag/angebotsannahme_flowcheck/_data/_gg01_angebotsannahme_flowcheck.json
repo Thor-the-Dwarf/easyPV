@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kaufvertrag",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Wann kommt ein Kaufvertrag in der Fallkette zustande?",
+      "hint": "Angebot und Annahme muessen zusammenpassen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn eine wirksame Annahme auf ein konkretes Angebot erfolgt",
+          "correct": true,
+          "feedback": "Richtig. Das ist der Kernausloeser."
+        },
+        {
+          "id": "b",
+          "text": "Schon beim ersten unverbindlichen Kontakt",
+          "correct": false,
+          "feedback": "Noch kein Vertragsschluss."
+        },
+        {
+          "id": "c",
+          "text": "Erst bei Zahlungseingang",
+          "correct": false,
+          "feedback": "Nicht zwingend erforderlich."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Was bringt im Flowcheck den Zeitbonus?",
+      "hint": "Schnell und korrekt entscheiden.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Korrekte Einordnung innerhalb des Zeitfensters",
+          "correct": true,
+          "feedback": "Genau. Dann gibt es Bonuspunkte."
+        },
+        {
+          "id": "b",
+          "text": "Beliebige schnelle Antwort",
+          "correct": false,
+          "feedback": "Nur Korrektheit zaehlt."
+        },
+        {
+          "id": "c",
+          "text": "Antwort ohne Pruefung verzoegern",
+          "correct": false,
+          "feedback": "Kein Bonus."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann gibt es doppelten Abzug?",
+      "hint": "Finaler Schritt falsch.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn der finale Vertragsschritt falsch bewertet wird",
+          "correct": true,
+          "feedback": "Richtig. Dieser Fehler wiegt schwerer."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein Hinweis gelesen wird",
+          "correct": false,
+          "feedback": "Hinweis ist erlaubt."
+        },
+        {
+          "id": "c",
+          "text": "Wenn KPI angezeigt werden",
+          "correct": false,
+          "feedback": "KPI sind vorgesehen."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI sind im Flowcheck zentral?",
+      "hint": "Genauigkeit + Reaktionszeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Abschlussgenauigkeit und mittlere Reaktionszeit",
+          "correct": true,
+          "feedback": "Richtig. Beide werden gemessen."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "feedback": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Faelle",
+          "correct": false,
+          "feedback": "Keine Qualitaetsmetrik."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann ist eine Fallkette erfolgreich geloest?",
+      "hint": "Status je Schritt nachvollziehbar.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn der Vertragsstatus in allen Schritten korrekt erkannt wird",
+          "correct": true,
+          "feedback": "Exakt. Das ist Zielerreichung."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur der erste Schritt stimmt",
+          "correct": false,
+          "feedback": "Unvollstaendig."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ohne Begruendung geraten wird",
+          "correct": false,
+          "feedback": "Nicht belastbar."
+        }
+      ]
+    }
+  ]
+}

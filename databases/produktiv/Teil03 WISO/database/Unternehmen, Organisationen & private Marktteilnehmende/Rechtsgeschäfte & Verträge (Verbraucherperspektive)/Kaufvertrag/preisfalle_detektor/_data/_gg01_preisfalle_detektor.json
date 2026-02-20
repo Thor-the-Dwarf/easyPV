@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kaufvertrag",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 8,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Wie erkennst du die Preisfalle am sichersten?",
+      "hint": "Endpreis inkl. Zusatzkosten vergleichen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gesamtkosten aller Angebote inkl. Pflichtzusatzkosten vergleichen",
+          "correct": true,
+          "feedback": "Richtig. Nur so wird die Falle sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Basispreis vergleichen",
+          "correct": false,
+          "feedback": "Versteckte Kosten fehlen."
+        },
+        {
+          "id": "c",
+          "text": "Nur Rabattprozente ansehen",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Wann droht Zusatzabzug?",
+      "hint": "Pflichtkosten uebersehen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn verpflichtende Kostenfaktoren nicht erkannt werden",
+          "correct": true,
+          "feedback": "Genau. Das kostet Zusatzpunkte."
+        },
+        {
+          "id": "b",
+          "text": "Wenn Kostenfaktoren markiert werden",
+          "correct": false,
+          "feedback": "Das ist gewuenscht."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Vergleichstabelle geoeffnet wird",
+          "correct": false,
+          "feedback": "Kein Abzug."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI sollen sichtbar sein?",
+      "hint": "Wahlleistung + Faktorenleistung.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Endpreis-Treffsicherheit und Kostenfaktor-Erkennung",
+          "correct": true,
+          "feedback": "Richtig. Das entspricht dem Plan."
+        },
+        {
+          "id": "b",
+          "text": "Nur Sessiondauer",
+          "correct": false,
+          "feedback": "Zu wenig fachlich."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Karten",
+          "correct": false,
+          "feedback": "Keine Qualitaetsaussage."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann steigt der Multiplikator?",
+      "hint": "Serie korrekter Karten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei einer Serie mehrerer korrekter Karten ohne Fehlfaktor",
+          "correct": true,
+          "feedback": "Richtig. Dann wird multipliziert."
+        },
+        {
+          "id": "b",
+          "text": "Bei beliebigen Fehlern",
+          "correct": false,
+          "feedback": "Kein Bonus."
+        },
+        {
+          "id": "c",
+          "text": "Nach Neustart",
+          "correct": false,
+          "feedback": "Nicht regelbasiert."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann ist eine Karte voll erfolgreich?",
+      "hint": "Bestes Angebot + Kostenfaktoren korrekt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn bestes Angebot und relevante Kostenfaktoren korrekt bestimmt sind",
+          "correct": true,
+          "feedback": "Exakt. Das ist Zielerreichung."
+        },
+        {
+          "id": "b",
+          "text": "Wenn nur das teuerste Angebot erkannt wird",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Wenn zufaellig gewaehlt wird",
+          "correct": false,
+          "feedback": "Keine valide Leistung."
+        }
+      ]
+    }
+  ]
+}

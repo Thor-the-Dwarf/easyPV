@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Kaufvertrag",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 6,
+    "wrong": -3,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was markiert der Scanner als Treffer?",
+      "hint": "Pflichtbestandteil korrekt erkannt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ein zwingender Vertragsbestandteil wird korrekt markiert",
+          "correct": true,
+          "feedback": "Richtig. Das ist ein echter Treffer."
+        },
+        {
+          "id": "b",
+          "text": "Beliebiger Zusatztext ohne Relevanz",
+          "correct": false,
+          "feedback": "Das ist Fehlmarkierung."
+        },
+        {
+          "id": "c",
+          "text": "Leere Stelle",
+          "correct": false,
+          "feedback": "Kein gueltiger Treffer."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Was senkt die Praezision?",
+      "hint": "Zu viele falsche Markierungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Uebermarkierung unverbindlicher Textbausteine",
+          "correct": true,
+          "feedback": "Genau. Das reduziert Praezision."
+        },
+        {
+          "id": "b",
+          "text": "Gezielte Markierung von Pflichtangaben",
+          "correct": false,
+          "feedback": "Das verbessert die Qualitaet."
+        },
+        {
+          "id": "c",
+          "text": "Feedback lesen",
+          "correct": false,
+          "feedback": "Kein Praezisionsverlust."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was senkt den Recall?",
+      "hint": "Pflichtangaben uebersehen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn erforderliche Pflichtbausteine nicht markiert werden",
+          "correct": true,
+          "feedback": "Richtig. Dann sinkt Recall."
+        },
+        {
+          "id": "b",
+          "text": "Wenn zu viel Zeit eingeplant wird",
+          "correct": false,
+          "feedback": "Zeit allein senkt Recall nicht."
+        },
+        {
+          "id": "c",
+          "text": "Wenn korrekte Bausteine markiert werden",
+          "correct": false,
+          "feedback": "Das ist positiv."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche KPI sind gefordert?",
+      "hint": "Praezision, Recall, Vollstaendigkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Praezision, Recall und Vollstaendigkeitsquote je Set",
+          "correct": true,
+          "feedback": "Richtig. Diese Kombination ist zentral."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte",
+          "correct": false,
+          "feedback": "Zu grob."
+        },
+        {
+          "id": "c",
+          "text": "Nur Set-Anzahl",
+          "correct": false,
+          "feedback": "Keine Qualitaetsmetrik."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann ist ein Set sauber geloest?",
+      "hint": "Pflichtangaben vollstaendig, wenig Fehlmarken.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn alle Pflichtangaben erkannt und Fehlmarkierungen gering sind",
+          "correct": true,
+          "feedback": "Exakt. Das ist die Ziellinie."
+        },
+        {
+          "id": "b",
+          "text": "Wenn alles markiert wird",
+          "correct": false,
+          "feedback": "Praezision sinkt."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nichts markiert wird",
+          "correct": false,
+          "feedback": "Recall faellt auf null."
+        }
+      ]
+    }
+  ]
+}

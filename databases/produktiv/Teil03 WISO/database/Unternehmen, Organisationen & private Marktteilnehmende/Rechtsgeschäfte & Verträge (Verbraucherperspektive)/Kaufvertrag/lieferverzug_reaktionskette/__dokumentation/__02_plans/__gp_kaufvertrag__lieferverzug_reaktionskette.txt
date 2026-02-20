@@ -1,0 +1,53 @@
+# __gp_kaufvertrag__lieferverzug_reaktionskette
+
+## Spielidee
+"Lieferverzug-Reaktionskette" simuliert Verzoegerungen mit unterschiedlichen Ursachen. Lernende ordnen die passenden naechsten Verbraucherhandlungen in korrekter Reihenfolge.
+
+## Lernziel
+- Vorgehen bei Lieferverzug strukturiert anwenden.
+- Fristsetzung und Eskalation sinnvoll kombinieren.
+
+## Messbare Progression
+- 9 Szenarien mit je 4 Schritten.
+- Punkte: +7 korrekter Schritt, -3 falscher Schritt.
+- KPI: korrekte Kettenbildung in Prozent.
+- Effizienzbonus bei Loesung mit Minimal-Schritten.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- DelayScenarioController
+- ActionSequenceEngine
+- SessionAnalytics
+
+### Domaenenobjekte
+- DelayScenario(scenarioId, causeType)
+- ActionStep(stepId, label)
+- SequenceResult(orderScore, completionSteps)
+
+### Beziehungen
+- DelayScenarioController verwaltet 1..* DelayScenario.
+- DelayScenario enthaelt 3..6 ActionStep.
+- SessionAnalytics sammelt 1..* SequenceResult.
+
+### Zustandsmodell
+- SCENARIO_START -> STEP_SELECT -> ORDER_CHECK -> STEP_FEEDBACK -> SCENARIO_END
+
+### Sequenz (Happy Path)
+1. DelayScenarioController startet Scenario.
+2. Player ordnet ActionStep.
+3. ActionSequenceEngine prueft Reihenfolge.
+4. SequenceResult berechnet orderScore.
+5. SessionAnalytics aktualisiert Gesamtfortschritt.
+
+## Regeln
+- Falscher erster Schritt kostet doppelte Strafpunkte.
+- Korrekte Kette ohne Hilfe bringt Bonuspunkte.
+
+## Datenmodell (JSON-Idee)
+- fields: scenarioId, causeType, steps[], expectedOrder[]
+
+## Abnahmekriterien
+- Reihenfolgebildung ist visuell eindeutig.
+- KPI zeigt Korrektheit und Schrittanzahl.
+- Fehlentscheidungen werden mit korrekter Reihenfolge erklaert.

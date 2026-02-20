@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "topic": "prozess schnittstellen",
+    "mechanic": "decision_quiz",
+    "engine": "DecisionGame",
+    "variant": "prozess_schnittstellen",
+    "version": "1.0"
+  },
+  "title": "prozess schnittstellen - Entscheidungen",
+  "subtitle": "Waehle pro Runde die fachlich beste Option.",
+  "rounds": [
+    {
+      "id": 1,
+      "phase": "Runde 1",
+      "situation": "Du sollst eine erste Einordnung zum Thema vornehmen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ausgangslage pruefen und Kriterien klar machen",
+          "correct": true,
+          "reason": "Das schafft eine belastbare Grundlage."
+        },
+        {
+          "id": "b",
+          "text": "Direkt ohne Kriterien entscheiden",
+          "correct": false,
+          "reason": "Ohne Kriterien ist die Entscheidung unsauber."
+        },
+        {
+          "id": "c",
+          "text": "Entscheidung vertagen ohne Analyse",
+          "correct": false,
+          "reason": "Es fehlt die fachliche Bearbeitung."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "phase": "Runde 2",
+      "situation": "Es gibt mehrere Handlungsoptionen mit Risiken.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Optionen vergleichen und Risiken benennen",
+          "correct": true,
+          "reason": "Vergleich + Risikoanalyse ist fachlich sinnvoll."
+        },
+        {
+          "id": "b",
+          "text": "Nur auf den niedrigsten Aufwand schauen",
+          "correct": false,
+          "reason": "Zu eindimensional fuer eine gute Entscheidung."
+        },
+        {
+          "id": "c",
+          "text": "Nur Bauchgefuehl ohne Beleg nutzen",
+          "correct": false,
+          "reason": "Nicht nachvollziehbar."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "phase": "Runde 3",
+      "situation": "Die Entscheidung soll abgesichert werden.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Entscheidung begruenden und Ergebnis kurz pruefen",
+          "correct": true,
+          "reason": "Begruendung und Check sichern die Qualitaet."
+        },
+        {
+          "id": "b",
+          "text": "Keine Begruendung dokumentieren",
+          "correct": false,
+          "reason": "Ohne Begruendung fehlt Nachvollziehbarkeit."
+        },
+        {
+          "id": "c",
+          "text": "Rueckmeldung ignorieren",
+          "correct": false,
+          "reason": "Feedback verbessert die Entscheidung."
+        }
+      ]
+    }
+  ]
+}

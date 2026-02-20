@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "topic": "Factory Pattern",
+    "mechanic": "finding_terms",
+    "engine": "FindingGame",
+    "variant": "factory_pattern",
+    "title": "Factory Pattern - Begriffe finden",
+    "subtitle": "Markiere die relevanten Fachbegriffe im Text.",
+    "version": "1.0"
+  },
+  "scoring": {
+    "max_score": 100,
+    "false_penalty": 10
+  },
+  "contract_excerpt": [
+    "Factory Pattern: Ausgangslage, Kriterien und Umsetzung sollen sauber dokumentiert werden.",
+    "Fachlich wichtig sind Analyse, Bewertung und rueckgekoppelte Verbesserung.",
+    "Unscharfe Aussagen ohne Kriterien helfen nicht bei der Qualitaet."
+  ],
+  "terms": [
+    {
+      "id": "t1",
+      "label": "Ausgangslage",
+      "is_target": true,
+      "explanation": "Wichtiger Startpunkt fuer die Einordnung."
+    },
+    {
+      "id": "t2",
+      "label": "Kriterien",
+      "is_target": true,
+      "explanation": "Kriterien sichern Vergleichbarkeit."
+    },
+    {
+      "id": "t3",
+      "label": "Bewertung",
+      "is_target": true,
+      "explanation": "Bewertung ist Kern der fachlichen Entscheidung."
+    },
+    {
+      "id": "t4",
+      "label": "Verbesserung",
+      "is_target": true,
+      "explanation": "Rueckkopplung verbessert das Ergebnis."
+    },
+    {
+      "id": "t5",
+      "label": "Unscharfe Aussagen",
+      "is_target": false,
+      "explanation": "Das ist kein tragfaehiger Fachbegriff."
+    },
+    {
+      "id": "t6",
+      "label": "Qualitaet",
+      "is_target": false,
+      "explanation": "Hier nur als Ablenkbegriff genutzt."
+    }
+  ]
+}

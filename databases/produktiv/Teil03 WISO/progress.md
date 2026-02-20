@@ -146,3 +146,6 @@ Original prompt: commite ab jetzt mit der Message: games_teil03_reverse <Deine M
     - `output/web-game-wandel-maerkte/shot-0.png`
     - `output/web-game-wandel-maerkte/state-0.json`
   - State-Check zeigt messbaren Fortschritt (`score`, `progress_percent`, `simulated_ms`), keine `errors-0.json`.
+  - Zusatz-Smoke im Reverse-Lauf erfolgreich:
+    - `output/web-game-teil03-reverse-wandel-maerkte/shot-0.png`
+    - `output/web-game-teil03-reverse-wandel-maerkte/state-0.json`

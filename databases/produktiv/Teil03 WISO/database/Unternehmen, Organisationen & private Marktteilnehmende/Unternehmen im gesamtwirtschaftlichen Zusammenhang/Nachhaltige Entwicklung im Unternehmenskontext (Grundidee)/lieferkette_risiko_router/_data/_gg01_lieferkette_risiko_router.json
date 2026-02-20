@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Nachhaltige Entwicklung im Unternehmenskontext",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 8,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Was ist bei erkanntem Lieferkettenrisiko der erste Pflichtschritt?",
+      "hint": "Risiko klassifizieren und priorisieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Risikotyp erfassen und Kritikalitaet priorisieren",
+          "correct": true,
+          "feedback": "Richtig. So wird der Pfad belastbar."
+        },
+        {
+          "id": "b",
+          "text": "Direkt Sanktion ohne Pruefung ausloesen",
+          "correct": false,
+          "feedback": "Ohne Bewertung zu frueh."
+        },
+        {
+          "id": "c",
+          "text": "Vorfall ignorieren bis Jahresende",
+          "correct": false,
+          "feedback": "Zu spaet und risikoreich."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Pfadlogik passt fuer hohe Risiken?",
+      "hint": "Analyse -> Sofortmassnahme -> Kontrolle.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sofortmassnahme einleiten und Wirksamkeit nachhalten",
+          "correct": true,
+          "feedback": "Genau der korrekte Ablauf."
+        },
+        {
+          "id": "b",
+          "text": "Nur Bericht erzeugen ohne Aktion",
+          "correct": false,
+          "feedback": "Fehlende Stabilisierung."
+        },
+        {
+          "id": "c",
+          "text": "Nur auf Selbstmeldung des Lieferanten warten",
+          "correct": false,
+          "feedback": "Unzureichend abgesichert."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Wann entsteht Zusatzabzug laut Regelwerk?",
+      "hint": "Pflichtreaktion wird uebersprungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn ein notwendiger Reaktionsschritt ausgelassen wird",
+          "correct": true,
+          "feedback": "Richtig. Das erhoeht Risiko."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein Schritt dokumentiert wird",
+          "correct": false,
+          "feedback": "Dokumentation ist erforderlich."
+        },
+        {
+          "id": "c",
+          "text": "Wenn KPI sichtbar bleiben",
+          "correct": false,
+          "feedback": "Das ist korrekt."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Welche Kennzahl zeigt Routing-Qualitaet?",
+      "hint": "Korrektheit plus Stabilisierungstempo.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Routing-Genauigkeit und Schritte bis Stabilisierung",
+          "correct": true,
+          "feedback": "Richtig. Das bildet Ziel und Effizienz ab."
+        },
+        {
+          "id": "b",
+          "text": "Nur Anzahl offener Mails",
+          "correct": false,
+          "feedback": "Kein direkter Routing-Indikator."
+        },
+        {
+          "id": "c",
+          "text": "Nur Dauer der Sitzung",
+          "correct": false,
+          "feedback": "Ohne Korrektheit unvollstaendig."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Wann ist ein Fall sauber abgeschlossen?",
+      "hint": "Risiko reduziert und Wirkung geprueft.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn Reaktionskette durchlaufen und Wirkung validiert ist",
+          "correct": true,
+          "feedback": "Exakt. So wird der Fall geschlossen."
+        },
+        {
+          "id": "b",
+          "text": "Sobald die erste Massnahme startet",
+          "correct": false,
+          "feedback": "Start ist noch kein Abschluss."
+        },
+        {
+          "id": "c",
+          "text": "Wenn niemand mehr fragt",
+          "correct": false,
+          "feedback": "Nicht fachlich belastbar."
+        }
+      ]
+    }
+  ]
+}

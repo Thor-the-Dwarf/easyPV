@@ -1,75 +1,70 @@
 {
-  "meta": {
-    "id": "email_translate_race_v1",
-    "title": "E-Mail-Translate-Race",
-    "topic": "Englisch",
-    "mechanic": "translation_quiz",
-    "version": "1.0"
+  "gameId": "chart_chooser",
+  "title": "Chart-Chooser",
+  "description": "Wähle für jeden Datensatz den passenden Diagrammtyp.",
+  "timing": {
+    "default_round_ms": 14000
   },
   "scoring": {
     "correct": 20,
-    "wrong": 0,
-    "timeout": 0,
-    "completion_bonus": 0
+    "wrong": -6,
+    "timeout": -8,
+    "completion_bonus": 10
   },
-  "timing": {
-    "default_round_ms": 10000
-  },
-  "rounds": [
+  "scenarios": [
     {
       "id": 1,
-      "de": "Sehr geehrte Damen und Herren",
-      "context": "Formelle Anrede in einer Geschaeftsmail",
+      "dataDesc": "Vergleich von Marktanteilen (5 Firmen)",
+      "hint": "Anteile eines Ganzen im gleichen Zeitraum",
+      "correctOptionId": "b",
       "options": [
-        { "id": "a", "text": "Hello all", "reason": "Zu informell." },
-        { "id": "b", "text": "Dear Sir or Madam", "reason": "Richtig: formelle Standardanrede." },
-        { "id": "c", "text": "Hi guys", "reason": "Umgangssprachlich und unpassend." }
-      ],
-      "correctOptionId": "b"
+        { "id": "a", "label": "Liniendiagramm", "icon": "📈", "reason": "Zeigt Trends über Zeit, nicht Anteile in einem Moment." },
+        { "id": "b", "label": "Kreisdiagramm", "icon": "🥧", "reason": "Richtig: Marktanteile sind Teil-vom-Ganzen-Daten." },
+        { "id": "c", "label": "Balkendiagramm", "icon": "📊", "reason": "Vergleichbar, aber bei klaren Anteilen ist Kreisdiagramm naheliegender." }
+      ]
     },
     {
       "id": 2,
-      "de": "Im Anhang finden Sie das Angebot.",
-      "context": "Hinweis auf beigefuegtes Dokument",
+      "dataDesc": "Umsatzentwicklung über 10 Jahre",
+      "hint": "Verlauf über Zeit",
+      "correctOptionId": "a",
       "options": [
-        { "id": "a", "text": "Please find the quotation attached.", "reason": "Richtig und professionell." },
-        { "id": "b", "text": "The offer is somewhere below.", "reason": "Unklar und unprofessionell." },
-        { "id": "c", "text": "I send you maybe an offer.", "reason": "Grammatikalisch und inhaltlich unpraezise." }
-      ],
-      "correctOptionId": "a"
+        { "id": "a", "label": "Liniendiagramm", "icon": "📈", "reason": "Richtig: Zeitreihen werden als Linie schnell lesbar." },
+        { "id": "b", "label": "Kreisdiagramm", "icon": "🥧", "reason": "Kreisdiagramme zeigen keine kontinuierliche Entwicklung." }
+      ]
     },
     {
       "id": 3,
-      "de": "Koennen Sie den Termin auf Freitag verschieben?",
-      "context": "Hoefliche Terminverschiebung",
+      "dataDesc": "Ticketanzahl pro Team im Quartal",
+      "hint": "Kategorien vergleichen",
+      "correctOptionId": "c",
       "options": [
-        { "id": "a", "text": "Move the meeting now.", "reason": "Zu direkt und nicht hoeflich." },
-        { "id": "b", "text": "Could you reschedule the appointment to Friday?", "reason": "Richtig: hoeflich und praezise." },
-        { "id": "c", "text": "Can you put date maybe Friday.", "reason": "Falscher Satzbau." }
-      ],
-      "correctOptionId": "b"
+        { "id": "a", "label": "Kreisdiagramm", "icon": "🥧", "reason": "Weniger gut für präzise Teamvergleiche." },
+        { "id": "b", "label": "Liniendiagramm", "icon": "📈", "reason": "Keine Zeitreihe, sondern Kategorienvergleich." },
+        { "id": "c", "label": "Balkendiagramm", "icon": "📊", "reason": "Richtig: Balken eignen sich für Kategorienvergleiche." }
+      ]
     },
     {
       "id": 4,
-      "de": "Vielen Dank fuer Ihre Rueckmeldung.",
-      "context": "Dank in professioneller Korrespondenz",
+      "dataDesc": "Budgetaufteilung eines Projekts (Personal, Hardware, Lizenzen)",
+      "hint": "Anteile in Prozent",
+      "correctOptionId": "b",
       "options": [
-        { "id": "a", "text": "Thanks for your feedback.", "reason": "Richtig, neutral-professionell." },
-        { "id": "b", "text": "Big thanks for answer.", "reason": "Unnatuerliche Formulierung." },
-        { "id": "c", "text": "Thx for your msg.", "reason": "Zu locker fuer Business-Mail." }
-      ],
-      "correctOptionId": "a"
+        { "id": "a", "label": "Balkendiagramm", "icon": "📊", "reason": "Geht auch, aber Anteile am Gesamtbudget sind im Kreis klar." },
+        { "id": "b", "label": "Kreisdiagramm", "icon": "🥧", "reason": "Richtig: Budgetanteile als Teil-vom-Ganzen." },
+        { "id": "c", "label": "Liniendiagramm", "icon": "📈", "reason": "Linien sind für zeitliche Entwicklung gedacht." }
+      ]
     },
     {
       "id": 5,
-      "de": "Bei Rueckfragen stehe ich gern zur Verfuegung.",
-      "context": "Abschlussformel",
+      "dataDesc": "Antwortzeit des Supports pro Woche (8 Wochen)",
+      "hint": "Messwerte entlang der Zeitachse",
+      "correctOptionId": "a",
       "options": [
-        { "id": "a", "text": "If you have any questions, please do not hesitate to contact me.", "reason": "Richtig: gaengige professionelle Abschlussformel." },
-        { "id": "b", "text": "Ask me if something weird.", "reason": "Unklar und unprofessionell." },
-        { "id": "c", "text": "Questions? Write maybe.", "reason": "Zu knapp und umgangssprachlich." }
-      ],
-      "correctOptionId": "a"
+        { "id": "a", "label": "Liniendiagramm", "icon": "📈", "reason": "Richtig: Wochenwerte als Verlauf darstellen." },
+        { "id": "b", "label": "Balkendiagramm", "icon": "📊", "reason": "Vergleichbar, aber Verlaufstrends sind als Linie besser sichtbar." },
+        { "id": "c", "label": "Kreisdiagramm", "icon": "🥧", "reason": "Kreis passt nicht zu zeitlichen Messreihen." }
+      ]
     }
   ]
 }

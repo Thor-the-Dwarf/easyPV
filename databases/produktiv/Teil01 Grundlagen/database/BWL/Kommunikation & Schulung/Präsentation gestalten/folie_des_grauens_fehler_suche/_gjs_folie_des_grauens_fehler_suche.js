@@ -3,23 +3,20 @@
 
   const state = {
     cfg: null,
-    roundIndex: 0,
+    foundIds: new Set(),
     score: 0,
-    correctCount: 0,
-    answered: false,
-    selectedOptionId: null,
-    done: false,
     feedback: '',
     feedbackState: '',
     remainingMs: 0,
-    lastTickAt: 0,
     elapsedMs: 0,
-    timerId: 0
+    done: false,
+    timerId: 0,
+    lastTickAt: 0
   };
 
   const el = {
     root: document.getElementById('root'),
-    round: document.getElementById('kpi-round'),
+    found: document.getElementById('kpi-found'),
     score: document.getElementById('kpi-score'),
     rate: document.getElementById('kpi-rate'),
     time: document.getElementById('kpi-time'),
@@ -30,48 +27,36 @@
 
   async function init() {
     try {
-      const response = await fetch('_data/_gg01_email_translate_race.json');
+      const response = await fetch('_data/_gg01_folie_des_grauens_fehler_suche.json');
       if (!response.ok) throw new Error('Konfiguration konnte nicht geladen werden.');
       state.cfg = await response.json();
-      startRound();
-      render();
+      restart();
     } catch (error) {
-      if (el.root) {
-        el.root.innerHTML = '<p>Fehler: ' + escapeHtml(error.message) + '</p>';
-      }
+      if (el.root) el.root.innerHTML = '<p>Fehler: ' + escapeHtml(error.message) + '</p>';
     }
   }
 
-  function currentRound() {
-    if (!state.cfg || !Array.isArray(state.cfg.rounds)) return null;
-    return state.cfg.rounds[state.roundIndex] || null;
+  function totalMs() {
+    const value = Number(state.cfg && state.cfg.timing && state.cfg.timing.total_ms);
+    return Number.isFinite(value) && value > 0 ? value : 60000;
   }
 
-  function roundLimitMs(round) {
-    const perRound = Number(round && round.roundMs);
-    if (Number.isFinite(perRound) && perRound > 0) return perRound;
-    const fallback = Number(state.cfg && state.cfg.timing && state.cfg.timing.default_round_ms);
-    return Number.isFinite(fallback) && fallback > 0 ? fallback : 10000;
+  function scoringValue(key, fallback) {
+    const value = Number(state.cfg && state.cfg.scoring && state.cfg.scoring[key]);
+    return Number.isFinite(value) ? value : fallback;
   }
 
-  function startRound() {
-    const round = currentRound();
-    if (!round) {
-      finishGame();
-      return;
-    }
+  function allErrors() {
+    return state.cfg && Array.isArray(state.cfg.errors) ? state.cfg.errors : [];
+  }
 
-    state.answered = false;
-    state.selectedOptionId = null;
-    state.feedback = '';
-    state.feedbackState = '';
-    state.remainingMs = roundLimitMs(round);
-    state.lastTickAt = Date.now();
-
+  function startTimer() {
     stopTimer();
+    state.lastTickAt = Date.now();
     state.timerId = window.setInterval(function () {
-      tick(Date.now() - state.lastTickAt);
-      state.lastTickAt = Date.now();
+      const now = Date.now();
+      tick(now - state.lastTickAt);
+      state.lastTickAt = now;
     }, 100);
   }
 
@@ -82,7 +67,7 @@
   }
 
   function tick(deltaMs) {
-    if (state.done || state.answered) return;
+    if (state.done) return;
     const delta = Number(deltaMs);
     if (!Number.isFinite(delta) || delta <= 0) return;
 
@@ -90,104 +75,90 @@
     state.elapsedMs += delta;
 
     if (state.remainingMs <= 0) {
-      evaluate('timeout');
+      finishGame(false);
       return;
     }
 
     renderKpis();
   }
 
-  function evaluate(optionId) {
-    if (state.done || state.answered) return;
-
-    const round = currentRound();
-    if (!round) return;
-
-    const scoring = state.cfg && state.cfg.scoring ? state.cfg.scoring : {};
-    const selected = String(optionId || '').trim();
-    const correctId = String(round.correctOptionId || '').trim();
-
-    const option = (round.options || []).find(function (entry) {
-      return String(entry.id || '') === selected;
-    });
-    const correctOption = (round.options || []).find(function (entry) {
-      return String(entry.id || '') === correctId;
-    });
-
-    if (selected !== 'timeout' && !option) return;
-
-    state.answered = true;
-    state.selectedOptionId = selected;
-    stopTimer();
-
-    if (selected === 'timeout') {
-      state.score += Number(scoring.timeout) || 0;
-      state.feedbackState = 'bad';
-      state.feedback = 'Zeit abgelaufen. Korrekt waere: ' + (correctOption ? correctOption.text : '-');
-    } else if (selected === correctId) {
-      state.score += Number(scoring.correct) || 0;
-      state.correctCount += 1;
-      state.feedbackState = 'ok';
-      state.feedback = option && option.reason ? option.reason : 'Korrekte Uebersetzung.';
-    } else {
-      state.score += Number(scoring.wrong) || 0;
-      state.feedbackState = 'bad';
-      state.feedback = (option && option.reason ? option.reason + ' ' : '') + 'Korrekt waere: ' + (correctOption ? correctOption.text : '-');
-    }
-
-    render();
+  function progressPercent() {
+    const total = allErrors().length;
+    if (!total) return 0;
+    return Math.round((state.foundIds.size / total) * 100);
   }
 
-  function nextRound() {
-    if (!state.answered || state.done || !state.cfg) return;
+  function markError(errorId) {
+    if (state.done) return;
 
-    if (state.roundIndex >= state.cfg.rounds.length - 1) {
-      finishGame();
+    const error = allErrors().find(function (entry) {
+      return entry.id === errorId;
+    });
+    if (!error) return;
+
+    if (state.foundIds.has(error.id)) {
+      state.feedbackState = 'bad';
+      state.feedback = 'Bereits markiert: ' + error.label;
+      render();
       return;
     }
 
-    state.roundIndex += 1;
-    startRound();
+    state.foundIds.add(error.id);
+    state.score += scoringValue('found', 15);
+    state.feedbackState = 'ok';
+    state.feedback = 'Gefunden: ' + error.label + ' - ' + error.explanation;
+
+    if (state.foundIds.size >= allErrors().length) {
+      finishGame(true);
+      return;
+    }
+
     render();
   }
 
-  function finishGame() {
-    stopTimer();
+  function registerMiss() {
+    if (state.done) return;
+    state.score += scoringValue('miss', -3);
+    state.feedbackState = 'bad';
+    state.feedback = 'Daneben geklickt. Suche eine konkrete Design-Sünde auf der Folie.';
+    render();
+  }
+
+  function finishGame(foundAll) {
+    if (state.done) return;
     state.done = true;
-    state.score += Number(state.cfg && state.cfg.scoring && state.cfg.scoring.completion_bonus) || 0;
+    stopTimer();
+
+    if (foundAll) {
+      state.score += scoringValue('completion_bonus', 20);
+      state.feedbackState = 'ok';
+      state.feedback = 'Stark! Alle Design-Sünden wurden gefunden.';
+    } else {
+      state.feedbackState = 'bad';
+      state.feedback = 'Zeit vorbei. Du hast ' + state.foundIds.size + ' von ' + allErrors().length + ' Fehlern gefunden.';
+    }
+
     render();
   }
 
   function restart() {
     stopTimer();
-    state.roundIndex = 0;
+    state.foundIds = new Set();
     state.score = 0;
-    state.correctCount = 0;
-    state.answered = false;
-    state.selectedOptionId = null;
-    state.done = false;
     state.feedback = '';
     state.feedbackState = '';
-    state.remainingMs = 0;
-    state.lastTickAt = 0;
+    state.remainingMs = totalMs();
     state.elapsedMs = 0;
-
-    startRound();
+    state.done = false;
+    startTimer();
     render();
   }
 
-  function progressPercent() {
-    if (!state.cfg || !Array.isArray(state.cfg.rounds) || state.cfg.rounds.length === 0) return 0;
-    return Math.round((state.correctCount / state.cfg.rounds.length) * 100);
-  }
-
   function renderKpis() {
-    const total = state.cfg && state.cfg.rounds ? state.cfg.rounds.length : 0;
-    const shownRound = state.done ? total : state.roundIndex + 1;
-    const round = currentRound();
-    const ratio = roundLimitMs(round) > 0 ? Math.max(0, Math.min(1, state.remainingMs / roundLimitMs(round))) : 0;
+    const total = allErrors().length;
+    const ratio = totalMs() > 0 ? Math.max(0, Math.min(1, state.remainingMs / totalMs())) : 0;
 
-    if (el.round) el.round.textContent = String(shownRound) + '/' + String(total);
+    if (el.found) el.found.textContent = String(state.foundIds.size) + '/' + String(total);
     if (el.score) el.score.textContent = String(state.score);
     if (el.rate) el.rate.textContent = String(progressPercent()) + '%';
     if (el.time) el.time.textContent = (state.remainingMs / 1000).toFixed(1) + 's';
@@ -204,59 +175,120 @@
     }
   }
 
-  function render() {
-    renderKpis();
-    if (!state.cfg || !el.root) return;
-
-    if (state.done) {
-      el.root.innerHTML = [
-        '<section class="result">',
-        '<h2>Translate-Race abgeschlossen</h2>',
-        '<p>Score: <strong>' + escapeHtml(String(state.score)) + '</strong></p>',
-        '<p>Trefferquote: <strong>' + escapeHtml(String(progressPercent())) + '%</strong></p>',
-        '<button id="restart-btn" class="btn" type="button">Nochmal spielen</button>',
-        '</section>'
-      ].join('');
-
-      const restartBtn = document.getElementById('restart-btn');
-      if (restartBtn) restartBtn.addEventListener('click', restart);
-      return;
-    }
-
-    const round = currentRound();
-    if (!round) return;
+  function renderSlide() {
+    const slide = state.cfg && state.cfg.slide ? state.cfg.slide : {};
 
     let html = '';
-    html += '<article class="prompt-card">';
-    html += '<div class="prompt-label">Deutsch</div>';
-    html += '<h2 class="prompt-text">' + escapeHtml(round.de || '') + '</h2>';
-    html += '<p class="prompt-context">' + escapeHtml(round.context || '') + '</p>';
-    html += '</article>';
-
-    html += '<div class="options">';
-    (round.options || []).forEach(function (option) {
-      const disabled = state.answered ? ' disabled' : '';
-      const chosenClass = state.selectedOptionId === option.id ? ' chosen' : '';
-      html += '<button class="option-btn' + chosenClass + '" type="button" data-option-id="' + escapeHtml(option.id) + '"' + disabled + '>' + escapeHtml(option.text) + '</button>';
+    html += '<section class="stage" id="stage">';
+    html += '<h2 class="slide-headline">' + escapeHtml(slide.headline || '') + '</h2>';
+    html += '<p class="slide-subline">' + escapeHtml(slide.subline || '') + '</p>';
+    html += '<div class="slide-grid">';
+    html += '<ul class="slide-bullets">';
+    (slide.bullets || []).forEach(function (bullet) {
+      html += '<li>' + escapeHtml(bullet) + '</li>';
     });
+    html += '</ul>';
+    html += '<div class="pixel-box" aria-hidden="true"></div>';
     html += '</div>';
+    html += '<div class="tiny-note">Schriftgröße 9pt für den Anhang</div>';
+
+    allErrors().forEach(function (error) {
+      const marker = error.marker || {};
+      const foundClass = state.foundIds.has(error.id) ? ' found' : '';
+      html += '<button class="marker' + foundClass + '" type="button" data-error-id="' + escapeHtml(error.id) + '" style="left:' + Number(marker.x_percent || 0) + '%;top:' + Number(marker.y_percent || 0) + '%;width:' + Number(marker.w_percent || 10) + '%;height:' + Number(marker.h_percent || 10) + '%;">';
+      if (state.foundIds.has(error.id)) {
+        html += '<span class="marker-label">✓</span>';
+      }
+      html += '</button>';
+    });
+
+    html += '</section>';
 
     if (state.feedback) {
       html += '<section class="feedback ' + escapeHtml(state.feedbackState || 'bad') + '">' + escapeHtml(state.feedback) + '</section>';
-      html += '<div class="next-wrap"><button id="next-btn" class="btn" type="button">' + (state.roundIndex >= state.cfg.rounds.length - 1 ? 'Auswertung' : 'Naechste Phrase') + '</button></div>';
+    }
+
+    if (state.foundIds.size > 0) {
+      html += '<div class="found-list">';
+      allErrors().forEach(function (error) {
+        if (!state.foundIds.has(error.id)) return;
+        html += '<span class="found-chip">' + escapeHtml(error.label) + '</span>';
+      });
+      html += '</div>';
+    }
+
+    if (state.done) {
+      html += '<div class="actions"><button id="restart-btn" class="btn" type="button">Nochmal spielen</button></div>';
     }
 
     el.root.innerHTML = html;
 
-    Array.from(el.root.querySelectorAll('[data-option-id]')).forEach(function (button) {
-      button.addEventListener('click', function () {
-        evaluate(button.getAttribute('data-option-id'));
+    const stage = document.getElementById('stage');
+    if (stage) {
+      stage.addEventListener('click', function (event) {
+        if (event.target && event.target.closest('[data-error-id]')) return;
+        registerMiss();
+      });
+    }
+
+    Array.from(el.root.querySelectorAll('[data-error-id]')).forEach(function (markerBtn) {
+      markerBtn.addEventListener('click', function (event) {
+        event.stopPropagation();
+        markError(markerBtn.getAttribute('data-error-id'));
       });
     });
 
-    const nextBtn = document.getElementById('next-btn');
-    if (nextBtn) nextBtn.addEventListener('click', nextRound);
+    const restartBtn = document.getElementById('restart-btn');
+    if (restartBtn) restartBtn.addEventListener('click', restart);
   }
+
+  function render() {
+    renderKpis();
+    if (!state.cfg || !el.root) return;
+    renderSlide();
+  }
+
+  function asStatePayload() {
+    const progress = progressPercent();
+    return {
+      mode: state.done ? 'result' : 'folie_des_grauens_fehler_suche',
+      measurable: true,
+      coordinate_system: 'origin top-left, x right, y down',
+      total_errors: allErrors().length,
+      found_errors: state.foundIds.size,
+      found_error_ids: Array.from(state.foundIds),
+      score: state.score,
+      progress_percent: progress,
+      rate_percent: progress,
+      remaining_ms: Math.round(state.remainingMs),
+      elapsed_ms: Math.round(state.elapsedMs)
+    };
+  }
+
+  window.render_game_to_text = function () {
+    const payload = asStatePayload();
+    payload.simulated_ms = window.__simulatedMs || 0;
+    return JSON.stringify(payload);
+  };
+
+  window.advanceTime = function (ms) {
+    const safeMs = Math.max(0, Number(ms) || 0);
+    window.__simulatedMs = (window.__simulatedMs || 0) + safeMs;
+    if (safeMs <= 0) {
+      renderKpis();
+      return;
+    }
+
+    const step = 1000 / 60;
+    let remaining = safeMs;
+    while (remaining > 0) {
+      const delta = Math.min(step, remaining);
+      tick(delta);
+      remaining -= delta;
+      if (state.done) break;
+    }
+    renderKpis();
+  };
 
   function escapeHtml(value) {
     return String(value)
@@ -266,57 +298,4 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
   }
-
-  function asStatePayload() {
-    const round = currentRound();
-    const progress = progressPercent();
-    return {
-      mode: state.done ? 'result' : 'email_translate_race',
-      measurable: true,
-      coordinate_system: 'origin top-left, x right, y down',
-      round_index: state.roundIndex,
-      total_rounds: state.cfg && state.cfg.rounds ? state.cfg.rounds.length : 0,
-      score: state.score,
-      progress_percent: progress,
-      rate_percent: progress,
-      answered: state.answered,
-      selected_option_id: state.selectedOptionId,
-      remaining_ms: Math.round(state.remainingMs),
-      elapsed_ms: Math.round(state.elapsedMs),
-      current_round: round
-        ? {
-            id: round.id,
-            de: round.de,
-            correct_option_id: round.correctOptionId
-          }
-        : null
-    };
-  }
-
-  const __baseRenderToText = function renderGameToTextBase() {
-    return JSON.stringify(asStatePayload());
-  };
-  let __simulatedMs = 0;
-
-  window.render_game_to_text = function renderGameToText() {
-    const raw = __baseRenderToText();
-    try {
-      const payload = JSON.parse(raw);
-      if (payload && typeof payload === 'object' && !Array.isArray(payload)) {
-        payload.simulated_ms = __simulatedMs;
-      }
-      return JSON.stringify(payload);
-    } catch (err) {
-      return raw;
-    }
-  };
-
-  window.advanceTime = function advanceTime(ms) {
-    const delta = Number(ms);
-    if (!Number.isFinite(delta) || delta <= 0) return true;
-    __simulatedMs += delta;
-    tick(delta);
-    render();
-    return true;
-  };
 })();

@@ -9,23 +9,22 @@ const unitDir = path.dirname(__filename);
 const testsDir = path.resolve(unitDir, '..');
 const docsDir = path.resolve(testsDir, '..');
 const gameDir = path.resolve(docsDir, '..');
-const configPath = path.join(gameDir, '_data/_gg01_email_translate_race.json');
+const configPath = path.join(gameDir, '_data/_gg01_zielgruppen_radar.json');
 
-describe('E-Mail-Translate-Race Config', () => {
-  it('contains rounds with 3 options and valid correctOptionId', async () => {
+describe('Zielgruppen-Radar Config', () => {
+  it('contains 3 audiences with 3 style options each', async () => {
     const raw = await readFile(configPath, 'utf8');
     const cfg = JSON.parse(raw);
 
-    assert.ok(Array.isArray(cfg.rounds) && cfg.rounds.length >= 5, 'expected at least 5 rounds');
-    assert.ok(cfg.scoring && typeof cfg.scoring === 'object', 'missing scoring');
+    assert.ok(Array.isArray(cfg.audiences) && cfg.audiences.length >= 3, 'expected at least 3 audiences');
 
-    cfg.rounds.forEach((round, index) => {
-      assert.ok(typeof round.de === 'string' && round.de.length > 0, `round ${index + 1}: missing de phrase`);
-      assert.ok(Array.isArray(round.options) && round.options.length === 3, `round ${index + 1}: expected exactly 3 options`);
-      assert.ok(typeof round.correctOptionId === 'string' && round.correctOptionId.length > 0, `round ${index + 1}: missing correctOptionId`);
+    cfg.audiences.forEach((audience, index) => {
+      assert.ok(typeof audience.name === 'string' && audience.name.length > 0, `audience ${index + 1}: missing name`);
+      assert.ok(Array.isArray(audience.styles) && audience.styles.length === 3, `audience ${index + 1}: expected 3 styles`);
+      assert.ok(typeof audience.correctStyleId === 'string' && audience.correctStyleId.length > 0, `audience ${index + 1}: missing correctStyleId`);
 
-      const ids = new Set(round.options.map((opt) => opt.id));
-      assert.ok(ids.has(round.correctOptionId), `round ${index + 1}: correctOptionId missing in options`);
+      const ids = new Set(audience.styles.map((style) => style.id));
+      assert.ok(ids.has(audience.correctStyleId), `audience ${index + 1}: correctStyleId missing in styles`);
     });
   });
 });

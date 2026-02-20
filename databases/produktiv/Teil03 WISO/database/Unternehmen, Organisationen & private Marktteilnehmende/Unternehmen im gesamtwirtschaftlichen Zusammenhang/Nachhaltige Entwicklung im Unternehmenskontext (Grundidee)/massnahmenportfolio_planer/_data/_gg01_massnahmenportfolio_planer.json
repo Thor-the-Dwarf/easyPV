@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Nachhaltige Entwicklung im Unternehmenskontext",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 10,
+    "wrong": -5,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Regel gilt bei Portfolioplanung zuerst?",
+      "hint": "Budgetgrenze einhalten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Massnahmen so kombinieren, dass Budget und Mindestwirkung passen",
+          "correct": true,
+          "feedback": "Richtig. Das ist die Grundbedingung."
+        },
+        {
+          "id": "b",
+          "text": "Wirkung ignorieren und nur guenstig kaufen",
+          "correct": false,
+          "feedback": "Niedrige Kosten allein reichen nicht."
+        },
+        {
+          "id": "c",
+          "text": "Budget bewusst ueberziehen",
+          "correct": false,
+          "feedback": "Fuehrt zu Abzug."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Auswahl verbessert den Wirkungsindex?",
+      "hint": "Hebel mit hoher Wirkung priorisieren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Massnahmen mit hohem Impact pro Budgeteinheit bevorzugen",
+          "correct": true,
+          "feedback": "Genau. So steigt die Effizienz."
+        },
+        {
+          "id": "b",
+          "text": "Massnahmen zufaellig anordnen",
+          "correct": false,
+          "feedback": "Nicht planbar."
+        },
+        {
+          "id": "c",
+          "text": "Nur bereits bekannte Massnahmen nehmen",
+          "correct": false,
+          "feedback": "Kann Potenzial verschenken."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Was ist ein typischer Planungsfehler?",
+      "hint": "Hoher Impact ohne Umsetzbarkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Portfolio mit Wirkung, aber ohne realistische Umsetzbarkeit",
+          "correct": true,
+          "feedback": "Richtig. Tragfaehigkeit fehlt."
+        },
+        {
+          "id": "b",
+          "text": "Risiken vorab zu markieren",
+          "correct": false,
+          "feedback": "Das ist sinnvoll."
+        },
+        {
+          "id": "c",
+          "text": "Budgetreserve zu planen",
+          "correct": false,
+          "feedback": "Das kann stabilisieren."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gibt es Bonus im Planer?",
+      "hint": "Konstant hohe Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bei stabil hoher Budgeteffizienz ueber mehrere Runden",
+          "correct": true,
+          "feedback": "Richtig. Serie wird belohnt."
+        },
+        {
+          "id": "b",
+          "text": "Bei einmaligem Zufallstreffer",
+          "correct": false,
+          "feedback": "Einmal reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Bei groesster Einzelmassnahme",
+          "correct": false,
+          "feedback": "Nicht zwingend effizient."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI-Kombination ist gefordert?",
+      "hint": "Wirkung und Effizienz getrennt.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wirkungsindex und Budgeteffizienz gemeinsam anzeigen",
+          "correct": true,
+          "feedback": "Exakt das Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Punktesumme anzeigen",
+          "correct": false,
+          "feedback": "Zu wenig differenziert."
+        },
+        {
+          "id": "c",
+          "text": "Nur Rundenzahl anzeigen",
+          "correct": false,
+          "feedback": "Keine Qualitaetsaussage."
+        }
+      ]
+    }
+  ]
+}

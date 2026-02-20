@@ -1,75 +1,67 @@
 {
-  "meta": {
-    "id": "email_translate_race_v1",
-    "title": "E-Mail-Translate-Race",
-    "topic": "Englisch",
-    "mechanic": "translation_quiz",
-    "version": "1.0"
+  "gameId": "folie_des_grauens_fehler_suche",
+  "title": "Folie des Grauens: Fehler-Suche",
+  "description": "Finde alle 7 Design-Sünden auf der Horror-Folie innerhalb von 60 Sekunden.",
+  "timing": {
+    "total_ms": 60000
   },
   "scoring": {
-    "correct": 20,
-    "wrong": 0,
-    "timeout": 0,
-    "completion_bonus": 0
+    "found": 15,
+    "miss": -3,
+    "completion_bonus": 20
   },
-  "timing": {
-    "default_round_ms": 10000
+  "slide": {
+    "headline": "Q4 Masterplan Super Ultra Mega Edition",
+    "subline": "Please read all 14 bullet points carefully right now",
+    "bullets": [
+      "Wir steigern alles gleichzeitig um 200% bei halbiertem Budget.",
+      "Die Details stehen auch noch in 4 weiteren Unterfolien.",
+      "Jeder liest die Tabelle am besten einfach komplett vor.",
+      "Farben: möglichst viele, damit es spannend aussieht."
+    ]
   },
-  "rounds": [
+  "errors": [
     {
-      "id": 1,
-      "de": "Sehr geehrte Damen und Herren",
-      "context": "Formelle Anrede in einer Geschaeftsmail",
-      "options": [
-        { "id": "a", "text": "Hello all", "reason": "Zu informell." },
-        { "id": "b", "text": "Dear Sir or Madam", "reason": "Richtig: formelle Standardanrede." },
-        { "id": "c", "text": "Hi guys", "reason": "Umgangssprachlich und unpassend." }
-      ],
-      "correctOptionId": "b"
+      "id": "font-chaos",
+      "label": "Comic-Sans-Schriftmix",
+      "explanation": "Unruhige Schriftwahl wirkt unprofessionell und erschwert Lesbarkeit.",
+      "marker": { "x_percent": 10, "y_percent": 19, "w_percent": 30, "h_percent": 9 }
     },
     {
-      "id": 2,
-      "de": "Im Anhang finden Sie das Angebot.",
-      "context": "Hinweis auf beigefuegtes Dokument",
-      "options": [
-        { "id": "a", "text": "Please find the quotation attached.", "reason": "Richtig und professionell." },
-        { "id": "b", "text": "The offer is somewhere below.", "reason": "Unklar und unprofessionell." },
-        { "id": "c", "text": "I send you maybe an offer.", "reason": "Grammatikalisch und inhaltlich unpraezise." }
-      ],
-      "correctOptionId": "a"
+      "id": "low-contrast",
+      "label": "Niedriger Kontrast",
+      "explanation": "Neongelb auf sehr hellem Hintergrund ist schwer zu lesen.",
+      "marker": { "x_percent": 58, "y_percent": 10, "w_percent": 34, "h_percent": 10 }
     },
     {
-      "id": 3,
-      "de": "Koennen Sie den Termin auf Freitag verschieben?",
-      "context": "Hoefliche Terminverschiebung",
-      "options": [
-        { "id": "a", "text": "Move the meeting now.", "reason": "Zu direkt und nicht hoeflich." },
-        { "id": "b", "text": "Could you reschedule the appointment to Friday?", "reason": "Richtig: hoeflich und praezise." },
-        { "id": "c", "text": "Can you put date maybe Friday.", "reason": "Falscher Satzbau." }
-      ],
-      "correctOptionId": "b"
+      "id": "text-wall",
+      "label": "Textwand",
+      "explanation": "Zu viel Fließtext auf einer Folie überfordert das Publikum.",
+      "marker": { "x_percent": 7, "y_percent": 36, "w_percent": 53, "h_percent": 42 }
     },
     {
-      "id": 4,
-      "de": "Vielen Dank fuer Ihre Rueckmeldung.",
-      "context": "Dank in professioneller Korrespondenz",
-      "options": [
-        { "id": "a", "text": "Thanks for your feedback.", "reason": "Richtig, neutral-professionell." },
-        { "id": "b", "text": "Big thanks for answer.", "reason": "Unnatuerliche Formulierung." },
-        { "id": "c", "text": "Thx for your msg.", "reason": "Zu locker fuer Business-Mail." }
-      ],
-      "correctOptionId": "a"
+      "id": "tiny-font",
+      "label": "Zu kleine Schrift",
+      "explanation": "Sehr kleine Schrift ist in Meetings schlecht erkennbar.",
+      "marker": { "x_percent": 62, "y_percent": 73, "w_percent": 26, "h_percent": 8 }
     },
     {
-      "id": 5,
-      "de": "Bei Rueckfragen stehe ich gern zur Verfuegung.",
-      "context": "Abschlussformel",
-      "options": [
-        { "id": "a", "text": "If you have any questions, please do not hesitate to contact me.", "reason": "Richtig: gaengige professionelle Abschlussformel." },
-        { "id": "b", "text": "Ask me if something weird.", "reason": "Unklar und unprofessionell." },
-        { "id": "c", "text": "Questions? Write maybe.", "reason": "Zu knapp und umgangssprachlich." }
-      ],
-      "correctOptionId": "a"
+      "id": "pixel-image",
+      "label": "Pixeliges Bild",
+      "explanation": "Unscharfe Bilder reduzieren Glaubwürdigkeit und Professionalität.",
+      "marker": { "x_percent": 66, "y_percent": 34, "w_percent": 27, "h_percent": 30 }
+    },
+    {
+      "id": "color-overload",
+      "label": "Farbüberladung",
+      "explanation": "Zu viele aggressive Farben lenken vom Inhalt ab.",
+      "marker": { "x_percent": 40, "y_percent": 24, "w_percent": 22, "h_percent": 11 }
+    },
+    {
+      "id": "missing-structure",
+      "label": "Fehlende Struktur",
+      "explanation": "Keine klare visuelle Hierarchie erschwert das Verständnis.",
+      "marker": { "x_percent": 43, "y_percent": 4, "w_percent": 26, "h_percent": 9 }
     }
   ]
 }

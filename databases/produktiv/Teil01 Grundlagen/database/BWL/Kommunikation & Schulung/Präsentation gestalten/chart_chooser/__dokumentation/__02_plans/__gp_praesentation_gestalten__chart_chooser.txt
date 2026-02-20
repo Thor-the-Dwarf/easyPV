@@ -1,16 +1,16 @@
 Anforderungen
-- Titel: "E-Mail-Translate-Race"
-- Ziel: Fuer 5 deutsche E-Mail-Phrasen jeweils die korrekte englische Entsprechung waehlen.
-- Lernziel: Formelle und fachlich passende Standardformulierungen in der englischen Geschaeftskommunikation.
+- Titel: "Chart-Chooser"
+- Ziel: Für 5 Datensätze jeweils den passendsten Diagrammtyp auswählen.
+- Lernziel: Visualisierungskompetenz für Präsentationen stärken.
 
 Spielidee
-- Pro Runde eine deutsche Phrase plus Kontext.
-- Drei englische Antwortoptionen.
-- Bewertung mit Punktefortschritt und Trefferquote.
+- Pro Runde ein Datensatz mit kurzem Hinweis.
+- Auswahl zwischen Diagrammtypen (Linie, Kreis, Balken).
+- Direkte Rückmeldung inklusive Begründung.
 
 Implementierungsplan
-- [x] JSON Konfiguration `_data/_gg01_email_translate_race.json`
-- [x] UI `_ghtml_email_translate_race.html` + `_gcss_email_translate_race.css`
-- [x] Spiel-Logik `_gjs_email_translate_race.js`
+- [x] JSON Konfiguration `_data/_gg01_chart_chooser.json`
+- [x] UI `_ghtml_chart_chooser.html` + `_gcss_chart_chooser.css`
+- [x] Spiel-Logik `_gjs_chart_chooser.js`
 - [x] Hooks `render_game_to_text` und `advanceTime`
 - [x] Tests in `__dokumentation/__03_tests` (reachability + config + progress)

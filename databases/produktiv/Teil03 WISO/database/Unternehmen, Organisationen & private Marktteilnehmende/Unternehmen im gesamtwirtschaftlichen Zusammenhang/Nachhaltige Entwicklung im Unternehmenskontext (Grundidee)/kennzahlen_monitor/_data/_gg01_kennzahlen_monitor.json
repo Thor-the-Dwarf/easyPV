@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Nachhaltige Entwicklung im Unternehmenskontext",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 8,
+    "wrong": -4,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Entwicklung ist ein kritischer Nachhaltigkeitstrend?",
+      "hint": "Mehr Emissionen bei sinkender Effizienz.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Emissionen steigen bei gleichzeitig sinkender Ressourceneffizienz",
+          "correct": true,
+          "feedback": "Richtig. Das ist klar kritisch."
+        },
+        {
+          "id": "b",
+          "text": "Alle KPI bleiben stabil im Zielkorridor",
+          "correct": false,
+          "feedback": "Das ist kein negativer Trend."
+        },
+        {
+          "id": "c",
+          "text": "Einzelwert schwankt ohne Muster",
+          "correct": false,
+          "feedback": "Noch kein belastbarer Trend."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche erste Reaktion passt bei negativem Trend?",
+      "hint": "Ursache pruefen, dann Massnahme.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Treiber analysieren und priorisierte Gegenmassnahme starten",
+          "correct": true,
+          "feedback": "Genau. Erst Ursache, dann Wirkung."
+        },
+        {
+          "id": "b",
+          "text": "Nur Reporting verschieben",
+          "correct": false,
+          "feedback": "Veraendert die Ursache nicht."
+        },
+        {
+          "id": "c",
+          "text": "Massnahme zufaellig waehlen",
+          "correct": false,
+          "feedback": "Ohne Analyse ineffektiv."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche KPI-Kombination verbessert die Steuerung?",
+      "hint": "Trend + Wirksamkeit gemeinsam.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trendquote und Massnahmenquote getrennt ausweisen",
+          "correct": true,
+          "feedback": "Richtig. So wird Wirkung sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtpunkte ohne Aufschluesselung",
+          "correct": false,
+          "feedback": "Zu wenig steuerbar."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Meetings messen",
+          "correct": false,
+          "feedback": "Nicht zielnah genug."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gilt ein Trend als bestaetigt?",
+      "hint": "Mehrere Messpunkte, nicht Einzelfall.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn mehrere Perioden dieselbe Abweichungsrichtung zeigen",
+          "correct": true,
+          "feedback": "Richtig. Das ist robust."
+        },
+        {
+          "id": "b",
+          "text": "Wenn ein Ausreisser auftritt",
+          "correct": false,
+          "feedback": "Ein Wert reicht nicht."
+        },
+        {
+          "id": "c",
+          "text": "Wenn nur ein Teammitglied es erwartet",
+          "correct": false,
+          "feedback": "Ohne Daten keine Bestaetigung."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche Auswertung hilft nach dem Fall am meisten?",
+      "hint": "Trendtreffer und Aktionsqualitaet trennen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Getrennte Rueckmeldung fuer Trend und Massnahme",
+          "correct": true,
+          "feedback": "Exakt. Lernluecken werden sichtbar."
+        },
+        {
+          "id": "b",
+          "text": "Nur Endstand ohne Ursachenbezug",
+          "correct": false,
+          "feedback": "Nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Zeitstempel dokumentieren",
+          "correct": false,
+          "feedback": "Zu wenig Aussagekraft."
+        }
+      ]
+    }
+  ]
+}

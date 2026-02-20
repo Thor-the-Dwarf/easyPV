@@ -1,0 +1,21 @@
+@startuml
+package "UI" {
+  [HTML] as H
+  [CSS] as C
+  [JS Controller] as J
+}
+package "Data" {
+  [Game JSON] as D
+  [MetaData JSON] as M
+}
+package "Tests" {
+  [Config Test] as T1
+  [Progress Test] as T2
+  [Reachability Test] as T3
+}
+J --> D
+J --> M
+T1 --> D
+T2 --> J
+T3 --> H
+@enduml

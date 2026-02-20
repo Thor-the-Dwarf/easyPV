@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "topic": "Nachhaltige Entwicklung im Unternehmenskontext",
+    "mechanic": "classification_quiz",
+    "version": "1.0"
+  },
+  "scoring": {
+    "correct": 6,
+    "wrong": -3,
+    "completion_bonus": 10
+  },
+  "rounds": [
+    {
+      "id": 1,
+      "prompt": "Welche Zuordnung passt zu Oekologie?",
+      "hint": "Ressourcen- und Emissionsbezug.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Energieeffizienzprogramm zur Emissionsreduktion",
+          "correct": true,
+          "feedback": "Richtig. Das ist oekologische Wirkung."
+        },
+        {
+          "id": "b",
+          "text": "Lieferantenrechnung frueher bezahlen",
+          "correct": false,
+          "feedback": "Eher wirtschaftlich/operativ."
+        },
+        {
+          "id": "c",
+          "text": "Mentoring fuer Nachwuchskraefte",
+          "correct": false,
+          "feedback": "Das ist eher soziale Dimension."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Welche Massnahme gehoert primaer zur sozialen Dimension?",
+      "hint": "Mensch und Arbeitsbedingungen.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Programm fuer Arbeitssicherheit und faire Arbeitszeiten",
+          "correct": true,
+          "feedback": "Genau. Das ist sozial."
+        },
+        {
+          "id": "b",
+          "text": "Abfallvermeidung in Produktion",
+          "correct": false,
+          "feedback": "Das ist oekologisch."
+        },
+        {
+          "id": "c",
+          "text": "Preisstrategie zur Margensteigerung",
+          "correct": false,
+          "feedback": "Das ist wirtschaftlich."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Welche Zuordnung ist wirtschaftlich (Oekonomie)?",
+      "hint": "Wertschoepfung und finanzielle Tragfaehigkeit.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prozessoptimierung zur nachhaltigen Kostensenkung",
+          "correct": true,
+          "feedback": "Richtig. Das ist oekonomischer Hebel."
+        },
+        {
+          "id": "b",
+          "text": "Aufforstungsprojekt im Liefergebiet",
+          "correct": false,
+          "feedback": "Das ist oekologisch."
+        },
+        {
+          "id": "c",
+          "text": "Gesundheitsprogramm fuer Mitarbeitende",
+          "correct": false,
+          "feedback": "Das ist sozial."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Wann gibt es Zusatzabzug im Match?",
+      "hint": "Kernmassnahme falsch einsortiert.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wenn eine zentrale Kernmassnahme der falschen Dimension zugeordnet wird",
+          "correct": true,
+          "feedback": "Richtig. Das ist besonders kritisch."
+        },
+        {
+          "id": "b",
+          "text": "Wenn Hinweistext gelesen wird",
+          "correct": false,
+          "feedback": "Das ist erlaubt."
+        },
+        {
+          "id": "c",
+          "text": "Wenn KPI angezeigt werden",
+          "correct": false,
+          "feedback": "Das ist gewuenscht."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Welche KPI zeigt Lernfortschritt im Match?",
+      "hint": "Treffer je Dimension.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trefferquote getrennt nach Oekonomie, Oekologie und Soziales",
+          "correct": true,
+          "feedback": "Exakt. Das entspricht dem Lernziel."
+        },
+        {
+          "id": "b",
+          "text": "Nur Gesamtdauer",
+          "correct": false,
+          "feedback": "Ohne Qualitaet nicht ausreichend."
+        },
+        {
+          "id": "c",
+          "text": "Nur Anzahl Antworten",
+          "correct": false,
+          "feedback": "Metrik ohne Korrektheit."
+        }
+      ]
+    }
+  ]
+}

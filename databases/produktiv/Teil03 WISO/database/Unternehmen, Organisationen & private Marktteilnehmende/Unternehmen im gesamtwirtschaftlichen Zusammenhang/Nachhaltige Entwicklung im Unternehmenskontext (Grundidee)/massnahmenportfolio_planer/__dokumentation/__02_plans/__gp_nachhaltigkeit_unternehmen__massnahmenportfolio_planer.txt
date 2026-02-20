@@ -1,0 +1,52 @@
+# __gp_nachhaltigkeit_unternehmen__massnahmenportfolio_planer
+
+## Spielidee
+"Massnahmenportfolio-Planer" gibt ein Budget und mehrere Nachhaltigkeitsmaßnahmen vor. Lernende bauen ein wirksames Maßnahmenportfolio.
+
+## Lernziel
+- Maßnahmen nach Wirkung und Kosten priorisieren.
+- Nachhaltigkeitsplanung mit Ressourcenbezug trainieren.
+
+## Messbare Progression
+- 8 Planungsrunden.
+- Punkte: +10 tragfaehiges Portfolio, -5 unpassendes Portfolio.
+- KPI: Wirkungsindex und Budgeteffizienz.
+
+## UML-relevante Bausteine
+### Akteure
+- Player
+- PlanningController
+- PortfolioEngine
+- KPIService
+
+### Domaenenobjekte
+- PortfolioCase(caseId, budget, measures[])
+- Measure(measureId, cost, impact)
+- RoundResult(impactScore, efficiencyScore)
+
+### Beziehungen
+- PortfolioCase enthaelt 4..15 Measure.
+- PortfolioEngine validiert Auswahl.
+- KPIService aggregiert 1..* RoundResult.
+
+### Zustandsmodell
+- LOAD_CASE -> BUILD_PORTFOLIO -> VALIDATE -> FEEDBACK -> NEXT_ROUND
+
+### Sequenz (Happy Path)
+1. PlanningController startet PortfolioCase.
+2. Player waehlt Measure.
+3. PortfolioEngine prueft Budget/Wirkung.
+4. RoundResult wird berechnet.
+5. KPIService aktualisiert Dashboard.
+
+## Regeln
+- Budgetueberschreitung verursacht Zusatzabzug.
+- Hohe Effizienz in Serie gibt Bonus.
+
+## Datenmodell (JSON-Idee)
+- fields: caseId, budget, measures[], expectedPortfolio
+
+## Abnahmekriterien
+- Kosten und Wirkung sind transparent.
+- KPI zeigt Impact und Effizienz getrennt.
+- Report listet haeufige Fehlplanungen.

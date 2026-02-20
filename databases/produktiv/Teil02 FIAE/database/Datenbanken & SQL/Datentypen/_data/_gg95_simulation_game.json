@@ -8,34 +8,34 @@
   },
   "title": "SQL Data Types - Parameter Simulation",
   "goal": {
-    "targetRateEur": 320,
-    "maxDownPaymentEur": 2500
+    "targetRateEur": 566,
+    "maxDownPaymentEur": 1800
   },
   "pricing": {
-    "baseRate": 520,
-    "termPerMonthDiscount": 1.2,
-    "downPaymentPer100Discount": 2.6,
-    "kmPer1000Surcharge": 9,
-    "minRate": 180
+    "baseRate": 600,
+    "termPerMonthDiscount": 1.3,
+    "downPaymentPer100Discount": 3.3,
+    "kmPer1000Surcharge": 12,
+    "minRate": 146
   },
   "limits": {
     "termMonths": {
       "min": 12,
-      "max": 60,
+      "max": 48,
       "step": 6,
-      "default": 24
+      "default": 36
     },
     "downPaymentEur": {
       "min": 0,
-      "max": 5000,
+      "max": 6400,
       "step": 100,
-      "default": 800
+      "default": 1700
     },
     "kmPerYear": {
       "min": 5000,
-      "max": 40000,
+      "max": 45000,
       "step": 1000,
-      "default": 15000
+      "default": 25000
     }
   }
 }

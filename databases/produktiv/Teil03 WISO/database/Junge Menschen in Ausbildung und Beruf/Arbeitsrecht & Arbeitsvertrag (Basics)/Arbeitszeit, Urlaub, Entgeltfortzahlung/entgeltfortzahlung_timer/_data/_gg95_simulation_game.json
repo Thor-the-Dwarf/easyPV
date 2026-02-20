@@ -8,32 +8,32 @@
   },
   "title": "Arbeitszeit und Entgelt - Parameter Simulation",
   "goal": {
-    "targetRateEur": 320,
-    "maxDownPaymentEur": 2500
+    "targetRateEur": 473,
+    "maxDownPaymentEur": 1200
   },
   "pricing": {
-    "baseRate": 520,
-    "termPerMonthDiscount": 1.2,
-    "downPaymentPer100Discount": 2.6,
-    "kmPer1000Surcharge": 9,
-    "minRate": 180
+    "baseRate": 498,
+    "termPerMonthDiscount": 1,
+    "downPaymentPer100Discount": 1.9,
+    "kmPer1000Surcharge": 8,
+    "minRate": 204
   },
   "limits": {
     "termMonths": {
       "min": 12,
-      "max": 60,
+      "max": 54,
       "step": 6,
       "default": 24
     },
     "downPaymentEur": {
       "min": 0,
-      "max": 5000,
+      "max": 4900,
       "step": 100,
-      "default": 800
+      "default": 1100
     },
     "kmPerYear": {
       "min": 5000,
-      "max": 40000,
+      "max": 45000,
       "step": 1000,
       "default": 15000
     }

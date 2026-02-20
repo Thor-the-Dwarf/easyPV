@@ -8,15 +8,15 @@
   },
   "title": "Betriebsprozesse - Parameter Simulation",
   "goal": {
-    "targetRateEur": 320,
-    "maxDownPaymentEur": 2500
+    "targetRateEur": 490,
+    "maxDownPaymentEur": 2200
   },
   "pricing": {
-    "baseRate": 520,
-    "termPerMonthDiscount": 1.2,
-    "downPaymentPer100Discount": 2.6,
-    "kmPer1000Surcharge": 9,
-    "minRate": 180
+    "baseRate": 566,
+    "termPerMonthDiscount": 1.6,
+    "downPaymentPer100Discount": 1.8,
+    "kmPer1000Surcharge": 5,
+    "minRate": 163
   },
   "limits": {
     "termMonths": {
@@ -27,13 +27,13 @@
     },
     "downPaymentEur": {
       "min": 0,
-      "max": 5000,
+      "max": 5200,
       "step": 100,
-      "default": 800
+      "default": 600
     },
     "kmPerYear": {
       "min": 5000,
-      "max": 40000,
+      "max": 50000,
       "step": 1000,
       "default": 15000
     }

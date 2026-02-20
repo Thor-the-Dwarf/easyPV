@@ -9,33 +9,33 @@
   "title": "Unternehmensaufbau - Parameter Simulation",
   "goal": {
     "targetRateEur": 320,
-    "maxDownPaymentEur": 2500
+    "maxDownPaymentEur": 3100
   },
   "pricing": {
-    "baseRate": 520,
-    "termPerMonthDiscount": 1.2,
-    "downPaymentPer100Discount": 2.6,
-    "kmPer1000Surcharge": 9,
-    "minRate": 180
+    "baseRate": 517,
+    "termPerMonthDiscount": 2,
+    "downPaymentPer100Discount": 3.9,
+    "kmPer1000Surcharge": 7,
+    "minRate": 136
   },
   "limits": {
     "termMonths": {
       "min": 12,
-      "max": 60,
+      "max": 72,
       "step": 6,
-      "default": 24
+      "default": 30
     },
     "downPaymentEur": {
       "min": 0,
-      "max": 5000,
+      "max": 3700,
       "step": 100,
       "default": 800
     },
     "kmPerYear": {
-      "min": 5000,
-      "max": 40000,
+      "min": 8000,
+      "max": 30000,
       "step": 1000,
-      "default": 15000
+      "default": 25000
     }
   }
 }

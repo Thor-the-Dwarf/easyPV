@@ -8,32 +8,32 @@
   },
   "title": "Ausbildungsplanung - Parameter Simulation",
   "goal": {
-    "targetRateEur": 320,
-    "maxDownPaymentEur": 2500
+    "targetRateEur": 577,
+    "maxDownPaymentEur": 1200
   },
   "pricing": {
-    "baseRate": 520,
-    "termPerMonthDiscount": 1.2,
-    "downPaymentPer100Discount": 2.6,
-    "kmPer1000Surcharge": 9,
-    "minRate": 180
+    "baseRate": 580,
+    "termPerMonthDiscount": 1,
+    "downPaymentPer100Discount": 3.6,
+    "kmPer1000Surcharge": 13,
+    "minRate": 150
   },
   "limits": {
     "termMonths": {
       "min": 12,
-      "max": 60,
+      "max": 72,
       "step": 6,
-      "default": 24
+      "default": 30
     },
     "downPaymentEur": {
       "min": 0,
-      "max": 5000,
+      "max": 2800,
       "step": 100,
-      "default": 800
+      "default": 1400
     },
     "kmPerYear": {
-      "min": 5000,
-      "max": 40000,
+      "min": 8000,
+      "max": 35000,
       "step": 1000,
       "default": 15000
     }

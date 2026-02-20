@@ -8,15 +8,15 @@
   },
   "title": "Soziale Marktwirtschaft - Parameter Simulation",
   "goal": {
-    "targetRateEur": 320,
-    "maxDownPaymentEur": 2500
+    "targetRateEur": 454,
+    "maxDownPaymentEur": 2000
   },
   "pricing": {
-    "baseRate": 520,
-    "termPerMonthDiscount": 1.2,
-    "downPaymentPer100Discount": 2.6,
-    "kmPer1000Surcharge": 9,
-    "minRate": 180
+    "baseRate": 509,
+    "termPerMonthDiscount": 0.9,
+    "downPaymentPer100Discount": 4,
+    "kmPer1000Surcharge": 6,
+    "minRate": 162
   },
   "limits": {
     "termMonths": {
@@ -27,15 +27,15 @@
     },
     "downPaymentEur": {
       "min": 0,
-      "max": 5000,
+      "max": 5100,
       "step": 100,
-      "default": 800
+      "default": 2000
     },
     "kmPerYear": {
-      "min": 5000,
-      "max": 40000,
+      "min": 10000,
+      "max": 45000,
       "step": 1000,
-      "default": 15000
+      "default": 25000
     }
   }
 }

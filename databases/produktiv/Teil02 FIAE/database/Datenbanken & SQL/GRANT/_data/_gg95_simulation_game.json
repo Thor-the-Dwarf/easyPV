@@ -8,15 +8,15 @@
   },
   "title": "GRANT & REVOKE - Parameter Simulation",
   "goal": {
-    "targetRateEur": 320,
-    "maxDownPaymentEur": 2500
+    "targetRateEur": 511,
+    "maxDownPaymentEur": 2000
   },
   "pricing": {
-    "baseRate": 520,
-    "termPerMonthDiscount": 1.2,
-    "downPaymentPer100Discount": 2.6,
-    "kmPer1000Surcharge": 9,
-    "minRate": 180
+    "baseRate": 540,
+    "termPerMonthDiscount": 1.6,
+    "downPaymentPer100Discount": 1.8,
+    "kmPer1000Surcharge": 7,
+    "minRate": 217
   },
   "limits": {
     "termMonths": {
@@ -27,15 +27,15 @@
     },
     "downPaymentEur": {
       "min": 0,
-      "max": 5000,
+      "max": 3100,
       "step": 100,
-      "default": 800
+      "default": 700
     },
     "kmPerYear": {
-      "min": 5000,
-      "max": 40000,
+      "min": 10000,
+      "max": 30000,
       "step": 1000,
-      "default": 15000
+      "default": 18000
     }
   }
 }

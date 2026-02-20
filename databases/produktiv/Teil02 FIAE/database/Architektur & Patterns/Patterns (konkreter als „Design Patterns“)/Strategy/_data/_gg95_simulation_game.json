@@ -8,34 +8,34 @@
   },
   "title": "Strategy Pattern - Parameter Simulation",
   "goal": {
-    "targetRateEur": 320,
-    "maxDownPaymentEur": 2500
+    "targetRateEur": 398,
+    "maxDownPaymentEur": 3000
   },
   "pricing": {
-    "baseRate": 520,
-    "termPerMonthDiscount": 1.2,
-    "downPaymentPer100Discount": 2.6,
+    "baseRate": 529,
+    "termPerMonthDiscount": 1.3,
+    "downPaymentPer100Discount": 3.3,
     "kmPer1000Surcharge": 9,
-    "minRate": 180
+    "minRate": 228
   },
   "limits": {
     "termMonths": {
       "min": 12,
-      "max": 60,
+      "max": 72,
       "step": 6,
-      "default": 24
+      "default": 18
     },
     "downPaymentEur": {
       "min": 0,
-      "max": 5000,
+      "max": 6200,
       "step": 100,
-      "default": 800
+      "default": 1000
     },
     "kmPerYear": {
       "min": 5000,
       "max": 40000,
       "step": 1000,
-      "default": 15000
+      "default": 25000
     }
   }
 }

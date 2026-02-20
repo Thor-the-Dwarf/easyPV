@@ -8,15 +8,15 @@
   },
   "title": "Wertschoepfungskette - Parameter Simulation",
   "goal": {
-    "targetRateEur": 320,
-    "maxDownPaymentEur": 2500
+    "targetRateEur": 466,
+    "maxDownPaymentEur": 2200
   },
   "pricing": {
-    "baseRate": 520,
-    "termPerMonthDiscount": 1.2,
-    "downPaymentPer100Discount": 2.6,
-    "kmPer1000Surcharge": 9,
-    "minRate": 180
+    "baseRate": 478,
+    "termPerMonthDiscount": 0.8,
+    "downPaymentPer100Discount": 1.8,
+    "kmPer1000Surcharge": 14,
+    "minRate": 134
   },
   "limits": {
     "termMonths": {
@@ -27,15 +27,15 @@
     },
     "downPaymentEur": {
       "min": 0,
-      "max": 5000,
+      "max": 3300,
       "step": 100,
-      "default": 800
+      "default": 1800
     },
     "kmPerYear": {
       "min": 5000,
-      "max": 40000,
+      "max": 45000,
       "step": 1000,
-      "default": 15000
+      "default": 25000
     }
   }
 }

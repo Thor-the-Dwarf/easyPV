@@ -8,34 +8,34 @@
   },
   "title": "Standortwettbewerb - Parameter Simulation",
   "goal": {
-    "targetRateEur": 320,
+    "targetRateEur": 431,
     "maxDownPaymentEur": 2500
   },
   "pricing": {
-    "baseRate": 520,
+    "baseRate": 497,
     "termPerMonthDiscount": 1.2,
-    "downPaymentPer100Discount": 2.6,
-    "kmPer1000Surcharge": 9,
-    "minRate": 180
+    "downPaymentPer100Discount": 4.3,
+    "kmPer1000Surcharge": 11,
+    "minRate": 178
   },
   "limits": {
     "termMonths": {
       "min": 12,
-      "max": 60,
+      "max": 66,
       "step": 6,
-      "default": 24
+      "default": 30
     },
     "downPaymentEur": {
       "min": 0,
-      "max": 5000,
+      "max": 4200,
       "step": 100,
-      "default": 800
+      "default": 1400
     },
     "kmPerYear": {
-      "min": 5000,
-      "max": 40000,
+      "min": 8000,
+      "max": 35000,
       "step": 1000,
-      "default": 15000
+      "default": 25000
     }
   }
 }

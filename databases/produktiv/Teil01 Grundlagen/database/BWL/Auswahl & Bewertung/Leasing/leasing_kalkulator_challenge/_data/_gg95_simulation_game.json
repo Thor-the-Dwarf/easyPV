@@ -8,34 +8,34 @@
   },
   "title": "Leasing-Kalkulator-Challenge - Parameter Simulation",
   "goal": {
-    "targetRateEur": 320,
-    "maxDownPaymentEur": 2500
+    "targetRateEur": 517,
+    "maxDownPaymentEur": 2800
   },
   "pricing": {
-    "baseRate": 520,
+    "baseRate": 529,
     "termPerMonthDiscount": 1.2,
-    "downPaymentPer100Discount": 2.6,
-    "kmPer1000Surcharge": 9,
-    "minRate": 180
+    "downPaymentPer100Discount": 2.1,
+    "kmPer1000Surcharge": 12,
+    "minRate": 150
   },
   "limits": {
     "termMonths": {
       "min": 12,
-      "max": 60,
+      "max": 48,
       "step": 6,
-      "default": 24
+      "default": 18
     },
     "downPaymentEur": {
       "min": 0,
-      "max": 5000,
+      "max": 5100,
       "step": 100,
-      "default": 800
+      "default": 1500
     },
     "kmPerYear": {
-      "min": 5000,
-      "max": 40000,
+      "min": 8000,
+      "max": 35000,
       "step": 1000,
-      "default": 15000
+      "default": 12000
     }
   }
 }

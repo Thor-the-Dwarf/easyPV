@@ -8,34 +8,34 @@
   },
   "title": "UML Use-Case Boundaries - Parameter Simulation",
   "goal": {
-    "targetRateEur": 320,
-    "maxDownPaymentEur": 2500
+    "targetRateEur": 379,
+    "maxDownPaymentEur": 3500
   },
   "pricing": {
-    "baseRate": 520,
-    "termPerMonthDiscount": 1.2,
-    "downPaymentPer100Discount": 2.6,
-    "kmPer1000Surcharge": 9,
-    "minRate": 180
+    "baseRate": 527,
+    "termPerMonthDiscount": 1.9,
+    "downPaymentPer100Discount": 3.9,
+    "kmPer1000Surcharge": 10,
+    "minRate": 140
   },
   "limits": {
     "termMonths": {
       "min": 12,
-      "max": 60,
+      "max": 72,
       "step": 6,
-      "default": 24
+      "default": 30
     },
     "downPaymentEur": {
       "min": 0,
-      "max": 5000,
+      "max": 6900,
       "step": 100,
-      "default": 800
+      "default": 1300
     },
     "kmPerYear": {
-      "min": 5000,
+      "min": 10000,
       "max": 40000,
       "step": 1000,
-      "default": 15000
+      "default": 12000
     }
   }
 }

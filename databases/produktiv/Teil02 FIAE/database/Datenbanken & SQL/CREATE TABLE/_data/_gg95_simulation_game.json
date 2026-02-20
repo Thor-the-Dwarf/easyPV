@@ -8,34 +8,34 @@
   },
   "title": "CREATE TABLE - Parameter Simulation",
   "goal": {
-    "targetRateEur": 320,
-    "maxDownPaymentEur": 2500
+    "targetRateEur": 553,
+    "maxDownPaymentEur": 3600
   },
   "pricing": {
-    "baseRate": 520,
-    "termPerMonthDiscount": 1.2,
-    "downPaymentPer100Discount": 2.6,
+    "baseRate": 565,
+    "termPerMonthDiscount": 1,
+    "downPaymentPer100Discount": 1.9,
     "kmPer1000Surcharge": 9,
-    "minRate": 180
+    "minRate": 175
   },
   "limits": {
     "termMonths": {
       "min": 12,
-      "max": 60,
+      "max": 54,
       "step": 6,
       "default": 24
     },
     "downPaymentEur": {
       "min": 0,
-      "max": 5000,
+      "max": 4100,
       "step": 100,
-      "default": 800
+      "default": 1800
     },
     "kmPerYear": {
-      "min": 5000,
-      "max": 40000,
+      "min": 10000,
+      "max": 35000,
       "step": 1000,
-      "default": 15000
+      "default": 25000
     }
   }
 }

@@ -17,6 +17,7 @@ import {
 } from './state.js';
 import { initLayout, mountTools, updateBreadcrumb } from './layout.js';
 import { renderSubchapter, renderPlaceholder, renderError } from './renderer.js';
+import { mountActualTools } from './tools.js';
 
 // ─── Konstanten ───────────────────────────────────────────────────────────────
 const LESSONS_URL = './assets/data/lessons.json';
@@ -224,6 +225,7 @@ function onNavigate(route) {
     setActiveSidebarItem(chapterId, subId);
     updateBreadcrumb([chapter.title, sub.title]);
     mountTools(sub.tools ?? []);
+    mountActualTools(sub.tools ?? [], { defaultCidr: '2001:db8::/48' });
 }
 
 // ─── Lessons laden ────────────────────────────────────────────────────────────

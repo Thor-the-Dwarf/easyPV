@@ -1330,3 +1330,571 @@ body.exam-mode #app-layout {
 .task-input:focus::after {
     content: '↵';
 }
+
+/* ═══════════════════════════════════════════════════════════
+   23. WP06 – PREFIX-VISUALIZER
+═══════════════════════════════════════════════════════════ */
+
+.pv-widget {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.pv-input-row {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.pv-cidr-input {
+    flex: 1;
+    height: 34px;
+    padding: 0 var(--space-3);
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    outline: none;
+    transition: border-color var(--transition);
+}
+
+.pv-cidr-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--color-accent-glow);
+}
+
+.pv-btn-go {
+    height: 34px;
+    padding: 0 var(--space-3);
+    font-size: var(--text-sm);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+
+/* Typ-Badge */
+.pv-type-badge {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-pill);
+    width: fit-content;
+}
+
+.pv-type-gua {
+    background: rgba(56, 189, 248, .15);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent-dim);
+}
+
+.pv-type-ula {
+    background: rgba(129, 140, 248, .15);
+    color: var(--color-accent-2);
+    border: 1px solid var(--color-accent-2-dim);
+}
+
+.pv-type-link-local {
+    background: rgba(251, 191, 36, .15);
+    color: var(--color-warning);
+    border: 1px solid var(--color-warning);
+}
+
+.pv-type-multicast {
+    background: rgba(248, 113, 113, .15);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+}
+
+.pv-type-loopback,
+.pv-type-unspecified {
+    background: var(--color-bg-elevated);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+}
+
+/* Gruppen-Row */
+.pv-groups-scroll {
+    overflow-x: auto;
+    padding-bottom: var(--space-1);
+}
+
+.pv-groups-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    min-width: max-content;
+}
+
+.pv-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: var(--space-1);
+    border-radius: var(--radius-sm);
+    min-width: 42px;
+    transition: background-color var(--transition);
+}
+
+.pv-group-full {
+    background-color: var(--color-accent-glow);
+    border: 1px solid var(--color-accent-dim);
+}
+
+.pv-group-partial {
+    background: linear-gradient(90deg, var(--color-accent-glow) 50%, var(--color-bg-elevated) 50%);
+    border: 1px solid var(--color-accent-dim);
+}
+
+.pv-group-none {
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+}
+
+.pv-group-hex {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+}
+
+.pv-group-full .pv-group-hex {
+    color: var(--color-accent);
+}
+
+.pv-group-partial .pv-group-hex {
+    color: var(--color-accent);
+}
+
+.pv-nibbles-row {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.pv-nibble {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    width: 9px;
+    text-align: center;
+    border-radius: 2px;
+    padding: 1px 0;
+}
+
+.pv-nibble-full {
+    background-color: var(--color-accent);
+    color: #000;
+}
+
+.pv-nibble-partial {
+    background: linear-gradient(90deg, var(--color-accent) 50%, var(--color-bg-hover) 50%);
+    color: var(--color-accent);
+}
+
+.pv-nibble-none {
+    background-color: var(--color-bg-hover);
+    color: var(--color-text-muted);
+}
+
+.pv-nibble-sep {
+    font-size: 7px;
+    color: var(--color-border);
+    line-height: 1;
+}
+
+.pv-group-idx {
+    font-size: 8px;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+}
+
+.pv-group-sep {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    padding-bottom: var(--space-3);
+    align-self: center;
+}
+
+/* Bit-Bar */
+.pv-bar {
+    display: flex;
+    height: 6px;
+    border-radius: var(--radius-pill);
+    overflow: hidden;
+    gap: 1px;
+}
+
+.pv-bar-full {
+    background-color: var(--color-accent);
+}
+
+.pv-bar-partial {
+    background: linear-gradient(90deg, var(--color-accent) 50%, var(--color-bg-elevated) 50%);
+}
+
+.pv-bar-none {
+    background-color: var(--color-bg-elevated);
+}
+
+/* Legend */
+.pv-legend {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.pv-leg {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.pv-swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.pv-sw-full {
+    background-color: var(--color-accent);
+}
+
+.pv-sw-partial {
+    background: linear-gradient(90deg, var(--color-accent) 50%, var(--color-bg-elevated) 50%);
+    border: 1px solid var(--color-border);
+}
+
+.pv-sw-none {
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+}
+
+/* Info-Grid */
+.pv-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2);
+}
+
+.pv-info-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.pv-info-label {
+    font-size: 10px;
+    color: var(--color-text-muted);
+    min-width: 70px;
+    flex-shrink: 0;
+}
+
+.pv-info-val {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--color-accent);
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pv-copy-btn {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xs);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.pv-copy-btn:hover {
+    background-color: var(--color-bg-hover);
+    color: var(--color-accent);
+}
+
+/* Warnungen */
+.pv-nibble-warn,
+.pv-error {
+    font-size: var(--text-xs);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+}
+
+.pv-nibble-warn {
+    background-color: var(--color-warning-dim);
+    border: 1px solid var(--color-warning);
+    color: var(--color-warning);
+}
+
+.pv-error {
+    background-color: var(--color-error-dim);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   24. WP07 – PREFIX-SLICER
+═══════════════════════════════════════════════════════════ */
+
+.ps-widget {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.ps-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.ps-label {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-medium);
+}
+
+.ps-cidr-input {
+    height: 34px;
+    padding: 0 var(--space-3);
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    outline: none;
+    transition: border-color var(--transition);
+    width: 100%;
+}
+
+.ps-cidr-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--color-accent-glow);
+}
+
+/* Mode-Tabs */
+.ps-mode-tabs {
+    display: flex;
+    gap: var(--space-1);
+    background-color: var(--color-bg-elevated);
+    padding: 3px;
+    border-radius: var(--radius-md);
+}
+
+.ps-mode-btn {
+    flex: 1;
+    height: 26px;
+    font-size: var(--text-xs);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.ps-mode-btn.ps-mode-active {
+    background-color: var(--color-accent);
+    color: #000;
+    font-weight: var(--font-semibold);
+}
+
+/* Slider */
+.ps-slider {
+    width: 100%;
+    accent-color: var(--color-accent);
+    cursor: pointer;
+}
+
+.ps-slider-hints {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    color: var(--color-text-muted);
+}
+
+.ps-count-input {
+    height: 34px;
+    padding: 0 var(--space-3);
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: var(--text-sm);
+    outline: none;
+    width: 100%;
+    transition: border-color var(--transition);
+}
+
+.ps-count-input:focus {
+    border-color: var(--color-accent);
+}
+
+.ps-count-hint {
+    font-size: 10px;
+    color: var(--color-text-muted);
+}
+
+.ps-full-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Summary */
+.ps-summary {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+}
+
+.ps-summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.ps-summary-label {
+    font-size: 9px;
+    color: var(--color-text-muted);
+}
+
+.ps-summary-val {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-primary);
+}
+
+.ps-summary-val.ps-highlight {
+    color: var(--color-accent);
+    font-weight: var(--font-bold);
+}
+
+.ps-summary-arrow {
+    font-size: var(--text-lg);
+    color: var(--color-accent);
+}
+
+/* Warn/OK */
+.ps-warn,
+.ps-ok {
+    font-size: var(--text-xs);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    line-height: 1.5;
+}
+
+.ps-warn {
+    background-color: var(--color-warning-dim);
+    border: 1px solid var(--color-warning);
+    color: var(--color-warning);
+}
+
+.ps-ok {
+    background-color: var(--color-success-dim);
+    border: 1px solid var(--color-success);
+    color: var(--color-success);
+}
+
+/* Subnet-Liste */
+.ps-subnet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ps-subnet-list-header {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    padding: var(--space-1) 0;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-1);
+}
+
+.ps-subnet-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 3px var(--space-2);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-bg-elevated);
+    transition: background-color var(--transition);
+}
+
+.ps-subnet-item:hover {
+    background-color: var(--color-bg-hover);
+}
+
+.ps-subnet-last {
+    border: 1px solid var(--color-accent-dim);
+}
+
+.ps-subnet-idx {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--color-text-muted);
+    min-width: 18px;
+    text-align: right;
+}
+
+.ps-subnet-cidr {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--color-accent);
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ps-copy-cidr {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    border-radius: 3px;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.ps-copy-cidr:hover {
+    background-color: var(--color-bg-hover);
+    color: var(--color-accent);
+}
+
+.ps-subnet-separator {
+    font-size: 10px;
+    color: var(--color-text-muted);
+    text-align: center;
+    padding: var(--space-1) 0;
+}
+
+.ps-error {
+    font-size: var(--text-xs);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-error-dim);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+}

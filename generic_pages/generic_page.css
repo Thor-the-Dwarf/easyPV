@@ -1,6 +1,7 @@
 :root {
   --fab-size: 52px;
   --fab-clearance: calc(var(--fab-size) + 1.2rem);
+  --bottom-bar-height: 72px;
   --bg: 230 30% 8%;
   --bg-glow-1: 195 100% 62%;
   --bg-glow-2: 262 92% 68%;
@@ -53,11 +54,66 @@ body {
 
 .drawer-list {
   width: 100%;
-  padding-bottom: calc(var(--fab-size) * 2 + 2.2rem);
+  padding-bottom: calc(var(--bottom-bar-height) + var(--fab-size) * 2 + 2.8rem);
   padding-right: var(--fab-clearance);
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+}
+
+.game-bottom-bar {
+  position: fixed;
+  left: 50%;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem);
+  transform: translateX(-50%);
+  width: min(740px, calc(100vw - 0.8rem));
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.35rem;
+  padding: 0.45rem;
+  border-radius: 16px;
+  border: 1px solid hsl(var(--border) / 0.38);
+  background: hsl(var(--surface-soft) / 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 14px 28px rgba(var(--shadow-ambient), 0.34);
+  z-index: 25;
+}
+
+.game-chip {
+  min-height: 52px;
+  border-radius: 12px;
+  border: 1px solid hsl(var(--border) / 0.28);
+  background: hsl(var(--surface-strong) / 0.82);
+  color: hsl(var(--text));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.08rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.16s ease, box-shadow 0.2s ease;
+}
+
+.game-chip:hover {
+  transform: translateY(-1px);
+  border-color: hsl(var(--border) / 0.7);
+}
+
+.game-chip.is-active {
+  border-color: hsl(var(--border) / 0.92);
+  box-shadow: 0 0 0 1px hsl(var(--border) / 0.24) inset, 0 0 16px hsl(var(--border) / 0.3);
+}
+
+.game-chip-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.game-chip-label {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 .generic-drawer {
@@ -354,7 +410,7 @@ body {
 .fab-stack {
   position: absolute;
   right: 0.35rem;
-  bottom: 0.7rem;
+  bottom: calc(var(--bottom-bar-height) + env(safe-area-inset-bottom, 0px) + 0.9rem);
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
@@ -524,18 +580,33 @@ body {
 
   .drawer-list {
     gap: 0.45rem;
-    padding-bottom: calc(var(--fab-size) * 2 + 1.6rem);
+    padding-bottom: calc(var(--bottom-bar-height) + var(--fab-size) * 2 + 2.1rem);
     padding-right: calc(var(--fab-size) + 0.9rem);
+  }
+
+  .game-bottom-bar {
+    width: calc(100vw - 0.55rem);
+    gap: 0.26rem;
+    padding: 0.32rem;
+  }
+
+  .game-chip {
+    min-height: 48px;
+  }
+
+  .game-chip-label {
+    font-size: 0.58rem;
   }
 
   .fab-stack {
     right: 0.1rem;
-    bottom: 0.4rem;
+    bottom: calc(var(--bottom-bar-height) + env(safe-area-inset-bottom, 0px) + 0.5rem);
     gap: 0.55rem;
   }
 
   :root {
     --fab-size: 48px;
+    --bottom-bar-height: 68px;
   }
 
   .feedback-modal {

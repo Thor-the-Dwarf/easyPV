@@ -7,6 +7,8 @@
   const drawerToggles = document.querySelectorAll('[data-drawer-toggle]');
   const fabPractice = document.getElementById('fab-practice');
   const fabFeedback = document.getElementById('fab-feedback');
+  const gameBottomBar = document.getElementById('game-bottom-bar');
+  const gameChips = Array.from(document.querySelectorAll('.game-chip[data-engine-id]'));
   const imageGridList = document.getElementById('image-grid-listview');
   const imageDrawerTitle = document.getElementById('image-drawer-title');
   let modalRefs = null;
@@ -28,6 +30,17 @@
   const nodeId = params.get('nodeId');
   const urlTheme = normalizeTheme(params.get('theme'));
   const progressKey = resolveProgressKey();
+  const KNOWN_ENGINE_IDS = [
+    'ConstructionGame',
+    'DecisionGame',
+    'FindingGame',
+    'MatchingGame',
+    'SimulationGame',
+    'SortingGame'
+  ];
+  let selectedEngineId = '';
+  let userSelectedEngine = false;
+  let sourceJsonPromise = null;
   let gameProgressTimer = 0;
   let gameProgressUnmeasurableSent = false;
 
@@ -128,6 +141,181 @@
   function syncThemeToContentFrame() {
     if (!frame || !frame.contentWindow) return;
     frame.contentWindow.postMessage({ type: 'global:theme', theme: getCurrentTheme() }, '*');
+  }
+
+  function normalizeEngineId(rawEngineId) {
+    const compact = String(rawEngineId || '')
+      .trim()
+      .toLowerCase()
+      .replace(/[\s_-]+/g, '');
+    if (!compact) return '';
+    if (compact === 'constructiongame' || compact === 'construction' || compact === 'build' || compact === 'builder') {
+      return 'ConstructionGame';
+    }
+    if (compact === 'decisiongame' || compact === 'decision' || compact === 'quiz' || compact === 'scenario') {
+      return 'DecisionGame';
+    }
+    if (compact === 'findinggame' || compact === 'finding' || compact === 'find' || compact === 'search') {
+      return 'FindingGame';
+    }
+    if (compact === 'matchinggame' || compact === 'matching' || compact === 'match') {
+      return 'MatchingGame';
+    }
+    if (compact === 'simulationgame' || compact === 'simulation' || compact === 'simulator' || compact === 'sim') {
+      return 'SimulationGame';
+    }
+    if (compact === 'sortinggame' || compact === 'sorting' || compact === 'sort') {
+      return 'SortingGame';
+    }
+    return '';
+  }
+
+  function inferEngineFromPathHint(pathHint) {
+    const source = String(pathHint || '').toLowerCase();
+    if (!source) return '';
+    if (/(join|match|mapping|zuordnung|matrix|pair|connector)/.test(source)) return 'MatchingGame';
+    if (/(finder|find|hunt|scan|detektiv|sieve|suche)/.test(source)) return 'FindingGame';
+    if (/(simulator|simulation|timer|race|survival|labyrinth)/.test(source)) return 'SimulationGame';
+    if (/(builder|build|factory|stack|dock|construction|pipeline)/.test(source)) return 'ConstructionGame';
+    if (/(sort|classification|category|kategor|router|routing|prioris|order|flow)/.test(source)) return 'SortingGame';
+    if (/(decision|quiz|duell|scenario|waage|check)/.test(source)) return 'DecisionGame';
+    return '';
+  }
+
+  function inferEngineFromMechanic(rawMechanic) {
+    const mechanic = String(rawMechanic || '').trim().toLowerCase();
+    if (!mechanic) return '';
+    const exactMap = {
+      classification_quiz: 'DecisionGame',
+      decision_quiz: 'DecisionGame',
+      scenario_quiz: 'DecisionGame',
+      category_sorting: 'SortingGame',
+      sorting: 'SortingGame',
+      sorting_rain: 'SortingGame'
+    };
+    if (Object.prototype.hasOwnProperty.call(exactMap, mechanic)) {
+      return exactMap[mechanic];
+    }
+    return inferEngineFromPathHint(mechanic);
+  }
+
+  function inferEngineFromStructure(payload) {
+    if (!payload || typeof payload !== 'object' || Array.isArray(payload)) return '';
+    if (Array.isArray(payload.rounds) && payload.rounds.length > 0) return 'DecisionGame';
+    if (payload.goal && payload.pricing) return 'SimulationGame';
+    if (Array.isArray(payload.levels) && payload.levels.length > 0) {
+      const firstLevel = payload.levels[0] || {};
+      if (Array.isArray(firstLevel.leftItems) || Array.isArray(firstLevel.rightItems)) return 'MatchingGame';
+      return 'DecisionGame';
+    }
+    if (Array.isArray(payload.terms) && Array.isArray(payload.contract_excerpt)) return 'FindingGame';
+    if (Array.isArray(payload.items) && Array.isArray(payload.solution)) return 'ConstructionGame';
+    if (Array.isArray(payload.categories) && (Array.isArray(payload.items) || Array.isArray(payload.terms))) return 'SortingGame';
+    return '';
+  }
+
+  function inferEngineFromPayload(payload) {
+    if (!payload || typeof payload !== 'object' || Array.isArray(payload)) return '';
+    const meta = payload.meta && typeof payload.meta === 'object' && !Array.isArray(payload.meta) ? payload.meta : {};
+    const explicitEngine = normalizeEngineId(meta.engine || meta.engineId || payload.engine || payload.engineId);
+    if (explicitEngine && KNOWN_ENGINE_IDS.includes(explicitEngine)) return explicitEngine;
+    const fromMechanic = inferEngineFromMechanic(meta.mechanic || payload.mechanic || meta.gameType || payload.gameType);
+    if (fromMechanic) return fromMechanic;
+    return inferEngineFromStructure(payload);
+  }
+
+  function loadSourceJsonPayload() {
+    if (!json) return Promise.resolve(null);
+    if (!sourceJsonPromise) {
+      sourceJsonPromise = fetch(json)
+        .then(function (response) {
+          if (!response || !response.ok) return null;
+          return response.json();
+        })
+        .catch(function () {
+          return null;
+        });
+    }
+    return sourceJsonPromise;
+  }
+
+  async function detectPreferredEngineId() {
+    const payload = await loadSourceJsonPayload();
+    const fromPayload = inferEngineFromPayload(payload);
+    if (fromPayload) return fromPayload;
+    return inferEngineFromPathHint(jsonRel || json || gameRel || game || folder);
+  }
+
+  function setSelectedEngine(engineId) {
+    const normalized = normalizeEngineId(engineId);
+    if (!normalized || !KNOWN_ENGINE_IDS.includes(normalized)) return false;
+    selectedEngineId = normalized;
+    if (gameBottomBar) {
+      gameBottomBar.setAttribute('data-selected-engine', normalized);
+    }
+    gameChips.forEach(function (chip) {
+      const chipEngine = normalizeEngineId(chip.getAttribute('data-engine-id'));
+      const active = chipEngine === normalized;
+      chip.classList.toggle('is-active', active);
+      chip.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    return true;
+  }
+
+  function buildEngineTarget(engineId) {
+    const normalized = normalizeEngineId(engineId);
+    if (!normalized) return '';
+    try {
+      const url = new URL('../game_pages/' + normalized + '/index.html', window.location.href);
+      if (json) {
+        url.searchParams.set('config', json);
+      }
+      if (folder) {
+        url.searchParams.set('folder', folder);
+      }
+      url.searchParams.set('theme', getCurrentTheme());
+      return url.href;
+    } catch (_) {
+      return '';
+    }
+  }
+
+  function resolveGameTargetUrl() {
+    const fromSelection = buildEngineTarget(selectedEngineId);
+    if (fromSelection) return fromSelection;
+    const fallbackGame = String(game || '').trim();
+    if (!fallbackGame) return '';
+    try {
+      const legacyUrl = new URL(fallbackGame, window.location.href);
+      legacyUrl.searchParams.set('theme', getCurrentTheme());
+      if (json) legacyUrl.searchParams.set('json', json);
+      return legacyUrl.href;
+    } catch (_) {
+      return fallbackGame;
+    }
+  }
+
+  function initGameBottomBar() {
+    if (!gameChips.length) return;
+
+    gameChips.forEach(function (chip) {
+      chip.setAttribute('aria-pressed', 'false');
+      chip.addEventListener('click', function () {
+        const nextEngine = chip.getAttribute('data-engine-id') || '';
+        if (!setSelectedEngine(nextEngine)) return;
+        userSelectedEngine = true;
+        setFrameMode('game');
+      });
+    });
+
+    const fromSourcePath = inferEngineFromPathHint(jsonRel || json || gameRel || game || folder);
+    setSelectedEngine(fromSourcePath || 'DecisionGame');
+
+    detectPreferredEngineId().then(function (preferredEngine) {
+      if (userSelectedEngine) return;
+      if (!preferredEngine) return;
+      setSelectedEngine(preferredEngine);
+    });
   }
 
   function escapeHtml(value) {
@@ -307,7 +495,8 @@
 
   function buildFeedbackContext() {
     const resolvedJsonPath = resolveRepoPath(jsonRel, json);
-    const resolvedGamePath = resolveRepoPath(gameRel, game);
+    const selectedGameUrl = feedbackOrigin === 'game' ? resolveGameTargetUrl() : '';
+    const resolvedGamePath = resolveRepoPath(gameRel, game || selectedGameUrl);
     const folderPath = repoDirname(resolvedGamePath) || repoDirname(resolvedJsonPath) || null;
     const gameTitle =
       feedbackOrigin === 'game'
@@ -333,20 +522,26 @@
   function updatePracticeButtonState() {
     if (!fabPractice) return;
     const isGameView = feedbackOrigin === 'game';
-    const label = isGameView ? 'Zurueck zum C-Suite Chat' : 'Ueben';
+    const label = isGameView ? 'Zurueck zum C-Suite Chat' : 'Spiel starten';
     fabPractice.title = label;
     fabPractice.setAttribute('aria-label', label);
   }
 
   function setFrameMode(mode) {
     const next = mode === 'game' ? 'game' : 'generic';
-    feedbackOrigin = next;
-
     if (next === 'game') {
-      const practiceTarget = game || genericSuiteTarget;
-      frame.src = practiceTarget;
-      startGameProgressTracking();
+      const practiceTarget = resolveGameTargetUrl();
+      if (practiceTarget) {
+        feedbackOrigin = 'game';
+        frame.src = practiceTarget;
+        startGameProgressTracking();
+      } else {
+        feedbackOrigin = 'generic';
+        frame.src = genericSuiteTarget;
+        stopGameProgressTracking();
+      }
     } else {
+      feedbackOrigin = 'generic';
       frame.src = genericSuiteTarget;
       stopGameProgressTracking();
     }
@@ -896,48 +1091,42 @@
 
   async function loadImageItemsFromJson() {
     const contextKey = detectContextKey();
-    const sources = [];
-    if (json) sources.push(json);
-    for (let i = 0; i < sources.length; i += 1) {
-      const sourceRef = sources[i];
-      try {
-        const resp = await fetch(sourceRef);
-        if (!resp.ok) continue;
-        const payload = await resp.json();
-        const list = payload && Array.isArray(payload.bild_quellen) ? payload.bild_quellen : [];
-        if (!list.length) continue;
-        const sourceBase = new URL(sourceRef, window.location.href).href;
-        const parsed = list
-          .map(function (entry) {
-            const title = String(entry && entry.titel ? entry.titel : '').trim();
-            const topic = String(entry && entry.thema ? entry.thema : '').trim();
-            const imageUrl = String(entry && entry.bild_url ? entry.bild_url : '').trim();
-            const sourceUrl = String(entry && entry.quelle_url ? entry.quelle_url : '').trim();
-            const license = String(entry && entry.lizenz ? entry.lizenz : '').trim();
-            if (!imageUrl) return null;
-            let resolvedImageUrl = imageUrl;
-            let resolvedSourceUrl = sourceUrl || imageUrl;
-            try {
-              resolvedImageUrl = new URL(imageUrl, sourceBase).href;
-            } catch (_) {}
-            try {
-              resolvedSourceUrl = new URL(sourceUrl || imageUrl, sourceBase).href;
-            } catch (_) {}
-            const metaParts = [topic, license].filter(Boolean);
-            return {
-              href: resolvedSourceUrl,
-              src: resolvedImageUrl,
-              alt: title || topic || 'Externes Bild',
-              meta: metaParts.join(' | ') || 'Externe Quelle',
-              title: title || topic || 'Bild'
-            };
-          })
-          .filter(Boolean)
-          .slice(0, 6);
-        return ensureSixImageItems(parsed, contextKey);
-      } catch (_) {
-        // keep trying additional sources
-      }
+    try {
+      const payload = await loadSourceJsonPayload();
+      const list = payload && Array.isArray(payload.bild_quellen) ? payload.bild_quellen : [];
+      if (!list.length) return ensureSixImageItems([], contextKey);
+
+      const sourceBase = new URL(json || window.location.href, window.location.href).href;
+      const parsed = list
+        .map(function (entry) {
+          const title = String(entry && entry.titel ? entry.titel : '').trim();
+          const topic = String(entry && entry.thema ? entry.thema : '').trim();
+          const imageUrl = String(entry && entry.bild_url ? entry.bild_url : '').trim();
+          const sourceUrl = String(entry && entry.quelle_url ? entry.quelle_url : '').trim();
+          const license = String(entry && entry.lizenz ? entry.lizenz : '').trim();
+          if (!imageUrl) return null;
+          let resolvedImageUrl = imageUrl;
+          let resolvedSourceUrl = sourceUrl || imageUrl;
+          try {
+            resolvedImageUrl = new URL(imageUrl, sourceBase).href;
+          } catch (_) {}
+          try {
+            resolvedSourceUrl = new URL(sourceUrl || imageUrl, sourceBase).href;
+          } catch (_) {}
+          const metaParts = [topic, license].filter(Boolean);
+          return {
+            href: resolvedSourceUrl,
+            src: resolvedImageUrl,
+            alt: title || topic || 'Externes Bild',
+            meta: metaParts.join(' | ') || 'Externe Quelle',
+            title: title || topic || 'Bild'
+          };
+        })
+        .filter(Boolean)
+        .slice(0, 6);
+      return ensureSixImageItems(parsed, contextKey);
+    } catch (_) {
+      // fall through
     }
     return ensureSixImageItems([], contextKey);
   }
@@ -1086,14 +1275,11 @@
       toggleDrawer(drawer);
     });
   });
+  initGameBottomBar();
   renderImageList();
 
   fabPractice.addEventListener('click', function () {
     if (feedbackOrigin === 'game') {
-      setFrameMode('generic');
-      return;
-    }
-    if (!game) {
       setFrameMode('generic');
       return;
     }

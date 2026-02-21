@@ -463,9 +463,11 @@ body.sidebar-closed #sidebar {
 
 #sidebar {
     grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-bg-secondary);
     border-right: 1px solid var(--color-border);
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
     position: sticky;
     top: var(--total-header);
@@ -489,6 +491,9 @@ body.sidebar-closed #sidebar {
 #chapter-list {
     list-style: none;
     padding: var(--space-2) 0;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
 }
 
 /* Skeleton Loader */
@@ -566,6 +571,52 @@ body.sidebar-closed #sidebar {
 
 .subchapter-item.active {
     border-left-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+#sidebar-tools {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-2) var(--space-3) var(--space-3);
+    background-color: var(--color-bg-surface);
+}
+
+#sidebar-tools-title {
+    font-size: 10px;
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-2);
+}
+
+#sidebar-tool-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 30dvh;
+    overflow-y: auto;
+}
+
+.sidebar-tool-btn {
+    width: 100%;
+    text-align: left;
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    padding: 6px var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-bg-elevated);
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.sidebar-tool-btn:hover {
+    background-color: var(--color-bg-hover);
+    color: var(--color-text-primary);
+}
+
+.sidebar-tool-btn.active {
+    background-color: var(--color-accent-glow);
+    border-color: var(--color-accent-dim);
     color: var(--color-accent);
 }
 
@@ -732,6 +783,7 @@ body.has-edge-tool-tabs #btn-drawer-toggle {
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 0;
+    transition: right var(--transition);
 }
 
 #drawer-edge-tabs[hidden] {
@@ -775,6 +827,10 @@ body.has-edge-tool-tabs #btn-drawer-toggle {
     font-family: var(--font-mono);
     line-height: 1;
     opacity: 0.85;
+}
+
+body.drawer-open #drawer-edge-tabs {
+    right: min(92vw, 360px);
 }
 
 .drawer-toggle-icon {
@@ -892,6 +948,34 @@ body.has-edge-tool-tabs #btn-drawer-toggle {
     flex-direction: column;
     gap: var(--space-2);
     flex: 1;
+}
+
+.tool-drawer-view {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    background-color: var(--color-bg-surface);
+}
+
+.tool-drawer-view[hidden] {
+    display: none;
+}
+
+.tool-drawer-head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+}
+
+.tool-drawer-icon {
+    font-size: var(--text-base);
+}
+
+.tool-drawer-name {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
 }
 
 /* ── Accordion-Slots ── */
@@ -1099,8 +1183,13 @@ body.has-edge-tool-tabs #btn-drawer-toggle {
 
     #drawer-edge-tabs {
         top: auto;
+        right: 0;
         bottom: var(--space-3);
         max-height: min(50dvh, 420px);
+    }
+
+    body.drawer-open #drawer-edge-tabs {
+        right: 0;
     }
 
     .edge-tool-tab {
@@ -1578,6 +1667,10 @@ body.exam-mode #hint-bar {
 }
 
 body.exam-mode #tool-panel {
+    display: none;
+}
+
+body.exam-mode #drawer-edge-tabs {
     display: none;
 }
 

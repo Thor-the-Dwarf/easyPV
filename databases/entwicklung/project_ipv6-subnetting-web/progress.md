@@ -46,3 +46,8 @@ Original prompt: Planänderung: Du arbeitest auf ne reigenen Git-Branch die du e
 - Burger-Button/Toggling robustisiert (`openSidebar`/`closeSidebar` + Resize-Sync in `assets/layout.js`) fuer verlässliches Ein-/Ausblenden.
 - Drawer-UX erweitert: pro Tool ein eigener Edge-Tab (Reiter am rechten Rand) mit Icon/Index und direkter Navigation zum jeweiligen Tool.
 - Der alte einzelne Tools-Reiter wird automatisch ausgeblendet, sobald Tool-Edge-Tabs verfügbar sind.
+- Rework laut Feedback:
+  - Rechte Seite: keine Accordion-Liste mehr, sondern pro Tool eine eigene Drawer-Ansicht; Edge-Tab-Wechsel zeigt immer genau ein Tool.
+  - Lektionen wechseln korrekt zwischen passenden Tool-Sets (z. B. `hex-prefix` mehrere, `compression` nur `prefix-visualizer`).
+  - Linke Sidebar unten enthält jetzt Textbuttons für alle Tools der aktuellen Lektion.
+- Edge-Tabs bei geöffnetem Drawer repositioniert (links am Drawer sichtbar/klickbar), statt hinter dem Panel zu liegen.

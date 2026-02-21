@@ -332,5 +332,28 @@
         "why": "Jedes Tool erhaelt einen eigenen sichtbaren Rand-Reiter; die Bedienung bleibt klar und konsistent"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-21 11:28:00",
+    "commit_message": "refactor(drawer+sidebar): ein Tool pro Drawer-Ansicht + Tool-Textbuttons unten links",
+    "request": "Pro Lektion passende Tools, keine Liste aller Tools im Drawer, unten links Textbuttons fuer Tools",
+    "response": [
+      {
+        "what": "Drawer-Rendering in `assets/layout.js` von Accordion-Liste auf einzelne Tool-Ansichten umgebaut (`.tool-drawer-view`)",
+        "why": "Beim Tool-Wechsel wird jetzt genau ein Tool angezeigt; Accordion-Drawer im rechten Panel entfaellt"
+      },
+      {
+        "what": "Edge-Tab-Logik erweitert und bei offenem Drawer repositioniert (`body.drawer-open #drawer-edge-tabs`)",
+        "why": "Jeder Tool-Reiter bleibt sichtbar/klickbar und oeffnet direkt die zugehoerige Tool-Ansicht"
+      },
+      {
+        "what": "In `index.html` + `assets/styles.css` + `assets/layout.js` neue Sidebar-Toolsektion unten links mit Textbuttons ergänzt",
+        "why": "Leerer Bereich unten links wird genutzt; Toolwechsel ist auch ueber Textbuttons moeglich"
+      },
+      {
+        "what": "Visual Checks mit Screenshots (`output/edge-tabs-hex`, `output/edge-tabs-compression`, `output/edge-tabs-open-shift`) ausgefuehrt",
+        "why": "Bestätigen, dass pro Lektion passende Tools und pro Tool eine eigene Drawer-Ansicht angezeigt werden"
+      }
+    ]
   }
 ]

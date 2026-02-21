@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL-Heartbeat</title>
+    <!-- Shared Theme -->
+    <link rel="stylesheet" href="../../produktiv/Teil01 Grundlagen/shared_theme.css">
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- CodeMirror (v5) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/sql/sql.min.js"></script>
+    <!-- Addons (optional but good) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/display/placeholder.min.js"></script>
+</head>
+
+<body>
+
+    <div id="app-container">
+        <!-- Top Canvas Overlay -->
+        <canvas id="top-canvas"></canvas>
+
+        <!-- Main Content Area (Horizontal Layout: Left - Center - Right) -->
+        <div id="main-area">
+            <aside id="left-drawer" class="drawer horizontal-drawer">
+                <div class="drawer-content">
+                    <h2>Navigation</h2>
+                    <!-- Content here -->
+                </div>
+                <div class="resizer-handle horizontal-handle" data-target="left"></div>
+            </aside>
+
+            <main id="center-content">
+                <div class="center-header"
+                    style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                    <h1 style="margin-bottom:0;">Datenbank Visualisierung</h1>
+                    <button id="btn-toggle-rels" class="theme-btn">Schlüssel-Referenzen</button>
+                </div>
+                <div id="tables-container"></div>
+            </main>
+
+            <aside id="right-drawer" class="drawer horizontal-drawer">
+                <div class="resizer-handle horizontal-handle left-side" data-target="right"></div>
+                <div class="drawer-content">
+                    <h2>Prozess-Visualisierung</h2>
+                    <div id="chat-container"></div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Bottom Drawer (Vertical Layout) -->
+        <section id="bottom-drawer" class="drawer vertical-drawer">
+            <div class="resizer-handle vertical-handle" data-target="bottom"></div>
+            <div class="drawer-content">
+                <div class="toolbar">
+                    <button id="btn-play">▶ Play</button>
+                    <button id="btn-ff">⏩ Fast Forward</button>
+                </div>
+                <div class="editor-container">
+                    <textarea id="sql-editor" placeholder="-- SQL Code hier eingeben --"></textarea>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/parser.js"></script>
+    <script src="assets/js/simulator.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

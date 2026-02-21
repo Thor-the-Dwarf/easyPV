@@ -57,12 +57,13 @@ function isMobile() { return window.innerWidth < 768; }
 
 export function openSidebar() {
     sidebarOpen = true;
+    bodyEl.classList.remove('sidebar-closed');
     if (isMobile()) {
         bodyEl.classList.add('sidebar-open');
-        bodyEl.classList.remove('sidebar-closed');
         sidebarBackdrop?.removeAttribute('hidden');
     } else {
-        bodyEl.classList.remove('sidebar-closed');
+        bodyEl.classList.remove('sidebar-open');
+        sidebarBackdrop?.setAttribute('hidden', '');
     }
     btnSidebar.setAttribute('aria-expanded', 'true');
     sidebar.setAttribute('aria-hidden', 'false');
@@ -70,11 +71,10 @@ export function openSidebar() {
 
 export function closeSidebar() {
     sidebarOpen = false;
+    bodyEl.classList.add('sidebar-closed');
+    bodyEl.classList.remove('sidebar-open');
     if (isMobile()) {
-        bodyEl.classList.remove('sidebar-open');
         sidebarBackdrop?.setAttribute('hidden', '');
-    } else {
-        bodyEl.classList.add('sidebar-closed');
     }
     btnSidebar.setAttribute('aria-expanded', 'false');
     sidebar.setAttribute('aria-hidden', 'true');
@@ -256,10 +256,23 @@ function initResizeHandler() {
         const mobile = isMobile();
         if (mobile === lastMobile) return;
         lastMobile = mobile;
-        if (!mobile) {
+        if (mobile) {
+            if (sidebarOpen) {
+                bodyEl.classList.add('sidebar-open');
+                bodyEl.classList.remove('sidebar-closed');
+                sidebarBackdrop?.removeAttribute('hidden');
+            } else {
+                bodyEl.classList.remove('sidebar-open');
+                sidebarBackdrop?.setAttribute('hidden', '');
+            }
+        } else {
             bodyEl.classList.remove('sidebar-open');
             sidebarBackdrop?.setAttribute('hidden', '');
-            if (sidebarOpen) bodyEl.classList.remove('sidebar-closed');
+            if (sidebarOpen) {
+                bodyEl.classList.remove('sidebar-closed');
+            } else {
+                bodyEl.classList.add('sidebar-closed');
+            }
         }
     });
 }

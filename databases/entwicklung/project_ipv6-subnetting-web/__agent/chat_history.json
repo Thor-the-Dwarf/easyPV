@@ -294,5 +294,24 @@
         "why": "Saubere technische Basis nach Abschluss der WP-Umsetzung"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-21 00:20:00",
+    "commit_message": "fix(layout): schmalere Sidebar + Burger-Toggle stabilisieren",
+    "request": "Die linke Leiste ist zu breit; nur so breit wie nötig und per Burger-Button ein/ausblenden",
+    "response": [
+      {
+        "what": "`#app-layout` in `assets/styles.css` auf 2 Spalten umgestellt und fehlerhafte alte Override-Regel entfernt",
+        "why": "Keine unnoetig reservierte Zusatzspalte mehr; Sidebar/Content reagieren klar auf den Toggle-Status"
+      },
+      {
+        "what": "Sidebar-Breite angepasst (`--sidebar-w: clamp(176px, 18vw, 220px)`; mobil `min(88vw, 240px)`)",
+        "why": "Linke Leiste wirkt schmaler und passt sich besser dem verfuegbaren Raum an"
+      },
+      {
+        "what": "Sidebar-State-Handling in `assets/layout.js` vereinheitlicht (`openSidebar`, `closeSidebar`, `initResizeHandler`)",
+        "why": "Burger-Button blendet die Sidebar auf Desktop und Mobile zuverlaessig ein/aus"
+      }
+    ]
   }
 ]

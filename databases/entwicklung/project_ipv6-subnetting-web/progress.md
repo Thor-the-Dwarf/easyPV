@@ -41,3 +41,6 @@ Original prompt: Planänderung: Du arbeitest auf ne reigenen Git-Branch die du e
 - Hinweis: Gesamtsuite hat weiterhin 2 bestehende Altfails ausserhalb von WP-06 (`compress(ULA)`, `prefixLastAddress(/48)`).
 - Nacharbeit: die 2 Altfails in `assets/lib/ipv6.test.js` korrigiert (Erwartungswerte waren fachlich falsch, Core-Logik unverändert).
 - Ergebnis: `node assets/lib/ipv6.test.js` läuft jetzt mit `80/80` erfolgreich durch.
+- Layout-Fix Sidebar: App-Layout auf echte 2-Spalten-Struktur gestellt (Sidebar + Content), keine reservierte dritte Spalte mehr.
+- Sidebar-Breite reduziert/adaptiv (`--sidebar-w: clamp(176px, 18vw, 220px)`), mobil auf `min(88vw, 240px)` begrenzt.
+- Burger-Button/Toggling robustisiert (`openSidebar`/`closeSidebar` + Resize-Sync in `assets/layout.js`) fuer verlässliches Ein-/Ausblenden.

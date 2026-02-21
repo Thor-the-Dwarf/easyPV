@@ -174,7 +174,7 @@ body {
     --header-h: 56px;
     --path-bar-h: 30px;
     --total-header: calc(var(--hint-bar-h) + var(--header-h) + var(--path-bar-h));
-    --sidebar-w: 240px;
+    --sidebar-w: clamp(176px, 18vw, 220px);
     --tool-panel-w: 280px;
     --transition: 0.22s ease;
 }
@@ -435,13 +435,13 @@ button {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   9. APP LAYOUT (3 Spalten)
+   9. APP LAYOUT
 ═══════════════════════════════════════════════════════════ */
 
 #app-layout {
     display: grid;
-    grid-template-columns: var(--sidebar-w) 1fr var(--tool-panel-w);
-    grid-template-areas: "sidebar content tool-panel";
+    grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+    grid-template-areas: "sidebar content";
     margin-top: var(--total-header);
     min-height: calc(100dvh - var(--total-header));
     transition: grid-template-columns var(--transition);
@@ -449,7 +449,7 @@ button {
 
 /* Sidebar closed */
 body.sidebar-closed #app-layout {
-    grid-template-columns: 0 1fr var(--tool-panel-w);
+    grid-template-columns: 0 minmax(0, 1fr);
 }
 
 body.sidebar-closed #sidebar {
@@ -577,6 +577,7 @@ body.sidebar-closed #sidebar {
     grid-area: content;
     padding: var(--space-8);
     max-width: 100%;
+    min-width: 0;
     overflow-y: auto;
 }
 
@@ -930,15 +931,6 @@ body.sidebar-closed #sidebar {
     font-size: var(--text-base);
 }
 
-/* App-Layout: kein Platz mehr für die rechte Spalte */
-#app-layout {
-    grid-template-columns: var(--sidebar-width) 1fr !important;
-    /* tool-panel-Spalte entfällt */
-    grid-template-areas: "sidebar content" !important;
-}
-
-
-
 /* ═══════════════════════════════════════════════════════════
    13. ERROR BANNER
 ═══════════════════════════════════════════════════════════ */
@@ -1017,7 +1009,7 @@ body.sidebar-closed #sidebar {
         position: fixed;
         top: var(--total-header);
         left: 0;
-        width: var(--sidebar-w);
+        width: min(88vw, 240px);
         height: calc(100dvh - var(--total-header));
         z-index: 90;
         transform: translateX(-100%);

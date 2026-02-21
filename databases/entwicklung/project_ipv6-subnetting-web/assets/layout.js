@@ -28,6 +28,7 @@ const TOOL_META = {
     'ndp-demo': { icon: '🔗', label: 'NDP-Demo', desc: 'Visualisiert den Neighbor-Discovery-Ablauf.' },
     'pmtud-demo': { icon: '📦', label: 'PMTUD-Demo', desc: 'Path-MTU-Discovery und Packet-Too-Big-Meldungen.' },
 };
+const ALL_TOOL_IDS = Object.keys(TOOL_META);
 
 // ─── DOM-Refs ─────────────────────────────────────────────────────────────────
 const htmlEl = document.documentElement;
@@ -66,7 +67,7 @@ function setActiveEdgeTab(toolId = null) {
 
 function setActiveSidebarToolButton(toolId = null) {
     sidebarToolButtons?.querySelectorAll('.sidebar-tool-btn').forEach((btn) => {
-        const isActive = toolId !== null && btn.dataset.toolId === toolId;
+        const isActive = !btn.disabled && toolId !== null && btn.dataset.toolId === toolId;
         btn.classList.toggle('active', isActive);
         btn.setAttribute('aria-pressed', String(isActive));
     });
@@ -123,29 +124,35 @@ function mountEdgeTabs(toolIds = []) {
 
 function mountSidebarToolButtons(toolIds = []) {
     if (!sidebarTools || !sidebarToolButtons) return;
-    sidebarToolButtons.innerHTML = '';
-    const hasTools = toolIds.length > 0;
-    sidebarTools.hidden = !hasTools;
-    if (!hasTools) {
-        setActiveSidebarToolButton(null);
-        return;
+    if (!sidebarToolButtons.childElementCount) {
+        ALL_TOOL_IDS.forEach((id) => {
+            const meta = TOOL_META[id] ?? { label: id };
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'sidebar-tool-btn';
+            btn.dataset.toolId = id;
+            btn.textContent = meta.label;
+            btn.title = `Tool öffnen: ${meta.label}`;
+            btn.setAttribute('aria-pressed', 'false');
+            btn.addEventListener('click', () => {
+                if (btn.disabled) return;
+                openDrawer();
+                openToolById(id, { scroll: true });
+            });
+            sidebarToolButtons.appendChild(btn);
+        });
     }
 
-    toolIds.forEach((id) => {
-        const meta = TOOL_META[id] ?? { label: id };
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'sidebar-tool-btn';
-        btn.dataset.toolId = id;
-        btn.textContent = meta.label;
-        btn.title = `Tool öffnen: ${meta.label}`;
-        btn.setAttribute('aria-pressed', 'false');
-        btn.addEventListener('click', () => {
-            openDrawer();
-            openToolById(id, { scroll: true });
-        });
-        sidebarToolButtons.appendChild(btn);
+    const activeSet = new Set(toolIds);
+    sidebarToolButtons.querySelectorAll('.sidebar-tool-btn').forEach((btn) => {
+        const isInLesson = activeSet.has(btn.dataset.toolId);
+        btn.disabled = !isInLesson;
+        btn.classList.toggle('is-unavailable', !isInLesson);
+        btn.setAttribute('aria-disabled', String(!isInLesson));
     });
+
+    sidebarTools.hidden = false;
+    setActiveSidebarToolButton(null);
 }
 
 // ─── Sidebar API ─────────────────────────────────────────────────────────────

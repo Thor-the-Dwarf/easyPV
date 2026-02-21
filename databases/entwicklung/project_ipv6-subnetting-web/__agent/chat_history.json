@@ -355,5 +355,28 @@
         "why": "Bestätigen, dass pro Lektion passende Tools und pro Tool eine eigene Drawer-Ansicht angezeigt werden"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-21 11:41:00",
+    "commit_message": "fix(sidebar-tools): dauerhaft sichtbar, Edge-Tabs nur lektion-spezifisch",
+    "request": "Tools links dauerhaft sichtbar; Edge-Tabs nur in der jeweiligen Lektion",
+    "response": [
+      {
+        "what": "Sidebar-Toolbuttons in `assets/layout.js` auf permanente Liste aller Tool-Labels umgestellt",
+        "why": "Die Toolliste unten links bleibt dauerhaft sichtbar statt nur pro Lektion neu aufgebaut/eingeblendet"
+      },
+      {
+        "what": "Pro Lektion werden nur passende Sidebar-Buttons aktiviert, nicht passende sichtbar aber deaktiviert",
+        "why": "Stabile Orientierung (alle Tools sichtbar) bei gleichzeitig klarer Lektion-Zuordnung"
+      },
+      {
+        "what": "Edge-Tabs bleiben an `mountTools(sub.tools)` gebunden und damit lektion-spezifisch",
+        "why": "Rechte Rand-Reiter zeigen nur die Tools der aktuell aktiven Lektion"
+      },
+      {
+        "what": "Visuell gegen `basics/compression` und `basics/hex-prefix` via Playwright-Screenshots geprüft",
+        "why": "Sicherstellen, dass beide Anforderungen im laufenden UI konsistent erfüllt sind"
+      }
+    ]
   }
 ]

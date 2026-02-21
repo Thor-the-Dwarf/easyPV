@@ -620,6 +620,13 @@ body.sidebar-closed #sidebar {
     color: var(--color-accent);
 }
 
+.sidebar-tool-btn:disabled,
+.sidebar-tool-btn.is-unavailable {
+    opacity: 0.5;
+    cursor: not-allowed;
+    color: var(--color-text-muted);
+}
+
 /* ═══════════════════════════════════════════════════════════
    11. MAIN CONTENT
 ═══════════════════════════════════════════════════════════ */

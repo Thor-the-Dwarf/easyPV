@@ -51,3 +51,6 @@ Original prompt: Planänderung: Du arbeitest auf ne reigenen Git-Branch die du e
   - Lektionen wechseln korrekt zwischen passenden Tool-Sets (z. B. `hex-prefix` mehrere, `compression` nur `prefix-visualizer`).
   - Linke Sidebar unten enthält jetzt Textbuttons für alle Tools der aktuellen Lektion.
 - Edge-Tabs bei geöffnetem Drawer repositioniert (links am Drawer sichtbar/klickbar), statt hinter dem Panel zu liegen.
+- Nachschärfung: Sidebar-Toolliste unten links ist jetzt dauerhaft sichtbar (alle Tool-Textbuttons), nicht nur lektionweise eingeblendet.
+- Pro Lektion sind nur die passenden Sidebar-Buttons aktiv; nicht passende bleiben sichtbar aber deaktiviert.
+- Edge-Tabs am rechten Rand bleiben weiterhin lektion-spezifisch (nur die Tools der aktuellen Lektion).

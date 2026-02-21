@@ -716,6 +716,67 @@ body.sidebar-closed #sidebar {
     transform: translateY(-50%) translateX(4px);
 }
 
+body.has-edge-tool-tabs #btn-drawer-toggle {
+    display: none;
+}
+
+#drawer-edge-tabs {
+    position: fixed;
+    right: 0;
+    top: calc(var(--total-header) + var(--space-2));
+    z-index: 305;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: calc(100dvh - var(--total-header) - var(--space-4));
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 0;
+}
+
+#drawer-edge-tabs[hidden] {
+    display: none;
+}
+
+.edge-tool-tab {
+    width: 40px;
+    min-height: 40px;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+    border: 1px solid var(--color-border);
+    border-right: none;
+    background-color: var(--color-bg-elevated);
+    color: var(--color-text-secondary);
+    display: grid;
+    place-items: center;
+    gap: 1px;
+    padding: 4px 2px;
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.edge-tool-tab:hover {
+    background-color: var(--color-bg-hover);
+    color: var(--color-text-primary);
+    transform: translateX(-2px);
+}
+
+.edge-tool-tab.active {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #000;
+}
+
+.edge-tool-tab-icon {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.edge-tool-tab-index {
+    font-size: 9px;
+    font-family: var(--font-mono);
+    line-height: 1;
+    opacity: 0.85;
+}
+
 .drawer-toggle-icon {
     font-size: 1.2rem;
 }
@@ -1034,6 +1095,17 @@ body.sidebar-closed #sidebar {
 
     #header-center {
         display: none;
+    }
+
+    #drawer-edge-tabs {
+        top: auto;
+        bottom: var(--space-3);
+        max-height: min(50dvh, 420px);
+    }
+
+    .edge-tool-tab {
+        width: 36px;
+        min-height: 36px;
     }
 }
 

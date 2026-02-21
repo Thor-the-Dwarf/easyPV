@@ -41,6 +41,7 @@ const toolPanelTitle = document.getElementById('tool-panel-title');
 const drawerBackdrop = document.getElementById('drawer-backdrop');
 const btnDrawerToggle = document.getElementById('btn-drawer-toggle');
 const btnDrawerClose = document.getElementById('btn-drawer-close');
+const drawerEdgeTabs = document.getElementById('drawer-edge-tabs');
 const breadcrumbList = document.getElementById('breadcrumb-list');
 const folderTreePath = document.getElementById('foldertree-path');
 const chapterList = document.getElementById('chapter-list');
@@ -52,6 +53,70 @@ let drawerOpen = false;
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function isMobile() { return window.innerWidth < 768; }
+
+function setAccordionExpanded(accordion, isOpen) {
+    const header = accordion.querySelector('.tool-acc-header');
+    const body = accordion.querySelector('.tool-acc-body');
+    const chevron = accordion.querySelector('.tool-acc-chevron');
+    if (!header || !body || !chevron) return;
+    body.hidden = !isOpen;
+    header.setAttribute('aria-expanded', String(isOpen));
+    chevron.textContent = isOpen ? '▾' : '▸';
+}
+
+function setActiveEdgeTab(toolId = null) {
+    drawerEdgeTabs?.querySelectorAll('.edge-tool-tab').forEach((tab) => {
+        const isActive = toolId !== null && tab.dataset.toolId === toolId;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-pressed', String(isActive));
+    });
+}
+
+function openToolById(toolId, { scroll = true } = {}) {
+    const accordions = Array.from(toolPanelContent.querySelectorAll('.tool-accordion'));
+    let found = null;
+    accordions.forEach((accordion) => {
+        const isTarget = accordion.dataset.toolId === toolId;
+        setAccordionExpanded(accordion, isTarget);
+        if (isTarget) found = accordion;
+    });
+    if (!found) return;
+    setActiveEdgeTab(toolId);
+    if (scroll) {
+        found.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+}
+
+function mountEdgeTabs(toolIds = []) {
+    if (!drawerEdgeTabs) return;
+    drawerEdgeTabs.innerHTML = '';
+    const hasTabs = toolIds.length > 0;
+    drawerEdgeTabs.hidden = !hasTabs;
+    bodyEl.classList.toggle('has-edge-tool-tabs', hasTabs);
+    if (!hasTabs) {
+        setActiveEdgeTab(null);
+        return;
+    }
+
+    toolIds.forEach((id, idx) => {
+        const meta = TOOL_META[id] ?? { icon: '🔧', label: id };
+        const tab = document.createElement('button');
+        tab.type = 'button';
+        tab.className = 'edge-tool-tab';
+        tab.dataset.toolId = id;
+        tab.title = meta.label;
+        tab.setAttribute('aria-label', `Tool öffnen: ${meta.label}`);
+        tab.setAttribute('aria-pressed', 'false');
+        tab.innerHTML = `
+          <span class="edge-tool-tab-icon" aria-hidden="true">${meta.icon}</span>
+          <span class="edge-tool-tab-index" aria-hidden="true">${idx + 1}</span>`;
+        tab.addEventListener('click', () => {
+            openDrawer();
+            openToolById(id, { scroll: true });
+        });
+        drawerEdgeTabs.appendChild(tab);
+    });
+}
 
 // ─── Sidebar API ─────────────────────────────────────────────────────────────
 
@@ -140,6 +205,7 @@ export function updateBreadcrumb(parts = []) {
  */
 export function mountTools(toolIds = [], autoOpen = true) {
     toolPanelContent.innerHTML = '';
+    mountEdgeTabs(toolIds);
 
     if (!toolIds.length) {
         toolPanelTitle.textContent = 'Tools';
@@ -160,7 +226,7 @@ export function mountTools(toolIds = [], autoOpen = true) {
         accordion.className = 'tool-accordion';
         accordion.dataset.toolId = id;
 
-        // Standardmäßig expandiert: erstes Tool offen, Rest geschlossen
+        // Standardmäßig: erstes Tool offen, Rest geschlossen
         const startOpen = idx === 0;
 
         accordion.innerHTML = `
@@ -182,17 +248,23 @@ export function mountTools(toolIds = [], autoOpen = true) {
         // Accordion-Toggle
         const header = accordion.querySelector('.tool-acc-header');
         const body = accordion.querySelector('.tool-acc-body');
-        const chevron = accordion.querySelector('.tool-acc-chevron');
 
         header.addEventListener('click', () => {
-            const isOpen = body.hidden;
-            body.hidden = !isOpen;
-            header.setAttribute('aria-expanded', String(isOpen));
-            chevron.textContent = isOpen ? '▾' : '▸';
+            const willOpen = body.hidden;
+            if (willOpen) {
+                openToolById(id, { scroll: false });
+            } else {
+                setAccordionExpanded(accordion, false);
+                setActiveEdgeTab(null);
+            }
         });
 
         toolPanelContent.appendChild(accordion);
     });
+
+    if (toolIds.length) {
+        openToolById(toolIds[0], { scroll: false });
+    }
 
     // Drawer automatisch öffnen wenn Tools vorhanden
     if (autoOpen && toolIds.length > 0) {

@@ -44,3 +44,5 @@ Original prompt: Planänderung: Du arbeitest auf ne reigenen Git-Branch die du e
 - Layout-Fix Sidebar: App-Layout auf echte 2-Spalten-Struktur gestellt (Sidebar + Content), keine reservierte dritte Spalte mehr.
 - Sidebar-Breite reduziert/adaptiv (`--sidebar-w: clamp(176px, 18vw, 220px)`), mobil auf `min(88vw, 240px)` begrenzt.
 - Burger-Button/Toggling robustisiert (`openSidebar`/`closeSidebar` + Resize-Sync in `assets/layout.js`) fuer verlässliches Ein-/Ausblenden.
+- Drawer-UX erweitert: pro Tool ein eigener Edge-Tab (Reiter am rechten Rand) mit Icon/Index und direkter Navigation zum jeweiligen Tool.
+- Der alte einzelne Tools-Reiter wird automatisch ausgeblendet, sobald Tool-Edge-Tabs verfügbar sind.

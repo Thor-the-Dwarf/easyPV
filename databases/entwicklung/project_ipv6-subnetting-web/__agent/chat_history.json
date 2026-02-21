@@ -313,5 +313,24 @@
         "why": "Burger-Button blendet die Sidebar auf Desktop und Mobile zuverlaessig ein/aus"
       }
     ]
+  },
+  {
+    "date_time_stamp": "26-02-21 00:34:00",
+    "commit_message": "feat(drawer): eigener Edge-Tab pro Tool",
+    "request": "Fuer jedes Tool im rechten Drawer einen eigenen Edge-Tab (Reiter am Rand)",
+    "response": [
+      {
+        "what": "In `index.html` einen neuen Container `#drawer-edge-tabs` fuer Tool-Reiter ergänzt",
+        "why": "Basisstruktur schaffen, um mehrere Rand-Reiter statt nur eines globalen Buttons anzeigen zu koennen"
+      },
+      {
+        "what": "In `assets/layout.js` dynamische Edge-Tabs pro Tool-ID aufgebaut (`mountEdgeTabs`) und mit Drawer/Accordion verknuepft (`openToolById`)",
+        "why": "Klick auf einen Reiter oeffnet den Drawer und springt direkt zum zugehoerigen Tool"
+      },
+      {
+        "what": "In `assets/styles.css` neue Reiter-Stile (`.edge-tool-tab*`) hinzugefuegt und den alten Einzel-Button bei aktiven Edge-Tabs ausgeblendet",
+        "why": "Jedes Tool erhaelt einen eigenen sichtbaren Rand-Reiter; die Bedienung bleibt klar und konsistent"
+      }
+    ]
   }
 ]
